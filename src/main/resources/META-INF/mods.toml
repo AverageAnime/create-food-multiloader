@@ -1,0 +1,35 @@
+modLoader="javafml"
+loaderVersion="[47,)"
+license="GPLv3"
+
+[[mods]]
+modId="createfood"
+version="${file.jarVersion}"
+displayName="Create: Food"
+displayURL="https://github.com/AverageAnime/create-metalwork"
+logoFile="icon.png"
+authors="average_anime"
+description='''
+An Addon for Create.
+'''
+
+[[dependencies.createfood]]
+modId="minecraft"
+mandatory=true
+versionRange="[1.20.1,1.20.2)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.createfood]]
+modId="forge"
+mandatory=true
+versionRange="[47,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.createfood]]
+modId="create"
+mandatory=true
+versionRange="[0.5.1.e,)"
+ordering="AFTER"
+side="BOTH"

@@ -1,0 +1,176 @@
+buildscript {
+    repositories {
+        maven { url = 'https://maven.minecraftforge.net' }
+        mavenCentral()
+        maven { url = 'https://repo.spongepowered.org/repository/maven-public' }
+        maven { url = 'https://maven.parchmentmc.org' }
+    }
+    dependencies {
+        classpath "net.minecraftforge.gradle:ForgeGradle:${forgegradle_version}"
+        classpath "org.spongepowered:mixingradle:${mixingradle_version}"
+        classpath "org.parchmentmc:librarian:${librarian_version}"
+    }
+}
+
+
+plugins {
+    id "me.modmuss50.mod-publish-plugin" version "0.5.1"
+}
+apply plugin: 'net.minecraftforge.gradle'
+apply plugin: 'org.parchmentmc.librarian.forgegradle'
+apply plugin: 'eclipse'
+apply plugin: 'maven-publish'
+apply plugin: 'org.spongepowered.mixin'
+
+version = mod_version
+group = 'net.averageanime.createfood'
+archivesBaseName = "create-food-${minecraft_version}"
+
+jarJar.enable()
+java.toolchain.languageVersion = JavaLanguageVersion.of(17)
+
+println "Java: ${System.getProperty 'java.version'}, JVM: ${System.getProperty 'java.vm.version'} (${System.getProperty 'java.vendor'}), Arch: ${System.getProperty 'os.arch'}"
+minecraft {
+    mappings channel: 'parchment', version: "${parchment_version}-${minecraft_version}"
+
+    accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg') // Currently, this location cannot be changed from the default.
+
+    runs {
+        client {
+            workingDirectory project.file('run')
+            arg '-mixin.config=createfood.mixins.json'
+            property 'forge.logging.markers', 'REGISTRIES'
+            property 'forge.logging.console.level', 'debug'
+            property 'forge.enabledGameTestNamespaces', 'createfood'
+            mods {
+                createfood {
+                    source sourceSets.main
+                }
+            }
+        }
+
+        server {
+            workingDirectory project.file('run')
+            arg '-mixin.config=createfood.mixins.json'
+            property 'forge.logging.markers', 'REGISTRIES'
+            property 'forge.logging.console.level', 'debug'
+            property 'forge.enabledGameTestNamespaces', 'createfood'
+            mods {
+                createfood {
+                    source sourceSets.main
+                }
+            }
+        }
+
+        data {
+            workingDirectory project.file('run')
+            property 'forge.logging.markers', 'REGISTRIES'
+            property 'forge.logging.console.level', 'debug'
+            args '--mod', 'createfood',
+                    '--all', '--output', file('src/generated/resources/'),
+                    '--existing', file('src/main/resources/'),
+                    '--existing-mod', 'create',
+                    '--existing-mod', 'farmersdelight'
+            mods {
+                createfood {
+                    source sourceSets.main
+                }
+            }
+        }
+    }
+}
+
+repositories {
+    mavenLocal()
+    maven {
+        name "Tterrag maven"
+        url "https://maven.tterrag.com/"
+    }
+    maven {
+        name "Theillusivec4 Maven"
+        url "https://maven.theillusivec4.top/"
+    }
+    maven {
+        name "Curse Maven"
+        url "https://www.cursemaven.com"
+        content {
+            includeGroup "curse.maven"
+        }
+    }
+    maven {
+        name = "squiddev"
+        url = "https://squiddev.cc/maven/"
+    }
+}
+
+dependencies {
+    minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
+
+    implementation fg.deobf("com.simibubi.create:create-${create_minecraft_version}:${create_version}-${create_version_build}:slim")
+    implementation fg.deobf("com.jozufozu.flywheel:flywheel-forge-${flywheel_minecraft_version}:${flywheel_version}")
+    implementation fg.deobf("com.tterrag.registrate:Registrate:${registrate_version}")
+
+    implementation fg.deobf("curse.maven:farmers-delight-398521:5051242")
+
+    compileOnly fg.deobf("mezz.jei:jei-${jei_minecraft_version}-common-api:${jei_version}")
+    compileOnly fg.deobf("mezz.jei:jei-${jei_minecraft_version}-forge-api:${jei_version}")
+    runtimeOnly fg.deobf("mezz.jei:jei-${jei_minecraft_version}-forge:${jei_version}")
+}
+
+sourceSets.main.resources { srcDir 'src/generated/resources' }
+
+mixin {
+    add sourceSets.main, 'createfood.refmap.json'
+    config 'createfood.mixins.json'
+
+    debug.verbose = true
+    debug.export = true
+}
+
+
+void processJar(Jar jarTask) {
+    jarTask.configure {
+        from "LICENSE"
+        exclude ".cache"
+        exclude "assets/createfood/lang/unfinished"
+        exclude "assets/createfood/lang/default"
+
+        manifest {
+            attributes([
+                    "Specification-Title"     : "createfood",
+                    "Specification-Vendor"    : "average_anime",
+                    "Specification-Version"   : "1", // We are version 1 of ourselves
+                    "Implementation-Title"    : project.name,
+                    "Implementation-Version"  : project.jar.archiveVersion,
+                    "Implementation-Vendor"   : "average_anime",
+                    "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
+                    'MixinConfigs': 'createfood.mixins.json'
+            ])
+        }
+    }
+}
+
+jar.finalizedBy('reobfJar')
+jar.setArchiveClassifier('slim')
+tasks.jarJar.setArchiveClassifier('')
+tasks.jarJar.finalizedBy('reobfJarJar')
+
+processJar(jar)
+processJar(tasks.jarJar)
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            artifact jar
+        }
+    }
+    repositories {
+        maven {
+            url "file://${project.projectDir}/mcmodsrepo"
+        }
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}
