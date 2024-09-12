@@ -1,0 +1,16 @@
+{
+    "type": "farmersdelight:cooking",
+    "cookingtime": 200,
+    "experience": 0.5,
+    "ingredients": [
+        {
+            "tag": "forge:milk_buckets"
+        },
+        {
+            "tag": "forge:salt"
+        }
+    ],
+    "result": {
+        "item": "createfood:cheese_block"
+    }
+}

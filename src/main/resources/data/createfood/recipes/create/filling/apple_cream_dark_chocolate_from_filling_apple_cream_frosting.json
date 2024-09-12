@@ -1,0 +1,17 @@
+{
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "tag": "forge:hollow_dark_chocolate"
+        },
+        {
+            "amount": 125,
+            "fluid": "createfood:apple_cream_frosting"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:apple_cream_dark_chocolate"
+        }
+    ]
+}

@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:bread_lettuce"
+        },
+        {
+            "tag": "forge:carrot"
+        }
+    ],
+    "result": {
+        "item": "createfood:bread_lettuce_carrot"
+    }
+}

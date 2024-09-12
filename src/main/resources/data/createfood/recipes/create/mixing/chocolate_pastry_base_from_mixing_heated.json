@@ -1,0 +1,17 @@
+{
+    "type": "create:mixing",
+    "heatRequirement": "heated",
+    "ingredients": [
+        {
+            "tag": "forge:chocolate_sweet_dough"
+        },
+        {
+            "tag": "forge:butter"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:chocolate_pastry_base"
+        }
+    ]
+}

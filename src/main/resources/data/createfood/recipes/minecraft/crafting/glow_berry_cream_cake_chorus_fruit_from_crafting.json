@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:glow_berry_cream_frosted_cake"
+        },
+        {
+            "tag": "forge:chorus_fruit"
+        }
+    ],
+    "result": {
+        "item": "createfood:glow_berry_cream_cake_chorus_fruit"
+    }
+}

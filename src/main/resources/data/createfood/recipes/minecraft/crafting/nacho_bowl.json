@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:tortilla_chip_bowl"
+        },
+        {
+            "tag": "forge:cheeses"
+        }
+    ],
+    "result": {
+        "item": "createfood:nacho_bowl"
+    }
+}

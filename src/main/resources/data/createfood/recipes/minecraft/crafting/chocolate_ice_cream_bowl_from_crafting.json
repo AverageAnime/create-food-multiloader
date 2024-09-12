@@ -1,0 +1,21 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:chocolate_ice_cream_bucket"
+        },
+        {
+            "tag": "forge:bowl"
+        },
+        {
+            "tag": "forge:bowl"
+        },
+        {
+            "tag": "forge:bowl"
+        }
+    ],
+    "result": {
+        "count": 3,
+        "item": "createfood:chocolate_ice_cream_bowl"
+    }
+}

@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "createfood:hot_cheese_biscuit_sandwich",
+      "required": false
+    },
+    {
+      "id": "meadow:cheese_sandwich",
+      "required": false
+    }
+  ]
+}

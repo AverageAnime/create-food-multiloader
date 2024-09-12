@@ -1,0 +1,17 @@
+{
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "tag": "forge:marshmallow_stick"
+        },
+        {
+            "amount": 125,
+            "fluid": "create:chocolate"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:chocolate_covered_marshmallow_stick"
+        }
+    ]
+}

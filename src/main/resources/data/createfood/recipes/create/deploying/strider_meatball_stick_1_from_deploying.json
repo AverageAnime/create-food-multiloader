@@ -1,0 +1,16 @@
+{
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "item": "minecraft:stick"
+        },
+        {
+            "tag": "forge:strider_meatball"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:strider_meatball_stick_1"
+        }
+    ]
+}

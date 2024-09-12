@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:bread_slice"
+        },
+        {
+            "tag": "forge:cooked_mutton"
+        },
+        {
+            "tag": "forge:bread_slice"
+        }
+    ],
+    "result": {
+        "item": "createfood:mutton_sandwich"
+    }
+}

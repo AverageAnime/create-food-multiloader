@@ -1,0 +1,17 @@
+{
+    "type": "farmersdelight:cutting",
+    "ingredients": [
+        {
+            "tag": "forge:chocolate_pie_graham_cracker"
+        }
+    ],
+    "tool": {
+        "tag": "forge:tools/knives"
+    },
+    "result": [
+        {
+            "count": 4,
+            "item": "createfood:chocolate_pie_graham_cracker_slice"
+        }
+    ]
+}

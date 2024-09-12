@@ -1,0 +1,14 @@
+{
+    "type": "create:pressing",
+    "ingredients": [
+        {
+            "tag": "forge:chili_pepper"
+        }
+    ],
+    "results": [
+        {
+            "count": 2,
+            "item": "createfood:paprika"
+        }
+    ]
+}

@@ -1,0 +1,17 @@
+{
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "tag": "forge:hollow_white_chocolate"
+        },
+        {
+            "amount": 125,
+            "fluid": "createfood:melon_cream_frosting"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:melon_cream_white_chocolate"
+        }
+    ]
+}

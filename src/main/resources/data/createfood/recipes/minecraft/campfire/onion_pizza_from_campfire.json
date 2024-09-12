@@ -1,0 +1,9 @@
+{
+    "type": "minecraft:campfire_cooking",
+    "ingredient": {
+        "tag": "forge:raw_onion_pizza"
+    },
+    "result": "createfood:onion_pizza",
+    "experience": 0.2,
+    "cookingtime": 350
+}

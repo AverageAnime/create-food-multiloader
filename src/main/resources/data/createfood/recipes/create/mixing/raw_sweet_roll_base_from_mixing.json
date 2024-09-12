@@ -1,0 +1,16 @@
+{
+    "type": "create:mixing",
+    "ingredients": [
+        {
+            "tag": "forge:sweet_dough"
+        },
+        {
+            "tag": "forge:sugar"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:raw_sweet_roll_base"
+        }
+    ]
+}

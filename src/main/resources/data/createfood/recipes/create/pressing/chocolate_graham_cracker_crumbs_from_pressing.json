@@ -1,0 +1,14 @@
+{
+    "type": "create:pressing",
+    "ingredients": [
+        {
+            "tag": "forge:chocolate_graham_cracker"
+        }
+    ],
+    "results": [
+        {
+            "count": 2,
+            "item": "createfood:chocolate_graham_cracker_crumbs"
+        }
+    ]
+}

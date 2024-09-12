@@ -1,0 +1,9 @@
+{
+    "type": "minecraft:smoking",
+    "ingredient": {
+        "tag": "forge:raw_sausage_bacon_pizza"
+    },
+    "result": "createfood:sausage_bacon_pizza",
+    "experience": 0.25,
+    "cookingtime": 400
+}

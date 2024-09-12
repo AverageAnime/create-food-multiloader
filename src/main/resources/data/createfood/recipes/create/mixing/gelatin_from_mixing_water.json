@@ -1,0 +1,30 @@
+{
+    "type": "create:mixing",
+    "heatRequirement": "heated",
+    "ingredients": [
+        {
+            "amount": 83,
+            "fluid": "minecraft:water"
+        },
+        {
+            "item": "minecraft:bone"
+        },
+        {
+            "item": "minecraft:bone"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:gelatin"
+        },
+        {
+            "item": "createfood:gelatin"
+        },
+        {
+            "item": "createfood:gelatin"
+        },
+        {
+            "item": "createfood:gelatin"
+        }
+    ]
+}

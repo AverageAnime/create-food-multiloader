@@ -1,0 +1,17 @@
+{
+    "type": "create:compacting",
+    "ingredients": [
+        {
+            "tag": "forge:sweet_dough"
+        },
+        {
+            "item": "minecraft:rotten_flesh"
+        }
+    ],
+    "results": [
+        {
+            "count": 8,
+            "item": "createfood:raw_flesh_cookie"
+        }
+    ]
+}

@@ -1,0 +1,14 @@
+{
+    "type": "create:compacting",
+    "ingredients": [
+        {
+            "tag": "forge:ground_beef"
+        }
+    ],
+    "results": [
+        {
+            "count": 2,
+            "item": "createfood:raw_meatball"
+        }
+    ]
+}

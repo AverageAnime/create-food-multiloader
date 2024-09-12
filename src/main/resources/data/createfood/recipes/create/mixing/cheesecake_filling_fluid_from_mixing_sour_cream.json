@@ -1,0 +1,36 @@
+{
+    "type": "create:mixing",
+    "ingredients": [
+        {
+            "amount": 250,
+            "fluid": "createfood:sour_cream"
+        },
+        {
+            "item": "createfood:cream_cheese"
+        },
+        {
+            "item": "createfood:cream_cheese"
+        },
+        {
+            "item": "createfood:cream_cheese"
+        },
+        {
+            "tag": "forge:sugar"
+        },
+        {
+            "tag": "forge:salt"
+        },
+        {
+            "tag": "forge:eggs"
+        },
+        {
+            "tag": "forge:eggs"
+        }
+    ],
+    "results": [
+        {
+            "amount": 1000,
+            "fluid": "createfood:cheesecake_filling"
+        }
+    ]
+}

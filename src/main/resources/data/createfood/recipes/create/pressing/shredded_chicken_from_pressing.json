@@ -1,0 +1,14 @@
+{
+    "type": "create:pressing",
+    "ingredients": [
+        {
+            "item": "minecraft:chicken"
+        }
+    ],
+    "results": [
+        {
+            "count": 2,
+            "item": "createfood:shredded_chicken"
+        }
+    ]
+}

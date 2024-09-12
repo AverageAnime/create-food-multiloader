@@ -1,0 +1,18 @@
+{
+    "type": "create:compacting",
+    "heatRequirement": "heated",
+    "ingredients": [
+        {
+            "tag": "forge:dark_chocolate_chips"
+        },
+        {
+            "tag": "forge:chocolate_sweet_dough"
+        }
+    ],
+    "results": [
+        {
+            "count": 8,
+            "item": "createfood:dark_chips_chocolate_cookie"
+        }
+    ]
+}

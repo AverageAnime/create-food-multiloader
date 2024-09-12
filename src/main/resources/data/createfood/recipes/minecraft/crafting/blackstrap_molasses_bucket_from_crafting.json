@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:empty_bucket"
+        },
+        {
+            "tag": "forge:blackstrap_molasses_bottle"
+        },
+        {
+            "tag": "forge:blackstrap_molasses_bottle"
+        }
+    ],
+    "result": {
+        "item": "createfood:blackstrap_molasses_bucket"
+    }
+}

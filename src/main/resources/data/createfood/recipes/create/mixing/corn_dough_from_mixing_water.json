@@ -1,0 +1,24 @@
+{
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "culturaldelights"
+        }
+    ],
+    "type": "create:mixing",
+    "ingredients": [
+        {
+            "tag": "forge:corn_flour"
+        },
+        {
+            "amount": 1000,
+            "fluid": "minecraft:water"
+        }
+    ],
+    "results": [
+        {
+            "count": 6,
+            "item": "culturaldelights:corn_dough"
+        }
+    ]
+}

@@ -1,0 +1,22 @@
+{
+    "type": "create:mixing",
+    "ingredients": [
+        {
+            "tag": "forge:cream_cheese"
+        },
+        {
+            "tag": "forge:sugar"
+        },
+        {
+            "tag": "forge:apple"
+        },
+        {
+            "item": "minecraft:glass_bottle"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:apple_cream_frosting_bottle"
+        }
+    ]
+}

@@ -1,0 +1,20 @@
+{
+    "type": "create:mixing",
+    "ingredients": [
+        {
+            "tag": "forge:sweet_dough"
+        },
+        {
+            "tag": "forge:eggs"
+        },
+        {
+            "amount": 1000,
+            "fluidTag": "forge:milk"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:raw_cake_base"
+        }
+    ]
+}

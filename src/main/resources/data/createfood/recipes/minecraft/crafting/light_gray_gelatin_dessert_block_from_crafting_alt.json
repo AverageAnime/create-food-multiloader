@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:gelatin_dessert_block"
+        },
+        {
+            "tag": "forge:light_gray_dyes"
+        }
+    ],
+    "result": {
+        "item": "createfood:light_gray_gelatin_dessert_block"
+    }
+}

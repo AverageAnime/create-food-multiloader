@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:hash_brown_fried_egg_plate"
+        },
+        {
+            "tag": "forge:toast_slice"
+        }
+    ],
+    "result": {
+        "item": "createfood:breakfast_plate"
+    }
+}

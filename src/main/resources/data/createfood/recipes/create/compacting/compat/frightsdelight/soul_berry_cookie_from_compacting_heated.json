@@ -1,0 +1,24 @@
+{
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "frightsdelight"
+        }
+    ],
+    "type": "create:compacting",
+    "heatRequirement": "heated",
+    "ingredients": [
+        {
+            "tag": "forge:sweet_dough"
+        },
+        {
+            "item": "frightsdelight:soul_berry"
+        }
+    ],
+    "results": [
+        {
+            "count": 8,
+            "item": "frightsdelight:soul_berry_cookie"
+        }
+    ]
+}

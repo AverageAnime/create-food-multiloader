@@ -1,0 +1,39 @@
+{
+    "type": "create:mixing",
+    "ingredients": [
+        {
+            "amount": 1000,
+            "fluidTag": "forge:milk"
+        },
+        {
+            "tag": "forge:sugar"
+        },
+        {
+            "tag": "forge:sugar"
+        },
+        {
+            "tag": "forge:sugar"
+        },
+        {
+            "tag": "forge:sugar"
+        },
+        {
+            "item": "forge:crops/ube"
+        },
+        {
+            "item": "forge:crops/ube"
+        },
+        {
+            "item": "forge:crops/ube"
+        },
+        {
+            "item": "forge:crops/ube"
+        }
+    ],
+    "results": [
+        {
+            "amount": 1000,
+            "fluid": "createfood:ube_cream_frosting"
+        }
+    ]
+}

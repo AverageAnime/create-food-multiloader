@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:chicken_bun_lettuce_tomato"
+        },
+        {
+            "tag": "forge:bun"
+        }
+    ],
+    "result": {
+        "item": "createfood:chicken_burger_lettuce_tomato"
+    }
+}

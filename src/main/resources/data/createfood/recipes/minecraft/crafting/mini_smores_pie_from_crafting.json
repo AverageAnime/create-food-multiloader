@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:mini_chocolate_pie_graham_cracker"
+        },
+        {
+            "tag": "forge:marshmallow"
+        }
+    ],
+    "result": {
+        "item": "createfood:mini_smores_pie"
+    }
+}

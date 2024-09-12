@@ -1,0 +1,24 @@
+{
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "expandeddelight"
+        }
+    ],
+    "type": "create:compacting",
+    "heatRequirement": "heated",
+    "ingredients": [
+        {
+            "tag": "forge:sugar"
+        },
+        {
+            "tag": "forge:sweet_dough"
+        }
+    ],
+    "results": [
+        {
+            "count": 8,
+            "item": "expandeddelight:sugar_cookie"
+        }
+    ]
+}

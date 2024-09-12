@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:bread_slice"
+        },
+        {
+            "tag": "forge:tomato"
+        },
+        {
+            "tag": "forge:salad_ingredients"
+        },
+        {
+            "tag": "forge:cooked_pork"
+        }
+    ],
+    "result": {
+        "item": "createfood:bread_slice_bacon_lettuce_tomato"
+    }
+}

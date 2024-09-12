@@ -1,0 +1,16 @@
+{
+    "type": "create:item_application",
+    "ingredients": [
+        {
+            "tag": "forge:raw_sausage_pizza"
+        },
+        {
+            "tag": "forge:cooked_pork"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:raw_sausage_bacon_pizza"
+        }
+    ]
+}

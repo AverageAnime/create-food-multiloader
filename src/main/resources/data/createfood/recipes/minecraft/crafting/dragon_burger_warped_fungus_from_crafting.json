@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:dragon_bun_warped_fungus"
+        },
+        {
+            "tag": "forge:bun"
+        }
+    ],
+    "result": {
+        "item": "createfood:dragon_burger_warped_fungus"
+    }
+}

@@ -1,0 +1,19 @@
+{
+    "type": "farmersdelight:cutting",
+    "ingredients": [
+        {
+            "tag": "forge:chocolate_pastry_base"
+        }
+    ],
+    "tool": {
+        "tag": "forge:tools/knives"
+    },
+    "result": [
+        {
+            "item": "createfood:chocolate_donut_hole"
+        },
+        {
+            "item": "createfood:chocolate_donut_hole"
+        }
+    ]
+}

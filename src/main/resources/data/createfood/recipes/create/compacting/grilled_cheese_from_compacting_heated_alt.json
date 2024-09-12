@@ -1,0 +1,14 @@
+{
+    "type": "create:compacting",
+    "heatRequirement": "heated",
+    "ingredients": [
+        {
+            "tag": "forge:cheese_sandwich"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:grilled_cheese_sandwich"
+        }
+    ]
+}

@@ -1,0 +1,14 @@
+{
+    "type": "create:compacting",
+    "ingredients": [
+        {
+            "tag": "forge:shredded_chicken"
+        }
+    ],
+    "results": [
+        {
+            "count": 2,
+            "item": "createfood:unbreaded_chicken_patty"
+        }
+    ]
+}

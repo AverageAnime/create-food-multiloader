@@ -1,0 +1,12 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:cream_cheese_bucket"
+        }
+    ],
+    "result": {
+        "count": 3,
+        "item": "createfood:cream_cheese"
+    }
+}

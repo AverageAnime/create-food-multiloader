@@ -1,0 +1,14 @@
+{
+    "type": "create:compacting",
+    "ingredients": [
+        {
+            "amount": 250,
+            "fluid": "createfood:butterscotch"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:butterscotch"
+        }
+    ]
+}

@@ -1,0 +1,26 @@
+{
+    "type": "create:mixing",
+    "ingredients": [
+        {
+            "tag": "forge:sugar"
+        },
+        {
+            "tag": "forge:apple_slice"
+        },
+        {
+            "tag": "forge:apple_slice"
+        },
+        {
+            "tag": "forge:apple_slice"
+        },
+        {
+            "tag": "forge:apple_slice"
+        }
+    ],
+    "results": [
+        {
+            "amount": 333,
+            "fluid": "createfood:apple_juice"
+        }
+    ]
+}

@@ -1,0 +1,35 @@
+{
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farm_and_charm"
+        }
+    ],
+    "type": "farm_and_charm:pot_cooking",
+    "container": {
+        "item": "minecraft:bucket"
+    },
+    "ingredients": [
+        {
+            "tag": "forge:butter"
+        },
+        {
+            "tag": "forge:sugar"
+        },
+        {
+            "tag": "forge:sugar"
+        },
+        {
+            "tag": "forge:chorus_fruit"
+        },
+        {
+            "tag": "forge:chorus_fruit"
+        },
+        {
+            "tag": "forge:chorus_fruit"
+        }
+    ],
+    "result": {
+        "item": "createfood:chorus_fruit_pie_filling_bucket"
+    }
+}

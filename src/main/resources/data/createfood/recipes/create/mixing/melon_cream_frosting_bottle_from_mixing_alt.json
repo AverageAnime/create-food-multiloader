@@ -1,0 +1,19 @@
+{
+    "type": "create:mixing",
+    "ingredients": [
+        {
+            "tag": "forge:sugar"
+        },
+        {
+            "tag": "forge:melon"
+        },
+        {
+            "item": "farmersdelight:milk_bottle"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:melon_cream_frosting_bottle"
+        }
+    ]
+}

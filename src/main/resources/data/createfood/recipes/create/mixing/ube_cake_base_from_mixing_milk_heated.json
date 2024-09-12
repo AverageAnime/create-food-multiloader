@@ -1,0 +1,21 @@
+{
+    "type": "create:mixing",
+    "heatRequirement": "heated",
+    "ingredients": [
+        {
+            "tag": "forge:ube_sugar_dough"
+        },
+        {
+            "tag": "forge:eggs"
+        },
+        {
+            "amount": 1000,
+            "fluidTag": "forge:milk"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:ube_cake_base"
+        }
+    ]
+}

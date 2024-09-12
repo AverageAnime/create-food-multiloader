@@ -1,0 +1,28 @@
+{
+    "type": "farmersdelight:cooking",
+    "cookingtime": 600,
+    "experience": 0.95,
+    "ingredients": [
+        {
+            "item": "minecraft:water_bucket"
+        },
+        {
+            "tag": "forge:sugar"
+        },
+        {
+            "tag": "forge:sugar"
+        },
+        {
+            "tag": "forge:fruits"
+        },
+        {
+            "tag": "forge:fruits"
+        },
+        {
+            "tag": "forge:fruits"
+        }
+    ],
+    "result": {
+        "item": "createfood:vinegar_bucket"
+    }
+}

@@ -1,0 +1,16 @@
+{
+    "type": "create:mixing",
+    "heatRequirement": "heated",
+    "ingredients": [
+        {
+            "amount": 1000,
+            "fluid": "createfood:cane_syrup"
+        }
+    ],
+    "results": [
+        {
+            "amount": 1000,
+            "fluid": "createfood:molasses"
+        }
+    ]
+}

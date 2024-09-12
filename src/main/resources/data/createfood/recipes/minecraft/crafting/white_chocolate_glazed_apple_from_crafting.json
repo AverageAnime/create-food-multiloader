@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:apple"
+        },
+        {
+            "tag": "forge:white_chocolate_chips"
+        }
+    ],
+    "result": {
+        "item": "createfood:white_chocolate_glazed_apple"
+    }
+}

@@ -1,0 +1,49 @@
+{
+    "type": "create:mixing",
+    "ingredients": [
+        {
+            "tag": "forge:cream_cheese"
+        },
+        {
+            "tag": "forge:cream_cheese"
+        },
+        {
+            "tag": "forge:cream_cheese"
+        },
+        {
+            "tag": "forge:cream_cheese"
+        },
+        {
+            "tag": "forge:sugar"
+        },
+        {
+            "tag": "forge:sugar"
+        },
+        {
+            "tag": "forge:sugar"
+        },
+        {
+            "tag": "forge:sugar"
+        },
+        {
+            "tag": "forge:chorus_fruit"
+        },
+        {
+            "tag": "forge:chorus_fruit"
+        },
+        {
+            "tag": "forge:chorus_fruit"
+        },
+        {
+            "tag": "forge:chorus_fruit"
+        },
+        {
+            "item": "minecraft:bucket"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:chorus_fruit_cream_frosting_bucket"
+        }
+    ]
+}

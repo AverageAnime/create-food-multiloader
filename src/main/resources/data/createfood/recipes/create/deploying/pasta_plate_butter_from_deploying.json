@@ -1,0 +1,16 @@
+{
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "forge:cooked_pasta"
+        },
+        {
+            "tag": "forge:butter"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:pasta_plate_butter"
+        }
+    ]
+}

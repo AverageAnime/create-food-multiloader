@@ -1,0 +1,9 @@
+{
+    "type": "minecraft:campfire_cooking",
+    "ingredient": {
+        "tag": "forge:raw_cheese_pizza"
+    },
+    "result": "createfood:cheese_pizza",
+    "experience": 0.2,
+    "cookingtime": 350
+}

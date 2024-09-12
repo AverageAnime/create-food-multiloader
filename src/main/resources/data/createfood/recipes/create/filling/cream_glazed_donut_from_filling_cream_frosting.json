@@ -1,0 +1,17 @@
+{
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "tag": "forge:donut_base"
+        },
+        {
+            "amount": 250,
+            "fluid": "createfood:cream_frosting"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:cream_glazed_donut"
+        }
+    ]
+}

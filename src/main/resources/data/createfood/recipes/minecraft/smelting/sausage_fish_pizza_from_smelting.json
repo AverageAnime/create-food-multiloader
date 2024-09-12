@@ -1,0 +1,9 @@
+{
+    "type": "minecraft:smelting",
+    "ingredient": {
+        "tag": "forge:raw_sausage_fish_pizza"
+    },
+    "result": "createfood:sausage_fish_pizza",
+    "experience": 0.25,
+    "cookingtime": 400
+}

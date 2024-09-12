@@ -1,0 +1,21 @@
+{
+    "type": "create:compacting",
+    "heatRequirement": "heated",
+    "ingredients": [
+        {
+            "tag": "forge:carrot"
+        },
+        {
+            "tag": "forge:potato"
+        },
+        {
+            "tag": "forge:vegetables"
+        }
+    ],
+    "results": [
+        {
+            "amount": 500,
+            "fluid": "createfood:vegetable_oil"
+        }
+    ]
+}

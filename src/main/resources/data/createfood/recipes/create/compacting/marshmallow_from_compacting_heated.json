@@ -1,0 +1,21 @@
+{
+    "type": "create:compacting",
+    "heatRequirement": "heated",
+    "ingredients": [
+        {
+            "item": "minecraft:sugar"
+        },
+        {
+            "amount": 83,
+            "fluid": "minecraft:water"
+        },
+        {
+            "tag": "forge:gelatin"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:marshmallow"
+        }
+    ]
+}

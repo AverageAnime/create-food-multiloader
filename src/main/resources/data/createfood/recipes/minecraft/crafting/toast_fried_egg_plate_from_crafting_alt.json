@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:bowl"
+        },
+        {
+            "tag": "forge:toast_slice"
+        },
+        {
+            "tag": "forge:cooked_eggs"
+        }
+    ],
+    "result": {
+        "item": "createfood:toast_fried_egg_plate"
+    }
+}

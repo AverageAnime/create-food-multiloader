@@ -1,0 +1,15 @@
+{
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "ubesdelight:cookie_ginger"
+        }
+    ],
+    "type": "minecraft:smelting",
+    "cookingtime": 200,
+    "experience": 0.35,
+    "ingredient": {
+        "tag": "forge:raw_ginger_cookie"
+    },
+    "result": "ubesdelight:cookie_ginger"
+}

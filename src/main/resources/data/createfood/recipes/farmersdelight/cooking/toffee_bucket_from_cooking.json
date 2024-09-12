@@ -1,0 +1,25 @@
+{
+    "type": "farmersdelight:cooking",
+    "container": {
+        "item": "minecraft:bucket"
+    },
+    "cookingtime": 50,
+    "experience": 0.25,
+    "ingredients": [
+        {
+            "tag": "forge:sugar"
+        },
+        {
+            "tag": "forge:sugar"
+        },
+        {
+            "tag": "forge:butter"
+        },
+        {
+            "tag": "forge:butter"
+        }
+    ],
+    "result": {
+        "item": "createfood:toffee_bucket"
+    }
+}

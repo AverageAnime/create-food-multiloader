@@ -1,0 +1,16 @@
+{
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "forge:beef_bun"
+        },
+        {
+            "tag": "forge:salad_ingredients"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:beef_bun_lettuce"
+        }
+    ]
+}

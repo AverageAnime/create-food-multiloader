@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:bowl"
+        },
+        {
+            "tag": "forge:potato_chips"
+        },
+        {
+            "tag": "forge:potato_chips"
+        }
+    ],
+    "result": {
+        "item": "createfood:potato_chip_bowl"
+    }
+}

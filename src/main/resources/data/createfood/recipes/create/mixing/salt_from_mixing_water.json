@@ -1,0 +1,15 @@
+{
+    "type": "create:mixing",
+    "heatRequirement": "heated",
+    "ingredients": [
+        {
+            "amount": 83,
+            "fluid": "minecraft:water"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:salt"
+        }
+    ]
+}

@@ -1,0 +1,17 @@
+{
+    "type": "farmersdelight:cutting",
+    "ingredients": [
+        {
+            "tag": "forge:chorus_fruit_cream_cake_sweet_berry"
+        }
+    ],
+    "tool": {
+        "tag": "forge:tools/knives"
+    },
+    "result": [
+        {
+            "count": 7,
+            "item": "createfood:chorus_fruit_cream_cake_slice_sweet_berry"
+        }
+    ]
+}

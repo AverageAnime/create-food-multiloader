@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:empty_buckets"
+        },
+        {
+            "tag": "forge:chorus_fruit_milkshake_bottle"
+        },
+        {
+            "tag": "forge:chorus_fruit_milkshake_bottle"
+        }
+    ],
+    "result": {
+        "item": "createfood:chorus_fruit_milkshake_bucket"
+    }
+}

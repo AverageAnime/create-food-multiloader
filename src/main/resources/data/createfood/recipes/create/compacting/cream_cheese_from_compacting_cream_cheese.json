@@ -1,0 +1,14 @@
+{
+    "type": "create:compacting",
+    "ingredients": [
+        {
+            "amount": 333,
+            "fluid": "createfood:cream_cheese"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:cream_cheese"
+        }
+    ]
+}

@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:chocolate_graham_cracker_neapolitan_scoop_2"
+        },
+        {
+            "tag": "forge:berry_ice_cream_stick"
+        }
+    ],
+    "result": {
+        "item": "createfood:chocolate_graham_cracker_neapolitan_scoop_3"
+    }
+}

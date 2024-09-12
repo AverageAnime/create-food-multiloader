@@ -1,0 +1,29 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:cake_slice_glow_berry"
+        },
+        {
+            "tag": "forge:cake_slice_glow_berry"
+        },
+        {
+            "tag": "forge:cake_slice_glow_berry"
+        },
+        {
+            "tag": "forge:cake_slice_glow_berry"
+        },
+        {
+            "tag": "forge:cake_slice_glow_berry"
+        },
+        {
+            "tag": "forge:cake_slice_glow_berry"
+        },
+        {
+            "tag": "forge:cake_slice_glow_berry"
+        }
+    ],
+    "result": {
+        "item": "createfood:cake_glow_berry"
+    }
+}

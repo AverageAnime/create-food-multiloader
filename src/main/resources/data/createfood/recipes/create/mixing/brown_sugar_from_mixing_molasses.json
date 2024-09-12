@@ -1,0 +1,17 @@
+{
+    "type": "create:mixing",
+    "ingredients": [
+        {
+            "amount": 125,
+            "fluid": "createfood:molasses"
+        },
+        {
+            "tag": "forge:sugar"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:brown_sugar"
+        }
+    ]
+}

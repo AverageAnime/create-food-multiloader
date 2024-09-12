@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:chicken_bun_lettuce"
+        },
+        {
+            "tag": "forge:cooked_pork"
+        }
+    ],
+    "result": {
+        "item": "createfood:chicken_bun_bacon_lettuce"
+    }
+}

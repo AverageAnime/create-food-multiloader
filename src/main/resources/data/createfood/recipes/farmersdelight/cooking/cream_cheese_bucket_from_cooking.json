@@ -1,0 +1,19 @@
+{
+    "type": "farmersdelight:cooking",
+    "cookingtime": 350,
+    "experience": 1.0,
+    "ingredients": [
+        {
+            "tag": "forge:milks"
+        },
+        {
+            "item": "createfood:vinegar_bottle"
+        },
+        {
+            "tag": "forge:salt"
+        }
+    ],
+    "result": {
+        "item": "createfood:cream_cheese_bucket"
+    }
+}

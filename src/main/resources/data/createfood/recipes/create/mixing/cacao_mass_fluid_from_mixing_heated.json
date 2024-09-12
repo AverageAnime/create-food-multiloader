@@ -1,0 +1,24 @@
+{
+    "type": "create:mixing",
+    "heatRequirement": "heated",
+    "ingredients": [
+        {
+            "item": "createfood:cacao_nibs"
+        },
+        {
+            "item": "createfood:cacao_nibs"
+        },
+        {
+            "item": "createfood:cacao_nibs"
+        },
+        {
+            "item": "createfood:cacao_nibs"
+        }
+    ],
+    "results": [
+        {
+            "amount": 1000,
+            "fluid": "createfood:cacao_mass"
+        }
+    ]
+}

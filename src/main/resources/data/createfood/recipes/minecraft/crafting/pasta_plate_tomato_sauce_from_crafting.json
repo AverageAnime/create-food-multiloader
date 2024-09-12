@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "farmersdelight:tomato_sauce"
+        },
+        {
+            "tag": "forge:cooked_pasta"
+        }
+    ],
+    "result": {
+        "item": "createfood:pasta_plate_tomato_sauce"
+    }
+}

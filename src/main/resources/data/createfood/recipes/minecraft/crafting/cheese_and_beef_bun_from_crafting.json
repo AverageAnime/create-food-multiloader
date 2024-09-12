@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:beef_bun"
+        },
+        {
+            "tag": "forge:cheeses"
+        }
+    ],
+    "result": {
+        "item": "createfood:cheese_and_beef_bun"
+    }
+}

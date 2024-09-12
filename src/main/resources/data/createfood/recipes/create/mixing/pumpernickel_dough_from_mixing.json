@@ -1,0 +1,24 @@
+{
+    "type": "create:mixing",
+    "ingredients": [
+        {
+            "tag": "forge:flour"
+        },
+        {
+            "tag": "forge:cocoa_powder"
+        },
+        {
+            "tag": "forge:eggs"
+        },
+        {
+            "amount": 500,
+            "fluid": "createfood:molasses"
+        }
+    ],
+    "results": [
+        {
+            "count": 3,
+            "item": "createfood:pumpernickel_dough"
+        }
+    ]
+}

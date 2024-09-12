@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:bread_slice"
+        },
+        {
+            "tag": "forge:berry_jam_bottle"
+        }
+    ],
+    "result": {
+        "item": "createfood:bread_slice_berry_jam"
+    }
+}

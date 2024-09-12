@@ -1,0 +1,9 @@
+{
+    "type": "minecraft:smoking",
+    "ingredient": {
+        "tag": "forge:raw_apple_cheesecake"
+    },
+    "result": "createfood:apple_cheesecake",
+    "experience": 0.95,
+    "cookingtime": 550
+}

@@ -1,0 +1,17 @@
+{
+    "type": "create:mixing",
+    "heatRequirement": "heated",
+    "ingredients": [
+        {
+            "tag": "forge:sweet_dough"
+        },
+        {
+            "tag": "forge:butter"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:pastry_base"
+        }
+    ]
+}

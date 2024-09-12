@@ -1,0 +1,15 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:chocolate_sweet_dough"
+        },
+        {
+            "tag": "forge:caramel_chips"
+        }
+    ],
+    "result": {
+        "count": 8,
+        "item": "createfood:raw_caramel_chips_chocolate_cookie"
+    }
+}

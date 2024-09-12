@@ -1,0 +1,21 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:wheat"
+        },
+        {
+            "tag": "forge:eggs"
+        },
+        {
+            "tag": "forge:sugar"
+        },
+        {
+            "tag": "forge:caramel_chips"
+        }
+    ],
+    "result": {
+        "count": 8,
+        "item": "createfood:raw_caramel_chips_cookie"
+    }
+}

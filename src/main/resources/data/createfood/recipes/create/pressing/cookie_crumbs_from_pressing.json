@@ -1,0 +1,14 @@
+{
+    "type": "create:pressing",
+    "ingredients": [
+        {
+            "tag": "forge:crushable_cookies"
+        }
+    ],
+    "results": [
+        {
+            "count": 2,
+            "item": "createfood:cookie_crumbs"
+        }
+    ]
+}

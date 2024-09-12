@@ -1,0 +1,25 @@
+{
+    "type": "farmersdelight:cooking",
+    "container": {
+        "item": "minecraft:bucket"
+    },
+    "cookingtime": 450,
+    "experience": 0.75,
+    "ingredients": [
+        {
+            "item": "minecraft:sweet_berries"
+        },
+        {
+            "item": "minecraft:sweet_berries"
+        },
+        {
+            "tag": "forge:sugar"
+        },
+        {
+            "tag": "forge:sugar"
+        }
+    ],
+    "result": {
+        "item": "createfood:berry_jam_bucket"
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:bun"
+        },
+        {
+            "tag": "forge:cooked_beef"
+        },
+        {
+            "tag": "forge:cooked_pork"
+        },
+        {
+            "tag": "forge:salad_ingredients"
+        },
+        {
+            "tag": "forge:tomato"
+        },
+        {
+            "tag": "forge:bun"
+        }
+    ],
+    "result": {
+        "item": "createfood:hamburger_bacon_lettuce_tomato"
+    }
+}

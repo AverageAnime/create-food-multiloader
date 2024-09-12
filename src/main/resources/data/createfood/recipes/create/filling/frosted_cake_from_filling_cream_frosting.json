@@ -1,0 +1,17 @@
+{
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "tag": "forge:cake_base"
+        },
+        {
+            "amount": 1000,
+            "fluid": "createfood:cream_frosting"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:frosted_cake"
+        }
+    ]
+}

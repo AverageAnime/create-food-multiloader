@@ -1,0 +1,21 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:wheat"
+        },
+        {
+            "tag": "forge:sugar"
+        },
+        {
+            "tag": "forge:eggs"
+        },
+        {
+            "tag": "forge:sugar"
+        }
+    ],
+    "result": {
+        "count": 8,
+        "item": "createfood:raw_sugar_cookie"
+    }
+}

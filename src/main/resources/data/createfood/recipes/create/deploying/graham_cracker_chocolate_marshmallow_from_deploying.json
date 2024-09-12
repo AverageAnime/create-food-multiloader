@@ -1,0 +1,16 @@
+{
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "forge:graham_cracker_chocolate"
+        },
+        {
+            "tag": "forge:marshmallow"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:graham_cracker_chocolate_marshmallow"
+        }
+    ]
+}

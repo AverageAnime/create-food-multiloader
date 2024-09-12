@@ -1,0 +1,25 @@
+{
+    "type": "farmersdelight:cooking",
+    "cookingtime": 150,
+    "experience": 0.1,
+    "ingredients": [
+        {
+            "tag": "forge:gelatin"
+        },
+        {
+            "tag": "forge:gelatin"
+        },
+        {
+            "tag": "forge:gelatin"
+        },
+        {
+            "item": "minecraft:water_bucket"
+        },
+        {
+            "tag": "forge:magenta_dyes"
+        }
+    ],
+    "result": {
+        "item": "createfood:magenta_gelatin_mix_bucket"
+    }
+}

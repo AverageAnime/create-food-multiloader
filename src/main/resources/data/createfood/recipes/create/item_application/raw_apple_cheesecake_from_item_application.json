@@ -1,0 +1,16 @@
+{
+    "type": "create:item_application",
+    "ingredients": [
+        {
+            "tag": "forge:raw_cheesecake"
+        },
+        {
+            "tag": "forge:apple"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:raw_apple_cheesecake"
+        }
+    ]
+}

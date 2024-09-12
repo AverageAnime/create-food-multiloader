@@ -1,0 +1,23 @@
+{
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farm_and_charm"
+        }
+    ],
+    "type": "farm_and_charm:stove",
+    "ingredients": [
+        {
+            "tag": "forge:cheese_and_sausage_biscuit_sandwich"
+        },
+        {
+            "tag": "forge:cheese_and_sausage_biscuit_sandwich"
+        },
+        {
+            "tag": "forge:cheese_and_sausage_biscuit_sandwich"
+        }
+    ],
+    "item": "createfood:hot_cheese_and_sausage_biscuit_sandwich",
+    "count": 3,
+    "experience": 0.15
+}

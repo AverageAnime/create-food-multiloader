@@ -1,0 +1,16 @@
+{
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "item": "createfood:endermite_meatball_stick_2"
+        },
+        {
+            "tag": "forge:endermite_meatball"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:endermite_meatball_stick_3"
+        }
+    ]
+}

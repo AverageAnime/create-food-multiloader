@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:apple_slice"
+        },
+        {
+            "tag": "forge:caramel"
+        }
+    ],
+    "result": {
+        "item": "createfood:caramel_apple_slice"
+    }
+}

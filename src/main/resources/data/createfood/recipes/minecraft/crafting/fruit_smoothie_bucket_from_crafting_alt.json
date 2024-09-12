@@ -1,0 +1,35 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:yogurt_bucket"
+        },
+        {
+            "tag": "forge:fruits"
+        },
+        {
+            "tag": "forge:fruits"
+        },
+        {
+            "tag": "forge:fruits"
+        },
+        {
+            "tag": "forge:fruits"
+        },
+        {
+            "tag": "forge:ice_blocks"
+        },
+        {
+            "tag": "forge:ice_blocks"
+        },
+        {
+            "tag": "forge:ice_blocks"
+        },
+        {
+            "tag": "forge:ice_blocks"
+        }
+    ],
+    "result": {
+        "item": "createfood:fruit_smoothie_bucket"
+    }
+}

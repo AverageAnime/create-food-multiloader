@@ -1,0 +1,16 @@
+{
+    "type": "create:item_application",
+    "ingredients": [
+        {
+            "tag": "forge:raw_graham_cracker_pie_crust"
+        },
+        {
+            "tag": "forge:cheesecake_filling_bucket"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:raw_cheesecake"
+        }
+    ]
+}

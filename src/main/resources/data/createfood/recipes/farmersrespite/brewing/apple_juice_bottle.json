@@ -1,0 +1,26 @@
+{
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farmersrespite"
+        }
+    ],
+    "type": "farmersrespite:brewing",
+    "ingredients": [
+        {
+            "tag": "forge:apple"
+        },
+        {
+            "tag": "forge:sugar"
+        }
+    ],
+    "result": {
+        "item": "createfood:apple_juice_bottle"
+    },
+    "container": {
+        "item": "minecraft:glass_bottle"
+    },
+    "experience": 0.35,
+    "brewingtime": 2400,
+    "needWater": true
+}

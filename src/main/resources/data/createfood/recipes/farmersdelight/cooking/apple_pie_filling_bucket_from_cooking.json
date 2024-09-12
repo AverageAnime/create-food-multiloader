@@ -1,0 +1,31 @@
+{
+    "type": "farmersdelight:cooking",
+    "container": {
+        "item": "minecraft:bucket"
+    },
+    "cookingtime": 85,
+    "experience": 0.25,
+    "ingredients": [
+        {
+            "tag": "forge:butter"
+        },
+        {
+            "tag": "forge:brown_sugar"
+        },
+        {
+            "tag": "forge:sugar"
+        },
+        {
+            "tag": "forge:apple"
+        },
+        {
+            "tag": "forge:apple"
+        },
+        {
+            "tag": "forge:apple"
+        }
+    ],
+    "result": {
+        "item": "createfood:apple_pie_filling_bucket"
+    }
+}

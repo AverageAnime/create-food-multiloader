@@ -1,0 +1,9 @@
+{
+    "type": "minecraft:smelting",
+    "cookingtime": 200,
+    "experience": 0.35,
+    "ingredient": {
+        "tag": "forge:raw_pastry_base"
+    },
+    "result": "createfood:pastry_base"
+}

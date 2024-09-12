@@ -1,0 +1,21 @@
+{
+    "type": "create:mixing",
+    "ingredients": [
+        {
+            "item": "forge:crops/ube"
+        },
+        {
+            "tag": "forge:sugar"
+        },
+        {
+            "amount": 1000,
+            "fluid": "minecraft:water"
+        }
+    ],
+    "results": [
+        {
+            "count": 3,
+            "item": "createfood:ube_sugar_dough"
+        }
+    ]
+}

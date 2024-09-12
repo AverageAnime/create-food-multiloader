@@ -1,0 +1,29 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "createfood:ice_cream_sandwich",
+      "required": false
+    },
+    {
+      "id": "createfood:ice_cream_sandwich_neapolitan",
+      "required": false
+    },
+    {
+      "id": "createfood:fruit_smoothie_bottle",
+      "required": false
+    },
+    {
+      "id": "createfood:hot_chocolate_bottle",
+      "required": false
+    },
+    {
+      "id": "createfood:hot_dark_chocolate_bottle",
+      "required": false
+    },
+    {
+      "id": "createfood:hot_white_chocolate_bottle",
+      "required": false
+    }
+  ]
+}

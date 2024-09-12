@@ -1,0 +1,20 @@
+{
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "beachparty"
+        }
+    ],
+    "type": "beachparty:mini_fridge_mixing",
+    "ingredients": [
+        {
+            "tag": "forge:apple"
+        },
+        {
+            "item": "minecraft:ice"
+        }
+    ],
+    "result": {
+        "item": "createfood:apple_popsicle"
+    }
+}

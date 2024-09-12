@@ -1,0 +1,16 @@
+{
+    "type": "farmersdelight:cooking",
+    "cookingtime": 50,
+    "experience": 0.25,
+    "ingredients": [
+        {
+            "tag": "forge:cocoa_powder"
+        },
+        {
+            "tag": "forge:milk_bottle"
+        }
+    ],
+    "result": {
+        "item": "createfood:chocolate_milk_bottle"
+    }
+}

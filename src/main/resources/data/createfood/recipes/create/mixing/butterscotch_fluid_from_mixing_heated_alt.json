@@ -1,0 +1,15 @@
+{
+    "type": "create:mixing",
+    "heatRequirement": "heated",
+    "ingredients": [
+        {
+            "tag": "forge:butterscotch"
+        }
+    ],
+    "results": [
+        {
+            "amount": 500,
+            "fluid": "createfood:butterscotch"
+        }
+    ]
+}

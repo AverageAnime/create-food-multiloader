@@ -1,0 +1,16 @@
+{
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "forge:eggplant_bun_lettuce"
+        },
+        {
+            "tag": "forge:bun"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:eggplant_burger_lettuce"
+        }
+    ]
+}

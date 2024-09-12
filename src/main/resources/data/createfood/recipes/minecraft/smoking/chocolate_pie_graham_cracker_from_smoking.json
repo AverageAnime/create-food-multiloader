@@ -1,0 +1,9 @@
+{
+    "type": "minecraft:smoking",
+    "ingredient": {
+        "tag": "forge:raw_chocolate_pie_graham_cracker"
+    },
+    "result": "createfood:chocolate_pie_graham_cracker",
+    "experience": 0.95,
+    "cookingtime": 550
+}

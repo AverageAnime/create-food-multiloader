@@ -1,0 +1,16 @@
+{
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "item": "minecraft:bread"
+        },
+        {
+            "tag": "forge:small_endermite_meatballs"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:endermite_meatball_sandwich"
+        }
+    ]
+}

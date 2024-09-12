@@ -1,0 +1,21 @@
+{
+    "type": "create:mixing",
+    "ingredients": [
+        {
+            "tag": "forge:flour"
+        },
+        {
+            "tag": "forge:salt"
+        },
+        {
+            "amount": 1000,
+            "fluid": "minecraft:water"
+        }
+    ],
+    "results": [
+        {
+            "count": 6,
+            "item": "createfood:salt_dough"
+        }
+    ]
+}

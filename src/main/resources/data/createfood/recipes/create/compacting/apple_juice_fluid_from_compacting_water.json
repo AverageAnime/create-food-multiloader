@@ -1,0 +1,21 @@
+{
+    "type": "create:compacting",
+    "ingredients": [
+        {
+            "amount": 250,
+            "fluid": "minecraft:water"
+        },
+        {
+            "tag": "forge:apple"
+        },
+        {
+            "tag": "forge:sugar"
+        }
+    ],
+    "results": [
+        {
+            "amount": 250,
+            "fluid": "createfood:apple_juice"
+        }
+    ]
+}

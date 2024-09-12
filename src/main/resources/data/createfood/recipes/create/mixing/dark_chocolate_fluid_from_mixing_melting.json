@@ -1,0 +1,14 @@
+{
+    "type": "create:mixing",
+    "ingredients": [
+        {
+            "tag": "forge:bar_of_dark_chocolate"
+        }
+    ],
+    "results": [
+        {
+            "amount": 333,
+            "fluid": "createfood:dark_chocolate"
+        }
+    ]
+}

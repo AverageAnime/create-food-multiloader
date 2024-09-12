@@ -1,0 +1,16 @@
+{
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "forge:chicken_nuggets"
+        },
+        {
+            "tag": "forge:paprika"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:spicy_chicken_nuggets"
+        }
+    ]
+}

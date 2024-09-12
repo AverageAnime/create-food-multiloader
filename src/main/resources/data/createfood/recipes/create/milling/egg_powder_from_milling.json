@@ -1,0 +1,19 @@
+{
+    "type": "create:milling",
+    "ingredients": [
+        {
+            "tag": "forge:cooked_eggs"
+        }
+    ],
+    "processingTime": 50,
+    "results": [
+        {
+            "count": 2,
+            "item": "createfood:egg_powder"
+        },
+        {
+            "chance": 0.25,
+            "item": "createfood:egg_powder"
+        }
+    ]
+}

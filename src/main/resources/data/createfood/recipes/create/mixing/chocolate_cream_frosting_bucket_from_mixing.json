@@ -1,0 +1,41 @@
+{
+    "type": "create:mixing",
+    "ingredients": [
+        {
+            "amount": 1000,
+            "fluidTag": "forge:milk"
+        },
+        {
+            "tag": "forge:sugar"
+        },
+        {
+            "tag": "forge:sugar"
+        },
+        {
+            "tag": "forge:sugar"
+        },
+        {
+            "tag": "forge:sugar"
+        },
+        {
+            "tag": "forge:cocoa_powder"
+        },
+        {
+            "tag": "forge:cocoa_powder"
+        },
+        {
+            "tag": "forge:cocoa_powder"
+        },
+        {
+            "tag": "forge:cocoa_powder"
+        },
+        {
+            "item": "minecraft:bucket"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:chocolate_cream_frosting_bucket"
+        }
+    ]
+}

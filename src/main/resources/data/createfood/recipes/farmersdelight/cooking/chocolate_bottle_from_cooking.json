@@ -1,0 +1,16 @@
+{
+    "type": "farmersdelight:cooking",
+    "container": {
+        "item": "minecraft:glass_bottle"
+    },
+    "cookingtime": 100,
+    "experience": 0.25,
+    "ingredients": [
+        {
+            "tag": "forge:hollow_chocolate"
+        }
+    ],
+    "result": {
+        "item": "createfood:chocolate_bottle"
+    }
+}

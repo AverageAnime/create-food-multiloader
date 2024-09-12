@@ -1,0 +1,17 @@
+{
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "tag": "forge:ube_cake_base"
+        },
+        {
+            "amount": 1000,
+            "fluid": "createfood:ube_cream_frosting"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:ube_cream_frosted_ube_cake"
+        }
+    ]
+}

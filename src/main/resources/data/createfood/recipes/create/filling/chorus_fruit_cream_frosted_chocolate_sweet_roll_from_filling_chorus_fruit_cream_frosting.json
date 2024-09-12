@@ -1,0 +1,17 @@
+{
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "item": "createfood:chocolate_sweet_roll_base"
+        },
+        {
+            "amount": 333,
+            "fluid": "createfood:chorus_fruit_cream_frosting"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:chorus_fruit_cream_frosted_chocolate_sweet_roll"
+        }
+    ]
+}

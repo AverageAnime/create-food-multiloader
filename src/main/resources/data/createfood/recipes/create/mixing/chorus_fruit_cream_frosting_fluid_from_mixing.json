@@ -1,0 +1,39 @@
+{
+    "type": "create:mixing",
+    "ingredients": [
+        {
+            "amount": 1000,
+            "fluidTag": "forge:milk"
+        },
+        {
+            "tag": "forge:sugar"
+        },
+        {
+            "tag": "forge:sugar"
+        },
+        {
+            "tag": "forge:sugar"
+        },
+        {
+            "tag": "forge:sugar"
+        },
+        {
+            "tag": "forge:chorus_fruit"
+        },
+        {
+            "tag": "forge:chorus_fruit"
+        },
+        {
+            "tag": "forge:chorus_fruit"
+        },
+        {
+            "tag": "forge:chorus_fruit"
+        }
+    ],
+    "results": [
+        {
+            "amount": 1000,
+            "fluid": "createfood:chorus_fruit_cream_frosting"
+        }
+    ]
+}

@@ -1,0 +1,22 @@
+{
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "expandeddelight"
+        }
+    ],
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "forge:cinnamon_sweet_roll"
+        },
+        {
+            "item": "minecraft:glow_berries"
+        }
+    ],
+    "results": [
+        {
+            "item": "expandeddelight:glow_berry_sweet_roll"
+        }
+    ]
+}

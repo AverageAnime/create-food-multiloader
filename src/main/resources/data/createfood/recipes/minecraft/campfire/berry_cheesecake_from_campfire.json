@@ -1,0 +1,9 @@
+{
+    "type": "minecraft:campfire_cooking",
+    "ingredient": {
+        "tag": "forge:raw_berry_cheesecake"
+    },
+    "result": "farmersdelight:sweet_berry_cheesecake",
+    "experience": 0.95,
+    "cookingtime": 550
+}

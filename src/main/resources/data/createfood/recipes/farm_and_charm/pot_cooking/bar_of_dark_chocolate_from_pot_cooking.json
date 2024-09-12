@@ -1,0 +1,25 @@
+{
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farm_and_charm"
+        }
+    ],
+    "type": "farm_and_charm:pot_cooking",
+    "ingredients": [
+        {
+            "tag": "forge:pressed_cocoa"
+        },
+        {
+            "tag": "forge:cacao_mass_bucket"
+        }
+    ],
+    "container": {
+        "item": "minecraft:bowl"
+    },
+    "result": {
+        "item": "createfood:bar_of_dark_chocolate",
+        "count": 1,
+        "experience": 0.75
+    }
+}

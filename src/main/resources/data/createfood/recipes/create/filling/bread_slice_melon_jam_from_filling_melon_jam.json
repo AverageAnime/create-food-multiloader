@@ -1,0 +1,17 @@
+{
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "tag": "forge:bread_slice"
+        },
+        {
+            "amount": 125,
+            "fluid": "createfood:melon_jam"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:bread_slice_melon_jam"
+        }
+    ]
+}

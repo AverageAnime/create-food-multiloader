@@ -1,0 +1,16 @@
+{
+    "type": "create:item_application",
+    "ingredients": [
+        {
+            "tag": "forge:gelatin_dessert_block"
+        },
+        {
+            "tag": "forge:lime_dyes"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:lime_gelatin_dessert_block"
+        }
+    ]
+}

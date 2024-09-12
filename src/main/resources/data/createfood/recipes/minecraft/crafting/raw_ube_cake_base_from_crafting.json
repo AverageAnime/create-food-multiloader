@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:egg"
+        },
+        {
+            "tag": "forge:ube_sugar_dough"
+        },
+        {
+            "tag": "forge:milk_buckets"
+        }
+    ],
+    "result": {
+        "item": "createfood:raw_ube_cake_base"
+    }
+}

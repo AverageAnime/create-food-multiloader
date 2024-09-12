@@ -1,0 +1,16 @@
+{
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "forge:bread_slice_beetroot"
+        },
+        {
+            "tag": "forge:salad_ingredients"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:bread_slice_beetroot_lettuce"
+        }
+    ]
+}

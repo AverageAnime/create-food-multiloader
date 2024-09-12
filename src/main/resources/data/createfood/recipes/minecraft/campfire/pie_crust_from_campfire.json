@@ -1,0 +1,9 @@
+{
+    "type": "minecraft:campfire_cooking",
+    "ingredient": {
+        "tag": "forge:raw_pie_crust"
+    },
+    "result": "farmersdelight:pie_crust",
+    "experience": 0.25,
+    "cookingtime": 200
+}

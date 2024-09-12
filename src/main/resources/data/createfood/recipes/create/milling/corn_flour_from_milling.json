@@ -1,0 +1,19 @@
+{
+    "type": "create:milling",
+    "ingredients": [
+        {
+            "tag": "forge:corn_kernel"
+        }
+    ],
+    "processingTime": 80,
+    "results": [
+        {
+            "count": 2,
+            "item": "createfood:corn_flour"
+        },
+        {
+            "chance": 0.5,
+            "item": "createfood:corn_flour"
+        }
+    ]
+}

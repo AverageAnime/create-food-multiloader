@@ -1,0 +1,26 @@
+{
+    "type": "create:mixing",
+    "ingredients": [
+        {
+            "tag": "forge:sugar"
+        },
+        {
+            "tag": "forge:chorus_fruit_slice"
+        },
+        {
+            "tag": "forge:chorus_fruit_slice"
+        },
+        {
+            "tag": "forge:chorus_fruit_slice"
+        },
+        {
+            "tag": "forge:chorus_fruit_slice"
+        }
+    ],
+    "results": [
+        {
+            "amount": 333,
+            "fluid": "createfood:chorus_fruit_juice"
+        }
+    ]
+}

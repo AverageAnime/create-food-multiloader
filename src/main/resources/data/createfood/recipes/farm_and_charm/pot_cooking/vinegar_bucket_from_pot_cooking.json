@@ -1,0 +1,35 @@
+{
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farm_and_charm"
+        }
+    ],
+    "type": "farm_and_charm:pot_cooking",
+    "ingredients": [
+        {
+            "item": "minecraft:water_bucket"
+        },
+        {
+            "tag": "forge:sugar"
+        },
+        {
+            "tag": "forge:sugar"
+        },
+        {
+            "tag": "forge:fruits"
+        },
+        {
+            "tag": "forge:fruits"
+        },
+        {
+            "tag": "forge:fruits"
+        }
+    ],
+    "container": {
+        "item": "minecraft:bucket"
+    },
+    "result": {
+        "item": "createfood:vinegar_bucket"
+    }
+}

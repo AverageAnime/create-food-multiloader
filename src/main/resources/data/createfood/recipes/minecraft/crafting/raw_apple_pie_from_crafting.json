@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:raw_pie_crust"
+        },
+        {
+            "tag": "forge:apple_pie_filling_bucket"
+        }
+    ],
+    "result": {
+        "item": "createfood:raw_apple_pie"
+    }
+}

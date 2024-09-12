@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:raw_onion_pizza"
+        },
+        {
+            "tag": "forge:cooked_pork"
+        }
+    ],
+    "result": {
+        "item": "createfood:raw_onion_bacon_pizza"
+    }
+}

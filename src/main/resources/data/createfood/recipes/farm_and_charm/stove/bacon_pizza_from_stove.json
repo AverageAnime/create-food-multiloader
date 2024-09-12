@@ -1,0 +1,23 @@
+{
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farm_and_charm"
+        }
+    ],
+    "type": "farm_and_charm:stove",
+    "ingredients": [
+        {
+            "tag": "forge:raw_bacon_pizza"
+        },
+        {
+            "tag": "forge:raw_bacon_pizza"
+        },
+        {
+            "tag": "forge:raw_bacon_pizza"
+        }
+    ],
+    "item": "createfood:bacon_pizza",
+    "count": 3,
+    "experience": 3
+}

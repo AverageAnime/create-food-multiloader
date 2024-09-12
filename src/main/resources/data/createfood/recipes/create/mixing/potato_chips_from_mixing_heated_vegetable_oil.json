@@ -1,0 +1,18 @@
+{
+    "type": "create:mixing",
+    "heatRequirement": "heated",
+    "ingredients": [
+        {
+            "tag": "forge:potato"
+        },
+        {
+            "amount": 125,
+            "fluid": "createfood:vegetable_oil"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:potato_chips"
+        }
+    ]
+}

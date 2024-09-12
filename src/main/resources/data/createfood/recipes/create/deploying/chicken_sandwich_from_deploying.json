@@ -1,0 +1,16 @@
+{
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "forge:bread_lettuce_carrot"
+        },
+        {
+            "tag": "forge:cooked_chicken"
+        }
+    ],
+    "results": [
+        {
+            "item": "farmersdelight:chicken_sandwich"
+        }
+    ]
+}

@@ -1,0 +1,16 @@
+{
+    "type": "create:item_application",
+    "ingredients": [
+        {
+            "tag": "forge:ube_cake_base"
+        },
+        {
+            "tag": "forge:ube_cream_frosting"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:ube_cream_frosted_ube_cake"
+        }
+    ]
+}

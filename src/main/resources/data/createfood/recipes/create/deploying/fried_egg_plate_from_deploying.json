@@ -1,0 +1,16 @@
+{
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "item": "minecraft:bowl"
+        },
+        {
+            "tag": "forge:cooked_eggs"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:fried_egg_plate"
+        }
+    ]
+}

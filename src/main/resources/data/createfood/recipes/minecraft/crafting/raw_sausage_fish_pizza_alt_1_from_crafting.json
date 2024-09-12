@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:pizza_dough"
+        },
+        {
+            "tag": "forge:tomato_sauce"
+        },
+        {
+            "tag": "forge:cheeses"
+        },
+        {
+            "tag": "forge:breakfast_sausages"
+        },
+        {
+            "tag": "forge:cooked_fishes"
+        }
+    ],
+    "result": {
+        "item": "createfood:raw_sausage_fish_pizza"
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farm_and_charm"
+        }
+    ],
+    "type": "farm_and_charm:pot_cooking",
+    "ingredients": [
+        {
+            "tag": "forge:sugar"
+        },
+        {
+            "tag": "forge:water_buckets"
+        },
+        {
+            "tag": "forge:gelatin"
+        }
+    ],
+    "container": {
+        "item": "minecraft:bowl"
+    },
+    "result": {
+        "item": "createfood:marshmallow"
+    }
+}

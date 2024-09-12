@@ -1,0 +1,16 @@
+{
+    "type": "farmersdelight:cooking",
+    "cookingtime": 150,
+    "experience": 1.0,
+    "ingredients": [
+        {
+            "tag": "forge:cacao_butter"
+        },
+        {
+            "item": "minecraft:milk_bucket"
+        }
+    ],
+    "result": {
+        "item": "createfood:bar_of_white_chocolate"
+    }
+}

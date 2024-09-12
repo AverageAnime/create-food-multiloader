@@ -1,0 +1,41 @@
+{
+    "type": "create:mixing",
+    "ingredients": [
+        {
+            "item": "minecraft:bucket"
+        },
+        {
+            "amount": 500,
+            "fluid": "createfood:yogurt"
+        },
+        {
+            "tag": "forge:fruits"
+        },
+        {
+            "tag": "forge:fruits"
+        },
+        {
+            "tag": "forge:fruits"
+        },
+        {
+            "tag": "forge:fruits"
+        },
+        {
+            "tag": "forge:ice_blocks"
+        },
+        {
+            "tag": "forge:ice_blocks"
+        },
+        {
+            "tag": "forge:ice_blocks"
+        },
+        {
+            "tag": "forge:ice_blocks"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:fruit_smoothie_bucket"
+        }
+    ]
+}

@@ -1,0 +1,19 @@
+{
+    "type": "create:compacting",
+    "heatRequirement": "heated",
+    "ingredients": [
+        {
+            "amount": 250,
+            "fluid": "create:honey"
+        },
+        {
+            "tag": "forge:sweet_dough"
+        }
+    ],
+    "results": [
+        {
+            "count": 8,
+            "item": "farmersdelight:honey_cookie"
+        }
+    ]
+}

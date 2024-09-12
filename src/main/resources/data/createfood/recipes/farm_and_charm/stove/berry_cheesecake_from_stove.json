@@ -1,0 +1,23 @@
+{
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farm_and_charm"
+        }
+    ],
+    "type": "farm_and_charm:stove",
+    "ingredients": [
+        {
+            "tag": "forge:raw_berry_pie"
+        },
+        {
+            "tag": "forge:raw_berry_pie"
+        },
+        {
+            "tag": "forge:raw_berry_pie"
+        }
+    ],
+    "result": "farmersdelight:sweet_berry_cheesecake",
+    "count": 3,
+    "experience": 1.5
+}

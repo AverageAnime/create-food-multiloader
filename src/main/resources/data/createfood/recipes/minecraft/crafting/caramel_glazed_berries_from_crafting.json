@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:sweet_berries"
+        },
+        {
+            "tag": "forge:caramel"
+        }
+    ],
+    "result": {
+        "item": "createfood:caramel_glazed_berries"
+    }
+}

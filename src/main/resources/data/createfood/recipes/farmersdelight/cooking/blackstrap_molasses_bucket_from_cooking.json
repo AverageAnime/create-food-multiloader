@@ -1,0 +1,13 @@
+{
+    "type": "farmersdelight:cooking",
+    "cookingtime": 50,
+    "experience": 0.5,
+    "ingredients": [
+        {
+            "tag": "forge:molasses_bucket"
+        }
+    ],
+    "result": {
+        "item": "createfood:blackstrap_molasses_bucket"
+    }
+}

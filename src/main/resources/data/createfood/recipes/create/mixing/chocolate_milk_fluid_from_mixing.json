@@ -1,0 +1,18 @@
+{
+    "type": "create:mixing",
+    "ingredients": [
+        {
+            "amount": 250,
+            "fluidTag": "forge:milk"
+        },
+        {
+            "tag": "forge:cocoa_powder"
+        }
+    ],
+    "results": [
+        {
+            "amount": 250,
+            "fluid": "createfood:chocolate_milk"
+        }
+    ]
+}

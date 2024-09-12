@@ -1,0 +1,17 @@
+{
+    "type": "create:compacting",
+    "ingredients": [
+        {
+            "tag": "forge:sweet_dough"
+        },
+        {
+            "item": "ends_delight:chorus_fruit_grain"
+        }
+    ],
+    "results": [
+        {
+            "count": 8,
+            "item": "createfood:raw_chorus_cookie"
+        }
+    ]
+}

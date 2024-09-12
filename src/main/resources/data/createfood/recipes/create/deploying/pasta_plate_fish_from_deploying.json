@@ -1,0 +1,16 @@
+{
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "forge:pasta_plate"
+        },
+        {
+            "tag": "forge:cooked_fishes"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:pasta_plate_fish"
+        }
+    ]
+}

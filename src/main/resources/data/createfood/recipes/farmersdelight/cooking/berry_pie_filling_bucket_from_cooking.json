@@ -1,0 +1,31 @@
+{
+    "type": "farmersdelight:cooking",
+    "container": {
+        "item": "minecraft:bucket"
+    },
+    "cookingtime": 85,
+    "experience": 0.25,
+    "ingredients": [
+        {
+            "tag": "forge:butter"
+        },
+        {
+            "tag": "forge:sugar"
+        },
+        {
+            "tag": "forge:sugar"
+        },
+        {
+            "item": "minecraft:sweet_berries"
+        },
+        {
+            "item": "minecraft:sweet_berries"
+        },
+        {
+            "item": "minecraft:sweet_berries"
+        }
+    ],
+    "result": {
+        "item": "createfood:berry_pie_filling_bucket"
+    }
+}

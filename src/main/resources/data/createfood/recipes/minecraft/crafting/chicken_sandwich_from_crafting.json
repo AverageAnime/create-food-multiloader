@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:bread_lettuce_carrot"
+        },
+        {
+            "tag": "forge:cooked_chicken"
+        }
+    ],
+    "result": {
+        "item": "farmersdelight:chicken_sandwich"
+    }
+}

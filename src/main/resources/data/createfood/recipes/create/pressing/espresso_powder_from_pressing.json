@@ -1,0 +1,14 @@
+{
+    "type": "create:pressing",
+    "ingredients": [
+        {
+            "tag": "forge:dried_coffee_beans"
+        }
+    ],
+    "results": [
+        {
+            "count": 2,
+            "item": "createfood:espresso_powder"
+        }
+    ]
+}

@@ -1,0 +1,17 @@
+{
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "tag": "forge:apple_slice"
+        },
+        {
+            "amount": 125,
+            "fluid": "createfood:caramel"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:caramel_apple_slice"
+        }
+    ]
+}

@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:milk_buckets"
+        },
+        {
+            "tag": "forge:chorus_fruit_ice_cream_bucket"
+        },
+        {
+            "tag": "forge:ice_blocks"
+        }
+    ],
+    "result": {
+        "item": "createfood:chorus_fruit_milkshake_bucket"
+    }
+}

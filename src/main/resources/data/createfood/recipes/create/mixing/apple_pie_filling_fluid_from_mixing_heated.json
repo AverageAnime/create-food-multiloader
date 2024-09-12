@@ -1,0 +1,30 @@
+{
+    "type": "create:mixing",
+    "heatRequirement": "heated",
+    "ingredients": [
+        {
+            "tag": "forge:butter"
+        },
+        {
+            "tag": "forge:brown_sugar"
+        },
+        {
+            "tag": "forge:sugar"
+        },
+        {
+            "tag": "forge:apple"
+        },
+        {
+            "tag": "forge:apple"
+        },
+        {
+            "tag": "forge:apple"
+        }
+    ],
+    "results": [
+        {
+            "amount": 1000,
+            "fluid": "createfood:apple_pie_filling"
+        }
+    ]
+}

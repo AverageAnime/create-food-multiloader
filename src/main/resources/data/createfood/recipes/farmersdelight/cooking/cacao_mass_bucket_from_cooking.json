@@ -1,0 +1,25 @@
+{
+    "type": "farmersdelight:cooking",
+    "container": {
+        "item": "minecraft:bucket"
+    },
+    "cookingtime": 100,
+    "experience": 1.0,
+    "ingredients": [
+        {
+            "tag": "forge:cacao_nibs"
+        },
+        {
+            "tag": "forge:cacao_nibs"
+        },
+        {
+            "tag": "forge:cacao_nibs"
+        },
+        {
+            "tag": "forge:cacao_nibs"
+        }
+    ],
+    "result": {
+        "item": "createfood:cacao_mass_bucket"
+    }
+}

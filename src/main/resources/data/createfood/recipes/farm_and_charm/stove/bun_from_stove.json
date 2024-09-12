@@ -1,0 +1,23 @@
+{
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farm_and_charm"
+        }
+    ],
+    "type": "farm_and_charm:stove",
+    "ingredients": [
+        {
+            "tag": "forge:salt_dough"
+        },
+        {
+            "tag": "forge:salt_dough"
+        },
+        {
+            "tag": "forge:salt_dough"
+        }
+    ],
+    "item": "createfood:bun",
+    "count": 3,
+    "experience": 0.1
+}

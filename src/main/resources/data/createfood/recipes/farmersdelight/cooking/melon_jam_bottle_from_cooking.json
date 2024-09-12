@@ -1,0 +1,19 @@
+{
+    "type": "farmersdelight:cooking",
+    "container": {
+        "item": "minecraft:glass_bottle"
+    },
+    "cookingtime": 250,
+    "experience": 0.45,
+    "ingredients": [
+        {
+            "tag": "forge:melon"
+        },
+        {
+            "tag": "forge:sugar"
+        }
+    ],
+    "result": {
+        "item": "createfood:melon_jam_bottle"
+    }
+}

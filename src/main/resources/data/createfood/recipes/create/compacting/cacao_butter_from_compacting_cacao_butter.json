@@ -1,0 +1,14 @@
+{
+    "type": "create:compacting",
+    "ingredients": [
+        {
+            "amount": 333,
+            "fluid": "createfood:cacao_butter"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:cacao_butter"
+        }
+    ]
+}

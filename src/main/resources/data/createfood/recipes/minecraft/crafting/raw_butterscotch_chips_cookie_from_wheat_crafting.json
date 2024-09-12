@@ -1,0 +1,21 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:wheat"
+        },
+        {
+            "tag": "forge:sugar"
+        },
+        {
+            "item": "minecraft:water_bucket"
+        },
+        {
+            "tag": "forge:butterscotch_chips"
+        }
+    ],
+    "result": {
+        "count": 8,
+        "item": "createfood:raw_butterscotch_chips_cookie"
+    }
+}

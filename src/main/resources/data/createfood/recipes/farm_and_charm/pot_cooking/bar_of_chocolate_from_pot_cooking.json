@@ -1,0 +1,23 @@
+{
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farm_and_charm"
+        }
+    ],
+    "type": "farm_and_charm:pot_cooking",
+    "ingredients": [
+        {
+            "item": "minecraft:milk_bucket"
+        },
+        {
+            "tag": "forge:cacao_mass_bucket"
+        }
+    ],
+    "container": {
+        "item": "minecraft:bowl"
+    },
+    "result": {
+        "item": "create:bar_of_chocolate"
+    }
+}

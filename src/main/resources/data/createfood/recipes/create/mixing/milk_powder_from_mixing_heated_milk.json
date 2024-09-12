@@ -1,0 +1,16 @@
+{
+    "type": "create:mixing",
+    "heatRequirement": "heated",
+    "ingredients": [
+        {
+            "amount": 1000,
+            "fluidTag": "forge:milk"
+        }
+    ],
+    "results": [
+        {
+            "count": 2,
+            "item": "createfood:milk_powder"
+        }
+    ]
+}

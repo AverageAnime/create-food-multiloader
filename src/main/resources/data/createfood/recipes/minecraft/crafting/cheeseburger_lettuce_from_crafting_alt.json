@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:bun"
+        },
+        {
+            "tag": "forge:cooked_beef"
+        },
+        {
+            "tag": "forge:cheeses"
+        },
+        {
+            "tag": "forge:salad_ingredients"
+        },
+        {
+            "tag": "forge:bun"
+        }
+    ],
+    "result": {
+        "item": "createfood:cheeseburger_lettuce"
+    }
+}

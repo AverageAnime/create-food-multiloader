@@ -1,0 +1,9 @@
+{
+    "type": "minecraft:smelting",
+    "cookingtime": 200,
+    "experience": 0.35,
+    "ingredient": {
+        "tag": "forge:raw_endermite_meatball"
+    },
+    "result": "createfood:endermite_meatball"
+}

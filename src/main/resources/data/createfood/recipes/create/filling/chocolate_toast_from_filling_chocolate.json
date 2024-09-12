@@ -1,0 +1,17 @@
+{
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "tag": "forge:toast"
+        },
+        {
+            "amount": 125,
+            "fluid": "create:chocolate"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:chocolate_toast"
+        }
+    ]
+}

@@ -1,0 +1,22 @@
+{
+    "type": "create:mixing",
+    "ingredients": [
+        {
+            "amount": 250,
+            "fluidTag": "forge:milk"
+        },
+        {
+            "amount": 750,
+            "fluid": "createfood:berry_ice_cream"
+        },
+        {
+            "tag": "forge:ice_blocks"
+        }
+    ],
+    "results": [
+        {
+            "amount": 1000,
+            "fluid": "createfood:berry_milkshake"
+        }
+    ]
+}

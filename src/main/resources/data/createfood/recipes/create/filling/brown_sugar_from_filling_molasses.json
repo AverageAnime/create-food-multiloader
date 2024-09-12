@@ -1,0 +1,17 @@
+{
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "item": "minecraft:sugar"
+        },
+        {
+            "amount": 125,
+            "fluid": "createfood:molasses"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:brown_sugar"
+        }
+    ]
+}

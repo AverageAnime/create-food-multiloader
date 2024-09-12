@@ -1,0 +1,16 @@
+{
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "forge:bread_slice_apple_jam"
+        },
+        {
+            "tag": "forge:bread_slice"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:apple_jam_sandwich"
+        }
+    ]
+}

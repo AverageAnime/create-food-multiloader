@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:wheat"
+        },
+        {
+            "item": "minecraft:water_bucket"
+        },
+        {
+            "tag": "forge:foods/vegetables/ginger"
+        }
+    ],
+    "result": {
+        "count": 8,
+        "item": "createfood:raw_ginger_cookie"
+    }
+}

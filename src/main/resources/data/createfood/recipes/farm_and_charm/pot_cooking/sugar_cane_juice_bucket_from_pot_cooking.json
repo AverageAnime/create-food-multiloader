@@ -1,0 +1,26 @@
+{
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farm_and_charm"
+        }
+    ],
+    "type": "farm_and_charm:pot_cooking",
+    "container": {
+        "item": "minecraft:bucket"
+    },
+    "ingredients": [
+        {
+            "item": "minecraft:sugar_cane"
+        },
+        {
+            "item": "minecraft:sugar_cane"
+        },
+        {
+            "item": "minecraft:sugar_cane"
+        }
+    ],
+    "result": {
+        "item": "createfood:sugar_cane_juice_bucket"
+    }
+}

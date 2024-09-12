@@ -1,0 +1,22 @@
+{
+    "type": "farmersdelight:cooking",
+    "container": {
+        "item": "minecraft:bucket"
+    },
+    "cookingtime": 50,
+    "experience": 0.5,
+    "ingredients": [
+        {
+            "item": "minecraft:sugar_cane"
+        },
+        {
+            "item": "minecraft:sugar_cane"
+        },
+        {
+            "item": "minecraft:sugar_cane"
+        }
+    ],
+    "result": {
+        "item": "createfood:sugar_cane_juice_bucket"
+    }
+}

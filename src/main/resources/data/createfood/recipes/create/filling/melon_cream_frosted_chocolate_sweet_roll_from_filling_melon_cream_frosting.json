@@ -1,0 +1,17 @@
+{
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "tag": "forge:chocolate_sweet_roll_base"
+        },
+        {
+            "amount": 333,
+            "fluid": "createfood:melon_cream_frosting"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:melon_cream_frosted_chocolate_sweet_roll"
+        }
+    ]
+}

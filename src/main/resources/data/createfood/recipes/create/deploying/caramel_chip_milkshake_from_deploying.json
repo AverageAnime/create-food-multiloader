@@ -1,0 +1,16 @@
+{
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "forge:milkshake"
+        },
+        {
+            "tag": "forge:caramel_chips"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:caramel_chip_milkshake_bottle"
+        }
+    ]
+}

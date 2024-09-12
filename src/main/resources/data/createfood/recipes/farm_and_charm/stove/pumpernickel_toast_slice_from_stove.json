@@ -1,0 +1,23 @@
+{
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farm_and_charm"
+        }
+    ],
+    "type": "farm_and_charm:stove",
+    "ingredients": [
+        {
+            "tag": "forge:pumpernickel_bread_slice"
+        },
+        {
+            "tag": "forge:pumpernickel_bread_slice"
+        },
+        {
+            "tag": "forge:pumpernickel_bread_slice"
+        }
+    ],
+    "item": "createfood:pumpernickel_toast_slice",
+    "count": 3,
+    "experience": 0.15
+}

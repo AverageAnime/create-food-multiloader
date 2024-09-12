@@ -1,0 +1,26 @@
+{
+    "type": "create:mixing",
+    "heatRequirement": "heated",
+    "ingredients": [
+        {
+            "tag": "forge:gelatin"
+        },
+        {
+            "tag": "forge:gelatin"
+        },
+        {
+            "tag": "forge:gelatin"
+        },
+        {
+            "item": "minecraft:water_bucket"
+        },
+        {
+            "tag": "forge:black_dyes"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:black_gelatin_mix_bucket"
+        }
+    ]
+}

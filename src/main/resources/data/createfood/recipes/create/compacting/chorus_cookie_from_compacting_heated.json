@@ -1,0 +1,24 @@
+{
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "ends_delight"
+        }
+    ],
+    "type": "create:compacting",
+    "heatRequirement": "heated",
+    "ingredients": [
+        {
+            "tag": "forge:sweet_dough"
+        },
+        {
+            "item": "ends_delight:chorus_fruit_grain"
+        }
+    ],
+    "results": [
+        {
+            "count": 8,
+            "item": "ends_delight:chorus_cookie"
+        }
+    ]
+}

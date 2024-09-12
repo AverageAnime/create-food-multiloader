@@ -1,0 +1,17 @@
+{
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "tag": "forge:chocolate_pastry_base"
+        },
+        {
+            "amount": 250,
+            "fluid": "createfood:dark_chocolate"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:dark_chocolate_chocolate_pastry"
+        }
+    ]
+}

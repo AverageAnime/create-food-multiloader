@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:chocolate_graham_cracker_crumbs"
+        },
+        {
+            "tag": "forge:chocolate_graham_cracker_crumbs"
+        },
+        {
+            "tag": "forge:chocolate_graham_cracker_crumbs"
+        },
+        {
+            "tag": "forge:butter"
+        },
+        {
+            "tag": "forge:milk_bottle"
+        }
+    ],
+    "result": {
+        "item": "createfood:raw_chocolate_graham_cracker_pie_crust"
+    }
+}

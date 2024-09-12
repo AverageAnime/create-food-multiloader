@@ -1,0 +1,9 @@
+{
+    "type": "minecraft:smelting",
+    "cookingtime": 200,
+    "experience": 0.35,
+    "ingredient": {
+        "tag": "forge:cheese_biscuit_sandwich"
+    },
+    "result": "createfood:hot_cheese_biscuit_sandwich"
+}

@@ -1,0 +1,18 @@
+{
+    "type": "create:mixing",
+    "ingredients": [
+        {
+            "amount": 1000,
+            "fluid": "createfood:ice_cream"
+        },
+        {
+            "tag": "forge:cocoa_powder"
+        }
+    ],
+    "results": [
+        {
+            "amount": 1000,
+            "fluid": "createfood:chocolate_ice_cream"
+        }
+    ]
+}

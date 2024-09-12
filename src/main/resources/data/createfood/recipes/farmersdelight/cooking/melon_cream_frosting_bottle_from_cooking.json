@@ -1,0 +1,19 @@
+{
+    "type": "farmersdelight:cooking",
+    "cookingtime": 50,
+    "experience": 0.5,
+    "ingredients": [
+        {
+            "tag": "forge:milk_bottle"
+        },
+        {
+            "tag": "forge:sugar"
+        },
+        {
+            "tag": "forge:melon"
+        }
+    ],
+    "result": {
+        "item": "createfood:melon_cream_frosting_bottle"
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "type": "create:compacting",
+    "ingredients": [
+        {
+            "item": "minecraft:stick"
+        },
+        {
+            "item": "minecraft:ice"
+        },
+        {
+            "item": "minecraft:ice"
+        },
+        {
+            "tag": "forge:chorus_fruit"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:chorus_fruit_popsicle"
+        }
+    ]
+}

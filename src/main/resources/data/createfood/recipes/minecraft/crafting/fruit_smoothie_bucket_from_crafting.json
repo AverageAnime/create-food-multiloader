@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:bucket"
+        },
+        {
+            "tag": "forge:fruit_smoothie_bottle"
+        },
+        {
+            "tag": "forge:fruit_smoothie_bottle"
+        },
+        {
+            "tag": "forge:fruit_smoothie_bottle"
+        },
+        {
+            "tag": "forge:fruit_smoothie_bottle"
+        }
+    ],
+    "result": {
+        "item": "createfood:fruit_smoothie_bucket"
+    }
+}

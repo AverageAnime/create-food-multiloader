@@ -1,0 +1,15 @@
+{
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farmersrespite:green_tea_cookie"
+        }
+    ],
+    "type": "minecraft:smoking",
+    "cookingtime": 100,
+    "experience": 0.35,
+    "ingredient": {
+        "tag": "forge:raw_green_tea_cookie"
+    },
+    "result": "farmersrespite:green_tea_cookie"
+}

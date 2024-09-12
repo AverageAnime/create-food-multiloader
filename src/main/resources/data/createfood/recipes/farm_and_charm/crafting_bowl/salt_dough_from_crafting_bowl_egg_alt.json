@@ -1,0 +1,24 @@
+{
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farm_and_charm"
+        }
+    ],
+    "type": "farm_and_charm:crafting_bowl",
+    "ingredients": [
+        {
+            "tag": "forge:wheat"
+        },
+        {
+            "tag": "forge:salt"
+        },
+        {
+            "tag": "forge:eggs"
+        }
+    ],
+    "result": {
+        "item": "createfood:salt_dough",
+        "count": 6
+    }
+}

@@ -1,0 +1,16 @@
+{
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "forge:chicken_bun_lettuce"
+        },
+        {
+            "tag": "forge:tomato"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:chicken_bun_lettuce_tomato"
+        }
+    ]
+}

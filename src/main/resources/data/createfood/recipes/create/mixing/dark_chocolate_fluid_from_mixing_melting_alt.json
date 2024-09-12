@@ -1,0 +1,14 @@
+{
+    "type": "create:mixing",
+    "ingredients": [
+        {
+            "tag": "forge:hollow_dark_chocolate"
+        }
+    ],
+    "results": [
+        {
+            "amount": 250,
+            "fluid": "createfood:dark_chocolate"
+        }
+    ]
+}

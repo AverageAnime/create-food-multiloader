@@ -1,0 +1,20 @@
+{
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "beachparty"
+        }
+    ],
+    "type": "beachparty:tiki_bar_mixing",
+    "ingredients": [
+        {
+            "tag": "forge:cocoa_powder"
+        },
+        {
+            "tag": "forge:milk"
+        }
+    ],
+    "result": {
+        "item": "createfood:chocolate_milk_bottle"
+    }
+}

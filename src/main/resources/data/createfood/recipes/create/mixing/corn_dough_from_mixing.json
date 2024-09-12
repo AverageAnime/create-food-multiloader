@@ -1,0 +1,23 @@
+{
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "culturaldelights"
+        }
+    ],
+    "type": "create:mixing",
+    "ingredients": [
+        {
+            "tag": "forge:corn_flour"
+        },
+        {
+            "tag": "forge:eggs"
+        }
+    ],
+    "results": [
+        {
+            "count": 6,
+            "item": "culturaldelights:corn_dough"
+        }
+    ]
+}

@@ -1,0 +1,15 @@
+{
+    "type": "create:compacting",
+    "heatRequirement": "heated",
+    "ingredients": [
+        {
+            "tag": "forge:ground_endermite"
+        }
+    ],
+    "results": [
+        {
+            "count": 2,
+            "item": "createfood:endermite_meatball"
+        }
+    ]
+}

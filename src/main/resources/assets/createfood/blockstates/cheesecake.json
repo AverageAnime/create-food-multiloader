@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "bites=0": {
+      "model": "createfood:block/cheesecake"
+    },
+    "bites=1": {
+      "model": "createfood:block/cheesecake_slice1"
+    },
+    "bites=2": {
+      "model": "createfood:block/cheesecake_slice2"
+    },
+    "bites=3": {
+      "model": "createfood:block/cheesecake_slice3"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "forge:bread_slice_mutton"
+        },
+        {
+            "tag": "forge:bread_slice"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:mutton_sandwich"
+        }
+    ]
+}

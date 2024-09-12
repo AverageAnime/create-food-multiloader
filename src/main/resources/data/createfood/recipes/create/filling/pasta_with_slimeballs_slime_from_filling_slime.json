@@ -1,0 +1,23 @@
+{
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "frightsdelight"
+        }
+    ],
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "tag": "forge:pasta_plate_slimeballs"
+        },
+        {
+            "amount": 250,
+            "fluid": "createfood:slime"
+        }
+    ],
+    "results": [
+        {
+            "item": "frightsdelight:pasta_with_slimeballs"
+        }
+    ]
+}

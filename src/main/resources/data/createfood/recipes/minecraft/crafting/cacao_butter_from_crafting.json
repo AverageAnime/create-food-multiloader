@@ -1,0 +1,12 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:cacao_butter_bucket"
+        }
+    ],
+    "result": {
+        "count": 3,
+        "item": "createfood:cacao_butter"
+    }
+}

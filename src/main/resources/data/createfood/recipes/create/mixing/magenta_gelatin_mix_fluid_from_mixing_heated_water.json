@@ -1,0 +1,28 @@
+{
+    "type": "create:mixing",
+    "heatRequirement": "heated",
+    "ingredients": [
+        {
+            "amount": 1000,
+            "fluid": "minecraft:water"
+        },
+        {
+            "tag": "forge:gelatin"
+        },
+        {
+            "tag": "forge:gelatin"
+        },
+        {
+            "tag": "forge:gelatin"
+        },
+        {
+            "tag": "forge:magenta_dyes"
+        }
+    ],
+    "results": [
+        {
+            "amount": 1000,
+            "fluid": "createfood:magenta_gelatin_mix"
+        }
+    ]
+}

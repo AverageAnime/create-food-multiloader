@@ -1,0 +1,15 @@
+{
+    "type": "create:mixing",
+    "heatRequirement": "heated",
+    "ingredients": [
+        {
+            "tag": "forge:bar_of_white_chocolate"
+        }
+    ],
+    "results": [
+        {
+            "amount": 333,
+            "fluid": "createfood:white_chocolate"
+        }
+    ]
+}

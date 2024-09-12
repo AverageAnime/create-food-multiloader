@@ -1,0 +1,9 @@
+{
+    "type": "minecraft:smelting",
+    "ingredient": {
+        "tag": "forge:raw_mushroom_pizza"
+    },
+    "result": "createfood:mushroom_pizza",
+    "experience": 0.2,
+    "cookingtime": 350
+}

@@ -1,0 +1,17 @@
+{
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "tag": "forge:raw_mini_chocolate_graham_cracker_pie_crust"
+        },
+        {
+            "amount": 250,
+            "fluid": "createfood:cream_pie_filling"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:raw_mini_cream_pie_chocolate_graham_cracker"
+        }
+    ]
+}

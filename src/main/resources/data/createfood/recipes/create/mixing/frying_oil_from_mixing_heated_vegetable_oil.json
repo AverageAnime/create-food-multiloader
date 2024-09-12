@@ -1,0 +1,22 @@
+{
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "create_bic_bit"
+        }
+    ],
+    "type": "create:mixing",
+    "heatRequirement": "heated",
+    "ingredients": [
+        {
+            "amount": 500,
+            "fluid": "createfood:vegetable_oil"
+        }
+    ],
+    "results": [
+        {
+            "amount": 500,
+            "fluid": "create_bic_bit:frying_oil"
+        }
+    ]
+}

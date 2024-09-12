@@ -1,0 +1,17 @@
+{
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farm_and_charm"
+        }
+    ],
+    "type": "farm_and_charm:drying",
+    "ingredient": {
+        "item": "minecraft:cocoa_beans"
+    },
+    "recipe_type": "MEAT",
+    "result": {
+        "item": "createfood:cacao_nibs",
+        "count": 1
+    }
+}

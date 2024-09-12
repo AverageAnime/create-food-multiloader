@@ -1,0 +1,22 @@
+{
+    "type": "farmersdelight:cooking",
+    "cookingtime": 50,
+    "experience": 0.1,
+    "ingredients": [
+        {
+            "tag": "forge:grains"
+        },
+        {
+            "tag": "forge:gelatin"
+        },
+        {
+            "tag": "forge:lime_dyes"
+        },
+        {
+            "tag": "forge:water_buckets"
+        }
+    ],
+    "result": {
+        "item": "createfood:slime_bucket"
+    }
+}

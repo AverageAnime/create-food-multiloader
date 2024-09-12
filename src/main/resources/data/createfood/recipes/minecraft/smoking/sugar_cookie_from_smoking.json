@@ -1,0 +1,15 @@
+{
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "expandeddelight:sugar_cookie"
+        }
+    ],
+    "type": "minecraft:smoking",
+    "cookingtime": 100,
+    "experience": 0.35,
+    "ingredient": {
+        "tag": "forge:raw_sugar_cookie"
+    },
+    "result": "expandeddelight:sugar_cookie"
+}

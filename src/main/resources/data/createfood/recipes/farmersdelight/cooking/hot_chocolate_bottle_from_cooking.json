@@ -1,0 +1,13 @@
+{
+    "type": "farmersdelight:cooking",
+    "cookingtime": 25,
+    "experience": 0.25,
+    "ingredients": [
+        {
+            "tag": "forge:chocolate_bottle"
+        }
+    ],
+    "result": {
+        "item": "createfood:hot_chocolate_bottle"
+    }
+}

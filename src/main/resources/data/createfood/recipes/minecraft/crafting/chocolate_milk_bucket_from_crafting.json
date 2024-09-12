@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:bucket"
+        },
+        {
+            "tag": "forge:chocolate_milk"
+        },
+        {
+            "tag": "forge:chocolate_milk"
+        },
+        {
+            "tag": "forge:chocolate_milk"
+        },
+        {
+            "tag": "forge:chocolate_milk"
+        }
+    ],
+    "result": {
+        "item": "createfood:chocolate_milk_bucket"
+    }
+}

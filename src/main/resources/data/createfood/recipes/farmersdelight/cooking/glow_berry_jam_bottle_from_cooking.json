@@ -1,0 +1,19 @@
+{
+    "type": "farmersdelight:cooking",
+    "container": {
+        "item": "minecraft:glass_bottle"
+    },
+    "cookingtime": 250,
+    "experience": 0.45,
+    "ingredients": [
+        {
+            "item": "minecraft:glow_berries"
+        },
+        {
+            "tag": "forge:sugar"
+        }
+    ],
+    "result": {
+        "item": "createfood:glow_berry_jam_bottle"
+    }
+}

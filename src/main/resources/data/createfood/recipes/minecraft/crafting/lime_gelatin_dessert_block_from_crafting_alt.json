@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:gelatin_dessert_block"
+        },
+        {
+            "tag": "forge:lime_dyes"
+        }
+    ],
+    "result": {
+        "item": "createfood:lime_gelatin_dessert_block"
+    }
+}

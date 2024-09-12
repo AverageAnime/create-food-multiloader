@@ -1,0 +1,9 @@
+{
+    "type": "minecraft:smelting",
+    "cookingtime": 200,
+    "experience": 0.35,
+    "ingredient": {
+        "tag": "forge:raw_toffee_chips_chocolate_cookie"
+    },
+    "result": "createfood:toffee_chips_chocolate_cookie"
+}

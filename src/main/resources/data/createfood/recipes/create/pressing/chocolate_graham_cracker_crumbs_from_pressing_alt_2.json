@@ -1,0 +1,13 @@
+{
+    "type": "create:pressing",
+    "ingredients": [
+        {
+            "tag": "forge:mini_chocolate_graham_cracker_pie_crust"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:chocolate_graham_cracker_crumbs"
+        }
+    ]
+}

@@ -1,0 +1,19 @@
+{
+    "type": "create:mixing",
+    "ingredients": [
+        {
+            "tag": "forge:cooked_pasta"
+        },
+        {
+            "item": "farmersdelight:tomato_sauce"
+        },
+        {
+            "tag": "forge:small_meatballs"
+        }
+    ],
+    "results": [
+        {
+            "item": "farmersdelight:pasta_with_meatballs"
+        }
+    ]
+}

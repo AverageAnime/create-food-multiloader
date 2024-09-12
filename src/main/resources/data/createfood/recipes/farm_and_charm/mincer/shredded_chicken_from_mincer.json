@@ -1,0 +1,16 @@
+{
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farm_and_charm"
+        }
+    ],
+    "type": "farm_and_charm:mincer",
+    "ingredient": {
+        "item": "farmersdelight:chicken_cuts"
+    },
+    "recipe_type": "MEAT",
+    "result": {
+        "item": "createfood:shredded_chicken"
+    }
+}

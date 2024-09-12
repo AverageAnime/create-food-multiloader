@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:empty_buckets"
+        },
+        {
+            "tag": "forge:apple_juice_bottle"
+        },
+        {
+            "tag": "forge:apple_juice_bottle"
+        },
+        {
+            "tag": "forge:apple_juice_bottle"
+        },
+        {
+            "tag": "forge:apple_juice_bottle"
+        }
+    ],
+    "result": {
+        "item": "createfood:apple_juice_bucket"
+    }
+}

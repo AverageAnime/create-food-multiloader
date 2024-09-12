@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:marshmallow_stick"
+        },
+        {
+            "tag": "forge:white_chocolate_bottle"
+        }
+    ],
+    "result": {
+        "item": "createfood:white_chocolate_covered_marshmallow_stick"
+    }
+}

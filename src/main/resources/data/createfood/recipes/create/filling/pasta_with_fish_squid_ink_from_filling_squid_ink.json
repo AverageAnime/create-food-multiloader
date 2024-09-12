@@ -1,0 +1,17 @@
+{
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "tag": "forge:pasta_plate_fish"
+        },
+        {
+            "amount": 250,
+            "fluid": "createfood:squid_ink"
+        }
+    ],
+    "results": [
+        {
+            "item": "farmersdelight:squid_ink_pasta"
+        }
+    ]
+}

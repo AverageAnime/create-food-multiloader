@@ -1,0 +1,16 @@
+{
+    "type": "create:item_application",
+    "ingredients": [
+        {
+            "tag": "forge:pizza_dough"
+        },
+        {
+            "tag": "forge:tomato_sauce"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:pizza_dough_tomato_sauce"
+        }
+    ]
+}

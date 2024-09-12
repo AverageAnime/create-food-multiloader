@@ -1,0 +1,16 @@
+{
+    "type": "farmersdelight:cooking",
+    "cookingtime": 500,
+    "experience": 1.0,
+    "ingredients": [
+        {
+            "tag": "forge:sour_cream_bucket"
+        },
+        {
+            "tag": "forge:milks"
+        }
+    ],
+    "result": {
+        "item": "createfood:yogurt_bucket"
+    }
+}

@@ -1,0 +1,27 @@
+{
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farm_and_charm"
+        }
+    ],
+    "type": "farm_and_charm:pot_cooking",
+    "container": {
+        "item": "minecraft:stick"
+    },
+    "ingredients": [
+        {
+            "tag": "forge:cane_syrup_bucket"
+        },
+        {
+            "tag": "forge:powdered_sugar"
+        },
+        {
+            "tag": "forge:salt"
+        }
+    ],
+    "result": {
+        "count": 8,
+        "item": "createfood:cotton_candy_stick"
+    }
+}

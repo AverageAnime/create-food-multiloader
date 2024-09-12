@@ -1,0 +1,25 @@
+{
+    "type": "create:mixing",
+    "heatRequirement": "heated",
+    "ingredients": [
+        {
+            "amount": 1000,
+            "fluid": "minecraft:water"
+        },
+        {
+            "tag": "forge:gelatin"
+        },
+        {
+            "tag": "forge:gelatin"
+        },
+        {
+            "tag": "forge:gelatin"
+        }
+    ],
+    "results": [
+        {
+            "amount": 1000,
+            "fluid": "createfood:gelatin_mix"
+        }
+    ]
+}

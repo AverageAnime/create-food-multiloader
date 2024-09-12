@@ -1,0 +1,17 @@
+{
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farm_and_charm"
+        }
+    ],
+    "type": "farm_and_charm:mincer",
+    "ingredient": {
+        "tag": "forge:bar_of_white_chocolate"
+    },
+    "recipe_type": "STONE",
+    "result": {
+        "count": 8,
+        "item": "createfood:white_chocolate_chips"
+    }
+}

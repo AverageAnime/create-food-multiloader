@@ -1,0 +1,11 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:slime_bucket"
+        }
+    ],
+    "result": {
+        "item": "minecraft:slime_block"
+    }
+}

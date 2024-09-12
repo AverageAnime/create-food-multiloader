@@ -1,0 +1,18 @@
+{
+    "type": "create:mixing",
+    "ingredients": [
+        {
+            "amount": 1000,
+            "fluid": "createfood:ice_cream"
+        },
+        {
+            "tag": "forge:apple"
+        }
+    ],
+    "results": [
+        {
+            "amount": 1000,
+            "fluid": "createfood:apple_ice_cream"
+        }
+    ]
+}

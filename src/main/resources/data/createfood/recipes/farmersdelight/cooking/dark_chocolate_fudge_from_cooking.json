@@ -1,0 +1,19 @@
+{
+    "type": "farmersdelight:cooking",
+    "cookingtime": 150,
+    "experience": 0.5,
+    "ingredients": [
+        {
+            "tag": "forge:condensed_milk"
+        },
+        {
+            "tag": "forge:dark_chocolate_chips"
+        },
+        {
+            "tag": "forge:butter"
+        }
+    ],
+    "result": {
+        "item": "createfood:dark_chocolate_fudge"
+    }
+}

@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:chorus_fruit_cheesecake_slice"
+        },
+        {
+            "tag": "forge:chorus_fruit_cheesecake_slice"
+        },
+        {
+            "tag": "forge:chorus_fruit_cheesecake_slice"
+        },
+        {
+            "tag": "forge:chorus_fruit_cheesecake_slice"
+        }
+    ],
+    "result": {
+        "item": "createfood:chorus_fruit_cheesecake"
+    }
+}

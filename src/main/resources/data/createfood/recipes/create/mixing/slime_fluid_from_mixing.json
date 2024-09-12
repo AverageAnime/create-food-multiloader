@@ -1,0 +1,25 @@
+{
+    "type": "create:mixing",
+    "heatRequirement": "heated",
+    "ingredients": [
+        {
+            "tag": "forge:flour"
+        },
+        {
+            "tag": "forge:gelatin"
+        },
+        {
+            "tag": "forge:lime_dyes"
+        },
+        {
+            "amount": 250,
+            "fluid": "minecraft:water"
+        }
+    ],
+    "results": [
+        {
+            "amount": 1000,
+            "fluid": "createfood:slime"
+        }
+    ]
+}

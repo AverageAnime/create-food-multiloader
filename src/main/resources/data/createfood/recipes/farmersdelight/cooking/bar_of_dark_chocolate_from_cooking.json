@@ -1,0 +1,16 @@
+{
+    "type": "farmersdelight:cooking",
+    "cookingtime": 150,
+    "experience": 1.0,
+    "ingredients": [
+        {
+            "tag": "forge:pressed_cocoa"
+        },
+        {
+            "tag": "forge:cacao_mass_bucket"
+        }
+    ],
+    "result": {
+        "item": "createfood:bar_of_dark_chocolate"
+    }
+}

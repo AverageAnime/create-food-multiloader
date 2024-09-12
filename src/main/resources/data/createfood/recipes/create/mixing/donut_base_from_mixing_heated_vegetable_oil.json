@@ -1,0 +1,18 @@
+{
+    "type": "create:mixing",
+    "heatRequirement": "heated",
+    "ingredients": [
+        {
+            "tag": "forge:pastry_base"
+        },
+        {
+            "amount": 125,
+            "fluid": "createfood:vegetable_oil"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:donut_base"
+        }
+    ]
+}

@@ -1,0 +1,17 @@
+{
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farm_and_charm"
+        }
+    ],
+    "type": "farm_and_charm:drying",
+    "ingredient": {
+        "tag": "forge:coffee_beans"
+    },
+    "recipe_type": "MEAT",
+    "result": {
+        "item": "createfood:dried_coffee_beans",
+        "count": 1
+    }
+}

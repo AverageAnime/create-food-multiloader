@@ -1,0 +1,24 @@
+{
+    "type": "create:mixing",
+    "heatRequirement": "heated",
+    "ingredients": [
+        {
+            "tag": "forge:white_chocolate_chips"
+        },
+        {
+            "tag": "forge:butter"
+        },
+        {
+            "tag": "forge:marshmallow"
+        },
+        {
+            "amount": 250,
+            "fluid": "createfood:condensed_milk"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:marshmallow_white_chocolate_fudge"
+        }
+    ]
+}

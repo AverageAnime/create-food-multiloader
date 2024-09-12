@@ -1,0 +1,14 @@
+{
+    "type": "create:compacting",
+    "ingredients": [
+        {
+            "tag": "forge:sausage_meat"
+        }
+    ],
+    "results": [
+        {
+            "count": 2,
+            "item": "createfood:raw_sausage_patty"
+        }
+    ]
+}

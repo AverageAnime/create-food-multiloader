@@ -1,0 +1,14 @@
+{
+    "type": "create:compacting",
+    "ingredients": [
+        {
+            "amount": 333,
+            "fluid": "createfood:white_chocolate"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:bar_of_white_chocolate"
+        }
+    ]
+}

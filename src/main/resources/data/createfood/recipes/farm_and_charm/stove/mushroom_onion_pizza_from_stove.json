@@ -1,0 +1,23 @@
+{
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farm_and_charm"
+        }
+    ],
+    "type": "farm_and_charm:stove",
+    "ingredients": [
+        {
+            "tag": "forge:raw_mushroom_onion_pizza"
+        },
+        {
+            "tag": "forge:raw_mushroom_onion_pizza"
+        },
+        {
+            "tag": "forge:raw_mushroom_onion_pizza"
+        }
+    ],
+    "item": "createfood:mushroom_onion_pizza",
+    "count": 3,
+    "experience": 0.4
+}

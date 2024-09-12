@@ -1,0 +1,16 @@
+{
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "forge:mini_chocolate_pie_graham_cracker"
+        },
+        {
+            "tag": "forge:marshmallow"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:mini_smores_pie"
+        }
+    ]
+}

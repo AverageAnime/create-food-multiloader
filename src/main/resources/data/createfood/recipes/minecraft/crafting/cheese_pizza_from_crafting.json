@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:cheese_pizza_slice"
+        },
+        {
+            "tag": "forge:cheese_pizza_slice"
+        },
+        {
+            "tag": "forge:cheese_pizza_slice"
+        },
+        {
+            "tag": "forge:cheese_pizza_slice"
+        }
+    ],
+    "result": {
+        "item": "createfood:cheese_pizza"
+    }
+}

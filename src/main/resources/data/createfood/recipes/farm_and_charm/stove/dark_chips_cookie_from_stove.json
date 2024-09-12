@@ -1,0 +1,23 @@
+{
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farm_and_charm"
+        }
+    ],
+    "type": "farm_and_charm:stove",
+    "ingredients": [
+        {
+            "tag": "forge:raw_dark_chips_cookie"
+        },
+        {
+            "tag": "forge:raw_dark_chips_cookie"
+        },
+        {
+            "tag": "forge:raw_dark_chips_cookie"
+        }
+    ],
+    "item": "createfood:dark_chips_cookie",
+    "count": 3,
+    "experience": 0.45
+}

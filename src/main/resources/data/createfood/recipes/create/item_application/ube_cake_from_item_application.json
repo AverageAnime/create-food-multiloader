@@ -1,0 +1,22 @@
+{
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "ubesdelight"
+        }
+    ],
+    "type": "create:item_application",
+    "ingredients": [
+        {
+            "tag": "forge:ube_cream_frosted_ube_cake"
+        },
+        {
+            "item": "ubesdelight:ube"
+        }
+    ],
+    "results": [
+        {
+            "item": "ubesdelight:ube_cake"
+        }
+    ]
+}

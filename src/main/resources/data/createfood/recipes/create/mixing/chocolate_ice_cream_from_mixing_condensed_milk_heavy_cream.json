@@ -1,0 +1,34 @@
+{
+    "type": "create:mixing",
+    "ingredients": [
+        {
+            "amount": 250,
+            "fluid": "createfood:condensed_milk"
+        },
+        {
+            "amount": 750,
+            "fluid": "createfood:heavy_cream"
+        },
+        {
+            "tag": "forge:ice_blocks"
+        },
+        {
+            "tag": "forge:ice_blocks"
+        },
+        {
+            "tag": "forge:ice_blocks"
+        },
+        {
+            "tag": "forge:ice_blocks"
+        },
+        {
+            "tag": "forge:cocoa_powder"
+        }
+    ],
+    "results": [
+        {
+            "amount": 1000,
+            "fluid": "createfood:chocolate_ice_cream"
+        }
+    ]
+}

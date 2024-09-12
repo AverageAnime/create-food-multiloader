@@ -1,0 +1,23 @@
+{
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farm_and_charm"
+        }
+    ],
+    "type": "farm_and_charm:stove",
+    "ingredients": [
+        {
+            "tag": "forge:raw_chocolate_pie_graham_cracker"
+        },
+        {
+            "tag": "forge:raw_chocolate_pie_graham_cracker"
+        },
+        {
+            "tag": "forge:raw_chocolate_pie_graham_cracker"
+        }
+    ],
+    "item": "createfood:chocolate_pie_graham_cracker",
+    "count": 3,
+    "experience": 1.5
+}

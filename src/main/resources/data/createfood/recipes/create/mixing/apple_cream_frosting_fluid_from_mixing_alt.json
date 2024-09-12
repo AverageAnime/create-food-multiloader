@@ -1,0 +1,47 @@
+{
+    "type": "create:mixing",
+    "ingredients": [
+        {
+            "tag": "forge:cream_cheese"
+        },
+        {
+            "tag": "forge:cream_cheese"
+        },
+        {
+            "tag": "forge:cream_cheese"
+        },
+        {
+            "tag": "forge:cream_cheese"
+        },
+        {
+            "tag": "forge:sugar"
+        },
+        {
+            "tag": "forge:sugar"
+        },
+        {
+            "tag": "forge:sugar"
+        },
+        {
+            "tag": "forge:sugar"
+        },
+        {
+            "tag": "forge:apple"
+        },
+        {
+            "tag": "forge:apple"
+        },
+        {
+            "tag": "forge:apple"
+        },
+        {
+            "tag": "forge:apple"
+        }
+    ],
+    "results": [
+        {
+            "amount": 1000,
+            "fluid": "createfood:apple_cream_frosting"
+        }
+    ]
+}

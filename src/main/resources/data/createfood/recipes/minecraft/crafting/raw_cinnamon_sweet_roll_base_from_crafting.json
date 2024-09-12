@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:sweet_dough"
+        },
+        {
+            "tag": "forge:sugar"
+        },
+        {
+            "tag": "forge:ground_cinnamon"
+        }
+    ],
+    "result": {
+        "item": "createfood:raw_cinnamon_sweet_roll_base"
+    }
+}

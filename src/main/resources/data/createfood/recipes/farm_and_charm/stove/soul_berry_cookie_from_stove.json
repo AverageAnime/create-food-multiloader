@@ -1,0 +1,23 @@
+{
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farm_and_charm"
+        }
+    ],
+    "type": "farm_and_charm:stove",
+    "ingredients": [
+        {
+            "tag": "forge:raw_soul_berry_cookie"
+        },
+        {
+            "tag": "forge:raw_soul_berry_cookie"
+        },
+        {
+            "tag": "forge:raw_soul_berry_cookie"
+        }
+    ],
+    "item": "frightsdelight:cookie_soul_berry",
+    "count": 3,
+    "experience": 0.45
+}

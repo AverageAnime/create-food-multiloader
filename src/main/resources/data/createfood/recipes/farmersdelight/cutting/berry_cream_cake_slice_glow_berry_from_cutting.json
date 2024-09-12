@@ -1,0 +1,17 @@
+{
+    "type": "farmersdelight:cutting",
+    "ingredients": [
+        {
+            "tag": "forge:berry_cream_cake_glow_berry"
+        }
+    ],
+    "tool": {
+        "tag": "forge:tools/knives"
+    },
+    "result": [
+        {
+            "count": 7,
+            "item": "createfood:berry_cream_cake_slice_glow_berry"
+        }
+    ]
+}

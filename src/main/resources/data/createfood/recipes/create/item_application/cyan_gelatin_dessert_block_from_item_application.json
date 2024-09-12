@@ -1,0 +1,16 @@
+{
+    "type": "create:item_application",
+    "ingredients": [
+        {
+            "tag": "forge:gelatin_dessert_block"
+        },
+        {
+            "tag": "forge:cyan_dyes"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:cyan_gelatin_dessert_block"
+        }
+    ]
+}

@@ -1,0 +1,14 @@
+{
+    "type": "create:pressing",
+    "ingredients": [
+        {
+            "item": "createfood:pressed_cocoa"
+        }
+    ],
+    "results": [
+        {
+            "count": 3,
+            "item": "createfood:cocoa_powder"
+        }
+    ]
+}

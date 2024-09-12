@@ -1,0 +1,20 @@
+{
+    "type": "create:mixing",
+    "ingredients": [
+        {
+            "amount": 1000,
+            "fluid": "createfood:blue_gelatin_mix"
+        },
+        {
+            "item": "minecraft:ice"
+        },
+        {
+            "item": "minecraft:ice"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:blue_gelatin_dessert_block"
+        }
+    ]
+}

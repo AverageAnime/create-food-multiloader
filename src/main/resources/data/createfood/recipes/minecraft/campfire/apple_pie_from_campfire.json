@@ -1,0 +1,9 @@
+{
+    "type": "minecraft:campfire_cooking",
+    "ingredient": {
+        "tag": "forge:raw_apple_pie"
+    },
+    "result": "farmersdelight:apple_pie",
+    "experience": 0.95,
+    "cookingtime": 550
+}

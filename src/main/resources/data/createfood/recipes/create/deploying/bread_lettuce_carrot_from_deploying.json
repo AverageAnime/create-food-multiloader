@@ -1,0 +1,16 @@
+{
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "forge:bread_lettuce"
+        },
+        {
+            "tag": "forge:carrot"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:bread_lettuce_carrot"
+        }
+    ]
+}

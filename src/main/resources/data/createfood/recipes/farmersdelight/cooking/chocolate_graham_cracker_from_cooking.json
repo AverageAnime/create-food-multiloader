@@ -1,0 +1,23 @@
+{
+    "type": "farmersdelight:cooking",
+    "cookingtime": 125,
+    "experience": 0.25,
+    "ingredients": [
+        {
+            "tag": "forge:milk_bottle"
+        },
+        {
+            "item": "minecraft:honey_bottle"
+        },
+        {
+            "tag": "forge:butter"
+        },
+        {
+            "tag": "forge:chocolate_sweet_dough"
+        }
+    ],
+    "result": {
+        "count": 8,
+        "item": "createfood:chocolate_graham_cracker"
+    }
+}

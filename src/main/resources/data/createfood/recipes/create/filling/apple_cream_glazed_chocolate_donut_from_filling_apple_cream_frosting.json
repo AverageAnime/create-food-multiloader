@@ -1,0 +1,17 @@
+{
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "tag": "forge:chocolate_donut_base"
+        },
+        {
+            "amount": 250,
+            "fluid": "createfood:apple_cream_frosting"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:apple_cream_glazed_chocolate_donut"
+        }
+    ]
+}

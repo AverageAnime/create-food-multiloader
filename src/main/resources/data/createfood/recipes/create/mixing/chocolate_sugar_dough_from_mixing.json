@@ -1,0 +1,23 @@
+{
+    "type": "create:mixing",
+    "ingredients": [
+        {
+            "tag": "forge:flour"
+        },
+        {
+            "tag": "forge:sugar"
+        },
+        {
+            "tag": "forge:cocoa_powder"
+        },
+        {
+            "tag": "forge:eggs"
+        }
+    ],
+    "results": [
+        {
+            "count": 3,
+            "item": "createfood:chocolate_sugar_dough"
+        }
+    ]
+}

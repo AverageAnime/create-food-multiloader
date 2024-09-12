@@ -1,0 +1,21 @@
+{
+    "type": "create:mixing",
+    "ingredients": [
+        {
+            "item": "minecraft:bucket"
+        },
+        {
+            "amount": 250,
+            "fluid": "createfood:sour_cream"
+        },
+        {
+            "amount": 1000,
+            "fluidTag": "forge:milk"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:yogurt_bucket"
+        }
+    ]
+}

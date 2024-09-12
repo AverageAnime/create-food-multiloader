@@ -1,0 +1,101 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "createfood:chocolate_graham_cracker_neapolitan_scoop_3",
+      "required": false
+    },
+    {
+      "id": "createfood:chocolate_graham_cracker_neapolitan_scoop_2",
+      "required": false
+    },
+    {
+      "id": "createfood:chocolate_graham_cracker_ice_cream",
+      "required": false
+    },
+    {
+      "id": "createfood:ube_cream_frosting_bottle",
+      "required": false
+    },
+    {
+      "id": "createfood:yogurt_bottle",
+      "required": false
+    },
+    {
+      "id": "createfood:melon_cream_frosting_bottle",
+      "required": false
+    },
+    {
+      "id": "createfood:melon_milkshake_bottle",
+      "required": false
+    },
+    {
+      "id": "createfood:butterscotch_chip_milkshake_bottle",
+      "required": false
+    },
+    {
+      "id": "createfood:caramel_chip_milkshake_bottle",
+      "required": false
+    },
+    {
+      "id": "createfood:chocolate_chip_milkshake_bottle",
+      "required": false
+    },
+    {
+      "id": "createfood:toffee_chip_milkshake_bottle",
+      "required": false
+    },
+    {
+      "id": "createfood:apple_milkshake_bottle",
+      "required": false
+    },
+    {
+      "id": "createfood:berry_milkshake_bottle",
+      "required": false
+    },
+    {
+      "id": "createfood:glow_berry_milkshake_bottle",
+      "required": false
+    },
+    {
+      "id": "createfood:chorus_fruit_milkshake_bottle",
+      "required": false
+    },
+    {
+      "id": "createfood:chocolate_milkshake_bottle",
+      "required": false
+    },
+    {
+      "id": "createfood:milkshake_bottle",
+      "required": false
+    },
+    {
+      "id": "createfood:blackstrap_molasses_bottle",
+      "required": false
+    },
+    {
+      "id": "createfood:apple_cream_frosting_bottle",
+      "required": false
+    },
+    {
+      "id": "createfood:cream_frosting_bottle",
+      "required": false
+    },
+    {
+      "id": "createfood:chorus_fruit_cream_frosting_bottle",
+      "required": false
+    },
+    {
+      "id": "createfood:berry_cream_frosting_bottle",
+      "required": false
+    },
+    {
+      "id": "createfood:glow_berry_cream_frosting_bottle",
+      "required": false
+    },
+    {
+      "id": "createfood:chocolate_cream_frosting_bottle",
+      "required": false
+    }
+  ]
+}

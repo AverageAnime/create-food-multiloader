@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:chocolate_donut_base"
+        },
+        {
+            "tag": "forge:powdered_sugar"
+        }
+    ],
+    "result": {
+        "item": "createfood:chocolate_donut_sugar"
+    }
+}

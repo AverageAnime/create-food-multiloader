@@ -1,0 +1,22 @@
+{
+    "type": "create:compacting",
+    "ingredients": [
+        {
+            "item": "minecraft:stick"
+        },
+        {
+            "item": "minecraft:ice"
+        },
+        {
+            "item": "minecraft:ice"
+        },
+        {
+            "tag": "forge:apple"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:apple_popsicle"
+        }
+    ]
+}

@@ -1,0 +1,23 @@
+{
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farm_and_charm"
+        }
+    ],
+    "type": "farm_and_charm:stove",
+    "ingredients": [
+        {
+            "tag": "forge:raw_endermite_meatball"
+        },
+        {
+            "tag": "forge:raw_endermite_meatball"
+        },
+        {
+            "tag": "forge:raw_endermite_meatball"
+        }
+    ],
+    "item": "createfood:endermite_meatball",
+    "count": 3,
+    "experience": 0.15
+}

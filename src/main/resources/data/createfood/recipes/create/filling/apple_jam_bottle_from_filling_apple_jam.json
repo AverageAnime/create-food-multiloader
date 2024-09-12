@@ -1,0 +1,17 @@
+{
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "item": "minecraft:glass_bottle"
+        },
+        {
+            "amount": 500,
+            "fluid": "createfood:apple_jam"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:apple_jam_bottle"
+        }
+    ]
+}

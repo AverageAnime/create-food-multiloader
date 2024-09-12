@@ -1,0 +1,16 @@
+{
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "item": "minecraft:stick"
+        },
+        {
+            "tag": "forge:marshmallow"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:marshmallow_stick"
+        }
+    ]
+}

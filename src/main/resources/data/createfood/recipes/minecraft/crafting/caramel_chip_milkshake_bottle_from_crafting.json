@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:milkshake"
+        },
+        {
+            "tag": "forge:caramel_chips"
+        }
+    ],
+    "result": {
+        "item": "createfood:caramel_chip_milkshake_bottle"
+    }
+}

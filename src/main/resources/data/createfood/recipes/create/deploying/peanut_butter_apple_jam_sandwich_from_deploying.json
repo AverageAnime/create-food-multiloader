@@ -1,0 +1,16 @@
+{
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "forge:bread_slice_peanut_butter"
+        },
+        {
+            "tag": "forge:bread_slice_apple_jam"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:peanut_butter_apple_jam_sandwich"
+        }
+    ]
+}

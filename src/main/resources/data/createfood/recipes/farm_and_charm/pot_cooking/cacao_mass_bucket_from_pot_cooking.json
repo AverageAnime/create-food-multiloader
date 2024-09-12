@@ -1,0 +1,29 @@
+{
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farm_and_charm"
+        }
+    ],
+    "type": "farm_and_charm:pot_cooking",
+    "ingredients": [
+        {
+            "tag": "forge:cacao_nibs"
+        },
+        {
+            "tag": "forge:cacao_nibs"
+        },
+        {
+            "tag": "forge:cacao_nibs"
+        },
+        {
+            "tag": "forge:cacao_nibs"
+        }
+    ],
+    "container": {
+        "item": "minecraft:bucket"
+    },
+    "result": {
+        "item": "createfood:cacao_mass_bucket"
+    }
+}

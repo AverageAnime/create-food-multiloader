@@ -1,0 +1,17 @@
+{
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farm_and_charm"
+        }
+    ],
+    "type": "farm_and_charm:mincer",
+    "ingredient": {
+        "item": "ends_delight:raw_ender_mite_meat"
+    },
+    "recipe_type": "MEAT",
+    "result": {
+        "count": 2,
+        "item": "createfood:ground_endermite"
+    }
+}

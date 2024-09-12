@@ -1,0 +1,27 @@
+{
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farm_and_charm"
+        }
+    ],
+    "type": "farm_and_charm:crafting_bowl",
+    "ingredients": [
+        {
+            "tag": "forge:wheat"
+        },
+        {
+            "tag": "forge:cocoa_powder"
+        },
+        {
+            "tag": "forge:molasses_bottle"
+        },
+        {
+            "tag": "forge:eggs"
+        }
+    ],
+    "result": {
+        "item": "createfood:pumpernickel_dough",
+        "count": 3
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "type": "create:mixing",
+    "ingredients": [
+        {
+            "amount": 125,
+            "fluidTag": "forge:milk"
+        },
+        {
+            "amount": 125,
+            "fluid": "createfood:cacao_mass"
+        },
+        {
+            "item": "minecraft:glass_bottle"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:chocolate_bottle"
+        }
+    ]
+}

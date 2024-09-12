@@ -1,0 +1,14 @@
+{
+    "type": "create:pressing",
+    "ingredients": [
+        {
+            "tag": "forge:bar_of_chocolate"
+        }
+    ],
+    "results": [
+        {
+            "count": 8,
+            "item": "createfood:chocolate_chips"
+        }
+    ]
+}

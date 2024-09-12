@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:raw_pie_crust"
+        },
+        {
+            "tag": "forge:chocolate_bucket"
+        }
+    ],
+    "result": {
+        "item": "createfood:raw_chocolate_pie"
+    }
+}

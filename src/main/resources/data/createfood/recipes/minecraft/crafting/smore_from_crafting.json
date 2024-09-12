@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:graham_cracker"
+        },
+        {
+            "tag": "forge:marshmallow_chocolate"
+        },
+        {
+            "tag": "forge:graham_cracker"
+        }
+    ],
+    "result": {
+        "item": "createfood:smore"
+    }
+}

@@ -1,0 +1,23 @@
+{
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farm_and_charm"
+        }
+    ],
+    "type": "farm_and_charm:stove",
+    "ingredients": [
+        {
+            "tag": "forge:coffee_beans"
+        },
+        {
+            "tag": "forge:coffee_beans"
+        },
+        {
+            "tag": "forge:coffee_beans"
+        }
+    ],
+    "item": "createfood:dried_coffee_beans",
+    "count": 3,
+    "experience": 0.15
+}

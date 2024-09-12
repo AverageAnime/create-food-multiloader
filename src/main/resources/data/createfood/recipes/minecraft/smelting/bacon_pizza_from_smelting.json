@@ -1,0 +1,9 @@
+{
+    "type": "minecraft:smelting",
+    "ingredient": {
+        "tag": "forge:raw_bacon_pizza"
+    },
+    "result": "createfood:bacon_pizza",
+    "experience": 0.2,
+    "cookingtime": 350
+}

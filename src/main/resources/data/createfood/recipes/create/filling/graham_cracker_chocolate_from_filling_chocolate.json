@@ -1,0 +1,17 @@
+{
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "tag": "forge:graham_cracker"
+        },
+        {
+            "amount": 166,
+            "fluid": "create:chocolate"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:graham_cracker_chocolate"
+        }
+    ]
+}

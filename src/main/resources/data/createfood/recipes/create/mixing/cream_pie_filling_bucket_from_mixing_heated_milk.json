@@ -1,0 +1,30 @@
+{
+    "type": "create:mixing",
+    "heatRequirement": "heated",
+    "ingredients": [
+        {
+            "amount": 1000,
+            "fluidTag": "forge:milk"
+        },
+        {
+            "tag": "forge:flour"
+        },
+        {
+            "tag": "forge:butter"
+        },
+        {
+            "tag": "forge:sugar"
+        },
+        {
+            "tag": "forge:eggs"
+        },
+        {
+            "item": "minecraft:bucket"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:cream_pie_filling_bucket"
+        }
+    ]
+}

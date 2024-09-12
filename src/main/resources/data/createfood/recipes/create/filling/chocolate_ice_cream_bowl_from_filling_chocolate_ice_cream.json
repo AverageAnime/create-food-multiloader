@@ -1,0 +1,17 @@
+{
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "tag": "forge:bowl"
+        },
+        {
+            "amount": 333,
+            "fluid": "createfood:chocolate_ice_cream"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:chocolate_ice_cream_bowl"
+        }
+    ]
+}

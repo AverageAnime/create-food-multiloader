@@ -1,0 +1,29 @@
+{
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farm_and_charm"
+        }
+    ],
+    "type": "farm_and_charm:pot_cooking",
+    "ingredients": [
+        {
+            "tag": "forge:condensed_milk"
+        },
+        {
+            "tag": "forge:toffee_chips"
+        },
+        {
+            "tag": "forge:butter"
+        },
+        {
+            "tag": "forge:marshmallow"
+        }
+    ],
+    "container": {
+        "item": "minecraft:bowl"
+    },
+    "result": {
+        "item": "createfood:marshmallow_toffee_fudge"
+    }
+}

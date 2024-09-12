@@ -1,0 +1,46 @@
+{
+    "type": "create:mixing",
+    "heatRequirement": "heated",
+    "ingredients": [
+        {
+            "amount": 1000,
+            "fluid": "createfood:cane_syrup"
+        },
+        {
+            "tag": "forge:powdered_sugar"
+        },
+        {
+            "tag": "forge:salt"
+        },
+        {
+            "item": "minecraft:stick"
+        },
+        {
+            "item": "minecraft:stick"
+        },
+        {
+            "item": "minecraft:stick"
+        },
+        {
+            "item": "minecraft:stick"
+        },
+        {
+            "item": "minecraft:stick"
+        },
+        {
+            "item": "minecraft:stick"
+        },
+        {
+            "item": "minecraft:stick"
+        },
+        {
+            "item": "minecraft:stick"
+        }
+    ],
+    "results": [
+        {
+            "count": 8,
+            "item": "createfood:cotton_candy_stick"
+        }
+    ]
+}

@@ -1,0 +1,17 @@
+{
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "tag": "forge:peanut_butter_sandwich"
+        },
+        {
+            "amount": 125,
+            "fluid": "createfood:apple_jam"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:peanut_butter_apple_jam_sandwich"
+        }
+    ]
+}

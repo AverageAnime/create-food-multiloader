@@ -1,0 +1,9 @@
+{
+    "type": "minecraft:smelting",
+    "cookingtime": 200,
+    "experience": 0.35,
+    "ingredient": {
+        "tag": "forge:raw_ube_cake_base"
+    },
+    "result": "createfood:ube_cake_base"
+}

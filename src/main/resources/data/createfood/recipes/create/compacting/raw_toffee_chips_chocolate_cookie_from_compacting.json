@@ -1,0 +1,17 @@
+{
+    "type": "create:compacting",
+    "ingredients": [
+        {
+            "tag": "forge:toffee_chips"
+        },
+        {
+            "tag": "forge:chocolate_sweet_dough"
+        }
+    ],
+    "results": [
+        {
+            "count": 8,
+            "item": "createfood:raw_toffee_chips_chocolate_cookie"
+        }
+    ]
+}

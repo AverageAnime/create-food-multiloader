@@ -1,0 +1,17 @@
+{
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "item": "createfood:sweet_roll_base"
+        },
+        {
+            "amount": 333,
+            "fluid": "createfood:glow_berry_cream_frosting"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:glow_berry_cream_frosted_sweet_roll"
+        }
+    ]
+}

@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:bun"
+        },
+        {
+            "tag": "forge:cooked_pork"
+        },
+        {
+            "tag": "forge:peanut_butter"
+        },
+        {
+            "tag": "forge:cooked_beef"
+        }
+    ],
+    "result": {
+        "item": "createfood:beef_bun_peanut_butter_bacon"
+    }
+}

@@ -1,0 +1,23 @@
+{
+    "type": "farmersdelight:cooking",
+    "container": {
+        "item": "minecraft:stick"
+    },
+    "cookingtime": 250,
+    "experience": 0.1,
+    "ingredients": [
+        {
+            "tag": "forge:cane_syrup_bucket"
+        },
+        {
+            "tag": "forge:powdered_sugar"
+        },
+        {
+            "tag": "forge:salt"
+        }
+    ],
+    "result": {
+        "count": 8,
+        "item": "createfood:cotton_candy_stick"
+    }
+}

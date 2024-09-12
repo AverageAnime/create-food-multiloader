@@ -1,0 +1,16 @@
+{
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "forge:chocolate_donut_base"
+        },
+        {
+            "tag": "forge:powdered_sugar"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:chocolate_donut_sugar"
+        }
+    ]
+}

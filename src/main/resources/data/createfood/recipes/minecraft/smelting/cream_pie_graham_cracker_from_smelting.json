@@ -1,0 +1,9 @@
+{
+    "type": "minecraft:smelting",
+    "ingredient": {
+        "tag": "forge:raw_cream_pie_graham_cracker"
+    },
+    "result": "createfood:cream_pie_graham_cracker",
+    "experience": 0.95,
+    "cookingtime": 550
+}

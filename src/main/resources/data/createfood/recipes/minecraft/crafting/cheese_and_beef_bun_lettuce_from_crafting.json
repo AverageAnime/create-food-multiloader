@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:cheese_and_beef_bun"
+        },
+        {
+            "tag": "forge:salad_ingredients"
+        }
+    ],
+    "result": {
+        "item": "createfood:cheese_and_beef_bun_lettuce"
+    }
+}

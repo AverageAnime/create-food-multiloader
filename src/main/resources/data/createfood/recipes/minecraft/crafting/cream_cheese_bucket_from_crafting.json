@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:empty_buckets"
+        },
+        {
+            "tag": "forge:cream_cheese"
+        },
+        {
+            "tag": "forge:cream_cheese"
+        },
+        {
+            "tag": "forge:cream_cheese"
+        }
+    ],
+    "result": {
+        "item": "createfood:cream_cheese_bucket"
+    }
+}

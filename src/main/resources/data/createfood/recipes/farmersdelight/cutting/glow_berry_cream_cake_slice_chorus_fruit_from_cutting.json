@@ -1,0 +1,17 @@
+{
+    "type": "farmersdelight:cutting",
+    "ingredients": [
+        {
+            "tag": "forge:glow_berry_cream_cake_chorus_fruit"
+        }
+    ],
+    "tool": {
+        "tag": "forge:tools/knives"
+    },
+    "result": [
+        {
+            "count": 7,
+            "item": "createfood:glow_berry_cream_cake_slice_chorus_fruit"
+        }
+    ]
+}

@@ -1,0 +1,26 @@
+{
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farmersrespite"
+        }
+    ],
+    "type": "farmersrespite:brewing",
+    "ingredients": [
+        {
+            "tag": "forge:chorus_fruit"
+        },
+        {
+            "tag": "forge:sugar"
+        }
+    ],
+    "result": {
+        "item": "createfood:chorus_fruit_juice_bottle"
+    },
+    "container": {
+        "item": "minecraft:glass_bottle"
+    },
+    "experience": 0.35,
+    "brewingtime": 2400,
+    "needWater": true
+}

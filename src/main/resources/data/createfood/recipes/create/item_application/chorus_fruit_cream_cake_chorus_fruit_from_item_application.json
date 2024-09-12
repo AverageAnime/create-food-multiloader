@@ -1,0 +1,16 @@
+{
+    "type": "create:item_application",
+    "ingredients": [
+        {
+            "tag": "forge:chorus_fruit_cream_frosted_cake"
+        },
+        {
+            "tag": "forge:chorus_fruit"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:chorus_fruit_cream_cake_chorus_fruit"
+        }
+    ]
+}

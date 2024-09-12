@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:cloth_filter"
+        },
+        {
+            "tag": "forge:cacao_mass_bucket"
+        }
+    ],
+    "result": {
+        "item": "createfood:cloth_filter_cacao_mass"
+    }
+}

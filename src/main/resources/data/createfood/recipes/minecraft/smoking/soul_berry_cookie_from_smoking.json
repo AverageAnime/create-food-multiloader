@@ -1,0 +1,15 @@
+{
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "frightsdelight:cookie_soul_berry"
+        }
+    ],
+    "type": "minecraft:smoking",
+    "cookingtime": 100,
+    "experience": 0.35,
+    "ingredient": {
+        "tag": "forge:raw_soul_berry_cookie"
+    },
+    "result": "frightsdelight:cookie_soul_berry"
+}

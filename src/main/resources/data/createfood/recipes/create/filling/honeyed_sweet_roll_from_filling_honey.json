@@ -1,0 +1,17 @@
+{
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "tag": "forge:sweet_roll_base"
+        },
+        {
+            "amount": 333,
+            "fluid": "create:honey"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:honeyed_sweet_roll"
+        }
+    ]
+}

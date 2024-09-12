@@ -1,0 +1,17 @@
+{
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "tag": "forge:cake_base"
+        },
+        {
+            "amount": 250,
+            "fluid": "createfood:chorus_fruit_cream_frosting"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:chorus_fruit_cream_frosted_cake"
+        }
+    ]
+}

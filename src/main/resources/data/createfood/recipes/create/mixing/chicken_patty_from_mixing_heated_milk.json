@@ -1,0 +1,30 @@
+{
+    "type": "create:mixing",
+    "heatRequirement": "heated",
+    "ingredients": [
+        {
+            "amount": 250,
+            "fluidTag": "forge:milk"
+        },
+        {
+            "tag": "forge:eggs"
+        },
+        {
+            "tag": "forge:toast"
+        },
+        {
+            "tag": "forge:unbreaded_chicken_patty"
+        },
+        {
+            "tag": "forge:unbreaded_chicken_patty"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:chicken_patty"
+        },
+        {
+            "item": "createfood:chicken_patty"
+        }
+    ]
+}

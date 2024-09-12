@@ -1,0 +1,20 @@
+{
+    "type": "create:mixing",
+    "ingredients": [
+        {
+            "tag": "forge:flour"
+        },
+        {
+            "tag": "forge:sugar"
+        },
+        {
+            "tag": "forge:eggs"
+        }
+    ],
+    "results": [
+        {
+            "count": 3,
+            "item": "createfood:sugar_dough"
+        }
+    ]
+}

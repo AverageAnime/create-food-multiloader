@@ -1,0 +1,9 @@
+{
+    "type": "minecraft:smoking",
+    "ingredient": {
+        "tag": "forge:raw_chorus_fruit_pie"
+    },
+    "result": "createfood:chorus_fruit_pie",
+    "experience": 0.95,
+    "cookingtime": 550
+}

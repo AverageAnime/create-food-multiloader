@@ -1,0 +1,17 @@
+{
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farm_and_charm"
+        }
+    ],
+    "type": "farm_and_charm:mincer",
+    "ingredient": {
+        "item": "minecraft:cocoa_beans"
+    },
+    "recipe_type": "STONE",
+    "result": {
+        "count": 8,
+        "item": "createfood:chocolate_chips"
+    }
+}

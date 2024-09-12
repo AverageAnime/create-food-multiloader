@@ -1,0 +1,26 @@
+{
+    "type": "create:compacting",
+    "heatRequirement": "heated",
+    "ingredients": [
+        {
+            "amount": 125,
+            "fluidTag": "forge:milk"
+        },
+        {
+            "amount": 250,
+            "fluid": "create:honey"
+        },
+        {
+            "tag": "forge:butter"
+        },
+        {
+            "tag": "forge:sweet_dough"
+        }
+    ],
+    "results": [
+        {
+            "count": 8,
+            "item": "createfood:graham_cracker"
+        }
+    ]
+}

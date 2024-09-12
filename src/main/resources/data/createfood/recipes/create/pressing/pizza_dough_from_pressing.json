@@ -1,0 +1,13 @@
+{
+    "type": "create:pressing",
+    "ingredients": [
+        {
+            "tag": "forge:salt_dough"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:pizza_dough"
+        }
+    ]
+}

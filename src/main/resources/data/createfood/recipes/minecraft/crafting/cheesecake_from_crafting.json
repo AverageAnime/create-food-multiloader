@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:cheesecake_slice"
+        },
+        {
+            "tag": "forge:cheesecake_slice"
+        },
+        {
+            "tag": "forge:cheesecake_slice"
+        },
+        {
+            "tag": "forge:cheesecake_slice"
+        }
+    ],
+    "result": {
+        "item": "createfood:cheesecake"
+    }
+}

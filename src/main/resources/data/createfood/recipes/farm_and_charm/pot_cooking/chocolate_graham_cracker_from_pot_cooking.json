@@ -1,0 +1,30 @@
+{
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farm_and_charm"
+        }
+    ],
+    "type": "farm_and_charm:pot_cooking",
+    "ingredients": [
+        {
+            "tag": "forge:milk_bottle"
+        },
+        {
+            "item": "minecraft:honey_bottle"
+        },
+        {
+            "tag": "forge:butter"
+        },
+        {
+            "tag": "forge:chocolate_sweet_dough"
+        }
+    ],
+    "container": {
+        "item": "minecraft:bowl"
+    },
+    "result": {
+        "count": 8,
+        "item": "createfood:chocolate_graham_cracker"
+    }
+}

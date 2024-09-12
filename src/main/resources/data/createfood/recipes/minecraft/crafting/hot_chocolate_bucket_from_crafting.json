@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:bucket"
+        },
+        {
+            "tag": "forge:hot_chocolate"
+        },
+        {
+            "tag": "forge:hot_chocolate"
+        },
+        {
+            "tag": "forge:hot_chocolate"
+        },
+        {
+            "tag": "forge:hot_chocolate"
+        }
+    ],
+    "result": {
+        "item": "createfood:hot_chocolate_bucket"
+    }
+}

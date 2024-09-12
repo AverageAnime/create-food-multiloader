@@ -1,0 +1,16 @@
+{
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "forge:bread_fried_egg"
+        },
+        {
+            "tag": "forge:hash_browns"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:fried_egg_hash_brown_sandwich"
+        }
+    ]
+}

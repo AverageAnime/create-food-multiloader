@@ -1,0 +1,23 @@
+{
+    "type": "create:mixing",
+    "heatRequirement": "heated",
+    "ingredients": [
+        {
+            "tag": "forge:gelatin"
+        },
+        {
+            "tag": "forge:gelatin"
+        },
+        {
+            "tag": "forge:gelatin"
+        },
+        {
+            "item": "minecraft:water_bucket"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:gelatin_mix_bucket"
+        }
+    ]
+}

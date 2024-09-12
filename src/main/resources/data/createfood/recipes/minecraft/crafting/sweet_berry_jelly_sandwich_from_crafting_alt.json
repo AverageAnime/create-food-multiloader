@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:bread_slice"
+        },
+        {
+            "tag": "forge:peanut_butter"
+        },
+        {
+            "tag": "forge:berry_jam_bottle"
+        },
+        {
+            "tag": "forge:bread_slice"
+        }
+    ],
+    "result": {
+        "item": "expandeddelight:sweet_berry_jelly_sandwich"
+    }
+}

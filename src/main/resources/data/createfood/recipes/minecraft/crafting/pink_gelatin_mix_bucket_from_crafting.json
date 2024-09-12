@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:gelatin_mix_bucket"
+        },
+        {
+            "tag": "forge:pink_dyes"
+        }
+    ],
+    "result": {
+        "item": "createfood:pink_gelatin_mix_bucket"
+    }
+}

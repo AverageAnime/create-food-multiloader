@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:beef"
+        },
+        {
+            "item": "minecraft:porkchop"
+        },
+        {
+            "item": "minecraft:chicken"
+        }
+    ],
+    "result": {
+        "count": 4,
+        "item": "createfood:sausage_meat"
+    }
+}

@@ -1,0 +1,19 @@
+{
+    "type": "farmersdelight:cooking",
+    "cookingtime": 50,
+    "experience": 0.5,
+    "ingredients": [
+        {
+            "tag": "forge:milk_bottle"
+        },
+        {
+            "tag": "forge:sugar"
+        },
+        {
+            "tag": "forge:cocoa_powder"
+        }
+    ],
+    "result": {
+        "item": "createfood:chocolate_cream_frosting_bottle"
+    }
+}

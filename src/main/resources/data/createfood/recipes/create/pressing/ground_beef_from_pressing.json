@@ -1,0 +1,14 @@
+{
+    "type": "create:pressing",
+    "ingredients": [
+        {
+            "item": "minecraft:beef"
+        }
+    ],
+    "results": [
+        {
+            "count": 2,
+            "item": "createfood:ground_beef"
+        }
+    ]
+}

@@ -1,0 +1,16 @@
+{
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "forge:hollow_dark_chocolate"
+        },
+        {
+            "tag": "forge:marshmallow"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:marshmallow_dark_chocolate"
+        }
+    ]
+}

@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:bread_slice_mutton"
+        },
+        {
+            "tag": "forge:beetroot"
+        }
+    ],
+    "result": {
+        "item": "createfood:bread_slice_mutton_beetroot"
+    }
+}

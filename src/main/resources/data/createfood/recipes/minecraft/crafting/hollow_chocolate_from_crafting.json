@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:chocolate_chips"
+        },
+        {
+            "tag": "forge:chocolate_chips"
+        },
+        {
+            "tag": "forge:chocolate_chips"
+        },
+        {
+            "tag": "forge:chocolate_chips"
+        }
+    ],
+    "result": {
+        "item": "createfood:hollow_chocolate"
+    }
+}

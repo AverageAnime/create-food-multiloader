@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:chocolate_sweet_roll_base"
+        },
+        {
+            "tag": "forge:apple_cream_frosting"
+        }
+    ],
+    "result": {
+        "item": "createfood:apple_cream_frosted_chocolate_sweet_roll"
+    }
+}

@@ -1,0 +1,16 @@
+{
+    "type": "create:mixing",
+    "ingredients": [
+        {
+            "tag": "forge:sugar"
+        },
+        {
+            "tag": "forge:milk_bottle"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:cream_frosting_bottle"
+        }
+    ]
+}

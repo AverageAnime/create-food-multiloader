@@ -1,0 +1,15 @@
+{
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "ubesdelight:cookie_ube"
+        }
+    ],
+    "type": "minecraft:smoking",
+    "cookingtime": 100,
+    "experience": 0.35,
+    "ingredient": {
+        "tag": "forge:raw_ube_cookie"
+    },
+    "result": "ubesdelight:cookie_ube"
+}

@@ -1,0 +1,9 @@
+{
+    "type": "minecraft:campfire_cooking",
+    "ingredient": {
+        "tag": "forge:shredded_potato"
+    },
+    "result": "createfood:hash_browns",
+    "experience": 0.25,
+    "cookingtime": 75
+}

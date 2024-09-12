@@ -1,0 +1,17 @@
+{
+    "type": "create:compacting",
+    "ingredients": [
+        {
+            "tag": "forge:sweet_dough"
+        },
+        {
+            "item": "minecraft:spider_eye"
+        }
+    ],
+    "results": [
+        {
+            "count": 8,
+            "item": "createfood:raw_spider_eye_cookie"
+        }
+    ]
+}

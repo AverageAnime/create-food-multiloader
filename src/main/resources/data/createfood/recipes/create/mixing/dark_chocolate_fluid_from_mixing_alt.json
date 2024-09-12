@@ -1,0 +1,15 @@
+{
+    "type": "create:mixing",
+    "ingredients": [
+        {
+            "amount": 250,
+            "fluid": "createfood:hot_dark_chocolate"
+        }
+    ],
+    "results": [
+        {
+            "amount": 250,
+            "fluid": "createfood:dark_chocolate"
+        }
+    ]
+}

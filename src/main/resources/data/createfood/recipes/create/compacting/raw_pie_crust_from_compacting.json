@@ -1,0 +1,26 @@
+{
+    "type": "create:compacting",
+    "ingredients": [
+        {
+            "amount": 250,
+            "fluidTag": "forge:milk"
+        },
+        {
+            "tag": "forge:flour"
+        },
+        {
+            "tag": "forge:flour"
+        },
+        {
+            "tag": "forge:flour"
+        },
+        {
+            "tag": "forge:butter"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:raw_pie_crust"
+        }
+    ]
+}

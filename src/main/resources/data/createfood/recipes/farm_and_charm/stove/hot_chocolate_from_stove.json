@@ -1,0 +1,23 @@
+{
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farm_and_charm"
+        }
+    ],
+    "type": "farm_and_charm:stove",
+    "ingredients": [
+        {
+            "tag": "forge:chocolate_bottle"
+        },
+        {
+            "tag": "forge:chocolate_bottle"
+        },
+        {
+            "tag": "forge:chocolate_bottle"
+        }
+    ],
+    "item": "createfood:hot_chocolate_bottle",
+    "count": 3,
+    "experience": 0.15
+}

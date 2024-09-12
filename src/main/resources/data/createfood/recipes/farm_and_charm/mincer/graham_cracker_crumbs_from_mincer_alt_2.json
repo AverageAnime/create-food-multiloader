@@ -1,0 +1,16 @@
+{
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farm_and_charm"
+        }
+    ],
+    "type": "farm_and_charm:mincer",
+    "ingredient": {
+        "tag": "forge:mini_graham_cracker_pie_crust"
+    },
+    "recipe_type": "STONE",
+    "result": {
+        "item": "createfood:graham_cracker_crumbs"
+    }
+}

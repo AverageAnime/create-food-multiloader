@@ -1,0 +1,23 @@
+{
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farm_and_charm"
+        }
+    ],
+    "type": "farm_and_charm:stove",
+    "ingredients": [
+        {
+            "tag": "forge:cheese_sandwich"
+        },
+        {
+            "tag": "forge:cheese_sandwich"
+        },
+        {
+            "tag": "forge:cheese_sandwich"
+        }
+    ],
+    "item": "createfood:grilled_cheese_sandwich",
+    "count": 3,
+    "experience": 0.15
+}

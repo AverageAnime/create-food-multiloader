@@ -1,0 +1,16 @@
+{
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "item": "minecraft:stick"
+        },
+        {
+            "tag": "forge:magma_cream_marshmallow"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:magma_cream_marshmallow_stick"
+        }
+    ]
+}

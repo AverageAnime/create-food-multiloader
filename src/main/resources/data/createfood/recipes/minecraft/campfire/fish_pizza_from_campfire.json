@@ -1,0 +1,9 @@
+{
+    "type": "minecraft:campfire_cooking",
+    "ingredient": {
+        "tag": "forge:raw_fish_pizza"
+    },
+    "result": "createfood:fish_pizza",
+    "experience": 0.2,
+    "cookingtime": 350
+}

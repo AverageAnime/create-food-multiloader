@@ -14,6 +14,7 @@ import net.minecraftforge.fluids.ForgeFlowingFluid;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 import net.averageanime.createfood.CreateFood;
+import vectorwing.farmersdelight.common.block.PieBlock;
 
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -37,7 +38,7 @@ public class ModCreativeTab {
         CREATIVE_TAB = REGISTER.register("base", () -> {
             return CreativeModeTab.builder().title(Components.literal("Create: Food"))
                     .withTabsBefore(AllCreativeModeTabs.BASE_CREATIVE_TAB.getKey(),AllCreativeModeTabs.PALETTES_CREATIVE_TAB.getKey())
-                    .icon(ModItems.APPLE_CREAM_CHOCOLATE_DONUT::asStack)
+                    .icon(ModItems.BREAKFAST_PLATE::asStack)
                     .displayItems(new DisplayItemsGenerator())
                     .build();
         });

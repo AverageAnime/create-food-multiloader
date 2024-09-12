@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:empty_buckets"
+        },
+        {
+            "tag": "forge:condensed_milk_bottle"
+        },
+        {
+            "tag": "forge:condensed_milk_bottle"
+        },
+        {
+            "tag": "forge:condensed_milk_bottle"
+        },
+        {
+            "tag": "forge:condensed_milk_bottle"
+        }
+    ],
+    "result": {
+        "item": "createfood:condensed_milk_bucket"
+    }
+}

@@ -1,0 +1,17 @@
+{
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "tag": "forge:sweet_roll_base"
+        },
+        {
+            "amount": 333,
+            "fluid": "createfood:cream_frosting"
+        }
+    ],
+    "results": [
+        {
+            "item": "create:sweet_roll"
+        }
+    ]
+}

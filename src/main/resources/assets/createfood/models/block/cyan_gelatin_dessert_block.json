@@ -1,5 +1,6 @@
 {
     "parent": "block/block",
+    "render_type": "translucent",
     "textures": {
         "particle": "createfood:block/cyan_gelatin_dessert_block",
         "down": "createfood:block/cyan_gelatin_dessert_block",

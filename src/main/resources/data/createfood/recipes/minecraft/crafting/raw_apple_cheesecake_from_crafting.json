@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:raw_cheesecake"
+        },
+        {
+            "tag": "forge:apple"
+        }
+    ],
+    "result": {
+        "item": "createfood:raw_apple_cheesecake"
+    }
+}

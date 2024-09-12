@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:hollow_white_chocolate"
+        },
+        {
+            "tag": "forge:berry_cream_frosting"
+        }
+    ],
+    "result": {
+        "item": "createfood:berry_cream_white_chocolate"
+    }
+}

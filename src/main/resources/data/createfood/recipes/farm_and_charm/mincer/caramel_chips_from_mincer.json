@@ -1,0 +1,17 @@
+{
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farm_and_charm"
+        }
+    ],
+    "type": "farm_and_charm:mincer",
+    "ingredient": {
+        "tag": "forge:caramel"
+    },
+    "recipe_type": "STONE",
+    "result": {
+        "count": 8,
+        "item": "createfood:caramel_chips"
+    }
+}

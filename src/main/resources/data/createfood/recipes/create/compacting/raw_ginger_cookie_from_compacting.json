@@ -1,0 +1,17 @@
+{
+    "type": "create:compacting",
+    "ingredients": [
+        {
+            "tag": "forge:sweet_dough"
+        },
+        {
+            "tag": "forge:foods/vegetables/ginger"
+        }
+    ],
+    "results": [
+        {
+            "count": 8,
+            "item": "createfood:raw_ginger_cookie"
+        }
+    ]
+}

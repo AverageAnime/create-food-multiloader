@@ -1,0 +1,9 @@
+{
+    "type": "minecraft:smelting",
+    "ingredient": {
+        "tag": "forge:raw_glow_berry_pie"
+    },
+    "result": "createfood:glow_berry_pie",
+    "experience": 0.95,
+    "cookingtime": 550
+}

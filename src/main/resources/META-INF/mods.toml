@@ -6,11 +6,11 @@ license="GPLv3"
 modId="createfood"
 version="${file.jarVersion}"
 displayName="Create: Food"
-displayURL="https://github.com/AverageAnime/create-metalwork"
+displayURL="https://github.com/AverageAnime/create-food"
 logoFile="icon.png"
 authors="average_anime"
 description='''
-An Addon for Create.
+Create: Food is an add-on for Farmer's Delight based on expanding food content found in Create, Farmer's Delight, and vanilla MC.
 '''
 
 [[dependencies.createfood]]

@@ -1,0 +1,130 @@
+{
+    "type": "minecraft:block",
+    "pools": [
+        {
+            "name": "cheesecake",
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "minecraft:item",
+                    "name": "createfood:cheesecake"
+                }
+            ],
+            "conditions": [
+                {
+                    "condition": "minecraft:inverted",
+                    "term": {
+                        "condition": "minecraft:match_tool",
+                        "predicate": {
+                            "tag": "forge:tools/knives"
+                        }
+                    }
+                },
+                {
+                    "condition": "minecraft:block_state_property",
+                    "block": "createfood:cheesecake",
+                    "properties": {
+                        "bites": "0"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "cheesecake_knife",
+            "rolls": 4,
+            "entries": [
+                {
+                    "type": "minecraft:item",
+                    "name": "createfood:cheesecake_slice"
+                }
+            ],
+            "conditions": [
+                {
+                    "condition": "minecraft:match_tool",
+                    "predicate": {
+                        "tag": "forge:tools/knives"
+                    }
+                },
+                {
+                    "condition": "minecraft:block_state_property",
+                    "block": "createfood:cheesecake",
+                    "properties": {
+                        "bites": "0"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "cheesecake_slice1",
+            "rolls": 3,
+            "entries": [
+                {
+                    "type": "minecraft:item",
+                    "name": "createfood:cheesecake_slice"
+                }
+            ],
+            "conditions": [
+                {
+                    "condition": "minecraft:match_tool",
+                    "predicate": {
+                        "tag": "forge:tools/knives"
+                    }
+                },
+                {
+                    "condition": "minecraft:block_state_property",
+                    "block": "createfood:cheesecake",
+                    "properties": {
+                        "bites": "1"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "cheesecake_slice2",
+            "rolls": 2,
+            "entries": [
+                {
+                    "type": "minecraft:item",
+                    "name": "createfood:cheesecake_slice"
+                }
+            ],
+            "conditions": [
+                {
+                    "condition": "minecraft:match_tool",
+                    "predicate": {
+                        "tag": "forge:tools/knives"
+                    }
+                },
+                {
+                    "condition": "minecraft:block_state_property",
+                    "block": "createfood:cheesecake",
+                    "properties": {
+                        "bites": "2"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "cheesecake_slice2",
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "minecraft:item",
+                    "name": "createfood:cheesecake_slice"
+                }
+            ],
+            "conditions": [
+                {
+                    "condition": "minecraft:survives_explosion"
+                },
+                {
+                    "condition": "minecraft:block_state_property",
+                    "block": "createfood:cheesecake",
+                    "properties": {
+                        "bites": "3"
+                    }
+                }
+            ]
+        }
+    ]
+}

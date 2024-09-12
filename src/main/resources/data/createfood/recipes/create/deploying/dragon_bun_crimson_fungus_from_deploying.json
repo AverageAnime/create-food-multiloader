@@ -1,0 +1,16 @@
+{
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "forge:dragon_bun"
+        },
+        {
+            "item": "minecraft:crimson_fungus"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:dragon_bun_crimson_fungus"
+        }
+    ]
+}

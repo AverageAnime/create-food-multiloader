@@ -1,0 +1,26 @@
+{
+    "type": "create:compacting",
+    "ingredients": [
+        {
+            "amount": 250,
+            "fluidTag": "forge:milk"
+        },
+        {
+            "tag": "forge:graham_cracker_crumbs"
+        },
+        {
+            "tag": "forge:graham_cracker_crumbs"
+        },
+        {
+            "tag": "forge:graham_cracker_crumbs"
+        },
+        {
+            "tag": "forge:butter"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:raw_graham_cracker_pie_crust"
+        }
+    ]
+}

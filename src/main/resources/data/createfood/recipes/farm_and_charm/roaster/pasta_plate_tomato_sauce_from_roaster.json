@@ -1,0 +1,20 @@
+{
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farm_and_charm"
+        }
+    ],
+    "type": "farm_and_charm:roaster",
+    "ingredients": [
+        {
+            "tag": "forge:raw_pasta"
+        }
+    ],
+    "container": {
+        "item": "farmersdelight:tomato_sauce"
+    },
+    "result": {
+        "item": "createfood:pasta_plate_tomato_sauce"
+    }
+}

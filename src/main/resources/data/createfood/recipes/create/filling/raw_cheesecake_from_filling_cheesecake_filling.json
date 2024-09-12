@@ -1,0 +1,17 @@
+{
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "tag": "forge:raw_graham_cracker_pie_crust"
+        },
+        {
+            "amount": 1000,
+            "fluid": "createfood:cheesecake_filling"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:raw_cheesecake"
+        }
+    ]
+}

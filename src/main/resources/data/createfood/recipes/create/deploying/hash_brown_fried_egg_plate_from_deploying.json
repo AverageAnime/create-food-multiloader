@@ -1,0 +1,16 @@
+{
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "forge:hash_brown_plate"
+        },
+        {
+            "tag": "forge:cooked_eggs"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:hash_brown_fried_egg_plate"
+        }
+    ]
+}
