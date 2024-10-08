@@ -1,17 +1,26 @@
 {
-    "type": "farmersdelight:cutting",
-    "ingredients": [
-        {
-            "tag": "forge:corn_kernel"
-        }
-    ],
-    "tool": {
-        "tag": "forge:tools/knives"
-    },
-    "result": [
-        {
-            "count": 2,
-            "item": "createfood:corn_flour"
-        }
-    ]
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:corn_kernel"
+      }
+    }
+  ],
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "tag": "forge:corn_kernel"
+    }
+  ],
+  "tool": {
+    "tag": "forge:tools/knives"
+  },
+  "result": [
+    {
+      "count": 2,
+      "item": "createfood:corn_flour"
+    }
+  ]
 }

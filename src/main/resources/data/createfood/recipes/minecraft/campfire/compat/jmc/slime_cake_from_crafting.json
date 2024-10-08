@@ -1,0 +1,24 @@
+{
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": [
+                "jmc"
+            ]
+        }
+    ],
+    "type": "minecraft:crafting",
+    "ingredients": [
+        {
+            "tag": "forge:frosted_cake"
+        },
+        {
+            "item": "minecraft:slime_ball"
+        }
+    ],
+    "results": [
+        {
+            "item": "jmc:slime_cake"
+        }
+    ]
+}

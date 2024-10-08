@@ -13,7 +13,7 @@
             "tag": "forge:lime_dyes"
         },
         {
-            "tag": "forge:water_buckets"
+            "tag": "forge:buckets/water"
         }
     ],
     "result": {

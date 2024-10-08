@@ -1,19 +1,28 @@
 {
-    "type": "create:milling",
-    "ingredients": [
-        {
-            "tag": "forge:chili_pepper"
-        }
-    ],
-    "processingTime": 80,
-    "results": [
-        {
-            "count": 2,
-            "item": "createfood:paprika"
-        },
-        {
-            "chance": 0.5,
-            "item": "createfood:paprika"
-        }
-    ]
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:chili_pepper"
+      }
+    }
+  ],
+  "type": "create:milling",
+  "ingredients": [
+    {
+      "tag": "forge:chili_pepper"
+    }
+  ],
+  "processingTime": 80,
+  "results": [
+    {
+      "count": 2,
+      "item": "createfood:paprika"
+    },
+    {
+      "chance": 0.5,
+      "item": "createfood:paprika"
+    }
+  ]
 }

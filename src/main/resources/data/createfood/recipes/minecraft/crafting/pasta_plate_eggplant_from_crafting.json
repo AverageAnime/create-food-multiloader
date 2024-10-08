@@ -1,14 +1,23 @@
 {
-    "type": "minecraft:crafting_shapeless",
-    "ingredients": [
-        {
-            "tag": "forge:pasta_plate"
-        },
-        {
-            "tag": "forge:cooked_eggplant"
-        }
-    ],
-    "result": {
-        "item": "createfood:pasta_plate_eggplant"
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:cooked_eggplant"
+      }
     }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "forge:pasta_plate"
+    },
+    {
+      "tag": "forge:cooked_eggplant"
+    }
+  ],
+  "result": {
+    "item": "createfood:pasta_plate_eggplant"
+  }
 }

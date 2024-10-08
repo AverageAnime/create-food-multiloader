@@ -7,7 +7,7 @@
             "tag": "forge:raw_pasta"
         },
         {
-            "tag": "forge:water_buckets"
+            "tag": "forge:buckets/water"
         }
     ],
     "result": {

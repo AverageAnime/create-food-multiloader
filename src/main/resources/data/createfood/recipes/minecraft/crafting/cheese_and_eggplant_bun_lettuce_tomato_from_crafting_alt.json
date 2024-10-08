@@ -1,23 +1,32 @@
 {
-    "type": "minecraft:crafting_shapeless",
-    "ingredients": [
-        {
-            "tag": "forge:bun"
-        },
-        {
-            "tag": "forge:tomato"
-        },
-        {
-            "tag": "forge:salad_ingredients"
-        },
-        {
-            "tag": "forge:cheeses"
-        },
-        {
-            "tag": "forge:cooked_eggplant"
-        }
-    ],
-    "result": {
-        "item": "createfood:cheese_and_eggplant_bun_lettuce_tomato"
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:cooked_eggplant"
+      }
     }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "forge:bun"
+    },
+    {
+      "tag": "forge:tomato"
+    },
+    {
+      "tag": "forge:salad_ingredients"
+    },
+    {
+      "tag": "forge:cheeses"
+    },
+    {
+      "tag": "forge:cooked_eggplant"
+    }
+  ],
+  "result": {
+    "item": "createfood:cheese_and_eggplant_bun_lettuce_tomato"
+  }
 }

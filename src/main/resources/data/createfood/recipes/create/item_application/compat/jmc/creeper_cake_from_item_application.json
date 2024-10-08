@@ -1,0 +1,24 @@
+{
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": [
+                "create"
+            ]
+        }
+    ],
+    "type": "create:item_application",
+    "ingredients": [
+        {
+            "tag": "forge:frosted_cake"
+        },
+        {
+            "item": "minecraft:gunpowder"
+        }
+    ],
+    "results": [
+        {
+            "item": "jmc:creeper_cake"
+        }
+    ]
+}

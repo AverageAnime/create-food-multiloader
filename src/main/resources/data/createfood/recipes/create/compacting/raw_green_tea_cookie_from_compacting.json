@@ -1,17 +1,26 @@
 {
-    "type": "create:compacting",
-    "ingredients": [
-        {
-            "tag": "forge:sweet_dough"
-        },
-        {
-            "tag": "forge:crops/green_tea_leaves"
-        }
-    ],
-    "results": [
-        {
-            "count": 8,
-            "item": "createfood:raw_green_tea_cookie"
-        }
-    ]
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:crops/green_tea_leaves"
+      }
+    }
+  ],
+  "type": "create:compacting",
+  "ingredients": [
+    {
+      "tag": "forge:sweet_dough"
+    },
+    {
+      "tag": "forge:crops/green_tea_leaves"
+    }
+  ],
+  "results": [
+    {
+      "count": 8,
+      "item": "createfood:raw_green_tea_cookie"
+    }
+  ]
 }

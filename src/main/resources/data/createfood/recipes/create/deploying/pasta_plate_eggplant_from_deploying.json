@@ -1,16 +1,25 @@
 {
-    "type": "create:deploying",
-    "ingredients": [
-        {
-            "tag": "forge:pasta_plate"
-        },
-        {
-            "tag": "forge:cooked_eggplant"
-        }
-    ],
-    "results": [
-        {
-            "item": "createfood:pasta_plate_eggplant"
-        }
-    ]
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:cooked_eggplant"
+      }
+    }
+  ],
+  "type": "create:deploying",
+  "ingredients": [
+    {
+      "tag": "forge:pasta_plate"
+    },
+    {
+      "tag": "forge:cooked_eggplant"
+    }
+  ],
+  "results": [
+    {
+      "item": "createfood:pasta_plate_eggplant"
+    }
+  ]
 }

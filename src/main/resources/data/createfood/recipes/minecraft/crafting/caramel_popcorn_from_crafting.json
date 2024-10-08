@@ -1,14 +1,23 @@
 {
-    "type": "minecraft:crafting_shapeless",
-    "ingredients": [
-        {
-            "tag": "forge:popcorn"
-        },
-        {
-            "tag": "forge:caramel"
-        }
-    ],
-    "result": {
-        "item": "createfood:caramel_popcorn"
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:popcorn"
+      }
     }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "forge:popcorn"
+    },
+    {
+      "tag": "forge:caramel"
+    }
+  ],
+  "result": {
+    "item": "createfood:caramel_popcorn"
+  }
 }

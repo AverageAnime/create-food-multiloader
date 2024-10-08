@@ -85,6 +85,7 @@ public class ModBlocks {
     public static final BlockEntry<CakeBaseBlock> UBE_CAKE_BASE = REGISTRATE.block("ube_cake_base", CakeBaseBlock::new).item().build().register();
 
     public static final BlockEntry<CakeBaseBlock> BERRY_CREAM_FROSTED_CAKE = REGISTRATE.block("berry_cream_frosted_cake", CakeBaseBlock::new).item().build().register();
+    public static final BlockEntry<CakeBaseBlock> CHOCOLATE_CREAM_FROSTED_CAKE = REGISTRATE.block("chocolate_cream_frosted_cake", CakeBaseBlock::new).item().build().register();
     public static final BlockEntry<CakeBaseBlock> CHORUS_FRUIT_CREAM_FROSTED_CAKE = REGISTRATE.block("chorus_fruit_cream_frosted_cake", CakeBaseBlock::new).item().build().register();
     public static final BlockEntry<CakeBaseBlock> FROSTED_CAKE = REGISTRATE.block("frosted_cake", CakeBaseBlock::new).item().build().register();
     public static final BlockEntry<CakeBaseBlock> GLOW_BERRY_CREAM_CREAM_FROSTED_CAKE = REGISTRATE.block("glow_berry_cream_frosted_cake", CakeBaseBlock::new).item().build().register();
@@ -95,6 +96,12 @@ public class ModBlocks {
     public static final BlockEntry<BerryCreamCakeSweetBerryBlock> BERRY_CREAM_CAKE_SWEET_BERRY = REGISTRATE.block("berry_cream_cake_sweet_berry", BerryCreamCakeSweetBerryBlock::new).item().build().register();
     public static final BlockEntry<BerryCreamCakeChorusFruitBlock> BERRY_CREAM_CAKE_CHORUS_FRUIT = REGISTRATE.block("berry_cream_cake_chorus_fruit", BerryCreamCakeChorusFruitBlock::new).item().build().register();
     public static final BlockEntry<BerryCreamCakeGlowBerryBlock> BERRY_CREAM_CAKE_GLOW_BERRY = REGISTRATE.block("berry_cream_cake_glow_berry", BerryCreamCakeGlowBerryBlock::new).item().build().register();
+    public static final BlockEntry<ChocolateCreamCakeButterscotchBlock> CHOCOLATE_CREAM_CAKE_BUTTERSCOTCH = REGISTRATE.block("chocolate_cream_cake_butterscotch", ChocolateCreamCakeButterscotchBlock::new).item().build().register();
+    public static final BlockEntry<ChocolateCreamCakeCaramelBlock> CHOCOLATE_CREAM_CAKE_CARAMEL = REGISTRATE.block("chocolate_cream_cake_caramel", ChocolateCreamCakeCaramelBlock::new).item().build().register();
+    public static final BlockEntry<ChocolateCreamCakeChocolateBlock> CHOCOLATE_CREAM_CAKE_CHOCOLATE = REGISTRATE.block("chocolate_cream_cake_chocolate", ChocolateCreamCakeChocolateBlock::new).item().build().register();
+    public static final BlockEntry<ChocolateCreamCakeDarkChocolateBlock> CHOCOLATE_CREAM_CAKE_DARK_CHOCOLATE = REGISTRATE.block("chocolate_cream_cake_dark_chocolate", ChocolateCreamCakeDarkChocolateBlock::new).item().build().register();
+    public static final BlockEntry<ChocolateCreamCakeToffeeBlock> CHOCOLATE_CREAM_CAKE_TOFFEE = REGISTRATE.block("chocolate_cream_cake_toffee", ChocolateCreamCakeToffeeBlock::new).item().build().register();
+    public static final BlockEntry<ChocolateCreamCakeWhiteChocolateBlock> CHOCOLATE_CREAM_CAKE_WHITE_CHOCOLATE = REGISTRATE.block("chocolate_cream_cake_white_chocolate", ChocolateCreamCakeWhiteChocolateBlock::new).item().build().register();
     public static final BlockEntry<ChorusFruitCreamCakeSweetBerryBlock> CHORUS_FRUIT_CREAM_CAKE_SWEET_BERRY = REGISTRATE.block("chorus_fruit_cream_cake_sweet_berry", ChorusFruitCreamCakeSweetBerryBlock::new).item().build().register();
     public static final BlockEntry<ChorusFruitCreamCakeChorusFruitBlock> CHORUS_FRUIT_CREAM_CAKE_CHORUS_FRUIT = REGISTRATE.block("chorus_fruit_cream_cake_chorus_fruit", ChorusFruitCreamCakeChorusFruitBlock::new).item().build().register();
     public static final BlockEntry<ChorusFruitCreamCakeGlowBerryBlock> CHORUS_FRUIT_CREAM_CAKE_GLOW_BERRY = REGISTRATE.block("chorus_fruit_cream_cake_glow_berry", ChorusFruitCreamCakeGlowBerryBlock::new).item().build().register();

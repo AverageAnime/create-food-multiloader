@@ -1,22 +1,22 @@
 {
-    "conditions": [
-        {
-            "type": "forge:mod_loaded",
-            "modid": "expandeddelight"
-        }
-    ],
-    "type": "create:deploying",
-    "ingredients": [
-        {
-            "tag": "forge:bread_slice_peanut_butter"
-        },
-        {
-            "tag": "forge:bread_slice_glow_berry_jam"
-        }
-    ],
-    "results": [
-        {
-            "item": "expandeddelight:glow_berry_jelly_sandwich"
-        }
-    ]
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "expandeddelight"
+    }
+  ],
+  "type": "create:deploying",
+  "ingredients": [
+    {
+      "tag": "forge:bread_slice_peanut_butter"
+    },
+    {
+      "tag": "forge:bread_slice_glow_berry_jam"
+    }
+  ],
+  "results": [
+    {
+      "item": "expandeddelight:glow_berry_jelly_sandwich"
+    }
+  ]
 }

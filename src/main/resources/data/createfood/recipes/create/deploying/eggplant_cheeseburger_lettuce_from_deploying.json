@@ -1,16 +1,25 @@
 {
-    "type": "create:deploying",
-    "ingredients": [
-        {
-            "tag": "forge:cheese_and_eggplant_bun_lettuce"
-        },
-        {
-            "tag": "forge:bun"
-        }
-    ],
-    "results": [
-        {
-            "item": "createfood:eggplant_cheeseburger_lettuce"
-        }
-    ]
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:cheese_and_eggplant_bun"
+      }
+    }
+  ],
+  "type": "create:deploying",
+  "ingredients": [
+    {
+      "tag": "forge:cheese_and_eggplant_bun_lettuce"
+    },
+    {
+      "tag": "forge:bun"
+    }
+  ],
+  "results": [
+    {
+      "item": "createfood:eggplant_cheeseburger_lettuce"
+    }
+  ]
 }

@@ -1,14 +1,23 @@
 {
-    "type": "minecraft:crafting_shapeless",
-    "ingredients": [
-        {
-            "tag": "forge:chicken_nuggets"
-        },
-        {
-            "tag": "forge:chili_pepper"
-        }
-    ],
-    "result": {
-        "item": "createfood:spicy_chicken_nuggets"
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:chili_pepper"
+      }
     }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "forge:chicken_nuggets"
+    },
+    {
+      "tag": "forge:chili_pepper"
+    }
+  ],
+  "result": {
+    "item": "createfood:spicy_chicken_nuggets"
+  }
 }

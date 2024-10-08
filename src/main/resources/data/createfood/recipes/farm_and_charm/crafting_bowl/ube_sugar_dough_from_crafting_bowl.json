@@ -1,24 +1,24 @@
 {
-    "conditions": [
-        {
-            "type": "forge:mod_loaded",
-            "modid": "farm_and_charm"
-        }
-    ],
-    "type": "farm_and_charm:crafting_bowl",
-    "ingredients": [
-        {
-            "tag": "forge:foods/vegetables/ube"
-        },
-        {
-            "tag": "forge:sugar"
-        },
-        {
-            "tag": "forge:water_buckets"
-        }
-    ],
-    "result": {
-        "item": "createfood:ube_sugar_dough",
-        "count": 3
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "farm_and_charm"
     }
+  ],
+  "type": "farm_and_charm:crafting_bowl",
+  "ingredients": [
+    {
+      "tag": "forge:foods/vegetables/ube"
+    },
+    {
+      "tag": "forge:sugar"
+    },
+    {
+      "tag": "forge:buckets/water"
+    }
+  ],
+  "result": {
+    "item": "createfood:ube_sugar_dough",
+    "count": 3
+  }
 }

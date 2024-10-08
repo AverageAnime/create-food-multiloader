@@ -1,15 +1,24 @@
 {
-    "type": "minecraft:crafting_shapeless",
-    "ingredients": [
-        {
-            "tag": "forge:sweet_dough"
-        },
-        {
-            "tag": "forge:crops/green_tea_leaves"
-        }
-    ],
-    "result": {
-        "count": 8,
-        "item": "createfood:raw_green_tea_cookie"
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:crops/green_tea_leaves"
+      }
     }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "forge:sweet_dough"
+    },
+    {
+      "tag": "forge:crops/green_tea_leaves"
+    }
+  ],
+  "result": {
+    "count": 8,
+    "item": "createfood:raw_green_tea_cookie"
+  }
 }

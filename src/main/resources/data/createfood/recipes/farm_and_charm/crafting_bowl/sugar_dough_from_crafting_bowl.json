@@ -14,7 +14,7 @@
             "tag": "forge:sugar"
         },
         {
-            "tag": "forge:water_buckets"
+            "tag": "forge:buckets/water"
         }
     ],
     "result": {

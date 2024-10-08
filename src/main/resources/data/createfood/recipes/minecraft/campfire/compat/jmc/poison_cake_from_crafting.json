@@ -1,0 +1,24 @@
+{
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": [
+                "jmc"
+            ]
+        }
+    ],
+    "type": "minecraft:crafting",
+    "ingredients": [
+        {
+            "item": "minecraft:cake"
+        },
+        {
+            "item": "minecraft:spider_eye"
+        }
+    ],
+    "results": [
+        {
+            "item": "jmc:poison_cake"
+        }
+    ]
+}

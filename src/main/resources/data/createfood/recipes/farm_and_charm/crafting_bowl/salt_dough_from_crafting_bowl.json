@@ -14,7 +14,7 @@
             "tag": "forge:salt"
         },
         {
-            "tag": "forge:water_buckets"
+            "tag": "forge:buckets/water"
         }
     ],
     "result": {

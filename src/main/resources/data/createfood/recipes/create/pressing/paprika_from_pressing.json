@@ -1,14 +1,23 @@
 {
-    "type": "create:pressing",
-    "ingredients": [
-        {
-            "tag": "forge:chili_pepper"
-        }
-    ],
-    "results": [
-        {
-            "count": 2,
-            "item": "createfood:paprika"
-        }
-    ]
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:chili_pepper"
+      }
+    }
+  ],
+  "type": "create:pressing",
+  "ingredients": [
+    {
+      "tag": "forge:chili_pepper"
+    }
+  ],
+  "results": [
+    {
+      "count": 2,
+      "item": "createfood:paprika"
+    }
+  ]
 }

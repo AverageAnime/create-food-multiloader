@@ -1,27 +1,27 @@
 {
-    "conditions": [
-        {
-            "type": "forge:mod_loaded",
-            "modid": "expandeddelight"
-        }
-    ],
-    "type": "create:compacting",
-    "heatRequirement": "heated",
-    "ingredients": [
-        {
-            "tag": "forge:sugar"
-        },
-        {
-            "tag": "forge:sweet_dough"
-        },
-        {
-            "tag": "forge:ground_cinnamon"
-        }
-    ],
-    "results": [
-        {
-            "count": 8,
-            "item": "expandeddelight:snickerdoodle"
-        }
-    ]
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "expandeddelight"
+    }
+  ],
+  "type": "create:compacting",
+  "heatRequirement": "heated",
+  "ingredients": [
+    {
+      "tag": "forge:sugar"
+    },
+    {
+      "tag": "forge:sweet_dough"
+    },
+    {
+      "tag": "forge:ground_cinnamon"
+    }
+  ],
+  "results": [
+    {
+      "count": 8,
+      "item": "expandeddelight:snickerdoodle"
+    }
+  ]
 }

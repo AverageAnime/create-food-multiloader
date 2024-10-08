@@ -1,0 +1,16 @@
+{
+    "type": "create:item_application",
+    "ingredients": [
+        {
+            "tag": "forge:chocolate_cream_frosted_cake"
+        },
+        {
+            "tag": "forge:butterscotch_chips"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:chocolate_cream_cake_butterscotch"
+        }
+    ]
+}

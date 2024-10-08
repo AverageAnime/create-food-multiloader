@@ -1,17 +1,26 @@
 {
-    "type": "create:filling",
-    "ingredients": [
-        {
-            "tag": "forge:peanut_butter_sandwich"
-        },
-        {
-            "amount": 125,
-            "fluid": "createfood:chorus_fruit_jam"
-        }
-    ],
-    "results": [
-        {
-            "item": "createfood:peanut_butter_chorus_fruit_jam_sandwich"
-        }
-    ]
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:peanut_butter"
+      }
+    }
+  ],
+  "type": "create:filling",
+  "ingredients": [
+    {
+      "tag": "forge:peanut_butter_sandwich"
+    },
+    {
+      "amount": 125,
+      "fluid": "createfood:chorus_fruit_jam"
+    }
+  ],
+  "results": [
+    {
+      "item": "createfood:peanut_butter_chorus_fruit_jam_sandwich"
+    }
+  ]
 }

@@ -17,7 +17,7 @@
             "tag": "forge:cocoa_powder"
         },
         {
-            "tag": "forge:water_buckets"
+            "tag": "forge:buckets/water"
         }
     ],
     "result": {

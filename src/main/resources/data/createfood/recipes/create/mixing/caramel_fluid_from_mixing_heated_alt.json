@@ -1,0 +1,15 @@
+{
+    "type": "create:mixing",
+    "heatRequirement": "heated",
+    "ingredients": [
+        {
+            "tag": "forge:caramel"
+        }
+    ],
+    "results": [
+        {
+            "amount": 500,
+            "fluid": "createfood:caramel"
+        }
+    ]
+}

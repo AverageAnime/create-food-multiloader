@@ -17,7 +17,7 @@
             "tag": "forge:molasses_bottle"
         },
         {
-            "tag": "forge:water_buckets"
+            "tag": "forge:buckets/water"
         }
     ],
     "result": {

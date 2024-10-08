@@ -1,19 +1,28 @@
 {
-    "type": "create:milling",
-    "ingredients": [
-        {
-            "tag": "forge:dried_coffee_beans"
-        }
-    ],
-    "processingTime": 80,
-    "results": [
-        {
-            "count": 2,
-            "item": "createfood:espresso_powder"
-        },
-        {
-            "chance": 0.5,
-            "item": "createfood:espresso_powder"
-        }
-    ]
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:coffee_beans"
+      }
+    }
+  ],
+  "type": "create:milling",
+  "ingredients": [
+    {
+      "tag": "forge:dried_coffee_beans"
+    }
+  ],
+  "processingTime": 80,
+  "results": [
+    {
+      "count": 2,
+      "item": "createfood:espresso_powder"
+    },
+    {
+      "chance": 0.5,
+      "item": "createfood:espresso_powder"
+    }
+  ]
 }

@@ -2,19 +2,23 @@
   "replace": false,
   "values": [
     {
-      "id": "#c:apple",
+      "id": "#forge:apple",
       "required": false
     },
     {
-      "id": "#c:melon",
+      "id": "#forge:melon",
       "required": false
     },
     {
-      "id": "#c:chorus_fruit",
+      "id": "#forge:chorus_fruit",
       "required": false
     },
     {
-      "id": "#c:foods/berries",
+      "id": "minecraft:glow_berries",
+      "required": false
+    },
+    {
+      "id": "minecraft:sweet_berries",
       "required": false
     }
   ]

@@ -1,0 +1,17 @@
+{
+    "type": "farmersdelight:cutting",
+    "ingredients": [
+        {
+            "tag": "forge:chocolate_cream_cake_dark_chocolate"
+        }
+    ],
+    "tool": {
+        "tag": "forge:tools/knives"
+    },
+    "result": [
+        {
+            "count": 7,
+            "item": "createfood:chocolate_cream_cake_slice_dark_chocolate"
+        }
+    ]
+}

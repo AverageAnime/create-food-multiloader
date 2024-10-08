@@ -1,17 +1,26 @@
 {
-    "type": "create:compacting",
-    "ingredients": [
-        {
-            "tag": "forge:sweet_dough"
-        },
-        {
-            "tag": "forge:foods/vegetables/ube"
-        }
-    ],
-    "results": [
-        {
-            "count": 8,
-            "item": "createfood:raw_ube_cookie"
-        }
-    ]
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:foods/vegetables/ube"
+      }
+    }
+  ],
+  "type": "create:compacting",
+  "ingredients": [
+    {
+      "tag": "forge:sweet_dough"
+    },
+    {
+      "tag": "forge:foods/vegetables/ube"
+    }
+  ],
+  "results": [
+    {
+      "count": 8,
+      "item": "createfood:raw_ube_cookie"
+    }
+  ]
 }

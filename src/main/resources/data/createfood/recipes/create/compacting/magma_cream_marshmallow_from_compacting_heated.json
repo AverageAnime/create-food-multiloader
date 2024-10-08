@@ -1,21 +1,30 @@
 {
-    "type": "create:compacting",
-    "heatRequirement": "heated",
-    "ingredients": [
-        {
-            "tag": "forge:sugar"
-        },
-        {
-            "amount": 83,
-            "fluid": "minecraft:water"
-        },
-        {
-            "item": "nethersdelight:magma_gelatin"
-        }
-    ],
-    "results": [
-        {
-            "item": "createfood:magma_cream_marshmallow"
-        }
-    ]
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:magma_gelatin"
+      }
+    }
+  ],
+  "type": "create:compacting",
+  "heatRequirement": "heated",
+  "ingredients": [
+    {
+      "tag": "forge:sugar"
+    },
+    {
+      "amount": 83,
+      "fluid": "minecraft:water"
+    },
+    {
+      "tag": "forge:magma_gelatin"
+    }
+  ],
+  "results": [
+    {
+      "item": "createfood:magma_cream_marshmallow"
+    }
+  ]
 }

@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "minecraft:red_dye",
+      "required": false
+    }
+  ]
+}

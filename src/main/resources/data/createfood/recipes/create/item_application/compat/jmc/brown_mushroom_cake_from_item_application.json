@@ -1,0 +1,24 @@
+{
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": [
+                "create"
+            ]
+        }
+    ],
+    "type": "create:item_application",
+    "ingredients": [
+        {
+            "tag": "forge:frosted_cake"
+        },
+        {
+            "item": "minecraft:brown_mushroom"
+        }
+    ],
+    "results": [
+        {
+            "item": "jmc:brown_mushroom_cake"
+        }
+    ]
+}

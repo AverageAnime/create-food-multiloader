@@ -1,14 +1,23 @@
 {
-    "type": "create:pressing",
-    "ingredients": [
-        {
-            "tag": "forge:dried_coffee_beans"
-        }
-    ],
-    "results": [
-        {
-            "count": 2,
-            "item": "createfood:espresso_powder"
-        }
-    ]
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:coffee_beans"
+      }
+    }
+  ],
+  "type": "create:pressing",
+  "ingredients": [
+    {
+      "tag": "forge:dried_coffee_beans"
+    }
+  ],
+  "results": [
+    {
+      "count": 2,
+      "item": "createfood:espresso_powder"
+    }
+  ]
 }

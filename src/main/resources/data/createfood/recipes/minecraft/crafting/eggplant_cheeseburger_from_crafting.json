@@ -1,14 +1,23 @@
 {
-    "type": "minecraft:crafting_shapeless",
-    "ingredients": [
-        {
-            "tag": "forge:cheese_and_eggplant_bun"
-        },
-        {
-            "tag": "forge:bun"
-        }
-    ],
-    "result": {
-        "item": "createfood:eggplant_cheeseburger"
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:cheese_and_eggplant_bun"
+      }
     }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "forge:cheese_and_eggplant_bun"
+    },
+    {
+      "tag": "forge:bun"
+    }
+  ],
+  "result": {
+    "item": "createfood:eggplant_cheeseburger"
+  }
 }

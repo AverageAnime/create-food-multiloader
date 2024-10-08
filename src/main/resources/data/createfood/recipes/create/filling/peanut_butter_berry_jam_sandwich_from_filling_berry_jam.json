@@ -1,23 +1,23 @@
 {
-    "conditions": [
-        {
-            "type": "forge:mod_loaded",
-            "modid": "expandeddelight"
-        }
-    ],
-    "type": "create:filling",
-    "ingredients": [
-        {
-            "tag": "forge:peanut_butter_sandwich"
-        },
-        {
-            "amount": 125,
-            "fluid": "createfood:berry_jam"
-        }
-    ],
-    "results": [
-        {
-            "item": "expandeddelight:sweet_berry_jelly_sandwich"
-        }
-    ]
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "expandeddelight"
+    }
+  ],
+  "type": "create:filling",
+  "ingredients": [
+    {
+      "tag": "forge:peanut_butter_sandwich"
+    },
+    {
+      "amount": 125,
+      "fluid": "createfood:berry_jam"
+    }
+  ],
+  "results": [
+    {
+      "item": "expandeddelight:sweet_berry_jelly_sandwich"
+    }
+  ]
 }

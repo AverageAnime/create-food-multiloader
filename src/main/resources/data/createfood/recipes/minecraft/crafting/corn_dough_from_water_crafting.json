@@ -2,7 +2,7 @@
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {
-            "tag": "forge:water_buckets"
+            "tag": "forge:buckets/water"
         },
         {
             "tag": "forge:corn"

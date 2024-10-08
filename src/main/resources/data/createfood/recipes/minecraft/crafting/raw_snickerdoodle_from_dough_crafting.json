@@ -1,18 +1,27 @@
 {
-    "type": "minecraft:crafting_shapeless",
-    "ingredients": [
-        {
-            "tag": "forge:sweet_dough"
-        },
-        {
-            "tag": "forge:sugar"
-        },
-        {
-            "tag": "forge:ground_cinnamon"
-        }
-    ],
-    "result": {
-        "count": 8,
-        "item": "createfood:raw_snickerdoodle"
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:ground_cinnamon"
+      }
     }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "forge:sweet_dough"
+    },
+    {
+      "tag": "forge:sugar"
+    },
+    {
+      "tag": "forge:ground_cinnamon"
+    }
+  ],
+  "result": {
+    "count": 8,
+    "item": "createfood:raw_snickerdoodle"
+  }
 }

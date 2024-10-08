@@ -1,19 +1,28 @@
 {
-    "type": "create:mixing",
-    "ingredients": [
-        {
-            "tag": "forge:sugar"
-        },
-        {
-            "tag": "forge:sweet_dough"
-        },
-        {
-            "tag": "forge:ground_cinnamon"
-        }
-    ],
-    "results": [
-        {
-            "item": "createfood:raw_cinnamon_sweet_roll_base"
-        }
-    ]
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:ground_cinnamon"
+      }
+    }
+  ],
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "tag": "forge:sugar"
+    },
+    {
+      "tag": "forge:sweet_dough"
+    },
+    {
+      "tag": "forge:ground_cinnamon"
+    }
+  ],
+  "results": [
+    {
+      "item": "createfood:raw_cinnamon_sweet_roll_base"
+    }
+  ]
 }

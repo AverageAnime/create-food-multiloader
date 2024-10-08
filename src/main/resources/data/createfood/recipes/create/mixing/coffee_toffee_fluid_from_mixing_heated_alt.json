@@ -1,0 +1,15 @@
+{
+    "type": "create:mixing",
+    "heatRequirement": "heated",
+    "ingredients": [
+        {
+            "tag": "forge:coffee_toffee"
+        }
+    ],
+    "results": [
+        {
+            "amount": 500,
+            "fluid": "createfood:coffee_toffee"
+        }
+    ]
+}
