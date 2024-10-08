@@ -1,26 +1,26 @@
 {
-  "conditions": [
-    {
-      "type": "forge:mod_loaded",
-      "modid": "farm_and_charm"
-    }
-  ],
-  "type": "farm_and_charm:pot_cooking",
-  "ingredients": [
-    {
-      "tag": "forge:sugar"
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farm_and_charm"
+        }
+    ],
+    "type": "farm_and_charm:pot_cooking",
+    "ingredients": [
+        {
+            "tag": "forge:sugar"
+        },
+        {
+            "tag": "forge:buckets/water"
+        },
+        {
+            "tag": "forge:magma_gelatin"
+        }
+    ],
+    "container": {
+        "item": "minecraft:bowl"
     },
-    {
-      "tag": "forge:buckets/water"
-    },
-    {
-      "tag": "forge:magma_gelatin"
+    "result": {
+        "item": "createfood:magma_cream_marshmallow"
     }
-  ],
-  "container": {
-    "item": "minecraft:bowl"
-  },
-  "result": {
-    "item": "createfood:magma_cream_marshmallow"
-  }
 }

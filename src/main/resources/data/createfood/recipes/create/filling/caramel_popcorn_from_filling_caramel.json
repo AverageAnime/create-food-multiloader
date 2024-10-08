@@ -1,26 +1,26 @@
 {
-  "conditions": [
-    {
-      "type": "forge:not",
-      "value": {
-        "type": "forge:tag_empty",
-        "tag": "forge:popcorn"
-      }
-    }
-  ],
-  "type": "create:filling",
-  "ingredients": [
-    {
-      "tag": "forge:popcorn"
-    },
-    {
-      "amount": 125,
-      "fluid": "createfood:caramel"
-    }
-  ],
-  "results": [
-    {
-      "item": "createfood:caramel_popcorn"
-    }
-  ]
+    "conditions": [
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:popcorn"
+            }
+        }
+    ],
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "tag": "forge:popcorn"
+        },
+        {
+            "amount": 125,
+            "fluid": "createfood:caramel"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:caramel_popcorn"
+        }
+    ]
 }

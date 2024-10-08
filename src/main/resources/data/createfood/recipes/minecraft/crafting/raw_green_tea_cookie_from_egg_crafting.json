@@ -1,27 +1,27 @@
 {
-  "conditions": [
-    {
-      "type": "forge:not",
-      "value": {
-        "type": "forge:tag_empty",
-        "tag": "forge:crops/green_tea_leaves"
-      }
+    "conditions": [
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:crops/green_tea_leaves"
+            }
+        }
+    ],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:wheat"
+        },
+        {
+            "tag": "forge:crops/green_tea_leaves"
+        },
+        {
+            "tag": "forge:eggs"
+        }
+    ],
+    "result": {
+        "count": 8,
+        "item": "createfood:raw_green_tea_cookie"
     }
-  ],
-  "type": "minecraft:crafting_shapeless",
-  "ingredients": [
-    {
-      "item": "minecraft:wheat"
-    },
-    {
-      "tag": "forge:crops/green_tea_leaves"
-    },
-    {
-      "tag": "forge:eggs"
-    }
-  ],
-  "result": {
-    "count": 8,
-    "item": "createfood:raw_green_tea_cookie"
-  }
 }

@@ -1,18 +1,18 @@
 {
-  "conditions": [
-    {
-      "type": "forge:not",
-      "value": {
-        "type": "forge:tag_empty",
+    "conditions": [
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:coffee_beans"
+            }
+        }
+    ],
+    "type": "minecraft:campfire_cooking",
+    "ingredient": {
         "tag": "forge:coffee_beans"
-      }
-    }
-  ],
-  "type": "minecraft:campfire_cooking",
-  "ingredient": {
-    "tag": "forge:coffee_beans"
-  },
-  "result": "createfood:dried_coffee_beans",
-  "experience": 0.1,
-  "cookingtime": 25
+    },
+    "result": "createfood:dried_coffee_beans",
+    "experience": 0.1,
+    "cookingtime": 25
 }

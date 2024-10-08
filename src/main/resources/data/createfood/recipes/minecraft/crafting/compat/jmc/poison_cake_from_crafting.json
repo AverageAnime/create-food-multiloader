@@ -5,18 +5,18 @@
             "modid": "jmc"
         }
     ],
-    "type": "create:item_application",
+    "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {
-            "tag": "forge:frosted_cake"
+            "item": "minecraft:cake"
         },
         {
-            "item": "minecraft:obsidian"
+            "item": "minecraft:spider_eye"
         }
     ],
     "results": [
         {
-            "item": "jmc:obsidian_cake"
+            "item": "jmc:poison_cake"
         }
     ]
 }

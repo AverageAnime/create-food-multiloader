@@ -1,25 +1,25 @@
 {
-  "conditions": [
-    {
-      "type": "forge:not",
-      "value": {
-        "type": "forge:tag_empty",
-        "tag": "forge:peanut_butter"
-      }
-    }
-  ],
-  "type": "create:deploying",
-  "ingredients": [
-    {
-      "tag": "forge:bread_slice"
-    },
-    {
-      "tag": "forge:peanut_butter"
-    }
-  ],
-  "results": [
-    {
-      "item": "createfood:bread_slice_peanut_butter"
-    }
-  ]
+    "conditions": [
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:peanut_butter"
+            }
+        }
+    ],
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "forge:bread_slice"
+        },
+        {
+            "tag": "forge:peanut_butter"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:bread_slice_peanut_butter"
+        }
+    ]
 }

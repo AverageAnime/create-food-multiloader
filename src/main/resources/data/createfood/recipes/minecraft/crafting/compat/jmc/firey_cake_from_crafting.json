@@ -2,23 +2,21 @@
     "conditions": [
         {
             "type": "forge:mod_loaded",
-            "modid": [
-                "jmc"
-            ]
+            "modid": "jmc"
         }
     ],
-    "type": "minecraft:crafting",
+    "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {
             "tag": "forge:frosted_cake"
         },
         {
-            "item": "minecraft:pumpkin"
+            "item": "minecraft:magma_cream"
         }
     ],
     "results": [
         {
-            "item": "jmc:pumpkin_cake"
+            "item": "jmc:firey_cake"
         }
     ]
 }

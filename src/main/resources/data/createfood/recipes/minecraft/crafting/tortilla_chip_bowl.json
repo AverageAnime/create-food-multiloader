@@ -1,26 +1,26 @@
 {
-  "conditions": [
-    {
-      "type": "forge:not",
-      "value": {
-        "type": "forge:tag_empty",
-        "tag": "forge:tortilla_chips"
-      }
+    "conditions": [
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:tortilla_chips"
+            }
+        }
+    ],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:bowl"
+        },
+        {
+            "tag": "forge:tortilla_chips"
+        },
+        {
+            "tag": "forge:tortilla_chips"
+        }
+    ],
+    "result": {
+        "item": "createfood:tortilla_chip_bowl"
     }
-  ],
-  "type": "minecraft:crafting_shapeless",
-  "ingredients": [
-    {
-      "tag": "forge:bowl"
-    },
-    {
-      "tag": "forge:tortilla_chips"
-    },
-    {
-      "tag": "forge:tortilla_chips"
-    }
-  ],
-  "result": {
-    "item": "createfood:tortilla_chip_bowl"
-  }
 }

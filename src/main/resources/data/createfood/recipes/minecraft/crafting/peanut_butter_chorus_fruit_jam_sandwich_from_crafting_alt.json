@@ -1,29 +1,29 @@
 {
-  "conditions": [
-    {
-      "type": "forge:not",
-      "value": {
-        "type": "forge:tag_empty",
-        "tag": "forge:peanut_butter"
-      }
+    "conditions": [
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:peanut_butter"
+            }
+        }
+    ],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:bread_slice"
+        },
+        {
+            "tag": "forge:peanut_butter"
+        },
+        {
+            "tag": "forge:chorus_fruit_jam_bottle"
+        },
+        {
+            "tag": "forge:bread_slice"
+        }
+    ],
+    "result": {
+        "item": "createfood:peanut_butter_chorus_fruit_jam_sandwich"
     }
-  ],
-  "type": "minecraft:crafting_shapeless",
-  "ingredients": [
-    {
-      "tag": "forge:bread_slice"
-    },
-    {
-      "tag": "forge:peanut_butter"
-    },
-    {
-      "tag": "forge:chorus_fruit_jam_bottle"
-    },
-    {
-      "tag": "forge:bread_slice"
-    }
-  ],
-  "result": {
-    "item": "createfood:peanut_butter_chorus_fruit_jam_sandwich"
-  }
 }

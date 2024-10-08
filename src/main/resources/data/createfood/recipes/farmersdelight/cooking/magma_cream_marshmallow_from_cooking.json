@@ -1,28 +1,28 @@
 {
-  "conditions": [
-    {
-      "type": "forge:not",
-      "value": {
-        "type": "forge:tag_empty",
-        "tag": "forge:magma_gelatin"
-      }
+    "conditions": [
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:magma_gelatin"
+            }
+        }
+    ],
+    "type": "farmersdelight:cooking",
+    "cookingtime": 50,
+    "experience": 0.5,
+    "ingredients": [
+        {
+            "tag": "forge:sugar"
+        },
+        {
+            "item": "minecraft:water_bucket"
+        },
+        {
+            "tag": "forge:magma_gelatin"
+        }
+    ],
+    "result": {
+        "item": "createfood:magma_cream_marshmallow"
     }
-  ],
-  "type": "farmersdelight:cooking",
-  "cookingtime": 50,
-  "experience": 0.5,
-  "ingredients": [
-    {
-      "tag": "forge:sugar"
-    },
-    {
-      "item": "minecraft:water_bucket"
-    },
-    {
-      "tag": "forge:magma_gelatin"
-    }
-  ],
-  "result": {
-    "item": "createfood:magma_cream_marshmallow"
-  }
 }

@@ -2,23 +2,21 @@
     "conditions": [
         {
             "type": "forge:mod_loaded",
-            "modid": [
-                "jmc"
-            ]
+            "modid": "jmc"
         }
     ],
-    "type": "minecraft:crafting",
+    "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {
             "tag": "forge:frosted_cake"
         },
         {
-            "tag": "forge:melon"
+            "item": "minecraft:sweet_berries"
         }
     ],
     "results": [
         {
-            "item": "jmc:melon_cake"
+            "item": "jmc:sweet_berry_cake"
         }
     ]
 }

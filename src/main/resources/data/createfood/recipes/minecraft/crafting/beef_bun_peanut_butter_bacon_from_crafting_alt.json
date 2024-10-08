@@ -1,29 +1,29 @@
 {
-  "conditions": [
-    {
-      "type": "forge:not",
-      "value": {
-        "type": "forge:tag_empty",
-        "tag": "forge:peanut_butter"
-      }
+    "conditions": [
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:peanut_butter"
+            }
+        }
+    ],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:bun"
+        },
+        {
+            "tag": "forge:cooked_pork"
+        },
+        {
+            "tag": "forge:peanut_butter"
+        },
+        {
+            "tag": "forge:cooked_beef"
+        }
+    ],
+    "result": {
+        "item": "createfood:beef_bun_peanut_butter_bacon"
     }
-  ],
-  "type": "minecraft:crafting_shapeless",
-  "ingredients": [
-    {
-      "tag": "forge:bun"
-    },
-    {
-      "tag": "forge:cooked_pork"
-    },
-    {
-      "tag": "forge:peanut_butter"
-    },
-    {
-      "tag": "forge:cooked_beef"
-    }
-  ],
-  "result": {
-    "item": "createfood:beef_bun_peanut_butter_bacon"
-  }
 }

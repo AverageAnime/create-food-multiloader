@@ -2,23 +2,21 @@
     "conditions": [
         {
             "type": "forge:mod_loaded",
-            "modid": [
-                "jmc"
-            ]
+            "modid": "jmc"
         }
-          ],
-    "type": "minecraft:crafting",
+    ],
+    "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {
             "tag": "forge:frosted_cake"
         },
         {
-            "tag": "forge:apple"
+            "item": "minecraft:gunpowder"
         }
     ],
     "results": [
         {
-            "item": "jmc:apple_cake"
+            "item": "jmc:creeper_cake"
         }
     ]
 }

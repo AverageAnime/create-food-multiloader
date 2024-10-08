@@ -1,29 +1,29 @@
 {
-  "conditions": [
-    {
-      "type": "forge:not",
-      "value": {
-        "type": "forge:tag_empty",
-        "tag": "forge:cooked_eggplant"
-      }
+    "conditions": [
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:cooked_eggplant"
+            }
+        }
+    ],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:bun"
+        },
+        {
+            "tag": "forge:cooked_eggplant"
+        },
+        {
+            "tag": "forge:cheeses"
+        },
+        {
+            "tag": "forge:bun"
+        }
+    ],
+    "result": {
+        "item": "createfood:eggplant_cheeseburger"
     }
-  ],
-  "type": "minecraft:crafting_shapeless",
-  "ingredients": [
-    {
-      "tag": "forge:bun"
-    },
-    {
-      "tag": "forge:cooked_eggplant"
-    },
-    {
-      "tag": "forge:cheeses"
-    },
-    {
-      "tag": "forge:bun"
-    }
-  ],
-  "result": {
-    "item": "createfood:eggplant_cheeseburger"
-  }
 }

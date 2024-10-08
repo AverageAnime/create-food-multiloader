@@ -1,24 +1,24 @@
 {
-  "conditions": [
-    {
-      "type": "forge:mod_loaded",
-      "modid": "farmersrespite"
-    }
-  ],
-  "type": "create:compacting",
-  "heatRequirement": "heated",
-  "ingredients": [
-    {
-      "tag": "forge:sweet_dough"
-    },
-    {
-      "tag": "forge:crops/green_tea_leaves"
-    }
-  ],
-  "results": [
-    {
-      "count": 8,
-      "item": "farmersrespite:green_tea_cookie"
-    }
-  ]
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farmersrespite"
+        }
+    ],
+    "type": "create:compacting",
+    "heatRequirement": "heated",
+    "ingredients": [
+        {
+            "tag": "forge:sweet_dough"
+        },
+        {
+            "tag": "forge:crops/green_tea_leaves"
+        }
+    ],
+    "results": [
+        {
+            "count": 8,
+            "item": "farmersrespite:green_tea_cookie"
+        }
+    ]
 }

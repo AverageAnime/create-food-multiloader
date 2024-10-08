@@ -1,27 +1,27 @@
 {
-  "conditions": [
-    {
-      "type": "forge:not",
-      "value": {
-        "type": "forge:tag_empty",
-        "tag": "forge:foods/vegetables/ginger"
-      }
+    "conditions": [
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:vegetables/ginger"
+            }
+        }
+    ],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:wheat"
+        },
+        {
+            "tag": "forge:vegetables/ginger"
+        },
+        {
+            "tag": "forge:eggs"
+        }
+    ],
+    "result": {
+        "count": 8,
+        "item": "createfood:raw_ginger_cookie"
     }
-  ],
-  "type": "minecraft:crafting_shapeless",
-  "ingredients": [
-    {
-      "item": "minecraft:wheat"
-    },
-    {
-      "tag": "forge:foods/vegetables/ginger"
-    },
-    {
-      "tag": "forge:eggs"
-    }
-  ],
-  "result": {
-    "count": 8,
-    "item": "createfood:raw_ginger_cookie"
-  }
 }

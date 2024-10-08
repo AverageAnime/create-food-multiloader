@@ -1,25 +1,25 @@
 {
-  "conditions": [
-    {
-      "type": "forge:not",
-      "value": {
-        "type": "forge:tag_empty",
-        "tag": "forge:cooked_eggplant"
-      }
-    }
-  ],
-  "type": "create:deploying",
-  "ingredients": [
-    {
-      "tag": "forge:bun"
-    },
-    {
-      "tag": "forge:cooked_eggplant"
-    }
-  ],
-  "results": [
-    {
-      "item": "createfood:eggplant_bun"
-    }
-  ]
+    "conditions": [
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:cooked_eggplant"
+            }
+        }
+    ],
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "forge:bun"
+        },
+        {
+            "tag": "forge:cooked_eggplant"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:eggplant_bun"
+        }
+    ]
 }

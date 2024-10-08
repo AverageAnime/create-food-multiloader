@@ -2,7 +2,7 @@
     "type": "create:mixing",
     "ingredients": [
         {
-            "item": "forge:crops/ube"
+            "tag": "forge:vegetables/ube"
         },
         {
             "tag": "forge:sugar"

@@ -1,25 +1,25 @@
 {
-  "conditions": [
-    {
-      "type": "forge:not",
-      "value": {
-        "type": "forge:tag_empty",
-        "tag": "forge:peanut_butter"
-      }
-    }
-  ],
-  "type": "create:deploying",
-  "ingredients": [
-    {
-      "tag": "forge:beef_bun_peanut_butter"
-    },
-    {
-      "tag": "forge:bun"
-    }
-  ],
-  "results": [
-    {
-      "item": "createfood:hamburger_peanut_butter"
-    }
-  ]
+    "conditions": [
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:peanut_butter"
+            }
+        }
+    ],
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "forge:beef_bun_peanut_butter"
+        },
+        {
+            "tag": "forge:bun"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:hamburger_peanut_butter"
+        }
+    ]
 }

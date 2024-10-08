@@ -1,23 +1,23 @@
 {
-  "conditions": [
-    {
-      "type": "forge:not",
-      "value": {
-        "type": "forge:tag_empty",
-        "tag": "forge:ground_strider"
-      }
-    }
-  ],
-  "type": "create:compacting",
-  "ingredients": [
-    {
-      "tag": "forge:ground_strider"
-    }
-  ],
-  "results": [
-    {
-      "count": 2,
-      "item": "createfood:raw_strider_meatball"
-    }
-  ]
+    "conditions": [
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:ground_strider"
+            }
+        }
+    ],
+    "type": "create:compacting",
+    "ingredients": [
+        {
+            "tag": "forge:ground_strider"
+        }
+    ],
+    "results": [
+        {
+            "count": 2,
+            "item": "createfood:raw_strider_meatball"
+        }
+    ]
 }

@@ -2,9 +2,7 @@
     "conditions": [
         {
             "type": "forge:mod_loaded",
-            "modid": [
-                "create"
-            ]
+            "modid": "jmc"
         }
     ],
     "type": "create:item_application",

@@ -2,23 +2,21 @@
     "conditions": [
         {
             "type": "forge:mod_loaded",
-            "modid": [
-                "jmc"
-            ]
+            "modid": "jmc"
         }
     ],
-    "type": "minecraft:crafting",
+    "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {
             "item": "minecraft:cake"
         },
         {
-            "item": "minecraft:spider_eye"
+            "item": "minecraft:tnt"
         }
     ],
     "results": [
         {
-            "item": "jmc:poison_cake"
+            "item": "jmc:tnt_cake"
         }
     ]
 }

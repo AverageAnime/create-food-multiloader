@@ -2,23 +2,21 @@
     "conditions": [
         {
             "type": "forge:mod_loaded",
-            "modid": [
-                "jmc"
-            ]
+            "modid": "jmc"
         }
     ],
-    "type": "minecraft:crafting",
+    "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {
             "tag": "forge:frosted_cake"
         },
         {
-            "item": "minecraft:red_mushroom"
+            "tag": "forge:seeds"
         }
     ],
     "results": [
         {
-            "item": "jmc:red_mushroom_cake"
+            "item": "jmc:seed_cake"
         }
     ]
 }

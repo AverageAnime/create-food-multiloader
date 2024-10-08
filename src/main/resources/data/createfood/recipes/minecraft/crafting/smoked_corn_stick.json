@@ -1,23 +1,23 @@
 {
-  "conditions": [
-    {
-      "type": "forge:not",
-      "value": {
-        "type": "forge:tag_empty",
-        "tag": "forge:smoked_corn"
-      }
+    "conditions": [
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:smoked_corn"
+            }
+        }
+    ],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:stick"
+        },
+        {
+            "tag": "forge:smoked_corn"
+        }
+    ],
+    "result": {
+        "item": "createfood:smoked_corn_stick"
     }
-  ],
-  "type": "minecraft:crafting_shapeless",
-  "ingredients": [
-    {
-      "item": "minecraft:stick"
-    },
-    {
-      "tag": "forge:smoked_corn"
-    }
-  ],
-  "result": {
-    "item": "createfood:smoked_corn_stick"
-  }
 }

@@ -1,23 +1,23 @@
 {
-  "conditions": [
-    {
-      "type": "forge:not",
-      "value": {
-        "type": "forge:tag_empty",
-        "tag": "forge:peanut_butter"
-      }
+    "conditions": [
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:peanut_butter"
+            }
+        }
+    ],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:bread_slice_peanut_butter"
+        },
+        {
+            "tag": "forge:bread_slice_melon_jam"
+        }
+    ],
+    "result": {
+        "item": "createfood:peanut_butter_melon_jam_sandwich"
     }
-  ],
-  "type": "minecraft:crafting_shapeless",
-  "ingredients": [
-    {
-      "tag": "forge:bread_slice_peanut_butter"
-    },
-    {
-      "tag": "forge:bread_slice_melon_jam"
-    }
-  ],
-  "result": {
-    "item": "createfood:peanut_butter_melon_jam_sandwich"
-  }
 }
