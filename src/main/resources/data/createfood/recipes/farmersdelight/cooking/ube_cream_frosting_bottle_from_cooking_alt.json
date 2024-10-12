@@ -1,4 +1,13 @@
 {
+    "conditions": [
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:vegetables/ube"
+            }
+        }
+    ],
     "type": "farmersdelight:cooking",
     "container": {
         "item": "minecraft:glass_bottle"
@@ -13,7 +22,7 @@
             "tag": "forge:sugar"
         },
         {
-            "item": "ubesdelight:ube"
+            "tag": "forge:vegetables/ube"
         }
     ],
     "result": {

@@ -14,9 +14,8 @@
             "item": "minecraft:echo_shard"
         }
     ],
-    "result": [
+    "result":
         {
             "item": "jmc:sculk_cake"
         }
-    ]
 }

@@ -14,9 +14,8 @@
             "tag": "forge:chorus_fruit"
         }
     ],
-    "result": [
+    "result":
         {
             "item": "jmc:chorus_cake"
         }
-    ]
 }

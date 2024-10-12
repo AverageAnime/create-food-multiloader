@@ -17,7 +17,7 @@
             "tag": "forge:raw_berry_pie"
         }
     ],
-    "result": "farmersdelight:sweet_berry_cheesecake",
+    "item": "farmersdelight:sweet_berry_cheesecake",
     "count": 3,
     "experience": 1.5
 }

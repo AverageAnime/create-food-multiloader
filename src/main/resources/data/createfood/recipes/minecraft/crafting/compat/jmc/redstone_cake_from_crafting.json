@@ -14,9 +14,8 @@
             "item": "minecraft:redstone"
         }
     ],
-    "result": [
+    "result":
         {
             "item": "jmc:redstone_cake"
         }
-    ]
 }

@@ -14,9 +14,8 @@
             "tag": "forge:cookie_crumbs"
         }
     ],
-    "result": [
+    "result":
         {
             "item": "jmc:cookie_cake"
         }
-    ]
 }

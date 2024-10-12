@@ -1,4 +1,10 @@
 {
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "frightsdelight"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {

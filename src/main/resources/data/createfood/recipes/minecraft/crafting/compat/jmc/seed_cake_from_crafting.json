@@ -14,9 +14,8 @@
             "tag": "forge:seeds"
         }
     ],
-    "result": [
+    "result":
         {
             "item": "jmc:seed_cake"
         }
-    ]
 }

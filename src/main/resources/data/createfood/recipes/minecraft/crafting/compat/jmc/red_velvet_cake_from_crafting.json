@@ -14,9 +14,8 @@
             "item": "minecraft:red_dye"
         }
     ],
-    "result": [
+    "result":
         {
             "item": "jmc:red_velvet_cake"
         }
-    ]
 }

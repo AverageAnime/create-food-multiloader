@@ -1,4 +1,13 @@
 {
+    "conditions": [
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:vegetables/ube"
+            }
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {
@@ -8,7 +17,7 @@
             "item": "minecraft:water_bucket"
         },
         {
-            "item": "ubesdelight:ube"
+            "tag": "forge:vegetables/ube"
         }
     ],
     "result": {
