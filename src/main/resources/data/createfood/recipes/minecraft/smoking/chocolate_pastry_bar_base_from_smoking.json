@@ -1,7 +1,7 @@
 {
     "type": "minecraft:smoking",
-    "cookingtime": 100,
-    "experience": 0.55,
+    "cookingtime": "100",
+    "experience": "0.55",
     "ingredient": {
         "tag": "forge:raw_chocolate_pastry_bar_base"
     },

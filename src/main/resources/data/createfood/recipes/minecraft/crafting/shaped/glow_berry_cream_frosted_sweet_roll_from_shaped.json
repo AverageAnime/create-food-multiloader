@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "1 ",
+        "2 "
+    ],
+    "key": {
+        "1": {
+            "tag": "forge:glow_berry_cream_frosting"
+        },
+        "2": {
+            "tag": "forge:sweet_roll_base"
+        }
+    },
+    "result": {
+        "item": "createfood:glow_berry_cream_frosted_sweet_roll"
+    }
+}

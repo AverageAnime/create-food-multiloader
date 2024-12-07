@@ -3,8 +3,8 @@
     "container": {
         "item": "minecraft:bucket"
     },
-    "cookingtime": 100,
-    "experience": 1.0,
+    "cookingtime": "100",
+    "experience": "1.0",
     "ingredients": [
         {
             "tag": "forge:cacao_nibs"

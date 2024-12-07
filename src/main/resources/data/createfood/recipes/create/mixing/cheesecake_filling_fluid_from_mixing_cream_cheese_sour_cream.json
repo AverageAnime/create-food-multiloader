@@ -2,12 +2,12 @@
     "type": "create:mixing",
     "ingredients": [
         {
-            "amount": 1000,
-            "fluid": "createfood:cream_cheese"
+            "amount": "1000",
+            "fluidTag": "forge:cream_cheese"
         },
         {
-            "amount": 250,
-            "fluid": "createfood:sour_cream"
+            "amount": "250",
+            "fluidTag": "forge:sour_cream"
         },
         {
             "tag": "forge:sugar"

@@ -4,6 +4,10 @@
     {
       "id": "createfood:white_chocolate_glazed_apple",
       "required": false
+    },
+    {
+      "id": "create_factory:white_chocolate_apple",
+      "required": false
     }
   ]
 }

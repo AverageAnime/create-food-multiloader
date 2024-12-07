@@ -5,7 +5,7 @@
             "tag": "forge:cooked_eggs"
         }
     ],
-    "processingTime": 50,
+    "processingTime": "50",
     "results": [
         {
             "count": 2,

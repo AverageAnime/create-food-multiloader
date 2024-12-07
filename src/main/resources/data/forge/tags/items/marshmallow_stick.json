@@ -4,6 +4,10 @@
     {
       "id": "createfood:marshmallow_stick",
       "required": false
+    },
+    {
+      "id": "create_confectionery:marshmallow_on_a_stick",
+      "required": false
     }
   ]
 }

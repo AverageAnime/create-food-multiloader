@@ -12,6 +12,6 @@
     "recipe_type": "MEAT",
     "result": {
         "item": "createfood:cacao_nibs",
-        "count": 1
+        "count": "1"
     }
 }

@@ -5,8 +5,8 @@
             "tag": "forge:chocolate_pastry_base"
         },
         {
-            "amount": 250,
-            "fluid": "createfood:white_chocolate"
+            "amount": "250",
+            "fluidTag": "forge:white_chocolate"
         }
     ],
     "results": [

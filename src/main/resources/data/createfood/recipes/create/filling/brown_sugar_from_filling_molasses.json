@@ -5,8 +5,8 @@
             "item": "minecraft:sugar"
         },
         {
-            "amount": 125,
-            "fluid": "createfood:molasses"
+            "amount": "125",
+            "fluidTag": "forge:molasses"
         }
     ],
     "results": [

@@ -5,8 +5,8 @@
             "item": "minecraft:glass_bottle"
         },
         {
-            "amount": 250,
-            "fluid": "createfood:sour_cream"
+            "amount": "250",
+            "fluidTag": "forge:sour_cream"
         }
     ],
     "results": [

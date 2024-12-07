@@ -2,12 +2,12 @@
     "type": "create:mixing",
     "ingredients": [
         {
-            "amount": 250,
-            "fluid": "createfood:condensed_milk"
+            "amount": "250",
+            "fluidTag": "forge:condensed_milk"
         },
         {
-            "amount": 750,
-            "fluid": "createfood:heavy_cream"
+            "amount": "750",
+            "fluidTag": "forge:heavy_cream"
         },
         {
             "tag": "forge:ice_blocks"

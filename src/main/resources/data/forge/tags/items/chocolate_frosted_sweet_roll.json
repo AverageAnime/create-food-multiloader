@@ -4,6 +4,10 @@
     {
       "id": "createfood:chocolate_frosted_sweet_roll",
       "required": false
+    },
+    {
+      "id": "create_factory:chocolate_roll",
+      "required": false
     }
   ]
 }

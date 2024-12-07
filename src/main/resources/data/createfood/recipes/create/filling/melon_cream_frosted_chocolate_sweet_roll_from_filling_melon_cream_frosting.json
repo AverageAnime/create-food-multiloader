@@ -5,8 +5,8 @@
             "tag": "forge:chocolate_sweet_roll_base"
         },
         {
-            "amount": 333,
-            "fluid": "createfood:melon_cream_frosting"
+            "amount": "333",
+            "fluidTag": "forge:melon_cream_frosting"
         }
     ],
     "results": [

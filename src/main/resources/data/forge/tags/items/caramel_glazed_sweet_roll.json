@@ -4,6 +4,10 @@
     {
       "id": "createfood:caramel_glazed_sweet_roll",
       "required": false
+    },
+    {
+      "id": "create_factory:caramel_roll",
+      "required": false
     }
   ]
 }

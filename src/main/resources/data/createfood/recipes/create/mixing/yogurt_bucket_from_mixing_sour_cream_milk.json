@@ -5,11 +5,11 @@
             "item": "minecraft:bucket"
         },
         {
-            "amount": 250,
-            "fluid": "createfood:sour_cream"
+            "amount": "250",
+            "fluidTag": "forge:sour_cream"
         },
         {
-            "amount": 1000,
+            "amount": "1000",
             "fluidTag": "forge:milk"
         }
     ],

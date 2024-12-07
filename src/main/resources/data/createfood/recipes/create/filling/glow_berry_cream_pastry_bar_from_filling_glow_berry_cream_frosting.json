@@ -5,8 +5,8 @@
             "tag": "forge:pastry_bar_base"
         },
         {
-            "amount": 250,
-            "fluid": "createfood:glow_berry_cream_frosting"
+            "amount": "250",
+            "fluidTag": "forge:glow_berry_cream_frosting"
         }
     ],
     "results": [

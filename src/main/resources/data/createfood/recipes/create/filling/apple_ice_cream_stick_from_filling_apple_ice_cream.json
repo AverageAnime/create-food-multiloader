@@ -5,8 +5,8 @@
             "item": "minecraft:stick"
         },
         {
-            "amount": 111,
-            "fluid": "createfood:apple_ice_cream"
+            "amount": "111",
+            "fluidTag": "forge:apple_ice_cream"
         }
     ],
     "results": [

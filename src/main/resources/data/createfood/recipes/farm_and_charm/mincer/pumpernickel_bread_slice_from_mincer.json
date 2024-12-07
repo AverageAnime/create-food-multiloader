@@ -11,7 +11,7 @@
     },
     "recipe_type": "MEAT",
     "result": {
-        "count": 3,
+        "count": "3",
         "item": "createfood:pumpernickel_bread_slice"
     }
 }

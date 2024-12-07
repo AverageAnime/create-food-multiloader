@@ -4,6 +4,10 @@
     {
       "id": "createfood:honeyed_berries",
       "required": false
+    },
+    {
+      "id": "create_factory:honey_glazed_berries",
+      "required": false
     }
   ]
 }

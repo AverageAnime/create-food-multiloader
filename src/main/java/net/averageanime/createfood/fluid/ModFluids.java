@@ -448,7 +448,7 @@ public class ModFluids {
                             .explosionResistance(100f))
                     .register();
 
-    public static final FluidEntry<ForgeFlowingFluid.Flowing> COFFEE_TOFFEE_FROSTING =
+    public static final FluidEntry<ForgeFlowingFluid.Flowing> COFFEE_TOFFEE =
             REGISTRATE.standardFluid("coffee_toffee",
                             SolidRenderedPlaceableFluidType.create(0xb73800,
                                     () -> 1f / 32f * 1))

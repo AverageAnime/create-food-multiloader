@@ -5,8 +5,8 @@
             "tag": "forge:pastry_bar_base"
         },
         {
-            "amount": 250,
-            "fluid": "createfood:apple_cream_frosting"
+            "amount": "250",
+            "fluidTag": "forge:apple_cream_frosting"
         }
     ],
     "results": [

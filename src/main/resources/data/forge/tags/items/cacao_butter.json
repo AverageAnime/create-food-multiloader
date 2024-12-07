@@ -4,6 +4,10 @@
     {
       "id": "createfood:cacao_butter",
       "required": false
+    },
+    {
+      "id": "create_confectionery:cocoa_butter",
+      "required": false
     }
   ]
 }

@@ -5,8 +5,8 @@
             "tag": "forge:cloth_filter"
         },
         {
-            "amount": 1000,
-            "fluid": "createfood:cacao_mass"
+            "amount": "1000",
+            "fluidTag": "forge:cacao_mass"
         }
     ],
     "results": [

@@ -19,6 +19,6 @@
     ],
     "result": {
         "item": "createfood:sugar_dough",
-        "count": 3
+        "count": "3"
     }
 }

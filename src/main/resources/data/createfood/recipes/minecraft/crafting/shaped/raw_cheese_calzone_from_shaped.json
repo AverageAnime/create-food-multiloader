@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        " 1 ",
+        " 2 "
+    ],
+    "key": {
+        "1": {
+            "tag": "forge:cheeses"
+        },
+        "2": {
+            "tag": "forge:raw_calzone"
+        }
+    },
+    "result": {
+        "item": "createfood:raw_cheese_calzone"
+    }
+}

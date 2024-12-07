@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "1 ",
+        "2 "
+    ],
+    "key": {
+        "1": {
+            "tag": "forge:cooked_eggs"
+        },
+        "2": {
+            "tag": "forge:toast_plate"
+        }
+    },
+    "result": {
+        "item": "createfood:toast_fried_egg_plate"
+    }
+}

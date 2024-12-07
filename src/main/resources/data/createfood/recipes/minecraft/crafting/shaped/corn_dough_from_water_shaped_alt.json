@@ -1,0 +1,19 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "1 ",
+        "2 "
+    ],
+    "key": {
+        "1": {
+            "tag": "forge:corn_flour"
+        },
+        "2": {
+            "tag": "forge:water_buckets"
+        }
+    },
+    "result": {
+        "count": 3,
+        "item": "culturaldelights:corn_dough"
+    }
+}

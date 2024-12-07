@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:raw_muffin"
+        },
+        {
+            "tag": "forge:toffee_chips"
+        }
+    ],
+    "result": {
+        "item": "createfood:raw_toffee_chip_muffin"
+    }
+}

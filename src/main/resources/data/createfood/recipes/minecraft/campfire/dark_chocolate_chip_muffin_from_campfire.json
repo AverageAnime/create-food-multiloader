@@ -1,0 +1,9 @@
+{
+    "type": "minecraft:campfire_cooking",
+    "ingredient": {
+        "tag": "forge:raw_dark_chocolate_chip_muffin"
+    },
+    "result": "createfood:dark_chocolate_chip_muffin",
+    "experience": 0.15,
+    "cookingtime": 150
+}

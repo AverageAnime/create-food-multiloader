@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        " 1 ",
+        " 2 "
+    ],
+    "key": {
+        "1": {
+            "tag": "forge:butterscotch_chips"
+        },
+        "2": {
+            "tag": "forge:raw_muffin"
+        }
+    },
+    "result": {
+        "item": "createfood:raw_butterscotch_chip_muffin"
+    }
+}

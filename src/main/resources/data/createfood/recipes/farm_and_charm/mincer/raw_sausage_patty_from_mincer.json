@@ -11,7 +11,7 @@
     },
     "recipe_type": "MEAT",
     "result": {
-        "count": 2,
+        "count": "2",
         "item": "createfood:raw_sausage_patty"
     }
 }

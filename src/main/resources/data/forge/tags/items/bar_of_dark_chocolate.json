@@ -4,6 +4,10 @@
     {
       "id": "createfood:bar_of_dark_chocolate",
       "required": false
+    },
+    {
+      "id": "create_confectionery:bar_of_black_chocolate",
+      "required": false
     }
   ]
 }

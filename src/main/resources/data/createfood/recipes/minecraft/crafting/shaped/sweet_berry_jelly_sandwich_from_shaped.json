@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "1 ",
+        "2 "
+    ],
+    "key": {
+        "1": {
+            "tag": "forge:bread_slice_berry_jam"
+        },
+        "2": {
+            "tag": "forge:bread_slice_peanut_butter"
+        }
+    },
+    "result": {
+        "item": "expandeddelight:sweet_berry_jelly_sandwich"
+    }
+}

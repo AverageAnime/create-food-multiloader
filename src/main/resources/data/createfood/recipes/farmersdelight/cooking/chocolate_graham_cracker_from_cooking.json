@@ -1,7 +1,7 @@
 {
     "type": "farmersdelight:cooking",
-    "cookingtime": 125,
-    "experience": 0.25,
+    "cookingtime": "125",
+    "experience": "0.25",
     "ingredients": [
         {
             "tag": "forge:milk_bottle"
@@ -17,7 +17,7 @@
         }
     ],
     "result": {
-        "count": 8,
+        "count": "8",
         "item": "createfood:chocolate_graham_cracker"
     }
 }

@@ -1,0 +1,9 @@
+{
+    "type": "minecraft:smoking",
+    "ingredient": {
+        "tag": "forge:raw_butterscotch_chip_muffin"
+    },
+    "result": "createfood:butterscotch_chip_muffin",
+    "experience": 0.15,
+    "cookingtime": 150
+}

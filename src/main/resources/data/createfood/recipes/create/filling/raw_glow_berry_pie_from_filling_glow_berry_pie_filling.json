@@ -5,8 +5,8 @@
             "tag": "forge:raw_pie_crust"
         },
         {
-            "amount": 1000,
-            "fluid": "createfood:glow_berry_pie_filling"
+            "amount": "1000",
+            "fluidTag": "forge:glow_berry_pie_filling"
         }
     ],
     "results": [

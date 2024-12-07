@@ -18,6 +18,6 @@
         }
     ],
     "item": "ubesdelight:cookie_ginger",
-    "count": 3,
-    "experience": 0.45
+    "count": "3",
+    "experience": "0.45"
 }

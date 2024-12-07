@@ -5,8 +5,8 @@
             "item": "createfood:sweet_roll_base"
         },
         {
-            "amount": 333,
-            "fluid": "createfood:chorus_fruit_cream_frosting"
+            "amount": "333",
+            "fluidTag": "forge:chorus_fruit_cream_frosting"
         }
     ],
     "results": [

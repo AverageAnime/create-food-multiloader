@@ -14,7 +14,7 @@
             "tag": "forge:dried_coffee_beans"
         }
     ],
-    "processingTime": 80,
+    "processingTime": "80",
     "results": [
         {
             "count": 2,

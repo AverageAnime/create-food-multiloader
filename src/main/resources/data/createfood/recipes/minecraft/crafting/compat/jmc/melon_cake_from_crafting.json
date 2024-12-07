@@ -14,8 +14,7 @@
             "tag": "forge:melon"
         }
     ],
-    "result":
-        {
-            "item": "jmc:melon_cake"
-        }
+    "result": {
+        "item": "jmc:melon_cake"
+    }
 }

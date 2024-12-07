@@ -4,6 +4,10 @@
     {
       "id": "createfood:berry_jam_bucket",
       "required": false
+    },
+    {
+      "id": "create_factory:sweet_berry_jam_bucket",
+      "required": false
     }
   ]
 }

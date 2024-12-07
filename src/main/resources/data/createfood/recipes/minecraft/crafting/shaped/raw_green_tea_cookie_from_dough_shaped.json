@@ -1,0 +1,19 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "1 ",
+        "2 "
+    ],
+    "key": {
+        "1": {
+            "tag": "forge:crops/green_tea_leaves"
+        },
+        "2": {
+            "tag": "forge:sweet_dough"
+        }
+    },
+    "result": {
+        "count": 8,
+        "item": "createfood:raw_green_tea_cookie"
+    }
+}

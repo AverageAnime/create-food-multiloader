@@ -5,7 +5,7 @@
             "tag": "forge:raw_mini_graham_cracker_pie_crust"
         },
         {
-            "amount": 250,
+            "amount": "250",
             "fluid": "create:chocolate"
         }
     ],

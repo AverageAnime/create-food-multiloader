@@ -12,7 +12,7 @@
             "tag": "forge:lime_dyes"
         },
         {
-            "amount": 250,
+            "amount": "250",
             "fluid": "minecraft:water"
         }
     ],

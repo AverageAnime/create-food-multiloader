@@ -1,0 +1,11 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:salt_dough_small"
+        }
+    ],
+    "result": {
+        "item": "createfood:raw_calzone"
+    }
+}

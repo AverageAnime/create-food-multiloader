@@ -1,0 +1,23 @@
+{
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farm_and_charm"
+        }
+    ],
+    "type": "farm_and_charm:stove",
+    "ingredients": [
+        {
+            "tag": "forge:raw_onion_calzone"
+        },
+        {
+            "tag": "forge:raw_onion_calzone"
+        },
+        {
+            "tag": "forge:raw_onion_calzone"
+        }
+    ],
+    "item": "createfood:onion_calzone",
+    "count": 3,
+    "experience": 0.25
+}

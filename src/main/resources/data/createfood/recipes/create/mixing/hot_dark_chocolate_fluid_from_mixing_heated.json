@@ -3,8 +3,8 @@
     "heatRequirement": "heated",
     "ingredients": [
         {
-            "amount": 250,
-            "fluid": "createfood:cacao_mass"
+            "amount": "250",
+            "fluidTag": "forge:cacao_mass"
         },
         {
             "tag": "forge:cocoa_powder"

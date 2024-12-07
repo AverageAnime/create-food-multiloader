@@ -19,6 +19,6 @@
     ],
     "result": {
         "item": "createfood:butter_dough",
-        "count": 3
+        "count": "3"
     }
 }

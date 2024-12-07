@@ -4,6 +4,14 @@
     {
       "id": "createfood:hot_chocolate_bottle",
       "required": false
+    },
+    {
+      "id": "create_dd:hot_chocolate",
+      "required": false
+    },
+    {
+      "id": "create_confectionery:hot_chocolate_bottle",
+      "required": false
     }
   ]
 }

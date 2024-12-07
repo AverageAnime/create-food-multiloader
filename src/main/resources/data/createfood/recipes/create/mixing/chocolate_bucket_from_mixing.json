@@ -2,12 +2,12 @@
     "type": "create:mixing",
     "ingredients": [
         {
-            "amount": 500,
+            "amount": "500",
             "fluidTag": "forge:milk"
         },
         {
-            "amount": 500,
-            "fluid": "createfood:cacao_mass"
+            "amount": "500",
+            "fluidTag": "forge:cacao_mass"
         },
         {
             "item": "minecraft:bucket"

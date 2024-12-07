@@ -4,6 +4,10 @@
     {
       "id": "createfood:marshmallow",
       "required": false
+    },
+    {
+      "id": "create_confectionery:marshmallow",
+      "required": false
     }
   ]
 }

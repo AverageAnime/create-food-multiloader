@@ -1,7 +1,7 @@
 {
     "type": "farmersdelight:cooking",
-    "cookingtime": 350,
-    "experience": 0.2,
+    "cookingtime": "350",
+    "experience": "0.2",
     "ingredients": [
         {
             "tag": "forge:raw_pasta"
@@ -11,7 +11,7 @@
         }
     ],
     "result": {
-        "count": 1,
+        "count": "1",
         "item": "createfood:pasta"
     }
 }

@@ -5,8 +5,8 @@
             "item": "createfood:sweet_roll_base"
         },
         {
-            "amount": 333,
-            "fluid": "createfood:berry_cream_frosting"
+            "amount": "333",
+            "fluidTag": "forge:berry_cream_frosting"
         }
     ],
     "results": [

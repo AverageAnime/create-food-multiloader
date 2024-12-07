@@ -5,8 +5,8 @@
             "tag": "forge:raw_pie_crust"
         },
         {
-            "amount": 1000,
-            "fluid": "createfood:apple_pie_filling"
+            "amount": "1000",
+            "fluidTag": "forge:apple_pie_filling"
         }
     ],
     "results": [

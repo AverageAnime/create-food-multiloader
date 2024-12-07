@@ -1,0 +1,9 @@
+{
+    "type": "minecraft:smoking",
+    "ingredient": {
+        "tag": "forge:raw_white_chocolate_chip_muffin"
+    },
+    "result": "createfood:white_chocolate_chip_muffin",
+    "experience": 0.15,
+    "cookingtime": 150
+}

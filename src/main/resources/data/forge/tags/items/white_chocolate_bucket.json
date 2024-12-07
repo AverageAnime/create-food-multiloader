@@ -4,6 +4,10 @@
     {
       "id": "createfood:white_chocolate_bucket",
       "required": false
+    },
+    {
+      "id": "create_confectionery:white_chocolate_bucket",
+      "required": false
     }
   ]
 }

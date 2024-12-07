@@ -18,6 +18,6 @@
         }
     ],
     "item": "createfood:cinnamon_sweet_roll_base",
-    "count": 3,
-    "experience": 0.25
+    "count": "3",
+    "experience": "0.25"
 }

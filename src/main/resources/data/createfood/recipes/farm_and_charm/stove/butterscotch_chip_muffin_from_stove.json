@@ -1,0 +1,23 @@
+{
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farm_and_charm"
+        }
+    ],
+    "type": "farm_and_charm:stove",
+    "ingredients": [
+        {
+            "tag": "forge:raw_butterscotch_chip_muffin"
+        },
+        {
+            "tag": "forge:raw_butterscotch_chip_muffin"
+        },
+        {
+            "tag": "forge:raw_butterscotch_chip_muffin"
+        }
+    ],
+    "item": "createfood:butterscotch_chip_muffin",
+    "count": 3,
+    "experience": 0.25
+}

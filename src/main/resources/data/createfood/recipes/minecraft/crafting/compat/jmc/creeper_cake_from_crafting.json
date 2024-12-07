@@ -14,8 +14,7 @@
             "item": "minecraft:gunpowder"
         }
     ],
-    "result":
-        {
-            "item": "jmc:creeper_cake"
-        }
+    "result": {
+        "item": "jmc:creeper_cake"
+    }
 }

@@ -1,0 +1,9 @@
+{
+    "type": "minecraft:smoking",
+    "ingredient": {
+        "tag": "forge:raw_sausage_calzone"
+    },
+    "result": "createfood:sausage_calzone",
+    "experience": 0.15,
+    "cookingtime": 250
+}

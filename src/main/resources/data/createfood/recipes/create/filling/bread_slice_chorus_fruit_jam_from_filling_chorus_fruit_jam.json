@@ -5,8 +5,8 @@
             "tag": "forge:bread_slice"
         },
         {
-            "amount": 125,
-            "fluid": "createfood:chorus_fruit_jam"
+            "amount": "125",
+            "fluidTag": "forge:chorus_fruit_jam"
         }
     ],
     "results": [

@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "1 ",
+        "2 "
+    ],
+    "key": {
+        "1": {
+            "item": "minecraft:sweet_berries"
+        },
+        "2": {
+            "tag": "forge:raw_cheesecake"
+        }
+    },
+    "result": {
+        "item": "createfood:raw_berry_cheesecake"
+    }
+}

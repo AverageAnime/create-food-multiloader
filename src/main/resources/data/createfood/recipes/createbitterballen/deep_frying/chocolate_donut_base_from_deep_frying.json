@@ -12,11 +12,11 @@
             "tag": "forge:chocolate_pastry_base"
         },
         {
-            "amount": 125,
+            "amount": "125",
             "fluid": "create_bic_bit:frying_oil"
         }
     ],
-    "processingTime": 100,
+    "processingTime": "100",
     "results": [
         {
             "item": "createfood:chocolate_donut_base"

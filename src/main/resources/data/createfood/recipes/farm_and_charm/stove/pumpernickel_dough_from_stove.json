@@ -18,6 +18,6 @@
         }
     ],
     "item": "createfood:pumpernickel_bread",
-    "count": 3,
-    "experience": 0.1
+    "count": "3",
+    "experience": "0.1"
 }

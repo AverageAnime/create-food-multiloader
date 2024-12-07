@@ -1,0 +1,16 @@
+{
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "forge:raw_muffin"
+        },
+        {
+            "tag": "forge:toffee_chips"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:raw_toffee_chip_muffin"
+        }
+    ]
+}

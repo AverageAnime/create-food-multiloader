@@ -5,8 +5,8 @@
             "item": "createfood:chocolate_sweet_roll_base"
         },
         {
-            "amount": 333,
-            "fluid": "createfood:cream_frosting"
+            "amount": "333",
+            "fluidTag": "forge:cream_frosting"
         }
     ],
     "results": [

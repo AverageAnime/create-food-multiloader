@@ -1,0 +1,34 @@
+{
+    "type": "farmersdelight:cooking",
+    "cookingtime": "200",
+    "experience": "1.0",
+    "ingredients": [
+        {
+            "tag": "forge:dumpling_wrappers"
+        },
+        {
+            "tag": "forge:crops/cabbage"
+        },
+        {
+            "tag": "forge:onion"
+        },
+        [
+            {
+                "tag": "forge:foods/raw_meats/raw_chicken"
+            },
+            {
+                "tag": "forge:foods/raw_meats/raw_pork"
+            },
+            {
+                "tag": "forge:foods/raw_meats/raw_beef"
+            },
+            {
+                "item": "minecraft:brown_mushroom"
+            }
+        ]
+    ],
+    "result": {
+        "count": "2",
+        "item": "farmersdelight:dumplings"
+    }
+}

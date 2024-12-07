@@ -2,8 +2,8 @@
     "type": "create:mixing",
     "ingredients": [
         {
-            "amount": 125,
-            "fluid": "createfood:molasses"
+            "amount": "125",
+            "fluidTag": "forge:molasses"
         },
         {
             "tag": "forge:sugar"

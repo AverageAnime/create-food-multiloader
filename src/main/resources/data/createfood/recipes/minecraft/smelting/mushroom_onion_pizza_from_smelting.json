@@ -4,6 +4,6 @@
         "tag": "forge:raw_mushroom_onion_pizza"
     },
     "result": "createfood:mushroom_onion_pizza",
-    "experience": 0.25,
-    "cookingtime": 400
+    "experience": "0.25",
+    "cookingtime": "400"
 }

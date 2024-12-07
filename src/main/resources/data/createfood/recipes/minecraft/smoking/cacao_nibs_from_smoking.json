@@ -1,7 +1,7 @@
 {
     "type": "minecraft:smoking",
-    "cookingtime": 100,
-    "experience": 0.2,
+    "cookingtime": "100",
+    "experience": "0.2",
     "ingredient": {
         "item": "minecraft:cocoa_beans"
     },

@@ -4,6 +4,6 @@
         "tag": "forge:raw_onion_bacon_pizza"
     },
     "result": "createfood:onion_bacon_pizza",
-    "experience": 0.25,
-    "cookingtime": 400
+    "experience": "0.25",
+    "cookingtime": "400"
 }

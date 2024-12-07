@@ -5,8 +5,8 @@
             "tag": "forge:raw_graham_cracker_pie_crust"
         },
         {
-            "amount": 1000,
-            "fluid": "createfood:cheesecake_filling"
+            "amount": "1000",
+            "fluidTag": "forge:cheesecake_filling"
         }
     ],
     "results": [

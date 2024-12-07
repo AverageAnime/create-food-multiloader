@@ -3,8 +3,8 @@
     "heatRequirement": "heated",
     "ingredients": [
         {
-            "amount": 1000,
-            "fluid": "createfood:sugar_cane_juice"
+            "amount": "1000",
+            "fluidTag": "forge:sugar_cane_juice"
         }
     ],
     "results": [

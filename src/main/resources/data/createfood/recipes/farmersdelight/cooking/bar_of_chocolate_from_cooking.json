@@ -1,7 +1,7 @@
 {
     "type": "farmersdelight:cooking",
-    "cookingtime": 150,
-    "experience": 1.0,
+    "cookingtime": "150",
+    "experience": "1.0",
     "ingredients": [
         {
             "item": "minecraft:milk_bucket"

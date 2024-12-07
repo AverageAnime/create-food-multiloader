@@ -2,8 +2,8 @@
     "type": "create:compacting",
     "ingredients": [
         {
-            "amount": 333,
-            "fluid": "createfood:cream_cheese"
+            "amount": "333",
+            "fluidTag": "forge:cream_cheese"
         }
     ],
     "results": [

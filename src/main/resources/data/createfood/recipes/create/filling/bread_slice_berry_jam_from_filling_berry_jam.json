@@ -5,8 +5,8 @@
             "tag": "forge:bread_slice"
         },
         {
-            "amount": 125,
-            "fluid": "createfood:berry_jam"
+            "amount": "125",
+            "fluidTag": "forge:berry_jam"
         }
     ],
     "results": [

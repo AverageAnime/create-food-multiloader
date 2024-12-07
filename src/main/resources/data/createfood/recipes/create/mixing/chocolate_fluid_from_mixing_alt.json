@@ -2,8 +2,8 @@
     "type": "create:mixing",
     "ingredients": [
         {
-            "amount": 250,
-            "fluid": "createfood:hot_chocolate"
+            "amount": "250",
+            "fluidTag": "forge:hot_chocolate"
         }
     ],
     "results": [

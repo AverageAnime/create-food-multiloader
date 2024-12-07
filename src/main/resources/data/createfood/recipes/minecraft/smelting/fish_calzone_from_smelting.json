@@ -1,0 +1,9 @@
+{
+    "type": "minecraft:smelting",
+    "ingredient": {
+        "tag": "forge:raw_fish_calzone"
+    },
+    "result": "createfood:fish_calzone",
+    "experience": 0.15,
+    "cookingtime": 250
+}

@@ -8,6 +8,10 @@
     {
       "id": "croptopia:butter",
       "required": false
+    },
+    {
+      "id": "gourmet:butter",
+      "required": false
     }
   ]
 }

@@ -5,8 +5,8 @@
             "tag": "forge:apple_slice"
         },
         {
-            "amount": 125,
-            "fluid": "createfood:caramel"
+            "amount": "125",
+            "fluidTag": "forge:caramel"
         }
     ],
     "results": [

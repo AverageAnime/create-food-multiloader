@@ -5,8 +5,8 @@
             "tag": "forge:hollow_chocolate"
         },
         {
-            "amount": 125,
-            "fluid": "createfood:melon_cream_frosting"
+            "amount": "125",
+            "fluidTag": "forge:melon_cream_frosting"
         }
     ],
     "results": [

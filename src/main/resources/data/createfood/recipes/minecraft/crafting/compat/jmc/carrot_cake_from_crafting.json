@@ -14,8 +14,7 @@
             "item": "minecraft:carrot"
         }
     ],
-    "result":
-        {
-            "item": "jmc:carrot_cake"
-        }
+    "result": {
+        "item": "jmc:carrot_cake"
+    }
 }

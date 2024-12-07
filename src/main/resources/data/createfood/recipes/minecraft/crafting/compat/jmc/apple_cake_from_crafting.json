@@ -14,8 +14,7 @@
             "tag": "forge:apple"
         }
     ],
-    "result":
-        {
-            "item": "jmc:apple_cake"
-        }
+    "result": {
+        "item": "jmc:apple_cake"
+    }
 }

@@ -6,7 +6,7 @@
             "item": "farmersdelight:raw_pasta"
         },
         {
-            "amount": 125,
+            "amount": "125",
             "fluid": "minecraft:water"
         }
     ],

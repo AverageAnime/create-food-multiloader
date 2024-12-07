@@ -4,6 +4,10 @@
     {
       "id": "createfood:chicken_burger",
       "required": false
+    },
+    {
+      "id": "gourmet:chicken_sandwich",
+      "required": false
     }
   ]
 }

@@ -2,8 +2,8 @@
     "type": "create:compacting",
     "ingredients": [
         {
-            "amount": 1000,
-            "fluid": "createfood:slime"
+            "amount": "1000",
+            "fluidTag": "forge:slime"
         }
     ],
     "results": [

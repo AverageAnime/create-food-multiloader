@@ -18,6 +18,6 @@
         }
     ],
     "item": "createfood:meatball",
-    "count": 3,
-    "experience": 0.15
+    "count": "3",
+    "experience": "0.15"
 }

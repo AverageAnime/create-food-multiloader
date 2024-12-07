@@ -14,8 +14,7 @@
             "item": "minecraft:sweet_berries"
         }
     ],
-    "result":
-        {
-            "item": "jmc:sweet_berry_cake"
-        }
+    "result": {
+        "item": "jmc:sweet_berry_cake"
+    }
 }

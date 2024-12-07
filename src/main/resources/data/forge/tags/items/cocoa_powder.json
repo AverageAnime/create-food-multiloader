@@ -4,6 +4,10 @@
     {
       "id": "createfood:cocoa_powder",
       "required": false
+    },
+    {
+      "id": "create_confectionery:cocoa_powder",
+      "required": false
     }
   ]
 }

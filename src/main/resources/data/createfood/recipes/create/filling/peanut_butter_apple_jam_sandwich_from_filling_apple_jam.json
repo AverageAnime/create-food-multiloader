@@ -14,8 +14,8 @@
             "tag": "forge:peanut_butter_sandwich"
         },
         {
-            "amount": 125,
-            "fluid": "createfood:apple_jam"
+            "amount": "125",
+            "fluidTag": "forge:apple_jam"
         }
     ],
     "results": [

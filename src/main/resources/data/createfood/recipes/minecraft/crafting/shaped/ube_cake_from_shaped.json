@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "1 ",
+        "2 "
+    ],
+    "key": {
+        "1": {
+            "tag": "forge:vegetables/ube"
+        },
+        "2": {
+            "tag": "forge:ube_cream_frosted_ube_cake"
+        }
+    },
+    "result": {
+        "item": "ubesdelight:ube_cake"
+    }
+}

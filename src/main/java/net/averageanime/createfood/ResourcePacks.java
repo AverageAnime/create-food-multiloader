@@ -116,6 +116,18 @@ public class ResourcePacks {
                     }
                 });
 
+                event.addRepositorySource(consumer
+                        -> {
+                    Pack pack = Pack.readMetaAndCreate(Create.asResource("rustic_delight").toString(),
+                            Components.literal("Rustic Delight"),
+                            false,
+                            id -> new ModFilePackResources(id, modFile, "resourcepacks/rustic_delight"),
+                            PackType.CLIENT_RESOURCES, Pack.Position.TOP, PackSource.BUILT_IN);
+                    if (pack != null) {
+                        consumer.accept(pack);
+                    }
+                });
+
             }
         }
     }

@@ -4,6 +4,10 @@
     {
       "id": "createfood:caramel_glazed_berries",
       "required": false
+    },
+    {
+      "id": "create_confectionery:caramel_glazed_berries",
+      "required": false
     }
   ]
 }

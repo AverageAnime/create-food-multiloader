@@ -1,0 +1,9 @@
+{
+    "type": "minecraft:smelting",
+    "ingredient": {
+        "tag": "forge:raw_cheese_calzone"
+    },
+    "result": "createfood:cheese_calzone",
+    "experience": 0.15,
+    "cookingtime": 250
+}

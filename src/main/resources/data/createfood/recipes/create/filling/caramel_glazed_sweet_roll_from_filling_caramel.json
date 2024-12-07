@@ -5,8 +5,8 @@
             "item": "createfood:sweet_roll_base"
         },
         {
-            "amount": 333,
-            "fluid": "createfood:caramel"
+            "amount": "333",
+            "fluidTag": "forge:caramel"
         }
     ],
     "results": [

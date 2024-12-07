@@ -5,8 +5,8 @@
             "tag": "forge:donut_base"
         },
         {
-            "amount": 250,
-            "fluid": "createfood:cream_frosting"
+            "amount": "250",
+            "fluidTag": "forge:cream_frosting"
         }
     ],
     "results": [

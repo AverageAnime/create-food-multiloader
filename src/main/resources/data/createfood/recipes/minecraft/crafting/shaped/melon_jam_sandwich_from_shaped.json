@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "1 ",
+        "2 "
+    ],
+    "key": {
+        "1": {
+            "tag": "forge:bread_slice"
+        },
+        "2": {
+            "tag": "forge:bread_slice_melon_jam"
+        }
+    },
+    "result": {
+        "item": "createfood:melon_jam_sandwich"
+    }
+}

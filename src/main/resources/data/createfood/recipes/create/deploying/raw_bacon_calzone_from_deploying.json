@@ -1,0 +1,16 @@
+{
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "forge:raw_cheese_calzone"
+        },
+        {
+            "tag": "forge:cooked_pork"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:raw_bacon_calzone"
+        }
+    ]
+}

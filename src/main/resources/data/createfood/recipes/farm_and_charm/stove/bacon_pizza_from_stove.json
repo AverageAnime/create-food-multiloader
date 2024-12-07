@@ -18,6 +18,6 @@
         }
     ],
     "item": "createfood:bacon_pizza",
-    "count": 3,
-    "experience": 3
+    "count": "3",
+    "experience": "3"
 }

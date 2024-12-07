@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "1 ",
+        "2 "
+    ],
+    "key": {
+        "1": {
+            "tag": "forge:bun"
+        },
+        "2": {
+            "tag": "forge:dragon_bun"
+        }
+    },
+    "result": {
+        "item": "createfood:dragon_burger"
+    }
+}

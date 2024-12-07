@@ -5,8 +5,8 @@
             "tag": "forge:chocolate_graham_cracker_neapolitan_scoop_2"
         },
         {
-            "amount": 111,
-            "fluid": "createfood:berry_ice_cream"
+            "amount": "111",
+            "fluidTag": "forge:berry_ice_cream"
         }
     ],
     "results": [

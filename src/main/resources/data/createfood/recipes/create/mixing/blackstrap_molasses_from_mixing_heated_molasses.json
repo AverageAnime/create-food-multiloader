@@ -3,8 +3,8 @@
     "heatRequirement": "heated",
     "ingredients": [
         {
-            "amount": 1000,
-            "fluid": "createfood:molasses"
+            "amount": "1000",
+            "fluidTag": "forge:molasses"
         }
     ],
     "results": [

@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "1 ",
+        "2 "
+    ],
+    "key": {
+        "1": {
+            "tag": "forge:carrot"
+        },
+        "2": {
+            "tag": "forge:bread_lettuce"
+        }
+    },
+    "result": {
+        "item": "createfood:bread_lettuce_carrot"
+    }
+}

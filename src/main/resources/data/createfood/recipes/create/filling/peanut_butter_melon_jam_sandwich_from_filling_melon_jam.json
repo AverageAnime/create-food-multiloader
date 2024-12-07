@@ -14,8 +14,8 @@
             "tag": "forge:peanut_butter_sandwich"
         },
         {
-            "amount": 125,
-            "fluid": "createfood:melon_jam"
+            "amount": "125",
+            "fluidTag": "forge:melon_jam"
         }
     ],
     "results": [

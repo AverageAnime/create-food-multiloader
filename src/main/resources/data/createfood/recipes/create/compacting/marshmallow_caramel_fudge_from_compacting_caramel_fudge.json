@@ -2,8 +2,8 @@
     "type": "create:compacting",
     "ingredients": [
         {
-            "amount": 500,
-            "fluid": "createfood:caramel_fudge"
+            "amount": "500",
+            "fluidTag": "forge:caramel_fudge"
         },
         {
             "tag": "forge:marshmallow"

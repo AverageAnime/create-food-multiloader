@@ -5,8 +5,8 @@
             "tag": "forge:chocolate_graham_cracker"
         },
         {
-            "amount": 333,
-            "fluid": "createfood:ice_cream"
+            "amount": "333",
+            "fluidTag": "forge:ice_cream"
         }
     ],
     "results": [

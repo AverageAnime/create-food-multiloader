@@ -2,8 +2,8 @@
     "type": "create:mixing",
     "ingredients": [
         {
-            "amount": 1000,
-            "fluid": "createfood:light_gray_gelatin_mix"
+            "amount": "1000",
+            "fluidTag": "forge:light_gray_gelatin_mix"
         },
         {
             "item": "minecraft:ice"

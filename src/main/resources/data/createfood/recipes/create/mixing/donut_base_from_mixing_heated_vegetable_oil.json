@@ -6,8 +6,8 @@
             "tag": "forge:pastry_base"
         },
         {
-            "amount": 125,
-            "fluid": "createfood:vegetable_oil"
+            "amount": "125",
+            "fluidTag": "forge:vegetable_oil"
         }
     ],
     "results": [

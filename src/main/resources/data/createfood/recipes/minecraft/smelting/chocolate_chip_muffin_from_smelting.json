@@ -1,0 +1,9 @@
+{
+    "type": "minecraft:smelting",
+    "ingredient": {
+        "tag": "forge:raw_chocolate_chip_muffin"
+    },
+    "result": "createfood:chocolate_chip_muffin",
+    "experience": 0.15,
+    "cookingtime": 150
+}

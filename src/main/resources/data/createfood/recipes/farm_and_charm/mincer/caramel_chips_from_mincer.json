@@ -11,7 +11,7 @@
     },
     "recipe_type": "STONE",
     "result": {
-        "count": 8,
+        "count": "8",
         "item": "createfood:caramel_chips"
     }
 }

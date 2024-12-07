@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "1 ",
+        "2 "
+    ],
+    "key": {
+        "1": {
+            "tag": "forge:cooked_fishes"
+        },
+        "2": {
+            "tag": "forge:raw_sausage_pizza"
+        }
+    },
+    "result": {
+        "item": "createfood:raw_sausage_fish_pizza"
+    }
+}

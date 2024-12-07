@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "1 ",
+        "2 "
+    ],
+    "key": {
+        "1": {
+            "tag": "forge:cookie_crumbs"
+        },
+        "2": {
+            "tag": "forge:cream_pie_chocolate_graham_cracker"
+        }
+    },
+    "result": {
+        "item": "createfood:cookie_cream_pie"
+    }
+}

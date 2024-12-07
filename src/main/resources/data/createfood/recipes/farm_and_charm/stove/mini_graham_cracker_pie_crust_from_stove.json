@@ -18,6 +18,6 @@
         }
     ],
     "item": "createfood:mini_graham_cracker_pie_crust",
-    "count": 3,
-    "experience": 0.2
+    "count": "3",
+    "experience": "0.2"
 }

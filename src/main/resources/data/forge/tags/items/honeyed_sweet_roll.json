@@ -4,6 +4,10 @@
     {
       "id": "createfood:honeyed_sweet_roll",
       "required": false
+    },
+    {
+      "id": "create_factory:honey_roll",
+      "required": false
     }
   ]
 }

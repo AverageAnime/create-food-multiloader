@@ -1,7 +1,7 @@
 {
     "type": "farmersdelight:cooking",
-    "cookingtime": 50,
-    "experience": 0.5,
+    "cookingtime": "50",
+    "experience": "0.5",
     "ingredients": [
         {
             "item": "minecraft:water_bucket"

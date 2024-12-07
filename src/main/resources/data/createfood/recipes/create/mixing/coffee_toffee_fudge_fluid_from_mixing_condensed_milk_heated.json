@@ -12,8 +12,8 @@
             "tag": "forge:butter"
         },
         {
-            "amount": 250,
-            "fluid": "createfood:condensed_milk"
+            "amount": "250",
+            "fluidTag": "forge:condensed_milk"
         }
     ],
     "results": [

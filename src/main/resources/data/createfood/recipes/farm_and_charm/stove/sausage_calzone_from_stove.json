@@ -1,0 +1,23 @@
+{
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farm_and_charm"
+        }
+    ],
+    "type": "farm_and_charm:stove",
+    "ingredients": [
+        {
+            "tag": "forge:raw_sausage_calzone"
+        },
+        {
+            "tag": "forge:raw_sausage_calzone"
+        },
+        {
+            "tag": "forge:raw_sausage_calzone"
+        }
+    ],
+    "item": "createfood:sausage_calzone",
+    "count": 3,
+    "experience": 0.25
+}

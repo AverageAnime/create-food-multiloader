@@ -10,7 +10,7 @@
     },
     "result": [
         {
-            "count": 4,
+            "count": "4",
             "item": "createfood:chocolate_pie_graham_cracker_slice"
         }
     ]

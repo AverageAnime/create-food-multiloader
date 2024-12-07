@@ -1,0 +1,9 @@
+{
+    "type": "minecraft:smoking",
+    "ingredient": {
+        "tag": "forge:raw_caramel_chip_muffin"
+    },
+    "result": "createfood:caramel_chip_muffin",
+    "experience": 0.15,
+    "cookingtime": 150
+}

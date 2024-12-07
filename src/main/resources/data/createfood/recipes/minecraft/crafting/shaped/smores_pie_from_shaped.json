@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "1 ",
+        "2 "
+    ],
+    "key": {
+        "1": {
+            "tag": "forge:marshmallow"
+        },
+        "2": {
+            "tag": "forge:chocolate_pie_graham_cracker"
+        }
+    },
+    "result": {
+        "item": "createfood:smores_pie"
+    }
+}

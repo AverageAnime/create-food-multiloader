@@ -1,0 +1,9 @@
+{
+    "type": "minecraft:smelting",
+    "ingredient": {
+        "tag": "forge:raw_cupcake"
+    },
+    "result": "createfood:cupcake_base",
+    "experience": 0.15,
+    "cookingtime": 150
+}

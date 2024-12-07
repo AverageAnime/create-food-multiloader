@@ -12,6 +12,6 @@
     "recipe_type": "MEAT",
     "result": {
         "item": "createfood:dried_coffee_beans",
-        "count": 1
+        "count": "1"
     }
 }

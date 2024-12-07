@@ -5,8 +5,8 @@
             "item": "minecraft:sweet_berries"
         },
         {
-            "amount": 333,
-            "fluid": "createfood:dark_chocolate"
+            "amount": "333",
+            "fluidTag": "forge:dark_chocolate"
         }
     ],
     "results": [

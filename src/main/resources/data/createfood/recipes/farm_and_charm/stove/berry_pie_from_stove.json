@@ -18,6 +18,6 @@
         }
     ],
     "item": "createfood:berry_pie",
-    "count": 3,
-    "experience": 1.5
+    "count": "3",
+    "experience": "1.5"
 }

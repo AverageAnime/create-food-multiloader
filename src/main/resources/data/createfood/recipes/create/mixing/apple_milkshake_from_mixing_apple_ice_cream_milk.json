@@ -2,12 +2,12 @@
     "type": "create:mixing",
     "ingredients": [
         {
-            "amount": 250,
+            "amount": "250",
             "fluidTag": "forge:milk"
         },
         {
-            "amount": 750,
-            "fluid": "createfood:apple_ice_cream"
+            "amount": "750",
+            "fluidTag": "forge:apple_ice_cream"
         },
         {
             "tag": "forge:ice_blocks"

@@ -11,8 +11,8 @@
             "tag": "forge:eggs"
         },
         {
-            "amount": 500,
-            "fluid": "createfood:molasses"
+            "amount": "500",
+            "fluidTag": "forge:molasses"
         }
     ],
     "results": [

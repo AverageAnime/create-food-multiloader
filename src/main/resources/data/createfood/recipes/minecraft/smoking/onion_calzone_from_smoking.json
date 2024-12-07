@@ -1,0 +1,9 @@
+{
+    "type": "minecraft:smoking",
+    "ingredient": {
+        "tag": "forge:raw_onion_calzone"
+    },
+    "result": "createfood:onion_calzone",
+    "experience": 0.15,
+    "cookingtime": 250
+}

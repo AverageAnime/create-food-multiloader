@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "1 ",
+        "2 "
+    ],
+    "key": {
+        "1": {
+            "tag": "forge:slime_bucket"
+        },
+        "2": {
+            "tag": "forge:pasta_plate_slimeballs"
+        }
+    },
+    "result": {
+        "item": "frightsdelight:pasta_with_slimeballs"
+    }
+}

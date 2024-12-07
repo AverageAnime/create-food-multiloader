@@ -1,7 +1,7 @@
 {
     "type": "farmersdelight:cooking",
-    "cookingtime": 350,
-    "experience": 1.0,
+    "cookingtime": "350",
+    "experience": "1.0",
     "ingredients": [
         {
             "tag": "forge:milks"

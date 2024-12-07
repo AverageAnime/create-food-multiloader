@@ -4,17 +4,17 @@
             "type": "forge:not",
             "value": {
                 "type": "forge:tag_empty",
-                "tag": "forge:chili_pepper"
+                "tag": "forge:paprika_pepper"
             }
         }
     ],
     "type": "create:milling",
     "ingredients": [
         {
-            "tag": "forge:chili_pepper"
+            "tag": "forge:paprika_pepper"
         }
     ],
-    "processingTime": 80,
+    "processingTime": "80",
     "results": [
         {
             "count": 2,

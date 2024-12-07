@@ -24,7 +24,7 @@
         "item": "minecraft:bowl"
     },
     "result": {
-        "count": 8,
+        "count": "8",
         "item": "createfood:graham_cracker"
     }
 }

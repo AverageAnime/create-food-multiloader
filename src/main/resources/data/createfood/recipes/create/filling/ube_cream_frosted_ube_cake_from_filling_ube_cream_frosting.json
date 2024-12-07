@@ -5,8 +5,8 @@
             "tag": "forge:ube_cake_base"
         },
         {
-            "amount": 1000,
-            "fluid": "createfood:ube_cream_frosting"
+            "amount": "1000",
+            "fluidTag": "forge:ube_cream_frosting"
         }
     ],
     "results": [

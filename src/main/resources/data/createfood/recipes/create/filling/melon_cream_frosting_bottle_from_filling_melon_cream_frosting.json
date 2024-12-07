@@ -5,8 +5,8 @@
             "item": "minecraft:glass_bottle"
         },
         {
-            "amount": 250,
-            "fluid": "createfood:melon_cream_frosting"
+            "amount": "250",
+            "fluidTag": "forge:melon_cream_frosting"
         }
     ],
     "results": [

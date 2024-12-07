@@ -9,8 +9,8 @@
         }
     ],
     "type": "minecraft:smelting",
-    "cookingtime": 25,
-    "experience": 0.35,
+    "cookingtime": "25",
+    "experience": "0.35",
     "ingredient": {
         "tag": "forge:coffee_beans"
     },

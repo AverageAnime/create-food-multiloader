@@ -14,8 +14,8 @@
             "tag": "forge:popcorn"
         },
         {
-            "amount": 125,
-            "fluid": "createfood:caramel"
+            "amount": "125",
+            "fluidTag": "forge:caramel"
         }
     ],
     "results": [

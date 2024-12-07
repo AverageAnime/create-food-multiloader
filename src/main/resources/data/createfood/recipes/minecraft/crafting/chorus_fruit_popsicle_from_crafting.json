@@ -1,20 +1,18 @@
 {
-    "type": "minecraft:crafting_shaped",
-    "key": {
-        "-": {
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
             "item": "minecraft:stick"
         },
-        "i": {
+        {
             "item": "minecraft:ice"
         },
-        "b": {
+        {
+            "item": "minecraft:ice"
+        },
+        {
             "tag": "forge:chorus_fruit"
         }
-    },
-    "pattern": [
-        "   ",
-        "ib ",
-        "-i "
     ],
     "result": {
         "item": "createfood:chorus_fruit_popsicle"

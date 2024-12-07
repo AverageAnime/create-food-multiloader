@@ -5,8 +5,8 @@
             "tag": "forge:cake_base"
         },
         {
-            "amount": 1000,
-            "fluid": "createfood:cream_frosting"
+            "amount": "1000",
+            "fluidTag": "forge:cream_frosting"
         }
     ],
     "results": [

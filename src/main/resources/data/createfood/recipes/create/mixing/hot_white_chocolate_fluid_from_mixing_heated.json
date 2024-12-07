@@ -3,12 +3,12 @@
     "heatRequirement": "heated",
     "ingredients": [
         {
-            "amount": 125,
+            "amount": "125",
             "fluidTag": "forge:milk"
         },
         {
-            "amount": 125,
-            "fluid": "createfood:cacao_butter"
+            "amount": "125",
+            "fluidTag": "forge:cacao_butter"
         }
     ],
     "results": [

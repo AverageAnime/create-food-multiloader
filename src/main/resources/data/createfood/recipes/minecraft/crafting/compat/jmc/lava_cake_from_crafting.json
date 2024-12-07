@@ -14,8 +14,7 @@
             "item": "minecraft:lava_bucket"
         }
     ],
-    "result":
-        {
-            "item": "jmc:lava_cake"
-        }
+    "result": {
+        "item": "jmc:lava_cake"
+    }
 }

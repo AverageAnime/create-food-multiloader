@@ -2,8 +2,8 @@
     "type": "create:compacting",
     "ingredients": [
         {
-            "amount": 333,
-            "fluid": "createfood:white_chocolate"
+            "amount": "333",
+            "fluidTag": "forge:white_chocolate"
         }
     ],
     "results": [

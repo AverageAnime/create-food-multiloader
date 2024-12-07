@@ -14,8 +14,7 @@
             "item": "minecraft:ice"
         }
     ],
-    "result":
-        {
-            "item": "jmc:ice_cake"
-        }
+    "result": {
+        "item": "jmc:ice_cake"
+    }
 }
