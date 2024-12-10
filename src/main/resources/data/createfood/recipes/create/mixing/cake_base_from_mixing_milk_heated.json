@@ -9,7 +9,7 @@
             "tag": "forge:eggs"
         },
         {
-            "amount": "1000",
+            "amount": 1000,
             "fluidTag": "forge:milk"
         }
     ],

@@ -11,7 +11,7 @@
             "tag": "forge:cinnamon_sweet_roll_base"
         },
         {
-            "amount": "333",
+            "amount": 333,
             "fluidTag": "forge:cream_frosting"
         }
     ],

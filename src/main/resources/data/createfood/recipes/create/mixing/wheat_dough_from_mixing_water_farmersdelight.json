@@ -5,7 +5,7 @@
             "tag": "forge:wheat_flour"
         },
         {
-            "amount": "1000",
+            "amount": 1000,
             "fluid": "minecraft:water"
         }
     ],

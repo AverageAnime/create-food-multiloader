@@ -2,7 +2,7 @@
     "type": "create:compacting",
     "ingredients": [
         {
-            "amount": "333",
+            "amount": 333,
             "fluidTag": "forge:cacao_butter"
         }
     ],

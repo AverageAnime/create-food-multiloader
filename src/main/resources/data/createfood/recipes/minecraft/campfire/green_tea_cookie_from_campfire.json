@@ -10,6 +10,6 @@
         "tag": "forge:raw_green_tea_cookie"
     },
     "result": "farmersrespite:green_tea_cookie",
-    "experience": "0.1",
-    "cookingtime": "200"
+    "experience": 0.1,
+    "cookingtime": 200
 }

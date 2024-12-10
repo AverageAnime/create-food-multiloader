@@ -5,7 +5,7 @@
             "tag": "forge:chocolate_graham_cracker_neapolitan_scoop_1"
         },
         {
-            "amount": "111",
+            "amount": 111,
             "fluidTag": "forge:ice_cream"
         }
     ],

@@ -14,7 +14,7 @@
             "tag": "forge:peanut_butter_sandwich"
         },
         {
-            "amount": "125",
+            "amount": 125,
             "fluidTag": "forge:apple_jam"
         }
     ],

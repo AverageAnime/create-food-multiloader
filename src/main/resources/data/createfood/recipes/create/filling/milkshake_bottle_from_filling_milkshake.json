@@ -5,7 +5,7 @@
             "item": "minecraft:glass_bottle"
         },
         {
-            "amount": "500",
+            "amount": 500,
             "fluidTag": "forge:milkshake"
         }
     ],

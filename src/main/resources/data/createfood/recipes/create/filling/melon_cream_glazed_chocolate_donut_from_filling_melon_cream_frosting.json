@@ -5,7 +5,7 @@
             "tag": "forge:chocolate_donut_base"
         },
         {
-            "amount": "250",
+            "amount": 250,
             "fluidTag": "forge:melon_cream_frosting"
         }
     ],

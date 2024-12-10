@@ -11,7 +11,7 @@
             "tag": "forge:eggs"
         },
         {
-            "amount": "500",
+            "amount": 500,
             "fluidTag": "forge:molasses"
         }
     ],

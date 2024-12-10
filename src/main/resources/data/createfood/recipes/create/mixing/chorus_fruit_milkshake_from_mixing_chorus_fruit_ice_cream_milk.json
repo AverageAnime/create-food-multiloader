@@ -2,11 +2,11 @@
     "type": "create:mixing",
     "ingredients": [
         {
-            "amount": "250",
+            "amount": 250,
             "fluidTag": "forge:milk"
         },
         {
-            "amount": "750",
+            "amount": 750,
             "fluidTag": "forge:chorus_fruit_ice_cream"
         },
         {

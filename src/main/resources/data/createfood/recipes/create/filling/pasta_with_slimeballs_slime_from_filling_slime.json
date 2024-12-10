@@ -11,7 +11,7 @@
             "tag": "forge:pasta_plate_slimeballs"
         },
         {
-            "amount": "250",
+            "amount": 250,
             "fluidTag": "forge:slime"
         }
     ],

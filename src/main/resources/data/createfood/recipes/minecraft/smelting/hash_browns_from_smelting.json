@@ -1,7 +1,7 @@
 {
     "type": "minecraft:smelting",
-    "cookingtime": "75",
-    "experience": "0.55",
+    "cookingtime": 75,
+    "experience": 0.55,
     "ingredient": {
         "tag": "forge:shredded_potato"
     },

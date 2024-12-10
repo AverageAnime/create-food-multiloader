@@ -5,7 +5,7 @@
             "tag": "forge:bowl"
         },
         {
-            "amount": "333",
+            "amount": 333,
             "fluidTag": "forge:chorus_fruit_ice_cream"
         }
     ],

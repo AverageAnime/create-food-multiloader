@@ -6,7 +6,7 @@
             "tag": "forge:potato"
         },
         {
-            "amount": "125",
+            "amount": 125,
             "fluidTag": "forge:vegetable_oil"
         }
     ],

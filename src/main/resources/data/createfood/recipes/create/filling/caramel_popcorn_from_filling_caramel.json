@@ -14,7 +14,7 @@
             "tag": "forge:popcorn"
         },
         {
-            "amount": "125",
+            "amount": 125,
             "fluidTag": "forge:caramel"
         }
     ],

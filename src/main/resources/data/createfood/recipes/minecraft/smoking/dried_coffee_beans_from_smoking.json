@@ -9,8 +9,8 @@
         }
     ],
     "type": "minecraft:smoking",
-    "cookingtime": "100",
-    "experience": "0.35",
+    "cookingtime": 100,
+    "experience": 0.35,
     "ingredient": {
         "tag": "forge:coffee_beans"
     },

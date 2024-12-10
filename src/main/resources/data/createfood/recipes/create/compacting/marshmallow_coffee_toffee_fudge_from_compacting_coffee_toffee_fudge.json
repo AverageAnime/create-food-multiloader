@@ -2,7 +2,7 @@
     "type": "create:compacting",
     "ingredients": [
         {
-            "amount": "500",
+            "amount": 500,
             "fluidTag": "forge:coffee_toffee_fudge"
         },
         {

@@ -14,7 +14,7 @@
             "tag": "forge:corn_kernel"
         }
     ],
-    "processingTime": "80",
+    "processingTime": 80,
     "results": [
         {
             "count": 2,

@@ -4,6 +4,6 @@
         "tag": "forge:raw_mushroom_fish_pizza"
     },
     "result": "createfood:mushroom_fish_pizza",
-    "experience": "0.25",
-    "cookingtime": "400"
+    "experience": 0.25,
+    "cookingtime": 400
 }

@@ -1,7 +1,7 @@
 {
     "type": "farmersdelight:cooking",
-    "cookingtime": "500",
-    "experience": "1.0",
+    "cookingtime": 500,
+    "experience": 1.0,
     "ingredients": [
         {
             "tag": "forge:heavy_cream_bucket"

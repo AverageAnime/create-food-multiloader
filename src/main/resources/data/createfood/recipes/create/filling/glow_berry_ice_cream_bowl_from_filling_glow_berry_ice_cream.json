@@ -5,7 +5,7 @@
             "tag": "forge:bowl"
         },
         {
-            "amount": "333",
+            "amount": 333,
             "fluidTag": "forge:glow_berry_ice_cream"
         }
     ],

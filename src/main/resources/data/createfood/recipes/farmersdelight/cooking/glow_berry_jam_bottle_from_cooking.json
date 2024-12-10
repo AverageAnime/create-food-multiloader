@@ -3,8 +3,8 @@
     "container": {
         "item": "minecraft:glass_bottle"
     },
-    "cookingtime": "250",
-    "experience": "0.45",
+    "cookingtime": 250,
+    "experience": 0.45,
     "ingredients": [
         {
             "item": "minecraft:glow_berries"

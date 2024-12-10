@@ -9,7 +9,7 @@
             "tag": "forge:butter"
         },
         {
-            "amount": "250",
+            "amount": 250,
             "fluidTag": "forge:condensed_milk"
         }
     ],

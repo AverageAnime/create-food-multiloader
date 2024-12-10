@@ -1,7 +1,7 @@
 {
     "type": "farmersdelight:cooking",
-    "cookingtime": "350",
-    "experience": "0.2",
+    "cookingtime": 350,
+    "experience": 0.2,
     "ingredients": [
         {
             "item": "minecraft:water_bucket"
@@ -14,7 +14,7 @@
         }
     ],
     "result": {
-        "count": "4",
+        "count": 4,
         "item": "createfood:gelatin"
     }
 }

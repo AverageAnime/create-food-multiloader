@@ -4,6 +4,6 @@
         "tag": "forge:raw_cheesecake"
     },
     "result": "createfood:cheesecake",
-    "experience": "0.95",
-    "cookingtime": "550"
+    "experience": 0.95,
+    "cookingtime": 550
 }

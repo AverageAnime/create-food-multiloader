@@ -16,7 +16,7 @@
     },
     "result": {
         "item": "createfood:sausage_patty",
-        "count": "1",
-        "experience": "0.45"
+        "count": 1,
+        "experience": 0.45
     }
 }

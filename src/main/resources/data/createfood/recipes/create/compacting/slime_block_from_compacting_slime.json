@@ -2,7 +2,7 @@
     "type": "create:compacting",
     "ingredients": [
         {
-            "amount": "1000",
+            "amount": 1000,
             "fluidTag": "forge:slime"
         }
     ],

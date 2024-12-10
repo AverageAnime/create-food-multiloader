@@ -18,6 +18,6 @@
         }
     ],
     "item": "createfood:fish_bacon_pizza",
-    "count": "3",
-    "experience": "0.4"
+    "count": 3,
+    "experience": 0.4
 }

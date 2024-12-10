@@ -3,8 +3,8 @@
     "container": {
         "item": "minecraft:bucket"
     },
-    "cookingtime": "450",
-    "experience": "0.75",
+    "cookingtime": 450,
+    "experience": 0.75,
     "ingredients": [
         {
             "tag": "forge:chorus_fruit"

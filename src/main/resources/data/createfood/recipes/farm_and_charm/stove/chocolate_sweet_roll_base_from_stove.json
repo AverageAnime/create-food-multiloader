@@ -18,6 +18,6 @@
         }
     ],
     "item": "createfood:chocolate_sweet_roll_base",
-    "count": "3",
-    "experience": "0.3"
+    "count": 3,
+    "experience": 0.3
 }

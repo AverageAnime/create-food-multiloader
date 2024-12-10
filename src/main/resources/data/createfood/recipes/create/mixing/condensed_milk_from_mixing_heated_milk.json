@@ -3,7 +3,7 @@
     "heatRequirement": "heated",
     "ingredients": [
         {
-            "amount": "1000",
+            "amount": 1000,
             "fluidTag": "forge:milk"
         },
         {

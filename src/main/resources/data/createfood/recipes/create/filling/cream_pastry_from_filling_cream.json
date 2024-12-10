@@ -5,7 +5,7 @@
             "tag": "forge:pastry_base"
         },
         {
-            "amount": "250",
+            "amount": 250,
             "fluidTag": "forge:cream_frosting"
         }
     ],

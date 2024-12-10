@@ -1,4 +1,10 @@
 {
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "culturaldelights"
+        }
+    ],
     "type": "minecraft:crafting_shaped",
     "pattern": [
         "1 ",
@@ -6,10 +12,10 @@
     ],
     "key": {
         "1": {
-            "tag": "forge:cooked_eggplant"
+            "item": "farmersdelight:tomato_sauce"
         },
         "2": {
-            "tag": "forge:pasta_plate_tomato_sauce"
+            "tag": "forge:pasta_plate_eggplant"
         }
     },
     "result": {

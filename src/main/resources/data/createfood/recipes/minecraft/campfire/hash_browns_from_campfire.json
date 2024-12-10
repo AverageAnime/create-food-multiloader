@@ -4,6 +4,6 @@
         "tag": "forge:shredded_potato"
     },
     "result": "createfood:hash_browns",
-    "experience": "0.25",
-    "cookingtime": "75"
+    "experience": 0.25,
+    "cookingtime": 75
 }

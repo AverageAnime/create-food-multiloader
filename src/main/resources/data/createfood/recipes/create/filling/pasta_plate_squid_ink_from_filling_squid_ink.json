@@ -5,7 +5,7 @@
             "tag": "forge:pasta_plate"
         },
         {
-            "amount": "250",
+            "amount": 250,
             "fluidTag": "forge:squid_ink"
         }
     ],

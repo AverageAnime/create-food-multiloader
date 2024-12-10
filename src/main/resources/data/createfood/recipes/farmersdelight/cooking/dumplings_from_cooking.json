@@ -1,7 +1,7 @@
 {
     "type": "farmersdelight:cooking",
-    "cookingtime": "200",
-    "experience": "1.0",
+    "cookingtime": 200,
+    "experience": 1.0,
     "ingredients": [
         {
             "tag": "forge:dumpling_wrappers"
@@ -28,7 +28,7 @@
         ]
     ],
     "result": {
-        "count": "2",
+        "count": 2,
         "item": "farmersdelight:dumplings"
     }
 }

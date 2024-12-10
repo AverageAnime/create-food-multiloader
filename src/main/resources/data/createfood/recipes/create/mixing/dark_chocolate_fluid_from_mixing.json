@@ -2,7 +2,7 @@
     "type": "create:mixing",
     "ingredients": [
         {
-            "amount": "250",
+            "amount": 250,
             "fluidTag": "forge:cacao_mass"
         },
         {

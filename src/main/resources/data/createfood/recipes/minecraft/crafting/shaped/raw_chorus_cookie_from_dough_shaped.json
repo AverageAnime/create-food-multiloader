@@ -1,4 +1,10 @@
 {
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "ends_delight"
+        }
+    ],
     "type": "minecraft:crafting_shaped",
     "pattern": [
         "1 ",

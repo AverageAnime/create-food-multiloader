@@ -4,6 +4,6 @@
         "tag": "forge:raw_chorus_fruit_cheesecake"
     },
     "result": "createfood:chorus_fruit_cheesecake",
-    "experience": "0.95",
-    "cookingtime": "550"
+    "experience": 0.95,
+    "cookingtime": 550
 }

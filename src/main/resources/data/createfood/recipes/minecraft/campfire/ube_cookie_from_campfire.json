@@ -10,6 +10,6 @@
         "tag": "forge:raw_ube_cookie"
     },
     "result": "ubesdelight:cookie_ube",
-    "experience": "0.1",
-    "cookingtime": "200"
+    "experience": 0.1,
+    "cookingtime": 200
 }

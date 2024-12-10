@@ -3,8 +3,8 @@
     "container": {
         "item": "minecraft:bucket"
     },
-    "cookingtime": "85",
-    "experience": "0.25",
+    "cookingtime": 85,
+    "experience": 0.25,
     "ingredients": [
         {
             "tag": "forge:butter"

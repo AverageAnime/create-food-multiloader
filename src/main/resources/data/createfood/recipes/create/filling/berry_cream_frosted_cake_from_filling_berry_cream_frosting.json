@@ -5,7 +5,7 @@
             "tag": "forge:cake_base"
         },
         {
-            "amount": "250",
+            "amount": 250,
             "fluidTag": "forge:berry_cream_frosting"
         }
     ],

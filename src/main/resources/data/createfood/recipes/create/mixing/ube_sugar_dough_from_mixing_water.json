@@ -17,7 +17,7 @@
             "tag": "forge:sugar"
         },
         {
-            "amount": "1000",
+            "amount": 1000,
             "fluid": "minecraft:water"
         }
     ],

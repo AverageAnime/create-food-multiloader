@@ -2,7 +2,7 @@
     "type": "create:mixing",
     "ingredients": [
         {
-            "amount": "1000",
+            "amount": 1000,
             "fluidTag": "forge:yellow_gelatin_mix"
         },
         {

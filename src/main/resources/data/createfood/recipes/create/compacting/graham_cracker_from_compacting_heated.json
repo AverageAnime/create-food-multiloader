@@ -3,11 +3,11 @@
     "heatRequirement": "heated",
     "ingredients": [
         {
-            "amount": "125",
+            "amount": 125,
             "fluidTag": "forge:milk"
         },
         {
-            "amount": "250",
+            "amount": 250,
             "fluid": "create:honey"
         },
         {

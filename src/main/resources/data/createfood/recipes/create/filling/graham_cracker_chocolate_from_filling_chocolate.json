@@ -5,7 +5,7 @@
             "tag": "forge:graham_cracker"
         },
         {
-            "amount": "166",
+            "amount": 166,
             "fluid": "create:chocolate"
         }
     ],

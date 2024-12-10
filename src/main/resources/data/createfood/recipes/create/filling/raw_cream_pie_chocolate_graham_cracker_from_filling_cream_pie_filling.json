@@ -5,7 +5,7 @@
             "tag": "forge:raw_chocolate_graham_cracker_pie_crust"
         },
         {
-            "amount": "1000",
+            "amount": 1000,
             "fluidTag": "forge:cream_pie_filling"
         }
     ],

@@ -2,11 +2,11 @@
     "type": "create:mixing",
     "ingredients": [
         {
-            "amount": "1000",
+            "amount": 1000,
             "fluidTag": "forge:heavy_cream"
         },
         {
-            "amount": "250",
+            "amount": 250,
             "fluidTag": "forge:milk"
         }
     ],

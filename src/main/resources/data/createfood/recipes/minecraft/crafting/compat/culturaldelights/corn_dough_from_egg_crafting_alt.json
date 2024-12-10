@@ -11,14 +11,14 @@
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {
-            "tag": "forge:buckets/water"
+            "tag": "forge:eggs"
         },
         {
             "tag": "forge:corn_flour"
         }
     ],
     "result": {
-        "count": "3",
+        "count": 3,
         "item": "culturaldelights:corn_dough"
     }
 }

@@ -5,7 +5,7 @@
             "tag": "forge:pastry_bar_base"
         },
         {
-            "amount": "250",
+            "amount": 250,
             "fluidTag": "forge:caramel"
         }
     ],

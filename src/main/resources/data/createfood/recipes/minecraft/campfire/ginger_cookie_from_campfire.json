@@ -10,6 +10,6 @@
         "tag": "forge:raw_ginger_cookie"
     },
     "result": "ubesdelight:cookie_ginger",
-    "experience": "0.1",
-    "cookingtime": "200"
+    "experience": 0.1,
+    "cookingtime": 200
 }

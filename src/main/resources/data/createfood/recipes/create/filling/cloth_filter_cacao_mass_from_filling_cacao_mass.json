@@ -5,7 +5,7 @@
             "tag": "forge:cloth_filter"
         },
         {
-            "amount": "1000",
+            "amount": 1000,
             "fluidTag": "forge:cacao_mass"
         }
     ],

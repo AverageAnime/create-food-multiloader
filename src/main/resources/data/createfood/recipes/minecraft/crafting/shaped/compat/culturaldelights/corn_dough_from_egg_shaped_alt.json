@@ -1,4 +1,10 @@
 {
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "culturaldelights"
+        }
+    ],
     "type": "minecraft:crafting_shaped",
     "pattern": [
         "1 ",
@@ -9,7 +15,7 @@
             "tag": "forge:corn_flour"
         },
         "2": {
-            "tag": "forge:water_buckets"
+            "tag": "forge:eggs"
         }
     },
     "result": {

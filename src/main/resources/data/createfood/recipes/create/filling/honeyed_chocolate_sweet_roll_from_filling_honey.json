@@ -5,7 +5,7 @@
             "tag": "forge:chocolate_sweet_roll_base"
         },
         {
-            "amount": "333",
+            "amount": 333,
             "fluid": "create:honey"
         }
     ],

@@ -4,20 +4,21 @@
             "type": "forge:not",
             "value": {
                 "type": "forge:tag_empty",
-                "tag": "forge:peanut_butter"
+                "tag": "forge:corn"
             }
         }
     ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {
-            "tag": "forge:bread_slice_peanut_butter"
+            "tag": "forge:buckets/water"
         },
         {
-            "tag": "forge:bread_slice_glow_berry_jam"
+            "tag": "forge:corn_flour"
         }
     ],
     "result": {
-        "item": "expandeddelight:glow_berry_jelly_sandwich"
+        "count": 3,
+        "item": "culturaldelights:corn_dough"
     }
 }

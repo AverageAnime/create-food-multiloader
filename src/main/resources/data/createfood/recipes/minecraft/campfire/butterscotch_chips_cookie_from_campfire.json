@@ -4,6 +4,6 @@
         "tag": "forge:raw_butterscotch_chips_cookie"
     },
     "result": "createfood:butterscotch_chips_cookie",
-    "experience": "0.1",
-    "cookingtime": "200"
+    "experience": 0.1,
+    "cookingtime": 200
 }

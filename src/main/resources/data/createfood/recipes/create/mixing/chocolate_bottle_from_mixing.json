@@ -2,11 +2,11 @@
     "type": "create:mixing",
     "ingredients": [
         {
-            "amount": "125",
+            "amount": 125,
             "fluidTag": "forge:milk"
         },
         {
-            "amount": "125",
+            "amount": 125,
             "fluidTag": "forge:cacao_mass"
         },
         {
