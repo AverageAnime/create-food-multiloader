@@ -4,6 +4,10 @@
     {
       "id": "expandeddelight:peanut_butter",
       "required": false
+    },
+    {
+      "id": "delightful:nut_butter_bottle",
+      "required": false
     }
   ]
 }

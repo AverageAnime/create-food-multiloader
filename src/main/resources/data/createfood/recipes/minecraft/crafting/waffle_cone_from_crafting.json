@@ -1,0 +1,12 @@
+{
+    "conditions": [],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:mini_waffle"
+        }
+    ],
+    "result": {
+        "item": "createfood:waffle_cone"
+    }
+}

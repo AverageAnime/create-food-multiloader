@@ -1060,7 +1060,17 @@ public class ModFluids {
                             .explosionResistance(100f))
                     .register();
 
-
+    public static final FluidEntry<ForgeFlowingFluid.Flowing> WAFFLE_BATTER =
+            REGISTRATE.standardFluid("waffle_batter",
+                            SolidRenderedPlaceableFluidType.create(0xcebc92,
+                                    () -> 1f / 32f * 1))
+                    .properties(b -> b.viscosity(1500)
+                            .density(1400))
+                    .fluidProperties(p -> p.levelDecreasePerBlock(3)
+                            .tickRate(25)
+                            .slopeFindDistance(4)
+                            .explosionResistance(100f))
+                    .register();
 
     public static void register() {}
 

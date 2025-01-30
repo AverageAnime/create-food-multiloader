@@ -1,0 +1,17 @@
+{
+    "conditions": [],
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "forge:ice_cream_cone"
+        },
+        {
+            "tag": "forge:chocolate_chips"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:chocolate_chip_ice_cream_cone"
+        }
+    ]
+}

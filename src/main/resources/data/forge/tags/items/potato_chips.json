@@ -8,6 +8,10 @@
     {
       "id": "casualnessdelight:potato_chip",
       "required": false
+    },
+    {
+      "id": "kitchen_grow:potato_chips",
+      "required": false
     }
   ]
 }

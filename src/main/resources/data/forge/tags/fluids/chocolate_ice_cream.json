@@ -8,6 +8,10 @@
         {
             "id": "createfood:chocolate_ice_cream",
             "required": false
+        },
+        {
+            "id": "kitchen_grow:chocolate_ice_cream",
+            "required": false
         }
     ]
 }

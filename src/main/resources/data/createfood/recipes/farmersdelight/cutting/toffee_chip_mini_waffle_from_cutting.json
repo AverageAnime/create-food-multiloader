@@ -1,0 +1,18 @@
+{
+    "conditions": [],
+    "type": "farmersdelight:cutting",
+    "ingredients": [
+        {
+            "tag": "forge:toffee_chip_waffle"
+        }
+    ],
+    "tool": {
+        "tag": "forge:tools/knives"
+    },
+    "result": [
+        {
+            "count": 4,
+            "item": "createfood:toffee_chip_mini_waffle"
+        }
+    ]
+}

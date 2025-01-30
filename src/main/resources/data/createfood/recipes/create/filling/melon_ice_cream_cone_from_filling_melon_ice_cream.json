@@ -1,0 +1,18 @@
+{
+    "conditions": [],
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "tag": "forge:waffle_cone"
+        },
+        {
+            "amount": 111,
+            "fluidTag": "forge:melon_ice_cream"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:melon_ice_cream_cone"
+        }
+    ]
+}

@@ -1,0 +1,22 @@
+{
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farm_and_charm"
+        }
+    ],
+    "type": "farm_and_charm:pot_cooking",
+    "ingredients": [
+        {
+            "tag": "forge:waffle_batter_bucket"
+        },
+        {
+            "count": 8,
+            "tag": "forge:caramel_chips"
+        }
+    ],
+    "result": {
+        "count": 2,
+        "item": "createfood:caramel_chip_waffle"
+    }
+}

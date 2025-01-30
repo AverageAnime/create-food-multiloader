@@ -4,6 +4,10 @@
     {
       "id": "createfood:chocolate_ice_cream_bucket",
       "required": false
+    },
+    {
+      "id": "kitchen_grow:chocolate_ice_cream_bucket",
+      "required": false
     }
   ]
 }

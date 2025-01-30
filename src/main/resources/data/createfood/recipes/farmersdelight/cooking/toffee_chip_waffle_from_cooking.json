@@ -1,0 +1,19 @@
+{
+    "conditions": [],
+    "type": "farmersdelight:cooking",
+    "cookingtime": 100,
+    "experience": 0.75,
+    "ingredients": [
+        {
+            "tag": "forge:waffle_batter_bucket"
+        },
+        {
+            "count": 8,
+            "tag": "forge:toffee_chips"
+        }
+    ],
+    "result": {
+        "count": 2,
+        "item": "createfood:toffee_chip_waffle"
+    }
+}

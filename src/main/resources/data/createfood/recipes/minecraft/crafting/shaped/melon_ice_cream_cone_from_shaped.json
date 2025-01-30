@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "1 ",
+        "2 "
+    ],
+    "key": {
+        "1": {
+            "tag": "forge:melon_ice_cream_stick"
+        },
+        "2": {
+            "tag": "forge:waffle_cone"
+        }
+    },
+    "result": {
+        "item": "createfood:melon_ice_cream_cone"
+    }
+}

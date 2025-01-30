@@ -1,0 +1,28 @@
+{
+    "conditions": [],
+    "type": "create:compacting",
+    "heatRequirement": "heated",
+    "ingredients": [
+        {
+            "amount": 500,
+            "fluidTag": "forge:waffle_batter"
+        },
+        {
+            "tag": "forge:dark_chocolate_chips"
+        },
+        {
+            "tag": "forge:dark_chocolate_chips"
+        },
+        {
+            "tag": "forge:dark_chocolate_chips"
+        },
+        {
+            "tag": "forge:dark_chocolate_chips"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:dark_chocolate_chip_waffle"
+        }
+    ]
+}

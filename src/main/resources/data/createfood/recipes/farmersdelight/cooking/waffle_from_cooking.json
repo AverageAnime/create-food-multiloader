@@ -1,0 +1,15 @@
+{
+    "conditions": [],
+    "type": "farmersdelight:cooking",
+    "cookingtime": 100,
+    "experience": 0.75,
+    "ingredients": [
+        {
+            "tag": "forge:waffle_batter_bucket"
+        }
+    ],
+    "result": {
+        "count": 2,
+        "item": "createfood:waffle"
+    }
+}

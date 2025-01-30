@@ -6,6 +6,7 @@ import net.averageanime.createfood.CreateFood;
 import net.averageanime.createfood.block.cake.*;
 import net.averageanime.createfood.block.pie.*;
 import net.averageanime.createfood.block.pizza.*;
+import net.averageanime.createfood.block.waffle.*;
 import net.minecraft.world.level.block.SlimeBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 
@@ -80,6 +81,15 @@ public class ModBlocks {
     public static final BlockEntry<GlowBerryCheesecakeBlock> GLOW_BERRY_CHEESECAKE = REGISTRATE.block("glow_berry_cheesecake", GlowBerryCheesecakeBlock::new).item().build().register();
     public static final BlockEntry<GlowBerryPieBlock> GLOW_BERRY_PIE = REGISTRATE.block("glow_berry_pie", GlowBerryPieBlock::new).item().build().register();
     public static final BlockEntry<SmoresPieBlock> SMORES_PIE = REGISTRATE.block("smores_pie", SmoresPieBlock::new).item().build().register();
+
+    public static final BlockEntry<WaffleBlock> WAFFLE = REGISTRATE.block("waffle", WaffleBlock::new).item().build().register();
+    public static final BlockEntry<ButterscotchChipWaffleBlock> BUTTERSCOTCH_CHIP_WAFFLE = REGISTRATE.block("butterscotch_chip_waffle", ButterscotchChipWaffleBlock::new).item().build().register();
+    public static final BlockEntry<CaramelChipWaffleBlock> CARAMEL_CHIP_WAFFLE = REGISTRATE.block("caramel_chip_waffle", CaramelChipWaffleBlock::new).item().build().register();
+    public static final BlockEntry<ChocolateChipWaffleBlock> CHOCOLATE_CHIP_WAFFLE = REGISTRATE.block("chocolate_chip_waffle", ChocolateChipWaffleBlock::new).item().build().register();
+    public static final BlockEntry<DarkChocolateChipWaffleBlock> DARK_CHOCOLATE_CHIP_WAFFLE = REGISTRATE.block("dark_chocolate_chip_waffle", DarkChocolateChipWaffleBlock::new).item().build().register();
+    public static final BlockEntry<WhiteChocolateChipWaffleBlock> WHITE_CHOCOLATE_CHIP_WAFFLE = REGISTRATE.block("white_chocolate_chip_waffle", WhiteChocolateChipWaffleBlock::new).item().build().register();
+    public static final BlockEntry<ToffeeChipWaffleBlock> TOFFEE_CHIP_WAFFLE = REGISTRATE.block("toffee_chip_waffle", ToffeeChipWaffleBlock::new).item().build().register();
+
 
     public static final BlockEntry<CakeBaseBlock> CAKE_BASE = REGISTRATE.block("cake_base", CakeBaseBlock::new).item().build().register();
     public static final BlockEntry<CakeBaseBlock> UBE_CAKE_BASE = REGISTRATE.block("ube_cake_base", CakeBaseBlock::new).item().build().register();

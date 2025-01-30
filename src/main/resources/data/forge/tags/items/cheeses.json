@@ -32,6 +32,14 @@
     {
       "id": "create_bic_bit:aged_cheese_wedge",
       "required": false
+    },
+    {
+      "id": "kitchen_grow:cheese",
+      "required": false
+    },
+    {
+      "id": "kitchen_grow:plastic_cheese",
+      "required": false
     }
   ]
 }

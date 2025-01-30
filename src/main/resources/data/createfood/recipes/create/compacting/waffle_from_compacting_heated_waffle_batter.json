@@ -1,0 +1,16 @@
+{
+    "conditions": [],
+    "type": "create:compacting",
+    "heatRequirement": "heated",
+    "ingredients": [
+        {
+            "amount": 500,
+            "fluidTag": "forge:waffle_batter"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:waffle"
+        }
+    ]
+}

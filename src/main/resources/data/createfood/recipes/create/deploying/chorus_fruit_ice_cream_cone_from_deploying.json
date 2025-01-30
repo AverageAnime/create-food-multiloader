@@ -1,0 +1,17 @@
+{
+    "conditions": [],
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "forge:waffle_cone"
+        },
+        {
+            "tag": "forge:chorus_fruit_ice_cream_stick"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:chorus_fruit_ice_cream_cone"
+        }
+    ]
+}

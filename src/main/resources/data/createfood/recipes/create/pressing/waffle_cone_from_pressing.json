@@ -1,0 +1,14 @@
+{
+    "conditions": [],
+    "type": "create:pressing",
+    "ingredients": [
+        {
+            "tag": "forge:mini_waffle"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:waffle_cone"
+        }
+    ]
+}

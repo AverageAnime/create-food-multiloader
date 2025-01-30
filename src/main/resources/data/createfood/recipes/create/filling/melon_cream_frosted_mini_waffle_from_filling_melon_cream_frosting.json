@@ -1,0 +1,18 @@
+{
+    "conditions": [],
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "tag": "forge:mini_waffle"
+        },
+        {
+            "amount": 250,
+            "fluidTag": "forge:melon_cream_frosting"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:melon_cream_frosted_mini_waffle"
+        }
+    ]
+}

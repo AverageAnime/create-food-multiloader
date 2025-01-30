@@ -1,0 +1,28 @@
+{
+    "conditions": [],
+    "type": "create:compacting",
+    "heatRequirement": "heated",
+    "ingredients": [
+        {
+            "amount": 500,
+            "fluidTag": "forge:waffle_batter"
+        },
+        {
+            "tag": "forge:toffee_chips"
+        },
+        {
+            "tag": "forge:toffee_chips"
+        },
+        {
+            "tag": "forge:toffee_chips"
+        },
+        {
+            "tag": "forge:toffee_chips"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:toffee_chip_waffle"
+        }
+    ]
+}

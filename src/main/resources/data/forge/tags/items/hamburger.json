@@ -8,6 +8,10 @@
     {
       "id": "delightfulcreators:incomplete_hamburger",
       "required": false
+    },
+    {
+      "id": "delightfulburgers:basic_hamburger",
+      "required": false
     }
   ]
 }

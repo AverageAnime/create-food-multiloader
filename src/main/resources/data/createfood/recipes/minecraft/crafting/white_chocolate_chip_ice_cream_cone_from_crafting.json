@@ -1,0 +1,15 @@
+{
+    "conditions": [],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:ice_cream_cone"
+        },
+        {
+            "tag": "forge:white_chocolate_chips"
+        }
+    ],
+    "result": {
+        "item": "createfood:white_chocolate_chip_ice_cream_cone"
+    }
+}

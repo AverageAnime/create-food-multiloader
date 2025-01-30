@@ -1,0 +1,30 @@
+{
+    "conditions": [],
+    "type": "create:mixing",
+    "ingredients": [
+        {
+            "amount": 1000,
+            "fluidTag": "forge:milk"
+        },
+        {
+            "tag": "forge:sugar"
+        },
+        {
+            "tag": "forge:flour"
+        },
+        {
+            "tag": "forge:eggs"
+        },
+        {
+            "tag": "forge:butter"
+        },
+        {
+            "item": "minecraft:bucket"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:waffle_batter_bucket"
+        }
+    ]
+}

@@ -4,6 +4,10 @@
     {
       "id": "createfood:cheeseburger_onion_lettuce_tomato",
       "required": false
+    },
+    {
+      "id": "delightful:cheeseburger",
+      "required": false
     }
   ]
 }

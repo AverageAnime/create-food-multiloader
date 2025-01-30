@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:berry_cream_frosted_mini_waffle"
+        },
+        {
+            "item": "minecraft:sweet_berries"
+        }
+    ],
+    "result": {
+        "item": "createfood:berry_cream_frosted_mini_waffle_sweet_berry"
+    }
+}

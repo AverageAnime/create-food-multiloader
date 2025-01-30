@@ -1,0 +1,15 @@
+{
+    "conditions": [],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:mini_waffle"
+        },
+        {
+            "tag": "forge:melon_cream_frosting"
+        }
+    ],
+    "result": {
+        "item": "createfood:melon_cream_frosted_mini_waffle"
+    }
+}

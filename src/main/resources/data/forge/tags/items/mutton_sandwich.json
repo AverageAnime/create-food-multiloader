@@ -8,6 +8,10 @@
     {
       "id": "culturalcreators:incomplete_mutton_sandwich",
       "required": false
+    },
+    {
+      "id": "delightfulsandwich:mutton_sandwich",
+      "required": false
     }
   ]
 }

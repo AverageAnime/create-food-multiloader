@@ -12,6 +12,10 @@
     {
       "id": "rusticdelight:potato_slices",
       "required": false
+    },
+    {
+      "id": "kitchen_grow:potato_slices",
+      "required": false
     }
   ]
 }

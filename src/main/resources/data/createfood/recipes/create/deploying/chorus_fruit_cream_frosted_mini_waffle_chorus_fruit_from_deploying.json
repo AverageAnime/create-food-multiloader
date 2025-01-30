@@ -1,0 +1,17 @@
+{
+    "conditions": [],
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "forge:chorus_fruit_cream_frosted_mini_waffle"
+        },
+        {
+            "item": "minecraft:sweet_berries"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:chorus_fruit_cream_frosted_mini_waffle_chorus_fruit"
+        }
+    ]
+}

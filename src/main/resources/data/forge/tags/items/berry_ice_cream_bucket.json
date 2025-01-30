@@ -4,6 +4,10 @@
     {
       "id": "createfood:berry_ice_cream_bucket",
       "required": false
+    },
+    {
+      "id": "kitchen_grow:berry_ice_cream_bucket",
+      "required": false
     }
   ]
 }

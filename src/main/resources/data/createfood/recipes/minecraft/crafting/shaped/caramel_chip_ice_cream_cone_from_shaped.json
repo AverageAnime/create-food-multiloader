@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "1 ",
+        "2 "
+    ],
+    "key": {
+        "1": {
+            "tag": "forge:ice_cream_cone"
+        },
+        "2": {
+            "tag": "forge:caramel_chips"
+        }
+    },
+    "result": {
+        "item": "createfood:caramel_chip_ice_cream_cone"
+    }
+}
