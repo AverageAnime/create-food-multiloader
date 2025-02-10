@@ -1,0 +1,23 @@
+{
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "culturaldelights"
+        }
+    ],
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "tag": "forge:pasta_plate_eggplant"
+        },
+        {
+            "amount": 250,
+            "fluidTag": "forge:tomato_sauce"
+        }
+    ],
+    "results": [
+        {
+            "item": "culturaldelights:fried_eggplant_pasta"
+        }
+    ]
+}
