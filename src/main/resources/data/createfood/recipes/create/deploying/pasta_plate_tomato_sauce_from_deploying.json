@@ -2,10 +2,10 @@
     "type": "create:deploying",
     "ingredients": [
         {
-            "item": "farmersdelight:tomato_sauce"
+            "tag": "forge:pasta_plate"
         },
         {
-            "tag": "forge:cooked_pasta"
+            "item": "farmersdelight:tomato_sauce"
         }
     ],
     "results": [

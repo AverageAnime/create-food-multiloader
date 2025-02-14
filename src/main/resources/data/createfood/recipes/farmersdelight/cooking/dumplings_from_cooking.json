@@ -14,16 +14,16 @@
         },
         [
             {
-                "tag": "forge:foods/raw_meats/raw_chicken"
+                "tag": "forge:raw_chicken"
             },
             {
-                "tag": "forge:foods/raw_meats/raw_pork"
+                "tag": "forge:raw_pork"
             },
             {
-                "tag": "forge:foods/raw_meats/raw_beef"
+                "tag": "forge:raw_beef"
             },
             {
-                "item": "minecraft:brown_mushroom"
+                "tag": "forge:mushrooms"
             }
         ]
     ],

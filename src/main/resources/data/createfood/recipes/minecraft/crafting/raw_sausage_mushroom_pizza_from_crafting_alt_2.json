@@ -1,0 +1,15 @@
+{
+    "conditions": [],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:raw_mushroom_pizza"
+        },
+        {
+            "tag": "forge:breakfast_sausages"
+        }
+    ],
+    "result": {
+        "item": "createfood:raw_sausage_mushroom_pizza"
+    }
+}

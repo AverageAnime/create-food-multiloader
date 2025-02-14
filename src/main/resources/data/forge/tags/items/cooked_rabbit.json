@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "minecraft:cooked_rabbit",
+      "required": false
+    },
+    {
+      "id": "createfood:cooked_rabbit_cuts",
+      "required": false
+    }
+  ]
+}

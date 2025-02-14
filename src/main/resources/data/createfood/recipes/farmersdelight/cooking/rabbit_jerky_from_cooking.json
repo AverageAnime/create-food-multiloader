@@ -1,0 +1,17 @@
+{
+    "conditions": [],
+    "type": "farmersdelight:cooking",
+    "cookingtime": 200,
+    "experience": 0.25,
+    "ingredients": [
+        {
+            "tag": "forge:cooked_rabbit_cuts"
+        },
+        {
+            "tag": "forge:salt"
+        }
+    ],
+    "result": {
+        "item": "createfood:rabbit_jerky"
+    }
+}

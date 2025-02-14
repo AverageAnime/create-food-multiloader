@@ -8,7 +8,10 @@
     "type": "farm_and_charm:pot_cooking",
     "ingredients": [
         {
-            "tag": "forge:milk_buckets"
+            "item": "minecraft:milk_bucket"
+        },
+        {
+            "item": "minecraft:milk_bucket"
         },
         {
             "tag": "forge:sugar"

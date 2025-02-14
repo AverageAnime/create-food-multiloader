@@ -2,17 +2,17 @@
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {
-            "item": "minecraft:beef"
+            "tag": "forge:raw_beef"
         },
         {
-            "item": "minecraft:porkchop"
+            "tag": "forge:raw_pork"
         },
         {
-            "item": "minecraft:chicken"
+            "tag": "forge:raw_chicken"
         }
     ],
     "result": {
-        "count": 4,
+        "count": 2,
         "item": "createfood:sausage_meat"
     }
 }

@@ -1,0 +1,12 @@
+{
+    "conditions": [],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:crops/onion"
+        }
+    ],
+    "result": {
+        "item": "createfood:diced_onion"
+    }
+}

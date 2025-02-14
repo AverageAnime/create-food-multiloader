@@ -8,6 +8,10 @@
     {
       "id": "delightful:nut_butter_bottle",
       "required": false
+    },
+    {
+      "id": "croptopia:peanut_butter",
+      "required": false
     }
   ]
 }

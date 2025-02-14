@@ -1,0 +1,15 @@
+{
+    "conditions": [],
+    "type": "create:pressing",
+    "ingredients": [
+        {
+            "tag": "forge:crops/tomato"
+        }
+    ],
+    "results": [
+        {
+            "count": 2,
+            "item": "createfood:diced_tomato"
+        }
+    ]
+}

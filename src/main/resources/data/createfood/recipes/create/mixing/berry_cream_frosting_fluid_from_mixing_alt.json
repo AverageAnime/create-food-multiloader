@@ -1,38 +1,10 @@
 {
+    "conditions": [],
     "type": "create:mixing",
     "ingredients": [
         {
-            "tag": "forge:cream_cheese"
-        },
-        {
-            "tag": "forge:cream_cheese"
-        },
-        {
-            "tag": "forge:cream_cheese"
-        },
-        {
-            "tag": "forge:cream_cheese"
-        },
-        {
-            "tag": "forge:sugar"
-        },
-        {
-            "tag": "forge:sugar"
-        },
-        {
-            "tag": "forge:sugar"
-        },
-        {
-            "tag": "forge:sugar"
-        },
-        {
-            "item": "minecraft:sweet_berries"
-        },
-        {
-            "item": "minecraft:sweet_berries"
-        },
-        {
-            "item": "minecraft:sweet_berries"
+            "amount": 1000,
+            "fluidTag": "forge:cream_frosting"
         },
         {
             "item": "minecraft:sweet_berries"

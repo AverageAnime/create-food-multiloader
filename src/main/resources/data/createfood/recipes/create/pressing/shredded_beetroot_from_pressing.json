@@ -1,0 +1,15 @@
+{
+    "conditions": [],
+    "type": "create:pressing",
+    "ingredients": [
+        {
+            "item": "minecraft:beetroot"
+        }
+    ],
+    "results": [
+        {
+            "count": 2,
+            "item": "createfood:shredded_beetroot"
+        }
+    ]
+}

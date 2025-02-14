@@ -1,0 +1,15 @@
+{
+    "conditions": [],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:bread"
+        },
+        {
+            "tag": "forge:small_pork_meatballs"
+        }
+    ],
+    "result": {
+        "item": "createfood:pork_meatball_sandwich"
+    }
+}

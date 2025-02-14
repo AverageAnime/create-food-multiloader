@@ -1,0 +1,23 @@
+{
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farm_and_charm"
+        }
+    ],
+    "type": "farm_and_charm:pot_cooking",
+    "ingredients": [
+        {
+            "tag": "forge:cooked_rabbit_cuts"
+        },
+        {
+            "tag": "forge:salt"
+        }
+    ],
+    "container": {
+        "item": "minecraft:bowl"
+    },
+    "result": {
+        "item": "createfood:rabbit_jerky"
+    }
+}

@@ -2,13 +2,10 @@
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {
-            "tag": "forge:milk_buckets"
+            "item": "minecraft:milk_bucket"
         },
         {
             "tag": "forge:butter"
-        },
-        {
-            "tag": "forge:powdered_sugar"
         }
     ],
     "result": {

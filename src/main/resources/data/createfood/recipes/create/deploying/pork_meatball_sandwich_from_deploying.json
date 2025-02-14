@@ -1,0 +1,17 @@
+{
+    "conditions": [],
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "item": "minecraft:bread"
+        },
+        {
+            "tag": "forge:small_pork_meatballs"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:pork_meatball_sandwich"
+        }
+    ]
+}

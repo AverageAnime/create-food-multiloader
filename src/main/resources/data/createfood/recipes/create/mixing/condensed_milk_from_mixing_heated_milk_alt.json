@@ -1,0 +1,25 @@
+{
+    "type": "create:mixing",
+    "heatRequirement": "heated",
+    "ingredients": [
+        {
+            "amount": 1000,
+            "fluidTag": "forge:milk"
+        },
+        {
+            "tag": "forge:milk_powder"
+        },
+        {
+            "tag": "forge:sugar"
+        },
+        {
+            "tag": "forge:sugar"
+        }
+    ],
+    "results": [
+        {
+            "amount": 1000,
+            "fluid": "createfood:condensed_milk"
+        }
+    ]
+}

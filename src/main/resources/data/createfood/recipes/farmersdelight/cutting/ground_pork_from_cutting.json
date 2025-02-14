@@ -1,0 +1,17 @@
+{
+    "conditions": [],
+    "type": "farmersdelight:cutting",
+    "ingredients": [
+        {
+            "tag": "forge:foods/raw_meats/raw_bacon"
+        }
+    ],
+    "tool": {
+        "tag": "forge:tools/knives"
+    },
+    "result": [
+        {
+            "item": "createfood:ground_pork"
+        }
+    ]
+}

@@ -1,0 +1,17 @@
+{
+    "conditions": [],
+    "type": "create:item_application",
+    "ingredients": [
+        {
+            "tag": "forge:raw_fish_pizza"
+        },
+        {
+            "tag": "forge:breakfast_sausages"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:raw_sausage_fish_pizza"
+        }
+    ]
+}

@@ -1,0 +1,16 @@
+{
+    "conditions": [],
+    "type": "create:compacting",
+    "heatRequirement": "heated",
+    "ingredients": [
+        {
+            "tag": "forge:ground_pork"
+        }
+    ],
+    "results": [
+        {
+            "count": 2,
+            "item": "createfood:pork_meatball"
+        }
+    ]
+}

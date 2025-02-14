@@ -1,0 +1,17 @@
+{
+    "conditions": [],
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "item": "minecraft:stick"
+        },
+        {
+            "tag": "forge:pork_meatball"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:pork_meatball_stick_1"
+        }
+    ]
+}

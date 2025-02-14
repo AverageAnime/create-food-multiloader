@@ -1,0 +1,24 @@
+{
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "create_bic_bit"
+        }
+    ],
+    "type": "create:mixing",
+    "heatRequirement": "heated",
+    "ingredients": [
+        {
+            "tag": "forge:potato"
+        },
+        {
+            "amount": 125,
+            "fluid": "create_bic_bit:frying_oil"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:potato_chips"
+        }
+    ]
+}

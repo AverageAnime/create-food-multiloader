@@ -2,7 +2,7 @@
     "type": "create:deploying",
     "ingredients": [
         {
-            "tag": "forge:cooked_pasta"
+            "tag": "forge:pasta_plate"
         },
         {
             "tag": "forge:butter"

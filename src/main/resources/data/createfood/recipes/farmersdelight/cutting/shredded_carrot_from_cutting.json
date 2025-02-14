@@ -1,0 +1,17 @@
+{
+    "conditions": [],
+    "type": "farmersdelight:cutting",
+    "ingredients": [
+        {
+            "tag": "forge:sliced_carrot"
+        }
+    ],
+    "tool": {
+        "tag": "forge:tools/knives"
+    },
+    "result": [
+        {
+            "item": "createfood:shredded_carrot"
+        }
+    ]
+}

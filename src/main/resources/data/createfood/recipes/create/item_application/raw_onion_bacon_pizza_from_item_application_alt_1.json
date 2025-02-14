@@ -1,0 +1,17 @@
+{
+    "conditions": [],
+    "type": "create:item_application",
+    "ingredients": [
+        {
+            "tag": "forge:raw_bacon_pizza"
+        },
+        {
+            "tag": "forge:onion"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:raw_onion_bacon_pizza"
+        }
+    ]
+}

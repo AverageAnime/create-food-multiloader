@@ -2,6 +2,10 @@
   "replace": false,
   "values": [
     {
+      "id": "minecraft:milk_bucket",
+      "required": false
+    },
+    {
       "id": "meadow:wooden_milk_bucket",
       "required": false
     },

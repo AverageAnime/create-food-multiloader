@@ -1,0 +1,20 @@
+{
+    "conditions": [],
+    "type": "farmersdelight:cooking",
+    "cookingtime": 350,
+    "experience": 0.2,
+    "ingredients": [
+        {
+            "tag": "forge:water_buckets"
+        },
+        {
+            "tag": "forge:raw_macaroni"
+        },
+        {
+            "tag": "forge:butter"
+        }
+    ],
+    "result": {
+        "item": "createfood:macaroni"
+    }
+}

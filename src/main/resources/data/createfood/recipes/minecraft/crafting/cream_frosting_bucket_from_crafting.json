@@ -1,20 +1,21 @@
 {
+    "conditions": [],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {
-            "item": "minecraft:bucket"
+            "tag": "forge:heavy_cream_bucket"
         },
         {
-            "tag": "forge:cream_frosting"
+            "tag": "forge:sugar"
         },
         {
-            "tag": "forge:cream_frosting"
+            "tag": "forge:sugar"
         },
         {
-            "tag": "forge:cream_frosting"
+            "tag": "forge:frosting_ingredients"
         },
         {
-            "tag": "forge:cream_frosting"
+            "tag": "forge:frosting_ingredients"
         }
     ],
     "result": {

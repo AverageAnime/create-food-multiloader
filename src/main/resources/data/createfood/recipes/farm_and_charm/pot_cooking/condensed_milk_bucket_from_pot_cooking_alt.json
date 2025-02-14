@@ -1,0 +1,29 @@
+{
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farm_and_charm"
+        }
+    ],
+    "type": "farm_and_charm:pot_cooking",
+    "ingredients": [
+        {
+            "item": "minecraft:milk_bucket"
+        },
+        {
+            "tag": "forge:milk_powder"
+        },
+        {
+            "tag": "forge:sugar"
+        },
+        {
+            "tag": "forge:sugar"
+        }
+    ],
+    "container": {
+        "item": "minecraft:bucket"
+    },
+    "result": {
+        "item": "createfood:condensed_milk_bucket"
+    }
+}

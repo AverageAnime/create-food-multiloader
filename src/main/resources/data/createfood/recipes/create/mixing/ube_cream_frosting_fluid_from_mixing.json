@@ -1,18 +1,10 @@
 {
-    "conditions": [
-        {
-            "type": "forge:not",
-            "value": {
-                "type": "forge:tag_empty",
-                "tag": "forge:vegetables/ube"
-            }
-        }
-    ],
+    "conditions": [],
     "type": "create:mixing",
     "ingredients": [
         {
             "amount": 1000,
-            "fluidTag": "forge:milk"
+            "fluidTag": "forge:heavy_cream"
         },
         {
             "tag": "forge:sugar"
@@ -21,19 +13,10 @@
             "tag": "forge:sugar"
         },
         {
-            "tag": "forge:sugar"
+            "tag": "forge:frosting_ingredients"
         },
         {
-            "tag": "forge:sugar"
-        },
-        {
-            "tag": "forge:vegetables/ube"
-        },
-        {
-            "tag": "forge:vegetables/ube"
-        },
-        {
-            "tag": "forge:vegetables/ube"
+            "tag": "forge:frosting_ingredients"
         },
         {
             "tag": "forge:vegetables/ube"

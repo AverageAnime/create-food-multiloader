@@ -1,0 +1,15 @@
+{
+    "conditions": [],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "createfood:pork_meatball_stick_1"
+        },
+        {
+            "tag": "forge:pork_meatball"
+        }
+    ],
+    "result": {
+        "item": "createfood:pork_meatball_stick_2"
+    }
+}

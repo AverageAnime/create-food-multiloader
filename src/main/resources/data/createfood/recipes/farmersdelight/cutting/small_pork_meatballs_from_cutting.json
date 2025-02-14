@@ -1,0 +1,17 @@
+{
+    "conditions": [],
+    "type": "farmersdelight:cutting",
+    "ingredients": [
+        {
+            "tag": "forge:pork_meatball"
+        }
+    ],
+    "tool": {
+        "tag": "forge:tools/knives"
+    },
+    "result": [
+        {
+            "item": "createfood:small_pork_meatballs"
+        }
+    ]
+}

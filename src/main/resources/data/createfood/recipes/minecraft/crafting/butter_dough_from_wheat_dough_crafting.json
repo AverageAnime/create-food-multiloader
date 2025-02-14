@@ -1,0 +1,18 @@
+{
+    "conditions": [],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:wheat_dough_small"
+        },
+        {
+            "tag": "forge:butter"
+        },
+        {
+            "tag": "forge:wheat_dough_small"
+        }
+    ],
+    "result": {
+        "item": "createfood:butter_dough"
+    }
+}

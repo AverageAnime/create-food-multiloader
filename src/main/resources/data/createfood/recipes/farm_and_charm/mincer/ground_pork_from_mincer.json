@@ -1,0 +1,16 @@
+{
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farm_and_charm"
+        }
+    ],
+    "type": "farm_and_charm:mincer",
+    "ingredient": {
+        "tag": "forge:foods/raw_meats/raw_bacon"
+    },
+    "recipe_type": "MEAT",
+    "result": {
+        "item": "createfood:ground_pork"
+    }
+}

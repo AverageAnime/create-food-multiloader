@@ -1,0 +1,17 @@
+{
+    "conditions": [],
+    "type": "farmersdelight:cutting",
+    "ingredients": [
+        {
+            "tag": "forge:wheat_dough_small"
+        }
+    ],
+    "tool": {
+        "tag": "forge:tools/knives"
+    },
+    "result": [
+        {
+            "item": "createfood:raw_macaroni"
+        }
+    ]
+}

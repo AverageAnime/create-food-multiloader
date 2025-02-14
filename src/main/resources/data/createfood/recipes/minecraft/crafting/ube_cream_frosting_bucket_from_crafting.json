@@ -1,20 +1,29 @@
 {
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "ubesdelight"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {
-            "item": "minecraft:bucket"
+            "tag": "forge:heavy_cream_bucket"
         },
         {
-            "tag": "forge:ube_cream_frosting"
+            "tag": "forge:sugar"
         },
         {
-            "tag": "forge:ube_cream_frosting"
+            "tag": "forge:sugar"
         },
         {
-            "tag": "forge:ube_cream_frosting"
+            "tag": "forge:frosting_ingredients"
         },
         {
-            "tag": "forge:ube_cream_frosting"
+            "tag": "forge:frosting_ingredients"
+        },
+        {
+            "item": "ubesdelight:ube"
         }
     ],
     "result": {

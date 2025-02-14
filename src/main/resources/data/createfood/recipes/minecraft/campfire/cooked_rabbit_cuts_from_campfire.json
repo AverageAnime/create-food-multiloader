@@ -1,0 +1,10 @@
+{
+    "conditions": [],
+    "type": "minecraft:campfire_cooking",
+    "ingredient": {
+        "tag": "forge:rabbit_cuts"
+    },
+    "result": "createfood:cooked_rabbit_cuts",
+    "experience": 0.35,
+    "cookingtime": 100
+}

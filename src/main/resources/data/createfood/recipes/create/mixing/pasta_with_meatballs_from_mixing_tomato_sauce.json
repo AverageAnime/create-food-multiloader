@@ -1,0 +1,29 @@
+{
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "delightfulcreators"
+        }
+    ],
+    "type": "create:mixing",
+    "ingredients": [
+        {
+            "tag": "forge:cooked_pasta"
+        },
+        {
+            "item": "minecraft:bowl"
+        },
+        {
+            "tag": "forge:small_meatballs"
+        },
+        {
+            "amount": 250,
+            "fluid": "delightfulcreators:tomato_sauce"
+        }
+    ],
+    "results": [
+        {
+            "item": "farmersdelight:pasta_with_meatballs"
+        }
+    ]
+}

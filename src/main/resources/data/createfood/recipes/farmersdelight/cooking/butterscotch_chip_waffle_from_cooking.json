@@ -1,0 +1,19 @@
+{
+    "conditions": [],
+    "type": "farmersdelight:cooking",
+    "cookingtime": 100,
+    "experience": 0.75,
+    "ingredients": [
+        {
+            "tag": "forge:waffle_batter_bucket"
+        },
+        {
+            "count": 8,
+            "tag": "forge:butterscotch_chips"
+        }
+    ],
+    "result": {
+        "count": 2,
+        "item": "createfood:butterscotch_chip_waffle"
+    }
+}

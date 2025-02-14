@@ -1,0 +1,24 @@
+{
+    "conditions": [],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:bucket"
+        },
+        {
+            "tag": "forge:berry_cream_frosting"
+        },
+        {
+            "tag": "forge:berry_cream_frosting"
+        },
+        {
+            "tag": "forge:berry_cream_frosting"
+        },
+        {
+            "tag": "forge:berry_cream_frosting"
+        }
+    ],
+    "result": {
+        "item": "createfood:berry_cream_frosting_bucket"
+    }
+}

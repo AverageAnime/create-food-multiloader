@@ -1,0 +1,17 @@
+{
+    "conditions": [],
+    "type": "create:item_application",
+    "ingredients": [
+        {
+            "tag": "forge:raw_fish_pizza"
+        },
+        {
+            "tag": "forge:mushrooms"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:raw_mushroom_fish_pizza"
+        }
+    ]
+}

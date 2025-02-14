@@ -1,0 +1,22 @@
+{
+    "type": "farmersdelight:cooking",
+    "cookingtime": 150,
+    "experience": 0.5,
+    "ingredients": [
+        {
+            "item": "minecraft:milk_bucket"
+        },
+        {
+            "tag": "forge:milk_powder"
+        },
+        {
+            "tag": "forge:sugar"
+        },
+        {
+            "tag": "forge:sugar"
+        }
+    ],
+    "result": {
+        "item": "createfood:condensed_milk_bucket"
+    }
+}

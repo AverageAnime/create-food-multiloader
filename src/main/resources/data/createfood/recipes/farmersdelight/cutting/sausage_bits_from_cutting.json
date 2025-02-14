@@ -1,0 +1,18 @@
+{
+    "conditions": [],
+    "type": "farmersdelight:cutting",
+    "ingredients": [
+        {
+            "tag": "forge:sausage"
+        }
+    ],
+    "tool": {
+        "tag": "forge:tools/knives"
+    },
+    "result": [
+        {
+            "count": 2,
+            "item": "createfood:sausage_bits"
+        }
+    ]
+}

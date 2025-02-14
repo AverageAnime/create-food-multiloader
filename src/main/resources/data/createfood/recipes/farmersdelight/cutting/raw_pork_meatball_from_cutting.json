@@ -1,0 +1,18 @@
+{
+    "conditions": [],
+    "type": "farmersdelight:cutting",
+    "ingredients": [
+        {
+            "tag": "forge:ground_pork"
+        }
+    ],
+    "tool": {
+        "tag": "forge:tools/knives"
+    },
+    "result": [
+        {
+            "count": 2,
+            "item": "createfood:raw_pork_meatball"
+        }
+    ]
+}

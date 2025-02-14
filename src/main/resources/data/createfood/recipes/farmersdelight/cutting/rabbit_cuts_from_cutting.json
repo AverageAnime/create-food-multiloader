@@ -1,0 +1,21 @@
+{
+    "conditions": [],
+    "type": "farmersdelight:cutting",
+    "ingredients": [
+        {
+            "item": "minecraft:rabbit"
+        }
+    ],
+    "tool": {
+        "tag": "forge:tools/knives"
+    },
+    "result": [
+        {
+            "count": 2,
+            "item": "createfood:rabbit_cuts"
+        },
+        {
+            "item": "minecraft:bone_meal"
+        }
+    ]
+}

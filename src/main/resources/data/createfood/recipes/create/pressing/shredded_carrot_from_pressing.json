@@ -1,0 +1,15 @@
+{
+    "conditions": [],
+    "type": "create:pressing",
+    "ingredients": [
+        {
+            "item": "minecraft:carrot"
+        }
+    ],
+    "results": [
+        {
+            "count": 2,
+            "item": "createfood:shredded_carrot"
+        }
+    ]
+}

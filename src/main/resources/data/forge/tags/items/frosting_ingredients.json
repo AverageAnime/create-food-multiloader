@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "#forge:cream_cheese",
+      "required": false
+    },
+    {
+      "id": "#forge:butter",
+      "required": false
+    }
+  ]
+}
