@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "createfood:cooked_rabbit_cuts",
+      "required": false
+    }
+  ]
+}

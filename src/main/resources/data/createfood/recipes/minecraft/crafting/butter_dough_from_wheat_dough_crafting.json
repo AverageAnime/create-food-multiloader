@@ -1,0 +1,28 @@
+{
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:tags_populated",
+            "values": [
+                "c:butter",
+                "c:wheat_dough_small",
+                "c:butter_dough"
+            ]
+        }
+    ],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:wheat_dough_small"
+        },
+        {
+            "tag": "c:butter"
+        },
+        {
+            "tag": "c:wheat_dough_small"
+        }
+    ],
+    "result":
+    {
+        "item": "createfood:butter_dough"
+    }
+}

@@ -1,0 +1,28 @@
+{
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:tags_populated",
+            "values": [
+                "c:salt",
+                "c:wheat_dough_small",
+                "c:salt_dough"
+            ]
+        }
+    ],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:wheat_dough_small"
+        },
+        {
+            "tag": "c:salt"
+        },
+        {
+            "tag": "c:wheat_dough_small"
+        }
+    ],
+    "result":
+    {
+        "item": "createfood:salt_dough"
+    }
+}

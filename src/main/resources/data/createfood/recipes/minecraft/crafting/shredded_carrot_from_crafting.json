@@ -1,0 +1,19 @@
+{
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:tags_populated",
+            "values": [
+                "c:shredded_carrot"
+            ]
+        }
+    ],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:carrot"
+        }
+    ],
+    "result": {
+        "item": "createfood:shredded_carrot"
+    }
+}

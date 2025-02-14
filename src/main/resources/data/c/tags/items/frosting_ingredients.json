@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "#c:cream_cheese",
+      "required": false
+    },
+    {
+      "id": "#c:butter",
+      "required": false
+    }
+  ]
+}

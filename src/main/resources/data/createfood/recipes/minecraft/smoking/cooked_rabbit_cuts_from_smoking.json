@@ -1,0 +1,18 @@
+{
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:tags_populated",
+            "values": [
+                "c:rabbit_cuts",
+                "c:cooked_rabbit_cuts"
+            ]
+        }
+    ],
+    "type": "minecraft:smoking",
+    "ingredient": {
+        "tag": "c:rabbit_cuts"
+    },
+    "result": "createfood:cooked_rabbit_cuts",
+    "experience": 0.35,
+    "cookingtime": 100
+}

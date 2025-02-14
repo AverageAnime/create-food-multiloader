@@ -12,6 +12,10 @@
     {
       "id": "minecraft:cooked_porkchop",
       "required": false
+    },
+    {
+      "id": "createfood:bacon_bits",
+      "required": false
     }
   ]
 }

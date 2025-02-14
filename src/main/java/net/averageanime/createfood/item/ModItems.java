@@ -185,6 +185,13 @@ public class ModItems {
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(APPLE_SLICE));
         }
 
+// Bacon Bits
+
+        if (CONFIG.isBaconBitsEnabled) {
+            final Item BACON_BITS = registerItem("bacon_bits", new ConsumableItem(new FabricItemSettings().food(new FoodComponent.Builder().hunger(1).saturationModifier(0.4f).build())));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(BACON_BITS));
+        }
+
 // Bacon Calzone
 
         if (CONFIG.isBaconCalzoneEnabled) {
@@ -1970,6 +1977,13 @@ public class ModItems {
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(CONDENSEDMILKBOTTLE));
         }
 
+// Cooked Rabbit Cuts
+
+        if (CONFIG.isCookedRabbitCutsEnabled) {
+            final Item COOKED_RABBIT_CUTS = registerItem("cooked_rabbit_cuts", new ConsumableItem(new FabricItemSettings().food(new FoodComponent.Builder().hunger(3).saturationModifier(0.6f).snack().build())));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(COOKED_RABBIT_CUTS));
+        }
+
 // Cookies & Cream Pie
 
         if (CONFIG.isCookieCreamPieEnabled) {
@@ -2191,8 +2205,15 @@ public class ModItems {
 // Diced Onion
 
         if (CONFIG.isDicedOnionEnabled) {
-            final Item DICEDONION = registerItem("diced_onion", new ConsumableItem(new FabricItemSettings().food(new FoodComponent.Builder().hunger(1).saturationModifier(0.5f).build())));
+            final Item DICEDONION = registerItem("diced_onion", new ConsumableItem(new FabricItemSettings()));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(DICEDONION));
+        }
+
+// Diced Tomato
+
+        if (CONFIG.isDicedTomatoEnabled) {
+            final Item DICED_TOMATO = registerItem("diced_tomato", new ConsumableItem(new FabricItemSettings()));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(DICED_TOMATO));
         }
 
 // Donut Base
@@ -2797,6 +2818,13 @@ public class ModItems {
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(GROUNDENDERMITE));
         }
 
+// Ground Pork
+
+        if (CONFIG.isGroundPorkEnabled) {
+            final Item GROUND_PORK = registerItem("ground_pork", new ConsumableItem(new FabricItemSettings()));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(GROUND_PORK));
+        }
+
 // Hamburger
 
         if (CONFIG.isHamburgerEnabled) {
@@ -3075,6 +3103,13 @@ public class ModItems {
         if (CONFIG.isIceCreamStickEnabled) {
             final Item ICE_CREAM_STICK = registerItem("ice_cream_stick", new StickFood(new FabricItemSettings().food(new FoodComponent.Builder().hunger(1).saturationModifier(0.8f).snack().build())));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(ICE_CREAM_STICK));
+        }
+
+// Macaroni
+
+        if (CONFIG.isMacaroniEnabled) {
+            final Item MACARONI = registerItem("macaroni", new ConsumableItem(new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.5f).build())));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(MACARONI));
         }
 
 // Magma Cream Marshmallow
@@ -3648,6 +3683,35 @@ public class ModItems {
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(PEANUTBUTTERMELONJAMSANDWICH));
         }
 
+// Pork Meatball
+
+        if (CONFIG.isPorkMeatballEnabled) {
+            final Item PORK_MEATBALL = registerItem("pork_meatball", new ConsumableItem(new FabricItemSettings().food(new FoodComponent.Builder().hunger(3).saturationModifier(0.8f).build())));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(PORK_MEATBALL));
+        }
+
+// Pork Meatball Sandwich
+
+        if (CONFIG.isPorkMeatballSandwichEnabled) {
+            final Item PORK_MEATBALL_SANDWICH = registerItem("pork_meatball_sandwich", new ConsumableItem(new FabricItemSettings().food(new FoodComponent.Builder().hunger(9).saturationModifier(0.6f).statusEffect(new StatusEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0),1.0f).build()), true));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(PORK_MEATBALL_SANDWICH));
+        }
+
+// Pork Meatball Stick
+
+        if (CONFIG.isPorkMeatballStickEnabled) {
+            final Item PORK_MEATBALL_STICK1 = registerItem("pork_meatball_stick_1", new StickFood(new FabricItemSettings().food(new FoodComponent.Builder().hunger(4).saturationModifier(0.8f).snack().build())));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(PORK_MEATBALL_STICK1));
+        }
+        if (CONFIG.isPorkMeatballStickEnabled) {
+            final Item PORK_MEATBALL_STICK2 = registerItem("pork_meatball_stick_2", new StickFood(new FabricItemSettings().food(new FoodComponent.Builder().hunger(5).saturationModifier(0.8f).snack().build())));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(PORK_MEATBALL_STICK2));
+        }
+        if (CONFIG.isPorkMeatballStickEnabled) {
+            final Item PORK_MEATBALL_STICK3 = registerItem("pork_meatball_stick_3", new StickFood(new FabricItemSettings().food(new FoodComponent.Builder().hunger(7).saturationModifier(0.9f).snack().build())));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(PORK_MEATBALL_STICK3));
+        }
+
 // Potato Chips
 
         if (CONFIG.isPotatoChipsEnabled) {
@@ -3702,6 +3766,20 @@ public class ModItems {
         if (CONFIG.isPumpernickelToastSliceEnabled) {
             final Item PUMPERNICKELTOASTSLICE = registerItem("pumpernickel_toast_slice", new ConsumableItem(new FabricItemSettings().food(new FoodComponent.Builder().hunger(6).saturationModifier(1.3f).snack().build())));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(PUMPERNICKELTOASTSLICE));
+        }
+
+// Rabbit Cuts
+
+        if (CONFIG.isRabbitCutsEnabled) {
+            final Item RABBIT_CUTS = registerItem("rabbit_cuts", new ConsumableItem(new FabricItemSettings()));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(RABBIT_CUTS));
+        }
+
+// Rabbit Jerky
+
+        if (CONFIG.isRabbitJerkyEnabled) {
+            final Item RABBIT_JERKY = registerItem("rabbit_jerky", new ConsumableItem(new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(1.6f).snack().statusEffect(new StatusEffectInstance(StatusEffects.HASTE, 1200, 0),1.0f).statusEffect(new StatusEffectInstance(StatusEffects.SPEED, 1200, 0),1.0f).build()), true));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(RABBIT_JERKY));
         }
 
 // Raw Bacon Calzone
@@ -3900,6 +3978,13 @@ public class ModItems {
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(RAWHONEYCOOKIE));
         }
 
+// Raw Macaroni
+
+        if (CONFIG.isRawMacaroniEnabled) {
+            final Item RAW_MACARONI = registerItem("raw_macaroni", new ConsumableItem(new FabricItemSettings()));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(RAW_MACARONI));
+        }
+
 // Raw Meatball
 
         if (CONFIG.isRawMeatballEnabled) {
@@ -3975,6 +4060,13 @@ public class ModItems {
         if (CONFIG.isRawPastryBaseEnabled) {
             final Item RAWPASTRYBASE = registerItem("raw_pastry_base", new ConsumableItem(new FabricItemSettings()));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(RAWPASTRYBASE));
+        }
+
+// Raw Pork Meatball
+
+        if (CONFIG.isRawPorkMeatballEnabled) {
+            final Item RAW_PORK_MEATBALL = registerItem("raw_pork_meatball", new ConsumableItem(new FabricItemSettings()));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(RAW_PORK_MEATBALL));
         }
 
 // Raw Sausage Calzone
@@ -4145,6 +4237,13 @@ public class ModItems {
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(SAUSAGEBISCUITSANDWICH));
         }
 
+// Sausage Bits
+
+        if (CONFIG.isSausageBitsEnabled) {
+            final Item SAUSAGE_BITS = registerItem("sausage_bits", new ConsumableItem(new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.2f).build())));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(SAUSAGE_BITS));
+        }
+
 // Sausage Calzone
 
         if (CONFIG.isSausageCalzoneEnabled) {
@@ -4211,6 +4310,18 @@ public class ModItems {
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(SAUSAGE_ONION_PIZZA));
         }
 
+// Shredded Beetroot
+        if (CONFIG.isShreddedBeetrootEnabled) {
+            final Item SHREDDED_BEETROOT = registerItem("shredded_beetroot", new ConsumableItem(new FabricItemSettings()));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(SHREDDED_BEETROOT));
+        }
+
+// Shredded Carrot
+        if (CONFIG.isShreddedCarrotEnabled) {
+            final Item SHREDDED_CARROT = registerItem("shredded_carrot", new ConsumableItem(new FabricItemSettings()));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(SHREDDED_CARROT));
+        }
+
 // Shredded Chicken
 
         if (CONFIG.isShreddedChickenEnabled) {
@@ -4232,6 +4343,13 @@ public class ModItems {
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(SLICEDBEETROOT));
         }
 
+// Sliced Brown Mushroom
+
+        if (CONFIG.isSlicedBrownMushroomEnabled) {
+            final Item SLICED_BROWN_MUSHROOM = registerItem("sliced_brown_mushroom", new ConsumableItem(new FabricItemSettings().food(new FoodComponent.Builder().hunger(1).saturationModifier(1.1f).build())));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(SLICED_BROWN_MUSHROOM));
+        }
+
 // Sliced Carrot
         if (CONFIG.isSlicedCarrotEnabled) {
             final Item SLICEDCARROT = registerItem("sliced_carrot", new ConsumableItem(new FabricItemSettings().food(new FoodComponent.Builder().hunger(1).saturationModifier(0.4f).snack().build())));
@@ -4243,6 +4361,20 @@ public class ModItems {
         if (CONFIG.isSlicedPotatoEnabled) {
             final Item SLICEDPOTATO = registerItem("sliced_potato", new ConsumableItem(new FabricItemSettings().food(new FoodComponent.Builder().hunger(1).saturationModifier(0.6f).snack().build())));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(SLICEDPOTATO));
+        }
+
+// Sliced Onion
+
+        if (CONFIG.isSlicedOnionEnabled) {
+            final Item SLICED_ONION = registerItem("sliced_onion", new ConsumableItem(new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.4f).build())));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(SLICED_ONION));
+        }
+
+// Sliced Red Mushroom
+
+        if (CONFIG.isSlicedRedMushroomEnabled) {
+            final Item SLICED_RED_MUSHROOM = registerItem("sliced_red_mushroom", new ConsumableItem(new FabricItemSettings().food(new FoodComponent.Builder().hunger(1).saturationModifier(1.1f).build())));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(SLICED_RED_MUSHROOM));
         }
 
 // Sliced Tomato
@@ -4264,6 +4396,13 @@ public class ModItems {
         if (CONFIG.isSmallMeatballsEnabled) {
             final Item SMALLMEATBALLS = registerItem("small_meatballs", new ConsumableItem(new FabricItemSettings().food(new FoodComponent.Builder().hunger(3).saturationModifier(0.7f).statusEffect(new StatusEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0),1.0f).build()), true));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(SMALLMEATBALLS));
+        }
+
+// Small Pork Meatballs
+
+        if (CONFIG.isSmallPorkMeatballsEnabled) {
+            final Item SMALL_PORK_MEATBALLS = registerItem("small_pork_meatballs", new ConsumableItem(new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.9f).statusEffect(new StatusEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0),1.0f).build()), true));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(SMALL_PORK_MEATBALLS));
         }
 
 // Small Slimeballs
@@ -4507,6 +4646,13 @@ public class ModItems {
         if (CONFIG.isWaffleConeEnabled) {
             final Item WAFFLE_CONE = registerItem("waffle_cone", new ConsumableItem(new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(1.0f).build())));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(WAFFLE_CONE));
+        }
+
+// Wheat Dough (Small)
+
+        if (CONFIG.isWheatDoughSmallEnabled) {
+            final Item WHEAT_DOUGH_SMALL = registerItem("wheat_dough_small", new ConsumableItem(new FabricItemSettings()));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(WHEAT_DOUGH_SMALL));
         }
 
 // White Chips Chocolate Cookie

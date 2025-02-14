@@ -9,7 +9,6 @@
         {
             "condition": "fabric:tags_populated",
             "values": [
-                "c:cream_cheese",
                 "c:cocoa_powder",
                 "c:chocolate_cream_frosting_bucket"
             ]
@@ -18,37 +17,8 @@
     "type": "create:mixing",
     "ingredients": [
         {
-            "tag": "c:cream_cheese"
-        },
-        {
-            "tag": "c:cream_cheese"
-        },
-        {
-            "tag": "c:cream_cheese"
-        },
-        {
-            "tag": "c:cream_cheese"
-        },
-        {
-            "tag": "c:sugar"
-        },
-        {
-            "tag": "c:sugar"
-        },
-        {
-            "tag": "c:sugar"
-        },
-        {
-            "tag": "c:sugar"
-        },
-        {
-            "tag": "c:cocoa_powder"
-        },
-        {
-            "tag": "c:cocoa_powder"
-        },
-        {
-            "tag": "c:cocoa_powder"
+            "amount": 81000,
+            "fluidTag": "c:cream_frosting"
         },
         {
             "tag": "c:cocoa_powder"

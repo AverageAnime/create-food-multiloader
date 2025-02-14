@@ -1,0 +1,26 @@
+{
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:tags_populated",
+            "values": [
+                "c:pork_meatball",
+                "c:pork_meatball_stick"
+            ]
+        }
+    ],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:stick"
+        },
+        {
+            "tag": "c:pork_meatball"
+        },
+        {
+            "tag": "c:pork_meatball"
+        }
+    ],
+    "result": {
+        "item": "createfood:pork_meatball_stick_2"
+    }
+}

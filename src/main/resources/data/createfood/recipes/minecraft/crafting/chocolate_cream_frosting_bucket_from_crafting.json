@@ -3,7 +3,9 @@
         {
             "condition": "fabric:tags_populated",
             "values": [
-                "c:chocolate_cream_frosting",
+                "c:heavy_cream_bucket",
+                "c:cocoa_powder",
+                "c:frosting_ingredients",
                 "c:chocolate_cream_frosting_bucket"
             ]
         }
@@ -11,19 +13,22 @@
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {
-            "item": "minecraft:bucket"
+            "tag": "c:heavy_cream_bucket"
         },
         {
-            "tag": "c:chocolate_cream_frosting"
+            "tag": "c:sugar"
         },
         {
-            "tag": "c:chocolate_cream_frosting"
+            "tag": "c:sugar"
         },
         {
-            "tag": "c:chocolate_cream_frosting"
+            "tag": "c:frosting_ingredients"
         },
         {
-            "tag": "c:chocolate_cream_frosting"
+            "tag": "c:frosting_ingredients"
+        },
+        {
+            "tag": "c:cocoa_powder"
         }
     ],
     "result": {

@@ -1,0 +1,33 @@
+{
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "create"
+            ]
+        },
+        {
+            "condition": "fabric:tags_populated",
+            "values": [
+                "c:cooked_rabbit_cuts",
+                "c:salt",
+                "c:rabbit_jerky"
+            ]
+        }
+    ],
+    "type": "create:compacting",
+    "heatRequirement": "heated",
+    "ingredients": [
+        {
+            "tag": "c:cooked_rabbit_cuts"
+        },
+        {
+            "tag": "c:salt"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:rabbit_jerky"
+        }
+    ]
+}

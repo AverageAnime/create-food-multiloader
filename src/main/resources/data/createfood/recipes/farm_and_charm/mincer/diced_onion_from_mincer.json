@@ -9,17 +9,17 @@
         {
             "condition": "fabric:tags_populated",
             "values": [
+                "c:sliced_onion",
                 "c:diced_onion"
             ]
         }
     ],
     "type": "farm_and_charm:mincer",
     "ingredient": {
-        "tag": "c:crops/onion"
+        "tag": "c:sliced_onion"
     },
     "recipe_type": "WOOD",
     "result": {
-        "count": 2,
         "item": "createfood:diced_onion"
     }
 }

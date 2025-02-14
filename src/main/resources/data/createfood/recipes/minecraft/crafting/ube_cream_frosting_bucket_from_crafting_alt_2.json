@@ -1,0 +1,23 @@
+{
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:tags_populated",
+            "values": [
+                "c:cream_frosting_bucket",
+                "c:ube_cream_frosting_bucket"
+            ]
+        }
+    ],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:cream_frosting_bucket"
+        },
+        {
+            "item": "ubesdelight:ube"
+        }
+    ],
+    "result": {
+        "item": "createfood:ube_cream_frosting_bucket"
+    }
+}

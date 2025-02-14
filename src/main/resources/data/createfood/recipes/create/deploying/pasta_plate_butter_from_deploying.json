@@ -9,7 +9,7 @@
         {
             "condition": "fabric:tags_populated",
             "values": [
-                "c:cooked_pasta",
+                "c:pasta_plate",
                 "c:butter",
                 "c:pasta_plate_butter"
             ]
@@ -18,7 +18,7 @@
     "type": "create:deploying",
     "ingredients": [
         {
-            "tag": "c:cooked_pasta"
+            "tag": "c:pasta_plate"
         },
         {
             "tag": "c:butter"

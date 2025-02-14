@@ -1,0 +1,32 @@
+{
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "farmersdelight"
+            ]
+        },
+        {
+            "condition": "fabric:tags_populated",
+            "values": [
+                "c:cooked_rabbit_cuts",
+                "c:salt",
+                "c:rabbit_jerky"
+            ]
+        }
+    ],
+    "type": "farmersdelight:cooking",
+    "cookingtime": 200,
+    "experience": 0.25,
+    "ingredients": [
+        {
+            "tag": "c:cooked_rabbit_cuts"
+        },
+        {
+            "tag": "c:salt"
+        }
+    ],
+    "result": {
+        "item": "createfood:rabbit_jerky"
+    }
+}

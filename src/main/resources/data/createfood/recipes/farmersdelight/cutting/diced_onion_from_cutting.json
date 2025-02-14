@@ -9,6 +9,7 @@
         {
             "condition": "fabric:tags_populated",
             "values": [
+                "c:sliced_onion",
                 "c:diced_onion"
             ]
         }
@@ -16,7 +17,7 @@
     "type": "farmersdelight:cutting",
     "ingredients": [
         {
-            "tag": "c:crops/onion"
+            "tag": "c:sliced_onion"
         }
     ],
     "tool": {
@@ -24,7 +25,6 @@
     },
     "result": [
         {
-            "count": 2,
             "item": "createfood:diced_onion"
         }
     ]

@@ -9,7 +9,6 @@
         {
             "condition": "fabric:tags_populated",
             "values": [
-                "c:powdered_sugar",
                 "c:condensed_milk_bucket"
             ]
         }
@@ -22,7 +21,7 @@
             "fluidTag": "c:milk"
         },
         {
-            "tag": "c:powdered_sugar"
+            "tag": "c:sugar"
         }
     ],
     "results": [

@@ -9,7 +9,6 @@
         {
             "condition": "fabric:tags_populated",
             "values": [
-                "c:cream_cheese",
                 "c:melon_cream_frosting_bucket"
             ]
         }
@@ -17,37 +16,8 @@
     "type": "create:mixing",
     "ingredients": [
         {
-            "tag": "c:cream_cheese"
-        },
-        {
-            "tag": "c:cream_cheese"
-        },
-        {
-            "tag": "c:cream_cheese"
-        },
-        {
-            "tag": "c:cream_cheese"
-        },
-        {
-            "tag": "c:sugar"
-        },
-        {
-            "tag": "c:sugar"
-        },
-        {
-            "tag": "c:sugar"
-        },
-        {
-            "tag": "c:sugar"
-        },
-        {
-            "tag": "c:melon"
-        },
-        {
-            "tag": "c:melon"
-        },
-        {
-            "tag": "c:melon"
+            "amount": 81000,
+            "fluidTag": "c:cream_frosting"
         },
         {
             "tag": "c:melon"

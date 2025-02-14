@@ -9,6 +9,7 @@
         {
             "condition": "fabric:tags_populated",
             "values": [
+                "c:frosting_ingredients",
                 "c:cream_frosting_bucket"
             ]
         }
@@ -17,7 +18,7 @@
     "ingredients": [
         {
             "amount": 81000,
-            "fluidTag": "c:milk"
+            "fluidTag": "c:heavy_cream"
         },
         {
             "tag": "c:sugar"
@@ -26,10 +27,10 @@
             "tag": "c:sugar"
         },
         {
-            "tag": "c:sugar"
+            "tag": "c:frosting_ingredients"
         },
         {
-            "tag": "c:sugar"
+            "tag": "c:frosting_ingredients"
         }
     ],
     "results": [

@@ -3,27 +3,32 @@
         {
             "condition": "fabric:tags_populated",
             "values": [
-                "c:chorus_fruit_cream_frosting",
+                "c:heavy_cream_bucket",
+                "c:frosting_ingredients",
                 "c:chorus_fruit_cream_frosting_bucket"
+
             ]
         }
     ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {
-            "item": "minecraft:bucket"
+            "tag": "c:heavy_cream_bucket"
         },
         {
-            "tag": "c:chorus_fruit_cream_frosting"
+            "tag": "c:sugar"
         },
         {
-            "tag": "c:chorus_fruit_cream_frosting"
+            "tag": "c:sugar"
         },
         {
-            "tag": "c:chorus_fruit_cream_frosting"
+            "tag": "c:frosting_ingredients"
         },
         {
-            "tag": "c:chorus_fruit_cream_frosting"
+            "tag": "c:frosting_ingredients"
+        },
+        {
+            "tag": "c:chorus_fruit"
         }
     ],
     "result": {

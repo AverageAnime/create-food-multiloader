@@ -3,7 +3,8 @@
         {
             "condition": "fabric:tags_populated",
             "values": [
-                "c:melon_cream_frosting",
+                "c:heavy_cream_bucket",
+                "c:frosting_ingredients",
                 "c:melon_cream_frosting_bucket"
             ]
         }
@@ -11,19 +12,22 @@
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {
-            "item": "minecraft:bucket"
+            "tag": "c:heavy_cream_bucket"
         },
         {
-            "tag": "c:melon_cream_frosting"
+            "tag": "c:sugar"
         },
         {
-            "tag": "c:melon_cream_frosting"
+            "tag": "c:sugar"
         },
         {
-            "tag": "c:melon_cream_frosting"
+            "tag": "c:frosting_ingredients"
         },
         {
-            "tag": "c:melon_cream_frosting"
+            "tag": "c:frosting_ingredients"
+        },
+        {
+            "tag": "c:melon"
         }
     ],
     "result": {

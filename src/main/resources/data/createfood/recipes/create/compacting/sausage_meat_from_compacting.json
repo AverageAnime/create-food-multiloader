@@ -16,13 +16,13 @@
     "type": "create:compacting",
     "ingredients": [
         {
-            "item": "minecraft:beef"
+            "tag": "c:foods/raw_meats/raw_beef"
         },
         {
-            "item": "minecraft:porkchop"
+            "tag": "c:foods/raw_meats/raw_pork"
         },
         {
-            "item": "minecraft:chicken"
+            "tag": "c:foods/raw_meats/raw_chicken"
         }
     ],
     "results": [
