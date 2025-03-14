@@ -1,0 +1,17 @@
+{
+    "conditions": [],
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "forge:chocolate_graham_cracker_melon_ice_cream"
+        },
+        {
+            "tag": "forge:chocolate_graham_cracker"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:melon_ice_cream_sandwich"
+        }
+    ]
+}

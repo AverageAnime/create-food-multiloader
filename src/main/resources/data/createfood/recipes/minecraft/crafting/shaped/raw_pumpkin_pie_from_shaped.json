@@ -1,0 +1,19 @@
+{
+    "conditions": [],
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "1 ",
+        "2 "
+    ],
+    "key": {
+        "1": {
+            "tag": "forge:pumpkin_pie_filling_bucket"
+        },
+        "2": {
+            "tag": "forge:raw_pie_crust"
+        }
+    },
+    "result": {
+        "item": "createfood:raw_pumpkin_pie"
+    }
+}

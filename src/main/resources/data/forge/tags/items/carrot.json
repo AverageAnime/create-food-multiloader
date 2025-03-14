@@ -8,6 +8,10 @@
     {
       "id": "minecraft:carrot",
       "required": false
+    },
+    {
+      "id": "createfood:shredded_carrot",
+      "required": false
     }
   ]
 }

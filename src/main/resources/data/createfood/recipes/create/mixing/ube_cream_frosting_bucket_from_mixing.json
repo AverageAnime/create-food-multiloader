@@ -1,5 +1,13 @@
 {
-    "conditions": [],
+    "conditions": [
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:cooked_eggplant"
+            }
+        }
+    ],
     "type": "create:mixing",
     "ingredients": [
         {

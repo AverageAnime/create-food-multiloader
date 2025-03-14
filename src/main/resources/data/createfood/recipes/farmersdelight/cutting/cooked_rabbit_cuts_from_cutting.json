@@ -4,9 +4,6 @@
     "ingredients": [
         {
             "item": "minecraft:cooked_rabbit"
-        },
-        {
-            "item": "minecraft:bone_meal"
         }
     ],
     "tool": {
@@ -16,6 +13,9 @@
         {
             "count": 2,
             "item": "createfood:cooked_rabbit_cuts"
+        },
+        {
+            "item": "minecraft:bone_meal"
         }
     ]
 }

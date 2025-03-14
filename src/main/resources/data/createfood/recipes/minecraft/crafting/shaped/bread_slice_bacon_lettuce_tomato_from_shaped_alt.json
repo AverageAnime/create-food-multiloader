@@ -1,0 +1,19 @@
+{
+    "conditions": [],
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "1 ",
+        "2 "
+    ],
+    "key": {
+        "1": {
+            "tag": "forge:tomato"
+        },
+        "2": {
+            "tag": "forge:bread_slice_bacon_lettuce"
+        }
+    },
+    "result": {
+        "item": "createfood:bread_slice_bacon_lettuce_tomato"
+    }
+}

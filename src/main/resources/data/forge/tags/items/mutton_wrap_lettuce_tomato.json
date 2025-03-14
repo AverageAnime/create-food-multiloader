@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "createfood:mutton_wrap_lettuce_tomato",
+      "required": false
+    }
+  ]
+}

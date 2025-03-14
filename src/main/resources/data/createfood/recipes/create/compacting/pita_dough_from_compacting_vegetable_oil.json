@@ -1,0 +1,18 @@
+{
+    "conditions": [],
+    "type": "create:compacting",
+    "ingredients": [
+        {
+            "amount": 111,
+            "fluidTag": "forge:vegetable_oil"
+        },
+        {
+            "tag": "forge:pita_dough_ingredients"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:pita_dough"
+        }
+    ]
+}

@@ -1,0 +1,17 @@
+{
+    "conditions": [],
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "forge:beef_bun_lettuce"
+        },
+        {
+            "tag": "forge:onion"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:beef_bun_onion_lettuce"
+        }
+    ]
+}

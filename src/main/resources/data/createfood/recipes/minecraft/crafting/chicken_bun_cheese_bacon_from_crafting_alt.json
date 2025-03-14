@@ -1,0 +1,21 @@
+{
+    "conditions": [],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:bun"
+        },
+        {
+            "tag": "forge:cooked_pork"
+        },
+        {
+            "tag": "forge:cheeses"
+        },
+        {
+            "tag": "forge:chicken_patty"
+        }
+    ],
+    "result": {
+        "item": "createfood:chicken_bun_cheese_bacon"
+    }
+}

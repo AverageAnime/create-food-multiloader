@@ -1,0 +1,19 @@
+{
+    "conditions": [],
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        " 1 ",
+        " 2 "
+    ],
+    "key": {
+        "1": {
+            "tag": "forge:chorus_fruit"
+        },
+        "2": {
+            "tag": "forge:frosted_mini_waffle"
+        }
+    },
+    "result": {
+        "item": "createfood:frosted_mini_waffle_chorus_fruit"
+    }
+}

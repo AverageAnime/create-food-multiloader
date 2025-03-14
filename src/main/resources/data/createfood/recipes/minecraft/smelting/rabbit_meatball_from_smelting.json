@@ -1,0 +1,10 @@
+{
+    "conditions": [],
+    "type": "minecraft:smelting",
+    "ingredient": {
+        "tag": "forge:raw_rabbit_meatball"
+    },
+    "result": "createfood:rabbit_meatball",
+    "experience": 0.1,
+    "cookingtime": 200
+}

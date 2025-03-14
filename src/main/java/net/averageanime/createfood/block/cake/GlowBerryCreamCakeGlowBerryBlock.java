@@ -28,7 +28,7 @@ import vectorwing.farmersdelight.common.tag.ModTags;
 import vectorwing.farmersdelight.common.utility.ItemUtils;
 
 public class GlowBerryCreamCakeGlowBerryBlock extends CakeBlock {
-    public static final int MAX_BITES = 6;
+    public static final int MAX_BITES = 7;
     public static final IntegerProperty BITES;
     public static final int FULL_CAKE_SIGNAL;
     protected static final float AABB_OFFSET = 1.0F;

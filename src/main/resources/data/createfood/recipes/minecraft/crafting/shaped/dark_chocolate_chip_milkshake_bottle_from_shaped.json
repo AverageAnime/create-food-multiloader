@@ -1,0 +1,19 @@
+{
+    "conditions": [],
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "1 ",
+        "2 "
+    ],
+    "key": {
+        "1": {
+            "tag": "forge:dark_chocolate_chips"
+        },
+        "2": {
+            "tag": "forge:milkshake"
+        }
+    },
+    "result": {
+        "item": "createfood:dark_chocolate_chip_milkshake_bottle"
+    }
+}

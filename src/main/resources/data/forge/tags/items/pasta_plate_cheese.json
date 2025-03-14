@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "vintagedelight:cheese_pasta",
+      "required": false
+    },
+    {
+      "id": "createfood:pasta_plate_cheese",
+      "required": false
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+    "conditions": [],
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "forge:pasta_plate_tomato_sauce"
+        },
+        {
+            "tag": "forge:cooked_fishes"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:pasta_plate_fish_tomato_sauce"
+        }
+    ]
+}

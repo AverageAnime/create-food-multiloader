@@ -10,7 +10,35 @@
       "required": false
     },
     {
+      "id": "createfood:chocolate_graham_cracker_neapolitan_scoop_1",
+      "required": false
+    },
+    {
       "id": "createfood:chocolate_graham_cracker_ice_cream",
+      "required": false
+    },
+    {
+      "id": "createfood:chocolate_graham_cracker_apple_ice_cream",
+      "required": false
+    },
+    {
+      "id": "createfood:chocolate_graham_cracker_berry_ice_cream",
+      "required": false
+    },
+    {
+      "id": "createfood:chocolate_graham_cracker_chocolate_ice_cream",
+      "required": false
+    },
+    {
+      "id": "createfood:chocolate_graham_cracker_chorus_fruit_ice_cream",
+      "required": false
+    },
+    {
+      "id": "createfood:chocolate_graham_cracker_glow_berry_ice_cream",
+      "required": false
+    },
+    {
+      "id": "createfood:chocolate_graham_cracker_melon_ice_cream",
       "required": false
     },
     {

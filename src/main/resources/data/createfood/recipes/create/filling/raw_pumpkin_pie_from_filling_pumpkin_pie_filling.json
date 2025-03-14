@@ -1,0 +1,18 @@
+{
+    "conditions": [],
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "tag": "forge:raw_pie_crust"
+        },
+        {
+            "amount": 1000,
+            "fluidTag": "forge:pumpkin_pie_filling"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:raw_pumpkin_pie"
+        }
+    ]
+}

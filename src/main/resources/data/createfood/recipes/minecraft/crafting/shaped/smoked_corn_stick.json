@@ -1,4 +1,13 @@
 {
+    "conditions": [
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:smoked_corn"
+            }
+        }
+    ],
     "type": "minecraft:crafting_shaped",
     "pattern": [
         "1 ",

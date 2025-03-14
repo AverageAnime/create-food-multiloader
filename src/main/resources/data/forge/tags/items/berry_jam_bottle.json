@@ -2,6 +2,10 @@
   "replace": false,
   "values": [
     {
+      "id": "vintagedelight:sweet_berry_jam_bottle",
+      "required": false
+    },
+    {
       "id": "createfood:berry_jam_bottle",
       "required": false
     },

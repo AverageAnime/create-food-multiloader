@@ -1,0 +1,17 @@
+{
+    "conditions": [],
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "forge:chocolate_graham_cracker_chorus_fruit_ice_cream"
+        },
+        {
+            "tag": "forge:chocolate_graham_cracker"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:chorus_fruit_ice_cream_sandwich"
+        }
+    ]
+}

@@ -1,0 +1,17 @@
+{
+    "conditions": [],
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "forge:cheese_and_beef_bun"
+        },
+        {
+            "tag": "forge:tomato"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:beef_bun_cheese_tomato"
+        }
+    ]
+}

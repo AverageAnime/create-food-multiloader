@@ -4,6 +4,7 @@ import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.tterrag.registrate.util.entry.BlockEntry;
 import net.averageanime.createfood.CreateFood;
 import net.averageanime.createfood.block.cake.*;
+import net.averageanime.createfood.block.gyro.GyroMeatBlock;
 import net.averageanime.createfood.block.pie.*;
 import net.averageanime.createfood.block.pizza.*;
 import net.averageanime.createfood.block.waffle.*;
@@ -15,6 +16,8 @@ import static net.minecraft.world.item.Items.registerBlock;
 
 public class ModBlocks {
     private static final CreateRegistrate REGISTRATE = CreateFood.registrate();
+
+    public static final BlockEntry<GyroMeatBlock> GYRO_MEAT_BLOCK = REGISTRATE.block("gyro_meat_block", GyroMeatBlock::new).item().build().register();
 
     public static final BlockEntry<RawPizzaBlock> PIZZA_DOUGH = REGISTRATE.block("pizza_dough", RawPizzaBlock::new).item().build().register();
     public static final BlockEntry<RawPizzaBlock> PIZZA_DOUGH_TOMATO_SAUCE = REGISTRATE.block("pizza_dough_tomato_sauce", RawPizzaBlock::new).item().build().register();
@@ -68,6 +71,8 @@ public class ModBlocks {
     public static final BlockEntry<RawPieBlock> RAW_CREAM_PIE_GRAHAM_CRACKER = REGISTRATE.block("raw_cream_pie_graham_cracker", RawPieBlock::new).item().build().register();
     public static final BlockEntry<RawPieBlock> RAW_GLOW_BERRY_CHEESECAKE = REGISTRATE.block("raw_glow_berry_cheesecake", RawPieBlock::new).item().build().register();
     public static final BlockEntry<RawPieBlock> RAW_GLOW_BERRY_PIE = REGISTRATE.block("raw_glow_berry_pie", RawPieBlock::new).item().build().register();
+    public static final BlockEntry<RawPieBlock> RAW_PUMPKIN_PIE = REGISTRATE.block("raw_pumpkin_pie", RawPieBlock::new).item().build().register();
+
 
     public static final BlockEntry<AppleCheesecakeBlock> APPLE_CHEESECAKE = REGISTRATE.block("apple_cheesecake", AppleCheesecakeBlock::new).item().build().register();
     public static final BlockEntry<BerryPieBlock> BERRY_PIE = REGISTRATE.block("berry_pie", BerryPieBlock::new).item().build().register();

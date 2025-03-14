@@ -1,0 +1,25 @@
+{
+    "conditions": [
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:peanut_butter"
+            }
+        }
+    ],
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "forge:beef_bun_bacon"
+        },
+        {
+            "tag": "forge:peanut_butter"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:beef_bun_peanut_butter_bacon"
+        }
+    ]
+}

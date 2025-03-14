@@ -1,0 +1,12 @@
+{
+    "conditions": [],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:rabbit"
+        }
+    ],
+    "result": {
+        "item": "createfood:ground_rabbit"
+    }
+}

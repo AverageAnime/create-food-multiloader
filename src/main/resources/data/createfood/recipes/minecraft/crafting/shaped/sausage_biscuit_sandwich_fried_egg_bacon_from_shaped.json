@@ -1,0 +1,19 @@
+{
+    "conditions": [],
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "1 ",
+        "2 "
+    ],
+    "key": {
+        "1": {
+            "tag": "forge:biscuit"
+        },
+        "2": {
+            "tag": "forge:sausage_biscuit_fried_egg_bacon"
+        }
+    },
+    "result": {
+        "item": "createfood:sausage_biscuit_sandwich_fried_egg_bacon"
+    }
+}

@@ -1,0 +1,20 @@
+{
+    "conditions": [],
+    "type": "farmersdelight:cooking",
+    "cookingtime": 250,
+    "experience": 0.2,
+    "ingredients": [
+        {
+            "tag": "forge:pumpkin_puree_bucket"
+        },
+        {
+            "tag": "forge:eggs"
+        },
+        {
+            "tag": "forge:brown_sugar"
+        }
+    ],
+    "result": {
+        "item": "createfood:pumpkin_pie_filling_bucket"
+    }
+}

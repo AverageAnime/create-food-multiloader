@@ -1,0 +1,27 @@
+{
+    "conditions": [
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:cooked_eggplant"
+            }
+        }
+    ],
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "1 ",
+        "2 "
+    ],
+    "key": {
+        "1": {
+            "tag": "forge:tomato"
+        },
+        "2": {
+            "tag": "forge:eggplant_bun"
+        }
+    },
+    "result": {
+        "item": "createfood:eggplant_bun_tomato"
+    }
+}

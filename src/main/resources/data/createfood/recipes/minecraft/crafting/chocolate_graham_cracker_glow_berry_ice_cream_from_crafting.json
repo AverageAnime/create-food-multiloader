@@ -1,0 +1,15 @@
+{
+    "conditions": [],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:chocolate_graham_cracker"
+        },
+        {
+            "tag": "forge:glow_berry_ice_cream_bowl"
+        }
+    ],
+    "result": {
+        "item": "createfood:chocolate_graham_cracker_glow_berry_ice_cream"
+    }
+}

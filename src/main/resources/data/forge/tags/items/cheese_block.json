@@ -2,6 +2,10 @@
   "replace": false,
   "values": [
     {
+      "id": "vintagedelight:cheese_wheel",
+      "required": false
+    },
+    {
       "id": "createfood:cheese_block",
       "required": false
     },

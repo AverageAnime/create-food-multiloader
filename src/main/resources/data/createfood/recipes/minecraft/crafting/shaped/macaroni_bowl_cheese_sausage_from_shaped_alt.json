@@ -1,0 +1,19 @@
+{
+    "conditions": [],
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "1 ",
+        "2 "
+    ],
+    "key": {
+        "1": {
+            "tag": "forge:cheeses"
+        },
+        "2": {
+            "tag": "forge:macaroni_bowl_sausage"
+        }
+    },
+    "result": {
+        "item": "createfood:macaroni_bowl_cheese_sausage"
+    }
+}

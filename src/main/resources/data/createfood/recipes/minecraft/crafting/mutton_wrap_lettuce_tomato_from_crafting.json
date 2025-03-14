@@ -1,0 +1,24 @@
+{
+    "conditions": [],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:pita_bread"
+        },
+        {
+            "tag": "forge:gyro_meat_slice"
+        },
+        {
+            "tag": "forge:gyro_meat_slice"
+        },
+        {
+            "tag": "forge:salad_ingredients"
+        },
+        {
+            "tag": "forge:tomato"
+        }
+    ],
+    "result": {
+        "item": "createfood:mutton_wrap_lettuce_tomato"
+    }
+}

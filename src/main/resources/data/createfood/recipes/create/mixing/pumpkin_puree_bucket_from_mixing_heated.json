@@ -1,0 +1,27 @@
+{
+    "conditions": [],
+    "type": "create:mixing",
+    "heatRequirement": "heated",
+    "ingredients": [
+        {
+            "item": "minecraft:bucket"
+        },
+        {
+            "item": "farmersdelight:pumpkin_slice"
+        },
+        {
+            "item": "farmersdelight:pumpkin_slice"
+        },
+        {
+            "item": "farmersdelight:pumpkin_slice"
+        },
+        {
+            "item": "farmersdelight:pumpkin_slice"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:pumpkin_puree_bucket"
+        }
+    ]
+}

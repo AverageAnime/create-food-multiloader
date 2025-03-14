@@ -1,0 +1,15 @@
+{
+    "conditions": [],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:beef_bun_lettuce_tomato"
+        },
+        {
+            "tag": "forge:onion"
+        }
+    ],
+    "result": {
+        "item": "createfood:beef_bun_onion_lettuce_tomato"
+    }
+}

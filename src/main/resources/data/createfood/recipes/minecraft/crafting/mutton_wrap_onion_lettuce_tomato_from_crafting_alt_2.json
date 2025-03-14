@@ -1,0 +1,15 @@
+{
+    "conditions": [],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "farmersdelight:mutton_wrap"
+        },
+        {
+            "tag": "forge:tomato"
+        }
+    ],
+    "result": {
+        "item": "createfood:mutton_wrap_onion_lettuce_tomato"
+    }
+}

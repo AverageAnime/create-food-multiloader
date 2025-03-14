@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "#forge:foods/raw_meats/raw_beef",
+      "required": false
+    },
+    {
+      "id": "#forge:foods/raw_meats/raw_pork",
+      "required": false
+    },
+    {
+      "id": "#forge:foods/raw_meats/raw_chicken",
+      "required": false
+    },
+    {
+      "id": "#forge:foods/raw_meats/raw_rabbit",
+      "required": false
+    }
+  ]
+}

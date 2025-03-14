@@ -1,0 +1,19 @@
+{
+    "conditions": [],
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "1 ",
+        "2 "
+    ],
+    "key": {
+        "1": {
+            "tag": "forge:cheeses"
+        },
+        "2": {
+            "tag": "forge:chicken_bun_bacon"
+        }
+    },
+    "result": {
+        "item": "createfood:chicken_bun_cheese_bacon"
+    }
+}

@@ -1,0 +1,10 @@
+{
+    "conditions": [],
+    "type": "minecraft:smoking",
+    "ingredient": {
+        "tag": "forge:raw_gyro_meat_block"
+    },
+    "result": "createfood:gyro_meat_block",
+    "experience": 0.95,
+    "cookingtime": 800
+}

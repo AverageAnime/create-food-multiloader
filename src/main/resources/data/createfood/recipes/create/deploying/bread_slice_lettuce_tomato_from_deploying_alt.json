@@ -1,0 +1,17 @@
+{
+    "conditions": [],
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "forge:bread_slice_tomato"
+        },
+        {
+            "tag": "forge:salad_ingredients"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:bread_slice_lettuce_tomato"
+        }
+    ]
+}

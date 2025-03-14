@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "minecraft:rabbit",
+      "required": false
+    },
+    {
+      "id": "createfood:rabbit_cuts",
+      "required": false
+    },
+    {
+      "id": "createfood:ground_rabbit",
+      "required": false
+    }
+  ]
+}

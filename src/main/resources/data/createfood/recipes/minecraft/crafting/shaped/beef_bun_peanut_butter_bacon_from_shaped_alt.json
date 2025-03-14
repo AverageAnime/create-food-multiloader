@@ -1,0 +1,27 @@
+{
+    "conditions": [
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:peanut_butter"
+            }
+        }
+    ],
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "1 ",
+        "2 "
+    ],
+    "key": {
+        "1": {
+            "tag": "forge:peanut_butter"
+        },
+        "2": {
+            "tag": "forge:beef_bun_bacon"
+        }
+    },
+    "result": {
+        "item": "createfood:beef_bun_peanut_butter_bacon"
+    }
+}

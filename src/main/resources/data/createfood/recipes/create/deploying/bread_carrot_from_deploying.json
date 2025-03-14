@@ -1,0 +1,17 @@
+{
+    "conditions": [],
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "item": "minecraft:bread"
+        },
+        {
+            "tag": "forge:carrot"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:bread_carrot"
+        }
+    ]
+}

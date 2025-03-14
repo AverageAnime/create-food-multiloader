@@ -1,0 +1,17 @@
+{
+    "conditions": [],
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "forge:macaroni_bowl"
+        },
+        {
+            "tag": "forge:breakfast_sausages"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:macaroni_bowl_sausage"
+        }
+    ]
+}

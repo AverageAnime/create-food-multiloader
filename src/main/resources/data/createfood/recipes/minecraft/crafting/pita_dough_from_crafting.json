@@ -1,0 +1,15 @@
+{
+    "conditions": [],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:pita_dough_ingredients"
+        },
+        {
+            "tag": "forge:vegetable_oil"
+        }
+    ],
+    "result": {
+        "item": "createfood:pita_dough"
+    }
+}

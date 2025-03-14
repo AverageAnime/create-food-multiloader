@@ -1,0 +1,17 @@
+{
+    "conditions": [],
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "forge:bread_slice_lettuce"
+        },
+        {
+            "tag": "forge:cooked_pork"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:bread_slice_bacon_lettuce"
+        }
+    ]
+}

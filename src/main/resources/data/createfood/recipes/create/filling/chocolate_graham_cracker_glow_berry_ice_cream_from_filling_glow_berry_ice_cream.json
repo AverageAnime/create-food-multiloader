@@ -1,0 +1,18 @@
+{
+    "conditions": [],
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "tag": "forge:chocolate_graham_cracker"
+        },
+        {
+            "amount": 333,
+            "fluidTag": "forge:glow_berry_ice_cream"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:chocolate_graham_cracker_glow_berry_ice_cream"
+        }
+    ]
+}

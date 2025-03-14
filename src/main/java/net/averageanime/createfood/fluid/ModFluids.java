@@ -880,6 +880,30 @@ public class ModFluids {
                             .explosionResistance(100f))
                     .register();
 
+    public static final FluidEntry<ForgeFlowingFluid.Flowing> PUMPKIN_PIE_FILLING =
+            REGISTRATE.standardFluid("pumpkin_pie_filling",
+                            SolidRenderedPlaceableFluidType.create(0xd27d29,
+                                    () -> 1f / 32f * 1))
+                    .properties(b -> b.viscosity(1500)
+                            .density(1400))
+                    .fluidProperties(p -> p.levelDecreasePerBlock(3)
+                            .tickRate(25)
+                            .slopeFindDistance(4)
+                            .explosionResistance(100f))
+                    .register();
+
+    public static final FluidEntry<ForgeFlowingFluid.Flowing> PUMPKIN_PUREE =
+            REGISTRATE.standardFluid("pumpkin_puree",
+                            SolidRenderedPlaceableFluidType.create(0xd27d29,
+                                    () -> 1f / 32f * 1))
+                    .properties(b -> b.viscosity(1500)
+                            .density(1400))
+                    .fluidProperties(p -> p.levelDecreasePerBlock(3)
+                            .tickRate(25)
+                            .slopeFindDistance(4)
+                            .explosionResistance(100f))
+                    .register();
+
     public static final FluidEntry<ForgeFlowingFluid.Flowing> PURPLE_GELATIN_MIX_FROSTING =
             REGISTRATE.standardFluid("purple_gelatin_mix",
                             SolidRenderedPlaceableFluidType.create(0xb572d9,

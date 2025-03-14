@@ -8,6 +8,10 @@
     {
       "id": "createfood:sliced_beetroot",
       "required": false
+    },
+    {
+      "id": "createfood:shredded_beetroot",
+      "required": false
     }
   ]
 }

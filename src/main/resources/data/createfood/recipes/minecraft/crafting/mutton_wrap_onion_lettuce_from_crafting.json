@@ -1,0 +1,24 @@
+{
+    "conditions": [],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:pita_bread"
+        },
+        {
+            "tag": "forge:gyro_meat_slice"
+        },
+        {
+            "tag": "forge:gyro_meat_slice"
+        },
+        {
+            "tag": "forge:onion"
+        },
+        {
+            "tag": "forge:salad_ingredients"
+        }
+    ],
+    "result": {
+        "item": "farmersdelight:mutton_wrap"
+    }
+}

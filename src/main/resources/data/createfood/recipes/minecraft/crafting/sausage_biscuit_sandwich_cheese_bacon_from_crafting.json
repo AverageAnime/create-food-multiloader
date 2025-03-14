@@ -1,0 +1,15 @@
+{
+    "conditions": [],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:sausage_biscuit_cheese_bacon"
+        },
+        {
+            "tag": "forge:biscuit"
+        }
+    ],
+    "result": {
+        "item": "createfood:sausage_biscuit_sandwich_cheese_bacon"
+    }
+}

@@ -1,0 +1,17 @@
+{
+    "conditions": [],
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "item": "createfood:rabbit_meatball_stick_1"
+        },
+        {
+            "tag": "forge:rabbit_meatball"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:rabbit_meatball_stick_2"
+        }
+    ]
+}

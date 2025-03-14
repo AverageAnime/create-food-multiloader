@@ -1,0 +1,15 @@
+{
+    "conditions": [],
+    "type": "create:pressing",
+    "ingredients": [
+        {
+            "item": "minecraft:rabbit"
+        }
+    ],
+    "results": [
+        {
+            "count": 2,
+            "item": "createfood:ground_rabbit"
+        }
+    ]
+}

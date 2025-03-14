@@ -1,0 +1,21 @@
+{
+    "conditions": [],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:biscuit"
+        },
+        {
+            "tag": "forge:cooked_pork"
+        },
+        {
+            "tag": "forge:cooked_eggs"
+        },
+        {
+            "tag": "forge:sausage_patty"
+        }
+    ],
+    "result": {
+        "item": "createfood:sausage_biscuit_fried_egg_bacon"
+    }
+}

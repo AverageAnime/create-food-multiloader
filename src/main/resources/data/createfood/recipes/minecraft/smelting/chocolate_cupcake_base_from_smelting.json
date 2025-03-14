@@ -1,0 +1,10 @@
+{
+    "conditions": [],
+    "type": "minecraft:smelting",
+    "ingredient": {
+        "tag": "forge:raw_chocolate_cupcake_base"
+    },
+    "result": "createfood:chocolate_cupcake_base",
+    "experience": 0.15,
+    "cookingtime": 150
+}

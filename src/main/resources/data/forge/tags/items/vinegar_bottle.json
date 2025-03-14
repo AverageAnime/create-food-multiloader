@@ -8,6 +8,10 @@
     {
       "id": "dumplings_delight:vinegar",
       "required": false
+    },
+    {
+      "id": "vintagedelight:vinegar_bottle",
+      "required": false
     }
   ]
 }

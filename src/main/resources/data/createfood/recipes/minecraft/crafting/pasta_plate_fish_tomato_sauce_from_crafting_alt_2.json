@@ -1,0 +1,15 @@
+{
+    "conditions": [],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:pasta_plate_tomato_sauce"
+        },
+        {
+            "tag": "forge:cooked_fishes"
+        }
+    ],
+    "result": {
+        "item": "createfood:pasta_plate_fish_tomato_sauce"
+    }
+}

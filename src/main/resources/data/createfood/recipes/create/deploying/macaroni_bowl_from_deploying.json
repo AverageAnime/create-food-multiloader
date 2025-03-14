@@ -1,0 +1,17 @@
+{
+    "conditions": [],
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "item": "minecraft:bowl"
+        },
+        {
+            "tag": "forge:macaroni"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:macaroni_bowl"
+        }
+    ]
+}

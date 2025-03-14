@@ -2,6 +2,10 @@
   "replace": false,
   "values": [
     {
+      "id": "vintagedelight:nut_mash_bottle",
+      "required": false
+    },
+    {
       "id": "expandeddelight:peanut_butter",
       "required": false
     },

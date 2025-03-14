@@ -1,0 +1,17 @@
+{
+    "conditions": [],
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "forge:sausage_biscuit_cheese_bacon"
+        },
+        {
+            "tag": "forge:biscuit"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:sausage_biscuit_sandwich_cheese_bacon"
+        }
+    ]
+}

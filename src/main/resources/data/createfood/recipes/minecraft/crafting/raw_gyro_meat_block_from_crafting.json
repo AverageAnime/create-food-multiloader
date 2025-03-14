@@ -1,0 +1,28 @@
+{
+    "conditions": [],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:foods/raw_meats/raw_mutton"
+        },
+        {
+            "tag": "forge:foods/raw_meats/raw_mutton"
+        },
+        {
+            "tag": "forge:foods/raw_meats/raw_mutton"
+        },
+        {
+            "tag": "forge:foods/raw_meats/raw_mutton"
+        },
+        {
+            "tag": "forge:gyro_meat_ingredients"
+        },
+        {
+            "tag": "forge:gyro_meat_ingredients"
+        }
+    ],
+    "result":
+        {
+            "item": "createfood:raw_gyro_meat_block"
+        }
+}

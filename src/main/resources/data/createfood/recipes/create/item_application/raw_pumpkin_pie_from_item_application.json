@@ -1,0 +1,17 @@
+{
+    "conditions": [],
+    "type": "create:item_application",
+    "ingredients": [
+        {
+            "tag": "forge:raw_pie_crust"
+        },
+        {
+            "tag": "forge:pumpkin_pie_filling_bucket"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:raw_pumpkin_pie"
+        }
+    ]
+}

@@ -1,0 +1,15 @@
+{
+    "conditions": [],
+    "type": "create:compacting",
+    "ingredients": [
+        {
+            "tag": "forge:ground_rabbit"
+        }
+    ],
+    "results": [
+        {
+            "count": 2,
+            "item": "createfood:raw_rabbit_meatball"
+        }
+    ]
+}

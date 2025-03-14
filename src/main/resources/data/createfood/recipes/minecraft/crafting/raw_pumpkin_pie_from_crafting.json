@@ -1,0 +1,15 @@
+{
+    "conditions": [],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:raw_pie_crust"
+        },
+        {
+            "tag": "forge:pumpkin_pie_filling_bucket"
+        }
+    ],
+    "result": {
+        "item": "createfood:raw_pumpkin_pie"
+    }
+}

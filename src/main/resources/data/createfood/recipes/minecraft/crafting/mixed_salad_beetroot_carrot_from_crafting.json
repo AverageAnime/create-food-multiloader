@@ -1,0 +1,21 @@
+{
+    "conditions": [],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:salad_ingredients"
+        },
+        {
+            "tag": "forge:carrot"
+        },
+        {
+            "tag": "forge:beetroot"
+        },
+        {
+            "item": "minecraft:bowl"
+        }
+    ],
+    "result": {
+        "item": "createfood:mixed_salad_beetroot_carrot"
+    }
+}

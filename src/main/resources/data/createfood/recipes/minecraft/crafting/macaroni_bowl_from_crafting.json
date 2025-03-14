@@ -1,0 +1,15 @@
+{
+    "conditions": [],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:bowl"
+        },
+        {
+            "tag": "forge:macaroni"
+        }
+    ],
+    "result": {
+        "item": "createfood:macaroni_bowl"
+    }
+}

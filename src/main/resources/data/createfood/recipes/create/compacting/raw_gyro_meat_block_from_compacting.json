@@ -1,0 +1,20 @@
+{
+    "conditions": [],
+    "type": "create:compacting",
+    "ingredients": [
+        {
+            "tag": "forge:foods/raw_meats/raw_mutton"
+        },
+        {
+            "tag": "forge:foods/raw_meats/raw_mutton"
+        },
+        {
+            "tag": "forge:gyro_meat_ingredients"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:raw_gyro_meat_block"
+        }
+    ]
+}

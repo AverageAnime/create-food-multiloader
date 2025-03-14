@@ -1,0 +1,17 @@
+{
+    "conditions": [],
+    "type": "farmersdelight:cutting",
+    "ingredients": [
+        {
+            "item": "farmersdelight:mutton_chops"
+        }
+    ],
+    "tool": {
+        "tag": "forge:tools/knives"
+    },
+    "result": [
+        {
+            "item": "createfood:ground_mutton"
+        }
+    ]
+}

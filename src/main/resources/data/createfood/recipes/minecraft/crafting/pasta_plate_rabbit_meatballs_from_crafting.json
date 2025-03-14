@@ -1,0 +1,15 @@
+{
+    "conditions": [],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:pasta_plate"
+        },
+        {
+            "tag": "forge:small_rabbit_meatballs"
+        }
+    ],
+    "result": {
+        "item": "createfood:pasta_plate_rabbit_meatballs"
+    }
+}

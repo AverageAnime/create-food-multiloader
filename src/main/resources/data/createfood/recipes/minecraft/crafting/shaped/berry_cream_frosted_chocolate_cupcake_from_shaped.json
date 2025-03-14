@@ -1,0 +1,19 @@
+{
+    "conditions": [],
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        " 1 ",
+        " 2 "
+    ],
+    "key": {
+        "1": {
+            "tag": "forge:berry_cream_frosting"
+        },
+        "2": {
+            "tag": "forge:chocolate_cupcake_base"
+        }
+    },
+    "result": {
+        "item": "createfood:berry_cream_frosted_chocolate_cupcake"
+    }
+}

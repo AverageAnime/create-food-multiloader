@@ -1,0 +1,18 @@
+{
+    "conditions": [],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:stick"
+        },
+        {
+            "tag": "forge:rabbit_meatball"
+        },
+        {
+            "tag": "forge:rabbit_meatball"
+        }
+    ],
+    "result": {
+        "item": "createfood:rabbit_meatball_stick_2"
+    }
+}

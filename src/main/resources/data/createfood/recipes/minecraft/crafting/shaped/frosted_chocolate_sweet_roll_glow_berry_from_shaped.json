@@ -1,0 +1,19 @@
+{
+    "conditions": [],
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "1 ",
+        "2 "
+    ],
+    "key": {
+        "1": {
+            "item": "minecraft:glow_berries"
+        },
+        "2": {
+            "tag": "forge:frosted_chocolate_sweet_roll"
+        }
+    },
+    "result": {
+        "item": "createfood:frosted_chocolate_sweet_roll_glow_berry"
+    }
+}

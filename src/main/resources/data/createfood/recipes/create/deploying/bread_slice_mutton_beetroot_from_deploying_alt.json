@@ -1,0 +1,17 @@
+{
+    "conditions": [],
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "forge:bread_slice_beetroot"
+        },
+        {
+            "tag": "forge:cooked_mutton"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:bread_slice_mutton_beetroot"
+        }
+    ]
+}

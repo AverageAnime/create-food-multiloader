@@ -1,0 +1,15 @@
+{
+    "conditions": [],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:chocolate_milkshake"
+        },
+        {
+            "tag": "forge:butterscotch_chips"
+        }
+    ],
+    "result": {
+        "item": "createfood:butterscotch_chip_chocolate_milkshake_bottle"
+    }
+}

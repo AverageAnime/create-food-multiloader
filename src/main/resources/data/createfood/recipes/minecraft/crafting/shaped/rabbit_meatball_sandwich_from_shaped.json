@@ -1,0 +1,19 @@
+{
+    "conditions": [],
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "1 ",
+        "2 "
+    ],
+    "key": {
+        "1": {
+            "tag": "forge:small_rabbit_meatballs"
+        },
+        "2": {
+            "item": "minecraft:bread"
+        }
+    },
+    "result": {
+        "item": "createfood:rabbit_meatball_sandwich"
+    }
+}

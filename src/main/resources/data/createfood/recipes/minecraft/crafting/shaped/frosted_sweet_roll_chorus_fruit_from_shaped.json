@@ -1,0 +1,19 @@
+{
+    "conditions": [],
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "1 ",
+        "2 "
+    ],
+    "key": {
+        "1": {
+            "tag": "forge:chorus_fruit"
+        },
+        "2": {
+            "item": "create:sweet_roll"
+        }
+    },
+    "result": {
+        "item": "createfood:frosted_sweet_roll_chorus_fruit"
+    }
+}

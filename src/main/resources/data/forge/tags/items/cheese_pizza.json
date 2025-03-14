@@ -2,6 +2,10 @@
   "replace": false,
   "values": [
     {
+      "id": "vintagedelight:cheese_pizza",
+      "required": false
+    },
+    {
       "id": "createfood:cheese_pizza",
       "required": false
     }
