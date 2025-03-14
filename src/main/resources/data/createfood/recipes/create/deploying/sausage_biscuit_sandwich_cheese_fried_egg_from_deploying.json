@@ -1,0 +1,32 @@
+{
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "create"
+            ]
+        },
+        {
+            "condition": "fabric:tags_populated",
+            "values": [
+                "c:sausage_biscuit_cheese_fried_egg",
+                "c:biscuit",
+                "c:sausage_biscuit_sandwich_cheese_fried_egg"
+            ]
+        }
+    ],
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "c:sausage_biscuit_cheese_fried_egg"
+        },
+        {
+            "tag": "c:biscuit"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:sausage_biscuit_sandwich_cheese_fried_egg"
+        }
+    ]
+}

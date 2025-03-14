@@ -1,0 +1,26 @@
+{
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:tags_populated",
+            "values": [
+                "c:frosted_sweet_roll_sweet_berry"
+            ]
+        }
+    ],
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "1 ",
+        "2 "
+    ],
+    "key": {
+        "1": {
+            "item": "minecraft:sweet_berries"
+        },
+        "2": {
+            "item": "create:sweet_roll"
+        }
+    },
+    "result": {
+        "item": "createfood:frosted_sweet_roll_sweet_berry"
+    }
+}

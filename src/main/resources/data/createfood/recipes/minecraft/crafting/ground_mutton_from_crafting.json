@@ -1,0 +1,19 @@
+{
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:tags_populated",
+            "values": [
+                "c:ground_mutton"
+            ]
+        }
+    ],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:mutton"
+        }
+    ],
+    "result": {
+        "item": "createfood:ground_mutton"
+    }
+}

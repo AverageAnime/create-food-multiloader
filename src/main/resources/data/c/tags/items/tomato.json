@@ -2,6 +2,10 @@
   "replace": false,
   "values": [
     {
+      "id": "createfood:diced_tomato",
+      "required": false
+    },
+    {
       "id": "createfood:sliced_tomato",
       "required": false
     },

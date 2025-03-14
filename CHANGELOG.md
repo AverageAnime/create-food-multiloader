@@ -1,17 +1,63 @@
+### *** 1.1.9 ***
+
+#### General:
+* 120+ new food items.
+* Change display names of the following items. IDs will remain the same for now.
+  * (Create) Sweet Roll > Frosted Sweet Roll
+  * (Farmer's Delight) Mixed Salad > Mixed Salad (Beetroot, Tomato)
+  * (Farmer's Delight) Mutton Wrap > Mutton Wrap (Onion, Lettuce)
+  * Chocolate Sweet Roll > Frosted Chocolate Sweet Roll
+  * Sausage Meat > Ground Sausage
+  * Shredded Chicken > Ground Chicken
+  * Meatball > Beef Meatball + all related items
+  * Raw Cupcake > Raw Cupcake Base
+  * Raw Muffin > Raw Muffin Base
+  * Cheese and Beef Bun > Beef Bun (Cheese) + all related items
+  * Remove "jar" from frostings and jams [(#58)](https://github.com/AverageAnime/create-food/issues/58)
+* Recipe changes:
+  * New recipes to make Pizza, Pasta, Burger, and Sandwich sequences less strict. 
+  * Fix some Pasta recipes.
+  * Change Ground Sausage recipes to use tags. Also lower output for crafting recipe.
+  * Remove Powdered Sugar from Heavy Cream recipes.
+  * Substantially change recipes for Cream Frostings. Fruit Cream Frostings can now also be made from Cream Frosting. Fixes recipe overlap issue with Condensed Milk. [(#53)](https://github.com/AverageAnime/create-food/pull/53)
+  * Adjust Condensed Milk recipes to be more consistent.
+  * Diced Onion is now obtained via cutting Sliced Tomato.
+  * Raw Calzone is now obtained via cutting Salt Dough (Small).
+  * Change Cloth Filter recipe to match the other Create filters.
+* Diced Onion is no longer consumable. Also minor texture update.
+* Add Peanut Butter from Croptopia to tag.
+* Reduce Nourishment from Pasta with Butter.
+
+#### Fabric: 
+* Fix config so Pasta with Endermite/Strider Meatballs (and tomato sauce variations) are disabled by default. Regenerating the config is recommended. 
+* Add missing tag to fix Chorus Fruit Ice Cream Cone recipes. [(#54)](https://github.com/AverageAnime/create-food/pull/54)
+* Add missing tag to fix Peanut Butter & Melon Jam Sandwich. [(#55)](https://github.com/AverageAnime/create-food/pull/55)
+* Add missing effects for:
+  * Potato Chip Bowl.
+  * Fruit Smoothie Bottle. [(#56)](https://github.com/AverageAnime/create-food/issues/56)
+  * Pasta with Butter.
+  
+#### Forge:
+* Added filling recipes that use Tomato Sauce Fluid (added by Create: Central Kitchen).
+* Fix Dumplings cooking recipe to use correct tags.
+* Fix cakes only having 6 bites instead of 7.
+* Fix for stacks of bottle items and stick items replacing the stack with single remainder item on upon consumption. [(#58)](https://github.com/AverageAnime/create-food/issues/58)
+* Compatibility tags for VintageDelight. [(#58)](https://github.com/AverageAnime/create-food/issues/58)
+  * Note: VintageDelight currently breaks the forge:fruits tag. 
 ### *** 1.1.8 ***
 
 ![newprev118](https://github.com/user-attachments/assets/d888474a-6f96-4d3b-aa4f-1cc8dcf90495)
 > *Also added are waffle blocks which act the same as cheesecakes/pies/pizza*
 
-General:
+#### General:
 * 30+ new food items.
 * Fix sausage pizza loot tables.
 * Add Simplified Chinese Translation. [(#50)](https://github.com/AverageAnime/create-food/pull/50)
 
-Fabric:
+#### Fabric:
 * Fix dried coffee beans recipes to prevent crash. [(#48)](https://github.com/AverageAnime/create-food/issues/48)
 
-Forge:
+#### Forge:
 * Compatibility tags added for:
   * Create: The Kitchen Must Grow
   * Delightful
@@ -20,16 +66,16 @@ Forge:
 
 ### *** 1.1.7 ***
 
-General:
+#### General:
 * Moved some recipes to compat folders.
 * Fixed Create: Bitterballen deep-frying recipes. 
 
-Forge:
+#### Forge:
 * Fixed recipes incorrectly using strings [(#47)](https://github.com/AverageAnime/create-food/issues/47). 
 
 ### ***1.1.6***
 
-General:
+#### General:
 * New food: calzones, cupcakes, and muffins.
 * Fix fluid amount from melting hollow chocolates [(#46)](https://github.com/AverageAnime/create-food/issues/46)
 * New shaped recipes. 
@@ -46,15 +92,15 @@ General:
   * Chocolate Frosted Chocolate Sweet Roll > Chocolate Cream Frosted Chocolate Sweet Roll
   * Chocolate Frosted Sweet Roll > Chocolate Cream Frosted Sweet Roll
 
-Fabric:
+#### Fabric:
 * Change fluid amounts in filling/emptying/mixing recipes of create:builders_tea & farmersdelight:milk_bottle to match standard bottle size (333mB > 250mB)
 
-Forge:
+#### Forge:
 * Change fluid amount in create:chocolate compacting recipe to match Fabric (250mB > 333mB) [(#46)](https://github.com/AverageAnime/create-food/issues/46)
 
 ### ***1.1.5***
 
-General:
+#### General:
 
 * New item Dumpling Wrappers.
 * Compatibility tags added for:
@@ -67,11 +113,11 @@ General:
   * Animated textures for coffees.
 
 
-Fabric:
+#### Fabric:
 * Change creative tab icon. 
 * Fix pie filling fluids.
 
-Forge:
+#### Forge:
 * Compatibility tags added for:
   * Create: Confectionery
   * Create: Factory
@@ -79,35 +125,35 @@ Forge:
 
 ### ***1.1.4***
 
-General:
+#### General:
 * Fix JMC crafting recipes.
 * Tag compatibility for More Delight & Casualness Delight [(#37)](https://github.com/AverageAnime/create-food/issues/37).
 * New load conditions for Ube's Delight related loot tables to remove some log spam [(#38)](https://github.com/AverageAnime/create-food/issues/38). 
 * Updated Ube Cake texture added to Ube's Delight resource pack.
 * Fix default cake texture [(#39)](https://github.com/AverageAnime/create-food/issues/39).
 
-Fabric:
+#### Fabric:
 * Change icon texture size to prevent mip map quality issues. [(#36)](https://github.com/AverageAnime/create-food/issues/36).
 
-Forge: 
+#### Forge: 
 * Fix shaped recipes [(#35)](https://github.com/AverageAnime/create-food/issues/35).
 * Added missing load conditions.
 * Added missing item.
 
 ### ***1.1.3***
 
-General:
+#### General:
 * Basic recipes compatibility for [Just More Cakes](https://www.curseforge.com/minecraft/mc-mods/just-more-cakes) ([#32](https://github.com/AverageAnime/create-food/issues/33))
 * Fix some compacting recipes.
 * Fix some mixing recipes & added some missing ones.
 * New cake textures.
 
-Fabric:
+#### Fabric:
 * Added 'snack' property to various items.
 * Fix missing tooltips for some items.
 * Fix multiple items incorrectly being a stick food item.
 
-Forge:
+#### Forge:
 * Fruits tag fixed. ([#33](https://github.com/AverageAnime/create-food/issues/33))
 * Fix for bottle items not being consumable. ([#34](https://github.com/AverageAnime/create-food/issues/34))
 * Added 'fast' property to various items.

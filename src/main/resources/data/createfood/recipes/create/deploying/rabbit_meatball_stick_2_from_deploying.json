@@ -1,0 +1,31 @@
+{
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "create"
+            ]
+        },
+        {
+            "condition": "fabric:tags_populated",
+            "values": [
+                "c:rabbit_meatball",
+                "c:rabbit_meatball_stick"
+            ]
+        }
+    ],
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "item": "createfood:rabbit_meatball_stick_1"
+        },
+        {
+            "tag": "c:rabbit_meatball"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:rabbit_meatball_stick_2"
+        }
+    ]
+}

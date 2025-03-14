@@ -1,0 +1,24 @@
+{
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:tags_populated",
+            "values": [
+                "c:chicken_bun_cheese_bacon",
+                "c:bun",
+                "c:chicken_cheeseburger_bacon"
+            ]
+        }
+    ],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:chicken_bun_cheese_bacon"
+        },
+        {
+            "tag": "c:bun"
+        }
+    ],
+    "result": {
+        "item": "createfood:chicken_cheeseburger_bacon"
+    }
+}

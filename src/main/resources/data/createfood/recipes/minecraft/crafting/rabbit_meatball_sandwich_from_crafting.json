@@ -1,0 +1,23 @@
+{
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:tags_populated",
+            "values": [
+                "c:small_rabbit_meatballs",
+                "c:rabbit_meatball_sandwich"
+            ]
+        }
+    ],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:bread"
+        },
+        {
+            "tag": "c:small_rabbit_meatballs"
+        }
+    ],
+    "result": {
+        "item": "createfood:rabbit_meatball_sandwich"
+    }
+}

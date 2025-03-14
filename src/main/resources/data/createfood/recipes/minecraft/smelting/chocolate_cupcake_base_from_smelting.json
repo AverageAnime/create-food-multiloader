@@ -1,0 +1,18 @@
+{
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:tags_populated",
+            "values": [
+                "c:raw_chocolate_cupcake_base",
+                "c:chocolate_cupcake_base"
+            ]
+        }
+    ],
+    "type": "minecraft:smelting",
+    "ingredient": {
+        "tag": "c:raw_chocolate_cupcake_base"
+    },
+    "result": "createfood:chocolate_cupcake_base",
+    "experience": 0.15,
+    "cookingtime": 150
+}

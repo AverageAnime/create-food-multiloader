@@ -1,0 +1,31 @@
+{
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "create"
+            ]
+        },
+        {
+            "condition": "fabric:tags_populated",
+            "values": [
+                "c:eggplant_bun_tomato",
+                "c:eggplant_bun_cheese_tomato"
+            ]
+        }
+    ],
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "c:eggplant_bun_tomato"
+        },
+        {
+            "tag": "c:cheeses"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:eggplant_bun_cheese_tomato"
+        }
+    ]
+}

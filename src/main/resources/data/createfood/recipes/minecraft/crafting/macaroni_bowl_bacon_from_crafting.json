@@ -1,0 +1,23 @@
+{
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:tags_populated",
+            "values": [
+                "c:macaroni_bowl",
+                "c:macaroni_bowl_bacon"
+            ]
+        }
+    ],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:macaroni_bowl"
+        },
+        {
+            "tag": "c:cooked_pork"
+        }
+    ],
+    "result": {
+        "item": "createfood:macaroni_bowl_bacon"
+    }
+}

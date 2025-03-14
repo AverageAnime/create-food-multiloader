@@ -1,0 +1,24 @@
+{
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:tags_populated",
+            "values": [
+                "c:pita_dough_ingredients",
+                "c:vegetable_oil",
+                "c:pita_dough"
+            ]
+        }
+    ],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:pita_dough_ingredients"
+        },
+        {
+            "tag": "c:vegetable_oil"
+        }
+    ],
+    "result": {
+        "item": "createfood:pita_dough"
+    }
+}

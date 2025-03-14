@@ -1,0 +1,30 @@
+{
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:tags_populated",
+            "values": [
+                "c:chocolate_graham_cracker",
+                "c:berry_ice_cream_stick",
+                "c:chocolate_graham_cracker_berry_ice_cream"
+            ]
+        }
+    ],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:chocolate_graham_cracker"
+        },
+        {
+            "tag": "c:berry_ice_cream_stick"
+        },
+        {
+            "tag": "c:berry_ice_cream_stick"
+        },
+        {
+            "tag": "c:berry_ice_cream_stick"
+        }
+    ],
+    "result": {
+        "item": "createfood:chocolate_graham_cracker_berry_ice_cream"
+    }
+}

@@ -1,0 +1,31 @@
+{
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "create"
+            ]
+        },
+        {
+            "condition": "fabric:tags_populated",
+            "values": [
+                "c:cheese_and_beef_bun",
+                "c:beef_bun_cheese_tomato"
+            ]
+        }
+    ],
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "c:cheese_and_beef_bun"
+        },
+        {
+            "tag": "c:tomato"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:beef_bun_cheese_tomato"
+        }
+    ]
+}

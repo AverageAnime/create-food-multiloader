@@ -1,0 +1,32 @@
+{
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:tags_populated",
+            "values": [
+                "c:pita_bread",
+                "c:gyro_meat_slice"
+            ]
+        }
+    ],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:pita_bread"
+        },
+        {
+            "tag": "c:gyro_meat_slice"
+        },
+        {
+            "tag": "c:gyro_meat_slice"
+        },
+        {
+            "tag": "c:onion"
+        },
+        {
+            "tag": "c:salad_ingredients"
+        }
+    ],
+    "result": {
+        "item": "farmersdelight:mutton_wrap"
+    }
+}

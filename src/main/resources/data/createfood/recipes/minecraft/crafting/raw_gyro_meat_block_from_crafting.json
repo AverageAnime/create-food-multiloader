@@ -1,0 +1,35 @@
+{
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:tags_populated",
+            "values": [
+                "c:raw_gyro_meat_block"
+            ]
+        }
+    ],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:foods/raw_meats/raw_mutton"
+        },
+        {
+            "tag": "c:foods/raw_meats/raw_mutton"
+        },
+        {
+            "tag": "c:foods/raw_meats/raw_mutton"
+        },
+        {
+            "tag": "c:foods/raw_meats/raw_mutton"
+        },
+        {
+            "tag": "c:gyro_meat_ingredients"
+        },
+        {
+            "tag": "c:gyro_meat_ingredients"
+        }
+    ],
+    "result":
+        {
+            "item": "createfood:raw_gyro_meat_block"
+        }
+}

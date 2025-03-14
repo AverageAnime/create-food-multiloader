@@ -1,0 +1,32 @@
+{
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "create"
+            ]
+        },
+        {
+            "condition": "fabric:tags_populated",
+            "values": [
+                "c:pasta_plate_tomato_sauce",
+                "c:cheeses",
+                "c:pasta_plate_cheese_tomato_sauce"
+            ]
+        }
+    ],
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "c:pasta_plate_tomato_sauce"
+        },
+        {
+            "tag": "c:cheeses"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:pasta_plate_cheese_tomato_sauce"
+        }
+    ]
+}

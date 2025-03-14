@@ -1,0 +1,18 @@
+{
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:tags_populated",
+            "values": [
+                "c:pita_dough",
+                "c:pita_bread"
+            ]
+        }
+    ],
+    "type": "minecraft:smoking",
+    "ingredient": {
+        "tag": "c:pita_dough"
+    },
+    "result": "createfood:pita_bread",
+    "experience": 0.1,
+    "cookingtime": 200
+}

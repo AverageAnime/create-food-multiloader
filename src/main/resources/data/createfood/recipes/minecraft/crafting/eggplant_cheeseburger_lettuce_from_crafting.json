@@ -3,7 +3,7 @@
         {
             "condition": "fabric:tags_populated",
             "values": [
-                "c:cheese_and_eggplant_bun",
+                "c:cheese_and_eggplant_bun_lettuce",
                 "c:bun",
                 "c:eggplant_cheeseburger_lettuce"
             ]
@@ -12,13 +12,10 @@
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {
-            "tag": "c:cheese_and_eggplant_bun"
+            "tag": "c:cheese_and_eggplant_bun_lettuce"
         },
         {
             "tag": "c:bun"
-        },
-        {
-            "tag": "c:salad_ingredients"
         }
     ],
     "result": {

@@ -1,0 +1,25 @@
+{
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:tags_populated",
+            "values": [
+                "c:cloth_filter"
+            ]
+        }
+    ],
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "STS"
+    ],
+    "key": {
+        "S": {
+            "item": "minecraft:stick"
+        },
+        "T": {
+            "tag": "minecraft:wool"
+        }
+    },
+    "result": {
+        "item": "createfood:cloth_filter"
+    }
+}

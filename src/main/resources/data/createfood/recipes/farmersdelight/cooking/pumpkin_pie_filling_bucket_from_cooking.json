@@ -1,0 +1,33 @@
+{
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "farmersdelight"
+            ]
+        },
+        {
+            "condition": "fabric:tags_populated",
+            "values": [
+                "c:pumpkin_pie_filling_bucket"
+            ]
+        }
+    ],
+    "type": "farmersdelight:cooking",
+    "cookingtime": 250,
+    "experience": 0.20,
+    "ingredients": [
+        {
+            "tag": "c:pumpkin_puree_bucket"
+        },
+        {
+            "tag": "c:eggs"
+        },
+        {
+            "tag": "c:brown_sugar"
+        }
+    ],
+    "result": {
+        "item": "createfood:pumpkin_pie_filling_bucket"
+    }
+}

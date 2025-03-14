@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "createfood:salt_dough_small",
+      "required": false
+    },
+    {
+      "id": "createfood:wheat_dough_small",
+      "required": false
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "create"
+            ]
+        },
+        {
+            "condition": "fabric:tags_populated",
+            "values": [
+                "c:frosted_sweet_roll_glow_berry"
+            ]
+        }
+    ],
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "item": "create:sweet_roll"
+        },
+        {
+            "item": "minecraft:glow_berries"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:frosted_sweet_roll_glow_berry"
+        }
+    ]
+}

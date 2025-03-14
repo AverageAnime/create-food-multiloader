@@ -1,0 +1,13 @@
+{
+    "replace": false,
+    "values": [
+        {
+            "id": "createfood:flowing_pumpkin_puree",
+            "required": false
+        },
+        {
+            "id": "createfood:pumpkin_puree",
+            "required": false
+        }
+    ]
+}

@@ -1,0 +1,31 @@
+{
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "create"
+            ]
+        },
+        {
+            "condition": "fabric:tags_populated",
+            "values": [
+                "c:pasta_plate_rabbit_meatballs",
+                "c:pasta_plate_rabbit_meatballs_tomato_sauce"
+            ]
+        }
+    ],
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "c:pasta_plate_rabbit_meatballs"
+        },
+        {
+            "item": "farmersdelight:tomato_sauce"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:pasta_plate_rabbit_meatballs_tomato_sauce"
+        }
+    ]
+}

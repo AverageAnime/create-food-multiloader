@@ -1,0 +1,30 @@
+{
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:tags_populated",
+            "values": [
+                "c:chocolate_graham_cracker",
+                "c:chorus_fruit_ice_cream_stick",
+                "c:chocolate_graham_cracker_chorus_fruit_ice_cream"
+            ]
+        }
+    ],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:chocolate_graham_cracker"
+        },
+        {
+            "tag": "c:chorus_fruit_ice_cream_stick"
+        },
+        {
+            "tag": "c:chorus_fruit_ice_cream_stick"
+        },
+        {
+            "tag": "c:chorus_fruit_ice_cream_stick"
+        }
+    ],
+    "result": {
+        "item": "createfood:chocolate_graham_cracker_chorus_fruit_ice_cream"
+    }
+}

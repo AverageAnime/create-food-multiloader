@@ -1,0 +1,31 @@
+{
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "create"
+            ]
+        },
+        {
+            "condition": "fabric:tags_populated",
+            "values": [
+                "c:sausage_biscuit_cheese_bacon",
+                "c:sausage_biscuit_cheese_fried_egg_bacon"
+            ]
+        }
+    ],
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "c:sausage_biscuit_cheese_bacon"
+        },
+        {
+            "tag": "c:cooked_eggs"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:sausage_biscuit_cheese_fried_egg_bacon"
+        }
+    ]
+}

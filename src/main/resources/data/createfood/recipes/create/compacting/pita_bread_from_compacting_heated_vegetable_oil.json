@@ -1,0 +1,32 @@
+{
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "create"
+            ]
+        },
+        {
+            "condition": "fabric:tags_populated",
+            "values": [
+                "c:vegetable_oil_bucket",
+                "c:pita_bread"
+            ]
+        }
+    ],
+    "type": "create:compacting",
+    "heatRequirement": "heated",
+    "ingredients": [
+        {
+            "amount": 9000, "fluidTag": "c:vegetable_oil"
+        },
+        {
+            "tag": "c:pita_dough_ingredients"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:pita_bread"
+        }
+    ]
+}

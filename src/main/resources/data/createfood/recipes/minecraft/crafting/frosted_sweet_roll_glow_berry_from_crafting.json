@@ -1,0 +1,22 @@
+{
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:tags_populated",
+            "values": [
+                "c:frosted_sweet_roll_glow_berry"
+            ]
+        }
+    ],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "create:sweet_roll"
+        },
+        {
+            "item": "minecraft:glow_berries"
+        }
+    ],
+    "result": {
+        "item": "createfood:frosted_sweet_roll_glow_berry"
+    }
+}

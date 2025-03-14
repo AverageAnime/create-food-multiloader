@@ -1,0 +1,28 @@
+{
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:tags_populated",
+            "values": [
+                "c:sausage_biscuit_cheese_fried_egg",
+                "c:biscuit",
+                "c:sausage_biscuit_sandwich_cheese_fried_egg"
+            ]
+        }
+    ],
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "1 ",
+        "2 "
+    ],
+    "key": {
+        "1": {
+            "tag": "c:biscuit"
+        },
+        "2": {
+            "tag": "c:sausage_biscuit_cheese_fried_egg"
+        }
+    },
+    "result": {
+        "item": "createfood:sausage_biscuit_sandwich_cheese_fried_egg"
+    }
+}

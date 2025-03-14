@@ -1,0 +1,39 @@
+{
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "farmersdelight"
+            ]
+        },
+        {
+            "condition": "fabric:tags_populated",
+            "values": [
+                "c:pumpkin_puree_bucket"
+            ]
+        }
+    ],
+    "type": "farmersdelight:cooking",
+    "container": {
+        "item": "minecraft:bucket"
+    },
+    "cookingtime": 150,
+    "experience": 0.15,
+    "ingredients": [
+        {
+            "item": "farmersdelight:pumpkin_slice"
+        },
+        {
+            "item": "farmersdelight:pumpkin_slice"
+        },
+        {
+            "item": "farmersdelight:pumpkin_slice"
+        },
+        {
+            "item": "farmersdelight:pumpkin_slice"
+        }
+    ],
+    "result": {
+        "item": "createfood:pumpkin_puree_bucket"
+    }
+}

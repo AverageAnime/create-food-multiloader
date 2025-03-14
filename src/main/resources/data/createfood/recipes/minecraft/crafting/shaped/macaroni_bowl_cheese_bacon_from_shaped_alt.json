@@ -1,0 +1,28 @@
+{
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:tags_populated",
+            "values": [
+                "c:macaroni_bowl_bacon",
+                "c:cheeses",
+                "c:macaroni_bowl_cheese_bacon"
+            ]
+        }
+    ],
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "1 ",
+        "2 "
+    ],
+    "key": {
+        "1": {
+            "tag": "c:macaroni_bowl_bacon"
+        },
+        "2": {
+            "tag": "c:cheeses"
+        }
+    },
+    "result": {
+        "item": "createfood:macaroni_bowl_cheese_bacon"
+    }
+}

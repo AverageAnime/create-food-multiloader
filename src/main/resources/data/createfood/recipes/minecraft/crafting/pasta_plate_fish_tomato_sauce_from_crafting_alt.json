@@ -1,0 +1,26 @@
+{
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:tags_populated",
+            "values": [
+                "c:cooked_pasta",
+                "c:pasta_plate_fish_tomato_sauce"
+            ]
+        }
+    ],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "farmersdelight:tomato_sauce"
+        },
+        {
+            "tag": "c:cooked_pasta"
+        },
+        {
+            "tag": "c:cooked_fishes"
+        }
+    ],
+    "result": {
+        "item": "createfood:pasta_plate_fish_tomato_sauce"
+    }
+}

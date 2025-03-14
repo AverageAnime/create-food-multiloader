@@ -1,0 +1,24 @@
+{
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:tags_populated",
+            "values": [
+                "c:sausage_biscuit_fried_egg",
+                "c:cooked_pork",
+                "c:sausage_biscuit_fried_egg_bacon"
+            ]
+        }
+    ],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:sausage_biscuit_fried_egg"
+        },
+        {
+            "tag": "c:cooked_pork"
+        }
+    ],
+    "result": {
+        "item": "createfood:sausage_biscuit_fried_egg_bacon"
+    }
+}

@@ -1,0 +1,31 @@
+{
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "create"
+            ]
+        },
+        {
+            "condition": "fabric:tags_populated",
+            "values": [
+                "c:cheese_and_chicken_bun",
+                "c:chicken_bun_cheese_bacon"
+            ]
+        }
+    ],
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "c:cheese_and_chicken_bun"
+        },
+        {
+            "tag": "c:cooked_pork"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:chicken_bun_cheese_bacon"
+        }
+    ]
+}

@@ -1,0 +1,31 @@
+{
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "create"
+            ]
+        },
+        {
+            "condition": "fabric:tags_populated",
+            "values": [
+                "c:chicken_bun_bacon",
+                "c:chicken_bun_bacon_lettuce"
+            ]
+        }
+    ],
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "c:chicken_bun_bacon"
+        },
+        {
+            "tag": "c:salad_ingredients"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:chicken_bun_bacon_lettuce"
+        }
+    ]
+}

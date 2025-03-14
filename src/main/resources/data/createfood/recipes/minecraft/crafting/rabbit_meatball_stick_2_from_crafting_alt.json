@@ -1,0 +1,26 @@
+{
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:tags_populated",
+            "values": [
+                "c:rabbit_meatball",
+                "c:rabbit_meatball_stick"
+            ]
+        }
+    ],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:stick"
+        },
+        {
+            "tag": "c:rabbit_meatball"
+        },
+        {
+            "tag": "c:rabbit_meatball"
+        }
+    ],
+    "result": {
+        "item": "createfood:rabbit_meatball_stick_2"
+    }
+}

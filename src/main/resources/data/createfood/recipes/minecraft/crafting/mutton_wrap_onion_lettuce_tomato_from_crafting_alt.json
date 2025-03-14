@@ -1,0 +1,24 @@
+{
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:tags_populated",
+            "values": [
+                "c:pita_bread",
+                "c:gyro_meat_slice",
+                "c:mutton_wrap_onion_lettuce_tomato"
+            ]
+        }
+    ],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:mutton_wrap_lettuce_tomato"
+        },
+        {
+            "tag": "c:onion"
+        }
+    ],
+    "result": {
+        "item": "createfood:mutton_wrap_onion_lettuce_tomato"
+    }
+}

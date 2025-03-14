@@ -450,6 +450,16 @@ public class CreateFoodClient implements ClientModInitializer {
 
 // Fluids
 
+        FluidRenderHandlerRegistry.INSTANCE.register(ModFluids.STILL_PUMPKIN_PIE_FILLING, ModFluids.FLOWING_PUMPKIN_PIE_FILLING, new SimpleFluidRenderHandler(
+                new Identifier("createfood:block/pumpkin_pie_filling_still"),
+                new Identifier("createfood:block/pumpkin_pie_filling_flow")
+        ));
+
+        FluidRenderHandlerRegistry.INSTANCE.register(ModFluids.STILL_PUMPKIN_PUREE, ModFluids.FLOWING_PUMPKIN_PUREE, new SimpleFluidRenderHandler(
+                new Identifier("createfood:block/pumpkin_puree_still"),
+                new Identifier("createfood:block/pumpkin_puree_flow")
+        ));
+
         FluidRenderHandlerRegistry.INSTANCE.register(ModFluids.STILL_WAFFLE_BATTER, ModFluids.FLOWING_WAFFLE_BATTER, new SimpleFluidRenderHandler(
                 new Identifier("createfood:block/waffle_batter_still"),
                 new Identifier("createfood:block/waffle_batter_flow")

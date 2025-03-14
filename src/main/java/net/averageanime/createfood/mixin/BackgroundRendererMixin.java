@@ -48,6 +48,16 @@ public abstract class BackgroundRendererMixin {
             green = (float) 138 / 255;
             blue = (float) 107 / 255;
         }
+        if (ModFluids.isPumpkinPieFilling(state)) {
+            red = (float) 210 / 255;
+            green = (float) 125 / 255;
+            blue = (float) 41 / 255;
+        }
+        if (ModFluids.isPumpkinPuree(state)) {
+            red = (float) 210 / 255;
+            green = (float) 125 / 255;
+            blue = (float) 41 / 255;
+        }
         if (ModFluids.isChorusFruitPieFilling(state)) {
             red = (float) 223 / 255;
             green = (float) 70 / 255;
@@ -475,6 +485,16 @@ public abstract class BackgroundRendererMixin {
     private static void $applyFog(Camera camera, FogType fogType, float viewDistance, boolean thickFog, float tickDelta, CallbackInfo ci) {
         assert MinecraftClient.getInstance().world != null;
         FluidState state = MinecraftClient.getInstance().world.getFluidState(camera.getBlockPos());
+        if (ModFluids.isPumpkinPuree(state)) {
+            RenderSystem.setShaderFogStart(-1);
+            RenderSystem.setShaderFogEnd(1);
+            ci.cancel();
+        }
+        if (ModFluids.isPumpkinPieFilling(state)) {
+            RenderSystem.setShaderFogStart(-1);
+            RenderSystem.setShaderFogEnd(1);
+            ci.cancel();
+        }
         if (ModFluids.isWaffleBatter(state)) {
             RenderSystem.setShaderFogStart(-1);
             RenderSystem.setShaderFogEnd(1);

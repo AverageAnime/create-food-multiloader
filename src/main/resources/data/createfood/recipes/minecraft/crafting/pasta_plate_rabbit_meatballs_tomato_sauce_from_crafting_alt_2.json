@@ -1,0 +1,24 @@
+{
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:tags_populated",
+            "values": [
+                "c:pasta_plate_tomato_sauce",
+                "c:small_rabbit_meatballs",
+                "c:pasta_plate_rabbit_meatballs_tomato_sauce"
+            ]
+        }
+    ],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:pasta_plate_tomato_sauce"
+        },
+        {
+            "tag": "c:small_rabbit_meatballs"
+        }
+    ],
+    "result": {
+        "item": "createfood:pasta_plate_rabbit_meatballs_tomato_sauce"
+    }
+}

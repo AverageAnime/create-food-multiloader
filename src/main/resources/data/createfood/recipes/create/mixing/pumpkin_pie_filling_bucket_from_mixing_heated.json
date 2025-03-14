@@ -1,0 +1,34 @@
+{
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "create"
+            ]
+        },
+        {
+            "condition": "fabric:tags_populated",
+            "values": [
+                "c:pumpkin_pie_filling_bucket"
+            ]
+        }
+    ],
+    "type": "create:mixing",
+    "heatRequirement": "heated",
+    "ingredients": [
+        {
+            "tag": "c:pumpkin_puree_bucket"
+        },
+        {
+            "tag": "c:eggs"
+        },
+        {
+            "tag": "c:brown_sugar"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:pumpkin_pie_filling_bucket"
+        }
+    ]
+}

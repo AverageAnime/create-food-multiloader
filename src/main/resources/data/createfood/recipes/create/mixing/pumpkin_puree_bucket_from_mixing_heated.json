@@ -1,0 +1,40 @@
+{
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "create"
+            ]
+        },
+        {
+            "condition": "fabric:tags_populated",
+            "values": [
+                "c:pumpkin_puree_bucket"
+            ]
+        }
+    ],
+    "type": "create:mixing",
+    "heatRequirement": "heated",
+    "ingredients": [
+        {
+            "item": "minecraft:bucket"
+        },
+        {
+            "item": "farmersdelight:pumpkin_slice"
+        },
+        {
+            "item": "farmersdelight:pumpkin_slice"
+        },
+        {
+            "item": "farmersdelight:pumpkin_slice"
+        },
+        {
+            "item": "farmersdelight:pumpkin_slice"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:pumpkin_puree_bucket"
+        }
+    ]
+}

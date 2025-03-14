@@ -1,0 +1,24 @@
+{
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:tags_populated",
+            "values": [
+                "c:macaroni_bowl_sausage",
+                "c:cheeses",
+                "c:macaroni_bowl_cheese_sausage"
+            ]
+        }
+    ],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:macaroni_bowl_sausage"
+        },
+        {
+            "tag": "c:cheeses"
+        }
+    ],
+    "result": {
+        "item": "createfood:macaroni_bowl_cheese_sausage"
+    }
+}
