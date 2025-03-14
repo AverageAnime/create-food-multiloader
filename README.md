@@ -14,9 +14,14 @@ Create: Food is an add-on for [Farmer's Delight](https://www.curseforge.com/mine
 
 ### **Required Dependencies:**
 
+#### Fabric:
 * [Cloth Config](https://www.curseforge.com/minecraft/mc-mods/cloth-config)
 * [Fabric API](https://www.curseforge.com/minecraft/mc-mods/fabric-api)
 * [Farmer's Delight Refabricated](https://www.curseforge.com/minecraft/mc-mods/farmers-delight-refabricated)
+
+#### Forge:
+* [Create](https://www.curseforge.com/minecraft/mc-mods/create)
+* [Farmer's Delight](https://www.curseforge.com/minecraft/mc-mods/farmers-delight)
 
 ### **Read More:**
 
@@ -25,10 +30,9 @@ Create: Food is an add-on for [Farmer's Delight](https://www.curseforge.com/mine
 *  [Config Options](https://github.com/AverageAnime/create-food/wiki/Config-Options)
 *  [Food Effect Tags](https://github.com/AverageAnime/create-food/wiki/Food-Effect-Tags)
 
-### **Item Preview (1.1.8)**
-
-![fullprev118](https://github.com/user-attachments/assets/913ac8e7-4a68-46cb-8310-55e3384bcf59)
-![bucketprev118](https://github.com/user-attachments/assets/5756c879-5a39-4168-b7b6-ec33e001d309)
+### **Item Preview (1.1.9+)**
+![fullprev119](https://github.com/user-attachments/assets/3591199b-7d59-4f74-b71a-461c3d0d411b)
+![bucketprev119](https://github.com/user-attachments/assets/ebad28c0-69c6-4541-833b-332b9260f97c)
 
 ### **My Other Mods**
 

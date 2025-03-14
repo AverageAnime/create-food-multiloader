@@ -1,4 +1,11 @@
+### *** 1.1.10 ***
+
+#### Forge:
+* Updated dependency to Create 6.0.0. Use 1.1.9 for previous versions.
+
 ### *** 1.1.9 ***
+
+![newprev119](https://github.com/user-attachments/assets/33126cfe-3e46-42e1-a907-0a04ea7b3b16)
 
 #### General:
 * 120+ new food items.
@@ -44,6 +51,7 @@
 * Fix for stacks of bottle items and stick items replacing the stack with single remainder item on upon consumption. [(#58)](https://github.com/AverageAnime/create-food/issues/58)
 * Compatibility tags for VintageDelight. [(#58)](https://github.com/AverageAnime/create-food/issues/58)
   * Note: VintageDelight currently breaks the forge:fruits tag. 
+
 ### *** 1.1.8 ***
 
 ![newprev118](https://github.com/user-attachments/assets/d888474a-6f96-4d3b-aa4f-1cc8dcf90495)
