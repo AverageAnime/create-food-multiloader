@@ -1,12 +1,12 @@
 package net.averageanime.createfood.creativetab;
 
 import com.simibubi.create.AllCreativeModeTabs;
-import com.simibubi.create.foundation.utility.Components;
 import com.tterrag.registrate.util.entry.RegistryEntry;
 import it.unimi.dsi.fastutil.objects.ReferenceArrayList;
 import it.unimi.dsi.fastutil.objects.ReferenceLinkedOpenHashSet;
 import net.averageanime.createfood.item.ModItems;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -36,7 +36,7 @@ public class ModCreativeTab {
     static {
         REGISTER = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, CreateFood.ID);
         CREATIVE_TAB = REGISTER.register("base", () -> {
-            return CreativeModeTab.builder().title(Components.literal("Create: Food"))
+            return CreativeModeTab.builder().title(Component.literal("Create: Food"))
                     .withTabsBefore(AllCreativeModeTabs.BASE_CREATIVE_TAB.getKey(),AllCreativeModeTabs.PALETTES_CREATIVE_TAB.getKey())
                     .icon(ModItems.BREAKFAST_PLATE::asStack)
                     .displayItems(new DisplayItemsGenerator())

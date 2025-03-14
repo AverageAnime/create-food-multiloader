@@ -1,9 +1,9 @@
 package net.averageanime.createfood;
 
 import com.simibubi.create.Create;
-import com.simibubi.create.foundation.ModFilePackResources;
+import com.simibubi.create.foundation.pack.ModFilePackResources;
 
-import com.simibubi.create.foundation.utility.Components;
+import net.minecraft.network.chat.Component;
 import net.minecraft.server.packs.PackType;
 import net.minecraft.server.packs.repository.Pack;
 import net.minecraft.server.packs.repository.PackSource;
@@ -35,7 +35,7 @@ public class ResourcePacks {
                 event.addRepositorySource(consumer
                         -> {
                     Pack pack = Pack.readMetaAndCreate(Create.asResource("create").toString(),
-                            Components.literal("Create"),
+                            Component.literal("Create"),
                             false,
                             id -> new ModFilePackResources(id, modFile, "resourcepacks/create"),
                             PackType.CLIENT_RESOURCES, Pack.Position.TOP, PackSource.BUILT_IN);
@@ -47,7 +47,7 @@ public class ResourcePacks {
                 event.addRepositorySource(consumer
                         -> {
                     Pack pack = Pack.readMetaAndCreate(Create.asResource("farmers_delight").toString(),
-                            Components.literal("Farmer's Delight"),
+                            Component.literal("Farmer's Delight"),
                             false,
                             id -> new ModFilePackResources(id, modFile, "resourcepacks/farmers_delight"),
                             PackType.CLIENT_RESOURCES, Pack.Position.TOP, PackSource.BUILT_IN);
@@ -59,7 +59,7 @@ public class ResourcePacks {
                 event.addRepositorySource(consumer
                         -> {
                     Pack pack = Pack.readMetaAndCreate(Create.asResource("expanded_delight").toString(),
-                            Components.literal("Expanded Delight"),
+                            Component.literal("Expanded Delight"),
                             false,
                             id -> new ModFilePackResources(id, modFile, "resourcepacks/expanded_delight"),
                             PackType.CLIENT_RESOURCES, Pack.Position.TOP, PackSource.BUILT_IN);
@@ -71,7 +71,7 @@ public class ResourcePacks {
                 event.addRepositorySource(consumer
                         -> {
                     Pack pack = Pack.readMetaAndCreate(Create.asResource("farmers_respite").toString(),
-                            Components.literal("Farmer's Respite"),
+                            Component.literal("Farmer's Respite"),
                             false,
                             id -> new ModFilePackResources(id, modFile, "resourcepacks/farmers_respite"),
                             PackType.CLIENT_RESOURCES, Pack.Position.TOP, PackSource.BUILT_IN);
@@ -83,7 +83,7 @@ public class ResourcePacks {
                 event.addRepositorySource(consumer
                         -> {
                     Pack pack = Pack.readMetaAndCreate(Create.asResource("ends_delight").toString(),
-                            Components.literal("End's Delight"),
+                            Component.literal("End's Delight"),
                             false,
                             id -> new ModFilePackResources(id, modFile, "resourcepacks/ends_delight"),
                             PackType.CLIENT_RESOURCES, Pack.Position.TOP, PackSource.BUILT_IN);
@@ -95,7 +95,7 @@ public class ResourcePacks {
                 event.addRepositorySource(consumer
                         -> {
                     Pack pack = Pack.readMetaAndCreate(Create.asResource("cultural_delight").toString(),
-                            Components.literal("Cultural Delight"),
+                            Component.literal("Cultural Delight"),
                             false,
                             id -> new ModFilePackResources(id, modFile, "resourcepacks/cultural_delight"),
                             PackType.CLIENT_RESOURCES, Pack.Position.TOP, PackSource.BUILT_IN);
@@ -107,7 +107,7 @@ public class ResourcePacks {
                 event.addRepositorySource(consumer
                         -> {
                     Pack pack = Pack.readMetaAndCreate(Create.asResource("ubes_delight").toString(),
-                            Components.literal("Ube's Delight"),
+                            Component.literal("Ube's Delight"),
                             false,
                             id -> new ModFilePackResources(id, modFile, "resourcepacks/ubes_delight"),
                             PackType.CLIENT_RESOURCES, Pack.Position.TOP, PackSource.BUILT_IN);
@@ -119,7 +119,7 @@ public class ResourcePacks {
                 event.addRepositorySource(consumer
                         -> {
                     Pack pack = Pack.readMetaAndCreate(Create.asResource("rustic_delight").toString(),
-                            Components.literal("Rustic Delight"),
+                            Component.literal("Rustic Delight"),
                             false,
                             id -> new ModFilePackResources(id, modFile, "resourcepacks/rustic_delight"),
                             PackType.CLIENT_RESOURCES, Pack.Position.TOP, PackSource.BUILT_IN);
