@@ -28,6 +28,9 @@
         },
         {
             "item": "minecraft:sweet_berries"
+        },
+        {
+            "item": "minecraft:bucket"
         }
     ],
     "result": {

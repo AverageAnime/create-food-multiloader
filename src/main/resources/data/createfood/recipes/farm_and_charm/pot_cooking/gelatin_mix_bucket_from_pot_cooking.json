@@ -9,7 +9,6 @@
         {
             "condition": "fabric:tags_populated",
             "values": [
-                "c:water_buckets",
                 "c:gelatin",
                 "c:gelatin_mix_bucket"
             ]
@@ -18,7 +17,7 @@
     "type": "farm_and_charm:pot_cooking",
     "ingredients": [
         {
-            "tag": "c:water_bucket"
+            "item": "minecraft:water_bucket"
         },
         {
             "tag": "c:gelatin"

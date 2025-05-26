@@ -15,6 +15,9 @@
         },
         {
             "tag": "c:magenta_dyes"
+        },
+        {
+            "item": "minecraft:bucket"
         }
     ],
     "result": {

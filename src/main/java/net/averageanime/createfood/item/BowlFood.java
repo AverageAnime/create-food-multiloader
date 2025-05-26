@@ -44,6 +44,10 @@ public class BowlFood
         this.hasCustomTooltip = false;
     }
 
+    public static Item.Settings BowlItem() {
+        return new Item.Settings().recipeRemainder(Items.BOWL).maxCount(16);
+    }
+
     public BowlFood(Settings properties, boolean hasFoodEffectTooltip, boolean hasCustomTooltip) {
         super(properties);
         this.hasFoodEffectTooltip = hasFoodEffectTooltip;

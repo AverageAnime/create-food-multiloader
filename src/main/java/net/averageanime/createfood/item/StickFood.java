@@ -50,6 +50,10 @@ public class StickFood
         this.hasCustomTooltip = hasCustomTooltip;
     }
 
+    public static Item.Settings StickItem() {
+        return new Item.Settings().recipeRemainder(Items.STICK);
+    }
+
     @Override
     public void appendTooltip(ItemStack stack, @Nullable World level, List<Text> tooltip, TooltipContext isAdvanced) {
         super.appendTooltip(stack, level, tooltip, isAdvanced);

@@ -10,7 +10,7 @@
             "condition": "fabric:tags_populated",
             "values": [
                 "c:cheese_and_beef_bun_onion_bacon",
-                "c:cheese_and_beef_bun_onion_bacon"
+                "c:cheese_and_beef_bun_onion_bacon_lettuce"
             ]
         }
     ],
@@ -25,7 +25,7 @@
     ],
     "results": [
         {
-            "item": "createfood:cheese_and_beef_bun_onion_bacon"
+            "item": "createfood:cheese_and_beef_bun_onion_bacon_lettuce"
         }
     ]
 }

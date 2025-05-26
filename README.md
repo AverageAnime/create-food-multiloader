@@ -30,8 +30,8 @@ Create: Food is an add-on for [Farmer's Delight](https://www.curseforge.com/mine
 *  [Config Options](https://github.com/AverageAnime/create-food/wiki/Config-Options)
 *  [Food Effect Tags](https://github.com/AverageAnime/create-food/wiki/Food-Effect-Tags)
 
-### **Item Preview (1.1.9+)**
-![fullprev119](https://github.com/user-attachments/assets/3591199b-7d59-4f74-b71a-461c3d0d411b)
+### **Item Preview (1.1.11+)**
+![fullprev1111](https://github.com/user-attachments/assets/4fd7df97-37c6-4595-952d-fded2db9f8c3)
 ![bucketprev119](https://github.com/user-attachments/assets/ebad28c0-69c6-4541-833b-332b9260f97c)
 
 ### **My Other Mods**

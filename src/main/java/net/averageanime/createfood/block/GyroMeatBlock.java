@@ -45,9 +45,9 @@ public class GyroMeatBlock extends Block {
 
     public final Item cakeSlice;
 
-    public GyroMeatBlock(Item pieSlice) {
+    public GyroMeatBlock(Item cakeSlice) {
         super(FabricBlockSettings.copyOf(Blocks.CAKE));
-        this.cakeSlice = pieSlice;
+        this.cakeSlice = cakeSlice;
         this.setDefaultState(this.stateManager.getDefaultState().with(FACING, Direction.NORTH).with(BITES, 0));
     }
 

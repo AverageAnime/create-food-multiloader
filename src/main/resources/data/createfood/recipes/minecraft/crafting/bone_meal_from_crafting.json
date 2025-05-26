@@ -1,0 +1,19 @@
+{
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:tags_populated",
+            "values": [
+                "c:eggshell"
+            ]
+        }
+    ],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:eggshell"
+        }
+    ],
+    "result": {
+        "item": "minecraft:bone_meal"
+    }
+}

@@ -11,7 +11,7 @@
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {
-            "tag": "c:empty_bucket"
+            "item": "minecraft:bucket"
         },
         {
             "tag": "c:blackstrap_molasses_bottle"

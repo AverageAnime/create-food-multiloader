@@ -1,3 +1,38 @@
+### *** 1.1.11 ***
+
+![newprev1111](https://github.com/user-attachments/assets/2f0c34bd-f060-425f-b662-2c7403ac6eb1)
+
+#### General:
+
+* 11 new food items.
+* Cakes are now placeable in any direction.
+* Outline for cheesecakes, pies, pizzas, and waffles now follow bite shape.
+* Crafting remainders added for bottles, bowls, sticks, and cloth filter.
+* Max count added for bottles & bowls.
+* Fix issue with cream pie models not displaying properly.
+* Compatibility tags added for Let's Do Bakery jams.
+* Fix some sweet berry items missing "sweet" in their names.
+* Minor texture updates.
+* Recipe Changes:
+  * Small versions of dough are now made via axe cutting. [(#59)](https://github.com/AverageAnime/create-food/issues/59)
+  * Fix for duplication with crafting remainders. [(#60)](https://github.com/AverageAnime/create-food/issues/60)
+  * Removed Farm & Charm cooking pot recipes for apple jam, sweet berry jam, glow berry jam, molasses bucket, and milk powder. [(#61)](https://github.com/AverageAnime/create-food/issues/61)
+  * Remove diced tomato crafting recipe. [(#63)](https://github.com/AverageAnime/create-food/issues/63)
+  * Fix Beef Bun (Cheese, Onion, Bacon, Lettuce) deploying recipes. [(#64)](https://github.com/AverageAnime/create-food/issues/64)
+  * Fix molasses bucket recipes.
+  * Fruit smoothie recipes now use 2 ice instead of 4.
+  * New milling recipes.
+  * Chicken patties are now made with bread crumbs instead of toast slices.
+  
+#### Forge:
+* Add load conditions to recipes using tomato sauce fluid. [(#65)](https://github.com/AverageAnime/create-food/issues/65)
+* Fix typo for pork/rabbit meatball stick.
+* Fix yogurt bottle being a honey bottle.
+
+#### Fabric:
+* Fix chicken cheeseburger tomato tag.
+* Fix chorus fruit popsicle not being a stick food.
+
 ### *** 1.1.10 ***
 
 #### Forge:

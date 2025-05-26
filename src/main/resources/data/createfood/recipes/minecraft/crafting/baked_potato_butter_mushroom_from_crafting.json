@@ -1,0 +1,23 @@
+{
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:tags_populated",
+            "values": [
+                "c:baked_potato_butter",
+                "c:baked_potato_butter_mushroom"
+            ]
+        }
+    ],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:baked_potato_butter"
+        },
+        {
+            "tag": "c:mushrooms"
+        }
+    ],
+    "result": {
+        "item": "createfood:baked_potato_butter_mushroom"
+    }
+}

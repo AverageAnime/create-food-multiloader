@@ -15,6 +15,9 @@
         },
         {
             "tag": "c:cocoa_powder"
+        },
+        {
+            "item": "minecraft:bucket"
         }
     ],
     "result": {

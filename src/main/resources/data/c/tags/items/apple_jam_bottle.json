@@ -4,6 +4,10 @@
     {
       "id": "createfood:apple_jam_bottle",
       "required": false
+    },
+    {
+      "id": "bakery:apple_jam",
+      "required": false
     }
   ]
 }

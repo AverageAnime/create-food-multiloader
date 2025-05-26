@@ -18,7 +18,7 @@
     "type": "farm_and_charm:pot_cooking",
     "ingredients": [
         {
-            "tag": "c:milk"
+            "tag": "c:milk_bottle"
         },
         {
             "tag": "c:salt"

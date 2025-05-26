@@ -15,6 +15,9 @@
         },
         {
             "tag": "c:lime_dyes"
+        },
+        {
+            "item": "minecraft:bucket"
         }
     ],
     "result": {

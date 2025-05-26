@@ -132,6 +132,26 @@ public class ModConfig implements ConfigData
     @ConfigEntry.Category("CreateFood")
     @ConfigEntry.Gui.RequiresRestart
     public boolean isBaconSandwichLettuceEnabled = true;
+    @Comment("Enable Baked Potato (Butter).")
+    @ConfigEntry.Category("CreateFood")
+    @ConfigEntry.Gui.RequiresRestart
+    public boolean isBakedPotatoButterEnabled = true;
+    @Comment("Enable Baked Potato (Butter, Cheese).")
+    @ConfigEntry.Category("CreateFood")
+    @ConfigEntry.Gui.RequiresRestart
+    public boolean isBakedPotatoButterCheeseEnabled = true;
+    @Comment("Enable Baked Potato (Butter, Fish).")
+    @ConfigEntry.Category("CreateFood")
+    @ConfigEntry.Gui.RequiresRestart
+    public boolean isBakedPotatoButterFishEnabled = true;
+    @Comment("Enable Baked Potato (Butter, Fried Egg).")
+    @ConfigEntry.Category("CreateFood")
+    @ConfigEntry.Gui.RequiresRestart
+    public boolean isBakedPotatoButterFriedEggEnabled = true;
+    @Comment("Enable Baked Potato (Butter, Mushroom).")
+    @ConfigEntry.Category("CreateFood")
+    @ConfigEntry.Gui.RequiresRestart
+    public boolean isBakedPotatoButterMushroomEnabled = true;
     @Comment("Enable Bar of Dark Chocolate.")
     @ConfigEntry.Category("CreateFood")
     @ConfigEntry.Gui.RequiresRestart
@@ -264,6 +284,14 @@ public class ModConfig implements ConfigData
     @ConfigEntry.Category("CreateFood")
     @ConfigEntry.Gui.RequiresRestart
     public boolean isBlueGelatinDessertSliceEnabled = true;
+    @Comment("Enable Boiled Egg.")
+    @ConfigEntry.Category("CreateFood")
+    @ConfigEntry.Gui.RequiresRestart
+    public boolean isBoiledEggEnabled = true;
+    @Comment("Enable Boiled Egg (Peeled).")
+    @ConfigEntry.Category("CreateFood")
+    @ConfigEntry.Gui.RequiresRestart
+    public boolean isBoiledEggPeeledEnabled = true;
     @Comment("Enable Brown Gelatin Dessert Slice.")
     @ConfigEntry.Category("CreateFood")
     @ConfigEntry.Gui.RequiresRestart
@@ -272,6 +300,10 @@ public class ModConfig implements ConfigData
     @ConfigEntry.Category("CreateFood")
     @ConfigEntry.Gui.RequiresRestart
     public boolean isBrownSugarEnabled = true;
+    @Comment("Enable Bread Crumbs.")
+    @ConfigEntry.Category("CreateFood")
+    @ConfigEntry.Gui.RequiresRestart
+    public boolean isBreadCrumbsEnabled = true;
     @Comment("Enable Bread (Carrot).")
     @ConfigEntry.Category("CreateFood")
     @ConfigEntry.Gui.RequiresRestart
@@ -1048,6 +1080,10 @@ public class ModConfig implements ConfigData
     @ConfigEntry.Category("CreateFood")
     @ConfigEntry.Gui.RequiresRestart
     public boolean isFishCalzoneEnabled = true;
+    @Comment("Enable Fishcake.")
+    @ConfigEntry.Category("CreateFood")
+    @ConfigEntry.Gui.RequiresRestart
+    public boolean isFishcakeEnabled = true;
     @Comment("Enable Frosted Cake.")
     @ConfigEntry.Category("CreateFood")
     @ConfigEntry.Gui.RequiresRestart
@@ -1912,6 +1948,10 @@ public class ModConfig implements ConfigData
     @ConfigEntry.Category("CreateFood")
     @ConfigEntry.Gui.RequiresRestart
     public boolean isRawDarkChocolateChipMuffinEnabled = true;
+    @Comment("Enable Raw Fishcake.")
+    @ConfigEntry.Category("CreateFood")
+    @ConfigEntry.Gui.RequiresRestart
+    public boolean isRawFishcakeEnabled = true;
     @Comment("Enable Raw Fish Calzone.")
     @ConfigEntry.Category("CreateFood")
     @ConfigEntry.Gui.RequiresRestart

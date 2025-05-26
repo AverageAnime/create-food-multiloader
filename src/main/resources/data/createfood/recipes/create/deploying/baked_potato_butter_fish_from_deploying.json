@@ -1,0 +1,31 @@
+{
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "create"
+            ]
+        },
+        {
+            "condition": "fabric:tags_populated",
+            "values": [
+                "c:baked_potato_butter",
+                "c:baked_potato_butter_fish"
+            ]
+        }
+    ],
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "c:baked_potato_butter"
+        },
+        {
+            "tag": "c:foods/cooked_fishes"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:baked_potato_butter_fish"
+        }
+    ]
+}

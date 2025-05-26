@@ -16,6 +16,9 @@
         },
         {
             "tag": "c:chocolate_chips"
+        },
+        {
+            "item": "minecraft:glass_bottle"
         }
     ],
     "result": {

@@ -15,6 +15,9 @@
         },
         {
             "tag": "c:red_dyes"
+        },
+        {
+            "item": "minecraft:bucket"
         }
     ],
     "result": {

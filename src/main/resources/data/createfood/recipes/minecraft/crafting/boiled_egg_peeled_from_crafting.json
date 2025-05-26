@@ -1,0 +1,20 @@
+{
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:tags_populated",
+            "values": [
+                "c:boiled_egg",
+                "c:boiled_egg_peeled"
+            ]
+        }
+    ],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:boiled_egg"
+        }
+    ],
+    "result": {
+        "item": "createfood:boiled_egg_peeled"
+    }
+}

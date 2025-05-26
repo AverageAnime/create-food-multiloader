@@ -15,6 +15,9 @@
         },
         {
             "tag": "c:apple"
+        },
+        {
+            "item": "minecraft:bucket"
         }
     ],
     "result": {

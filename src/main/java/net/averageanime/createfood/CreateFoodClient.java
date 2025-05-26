@@ -694,6 +694,7 @@ public class CreateFoodClient implements ClientModInitializer {
                 new Identifier("createfood:block/apple_cream_frosting_flow")
 
         ));
+
         FluidRenderHandlerRegistry.INSTANCE.register(ModFluids.STILL_UBE_CREAM_FROSTING, ModFluids.FLOWING_UBE_CREAM_FROSTING, new SimpleFluidRenderHandler(
                 new Identifier("createfood:block/ube_cream_frosting_still"),
                 new Identifier("createfood:block/ube_cream_frosting_flow")

@@ -21,6 +21,9 @@
         },
         {
             "tag": "c:chorus_fruit"
+        },
+        {
+            "item": "minecraft:bucket"
         }
     ],
     "result": {

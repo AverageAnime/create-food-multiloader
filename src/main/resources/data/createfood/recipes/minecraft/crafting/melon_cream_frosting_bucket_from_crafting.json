@@ -28,6 +28,9 @@
         },
         {
             "tag": "c:melon"
+        },
+        {
+            "item": "minecraft:bucket"
         }
     ],
     "result": {

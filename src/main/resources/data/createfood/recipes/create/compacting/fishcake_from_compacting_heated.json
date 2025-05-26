@@ -1,0 +1,43 @@
+{
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "create"
+            ]
+        },
+        {
+            "condition": "fabric:tags_populated",
+            "values": [
+                "c:fishcake"
+            ]
+        }
+    ],
+    "type": "create:compacting",
+    "heatRequirement": "heated",
+    "ingredients": [
+        {
+            "tag": "c:bread_crumbs"
+        },
+        {
+            "tag": "c:bread_crumbs"
+        },
+        {
+            "item": "minecraft:dried_kelp"
+        },
+        {
+            "item": "minecraft:dried_kelp"
+        },
+        {
+            "tag": "c:foods/raw_fishes"
+        },
+        {
+            "tag": "c:foods/raw_fishes"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:fishcake"
+        }
+    ]
+}

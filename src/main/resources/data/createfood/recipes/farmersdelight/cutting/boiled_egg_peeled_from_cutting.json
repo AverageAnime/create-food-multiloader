@@ -1,0 +1,38 @@
+{
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "farmersdelight"
+            ]
+        },
+        {
+            "condition": "fabric:tags_populated",
+            "values": [
+                "c:boiled_egg",
+                "c:boiled_egg_peeled"
+            ]
+        }
+    ],
+    "type": "farmersdelight:cutting",
+    "ingredients": [
+        {
+            "tag": "c:boiled_egg"
+        }
+    ],
+    "tool": {
+        "tag": "c:tools/knives"
+    },
+    "result": [
+        {
+            "item": "createfood:boiled_egg_peeled"
+        },
+        {
+            "item": "createfood:eggshell"
+        },
+        {
+            "chance" : 0.25,
+            "item": "createfood:eggshell"
+        }
+    ]
+}

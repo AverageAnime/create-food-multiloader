@@ -1,0 +1,28 @@
+{
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:tags_populated",
+            "values": [
+                "c:eggshell"
+            ]
+        }
+    ],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:eggshell"
+        },
+        {
+            "tag": "c:eggshell"
+        },
+        {
+            "tag": "c:eggshell"
+        },
+        {
+            "item": "minecraft:dirt"
+        }
+    ],
+    "result": {
+        "item": "farmersdelight:rich_soil"
+    }
+}

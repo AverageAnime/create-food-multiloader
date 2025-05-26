@@ -1,6 +1,5 @@
 package net.averageanime.createfood.item;
 
-import com.nhoryzon.mc.farmersdelight.block.PieBlock;
 import net.averageanime.createfood.CreateFood;
 import net.averageanime.createfood.block.*;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
@@ -9,6 +8,7 @@ import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.FoodComponent;
 import net.minecraft.item.Item;
+import net.minecraft.item.Items;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
@@ -26,6 +26,7 @@ public class ModItems {
     public static void registerModItems() {
         CreateFood.LOGGER.info("Registering Items for " + CreateFood.MOD_ID);
     }
+
     public static void registerItem(){
 
 // Apple Cheesecake & Slice
@@ -35,7 +36,7 @@ public class ModItems {
                     .statusEffect(new StatusEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0F)
                     .build()), true));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(APPLE_CHEESECAKE_SLICE));
-            APPLE_CHEESECAKE = registerBlock("apple_cheesecake", new PieBlock(APPLE_CHEESECAKE_SLICE));
+            APPLE_CHEESECAKE = registerBlock("apple_cheesecake", new ModPieBlock(APPLE_CHEESECAKE_SLICE));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(APPLE_CHEESECAKE));
         }
 
@@ -90,7 +91,10 @@ public class ModItems {
 // Apple Cream Frosting Bottle
 
         if (CONFIG.isAppleCreamFrostingBottleEnabled) {
-            final Item APPLE_CREAM_FROSTING_BOTTLE = registerItem("apple_cream_frosting_bottle", new BottleDrink(new Item.Settings().food(new FoodComponent.Builder().hunger(3).saturationModifier(0.7f).build())));
+            Item.Settings settings = BottleDrink.BottleItem()
+                    .recipeRemainder(Items.GLASS_BOTTLE)
+                    .food(new FoodComponent.Builder().hunger(3).saturationModifier(0.7f).build());
+            final Item APPLE_CREAM_FROSTING_BOTTLE = registerItem("apple_cream_frosting_bottle", new BottleDrink(settings));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(APPLE_CREAM_FROSTING_BOTTLE));
         }
 
@@ -132,7 +136,9 @@ public class ModItems {
 // Apple Ice Cream Bowl
 
         if (CONFIG.isAppleIceCreamBowlEnabled) {
-            final Item APPLE_ICE_CREAM_BOWL = registerItem("apple_ice_cream_bowl", new BowlFood(new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(1.1f).build())));
+            Item.Settings settings = BowlFood.BowlItem()
+                    .food(new FoodComponent.Builder().hunger(2).saturationModifier(1.1f).build());
+            final Item APPLE_ICE_CREAM_BOWL = registerItem("apple_ice_cream_bowl", new BowlFood(settings));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(APPLE_ICE_CREAM_BOWL));
         }
 
@@ -153,14 +159,19 @@ public class ModItems {
 // Apple Ice Cream Stick
 
         if (CONFIG.isAppleIceCreamStickEnabled) {
-            final Item APPLE_ICE_CREAM_STICK = registerItem("apple_ice_cream_stick", new StickFood(new FabricItemSettings().food(new FoodComponent.Builder().hunger(1).saturationModifier(0.6f).snack().build())));
+            Item.Settings settings = StickFood.StickItem()
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.6f).snack().build());
+            final Item APPLE_ICE_CREAM_STICK = registerItem("apple_ice_cream_stick", new StickFood(settings));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(APPLE_ICE_CREAM_STICK));
         }
 
 // Apple Jam
 
         if (CONFIG.isAppleJamBottleEnabled) {
-            final Item APPLE_JAM_BOTTLE = registerItem("apple_jam_bottle", new BottleDrink(new FabricItemSettings().food(new FoodComponent.Builder().hunger(3).saturationModifier(1.6f).build())));
+            Item.Settings settings = BottleDrink.BottleItem()
+                    .recipeRemainder(Items.GLASS_BOTTLE)
+                    .food(new FoodComponent.Builder().hunger(3).saturationModifier(1.6f).build());
+            final Item APPLE_JAM_BOTTLE = registerItem("apple_jam_bottle", new BottleDrink(settings));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(APPLE_JAM_BOTTLE));
         }
 
@@ -174,21 +185,30 @@ public class ModItems {
 // Apple Juice
 
         if (CONFIG.isAppleJuiceBottleEnabled) {
-            final Item APPLE_JUICE_BOTTLE = registerItem("apple_juice_bottle", new BottleDrink(new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(1.5f).build())));
+            Item.Settings settings = BottleDrink.BottleItem()
+                    .recipeRemainder(Items.GLASS_BOTTLE)
+                    .food(new FoodComponent.Builder().hunger(2).saturationModifier(1.5f).build());
+            final Item APPLE_JUICE_BOTTLE = registerItem("apple_juice_bottle", new BottleDrink(settings));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(APPLE_JUICE_BOTTLE));
         }
 
 // Apple Milkshake
 
         if (CONFIG.isAppleMilkshakeBottleEnabled) {
-            final Item APPLE_MILKSHAKE_BOTTLE = registerItem("apple_milkshake_bottle", new BottleDrink(new FabricItemSettings().food(new FoodComponent.Builder().hunger(5).saturationModifier(0.9f).statusEffect(new StatusEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0F).build()), true));
+            Item.Settings settings = BottleDrink.BottleItem()
+                    .recipeRemainder(Items.GLASS_BOTTLE)
+                    .food(new FoodComponent.Builder().hunger(5).saturationModifier(0.9f)
+                            .statusEffect(new StatusEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0F).build());
+            final Item APPLE_MILKSHAKE_BOTTLE = registerItem("apple_milkshake_bottle", new BottleDrink(settings, true));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(APPLE_MILKSHAKE_BOTTLE));
         }
 
 // Apple Popsicle
 
         if (CONFIG.isApplePopsicleEnabled) {
-            final Item APPLE_POPSICLE = registerItem("apple_popsicle", new StickFood(new Item.Settings().food(new FoodComponent.Builder().hunger(4).saturationModifier(0.7f).snack().build())));
+            Item.Settings settings = new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(4).saturationModifier(0.7f).snack().build());
+            final Item APPLE_POPSICLE = registerItem("apple_popsicle", new StickFood(settings));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(APPLE_POPSICLE));
         }
 
@@ -234,6 +254,41 @@ public class ModItems {
         if (CONFIG.isBaconSandwichLettuceEnabled) {
             final Item BACON_SANDWICH_LETTUCE = registerItem("bacon_sandwich_lettuce", new ConsumableItem(new FabricItemSettings().food(new FoodComponent.Builder().hunger(9).saturationModifier(0.5f).statusEffect(new StatusEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0F).build()), true));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(BACON_SANDWICH_LETTUCE));
+        }
+
+// Baked Potato (Butter)
+
+        if (CONFIG.isBakedPotatoButterEnabled) {
+            final Item BAKED_POTATO_BUTTER = registerItem("baked_potato_butter", new ConsumableItem(new FabricItemSettings().food(new FoodComponent.Builder().hunger(5).saturationModifier(0.8f).build())));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(BAKED_POTATO_BUTTER));
+        }
+
+// Baked Potato (Butter, Cheese)
+
+        if (CONFIG.isBakedPotatoButterCheeseEnabled) {
+            final Item BAKED_POTATO_BUTTER_CHEESE = registerItem("baked_potato_butter_cheese", new ConsumableItem(new FabricItemSettings().food(new FoodComponent.Builder().hunger(5).saturationModifier(0.9f).build())));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(BAKED_POTATO_BUTTER_CHEESE));
+        }
+
+// Baked Potato (Butter, Fish)
+
+        if (CONFIG.isBakedPotatoButterFishEnabled) {
+            final Item BAKED_POTATO_BUTTER_FISH = registerItem("baked_potato_butter_fish", new ConsumableItem(new FabricItemSettings().food(new FoodComponent.Builder().hunger(6).saturationModifier(0.9f).build())));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(BAKED_POTATO_BUTTER_FISH));
+        }
+
+// Baked Potato (Butter, Fried Egg)
+
+        if (CONFIG.isBakedPotatoButterFriedEggEnabled) {
+            final Item BAKED_POTATO_BUTTER_FRIED_EGG = registerItem("baked_potato_butter_fried_egg", new ConsumableItem(new FabricItemSettings().food(new FoodComponent.Builder().hunger(6).saturationModifier(0.7f).build())));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(BAKED_POTATO_BUTTER_FRIED_EGG));
+        }
+
+// Baked Potato (Butter, Mushroom)
+
+        if (CONFIG.isBakedPotatoButterMushroomEnabled) {
+            final Item BAKED_POTATO_BUTTER_MUSHROOM = registerItem("baked_potato_butter_mushroom", new ConsumableItem(new FabricItemSettings().food(new FoodComponent.Builder().hunger(5).saturationModifier(1.1f).build())));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(BAKED_POTATO_BUTTER_MUSHROOM));
         }
 
 // Bar of Dark Chocolate
@@ -360,7 +415,7 @@ public class ModItems {
         if (CONFIG.isBerryCreamCakeChorusFruitEnabled) {
             final Item BERRY_CREAM_CAKE_SLICE_CHORUS_FRUIT = registerItem("berry_cream_cake_slice_chorus_fruit", new ConsumableItem(new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.3f).build())));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(BERRY_CREAM_CAKE_SLICE_CHORUS_FRUIT));
-            BERRY_CREAM_CAKE_CHORUS_FRUIT = registerBlock("berry_cream_cake_chorus_fruit", new BerryCreamCakeChorusFruitBlock(BERRY_CREAM_CAKE_SLICE_CHORUS_FRUIT));
+            BERRY_CREAM_CAKE_CHORUS_FRUIT = registerBlock("berry_cream_cake_chorus_fruit", new ModCakeBlock(BERRY_CREAM_CAKE_SLICE_CHORUS_FRUIT));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(BERRY_CREAM_CAKE_CHORUS_FRUIT));
         }
 
@@ -369,7 +424,7 @@ public class ModItems {
         if (CONFIG.isBerryCreamCakeGlowBerryEnabled) {
             final Item BERRY_CREAM_CAKE_SLICE_GLOW_BERRY = registerItem("berry_cream_cake_slice_glow_berry", new ConsumableItem(new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.2f).build())));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(BERRY_CREAM_CAKE_SLICE_GLOW_BERRY));
-            BERRY_CREAM_CAKE_GLOW_BERRY = registerBlock("berry_cream_cake_glow_berry", new BerryCreamCakeGlowBerryBlock(BERRY_CREAM_CAKE_SLICE_GLOW_BERRY));
+            BERRY_CREAM_CAKE_GLOW_BERRY = registerBlock("berry_cream_cake_glow_berry", new ModCakeBlock(BERRY_CREAM_CAKE_SLICE_GLOW_BERRY));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(BERRY_CREAM_CAKE_GLOW_BERRY));
         }
 
@@ -378,7 +433,7 @@ public class ModItems {
         if (CONFIG.isBerryCreamCakeSweetBerryEnabled) {
             final Item BERRY_CREAM_CAKE_SLICE_SWEET_BERRY = registerItem("berry_cream_cake_slice_sweet_berry", new ConsumableItem(new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.2f).build())));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(BERRY_CREAM_CAKE_SLICE_SWEET_BERRY));
-            BERRY_CREAM_CAKE_SWEET_BERRY = registerBlock("berry_cream_cake_sweet_berry", new BerryCreamCakeSweetBerryBlock(BERRY_CREAM_CAKE_SLICE_SWEET_BERRY));
+            BERRY_CREAM_CAKE_SWEET_BERRY = registerBlock("berry_cream_cake_sweet_berry", new ModCakeBlock(BERRY_CREAM_CAKE_SLICE_SWEET_BERRY));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(BERRY_CREAM_CAKE_SWEET_BERRY));
         }
 
@@ -419,8 +474,11 @@ public class ModItems {
 // Berry Cream Frosting Bottle
 
         if (CONFIG.isBerryCreamFrostingBottleEnabled) {
-            final Item BERRYCREAMFROSTINGBOTTLE = registerItem("berry_cream_frosting_bottle", new BottleDrink(new Item.Settings().food(new FoodComponent.Builder().hunger(4).saturationModifier(0.4f).build())));
-            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(BERRYCREAMFROSTINGBOTTLE));
+            Item.Settings settings = BottleDrink.BottleItem()
+                    .recipeRemainder(Items.GLASS_BOTTLE)
+                    .food(new FoodComponent.Builder().hunger(4).saturationModifier(0.4f).build());
+            final Item BERRY_CREAM_FROSTING_BOTTLE = registerItem("berry_cream_frosting_bottle", new BottleDrink(settings));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(BERRY_CREAM_FROSTING_BOTTLE));
         }
 
 // Berry Cream Frosted Chocolate Sweet Roll
@@ -496,8 +554,10 @@ public class ModItems {
 // Berry Ice Cream Bowl
 
         if (CONFIG.isBerryIceCreamBowlEnabled) {
-            final Item BERRYICECREAMBOWL = registerItem("berry_ice_cream_bowl", new BowlFood(new FabricItemSettings().food(new FoodComponent.Builder().hunger(3).saturationModifier(1.0f).build())));
-            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(BERRYICECREAMBOWL));
+            Item.Settings settings = BowlFood.BowlItem()
+                    .food(new FoodComponent.Builder().hunger(3).saturationModifier(1.0f).build());
+            final Item BERRY_ICE_CREAM_BOWL = registerItem("berry_ice_cream_bowl", new BowlFood(settings));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(BERRY_ICE_CREAM_BOWL));
         }
 
 // Berry Ice Cream Cone
@@ -517,15 +577,20 @@ public class ModItems {
 // Berry Ice Cream Stick
 
         if (CONFIG.isBerryIceCreamStickEnabled) {
-            final Item BERRY_ICE_CREAM_STICK = registerItem("berry_ice_cream_stick", new StickFood(new FabricItemSettings().food(new FoodComponent.Builder().hunger(1).saturationModifier(0.9f).snack().build())));
+            Item.Settings settings = StickFood.StickItem()
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.9f).snack().build());
+            final Item BERRY_ICE_CREAM_STICK = registerItem("berry_ice_cream_stick", new StickFood(settings));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(BERRY_ICE_CREAM_STICK));
         }
 
 // Berry Jam
 
         if (CONFIG.isBerryJamBottleEnabled) {
-            final Item BERRYJAMBOTTLE = registerItem("berry_jam_bottle", new BottleDrink(new FabricItemSettings().food(new FoodComponent.Builder().hunger(4).saturationModifier(1.2f).build())));
-            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(BERRYJAMBOTTLE));
+            Item.Settings settings = BottleDrink.BottleItem()
+                    .recipeRemainder(Items.GLASS_BOTTLE)
+                    .food(new FoodComponent.Builder().hunger(4).saturationModifier(1.2f).build());
+            final Item BERRY_JAM_BOTTLE = registerItem("berry_jam_bottle", new BottleDrink(settings));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(BERRY_JAM_BOTTLE));
         }
 
 // Berry Jam Sandwich
@@ -538,15 +603,23 @@ public class ModItems {
 // Berry Juice
 
         if (CONFIG.isBerryJuiceBottleEnabled) {
-            final Item BERRYJUICEBOTTLE = registerItem("berry_juice_bottle", new BottleDrink(new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(1.6f).build())));
-            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(BERRYJUICEBOTTLE));
+            Item.Settings settings = BottleDrink.BottleItem()
+                    .recipeRemainder(Items.GLASS_BOTTLE)
+                    .food(new FoodComponent.Builder().hunger(2).saturationModifier(1.6f).build());
+            final Item BERRY_JUICE_BOTTLE = registerItem("berry_juice_bottle", new BottleDrink(settings));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(BERRY_JUICE_BOTTLE));
         }
 
 // Berry Milkshake
 
         if (CONFIG.isBerryMilkshakeBottleEnabled) {
-            final Item BERRYMILKSHAKEBOTTLE = registerItem("berry_milkshake_bottle", new BottleDrink(new FabricItemSettings().food(new FoodComponent.Builder().hunger(5).saturationModifier(1.0f).statusEffect(new StatusEffectInstance(ModEffects.COMFORT.get(), 600, 0),1.0f).statusEffect(new StatusEffectInstance(StatusEffects.HASTE, 600, 0),1.0f).build()), true));
-            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(BERRYMILKSHAKEBOTTLE));
+            Item.Settings settings = BottleDrink.BottleItem()
+                    .recipeRemainder(Items.GLASS_BOTTLE)
+                    .food(new FoodComponent.Builder().hunger(5).saturationModifier(1.0f)
+                            .statusEffect(new StatusEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f)
+                            .statusEffect(new StatusEffectInstance(StatusEffects.HASTE, 600, 0), 1.0f).build());
+            final Item BERRY_MILKSHAKE_BOTTLE = registerItem("berry_milkshake_bottle", new BottleDrink(settings, true));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(BERRY_MILKSHAKE_BOTTLE));
         }
 
 // Berry Pie & Slice
@@ -556,15 +629,17 @@ public class ModItems {
                     .statusEffect(new StatusEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0F)
                     .build()), true));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(BERRY_PIE_SLICE));
-            BERRY_PIE = registerBlock("berry_pie", new PieBlock(BERRY_PIE_SLICE));
+            BERRY_PIE = registerBlock("berry_pie", new ModPieBlock(BERRY_PIE_SLICE));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(BERRY_PIE));
         }
 
 // Berry Popsicle
 
         if (CONFIG.isBerryPopsicleEnabled) {
-            final Item BERRYPOPSICLE = registerItem("berry_popsicle", new StickFood(new Item.Settings().food(new FoodComponent.Builder().hunger(3).saturationModifier(0.5f).snack().build())));
-            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(BERRYPOPSICLE));
+            Item.Settings settings = new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(3).saturationModifier(0.5f).snack().build());
+            final Item BERRY_POPSICLE = registerItem("berry_popsicle", new StickFood(settings));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(BERRY_POPSICLE));
         }
 
 // Biscuit
@@ -577,8 +652,34 @@ public class ModItems {
 // Blackstrap Molasses Bottle
 
         if (CONFIG.isBlackstrapMolassesBottleEnabled) {
-            final Item BLACKSTRAPMOLASSESBOTTLE = registerItem("blackstrap_molasses_bottle", new BottleDrink(new FabricItemSettings().food(new FoodComponent.Builder().hunger(1).saturationModifier(3.0f).build())));
-            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(BLACKSTRAPMOLASSESBOTTLE));
+            Item.Settings settings = BottleDrink.BottleItem()
+                    .recipeRemainder(Items.GLASS_BOTTLE)
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(3.0f).build());
+            final Item BLACKSTRAP_MOLASSES_BOTTLE = registerItem("blackstrap_molasses_bottle", new BottleDrink(settings));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(BLACKSTRAP_MOLASSES_BOTTLE));
+        }
+
+// Boiled Egg
+
+        if (CONFIG.isBoiledEggEnabled) {
+            final Item EGGSHELL = registerItem("eggshell", new ConsumableItem(new FabricItemSettings()));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(EGGSHELL));
+            final Item BOILED_EGG = registerItem("boiled_egg", new ConsumableItem(new FabricItemSettings().maxCount(16).recipeRemainder(EGGSHELL)));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(BOILED_EGG));
+        }
+
+// Boiled Egg (Peeled)
+
+        if (CONFIG.isBoiledEggPeeledEnabled) {
+            final Item BOILED_EGG_PEELED = registerItem("boiled_egg_peeled", new ConsumableItem(new FabricItemSettings().maxCount(16).food(new FoodComponent.Builder().hunger(6).saturationModifier(0.1f).snack().build())));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(BOILED_EGG_PEELED));
+        }
+
+// Bread Crumbs
+
+        if (CONFIG.isBreadCrumbsEnabled) {
+            final Item BREAD_CRUMBS = registerItem("bread_crumbs", new ConsumableItem(new FabricItemSettings()));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(BREAD_CRUMBS));
         }
 
 // Bread (Carrot)
@@ -752,8 +853,14 @@ public class ModItems {
 // Breakfast Plate
 
         if (CONFIG.isBreakfastPlateEnabled) {
-            final Item BREAKFASTPLATE = registerItem("breakfast_plate", new BowlFood(new FabricItemSettings().food(new FoodComponent.Builder().hunger(8).saturationModifier(1.6f).statusEffect(new StatusEffectInstance(StatusEffects.HASTE, 6000, 0),1.0f).statusEffect(new StatusEffectInstance(ModEffects.NOURISHMENT.get(), 6000, 0),1.0f).statusEffect(new StatusEffectInstance(ModEffects.COMFORT.get(), 3600, 0),1.0f).build()), true));
-            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(BREAKFASTPLATE));
+            Item.Settings settings = new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(8).saturationModifier(1.6f)
+                            .statusEffect(new StatusEffectInstance(StatusEffects.HASTE, 6000, 0), 1.0f)
+                            .statusEffect(new StatusEffectInstance(ModEffects.NOURISHMENT.get(), 6000, 0), 1.0f)
+                            .statusEffect(new StatusEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1.0f).build())
+                    .maxCount(16);
+            final Item BREAKFAST_PLATE = registerItem("breakfast_plate", new BowlFood(settings, true));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(BREAKFAST_PLATE));
         }
 
 // Breakfast Sausages
@@ -808,7 +915,12 @@ public class ModItems {
 // Butterscotch Chip Chocolate Milkshake
 
         if (CONFIG.isButterscotchChipChocolateMilkshakeBottleEnabled) {
-            final Item BUTTERSCOTCH_CHIP_CHOCOLATE_MILKSHAKE_BOTTLE = registerItem("butterscotch_chip_chocolate_milkshake_bottle", new BottleDrink(new FabricItemSettings().food(new FoodComponent.Builder().hunger(6).saturationModifier(1.5f).statusEffect(new StatusEffectInstance(ModEffects.COMFORT.get(), 600, 0),1.0f).statusEffect(new StatusEffectInstance(StatusEffects.HASTE, 600, 0),1.0f).build()), true));
+            Item.Settings settings = BottleDrink.BottleItem()
+                    .recipeRemainder(Items.GLASS_BOTTLE)
+                    .food(new FoodComponent.Builder().hunger(6).saturationModifier(1.5f)
+                            .statusEffect(new StatusEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f)
+                            .statusEffect(new StatusEffectInstance(StatusEffects.HASTE, 600, 0), 1.0f).build());
+            final Item BUTTERSCOTCH_CHIP_CHOCOLATE_MILKSHAKE_BOTTLE = registerItem("butterscotch_chip_chocolate_milkshake_bottle", new BottleDrink(settings, true));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(BUTTERSCOTCH_CHIP_CHOCOLATE_MILKSHAKE_BOTTLE));
         }
 
@@ -829,8 +941,13 @@ public class ModItems {
 // Butterscotch Chip Milkshake
 
         if (CONFIG.isButterscotchChipMilkshakeBottleEnabled) {
-            final Item BUTTERSCOTCHCHIPMILKSHAKEBOTTLE = registerItem("butterscotch_chip_milkshake_bottle", new BottleDrink(new FabricItemSettings().food(new FoodComponent.Builder().hunger(5).saturationModifier(1.2f).statusEffect(new StatusEffectInstance(ModEffects.COMFORT.get(), 600, 0),1.0f).statusEffect(new StatusEffectInstance(StatusEffects.HASTE, 600, 0),1.0f).build()), true));
-            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(BUTTERSCOTCHCHIPMILKSHAKEBOTTLE));
+            Item.Settings settings = BottleDrink.BottleItem()
+                    .recipeRemainder(Items.GLASS_BOTTLE)
+                    .food(new FoodComponent.Builder().hunger(5).saturationModifier(1.2f)
+                            .statusEffect(new StatusEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f)
+                            .statusEffect(new StatusEffectInstance(StatusEffects.HASTE, 600, 0), 1.0f).build());
+            final Item BUTTERSCOTCH_CHIP_MILKSHAKE_BOTTLE = registerItem("butterscotch_chip_milkshake_bottle", new BottleDrink(settings, true));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(BUTTERSCOTCH_CHIP_MILKSHAKE_BOTTLE));
         }
 
 // Butterscotch Chip Muffin
@@ -895,7 +1012,7 @@ public class ModItems {
         if (CONFIG.isCakeChorusFruitEnabled) {
             final Item CAKE_SLICE_CHORUS_FRUIT = registerItem("cake_slice_chorus_fruit", new ConsumableItem(new FabricItemSettings().food(new FoodComponent.Builder().hunger(4).saturationModifier(0.5f).build())));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(CAKE_SLICE_CHORUS_FRUIT));
-            CAKE_CHORUS_FRUIT = registerBlock("cake_chorus_fruit", new CakeChorusFruitBlock(CAKE_SLICE_CHORUS_FRUIT));
+            CAKE_CHORUS_FRUIT = registerBlock("cake_chorus_fruit", new ModCakeBlock(CAKE_SLICE_CHORUS_FRUIT));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(CAKE_CHORUS_FRUIT));
         }
 
@@ -904,7 +1021,7 @@ public class ModItems {
         if (CONFIG.isCakeGlowBerryEnabled) {
             final Item CAKE_SLICE_GLOW_BERRY = registerItem("cake_slice_glow_berry", new ConsumableItem(new FabricItemSettings().food(new FoodComponent.Builder().hunger(3).saturationModifier(0.3f).build())));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(CAKE_SLICE_GLOW_BERRY));
-            CAKE_GLOW_BERRY = registerBlock("cake_glow_berry", new CakeGlowBerryBlock(CAKE_SLICE_GLOW_BERRY));
+            CAKE_GLOW_BERRY = registerBlock("cake_glow_berry", new ModCakeBlock(CAKE_SLICE_GLOW_BERRY));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(CAKE_GLOW_BERRY));
         }
 
@@ -939,7 +1056,12 @@ public class ModItems {
 // Caramel Chip Chocolate Milkshake
 
         if (CONFIG.isCaramelChipChocolateMilkshakeBottleEnabled) {
-            final Item CARAMEL_CHIP_CHOCOLATE_MILKSHAKE_BOTTLE = registerItem("caramel_chip_chocolate_milkshake_bottle", new BottleDrink(new FabricItemSettings().food(new FoodComponent.Builder().hunger(6).saturationModifier(1.5f).statusEffect(new StatusEffectInstance(ModEffects.COMFORT.get(), 600, 0),1.0f).statusEffect(new StatusEffectInstance(StatusEffects.STRENGTH, 600, 0),1.0f).build()), true));
+            Item.Settings settings = BottleDrink.BottleItem()
+                    .recipeRemainder(Items.GLASS_BOTTLE)
+                    .food(new FoodComponent.Builder().hunger(6).saturationModifier(1.5f)
+                            .statusEffect(new StatusEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f)
+                            .statusEffect(new StatusEffectInstance(StatusEffects.STRENGTH, 600, 0), 1.0f).build());
+            final Item CARAMEL_CHIP_CHOCOLATE_MILKSHAKE_BOTTLE = registerItem("caramel_chip_chocolate_milkshake_bottle", new BottleDrink(settings, true));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(CARAMEL_CHIP_CHOCOLATE_MILKSHAKE_BOTTLE));
         }
 
@@ -960,8 +1082,13 @@ public class ModItems {
 // Caramel Chip Milkshake
 
         if (CONFIG.isCaramelChipMilkshakeBottleEnabled) {
-            final Item CARAMELCHIPMILKSHAKEBOTTLE = registerItem("caramel_chip_milkshake_bottle", new BottleDrink(new FabricItemSettings().food(new FoodComponent.Builder().hunger(5).saturationModifier(1.2f).statusEffect(new StatusEffectInstance(ModEffects.COMFORT.get(), 600, 0),1.0f).statusEffect(new StatusEffectInstance(StatusEffects.STRENGTH, 600, 0),1.0f).build()), true));
-            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(CARAMELCHIPMILKSHAKEBOTTLE));
+            Item.Settings settings = BottleDrink.BottleItem()
+                    .recipeRemainder(Items.GLASS_BOTTLE)
+                    .food(new FoodComponent.Builder().hunger(5).saturationModifier(1.2f)
+                            .statusEffect(new StatusEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f)
+                            .statusEffect(new StatusEffectInstance(StatusEffects.STRENGTH, 600, 0), 1.0f).build());
+            final Item CARAMEL_CHIP_MILKSHAKE_BOTTLE = registerItem("caramel_chip_milkshake_bottle", new BottleDrink(settings, true));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(CARAMEL_CHIP_MILKSHAKE_BOTTLE));
         }
 
 // Caramel Chip Muffin
@@ -1078,7 +1205,7 @@ public class ModItems {
         if (CONFIG.isCheesecakeEnabled) {
             final Item CHEESECAKE_SLICE = registerItem("cheesecake_slice", new ConsumableItem(new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.3f).statusEffect(new StatusEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0F).build()), true));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(CHEESECAKE_SLICE));
-            CHEESECAKE = registerBlock("cheesecake", new PieBlock(CHEESECAKE_SLICE));
+            CHEESECAKE = registerBlock("cheesecake", new ModPieBlock(CHEESECAKE_SLICE));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(CHEESECAKE));
         }
 
@@ -1499,8 +1626,11 @@ public class ModItems {
 // Chocolate Bottle
 
         if (CONFIG.isChocolateBottleEnabled) {
-            final Item CHOCOLATEBOTTLE = registerItem("chocolate_bottle", new BottleDrink(new Item.Settings().food(new FoodComponent.Builder().hunger(7).saturationModifier(0.4f).build()).maxCount(64)));
-            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(CHOCOLATEBOTTLE));
+            Item.Settings settings = BottleDrink.BottleItem()
+                    .recipeRemainder(Items.GLASS_BOTTLE)
+                    .food(new FoodComponent.Builder().hunger(7).saturationModifier(0.4f).build());
+            final Item CHOCOLATE_BOTTLE = registerItem("chocolate_bottle", new BottleDrink(settings));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(CHOCOLATE_BOTTLE));
         }
 
 // Chocolate Chips
@@ -1513,7 +1643,11 @@ public class ModItems {
 // Chocolate Chip Chocolate Milkshake
 
         if (CONFIG.isChocolateChipChocolateMilkshakeBottleEnabled) {
-            final Item CHOCOLATE_CHIP_CHOCOLATE_MILKSHAKE_BOTTLE = registerItem("chocolate_chip_chocolate_milkshake_bottle", new BottleDrink(new FabricItemSettings().food(new FoodComponent.Builder().hunger(6).saturationModifier(1.3f).statusEffect(new StatusEffectInstance(ModEffects.COMFORT.get(), 1200, 0),1.0f).build()), true));
+            Item.Settings settings = BottleDrink.BottleItem()
+                    .recipeRemainder(Items.GLASS_BOTTLE)
+                    .food(new FoodComponent.Builder().hunger(6).saturationModifier(1.3f)
+                            .statusEffect(new StatusEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build());
+            final Item CHOCOLATE_CHIP_CHOCOLATE_MILKSHAKE_BOTTLE = registerItem("chocolate_chip_chocolate_milkshake_bottle", new BottleDrink(settings, true));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(CHOCOLATE_CHIP_CHOCOLATE_MILKSHAKE_BOTTLE));
         }
 
@@ -1527,8 +1661,12 @@ public class ModItems {
 // Chocolate Chip Milkshake
 
         if (CONFIG.isChocolateChipMilkshakeBottleEnabled) {
-            final Item CHOCOLATECHIPMILKSHAKEBOTTLE = registerItem("chocolate_chip_milkshake_bottle", new BottleDrink(new FabricItemSettings().food(new FoodComponent.Builder().hunger(5).saturationModifier(1.2f).statusEffect(new StatusEffectInstance(ModEffects.COMFORT.get(), 1200, 0),1.0f).build()), true));
-            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(CHOCOLATECHIPMILKSHAKEBOTTLE));
+            Item.Settings settings = BottleDrink.BottleItem()
+                    .recipeRemainder(Items.GLASS_BOTTLE)
+                    .food(new FoodComponent.Builder().hunger(5).saturationModifier(1.2f)
+                            .statusEffect(new StatusEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build());
+            final Item CHOCOLATE_CHIP_MILKSHAKE_BOTTLE = registerItem("chocolate_chip_milkshake_bottle", new BottleDrink(settings, true));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(CHOCOLATE_CHIP_MILKSHAKE_BOTTLE));
         }
 
 // Chocolate Chip Muffin
@@ -1557,8 +1695,10 @@ public class ModItems {
 // Chocolate Covered Marshmallow Stick
 
         if (CONFIG.isChocolateCoveredMarshmallowStickEnabled) {
-            final Item CHOCOLATECOVEREDMARSHMALLOWSTICK = registerItem("chocolate_covered_marshmallow_stick", new StickFood(new FabricItemSettings().food(new FoodComponent.Builder().hunger(4).saturationModifier(0.3f).snack().build())));
-            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(CHOCOLATECOVEREDMARSHMALLOWSTICK));
+            Item.Settings settings = new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(4).saturationModifier(0.3f).snack().build());
+            final Item CHOCOLATE_COVERED_MARSHMALLOW_STICK = registerItem("chocolate_covered_marshmallow_stick", new StickFood(settings));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(CHOCOLATE_COVERED_MARSHMALLOW_STICK));
         }
 
 // Chocolate Cream Cake Slice (Butterscotch Chips)
@@ -1566,7 +1706,7 @@ public class ModItems {
         if (CONFIG.isChocolateCreamCakeButterscotchEnabled) {
             final Item CHOCOLATE_CREAM_CAKE_SLICE_BUTTERSCOTCH = registerItem("chocolate_cream_cake_slice_butterscotch", new ConsumableItem(new FabricItemSettings().food(new FoodComponent.Builder().hunger(4).saturationModifier(0.4f).statusEffect(new StatusEffectInstance(StatusEffects.HASTE, 600, 0),1.0f).build()), true));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(CHOCOLATE_CREAM_CAKE_SLICE_BUTTERSCOTCH));
-            CHOCOLATE_CREAM_CAKE_BUTTERSCOTCH = registerBlock("chocolate_cream_cake_butterscotch", new ChocolateCreamCakeButterscotchBlock(CHOCOLATE_CREAM_CAKE_SLICE_BUTTERSCOTCH));
+            CHOCOLATE_CREAM_CAKE_BUTTERSCOTCH = registerBlock("chocolate_cream_cake_butterscotch", new ModCakeBlock(CHOCOLATE_CREAM_CAKE_SLICE_BUTTERSCOTCH));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(CHOCOLATE_CREAM_CAKE_BUTTERSCOTCH));
         }
 
@@ -1575,16 +1715,16 @@ public class ModItems {
         if (CONFIG.isChocolateCreamCakeCaramelEnabled) {
             final Item CHOCOLATE_CREAM_CAKE_SLICE_CARAMEL = registerItem("chocolate_cream_cake_slice_caramel", new ConsumableItem(new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.4f).statusEffect(new StatusEffectInstance(StatusEffects.STRENGTH, 600, 0),1.0f).build()), true));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(CHOCOLATE_CREAM_CAKE_SLICE_CARAMEL));
-            CHOCOLATE_CREAM_CAKE_CARAMEL = registerBlock("chocolate_cream_cake_caramel", new ChocolateCreamCakeCaramelBlock(CHOCOLATE_CREAM_CAKE_SLICE_CARAMEL));
+            CHOCOLATE_CREAM_CAKE_CARAMEL = registerBlock("chocolate_cream_cake_caramel", new ModCakeBlock(CHOCOLATE_CREAM_CAKE_SLICE_CARAMEL));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(CHOCOLATE_CREAM_CAKE_CARAMEL));
         }
 
-// Chocolate Cream Cake Slice (Chocolate Chips)
+// Chocolate Cream 2 Slice (Chocolate Chips)
 
         if (CONFIG.isChocolateCreamCakeChocolateEnabled) {
             final Item CHOCOLATE_CREAM_CAKE_SLICE_CHOCOLATE = registerItem("chocolate_cream_cake_slice_chocolate", new ConsumableItem(new FabricItemSettings().food(new FoodComponent.Builder().hunger(4).saturationModifier(0.3f).statusEffect(new StatusEffectInstance(ModEffects.COMFORT.get(), 600, 0),1.0f).build()), true));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(CHOCOLATE_CREAM_CAKE_SLICE_CHOCOLATE));
-            CHOCOLATE_CREAM_CAKE_CHOCOLATE = registerBlock("chocolate_cream_cake_chocolate", new ChocolateCreamCakeChocolateBlock(CHOCOLATE_CREAM_CAKE_SLICE_CHOCOLATE));
+            CHOCOLATE_CREAM_CAKE_CHOCOLATE = registerBlock("chocolate_cream_cake_chocolate", new ModCakeBlock(CHOCOLATE_CREAM_CAKE_SLICE_CHOCOLATE));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(CHOCOLATE_CREAM_CAKE_CHOCOLATE));
         }
 
@@ -1593,7 +1733,7 @@ public class ModItems {
         if (CONFIG.isChocolateCreamCakeDarkChocolateEnabled) {
             final Item CHOCOLATE_CREAM_CAKE_SLICE_DARK_CHOCOLATE = registerItem("chocolate_cream_cake_slice_dark_chocolate", new ConsumableItem(new FabricItemSettings().food(new FoodComponent.Builder().hunger(5).saturationModifier(0.2f).statusEffect(new StatusEffectInstance(ModEffects.COMFORT.get(), 1200, 0),1.0f).build()), true));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(CHOCOLATE_CREAM_CAKE_SLICE_DARK_CHOCOLATE));
-            CHOCOLATE_CREAM_CAKE_DARK_CHOCOLATE = registerBlock("chocolate_cream_cake_dark_chocolate", new ChocolateCreamCakeDarkChocolateBlock(CHOCOLATE_CREAM_CAKE_SLICE_DARK_CHOCOLATE));
+            CHOCOLATE_CREAM_CAKE_DARK_CHOCOLATE = registerBlock("chocolate_cream_cake_dark_chocolate", new ModCakeBlock(CHOCOLATE_CREAM_CAKE_SLICE_DARK_CHOCOLATE));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(CHOCOLATE_CREAM_CAKE_DARK_CHOCOLATE));
         }
 
@@ -1602,7 +1742,7 @@ public class ModItems {
         if (CONFIG.isChocolateCreamCakeToffeeEnabled) {
             final Item CHOCOLATE_CREAM_CAKE_SLICE_TOFFEE = registerItem("chocolate_cream_cake_slice_toffee", new ConsumableItem(new FabricItemSettings().food(new FoodComponent.Builder().hunger(3).saturationModifier(0.4f).statusEffect(new StatusEffectInstance(StatusEffects.SPEED, 600, 0),1.0f).build()), true));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(CHOCOLATE_CREAM_CAKE_SLICE_TOFFEE));
-            CHOCOLATE_CREAM_CAKE_TOFFEE = registerBlock("chocolate_cream_cake_toffee", new ChocolateCreamCakeToffeeBlock(CHOCOLATE_CREAM_CAKE_SLICE_TOFFEE));
+            CHOCOLATE_CREAM_CAKE_TOFFEE = registerBlock("chocolate_cream_cake_toffee", new ModCakeBlock(CHOCOLATE_CREAM_CAKE_SLICE_TOFFEE));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(CHOCOLATE_CREAM_CAKE_TOFFEE));
         }
 
@@ -1611,15 +1751,18 @@ public class ModItems {
         if (CONFIG.isChocolateCreamCakeWhiteChocolateEnabled) {
             final Item CHOCOLATE_CREAM_CAKE_SLICE_WHITE_CHOCOLATE = registerItem("chocolate_cream_cake_slice_white_chocolate", new ConsumableItem(new FabricItemSettings().food(new FoodComponent.Builder().hunger(3).saturationModifier(0.5f).statusEffect(new StatusEffectInstance(ModEffects.COMFORT.get(), 1200, 0),1.0f).build()), true));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(CHOCOLATE_CREAM_CAKE_SLICE_WHITE_CHOCOLATE));
-            CHOCOLATE_CREAM_CAKE_WHITE_CHOCOLATE = registerBlock("chocolate_cream_cake_white_chocolate", new ChocolateCreamCakeWhiteChocolateBlock(CHOCOLATE_CREAM_CAKE_SLICE_WHITE_CHOCOLATE));
+            CHOCOLATE_CREAM_CAKE_WHITE_CHOCOLATE = registerBlock("chocolate_cream_cake_white_chocolate", new ModCakeBlock(CHOCOLATE_CREAM_CAKE_SLICE_WHITE_CHOCOLATE));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(CHOCOLATE_CREAM_CAKE_WHITE_CHOCOLATE));
         }
 
 // Chocolate Cream Frosting Jar
 
         if (CONFIG.isChocolateCreamFrostingBottleEnabled) {
-            final Item CHOCOLATECREAMFROSTINGBOTTLE = registerItem("chocolate_cream_frosting_bottle", new BottleDrink(new Item.Settings().food(new FoodComponent.Builder().hunger(4).saturationModifier(0.3f).build()).maxCount(64)));
-            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(CHOCOLATECREAMFROSTINGBOTTLE));
+            Item.Settings settings = BottleDrink.BottleItem()
+                    .recipeRemainder(Items.GLASS_BOTTLE)
+                    .food(new FoodComponent.Builder().hunger(4).saturationModifier(0.3f).build());
+            final Item CHOCOLATE_CREAM_FROSTING_BOTTLE = registerItem("chocolate_cream_frosting_bottle", new BottleDrink(settings));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(CHOCOLATE_CREAM_FROSTING_BOTTLE));
         }
 
 // Chocolate Cream Frosted Chocolate Cupcake
@@ -1683,7 +1826,7 @@ public class ModItems {
         if (CONFIG.isChocolatePieGrahamCrackerEnabled) {
             final Item CHOCOLATE_PIE_GRAHAM_CRACKER_SLICE = registerItem("chocolate_pie_graham_cracker_slice", new ConsumableItem(new FabricItemSettings().food(new FoodComponent.Builder().hunger(4).saturationModifier(0.3f).statusEffect(new StatusEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0F).build())));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(CHOCOLATE_PIE_GRAHAM_CRACKER_SLICE));
-            CHOCOLATE_PIE_GRAHAM_CRACKER = registerBlock("chocolate_pie_graham_cracker", new PieBlock(CHOCOLATE_PIE_GRAHAM_CRACKER_SLICE));
+            CHOCOLATE_PIE_GRAHAM_CRACKER = registerBlock("chocolate_pie_graham_cracker", new ModPieBlock(CHOCOLATE_PIE_GRAHAM_CRACKER_SLICE));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(CHOCOLATE_PIE_GRAHAM_CRACKER));
         }
 
@@ -1835,8 +1978,10 @@ public class ModItems {
 // Chocolate Ice Cream Bowl
 
         if (CONFIG.isChocolateIceCreamBowlEnabled) {
-            final Item CHOCOLATEICECREAMBOWL = registerItem("chocolate_ice_cream_bowl", new BowlFood(new FabricItemSettings().food(new FoodComponent.Builder().hunger(3).saturationModifier(1.2f).build())));
-            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(CHOCOLATEICECREAMBOWL));
+            Item.Settings settings = BowlFood.BowlItem()
+                    .food(new FoodComponent.Builder().hunger(3).saturationModifier(1.2f).build());
+            final Item CHOCOLATE_ICE_CREAM_BOWL = registerItem("chocolate_ice_cream_bowl", new BowlFood(settings));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(CHOCOLATE_ICE_CREAM_BOWL));
         }
 
 // Chocolate Ice Cream Cone
@@ -1856,22 +2001,30 @@ public class ModItems {
 // Chocolate Ice Cream Stick
 
         if (CONFIG.isChocolateIceCreamStickEnabled) {
-            final Item CHOCOLATE_ICE_CREAM_STICK = registerItem("chocolate_ice_cream_stick", new StickFood(new FabricItemSettings().food(new FoodComponent.Builder().hunger(1).saturationModifier(1.2f).snack().build())));
+            Item.Settings settings = StickFood.StickItem()
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(1.2f).snack().build());
+            final Item CHOCOLATE_ICE_CREAM_STICK = registerItem("chocolate_ice_cream_stick", new StickFood(settings));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(CHOCOLATE_ICE_CREAM_STICK));
         }
 
 // Chocolate Milk Bottle
 
         if (CONFIG.isChocolateMilkBottleEnabled) {
-            final Item CHOCOLATEMILKBOTTLE = registerItem("chocolate_milk_bottle", new BottleDrink(new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.3f).build())));
-            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(CHOCOLATEMILKBOTTLE));
+            Item.Settings settings = BottleDrink.BottleItem()
+                    .recipeRemainder(Items.GLASS_BOTTLE)
+                    .food(new FoodComponent.Builder().hunger(2).saturationModifier(0.3f).build());
+            final Item CHOCOLATE_MILK_BOTTLE = registerItem("chocolate_milk_bottle", new BottleDrink(settings));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(CHOCOLATE_MILK_BOTTLE));
         }
 
 // Chocolate Milkshake
 
         if (CONFIG.isChocolateMilkshakeBottleEnabled) {
-            final Item CHOCOLATEMILKSHAKEBOTTLE = registerItem("chocolate_milkshake_bottle", new BottleDrink(new FabricItemSettings().food(new FoodComponent.Builder().hunger(5).saturationModifier(1.2f).build())));
-            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(CHOCOLATEMILKSHAKEBOTTLE));
+            Item.Settings settings = BottleDrink.BottleItem()
+                    .recipeRemainder(Items.GLASS_BOTTLE)
+                    .food(new FoodComponent.Builder().hunger(5).saturationModifier(1.2f).build());
+            final Item CHOCOLATE_MILKSHAKE_BOTTLE = registerItem("chocolate_milkshake_bottle", new BottleDrink(settings));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(CHOCOLATE_MILKSHAKE_BOTTLE));
         }
 
 // Chocolate Pastry Bar Base
@@ -1930,7 +2083,7 @@ public class ModItems {
                     .statusEffect(new StatusEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0F)
                     .build()), true));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(CHORUS_FRUIT_CHEESECAKE_SLICE));
-            CHORUS_FRUIT_CHEESECAKE = registerBlock("chorus_fruit_cheesecake", new PieBlock(CHORUS_FRUIT_CHEESECAKE_SLICE));
+            CHORUS_FRUIT_CHEESECAKE = registerBlock("chorus_fruit_cheesecake", new ModPieBlock(CHORUS_FRUIT_CHEESECAKE_SLICE));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(CHORUS_FRUIT_CHEESECAKE));
         }
 
@@ -1939,7 +2092,7 @@ public class ModItems {
         if (CONFIG.isChorusFruitCreamCakeChorusFruitEnabled) {
             final Item CHORUS_FRUIT_CREAM_CAKE_SLICE_CHORUS_FRUIT = registerItem("chorus_fruit_cream_cake_slice_chorus_fruit", new ConsumableItem(new FabricItemSettings().food(new FoodComponent.Builder().hunger(4).saturationModifier(0.5f).build())));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(CHORUS_FRUIT_CREAM_CAKE_SLICE_CHORUS_FRUIT));
-            CHORUS_FRUIT_CREAM_CAKE_CHORUS_FRUIT = registerBlock("chorus_fruit_cream_cake_chorus_fruit", new ChorusFruitCreamCakeChorusFruitBlock(CHORUS_FRUIT_CREAM_CAKE_SLICE_CHORUS_FRUIT));
+            CHORUS_FRUIT_CREAM_CAKE_CHORUS_FRUIT = registerBlock("chorus_fruit_cream_cake_chorus_fruit", new ModCakeBlock(CHORUS_FRUIT_CREAM_CAKE_SLICE_CHORUS_FRUIT));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(CHORUS_FRUIT_CREAM_CAKE_CHORUS_FRUIT));
         }
 
@@ -1948,7 +2101,7 @@ public class ModItems {
         if (CONFIG.isChorusFruitCreamCakeGlowBerryEnabled) {
             final Item CHORUS_FRUIT_CREAM_CAKE_SLICE_GLOW_BERRY = registerItem("chorus_fruit_cream_cake_slice_glow_berry", new ConsumableItem(new FabricItemSettings().food(new FoodComponent.Builder().hunger(4).saturationModifier(0.4f).build())));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(CHORUS_FRUIT_CREAM_CAKE_SLICE_GLOW_BERRY));
-            CHORUS_FRUIT_CREAM_CAKE_GLOW_BERRY = registerBlock("chorus_fruit_cream_cake_glow_berry", new ChorusFruitCreamCakeGlowBerryBlock(CHORUS_FRUIT_CREAM_CAKE_SLICE_GLOW_BERRY));
+            CHORUS_FRUIT_CREAM_CAKE_GLOW_BERRY = registerBlock("chorus_fruit_cream_cake_glow_berry", new ModCakeBlock(CHORUS_FRUIT_CREAM_CAKE_SLICE_GLOW_BERRY));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(CHORUS_FRUIT_CREAM_CAKE_GLOW_BERRY));
         }
 
@@ -1957,7 +2110,7 @@ public class ModItems {
         if (CONFIG.isChorusFruitCreamCakeSweetBerryEnabled) {
             final Item CHORUS_FRUIT_CREAM_CAKE_SLICE_SWEET_BERRY = registerItem("chorus_fruit_cream_cake_slice_sweet_berry", new ConsumableItem(new FabricItemSettings().food(new FoodComponent.Builder().hunger(4).saturationModifier(0.4f).build())));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(CHORUS_FRUIT_CREAM_CAKE_SLICE_SWEET_BERRY));
-            CHORUS_FRUIT_CREAM_CAKE_SWEET_BERRY = registerBlock("chorus_fruit_cream_cake_sweet_berry", new ChorusFruitCreamCakeSweetBerryBlock(CHORUS_FRUIT_CREAM_CAKE_SLICE_SWEET_BERRY));
+            CHORUS_FRUIT_CREAM_CAKE_SWEET_BERRY = registerBlock("chorus_fruit_cream_cake_sweet_berry", new ModCakeBlock(CHORUS_FRUIT_CREAM_CAKE_SLICE_SWEET_BERRY));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(CHORUS_FRUIT_CREAM_CAKE_SWEET_BERRY));
         }
 
@@ -2013,8 +2166,11 @@ public class ModItems {
 // Chorus Fruit Cream Frosting Bottle
 
         if (CONFIG.isChorusFruitCreamFrostingBottleEnabled) {
-            final Item CHORUSFRUITCREAMFROSTINGBOTTLE = registerItem("chorus_fruit_cream_frosting_bottle", new BottleDrink(new Item.Settings().food(new FoodComponent.Builder().hunger(6).saturationModifier(0.5f).build())));
-            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(CHORUSFRUITCREAMFROSTINGBOTTLE));
+            Item.Settings settings = BottleDrink.BottleItem()
+                    .recipeRemainder(Items.GLASS_BOTTLE)
+                    .food(new FoodComponent.Builder().hunger(6).saturationModifier(0.5f).build());
+            final Item CHORUS_FRUIT_CREAM_FROSTING_BOTTLE = registerItem("chorus_fruit_cream_frosting_bottle", new BottleDrink(settings));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(CHORUS_FRUIT_CREAM_FROSTING_BOTTLE));
         }
 
 // Chorus Fruit Cream Frosted Chocolate Sweet Roll
@@ -2076,8 +2232,10 @@ public class ModItems {
 // Chorus Fruit Ice Cream Bowl
 
         if (CONFIG.isChorusFruitIceCreamBowlEnabled) {
-            final Item CHORUSFRUITICECREAMBOWL = registerItem("chorus_fruit_ice_cream_bowl", new BowlFood(new FabricItemSettings().food(new FoodComponent.Builder().hunger(4).saturationModifier(1.2f).build())));
-            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(CHORUSFRUITICECREAMBOWL));
+            Item.Settings settings = BowlFood.BowlItem()
+                    .food(new FoodComponent.Builder().hunger(4).saturationModifier(1.2f).build());
+            final Item CHORUS_FRUIT_ICE_CREAM_BOWL = registerItem("chorus_fruit_ice_cream_bowl", new BowlFood(settings));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(CHORUS_FRUIT_ICE_CREAM_BOWL));
         }
 
 // Chorus Fruit Ice Cream Cone
@@ -2097,15 +2255,20 @@ public class ModItems {
 // Chorus Fruit Ice Cream Stick
 
         if (CONFIG.isChorusFruitIceCreamStickEnabled) {
-            final Item CHORUS_FRUIT_ICE_CREAM_STICK = registerItem("chorus_fruit_ice_cream_stick", new StickFood(new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.9f).snack().build())));
+            Item.Settings settings = StickFood.StickItem()
+                    .food(new FoodComponent.Builder().hunger(2).saturationModifier(0.9f).snack().build());
+            final Item CHORUS_FRUIT_ICE_CREAM_STICK = registerItem("chorus_fruit_ice_cream_stick", new StickFood(settings));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(CHORUS_FRUIT_ICE_CREAM_STICK));
         }
 
 // Chorus Fruit Jam
 
         if (CONFIG.isChorusFruitJamBottleEnabled) {
-            final Item CHORUSFRUITJAMBOTTLE = registerItem("chorus_fruit_jam_bottle", new BottleDrink(new FabricItemSettings().food(new FoodComponent.Builder().hunger(5).saturationModifier(1.1f).build())));
-            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(CHORUSFRUITJAMBOTTLE));
+            Item.Settings settings = BottleDrink.BottleItem()
+                    .recipeRemainder(Items.GLASS_BOTTLE)
+                    .food(new FoodComponent.Builder().hunger(5).saturationModifier(1.1f).build());
+            final Item CHORUS_FRUIT_JAM_BOTTLE = registerItem("chorus_fruit_jam_bottle", new BottleDrink(settings));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(CHORUS_FRUIT_JAM_BOTTLE));
         }
 
 // Chorus Fruit Jam Sandwich
@@ -2118,17 +2281,22 @@ public class ModItems {
 // Chorus Fruit Juice
 
         if (CONFIG.isChorusFruitJuiceBottleEnabled) {
-            final Item CHORUSFRUITJUICEBOTTLE = registerItem("chorus_fruit_juice_bottle", new BottleDrink(new FabricItemSettings().food(new FoodComponent.Builder().hunger(3).saturationModifier(1.6f).build())));
-            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(CHORUSFRUITJUICEBOTTLE));
+            Item.Settings settings = BottleDrink.BottleItem()
+                    .recipeRemainder(Items.GLASS_BOTTLE)
+                    .food(new FoodComponent.Builder().hunger(3).saturationModifier(1.6f).build());
+            final Item CHORUS_FRUIT_JUICE_BOTTLE = registerItem("chorus_fruit_juice_bottle", new BottleDrink(settings));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(CHORUS_FRUIT_JUICE_BOTTLE));
         }
 
 // Chorus Fruit Milkshake
 
         if (CONFIG.isChorusFruitMilkshakeBottleEnabled) {
-            final Item CHORUSFRUITMILKSHAKEBOTTLE = registerItem("chorus_fruit_milkshake_bottle", new BottleDrink(new FabricItemSettings().food(new FoodComponent.Builder().hunger(6).saturationModifier(1.1f).build())));
-            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(CHORUSFRUITMILKSHAKEBOTTLE));
+            Item.Settings settings = BottleDrink.BottleItem()
+                    .recipeRemainder(Items.GLASS_BOTTLE)
+                    .food(new FoodComponent.Builder().hunger(6).saturationModifier(1.1f).build());
+            final Item CHORUS_FRUIT_MILKSHAKE_BOTTLE = registerItem("chorus_fruit_milkshake_bottle", new BottleDrink(settings));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(CHORUS_FRUIT_MILKSHAKE_BOTTLE));
         }
-
 // Chorus Fruit Slice
 
         if (CONFIG.isChorusFruitSliceEnabled) {
@@ -2141,15 +2309,17 @@ public class ModItems {
         if (CONFIG.isChorusFruitPieEnabled) {
             final Item CHORUS_FRUIT_PIE_SLICE = registerItem("chorus_fruit_pie_slice", new ConsumableItem(new FabricItemSettings().food(new FoodComponent.Builder().hunger(4).saturationModifier(0.3f).statusEffect(new StatusEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0F).build()), true));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(CHORUS_FRUIT_PIE_SLICE));
-            CHORUS_FRUIT_PIE = registerBlock("chorus_fruit_pie", new PieBlock(CHORUS_FRUIT_PIE_SLICE));
+            CHORUS_FRUIT_PIE = registerBlock("chorus_fruit_pie", new ModPieBlock(CHORUS_FRUIT_PIE_SLICE));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(CHORUS_FRUIT_PIE));
         }
 
 // Chorus Fruit Popsicle
 
         if (CONFIG.isChorusFruitPopsicleEnabled) {
-            final Item CHORUSFRUITPOPSICLE = registerItem("chorus_fruit_popsicle", new ConsumableItem(new Item.Settings().food(new FoodComponent.Builder().hunger(4).saturationModifier(0.6f).snack().build())));
-            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(CHORUSFRUITPOPSICLE));
+            Item.Settings settings = new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(4).saturationModifier(0.6f).snack().build());
+            final Item CHORUS_FRUIT_POPSICLE = registerItem("chorus_fruit_popsicle", new StickFood(settings));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(CHORUS_FRUIT_POPSICLE));
         }
 
 // Cinnamon Sweet Roll Base
@@ -2162,15 +2332,17 @@ public class ModItems {
 // Cloth Filter
 
         if (CONFIG.isClothFilterEnabled) {
-            final Item CLOTHFILTER = registerItem("cloth_filter", new ConsumableItem(new FabricItemSettings()));
-            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(CLOTHFILTER));
-        }
+            final Item CLOTH_FILTER = registerItem("cloth_filter", new Item(new FabricItemSettings()));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(CLOTH_FILTER));
 
 // Cloth Filter (Cacao Mass)
 
-        if (CONFIG.isClothFilterCacaoMassEnabled) {
-            final Item CLOTHFILTERCACAOMASS = registerItem("cloth_filter_cacao_mass", new ConsumableItem(new FabricItemSettings()));
-            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(CLOTHFILTERCACAOMASS));
+            if (CONFIG.isClothFilterCacaoMassEnabled) {
+                Item.Settings settings = new FabricItemSettings()
+                        .recipeRemainder(CLOTH_FILTER);
+                final Item CLOTH_FILTER_CACAO_MASS = registerItem("cloth_filter_cacao_mass", new Item(settings));
+                ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(CLOTH_FILTER_CACAO_MASS));
+            }
         }
 
 // Cocoa Powder
@@ -2197,8 +2369,10 @@ public class ModItems {
 // Condensed Milk Bottle
 
         if (CONFIG.isCondensedMilkBottleEnabled) {
-            final Item CONDENSEDMILKBOTTLE = registerItem("condensed_milk_bottle", new ConsumableItem(new FabricItemSettings()));
-            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(CONDENSEDMILKBOTTLE));
+            Item.Settings settings = BottleDrink.BottleItem()
+                    .recipeRemainder(Items.GLASS_BOTTLE);
+            final Item CONDENSED_MILK_BOTTLE = registerItem("condensed_milk_bottle", new ConsumableItem(settings));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(CONDENSED_MILK_BOTTLE));
         }
 
 // Cooked Rabbit Cuts
@@ -2213,7 +2387,7 @@ public class ModItems {
         if (CONFIG.isCookieCreamPieEnabled) {
             final Item COOKIE_CREAM_PIE_SLICE = registerItem("cookie_cream_pie_slice", new ConsumableItem(new FabricItemSettings().food(new FoodComponent.Builder().hunger(5).saturationModifier(0.7f).statusEffect(new StatusEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1.0F).build()), true));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(COOKIE_CREAM_PIE_SLICE));
-            COOKIE_CREAM_PIE = registerBlock("cookie_cream_pie", new PieBlock(COOKIE_CREAM_PIE_SLICE));
+            COOKIE_CREAM_PIE = registerBlock("cookie_cream_pie", new ModPieBlock(COOKIE_CREAM_PIE_SLICE));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(COOKIE_CREAM_PIE));
         }
 
@@ -2234,7 +2408,9 @@ public class ModItems {
 // Cotton Candy
 
         if (CONFIG.isCottonCandyStickEnabled) {
-            final Item COTTON_CANDY_STICK = registerItem("cotton_candy_stick", new StickFood(new FabricItemSettings().food(new FoodComponent.Builder().hunger(1).saturationModifier(5.0f).snack().build())));
+            Item.Settings settings = new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(5.0f).snack().build());
+            final Item COTTON_CANDY_STICK = registerItem("cotton_candy_stick", new StickFood(settings));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(COTTON_CANDY_STICK));
         }
 
@@ -2278,7 +2454,7 @@ public class ModItems {
         if (CONFIG.isCreamPieChocolateGrahamCrackerEnabled) {
             final Item CREAM_PIE_CHOCOLATE_GRAHAM_CRACKER_SLICE = registerItem("cream_pie_chocolate_graham_cracker_slice", new ConsumableItem(new FabricItemSettings().food(new FoodComponent.Builder().hunger(4).saturationModifier(0.5f).statusEffect(new StatusEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0F).build())));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(CREAM_PIE_CHOCOLATE_GRAHAM_CRACKER_SLICE));
-            CREAM_PIE_CHOCOLATE_GRAHAM_CRACKER = registerBlock("cream_pie_chocolate_graham_cracker", new PieBlock(CREAM_PIE_CHOCOLATE_GRAHAM_CRACKER_SLICE));
+            CREAM_PIE_CHOCOLATE_GRAHAM_CRACKER = registerBlock("cream_pie_chocolate_graham_cracker", new ModPieBlock(CREAM_PIE_CHOCOLATE_GRAHAM_CRACKER_SLICE));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(CREAM_PIE_CHOCOLATE_GRAHAM_CRACKER));
         }
 
@@ -2287,7 +2463,7 @@ public class ModItems {
         if (CONFIG.isCreamPieGrahamCrackerEnabled) {
             final Item CREAM_PIE_GRAHAM_CRACKER_SLICE = registerItem("cream_pie_graham_cracker_slice", new ConsumableItem(new FabricItemSettings().food(new FoodComponent.Builder().hunger(3).saturationModifier(0.6f).statusEffect(new StatusEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0F).build())));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(CREAM_PIE_GRAHAM_CRACKER_SLICE));
-            CREAM_PIE_GRAHAM_CRACKER = registerBlock("cream_pie_graham_cracker", new PieBlock(CREAM_PIE_GRAHAM_CRACKER_SLICE));
+            CREAM_PIE_GRAHAM_CRACKER = registerBlock("cream_pie_graham_cracker", new ModPieBlock(CREAM_PIE_GRAHAM_CRACKER_SLICE));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(CREAM_PIE_GRAHAM_CRACKER));
         }
 
@@ -2301,8 +2477,11 @@ public class ModItems {
 // Cream Frosting Jar
 
         if (CONFIG.isCreamFrostingBottleEnabled) {
-            final Item CREAMFROSTINGBOTTLE = registerItem("cream_frosting_bottle", new BottleDrink(new Item.Settings().food(new FoodComponent.Builder().hunger(3).saturationModifier(0.2f).build()).maxCount(64)));
-            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(CREAMFROSTINGBOTTLE));
+            Item.Settings settings = BottleDrink.BottleItem()
+                    .recipeRemainder(Items.GLASS_BOTTLE)
+                    .food(new FoodComponent.Builder().hunger(3).saturationModifier(0.2f).build());
+            final Item CREAM_FROSTING_BOTTLE = registerItem("cream_frosting_bottle", new BottleDrink(settings));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(CREAM_FROSTING_BOTTLE));
         }
 
 // Cream Glazed Chocolate Donut
@@ -2336,7 +2515,11 @@ public class ModItems {
 // Dark Chocolate Chip Chocolate Milkshake
 
         if (CONFIG.isDarkChocolateChipChocolateMilkshakeBottleEnabled) {
-            final Item DARK_CHOCOLATE_CHIP_CHOCOLATE_MILKSHAKE_BOTTLE = registerItem("dark_chocolate_chip_chocolate_milkshake_bottle", new BottleDrink(new FabricItemSettings().food(new FoodComponent.Builder().hunger(7).saturationModifier(1.2f).statusEffect(new StatusEffectInstance(ModEffects.COMFORT.get(), 1800, 0),1.0f).build()), true));
+            Item.Settings settings = BottleDrink.BottleItem()
+                    .recipeRemainder(Items.GLASS_BOTTLE)
+                    .food(new FoodComponent.Builder().hunger(7).saturationModifier(1.2f)
+                            .statusEffect(new StatusEffectInstance(ModEffects.COMFORT.get(), 1800, 0), 1.0f).build());
+            final Item DARK_CHOCOLATE_CHIP_CHOCOLATE_MILKSHAKE_BOTTLE = registerItem("dark_chocolate_chip_chocolate_milkshake_bottle", new BottleDrink(settings, true));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(DARK_CHOCOLATE_CHIP_CHOCOLATE_MILKSHAKE_BOTTLE));
         }
 
@@ -2350,8 +2533,11 @@ public class ModItems {
 // Dark Chocolate Bottle
 
         if (CONFIG.isDarkChocolateBottleEnabled) {
-            final Item DARKCHOCOLATEBOTTLE = registerItem("dark_chocolate_bottle", new BottleDrink(new Item.Settings().food(new FoodComponent.Builder().hunger(8).saturationModifier(0.3f).build()).maxCount(64)));
-            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(DARKCHOCOLATEBOTTLE));
+            Item.Settings settings = BottleDrink.BottleItem()
+                    .recipeRemainder(Items.GLASS_BOTTLE)
+                    .food(new FoodComponent.Builder().hunger(8).saturationModifier(0.3f).build());
+            final Item DARK_CHOCOLATE_BOTTLE = registerItem("dark_chocolate_bottle", new BottleDrink(settings));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(DARK_CHOCOLATE_BOTTLE));
         }
 
 // Dark Chocolate Chips
@@ -2371,7 +2557,11 @@ public class ModItems {
 // Dark Chocolate Chip Milkshake
 
         if (CONFIG.isDarkChocolateChipMilkshakeBottleEnabled) {
-            final Item DARK_CHOCOLATE_CHIP_MILKSHAKE_BOTTLE = registerItem("dark_chocolate_chip_milkshake_bottle", new BottleDrink(new FabricItemSettings().food(new FoodComponent.Builder().hunger(6).saturationModifier(1.1f).statusEffect(new StatusEffectInstance(ModEffects.COMFORT.get(), 1800, 0),1.0f).build()), true));
+            Item.Settings settings = BottleDrink.BottleItem()
+                    .recipeRemainder(Items.GLASS_BOTTLE)
+                    .food(new FoodComponent.Builder().hunger(6).saturationModifier(1.1f)
+                            .statusEffect(new StatusEffectInstance(ModEffects.COMFORT.get(), 1800, 0), 1.0f).build());
+            final Item DARK_CHOCOLATE_CHIP_MILKSHAKE_BOTTLE = registerItem("dark_chocolate_chip_milkshake_bottle", new BottleDrink(settings, true));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(DARK_CHOCOLATE_CHIP_MILKSHAKE_BOTTLE));
         }
 
@@ -2394,8 +2584,10 @@ public class ModItems {
 // Dark Chocolate Covered Marshmallow Stick
 
         if (CONFIG.isDarkChocolateCoveredMarshmallowStickEnabled) {
-            final Item DARKCHOCOLATECOVEREDMARSHMALLOWSTICK = registerItem("dark_chocolate_covered_marshmallow_stick", new StickFood(new FabricItemSettings().food(new FoodComponent.Builder().hunger(5).saturationModifier(0.3f).snack().build())));
-            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(DARKCHOCOLATECOVEREDMARSHMALLOWSTICK));
+            Item.Settings settings = new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(5).saturationModifier(0.3f).snack().build());
+            final Item DARK_CHOCOLATE_COVERED_MARSHMALLOW_STICK = registerItem("dark_chocolate_covered_marshmallow_stick", new StickFood(settings));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(DARK_CHOCOLATE_COVERED_MARSHMALLOW_STICK));
         }
 
 // Dark Chocolate Filled Chocolate Pastry
@@ -2653,16 +2845,24 @@ public class ModItems {
 // Endermite Meatball Stick
 
         if (CONFIG.isEndermiteMeatballStickEnabled) {
-            final Item ENDERMITEMEATBALLSTICK1 = registerItem("endermite_meatball_stick_1", new StickFood(new FabricItemSettings().food(new FoodComponent.Builder().hunger(5).saturationModifier(0.6f).snack().build())));
-            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(ENDERMITEMEATBALLSTICK1));
+            Item.Settings settings = new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(5).saturationModifier(0.6f).snack().build());
+            final Item ENDERMITE_MEATBALL_STICK_1 = registerItem("endermite_meatball_stick_1", new StickFood(settings));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(ENDERMITE_MEATBALL_STICK_1));
         }
+
         if (CONFIG.isEndermiteMeatballStickEnabled) {
-            final Item ENDERMITEMEATBALLSTICK2 = registerItem("endermite_meatball_stick_2", new StickFood(new FabricItemSettings().food(new FoodComponent.Builder().hunger(6).saturationModifier(0.6f).snack().build())));
-            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(ENDERMITEMEATBALLSTICK2));
+            Item.Settings settings = new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(6).saturationModifier(0.6f).snack().build());
+            final Item ENDERMITE_MEATBALL_STICK_2 = registerItem("endermite_meatball_stick_2", new StickFood(settings));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(ENDERMITE_MEATBALL_STICK_2));
         }
+
         if (CONFIG.isEndermiteMeatballStickEnabled) {
-            final Item ENDERMITEMEATBALLSTICK3 = registerItem("endermite_meatball_stick_3", new StickFood(new FabricItemSettings().food(new FoodComponent.Builder().hunger(8).saturationModifier(0.7f).snack().build())));
-            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(ENDERMITEMEATBALLSTICK3));
+            Item.Settings settings = new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(8).saturationModifier(0.7f).snack().build());
+            final Item ENDERMITE_MEATBALL_STICK_3 = registerItem("endermite_meatball_stick_3", new StickFood(settings));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(ENDERMITE_MEATBALL_STICK_3));
         }
 
 // Espresso Powder
@@ -2670,6 +2870,13 @@ public class ModItems {
         if (CONFIG.isEspressoPowderEnabled) {
             final Item ESPRESSOPOWDER = registerItem("espresso_powder", new ConsumableItem(new FabricItemSettings()));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(ESPRESSOPOWDER));
+        }
+
+// Fishcake
+
+        if (CONFIG.isFishcakeEnabled) {
+            final Item FISHCAKE = registerItem("fishcake", new ConsumableItem(new FabricItemSettings().food(new FoodComponent.Builder().hunger(4).saturationModifier(0.9f).statusEffect(new StatusEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0),1.0f).statusEffect(new StatusEffectInstance(StatusEffects.WATER_BREATHING, 3600, 0),1.0f).build()), true));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(FISHCAKE));
         }
 
 // Fish Calzone
@@ -2709,8 +2916,11 @@ public class ModItems {
 // Fried Egg Plate
 
         if (CONFIG.isFriedEggPlateEnabled) {
-            final Item FRIEDEGGPLATE = registerItem("fried_egg_plate", new BowlFood(new FabricItemSettings().food(new FoodComponent.Builder().hunger(4).saturationModifier(0.4f).build())));
-            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(FRIEDEGGPLATE));
+            Item.Settings settings = new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(4).saturationModifier(0.4f).build())
+                    .maxCount(16);
+            final Item FRIED_EGG_PLATE = registerItem("fried_egg_plate", new BowlFood(settings));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(FRIED_EGG_PLATE));
         }
 
 // Fried Egg & Hash Brown Sandwich
@@ -2806,8 +3016,16 @@ public class ModItems {
 // Fruit Smoothie
 
         if (CONFIG.isFruitSmoothieBottleEnabled) {
-            final Item FRUITSMOOTHIEBOTTLE = registerItem("fruit_smoothie_bottle", new BottleDrink(new FabricItemSettings().food(new FoodComponent.Builder().hunger(4).saturationModifier(1.8f).statusEffect(new StatusEffectInstance(ModEffects.COMFORT.get(), 6000, 0),1.0f).statusEffect(new StatusEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0),1.0f).statusEffect(new StatusEffectInstance(StatusEffects.LUCK, 1200, 0),1.0f).statusEffect(new StatusEffectInstance(StatusEffects.HASTE, 1200, 0),1.0f).statusEffect(new StatusEffectInstance(StatusEffects.STRENGTH, 1200, 0),1.0f).build()), true));
-            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(FRUITSMOOTHIEBOTTLE));
+            Item.Settings settings = BottleDrink.BottleItem()
+                    .recipeRemainder(Items.GLASS_BOTTLE)
+                    .food(new FoodComponent.Builder().hunger(4).saturationModifier(1.8f)
+                            .statusEffect(new StatusEffectInstance(ModEffects.COMFORT.get(), 6000, 0), 1.0f)
+                            .statusEffect(new StatusEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f)
+                            .statusEffect(new StatusEffectInstance(StatusEffects.LUCK, 1200, 0), 1.0f)
+                            .statusEffect(new StatusEffectInstance(StatusEffects.HASTE, 1200, 0), 1.0f)
+                            .statusEffect(new StatusEffectInstance(StatusEffects.STRENGTH, 1200, 0), 1.0f).build());
+            final Item FRUIT_SMOOTHIE_BOTTLE = registerItem("fruit_smoothie_bottle", new BottleDrink(settings, true));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(FRUIT_SMOOTHIE_BOTTLE));
         }
 
 // Gelatin
@@ -2889,7 +3107,7 @@ public class ModItems {
         if (CONFIG.isGlowBerryCheesecakeEnabled) {
             final Item GLOW_BERRY_CHEESECAKE_SLICE = registerItem("glow_berry_cheesecake_slice", new ConsumableItem(new FabricItemSettings().food(new FoodComponent.Builder().hunger(3).saturationModifier(0.3f).statusEffect(new StatusEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0F).build()), true));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(GLOW_BERRY_CHEESECAKE_SLICE));
-            GLOW_BERRY_CHEESECAKE = registerBlock("glow_berry_cheesecake", new PieBlock(GLOW_BERRY_CHEESECAKE_SLICE));
+            GLOW_BERRY_CHEESECAKE = registerBlock("glow_berry_cheesecake", new ModPieBlock(GLOW_BERRY_CHEESECAKE_SLICE));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(GLOW_BERRY_CHEESECAKE));
         }
 
@@ -2898,7 +3116,7 @@ public class ModItems {
         if (CONFIG.isGlowBerryCreamCakeChorusFruitEnabled) {
             final Item GLOW_BERRY_CREAM_CAKE_SLICE_CHORUS_FRUIT = registerItem("glow_berry_cream_cake_slice_chorus_fruit", new ConsumableItem(new FabricItemSettings().food(new FoodComponent.Builder().hunger(3).saturationModifier(0.4f).build())));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(GLOW_BERRY_CREAM_CAKE_SLICE_CHORUS_FRUIT));
-            GLOW_BERRY_CREAM_CAKE_CHORUS_FRUIT = registerBlock("glow_berry_cream_cake_chorus_fruit", new GlowBerryCreamCakeChorusFruitBlock(GLOW_BERRY_CREAM_CAKE_SLICE_CHORUS_FRUIT));
+            GLOW_BERRY_CREAM_CAKE_CHORUS_FRUIT = registerBlock("glow_berry_cream_cake_chorus_fruit", new ModCakeBlock(GLOW_BERRY_CREAM_CAKE_SLICE_CHORUS_FRUIT));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(GLOW_BERRY_CREAM_CAKE_CHORUS_FRUIT));
         }
 
@@ -2907,7 +3125,7 @@ public class ModItems {
         if (CONFIG.isGlowBerryCreamCakeGlowBerryEnabled) {
             final Item GLOW_BERRY_CREAM_CAKE_SLICE_GLOW_BERRY = registerItem("glow_berry_cream_cake_slice_glow_berry", new ConsumableItem(new FabricItemSettings().food(new FoodComponent.Builder().hunger(3).saturationModifier(0.3f).build())));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(GLOW_BERRY_CREAM_CAKE_SLICE_GLOW_BERRY));
-            GLOW_BERRY_CREAM_CAKE_GLOW_BERRY = registerBlock("glow_berry_cream_cake_glow_berry", new GlowBerryCreamCakeGlowBerryBlock(GLOW_BERRY_CREAM_CAKE_SLICE_GLOW_BERRY));
+            GLOW_BERRY_CREAM_CAKE_GLOW_BERRY = registerBlock("glow_berry_cream_cake_glow_berry", new ModCakeBlock(GLOW_BERRY_CREAM_CAKE_SLICE_GLOW_BERRY));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(GLOW_BERRY_CREAM_CAKE_GLOW_BERRY));
         }
 
@@ -2916,7 +3134,7 @@ public class ModItems {
         if (CONFIG.isGlowBerryCreamCakeSweetBerryEnabled) {
             final Item GLOW_BERRY_CREAM_CAKE_SLICE_SWEET_BERRY = registerItem("glow_berry_cream_cake_slice_sweet_berry", new ConsumableItem(new FabricItemSettings().food(new FoodComponent.Builder().hunger(3).saturationModifier(0.3f).build())));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(GLOW_BERRY_CREAM_CAKE_SLICE_SWEET_BERRY));
-            GLOW_BERRY_CREAM_CAKE_SWEET_BERRY = registerBlock("glow_berry_cream_cake_sweet_berry", new GlowBerryCreamCakeSweetBerryBlock(GLOW_BERRY_CREAM_CAKE_SLICE_SWEET_BERRY));
+            GLOW_BERRY_CREAM_CAKE_SWEET_BERRY = registerBlock("glow_berry_cream_cake_sweet_berry", new ModCakeBlock(GLOW_BERRY_CREAM_CAKE_SLICE_SWEET_BERRY));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(GLOW_BERRY_CREAM_CAKE_SWEET_BERRY));
         }
 
@@ -2958,8 +3176,11 @@ public class ModItems {
 // Glow Berry Cream Frosting Bottle
 
         if (CONFIG.isGlowBerryCreamFrostingBottleEnabled) {
-            final Item GLOWBERRYCREAMFROSTINGBOTTLE = registerItem("glow_berry_cream_frosting_bottle", new BottleDrink(new Item.Settings().food(new FoodComponent.Builder().hunger(4).saturationModifier(0.4f).build())));
-            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(GLOWBERRYCREAMFROSTINGBOTTLE));
+            Item.Settings settings = BottleDrink.BottleItem()
+                    .recipeRemainder(Items.GLASS_BOTTLE)
+                    .food(new FoodComponent.Builder().hunger(4).saturationModifier(0.4f).build());
+            final Item GLOW_BERRY_CREAM_FROSTING_BOTTLE = registerItem("glow_berry_cream_frosting_bottle", new BottleDrink(settings));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(GLOW_BERRY_CREAM_FROSTING_BOTTLE));
         }
 
 // Glow Berry Cream Frosted Chocolate Sweet Roll
@@ -3035,8 +3256,10 @@ public class ModItems {
 // Glow Berry Ice Cream Bowl
 
         if (CONFIG.isGlowBerryIceCreamBowlEnabled) {
-            final Item GLOWBERRYICECREAMBOWL = registerItem("glow_berry_ice_cream_bowl", new BowlFood(new FabricItemSettings().food(new FoodComponent.Builder().hunger(3).saturationModifier(1.0f).build())));
-            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(GLOWBERRYICECREAMBOWL));
+            Item.Settings settings = BowlFood.BowlItem()
+                    .food(new FoodComponent.Builder().hunger(3).saturationModifier(1.0f).build());
+            final Item GLOW_BERRY_ICE_CREAM_BOWL = registerItem("glow_berry_ice_cream_bowl", new BowlFood(settings));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(GLOW_BERRY_ICE_CREAM_BOWL));
         }
 
 // Glow Berry Ice Cream Cone
@@ -3056,15 +3279,20 @@ public class ModItems {
 // Glow Berry Ice Cream Stick
 
         if (CONFIG.isGlowBerryIceCreamStickEnabled) {
-            final Item GLOW_BERRY_ICE_CREAM_STICK = registerItem("glow_berry_ice_cream_stick", new StickFood(new FabricItemSettings().food(new FoodComponent.Builder().hunger(1).saturationModifier(0.9f).snack().build())));
+            Item.Settings settings = StickFood.StickItem()
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.9f).snack().build());
+            final Item GLOW_BERRY_ICE_CREAM_STICK = registerItem("glow_berry_ice_cream_stick", new StickFood(settings));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(GLOW_BERRY_ICE_CREAM_STICK));
         }
 
 // Glow Berry Jam
 
         if (CONFIG.isGlowBerryJamBottleEnabled) {
-            final Item GLOWBERRYJAMBOTTLE = registerItem("glow_berry_jam_bottle", new BottleDrink(new FabricItemSettings().food(new FoodComponent.Builder().hunger(4).saturationModifier(1.2f).build())));
-            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(GLOWBERRYJAMBOTTLE));
+            Item.Settings settings = BottleDrink.BottleItem()
+                    .recipeRemainder(Items.GLASS_BOTTLE)
+                    .food(new FoodComponent.Builder().hunger(4).saturationModifier(1.2f).build());
+            final Item GLOW_BERRY_JAM_BOTTLE = registerItem("glow_berry_jam_bottle", new BottleDrink(settings));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(GLOW_BERRY_JAM_BOTTLE));
         }
 
 // Glow Berry Jam Sandwich
@@ -3077,15 +3305,21 @@ public class ModItems {
 // Glow Berry Juice
 
         if (CONFIG.isGlowBerryJuiceBottleEnabled) {
-            final Item GLOWBERRYJUICEBOTTLE = registerItem("glow_berry_juice_bottle", new BottleDrink(new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(1.6f).build())));
-            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(GLOWBERRYJUICEBOTTLE));
+            Item.Settings settings = BottleDrink.BottleItem()
+                    .recipeRemainder(Items.GLASS_BOTTLE)
+                    .food(new FoodComponent.Builder().hunger(2).saturationModifier(1.6f).build());
+            final Item GLOW_BERRY_JUICE_BOTTLE = registerItem("glow_berry_juice_bottle", new BottleDrink(settings));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(GLOW_BERRY_JUICE_BOTTLE));
         }
 
 // Glow Berry Milkshake
 
         if (CONFIG.isGlowBerryMilkshakeBottleEnabled) {
-            final Item GLOWBERRYMILKSHAKEBOTTLE = registerItem("glow_berry_milkshake_bottle", new BottleDrink(new FabricItemSettings().food(new FoodComponent.Builder().hunger(5).saturationModifier(1.0f).build())));
-            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(GLOWBERRYMILKSHAKEBOTTLE));
+            Item.Settings settings = BottleDrink.BottleItem()
+                    .recipeRemainder(Items.GLASS_BOTTLE)
+                    .food(new FoodComponent.Builder().hunger(5).saturationModifier(1.0f).build());
+            final Item GLOW_BERRY_MILKSHAKE_BOTTLE = registerItem("glow_berry_milkshake_bottle", new BottleDrink(settings));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(GLOW_BERRY_MILKSHAKE_BOTTLE));
         }
 
 // Glow Berry Pie & Slice
@@ -3093,15 +3327,17 @@ public class ModItems {
         if (CONFIG.isGlowBerryPieEnabled) {
             final Item GLOW_BERRY_PIE_SLICE = registerItem("glow_berry_pie_slice", new ConsumableItem(new FabricItemSettings().food(new FoodComponent.Builder().hunger(3).saturationModifier(0.3f).statusEffect(new StatusEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0F).build()), true));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(GLOW_BERRY_PIE_SLICE));
-            GLOW_BERRY_PIE = registerBlock("glow_berry_pie", new PieBlock(GLOW_BERRY_PIE_SLICE));
+            GLOW_BERRY_PIE = registerBlock("glow_berry_pie", new ModPieBlock(GLOW_BERRY_PIE_SLICE));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(GLOW_BERRY_PIE));
         }
 
 // Glow Berry Popsicle
 
         if (CONFIG.isGlowBerryPopsicleEnabled) {
-            final Item GLOWBERRYPOPSICLE = registerItem("glow_berry_popsicle", new StickFood(new Item.Settings().food(new FoodComponent.Builder().hunger(3).saturationModifier(0.5f).snack().build())));
-            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(GLOWBERRYPOPSICLE));
+            Item.Settings settings = new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(3).saturationModifier(0.5f).snack().build());
+            final Item GLOW_BERRY_POPSICLE = registerItem("glow_berry_popsicle", new StickFood(settings));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(GLOW_BERRY_POPSICLE));
         }
 
 // Graham Cracker
@@ -3298,22 +3534,31 @@ public class ModItems {
 // Hash Browns Plate
 
         if (CONFIG.isHashBrownPlateEnabled) {
-            final Item HASHBROWNPLATE = registerItem("hash_brown_plate", new BowlFood(new FabricItemSettings().food(new FoodComponent.Builder().hunger(4).saturationModifier(0.6f).build())));
-            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(HASHBROWNPLATE));
+            Item.Settings settings = new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(4).saturationModifier(0.6f).build())
+                    .maxCount(16);
+            final Item HASH_BROWN_PLATE = registerItem("hash_brown_plate", new BowlFood(settings));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(HASH_BROWN_PLATE));
         }
 
 // Hash Brown & Fried Egg Plate
 
         if (CONFIG.isHashBrownAndFriedEggPlateEnabled) {
-            final Item HASHBROWNFRIEDEGGPLATE = registerItem("hash_brown_fried_egg_plate", new BowlFood(new FabricItemSettings().food(new FoodComponent.Builder().hunger(8).saturationModifier(0.7f).build())));
-            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(HASHBROWNFRIEDEGGPLATE));
+            Item.Settings settings = new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(8).saturationModifier(0.7f).build())
+                    .maxCount(16);
+            final Item HASH_BROWN_FRIED_EGG_PLATE = registerItem("hash_brown_fried_egg_plate", new BowlFood(settings));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(HASH_BROWN_FRIED_EGG_PLATE));
         }
 
 // Hash Brown & Toast Plate
 
         if (CONFIG.isHashBrownAndToastPlateEnabled) {
-            final Item HASHBROWNTOASTPLATE = registerItem("hash_brown_toast_plate", new BowlFood(new FabricItemSettings().food(new FoodComponent.Builder().hunger(8).saturationModifier(0.7f).build())));
-            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(HASHBROWNTOASTPLATE));
+            Item.Settings settings = new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(8).saturationModifier(0.7f).build())
+                    .maxCount(16);
+            final Item HASH_BROWN_TOAST_PLATE = registerItem("hash_brown_toast_plate", new BowlFood(settings));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(HASH_BROWN_TOAST_PLATE));
         }
 
 // Hollow Chocolate
@@ -3431,15 +3676,21 @@ public class ModItems {
 // Hot Chocolate Bottle
 
         if (CONFIG.isHotChocolateBottleEnabled) {
-            final Item HOTCHOCOLATEBOTTLE = registerItem("hot_chocolate_bottle", new BottleDrink(new FabricItemSettings().food(new FoodComponent.Builder().hunger(9).saturationModifier(0.9f).build())));
-            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(HOTCHOCOLATEBOTTLE));
+            Item.Settings settings = BottleDrink.BottleItem()
+                    .recipeRemainder(Items.GLASS_BOTTLE)
+                    .food(new FoodComponent.Builder().hunger(9).saturationModifier(0.9f).build());
+            final Item HOT_CHOCOLATE_BOTTLE = registerItem("hot_chocolate_bottle", new BottleDrink(settings));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(HOT_CHOCOLATE_BOTTLE));
         }
 
 // Hot Dark Chocolate Bottle
 
         if (CONFIG.isHotDarkChocolateBottleEnabled) {
-            final Item HOTDARKCHOCOLATEBOTTLE = registerItem("hot_dark_chocolate_bottle", new BottleDrink(new FabricItemSettings().food(new FoodComponent.Builder().hunger(10).saturationModifier(0.8f).build())));
-            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(HOTDARKCHOCOLATEBOTTLE));
+            Item.Settings settings = BottleDrink.BottleItem()
+                    .recipeRemainder(Items.GLASS_BOTTLE)
+                    .food(new FoodComponent.Builder().hunger(10).saturationModifier(0.8f).build());
+            final Item HOT_DARK_CHOCOLATE_BOTTLE = registerItem("hot_dark_chocolate_bottle", new BottleDrink(settings));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(HOT_DARK_CHOCOLATE_BOTTLE));
         }
 
 // Hot Sausage Biscuit Sandwich
@@ -3452,15 +3703,20 @@ public class ModItems {
 // Hot White Chocolate Bottle
 
         if (CONFIG.isHotWhiteChocolateBottleEnabled) {
-            final Item HOTWHITECHOCOLATEBOTTLE = registerItem("hot_white_chocolate_bottle", new BottleDrink(new FabricItemSettings().food(new FoodComponent.Builder().hunger(8).saturationModifier(1.0f).build())));
-            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(HOTWHITECHOCOLATEBOTTLE));
+            Item.Settings settings = BottleDrink.BottleItem()
+                    .recipeRemainder(Items.GLASS_BOTTLE)
+                    .food(new FoodComponent.Builder().hunger(8).saturationModifier(1.0f).build());
+            final Item HOT_WHITE_CHOCOLATE_BOTTLE = registerItem("hot_white_chocolate_bottle", new BottleDrink(settings));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(HOT_WHITE_CHOCOLATE_BOTTLE));
         }
 
 // Ice Cream Bowl
 
         if (CONFIG.isIceCreamBowlEnabled) {
-            final Item ICECREAMBOWL = registerItem("ice_cream_bowl", new BowlFood(new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(1.3f).build())));
-            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(ICECREAMBOWL));
+            Item.Settings settings = BowlFood.BowlItem()
+                    .food(new FoodComponent.Builder().hunger(2).saturationModifier(1.3f).build());
+            final Item ICE_CREAM_BOWL = registerItem("ice_cream_bowl", new BowlFood(settings));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(ICE_CREAM_BOWL));
         }
 
 // Ice Cream Cone
@@ -3487,7 +3743,9 @@ public class ModItems {
 // Ice Cream Stick
 
         if (CONFIG.isIceCreamStickEnabled) {
-            final Item ICE_CREAM_STICK = registerItem("ice_cream_stick", new StickFood(new FabricItemSettings().food(new FoodComponent.Builder().hunger(1).saturationModifier(0.8f).snack().build())));
+            Item.Settings settings = StickFood.StickItem()
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.8f).snack().build());
+            final Item ICE_CREAM_STICK = registerItem("ice_cream_stick", new StickFood(settings));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(ICE_CREAM_STICK));
         }
 
@@ -3501,42 +3759,66 @@ public class ModItems {
 // Macaroni Bowl
 
         if (CONFIG.isMacaroniBowlEnabled) {
-            final Item MACARONI_BOWL = registerItem("macaroni_bowl", new BowlFood(new FabricItemSettings().food(new FoodComponent.Builder().hunger(3).saturationModifier(0.5f).build())));
+            Item.Settings settings = new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(3).saturationModifier(0.5f).build())
+                    .maxCount(16);
+            final Item MACARONI_BOWL = registerItem("macaroni_bowl", new BowlFood(settings));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(MACARONI_BOWL));
         }
 
 // Macaroni Bowl (Bacon)
 
         if (CONFIG.isMacaroniBowlBaconEnabled) {
-            final Item MACARONI_BOWL_BACON = registerItem("macaroni_bowl_bacon", new BowlFood(new FabricItemSettings().food(new FoodComponent.Builder().hunger(4).saturationModifier(0.6f).statusEffect(new StatusEffectInstance(ModEffects.NOURISHMENT.get(), 1800, 0),1.0f).snack().build()), true));
+            Item.Settings settings = new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(4).saturationModifier(0.6f)
+                            .statusEffect(new StatusEffectInstance(ModEffects.NOURISHMENT.get(), 1800, 0), 1.0f).build())
+                    .maxCount(16);
+            final Item MACARONI_BOWL_BACON = registerItem("macaroni_bowl_bacon", new BowlFood(settings, true));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(MACARONI_BOWL_BACON));
         }
 
 // Macaroni Bowl (Cheese)
 
         if (CONFIG.isMacaroniBowlCheeseEnabled) {
-            final Item MACARONI_BOWL_CHEESE = registerItem("macaroni_bowl_cheese", new BowlFood(new FabricItemSettings().food(new FoodComponent.Builder().hunger(3).saturationModifier(0.6f).build())));
+            Item.Settings settings = new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(3).saturationModifier(0.6f).build())
+                    .maxCount(16);
+            final Item MACARONI_BOWL_CHEESE = registerItem("macaroni_bowl_cheese", new BowlFood(settings));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(MACARONI_BOWL_CHEESE));
         }
 
 // Macaroni Bowl (Cheese & Bacon)
 
         if (CONFIG.isMacaroniBowlCheeseBaconEnabled) {
-            final Item MACARONI_BOWL_CHEESE_BACON = registerItem("macaroni_bowl_cheese_bacon", new BowlFood(new FabricItemSettings().food(new FoodComponent.Builder().hunger(4).saturationModifier(0.6f).statusEffect(new StatusEffectInstance(ModEffects.COMFORT.get(), 3600, 0),1.0f).statusEffect(new StatusEffectInstance(ModEffects.NOURISHMENT.get(), 2400, 0),1.0f).snack().build()), true));
+            Item.Settings settings = new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(4).saturationModifier(0.6f)
+                            .statusEffect(new StatusEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1.0f)
+                            .statusEffect(new StatusEffectInstance(ModEffects.NOURISHMENT.get(), 2400, 0), 1.0f).build())
+                    .maxCount(16);
+            final Item MACARONI_BOWL_CHEESE_BACON = registerItem("macaroni_bowl_cheese_bacon", new BowlFood(settings, true));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(MACARONI_BOWL_CHEESE_BACON));
         }
 
 // Macaroni Bowl (Cheese & Sausage)
 
         if (CONFIG.isMacaroniBowlCheeseSausageEnabled) {
-            final Item MACARONI_BOWL_CHEESE_SAUSAGE = registerItem("macaroni_bowl_cheese_sausage", new BowlFood(new FabricItemSettings().food(new FoodComponent.Builder().hunger(5).saturationModifier(0.5f).statusEffect(new StatusEffectInstance(ModEffects.COMFORT.get(), 2400, 0),1.0f).statusEffect(new StatusEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0),1.0f).snack().build()), true));
+            Item.Settings settings = new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(5).saturationModifier(0.5f)
+                            .statusEffect(new StatusEffectInstance(ModEffects.COMFORT.get(), 2400, 0), 1.0f)
+                            .statusEffect(new StatusEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1.0f).build())
+                    .maxCount(16);
+            final Item MACARONI_BOWL_CHEESE_SAUSAGE = registerItem("macaroni_bowl_cheese_sausage", new BowlFood(settings, true));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(MACARONI_BOWL_CHEESE_SAUSAGE));
         }
 
 // Macaroni Bowl (Sausage)
 
         if (CONFIG.isMacaroniBowlSausageEnabled) {
-            final Item MACARONI_BOWL_SAUSAGE = registerItem("macaroni_bowl_sausage", new BowlFood(new FabricItemSettings().food(new FoodComponent.Builder().hunger(5).saturationModifier(0.5f).statusEffect(new StatusEffectInstance(ModEffects.NOURISHMENT.get(), 3000, 0),1.0f).snack().build()), true));
+            Item.Settings settings = new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(5).saturationModifier(0.5f)
+                            .statusEffect(new StatusEffectInstance(ModEffects.NOURISHMENT.get(), 3000, 0), 1.0f).build())
+                    .maxCount(16);
+            final Item MACARONI_BOWL_SAUSAGE = registerItem("macaroni_bowl_sausage", new BowlFood(settings, true));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(MACARONI_BOWL_SAUSAGE));
         }
 
@@ -3550,8 +3832,10 @@ public class ModItems {
 // Magma Cream Marshmallow Stick
 
         if (CONFIG.isMagmaCreamMarshmallowStickEnabled) {
-            final Item MAGMACREAMMARSHMALLOWSTICK = registerItem("magma_cream_marshmallow_stick", new StickFood(new FabricItemSettings().food(new FoodComponent.Builder().hunger(3).saturationModifier(0.2f).snack().build())));
-            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(MAGMACREAMMARSHMALLOWSTICK));
+            Item.Settings settings = new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(3).saturationModifier(0.2f).snack().build());
+            final Item MAGMA_CREAM_MARSHMALLOW_STICK = registerItem("magma_cream_marshmallow_stick", new StickFood(settings));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(MAGMA_CREAM_MARSHMALLOW_STICK));
         }
 
 // Marshmallow
@@ -3585,8 +3869,10 @@ public class ModItems {
 // Marshmallow Stick
 
         if (CONFIG.isMarshmallowStickEnabled) {
-            final Item MARSHMALLOWSTICK = registerItem("marshmallow_stick", new StickFood(new FabricItemSettings().food(new FoodComponent.Builder().hunger(3).saturationModifier(0.2f).snack().build())));
-            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(MARSHMALLOWSTICK));
+            Item.Settings settings = new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(3).saturationModifier(0.2f).snack().build());
+            final Item MARSHMALLOW_STICK = registerItem("marshmallow_stick", new StickFood(settings));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(MARSHMALLOW_STICK));
         }
 
 // Marshmallow Butterscotch Fudge
@@ -3655,16 +3941,24 @@ public class ModItems {
 // Meatball Stick
 
         if (CONFIG.isMeatballStickEnabled) {
-            final Item MEATBALLSTICK1 = registerItem("meatball_stick_1", new StickFood(new FabricItemSettings().food(new FoodComponent.Builder().hunger(5).saturationModifier(0.6f).snack().build())));
-            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(MEATBALLSTICK1));
+            Item.Settings settings = new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(5).saturationModifier(0.6f).snack().build());
+            final Item MEATBALL_STICK_1 = registerItem("meatball_stick_1", new StickFood(settings));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(MEATBALL_STICK_1));
         }
+
         if (CONFIG.isMeatballStickEnabled) {
-            final Item MEATBALLSTICK2 = registerItem("meatball_stick_2", new StickFood(new FabricItemSettings().food(new FoodComponent.Builder().hunger(6).saturationModifier(0.6f).snack().build())));
-            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(MEATBALLSTICK2));
+            Item.Settings settings = new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(6).saturationModifier(0.6f).snack().build());
+            final Item MEATBALL_STICK_2 = registerItem("meatball_stick_2", new StickFood(settings));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(MEATBALL_STICK_2));
         }
+
         if (CONFIG.isMeatballStickEnabled) {
-            final Item MEATBALLSTICK3 = registerItem("meatball_stick_3", new StickFood(new FabricItemSettings().food(new FoodComponent.Builder().hunger(8).saturationModifier(0.7f).snack().build())));
-            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(MEATBALLSTICK3));
+            Item.Settings settings = new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(8).saturationModifier(0.7f).snack().build());
+            final Item MEATBALL_STICK_3 = registerItem("meatball_stick_3", new StickFood(settings));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(MEATBALL_STICK_3));
         }
 
 // Melon Cream Chocolate
@@ -3718,8 +4012,11 @@ public class ModItems {
 // Melon Cream Frosting Bottle
 
         if (CONFIG.isMelonCreamFrostingBottleEnabled) {
-            final Item MELONCREAMFROSTINGBOTTLE = registerItem("melon_cream_frosting_bottle", new BottleDrink(new Item.Settings().food(new FoodComponent.Builder().hunger(4).saturationModifier(0.8f).build())));
-            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(MELONCREAMFROSTINGBOTTLE));
+            Item.Settings settings = BottleDrink.BottleItem()
+                    .recipeRemainder(Items.GLASS_BOTTLE)
+                    .food(new FoodComponent.Builder().hunger(4).saturationModifier(0.8f).build());
+            final Item MELON_CREAM_FROSTING_BOTTLE = registerItem("melon_cream_frosting_bottle", new BottleDrink(settings));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(MELON_CREAM_FROSTING_BOTTLE));
         }
 
 // Melon Cream Frosted Chocolate Sweet Roll
@@ -3760,8 +4057,10 @@ public class ModItems {
 // Melon Ice Cream Bowl
 
         if (CONFIG.isMelonIceCreamBowlEnabled) {
-            final Item MELONICECREAMBOWL = registerItem("melon_ice_cream_bowl", new BowlFood(new FabricItemSettings().food(new FoodComponent.Builder().hunger(3).saturationModifier(1.2f).build())));
-            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(MELONICECREAMBOWL));
+            Item.Settings settings = BowlFood.BowlItem()
+                    .food(new FoodComponent.Builder().hunger(3).saturationModifier(1.2f).build());
+            final Item MELON_ICE_CREAM_BOWL = registerItem("melon_ice_cream_bowl", new BowlFood(settings));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(MELON_ICE_CREAM_BOWL));
         }
 
 // Melon Ice Cream Cone
@@ -3781,15 +4080,20 @@ public class ModItems {
 // Melon Ice Cream Stick
 
         if (CONFIG.isMelonIceCreamStickEnabled) {
-            final Item MELON_ICE_CREAM_STICK = registerItem("melon_ice_cream_stick", new StickFood(new FabricItemSettings().food(new FoodComponent.Builder().hunger(1).saturationModifier(1.1f).snack().build())));
+            Item.Settings settings = StickFood.StickItem()
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(1.1f).snack().build());
+            final Item MELON_ICE_CREAM_STICK = registerItem("melon_ice_cream_stick", new StickFood(settings));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(MELON_ICE_CREAM_STICK));
         }
 
 // Melon Jam
 
         if (CONFIG.isMelonJamBottleEnabled) {
-            final Item MELONJAMBOTTLE = registerItem("melon_jam_bottle", new BottleDrink(new FabricItemSettings().food(new FoodComponent.Builder().hunger(4).saturationModifier(1.7f).build())));
-            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(MELONJAMBOTTLE));
+            Item.Settings settings = BottleDrink.BottleItem()
+                    .recipeRemainder(Items.GLASS_BOTTLE)
+                    .food(new FoodComponent.Builder().hunger(4).saturationModifier(1.7f).build());
+            final Item MELON_JAM_BOTTLE = registerItem("melon_jam_bottle", new BottleDrink(settings));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(MELON_JAM_BOTTLE));
         }
 
 // Melon Jam Sandwich
@@ -3802,15 +4106,21 @@ public class ModItems {
 // Melon Milkshake
 
         if (CONFIG.isMelonMilkshakeBottleEnabled) {
-            final Item MELONMILKSHAKEBOTTLE = registerItem("melon_milkshake_bottle", new BottleDrink(new FabricItemSettings().food(new FoodComponent.Builder().hunger(6).saturationModifier(1.0f).build())));
-            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(MELONMILKSHAKEBOTTLE));
+            Item.Settings settings = BottleDrink.BottleItem()
+                    .recipeRemainder(Items.GLASS_BOTTLE)
+                    .food(new FoodComponent.Builder().hunger(6).saturationModifier(1.0f).build());
+            final Item MELON_MILKSHAKE_BOTTLE = registerItem("melon_milkshake_bottle", new BottleDrink(settings));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(MELON_MILKSHAKE_BOTTLE));
         }
 
 // Milkshake
 
         if (CONFIG.isMilkshakeBottleEnabled) {
-            final Item MILKSHAKEBOTTLE = registerItem("milkshake_bottle", new BottleDrink(new FabricItemSettings().food(new FoodComponent.Builder().hunger(4).saturationModifier(0.8f).build())));
-            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(MILKSHAKEBOTTLE));
+            Item.Settings settings = BottleDrink.BottleItem()
+                    .recipeRemainder(Items.GLASS_BOTTLE)
+                    .food(new FoodComponent.Builder().hunger(4).saturationModifier(0.8f).build());
+            final Item MILKSHAKE_BOTTLE = registerItem("milkshake_bottle", new BottleDrink(settings));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(MILKSHAKE_BOTTLE));
         }
 
 // Milk Powder
@@ -3885,8 +4195,10 @@ public class ModItems {
 // Molasses
 
         if (CONFIG.isMolassesBottleEnabled) {
-            final Item MOLASSESBOTTLE = registerItem("molasses_bottle", new ConsumableItem(new FabricItemSettings()));
-            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(MOLASSESBOTTLE));
+            Item.Settings settings = BottleDrink.BottleItem()
+                    .recipeRemainder(Items.GLASS_BOTTLE);
+            final Item MOLASSES_BOTTLE = registerItem("molasses_bottle", new ConsumableItem(settings));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(MOLASSES_BOTTLE));
         }
 
 // Muffin Base
@@ -3976,8 +4288,11 @@ public class ModItems {
 // Nacho Bowl
 
         if (CONFIG.isNachoBowlEnabled) {
-            final Item NACHOBOWL = registerItem("nacho_bowl", new BowlFood(new FabricItemSettings().food(new FoodComponent.Builder().hunger(6).saturationModifier(0.9f).build())));
-            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(NACHOBOWL));
+            Item.Settings settings = new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(6).saturationModifier(0.9f).build())
+                    .maxCount(16);
+            final Item NACHO_BOWL = registerItem("nacho_bowl", new BowlFood(settings));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(NACHO_BOWL));
         }
 
 // Onion Calzone
@@ -4022,162 +4337,243 @@ public class ModItems {
 // Pasta Plate
 
         if (CONFIG.isPastaPlateEnabled) {
-            final Item PASTAPLATE = registerItem("pasta_plate", new BowlFood(new FabricItemSettings().food(new FoodComponent.Builder().hunger(5).saturationModifier(0.7f).build())));
-            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(PASTAPLATE));
+            Item.Settings settings = new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(5).saturationModifier(0.7f).build())
+                    .maxCount(16);
+            final Item PASTA_PLATE = registerItem("pasta_plate", new BowlFood(settings));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(PASTA_PLATE));
         }
 
 // Pasta Plate (Butter)
 
         if (CONFIG.isPastaPlateButterEnabled) {
-            final Item PASTAPLATEBUTTER = registerItem("pasta_plate_butter", new BowlFood(new FabricItemSettings().food(new FoodComponent.Builder().hunger(6).saturationModifier(0.8f).statusEffect(new StatusEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0),1.0f).build()), true));
-            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(PASTAPLATEBUTTER));
+            Item.Settings settings = new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(6).saturationModifier(0.8f)
+                            .statusEffect(new StatusEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).build())
+                    .maxCount(16);
+            final Item PASTA_PLATE_BUTTER = registerItem("pasta_plate_butter", new BowlFood(settings, true));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(PASTA_PLATE_BUTTER));
         }
 
 // Pasta Plate (Cheese)
 
         if (CONFIG.isPastaPlateCheeseEnabled) {
-            final Item PASTA_PLATE_CHEESE = registerItem("pasta_plate_cheese", new BowlFood(new FabricItemSettings().food(new FoodComponent.Builder().hunger(5).saturationModifier(0.9f).build())));
+            Item.Settings settings = new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(5).saturationModifier(0.9f).build())
+                    .maxCount(16);
+            final Item PASTA_PLATE_CHEESE = registerItem("pasta_plate_cheese", new BowlFood(settings));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(PASTA_PLATE_CHEESE));
         }
 
 // Pasta Plate (Cheese & Tomato Sauce)
 
         if (CONFIG.isPastaPlateCheeseTomatoSauceEnabled) {
-            final Item PASTA_PLATE_CHEESE_TOMATO_SAUCE = registerItem("pasta_plate_cheese_tomato_sauce", new BowlFood(new FabricItemSettings().food(new FoodComponent.Builder().hunger(9).saturationModifier(1.1f).statusEffect(new StatusEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0),1.0f).build()), true));
+            Item.Settings settings = new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(9).saturationModifier(1.1f)
+                            .statusEffect(new StatusEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f).build())
+                    .maxCount(16);
+            final Item PASTA_PLATE_CHEESE_TOMATO_SAUCE = registerItem("pasta_plate_cheese_tomato_sauce", new BowlFood(settings, true));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(PASTA_PLATE_CHEESE_TOMATO_SAUCE));
         }
 
 // Pasta Plate (Chicken Cut)
 
         if (CONFIG.isPastaPlateChickenCutEnabled) {
-            final Item PASTA_PLATE_CHICKEN_CUT = registerItem("pasta_plate_chicken_cut", new BowlFood(new FabricItemSettings().food(new FoodComponent.Builder().hunger(7).saturationModifier(0.7f).build())));
+            Item.Settings settings = new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(7).saturationModifier(0.7f).build())
+                    .maxCount(16);
+            final Item PASTA_PLATE_CHICKEN_CUT = registerItem("pasta_plate_chicken_cut", new BowlFood(settings));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(PASTA_PLATE_CHICKEN_CUT));
         }
 
 // Pasta Plate (Chicken Cut & Tomato Sauce)
 
         if (CONFIG.isPastaPlateChickenCutTomatoSauceEnabled) {
-            final Item PASTA_PLATE_CHICKEN_CUT_TOMATO_SAUCE = registerItem("pasta_plate_chicken_cut_tomato_sauce", new BowlFood(new FabricItemSettings().food(new FoodComponent.Builder().hunger(11).saturationModifier(0.9f).statusEffect(new StatusEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0),1.0f).build()), true));
+            Item.Settings settings = new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(11).saturationModifier(0.9f)
+                            .statusEffect(new StatusEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1.0f).build())
+                    .maxCount(16);
+            final Item PASTA_PLATE_CHICKEN_CUT_TOMATO_SAUCE = registerItem("pasta_plate_chicken_cut_tomato_sauce", new BowlFood(settings, true));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(PASTA_PLATE_CHICKEN_CUT_TOMATO_SAUCE));
         }
 
 // Pasta Plate (Eggplant)
 
         if (CONFIG.isPastaPlateEggplantEnabled) {
-            final Item PASTAPLATEEGGPLANT = registerItem("pasta_plate_eggplant", new BowlFood(new FabricItemSettings().food(new FoodComponent.Builder().hunger(7).saturationModifier(0.8f).build())));
-            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(PASTAPLATEEGGPLANT));
+            Item.Settings settings = new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(7).saturationModifier(0.8f).build())
+                    .maxCount(16);
+            final Item PASTA_PLATE_EGGPLANT = registerItem("pasta_plate_eggplant", new BowlFood(settings));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(PASTA_PLATE_EGGPLANT));
         }
 
 // Pasta Plate (Endermite Meatballs)
 
         if (CONFIG.isPastaPlateEndermiteMeatballsEnabled) {
-            final Item PASTAPLATEENDERMITEMEATBALLS = registerItem("pasta_plate_endermite_meatballs", new BowlFood(new FabricItemSettings().food(new FoodComponent.Builder().hunger(8).saturationModifier(0.6f).build())));
-            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(PASTAPLATEENDERMITEMEATBALLS));
+            Item.Settings settings = new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(8).saturationModifier(0.6f).build())
+                    .maxCount(16);
+            final Item PASTA_PLATE_ENDERMITE_MEATBALLS = registerItem("pasta_plate_endermite_meatballs", new BowlFood(settings));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(PASTA_PLATE_ENDERMITE_MEATBALLS));
         }
 
 // Pasta Plate (Endermite Meatballs & Tomato Sauce)
 
         if (CONFIG.isPastaPlateEndermiteMeatballsTomatoSauceEnabled) {
-            final Item PASTAPLATEENDERMITEMEATBALLSTOMATOSAUCE = registerItem("pasta_plate_endermite_meatballs_tomato_sauce", new BowlFood(new FabricItemSettings().food(new FoodComponent.Builder().hunger(12).saturationModifier(0.8f).statusEffect(new StatusEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0),1.0f).build()), true));
-            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(PASTAPLATEENDERMITEMEATBALLSTOMATOSAUCE));
+            Item.Settings settings = new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(12).saturationModifier(0.8f)
+                            .statusEffect(new StatusEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1.0f).build())
+                    .maxCount(16);
+            final Item PASTA_PLATE_ENDERMITE_MEATBALLS_TOMATO_SAUCE = registerItem("pasta_plate_endermite_meatballs_tomato_sauce", new BowlFood(settings, true));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(PASTA_PLATE_ENDERMITE_MEATBALLS_TOMATO_SAUCE));
         }
 
 // Pasta Plate (Fish)
 
         if (CONFIG.isPastaPlateFishEnabled) {
-            final Item PASTAPLATEFISH = registerItem("pasta_plate_fish", new BowlFood(new FabricItemSettings().food(new FoodComponent.Builder().hunger(7).saturationModifier(0.8f).build())));
-            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(PASTAPLATEFISH));
+            Item.Settings settings = new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(7).saturationModifier(0.8f).build())
+                    .maxCount(16);
+            final Item PASTA_PLATE_FISH = registerItem("pasta_plate_fish", new BowlFood(settings));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(PASTA_PLATE_FISH));
         }
 
 // Pasta Plate (Fish & Tomato Sauce)
 
         if (CONFIG.isPastaPlateFishTomatoSauceEnabled) {
-            final Item PASTA_PLATE_FISH_TOMATO_SAUCE = registerItem("pasta_plate_fish_tomato_sauce", new BowlFood(new FabricItemSettings().food(new FoodComponent.Builder().hunger(11).saturationModifier(0.8f).statusEffect(new StatusEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0),1.0f).build()), true));
+            Item.Settings settings = new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(11).saturationModifier(0.8f)
+                            .statusEffect(new StatusEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1.0f).build())
+                    .maxCount(16);
+            final Item PASTA_PLATE_FISH_TOMATO_SAUCE = registerItem("pasta_plate_fish_tomato_sauce", new BowlFood(settings, true));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(PASTA_PLATE_FISH_TOMATO_SAUCE));
         }
 
 // Pasta Plate (Meatballs)
 
         if (CONFIG.isPastaPlateMeatballsEnabled) {
-            final Item PASTAPLATEMEATBALLS = registerItem("pasta_plate_meatballs", new BowlFood(new FabricItemSettings().food(new FoodComponent.Builder().hunger(8).saturationModifier(0.6f).build())));
-            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(PASTAPLATEMEATBALLS));
+            Item.Settings settings = new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(8).saturationModifier(0.6f).build())
+                    .maxCount(16);
+            final Item PASTA_PLATE_MEATBALLS = registerItem("pasta_plate_meatballs", new BowlFood(settings));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(PASTA_PLATE_MEATBALLS));
         }
 
 // Pasta Plate (Mutton Chop)
 
         if (CONFIG.isPastaPlateMuttonChopEnabled) {
-            final Item PASTAPLATEMUTTONCHOP = registerItem("pasta_plate_mutton_chop", new BowlFood(new FabricItemSettings().food(new FoodComponent.Builder().hunger(8).saturationModifier(0.6f).build())));
-            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(PASTAPLATEMUTTONCHOP));
+            Item.Settings settings = new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(8).saturationModifier(0.6f).build())
+                    .maxCount(16);
+            final Item PASTA_PLATE_MUTTON_CHOP = registerItem("pasta_plate_mutton_chop", new BowlFood(settings));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(PASTA_PLATE_MUTTON_CHOP));
         }
 
 // Pasta Plate (Pork Meatballs)
 
         if (CONFIG.isPastaPlatePorkMeatballsEnabled) {
-            final Item PASTA_PLATE_PORK_MEATBALLS = registerItem("pasta_plate_pork_meatballs", new BowlFood(new FabricItemSettings().food(new FoodComponent.Builder().hunger(7).saturationModifier(0.8f).build())));
+            Item.Settings settings = new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(7).saturationModifier(0.8f).build())
+                    .maxCount(16);
+            final Item PASTA_PLATE_PORK_MEATBALLS = registerItem("pasta_plate_pork_meatballs", new BowlFood(settings));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(PASTA_PLATE_PORK_MEATBALLS));
         }
 
 // Pasta Plate (Pork Meatballs & Tomato Sauce)
 
         if (CONFIG.isPastaPlatePorkMeatballsTomatoSauceEnabled) {
-            final Item PASTA_PLATE_PORK_MEATBALLS_TOMATO_SAUCE = registerItem("pasta_plate_pork_meatballs_tomato_sauce", new BowlFood(new FabricItemSettings().food(new FoodComponent.Builder().hunger(11).saturationModifier(1.0f).statusEffect(new StatusEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0),1.0f).build()), true));
+            Item.Settings settings = new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(11).saturationModifier(1.0f)
+                            .statusEffect(new StatusEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1.0f).build())
+                    .maxCount(16);
+            final Item PASTA_PLATE_PORK_MEATBALLS_TOMATO_SAUCE = registerItem("pasta_plate_pork_meatballs_tomato_sauce", new BowlFood(settings, true));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(PASTA_PLATE_PORK_MEATBALLS_TOMATO_SAUCE));
         }
 
 // Pasta Plate (Rabbit Meatballs)
 
         if (CONFIG.isPastaPlateRabbitMeatballsEnabled) {
-            final Item PASTA_PLATE_RABBIT_MEATBALLS = registerItem("pasta_plate_rabbit_meatballs", new BowlFood(new FabricItemSettings().food(new FoodComponent.Builder().hunger(6).saturationModifier(0.9f).build())));
+            Item.Settings settings = new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(6).saturationModifier(0.9f).build())
+                    .maxCount(16);
+            final Item PASTA_PLATE_RABBIT_MEATBALLS = registerItem("pasta_plate_rabbit_meatballs", new BowlFood(settings));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(PASTA_PLATE_RABBIT_MEATBALLS));
         }
 
 // Pasta Plate (Rabbit Meatballs & Tomato Sauce)
 
         if (CONFIG.isPastaPlateRabbitMeatballsTomatoSauceEnabled) {
-            final Item PASTA_PLATE_RABBIT_MEATBALLS_TOMATO_SAUCE = registerItem("pasta_plate_rabbit_meatballs_tomato_sauce", new BowlFood(new FabricItemSettings().food(new FoodComponent.Builder().hunger(10).saturationModifier(1.1f).statusEffect(new StatusEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0),1.0f).statusEffect(new StatusEffectInstance(StatusEffects.HASTE, 1200, 0),1.0f).statusEffect(new StatusEffectInstance(StatusEffects.SPEED, 1200, 0),1.0f).build()), true));
+            Item.Settings settings = new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(10).saturationModifier(1.1f)
+                            .statusEffect(new StatusEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1.0f)
+                            .statusEffect(new StatusEffectInstance(StatusEffects.HASTE, 1200, 0), 1.0f)
+                            .statusEffect(new StatusEffectInstance(StatusEffects.SPEED, 1200, 0), 1.0f).build())
+                    .maxCount(16);
+            final Item PASTA_PLATE_RABBIT_MEATBALLS_TOMATO_SAUCE = registerItem("pasta_plate_rabbit_meatballs_tomato_sauce", new BowlFood(settings, true));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(PASTA_PLATE_RABBIT_MEATBALLS_TOMATO_SAUCE));
         }
 
 // Pasta Plate (Slime)
 
         if (CONFIG.isPastaPlateSlimeEnabled) {
-            final Item PASTAPLATESLIME = registerItem("pasta_plate_slime", new BowlFood(new FabricItemSettings().food(new FoodComponent.Builder().hunger(6).saturationModifier(0.8f).statusEffect(new StatusEffectInstance(StatusEffects.NAUSEA, 300, 0), 1.0F).build()), true));
-            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(PASTAPLATESLIME));
+            Item.Settings settings = new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(6).saturationModifier(0.8f)
+                            .statusEffect(new StatusEffectInstance(StatusEffects.NAUSEA, 300, 0), 1.0F).build())
+                    .maxCount(16);
+            final Item PASTA_PLATE_SLIME = registerItem("pasta_plate_slime", new BowlFood(settings, true));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(PASTA_PLATE_SLIME));
         }
 
 // Pasta Plate (Slimeballs)
 
         if (CONFIG.isPastaPlateSlimeballsEnabled) {
-            final Item PASTAPLATESLIMEBALLS = registerItem("pasta_plate_slimeballs", new BowlFood(new FabricItemSettings().food(new FoodComponent.Builder().hunger(8).saturationModifier(0.6f).statusEffect(new StatusEffectInstance(StatusEffects.NAUSEA, 300, 0), 1.0F).build()), true));
-            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(PASTAPLATESLIMEBALLS));
+            Item.Settings settings = new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(8).saturationModifier(0.6f)
+                            .statusEffect(new StatusEffectInstance(StatusEffects.NAUSEA, 300, 0), 1.0F).build())
+                    .maxCount(16);
+            final Item PASTA_PLATE_SLIMEBALLS = registerItem("pasta_plate_slimeballs", new BowlFood(settings, true));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(PASTA_PLATE_SLIMEBALLS));
         }
 
 // Pasta Plate (Strider Meatballs)
 
         if (CONFIG.isPastaPlateStriderMeatballsEnabled) {
-            final Item PASTAPLATESTRIDERMEATBALLS = registerItem("pasta_plate_strider_meatballs", new BowlFood(new FabricItemSettings().food(new FoodComponent.Builder().hunger(8).saturationModifier(0.6f).build())));
-            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(PASTAPLATESTRIDERMEATBALLS));
+            Item.Settings settings = new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(8).saturationModifier(0.6f).build())
+                    .maxCount(16);
+            final Item PASTA_PLATE_STRIDER_MEATBALLS = registerItem("pasta_plate_strider_meatballs", new BowlFood(settings));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(PASTA_PLATE_STRIDER_MEATBALLS));
         }
 
 // Pasta Plate (Strider Meatballs & Tomato Sauce)
 
         if (CONFIG.isPastaPlateStriderMeatballsTomatoSauceEnabled) {
-            final Item PASTAPLATESTRIDERMEATBALLSTOMATOSAUCE = registerItem("pasta_plate_strider_meatballs_tomato_sauce", new BowlFood(new FabricItemSettings().food(new FoodComponent.Builder().hunger(12).saturationModifier(0.8f).statusEffect(new StatusEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0),1.0f).build()), true));
-            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(PASTAPLATESTRIDERMEATBALLSTOMATOSAUCE));
+            Item.Settings settings = new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(12).saturationModifier(0.8f)
+                            .statusEffect(new StatusEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1.0f).build())
+                    .maxCount(16);
+            final Item PASTA_PLATE_STRIDER_MEATBALLS_TOMATO_SAUCE = registerItem("pasta_plate_strider_meatballs_tomato_sauce", new BowlFood(settings, true));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(PASTA_PLATE_STRIDER_MEATBALLS_TOMATO_SAUCE));
         }
 
 // Pasta Plate (Tomato Sauce)
 
         if (CONFIG.isPastaPlateTomatoSauceEnabled) {
-            final Item PASTAPLATETOMATOSAUCE = registerItem("pasta_plate_tomato_sauce", new BowlFood(new FabricItemSettings().food(new FoodComponent.Builder().hunger(7).saturationModifier(0.9f).build())));
-            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(PASTAPLATETOMATOSAUCE));
+            Item.Settings settings = new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(7).saturationModifier(0.9f).build())
+                    .maxCount(16);
+            final Item PASTA_PLATE_TOMATO_SAUCE = registerItem("pasta_plate_tomato_sauce", new BowlFood(settings));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(PASTA_PLATE_TOMATO_SAUCE));
         }
 
 // Pasta Plate (Squid Ink)
 
         if (CONFIG.isPastaPlateSquidInkEnabled) {
-            final Item PASTAPLATESQUIDINK = registerItem("pasta_plate_squid_ink", new BowlFood(new FabricItemSettings().food(new FoodComponent.Builder().hunger(6).saturationModifier(0.8f).build())));
-            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(PASTAPLATESQUIDINK));
+            Item.Settings settings = new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(6).saturationModifier(0.8f).build())
+                    .maxCount(16);
+            final Item PASTA_PLATE_SQUID_INK = registerItem("pasta_plate_squid_ink", new BowlFood(settings));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(PASTA_PLATE_SQUID_INK));
         }
 
 // Pastry Bar Base
@@ -4246,16 +4642,24 @@ public class ModItems {
 // Pork Meatball Stick
 
         if (CONFIG.isPorkMeatballStickEnabled) {
-            final Item PORK_MEATBALL_STICK1 = registerItem("pork_meatball_stick_1", new StickFood(new FabricItemSettings().food(new FoodComponent.Builder().hunger(4).saturationModifier(0.8f).snack().build())));
-            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(PORK_MEATBALL_STICK1));
+            Item.Settings settings = new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(4).saturationModifier(0.8f).snack().build());
+            final Item PORK_MEATBALL_STICK_1 = registerItem("pork_meatball_stick_1", new StickFood(settings));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(PORK_MEATBALL_STICK_1));
         }
+
         if (CONFIG.isPorkMeatballStickEnabled) {
-            final Item PORK_MEATBALL_STICK2 = registerItem("pork_meatball_stick_2", new StickFood(new FabricItemSettings().food(new FoodComponent.Builder().hunger(5).saturationModifier(0.8f).snack().build())));
-            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(PORK_MEATBALL_STICK2));
+            Item.Settings settings = new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(5).saturationModifier(0.8f).snack().build());
+            final Item PORK_MEATBALL_STICK_2 = registerItem("pork_meatball_stick_2", new StickFood(settings));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(PORK_MEATBALL_STICK_2));
         }
+
         if (CONFIG.isPorkMeatballStickEnabled) {
-            final Item PORK_MEATBALL_STICK3 = registerItem("pork_meatball_stick_3", new StickFood(new FabricItemSettings().food(new FoodComponent.Builder().hunger(7).saturationModifier(0.9f).snack().build())));
-            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(PORK_MEATBALL_STICK3));
+            Item.Settings settings = new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(7).saturationModifier(0.9f).snack().build());
+            final Item PORK_MEATBALL_STICK_3 = registerItem("pork_meatball_stick_3", new StickFood(settings));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(PORK_MEATBALL_STICK_3));
         }
 
 // Potato Chips
@@ -4268,8 +4672,13 @@ public class ModItems {
 // Potato Chip Bowl
 
         if (CONFIG.isPotatoChipBowlEnabled) {
-            final Item POTATOCHIPBOWL = registerItem("potato_chip_bowl", new BowlFood(new FabricItemSettings().food(new FoodComponent.Builder().hunger(4).saturationModifier(0.5f).statusEffect(new StatusEffectInstance(ModEffects.COMFORT.get(), 1200, 0),1.0f).statusEffect(new StatusEffectInstance(StatusEffects.LUCK, 1200, 0),1.0f).build()), true));
-            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(POTATOCHIPBOWL));
+            Item.Settings settings = new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(4).saturationModifier(0.5f)
+                            .statusEffect(new StatusEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f)
+                            .statusEffect(new StatusEffectInstance(StatusEffects.LUCK, 1200, 0), 1.0f).build())
+                    .maxCount(16);
+            final Item POTATO_CHIP_BOWL = registerItem("potato_chip_bowl", new BowlFood(settings, true));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(POTATO_CHIP_BOWL));
         }
 
 // Powdered Sugar
@@ -4345,15 +4754,23 @@ public class ModItems {
 // Rabbit Meatball Stick
 
         if (CONFIG.isRabbitMeatballStickEnabled) {
-            final Item RABBIT_MEATBALL_STICK_1 = registerItem("rabbit_meatball_stick_1", new StickFood(new FabricItemSettings().food(new FoodComponent.Builder().hunger(4).saturationModifier(0.6f).snack().build())));
+            Item.Settings settings = new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(4).saturationModifier(0.6f).snack().build());
+            final Item RABBIT_MEATBALL_STICK_1 = registerItem("rabbit_meatball_stick_1", new StickFood(settings));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(RABBIT_MEATBALL_STICK_1));
         }
+
         if (CONFIG.isRabbitMeatballStickEnabled) {
-            final Item RABBIT_MEATBALL_STICK_2 = registerItem("rabbit_meatball_stick_2", new StickFood(new FabricItemSettings().food(new FoodComponent.Builder().hunger(5).saturationModifier(0.6f).snack().build())));
+            Item.Settings settings = new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(5).saturationModifier(0.6f).snack().build());
+            final Item RABBIT_MEATBALL_STICK_2 = registerItem("rabbit_meatball_stick_2", new StickFood(settings));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(RABBIT_MEATBALL_STICK_2));
         }
+
         if (CONFIG.isRabbitMeatballStickEnabled) {
-            final Item RABBIT_MEATBALL_STICK_3 = registerItem("rabbit_meatball_stick_3", new StickFood(new FabricItemSettings().food(new FoodComponent.Builder().hunger(6).saturationModifier(0.7f).snack().build())));
+            Item.Settings settings = new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(6).saturationModifier(0.7f).snack().build());
+            final Item RABBIT_MEATBALL_STICK_3 = registerItem("rabbit_meatball_stick_3", new StickFood(settings));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(RABBIT_MEATBALL_STICK_3));
         }
 
@@ -4530,6 +4947,13 @@ public class ModItems {
         if (CONFIG.isRawFleshCookieEnabled) {
             final Item RAWFLESHCOOKIE = registerItem("raw_flesh_cookie", new ConsumableItem(new FabricItemSettings()));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(RAWFLESHCOOKIE));
+        }
+
+// Raw Fishcake
+
+        if (CONFIG.isRawFishcakeEnabled) {
+            final Item RAW_FISHCAKE = registerItem("raw_fishcake", new ConsumableItem(new FabricItemSettings()));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(RAW_FISHCAKE));
         }
 
 // Raw Fish Calzone
@@ -4796,7 +5220,7 @@ public class ModItems {
         if (CONFIG.isSmoresPieEnabled) {
             final Item SMORESPIESLICE = registerItem("smores_pie_slice", new ConsumableItem(new FabricItemSettings().food(new FoodComponent.Builder().hunger(4).saturationModifier(0.8f).statusEffect(new StatusEffectInstance(ModEffects.COMFORT.get(), 1800, 0), 1.0F).build()), true));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(SMORESPIESLICE));
-            SMORES_PIE = registerBlock("smores_pie", new PieBlock(SMORESPIESLICE));
+            SMORES_PIE = registerBlock("smores_pie", new ModPieBlock(SMORESPIESLICE));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(SMORES_PIE));
         }
 
@@ -5110,15 +5534,19 @@ public class ModItems {
 // Smoked Corn Stick
 
         if (CONFIG.isSmokedCornStickEnabled) {
-            final Item SMOKEDCORNSTICK = registerItem("smoked_corn_stick", new StickFood(new FabricItemSettings().food(new FoodComponent.Builder().hunger(4).saturationModifier(0.7f).snack().build())));
-            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(SMOKEDCORNSTICK));
+            Item.Settings settings = new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(4).saturationModifier(0.7f).snack().build());
+            final Item SMOKED_CORN_STICK = registerItem("smoked_corn_stick", new StickFood(settings));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(SMOKED_CORN_STICK));
         }
 
 // Sour Cream Bottle
 
         if (CONFIG.isSourCreamBottleEnabled) {
-            final Item SOURCREAMBOTTLE = registerItem("sour_cream_bottle", new ConsumableItem(new FabricItemSettings()));
-            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(SOURCREAMBOTTLE));
+            Item.Settings settings = BottleDrink.BottleItem()
+                    .recipeRemainder(Items.GLASS_BOTTLE);
+            final Item SOUR_CREAM_BOTTLE = registerItem("sour_cream_bottle", new ConsumableItem(settings));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(SOUR_CREAM_BOTTLE));
         }
 
 // Spicy Breakfast Sausages
@@ -5152,16 +5580,24 @@ public class ModItems {
 // Strider Meatball Stick
 
         if (CONFIG.isStriderMeatballStickEnabled) {
-            final Item STRIDERMEATBALLSTICK1 = registerItem("strider_meatball_stick_1", new StickFood(new FabricItemSettings().food(new FoodComponent.Builder().hunger(5).saturationModifier(0.6f).snack().build())));
-            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(STRIDERMEATBALLSTICK1));
+            Item.Settings settings = new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(5).saturationModifier(0.6f).snack().build());
+            final Item STRIDER_MEATBALL_STICK_1 = registerItem("strider_meatball_stick_1", new StickFood(settings));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(STRIDER_MEATBALL_STICK_1));
         }
+
         if (CONFIG.isStriderMeatballStickEnabled) {
-            final Item STRIDERMEATBALLSTICK2 = registerItem("strider_meatball_stick_2", new StickFood(new FabricItemSettings().food(new FoodComponent.Builder().hunger(6).saturationModifier(0.6f).snack().build())));
-            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(STRIDERMEATBALLSTICK2));
+            Item.Settings settings = new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(6).saturationModifier(0.6f).snack().build());
+            final Item STRIDER_MEATBALL_STICK_2 = registerItem("strider_meatball_stick_2", new StickFood(settings));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(STRIDER_MEATBALL_STICK_2));
         }
+
         if (CONFIG.isStriderMeatballStickEnabled) {
-            final Item STRIDERMEATBALLSTICK3 = registerItem("strider_meatball_stick_3", new StickFood(new FabricItemSettings().food(new FoodComponent.Builder().hunger(8).saturationModifier(0.7f).snack().build())));
-            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(STRIDERMEATBALLSTICK3));
+            Item.Settings settings = new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(8).saturationModifier(0.7f).snack().build());
+            final Item STRIDER_MEATBALL_STICK_3 = registerItem("strider_meatball_stick_3", new StickFood(settings));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(STRIDER_MEATBALL_STICK_3));
         }
 
 // Sugar Dough
@@ -5188,15 +5624,21 @@ public class ModItems {
 // Toast & Fried Egg Plate
 
         if (CONFIG.isToastAndFriedEggPlateEnabled) {
-            final Item TOASTFRIEDEGGPLATE = registerItem("toast_fried_egg_plate", new BowlFood(new FabricItemSettings().food(new FoodComponent.Builder().hunger(8).saturationModifier(0.7f).build())));
-            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(TOASTFRIEDEGGPLATE));
+            Item.Settings settings = new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(8).saturationModifier(0.7f).build())
+                    .maxCount(16);
+            final Item TOAST_FRIED_EGG_PLATE = registerItem("toast_fried_egg_plate", new BowlFood(settings));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(TOAST_FRIED_EGG_PLATE));
         }
 
 // Toast Plate
 
         if (CONFIG.isToastPlateEnabled) {
-            final Item TOASTPLATE = registerItem("toast_plate", new BowlFood(new FabricItemSettings().food(new FoodComponent.Builder().hunger(3).saturationModifier(0.3f).build())));
-            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(TOASTPLATE));
+            Item.Settings settings = new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(3).saturationModifier(0.3f).build())
+                    .maxCount(16);
+            final Item TOAST_PLATE = registerItem("toast_plate", new BowlFood(settings));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(TOAST_PLATE));
         }
 
 // Toast Slice
@@ -5230,7 +5672,11 @@ public class ModItems {
 // Toffee Chip Chocolate Milkshake
 
         if (CONFIG.isToffeeChipChocolateMilkshakeBottleEnabled) {
-            final Item TOFFEE_CHIP_CHOCOLATE_MILKSHAKE_BOTTLE = registerItem("toffee_chip_chocolate_milkshake_bottle", new BottleDrink(new FabricItemSettings().food(new FoodComponent.Builder().hunger(6).saturationModifier(1.3f).statusEffect(new StatusEffectInstance(ModEffects.COMFORT.get(), 600, 0),1.0f).statusEffect(new StatusEffectInstance(StatusEffects.SPEED, 600, 0),1.0f).build()), true));
+            Item.Settings settings = BottleDrink.BottleItem()
+                    .food(new FoodComponent.Builder().hunger(6).saturationModifier(1.3f)
+                            .statusEffect(new StatusEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f)
+                            .statusEffect(new StatusEffectInstance(StatusEffects.SPEED, 600, 0), 1.0f).build());
+            final Item TOFFEE_CHIP_CHOCOLATE_MILKSHAKE_BOTTLE = registerItem("toffee_chip_chocolate_milkshake_bottle", new BottleDrink(settings, true));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(TOFFEE_CHIP_CHOCOLATE_MILKSHAKE_BOTTLE));
         }
 
@@ -5251,8 +5697,13 @@ public class ModItems {
 // Toffee Chip Milkshake
 
         if (CONFIG.isToffeeChipMilkshakeBottleEnabled) {
-            final Item TOFFEECHIPMILKSHAKEBOTTLE = registerItem("toffee_chip_milkshake_bottle", new BottleDrink(new FabricItemSettings().food(new FoodComponent.Builder().hunger(5).saturationModifier(1.2f).statusEffect(new StatusEffectInstance(ModEffects.COMFORT.get(), 600, 0),1.0f).statusEffect(new StatusEffectInstance(StatusEffects.SPEED, 600, 0),1.0f).build()), true));
-            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(TOFFEECHIPMILKSHAKEBOTTLE));
+            Item.Settings settings = BottleDrink.BottleItem()
+                    .recipeRemainder(Items.GLASS_BOTTLE)
+                    .food(new FoodComponent.Builder().hunger(5).saturationModifier(1.2f)
+                            .statusEffect(new StatusEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f)
+                            .statusEffect(new StatusEffectInstance(StatusEffects.SPEED, 600, 0), 1.0f).build());
+            final Item TOFFEE_CHIP_MILKSHAKE_BOTTLE = registerItem("toffee_chip_milkshake_bottle", new BottleDrink(settings, true));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(TOFFEE_CHIP_MILKSHAKE_BOTTLE));
         }
 
 // Toffee Chip Muffin
@@ -5281,15 +5732,21 @@ public class ModItems {
 // Tortilla Chip Bowl
 
         if (CONFIG.isTortillaChipBowlEnabled) {
-            final Item TORTILLACHIPBOWL = registerItem("tortilla_chip_bowl", new BowlFood(new FabricItemSettings().food(new FoodComponent.Builder().hunger(4).saturationModifier(0.7f).build())));
-            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(TORTILLACHIPBOWL));
+            Item.Settings settings = new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(4).saturationModifier(0.7f).build())
+                    .maxCount(16);
+            final Item TORTILLA_CHIP_BOWL = registerItem("tortilla_chip_bowl", new BowlFood(settings));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(TORTILLA_CHIP_BOWL));
         }
 
 // Ube Cream Frosting Bottle
 
         if (CONFIG.isUbeCreamFrostingBottleEnabled) {
-            final Item UBECREAMFROSTINGBOTTLE = registerItem("ube_cream_frosting_bottle", new BottleDrink(new Item.Settings().food(new FoodComponent.Builder().hunger(5).saturationModifier(0.7f).build())));
-            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(UBECREAMFROSTINGBOTTLE));
+            Item.Settings settings = BottleDrink.BottleItem()
+                    .recipeRemainder(Items.GLASS_BOTTLE)
+                    .food(new FoodComponent.Builder().hunger(5).saturationModifier(0.7f).build());
+            final Item UBE_CREAM_FROSTING_BOTTLE = registerItem("ube_cream_frosting_bottle", new BottleDrink(settings));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(UBE_CREAM_FROSTING_BOTTLE));
         }
 
 // Ube Sugar Dough
@@ -5323,7 +5780,9 @@ public class ModItems {
 // Vinegar Bottle
 
         if (CONFIG.isVinegarBottleEnabled) {
-            final Item VINEGAR_BOTTLE = registerItem("vinegar_bottle", new ConsumableItem(new FabricItemSettings()));
+            Item.Settings settings = BottleDrink.BottleItem()
+                    .recipeRemainder(Items.GLASS_BOTTLE);
+            final Item VINEGAR_BOTTLE = registerItem("vinegar_bottle", new ConsumableItem(settings));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(VINEGAR_BOTTLE));
         }
 
@@ -5360,7 +5819,10 @@ public class ModItems {
 // White Chocolate Chip Chocolate Milkshake
 
         if (CONFIG.isWhiteChocolateChipChocolateMilkshakeBottleEnabled) {
-            final Item WHITE_CHOCOLATE_CHIP_CHOCOLATE_MILKSHAKE_BOTTLE = registerItem("white_chocolate_chip_chocolate_milkshake_bottle", new BottleDrink(new FabricItemSettings().food(new FoodComponent.Builder().hunger(6).saturationModifier(1.5f).statusEffect(new StatusEffectInstance(ModEffects.COMFORT.get(), 1800, 0),1.0f).build()), true));
+            Item.Settings settings = BottleDrink.BottleItem()
+                    .food(new FoodComponent.Builder().hunger(6).saturationModifier(1.5f)
+                            .statusEffect(new StatusEffectInstance(ModEffects.COMFORT.get(), 1800, 0), 1.0f).build());
+            final Item WHITE_CHOCOLATE_CHIP_CHOCOLATE_MILKSHAKE_BOTTLE = registerItem("white_chocolate_chip_chocolate_milkshake_bottle", new BottleDrink(settings, true));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(WHITE_CHOCOLATE_CHIP_CHOCOLATE_MILKSHAKE_BOTTLE));
         }
 
@@ -5374,8 +5836,11 @@ public class ModItems {
 // White Chocolate Bottle
 
         if (CONFIG.isWhiteChocolateBottleEnabled) {
-            final Item WHITECHOCOLATEBOTTLE = registerItem("white_chocolate_bottle", new BottleDrink(new Item.Settings().food(new FoodComponent.Builder().hunger(6).saturationModifier(0.5f).build()).maxCount(64)));
-            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(WHITECHOCOLATEBOTTLE));
+            Item.Settings settings = BottleDrink.BottleItem()
+                    .recipeRemainder(Items.GLASS_BOTTLE)
+                    .food(new FoodComponent.Builder().hunger(6).saturationModifier(0.5f).build());
+            final Item WHITE_CHOCOLATE_BOTTLE = registerItem("white_chocolate_bottle", new BottleDrink(settings));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(WHITE_CHOCOLATE_BOTTLE));
         }
 
 // White Chocolate Chips
@@ -5395,7 +5860,11 @@ public class ModItems {
 // White Chocolate Chip Milkshake
 
         if (CONFIG.isWhiteChocolateChipMilkshakeBottleEnabled) {
-            final Item WHITE_CHOCOLATE_CHIP_MILKSHAKE_BOTTLE = registerItem("white_chocolate_chip_milkshake_bottle", new BottleDrink(new FabricItemSettings().food(new FoodComponent.Builder().hunger(5).saturationModifier(1.4f).statusEffect(new StatusEffectInstance(ModEffects.COMFORT.get(), 1800, 0),1.0f).build()), true));
+            Item.Settings settings = BottleDrink.BottleItem()
+                    .recipeRemainder(Items.GLASS_BOTTLE)
+                    .food(new FoodComponent.Builder().hunger(5).saturationModifier(1.4f)
+                            .statusEffect(new StatusEffectInstance(ModEffects.COMFORT.get(), 1800, 0), 1.0f).build());
+            final Item WHITE_CHOCOLATE_CHIP_MILKSHAKE_BOTTLE = registerItem("white_chocolate_chip_milkshake_bottle", new BottleDrink(settings, true));
             ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(WHITE_CHOCOLATE_CHIP_MILKSHAKE_BOTTLE));
         }
 
@@ -5418,8 +5887,10 @@ public class ModItems {
 // White Chocolate Covered Marshmallow Stick
 
         if (CONFIG.isWhiteChocolateCoveredMarshmallowStickEnabled) {
-            final Item WHITECHOCOLATECOVEREDMARSHMALLOWSTICK = registerItem("white_chocolate_covered_marshmallow_stick", new StickFood(new FabricItemSettings().food(new FoodComponent.Builder().hunger(3).saturationModifier(0.4f).snack().build())));
-            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(WHITECHOCOLATECOVEREDMARSHMALLOWSTICK));
+            Item.Settings settings = new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(3).saturationModifier(0.4f).snack().build());
+            final Item WHITE_CHOCOLATE_COVERED_MARSHMALLOW_STICK = registerItem("white_chocolate_covered_marshmallow_stick", new StickFood(settings));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(WHITE_CHOCOLATE_COVERED_MARSHMALLOW_STICK));
         }
 
 // White Chocolate Filled Chocolate Pastry
@@ -5467,8 +5938,12 @@ public class ModItems {
 // Yoghurt
 
         if (CONFIG.isYogurtBottleEnabled) {
-            final Item YOGURTBOTTLE = registerItem("yogurt_bottle", new BottleDrink(new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.9f).build())));
-            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(YOGURTBOTTLE));
+            Item.Settings settings = new FabricItemSettings()
+                    .recipeRemainder(Items.GLASS_BOTTLE)
+                    .food(new FoodComponent.Builder().hunger(2).saturationModifier(0.9f).build())
+                    .maxCount(16);
+            final Item YOGURT_BOTTLE = registerItem("yogurt_bottle", new BottleDrink(settings));
+            ItemGroupEvents.modifyEntriesEvent(CreateFood.GROUP).register(entries -> entries.add(YOGURT_BOTTLE));
         }
 
     }

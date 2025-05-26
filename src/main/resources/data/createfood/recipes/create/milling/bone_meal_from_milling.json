@@ -1,0 +1,32 @@
+{
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "create"
+            ]
+        },
+        {
+            "condition": "fabric:tags_populated",
+            "values": [
+                "c:eggshell"
+            ]
+        }
+    ],
+    "type": "create:milling",
+    "ingredients": [
+        {
+            "tag": "c:eggshell"
+        }
+    ],
+    "processingTime": 50,
+    "results": [
+        {
+            "item": "minecraft:bone_meal"
+        },
+        {
+            "chance": 0.5,
+            "item": "minecraft:bone_meal"
+        }
+    ]
+}

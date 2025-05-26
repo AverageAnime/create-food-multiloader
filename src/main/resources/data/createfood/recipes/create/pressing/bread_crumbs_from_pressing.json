@@ -1,0 +1,29 @@
+{
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "create"
+            ]
+        },
+        {
+            "condition": "fabric:tags_populated",
+            "values": [
+                "c:bread_slice",
+                "c:bread_crumbs"
+            ]
+        }
+    ],
+    "type": "create:pressing",
+    "ingredients": [
+        {
+            "tag": "c:bread_slice"
+        }
+    ],
+    "results": [
+        {
+            "count": 2,
+            "item": "createfood:bread_crumbs"
+        }
+    ]
+}

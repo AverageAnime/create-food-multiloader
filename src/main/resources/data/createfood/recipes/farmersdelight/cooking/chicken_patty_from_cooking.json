@@ -10,7 +10,7 @@
             "condition": "fabric:tags_populated",
             "values": [
                 "c:unbreaded_chicken_patty",
-                "c:toast",
+                "c:bread_crumbs",
                 "c:chicken_patty"
             ]
         }
@@ -29,7 +29,7 @@
             "tag": "c:eggs"
         },
         {
-            "tag": "c:toast"
+            "tag": "c:bread_crumbs"
         }
     ],
     "result": {

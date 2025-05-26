@@ -1,0 +1,26 @@
+{
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "farm_and_charm"
+            ]
+        },
+        {
+            "condition": "fabric:tags_populated",
+            "values": [
+                "c:bread_slice",
+                "c:bread_crumbs"
+            ]
+        }
+    ],
+    "type": "farm_and_charm:mincer",
+    "ingredient": {
+        "tag": "c:bread_slice"
+    },
+    "recipe_type": "STONE",
+    "result": {
+        "count": 2,
+        "item": "createfood:bread_crumbs"
+    }
+}

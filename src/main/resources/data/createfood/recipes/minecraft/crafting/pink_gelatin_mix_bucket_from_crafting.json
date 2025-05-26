@@ -15,6 +15,9 @@
         },
         {
             "tag": "c:pink_dyes"
+        },
+        {
+            "item": "minecraft:bucket"
         }
     ],
     "result": {

@@ -1,0 +1,34 @@
+{
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "create"
+            ]
+        },
+        {
+            "condition": "fabric:tags_populated",
+            "values": [
+                "c:bread_slice",
+                "c:bread_crumbs"
+            ]
+        }
+    ],
+    "type": "create:milling",
+    "ingredients": [
+        {
+            "tag": "c:bread_slice"
+        }
+    ],
+    "processingTime": 80,
+    "results": [
+        {
+            "count": 2,
+            "item": "createfood:bread_crumbs"
+        },
+        {
+            "chance": 0.25,
+            "item": "createfood:bread_crumbs"
+        }
+    ]
+}

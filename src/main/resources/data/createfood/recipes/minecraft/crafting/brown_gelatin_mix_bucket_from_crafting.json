@@ -15,6 +15,9 @@
         },
         {
             "tag": "c:brown_dyes"
+        },
+        {
+            "item": "minecraft:bucket"
         }
     ],
     "result": {

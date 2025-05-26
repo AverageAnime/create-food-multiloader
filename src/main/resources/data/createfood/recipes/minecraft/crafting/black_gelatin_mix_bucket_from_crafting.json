@@ -15,6 +15,9 @@
         },
         {
             "tag": "c:black_dyes"
+        },
+        {
+            "item": "minecraft:bucket"
         }
     ],
     "result": {

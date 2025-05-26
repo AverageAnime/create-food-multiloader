@@ -52,6 +52,10 @@ public class BottleDrink
         this.hasCustomTooltip = hasCustomTooltip;
     }
 
+    public static Item.Settings BottleItem() {
+        return new Item.Settings().maxCount(16);
+    }
+
     @Override
     public void appendTooltip(ItemStack stack, @Nullable World level, List<Text> tooltip, TooltipContext isAdvanced) {
         super.appendTooltip(stack, level, tooltip, isAdvanced);

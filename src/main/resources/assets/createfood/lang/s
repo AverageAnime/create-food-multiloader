@@ -1,0 +1,1648 @@
+# Create Food - 1.1.8
+
+###	Apple Cheesecake
+`createfood:apple_cheesecake`
+###	Slice of Apple Cheesecake
+`createfood:apple_cheesecake_slice`
+###	Apple Cream Filled Chocolate
+`createfood:apple_cream_chocolate`
+###	Apple Cream Filled Chocolate Pastry Bar
+`createfood:apple_cream_chocolate_pastry_bar`
+###	Apple Cream Filled Dark Chocolate
+`createfood:apple_cream_dark_chocolate`
+### Apple Cream Frosted Chocolate  Roll
+`createfood:apple_cream_frosted_chocolate_sweet_roll`
+### Apple Cream Frosted Cupcake
+`createfood:apple_cream_frosted_cupcake`
+### Apple Cream Frosted Mini Waffle
+`createfood:apple_cream_frosted_mini_waffle`
+### Apple Cream Frosted  Roll
+`createfood:apple_cream_frosted_sweet_roll`
+### Apple Cream Frosting Jar
+`createfood:apple_cream_frosting_bottle`
+### Apple Cream Frosting Bucket
+`createfood:apple_cream_frosting_bucket`
+### Apple Cream Glazed Chocolate Donut
+`createfood:apple_cream_glazed_chocolate_donut`
+### Apple Cream Glazed Donut
+`createfood:apple_cream_glazed_donut`
+### Apple Cream Filled Pastry Bar
+`createfood:apple_cream_pastry_bar`
+### Apple Cream Filled White Chocolate
+`createfood:apple_cream_white_chocolate`
+###	Apple Ice Cream Bowl 
+`createfood:apple_ice_cream_bowl`
+###	Apple Ice Cream Bucket 
+`createfood:apple_ice_cream_bucket`
+### Apple Ice Cream Cone       
+`createfood:apple_ice_cream_cone`
+### Scoop of Apple Ice Cream
+`createfood:apple_ice_cream_stick`
+###	Apple Jam 
+`createfood:apple_jam_bottle`
+###	Apple Jam Bucket 
+`createfood:apple_jam_bucket`
+###	Apple Jam Sandwich 
+`createfood:apple_jam_sandwich`
+###	Apple Juice  
+`createfood:apple_juice_bottle`
+###	Apple Juice Bucket 
+`createfood:apple_juice_bucket`
+###	Apple Milkshake  
+`createfood:apple_milkshake_bottle`
+###	Apple Milkshake Bucket 
+`createfood:apple_milkshake_bucket`
+###	Apple Pie Filling Bucket 
+`createfood:apple_pie_filling_bucket`
+### Apple Popsicle
+`createfood:apple_popsicle`
+### Apple Slice
+`createfood:apple_slice`
+### Bacon Calzone
+`createfood:bacon_calzone`
+###	Bacon Pizza
+`createfood:bacon_pizza`
+###	Slice of Bacon Pizza
+`createfood:bacon_pizza_slice`
+###	Bacon Sandwich 
+`createfood:bacon_sandwich`
+###	Bacon Sandwich Lettuce 
+`createfood:bacon_sandwich_lettuce`
+### Bar of Dark Chocolate
+`createfood:bar_of_dark_chocolate`
+### Bar of White Chocolate
+`createfood:bar_of_white_chocolate`
+### Beef Bun
+`createfood:beef_bun`
+### Beef Bun (Bacon)
+`createfood:beef_bun_bacon`
+### Beef Bun (Bacon, Lettuce)
+`createfood:beef_bun_bacon_lettuce`
+### Beef Bun (Bacon, Lettuce, Tomato)
+`createfood:beef_bun_bacon_lettuce_tomato`
+### Beef Bun (Lettuce)
+`createfood:beef_bun_lettuce`
+### Beef Bun (Lettuce, Tomato)
+`createfood:beef_bun_lettuce_tomato`
+### Beef Bun (Onion)
+`createfood:beef_bun_onion`
+### Beef Bun (Onion, Bacon)
+`createfood:beef_bun_onion_bacon`
+### Beef Bun (Onion, Bacon, Lettuce)
+`createfood:beef_bun_onion_bacon_lettuce`
+### Beef Bun (Onion, Lettuce)
+`createfood:beef_bun_onion_lettuce`
+### Beef Bun (Onion, Lettuce, Tomato)
+`createfood:beef_bun_onion_lettuce_tomato`
+### Beef Bun (Peanut Butter)
+`createfood:beef_bun_peanut_butter`
+### Beef Bun (Peanut Butter, Bacon)
+`createfood:beef_bun_peanut_butter_bacon`
+### Sweet Berry Cream Cake (Chorus Fruit)
+`createfood:berry_cream_cake_chorus_fruit`
+### Sweet Berry Cream Cake (Glow Berry)
+`createfood:berry_cream_cake_glow_berry`
+### Slice of Sweet Berry Cream Cake (Chorus Fruit)
+`createfood:berry_cream_cake_slice_chorus_fruit`
+### Slice of Sweet Berry Cream Cake (Glow Berry)
+`createfood:berry_cream_cake_slice_glow_berry`
+### Slice of Sweet Berry Cream Cake (Sweet Berry)
+`createfood:berry_cream_cake_slice_sweet_berry`
+### Sweet Berry Cream Cake (Sweet Berry)
+`createfood:berry_cream_cake_sweet_berry`
+### Sweet Berry Cream Filled Chocolate
+`createfood:berry_cream_chocolate`
+### Sweet Berry Cream Filled Chocolate Pastry Bar
+`createfood:berry_cream_chocolate_pastry_bar`
+### Sweet Berry Cream Filled Dark Chocolate
+`createfood:berry_cream_dark_chocolate`
+### Sweet Berry Cream Frosted Cake
+`createfood:berry_cream_frosted_cake`
+### Sweet Berry Cream Frosted Chocolate Sweet Roll
+`createfood:berry_cream_frosted_chocolate_sweet_roll`
+### Sweet Berry Cream Frosted Chocolate Sweet Roll (Sweet Berry)
+`createfood:berry_cream_frosted_chocolate_sweet_roll_sweet_berry`
+### Sweet Berry Cream Frosted Cupcake
+`createfood:berry_cream_frosted_cupcake`
+### Sweet Berry Cream Frosted Mini Waffle (Sweet Berry)      
+`createfood:berry_cream_frosted_mini_waffle_sweet_berry`
+### Sweet Berry Cream Frosted Mini Waffle     
+`createfood:berry_cream_frosted_mini_waffle`
+### Sweet Berry Cream Frosted Sweet Roll
+`createfood:berry_cream_frosted_sweet_roll`
+### Sweet Berry Cream Frosted Sweet Roll (Sweet Berry)
+`createfood:berry_cream_frosted_sweet_roll_sweet_berry`
+### Sweet Berry Cream Frosting Jar
+`createfood:berry_cream_frosting_bottle`
+### Sweet Berry Cream Frosting Bucket
+`createfood:berry_cream_frosting_bucket`
+### Sweet Berry Cream Glazed Chocolate Donut
+`createfood:berry_cream_glazed_chocolate_donut`
+### Sweet Berry Cream Glazed Donut
+`createfood:berry_cream_glazed_donut`
+### Sweet Berry Cream Filled Pastry Bar
+`createfood:berry_cream_pastry_bar`
+### Sweet Berry Cream Filled White Chocolate
+`createfood:berry_cream_white_chocolate`
+###	Sweet Berry Ice Cream Bowl 
+`createfood:berry_ice_cream_bowl`
+###	Sweet Berry Ice Cream Bucket 
+`createfood:berry_ice_cream_bucket`
+### Sweet Berry Ice Cream Cone    
+`createfood:berry_ice_cream_cone`
+### Scoop of Sweet Berry Ice Cream
+`createfood:berry_ice_cream_stick`
+###	Sweet Berry Jam  
+`createfood:berry_jam_bottle`
+###	Sweet Berry Jam Bucket 
+`createfood:berry_jam_bucket`
+###	Sweet Berry Jam Sandwich 
+`createfood:berry_jam_sandwich`
+###	Sweet Berry Juice  
+`createfood:berry_juice_bottle`
+###	Sweet Berry Juice Bucket 
+`createfood:berry_juice_bucket`
+###	Sweet Berry Milkshake  
+`createfood:berry_milkshake_bottle`
+###	Sweet Berry Milkshake Bucket 
+`createfood:berry_milkshake_bucket`
+###	Sweet Berry Pie
+`createfood:berry_pie`
+###	Sweet Berry Pie Filling Bucket 
+`createfood:berry_pie_filling_bucket`
+###	Slice of Sweet Berry Pie
+`createfood:berry_pie_slice`
+### Sweet Berry Popsicle
+`createfood:berry_popsicle`
+### Biscuit
+`createfood:biscuit`
+### Black Gelatin Dessert Slice
+`createfood:black_gelatin_dessert_slice`
+### Black Gelatin Mix Bucket
+`createfood:black_gelatin_mix_bucket`
+### Blackstrap Molasses
+`createfood:blackstrap_molasses_bottle`
+### Blackstrap Molasses Bucket
+`createfood:blackstrap_molasses_bucket`
+### Blue Gelatin Dessert Slice
+`createfood:blue_gelatin_dessert_slice`
+### Blue Gelatin Mix Bucket
+`createfood:blue_gelatin_mix_bucket`
+###	Bread Fried Egg 
+`createfood:bread_fried_egg`
+### Bread (Lettuce)
+`createfood:bread_lettuce`
+### Bread (Lettuce, Carrot)
+`createfood:bread_lettuce_carrot`
+### Bread Slice
+`createfood:bread_slice`
+###	Bread Slice Apple Jam 
+`createfood:bread_slice_apple_jam`
+###	Bread Slice Bacon 
+`createfood:bread_slice_bacon`
+###	Bread Slice Bacon Lettuce 
+`createfood:bread_slice_bacon_lettuce`
+### Bread Slice (Bacon, Lettuce, Tomato)
+`createfood:bread_slice_bacon_lettuce_tomato`
+###	Bread Slice Beetroot 
+`createfood:bread_slice_beetroot`
+###	Bread Slice Beetroot Lettuce 
+`createfood:bread_slice_beetroot_lettuce`
+###	Bread Slice Sweet Berry Jam 
+`createfood:bread_slice_berry_jam`
+###	Bread Slice Cheese 
+`createfood:bread_slice_cheese`
+###	Bread Slice Chorus Fruit Jam 
+`createfood:bread_slice_chorus_fruit_jam`
+###	Bread Slice Glow Berry Jam 
+`createfood:bread_slice_glow_berry_jam`
+###	Bread Slice Honey 
+`createfood:bread_slice_honey`
+### Bread Slice (Lettuce)
+`createfood:bread_slice_lettuce`
+### Bread Slice (Lettuce, Tomato)
+`createfood:bread_slice_lettuce_tomato`
+###	Bread Slice Melon Jam 
+`createfood:bread_slice_melon_jam`
+###	Bread Slice Mutton Beetroot 
+`createfood:bread_slice_mutton_beetroot`
+###	Bread Slice Mutton 
+`createfood:bread_slice_mutton`
+###	Bread Slice Peanut Butter 
+`createfood:bread_slice_peanut_butter`
+### Breakfast Bar
+`createfood:breakfast_bar`
+### Breakfast Plate
+`createfood:breakfast_plate`
+### Breakfast Sausages
+`createfood:breakfast_sausages`
+### Brown Gelatin Dessert Slice
+`createfood:brown_gelatin_dessert_slice`
+### Brown Gelatin Mix Bucket
+`createfood:brown_gelatin_mix_bucket`
+### Brown Sugar
+`createfood:brown_sugar`
+### Bun
+`createfood:bun`
+### Butter
+`createfood:butter`
+### Butter Dough
+`createfood:butter_dough`
+### Butter Dough (Small)
+`createfood:butter_dough_small`
+###	Buttered Toast 
+`createfood:buttered_toast`
+### Butterscotch
+`createfood:butterscotch`
+### Butterscotch Bucket
+`createfood:butterscotch_bucket`
+### Butterscotch Chip Ice Cream Cone    
+`createfood:butterscotch_chip_ice_cream_cone`
+###	Butterscotch Chip Milkshake  
+`createfood:butterscotch_chip_milkshake_bottle`
+### Butterscotch Chip Mini Waffle 
+`createfood:butterscotch_chip_mini_waffle`
+### Butterscotch Chip Muffin
+`createfood:butterscotch_chip_muffin`
+### Butterscotch Chips
+`createfood:butterscotch_chips`
+### Butterscotch Chips Chocolate Cookie
+`createfood:butterscotch_chips_chocolate_cookie`
+### Butterscotch Chips Cookie
+`createfood:butterscotch_chips_cookie`
+### Butterscotch Fudge
+`createfood:butterscotch_fudge`
+### Butterscotch Fudge Bucket
+`createfood:butterscotch_fudge_bucket`
+### Cacao Butter
+`createfood:cacao_butter`
+### Cacao Butter Bucket
+`createfood:cacao_butter_bucket`
+### Cacao Mass Bucket
+`createfood:cacao_mass_bucket`
+### Cacao Nibs
+`createfood:cacao_nibs`
+### Cake Base
+`createfood:cake_base`
+### Cake (Chorus Fruit)
+`createfood:cake_chorus_fruit`
+### Cake (Glow Berry)
+`createfood:cake_glow_berry`
+### Cake Slice (Chorus Fruit)
+`createfood:cake_slice_chorus_fruit`
+### Cake Slice (Glow Berry)
+`createfood:cake_slice_glow_berry`
+### Cane Syrup Bucket
+`createfood:cane_syrup_bucket`
+### Caramel
+`createfood:caramel`
+### Caramel Apple Slice
+`createfood:caramel_apple_slice`
+### Caramel Bucket
+`createfood:caramel_bucket`
+### Caramel Chip Ice Cream Cone    
+`createfood:caramel_chip_ice_cream_cone`
+###	Caramel Chip Milkshake  
+`createfood:caramel_chip_milkshake_bottle`
+### Caramel Chip Mini Waffle 
+`createfood:caramel_chip_mini_waffle`
+### Caramel Chip Muffin
+`createfood:caramel_chip_muffin`
+### Caramel Chips
+`createfood:caramel_chips`
+### Caramel Chips Chocolate Cookie
+`createfood:caramel_chips_chocolate_cookie`
+### Caramel Chips Cookie
+`createfood:caramel_chips_cookie`
+### Caramel Filled Chocolate
+`createfood:caramel_chocolate`
+### Caramel Filled Chocolate Pastry Bar
+`createfood:caramel_chocolate_pastry_bar`
+### Caramel Filled Dark Chocolate
+`createfood:caramel_dark_chocolate`
+### Caramel Fudge
+`createfood:caramel_fudge`
+### Caramel Fudge Bucket
+`createfood:caramel_fudge_bucket`
+### Caramel Glazed Apple
+`createfood:caramel_glazed_apple`
+### Caramel Glazed Berries
+`createfood:caramel_glazed_berries`
+### Caramel Glazed Chocolate Sweet Roll
+`createfood:caramel_glazed_chocolate_sweet_roll`
+### Caramel Glazed Sweet Roll
+`createfood:caramel_glazed_sweet_roll`
+### Caramel Filled Pastry Bar
+`createfood:caramel_pastry_bar`
+###	Caramel Popcorn 
+`createfood:caramel_popcorn`
+### Caramel Toast
+`createfood:caramel_toast`
+### Caramel Filled White Chocolate
+`createfood:caramel_white_chocolate`
+### Cheese & Beef Bun
+`createfood:cheese_and_beef_bun`
+### Cheese & Beef Bun (Bacon)
+`createfood:cheese_and_beef_bun_bacon`
+### Cheese & Beef Bun (Bacon, Lettuce)
+`createfood:cheese_and_beef_bun_bacon_lettuce`
+### Cheese & Beef Bun (Bacon, Lettuce, Tomato)
+`createfood:cheese_and_beef_bun_bacon_lettuce_tomato`
+### Cheese & Beef Bun (Lettuce)
+`createfood:cheese_and_beef_bun_lettuce`
+### Cheese & Beef Bun (Lettuce, Tomato)
+`createfood:cheese_and_beef_bun_lettuce_tomato`
+### Cheese & Beef Bun (Onion)
+`createfood:cheese_and_beef_bun_onion`
+### Cheese & Beef Bun (Onion, Bacon)
+`createfood:cheese_and_beef_bun_onion_bacon`
+### Cheese & Beef Bun (Onion, Bacon, Lettuce)
+`createfood:cheese_and_beef_bun_onion_bacon_lettuce`
+### Cheese & Beef Bun (Onion, Lettuce)
+`createfood:cheese_and_beef_bun_onion_lettuce`
+### Cheese & Beef Bun (Onion, Lettuce, Tomato)
+`createfood:cheese_and_beef_bun_onion_lettuce_tomato`
+### Cheese & Chicken Bun
+`createfood:cheese_and_chicken_bun`
+### Cheese & Chicken Bun (Bacon, Lettuce)
+`createfood:cheese_and_chicken_bun_bacon_lettuce`
+### Cheese & Chicken Bun (Lettuce)
+`createfood:cheese_and_chicken_bun_lettuce`
+### Cheese & Chicken Bun (Lettuce, Tomato)
+`createfood:cheese_and_chicken_bun_lettuce_tomato`
+###	Cheese and Eggplant Bun Lettuce Tomato 
+`createfood:cheese_and_eggplant_bun_lettuce_tomato`
+###	Cheese and Eggplant Bun Lettuce 
+`createfood:cheese_and_eggplant_bun_lettuce`
+###	Cheese and Eggplant Bun 
+`createfood:cheese_and_eggplant_bun`
+### Cheese & Sausage Biscuit
+`createfood:cheese_and_sausage_biscuit`
+### Cheese & Sausage Biscuit Sandwich
+`createfood:cheese_and_sausage_biscuit_sandwich`
+### Cheese Biscuit
+`createfood:cheese_biscuit`
+### Cheese Biscuit Sandwich
+`createfood:cheese_biscuit_sandwich`
+### Cheese Block
+`createfood:cheese_block`
+### Cheese Calzone
+`createfood:cheese_calzone`
+### Cheese Pizza
+`createfood:cheese_pizza`
+###	Cheese Sandwich 
+`createfood:cheese_sandwich`
+### Slice of Cheese Pizza
+`createfood:cheese_pizza_slice`
+### Cheese Slice
+`createfood:cheese_slice`
+### Cheeseburger
+`createfood:cheeseburger`
+### Cheeseburger (Bacon)
+`createfood:cheeseburger_bacon`
+### Cheeseburger (Bacon, Lettuce)
+`createfood:cheeseburger_bacon_lettuce`
+### Cheeseburger (Bacon, Lettuce, Tomato)
+`createfood:cheeseburger_bacon_lettuce_tomato`
+### Cheeseburger (Lettuce)
+`createfood:cheeseburger_lettuce`
+### Cheeseburger (Lettuce, Tomato)
+`createfood:cheeseburger_lettuce_tomato`
+### Cheeseburger (Onion)
+`createfood:cheeseburger_onion`
+### Cheeseburger (Onion, Bacon)
+`createfood:cheeseburger_onion_bacon`
+### Cheeseburger (Onion, Bacon, Lettuce)
+`createfood:cheeseburger_onion_bacon_lettuce`
+### Cheeseburger (Onion, Lettuce)
+`createfood:cheeseburger_onion_lettuce`
+### Cheeseburger (Onion, Lettuce, Tomato)
+`createfood:cheeseburger_onion_lettuce_tomato`
+### Cheesecake
+`createfood:cheesecake`
+### Cheesecake Filling Bucket
+`createfood:cheesecake_filling_bucket`
+### Slice of Cheesecake
+`createfood:cheesecake_slice`
+### Chicken Bun
+`createfood:chicken_bun`
+### Chicken Bun (Bacon, Lettuce)
+`createfood:chicken_bun_bacon_lettuce`
+### Chicken Bun (Lettuce)
+`createfood:chicken_bun_lettuce`
+### Chicken Bun (Lettuce, Tomato)
+`createfood:chicken_bun_lettuce_tomato`
+### Chicken Burger
+`createfood:chicken_burger`
+### Chicken Burger (Bacon, Lettuce)
+`createfood:chicken_burger_bacon_lettuce`
+### Chicken Burger (Lettuce)
+`createfood:chicken_burger_lettuce`
+### Chicken Burger (Lettuce, Tomato)
+`createfood:chicken_burger_lettuce_tomato`
+### Chicken Cheeseburger
+`createfood:chicken_cheeseburger`
+### Chicken Cheeseburger (Bacon, Lettuce)
+`createfood:chicken_cheeseburger_bacon_lettuce`
+### Chicken Cheeseburger (Lettuce)
+`createfood:chicken_cheeseburger_lettuce`
+### Chicken Cheeseburger (Lettuce, Tomato)
+`createfood:chicken_cheeseburger_lettuce_tomato`
+### Chicken Nuggets
+`createfood:chicken_nuggets`
+### Chicken Patty
+`createfood:chicken_patty`
+### Chocolate Bottle
+`createfood:chocolate_bottle`
+### Chocolate Chip Ice Cream Cone    
+`createfood:chocolate_chip_ice_cream_cone`
+###	Chocolate Chip Milkshake  
+`createfood:chocolate_chip_milkshake_bottle`
+### Chocolate Chip Mini Waffle 
+`createfood:chocolate_chip_mini_waffle`
+### Chocolate Chip Muffin
+`createfood:chocolate_chip_muffin`
+### Chocolate Chips
+`createfood:chocolate_chips`
+### Chocolate Filled Chocolate Pastry
+`createfood:chocolate_chocolate_pastry`
+### Chocolate Cookie
+`createfood:chocolate_cookie`
+### Chocolate Covered Marshmallow Stick
+`createfood:chocolate_covered_marshmallow_stick`
+### Chocolate Cream Cake (Butterscotch)
+`createfood:chocolate_cream_cake_butterscotch`
+### Chocolate Cream Cake (Caramel)
+`createfood:chocolate_cream_cake_caramel`
+### Chocolate Cream Cake (Chocolate)
+`createfood:chocolate_cream_cake_chocolate`
+### Chocolate Cream Cake (Dark Chocolate)
+`createfood:chocolate_cream_cake_dark_chocolate`
+### Chocolate Cream Cake Slice (Butterscotch)
+`createfood:chocolate_cream_cake_slice_butterscotch`
+### Chocolate Cream Cake Slice (Caramel)
+`createfood:chocolate_cream_cake_slice_caramel`
+### Chocolate Cream Cake Slice (Chocolate)
+`createfood:chocolate_cream_cake_slice_chocolate`
+### Chocolate Cream Cake Slice (Dark Chocolate)
+`createfood:chocolate_cream_cake_slice_dark_chocolate`
+### ### Chocolate Cream Cake Slice (Toffee)
+`createfood:chocolate_cream_cake_slice_toffee`
+### Chocolate Cream Cake Slice (White Chocolate)
+`createfood:chocolate_cream_cake_slice_white_chocolate`
+### Chocolate Cream Cake (Toffee)
+`createfood:chocolate_cream_cake_toffee`
+### Chocolate Cream Cake (White Chocolate)
+`createfood:chocolate_cream_cake_white_chocolate`
+### Chocolate Cream Frosted Cake 
+`createfood:chocolate_cream_frosted_cake`
+### Chocolate Cream Frosted Cupcake
+`createfood:chocolate_cream_frosted_cupcake`
+### Chocolate Cream Frosted Mini Waffle     
+`createfood:chocolate_cream_frosted_mini_waffle`
+### Chocolate Cream Frosting Jar
+`createfood:chocolate_cream_frosting_bottle`
+### Chocolate Cream Frosting Bucket
+`createfood:chocolate_cream_frosting_bucket`
+### Chocolate Donut Base
+`createfood:chocolate_donut_base`
+### Chocolate Donut Hole
+`createfood:chocolate_donut_hole`
+### Chocolate Donut Hole (Sugar)
+`createfood:chocolate_donut_hole_sugar`
+###	Chocolate Donut (Sugar) 
+`createfood:chocolate_donut_sugar`
+### Chocolate Frosted Chocolate Sweet Roll
+`createfood:chocolate_frosted_chocolate_sweet_roll`
+### Chocolate Frosted Sweet Roll
+`createfood:chocolate_frosted_sweet_roll`
+### Chocolate Fudge
+`createfood:chocolate_fudge`
+### Chocolate Fudge Bucket
+`createfood:chocolate_fudge_bucket`
+### Chocolate Glazed Apple
+`createfood:chocolate_glazed_apple`
+### Chocolate Glazed Chocolate Donut
+`createfood:chocolate_glazed_chocolate_donut`
+### Chocolate Glazed Donut
+`createfood:chocolate_glazed_donut`
+### Chocolate Graham Cracker
+`createfood:chocolate_graham_cracker`
+### Chocolate Graham Cracker Crumbs
+`createfood:chocolate_graham_cracker_crumbs`
+### Chocolate Graham Cracker (Ice Cream)
+`createfood:chocolate_graham_cracker_ice_cream`
+### Chocolate Graham Cracker (Neapolitan Scoop #1)
+`createfood:chocolate_graham_cracker_neapolitan_scoop_1`
+### Chocolate Graham Cracker (Neapolitan Scoop #2)
+`createfood:chocolate_graham_cracker_neapolitan_scoop_2`
+### Chocolate Graham Cracker (Neapolitan Scoop #3)
+`createfood:chocolate_graham_cracker_neapolitan_scoop_3`
+### Chocolate Graham Cracker Pie Crust
+`createfood:chocolate_graham_cracker_pie_crust`
+###	Chocolate Ice Cream Bowl 
+`createfood:chocolate_ice_cream_bowl`
+###	Chocolate Ice Cream Bucket 
+`createfood:chocolate_ice_cream_bucket`
+### Chocolate Ice Cream Cone    
+`createfood:chocolate_ice_cream_cone`
+### Scoop of Chocolate Ice Cream
+`createfood:chocolate_ice_cream_stick`
+### Chocolate Milk
+`createfood:chocolate_milk_bottle`
+### Chocolate Milk Bucket
+`createfood:chocolate_milk_bucket`
+###	Chocolate Milkshake  
+`createfood:chocolate_milkshake_bottle`
+###	Chocolate Milkshake Bucket 
+`createfood:chocolate_milkshake_bucket`
+### Chocolate Filled Pastry
+`createfood:chocolate_pastry`
+### Chocolate Pastry Bar Base
+`createfood:chocolate_pastry_bar_base`
+### Chocolate Pastry Base
+`createfood:chocolate_pastry_base`
+### Chocolate Pie (Graham Cracker)
+`createfood:chocolate_pie_graham_cracker`
+### Slice of Chocolate Pie (Graham Cracker)
+`createfood:chocolate_pie_graham_cracker_slice`
+### Chocolate Sugar Dough
+`createfood:chocolate_sugar_dough`
+### Chocolate Sweet Roll
+`createfood:chocolate_sweet_roll`
+### Chocolate Sweet Roll Base
+`createfood:chocolate_sweet_roll_base`
+### Chocolate Toast
+`createfood:chocolate_toast`
+###	Chorus Fruit Cheesecake
+`createfood:chorus_fruit_cheesecake`
+###	Slice of Chorus Fruit Cheesecake
+`createfood:chorus_fruit_cheesecake_slice`
+###	Chorus Fruit Cream Cake (Chorus Fruit)
+`createfood:chorus_fruit_cream_cake_chorus_fruit`
+###	Chorus Fruit Cream Cake (Glow Berry)
+`createfood:chorus_fruit_cream_cake_glow_berry`
+###	Slice of Chorus Fruit Cream Cake (Chorus Fruit)
+`createfood:chorus_fruit_cream_cake_slice_chorus_fruit`
+###	Slice of Chorus Fruit Cream Cake (Glow Berry)
+`createfood:chorus_fruit_cream_cake_slice_glow_berry`
+###	Slice of Chorus Fruit Cream Cake (Sweet Berry)
+`createfood:chorus_fruit_cream_cake_slice_sweet_berry`
+###	Chorus Fruit Cream Cake (Sweet Berry)
+`createfood:chorus_fruit_cream_cake_sweet_berry`
+### Chorus Fruit Cream Filled Chocolate
+`createfood:chorus_fruit_cream_chocolate`
+### Chorus Fruit Cream Filled Chocolate Pastry Bar
+`createfood:chorus_fruit_cream_chocolate_pastry_bar`
+### Chorus Fruit Cream Filled Dark Chocolate
+`createfood:chorus_fruit_cream_dark_chocolate`
+###	Chorus Fruit Cream Frosted Cake
+`createfood:chorus_fruit_cream_frosted_cake`
+### Chorus Fruit Cream Frosted Chocolate Sweet Roll
+`createfood:chorus_fruit_cream_frosted_chocolate_sweet_roll`
+### Chorus Fruit Cream Frosted Chocolate Sweet Roll (Chorus Fruit)
+`createfood:chorus_fruit_cream_frosted_chocolate_sweet_roll_chorus_fruit`
+### Chorus Fruit Cream Frosted Cupcake
+`createfood:chorus_fruit_cream_frosted_cupcake`
+### Chorus Fruit Cream Frosted Mini Waffle (Chorus Fruit)
+`createfood:chorus_fruit_cream_frosted_mini_waffle_chorus_fruit`
+### Chorus Fruit Cream Frosted Mini Waffle    
+`createfood:chorus_fruit_cream_frosted_mini_waffle`
+### Chorus Fruit Cream Frosted Sweet Roll
+`createfood:chorus_fruit_cream_frosted_sweet_roll`
+### Chorus Fruit Cream Frosted Sweet Roll (Chorus Fruit)
+`createfood:chorus_fruit_cream_frosted_sweet_roll_chorus_fruit`
+### Chorus Fruit Cream Frosting Jar
+`createfood:chorus_fruit_cream_frosting_bottle`
+### Chorus Fruit Cream Frosting Bucket
+`createfood:chorus_fruit_cream_frosting_bucket`
+### Chorus Fruit Cream Glazed Chocolate Donut
+`createfood:chorus_fruit_cream_glazed_chocolate_donut`
+### Chorus Fruit Cream Glazed Donut
+`createfood:chorus_fruit_cream_glazed_donut`
+### Chorus Fruit Cream Filled Pastry Bar
+`createfood:chorus_fruit_cream_pastry_bar`
+### Chorus Fruit Cream Filled White Chocolate
+`createfood:chorus_fruit_cream_white_chocolate`
+###	Chorus Fruit Ice Cream Bowl 
+`createfood:chorus_fruit_ice_cream_bowl`
+###	Chorus Fruit Ice Cream Bucket 
+`createfood:chorus_fruit_ice_cream_bucket`
+### Chorus Fruit Ice Cream Cone    
+`createfood:chorus_fruit_ice_cream_cone`
+### Scoop of Chorus Fruit Ice Cream
+`createfood:chorus_fruit_ice_cream_stick`
+###	Chorus Fruit Jam  
+`createfood:chorus_fruit_jam_bottle`
+###	Chorus Fruit Jam Bucket 
+`createfood:chorus_fruit_jam_bucket`
+###	Chorus Fruit Jam Sandwich 
+`createfood:chorus_fruit_jam_sandwich`
+###	Chorus Fruit Juice  
+`createfood:chorus_fruit_juice_bottle`
+###	Chorus Fruit Juice Bucket 
+`createfood:chorus_fruit_juice_bucket`
+###	Chorus Fruit Milkshake  
+`createfood:chorus_fruit_milkshake_bottle`
+###	Chorus Fruit Milkshake Bucket 
+`createfood:chorus_fruit_milkshake_bucket`
+###	Chorus Fruit Pie
+`createfood:chorus_fruit_pie`
+###	Chorus Fruit Pie Filling Bucket 
+`createfood:chorus_fruit_pie_filling_bucket`
+###	Slice of Chorus Fruit Pie
+`createfood:chorus_fruit_pie_slice`
+###	Chorus Fruit Popsicle 
+`createfood:chorus_fruit_popsicle`
+###	Chorus Fruit Slice 
+`createfood:chorus_fruit_slice`
+### Cinnamon Sweet Roll Base
+`createfood:cinnamon_sweet_roll_base`
+### Cloth Filter
+`createfood:cloth_filter`
+### Cloth Filter (Cacao Mass)
+`createfood:cloth_filter_cacao_mass`
+### Cocoa Powder
+`createfood:cocoa_powder`
+###	Coffee Toffee Bucket 
+`createfood:coffee_toffee_bucket`
+###	Coffee Toffee Fudge Bucket 
+`createfood:coffee_toffee_fudge_bucket`
+###	Coffee Toffee Fudge 
+`createfood:coffee_toffee_fudge`
+###	Coffee Toffee 
+`createfood:coffee_toffee`
+### Condensed Milk
+`createfood:condensed_milk_bottle`
+### Condensed Milk Bucket
+`createfood:condensed_milk_bucket`
+### Cookies & Cream Pie
+`createfood:cookie_cream_pie`
+### Slice of Cookies & Cream Pie
+`createfood:cookie_cream_pie_slice`
+### Cookie Crumbs
+`createfood:cookie_crumbs`
+### Cotton Candy
+`createfood:cotton_candy_stick`
+###	Corn Flour 
+`createfood:corn_flour`
+###	Cream Cheese 
+`createfood:cream_cheese`
+###	Cream Cheese Bucket
+`createfood:cream_cheese_bucket`
+### Cream Filled Chocolate
+`createfood:cream_chocolate`
+### Cream Filled Chocolate Pastry
+`createfood:cream_chocolate_pastry`
+### Cream Filled Dark Chocolate
+`createfood:cream_dark_chocolate`
+### Cream Frosting Jar
+`createfood:cream_frosting_bottle`
+### Cream Frosting Bucket
+`createfood:cream_frosting_bucket`
+### Glazed Chocolate Donut
+`createfood:cream_glazed_chocolate_donut`
+### Glazed Donut
+`createfood:cream_glazed_donut`
+### Cream Filled Pastry
+`createfood:cream_pastry`
+### Cream Pie (Chocolate Graham Cracker)
+`createfood:cream_pie_chocolate_graham_cracker`
+### Slice of Cream Pie (Chocolate Graham Cracker)
+`createfood:cream_pie_chocolate_graham_cracker_slice`
+### Cream Pie Filling Bucket
+`createfood:cream_pie_filling_bucket`
+### Cream Pie (Graham Cracker)
+`createfood:cream_pie_graham_cracker`
+### Slice of Cream Pie (Graham Cracker)
+`createfood:cream_pie_graham_cracker_slice`
+### Cream Filled White Chocolate
+`createfood:cream_white_chocolate`
+Cupcake Base
+`createfood:cupcake_base`
+### Cyan Gelatin Dessert Slice
+`createfood:cyan_gelatin_dessert_slice`
+### Cyan Gelatin Mix Bucket
+`createfood:cyan_gelatin_mix_bucket`
+### Dark Chips Chocolate Cookie
+`createfood:dark_chips_chocolate_cookie`
+### Dark Chips Cookie
+`createfood:dark_chips_cookie`
+### Dark Chocolate Bottle
+`createfood:dark_chocolate_bottle`
+### Dark Chocolate Bucket
+`createfood:dark_chocolate_bucket`
+### Dark Chocolate Chip Ice Cream Cone    
+`createfood:dark_chocolate_chip_ice_cream_cone`
+### Dark Chocolate Chip Mini Waffle 
+`createfood:dark_chocolate_chip_mini_waffle`
+### Dark Chocolate Chip Muffin
+`createfood:dark_chocolate_chip_muffin`
+### Dark Chocolate Chips
+`createfood:dark_chocolate_chips`
+### Dark Chocolate Filled Chocolate Pastry
+`createfood:dark_chocolate_chocolate_pastry`
+### Dark Chocolate Covered Marshmallow Stick
+`createfood:dark_chocolate_covered_marshmallow_stick`
+### Dark Chocolate Fudge
+`createfood:dark_chocolate_fudge`
+### Dark Chocolate Fudge Bucket
+`createfood:dark_chocolate_fudge_bucket`
+### Dark Chocolate Glazed Apple
+`createfood:dark_chocolate_glazed_apple`
+### Dark Chocolate Glazed Berries
+`createfood:dark_chocolate_glazed_berries`
+### Dark Chocolate Filled Pastry
+`createfood:dark_chocolate_pastry`
+### Dark Chocolate Toast
+`createfood:dark_chocolate_toast`
+### Diced Onion
+`createfood:diced_onion`
+### Donut Base
+`createfood:donut_base`
+### Donut Hole
+`createfood:donut_hole`
+### Donut Hole (Sugar)
+`createfood:donut_hole_sugar`
+###	Donut (Sugar) 
+`createfood:donut_sugar`
+###	Dragon Bun Crimson Fungus 
+`createfood:dragon_bun_crimson_fungus`
+###	Dragon Bun Warped Fungus 
+`createfood:dragon_bun_warped_fungus`
+###	Dragon Bun 
+`createfood:dragon_bun`
+###	Dragon Burger Crimson Fungus 
+`createfood:dragon_burger_crimson_fungus`
+###	Dragon Burger Warped Fungus 
+`createfood:dragon_burger_warped_fungus`
+###	Dragon Burger 
+`createfood:dragon_burger`
+###	Dragon Patty 
+`createfood:dragon_patty`
+###	Dried Coffee Beans 
+`createfood:dried_coffee_beans`
+###	Dumpling Wrappers 
+`createfood:dumpling_wrappers`
+###	Egg Powder
+`createfood:egg_powder`
+###	Eggplant Bun Lettuce Tomato 
+`createfood:eggplant_bun_lettuce_tomato`
+###	Eggplant Bun Lettuce 
+`createfood:eggplant_bun_lettuce`
+###	Eggplant Bun 
+`createfood:eggplant_bun`
+###	Eggplant Burger Lettuce 
+`createfood:eggplant_burger_lettuce`
+###	Eggplant Burger 
+`createfood:eggplant_burger`
+###	Eggplant Cheeseburger Lettuce Tomato 
+`createfood:eggplant_cheeseburger_lettuce_tomato`
+###	Eggplant Cheeseburger Lettuce 
+`createfood:eggplant_cheeseburger_lettuce`
+###	Eggplant Cheeseburger 
+`createfood:eggplant_cheeseburger`
+###	Endermite Meatball 
+`createfood:endermite_meatball`
+###	Endermite Meatball Sandwich 
+`createfood:endermite_meatball_sandwich`
+###	Endermite Meatball Stick
+`createfood:endermite_meatball_stick_1`
+`createfood:endermite_meatball_stick_2`
+`createfood:endermite_meatball_stick_3`
+###	Espresso Powder 
+`createfood:espresso_powder`
+### Fish Calzone
+`createfood:fish_calzone`
+###	Fish Bacon Pizza
+`createfood:fish_bacon_pizza`
+###	Slice of Fish Bacon Pizza
+`createfood:fish_bacon_pizza_slice`
+###	Fish Onion Pizza
+`createfood:fish_onion_pizza`
+###	Slice of Fish Onion Pizza
+`createfood:fish_onion_pizza_slice`
+###	Fish Pizza
+`createfood:fish_pizza`
+###	Slice of Fish Pizza
+`createfood:fish_pizza_slice`
+###	Fried Egg & Hash Brown Sandwich 
+`createfood:fried_egg_hash_brown_sandwich`
+###	Fried Egg Plate 
+`createfood:fried_egg_plate`
+### Frosted Cake
+`createfood:frosted_cake`
+### Frosted Cupcake
+`createfood:frosted_cupcake`
+### Frosted Mini Waffle 
+`createfood:frosted_mini_waffle`
+### Fruit Smoothie Bottle
+`createfood:fruit_smoothie_bottle`
+### Fruit Smoothie Bucket
+`createfood:fruit_smoothie_bucket`
+### Gelatin
+`createfood:gelatin`
+### Gelatin Dessert Slice
+`createfood:gelatin_dessert_slice`
+### Gelatin Mix Bucket
+`createfood:gelatin_mix_bucket`
+###	Glow Berry Cheesecake
+`createfood:glow_berry_cheesecake`
+###	Slice of Glow Berry Cheesecake
+`createfood:glow_berry_cheesecake_slice`
+### Glow Berry Cream Cake (Chorus Fruit)
+`createfood:glow_berry_cream_cake_chorus_fruit`
+### Glow Berry Cream Cake (Glow Berry)
+`createfood:glow_berry_cream_cake_glow_berry`
+### Slice of Glow Berry Cream Cake (Chorus Fruit)
+`createfood:glow_berry_cream_cake_slice_chorus_fruit`
+### Slice of Glow Berry Cream Cake (Glow Berry)
+`createfood:glow_berry_cream_cake_slice_glow_berry`
+### Slice of Glow Berry Cream Cake (Sweet Berry)
+`createfood:glow_berry_cream_cake_slice_sweet_berry`
+### Glow Berry Cream Cake (Sweet Berry)
+`createfood:glow_berry_cream_cake_sweet_berry`
+### Glow Berry Cream Filled Chocolate
+`createfood:glow_berry_cream_chocolate`
+### Glow Berry Cream Filled Chocolate Pastry Bar
+`createfood:glow_berry_cream_chocolate_pastry_bar`
+### Glow Berry Cream Filled Dark Chocolate
+`createfood:glow_berry_cream_dark_chocolate`
+### Glow Berry Cream Frosted Cake
+`createfood:glow_berry_cream_frosted_cake`
+### Glow Berry Cream Frosted Chocolate Sweet Roll
+`createfood:glow_berry_cream_frosted_chocolate_sweet_roll`
+### Glow Berry Cream Frosted Chocolate Sweet Roll (Glow Berry)
+`createfood:glow_berry_cream_frosted_chocolate_sweet_roll_glow_berry`
+### Glow Berry Cream Frosted Cupcake
+`createfood:glow_berry_cream_frosted_cupcake`
+### Glow Berry Cream Frosted Mini Waffle (Glow Berry)      
+`createfood:glow_berry_cream_frosted_mini_waffle_glow_berry`
+### Glow Berry Cream Frosted Mini Waffle
+`createfood:glow_berry_cream_frosted_mini_waffle`
+### Glow Berry Cream Frosted Sweet Roll
+`createfood:glow_berry_cream_frosted_sweet_roll`
+### Glow Berry Cream Frosted Sweet Roll (Glow Berry)
+`createfood:glow_berry_cream_frosted_sweet_roll_glow_berry`
+### Glow Berry Cream Frosting Jar
+`createfood:glow_berry_cream_frosting_bottle`
+### Glow Berry Cream Frosting Bucket
+`createfood:glow_berry_cream_frosting_bucket`
+### Glow Berry Cream Glazed Chocolate Donut
+`createfood:glow_berry_cream_glazed_chocolate_donut`
+### Glow Berry Cream Glazed Donut
+`createfood:glow_berry_cream_glazed_donut`
+### Glow Berry Cream Filled Pastry Bar
+`createfood:glow_berry_cream_pastry_bar`
+### Glow Berry Cream Filled White Chocolate
+`createfood:glow_berry_cream_white_chocolate`
+###	Glow Berry Ice Cream Bowl 
+`createfood:glow_berry_ice_cream_bowl`
+###	Glow Berry Ice Cream Bucket 
+`createfood:glow_berry_ice_cream_bucket`
+### Glow Berry Ice Cream Cone    
+`createfood:glow_berry_ice_cream_cone`
+### Scoop of Glow Berry Ice Cream
+`createfood:glow_berry_ice_cream_stick`
+###	Glow Berry Jam  
+`createfood:glow_berry_jam_bottle`
+###	Glow Berry Jam Bucket 
+`createfood:glow_berry_jam_bucket`
+###	Glow Berry Jam Sandwich 
+`createfood:glow_berry_jam_sandwich`
+###	Glow Berry Juice  
+`createfood:glow_berry_juice_bottle`
+###	Glow Berry Juice Bucket 
+`createfood:glow_berry_juice_bucket`
+###	Glow Berry Milkshake  
+`createfood:glow_berry_milkshake_bottle`
+###	Glow Berry Milkshake Bucket 
+`createfood:glow_berry_milkshake_bucket`
+###	Glow Berry Pie
+`createfood:glow_berry_pie`
+###	Glow Berry Pie Filling Bucket 
+`createfood:glow_berry_pie_filling_bucket`
+###	Slice of Glow Berry Pie
+`createfood:glow_berry_pie_slice`
+### Glow Berry Popsicle
+`createfood:glow_berry_popsicle`
+### Graham Cracker
+`createfood:graham_cracker`
+### Graham Cracker (Chocolate)
+`createfood:graham_cracker_chocolate`
+### Graham Cracker (Chocolate, Marshmallow)
+`createfood:graham_cracker_chocolate_marshmallow`
+### Graham Cracker Crumbs
+`createfood:graham_cracker_crumbs`
+### Graham Cracker (Marshmallow)
+`createfood:graham_cracker_marshmallow`
+### Graham Cracker Pie Crust
+`createfood:graham_cracker_pie_crust`
+### Gray Gelatin Dessert Slice
+`createfood:gray_gelatin_dessert_slice`
+### Gray Gelatin Mix Bucket
+`createfood:gray_gelatin_mix_bucket`
+### Green Gelatin Dessert Slice
+`createfood:green_gelatin_dessert_slice`
+### Green Gelatin Mix Bucket
+`createfood:green_gelatin_mix_bucket`
+###	Grilled Cheese Sandwich 
+`createfood:grilled_cheese_sandwich`
+### Ground Beef
+`createfood:ground_beef`
+###	Ground Endermite 
+`createfood:ground_endermite`
+### Hamburger
+`createfood:hamburger`
+### Hamburger (Bacon)
+`createfood:hamburger_bacon`
+### Hamburger (Bacon, Lettuce)
+`createfood:hamburger_bacon_lettuce`
+### Hamburger (Bacon, Lettuce, Tomato)
+`createfood:hamburger_bacon_lettuce_tomato`
+### Hamburger (Lettuce)
+`createfood:hamburger_lettuce`
+### Hamburger (Lettuce, Tomato)
+`createfood:hamburger_lettuce_tomato`
+### Hamburger (Onion)
+`createfood:hamburger_onion`
+### Hamburger (Onion, Bacon)
+`createfood:hamburger_onion_bacon`
+### Hamburger (Onion, Bacon, Lettuce)
+`createfood:hamburger_onion_bacon_lettuce`
+### Hamburger (Onion, Lettuce)
+`createfood:hamburger_onion_lettuce`
+###	Hamburger (Peanut Butter) 
+`createfood:hamburger_peanut_butter`
+### Hamburger (Peanut Butter, Bacon)
+`createfood:hamburger_peanut_butter_bacon`
+###	Hash Browns & Fried Egg Plate
+`createfood:hash_brown_fried_egg_plate`
+###	Hash Brown Plate
+`createfood:hash_brown_plate`
+###	Hash Browns & Toast Plate
+`createfood:hash_brown_toast_plate`
+###	Hash Browns 
+`createfood:hash_browns`
+###	Heavy Cream  
+`createfood:heavy_cream_bottle`
+###	Heavy Cream Bucket 
+`createfood:heavy_cream_bucket`
+### Hollow Chocolate
+`createfood:hollow_chocolate`
+### Hollow Dark Chocolate
+`createfood:hollow_dark_chocolate`
+### Hollow White Chocolate
+`createfood:hollow_white_chocolate`
+### Honeyed Berries
+`createfood:honeyed_berries`
+### Honeyed Biscuit
+`createfood:honeyed_biscuit`
+### Honeyed Chocolate Donut
+`createfood:honeyed_chocolate_donut`
+### Honeyed Chocolate Sweet Roll
+`createfood:honeyed_chocolate_sweet_roll`
+### Honeyed Cupcake
+`createfood:honeyed_cupcake`
+### Honeyed Mini Waffle 
+`createfood:honeyed_mini_waffle`
+### Honeyed Donut
+`createfood:honeyed_donut`
+### Honeyed Muffin
+`createfood:honeyed_muffin`
+### Honeyed Sweet Roll
+`createfood:honeyed_sweet_roll`
+### Honeyed Toast
+`createfood:honeyed_toast`
+### Hot Cheese & Sausage Biscuit Sandwich
+`createfood:hot_cheese_and_sausage_biscuit_sandwich`
+### Hot Cheese Biscuit Sandwich
+`createfood:hot_cheese_biscuit_sandwich`
+### Hot Chocolate
+`createfood:hot_chocolate_bottle`
+### Hot Chocolate Bucket
+`createfood:hot_chocolate_bucket`
+### Hot Dark Chocolate
+`createfood:hot_dark_chocolate_bottle`
+### Hot Dark Chocolate Bucket
+`createfood:hot_dark_chocolate_bucket`
+### Hot Sausage Biscuit Sandwich
+`createfood:hot_sausage_biscuit_sandwich`
+### Hot White Chocolate
+`createfood:hot_white_chocolate_bottle`
+### Hot White Chocolate Bucket
+`createfood:hot_white_chocolate_bucket`
+###	Ice Cream Bowl
+`createfood:ice_cream_bowl`
+###	Ice Cream Bucket 
+`createfood:ice_cream_bucket`
+### Ice Cream Cone    
+`createfood:ice_cream_cone`
+### Ice Cream Sandwich
+`createfood:ice_cream_sandwich`
+### Ice Cream Sandwich (Neapolitan)
+`createfood:ice_cream_sandwich_neapolitan`
+### Scoop of Ice Cream
+`createfood:ice_cream_stick`
+### Light Blue Gelatin Dessert Slice
+`createfood:light_blue_gelatin_dessert_slice`
+### Light Blue Gelatin Mix Bucket
+`createfood:light_blue_gelatin_mix_bucket`
+### Light Gray Gelatin Dessert Slice
+`createfood:light_gray_gelatin_dessert_slice`
+### Light Gray Gelatin Mix Bucket
+`createfood:light_gray_gelatin_mix_bucket`
+### Lime Gelatin Dessert Slice
+`createfood:lime_gelatin_dessert_slice`
+### Lime Gelatin Mix Bucket
+`createfood:lime_gelatin_mix_bucket`
+### Magenta Gelatin Dessert Slice
+`createfood:magenta_gelatin_dessert_slice`
+### Magenta Gelatin Mix Bucket
+`createfood:magenta_gelatin_mix_bucket`
+###	Magma Cream Marshmallow Stick 
+`createfood:magma_cream_marshmallow_stick`
+###	Magma Cream Marshmallow 
+`createfood:magma_cream_marshmallow`
+### Marshmallow
+`createfood:marshmallow`
+### Marshmallow Butterscotch Fudge
+`createfood:marshmallow_butterscotch_fudge`
+### Marshmallow Caramel Fudge
+`createfood:marshmallow_caramel_fudge`
+### Marshmallow Filled Chocolate
+`createfood:marshmallow_chocolate`
+### Marshmallow Chocolate Fudge
+`createfood:marshmallow_chocolate_fudge`
+###	Marshmallow Coffee Toffee Fudge 
+`createfood:marshmallow_coffee_toffee_fudge`
+### Marshmallow Filled Dark Chocolate
+`createfood:marshmallow_dark_chocolate`
+### Marshmallow Dark Chocolate Fudge
+`createfood:marshmallow_dark_chocolate_fudge`
+### Marshmallow Stick
+`createfood:marshmallow_stick`
+### Marshmallow Toffee Fudge
+`createfood:marshmallow_toffee_fudge`
+### Marshmallow Filled White Chocolate
+`createfood:marshmallow_white_chocolate`
+### Marshmallow White Chocolate Fudge
+`createfood:marshmallow_white_chocolate_fudge`
+### Meatball
+`createfood:meatball`
+### Meatball Sandwich
+`createfood:meatball_sandwich`
+### Meatball Stick
+`createfood:meatball_stick_1`
+`createfood:meatball_stick_2`
+`createfood:meatball_stick_3`
+###	Melon Cream Chocolate Pastry Bar 
+`createfood:melon_cream_chocolate_pastry_bar`
+###	Melon Cream Chocolate 
+`createfood:melon_cream_chocolate`
+###	Melon Cream Dark Chocolate 
+`createfood:melon_cream_dark_chocolate`
+###	Melon Cream Frosted Chocolate Sweet Roll 
+`createfood:melon_cream_frosted_chocolate_sweet_roll`
+### Melon Cream Frosted Cupcake
+`createfood:melon_cream_frosted_cupcake`
+### Melon Cream Frosted Mini Waffle
+`createfood:melon_cream_frosted_mini_waffle`
+###	Melon Cream Frosted Sweet Roll 
+`createfood:melon_cream_frosted_sweet_roll`
+###	Melon Cream Frosting Jar 
+`createfood:melon_cream_frosting_bottle`
+###	Melon Cream Frosting Bucket 
+`createfood:melon_cream_frosting_bucket`
+###	Melon Cream Glazed Chocolate Donut 
+`createfood:melon_cream_glazed_chocolate_donut`
+###	Melon Cream Glazed Donut 
+`createfood:melon_cream_glazed_donut`
+###	Melon Cream Pastry Bar 
+`createfood:melon_cream_pastry_bar`
+###	Melon Cream White Chocolate 
+`createfood:melon_cream_white_chocolate`
+###	Melon Ice Cream Bowl 
+`createfood:melon_ice_cream_bowl`
+###	Melon Ice Cream Bucket 
+`createfood:melon_ice_cream_bucket`
+### Melon Ice Cream Cone    
+`createfood:melon_ice_cream_cone`
+### Scoop of Melon Ice Cream
+`createfood:melon_ice_cream_stick`
+###	Melon Jam  
+`createfood:melon_jam_bottle`
+###	Melon Jam Bucket 
+`createfood:melon_jam_bucket`
+###	Melon Jam Sandwich 
+`createfood:melon_jam_sandwich`
+###	Melon Milkshake  
+`createfood:melon_milkshake_bottle`
+###	Melon Milkshake Bucket 
+`createfood:melon_milkshake_bucket`
+### Milk Powder
+`createfood:milk_powder`
+###	Milkshake  
+`createfood:milkshake_bottle`
+###	Milkshake Bucket 
+`createfood:milkshake_bucket`
+###	Minced Dragon 
+`createfood:minced_dragon`
+### Mini Chocolate Graham Cracker Pie Crust
+`createfood:mini_chocolate_graham_cracker_pie_crust`
+### Mini Chocolate Pie (Graham Cracker)
+`createfood:mini_chocolate_pie_graham_cracker`
+### Mini Cookies & Cream Pie
+`createfood:mini_cookie_cream_pie`
+### Mini Cream Pie (Chocolate Graham Cracker)
+`createfood:mini_cream_pie_chocolate_graham_cracker`
+### Mini Cream Pie (Graham Cracker)
+`createfood:mini_cream_pie_graham_cracker`
+### Mini Graham Cracker Pie Crust
+`createfood:mini_graham_cracker_pie_crust`
+### Mini S'mores Pie
+`createfood:mini_smores_pie`
+### Molasses
+`createfood:molasses_bottle`
+### Molasses Bucket
+`createfood:molasses_bucket`
+### Mini Waffle 
+`createfood:mini_waffle`
+### Muffin Base
+`createfood:muffin_base`
+### Mushroom Bacon Pizza
+`createfood:mushroom_bacon_pizza`
+### Slice of Mushroom Bacon Pizza
+`createfood:mushroom_bacon_pizza_slice`
+### Mushroom Calzone
+`createfood:mushroom_calzone`
+### Mushroom Fish Pizza
+`createfood:mushroom_fish_pizza`
+### Slice of Mushroom Fish Pizza
+`createfood:mushroom_fish_pizza_slice`
+### Mushroom Onion Pizza
+`createfood:mushroom_onion_pizza`
+### Slice of Mushroom Onion Pizza
+`createfood:mushroom_onion_pizza_slice`
+### Mushroom Pizza
+`createfood:mushroom_pizza`
+### Slice of Mushroom Pizza
+`createfood:mushroom_pizza_slice`
+###	Mutton Sandwich 
+`createfood:mutton_sandwich`
+###	Mutton Sandwich Beetroot 
+`createfood:mutton_sandwich_beetroot`
+###	Nacho Bowl 
+`createfood:nacho_bowl`
+###	Onion Bacon Pizza 
+`createfood:onion_bacon_pizza`
+###	Slice of Onion Bacon Pizza 
+`createfood:onion_bacon_pizza_slice`
+### Onion Calzone
+`createfood:onion_calzone`
+###	Onion Pizza 
+`createfood:onion_pizza`
+###	Slice of Onion Pizza 
+`createfood:onion_pizza_slice`
+### Orange Gelatin Dessert Slice
+`createfood:orange_gelatin_dessert_slice`
+### Orange Gelatin Mix Bucket
+`createfood:orange_gelatin_mix_bucket`
+### Paprika
+`createfood:paprika`
+### Pasta
+`createfood:pasta`
+### Pasta Plate
+`createfood:pasta_plate`
+### Pasta with Butter
+`createfood:pasta_plate_butter`
+###	Pasta Plate Eggplant 
+`createfood:pasta_plate_eggplant`
+###	Pasta Plate Endermite Meatballs Tomato Sauce 
+`createfood:pasta_plate_endermite_meatballs_tomato_sauce`
+###	Pasta Plate Endermite Meatballs 
+`createfood:pasta_plate_endermite_meatballs`
+###	Pasta Plate Fish 
+`createfood:pasta_plate_fish`
+###	Pasta Plate Meatballs 
+`createfood:pasta_plate_meatballs`
+###	Pasta Plate Mutton Chop 
+`createfood:pasta_plate_mutton_chop`
+###	Pasta Plate Slime 
+`createfood:pasta_plate_slime`
+###	Pasta Plate Slimeballs 
+`createfood:pasta_plate_slimeballs`
+###	Pasta Plate Squid Ink 
+`createfood:pasta_plate_squid_ink`
+###	Pasta Plate Strider Meatballs Tomato Sauce 
+`createfood:pasta_plate_strider_meatballs_tomato_sauce`
+###	Pasta Plate Strider Meatballs 
+`createfood:pasta_plate_strider_meatballs`
+### Pasta with Tomato Sauce
+`createfood:pasta_plate_tomato_sauce`
+### Pastry Bar Base
+`createfood:pastry_bar_base`
+### Pastry Base
+`createfood:pastry_base`
+###	Peanut Butter Apple Jam Sandwich 
+`createfood:peanut_butter_apple_jam_sandwich`
+###	Peanut Butter Chorus Fruit Jam Sandwich 
+`createfood:peanut_butter_chorus_fruit_jam_sandwich`
+###	Peanut Butter Melon Jam Sandwich 
+`createfood:peanut_butter_melon_jam_sandwich`
+### Pink Gelatin Dessert Slice
+`createfood:pink_gelatin_dessert_slice`
+###	Pizza Dough
+`createfood:pizza_dough`
+###	Pizza Dough (Tomato Sauce)
+`createfood:pizza_dough_tomato_sauce`
+### Pink Gelatin Mix Bucket
+`createfood:pink_gelatin_mix_bucket`
+###	Potato Chip Bowl 
+`createfood:potato_chip_bowl`
+### Potato Chips
+`createfood:potato_chips`
+### Powdered Sugar
+`createfood:powdered_sugar`
+### Pressed Cocoa
+`createfood:pressed_cocoa`
+### Pumpernickel Bread
+`createfood:pumpernickel_bread`
+### Pumpernickel Bread Slice
+`createfood:pumpernickel_bread_slice`
+### Pumpernickel Dough
+`createfood:pumpernickel_dough`
+###	Pumpernickel Toast Slice 
+`createfood:pumpernickel_toast_slice`
+### Purple Gelatin Dessert Slice
+`createfood:purple_gelatin_dessert_slice`
+### Purple Gelatin Mix Bucket
+`createfood:purple_gelatin_mix_bucket`
+###	Raw Apple Cheesecake
+`createfood:raw_apple_cheesecake`
+###	Raw Apple Pie
+`createfood:raw_apple_pie`
+### Raw Bacon Calzone
+`createfood:raw_bacon_calzone`
+###	Raw Bacon Pizza
+`createfood:raw_bacon_pizza`
+###	Raw Berry Cheesecake
+`createfood:raw_berry_cheesecake`
+###	Raw Berry Pie
+`createfood:raw_berry_pie`
+### Raw Butterscotch Chip Muffin
+`createfood:raw_butterscotch_chip_muffin`
+### Raw Butterscotch Chips Chocolate Cookie
+`createfood:raw_butterscotch_chips_chocolate_cookie`
+### Raw Butterscotch Chips Cookie
+`createfood:raw_butterscotch_chips_cookie`
+### Raw Cake Base
+`createfood:raw_cake_base`
+### Raw Calzone
+`createfood:raw_calzone`
+### Raw Caramel Chip Muffin
+`createfood:raw_caramel_chip_muffin`
+### Raw Caramel Chips Chocolate Cookie
+`createfood:raw_caramel_chips_chocolate_cookie`
+### Raw Caramel Chips Cookie
+`createfood:raw_caramel_chips_cookie`
+### Raw Cheese Calzone
+`createfood:raw_cheese_calzone`
+###	Raw Cheese Pizza
+`createfood:raw_cheese_pizza`
+###	Raw Cheesecake
+`createfood:raw_cheesecake`
+### Raw Chocolate Chip Muffin
+`createfood:raw_chocolate_chip_muffin`
+### Raw Chocolate Cookie
+`createfood:raw_chocolate_cookie`
+### Raw Chocolate Graham Cracker Pie Crust
+`createfood:raw_chocolate_graham_cracker_pie_crust`
+### Raw Chocolate Pastry Bar Base
+`createfood:raw_chocolate_pastry_bar_base`
+### Raw Chocolate Pastry Base
+`createfood:raw_chocolate_pastry_base`
+### Raw Chocolate Pie
+`createfood:raw_chocolate_pie`
+### Raw Chocolate Pie (Graham Cracker)
+`createfood:raw_chocolate_pie_graham_cracker`
+### Raw Chocolate Sweet Roll Base
+`createfood:raw_chocolate_sweet_roll_base`
+###	Raw Chorus Cookie 
+`createfood:raw_chorus_cookie`
+###	Raw Chorus Fruit Cheesecake
+`createfood:raw_chorus_fruit_cheesecake`
+### Raw Cinnamon Sweet Roll Base
+`createfood:raw_cinnamon_sweet_roll_base`
+### Raw Cookie
+`createfood:raw_cookie`
+### Raw Cream Pie (Chocolate Graham Cracker)
+`createfood:raw_cream_pie_chocolate_graham_cracker`
+### Raw Cream Pie (Graham Cracker)
+`createfood:raw_cream_pie_graham_cracker`
+### Raw Cupcake
+`createfood:raw_cupcake`
+### Raw Dark Chocolate Chip Muffin
+`createfood:raw_dark_chocolate_chip_muffin`
+### Raw Dark Chips Chocolate Cookie
+`createfood:raw_dark_chips_chocolate_cookie`
+### Raw Dark Chips Cookie
+`createfood:raw_dark_chips_cookie`
+###	Raw Endermite Meatball 
+`createfood:raw_endermite_meatball`
+###	Raw Fish Bacon Pizza 
+`createfood:raw_fish_bacon_pizza`
+### Raw Fish Calzone
+`createfood:raw_fish_calzone`
+###	Raw Fish Onion Pizza 
+`createfood:raw_fish_onion_pizza`
+###	Raw Fish Pizza 
+`createfood:raw_fish_pizza`
+###	Raw Flesh Cookie 
+`createfood:raw_flesh_cookie`
+###	Raw Ginger Cookie 
+`createfood:raw_ginger_cookie`
+###	Raw Glow Berry Cheesecake
+`createfood:raw_glow_berry_cheesecake`
+###	Raw Glow Berry Pie
+`createfood:raw_glow_berry_pie`
+###	Raw Graham Cracker Pie Crust
+`createfood:raw_graham_cracker_pie_crust`
+###	Raw Green Tea Cookie 
+`createfood:raw_green_tea_cookie`
+### Raw Honey Cookie
+`createfood:raw_honey_cookie`
+### Raw Honeyed Muffin
+`createfood:raw_honeyed_muffin`
+### Raw Meatball
+`createfood:raw_meatball`
+### Raw Mini Chocolate Graham Cracker Pie Crust
+`createfood:raw_mini_chocolate_graham_cracker_pie_crust`
+### Raw Mini Chocolate Pie (Graham Cracker)
+`createfood:raw_mini_chocolate_pie_graham_cracker`
+### Raw Mini Cream Pie (Chocolate Graham Cracker)
+`createfood:raw_mini_cream_pie_chocolate_graham_cracker`
+### Raw Mini Cream Pie (Graham Cracker)
+`createfood:raw_mini_cream_pie_graham_cracker`
+### Raw Mini Graham Cracker Pie Crust
+`createfood:raw_mini_graham_cracker_pie_crust`
+### Raw Muffin
+`createfood:raw_muffin`
+###	Raw Mushroom Bacon Pizza 
+`createfood:raw_mushroom_bacon_pizza`
+### Raw Mushroom Calzone
+`createfood:raw_mushroom_calzone
+###	Raw Mushroom Fish Pizza 
+`createfood:raw_mushroom_fish_pizza`
+###	Raw Mushroom Onion Pizza 
+`createfood:raw_mushroom_onion_pizza`
+###	Raw Mushroom Pizza 
+`createfood:raw_mushroom_pizza`
+###	Raw Onion Bacon Pizza 
+`createfood:raw_onion_bacon_pizza`
+### Raw Onion Calzone
+`createfood:raw_onion_calzone`
+###	Raw Onion Pizza 
+`createfood:raw_onion_pizza`
+### Raw Pastry Bar Base
+`createfood:raw_pastry_bar_base`
+### Raw Pastry Base
+`createfood:raw_pastry_base`
+### Raw Pie Crust
+`createfood:raw_pie_crust`
+###	Raw Sausage Bacon Pizza 
+`createfood:raw_sausage_bacon_pizza`
+###  Raw Sausage Calzone
+`createfood:raw_sausage_calzone`
+###	Raw Sausage Fish Pizza 
+`createfood:raw_sausage_fish_pizza`
+###	Raw Sausage Mushroom Pizza 
+`createfood:raw_sausage_mushroom_pizza`
+###	Raw Sausage Onion Pizza 
+`createfood:raw_sausage_onion_pizza`
+### Raw Sausage Patty
+`createfood:raw_sausage_patty`
+###	Raw Sausage Pizza 
+`createfood:raw_sausage_pizza`
+### Raw Snickerdoodle
+`createfood:raw_snickerdoodle`
+###	Raw Soul Sweet Berry Cookie 
+`createfood:raw_soul_berry_cookie`
+###	Raw Spider Eye Cookie 
+`createfood:raw_spider_eye_cookie`
+###	Raw Strider Meatball 
+`createfood:raw_strider_meatball`
+### Raw Sugar Cookie
+`createfood:raw_sugar_cookie`
+### Raw Sweet Berry Cookie
+`createfood:raw_sweet_berry_cookie`
+### Raw Sweet Roll Base
+`createfood:raw_sweet_roll_base`
+###  Raw Toffee Chip Muffin
+`createfood:raw_toffee_chip_muffin`
+### Raw Toffee Chips Chocolate Cookie
+`createfood:raw_toffee_chips_chocolate_cookie`
+### Raw Toffee Chips Cookie
+`createfood:raw_toffee_chips_cookie`
+###	Raw Ube Cake Base 
+`createfood:raw_ube_cake_base`
+###	Raw Ube Cookie 
+`createfood:raw_ube_cookie`
+### Raw White Chocolate Chip Muffin
+`createfood:raw_white_chocolate_chip_muffin`
+### Raw White Chips Chocolate Cookie
+`createfood:raw_white_chips_chocolate_cookie`
+### Raw White Chips Cookie
+`createfood:raw_white_chips_cookie`
+### Red Gelatin Dessert Slice
+`createfood:red_gelatin_dessert_slice`
+### Red Gelatin Mix Bucket
+`createfood:red_gelatin_mix_bucket`
+### Salt
+`createfood:salt`
+### Salt Dough
+`createfood:salt_dough`
+### Salt Dough (Small)
+`createfood:salt_dough_small`
+###	Sausage Bacon Pizza 
+`createfood:sausage_bacon_pizza`
+###	Slice of Sausage Bacon Pizza 
+`createfood:sausage_bacon_pizza_slice`
+### Sausage Biscuit
+`createfood:sausage_biscuit`
+### Sausage Biscuit Sandwich
+`createfood:sausage_biscuit_sandwich`
+### Sausage Calzone
+`createfood:sausage_calzone`
+###	Sausage Fish Pizza 
+`createfood:sausage_fish_pizza`
+###	Slice of Sausage Fish Pizza 
+`createfood:sausage_fish_pizza_slice`
+### Sausage Meat
+`createfood:sausage_meat`
+###	Sausage Mushroom Pizza 
+`createfood:sausage_mushroom_pizza`
+###	Slice of Sausage Mushroom Pizza 
+`createfood:sausage_mushroom_pizza_slice`
+###	Sausage Onion Pizza 
+`createfood:sausage_onion_pizza`
+###	Slice of Sausage Onion Pizza 
+`createfood:sausage_onion_pizza_slice`
+### Sausage Patty
+`createfood:sausage_patty`
+###	Sausage Pizza 
+`createfood:sausage_pizza`
+###	Slice of Sausage Pizza 
+`createfood:sausage_pizza_slice`
+### Shredded Chicken
+`createfood:shredded_chicken`
+###	Shredded Potato 
+`createfood:shredded_potato`
+###	Sliced Beetroot 
+`createfood:sliced_beetroot`
+### Sliced Carrot
+`createfood:sliced_carrot`
+### Sliced Potato
+`createfood:sliced_potato`
+### Sliced Tomato
+`createfood:sliced_tomato`
+###	Slime Bucket 
+`createfood:slime_bucket`
+###	Small Endermite Meatballs 
+`createfood:small_endermite_meatballs`
+### Small Meatballs
+`createfood:small_meatballs`
+###	Small Slimeballs 
+`createfood:small_slimeballs`
+###	Small Strider Meatballs 
+`createfood:small_strider_meatballs`
+###	Smoked Corn Stick 
+`createfood:smoked_corn_stick`
+### S'more
+`createfood:smore`
+### S'mores Pie
+`createfood:smores_pie`
+### Slice of S'mores Pie
+`createfood:smores_pie_slice`
+### Sour Cream Bottle
+`createfood:sour_cream_bottle`
+### Sour Cream Bucket
+`createfood:sour_cream_bucket`
+### Spicy Breakfast Sausages
+`createfood:spicy_breakfast_sausages`
+### Spicy Chicken Nuggets
+`createfood:spicy_chicken_nuggets`
+###	Squid Ink Bucket 
+`createfood:squid_ink_bucket`
+###	Strider Meatball 
+`createfood:strider_meatball`
+###	Strider Meatball Sandwich 
+`createfood:strider_meatball_sandwich`
+###	Strider Meatball Stick 
+`createfood:strider_meatball_stick_1`
+`createfood:strider_meatball_stick_2`
+`createfood:strider_meatball_stick_3`
+### Sugar Cane Juice Bucket
+`createfood:sugar_cane_juice_bucket`
+### Sugar Dough
+`createfood:sugar_dough`
+### Sugar Dough (Small)
+`createfood:sugar_dough_small`
+### Sweet Roll Base
+`createfood:sweet_roll_base`
+### Toast & Fried Egg Plate
+`createfood:toast_fried_egg_plate`
+### Toast Plate
+`createfood:toast_plate`
+### Toast Slice
+`createfood:toast_slice`
+### Toffee
+`createfood:toffee`
+### Toffee Bucket
+`createfood:toffee_bucket`
+### Toffee Chip Ice Cream Cone    
+`createfood:toffee_chip_ice_cream_cone`
+###	Toffee Chip Milkshake  
+`createfood:toffee_chip_milkshake_bottle`
+### Toffee Chip Mini Waffle 
+`createfood:toffee_chip_mini_waffle`
+### Toffee Chip Muffin
+`createfood:toffee_chip_muffin`
+### Toffee Chips
+`createfood:toffee_chips`
+### Toffee Chips Chocolate Cookie
+`createfood:toffee_chips_chocolate_cookie`
+### Toffee Chips Cookie
+`createfood:toffee_chips_cookie`
+### Toffee Fudge
+`createfood:toffee_fudge`
+### Toffee Fudge Bucket
+`createfood:toffee_fudge_bucket`
+###	Tortilla Chip Bowl 
+`createfood:tortilla_chip_bowl`
+###	Ube Cake Base 
+`createfood:ube_cake_base`
+###	Ube Cream Frosted Ube Cake 
+`createfood:ube_cream_frosted_ube_cake`
+###	Ube Cream Frosting Jar 
+`createfood:ube_cream_frosting_bottle`
+###	Ube Cream Frosting Bucket 
+`createfood:ube_cream_frosting_bucket`
+###	Ube Sugar Dough 
+`createfood:ube_sugar_dough`
+### Unbreaded Chicken Patty
+`createfood:unbreaded_chicken_patty`
+### Vegetable Oil Bucket
+`createfood:vegetable_oil_bucket`
+###	Vegetable Sandwich Beetroot Lettuce 
+`createfood:vegetable_sandwich_beetroot_lettuce`
+###	Vegetable Sandwich Lettuce Tomato 
+`createfood:vegetable_sandwich_lettuce_tomato`
+### Vinegar Bottle
+`createfood:vinegar_bottle`
+### Vinegar Bucket
+`createfood:vinegar_bucket`
+### Waffle Batter Bucket
+`createfood:waffle_batter_bucket`
+### Waffle Cone
+`createfood:waffle_cone`
+### White Chips Chocolate Cookie
+`createfood:white_chips_chocolate_cookie`
+### White Chips Cookie
+`createfood:white_chips_cookie`
+### White Chocolate Bottle
+`createfood:white_chocolate_bottle`
+### White Chocolate Bucket
+`createfood:white_chocolate_bucket`
+### White Chocolate Chip Ice Cream Cone    
+`createfood:white_chocolate_chip_ice_cream_cone`
+### White Chocolate Chip Mini Waffle 
+`createfood:white_chocolate_chip_mini_waffle`
+###  White Chocolate Chip Muffin
+`createfood:white_chocolate_chip_muffin`
+### White Chocolate Chips
+`createfood:white_chocolate_chips`
+### White Chocolate Filled Chocolate Pastry
+`createfood:white_chocolate_chocolate_pastry`
+### White Chocolate Covered Marshmallow Stick
+`createfood:white_chocolate_covered_marshmallow_stick`
+### White Chocolate Fudge
+`createfood:white_chocolate_fudge`
+### White Chocolate Fudge Bucket
+`createfood:white_chocolate_fudge_bucket`
+### White Chocolate Glazed Apple
+`createfood:white_chocolate_glazed_apple`
+### White Chocolate Glazed Berries
+`createfood:white_chocolate_glazed_berries`
+### White Chocolate Filled Pastry
+`createfood:white_chocolate_pastry`
+### White Chocolate Toast
+`createfood:white_chocolate_toast`
+### Yellow Gelatin Dessert Slice
+`createfood:yellow_gelatin_dessert_slice`
+### Yellow Gelatin Mix Bucket
+`createfood:yellow_gelatin_mix_bucket`
+### Yoghurt Bottle
+`createfood:yoghurt_bottle`
+### Yoghurt Bucket
+`createfood:yoghurt_bucket`

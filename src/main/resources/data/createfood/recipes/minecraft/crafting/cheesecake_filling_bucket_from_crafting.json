@@ -29,6 +29,9 @@
         },
         {
             "tag": "c:eggs"
+        },
+        {
+            "item": "minecraft:bucket"
         }
     ],
     "result": {

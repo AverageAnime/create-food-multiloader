@@ -32,10 +32,7 @@
             "tag": "c:ice_blocks"
         },
         {
-            "tag": "c:ice_blocks"
-        },
-        {
-            "tag": "c:ice_blocks"
+            "item": "minecraft:bucket"
         }
     ],
     "result": {
