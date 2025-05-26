@@ -1,0 +1,19 @@
+{
+    "type": "create:milling",
+    "ingredients": [
+        {
+            "tag": "forge:crushable_cookies"
+        }
+    ],
+    "processingTime": 80,
+    "results": [
+        {
+            "count": 2,
+            "item": "createfood:cookie_crumbs"
+        },
+        {
+            "chance": 0.25,
+            "item": "createfood:cookie_crumbs"
+        }
+    ]
+}

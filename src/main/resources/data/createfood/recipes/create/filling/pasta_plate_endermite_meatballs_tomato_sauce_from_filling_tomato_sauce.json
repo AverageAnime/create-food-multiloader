@@ -1,5 +1,10 @@
 {
-    "conditions": [],
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "create_central_kitchen"
+        }
+    ],
     "type": "create:filling",
     "ingredients": [
         {

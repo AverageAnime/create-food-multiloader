@@ -6,6 +6,9 @@
         },
         {
             "tag": "forge:pink_dyes"
+        },
+        {
+            "item": "minecraft:bucket"
         }
     ],
     "result": {

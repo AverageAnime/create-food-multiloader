@@ -124,7 +124,6 @@ public class ModBlocks {
     public static final BlockEntry<GlowBerryCreamCakeChorusFruitBlock> GLOW_BERRY_CREAM_CREAM_CAKE_CHORUS_FRUIT = REGISTRATE.block("glow_berry_cream_cake_chorus_fruit", GlowBerryCreamCakeChorusFruitBlock::new).item().build().register();
     public static final BlockEntry<GlowBerryCreamCakeGlowBerryBlock> GLOW_BERRY_CREAM_CREAM_CAKE_GLOW_BERRY = REGISTRATE.block("glow_berry_cream_cake_glow_berry", GlowBerryCreamCakeGlowBerryBlock::new).item().build().register();
 
-
     public static final BlockEntry<SlimeBlock> BLACK_GELATIN_DESSERT_BLOCK = REGISTRATE.block("black_gelatin_dessert_block", SlimeBlock::new).properties(BlockBehaviour.Properties::noOcclusion).item().build().register();
     public static final BlockEntry<SlimeBlock> BLUE_GELATIN_DESSERT_BLOCK = REGISTRATE.block("blue_gelatin_dessert_block", SlimeBlock::new).properties(BlockBehaviour.Properties::noOcclusion).item().build().register();
     public static final BlockEntry<SlimeBlock> BROWN_GELATIN_DESSERT_BLOCK = REGISTRATE.block("brown_gelatin_dessert_block", SlimeBlock::new).properties(BlockBehaviour.Properties::noOcclusion).item().build().register();

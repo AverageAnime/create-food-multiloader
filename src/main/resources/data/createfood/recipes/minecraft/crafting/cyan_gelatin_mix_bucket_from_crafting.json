@@ -6,6 +6,9 @@
         },
         {
             "tag": "forge:cyan_dyes"
+        },
+        {
+            "item": "minecraft:bucket"
         }
     ],
     "result": {

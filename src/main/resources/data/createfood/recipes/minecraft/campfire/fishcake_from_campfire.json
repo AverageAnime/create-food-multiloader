@@ -1,0 +1,9 @@
+{
+    "type": "minecraft:campfire_cooking",
+    "ingredient": {
+        "tag": "forge:raw_fishcake"
+    },
+    "result": "createfood:fishcake",
+    "experience": 0.25,
+    "cookingtime": 375
+}

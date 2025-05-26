@@ -6,6 +6,9 @@
         },
         {
             "tag": "forge:light_gray_dyes"
+        },
+        {
+            "item": "minecraft:bucket"
         }
     ],
     "result": {

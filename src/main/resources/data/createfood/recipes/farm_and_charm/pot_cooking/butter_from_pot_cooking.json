@@ -8,7 +8,7 @@
     "type": "farm_and_charm:pot_cooking",
     "ingredients": [
         {
-            "tag": "forge:milk"
+            "tag": "forge:milk_bottle"
         },
         {
             "tag": "forge:salt"

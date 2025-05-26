@@ -1,0 +1,26 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:bread_crumbs"
+        },
+        {
+            "tag": "forge:bread_crumbs"
+        },
+        {
+            "item": "minecraft:dried_kelp"
+        },
+        {
+            "item": "minecraft:dried_kelp"
+        },
+        {
+            "tag": "forge:raw_fishes"
+        },
+        {
+            "tag": "forge:raw_fishes"
+        }
+    ],
+    "result": {
+        "item": "createfood:raw_fishcake"
+    }
+}

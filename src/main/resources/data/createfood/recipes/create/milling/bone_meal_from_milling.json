@@ -1,0 +1,18 @@
+{
+    "type": "create:milling",
+    "ingredients": [
+        {
+            "tag": "forge:eggshell"
+        }
+    ],
+    "processingTime": 50,
+    "results": [
+        {
+            "item": "minecraft:bone_meal"
+        },
+        {
+            "chance": 0.5,
+            "item": "minecraft:bone_meal"
+        }
+    ]
+}

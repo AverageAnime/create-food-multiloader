@@ -16,6 +16,9 @@
         },
         {
             "tag": "forge:frosting_ingredients"
+        },
+        {
+            "item": "minecraft:bucket"
         }
     ],
     "result": {

@@ -12,6 +12,9 @@
         },
         {
             "tag": "forge:apple"
+        },
+        {
+            "item": "minecraft:bucket"
         }
     ],
     "result": {

@@ -6,6 +6,9 @@
         },
         {
             "tag": "forge:cocoa_powder"
+        },
+        {
+            "item": "minecraft:bucket"
         }
     ],
     "result": {

@@ -6,6 +6,9 @@
         },
         {
             "tag": "forge:brown_dyes"
+        },
+        {
+            "item": "minecraft:bucket"
         }
     ],
     "result": {

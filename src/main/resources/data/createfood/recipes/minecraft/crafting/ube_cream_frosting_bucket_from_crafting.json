@@ -24,6 +24,9 @@
         },
         {
             "item": "ubesdelight:ube"
+        },
+        {
+            "item": "minecraft:bucket"
         }
     ],
     "result": {

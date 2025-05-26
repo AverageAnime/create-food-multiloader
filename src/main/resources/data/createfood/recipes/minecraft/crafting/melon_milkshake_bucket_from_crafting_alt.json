@@ -12,6 +12,9 @@
         },
         {
             "tag": "forge:melon"
+        },
+        {
+            "item": "minecraft:bucket"
         }
     ],
     "result": {

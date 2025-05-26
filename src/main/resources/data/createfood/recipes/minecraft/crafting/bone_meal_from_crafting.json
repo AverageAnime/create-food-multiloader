@@ -1,0 +1,11 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:eggshell"
+        }
+    ],
+    "result": {
+        "item": "minecraft:bone_meal"
+    }
+}

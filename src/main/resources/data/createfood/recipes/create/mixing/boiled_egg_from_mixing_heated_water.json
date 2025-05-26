@@ -1,0 +1,21 @@
+{
+    "type": "create:mixing",
+    "heatRequirement": "heated",
+    "ingredients": [
+        {
+            "item": "minecraft:egg"
+        },
+        {
+            "tag": "forge:salt"
+        },
+        {
+            "amount": 125,
+            "fluid": "minecraft:water"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:boiled_egg"
+        }
+    ]
+}

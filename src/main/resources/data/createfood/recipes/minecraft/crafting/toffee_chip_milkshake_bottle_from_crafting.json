@@ -6,6 +6,9 @@
         },
         {
             "tag": "forge:toffee_chips"
+        },
+        {
+            "item": "minecraft:glass_bottle"
         }
     ],
     "result": {

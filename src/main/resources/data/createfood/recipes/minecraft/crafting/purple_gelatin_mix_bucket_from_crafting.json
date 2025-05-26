@@ -6,6 +6,9 @@
         },
         {
             "tag": "forge:purple_dyes"
+        },
+        {
+            "item": "minecraft:bucket"
         }
     ],
     "result": {

@@ -1,0 +1,18 @@
+{
+    "type": "create:milling",
+    "ingredients": [
+        {
+            "tag": "forge:mini_chocolate_graham_cracker_pie_crust"
+        }
+    ],
+    "processingTime": 80,
+    "results": [
+        {
+            "item": "createfood:chocolate_graham_cracker_crumbs"
+        },
+        {
+            "chance": 0.25,
+            "item": "createfood:chocolate_graham_cracker_crumbs"
+        }
+    ]
+}

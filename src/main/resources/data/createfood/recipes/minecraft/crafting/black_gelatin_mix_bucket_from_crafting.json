@@ -6,6 +6,9 @@
         },
         {
             "tag": "forge:black_dyes"
+        },
+        {
+            "item": "minecraft:bucket"
         }
     ],
     "result": {

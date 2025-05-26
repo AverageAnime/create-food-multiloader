@@ -1,0 +1,17 @@
+{
+    "conditions": [],
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "forge:baked_potato_butter"
+        },
+        {
+            "tag": "forge:cheeses"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:baked_potato_butter_cheese"
+        }
+    ]
+}

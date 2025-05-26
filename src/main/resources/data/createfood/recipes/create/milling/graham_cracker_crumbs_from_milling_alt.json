@@ -1,0 +1,14 @@
+{
+    "type": "create:milling",
+    "ingredients": [
+        {
+            "tag": "forge:graham_cracker_pie_crust"
+        }
+    ],
+    "results": [
+        {
+            "count": 2,
+            "item": "createfood:graham_cracker_crumbs"
+        }
+    ]
+}

@@ -1,3 +1,6 @@
 {
-  "parent": "createfood:block/butterscotch_chip_waffle"
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "createfood:item/butterscotch_chip_waffle"
+  }
 }

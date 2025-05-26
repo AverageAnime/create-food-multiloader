@@ -6,6 +6,9 @@
         },
         {
             "tag": "forge:lime_dyes"
+        },
+        {
+            "item": "minecraft:bucket"
         }
     ],
     "result": {

@@ -1,0 +1,15 @@
+{
+    "conditions": [],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:baked_potato_butter"
+        },
+        {
+            "tag": "forge:mushrooms"
+        }
+    ],
+    "result": {
+        "item": "createfood:baked_potato_butter_mushroom"
+    }
+}

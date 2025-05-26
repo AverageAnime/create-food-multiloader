@@ -6,6 +6,9 @@
         },
         {
             "tag": "forge:yellow_dyes"
+        },
+        {
+            "item": "minecraft:bucket"
         }
     ],
     "result": {

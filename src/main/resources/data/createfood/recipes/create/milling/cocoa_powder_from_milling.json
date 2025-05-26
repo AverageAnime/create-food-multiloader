@@ -1,0 +1,19 @@
+{
+    "type": "create:milling",
+    "ingredients": [
+        {
+            "item": "createfood:pressed_cocoa"
+        }
+    ],
+    "processingTime": 80,
+    "results": [
+        {
+            "count": 3,
+            "item": "createfood:cocoa_powder"
+        },
+        {
+            "chance": 0.25,
+            "item": "createfood:cocoa_powder"
+        }
+    ]
+}

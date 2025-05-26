@@ -1,0 +1,19 @@
+{
+    "type": "create:milling",
+    "ingredients": [
+        {
+            "tag": "forge:chocolate_graham_cracker"
+        }
+    ],
+    "processingTime": 80,
+    "results": [
+        {
+            "count": 2,
+            "item": "createfood:chocolate_graham_cracker_crumbs"
+        },
+        {
+            "chance": 0.25,
+            "item": "createfood:chocolate_graham_cracker_crumbs"
+        }
+    ]
+}

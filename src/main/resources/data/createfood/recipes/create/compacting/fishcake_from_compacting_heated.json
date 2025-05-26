@@ -1,0 +1,29 @@
+{
+    "type": "create:compacting",
+    "heatRequirement": "heated",
+    "ingredients": [
+        {
+            "tag": "forge:bread_crumbs"
+        },
+        {
+            "tag": "forge:bread_crumbs"
+        },
+        {
+            "item": "minecraft:dried_kelp"
+        },
+        {
+            "item": "minecraft:dried_kelp"
+        },
+        {
+            "tag": "forge:raw_fishes"
+        },
+        {
+            "tag": "forge:raw_fishes"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:fishcake"
+        }
+    ]
+}

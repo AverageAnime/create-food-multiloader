@@ -18,6 +18,9 @@
         },
         {
             "tag": "forge:eggs"
+        },
+        {
+            "item": "minecraft:bucket"
         }
     ],
     "result": {

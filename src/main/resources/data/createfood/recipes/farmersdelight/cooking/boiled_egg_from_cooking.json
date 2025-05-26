@@ -1,0 +1,22 @@
+{
+    "type": "farmersdelight:cooking",
+    "cookingtime": 100,
+    "experience": 0.2,
+    "container": {
+        "item": "minecraft:stick"
+    },
+    "ingredients": [
+        {
+            "item": "minecraft:water_bucket"
+        },
+        {
+            "item": "minecraft:egg"
+        },
+        {
+            "tag": "forge:salt"
+        }
+    ],
+    "result": {
+        "item": "createfood:boiled_egg"
+    }
+}

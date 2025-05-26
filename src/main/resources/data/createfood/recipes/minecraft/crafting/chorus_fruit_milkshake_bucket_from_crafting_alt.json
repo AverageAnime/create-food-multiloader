@@ -12,6 +12,9 @@
         },
         {
             "tag": "forge:chorus_fruit"
+        },
+        {
+            "item": "minecraft:bucket"
         }
     ],
     "result": {

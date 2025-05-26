@@ -6,6 +6,9 @@
         },
         {
             "tag": "forge:magenta_dyes"
+        },
+        {
+            "item": "minecraft:bucket"
         }
     ],
     "result": {

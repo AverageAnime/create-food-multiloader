@@ -6,6 +6,9 @@
         },
         {
             "tag": "forge:blue_dyes"
+        },
+        {
+            "item": "minecraft:bucket"
         }
     ],
     "result": {

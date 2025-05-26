@@ -6,6 +6,9 @@
         },
         {
             "tag": "forge:butterscotch_chips"
+        },
+        {
+            "item": "minecraft:glass_bottle"
         }
     ],
     "result": {

@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "createfood:boiled_egg_peeled",
+      "required": false
+    }
+  ]
+}
