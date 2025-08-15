@@ -1,0 +1,25 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:not",
+            "value": {
+                "type": "neoforge:tag_empty",
+                "tag": "c:coffee_beans"
+            }
+        }
+    ],
+    "type": "create:pressing",
+    "ingredients": [
+        {
+            "tag": "c:dried_coffee_beans"
+        }
+    ],
+    "results": [
+        {
+            "count": 2,
+            "item": {
+                "id": "createfood:espresso_powder"
+            }
+        }
+    ]
+}

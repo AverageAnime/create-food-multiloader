@@ -1,0 +1,19 @@
+{
+    "type": "create:emptying",
+    "ingredients": [
+        {
+            "tag": "c:chorus_fruit_ice_cream_stick"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "minecraft:stick"
+            }
+        },
+        {
+            "amount": 9000,
+            "id": "createfood:chorus_fruit_ice_cream"
+        }
+    ]
+}

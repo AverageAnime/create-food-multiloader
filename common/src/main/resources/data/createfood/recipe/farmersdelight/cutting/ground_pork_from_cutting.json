@@ -1,0 +1,19 @@
+{
+    "type": "farmersdelight:cutting",
+    "ingredients": [
+        {
+            "tag": "c:foods/raw_meats/raw_bacon"
+        }
+    ],
+    "tool": {
+        "tag": "c:tools/knife"
+    },
+    "result": [
+        {
+            "item": {
+                "id": "createfood:ground_pork"
+            }
+        }
+    ],
+    "neoc:conditions": []
+}

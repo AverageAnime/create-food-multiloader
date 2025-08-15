@@ -1,0 +1,29 @@
+{
+    "type": "create:mixing",
+    "heat_requirement": "heated",
+    "ingredients": [
+        {
+            "type": "fluid_tag",
+            "amount": 1000,
+            "fluid_tag": "c:water"
+        },
+        {
+            "tag": "c:gelatin"
+        },
+        {
+            "tag": "c:gelatin"
+        },
+        {
+            "tag": "c:gelatin"
+        },
+        {
+            "tag": "c:dyes/light_blue"
+        }
+    ],
+    "results": [
+        {
+            "amount": 1000,
+            "id": "createfood:light_blue_gelatin_mix"
+        }
+    ]
+}

@@ -1,0 +1,21 @@
+{
+    "neoforge:conditions": [],
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "tag": "c:mini_waffle"
+        },
+        {
+            "type": "fluid_tag",
+            "amount": 250,
+            "fluid_tag": "c:chocolate_cream_frosting"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:chocolate_cream_mini_waffle"
+            }
+        }
+    ]
+}

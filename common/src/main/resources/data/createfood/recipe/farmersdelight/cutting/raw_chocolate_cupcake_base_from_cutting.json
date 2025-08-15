@@ -1,0 +1,19 @@
+{
+    "type": "farmersdelight:cutting",
+    "ingredients": [
+        {
+            "tag": "c:chocolate_sugar_dough_small"
+        }
+    ],
+    "tool": {
+        "tag": "c:tools/knife"
+    },
+    "result": [
+        {
+            "item": {
+                "id": "createfood:raw_chocolate_cupcake_base"
+            }
+        }
+    ],
+    "neoc:conditions": []
+}

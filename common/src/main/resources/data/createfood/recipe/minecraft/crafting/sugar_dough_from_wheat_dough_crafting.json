@@ -1,0 +1,18 @@
+{
+    "neoforge:conditions": [],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:wheat_dough_small"
+        },
+        {
+            "tag": "c:sugar"
+        },
+        {
+            "tag": "c:wheat_dough_small"
+        }
+    ],
+    "result": {
+        "id": "createfood:sugar_dough"
+    }
+}

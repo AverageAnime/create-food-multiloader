@@ -1,0 +1,15 @@
+{
+    "neoforge:conditions": [],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:chocolate_graham_cracker_berry_ice_cream"
+        },
+        {
+            "tag": "c:chocolate_graham_cracker"
+        }
+    ],
+    "result": {
+        "id": "createfood:berry_ice_cream_sandwich"
+    }
+}

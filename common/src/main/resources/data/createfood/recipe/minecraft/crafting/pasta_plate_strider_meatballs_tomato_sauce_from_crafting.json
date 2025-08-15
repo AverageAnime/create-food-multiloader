@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:pasta_plate_strider_meatballs"
+        },
+        {
+            "item": "farmersdelight:tomato_sauce"
+        }
+    ],
+    "result": {
+        "id": "createfood:pasta_plate_strider_meatballs_tomato_sauce"
+    }
+}

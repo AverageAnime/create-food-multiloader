@@ -1,0 +1,18 @@
+{
+    "type": "create:item_application",
+    "ingredients": [
+        {
+            "tag": "c:cake_base"
+        },
+        {
+            "tag": "c:chorus_fruit_cream_frosting_bottle"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:chorus_fruit_cream_cake"
+            }
+        }
+    ]
+}

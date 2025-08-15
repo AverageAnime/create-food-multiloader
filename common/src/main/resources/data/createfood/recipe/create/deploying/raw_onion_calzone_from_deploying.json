@@ -1,0 +1,18 @@
+{
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "c:raw_cheese_calzone"
+        },
+        {
+            "tag": "c:onion"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:raw_onion_calzone"
+            }
+        }
+    ]
+}

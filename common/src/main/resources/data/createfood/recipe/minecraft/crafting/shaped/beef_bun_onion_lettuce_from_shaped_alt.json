@@ -1,0 +1,19 @@
+{
+    "neoforge:conditions": [],
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "1 ",
+        "2 "
+    ],
+    "key": {
+        "1": {
+            "tag": "c:onion"
+        },
+        "2": {
+            "tag": "c:beef_bun_lettuce"
+        }
+    },
+    "result": {
+        "id": "createfood:beef_bun_onion_lettuce"
+    }
+}

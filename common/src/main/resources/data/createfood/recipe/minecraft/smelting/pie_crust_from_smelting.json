@@ -1,0 +1,13 @@
+{
+    "type": "minecraft:smelting",
+    "category": "food",
+    "cookingtime": 200,
+    "experience": 0.25,
+    "ingredient": {
+        "tag": "c:raw_pie_crust"
+    },
+    "result": {
+        "count": 1,
+        "id": "farmersdelight:pie_crust"
+    }
+}

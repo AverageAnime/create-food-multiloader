@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:chocolate_cream_cake"
+        },
+        {
+            "tag": "c:toffee_chips"
+        }
+    ],
+    "result": {
+        "id": "createfood:chocolate_cream_cake_toffee"
+    }
+}

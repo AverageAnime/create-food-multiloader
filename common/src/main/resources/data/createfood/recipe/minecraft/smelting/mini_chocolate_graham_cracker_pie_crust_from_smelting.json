@@ -1,0 +1,13 @@
+{
+    "type": "minecraft:smelting",
+    "category": "food",
+    "cookingtime": 150,
+    "experience": 0.2,
+    "ingredient": {
+        "tag": "c:raw_mini_chocolate_graham_cracker_pie_crust"
+    },
+    "result": {
+        "count": 1,
+        "id": "createfood:mini_chocolate_graham_cracker_pie_crust"
+    }
+}

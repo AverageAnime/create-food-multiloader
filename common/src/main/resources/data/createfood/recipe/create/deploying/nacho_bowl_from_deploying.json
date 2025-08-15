@@ -1,0 +1,18 @@
+{
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "c:tortilla_chip_bowl"
+        },
+        {
+            "tag": "c:cheeses"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:nacho_bowl"
+            }
+        }
+    ]
+}

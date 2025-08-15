@@ -1,0 +1,18 @@
+{
+    "type": "create:item_application",
+    "ingredients": [
+        {
+            "tag": "c:glow_berry_cream_cake"
+        },
+        {
+            "tag": "c:chorus_fruit"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:glow_berry_cream_cake_chorus_fruit"
+            }
+        }
+    ]
+}

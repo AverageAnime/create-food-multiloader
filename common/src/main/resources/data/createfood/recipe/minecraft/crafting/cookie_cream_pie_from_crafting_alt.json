@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:cookie_cream_pie_slice"
+        },
+        {
+            "tag": "c:cookie_cream_pie_slice"
+        },
+        {
+            "tag": "c:cookie_cream_pie_slice"
+        },
+        {
+            "tag": "c:cookie_cream_pie_slice"
+        }
+    ],
+    "result": {
+        "id": "createfood:cookie_cream_pie"
+    }
+}

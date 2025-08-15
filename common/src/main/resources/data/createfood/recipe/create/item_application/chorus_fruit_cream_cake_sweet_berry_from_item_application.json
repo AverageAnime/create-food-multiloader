@@ -1,0 +1,18 @@
+{
+    "type": "create:item_application",
+    "ingredients": [
+        {
+            "tag": "c:chorus_fruit_cream_cake"
+        },
+        {
+            "item": "minecraft:sweet_berries"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:chorus_fruit_cream_cake_sweet_berry"
+            }
+        }
+    ]
+}

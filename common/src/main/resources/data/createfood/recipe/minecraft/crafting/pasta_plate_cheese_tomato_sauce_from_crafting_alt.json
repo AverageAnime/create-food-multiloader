@@ -1,0 +1,18 @@
+{
+    "neoforge:conditions": [],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "farmersdelight:tomato_sauce"
+        },
+        {
+            "tag": "c:cooked_pasta"
+        },
+        {
+            "tag": "c:cheeses"
+        }
+    ],
+    "result": {
+        "id": "createfood:pasta_plate_cheese_tomato_sauce"
+    }
+}

@@ -1,0 +1,31 @@
+{
+    "neoforge:conditions": [],
+    "type": "create:compacting",
+    "heat_requirement": "heated",
+    "ingredients": [
+        {
+            "type": "fluid_tag",
+            "amount": 500,
+            "fluid_tag": "c:waffle_batter"
+        },
+        {
+            "tag": "c:butterscotch_chips"
+        },
+        {
+            "tag": "c:butterscotch_chips"
+        },
+        {
+            "tag": "c:butterscotch_chips"
+        },
+        {
+            "tag": "c:butterscotch_chips"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:butterscotch_chip_waffle"
+            }
+        }
+    ]
+}

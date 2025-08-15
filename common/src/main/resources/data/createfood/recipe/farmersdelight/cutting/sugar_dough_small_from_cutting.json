@@ -1,0 +1,19 @@
+{
+    "type": "farmersdelight:cutting",
+    "ingredients": [
+        {
+            "tag": "c:sugar_dough"
+        }
+    ],
+    "tool": {
+        "tag": "minecraft:axes"
+    },
+    "result": [
+        {
+            "item": {
+                "count": 2,
+                "id": "createfood:sugar_dough_small"
+            }
+        }
+    ]
+}

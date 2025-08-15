@@ -1,0 +1,22 @@
+{
+    "type": "create:compacting",
+    "heat_requirement": "heated",
+    "ingredients": [
+        {
+            "tag": "c:graham_cracker"
+        },
+        {
+            "tag": "c:marshmallow_chocolate"
+        },
+        {
+            "tag": "c:graham_cracker"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:smore"
+            }
+        }
+    ]
+}

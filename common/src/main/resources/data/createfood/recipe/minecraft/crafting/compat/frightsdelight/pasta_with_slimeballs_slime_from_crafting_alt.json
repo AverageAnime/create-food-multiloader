@@ -1,0 +1,20 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "frightsdelight"
+        }
+    ],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:pasta_plate_slimeballs"
+        },
+        {
+            "tag": "c:slime_bucket"
+        }
+    ],
+    "result": {
+        "id": "frightsdelight:pasta_with_slimeballs"
+    }
+}

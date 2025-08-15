@@ -1,0 +1,18 @@
+{
+    "type": "create:item_application",
+    "ingredients": [
+        {
+            "tag": "c:chocolate_cream_cake"
+        },
+        {
+            "tag": "c:butterscotch_chips"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:chocolate_cream_cake_butterscotch"
+            }
+        }
+    ]
+}

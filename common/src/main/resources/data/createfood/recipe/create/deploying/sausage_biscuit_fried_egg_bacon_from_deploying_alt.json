@@ -1,0 +1,19 @@
+{
+    "neoforge:conditions": [],
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "c:sausage_biscuit_bacon"
+        },
+        {
+            "tag": "c:cooked_eggs"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:sausage_biscuit_fried_egg_bacon"
+            }
+        }
+    ]
+}

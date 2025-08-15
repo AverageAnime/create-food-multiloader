@@ -1,0 +1,19 @@
+{
+    "neoforge:conditions": [],
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "c:cream_chocolate_sweet_roll"
+        },
+        {
+            "item": "minecraft:glow_berries"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:cream_chocolate_sweet_roll_glow_berry"
+            }
+        }
+    ]
+}

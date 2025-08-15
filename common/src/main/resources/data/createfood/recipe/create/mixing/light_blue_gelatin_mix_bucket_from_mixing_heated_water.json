@@ -1,0 +1,28 @@
+{
+    "type": "create:mixing",
+    "heat_requirement": "heated",
+    "ingredients": [
+        {
+            "tag": "c:gelatin"
+        },
+        {
+            "tag": "c:gelatin"
+        },
+        {
+            "tag": "c:gelatin"
+        },
+        {
+            "item": "minecraft:water_bucket"
+        },
+        {
+            "tag": "c:dyes/light_blue"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:light_blue_gelatin_mix_bucket"
+            }
+        }
+    ]
+}

@@ -1,0 +1,26 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "expandeddelight"
+        }
+    ],
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "tag": "c:peanut_butter_sandwich"
+        },
+        {
+            "type": "fluid_tag",
+            "amount": 125,
+            "fluid_tag": "c:glow_berry_jam"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "expandeddelight:glow_berry_jelly_sandwich"
+            }
+        }
+    ]
+}

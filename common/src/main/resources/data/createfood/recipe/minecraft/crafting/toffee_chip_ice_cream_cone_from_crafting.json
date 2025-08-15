@@ -1,0 +1,15 @@
+{
+    "neoforge:conditions": [],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:ice_cream_cone"
+        },
+        {
+            "tag": "c:toffee_chips"
+        }
+    ],
+    "result": {
+        "id": "createfood:toffee_chip_ice_cream_cone"
+    }
+}

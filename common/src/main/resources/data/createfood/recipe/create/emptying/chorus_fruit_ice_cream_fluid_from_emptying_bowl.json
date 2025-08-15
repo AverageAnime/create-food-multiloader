@@ -1,0 +1,19 @@
+{
+    "type": "create:emptying",
+    "ingredients": [
+        {
+            "tag": "c:chorus_fruit_ice_cream_bowl"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "minecraft:bowl"
+            }
+        },
+        {
+            "amount": 27000,
+            "id": "createfood:chorus_fruit_ice_cream"
+        }
+    ]
+}

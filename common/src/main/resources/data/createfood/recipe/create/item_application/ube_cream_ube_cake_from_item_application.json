@@ -1,0 +1,18 @@
+{
+    "type": "create:item_application",
+    "ingredients": [
+        {
+            "tag": "c:ube_cake_base"
+        },
+        {
+            "tag": "c:ube_cream_frosting"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:ube_cream_ube_cake"
+            }
+        }
+    ]
+}

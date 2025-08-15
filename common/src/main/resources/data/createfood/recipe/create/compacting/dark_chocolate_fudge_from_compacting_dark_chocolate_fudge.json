@@ -1,0 +1,17 @@
+{
+    "type": "create:compacting",
+    "ingredients": [
+        {
+            "type": "fluid_tag",
+            "amount": 500,
+            "fluid_tag": "c:dark_chocolate_fudge"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:dark_chocolate_fudge"
+            }
+        }
+    ]
+}

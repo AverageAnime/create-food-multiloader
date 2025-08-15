@@ -1,0 +1,20 @@
+{
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "tag": "c:raw_pie_crust"
+        },
+        {
+            "type": "fluid_tag",
+            "amount": 1000,
+            "fluid_tag": "c:apple_pie_filling"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:raw_apple_pie"
+            }
+        }
+    ]
+}

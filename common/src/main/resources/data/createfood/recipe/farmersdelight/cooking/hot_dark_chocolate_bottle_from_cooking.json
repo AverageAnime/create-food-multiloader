@@ -1,0 +1,14 @@
+{
+    "type": "farmersdelight:cooking",
+    "experience": 0.25,
+    "ingredients": [
+        {
+            "tag": "c:dark_chocolate_bottle"
+        }
+    ],
+    "recipe_book_tab": "drinks",
+    "result": {
+        "count": 1,
+        "id": "createfood:hot_dark_chocolate_bottle"
+    }
+}

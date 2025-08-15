@@ -1,0 +1,18 @@
+{
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "c:dragon_bun"
+        },
+        {
+            "item": "minecraft:warped_fungus"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:dragon_bun_warped_fungus"
+            }
+        }
+    ]
+}

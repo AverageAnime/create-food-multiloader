@@ -1,0 +1,17 @@
+{
+    "type": "farmersdelight:cooking",
+    "experience": 0.2,
+    "ingredients": [
+        {
+            "tag": "c:raw_pasta"
+        },
+        {
+            "tag": "c:buckets/water"
+        }
+    ],
+    "recipe_book_tab": "misc",
+    "result": {
+        "count": 1,
+        "id": "createfood:pasta"
+    }
+}

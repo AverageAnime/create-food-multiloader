@@ -1,0 +1,23 @@
+{
+    "type": "create:mixing",
+    "heat_requirement": "heated",
+    "ingredients": [
+        {
+            "tag": "c:chocolate_chips"
+        },
+        {
+            "tag": "c:butter"
+        },
+        {
+            "type": "fluid_tag",
+            "amount": 250,
+            "fluid_tag": "c:condensed_milk"
+        }
+    ],
+    "results": [
+        {
+            "amount": 500,
+            "id": "createfood:chocolate_fudge"
+        }
+    ]
+}

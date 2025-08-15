@@ -1,0 +1,19 @@
+{
+    "neoforge:conditions": [],
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "c:macaroni_bowl_bacon"
+        },
+        {
+            "tag": "c:cheeses"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:macaroni_bowl_cheese_bacon"
+            }
+        }
+    ]
+}

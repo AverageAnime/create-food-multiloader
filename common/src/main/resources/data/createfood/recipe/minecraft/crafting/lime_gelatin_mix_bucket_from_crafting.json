@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:gelatin_mix_bucket"
+        },
+        {
+            "tag": "c:dyes/lime"
+        },
+        {
+            "item": "minecraft:bucket"
+        }
+    ],
+    "result": {
+        "id": "createfood:lime_gelatin_mix_bucket"
+    }
+}

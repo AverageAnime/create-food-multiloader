@@ -1,0 +1,24 @@
+{
+    "neoforge:conditions": [],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:bucket"
+        },
+        {
+            "tag": "c:chorus_fruit_cream_frosting"
+        },
+        {
+            "tag": "c:chorus_fruit_cream_frosting"
+        },
+        {
+            "tag": "c:chorus_fruit_cream_frosting"
+        },
+        {
+            "tag": "c:chorus_fruit_cream_frosting"
+        }
+    ],
+    "result": {
+        "id": "createfood:chorus_fruit_cream_frosting_bucket"
+    }
+}

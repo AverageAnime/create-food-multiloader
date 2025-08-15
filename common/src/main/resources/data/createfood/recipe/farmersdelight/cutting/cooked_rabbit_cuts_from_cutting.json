@@ -1,0 +1,25 @@
+{
+    "type": "farmersdelight:cutting",
+    "ingredients": [
+        {
+            "item": "minecraft:cooked_rabbit"
+        }
+    ],
+    "tool": {
+        "tag": "c:tools/knife"
+    },
+    "result": [
+        {
+            "item": {
+                "count": 2,
+                "id": "createfood:cooked_rabbit_cuts"
+            }
+        },
+        {
+            "item": {
+                "id": "minecraft:bone_meal"
+            }
+        }
+    ],
+    "neoc:conditions": []
+}

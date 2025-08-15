@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:raw_pie_crust"
+        },
+        {
+            "tag": "c:glow_berry_pie_filling_bucket"
+        }
+    ],
+    "result": {
+        "id": "createfood:raw_glow_berry_pie"
+    }
+}

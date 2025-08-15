@@ -1,0 +1,15 @@
+{
+    "neoforge:conditions": [],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:bowl"
+        },
+        {
+            "tag": "c:macaroni"
+        }
+    ],
+    "result": {
+        "id": "createfood:macaroni_bowl"
+    }
+}

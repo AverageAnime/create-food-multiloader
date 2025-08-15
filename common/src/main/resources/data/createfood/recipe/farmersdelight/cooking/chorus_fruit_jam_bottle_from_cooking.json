@@ -1,0 +1,17 @@
+{
+    "type": "farmersdelight:cooking",
+    "experience": 0.45,
+    "ingredients": [
+        {
+            "tag": "c:chorus_fruit"
+        },
+        {
+            "tag": "c:sugar"
+        }
+    ],
+    "recipe_book_tab": "drinks",
+    "result": {
+        "count": 1,
+        "id": "createfood:chorus_fruit_jam_bottle"
+    }
+}

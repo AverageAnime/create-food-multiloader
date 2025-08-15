@@ -1,0 +1,18 @@
+{
+    "type": "create:item_application",
+    "ingredients": [
+        {
+            "tag": "c:chocolate_cream_cake"
+        },
+        {
+            "tag": "c:dark_chocolate_chips"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:chocolate_cream_cake_dark_chocolate"
+            }
+        }
+    ]
+}

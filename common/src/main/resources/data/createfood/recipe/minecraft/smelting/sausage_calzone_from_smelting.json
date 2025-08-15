@@ -1,0 +1,13 @@
+{
+    "type": "minecraft:smelting",
+    "category": "food",
+    "cookingtime": 250,
+    "experience": 0.15,
+    "ingredient": {
+        "tag": "c:raw_sausage_calzone"
+    },
+    "result": {
+        "count": 1,
+        "id": "createfood:sausage_calzone"
+    }
+}

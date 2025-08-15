@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:bun"
+        },
+        {
+            "tag": "c:cooked_pork"
+        },
+        {
+            "tag": "c:foods/leafy_green"
+        },
+        {
+            "tag": "c:cheeses"
+        },
+        {
+            "tag": "c:chicken_patty"
+        }
+    ],
+    "result": {
+        "id": "createfood:chicken_bun_cheese_bacon_lettuce"
+    }
+}

@@ -1,0 +1,17 @@
+{
+    "neoforge:conditions": [],
+    "type": "create:pressing",
+    "ingredients": [
+        {
+            "item": "minecraft:carrot"
+        }
+    ],
+    "results": [
+        {
+            "count": 2,
+            "item": {
+                "id": "createfood:shredded_carrot"
+            }
+        }
+    ]
+}

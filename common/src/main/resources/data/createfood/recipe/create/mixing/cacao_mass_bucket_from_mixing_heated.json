@@ -1,0 +1,28 @@
+{
+    "type": "create:mixing",
+    "heat_requirement": "heated",
+    "ingredients": [
+        {
+            "tag": "c:cacao_nibs"
+        },
+        {
+            "tag": "c:cacao_nibs"
+        },
+        {
+            "tag": "c:cacao_nibs"
+        },
+        {
+            "tag": "c:cacao_nibs"
+        },
+        {
+            "item": "minecraft:bucket"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:cacao_mass_bucket"
+            }
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+{
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "c:bun"
+        },
+        {
+            "tag": "c:dragon_patty"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:dragon_bun"
+            }
+        }
+    ]
+}

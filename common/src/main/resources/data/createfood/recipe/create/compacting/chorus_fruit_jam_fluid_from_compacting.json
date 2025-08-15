@@ -1,0 +1,17 @@
+{
+    "type": "create:compacting",
+    "ingredients": [
+        {
+            "tag": "c:chorus_fruit"
+        },
+        {
+            "tag": "c:sugar"
+        }
+    ],
+    "results": [
+        {
+            "amount": 500,
+            "id": "createfood:chorus_fruit_jam"
+        }
+    ]
+}

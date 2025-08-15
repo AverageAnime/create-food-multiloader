@@ -1,0 +1,33 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:not",
+            "value": {
+                "type": "neoforge:tag_empty",
+                "tag": "c:crops/ube"
+            }
+        }
+    ],
+    "type": "create:mixing",
+    "ingredients": [
+        {
+            "tag": "c:crops/ube"
+        },
+        {
+            "tag": "c:sugar"
+        },
+        {
+            "type": "fluid_tag",
+            "amount": 1000,
+            "fluid_tag": "c:water"
+        }
+    ],
+    "results": [
+        {
+            "count": 3,
+            "item": {
+                "id": "createfood:ube_sugar_dough"
+            }
+        }
+    ]
+}

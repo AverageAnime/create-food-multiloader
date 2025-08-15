@@ -1,0 +1,13 @@
+{
+    "type": "minecraft:smelting",
+    "category": "food",
+    "cookingtime": 400,
+    "experience": 0.25,
+    "ingredient": {
+        "tag": "c:raw_mushroom_fish_pizza"
+    },
+    "result": {
+        "count": 1,
+        "id": "createfood:mushroom_fish_pizza"
+    }
+}

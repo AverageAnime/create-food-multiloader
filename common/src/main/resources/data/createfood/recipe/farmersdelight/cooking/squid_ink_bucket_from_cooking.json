@@ -1,0 +1,14 @@
+{
+    "type": "farmersdelight:cooking",
+    "experience": 0.1,
+    "ingredients": [
+        {
+            "item": "minecraft:ink_sac"
+        }
+    ],
+    "recipe_book_tab": "drinks",
+    "result": {
+        "count": 1,
+        "id": "createfood:squid_ink_bucket"
+    }
+}

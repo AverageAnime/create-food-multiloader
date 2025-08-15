@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:eggshell"
+        },
+        {
+            "tag": "c:eggshell"
+        },
+        {
+            "tag": "c:eggshell"
+        },
+        {
+            "item": "minecraft:dirt"
+        }
+    ],
+    "result": {
+        "id": "farmersdelight:rich_soil"
+    }
+}

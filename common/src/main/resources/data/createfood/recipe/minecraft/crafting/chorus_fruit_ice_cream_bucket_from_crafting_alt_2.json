@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:ice_cream_bucket"
+        },
+        {
+            "tag": "c:chorus_fruit"
+        },
+        {
+            "item": "minecraft:bucket"
+        }
+    ],
+    "result": {
+        "id": "createfood:chorus_fruit_ice_cream_bucket"
+    }
+}

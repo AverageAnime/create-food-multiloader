@@ -1,0 +1,21 @@
+{
+    "type": "create:mixing",
+    "ingredients": [
+        {
+            "tag": "c:flours/wheat"
+        },
+        {
+            "type": "fluid_tag",
+            "amount": 1000,
+            "fluid_tag": "c:water"
+        }
+    ],
+    "results": [
+        {
+            "count": 3,
+            "item": {
+                "id": "farmersdelight:wheat_dough"
+            }
+        }
+    ]
+}

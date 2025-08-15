@@ -1,0 +1,23 @@
+{
+    "type": "create:milling",
+    "ingredients": [
+        {
+            "tag": "c:bread_slice"
+        }
+    ],
+    "processingTime": 80,
+    "results": [
+        {
+            "count": 2,
+            "item": {
+                "id": "createfood:bread_crumbs"
+            }
+        },
+        {
+            "chance": 0.25,
+            "item": {
+                "id": "createfood:bread_crumbs"
+            }
+        }
+    ]
+}

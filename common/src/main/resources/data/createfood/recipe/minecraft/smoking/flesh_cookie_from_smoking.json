@@ -1,0 +1,19 @@
+{
+    "type": "minecraft:smoking",
+    "category": "food",
+    "cookingtime": 100,
+    "experience": 0.35,
+    "ingredient": {
+        "tag": "c:raw_flesh_cookie"
+    },
+    "result": {
+        "count": 1,
+        "id": "frightsdelight:cookie_flesh"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "frightsdelight:cookie_flesh"
+        }
+    ]
+}

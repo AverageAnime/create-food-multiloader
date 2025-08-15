@@ -1,0 +1,18 @@
+{
+    "type": "create:item_application",
+    "ingredients": [
+        {
+            "tag": "c:raw_mushroom_pizza"
+        },
+        {
+            "tag": "c:onion"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:raw_mushroom_onion_pizza"
+            }
+        }
+    ]
+}

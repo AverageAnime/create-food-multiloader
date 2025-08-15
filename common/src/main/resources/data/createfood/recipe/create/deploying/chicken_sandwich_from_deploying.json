@@ -1,0 +1,18 @@
+{
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "c:bread_lettuce_carrot"
+        },
+        {
+            "tag": "c:cooked_chicken"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "farmersdelight:chicken_sandwich"
+            }
+        }
+    ]
+}

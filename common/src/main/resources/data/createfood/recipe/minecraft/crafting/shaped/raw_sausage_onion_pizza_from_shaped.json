@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "1 ",
+        "2 "
+    ],
+    "key": {
+        "1": {
+            "tag": "c:onion"
+        },
+        "2": {
+            "tag": "c:raw_sausage_pizza"
+        }
+    },
+    "result": {
+        "id": "createfood:raw_sausage_onion_pizza"
+    }
+}

@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:dragon_bun"
+        },
+        {
+            "item": "minecraft:crimson_fungus"
+        }
+    ],
+    "result": {
+        "id": "createfood:dragon_bun_crimson_fungus"
+    }
+}

@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:smelting",
+    "category": "food",
+    "cookingtime": 150,
+    "experience": 0.15,
+    "ingredient": {
+        "tag": "c:raw_chocolate_cupcake_base"
+    },
+    "result": {
+        "count": 1,
+        "id": "createfood:chocolate_cupcake_base"
+    },
+    "neoforge:conditions": []
+}

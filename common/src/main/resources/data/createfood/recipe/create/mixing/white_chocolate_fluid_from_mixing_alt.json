@@ -1,0 +1,16 @@
+{
+    "type": "create:mixing",
+    "ingredients": [
+        {
+            "type": "fluid_tag",
+            "amount": 250,
+            "fluid_tag": "c:hot_white_chocolate"
+        }
+    ],
+    "results": [
+        {
+            "amount": 250,
+            "id": "createfood:white_chocolate"
+        }
+    ]
+}

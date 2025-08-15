@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "1 ",
+        "2 "
+    ],
+    "key": {
+        "1": {
+            "tag": "c:toast_slice"
+        },
+        "2": {
+            "tag": "c:hash_brown_plate"
+        }
+    },
+    "result": {
+        "id": "createfood:hash_brown_toast_plate"
+    }
+}

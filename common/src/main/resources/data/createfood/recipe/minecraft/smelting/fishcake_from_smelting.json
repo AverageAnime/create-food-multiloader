@@ -1,0 +1,13 @@
+{
+    "type": "minecraft:smelting",
+    "category": "food",
+    "cookingtime": 375,
+    "experience": 0.25,
+    "ingredient": {
+        "tag": "c:raw_fishcake"
+    },
+    "result": {
+        "count": 1,
+        "id": "createfood:fishcake"
+    }
+}

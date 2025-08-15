@@ -1,0 +1,28 @@
+{
+    "type": "farmersdelight:cutting",
+    "ingredients": [
+        {
+            "tag": "c:dried_coffee_beans"
+        }
+    ],
+    "tool": {
+        "tag": "c:tools/knife"
+    },
+    "result": [
+        {
+            "item": {
+                "count": 2,
+                "id": "createfood:espresso_powder"
+            }
+        }
+    ],
+    "neoc:conditions": [
+        {
+            "type": "c:not",
+            "value": {
+                "type": "c:tag_empty",
+                "tag": "c:coffee_beans"
+            }
+        }
+    ]
+}

@@ -1,0 +1,19 @@
+{
+    "neoforge:conditions": [],
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "c:chicken_bun_cheese"
+        },
+        {
+            "tag": "c:tomato"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:chicken_bun_cheese_tomato"
+            }
+        }
+    ]
+}

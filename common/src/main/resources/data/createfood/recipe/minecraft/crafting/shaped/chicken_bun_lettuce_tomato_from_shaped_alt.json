@@ -1,0 +1,19 @@
+{
+    "neoforge:conditions": [],
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "1 ",
+        "2 "
+    ],
+    "key": {
+        "1": {
+            "tag": "c:foods/leafy_green"
+        },
+        "2": {
+            "tag": "c:chicken_bun_tomato"
+        }
+    },
+    "result": {
+        "id": "createfood:chicken_bun_lettuce_tomato"
+    }
+}

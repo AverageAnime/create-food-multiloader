@@ -1,0 +1,29 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:chocolate_cream_cake_slice_dark_chocolate"
+        },
+        {
+            "tag": "c:chocolate_cream_cake_slice_dark_chocolate"
+        },
+        {
+            "tag": "c:chocolate_cream_cake_slice_dark_chocolate"
+        },
+        {
+            "tag": "c:chocolate_cream_cake_slice_dark_chocolate"
+        },
+        {
+            "tag": "c:chocolate_cream_cake_slice_dark_chocolate"
+        },
+        {
+            "tag": "c:chocolate_cream_cake_slice_dark_chocolate"
+        },
+        {
+            "tag": "c:chocolate_cream_cake_slice_dark_chocolate"
+        }
+    ],
+    "result": {
+        "id": "createfood:chocolate_cream_cake_dark_chocolate"
+    }
+}

@@ -1,0 +1,18 @@
+{
+    "type": "farmersdelight:cooking",
+    "experience": 0.25,
+    "ingredients": [
+        {
+            "tag": "c:cooked_rabbit_cuts"
+        },
+        {
+            "tag": "c:salt"
+        }
+    ],
+    "recipe_book_tab": "misc",
+    "result": {
+        "count": 1,
+        "id": "createfood:rabbit_jerky"
+    },
+    "neoforge:conditions": []
+}

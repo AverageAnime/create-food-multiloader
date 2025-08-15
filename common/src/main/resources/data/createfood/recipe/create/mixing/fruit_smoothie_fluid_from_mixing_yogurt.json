@@ -1,0 +1,34 @@
+{
+    "type": "create:mixing",
+    "ingredients": [
+        {
+            "type": "fluid_tag",
+            "amount": 500,
+            "fluid_tag": "c:yogurt"
+        },
+        {
+            "tag": "c:fruits"
+        },
+        {
+            "tag": "c:fruits"
+        },
+        {
+            "tag": "c:fruits"
+        },
+        {
+            "tag": "c:fruits"
+        },
+        {
+            "tag": "c:ice_blocks"
+        },
+        {
+            "tag": "c:ice_blocks"
+        }
+    ],
+    "results": [
+        {
+            "amount": 1000,
+            "id": "createfood:fruit_smoothie"
+        }
+    ]
+}

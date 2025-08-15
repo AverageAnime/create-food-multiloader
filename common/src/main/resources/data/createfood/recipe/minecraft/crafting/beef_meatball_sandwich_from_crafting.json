@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:bread"
+        },
+        {
+            "tag": "c:small_beef_meatballs"
+        }
+    ],
+    "result": {
+        "id": "createfood:beef_meatball_sandwich"
+    }
+}

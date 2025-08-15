@@ -1,0 +1,17 @@
+{
+    "type": "farmersdelight:cooking",
+    "experience": 0.25,
+    "ingredients": [
+        {
+            "tag": "c:cocoa_powder"
+        },
+        {
+            "tag": "c:milk_bottle"
+        }
+    ],
+    "recipe_book_tab": "drinks",
+    "result": {
+        "count": 1,
+        "id": "createfood:chocolate_milk_bottle"
+    }
+}

@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:fried_egg_plate"
+        },
+        {
+            "tag": "c:hash_browns"
+        }
+    ],
+    "result": {
+        "id": "createfood:hash_brown_fried_egg_plate"
+    }
+}

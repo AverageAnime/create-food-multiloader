@@ -1,0 +1,19 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "1 ",
+        "2 "
+    ],
+    "key": {
+        "1": {
+            "item": "minecraft:water_bucket"
+        },
+        "2": {
+            "tag": "c:foods/doughs"
+        }
+    },
+    "result": {
+        "count": 2,
+        "id": "createfood:dumpling_wrappers"
+    }
+}

@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:bucket"
+        },
+        {
+            "tag": "c:sour_cream_bottle"
+        },
+        {
+            "tag": "c:sour_cream_bottle"
+        },
+        {
+            "tag": "c:sour_cream_bottle"
+        },
+        {
+            "tag": "c:sour_cream_bottle"
+        }
+    ],
+    "result": {
+        "id": "createfood:sour_cream_bucket"
+    }
+}

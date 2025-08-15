@@ -1,0 +1,23 @@
+{
+    "type": "farmersdelight:cutting",
+    "ingredients": [
+        {
+            "tag": "c:pastry_base"
+        }
+    ],
+    "tool": {
+        "tag": "c:tools/knife"
+    },
+    "result": [
+        {
+            "item": {
+                "id": "createfood:donut_hole"
+            }
+        },
+        {
+            "item": {
+                "id": "createfood:donut_hole"
+            }
+        }
+    ]
+}

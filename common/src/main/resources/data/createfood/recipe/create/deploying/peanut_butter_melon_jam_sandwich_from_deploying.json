@@ -1,0 +1,27 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:not",
+            "value": {
+                "type": "neoforge:tag_empty",
+                "tag": "c:peanut_butter"
+            }
+        }
+    ],
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "c:bread_slice_peanut_butter"
+        },
+        {
+            "tag": "c:bread_slice_melon_jam"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:peanut_butter_melon_jam_sandwich"
+            }
+        }
+    ]
+}

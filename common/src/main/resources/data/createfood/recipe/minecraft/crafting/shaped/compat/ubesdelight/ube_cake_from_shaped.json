@@ -1,0 +1,24 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "ubesdelight"
+        }
+    ],
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "1 ",
+        "2 "
+    ],
+    "key": {
+        "1": {
+            "tag": "c:vegetables/ube"
+        },
+        "2": {
+            "tag": "c:ube_cream_ube_cake"
+        }
+    },
+    "result": {
+        "id": "ubesdelight:ube_cake"
+    }
+}

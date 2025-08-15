@@ -1,0 +1,24 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:wheat"
+        },
+        {
+            "tag": "c:sugar"
+        },
+        {
+            "item": "minecraft:water_bucket"
+        },
+        {
+            "tag": "c:cocoa_powder"
+        },
+        {
+            "tag": "c:chocolate_chips"
+        }
+    ],
+    "result": {
+        "count": 8,
+        "id": "createfood:raw_chocolate_chip_chocolate_cookie"
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "neoforge:conditions": [],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:pasta_plate_tomato_sauce"
+        },
+        {
+            "tag": "c:cooked_chicken"
+        }
+    ],
+    "result": {
+        "id": "createfood:pasta_plate_chicken_cut_tomato_sauce"
+    }
+}

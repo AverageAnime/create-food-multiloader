@@ -1,0 +1,29 @@
+{
+    "type": "farmersdelight:cooking",
+    "experience": 0.95,
+    "ingredients": [
+        {
+            "item": "minecraft:water_bucket"
+        },
+        {
+            "tag": "c:sugar"
+        },
+        {
+            "tag": "c:sugar"
+        },
+        {
+            "tag": "c:fruits"
+        },
+        {
+            "tag": "c:fruits"
+        },
+        {
+            "tag": "c:fruits"
+        }
+    ],
+    "recipe_book_tab": "drinks",
+    "result": {
+        "count": 1,
+        "id": "createfood:vinegar_bucket"
+    }
+}

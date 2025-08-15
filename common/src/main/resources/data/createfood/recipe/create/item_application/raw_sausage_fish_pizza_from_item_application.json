@@ -1,0 +1,18 @@
+{
+    "type": "create:item_application",
+    "ingredients": [
+        {
+            "tag": "c:raw_sausage_pizza"
+        },
+        {
+            "tag": "c:cooked_fishes"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:raw_sausage_fish_pizza"
+            }
+        }
+    ]
+}

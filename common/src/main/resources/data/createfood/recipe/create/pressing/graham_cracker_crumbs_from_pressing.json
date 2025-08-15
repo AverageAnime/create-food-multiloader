@@ -1,0 +1,16 @@
+{
+    "type": "create:pressing",
+    "ingredients": [
+        {
+            "tag": "c:graham_cracker"
+        }
+    ],
+    "results": [
+        {
+            "count": 2,
+            "item": {
+                "id": "createfood:graham_cracker_crumbs"
+            }
+        }
+    ]
+}

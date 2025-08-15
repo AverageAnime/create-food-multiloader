@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        " 1 ",
+        " 2 "
+    ],
+    "key": {
+        "1": {
+            "tag": "c:toffee_chips"
+        },
+        "2": {
+            "tag": "c:raw_muffin_base"
+        }
+    },
+    "result": {
+        "id": "createfood:raw_toffee_chip_muffin"
+    }
+}

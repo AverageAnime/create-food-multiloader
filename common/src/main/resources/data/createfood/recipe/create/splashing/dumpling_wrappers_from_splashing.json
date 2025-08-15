@@ -1,0 +1,16 @@
+{
+    "type": "create:splashing",
+    "ingredients": [
+        {
+            "tag": "c:foods/doughs"
+        }
+    ],
+    "results": [
+        {
+            "count": 2,
+            "item": {
+                "id": "createfood:dumpling_wrappers"
+            }
+        }
+    ]
+}

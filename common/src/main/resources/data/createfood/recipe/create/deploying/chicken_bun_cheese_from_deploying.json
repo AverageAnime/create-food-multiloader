@@ -1,0 +1,18 @@
+{
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "c:chicken_bun"
+        },
+        {
+            "tag": "c:cheeses"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:chicken_bun_cheese"
+            }
+        }
+    ]
+}

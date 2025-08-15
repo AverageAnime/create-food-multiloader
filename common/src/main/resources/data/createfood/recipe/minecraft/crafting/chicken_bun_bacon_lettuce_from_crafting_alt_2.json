@@ -1,0 +1,15 @@
+{
+    "neoforge:conditions": [],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:chicken_bun_bacon"
+        },
+        {
+            "tag": "c:foods/leafy_green"
+        }
+    ],
+    "result": {
+        "id": "createfood:chicken_bun_bacon_lettuce"
+    }
+}

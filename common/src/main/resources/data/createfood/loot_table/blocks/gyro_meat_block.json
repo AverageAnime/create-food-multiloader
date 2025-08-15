@@ -1,0 +1,197 @@
+{
+    "type": "minecraft:block",
+    "pools": [
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "minecraft:item",
+                    "name": "createfood:gyro_meat_block"
+                }
+            ],
+            "conditions": [
+                {
+                    "condition": "minecraft:inverted",
+                    "term": {
+                        "condition": "minecraft:match_tool",
+                        "predicate": {
+                            "items": "#c:tools/knife"
+                        }
+                    }
+                },
+                {
+                    "condition": "minecraft:block_state_property",
+                    "block": "createfood:gyro_meat_block",
+                    "properties": {
+                        "bites": "0"
+                    }
+                }
+            ]
+        },
+        {
+            "rolls": 7,
+            "entries": [
+                {
+                    "type": "minecraft:item",
+                    "name": "createfood:gyro_meat_slice"
+                }
+            ],
+            "conditions": [
+                {
+                    "condition": "minecraft:match_tool",
+                    "predicate": {
+                        "items": "#c:tools/knife"
+                    }
+                },
+                {
+                    "condition": "minecraft:block_state_property",
+                    "block": "createfood:gyro_meat_block",
+                    "properties": {
+                        "bites": "0"
+                    }
+                }
+            ]
+        },
+        {
+            "rolls": 6,
+            "entries": [
+                {
+                    "type": "minecraft:item",
+                    "name": "createfood:gyro_meat_slice"
+                }
+            ],
+            "conditions": [
+                {
+                    "condition": "minecraft:match_tool",
+                    "predicate": {
+                        "items": "#c:tools/knife"
+                    }
+                },
+                {
+                    "condition": "minecraft:block_state_property",
+                    "block": "createfood:gyro_meat_block",
+                    "properties": {
+                        "bites": "1"
+                    }
+                }
+            ]
+        },
+        {
+            "rolls": 5,
+            "entries": [
+                {
+                    "type": "minecraft:item",
+                    "name": "createfood:gyro_meat_slice"
+                }
+            ],
+            "conditions": [
+                {
+                    "condition": "minecraft:match_tool",
+                    "predicate": {
+                        "items": "#c:tools/knife"
+                    }
+                },
+                {
+                    "condition": "minecraft:block_state_property",
+                    "block": "createfood:gyro_meat_block",
+                    "properties": {
+                        "bites": "2"
+                    }
+                }
+            ]
+        },
+        {
+            "rolls": 4,
+            "entries": [
+                {
+                    "type": "minecraft:item",
+                    "name": "createfood:gyro_meat_slice"
+                }
+            ],
+            "conditions": [
+                {
+                    "condition": "minecraft:match_tool",
+                    "predicate": {
+                        "items": "#c:tools/knife"
+                    }
+                },
+                {
+                    "condition": "minecraft:block_state_property",
+                    "block": "createfood:gyro_meat_block",
+                    "properties": {
+                        "bites": "3"
+                    }
+                }
+            ]
+        },
+        {
+            "rolls": 3,
+            "entries": [
+                {
+                    "type": "minecraft:item",
+                    "name": "createfood:gyro_meat_slice"
+                }
+            ],
+            "conditions": [
+                {
+                    "condition": "minecraft:match_tool",
+                    "predicate": {
+                        "items": "#c:tools/knife"
+                    }
+                },
+                {
+                    "condition": "minecraft:block_state_property",
+                    "block": "createfood:gyro_meat_block",
+                    "properties": {
+                        "bites": "4"
+                    }
+                }
+            ]
+        },
+        {
+            "rolls": 2,
+            "entries": [
+                {
+                    "type": "minecraft:item",
+                    "name": "createfood:gyro_meat_slice"
+                }
+            ],
+            "conditions": [
+                {
+                    "condition": "minecraft:match_tool",
+                    "predicate": {
+                        "items": "#c:tools/knife"
+                    }
+                },
+                {
+                    "condition": "minecraft:block_state_property",
+                    "block": "createfood:gyro_meat_block",
+                    "properties": {
+                        "bites": "5"
+                    }
+                }
+            ]
+        },
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "minecraft:item",
+                    "name": "createfood:gyro_meat_slice"
+                }
+            ],
+            "conditions": [
+                {
+                    "condition": "minecraft:survives_explosion"
+                },
+                {
+                    "condition": "minecraft:block_state_property",
+                    "block": "createfood:gyro_meat_block",
+                    "properties": {
+                        "bites": "6"
+                    }
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,19 @@
+{
+    "neoforge:conditions": [],
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "c:milkshake"
+        },
+        {
+            "tag": "c:dark_chocolate_chips"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:dark_chocolate_chip_milkshake_bottle"
+            }
+        }
+    ]
+}

@@ -1,0 +1,24 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "jmc"
+        }
+    ],
+    "type": "create:item_application",
+    "ingredients": [
+        {
+            "tag": "c:cream_cake"
+        },
+        {
+            "item": "minecraft:crimson_fungus"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "jmc:crimson_fungus_cake"
+            }
+        }
+    ]
+}

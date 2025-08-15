@@ -1,0 +1,19 @@
+{
+    "type": "create:emptying",
+    "ingredients": [
+        {
+            "tag": "c:melon_ice_cream_stick"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "minecraft:stick"
+            }
+        },
+        {
+            "amount": 9000,
+            "id": "createfood:melon_ice_cream"
+        }
+    ]
+}

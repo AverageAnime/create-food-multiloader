@@ -1,0 +1,17 @@
+{
+    "type": "farmersdelight:cooking",
+    "experience": 0.1,
+    "ingredients": [
+        {
+            "tag": "c:butterscotch"
+        },
+        {
+            "tag": "c:butterscotch"
+        }
+    ],
+    "recipe_book_tab": "drinks",
+    "result": {
+        "count": 1,
+        "id": "createfood:butterscotch_bucket"
+    }
+}

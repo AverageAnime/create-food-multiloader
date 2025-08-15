@@ -1,0 +1,29 @@
+{
+    "type": "farmersdelight:cooking",
+    "experience": 0.25,
+    "ingredients": [
+        {
+            "tag": "c:butter"
+        },
+        {
+            "tag": "c:brown_sugar"
+        },
+        {
+            "tag": "c:sugar"
+        },
+        {
+            "tag": "c:apple"
+        },
+        {
+            "tag": "c:apple"
+        },
+        {
+            "tag": "c:apple"
+        }
+    ],
+    "recipe_book_tab": "drinks",
+    "result": {
+        "count": 1,
+        "id": "createfood:apple_pie_filling_bucket"
+    }
+}

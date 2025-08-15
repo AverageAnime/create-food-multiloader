@@ -1,0 +1,13 @@
+{
+    "type": "minecraft:smelting",
+    "category": "food",
+    "cookingtime": 550,
+    "experience": 0.95,
+    "ingredient": {
+        "tag": "c:raw_chocolate_pie_graham_cracker"
+    },
+    "result": {
+        "count": 1,
+        "id": "createfood:chocolate_pie_graham_cracker"
+    }
+}

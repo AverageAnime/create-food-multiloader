@@ -1,0 +1,28 @@
+{
+    "type": "create:mixing",
+    "heat_requirement": "heated",
+    "ingredients": [
+        {
+            "tag": "c:gelatin"
+        },
+        {
+            "tag": "c:gelatin"
+        },
+        {
+            "tag": "c:gelatin"
+        },
+        {
+            "item": "minecraft:water_bucket"
+        },
+        {
+            "tag": "c:dyes/magenta"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:magenta_gelatin_mix_bucket"
+            }
+        }
+    ]
+}

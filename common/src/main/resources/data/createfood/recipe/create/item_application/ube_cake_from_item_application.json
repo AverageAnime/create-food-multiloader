@@ -1,0 +1,24 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "ubesdelight"
+        }
+    ],
+    "type": "create:item_application",
+    "ingredients": [
+        {
+            "tag": "c:ube_cream_ube_cake"
+        },
+        {
+            "item": "ubesdelight:ube"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "ubesdelight:ube_cake"
+            }
+        }
+    ]
+}

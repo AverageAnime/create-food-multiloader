@@ -1,0 +1,15 @@
+{
+    "neoforge:conditions": [],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:beef_bun_tomato"
+        },
+        {
+            "tag": "c:foods/leafy_green"
+        }
+    ],
+    "result": {
+        "id": "createfood:beef_bun_lettuce_tomato"
+    }
+}

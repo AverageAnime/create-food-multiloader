@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:gelatin_mix_bucket"
+        },
+        {
+            "tag": "c:dyes/blue"
+        },
+        {
+            "item": "minecraft:bucket"
+        }
+    ],
+    "result": {
+        "id": "createfood:blue_gelatin_mix_bucket"
+    }
+}

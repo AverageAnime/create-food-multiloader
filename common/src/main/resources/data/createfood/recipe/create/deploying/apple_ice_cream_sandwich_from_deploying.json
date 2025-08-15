@@ -1,0 +1,19 @@
+{
+    "neoforge:conditions": [],
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "c:chocolate_graham_cracker_apple_ice_cream"
+        },
+        {
+            "tag": "c:chocolate_graham_cracker"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:apple_ice_cream_sandwich"
+            }
+        }
+    ]
+}

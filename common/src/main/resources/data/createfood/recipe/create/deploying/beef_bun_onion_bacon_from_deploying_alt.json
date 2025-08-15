@@ -1,0 +1,19 @@
+{
+    "neoforge:conditions": [],
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "c:beef_bun_bacon"
+        },
+        {
+            "tag": "c:onion"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:beef_bun_onion_bacon"
+            }
+        }
+    ]
+}

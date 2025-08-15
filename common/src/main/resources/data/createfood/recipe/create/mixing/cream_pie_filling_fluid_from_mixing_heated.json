@@ -1,0 +1,29 @@
+{
+    "type": "create:mixing",
+    "heat_requirement": "heated",
+    "ingredients": [
+        {
+            "type": "fluid_tag",
+            "amount": 1000,
+            "fluid_tag": "c:milk"
+        },
+        {
+            "tag": "c:flours/wheat"
+        },
+        {
+            "tag": "c:butter"
+        },
+        {
+            "tag": "c:sugar"
+        },
+        {
+            "tag": "c:eggs"
+        }
+    ],
+    "results": [
+        {
+            "amount": 1000,
+            "id": "createfood:cream_pie_filling"
+        }
+    ]
+}

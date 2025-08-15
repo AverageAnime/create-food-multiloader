@@ -1,0 +1,21 @@
+{
+    "neoforge:conditions": [],
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "tag": "c:chocolate_cupcake_base"
+        },
+        {
+            "type": "fluid_tag",
+            "amount": 125,
+            "fluid_tag": "c:chocolate_cream_frosting"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:chocolate_cream_chocolate_cupcake"
+            }
+        }
+    ]
+}

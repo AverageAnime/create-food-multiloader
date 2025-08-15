@@ -1,0 +1,23 @@
+{
+    "type": "create:mixing",
+    "ingredients": [
+        {
+            "type": "fluid_tag",
+            "amount": 1000,
+            "fluid_tag": "c:brown_gelatin_mix"
+        },
+        {
+            "item": "minecraft:ice"
+        },
+        {
+            "item": "minecraft:ice"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:brown_gelatin_dessert_block"
+            }
+        }
+    ]
+}

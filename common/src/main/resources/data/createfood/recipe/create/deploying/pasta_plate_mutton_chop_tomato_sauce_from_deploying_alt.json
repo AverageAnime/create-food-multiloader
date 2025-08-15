@@ -1,0 +1,19 @@
+{
+    "neoforge:conditions": [],
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "c:pasta_plate_mutton_chop"
+        },
+        {
+            "item": "farmersdelight:tomato_sauce"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "farmersdelight:pasta_with_mutton_chop"
+            }
+        }
+    ]
+}

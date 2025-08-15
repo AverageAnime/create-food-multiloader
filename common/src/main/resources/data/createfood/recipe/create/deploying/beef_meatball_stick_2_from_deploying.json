@@ -1,0 +1,18 @@
+{
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "item": "createfood:beef_meatball_stick_1"
+        },
+        {
+            "tag": "c:beef_meatball"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:beef_meatball_stick_2"
+            }
+        }
+    ]
+}

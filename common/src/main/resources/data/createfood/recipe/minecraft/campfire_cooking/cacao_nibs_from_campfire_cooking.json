@@ -1,0 +1,13 @@
+{
+    "type": "minecraft:campfire_cooking",
+    "category": "food",
+    "cookingtime": 200,
+    "experience": 0.1,
+    "ingredient": {
+        "item": "minecraft:cocoa_beans"
+    },
+    "result": {
+        "count": 1,
+        "id": "createfood:cacao_nibs"
+    }
+}

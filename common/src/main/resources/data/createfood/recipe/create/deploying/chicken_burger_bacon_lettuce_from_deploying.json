@@ -1,0 +1,18 @@
+{
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "c:chicken_bun_bacon_lettuce"
+        },
+        {
+            "tag": "c:bun"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:chicken_burger_bacon_lettuce"
+            }
+        }
+    ]
+}

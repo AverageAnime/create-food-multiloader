@@ -1,0 +1,12 @@
+{
+    "neoforge:conditions": [],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:carrot"
+        }
+    ],
+    "result": {
+        "id": "createfood:shredded_carrot"
+    }
+}

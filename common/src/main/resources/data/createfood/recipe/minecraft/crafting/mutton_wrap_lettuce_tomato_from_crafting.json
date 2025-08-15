@@ -1,0 +1,24 @@
+{
+    "neoforge:conditions": [],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:pita_bread"
+        },
+        {
+            "tag": "c:gyro_meat_slice"
+        },
+        {
+            "tag": "c:gyro_meat_slice"
+        },
+        {
+            "tag": "c:foods/leafy_green"
+        },
+        {
+            "tag": "c:tomato"
+        }
+    ],
+    "result": {
+        "id": "createfood:mutton_wrap_lettuce_tomato"
+    }
+}

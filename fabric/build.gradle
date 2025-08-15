@@ -1,0 +1,62 @@
+plugins {
+    id 'multiloader-loader'
+    id 'fabric-loom'
+}
+repositories {
+    maven { url 'https://www.cursemaven.com' }
+    maven { url = 'https://repo.greenhouse.house/snapshots/' }
+    maven { url = "https://mvn.devos.one/snapshots/" } // Registrate, Porting Lib, Forge Tags, Milk Lib
+    maven { url = "https://mvn.devos.one/releases/" }
+    maven { url = "https://jitpack.io/" } // for Porting Lib: Fabric ASM
+}
+dependencies {
+    minecraft "com.mojang:minecraft:${minecraft_version}"
+    mappings loom.layered {
+        officialMojangMappings()
+        parchment("org.parchmentmc.data:parchment-${parchment_minecraft}:${parchment_version}@zip")
+    }
+    modImplementation "net.fabricmc:fabric-loader:${fabric_loader_version}"
+    modImplementation "net.fabricmc.fabric-api:fabric-api:${fabric_version}"
+
+    modImplementation "curse.maven:farmers-delight-refabricated-993166:5852406"
+
+    for (String module in port_lib_modules.split(",")) {
+        modApi("io.github.fabricators_of_create.Porting-Lib:$module:$port_lib_version")
+    }
+
+}
+
+loom {
+    def aw = project(':common').file("src/main/resources/${mod_id}.accesswidener")
+    if (aw.exists()) {
+        accessWidenerPath.set(aw)
+    }
+    mixin {
+        defaultRefmapName.set("${mod_id}.refmap.json")
+    }
+    runs {
+        client {
+            client()
+            setConfigName('Fabric Client')
+            ideConfigGenerated(true)
+            runDir('runs/client')
+        }
+        server {
+            server()
+            setConfigName('Fabric Server')
+            ideConfigGenerated(true)
+            runDir('runs/server')
+        }
+    }
+}
+
+publishing {
+    publications {
+        register('fabricVersion', MavenPublication) {
+            def name=base.archivesName.get()
+            artifactId name.substring(0,name.lastIndexOf('-'))
+            artifact remapJar
+            artifact sourcesJar
+        }
+    }
+}

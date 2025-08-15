@@ -1,0 +1,25 @@
+{
+    "type": "create:mixing",
+    "ingredients": [
+        {
+            "tag": "c:flours/wheat"
+        },
+        {
+            "tag": "c:sugar"
+        },
+        {
+            "tag": "c:cocoa_powder"
+        },
+        {
+            "tag": "c:eggs"
+        }
+    ],
+    "results": [
+        {
+            "count": 3,
+            "item": {
+                "id": "createfood:chocolate_sugar_dough"
+            }
+        }
+    ]
+}

@@ -1,0 +1,19 @@
+{
+    "type": "farmersdelight:cutting",
+    "ingredients": [
+        {
+            "tag": "c:bar_of_white_chocolate"
+        }
+    ],
+    "tool": {
+        "item": "minecraft:stick"
+    },
+    "result": [
+        {
+            "item": {
+                "count": 2,
+                "id": "createfood:hollow_white_chocolate"
+            }
+        }
+    ]
+}

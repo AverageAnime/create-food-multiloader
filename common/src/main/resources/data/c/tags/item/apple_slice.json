@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "createfood:apple_slice",
+      "required": false
+    },
+    {
+      "id": "create_deepfried:apple_slices",
+      "required": false
+    }
+  ]
+}

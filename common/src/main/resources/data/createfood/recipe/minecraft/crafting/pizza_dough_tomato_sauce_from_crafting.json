@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:pizza_dough"
+        },
+        {
+            "tag": "c:tomato_sauce"
+        }
+    ],
+    "result": {
+        "id": "createfood:pizza_dough_tomato_sauce"
+    }
+}

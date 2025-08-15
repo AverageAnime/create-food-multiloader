@@ -1,0 +1,19 @@
+{
+    "neoforge:conditions": [],
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "c:cream_mini_waffle"
+        },
+        {
+            "item": "minecraft:glow_berries"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:cream_mini_waffle_glow_berry"
+            }
+        }
+    ]
+}

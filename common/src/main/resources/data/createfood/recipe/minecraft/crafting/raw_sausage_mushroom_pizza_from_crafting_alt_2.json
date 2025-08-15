@@ -1,0 +1,15 @@
+{
+    "neoforge:conditions": [],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:raw_mushroom_pizza"
+        },
+        {
+            "tag": "c:sausages"
+        }
+    ],
+    "result": {
+        "id": "createfood:raw_sausage_mushroom_pizza"
+    }
+}

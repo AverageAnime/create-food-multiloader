@@ -1,0 +1,13 @@
+{
+    "type": "minecraft:smoking",
+    "category": "food",
+    "cookingtime": 150,
+    "experience": 0.15,
+    "ingredient": {
+        "tag": "c:raw_mini_graham_cracker_pie_crust"
+    },
+    "result": {
+        "count": 1,
+        "id": "createfood:mini_graham_cracker_pie_crust"
+    }
+}

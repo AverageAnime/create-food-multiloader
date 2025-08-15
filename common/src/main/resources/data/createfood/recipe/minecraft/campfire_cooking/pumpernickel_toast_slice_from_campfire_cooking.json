@@ -1,0 +1,13 @@
+{
+    "type": "minecraft:campfire_cooking",
+    "category": "food",
+    "cookingtime": 200,
+    "experience": 0.1,
+    "ingredient": {
+        "tag": "c:pumpernickel_bread_slice"
+    },
+    "result": {
+        "count": 1,
+        "id": "createfood:pumpernickel_toast_slice"
+    }
+}

@@ -1,0 +1,23 @@
+{
+    "neoforge:conditions": [],
+    "type": "create:mixing",
+    "heat_requirement": "heated",
+    "ingredients": [
+        {
+            "tag": "c:pumpkin_puree_bucket"
+        },
+        {
+            "tag": "c:eggs"
+        },
+        {
+            "tag": "c:brown_sugar"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:pumpkin_pie_filling_bucket"
+            }
+        }
+    ]
+}

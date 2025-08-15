@@ -1,0 +1,24 @@
+{
+    "type": "create:mixing",
+    "ingredients": [
+        {
+            "tag": "c:flours/wheat"
+        },
+        {
+            "tag": "c:sugar"
+        },
+        {
+            "type": "fluid_tag",
+            "amount": 1000,
+            "fluid_tag": "c:water"
+        }
+    ],
+    "results": [
+        {
+            "count": 3,
+            "item": {
+                "id": "createfood:sugar_dough"
+            }
+        }
+    ]
+}

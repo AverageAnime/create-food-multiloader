@@ -1,0 +1,20 @@
+{
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "tag": "c:bread_slice"
+        },
+        {
+            "type": "fluid_tag",
+            "amount": 125,
+            "fluid_tag": "c:honey"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:bread_slice_honey"
+            }
+        }
+    ]
+}

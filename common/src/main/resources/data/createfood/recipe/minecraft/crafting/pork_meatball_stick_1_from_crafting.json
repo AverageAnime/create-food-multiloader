@@ -1,0 +1,15 @@
+{
+    "neoforge:conditions": [],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:stick"
+        },
+        {
+            "tag": "c:pork_meatball"
+        }
+    ],
+    "result": {
+        "id": "createfood:pork_meatball_stick_1"
+    }
+}

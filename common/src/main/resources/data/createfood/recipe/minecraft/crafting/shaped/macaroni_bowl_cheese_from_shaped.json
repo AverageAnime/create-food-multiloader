@@ -1,0 +1,19 @@
+{
+    "neoforge:conditions": [],
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "1 ",
+        "2 "
+    ],
+    "key": {
+        "1": {
+            "tag": "c:cheeses"
+        },
+        "2": {
+            "tag": "c:macaroni_bowl"
+        }
+    },
+    "result": {
+        "id": "createfood:macaroni_bowl_cheese"
+    }
+}

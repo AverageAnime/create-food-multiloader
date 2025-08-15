@@ -1,0 +1,19 @@
+{
+    "type": "minecraft:smelting",
+    "category": "food",
+    "cookingtime": 200,
+    "experience": 0.35,
+    "ingredient": {
+        "tag": "c:raw_green_tea_cookie"
+    },
+    "result": {
+        "count": 1,
+        "id": "farmersrespite:green_tea_cookie"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "farmersrespite:green_tea_cookie"
+        }
+    ]
+}

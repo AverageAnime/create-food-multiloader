@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:raw_chocolate_graham_cracker_pie_crust"
+        },
+        {
+            "tag": "c:cream_pie_filling_bucket"
+        }
+    ],
+    "result": {
+        "id": "createfood:raw_cream_pie_chocolate_graham_cracker"
+    }
+}

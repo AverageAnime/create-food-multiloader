@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:smoking",
+    "category": "food",
+    "cookingtime": 200,
+    "experience": 0.1,
+    "ingredient": {
+        "tag": "c:raw_rabbit_meatball"
+    },
+    "result": {
+        "count": 1,
+        "id": "createfood:rabbit_meatball"
+    },
+    "neoforge:conditions": []
+}

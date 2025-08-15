@@ -1,0 +1,18 @@
+{
+    "type": "create:item_application",
+    "ingredients": [
+        {
+            "tag": "c:raw_cheesecake"
+        },
+        {
+            "tag": "c:apple"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:raw_apple_cheesecake"
+            }
+        }
+    ]
+}

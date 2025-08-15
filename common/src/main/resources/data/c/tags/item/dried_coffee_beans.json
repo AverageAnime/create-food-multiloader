@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "createfood:dried_coffee_beans",
+      "required": false
+    },
+    {
+      "id": "rusticdelight:roasted_coffee_beans",
+      "required": false
+    }
+  ]
+}

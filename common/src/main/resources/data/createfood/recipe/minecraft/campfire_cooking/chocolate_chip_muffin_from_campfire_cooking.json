@@ -1,0 +1,13 @@
+{
+    "type": "minecraft:campfire_cooking",
+    "category": "food",
+    "cookingtime": 150,
+    "experience": 0.15,
+    "ingredient": {
+        "tag": "c:raw_chocolate_chip_muffin"
+    },
+    "result": {
+        "count": 1,
+        "id": "createfood:chocolate_chip_muffin"
+    }
+}

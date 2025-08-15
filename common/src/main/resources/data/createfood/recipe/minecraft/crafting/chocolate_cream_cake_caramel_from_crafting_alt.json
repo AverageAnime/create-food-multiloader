@@ -1,0 +1,29 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:chocolate_cream_cake_slice_caramel"
+        },
+        {
+            "tag": "c:chocolate_cream_cake_slice_caramel"
+        },
+        {
+            "tag": "c:chocolate_cream_cake_slice_caramel"
+        },
+        {
+            "tag": "c:chocolate_cream_cake_slice_caramel"
+        },
+        {
+            "tag": "c:chocolate_cream_cake_slice_caramel"
+        },
+        {
+            "tag": "c:chocolate_cream_cake_slice_caramel"
+        },
+        {
+            "tag": "c:chocolate_cream_cake_slice_caramel"
+        }
+    ],
+    "result": {
+        "id": "createfood:chocolate_cream_cake_caramel"
+    }
+}

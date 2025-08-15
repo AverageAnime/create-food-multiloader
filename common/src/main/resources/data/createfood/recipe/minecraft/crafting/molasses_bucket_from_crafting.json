@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:bucket"
+        },
+        {
+            "tag": "c:molasses_bottle"
+        },
+        {
+            "tag": "c:molasses_bottle"
+        }
+    ],
+    "result": {
+        "id": "createfood:molasses_bucket"
+    }
+}

@@ -1,0 +1,18 @@
+{
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "c:raw_muffin_base"
+        },
+        {
+            "tag": "c:white_chocolate_chips"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:raw_white_chocolate_chip_muffin"
+            }
+        }
+    ]
+}

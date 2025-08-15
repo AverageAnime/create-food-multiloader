@@ -1,0 +1,23 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:not",
+            "value": {
+                "type": "neoforge:tag_empty",
+                "tag": "c:popcorn"
+            }
+        }
+    ],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:popcorn"
+        },
+        {
+            "tag": "c:caramel"
+        }
+    ],
+    "result": {
+        "id": "createfood:caramel_popcorn"
+    }
+}

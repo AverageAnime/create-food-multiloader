@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:bucket"
+        },
+        {
+            "tag": "c:apple_jam_bottle"
+        },
+        {
+            "tag": "c:apple_jam_bottle"
+        }
+    ],
+    "result": {
+        "id": "createfood:apple_jam_bucket"
+    }
+}

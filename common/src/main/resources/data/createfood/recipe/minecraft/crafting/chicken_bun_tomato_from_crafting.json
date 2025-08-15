@@ -1,0 +1,15 @@
+{
+    "neoforge:conditions": [],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:chicken_bun"
+        },
+        {
+            "tag": "c:tomato"
+        }
+    ],
+    "result": {
+        "id": "createfood:chicken_bun_tomato"
+    }
+}

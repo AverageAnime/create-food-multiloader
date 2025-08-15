@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:chocolate_graham_cracker"
+        },
+        {
+            "tag": "c:chocolate_ice_cream_stick"
+        }
+    ],
+    "result": {
+        "id": "createfood:chocolate_graham_cracker_neapolitan_scoop_1"
+    }
+}

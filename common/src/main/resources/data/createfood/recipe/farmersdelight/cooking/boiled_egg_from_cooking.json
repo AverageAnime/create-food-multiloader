@@ -1,0 +1,24 @@
+{
+    "type": "farmersdelight:cooking",
+    "container": {
+        "count": 1,
+        "id": "minecraft:stick"
+    },
+    "experience": 0.2,
+    "ingredients": [
+        {
+            "item": "minecraft:water_bucket"
+        },
+        {
+            "item": "minecraft:egg"
+        },
+        {
+            "tag": "c:salt"
+        }
+    ],
+    "recipe_book_tab": "misc",
+    "result": {
+        "count": 1,
+        "id": "createfood:boiled_egg"
+    }
+}

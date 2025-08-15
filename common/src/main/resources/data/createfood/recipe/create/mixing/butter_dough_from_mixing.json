@@ -1,0 +1,22 @@
+{
+    "type": "create:mixing",
+    "ingredients": [
+        {
+            "tag": "c:flours/wheat"
+        },
+        {
+            "tag": "c:butter"
+        },
+        {
+            "tag": "c:eggs"
+        }
+    ],
+    "results": [
+        {
+            "count": 3,
+            "item": {
+                "id": "createfood:butter_dough"
+            }
+        }
+    ]
+}

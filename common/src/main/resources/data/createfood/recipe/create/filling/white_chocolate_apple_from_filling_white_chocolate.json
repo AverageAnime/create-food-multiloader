@@ -1,0 +1,20 @@
+{
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "item": "minecraft:apple"
+        },
+        {
+            "type": "fluid_tag",
+            "amount": 250,
+            "fluid_tag": "c:white_chocolate"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:white_chocolate_apple"
+            }
+        }
+    ]
+}

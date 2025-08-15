@@ -1,0 +1,18 @@
+{
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "c:bread_slice_glow_berry_jam"
+        },
+        {
+            "tag": "c:bread_slice"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:glow_berry_jam_sandwich"
+            }
+        }
+    ]
+}

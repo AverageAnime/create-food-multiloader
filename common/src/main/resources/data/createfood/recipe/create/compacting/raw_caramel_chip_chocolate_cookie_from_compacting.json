@@ -1,0 +1,19 @@
+{
+    "type": "create:compacting",
+    "ingredients": [
+        {
+            "tag": "c:caramel_chips"
+        },
+        {
+            "tag": "c:chocolate_sweet_dough"
+        }
+    ],
+    "results": [
+        {
+            "count": 8,
+            "item": {
+                "id": "createfood:raw_caramel_chip_chocolate_cookie"
+            }
+        }
+    ]
+}

@@ -1,0 +1,12 @@
+{
+    "neoforge:conditions": [],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:porkchop"
+        }
+    ],
+    "result": {
+        "id": "createfood:ground_pork"
+    }
+}

@@ -1,0 +1,27 @@
+{
+    "type": "farmersdelight:cutting",
+    "ingredients": [
+        {
+            "tag": "c:raw_dragon_meat_cuts"
+        }
+    ],
+    "tool": {
+        "tag": "c:tools/knife"
+    },
+    "result": [
+        {
+            "item": {
+                "id": "createfood:minced_dragon"
+            }
+        }
+    ],
+    "neoc:conditions": [
+        {
+            "type": "c:not",
+            "value": {
+                "type": "c:tag_empty",
+                "tag": "c:raw_dragon_meat_cuts"
+            }
+        }
+    ]
+}

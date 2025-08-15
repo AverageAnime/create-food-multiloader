@@ -1,0 +1,18 @@
+{
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "c:bun"
+        },
+        {
+            "tag": "c:cooked_beef"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:beef_bun"
+            }
+        }
+    ]
+}

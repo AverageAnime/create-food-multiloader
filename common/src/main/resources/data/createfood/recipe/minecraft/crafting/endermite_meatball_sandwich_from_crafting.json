@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:bread"
+        },
+        {
+            "tag": "c:small_endermite_meatballs"
+        }
+    ],
+    "result": {
+        "id": "createfood:endermite_meatball_sandwich"
+    }
+}

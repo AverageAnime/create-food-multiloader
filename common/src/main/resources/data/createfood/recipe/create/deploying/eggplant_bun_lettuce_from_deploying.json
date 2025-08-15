@@ -1,0 +1,18 @@
+{
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "c:eggplant_bun"
+        },
+        {
+            "tag": "c:foods/leafy_green"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:eggplant_bun_lettuce"
+            }
+        }
+    ]
+}

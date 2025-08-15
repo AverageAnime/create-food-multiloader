@@ -1,0 +1,20 @@
+{
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "tag": "c:marshmallow_stick"
+        },
+        {
+            "type": "fluid_tag",
+            "amount": 125,
+            "fluid_tag": "c:dark_chocolate"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:dark_chocolate_marshmallow_stick"
+            }
+        }
+    ]
+}

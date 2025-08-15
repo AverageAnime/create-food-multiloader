@@ -1,0 +1,17 @@
+{
+    "type": "farmersdelight:cooking",
+    "experience": 1.0,
+    "ingredients": [
+        {
+            "tag": "c:pressed_cocoa"
+        },
+        {
+            "tag": "c:cacao_mass_bucket"
+        }
+    ],
+    "recipe_book_tab": "misc",
+    "result": {
+        "count": 1,
+        "id": "createfood:bar_of_dark_chocolate"
+    }
+}

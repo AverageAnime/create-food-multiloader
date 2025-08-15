@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "STS"
+    ],
+    "key": {
+        "S": {
+            "item": "minecraft:stick"
+        },
+        "T": {
+            "tag": "minecraft:wool"
+        }
+    },
+    "result": {
+        "id": "createfood:cloth_filter"
+    }
+}

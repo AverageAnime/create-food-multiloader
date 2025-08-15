@@ -1,0 +1,20 @@
+{
+    "type": "farmersdelight:cooking",
+    "experience": 0.5,
+    "ingredients": [
+        {
+            "tag": "c:condensed_milk"
+        },
+        {
+            "tag": "c:dark_chocolate_chips"
+        },
+        {
+            "tag": "c:butter"
+        }
+    ],
+    "recipe_book_tab": "misc",
+    "result": {
+        "count": 1,
+        "id": "createfood:dark_chocolate_fudge"
+    }
+}

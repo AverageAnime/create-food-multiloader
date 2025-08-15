@@ -1,0 +1,15 @@
+{
+    "neoforge:conditions": [],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:chocolate_cupcake_base"
+        },
+        {
+            "tag": "c:glow_berry_cream_frosting"
+        }
+    ],
+    "result": {
+        "id": "createfood:glow_berry_cream_chocolate_cupcake"
+    }
+}

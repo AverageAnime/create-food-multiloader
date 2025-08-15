@@ -1,0 +1,33 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:not",
+            "value": {
+                "type": "neoforge:tag_empty",
+                "tag": "c:magma_gelatin"
+            }
+        }
+    ],
+    "type": "create:compacting",
+    "heat_requirement": "heated",
+    "ingredients": [
+        {
+            "tag": "c:sugar"
+        },
+        {
+            "type": "fluid_tag",
+            "amount": 83,
+            "fluid_tag": "c:water"
+        },
+        {
+            "tag": "c:magma_gelatin"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:magma_cream_marshmallow"
+            }
+        }
+    ]
+}

@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:raw_cheese_calzone"
+        },
+        {
+            "tag": "c:onion"
+        }
+    ],
+    "result": {
+        "id": "createfood:raw_onion_calzone"
+    }
+}

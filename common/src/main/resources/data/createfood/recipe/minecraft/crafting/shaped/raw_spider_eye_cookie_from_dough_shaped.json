@@ -1,0 +1,19 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "1 ",
+        "2 "
+    ],
+    "key": {
+        "1": {
+            "item": "minecraft:spider_eye"
+        },
+        "2": {
+            "tag": "c:sweet_dough"
+        }
+    },
+    "result": {
+        "count": 8,
+        "id": "createfood:raw_spider_eye_cookie"
+    }
+}

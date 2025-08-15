@@ -1,0 +1,27 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:not",
+            "value": {
+                "type": "neoforge:tag_empty",
+                "tag": "c:corn"
+            }
+        }
+    ],
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "1 ",
+        "2 "
+    ],
+    "key": {
+        "1": {
+            "tag": "c:corn"
+        },
+        "2": {
+            "item": "minecraft:stick"
+        }
+    },
+    "result": {
+        "id": "createfood:corn_stick"
+    }
+}

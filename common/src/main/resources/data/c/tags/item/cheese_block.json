@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "createfood:cheese_block",
+      "required": false
+    },
+    {
+      "id": "meadow:cheese_block",
+      "required": false
+    },
+    {
+      "id": "casualnessdelight:cheese_wheel",
+      "required": false
+    }
+  ]
+}

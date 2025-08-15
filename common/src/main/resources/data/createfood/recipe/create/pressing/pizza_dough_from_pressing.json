@@ -1,0 +1,15 @@
+{
+    "type": "create:pressing",
+    "ingredients": [
+        {
+            "tag": "c:salt_dough"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:pizza_dough"
+            }
+        }
+    ]
+}

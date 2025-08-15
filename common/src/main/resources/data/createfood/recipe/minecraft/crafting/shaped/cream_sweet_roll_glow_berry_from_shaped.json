@@ -1,0 +1,19 @@
+{
+    "neoforge:conditions": [],
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "1 ",
+        "2 "
+    ],
+    "key": {
+        "1": {
+            "item": "minecraft:glow_berries"
+        },
+        "2": {
+            "item": "create:sweet_roll"
+        }
+    },
+    "result": {
+        "id": "createfood:cream_sweet_roll_glow_berry"
+    }
+}

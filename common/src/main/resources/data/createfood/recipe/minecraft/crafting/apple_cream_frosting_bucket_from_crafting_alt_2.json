@@ -1,0 +1,18 @@
+{
+    "neoforge:conditions": [],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:cream_frosting_bucket"
+        },
+        {
+            "tag": "c:apple"
+        },
+        {
+            "item": "minecraft:bucket"
+        }
+    ],
+    "result": {
+        "id": "createfood:apple_cream_frosting_bucket"
+    }
+}

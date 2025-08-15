@@ -1,0 +1,15 @@
+{
+    "neoforge:conditions": [],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:waffle_cone"
+        },
+        {
+            "tag": "c:glow_berry_ice_cream_stick"
+        }
+    ],
+    "result": {
+        "id": "createfood:glow_berry_ice_cream_cone"
+    }
+}

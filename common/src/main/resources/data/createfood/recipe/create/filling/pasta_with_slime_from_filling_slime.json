@@ -1,0 +1,20 @@
+{
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "tag": "c:pasta_plate"
+        },
+        {
+            "type": "fluid_tag",
+            "amount": 250,
+            "fluid_tag": "c:slime"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:pasta_plate_slime"
+            }
+        }
+    ]
+}

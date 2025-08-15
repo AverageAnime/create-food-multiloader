@@ -1,0 +1,20 @@
+{
+    "type": "farmersdelight:cooking",
+    "experience": 1.0,
+    "ingredients": [
+        {
+            "tag": "c:milks"
+        },
+        {
+            "item": "createfood:vinegar_bottle"
+        },
+        {
+            "tag": "c:salt"
+        }
+    ],
+    "recipe_book_tab": "drinks",
+    "result": {
+        "count": 1,
+        "id": "createfood:cream_cheese_bucket"
+    }
+}

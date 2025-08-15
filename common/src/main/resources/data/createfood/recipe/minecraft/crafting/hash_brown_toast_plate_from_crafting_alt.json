@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:bowl"
+        },
+        {
+            "tag": "c:hash_browns"
+        },
+        {
+            "tag": "c:toast_slice"
+        }
+    ],
+    "result": {
+        "id": "createfood:hash_brown_toast_plate"
+    }
+}

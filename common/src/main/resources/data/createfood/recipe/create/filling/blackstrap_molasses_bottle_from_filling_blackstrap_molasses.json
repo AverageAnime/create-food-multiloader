@@ -1,0 +1,20 @@
+{
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "item": "minecraft:glass_bottle"
+        },
+        {
+            "type": "fluid_tag",
+            "amount": 500,
+            "fluid_tag": "c:blackstrap_molasses"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:blackstrap_molasses_bottle"
+            }
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+{
+    "type": "create:item_application",
+    "ingredients": [
+        {
+            "tag": "c:cream_cake"
+        },
+        {
+            "tag": "c:chorus_fruit"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:cream_cake_chorus_fruit"
+            }
+        }
+    ]
+}

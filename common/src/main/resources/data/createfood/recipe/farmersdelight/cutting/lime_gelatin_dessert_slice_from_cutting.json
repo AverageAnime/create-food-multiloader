@@ -1,0 +1,19 @@
+{
+    "type": "farmersdelight:cutting",
+    "ingredients": [
+        {
+            "tag": "c:lime_gelatin_dessert_block"
+        }
+    ],
+    "tool": {
+        "tag": "c:tools/knife"
+    },
+    "result": [
+        {
+            "item": {
+                "count": 8,
+                "id": "createfood:lime_gelatin_dessert_slice"
+            }
+        }
+    ]
+}

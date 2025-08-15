@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "1 ",
+        "2 "
+    ],
+    "key": {
+        "1": {
+            "tag": "c:caramel"
+        },
+        "2": {
+            "tag": "c:chocolate_sweet_roll_base"
+        }
+    },
+    "result": {
+        "id": "createfood:caramel_chocolate_sweet_roll"
+    }
+}

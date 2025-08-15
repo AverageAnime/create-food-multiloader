@@ -1,0 +1,24 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "culturaldelights"
+        }
+    ],
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "1 ",
+        "2 "
+    ],
+    "key": {
+        "1": {
+            "item": "farmersdelight:tomato_sauce"
+        },
+        "2": {
+            "tag": "c:pasta_plate_eggplant"
+        }
+    },
+    "result": {
+        "id": "culturaldelights:fried_eggplant_pasta"
+    }
+}

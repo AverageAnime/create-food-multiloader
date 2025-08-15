@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:sweet_dough"
+        },
+        {
+            "tag": "c:butter"
+        }
+    ],
+    "result": {
+        "id": "createfood:raw_pastry_base"
+    }
+}

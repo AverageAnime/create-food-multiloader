@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "1 ",
+        "2 "
+    ],
+    "key": {
+        "1": {
+            "tag": "c:endermite_meatball"
+        },
+        "2": {
+            "item": "createfood:endermite_meatball_stick_2"
+        }
+    },
+    "result": {
+        "id": "createfood:endermite_meatball_stick_3"
+    }
+}

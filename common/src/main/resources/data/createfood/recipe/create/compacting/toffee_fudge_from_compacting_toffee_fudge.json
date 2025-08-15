@@ -1,0 +1,17 @@
+{
+    "type": "create:compacting",
+    "ingredients": [
+        {
+            "type": "fluid_tag",
+            "amount": 500,
+            "fluid_tag": "c:toffee_fudge"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:toffee_fudge"
+            }
+        }
+    ]
+}

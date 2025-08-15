@@ -1,0 +1,16 @@
+{
+    "type": "create:pressing",
+    "ingredients": [
+        {
+            "tag": "c:bar_of_dark_chocolate"
+        }
+    ],
+    "results": [
+        {
+            "count": 8,
+            "item": {
+                "id": "createfood:dark_chocolate_chips"
+            }
+        }
+    ]
+}

@@ -1,0 +1,20 @@
+{
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "item": "minecraft:stick"
+        },
+        {
+            "type": "fluid_tag",
+            "amount": 111,
+            "fluid_tag": "c:ice_cream"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:ice_cream_stick"
+            }
+        }
+    ]
+}

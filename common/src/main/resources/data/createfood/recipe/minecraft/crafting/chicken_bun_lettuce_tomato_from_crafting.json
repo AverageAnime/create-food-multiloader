@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:chicken_bun_lettuce"
+        },
+        {
+            "tag": "c:tomato"
+        }
+    ],
+    "result": {
+        "id": "createfood:chicken_bun_lettuce_tomato"
+    }
+}

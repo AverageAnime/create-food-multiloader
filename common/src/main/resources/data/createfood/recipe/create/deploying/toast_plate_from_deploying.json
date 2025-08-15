@@ -1,0 +1,18 @@
+{
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "item": "minecraft:bowl"
+        },
+        {
+            "tag": "c:toast_slice"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:toast_plate"
+            }
+        }
+    ]
+}

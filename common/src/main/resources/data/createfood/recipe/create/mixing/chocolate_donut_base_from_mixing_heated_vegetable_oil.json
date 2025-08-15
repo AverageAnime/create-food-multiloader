@@ -1,0 +1,21 @@
+{
+    "type": "create:mixing",
+    "heat_requirement": "heated",
+    "ingredients": [
+        {
+            "tag": "c:chocolate_pastry_base"
+        },
+        {
+            "type": "fluid_tag",
+            "amount": 125,
+            "fluid_tag": "c:vegetable_oil"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:chocolate_donut_base"
+            }
+        }
+    ]
+}

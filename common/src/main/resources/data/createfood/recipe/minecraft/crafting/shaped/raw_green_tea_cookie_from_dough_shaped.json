@@ -1,0 +1,28 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:not",
+            "value": {
+                "type": "neoforge:tag_empty",
+                "tag": "c:crops/green_tea_leaves"
+            }
+        }
+    ],
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "1 ",
+        "2 "
+    ],
+    "key": {
+        "1": {
+            "tag": "c:crops/green_tea_leaves"
+        },
+        "2": {
+            "tag": "c:sweet_dough"
+        }
+    },
+    "result": {
+        "count": 8,
+        "id": "createfood:raw_green_tea_cookie"
+    }
+}

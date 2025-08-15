@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:pasta_plate"
+        },
+        {
+            "tag": "c:small_beef_meatballs"
+        }
+    ],
+    "result": {
+        "id": "createfood:pasta_plate_beef_meatballs"
+    }
+}

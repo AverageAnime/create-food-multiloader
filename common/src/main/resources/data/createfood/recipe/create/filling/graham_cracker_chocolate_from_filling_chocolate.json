@@ -1,0 +1,20 @@
+{
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "tag": "c:graham_cracker"
+        },
+        {
+            "type": "fluid_tag",
+            "amount": 166,
+            "fluid_tag": "c:chocolates"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:graham_cracker_chocolate"
+            }
+        }
+    ]
+}

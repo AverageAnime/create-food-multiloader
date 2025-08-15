@@ -1,0 +1,18 @@
+{
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "c:pasta_plate"
+        },
+        {
+            "tag": "c:small_slimeballs"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:pasta_plate_slimeballs"
+            }
+        }
+    ]
+}

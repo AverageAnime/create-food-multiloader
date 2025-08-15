@@ -1,0 +1,15 @@
+{
+    "type": "create:mixing",
+    "heat_requirement": "heated",
+    "ingredients": [
+        {
+            "tag": "c:butterscotch"
+        }
+    ],
+    "results": [
+        {
+            "amount": 500,
+            "id": "createfood:butterscotch"
+        }
+    ]
+}

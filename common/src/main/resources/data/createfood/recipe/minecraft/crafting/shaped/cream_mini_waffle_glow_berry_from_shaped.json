@@ -1,0 +1,19 @@
+{
+    "neoforge:conditions": [],
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        " 1 ",
+        " 2 "
+    ],
+    "key": {
+        "1": {
+            "item": "minecraft:glow_berries"
+        },
+        "2": {
+            "tag": "c:cream_mini_waffle"
+        }
+    },
+    "result": {
+        "id": "createfood:cream_mini_waffle_glow_berry"
+    }
+}

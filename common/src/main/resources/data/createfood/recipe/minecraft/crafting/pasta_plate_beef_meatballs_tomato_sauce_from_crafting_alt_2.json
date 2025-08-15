@@ -1,0 +1,18 @@
+{
+    "neoforge:conditions": [],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:cooked_pasta"
+        },
+        {
+            "item": "farmersdelight:tomato_sauce"
+        },
+        {
+            "tag": "c:small_beef_meatballs"
+        }
+    ],
+    "result": {
+        "id": "farmersdelight:pasta_with_meatballs"
+    }
+}

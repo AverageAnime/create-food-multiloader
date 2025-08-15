@@ -1,0 +1,19 @@
+{
+    "type": "farmersdelight:cutting",
+    "ingredients": [
+        {
+            "tag": "c:salt_dough"
+        }
+    ],
+    "tool": {
+        "tag": "minecraft:axes"
+    },
+    "result": [
+        {
+            "item": {
+                "count": 2,
+                "id": "createfood:salt_dough_small"
+            }
+        }
+    ]
+}

@@ -1,0 +1,23 @@
+{
+    "type": "create:mixing",
+    "ingredients": [
+        {
+            "tag": "c:ube_sugar_dough"
+        },
+        {
+            "tag": "c:eggs"
+        },
+        {
+            "type": "fluid_tag",
+            "amount": 1000,
+            "fluid_tag": "c:milk"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:raw_ube_cake_base"
+            }
+        }
+    ]
+}

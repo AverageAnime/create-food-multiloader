@@ -1,0 +1,18 @@
+{
+    "type": "create:item_application",
+    "ingredients": [
+        {
+            "tag": "c:cake_base"
+        },
+        {
+            "tag": "c:berry_cream_frosting_bottle"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:berry_cream_cake"
+            }
+        }
+    ]
+}

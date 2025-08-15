@@ -1,0 +1,25 @@
+{
+    "neoforge:conditions": [],
+    "type": "create:mixing",
+    "heat_requirement": "heated",
+    "ingredients": [
+        {
+            "type": "fluid_tag",
+            "amount": 125,
+            "fluid_tag": "c:water"
+        },
+        {
+            "tag": "c:raw_macaroni"
+        },
+        {
+            "tag": "c:butter"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:macaroni"
+            }
+        }
+    ]
+}

@@ -1,0 +1,17 @@
+{
+    "neoforge:conditions": [],
+    "type": "create:pressing",
+    "ingredients": [
+        {
+            "item": "minecraft:mutton"
+        }
+    ],
+    "results": [
+        {
+            "count": 2,
+            "item": {
+                "id": "createfood:ground_mutton"
+            }
+        }
+    ]
+}

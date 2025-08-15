@@ -1,0 +1,30 @@
+{
+    "type": "create:mixing",
+    "ingredients": [
+        {
+            "item": "minecraft:water_bucket"
+        },
+        {
+            "tag": "c:sugar"
+        },
+        {
+            "tag": "c:sugar"
+        },
+        {
+            "tag": "c:fruits"
+        },
+        {
+            "tag": "c:fruits"
+        },
+        {
+            "tag": "c:fruits"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:vinegar_bucket"
+            }
+        }
+    ]
+}

@@ -1,0 +1,21 @@
+{
+    "neoforge:conditions": [],
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "tag": "c:mini_waffle"
+        },
+        {
+            "type": "fluid_tag",
+            "amount": 250,
+            "fluid_tag": "c:honey"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:honeyed_mini_waffle"
+            }
+        }
+    ]
+}

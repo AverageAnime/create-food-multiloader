@@ -1,0 +1,29 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:chocolate_cream_cake_slice_toffee"
+        },
+        {
+            "tag": "c:chocolate_cream_cake_slice_toffee"
+        },
+        {
+            "tag": "c:chocolate_cream_cake_slice_toffee"
+        },
+        {
+            "tag": "c:chocolate_cream_cake_slice_toffee"
+        },
+        {
+            "tag": "c:chocolate_cream_cake_slice_toffee"
+        },
+        {
+            "tag": "c:chocolate_cream_cake_slice_toffee"
+        },
+        {
+            "tag": "c:chocolate_cream_cake_slice_toffee"
+        }
+    ],
+    "result": {
+        "id": "createfood:chocolate_cream_cake_toffee"
+    }
+}

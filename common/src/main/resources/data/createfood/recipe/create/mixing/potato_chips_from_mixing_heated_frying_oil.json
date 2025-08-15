@@ -1,0 +1,26 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "create_bic_bit"
+        }
+    ],
+    "type": "create:mixing",
+    "heat_requirement": "heated",
+    "ingredients": [
+        {
+            "tag": "c:potato"
+        },
+        {
+            "amount": 125,
+            "fluid": "create_bic_bit:frying_oil"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:potato_chips"
+            }
+        }
+    ]
+}

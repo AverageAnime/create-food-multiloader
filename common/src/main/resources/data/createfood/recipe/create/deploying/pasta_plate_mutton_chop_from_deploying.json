@@ -1,0 +1,18 @@
+{
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "c:pasta_plate"
+        },
+        {
+            "tag": "c:cooked_mutton"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:pasta_plate_mutton_chop"
+            }
+        }
+    ]
+}

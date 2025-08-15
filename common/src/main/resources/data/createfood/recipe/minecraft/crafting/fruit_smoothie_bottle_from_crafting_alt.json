@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:yogurt_bottle"
+        },
+        {
+            "tag": "c:fruits"
+        },
+        {
+            "tag": "c:ice_blocks"
+        }
+    ],
+    "result": {
+        "id": "createfood:fruit_smoothie_bottle"
+    }
+}

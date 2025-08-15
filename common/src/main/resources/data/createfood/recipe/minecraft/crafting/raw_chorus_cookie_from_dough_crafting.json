@@ -1,0 +1,21 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "ends_delight"
+        }
+    ],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:sweet_dough"
+        },
+        {
+            "item": "ends_delight:chorus_fruit_grain"
+        }
+    ],
+    "result": {
+        "count": 8,
+        "id": "createfood:raw_chorus_cookie"
+    }
+}

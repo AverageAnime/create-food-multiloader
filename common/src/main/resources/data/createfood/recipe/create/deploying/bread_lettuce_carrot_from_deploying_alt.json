@@ -1,0 +1,19 @@
+{
+    "neoforge:conditions": [],
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "c:bread_carrot"
+        },
+        {
+            "tag": "c:foods/leafy_green"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:bread_lettuce_carrot"
+            }
+        }
+    ]
+}

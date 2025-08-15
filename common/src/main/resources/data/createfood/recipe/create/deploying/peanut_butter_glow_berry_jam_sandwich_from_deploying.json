@@ -1,0 +1,24 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "expandeddelight"
+        }
+    ],
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "c:bread_slice_peanut_butter"
+        },
+        {
+            "tag": "c:bread_slice_glow_berry_jam"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "expandeddelight:glow_berry_jelly_sandwich"
+            }
+        }
+    ]
+}

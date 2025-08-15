@@ -1,0 +1,15 @@
+{
+    "neoforge:conditions": [],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:bread_slice_bacon"
+        },
+        {
+            "tag": "c:foods/leafy_green"
+        }
+    ],
+    "result": {
+        "id": "createfood:bread_slice_bacon_lettuce"
+    }
+}

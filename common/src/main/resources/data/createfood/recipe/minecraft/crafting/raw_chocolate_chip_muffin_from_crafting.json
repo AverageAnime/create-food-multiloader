@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:raw_muffin_base"
+        },
+        {
+            "tag": "c:chocolate_chips"
+        }
+    ],
+    "result": {
+        "id": "createfood:raw_chocolate_chip_muffin"
+    }
+}

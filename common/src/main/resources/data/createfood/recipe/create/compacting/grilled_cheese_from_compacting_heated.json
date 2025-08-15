@@ -1,0 +1,22 @@
+{
+    "type": "create:compacting",
+    "heat_requirement": "heated",
+    "ingredients": [
+        {
+            "tag": "c:bread_slice"
+        },
+        {
+            "tag": "c:cheeses"
+        },
+        {
+            "tag": "c:bread_slice"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:grilled_cheese_sandwich"
+            }
+        }
+    ]
+}

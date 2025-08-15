@@ -1,0 +1,19 @@
+{
+    "neoforge:conditions": [],
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        " 1 ",
+        " 2 "
+    ],
+    "key": {
+        "1": {
+            "tag": "c:berry_cream_frosting"
+        },
+        "2": {
+            "tag": "c:chocolate_cupcake_base"
+        }
+    },
+    "result": {
+        "id": "createfood:berry_cream_chocolate_cupcake"
+    }
+}

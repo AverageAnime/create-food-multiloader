@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:smelting",
+    "category": "food",
+    "cookingtime": 200,
+    "experience": 0.1,
+    "ingredient": {
+        "tag": "c:pita_dough"
+    },
+    "result": {
+        "count": 1,
+        "id": "createfood:pita_bread"
+    },
+    "neoforge:conditions": []
+}

@@ -1,0 +1,13 @@
+{
+    "type": "minecraft:campfire_cooking",
+    "category": "food",
+    "cookingtime": 200,
+    "experience": 0.1,
+    "ingredient": {
+        "tag": "c:cheese_sandwich"
+    },
+    "result": {
+        "count": 1,
+        "id": "createfood:grilled_cheese_sandwich"
+    }
+}

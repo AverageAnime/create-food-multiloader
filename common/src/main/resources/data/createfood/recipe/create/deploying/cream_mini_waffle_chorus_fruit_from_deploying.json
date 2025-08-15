@@ -1,0 +1,19 @@
+{
+    "neoforge:conditions": [],
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "c:cream_mini_waffle"
+        },
+        {
+            "tag": "c:chorus_fruit"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:cream_mini_waffle_chorus_fruit"
+            }
+        }
+    ]
+}

@@ -1,0 +1,19 @@
+{
+    "type": "minecraft:campfire_cooking",
+    "category": "food",
+    "cookingtime": 200,
+    "experience": 0.1,
+    "ingredient": {
+        "tag": "c:raw_ginger_cookie"
+    },
+    "result": {
+        "count": 1,
+        "id": "ubesdelight:cookie_ginger"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "ubesdelight:cookie_ginger"
+        }
+    ]
+}

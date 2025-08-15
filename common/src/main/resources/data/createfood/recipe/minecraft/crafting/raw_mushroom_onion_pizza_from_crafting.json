@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:raw_mushroom_pizza"
+        },
+        {
+            "tag": "c:onion"
+        }
+    ],
+    "result": {
+        "id": "createfood:raw_mushroom_onion_pizza"
+    }
+}

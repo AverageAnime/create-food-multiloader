@@ -1,0 +1,18 @@
+{
+    "type": "create:item_application",
+    "ingredients": [
+        {
+            "tag": "c:gelatin_dessert_block"
+        },
+        {
+            "tag": "c:dyes/gray"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:gray_gelatin_dessert_block"
+            }
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "1 ",
+        "2 "
+    ],
+    "key": {
+        "1": {
+            "tag": "c:biscuit"
+        },
+        "2": {
+            "tag": "c:cheese_biscuit"
+        }
+    },
+    "result": {
+        "id": "createfood:cheese_biscuit_sandwich"
+    }
+}

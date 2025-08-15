@@ -1,0 +1,13 @@
+{
+    "type": "minecraft:campfire_cooking",
+    "category": "food",
+    "cookingtime": 200,
+    "experience": 0.1,
+    "ingredient": {
+        "tag": "c:sliced_potato"
+    },
+    "result": {
+        "count": 1,
+        "id": "createfood:potato_chips"
+    }
+}

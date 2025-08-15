@@ -1,0 +1,13 @@
+{
+    "type": "minecraft:campfire_cooking",
+    "category": "food",
+    "cookingtime": 200,
+    "experience": 0.1,
+    "ingredient": {
+        "tag": "c:white_chocolate_bottle"
+    },
+    "result": {
+        "count": 1,
+        "id": "createfood:hot_white_chocolate_bottle"
+    }
+}

@@ -1,0 +1,23 @@
+{
+    "type": "farmersdelight:cooking",
+    "experience": 0.75,
+    "ingredients": [
+        {
+            "item": "minecraft:glow_berries"
+        },
+        {
+            "item": "minecraft:glow_berries"
+        },
+        {
+            "tag": "c:sugar"
+        },
+        {
+            "tag": "c:sugar"
+        }
+    ],
+    "recipe_book_tab": "drinks",
+    "result": {
+        "count": 1,
+        "id": "createfood:glow_berry_jam_bucket"
+    }
+}

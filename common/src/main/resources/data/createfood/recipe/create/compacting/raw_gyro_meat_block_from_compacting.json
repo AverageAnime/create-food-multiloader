@@ -1,0 +1,22 @@
+{
+    "neoforge:conditions": [],
+    "type": "create:compacting",
+    "ingredients": [
+        {
+            "tag": "c:foods/raw_meats/raw_mutton"
+        },
+        {
+            "tag": "c:foods/raw_meats/raw_mutton"
+        },
+        {
+            "tag": "c:gyro_meat_ingredients"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:raw_gyro_meat_block"
+            }
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+{
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "c:eggplant_bun_lettuce"
+        },
+        {
+            "tag": "c:tomato"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:eggplant_bun_lettuce_tomato"
+            }
+        }
+    ]
+}

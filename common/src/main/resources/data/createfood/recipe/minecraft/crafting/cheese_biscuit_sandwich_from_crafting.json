@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:cheese_biscuit"
+        },
+        {
+            "tag": "c:biscuit"
+        }
+    ],
+    "result": {
+        "id": "createfood:cheese_biscuit_sandwich"
+    }
+}

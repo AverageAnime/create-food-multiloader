@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "1 ",
+        "2 "
+    ],
+    "key": {
+        "1": {
+            "tag": "c:cooked_eggs"
+        },
+        "2": {
+            "item": "minecraft:bread"
+        }
+    },
+    "result": {
+        "id": "createfood:bread_fried_egg"
+    }
+}

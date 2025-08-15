@@ -1,0 +1,23 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:not",
+            "value": {
+                "type": "neoforge:tag_empty",
+                "tag": "c:vegetables/ube"
+            }
+        }
+    ],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:ube_cream_ube_cake"
+        },
+        {
+            "tag": "c:vegetables/ube"
+        }
+    ],
+    "result": {
+        "id": "ubesdelight:ube_cake"
+    }
+}

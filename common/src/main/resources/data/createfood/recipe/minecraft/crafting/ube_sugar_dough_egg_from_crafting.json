@@ -1,0 +1,27 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:not",
+            "value": {
+                "type": "neoforge:tag_empty",
+                "tag": "c:crops/ube"
+            }
+        }
+    ],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:eggs"
+        },
+        {
+            "tag": "c:sugar"
+        },
+        {
+            "tag": "c:crops/ube"
+        }
+    ],
+    "result": {
+        "count": 3,
+        "id": "createfood:ube_sugar_dough"
+    }
+}

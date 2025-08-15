@@ -1,0 +1,26 @@
+{
+    "type": "farmersdelight:cooking",
+    "experience": 0.5,
+    "ingredients": [
+        {
+            "tag": "c:condensed_milk"
+        },
+        {
+            "tag": "c:toffee_chips"
+        },
+        {
+            "tag": "c:butter"
+        },
+        {
+            "tag": "c:marshmallow"
+        },
+        {
+            "tag": "c:espresso_powder"
+        }
+    ],
+    "recipe_book_tab": "misc",
+    "result": {
+        "count": 1,
+        "id": "createfood:marshmallow_coffee_toffee_fudge"
+    }
+}

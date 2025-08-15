@@ -1,0 +1,24 @@
+{
+    "neoforge:conditions": [],
+    "type": "create:mixing",
+    "heat_requirement": "heated",
+    "ingredients": [
+        {
+            "type": "fluid_tag",
+            "amount": 1000,
+            "fluid_tag": "c:pumpkin_puree"
+        },
+        {
+            "tag": "c:eggs"
+        },
+        {
+            "tag": "c:brown_sugar"
+        }
+    ],
+    "results": [
+        {
+            "amount": 1000,
+            "id": "createfood:pumpkin_pie_filling"
+        }
+    ]
+}

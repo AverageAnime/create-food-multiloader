@@ -1,0 +1,19 @@
+{
+    "neoforge:conditions": [],
+    "type": "create:item_application",
+    "ingredients": [
+        {
+            "tag": "c:raw_onion_pizza"
+        },
+        {
+            "tag": "c:cooked_fishes"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:raw_fish_onion_pizza"
+            }
+        }
+    ]
+}

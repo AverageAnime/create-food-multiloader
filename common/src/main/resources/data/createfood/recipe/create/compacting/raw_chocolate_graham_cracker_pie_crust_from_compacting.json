@@ -1,0 +1,29 @@
+{
+    "type": "create:compacting",
+    "ingredients": [
+        {
+            "type": "fluid_tag",
+            "amount": 250,
+            "fluid_tag": "c:milk"
+        },
+        {
+            "tag": "c:chocolate_graham_cracker_crumbs"
+        },
+        {
+            "tag": "c:chocolate_graham_cracker_crumbs"
+        },
+        {
+            "tag": "c:chocolate_graham_cracker_crumbs"
+        },
+        {
+            "tag": "c:butter"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:raw_chocolate_graham_cracker_pie_crust"
+            }
+        }
+    ]
+}

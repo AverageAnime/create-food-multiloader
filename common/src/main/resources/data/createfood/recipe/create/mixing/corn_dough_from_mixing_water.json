@@ -1,0 +1,27 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "culturaldelights"
+        }
+    ],
+    "type": "create:mixing",
+    "ingredients": [
+        {
+            "tag": "c:corn_flour"
+        },
+        {
+            "type": "fluid_tag",
+            "amount": 1000,
+            "fluid_tag": "c:water"
+        }
+    ],
+    "results": [
+        {
+            "count": 6,
+            "item": {
+                "id": "culturaldelights:corn_dough"
+            }
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+{
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "c:chocolate_graham_cracker_neapolitan_scoop_3"
+        },
+        {
+            "tag": "c:chocolate_graham_cracker"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:ice_cream_sandwich_neapolitan"
+            }
+        }
+    ]
+}

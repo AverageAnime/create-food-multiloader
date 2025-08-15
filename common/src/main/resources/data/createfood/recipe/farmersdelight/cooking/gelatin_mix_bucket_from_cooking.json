@@ -1,0 +1,23 @@
+{
+    "type": "farmersdelight:cooking",
+    "experience": 0.1,
+    "ingredients": [
+        {
+            "tag": "c:gelatin"
+        },
+        {
+            "tag": "c:gelatin"
+        },
+        {
+            "tag": "c:gelatin"
+        },
+        {
+            "item": "minecraft:water_bucket"
+        }
+    ],
+    "recipe_book_tab": "drinks",
+    "result": {
+        "count": 1,
+        "id": "createfood:gelatin_mix_bucket"
+    }
+}

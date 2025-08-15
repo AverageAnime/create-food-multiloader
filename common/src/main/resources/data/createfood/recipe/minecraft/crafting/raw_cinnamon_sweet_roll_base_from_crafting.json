@@ -1,0 +1,26 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:not",
+            "value": {
+                "type": "neoforge:tag_empty",
+                "tag": "c:dusts/cinnamon"
+            }
+        }
+    ],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:sweet_dough"
+        },
+        {
+            "tag": "c:sugar"
+        },
+        {
+            "tag": "c:dusts/cinnamon"
+        }
+    ],
+    "result": {
+        "id": "createfood:raw_cinnamon_sweet_roll_base"
+    }
+}

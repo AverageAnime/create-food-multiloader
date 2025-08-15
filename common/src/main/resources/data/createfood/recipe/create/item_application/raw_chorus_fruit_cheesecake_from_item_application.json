@@ -1,0 +1,18 @@
+{
+    "type": "create:item_application",
+    "ingredients": [
+        {
+            "tag": "c:raw_cheesecake"
+        },
+        {
+            "tag": "c:chorus_fruit"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:raw_chorus_fruit_cheesecake"
+            }
+        }
+    ]
+}

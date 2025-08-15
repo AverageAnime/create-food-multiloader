@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:graham_cracker"
+        },
+        {
+            "tag": "c:hollow_chocolate"
+        }
+    ],
+    "result": {
+        "id": "createfood:graham_cracker_chocolate"
+    }
+}

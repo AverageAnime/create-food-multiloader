@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:chocolate_pie_graham_cracker_slice"
+        },
+        {
+            "tag": "c:chocolate_pie_graham_cracker_slice"
+        },
+        {
+            "tag": "c:chocolate_pie_graham_cracker_slice"
+        },
+        {
+            "tag": "c:chocolate_pie_graham_cracker_slice"
+        }
+    ],
+    "result": {
+        "id": "createfood:chocolate_pie_graham_cracker"
+    }
+}

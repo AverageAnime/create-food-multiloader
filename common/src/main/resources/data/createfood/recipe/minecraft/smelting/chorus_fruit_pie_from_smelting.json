@@ -1,0 +1,13 @@
+{
+    "type": "minecraft:smelting",
+    "category": "food",
+    "cookingtime": 550,
+    "experience": 0.95,
+    "ingredient": {
+        "tag": "c:raw_chorus_fruit_pie"
+    },
+    "result": {
+        "count": 1,
+        "id": "createfood:chorus_fruit_pie"
+    }
+}

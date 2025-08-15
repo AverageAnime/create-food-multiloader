@@ -1,0 +1,19 @@
+{
+    "type": "minecraft:smoking",
+    "category": "food",
+    "cookingtime": 100,
+    "experience": 0.35,
+    "ingredient": {
+        "tag": "c:raw_sugar_cookie"
+    },
+    "result": {
+        "count": 1,
+        "id": "expandeddelight:sugar_cookie"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "expandeddelight:sugar_cookie"
+        }
+    ]
+}

@@ -1,0 +1,23 @@
+{
+    "type": "farmersdelight:cooking",
+    "experience": 0.1,
+    "ingredients": [
+        {
+            "tag": "c:crops/grains"
+        },
+        {
+            "tag": "c:gelatin"
+        },
+        {
+            "tag": "c:dyes/lime"
+        },
+        {
+            "tag": "c:buckets/water"
+        }
+    ],
+    "recipe_book_tab": "drinks",
+    "result": {
+        "count": 1,
+        "id": "createfood:slime_bucket"
+    }
+}

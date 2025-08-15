@@ -1,0 +1,19 @@
+{
+    "neoforge:conditions": [],
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "1 ",
+        "2 "
+    ],
+    "key": {
+        "1": {
+            "tag": "c:foods/leafy_green"
+        },
+        "2": {
+            "tag": "c:bread_carrot"
+        }
+    },
+    "result": {
+        "id": "createfood:bread_lettuce_carrot"
+    }
+}

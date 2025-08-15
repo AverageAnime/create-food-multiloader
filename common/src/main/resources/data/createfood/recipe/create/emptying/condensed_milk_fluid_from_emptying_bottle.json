@@ -1,0 +1,19 @@
+{
+    "type": "create:emptying",
+    "ingredients": [
+        {
+            "tag": "c:condensed_milk_bottle"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "minecraft:glass_bottle"
+            }
+        },
+        {
+            "amount": 250,
+            "id": "createfood:condensed_milk"
+        }
+    ]
+}

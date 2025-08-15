@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:bucket"
+        },
+        {
+            "tag": "c:glow_berry_milkshake_bottle"
+        },
+        {
+            "tag": "c:glow_berry_milkshake_bottle"
+        }
+    ],
+    "result": {
+        "id": "createfood:glow_berry_milkshake_bucket"
+    }
+}

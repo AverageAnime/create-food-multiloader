@@ -1,0 +1,19 @@
+{
+    "neoforge:conditions": [],
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "c:pasta_plate"
+        },
+        {
+            "tag": "c:small_pork_meatballs"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:pasta_plate_pork_meatballs"
+            }
+        }
+    ]
+}

@@ -1,0 +1,20 @@
+{
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "item": "minecraft:glass_bottle"
+        },
+        {
+            "type": "fluid_tag",
+            "amount": 250,
+            "fluid_tag": "c:hot_dark_chocolate"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:hot_dark_chocolate_bottle"
+            }
+        }
+    ]
+}

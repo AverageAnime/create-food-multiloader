@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "createfood:glow_berry_milkshake_bucket",
+      "required": false
+    },
+    {
+      "id": "create_dd:glow_berry_milkshake_bucket",
+      "required": false
+    }
+  ]
+}

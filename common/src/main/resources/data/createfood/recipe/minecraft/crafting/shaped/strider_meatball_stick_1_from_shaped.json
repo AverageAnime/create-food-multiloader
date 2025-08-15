@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "1 ",
+        "2 "
+    ],
+    "key": {
+        "1": {
+            "tag": "c:strider_meatball"
+        },
+        "2": {
+            "item": "minecraft:stick"
+        }
+    },
+    "result": {
+        "id": "createfood:strider_meatball_stick_1"
+    }
+}

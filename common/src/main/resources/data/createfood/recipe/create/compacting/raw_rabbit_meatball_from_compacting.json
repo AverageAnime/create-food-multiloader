@@ -1,0 +1,17 @@
+{
+    "neoforge:conditions": [],
+    "type": "create:compacting",
+    "ingredients": [
+        {
+            "tag": "c:ground_rabbit"
+        }
+    ],
+    "results": [
+        {
+            "count": 2,
+            "item": {
+                "id": "createfood:raw_rabbit_meatball"
+            }
+        }
+    ]
+}

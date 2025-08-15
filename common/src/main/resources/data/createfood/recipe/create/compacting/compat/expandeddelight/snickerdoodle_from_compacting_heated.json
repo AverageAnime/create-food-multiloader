@@ -1,0 +1,29 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "expandeddelight"
+        }
+    ],
+    "type": "create:compacting",
+    "heat_requirement": "heated",
+    "ingredients": [
+        {
+            "tag": "c:sugar"
+        },
+        {
+            "tag": "c:sweet_dough"
+        },
+        {
+            "tag": "c:dusts/cinnamon"
+        }
+    ],
+    "results": [
+        {
+            "count": 8,
+            "item": {
+                "id": "expandeddelight:snickerdoodle"
+            }
+        }
+    ]
+}

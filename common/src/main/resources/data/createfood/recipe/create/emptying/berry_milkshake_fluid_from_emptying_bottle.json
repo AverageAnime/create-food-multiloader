@@ -1,0 +1,19 @@
+{
+    "type": "create:emptying",
+    "ingredients": [
+        {
+            "tag": "c:berry_milkshake_bottle"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "minecraft:glass_bottle"
+            }
+        },
+        {
+            "amount": 40500,
+            "id": "createfood:berry_milkshake"
+        }
+    ]
+}

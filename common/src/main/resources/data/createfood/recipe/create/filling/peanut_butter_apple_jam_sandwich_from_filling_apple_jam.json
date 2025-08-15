@@ -1,0 +1,29 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:not",
+            "value": {
+                "type": "neoforge:tag_empty",
+                "tag": "c:peanut_butter"
+            }
+        }
+    ],
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "tag": "c:peanut_butter_sandwich"
+        },
+        {
+            "type": "fluid_tag",
+            "amount": 125,
+            "fluid_tag": "c:apple_jam"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:peanut_butter_apple_jam_sandwich"
+            }
+        }
+    ]
+}

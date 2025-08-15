@@ -1,0 +1,18 @@
+{
+    "neoforge:conditions": [],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:biscuit"
+        },
+        {
+            "tag": "c:cooked_pork"
+        },
+        {
+            "tag": "c:sausage_patty"
+        }
+    ],
+    "result": {
+        "id": "createfood:sausage_biscuit_bacon"
+    }
+}

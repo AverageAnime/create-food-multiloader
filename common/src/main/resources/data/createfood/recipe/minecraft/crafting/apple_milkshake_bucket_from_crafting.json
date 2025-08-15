@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:bucket"
+        },
+        {
+            "tag": "c:apple_milkshake_bottle"
+        },
+        {
+            "tag": "c:apple_milkshake_bottle"
+        }
+    ],
+    "result": {
+        "id": "createfood:apple_milkshake_bucket"
+    }
+}

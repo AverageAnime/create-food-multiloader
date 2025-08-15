@@ -1,0 +1,18 @@
+{
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "item": "minecraft:bread"
+        },
+        {
+            "tag": "c:foods/leafy_green"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:bread_lettuce"
+            }
+        }
+    ]
+}

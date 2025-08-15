@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:gelatin_dessert_block"
+        },
+        {
+            "tag": "c:dyes/orange"
+        }
+    ],
+    "result": {
+        "id": "createfood:orange_gelatin_dessert_block"
+    }
+}

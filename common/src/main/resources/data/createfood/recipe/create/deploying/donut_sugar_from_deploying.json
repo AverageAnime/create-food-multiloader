@@ -1,0 +1,18 @@
+{
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "c:donut_base"
+        },
+        {
+            "tag": "c:powdered_sugar"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:donut_sugar"
+            }
+        }
+    ]
+}

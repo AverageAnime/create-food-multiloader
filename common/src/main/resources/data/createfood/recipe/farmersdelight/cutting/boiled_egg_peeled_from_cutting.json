@@ -1,0 +1,29 @@
+{
+    "type": "farmersdelight:cutting",
+    "ingredients": [
+        {
+            "tag": "c:boiled_egg"
+        }
+    ],
+    "tool": {
+        "tag": "c:tools/knife"
+    },
+    "result": [
+        {
+            "item": {
+                "id": "createfood:boiled_egg_peeled"
+            }
+        },
+        {
+            "item": {
+                "id": "createfood:eggshell"
+            }
+        },
+        {
+            "item": {
+                "id": "createfood:eggshell",
+                "chance": 0.25
+            }
+        }
+    ]
+}

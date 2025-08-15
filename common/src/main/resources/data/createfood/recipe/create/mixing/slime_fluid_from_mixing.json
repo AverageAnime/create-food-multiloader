@@ -1,0 +1,26 @@
+{
+    "type": "create:mixing",
+    "heat_requirement": "heated",
+    "ingredients": [
+        {
+            "tag": "c:flours/wheat"
+        },
+        {
+            "tag": "c:gelatin"
+        },
+        {
+            "tag": "c:dyes/lime"
+        },
+        {
+            "type": "fluid_tag",
+            "amount": 250,
+            "fluid_tag": "c:water"
+        }
+    ],
+    "results": [
+        {
+            "amount": 1000,
+            "id": "createfood:slime"
+        }
+    ]
+}

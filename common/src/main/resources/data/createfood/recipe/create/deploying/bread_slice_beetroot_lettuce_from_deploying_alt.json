@@ -1,0 +1,19 @@
+{
+    "neoforge:conditions": [],
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "c:bread_slice_lettuce"
+        },
+        {
+            "tag": "c:beetroot"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:bread_slice_beetroot_lettuce"
+            }
+        }
+    ]
+}

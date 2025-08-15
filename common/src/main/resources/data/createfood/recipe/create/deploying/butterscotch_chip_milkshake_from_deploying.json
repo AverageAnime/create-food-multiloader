@@ -1,0 +1,18 @@
+{
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "c:milkshake"
+        },
+        {
+            "tag": "c:butterscotch_chips"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:butterscotch_chip_milkshake_bottle"
+            }
+        }
+    ]
+}

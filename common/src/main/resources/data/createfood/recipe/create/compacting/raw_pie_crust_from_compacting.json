@@ -1,0 +1,29 @@
+{
+    "type": "create:compacting",
+    "ingredients": [
+        {
+            "type": "fluid_tag",
+            "amount": 250,
+            "fluid_tag": "c:milk"
+        },
+        {
+            "tag": "c:flours/wheat"
+        },
+        {
+            "tag": "c:flours/wheat"
+        },
+        {
+            "tag": "c:flours/wheat"
+        },
+        {
+            "tag": "c:butter"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:raw_pie_crust"
+            }
+        }
+    ]
+}

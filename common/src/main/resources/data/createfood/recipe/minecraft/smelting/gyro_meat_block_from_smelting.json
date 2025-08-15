@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:smelting",
+    "category": "food",
+    "cookingtime": 800,
+    "experience": 0.95,
+    "ingredient": {
+        "tag": "c:raw_gyro_meat_block"
+    },
+    "result": {
+        "count": 1,
+        "id": "createfood:gyro_meat_block"
+    },
+    "neoforge:conditions": []
+}

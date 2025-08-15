@@ -1,0 +1,15 @@
+{
+    "neoforge:conditions": [],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:baked_potato_butter"
+        },
+        {
+            "tag": "c:mushrooms"
+        }
+    ],
+    "result": {
+        "id": "createfood:baked_potato_butter_mushroom"
+    }
+}

@@ -1,0 +1,33 @@
+{
+    "neoforge:conditions": [],
+    "type": "create:mixing",
+    "ingredients": [
+        {
+            "type": "fluid_tag",
+            "amount": 1000,
+            "fluid_tag": "c:heavy_cream"
+        },
+        {
+            "tag": "c:sugar"
+        },
+        {
+            "tag": "c:sugar"
+        },
+        {
+            "tag": "c:frosting_ingredients"
+        },
+        {
+            "tag": "c:frosting_ingredients"
+        },
+        {
+            "item": "minecraft:bucket"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:cream_frosting_bucket"
+            }
+        }
+    ]
+}

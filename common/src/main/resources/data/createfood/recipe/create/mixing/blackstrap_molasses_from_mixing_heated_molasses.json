@@ -1,0 +1,17 @@
+{
+    "type": "create:mixing",
+    "heat_requirement": "heated",
+    "ingredients": [
+        {
+            "type": "fluid_tag",
+            "amount": 1000,
+            "fluid_tag": "c:molasses"
+        }
+    ],
+    "results": [
+        {
+            "amount": 1000,
+            "id": "createfood:blackstrap_molasses"
+        }
+    ]
+}

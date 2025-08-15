@@ -1,0 +1,19 @@
+{
+    "neoforge:conditions": [],
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "c:pasta_plate_fish"
+        },
+        {
+            "item": "farmersdelight:tomato_sauce"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:pasta_plate_fish_tomato_sauce"
+            }
+        }
+    ]
+}

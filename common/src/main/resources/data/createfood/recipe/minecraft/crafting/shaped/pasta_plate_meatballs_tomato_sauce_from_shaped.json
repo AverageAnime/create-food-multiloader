@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "1 ",
+        "2 "
+    ],
+    "key": {
+        "1": {
+            "item": "farmersdelight:tomato_sauce"
+        },
+        "2": {
+            "tag": "c:pasta_plate_beef_meatballs"
+        }
+    },
+    "result": {
+        "id": "farmersdelight:pasta_with_meatballs"
+    }
+}

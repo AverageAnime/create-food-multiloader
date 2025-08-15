@@ -1,0 +1,31 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "delightfulcreators"
+        }
+    ],
+    "type": "create:mixing",
+    "ingredients": [
+        {
+            "tag": "c:cooked_pasta"
+        },
+        {
+            "item": "minecraft:bowl"
+        },
+        {
+            "tag": "c:small_beef_meatballs"
+        },
+        {
+            "amount": 250,
+            "fluid": "delightfulcreators:tomato_sauce"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "farmersdelight:pasta_with_meatballs"
+            }
+        }
+    ]
+}

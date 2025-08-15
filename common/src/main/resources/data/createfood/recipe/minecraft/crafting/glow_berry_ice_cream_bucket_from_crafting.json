@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:bucket"
+        },
+        {
+            "tag": "c:glow_berry_ice_cream_bowl"
+        },
+        {
+            "tag": "c:glow_berry_ice_cream_bowl"
+        },
+        {
+            "tag": "c:glow_berry_ice_cream_bowl"
+        }
+    ],
+    "result": {
+        "id": "createfood:glow_berry_ice_cream_bucket"
+    }
+}

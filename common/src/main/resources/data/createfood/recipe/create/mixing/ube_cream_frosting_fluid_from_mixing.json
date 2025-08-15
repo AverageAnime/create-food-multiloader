@@ -1,0 +1,40 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:not",
+            "value": {
+                "type": "neoforge:tag_empty",
+                "tag": "c:cooked_eggplant"
+            }
+        }
+    ],
+    "type": "create:mixing",
+    "ingredients": [
+        {
+            "type": "fluid_tag",
+            "amount": 1000,
+            "fluid_tag": "c:heavy_cream"
+        },
+        {
+            "tag": "c:sugar"
+        },
+        {
+            "tag": "c:sugar"
+        },
+        {
+            "tag": "c:frosting_ingredients"
+        },
+        {
+            "tag": "c:frosting_ingredients"
+        },
+        {
+            "tag": "c:vegetables/ube"
+        }
+    ],
+    "results": [
+        {
+            "amount": 1000,
+            "id": "createfood:ube_cream_frosting"
+        }
+    ]
+}

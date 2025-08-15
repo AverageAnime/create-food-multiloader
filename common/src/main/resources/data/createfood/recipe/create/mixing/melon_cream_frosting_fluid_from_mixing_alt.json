@@ -1,0 +1,20 @@
+{
+    "neoforge:conditions": [],
+    "type": "create:mixing",
+    "ingredients": [
+        {
+            "type": "fluid_tag",
+            "amount": 1000,
+            "fluid_tag": "c:cream_frosting"
+        },
+        {
+            "tag": "c:melon"
+        }
+    ],
+    "results": [
+        {
+            "amount": 1000,
+            "id": "createfood:melon_cream_frosting"
+        }
+    ]
+}

@@ -1,0 +1,24 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "jmc"
+        }
+    ],
+    "type": "create:item_application",
+    "ingredients": [
+        {
+            "tag": "c:cream_cake"
+        },
+        {
+            "item": "minecraft:echo_shard"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "jmc:sculk_cake"
+            }
+        }
+    ]
+}

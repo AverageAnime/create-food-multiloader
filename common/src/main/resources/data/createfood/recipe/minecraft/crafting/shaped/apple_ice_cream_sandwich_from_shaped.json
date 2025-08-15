@@ -1,0 +1,19 @@
+{
+    "neoforge:conditions": [],
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "1 ",
+        "2 "
+    ],
+    "key": {
+        "1": {
+            "tag": "c:chocolate_graham_cracker"
+        },
+        "2": {
+            "tag": "c:chocolate_graham_cracker_apple_ice_cream"
+        }
+    },
+    "result": {
+        "id": "createfood:apple_ice_cream_sandwich"
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "neoforge:conditions": [],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:bread"
+        },
+        {
+            "tag": "c:small_pork_meatballs"
+        }
+    ],
+    "result": {
+        "id": "createfood:pork_meatball_sandwich"
+    }
+}

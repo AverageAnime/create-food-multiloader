@@ -1,0 +1,21 @@
+{
+    "neoforge:conditions": [],
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "tag": "c:waffle_cone"
+        },
+        {
+            "type": "fluid_tag",
+            "amount": 111,
+            "fluid_tag": "c:chocolate_ice_cream"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:chocolate_ice_cream_cone"
+            }
+        }
+    ]
+}

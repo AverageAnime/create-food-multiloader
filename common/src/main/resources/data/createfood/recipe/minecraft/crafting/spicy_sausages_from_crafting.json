@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:sausages"
+        },
+        {
+            "tag": "c:paprika"
+        }
+    ],
+    "result": {
+        "id": "createfood:spicy_sausages"
+    }
+}

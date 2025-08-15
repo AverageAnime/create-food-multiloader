@@ -1,0 +1,26 @@
+{
+    "type": "create:mixing",
+    "heat_requirement": "heated",
+    "ingredients": [
+        {
+            "tag": "c:toffee_chips"
+        },
+        {
+            "tag": "c:espresso_powder"
+        },
+        {
+            "tag": "c:butter"
+        },
+        {
+            "type": "fluid_tag",
+            "amount": 250,
+            "fluid_tag": "c:condensed_milk"
+        }
+    ],
+    "results": [
+        {
+            "amount": 500,
+            "id": "createfood:coffee_toffee_fudge"
+        }
+    ]
+}

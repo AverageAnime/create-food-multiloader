@@ -1,0 +1,29 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:not",
+            "value": {
+                "type": "neoforge:tag_empty",
+                "tag": "c:popcorn"
+            }
+        }
+    ],
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "tag": "c:popcorn"
+        },
+        {
+            "type": "fluid_tag",
+            "amount": 125,
+            "fluid_tag": "c:caramel"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:caramel_popcorn"
+            }
+        }
+    ]
+}

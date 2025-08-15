@@ -1,0 +1,27 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:not",
+            "value": {
+                "type": "neoforge:tag_empty",
+                "tag": "c:peanut_butter"
+            }
+        }
+    ],
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "1 ",
+        "2 "
+    ],
+    "key": {
+        "1": {
+            "tag": "c:cooked_pork"
+        },
+        "2": {
+            "tag": "c:beef_bun_peanut_butter"
+        }
+    },
+    "result": {
+        "id": "createfood:beef_bun_peanut_butter_bacon"
+    }
+}

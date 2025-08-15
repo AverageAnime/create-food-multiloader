@@ -1,0 +1,19 @@
+{
+    "neoforge:conditions": [],
+    "type": "create:item_application",
+    "ingredients": [
+        {
+            "tag": "c:raw_bacon_pizza"
+        },
+        {
+            "tag": "c:mushrooms"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:raw_mushroom_bacon_pizza"
+            }
+        }
+    ]
+}

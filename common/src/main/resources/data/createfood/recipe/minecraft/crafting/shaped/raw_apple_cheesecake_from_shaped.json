@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "1 ",
+        "2 "
+    ],
+    "key": {
+        "1": {
+            "tag": "c:apple"
+        },
+        "2": {
+            "tag": "c:raw_cheesecake"
+        }
+    },
+    "result": {
+        "id": "createfood:raw_apple_cheesecake"
+    }
+}

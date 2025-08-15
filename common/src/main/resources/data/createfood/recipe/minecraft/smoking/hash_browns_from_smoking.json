@@ -1,0 +1,13 @@
+{
+    "type": "minecraft:smoking",
+    "category": "food",
+    "cookingtime": 55,
+    "experience": 0.55,
+    "ingredient": {
+        "tag": "c:shredded_potato"
+    },
+    "result": {
+        "count": 1,
+        "id": "createfood:hash_browns"
+    }
+}

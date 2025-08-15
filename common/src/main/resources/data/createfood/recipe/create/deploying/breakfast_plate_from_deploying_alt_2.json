@@ -1,0 +1,18 @@
+{
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "c:hash_brown_fried_egg_plate"
+        },
+        {
+            "tag": "c:toast_slice"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:breakfast_plate"
+            }
+        }
+    ]
+}

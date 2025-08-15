@@ -1,0 +1,33 @@
+{
+    "neoforge:conditions": [],
+    "type": "create:mixing",
+    "ingredients": [
+        {
+            "type": "fluid_tag",
+            "amount": 1000,
+            "fluid_tag": "c:milk"
+        },
+        {
+            "tag": "c:sugar"
+        },
+        {
+            "tag": "c:flours/wheat"
+        },
+        {
+            "tag": "c:eggs"
+        },
+        {
+            "tag": "c:butter"
+        },
+        {
+            "item": "minecraft:bucket"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:waffle_batter_bucket"
+            }
+        }
+    ]
+}

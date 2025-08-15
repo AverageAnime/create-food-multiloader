@@ -1,0 +1,17 @@
+{
+    "neoforge:conditions": [],
+    "type": "create:pressing",
+    "ingredients": [
+        {
+            "item": "minecraft:beetroot"
+        }
+    ],
+    "results": [
+        {
+            "count": 2,
+            "item": {
+                "id": "createfood:shredded_beetroot"
+            }
+        }
+    ]
+}

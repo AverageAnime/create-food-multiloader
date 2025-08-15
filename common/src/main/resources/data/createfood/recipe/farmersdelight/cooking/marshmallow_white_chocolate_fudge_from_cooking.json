@@ -1,0 +1,23 @@
+{
+    "type": "farmersdelight:cooking",
+    "experience": 0.5,
+    "ingredients": [
+        {
+            "tag": "c:condensed_milk"
+        },
+        {
+            "tag": "c:white_chocolate_chips"
+        },
+        {
+            "tag": "c:butter"
+        },
+        {
+            "tag": "c:marshmallow"
+        }
+    ],
+    "recipe_book_tab": "misc",
+    "result": {
+        "count": 1,
+        "id": "createfood:marshmallow_white_chocolate_fudge"
+    }
+}

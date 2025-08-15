@@ -1,0 +1,15 @@
+{
+    "neoforge:conditions": [],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:raw_bacon_pizza"
+        },
+        {
+            "tag": "c:onion"
+        }
+    ],
+    "result": {
+        "id": "createfood:raw_onion_bacon_pizza"
+    }
+}

@@ -1,0 +1,18 @@
+{
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "item": "minecraft:bread"
+        },
+        {
+            "tag": "c:small_strider_meatballs"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:strider_meatball_sandwich"
+            }
+        }
+    ]
+}

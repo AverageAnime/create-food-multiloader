@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:bucket"
+        },
+        {
+            "tag": "c:white_chocolate_bottle"
+        },
+        {
+            "tag": "c:white_chocolate_bottle"
+        },
+        {
+            "tag": "c:white_chocolate_bottle"
+        },
+        {
+            "tag": "c:white_chocolate_bottle"
+        }
+    ],
+    "result": {
+        "id": "createfood:white_chocolate_bucket"
+    }
+}

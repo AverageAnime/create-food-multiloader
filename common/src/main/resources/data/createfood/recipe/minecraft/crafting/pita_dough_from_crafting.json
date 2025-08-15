@@ -1,0 +1,15 @@
+{
+    "neoforge:conditions": [],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:pita_dough_ingredients"
+        },
+        {
+            "tag": "c:vegetable_oil"
+        }
+    ],
+    "result": {
+        "id": "createfood:pita_dough"
+    }
+}

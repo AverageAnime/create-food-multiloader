@@ -1,0 +1,27 @@
+{
+    "type": "create:mixing",
+    "heat_requirement": "heated",
+    "ingredients": [
+        {
+            "type": "fluid_stack",
+            "amount": 83,
+            "fluid": "minecraft:water",
+            "nbt": {}
+        },
+        {
+            "tag": "c:cloth_filter"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:salt"
+            }
+        },
+        {
+            "item": {
+                "id": "createfood:cloth_filter"
+            }
+        }
+    ]
+}

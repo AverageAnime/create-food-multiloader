@@ -1,0 +1,14 @@
+{
+    "type": "create:compacting",
+    "ingredients": [
+        {
+            "item": "minecraft:ink_sac"
+        }
+    ],
+    "results": [
+        {
+            "amount": 1000,
+            "id": "createfood:squid_ink"
+        }
+    ]
+}

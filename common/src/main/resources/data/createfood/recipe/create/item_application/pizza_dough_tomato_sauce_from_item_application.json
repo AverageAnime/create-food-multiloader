@@ -1,0 +1,18 @@
+{
+    "type": "create:item_application",
+    "ingredients": [
+        {
+            "tag": "c:pizza_dough"
+        },
+        {
+            "tag": "c:tomato_sauce"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:pizza_dough_tomato_sauce"
+            }
+        }
+    ]
+}

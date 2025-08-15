@@ -1,0 +1,21 @@
+{
+    "type": "create:mixing",
+    "heat_requirement": "heated",
+    "ingredients": [
+        {
+            "tag": "c:sugar"
+        },
+        {
+            "tag": "c:espresso_powder"
+        },
+        {
+            "tag": "c:butter"
+        }
+    ],
+    "results": [
+        {
+            "amount": 500,
+            "id": "createfood:coffee_toffee"
+        }
+    ]
+}

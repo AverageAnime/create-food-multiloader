@@ -1,0 +1,20 @@
+{
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "tag": "c:pastry_base"
+        },
+        {
+            "type": "fluid_tag",
+            "amount": 250,
+            "fluid_tag": "c:chocolates"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:chocolate_pastry"
+            }
+        }
+    ]
+}

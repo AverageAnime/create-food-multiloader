@@ -1,0 +1,22 @@
+{
+    "type": "minecraft:smoking",
+    "category": "food",
+    "cookingtime": 100,
+    "experience": 0.35,
+    "ingredient": {
+        "tag": "c:coffee_beans"
+    },
+    "result": {
+        "count": 1,
+        "id": "createfood:dried_coffee_beans"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:not",
+            "value": {
+                "type": "neoforge:tag_empty",
+                "tag": "c:coffee_beans"
+            }
+        }
+    ]
+}

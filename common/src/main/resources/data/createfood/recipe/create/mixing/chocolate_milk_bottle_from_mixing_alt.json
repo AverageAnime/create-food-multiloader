@@ -1,0 +1,18 @@
+{
+    "type": "create:mixing",
+    "ingredients": [
+        {
+            "tag": "c:cocoa_powder"
+        },
+        {
+            "item": "farmersdelight:milk_bottle"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:chocolate_milk_bottle"
+            }
+        }
+    ]
+}

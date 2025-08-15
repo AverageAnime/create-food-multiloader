@@ -1,0 +1,29 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:bucket"
+        },
+        {
+            "tag": "c:carrot"
+        },
+        {
+            "tag": "c:carrot"
+        },
+        {
+            "tag": "c:potato"
+        },
+        {
+            "tag": "c:potato"
+        },
+        {
+            "tag": "c:vegetables"
+        },
+        {
+            "tag": "c:vegetables"
+        }
+    ],
+    "result": {
+        "id": "createfood:vegetable_oil_bucket"
+    }
+}

@@ -1,0 +1,23 @@
+{
+    "type": "farmersdelight:cooking",
+    "experience": 0.2,
+    "ingredients": [
+        {
+            "tag": "c:milk_bottle"
+        },
+        {
+            "tag": "c:eggs"
+        },
+        {
+            "tag": "c:bread_crumbs"
+        },
+        {
+            "tag": "c:unbreaded_chicken_patty"
+        }
+    ],
+    "recipe_book_tab": "misc",
+    "result": {
+        "count": 1,
+        "id": "createfood:chicken_patty"
+    }
+}

@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "1 ",
+        "2 "
+    ],
+    "key": {
+        "1": {
+            "tag": "c:ice_cream_stick"
+        },
+        "2": {
+            "tag": "c:chocolate_graham_cracker_neapolitan_scoop_1"
+        }
+    },
+    "result": {
+        "id": "createfood:chocolate_graham_cracker_neapolitan_scoop_2"
+    }
+}

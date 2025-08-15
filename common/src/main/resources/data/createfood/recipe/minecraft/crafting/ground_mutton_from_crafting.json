@@ -1,0 +1,12 @@
+{
+    "neoforge:conditions": [],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:mutton"
+        }
+    ],
+    "result": {
+        "id": "createfood:ground_mutton"
+    }
+}

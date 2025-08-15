@@ -1,0 +1,33 @@
+{
+    "replace": false,
+    "values": [
+        {
+            "id": "minecraft:cookie",
+            "required": false
+        },
+        {
+            "id": "createfood:butterscotch_chip_cookie",
+            "required": false
+        },
+        {
+            "id": "createfood:caramel_chip_cookie",
+            "required": false
+        },
+        {
+            "id": "createfood:dark_chocolate_chip_cookie",
+            "required": false
+        },
+        {
+            "id": "createfood:toffee_chip_cookie",
+            "required": false
+        },
+        {
+            "id": "createfood:white_chocolate_chip_cookie",
+            "required": false
+        },
+        {
+            "id": "farmersdelight:honey_cookie",
+            "required": false
+        }
+    ]
+}

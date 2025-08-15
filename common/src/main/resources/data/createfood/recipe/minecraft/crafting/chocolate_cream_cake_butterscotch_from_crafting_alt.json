@@ -1,0 +1,29 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:chocolate_cream_cake_slice_butterscotch"
+        },
+        {
+            "tag": "c:chocolate_cream_cake_slice_butterscotch"
+        },
+        {
+            "tag": "c:chocolate_cream_cake_slice_butterscotch"
+        },
+        {
+            "tag": "c:chocolate_cream_cake_slice_butterscotch"
+        },
+        {
+            "tag": "c:chocolate_cream_cake_slice_butterscotch"
+        },
+        {
+            "tag": "c:chocolate_cream_cake_slice_butterscotch"
+        },
+        {
+            "tag": "c:chocolate_cream_cake_slice_butterscotch"
+        }
+    ],
+    "result": {
+        "id": "createfood:chocolate_cream_cake_butterscotch"
+    }
+}

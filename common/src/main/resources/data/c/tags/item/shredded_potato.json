@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "createfood:shredded_potato",
+      "required": false
+    },
+    {
+      "id": "moredelight:diced_potatoes",
+      "required": false
+    }
+  ]
+}

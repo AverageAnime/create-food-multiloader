@@ -1,0 +1,15 @@
+{
+    "neoforge:conditions": [],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:baked_potato"
+        },
+        {
+            "tag": "c:butter"
+        }
+    ],
+    "result": {
+        "id": "createfood:baked_potato_butter"
+    }
+}

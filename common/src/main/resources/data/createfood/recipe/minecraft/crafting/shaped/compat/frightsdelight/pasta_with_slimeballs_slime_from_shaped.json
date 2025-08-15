@@ -1,0 +1,24 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "frightsdelight"
+        }
+    ],
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "1 ",
+        "2 "
+    ],
+    "key": {
+        "1": {
+            "tag": "c:small_slimeballs"
+        },
+        "2": {
+            "tag": "c:pasta_plate_slime"
+        }
+    },
+    "result": {
+        "id": "frightsdelight:pasta_with_slimeballs"
+    }
+}

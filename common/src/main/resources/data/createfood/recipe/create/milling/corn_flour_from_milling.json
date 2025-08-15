@@ -1,0 +1,32 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:not",
+            "value": {
+                "type": "neoforge:tag_empty",
+                "tag": "c:corn_kernel"
+            }
+        }
+    ],
+    "type": "create:milling",
+    "ingredients": [
+        {
+            "tag": "c:corn_kernel"
+        }
+    ],
+    "processingTime": 80,
+    "results": [
+        {
+            "count": 2,
+            "item": {
+                "id": "createfood:corn_flour"
+            }
+        },
+        {
+            "chance": 0.5,
+            "item": {
+                "id": "createfood:corn_flour"
+            }
+        }
+    ]
+}

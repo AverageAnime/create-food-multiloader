@@ -1,0 +1,19 @@
+{
+    "neoforge:conditions": [],
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "c:waffle_cone"
+        },
+        {
+            "tag": "c:chocolate_ice_cream_stick"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:chocolate_ice_cream_cone"
+            }
+        }
+    ]
+}

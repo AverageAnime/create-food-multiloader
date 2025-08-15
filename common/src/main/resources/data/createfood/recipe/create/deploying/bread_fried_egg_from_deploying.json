@@ -1,0 +1,18 @@
+{
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "item": "minecraft:bread"
+        },
+        {
+            "tag": "c:cooked_eggs"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:bread_fried_egg"
+            }
+        }
+    ]
+}

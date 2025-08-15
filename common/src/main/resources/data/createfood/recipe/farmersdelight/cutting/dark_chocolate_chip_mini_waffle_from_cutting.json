@@ -1,0 +1,20 @@
+{
+    "type": "farmersdelight:cutting",
+    "ingredients": [
+        {
+            "tag": "c:dark_chocolate_chip_waffle"
+        }
+    ],
+    "tool": {
+        "tag": "c:tools/knife"
+    },
+    "result": [
+        {
+            "item": {
+                "count": 4,
+                "id": "createfood:dark_chocolate_chip_mini_waffle"
+            }
+        }
+    ],
+    "neoc:conditions": []
+}

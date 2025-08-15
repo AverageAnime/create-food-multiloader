@@ -1,0 +1,20 @@
+{
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "tag": "c:bowl"
+        },
+        {
+            "type": "fluid_tag",
+            "amount": 333,
+            "fluid_tag": "c:melon_ice_cream"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:melon_ice_cream_bowl"
+            }
+        }
+    ]
+}

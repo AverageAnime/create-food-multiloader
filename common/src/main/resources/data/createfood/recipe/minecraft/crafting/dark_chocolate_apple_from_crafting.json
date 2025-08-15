@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:apple"
+        },
+        {
+            "tag": "c:dark_chocolate_chips"
+        }
+    ],
+    "result": {
+        "id": "createfood:dark_chocolate_apple"
+    }
+}

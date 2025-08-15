@@ -1,0 +1,13 @@
+{
+    "type": "minecraft:smoking",
+    "category": "food",
+    "cookingtime": 550,
+    "experience": 0.95,
+    "ingredient": {
+        "tag": "c:raw_glow_berry_cheesecake"
+    },
+    "result": {
+        "count": 1,
+        "id": "createfood:glow_berry_cheesecake"
+    }
+}

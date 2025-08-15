@@ -1,0 +1,19 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "1 ",
+        "2 "
+    ],
+    "key": {
+        "1": {
+            "tag": "c:toffee_chips"
+        },
+        "2": {
+            "tag": "c:chocolate_sweet_dough"
+        }
+    },
+    "result": {
+        "count": 8,
+        "id": "createfood:raw_toffee_chip_chocolate_cookie"
+    }
+}

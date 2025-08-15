@@ -1,0 +1,26 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "frightsdelight"
+        }
+    ],
+    "type": "create:compacting",
+    "heat_requirement": "heated",
+    "ingredients": [
+        {
+            "tag": "c:sweet_dough"
+        },
+        {
+            "item": "frightsdelight:soul_berry"
+        }
+    ],
+    "results": [
+        {
+            "count": 8,
+            "item": {
+                "id": "frightsdelight:soul_berry_cookie"
+            }
+        }
+    ]
+}

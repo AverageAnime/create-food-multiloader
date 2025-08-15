@@ -1,0 +1,30 @@
+{
+    "type": "create:mixing",
+    "heat_requirement": "heated",
+    "ingredients": [
+        {
+            "tag": "c:butter"
+        },
+        {
+            "tag": "c:sugar"
+        },
+        {
+            "tag": "c:sugar"
+        },
+        {
+            "tag": "c:chorus_fruit"
+        },
+        {
+            "tag": "c:chorus_fruit"
+        },
+        {
+            "tag": "c:chorus_fruit"
+        }
+    ],
+    "results": [
+        {
+            "amount": 1000,
+            "id": "createfood:chorus_fruit_pie_filling"
+        }
+    ]
+}

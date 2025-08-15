@@ -1,0 +1,18 @@
+{
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "c:chocolate_graham_cracker_ice_cream"
+        },
+        {
+            "tag": "c:chocolate_graham_cracker"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:ice_cream_sandwich"
+            }
+        }
+    ]
+}

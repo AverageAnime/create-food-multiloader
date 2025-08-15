@@ -1,0 +1,29 @@
+{
+    "neoforge:conditions": [],
+    "type": "create:mixing",
+    "heat_requirement": "heated",
+    "ingredients": [
+        {
+            "item": "minecraft:bucket"
+        },
+        {
+            "item": "farmersdelight:pumpkin_slice"
+        },
+        {
+            "item": "farmersdelight:pumpkin_slice"
+        },
+        {
+            "item": "farmersdelight:pumpkin_slice"
+        },
+        {
+            "item": "farmersdelight:pumpkin_slice"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:pumpkin_puree_bucket"
+            }
+        }
+    ]
+}

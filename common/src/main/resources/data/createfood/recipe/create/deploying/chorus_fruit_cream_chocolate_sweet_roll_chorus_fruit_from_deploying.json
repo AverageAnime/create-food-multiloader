@@ -1,0 +1,18 @@
+{
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "c:chorus_fruit_cream_chocolate_sweet_roll"
+        },
+        {
+            "tag": "c:chorus_fruit"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:chorus_fruit_cream_chocolate_sweet_roll_chorus_fruit"
+            }
+        }
+    ]
+}

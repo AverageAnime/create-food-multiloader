@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "1 ",
+        "2 "
+    ],
+    "key": {
+        "1": {
+            "tag": "c:white_chocolate_chips"
+        },
+        "2": {
+            "item": "minecraft:apple"
+        }
+    },
+    "result": {
+        "id": "createfood:white_chocolate_apple"
+    }
+}

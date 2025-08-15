@@ -1,0 +1,19 @@
+{
+    "neoforge:conditions": [],
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "1 ",
+        "2 "
+    ],
+    "key": {
+        "1": {
+            "tag": "c:biscuit"
+        },
+        "2": {
+            "tag": "c:sausage_biscuit_cheese_bacon"
+        }
+    },
+    "result": {
+        "id": "createfood:sausage_biscuit_sandwich_cheese_bacon"
+    }
+}

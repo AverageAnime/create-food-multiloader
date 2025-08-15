@@ -1,0 +1,26 @@
+{
+    "type": "create:mixing",
+    "ingredients": [
+        {
+            "tag": "c:sugar"
+        },
+        {
+            "tag": "c:apple_slice"
+        },
+        {
+            "tag": "c:apple_slice"
+        },
+        {
+            "tag": "c:apple_slice"
+        },
+        {
+            "tag": "c:apple_slice"
+        }
+    ],
+    "results": [
+        {
+            "amount": 333,
+            "id": "createfood:apple_juice"
+        }
+    ]
+}

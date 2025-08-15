@@ -1,0 +1,25 @@
+{
+    "type": "create:mixing",
+    "heat_requirement": "heated",
+    "ingredients": [
+        {
+            "tag": "c:cacao_butter"
+        },
+        {
+            "tag": "c:cacao_butter"
+        },
+        {
+            "tag": "c:cacao_butter"
+        },
+        {
+            "item": "minecraft:bucket"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:cacao_butter_bucket"
+            }
+        }
+    ]
+}

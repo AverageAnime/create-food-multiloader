@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:smoking",
+    "category": "food",
+    "cookingtime": 100,
+    "experience": 0.35,
+    "ingredient": {
+        "tag": "c:rabbit_cuts"
+    },
+    "result": {
+        "count": 1,
+        "id": "createfood:cooked_rabbit_cuts"
+    },
+    "neoforge:conditions": []
+}

@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "createfood:small_beef_meatballs",
+      "required": false
+    }
+  ]
+}

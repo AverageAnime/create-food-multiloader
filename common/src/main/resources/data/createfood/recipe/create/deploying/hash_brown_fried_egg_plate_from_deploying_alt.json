@@ -1,0 +1,18 @@
+{
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "c:fried_egg_plate"
+        },
+        {
+            "tag": "c:hash_browns"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:hash_brown_fried_egg_plate"
+            }
+        }
+    ]
+}

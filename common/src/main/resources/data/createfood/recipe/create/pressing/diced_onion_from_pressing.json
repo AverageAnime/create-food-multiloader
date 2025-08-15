@@ -1,0 +1,17 @@
+{
+    "neoforge:conditions": [],
+    "type": "create:pressing",
+    "ingredients": [
+        {
+            "tag": "c:crops/onion"
+        }
+    ],
+    "results": [
+        {
+            "count": 2,
+            "item": {
+                "id": "createfood:diced_onion"
+            }
+        }
+    ]
+}

@@ -1,0 +1,35 @@
+{
+    "type": "create:mixing",
+    "heat_requirement": "heated",
+    "ingredients": [
+        {
+            "type": "fluid_tag",
+            "amount": 250,
+            "fluid_tag": "c:milk"
+        },
+        {
+            "tag": "c:eggs"
+        },
+        {
+            "tag": "c:bread_crumbs"
+        },
+        {
+            "tag": "c:unbreaded_chicken_patty"
+        },
+        {
+            "tag": "c:unbreaded_chicken_patty"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:chicken_patty"
+            }
+        },
+        {
+            "item": {
+                "id": "createfood:chicken_patty"
+            }
+        }
+    ]
+}

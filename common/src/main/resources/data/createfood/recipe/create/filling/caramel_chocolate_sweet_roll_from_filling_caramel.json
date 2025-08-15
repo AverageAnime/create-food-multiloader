@@ -1,0 +1,20 @@
+{
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "item": "createfood:chocolate_sweet_roll_base"
+        },
+        {
+            "type": "fluid_tag",
+            "amount": 333,
+            "fluid_tag": "c:caramel"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:caramel_chocolate_sweet_roll"
+            }
+        }
+    ]
+}

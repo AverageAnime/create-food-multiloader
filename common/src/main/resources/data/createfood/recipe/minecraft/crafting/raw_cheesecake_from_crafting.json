@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:raw_graham_cracker_pie_crust"
+        },
+        {
+            "tag": "c:cheesecake_filling_bucket"
+        }
+    ],
+    "result": {
+        "id": "createfood:raw_cheesecake"
+    }
+}

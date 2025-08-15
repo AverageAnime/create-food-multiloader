@@ -1,0 +1,15 @@
+{
+    "type": "farmersdelight:cooking",
+    "experience": 0.75,
+    "ingredients": [
+        {
+            "tag": "c:waffle_batter_bucket"
+        }
+    ],
+    "recipe_book_tab": "misc",
+    "result": {
+        "count": 1,
+        "id": "createfood:waffle"
+    },
+    "neoforge:conditions": []
+}

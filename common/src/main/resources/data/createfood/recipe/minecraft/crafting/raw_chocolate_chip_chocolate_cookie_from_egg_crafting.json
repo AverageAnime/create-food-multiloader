@@ -1,0 +1,21 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:eggs"
+        },
+        {
+            "tag": "c:sugar"
+        },
+        {
+            "tag": "c:cocoa_powder"
+        },
+        {
+            "tag": "c:chocolate_chips"
+        }
+    ],
+    "result": {
+        "count": 8,
+        "id": "createfood:raw_chocolate_chip_chocolate_cookie"
+    }
+}

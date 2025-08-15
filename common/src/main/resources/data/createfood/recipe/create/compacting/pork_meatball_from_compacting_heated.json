@@ -1,0 +1,18 @@
+{
+    "neoforge:conditions": [],
+    "type": "create:compacting",
+    "heat_requirement": "heated",
+    "ingredients": [
+        {
+            "tag": "c:ground_pork"
+        }
+    ],
+    "results": [
+        {
+            "count": 2,
+            "item": {
+                "id": "createfood:pork_meatball"
+            }
+        }
+    ]
+}

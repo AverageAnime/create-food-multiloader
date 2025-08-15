@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:eggs"
+        },
+        {
+            "tag": "c:sugar_dough"
+        },
+        {
+            "tag": "c:buckets/milk"
+        }
+    ],
+    "result": {
+        "id": "createfood:raw_cake_base"
+    }
+}

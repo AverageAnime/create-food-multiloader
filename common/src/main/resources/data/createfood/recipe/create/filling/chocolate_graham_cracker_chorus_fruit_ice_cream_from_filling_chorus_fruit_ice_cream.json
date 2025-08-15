@@ -1,0 +1,21 @@
+{
+    "neoforge:conditions": [],
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "tag": "c:chocolate_graham_cracker"
+        },
+        {
+            "type": "fluid_tag",
+            "amount": 333,
+            "fluid_tag": "c:chorus_fruit_ice_cream"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:chocolate_graham_cracker_chorus_fruit_ice_cream"
+            }
+        }
+    ]
+}

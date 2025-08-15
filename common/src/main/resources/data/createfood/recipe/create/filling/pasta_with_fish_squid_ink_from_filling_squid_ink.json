@@ -1,0 +1,20 @@
+{
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "tag": "c:pasta_plate_fish"
+        },
+        {
+            "type": "fluid_tag",
+            "amount": 250,
+            "fluid_tag": "c:squid_ink"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "farmersdelight:squid_ink_pasta"
+            }
+        }
+    ]
+}

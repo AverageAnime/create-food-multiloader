@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:chicken_nuggets"
+        },
+        {
+            "tag": "c:paprika"
+        }
+    ],
+    "result": {
+        "id": "createfood:spicy_chicken_nuggets"
+    }
+}

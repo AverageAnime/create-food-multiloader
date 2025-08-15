@@ -1,0 +1,27 @@
+{
+    "neoforge:conditions": [],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:foods/raw_meats/raw_mutton"
+        },
+        {
+            "tag": "c:foods/raw_meats/raw_mutton"
+        },
+        {
+            "tag": "c:foods/raw_meats/raw_mutton"
+        },
+        {
+            "tag": "c:foods/raw_meats/raw_mutton"
+        },
+        {
+            "tag": "c:gyro_meat_ingredients"
+        },
+        {
+            "tag": "c:gyro_meat_ingredients"
+        }
+    ],
+    "result": {
+        "id": "createfood:raw_gyro_meat_block"
+    }
+}

@@ -1,0 +1,18 @@
+{
+    "neoforge:conditions": [],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:stick"
+        },
+        {
+            "tag": "c:rabbit_meatball"
+        },
+        {
+            "tag": "c:rabbit_meatball"
+        }
+    ],
+    "result": {
+        "id": "createfood:rabbit_meatball_stick_2"
+    }
+}

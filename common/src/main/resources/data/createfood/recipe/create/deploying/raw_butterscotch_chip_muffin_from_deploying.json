@@ -1,0 +1,18 @@
+{
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "c:raw_muffin_base"
+        },
+        {
+            "tag": "c:butterscotch_chips"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:raw_butterscotch_chip_muffin"
+            }
+        }
+    ]
+}

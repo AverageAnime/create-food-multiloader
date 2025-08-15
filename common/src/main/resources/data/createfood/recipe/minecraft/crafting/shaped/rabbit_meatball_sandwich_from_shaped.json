@@ -1,0 +1,19 @@
+{
+    "neoforge:conditions": [],
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "1 ",
+        "2 "
+    ],
+    "key": {
+        "1": {
+            "tag": "c:small_rabbit_meatballs"
+        },
+        "2": {
+            "item": "minecraft:bread"
+        }
+    },
+    "result": {
+        "id": "createfood:rabbit_meatball_sandwich"
+    }
+}

@@ -1,0 +1,23 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:not",
+            "value": {
+                "type": "neoforge:tag_empty",
+                "tag": "c:chili_pepper"
+            }
+        }
+    ],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:chicken_nuggets"
+        },
+        {
+            "tag": "c:chili_pepper"
+        }
+    ],
+    "result": {
+        "id": "createfood:spicy_chicken_nuggets"
+    }
+}

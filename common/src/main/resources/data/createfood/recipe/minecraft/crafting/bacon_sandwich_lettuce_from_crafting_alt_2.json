@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:bread_slice_bacon"
+        },
+        {
+            "tag": "c:bread_slice_lettuce"
+        }
+    ],
+    "result": {
+        "id": "createfood:bacon_sandwich_lettuce"
+    }
+}

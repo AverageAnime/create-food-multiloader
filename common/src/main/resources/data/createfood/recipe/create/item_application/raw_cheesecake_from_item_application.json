@@ -1,0 +1,18 @@
+{
+    "type": "create:item_application",
+    "ingredients": [
+        {
+            "tag": "c:raw_graham_cracker_pie_crust"
+        },
+        {
+            "tag": "c:cheesecake_filling_bucket"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:raw_cheesecake"
+            }
+        }
+    ]
+}

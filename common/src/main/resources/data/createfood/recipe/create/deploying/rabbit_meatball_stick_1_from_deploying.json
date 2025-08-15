@@ -1,0 +1,19 @@
+{
+    "neoforge:conditions": [],
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "item": "minecraft:stick"
+        },
+        {
+            "tag": "c:rabbit_meatball"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:rabbit_meatball_stick_1"
+            }
+        }
+    ]
+}

@@ -1,0 +1,21 @@
+{
+    "neoforge:conditions": [],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:chocolate_graham_cracker"
+        },
+        {
+            "tag": "c:melon_ice_cream_stick"
+        },
+        {
+            "tag": "c:melon_ice_cream_stick"
+        },
+        {
+            "tag": "c:melon_ice_cream_stick"
+        }
+    ],
+    "result": {
+        "id": "createfood:chocolate_graham_cracker_melon_ice_cream"
+    }
+}

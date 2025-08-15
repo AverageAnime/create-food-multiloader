@@ -1,0 +1,21 @@
+{
+    "neoforge:conditions": [],
+    "type": "create:compacting",
+    "ingredients": [
+        {
+            "type": "fluid_tag",
+            "amount": 111,
+            "fluid_tag": "c:vegetable_oil"
+        },
+        {
+            "tag": "c:pita_dough_ingredients"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:pita_dough"
+            }
+        }
+    ]
+}

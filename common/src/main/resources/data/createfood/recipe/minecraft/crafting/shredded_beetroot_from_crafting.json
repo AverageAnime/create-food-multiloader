@@ -1,0 +1,12 @@
+{
+    "neoforge:conditions": [],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:beetroot"
+        }
+    ],
+    "result": {
+        "id": "createfood:shredded_beetroot"
+    }
+}

@@ -1,0 +1,24 @@
+{
+    "type": "create:compacting",
+    "ingredients": [
+        {
+            "tag": "c:cloth_filter_cacao_mass"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:cloth_filter"
+            }
+        },
+        {
+            "item": {
+                "id": "createfood:pressed_cocoa"
+            }
+        },
+        {
+            "amount": 1000,
+            "id": "createfood:cacao_butter"
+        }
+    ]
+}

@@ -1,0 +1,24 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "culturaldelights"
+        }
+    ],
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "1 ",
+        "2 "
+    ],
+    "key": {
+        "1": {
+            "tag": "c:bun"
+        },
+        "2": {
+            "tag": "c:eggplant_bun_lettuce_tomato"
+        }
+    },
+    "result": {
+        "id": "culturaldelights:eggplant_burger"
+    }
+}

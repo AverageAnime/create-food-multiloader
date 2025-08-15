@@ -1,0 +1,18 @@
+{
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "c:chicken_nuggets"
+        },
+        {
+            "tag": "c:paprika"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:spicy_chicken_nuggets"
+            }
+        }
+    ]
+}

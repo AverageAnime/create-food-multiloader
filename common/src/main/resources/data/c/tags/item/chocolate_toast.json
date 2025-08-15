@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "createfood:chocolate_toast",
+      "required": false
+    },
+    {
+      "id": "moredelight:toast_with_chocolate",
+      "required": false
+    }
+  ]
+}

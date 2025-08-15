@@ -1,0 +1,13 @@
+{
+    "type": "minecraft:campfire_cooking",
+    "category": "food",
+    "cookingtime": 200,
+    "experience": 0.1,
+    "ingredient": {
+        "tag": "c:raw_sweet_berry_cookie"
+    },
+    "result": {
+        "count": 1,
+        "id": "farmersdelight:sweet_berry_cookie"
+    }
+}

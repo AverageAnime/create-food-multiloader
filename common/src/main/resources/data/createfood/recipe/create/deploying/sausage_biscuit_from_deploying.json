@@ -1,0 +1,18 @@
+{
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "c:biscuit"
+        },
+        {
+            "tag": "c:sausage_patty"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:sausage_biscuit"
+            }
+        }
+    ]
+}

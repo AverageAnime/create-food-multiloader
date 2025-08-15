@@ -1,0 +1,13 @@
+{
+    "type": "minecraft:smoking",
+    "category": "food",
+    "cookingtime": 400,
+    "experience": 0.25,
+    "ingredient": {
+        "tag": "c:raw_fish_onion_pizza"
+    },
+    "result": {
+        "count": 1,
+        "id": "createfood:fish_onion_pizza"
+    }
+}

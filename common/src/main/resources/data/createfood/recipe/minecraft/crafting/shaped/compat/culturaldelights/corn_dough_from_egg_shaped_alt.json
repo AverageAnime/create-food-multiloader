@@ -1,0 +1,25 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "culturaldelights"
+        }
+    ],
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "1 ",
+        "2 "
+    ],
+    "key": {
+        "1": {
+            "tag": "c:corn_flour"
+        },
+        "2": {
+            "tag": "c:eggs"
+        }
+    },
+    "result": {
+        "count": 3,
+        "id": "culturaldelights:corn_dough"
+    }
+}

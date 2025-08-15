@@ -1,0 +1,21 @@
+{
+    "type": "create:mixing",
+    "ingredients": [
+        {
+            "type": "fluid_tag",
+            "amount": 125,
+            "fluid_tag": "c:milk"
+        },
+        {
+            "type": "fluid_tag",
+            "amount": 125,
+            "fluid_tag": "c:cacao_mass"
+        }
+    ],
+    "results": [
+        {
+            "amount": 250,
+            "id": "create:chocolate"
+        }
+    ]
+}

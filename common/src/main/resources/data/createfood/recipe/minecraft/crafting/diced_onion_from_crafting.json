@@ -1,0 +1,12 @@
+{
+    "neoforge:conditions": [],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:crops/onion"
+        }
+    ],
+    "result": {
+        "id": "createfood:diced_onion"
+    }
+}

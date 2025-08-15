@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "1 ",
+        "2 "
+    ],
+    "key": {
+        "1": {
+            "tag": "c:bread_slice"
+        },
+        "2": {
+            "tag": "c:bread_slice_apple_jam"
+        }
+    },
+    "result": {
+        "id": "createfood:apple_jam_sandwich"
+    }
+}

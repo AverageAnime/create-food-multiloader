@@ -1,0 +1,13 @@
+{
+    "type": "minecraft:campfire_cooking",
+    "category": "food",
+    "cookingtime": 200,
+    "experience": 0.25,
+    "ingredient": {
+        "tag": "c:raw_graham_cracker_pie_crust"
+    },
+    "result": {
+        "count": 1,
+        "id": "createfood:graham_cracker_pie_crust"
+    }
+}

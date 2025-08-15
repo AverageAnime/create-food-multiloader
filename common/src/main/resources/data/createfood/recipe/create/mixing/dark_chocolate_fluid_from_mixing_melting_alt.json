@@ -1,0 +1,14 @@
+{
+    "type": "create:mixing",
+    "ingredients": [
+        {
+            "tag": "c:hollow_dark_chocolate"
+        }
+    ],
+    "results": [
+        {
+            "amount": 166,
+            "id": "createfood:dark_chocolate"
+        }
+    ]
+}

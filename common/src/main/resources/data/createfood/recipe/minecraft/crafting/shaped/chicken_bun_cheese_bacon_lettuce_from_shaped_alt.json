@@ -1,0 +1,19 @@
+{
+    "neoforge:conditions": [],
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "1 ",
+        "2 "
+    ],
+    "key": {
+        "1": {
+            "tag": "c:cheeses"
+        },
+        "2": {
+            "tag": "c:chicken_bun_bacon_lettuce"
+        }
+    },
+    "result": {
+        "id": "createfood:chicken_bun_cheese_bacon_lettuce"
+    }
+}

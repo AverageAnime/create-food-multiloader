@@ -1,0 +1,20 @@
+{
+    "type": "farmersdelight:cooking",
+    "experience": 0.1,
+    "ingredients": [
+        {
+            "tag": "c:cane_syrup_bucket"
+        },
+        {
+            "tag": "c:powdered_sugar"
+        },
+        {
+            "tag": "c:salt"
+        }
+    ],
+    "recipe_book_tab": "misc",
+    "result": {
+        "count": 1,
+        "id": "createfood:cotton_candy_stick"
+    }
+}

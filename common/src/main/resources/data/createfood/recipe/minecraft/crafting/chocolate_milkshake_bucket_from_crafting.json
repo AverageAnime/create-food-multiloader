@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:bucket"
+        },
+        {
+            "tag": "c:chocolate_milkshake_bottle"
+        },
+        {
+            "tag": "c:chocolate_milkshake_bottle"
+        }
+    ],
+    "result": {
+        "id": "createfood:chocolate_milkshake_bucket"
+    }
+}

@@ -1,0 +1,29 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:chocolate_cream_cake_slice_white_chocolate"
+        },
+        {
+            "tag": "c:chocolate_cream_cake_slice_white_chocolate"
+        },
+        {
+            "tag": "c:chocolate_cream_cake_slice_white_chocolate"
+        },
+        {
+            "tag": "c:chocolate_cream_cake_slice_white_chocolate"
+        },
+        {
+            "tag": "c:chocolate_cream_cake_slice_white_chocolate"
+        },
+        {
+            "tag": "c:chocolate_cream_cake_slice_white_chocolate"
+        },
+        {
+            "tag": "c:chocolate_cream_cake_slice_white_chocolate"
+        }
+    ],
+    "result": {
+        "id": "createfood:chocolate_cream_cake_white_chocolate"
+    }
+}

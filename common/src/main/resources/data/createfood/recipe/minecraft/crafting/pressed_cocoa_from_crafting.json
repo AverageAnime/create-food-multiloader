@@ -1,0 +1,11 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:cloth_filter_cacao_mass"
+        }
+    ],
+    "result": {
+        "id": "createfood:pressed_cocoa"
+    }
+}

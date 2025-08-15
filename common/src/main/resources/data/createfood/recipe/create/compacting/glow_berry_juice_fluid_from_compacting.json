@@ -1,0 +1,22 @@
+{
+    "type": "create:compacting",
+    "ingredients": [
+        {
+            "type": "fluid_tag",
+            "amount": 250,
+            "fluid_tag": "minecraft:water"
+        },
+        {
+            "item": "minecraft:glow_berries"
+        },
+        {
+            "tag": "c:sugar"
+        }
+    ],
+    "results": [
+        {
+            "amount": 250,
+            "id": "createfood:glow_berry_juice"
+        }
+    ]
+}

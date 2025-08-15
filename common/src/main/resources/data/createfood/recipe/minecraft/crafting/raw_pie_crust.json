@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:flours/wheat"
+        },
+        {
+            "tag": "c:flours/wheat"
+        },
+        {
+            "tag": "c:flours/wheat"
+        },
+        {
+            "tag": "c:butter"
+        },
+        {
+            "tag": "c:milks"
+        }
+    ],
+    "result": {
+        "id": "createfood:raw_pie_crust"
+    }
+}

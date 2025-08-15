@@ -1,0 +1,19 @@
+{
+    "neoforge:conditions": [],
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "item": "createfood:pork_meatball_stick_2"
+        },
+        {
+            "tag": "c:pork_meatball"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:pork_meatball_stick_3"
+            }
+        }
+    ]
+}

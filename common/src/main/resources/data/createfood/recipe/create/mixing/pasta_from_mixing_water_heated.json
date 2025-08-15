@@ -1,0 +1,21 @@
+{
+    "type": "create:mixing",
+    "heat_requirement": "heated",
+    "ingredients": [
+        {
+            "item": "farmersdelight:raw_pasta"
+        },
+        {
+            "type": "fluid_tag",
+            "amount": 125,
+            "fluid_tag": "minecraft:water"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:pasta"
+            }
+        }
+    ]
+}

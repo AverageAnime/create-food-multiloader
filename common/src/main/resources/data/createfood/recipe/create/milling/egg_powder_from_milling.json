@@ -1,0 +1,23 @@
+{
+    "type": "create:milling",
+    "ingredients": [
+        {
+            "tag": "c:cooked_eggs"
+        }
+    ],
+    "processingTime": 50,
+    "results": [
+        {
+            "count": 2,
+            "item": {
+                "id": "createfood:egg_powder"
+            }
+        },
+        {
+            "chance": 0.25,
+            "item": {
+                "id": "createfood:egg_powder"
+            }
+        }
+    ]
+}

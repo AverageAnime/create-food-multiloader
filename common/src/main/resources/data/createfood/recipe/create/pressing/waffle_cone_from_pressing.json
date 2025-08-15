@@ -1,0 +1,16 @@
+{
+    "neoforge:conditions": [],
+    "type": "create:pressing",
+    "ingredients": [
+        {
+            "tag": "c:mini_waffle"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:waffle_cone"
+            }
+        }
+    ]
+}

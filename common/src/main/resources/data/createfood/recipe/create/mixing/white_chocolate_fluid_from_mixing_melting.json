@@ -1,0 +1,15 @@
+{
+    "type": "create:mixing",
+    "heat_requirement": "heated",
+    "ingredients": [
+        {
+            "tag": "c:bar_of_white_chocolate"
+        }
+    ],
+    "results": [
+        {
+            "amount": 333,
+            "id": "createfood:white_chocolate"
+        }
+    ]
+}

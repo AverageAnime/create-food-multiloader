@@ -1,0 +1,18 @@
+{
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "c:graham_cracker_chocolate_marshmallow"
+        },
+        {
+            "tag": "c:graham_cracker"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:smore"
+            }
+        }
+    ]
+}

@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:onion_bacon_pizza_slice"
+        },
+        {
+            "tag": "c:onion_bacon_pizza_slice"
+        },
+        {
+            "tag": "c:onion_bacon_pizza_slice"
+        },
+        {
+            "tag": "c:onion_bacon_pizza_slice"
+        }
+    ],
+    "result": {
+        "id": "createfood:onion_bacon_pizza"
+    }
+}

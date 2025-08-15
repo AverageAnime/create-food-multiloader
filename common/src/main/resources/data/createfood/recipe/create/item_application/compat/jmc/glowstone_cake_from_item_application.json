@@ -1,0 +1,24 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "jmc"
+        }
+    ],
+    "type": "create:item_application",
+    "ingredients": [
+        {
+            "tag": "c:cream_cake"
+        },
+        {
+            "item": "minecraft:glowstone_dust"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "jmc:glowstone_cake"
+            }
+        }
+    ]
+}

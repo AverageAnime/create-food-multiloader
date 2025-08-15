@@ -1,0 +1,20 @@
+{
+    "type": "create:compacting",
+    "heat_requirement": "heated",
+    "ingredients": [
+        {
+            "tag": "c:white_chocolate_chips"
+        },
+        {
+            "tag": "c:chocolate_sweet_dough"
+        }
+    ],
+    "results": [
+        {
+            "count": 8,
+            "item": {
+                "id": "createfood:white_chocolate_chip_chocolate_cookie"
+            }
+        }
+    ]
+}

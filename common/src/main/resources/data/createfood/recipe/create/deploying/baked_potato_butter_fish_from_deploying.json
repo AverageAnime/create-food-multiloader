@@ -1,0 +1,19 @@
+{
+    "neoforge:conditions": [],
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "c:baked_potato_butter"
+        },
+        {
+            "tag": "c:cooked_fishes"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:baked_potato_butter_fish"
+            }
+        }
+    ]
+}

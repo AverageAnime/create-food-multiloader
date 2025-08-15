@@ -1,0 +1,24 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "jmc"
+        }
+    ],
+    "type": "create:item_application",
+    "ingredients": [
+        {
+            "tag": "c:cream_cake"
+        },
+        {
+            "item": "minecraft:honey_bottle"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "jmc:honey_cake"
+            }
+        }
+    ]
+}

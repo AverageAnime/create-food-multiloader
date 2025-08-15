@@ -1,0 +1,21 @@
+{
+    "type": "farmersdelight:cooking",
+    "experience": 0.2,
+    "ingredients": [
+        {
+            "tag": "c:pumpkin_puree_bucket"
+        },
+        {
+            "tag": "c:eggs"
+        },
+        {
+            "tag": "c:brown_sugar"
+        }
+    ],
+    "recipe_book_tab": "drinks",
+    "result": {
+        "count": 1,
+        "id": "createfood:pumpkin_pie_filling_bucket"
+    },
+    "neoforge:conditions": []
+}

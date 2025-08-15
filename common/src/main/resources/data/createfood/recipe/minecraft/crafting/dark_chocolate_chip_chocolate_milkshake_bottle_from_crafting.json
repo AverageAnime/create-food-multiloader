@@ -1,0 +1,15 @@
+{
+    "neoforge:conditions": [],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:chocolate_milkshake"
+        },
+        {
+            "tag": "c:dark_chocolate_chips"
+        }
+    ],
+    "result": {
+        "id": "createfood:dark_chocolate_chip_chocolate_milkshake_bottle"
+    }
+}
