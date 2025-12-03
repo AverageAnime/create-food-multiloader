@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+          "tag": "c:glow_berry_cream_frosting_bottle"
+        },
+        {
+          "tag": "c:piping_bag"
+        }
+    ],
+    "result": {
+        "id": "createfood:glow_berry_cream_frosting_piping_bag"
+    }
+}

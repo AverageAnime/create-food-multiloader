@@ -12,7 +12,7 @@
         },
         {
             "type": "fluid_tag",
-            "amount": 333,
+            "amount": 250,
             "fluid_tag": "c:cream_frosting"
         }
     ],

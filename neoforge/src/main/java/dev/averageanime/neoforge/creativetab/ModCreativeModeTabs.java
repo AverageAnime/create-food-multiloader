@@ -21,9 +21,11 @@ public class ModCreativeModeTabs {
     public static final Supplier<CreativeModeTab> CREATEFOOD_TAB = CREATIVE_MODE_TAB.register("createfood",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.BREAKFAST_PLATE.get()))
                     .title(Component.translatable("tab.createfood"))
-                    .displayItems((itemDisplayParameters, output) -> {
+                    .displayItems((params, output) -> {
                         output.accept(ModBlocks.APPLE_CHEESECAKE.get());
                         output.accept(ModItems.APPLE_CHEESECAKE_SLICE.get());
+                        output.accept(ModBlocks.APPLE_CREAM_CAKE.get());
+                        output.accept(ModItems.APPLE_CREAM_CAKE_SLICE.get());
                         output.accept(ModItems.APPLE_CREAM_CHOCOLATE.get());
                         output.accept(ModItems.APPLE_CREAM_CHOCOLATE_CUPCAKE.get());
                         output.accept(ModItems.APPLE_CREAM_CHOCOLATE_DONUT.get());
@@ -33,6 +35,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.APPLE_CREAM_DARK_CHOCOLATE.get());
                         output.accept(ModItems.APPLE_CREAM_DONUT.get());
                         output.accept(ModItems.APPLE_CREAM_FROSTING_BOTTLE.get());
+                        output.accept(ModItems.APPLE_CREAM_FROSTING_PIPING_BAG.get());
                         output.accept(ModItems.APPLE_CREAM_MINI_WAFFLE.get());
                         output.accept(ModItems.APPLE_CREAM_PASTRY.get());
                         output.accept(ModItems.APPLE_CREAM_SWEET_ROLL.get());
@@ -94,6 +97,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.BERRY_CREAM_CAKE.get());
                         output.accept(ModBlocks.BERRY_CREAM_CAKE_CHORUS_FRUIT.get());
                         output.accept(ModBlocks.BERRY_CREAM_CAKE_GLOW_BERRY.get());
+                        output.accept(ModItems.BERRY_CREAM_CAKE_SLICE.get());
                         output.accept(ModItems.BERRY_CREAM_CAKE_SLICE_CHORUS_FRUIT.get());
                         output.accept(ModItems.BERRY_CREAM_CAKE_SLICE_GLOW_BERRY.get());
                         output.accept(ModItems.BERRY_CREAM_CAKE_SLICE_SWEET_BERRY.get());
@@ -108,6 +112,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.BERRY_CREAM_DARK_CHOCOLATE.get());
                         output.accept(ModItems.BERRY_CREAM_DONUT.get());
                         output.accept(ModItems.BERRY_CREAM_FROSTING_BOTTLE.get());
+                        output.accept(ModItems.BERRY_CREAM_FROSTING_PIPING_BAG.get());
                         output.accept(ModItems.BERRY_CREAM_MINI_WAFFLE.get());
                         output.accept(ModItems.BERRY_CREAM_MINI_WAFFLE_SWEET_BERRY.get());
                         output.accept(ModItems.BERRY_CREAM_PASTRY.get());
@@ -269,6 +274,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.CHOCOLATE_CREAM_CAKE_CARAMEL.get());
                         output.accept(ModBlocks.CHOCOLATE_CREAM_CAKE_CHOCOLATE.get());
                         output.accept(ModBlocks.CHOCOLATE_CREAM_CAKE_DARK_CHOCOLATE.get());
+                        output.accept(ModItems.CHOCOLATE_CREAM_CAKE_SLICE.get());
                         output.accept(ModItems.CHOCOLATE_CREAM_CAKE_SLICE_BUTTERSCOTCH.get());
                         output.accept(ModItems.CHOCOLATE_CREAM_CAKE_SLICE_CARAMEL.get());
                         output.accept(ModItems.CHOCOLATE_CREAM_CAKE_SLICE_CHOCOLATE.get());
@@ -283,6 +289,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.CHOCOLATE_CREAM_CUPCAKE.get());
                         output.accept(ModItems.CHOCOLATE_CREAM_DONUT.get());
                         output.accept(ModItems.CHOCOLATE_CREAM_FROSTING_BOTTLE.get());
+                        output.accept(ModItems.CHOCOLATE_CREAM_FROSTING_PIPING_BAG.get());
                         output.accept(ModItems.CHOCOLATE_CREAM_MINI_WAFFLE.get());
                         output.accept(ModItems.CHOCOLATE_CREAM_SWEET_ROLL.get());
                         output.accept(ModItems.CHOCOLATE_CUPCAKE_BASE.get());
@@ -323,6 +330,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.CHORUS_FRUIT_CREAM_CAKE.get());
                         output.accept(ModBlocks.CHORUS_FRUIT_CREAM_CAKE_CHORUS_FRUIT.get());
                         output.accept(ModBlocks.CHORUS_FRUIT_CREAM_CAKE_GLOW_BERRY.get());
+                        output.accept(ModItems.CHORUS_FRUIT_CREAM_CAKE_SLICE.get());
                         output.accept(ModItems.CHORUS_FRUIT_CREAM_CAKE_SLICE_CHORUS_FRUIT.get());
                         output.accept(ModItems.CHORUS_FRUIT_CREAM_CAKE_SLICE_GLOW_BERRY.get());
                         output.accept(ModItems.CHORUS_FRUIT_CREAM_CAKE_SLICE_SWEET_BERRY.get());
@@ -337,6 +345,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.CHORUS_FRUIT_CREAM_DARK_CHOCOLATE.get());
                         output.accept(ModItems.CHORUS_FRUIT_CREAM_DONUT.get());
                         output.accept(ModItems.CHORUS_FRUIT_CREAM_FROSTING_BOTTLE.get());
+                        output.accept(ModItems.CHORUS_FRUIT_CREAM_FROSTING_PIPING_BAG.get());
                         output.accept(ModItems.CHORUS_FRUIT_CREAM_MINI_WAFFLE.get());
                         output.accept(ModItems.CHORUS_FRUIT_CREAM_MINI_WAFFLE_CHORUS_FRUIT.get());
                         output.accept(ModItems.CHORUS_FRUIT_CREAM_PASTRY.get());
@@ -373,6 +382,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.CREAM_CAKE.get());
                         output.accept(ModBlocks.CREAM_CAKE_CHORUS_FRUIT.get());
                         output.accept(ModBlocks.CREAM_CAKE_GLOW_BERRY.get());
+                        output.accept(ModItems.CREAM_CAKE_SLICE.get());
                         output.accept(ModItems.CREAM_CAKE_SLICE_CHORUS_FRUIT.get());
                         output.accept(ModItems.CREAM_CAKE_SLICE_GLOW_BERRY.get());
                         output.accept(ModItems.CREAM_CHEESE.get());
@@ -388,6 +398,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.CREAM_DARK_CHOCOLATE.get());
                         output.accept(ModItems.CREAM_DONUT.get());
                         output.accept(ModItems.CREAM_FROSTING_BOTTLE.get());
+                        output.accept(ModItems.CREAM_FROSTING_PIPING_BAG.get());
                         output.accept(ModItems.CREAM_MINI_WAFFLE.get());
                         output.accept(ModItems.CREAM_MINI_WAFFLE_CHORUS_FRUIT.get());
                         output.accept(ModItems.CREAM_MINI_WAFFLE_GLOW_BERRY.get());
@@ -475,23 +486,25 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.GELATIN_DESSERT_SLICE.get());
                         output.accept(ModBlocks.GLOW_BERRY_CHEESECAKE.get());
                         output.accept(ModItems.GLOW_BERRY_CHEESECAKE_SLICE.get());
+                        output.accept(ModBlocks.GLOW_BERRY_CREAM_CREAM_CAKE.get());
                         output.accept(ModBlocks.GLOW_BERRY_CREAM_CAKE_CHORUS_FRUIT.get());
                         output.accept(ModBlocks.GLOW_BERRY_CREAM_CAKE_GLOW_BERRY.get());
+                        output.accept(ModBlocks.GLOW_BERRY_CREAM_CAKE_SWEET_BERRY.get());
+                        output.accept(ModItems.GLOW_BERRY_CREAM_CAKE_SLICE.get());
                         output.accept(ModItems.GLOW_BERRY_CREAM_CAKE_SLICE_CHORUS_FRUIT.get());
                         output.accept(ModItems.GLOW_BERRY_CREAM_CAKE_SLICE_GLOW_BERRY.get());
                         output.accept(ModItems.GLOW_BERRY_CREAM_CAKE_SLICE_SWEET_BERRY.get());
-                        output.accept(ModBlocks.GLOW_BERRY_CREAM_CAKE_SWEET_BERRY.get());
                         output.accept(ModItems.GLOW_BERRY_CREAM_CHOCOLATE.get());
                         output.accept(ModItems.GLOW_BERRY_CREAM_CHOCOLATE_CUPCAKE.get());
                         output.accept(ModItems.GLOW_BERRY_CREAM_CHOCOLATE_DONUT.get());
                         output.accept(ModItems.GLOW_BERRY_CREAM_CHOCOLATE_PASTRY.get());
                         output.accept(ModItems.GLOW_BERRY_CREAM_CHOCOLATE_SWEET_ROLL.get());
                         output.accept(ModItems.GLOW_BERRY_CREAM_CHOCOLATE_SWEET_ROLL_GLOW_BERRY.get());
-                        output.accept(ModBlocks.GLOW_BERRY_CREAM_CREAM_CAKE.get());
                         output.accept(ModItems.GLOW_BERRY_CREAM_CUPCAKE.get());
                         output.accept(ModItems.GLOW_BERRY_CREAM_DARK_CHOCOLATE.get());
                         output.accept(ModItems.GLOW_BERRY_CREAM_DONUT.get());
                         output.accept(ModItems.GLOW_BERRY_CREAM_FROSTING_BOTTLE.get());
+                        output.accept(ModItems.GLOW_BERRY_CREAM_FROSTING_PIPING_BAG.get());
                         output.accept(ModItems.GLOW_BERRY_CREAM_MINI_WAFFLE.get());
                         output.accept(ModItems.GLOW_BERRY_CREAM_MINI_WAFFLE_GLOW_BERRY.get());
                         output.accept(ModItems.GLOW_BERRY_CREAM_PASTRY.get());
@@ -597,6 +610,8 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.MARSHMALLOW_TOFFEE_FUDGE.get());
                         output.accept(ModItems.MARSHMALLOW_WHITE_CHOCOLATE.get());
                         output.accept(ModItems.MARSHMALLOW_WHITE_CHOCOLATE_FUDGE.get());
+                        output.accept(ModBlocks.MELON_CREAM_CAKE.get());
+                        output.accept(ModItems.MELON_CREAM_CAKE_SLICE.get());
                         output.accept(ModItems.MELON_CREAM_CHOCOLATE.get());
                         output.accept(ModItems.MELON_CREAM_CHOCOLATE_CUPCAKE.get());
                         output.accept(ModItems.MELON_CREAM_CHOCOLATE_DONUT.get());
@@ -606,6 +621,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.MELON_CREAM_DARK_CHOCOLATE.get());
                         output.accept(ModItems.MELON_CREAM_DONUT.get());
                         output.accept(ModItems.MELON_CREAM_FROSTING_BOTTLE.get());
+                        output.accept(ModItems.MELON_CREAM_FROSTING_PIPING_BAG.get());
                         output.accept(ModItems.MELON_CREAM_MINI_WAFFLE.get());
                         output.accept(ModItems.MELON_CREAM_PASTRY.get());
                         output.accept(ModItems.MELON_CREAM_SWEET_ROLL.get());
@@ -684,6 +700,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.PEANUT_BUTTER_MELON_JAM_SANDWICH.get());
                         output.accept(ModBlocks.PINK_GELATIN_DESSERT_BLOCK.get());
                         output.accept(ModItems.PINK_GELATIN_DESSERT_SLICE.get());
+                        output.accept(ModItems.PIPING_BAG.get());
                         output.accept(ModItems.PITA_BREAD.get());
                         output.accept(ModItems.PITA_DOUGH.get());
                         output.accept(ModBlocks.PIZZA_DOUGH.get());
@@ -701,6 +718,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.PUMPERNICKEL_BREAD_SLICE.get());
                         output.accept(ModItems.PUMPERNICKEL_DOUGH.get());
                         output.accept(ModItems.PUMPERNICKEL_TOAST_SLICE.get());
+                        output.accept(ModItems.PUMPKIN_PIE_SLICE.get());
                         output.accept(ModBlocks.PURPLE_GELATIN_DESSERT_BLOCK.get());
                         output.accept(ModItems.PURPLE_GELATIN_DESSERT_SLICE.get());
                         output.accept(ModItems.RABBIT_CUTS.get());
@@ -885,7 +903,9 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.TORTILLA_CHIP_BOWL.get());
                         output.accept(ModBlocks.UBE_CAKE_BASE.get());
                         output.accept(ModItems.UBE_CREAM_FROSTING_BOTTLE.get());
+                        output.accept(ModItems.UBE_CREAM_FROSTING_PIPING_BAG.get());
                         output.accept(ModBlocks.UBE_CREAM_UBE_CAKE.get());
+                        output.accept(ModItems.UBE_CREAM_UBE_CAKE_SLICE.get());
                         output.accept(ModItems.UBE_SUGAR_DOUGH.get());
                         output.accept(ModItems.UNBREADED_CHICKEN_PATTY.get());
                         output.accept(ModItems.VEGETABLE_SANDWICH_BEETROOT_LETTUCE.get());
@@ -920,7 +940,7 @@ public class ModCreativeModeTabs {
     public static final Supplier<CreativeModeTab> CREATEFOOD_TAB_FLUID = CREATIVE_MODE_TAB.register("createfoodfluid",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModFluids.CREAM_PIE_FILLING_FLUID.BUCKET.get()))
                     .title(Component.translatable("tab.createfood.fluid"))
-                    .displayItems((itemDisplayParameters, output) -> {
+                    .displayItems((params, output) -> {
                         output.accept(ModFluids.APPLE_CREAM_FROSTING_FLUID.BUCKET.get());
                         output.accept(ModFluids.APPLE_ICE_CREAM_FLUID.BUCKET.get());
                         output.accept(ModFluids.APPLE_JAM_FLUID.BUCKET.get());

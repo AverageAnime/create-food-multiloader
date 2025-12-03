@@ -1,0 +1,20 @@
+{
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "tag": "c:cake_base"
+        },
+        {
+            "type": "fluid_tag",
+            "amount": 500,
+            "fluid_tag": "c:melon_cream_frosting"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:melon_cream_cake"
+            }
+        }
+    ]
+}

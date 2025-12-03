@@ -1,0 +1,19 @@
+{
+    "type": "create:emptying",
+    "ingredients": [
+        {
+            "tag": "c:berry_cream_frosting_piping_bag"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:piping_bag"
+            }
+        },
+        {
+            "amount": 500,
+            "id": "createfood:berry_cream_frosting"
+        }
+    ]
+}

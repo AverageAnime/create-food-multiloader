@@ -1,0 +1,29 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:cream_cake_slice"
+        },
+        {
+            "tag": "c:cream_cake_slice"
+        },
+        {
+            "tag": "c:cream_cake_slice"
+        },
+        {
+            "tag": "c:cream_cake_slice"
+        },
+        {
+            "tag": "c:cream_cake_slice"
+        },
+        {
+            "tag": "c:cream_cake_slice"
+        },
+        {
+            "tag": "c:cream_cake_slice"
+        }
+    ],
+    "result": {
+        "id": "createfood:cream_cake"
+    }
+}

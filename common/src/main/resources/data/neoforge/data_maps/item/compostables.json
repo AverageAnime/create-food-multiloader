@@ -1,0 +1,12 @@
+{
+  "values": {
+    "createfood:eggshell": {
+      "chance": 1,
+      "can_villager_compost": true
+    },
+    "createfood:boiled_egg_peeled": {
+      "chance": 0.65,
+      "can_villager_compost": true
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+    "type": "create:item_application",
+    "ingredients": [
+        {
+            "tag": "c:cake_base"
+        },
+        {
+            "tag": "c:apple_cream_frosting_piping_bag"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:apple_cream_cake"
+            }
+        }
+    ]
+}

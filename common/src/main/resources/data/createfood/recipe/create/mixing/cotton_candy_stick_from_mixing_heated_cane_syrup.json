@@ -15,32 +15,10 @@
         },
         {
             "item": "minecraft:stick"
-        },
-        {
-            "item": "minecraft:stick"
-        },
-        {
-            "item": "minecraft:stick"
-        },
-        {
-            "item": "minecraft:stick"
-        },
-        {
-            "item": "minecraft:stick"
-        },
-        {
-            "item": "minecraft:stick"
-        },
-        {
-            "item": "minecraft:stick"
-        },
-        {
-            "item": "minecraft:stick"
         }
     ],
     "results": [
         {
-            "count": 8,
             "item": {
                 "id": "createfood:cotton_candy_stick"
             }

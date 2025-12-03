@@ -1,0 +1,20 @@
+{
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "tag": "c:piping_bag"
+        },
+        {
+            "type": "fluid_tag",
+            "amount": 500,
+            "fluid_tag": "c:glow_berry_cream_frosting"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:glow_berry_cream_frosting_piping_bag"
+            }
+        }
+    ]
+}

@@ -3,8 +3,8 @@
 	"textures": {
 		"bottom": "createfood:block/cake_bottom",
 		"top": "createfood:block/cream_cake_top",
-		"particle": "createfood:block/cake_side",
-		"side": "createfood:block/cake_side"
+		"particle": "createfood:block/cream_cake_side",
+		"side": "createfood:block/cream_cake_side"
 	},
 	"elements": [
 		{

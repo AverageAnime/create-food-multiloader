@@ -1,0 +1,13 @@
+{
+    "type": "minecraft:smoking",
+    "category": "food",
+    "cookingtime": 550,
+    "experience": 0.95,
+    "ingredient": {
+        "tag": "c:raw_pumpkin_pie"
+    },
+    "result": {
+        "count": 1,
+        "id": "minecraft:pumpkin_pie"
+    }
+}

@@ -1,0 +1,19 @@
+{
+    "type": "farmersdelight:cutting",
+    "ingredients": [
+        {
+            "tag": "c:chorus_fruit_cream_cake"
+        }
+    ],
+    "tool": {
+        "tag": "c:tools/knife"
+    },
+    "result": [
+        {
+            "item": {
+                "count": 7,
+                "id": "createfood:chorus_fruit_cream_cake_slice"
+            }
+        }
+    ]
+}

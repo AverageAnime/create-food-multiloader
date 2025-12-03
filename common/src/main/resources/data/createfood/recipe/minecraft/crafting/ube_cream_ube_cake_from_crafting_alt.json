@@ -1,0 +1,29 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:ube_cream_ube_cake_slice"
+        },
+        {
+            "tag": "c:ube_cream_ube_cake_slice"
+        },
+        {
+            "tag": "c:ube_cream_ube_cake_slice"
+        },
+        {
+            "tag": "c:ube_cream_ube_cake_slice"
+        },
+        {
+            "tag": "c:ube_cream_ube_cake_slice"
+        },
+        {
+            "tag": "c:ube_cream_ube_cake_slice"
+        },
+        {
+            "tag": "c:ube_cream_ube_cake_slice"
+        }
+    ],
+    "result": {
+        "id": "createfood:ube_cream_ube_cake"
+    }
+}
