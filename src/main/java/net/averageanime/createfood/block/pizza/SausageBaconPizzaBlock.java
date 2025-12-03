@@ -24,7 +24,7 @@ public class SausageBaconPizzaBlock extends ModPieBlock {
         return new ItemStack((ItemLike) ModItems.SAUSAGE_BACON_PIZZA_SLICE.get());
     }
 
-    protected static InteractionResult consumeBite(LevelAccessor pLevel, BlockPos pPos, BlockState pState, Player pPlayer) {
+    protected InteractionResult consumeBite(LevelAccessor pLevel, BlockPos pPos, BlockState pState, Player pPlayer) {
         if (!pPlayer.canEat(false)) {
             return InteractionResult.PASS;
         } else {

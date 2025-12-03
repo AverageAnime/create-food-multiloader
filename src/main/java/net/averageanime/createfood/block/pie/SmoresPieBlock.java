@@ -22,7 +22,7 @@ public class SmoresPieBlock extends ModPieBlock {
         return new ItemStack((ItemLike) ModItems.SMORES_PIE_SLICE.get());
     }
 
-    protected static InteractionResult consumeBite(LevelAccessor pLevel, BlockPos pPos, BlockState pState, Player pPlayer) {
+    protected InteractionResult consumeBite(LevelAccessor pLevel, BlockPos pPos, BlockState pState, Player pPlayer) {
         if (!pPlayer.canEat(false)) {
             return InteractionResult.PASS;
         } else {

@@ -24,7 +24,7 @@ public class MushroomOnionPizzaBlock extends ModPieBlock {
         return new ItemStack((ItemLike) ModItems.MUSHROOM_ONION_PIZZA_SLICE.get());
     }
 
-    protected static InteractionResult consumeBite(LevelAccessor pLevel, BlockPos pPos, BlockState pState, Player pPlayer) {
+    protected InteractionResult consumeBite(LevelAccessor pLevel, BlockPos pPos, BlockState pState, Player pPlayer) {
         if (!pPlayer.canEat(false)) {
             return InteractionResult.PASS;
         } else {

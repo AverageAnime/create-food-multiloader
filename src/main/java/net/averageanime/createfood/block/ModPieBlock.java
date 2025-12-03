@@ -31,30 +31,32 @@ import vectorwing.farmersdelight.common.registry.ModEffects;
 import vectorwing.farmersdelight.common.tag.ModTags;
 import vectorwing.farmersdelight.common.utility.ItemUtils;
 
-public class ModPieBlock extends CakeBlock {
-    public static final int MAX_BITES = 4;
-    public static final IntegerProperty BITES;
-    public static final int FULL_CAKE_SIGNAL;
+public class ModPieBlock extends Block {
+    public static final int MAX_PIE_BITES = 4;
+    // Create our own BITES property with the correct range (0-3 instead of 0-6)
+    public static final IntegerProperty BITES = IntegerProperty.create("bites", 0, MAX_PIE_BITES - 1);
+    public static final int FULL_PIE_SIGNAL;
     protected static final float AABB_OFFSET = 1.0F;
     protected static final float AABB_SIZE_PER_BITE = 2.0F;
     protected static VoxelShape[] SHAPE_BY_BITE;
     public static final DirectionProperty FACING;
 
     public BlockState getStateForPlacement(BlockPlaceContext context) {
-        return (BlockState)this.defaultBlockState().setValue(FACING, context.getHorizontalDirection());
+        return this.defaultBlockState().setValue(FACING, context.getHorizontalDirection()).setValue(BITES, 0);
     }
 
     public ModPieBlock(Properties pProperties) {
         super(pProperties);
+        // Set the default state with 0 bites
+        this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(BITES, 0));
     }
 
     @Override
     public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
         int bites = pState.getValue(BITES);
-        if (bites < 0 || bites >= SHAPE_BY_BITE.length) {
-            System.err.println("Invalid bites value: " + bites);
-            return SHAPE_BY_BITE[0];
-        }
+
+        // Defensive check: Clamp bites to valid range
+        bites = Math.max(0, Math.min(bites, SHAPE_BY_BITE.length - 1));
 
         VoxelShape baseShape = SHAPE_BY_BITE[bites];
         Direction facing = pState.getValue(FACING);
@@ -103,33 +105,33 @@ public class ModPieBlock extends CakeBlock {
     }
 
     protected InteractionResult cutSlice(Level level, BlockPos pos, BlockState state, Player player) {
-        int bites = (Integer)state.getValue(BITES);
-        if (bites < MAX_BITES - 1) {
-            level.setBlock(pos, (BlockState)state.setValue(BITES, bites + 1), 3);
+        int bites = state.getValue(BITES);
+        if (bites < MAX_PIE_BITES - 1) {
+            level.setBlock(pos, state.setValue(BITES, bites + 1), 3);
         } else {
             level.removeBlock(pos, false);
         }
 
         Direction direction = player.getDirection().getOpposite();
-        ItemUtils.spawnItemEntity(level, this.getPieSliceItem(), (double)pos.getX() + 0.5, (double)pos.getY() + 0.3, (double)pos.getZ() + 0.5, (double)direction.getStepX() * 0.15, 0.05, (double)direction.getStepZ() * 0.15);
-        level.playSound((Player)null, pos, SoundEvents.WOOL_BREAK, SoundSource.PLAYERS, 0.8F, 0.8F);
+        ItemUtils.spawnItemEntity(level, this.getPieSliceItem(), (double) pos.getX() + 0.5, (double) pos.getY() + 0.3, (double) pos.getZ() + 0.5, (double) direction.getStepX() * 0.15, 0.05, (double) direction.getStepZ() * 0.15);
+        level.playSound((Player) null, pos, SoundEvents.WOOL_BREAK, SoundSource.PLAYERS, 0.8F, 0.8F);
         return InteractionResult.SUCCESS;
     }
 
     public ItemStack getPieSliceItem() {
-        return new ItemStack((ItemLike) ModItems.APPLE_CHEESECAKE_SLICE.get());
+        return new ItemStack(ModItems.APPLE_CHEESECAKE_SLICE.get());
     }
 
-    protected static InteractionResult consumeBite(LevelAccessor pLevel, BlockPos pPos, BlockState pState, Player pPlayer) {
+    protected InteractionResult consumeBite(LevelAccessor pLevel, BlockPos pPos, BlockState pState, Player pPlayer) {
         if (!pPlayer.canEat(false)) {
             return InteractionResult.PASS;
         } else {
             pPlayer.addEffect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0));
             pPlayer.getFoodData().eat(3, 0.1F);
-            int $$4 = (Integer)pState.getValue(BITES);
+            int currentBites = pState.getValue(BITES);
             pLevel.gameEvent(pPlayer, GameEvent.EAT, pPos);
-            if ($$4 < 3) {
-                pLevel.setBlock(pPos, (BlockState)pState.setValue(BITES, $$4 + 1), 3);
+            if (currentBites < MAX_PIE_BITES - 1) {
+                pLevel.setBlock(pPos, pState.setValue(BITES, currentBites + 1), 3);
             } else {
                 pLevel.removeBlock(pPos, false);
                 pLevel.gameEvent(pPlayer, GameEvent.BLOCK_DESTROY, pPos);
@@ -140,7 +142,7 @@ public class ModPieBlock extends CakeBlock {
     }
 
     public BlockState updateShape(BlockState pState, Direction pFacing, BlockState pFacingState, LevelAccessor pLevel, BlockPos pCurrentPos, BlockPos pFacingPos) {
-        return pFacing == Direction.DOWN && !pState.canSurvive(pLevel, pCurrentPos) ? Blocks.AIR.defaultBlockState() : super.updateShape(pState, pFacing, pFacingState, pLevel, pCurrentPos, pFacingPos);
+        return pFacing == Direction.DOWN && !pState.canSurvive(pLevel, pCurrentPos) ? Blocks.AIR.defaultBlockState() : pState;
     }
 
     public boolean canSurvive(BlockState pState, LevelReader pLevel, BlockPos pPos) {
@@ -148,15 +150,15 @@ public class ModPieBlock extends CakeBlock {
     }
 
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-        builder.add(new Property[]{FACING, BITES});
+        builder.add(FACING, BITES);
     }
 
     public int getAnalogOutputSignal(BlockState pBlockState, Level pLevel, BlockPos pPos) {
-        return getOutputSignal((Integer)pBlockState.getValue(BITES));
+        return getOutputSignal(pBlockState.getValue(BITES));
     }
 
     public static int getOutputSignal(int pEaten) {
-        return (7 - pEaten) * 2;
+        return (MAX_PIE_BITES - pEaten) * 2;
     }
 
     public boolean hasAnalogOutputSignal(BlockState pState) {
@@ -169,16 +171,15 @@ public class ModPieBlock extends CakeBlock {
 
     static {
         FACING = BlockStateProperties.HORIZONTAL_FACING;
-        BITES = BlockStateProperties.BITES;
-        FULL_CAKE_SIGNAL = getOutputSignal(0);
+        FULL_PIE_SIGNAL = getOutputSignal(0);
         SHAPE_BY_BITE = new VoxelShape[]{
-                Block.box(2.0D, 0.0D, 2.0D, 14.0D, 4.0D, 14.0D),
-                Shapes.or(
+                Block.box(2.0D, 0.0D, 2.0D, 14.0D, 4.0D, 14.0D),  // 0 bites (full pie)
+                Shapes.or(  // 1 bite
                         Block.box(2.0D, 0.0D, 8.0D, 8.0D, 4.0D, 14.0D),
                         Block.box(2.0D, 0.0D, 2.0D, 14.0D, 4.0D, 8.0D)
                 ),
-                Block.box(2.0D, 0.0D, 2.0D, 14.0D, 4.0D, 8.0D),
-                Block.box(8.0D, 0.0D, 2.0D, 14.0D, 4.0D, 8.0D)
+                Block.box(2.0D, 0.0D, 2.0D, 14.0D, 4.0D, 8.0D),    // 2 bites
+                Block.box(8.0D, 0.0D, 2.0D, 14.0D, 4.0D, 8.0D)     // 3 bites
         };
     }
 }
