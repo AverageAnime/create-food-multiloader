@@ -1,3 +1,12 @@
+### *** 1.1.12 ***
+
+#### General:
+* Fix missing melon jam filling recipe. [(#85)](https://github.com/AverageAnime/create-food/issues/85)
+* Fix cloth filter recipe. [(#95)](https://github.com/AverageAnime/create-food/issues/95)
+
+#### Fabric:
+* Update zh_cn.json
+
 ### *** 1.1.11 ***
 
 ![newprev1111](https://github.com/user-attachments/assets/2f0c34bd-f060-425f-b662-2c7403ac6eb1)
