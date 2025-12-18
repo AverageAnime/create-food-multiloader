@@ -19,5 +19,11 @@
     ],
     "result": {
         "id": "createfood:cheeseburger_onion"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "cheeseburger_onion"
+        }
+    ]
 }

@@ -10,5 +10,11 @@
     ],
     "result": {
         "id": "createfood:glow_berry_cream_sweet_roll"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "glow_berry_cream_sweet_roll"
+        }
+    ]
 }

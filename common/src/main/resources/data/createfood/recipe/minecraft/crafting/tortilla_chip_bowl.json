@@ -6,6 +6,10 @@
                 "type": "neoforge:tag_empty",
                 "tag": "c:tortilla_chips"
             }
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "tortilla_chip_bowl"
         }
     ],
     "type": "minecraft:crafting_shapeless",

@@ -15,5 +15,11 @@
                 "id": "createfood:chocolate_pie_graham_cracker_slice"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "chocolate_pie_graham_cracker_slice"
+        }
     ]
 }

@@ -16,5 +16,11 @@
             }
         }
     ],
-    "neoc:conditions": []
+    "neoc:conditions": [],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "caramel_chip_mini_waffle"
+        }
+    ]
 }

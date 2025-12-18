@@ -10,5 +10,11 @@
     "result": {
         "count": 1,
         "id": "createfood:blackstrap_molasses_bucket"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "blackstrap_molasses_bucket"
+        }
+    ]
 }

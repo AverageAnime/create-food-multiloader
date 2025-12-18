@@ -13,5 +13,11 @@
     "result": {
         "count": 1,
         "id": "createfood:cheese_block"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "cheese_block"
+        }
+    ]
 }

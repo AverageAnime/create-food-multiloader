@@ -20,5 +20,11 @@
     "result": {
         "count": 4,
         "id": "createfood:sour_cream_bottle"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "sour_cream_bottle"
+        }
+    ]
 }

@@ -1,0 +1,24 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "1 ",
+        "2 "
+    ],
+    "key": {
+        "1": {
+            "tag": "c:toffee"
+        },
+        "2": {
+            "tag": "c:chocolate_pastry_base"
+        }
+    },
+    "result": {
+        "id": "createfood:toffee_chocolate_pastry"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "toffee_chocolate_pastry"
+        }
+    ]
+}

@@ -24,5 +24,11 @@
                 "id": "createfood:light_blue_gelatin_mix_bucket"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "light_blue_gelatin_mix_bucket"
+        }
     ]
 }

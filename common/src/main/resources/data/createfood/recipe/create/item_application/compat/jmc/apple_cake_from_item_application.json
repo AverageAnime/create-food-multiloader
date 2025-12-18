@@ -3,6 +3,10 @@
         {
             "type": "neoforge:mod_loaded",
             "modid": "jmc"
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "jmc:apple_cake"
         }
     ],
     "type": "create:item_application",

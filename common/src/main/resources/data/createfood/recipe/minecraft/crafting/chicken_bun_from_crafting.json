@@ -10,5 +10,11 @@
     ],
     "result": {
         "id": "createfood:chicken_bun"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "chicken_bun"
+        }
+    ]
 }

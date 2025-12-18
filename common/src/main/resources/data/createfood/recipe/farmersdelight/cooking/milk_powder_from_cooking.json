@@ -10,5 +10,11 @@
     "result": {
         "count": 1,
         "id": "createfood:milk_powder"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "milk_powder"
+        }
+    ]
 }

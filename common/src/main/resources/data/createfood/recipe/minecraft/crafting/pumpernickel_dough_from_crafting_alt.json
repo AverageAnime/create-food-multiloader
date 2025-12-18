@@ -23,5 +23,11 @@
     "result": {
         "count": 3,
         "id": "createfood:pumpernickel_dough"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "pumpernickel_dough"
+        }
+    ]
 }

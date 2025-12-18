@@ -15,5 +15,11 @@
                 "id": "createfood:black_gelatin_dessert_slice"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "black_gelatin_dessert_slice"
+        }
     ]
 }

@@ -14,5 +14,11 @@
     },
     "result": {
         "id": "createfood:cheese_biscuit"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "cheese_biscuit"
+        }
+    ]
 }

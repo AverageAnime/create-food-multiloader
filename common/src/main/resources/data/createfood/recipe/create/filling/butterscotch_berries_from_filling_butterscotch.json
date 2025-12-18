@@ -1,0 +1,26 @@
+{
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "item": "minecraft:sweet_berries"
+        },
+        {
+            "type": "fluid_tag",
+            "amount": 250,
+            "fluid_tag": "c:butterscotch"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:butterscotch_berries"
+            }
+        }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "butterscotch_berries"
+        }
+    ]
+}

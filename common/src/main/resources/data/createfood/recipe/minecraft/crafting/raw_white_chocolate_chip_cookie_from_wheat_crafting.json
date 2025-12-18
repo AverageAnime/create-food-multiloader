@@ -17,5 +17,11 @@
     "result": {
         "count": 8,
         "id": "createfood:raw_white_chocolate_chip_cookie"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "raw_white_chocolate_chip_cookie"
+        }
+    ]
 }

@@ -14,5 +14,11 @@
     },
     "result": {
         "id": "createfood:breakfast_plate"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "breakfast_plate"
+        }
+    ]
 }

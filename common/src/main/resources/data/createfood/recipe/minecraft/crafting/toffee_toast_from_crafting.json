@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:toast"
+        },
+        {
+            "tag": "c:toffee"
+        }
+    ],
+    "result": {
+        "id": "createfood:toffee_toast"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "toffee_toast"
+        }
+    ]
+}

@@ -26,5 +26,11 @@
                 "id": "createfood:vinegar_bucket"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "vinegar_bucket"
+        }
     ]
 }

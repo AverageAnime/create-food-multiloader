@@ -14,5 +14,11 @@
                 "id": "createfood:beef_bun"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "beef_bun"
+        }
     ]
 }

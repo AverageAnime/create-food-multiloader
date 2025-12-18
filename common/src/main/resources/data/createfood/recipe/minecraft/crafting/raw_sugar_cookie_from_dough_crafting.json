@@ -14,5 +14,11 @@
     "result": {
         "count": 8,
         "id": "createfood:raw_sugar_cookie"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "raw_sugar_cookie"
+        }
+    ]
 }

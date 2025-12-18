@@ -10,5 +10,11 @@
     "result": {
         "count": 1,
         "id": "createfood:squid_ink_bucket"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "squid_ink_bucket"
+        }
+    ]
 }

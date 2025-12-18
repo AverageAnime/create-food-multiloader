@@ -6,6 +6,10 @@
                 "type": "neoforge:tag_empty",
                 "tag": "c:cooked_eggplant"
             }
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "eggplant_bun"
         }
     ],
     "type": "minecraft:crafting_shaped",

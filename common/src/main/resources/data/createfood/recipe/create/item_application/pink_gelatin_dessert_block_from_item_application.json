@@ -14,5 +14,11 @@
                 "id": "createfood:pink_gelatin_dessert_block"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "pink_gelatin_dessert_block"
+        }
     ]
 }

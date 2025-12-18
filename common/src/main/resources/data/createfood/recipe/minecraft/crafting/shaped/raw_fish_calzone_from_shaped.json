@@ -14,5 +14,11 @@
     },
     "result": {
         "id": "createfood:raw_fish_calzone"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "raw_fish_calzone"
+        }
+    ]
 }

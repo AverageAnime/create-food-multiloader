@@ -1,0 +1,32 @@
+{
+    "type": "create:mixing",
+    "ingredients": [
+        {
+            "type": "fluid_tag",
+            "amount": 1000,
+            "fluid_tag": "c:mutton_stew"
+        },
+        {
+            "item": "minecraft:bowl"
+        },
+        {
+            "item": "minecraft:bowl"
+        },
+        {
+            "item": "minecraft:bowl"
+        }
+    ],
+    "results": [
+      {
+        "item": {
+          "id": "createfood:mutton_stew_bowl"
+        }
+      }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "mutton_stew_bowl"
+        }
+    ]
+}

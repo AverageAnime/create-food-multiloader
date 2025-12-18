@@ -14,5 +14,11 @@
     },
     "result": {
         "id": "createfood:pork_meatball_stick_1"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "pork_meatball_stick_1"
+        }
+    ]
 }

@@ -14,5 +14,11 @@
     },
     "result": {
         "id": "createfood:pasta_plate_slimeballs"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "pasta_plate_slimeballs"
+        }
+    ]
 }

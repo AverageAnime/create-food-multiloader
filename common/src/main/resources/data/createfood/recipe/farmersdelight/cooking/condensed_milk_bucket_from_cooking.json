@@ -19,5 +19,11 @@
     "result": {
         "count": 1,
         "id": "createfood:condensed_milk_bucket"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "condensed_milk_bucket"
+        }
+    ]
 }

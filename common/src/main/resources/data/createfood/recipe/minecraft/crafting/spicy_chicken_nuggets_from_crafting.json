@@ -10,5 +10,11 @@
     ],
     "result": {
         "id": "createfood:spicy_chicken_nuggets"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "spicy_chicken_nuggets"
+        }
+    ]
 }

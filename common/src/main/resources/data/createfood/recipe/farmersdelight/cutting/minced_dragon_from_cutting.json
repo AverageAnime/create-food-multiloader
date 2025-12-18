@@ -23,5 +23,11 @@
                 "tag": "c:raw_dragon_meat_cuts"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "minced_dragon"
+        }
     ]
 }

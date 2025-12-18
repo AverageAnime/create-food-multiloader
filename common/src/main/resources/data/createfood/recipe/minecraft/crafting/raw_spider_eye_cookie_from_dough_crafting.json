@@ -11,5 +11,11 @@
     "result": {
         "count": 8,
         "id": "createfood:raw_spider_eye_cookie"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "raw_spider_eye_cookie"
+        }
+    ]
 }

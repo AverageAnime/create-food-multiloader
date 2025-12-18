@@ -3,6 +3,10 @@
         {
             "type": "neoforge:mod_loaded",
             "modid": "expandeddelight"
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "expandeddelight:glow_berry_sweet_roll"
         }
     ],
     "type": "minecraft:crafting_shapeless",

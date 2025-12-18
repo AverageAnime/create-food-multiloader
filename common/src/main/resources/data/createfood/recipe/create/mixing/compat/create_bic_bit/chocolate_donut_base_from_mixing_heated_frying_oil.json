@@ -3,6 +3,10 @@
         {
             "type": "neoforge:mod_loaded",
             "modid": "create_bic_bit"
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "chocolate_donut_base"
         }
     ],
     "type": "create:mixing",
@@ -12,6 +16,7 @@
             "tag": "c:chocolate_pastry_base"
         },
         {
+            "type": "fluid_stack",
             "amount": 125,
             "fluid": "create_bic_bit:frying_oil"
         }

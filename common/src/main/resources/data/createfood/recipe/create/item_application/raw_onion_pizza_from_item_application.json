@@ -14,5 +14,11 @@
                 "id": "createfood:raw_onion_pizza"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "raw_onion_pizza"
+        }
     ]
 }

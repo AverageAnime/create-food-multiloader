@@ -23,5 +23,11 @@
                 "id": "createfood:breakfast_bar"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "breakfast_bar"
+        }
     ]
 }

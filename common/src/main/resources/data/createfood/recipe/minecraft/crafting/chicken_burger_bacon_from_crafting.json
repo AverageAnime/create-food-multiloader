@@ -1,5 +1,10 @@
 {
-    "neoforge:conditions": [],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "chicken_burger_bacon"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {

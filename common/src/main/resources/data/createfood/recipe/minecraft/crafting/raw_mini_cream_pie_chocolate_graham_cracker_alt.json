@@ -14,5 +14,11 @@
     "result": {
         "count": 2,
         "id": "createfood:raw_mini_cream_pie_chocolate_graham_cracker"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "raw_mini_cream_pie_chocolate_graham_cracker"
+        }
+    ]
 }

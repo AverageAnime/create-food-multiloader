@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:sweet_roll_base"
+        },
+        {
+            "tag": "c:toffee"
+        }
+    ],
+    "result": {
+        "id": "createfood:toffee_sweet_roll"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "toffee_sweet_roll"
+        }
+    ]
+}

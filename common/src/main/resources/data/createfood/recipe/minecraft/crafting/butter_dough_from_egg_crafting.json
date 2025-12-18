@@ -20,5 +20,11 @@
     "result": {
         "count": 3,
         "id": "createfood:butter_dough"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "butter_dough"
+        }
+    ]
 }

@@ -3,6 +3,10 @@
         {
             "type": "neoforge:mod_loaded",
             "modid": "frightsdelight"
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "frightsdelight:spider_eye_cookie"
         }
     ],
     "type": "create:compacting",

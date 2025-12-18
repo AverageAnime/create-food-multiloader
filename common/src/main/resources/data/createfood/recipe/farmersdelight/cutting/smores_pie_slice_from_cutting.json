@@ -15,5 +15,11 @@
                 "id": "createfood:smores_pie_slice"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "smores_pie_slice"
+        }
     ]
 }

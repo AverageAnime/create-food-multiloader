@@ -14,5 +14,11 @@
                 "id": "farmersdelight:pasta_with_meatballs"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "farmersdelight:pasta_with_meatballs"
+        }
     ]
 }

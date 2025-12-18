@@ -9,5 +9,11 @@
     "result": {
         "count": 1,
         "id": "createfood:chocolate_sweet_roll_base"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "chocolate_sweet_roll_base"
+        }
+    ]
 }

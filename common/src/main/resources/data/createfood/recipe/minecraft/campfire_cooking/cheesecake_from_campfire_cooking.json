@@ -9,5 +9,11 @@
     "result": {
         "count": 1,
         "id": "createfood:cheesecake"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "cheesecake"
+        }
+    ]
 }

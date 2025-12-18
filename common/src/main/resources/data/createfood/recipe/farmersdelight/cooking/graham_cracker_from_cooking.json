@@ -19,5 +19,11 @@
     "result": {
         "count": 1,
         "id": "createfood:graham_cracker"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "graham_cracker"
+        }
+    ]
 }

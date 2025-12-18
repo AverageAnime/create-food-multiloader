@@ -1,0 +1,13 @@
+{
+    "replace": false,
+    "values": [
+        {
+            "id": "createfood:flowing_leather_soup",
+            "required": false
+        },
+        {
+            "id": "createfood:leather_soup",
+            "required": false
+        }
+    ]
+}

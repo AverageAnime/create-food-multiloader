@@ -16,5 +16,11 @@
     ],
     "result": {
         "id": "createfood:dragon_burger_warped_fungus"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "dragon_burger_warped_fungus"
+        }
+    ]
 }

@@ -14,6 +14,10 @@
         {
             "type": "neoforge:mod_loaded",
             "modid": "ubesdelight:cookie_ube"
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "ubesdelight:cookie_ube"
         }
     ]
 }

@@ -16,5 +16,11 @@
     ],
     "result": {
         "id": "createfood:onion_pizza"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "onion_pizza"
+        }
+    ]
 }

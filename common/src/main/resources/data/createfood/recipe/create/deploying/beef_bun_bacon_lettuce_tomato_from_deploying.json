@@ -14,5 +14,11 @@
                 "id": "createfood:beef_bun_bacon_lettuce_tomato"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "beef_bun_bacon_lettuce_tomato"
+        }
     ]
 }

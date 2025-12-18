@@ -1,20 +1,26 @@
 {
-  "type": "create:filling",
-  "ingredients": [
-    {
-      "tag": "c:cupcake_base"
-    },
-    {
-      "type": "fluid_tag",
-      "amount": 250,
-      "fluid_tag": "c:honey"
-    }
-  ],
-  "results": [
-    {
-      "item": {
-        "id": "createfood:honeyed_cupcake"
-      }
-    }
-  ]
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "tag": "c:cupcake_base"
+        },
+        {
+            "type": "fluid_tag",
+            "amount": 250,
+            "fluid_tag": "c:honey"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:honeyed_cupcake"
+            }
+        }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "honeyed_cupcake"
+        }
+    ]
 }

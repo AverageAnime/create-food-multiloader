@@ -13,5 +13,11 @@
     ],
     "result": {
         "id": "createfood:dragon_bun_crimson_fungus"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "dragon_bun_crimson_fungus"
+        }
+    ]
 }

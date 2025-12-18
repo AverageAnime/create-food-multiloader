@@ -11,5 +11,11 @@
             "amount": 500,
             "id": "createfood:butterscotch"
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "butterscotch"
+        }
     ]
 }

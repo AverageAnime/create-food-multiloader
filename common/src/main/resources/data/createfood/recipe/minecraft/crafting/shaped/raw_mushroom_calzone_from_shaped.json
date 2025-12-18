@@ -14,5 +14,11 @@
     },
     "result": {
         "id": "createfood:raw_mushroom_calzone"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "raw_mushroom_calzone"
+        }
+    ]
 }

@@ -17,5 +17,11 @@
     "result": {
         "count": 3,
         "id": "createfood:chocolate_graham_cracker_neapolitan_scoop_3"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "chocolate_graham_cracker_neapolitan_scoop_3"
+        }
+    ]
 }

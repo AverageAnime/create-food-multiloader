@@ -14,5 +14,11 @@
     },
     "result": {
         "id": "createfood:berry_cream_cake"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "berry_cream_cake"
+        }
+    ]
 }

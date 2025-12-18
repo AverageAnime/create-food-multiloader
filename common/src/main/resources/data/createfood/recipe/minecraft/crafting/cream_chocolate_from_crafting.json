@@ -5,10 +5,16 @@
             "tag": "c:hollow_chocolate"
         },
         {
-            "tag": "c:cream_frosting_piping_bag"
+            "tag": "c:cream_frosting"
         }
     ],
     "result": {
         "id": "createfood:cream_chocolate"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "cream_chocolate"
+        }
+    ]
 }

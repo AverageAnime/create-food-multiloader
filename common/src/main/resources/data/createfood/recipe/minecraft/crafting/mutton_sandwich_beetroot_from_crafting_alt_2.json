@@ -10,5 +10,11 @@
     ],
     "result": {
         "id": "createfood:mutton_sandwich_beetroot"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "mutton_sandwich_beetroot"
+        }
+    ]
 }

@@ -1,0 +1,26 @@
+{
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "tag": "c:bowl"
+        },
+        {
+            "type": "fluid_tag",
+            "amount": 333,
+            "fluid_tag": "c:mutton_stew"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:mutton_stew_bowl"
+            }
+        }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "mutton_stew_bowl"
+        }
+    ]
+}

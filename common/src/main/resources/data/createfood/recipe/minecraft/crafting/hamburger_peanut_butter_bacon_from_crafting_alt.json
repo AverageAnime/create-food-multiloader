@@ -6,6 +6,10 @@
                 "type": "neoforge:tag_empty",
                 "tag": "c:peanut_butter"
             }
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "hamburger_peanut_butter_bacon"
         }
     ],
     "type": "minecraft:crafting_shapeless",

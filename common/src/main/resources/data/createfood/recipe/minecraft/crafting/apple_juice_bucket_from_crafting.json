@@ -19,5 +19,11 @@
     ],
     "result": {
         "id": "createfood:apple_juice_bucket"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "apple_juice_bucket"
+        }
+    ]
 }

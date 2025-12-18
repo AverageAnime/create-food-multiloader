@@ -15,5 +15,11 @@
                 "id": "createfood:bread_slice"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "bread_slice"
+        }
     ]
 }

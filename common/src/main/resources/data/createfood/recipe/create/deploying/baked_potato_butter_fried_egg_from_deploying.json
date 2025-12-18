@@ -1,5 +1,10 @@
 {
-    "neoforge:conditions": [],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "baked_potato_butter_fried_egg"
+        }
+    ],
     "type": "create:deploying",
     "ingredients": [
         {

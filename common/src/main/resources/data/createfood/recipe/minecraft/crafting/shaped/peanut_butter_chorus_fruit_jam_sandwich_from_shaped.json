@@ -6,6 +6,10 @@
                 "type": "neoforge:tag_empty",
                 "tag": "c:peanut_butter"
             }
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "peanut_butter_chorus_fruit_jam_sandwich"
         }
     ],
     "type": "minecraft:crafting_shaped",

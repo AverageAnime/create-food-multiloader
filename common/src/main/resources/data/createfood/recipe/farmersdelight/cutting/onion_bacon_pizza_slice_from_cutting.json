@@ -15,5 +15,11 @@
                 "id": "createfood:onion_bacon_pizza_slice"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "onion_bacon_pizza_slice"
+        }
     ]
 }

@@ -16,5 +16,11 @@
                 "id": "createfood:vinegar_bottle"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "vinegar_bottle"
+        }
     ]
 }

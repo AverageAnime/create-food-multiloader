@@ -15,5 +15,11 @@
                 "id": "createfood:ube_cream_ube_cake_slice"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "ube_cream_ube_cake_slice"
+        }
     ]
 }

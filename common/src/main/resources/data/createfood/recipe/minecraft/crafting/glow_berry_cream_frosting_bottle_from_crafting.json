@@ -20,5 +20,11 @@
     "result": {
         "count": 4,
         "id": "createfood:glow_berry_cream_frosting_bottle"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "glow_berry_cream_frosting_bottle"
+        }
+    ]
 }

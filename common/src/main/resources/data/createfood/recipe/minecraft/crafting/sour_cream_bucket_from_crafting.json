@@ -19,5 +19,11 @@
     ],
     "result": {
         "id": "createfood:sour_cream_bucket"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "sour_cream_bucket"
+        }
+    ]
 }

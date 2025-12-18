@@ -15,5 +15,11 @@
             "amount": 500,
             "id": "createfood:glow_berry_jam"
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "glow_berry_jam"
+        }
     ]
 }

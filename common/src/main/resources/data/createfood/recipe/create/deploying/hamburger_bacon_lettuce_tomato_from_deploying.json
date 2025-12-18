@@ -14,5 +14,11 @@
                 "id": "createfood:hamburger_bacon_lettuce_tomato"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "hamburger_bacon_lettuce_tomato"
+        }
     ]
 }

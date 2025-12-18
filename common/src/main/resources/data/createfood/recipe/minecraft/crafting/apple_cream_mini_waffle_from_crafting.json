@@ -1,5 +1,10 @@
 {
-    "neoforge:conditions": [],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "apple_cream_mini_waffle"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {

@@ -16,5 +16,11 @@
                 "id": "createfood:berry_cream_frosting_bottle"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "berry_cream_frosting_bottle"
+        }
     ]
 }

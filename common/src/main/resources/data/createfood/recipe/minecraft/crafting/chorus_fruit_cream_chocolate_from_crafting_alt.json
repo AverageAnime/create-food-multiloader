@@ -1,0 +1,30 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:hollow_chocolate"
+        },
+        {
+          "tag": "c:hollow_chocolate"
+        },
+        {
+          "tag": "c:hollow_chocolate"
+        },
+        {
+          "tag": "c:hollow_chocolate"
+        },
+        {
+            "tag": "c:chorus_fruit_cream_frosting_piping_bag"
+        }
+    ],
+    "result": {
+      "count": 4,
+      "id": "createfood:chorus_fruit_cream_chocolate"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "chorus_fruit_cream_chocolate"
+        }
+    ]
+}

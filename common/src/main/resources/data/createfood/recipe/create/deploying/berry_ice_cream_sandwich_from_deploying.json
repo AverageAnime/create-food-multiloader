@@ -1,5 +1,10 @@
 {
-    "neoforge:conditions": [],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "berry_ice_cream_sandwich"
+        }
+    ],
     "type": "create:deploying",
     "ingredients": [
         {

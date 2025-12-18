@@ -13,5 +13,11 @@
     ],
     "result": {
         "id": "createfood:potato_chip_bowl"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "potato_chip_bowl"
+        }
+    ]
 }

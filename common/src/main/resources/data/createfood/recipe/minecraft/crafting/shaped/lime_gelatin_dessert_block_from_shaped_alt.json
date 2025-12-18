@@ -14,5 +14,11 @@
     },
     "result": {
         "id": "createfood:lime_gelatin_dessert_block"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "lime_gelatin_dessert_block"
+        }
+    ]
 }

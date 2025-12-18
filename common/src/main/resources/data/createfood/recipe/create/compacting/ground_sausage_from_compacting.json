@@ -18,5 +18,11 @@
                 "id": "createfood:ground_sausage"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "ground_sausage"
+        }
     ]
 }

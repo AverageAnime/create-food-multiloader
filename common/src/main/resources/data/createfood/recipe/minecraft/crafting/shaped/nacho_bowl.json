@@ -14,5 +14,11 @@
     },
     "result": {
         "id": "createfood:nacho_bowl"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "nacho_bowl"
+        }
+    ]
 }

@@ -25,5 +25,11 @@
     ],
     "result": {
         "id": "createfood:chocolate_cream_cake_toffee"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "chocolate_cream_cake_toffee"
+        }
+    ]
 }

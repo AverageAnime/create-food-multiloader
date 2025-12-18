@@ -14,5 +14,11 @@
     "result": {
         "count": 2,
         "id": "createfood:molasses_bottle"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "molasses_bottle"
+        }
+    ]
 }

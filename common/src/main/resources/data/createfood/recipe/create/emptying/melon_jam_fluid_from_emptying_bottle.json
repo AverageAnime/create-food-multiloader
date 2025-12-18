@@ -15,5 +15,11 @@
             "amount": 500,
             "id": "createfood:melon_jam"
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "melon_jam"
+        }
     ]
 }

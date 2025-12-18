@@ -22,5 +22,11 @@
             "amount": 333,
             "id": "createfood:chorus_fruit_juice"
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "chorus_fruit_juice"
+        }
     ]
 }

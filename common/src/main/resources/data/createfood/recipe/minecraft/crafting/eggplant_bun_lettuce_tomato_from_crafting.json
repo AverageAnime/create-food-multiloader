@@ -10,5 +10,11 @@
     ],
     "result": {
         "id": "createfood:eggplant_bun_lettuce_tomato"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "eggplant_bun_lettuce_tomato"
+        }
+    ]
 }

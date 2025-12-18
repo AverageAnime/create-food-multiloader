@@ -1,9 +1,9 @@
 package dev.averageanime.neoforge.block;
 
 import dev.averageanime.CommonClass;
+import dev.averageanime.neoforge.block.type.*;
 import dev.averageanime.neoforge.item.ModItems;
 import net.minecraft.network.chat.Component;
-import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -16,35 +16,45 @@ import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.util.List;
-import java.util.function.Supplier;
 
 import static dev.averageanime.neoforge.CreateFood.LOGGER;
 import static dev.averageanime.neoforge.item.ModItems.ITEMS;
-import static dev.averageanime.neoforge.item.ModItems.addModTooltip;
+import static dev.averageanime.neoforge.item.tooltip.CustomTooltips.addTooltip;
 
+@SuppressWarnings("unused")
 public class ModBlocks {
 
     public static final DeferredRegister.Blocks BLOCKS =
             DeferredRegister.createBlocks(CommonClass.ID);
 
-    private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
-        DeferredBlock<T> toReturn = BLOCKS.register(name, block);
-        registerBlockItem(name, toReturn);
-        return toReturn;
-    }
-
     private static <T extends Block> void registerBlockItem(String name, DeferredBlock<T> block) {
         ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
     }
-    public static final DeferredBlock<Block> PUMPKIN_PIE_BLOCK = BLOCKS.register("pumpkin_pie",
+
+    public static final DeferredBlock<Block> RAW_MEAT_PIE = BLOCKS.register("raw_meat_pie",
+            () -> new RawPieBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE)));
+    public static final DeferredItem<Item> RAW_MEAT_PIE_ITEM = ITEMS.register("raw_meat_pie",
+            () -> new BlockItem(ModBlocks.RAW_MEAT_PIE.get(), new Item.Properties()));
+
+    public static final DeferredBlock<Block> MEAT_PIE = BLOCKS.register("meat_pie",
+            () -> new ModPieBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), ModItems.MEAT_PIE_SLICE));
+    public static final DeferredItem<Item> MEAT_PIE_ITEM = ITEMS.register("meat_pie",
+            () -> new BlockItem(ModBlocks.MEAT_PIE.get(), new Item.Properties()));
+
+    public static final DeferredBlock<Block> PUMPKIN_PIE_BLOCK = BLOCKS.register("pumpkin_pie_block",
             () -> new ModPieBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), ModItems.PUMPKIN_PIE_SLICE));
-    public static final DeferredItem<Item> PUMPKIN_PIE_ITEM = ITEMS.register("pumpkin_pie",
+    public static final DeferredItem<Item> PUMPKIN_PIE_ITEM = ITEMS.register("pumpkin_pie_block",
             () -> new BlockItem(ModBlocks.PUMPKIN_PIE_BLOCK.get(), new Item.Properties()));
 
     public static final DeferredBlock<Block> GYRO_MEAT_BLOCK = BLOCKS.register("gyro_meat_block",
             () -> new GyroMeatBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE)));
     public static final DeferredItem<Item> GYRO_MEAT_BLOCK_ITEM = ITEMS.register("gyro_meat_block",
             () -> new BlockItem(ModBlocks.GYRO_MEAT_BLOCK.get(), new Item.Properties()));
+
+    public static final DeferredBlock<Block> CHEESE_BLOCK = BLOCKS.register("cheese_block",
+            () -> new CheeseBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE)));
+    public static final DeferredItem<Item> CHEESE_BLOCK_ITEM = ITEMS.register("cheese_block",
+            () -> new BlockItem(ModBlocks.CHEESE_BLOCK.get(), new Item.Properties()));
 
     public static final DeferredBlock<Block> PIZZA_DOUGH = BLOCKS.register("pizza_dough",
             () -> new RawPizzaBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE)));
@@ -57,7 +67,7 @@ public class ModBlocks {
             () -> new BlockItem(ModBlocks.PIZZA_DOUGH_TOMATO_SAUCE.get(), new Item.Properties()) {
                 @Override
                 public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addModTooltip(components, "tooltip.createfood.default", "tooltip.createfood.tomato_sauce_ingredient");
+                    addTooltip(components, null, "tooltip.createfood.tomato_sauce_ingredient");
                     super.appendHoverText(stack, context, components, flag);
                 }
             });
@@ -68,7 +78,7 @@ public class ModBlocks {
             () -> new BlockItem(ModBlocks.RAW_BACON_PIZZA.get(), new Item.Properties()) {
                 @Override
                 public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addModTooltip(components, "tooltip.createfood.default", "tooltip.createfood.bacon_ingredient");
+                    addTooltip(components, null, "tooltip.createfood.bacon_ingredient");
                     super.appendHoverText(stack, context, components, flag);
                 }
             });
@@ -79,7 +89,7 @@ public class ModBlocks {
             () -> new BlockItem(ModBlocks.RAW_CHEESE_PIZZA.get(), new Item.Properties()) {
                 @Override
                 public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addModTooltip(components, "tooltip.createfood.default", "tooltip.createfood.cheese_ingredient");
+                    addTooltip(components, null, "tooltip.createfood.cheese_ingredient");
                     super.appendHoverText(stack, context, components, flag);
                 }
             });
@@ -90,7 +100,7 @@ public class ModBlocks {
             () -> new BlockItem(ModBlocks.RAW_FISH_BACON_PIZZA.get(), new Item.Properties()) {
                 @Override
                 public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addModTooltip(components, "tooltip.createfood.default", "tooltip.createfood.fish_ingredient", "tooltip.createfood.bacon_ingredient");
+                    addTooltip(components, null, "tooltip.createfood.fish_ingredient", "tooltip.createfood.bacon_ingredient");
                     super.appendHoverText(stack, context, components, flag);
                 }
             });
@@ -101,7 +111,7 @@ public class ModBlocks {
             () -> new BlockItem(ModBlocks.RAW_FISH_ONION_PIZZA.get(), new Item.Properties()) {
                 @Override
                 public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addModTooltip(components, "tooltip.createfood.default", "tooltip.createfood.fish_ingredient", "tooltip.createfood.onion_ingredient");
+                    addTooltip(components, null, "tooltip.createfood.fish_ingredient", "tooltip.createfood.onion_ingredient");
                     super.appendHoverText(stack, context, components, flag);
                 }
             });
@@ -112,7 +122,7 @@ public class ModBlocks {
             () -> new BlockItem(ModBlocks.RAW_FISH_PIZZA.get(), new Item.Properties()) {
                 @Override
                 public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addModTooltip(components, "tooltip.createfood.default", "tooltip.createfood.fish_ingredient");
+                    addTooltip(components, null, "tooltip.createfood.fish_ingredient");
                     super.appendHoverText(stack, context, components, flag);
                 }
             });
@@ -123,7 +133,7 @@ public class ModBlocks {
             () -> new BlockItem(ModBlocks.RAW_MUSHROOM_BACON_PIZZA.get(), new Item.Properties()) {
                 @Override
                 public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addModTooltip(components, "tooltip.createfood.default", "tooltip.createfood.mushroom_ingredient", "tooltip.createfood.bacon_ingredient");
+                    addTooltip(components, null, "tooltip.createfood.mushroom_ingredient", "tooltip.createfood.bacon_ingredient");
                     super.appendHoverText(stack, context, components, flag);
                 }
             });
@@ -134,7 +144,7 @@ public class ModBlocks {
             () -> new BlockItem(ModBlocks.RAW_MUSHROOM_FISH_PIZZA.get(), new Item.Properties()) {
                 @Override
                 public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addModTooltip(components, "tooltip.createfood.default", "tooltip.createfood.mushroom_ingredient", "tooltip.createfood.fish_ingredient");
+                    addTooltip(components, null, "tooltip.createfood.mushroom_ingredient", "tooltip.createfood.fish_ingredient");
                     super.appendHoverText(stack, context, components, flag);
                 }
             });
@@ -145,7 +155,7 @@ public class ModBlocks {
             () -> new BlockItem(ModBlocks.RAW_MUSHROOM_ONION_PIZZA.get(), new Item.Properties()) {
                 @Override
                 public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addModTooltip(components, "tooltip.createfood.default", "tooltip.createfood.mushroom_ingredient", "tooltip.createfood.onion_ingredient");
+                    addTooltip(components, null, "tooltip.createfood.mushroom_ingredient", "tooltip.createfood.onion_ingredient");
                     super.appendHoverText(stack, context, components, flag);
                 }
             });
@@ -156,7 +166,7 @@ public class ModBlocks {
             () -> new BlockItem(ModBlocks.RAW_MUSHROOM_PIZZA.get(), new Item.Properties()) {
                 @Override
                 public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addModTooltip(components, "tooltip.createfood.default", "tooltip.createfood.mushroom_ingredient");
+                    addTooltip(components, null, "tooltip.createfood.mushroom_ingredient");
                     super.appendHoverText(stack, context, components, flag);
                 }
             });
@@ -167,7 +177,7 @@ public class ModBlocks {
             () -> new BlockItem(ModBlocks.RAW_ONION_BACON_PIZZA.get(), new Item.Properties()) {
                 @Override
                 public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addModTooltip(components, "tooltip.createfood.default", "tooltip.createfood.onion_ingredient", "tooltip.createfood.bacon_ingredient");
+                    addTooltip(components, null, "tooltip.createfood.onion_ingredient", "tooltip.createfood.bacon_ingredient");
                     super.appendHoverText(stack, context, components, flag);
                 }
             });
@@ -178,7 +188,7 @@ public class ModBlocks {
             () -> new BlockItem(ModBlocks.RAW_ONION_PIZZA.get(), new Item.Properties()) {
                 @Override
                 public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addModTooltip(components, "tooltip.createfood.default", "tooltip.createfood.onion_ingredient");
+                    addTooltip(components, null, "tooltip.createfood.onion_ingredient");
                     super.appendHoverText(stack, context, components, flag);
                 }
             });
@@ -189,7 +199,7 @@ public class ModBlocks {
             () -> new BlockItem(ModBlocks.RAW_SAUSAGE_BACON_PIZZA.get(), new Item.Properties()) {
                 @Override
                 public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addModTooltip(components, "tooltip.createfood.default", "tooltip.createfood.sausage_ingredient", "tooltip.createfood.bacon_ingredient");
+                    addTooltip(components, null, "tooltip.createfood.sausage_ingredient", "tooltip.createfood.bacon_ingredient");
                     super.appendHoverText(stack, context, components, flag);
                 }
             });
@@ -200,7 +210,7 @@ public class ModBlocks {
             () -> new BlockItem(ModBlocks.RAW_SAUSAGE_FISH_PIZZA.get(), new Item.Properties()) {
                 @Override
                 public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addModTooltip(components, "tooltip.createfood.default", "tooltip.createfood.sausage_ingredient", "tooltip.createfood.fish_ingredient");
+                    addTooltip(components, null, "tooltip.createfood.sausage_ingredient", "tooltip.createfood.fish_ingredient");
                     super.appendHoverText(stack, context, components, flag);
                 }
             });
@@ -211,7 +221,7 @@ public class ModBlocks {
             () -> new BlockItem(ModBlocks.RAW_SAUSAGE_MUSHROOM_PIZZA.get(), new Item.Properties()) {
                 @Override
                 public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addModTooltip(components, "tooltip.createfood.default", "tooltip.createfood.sausage_ingredient", "tooltip.createfood.mushroom_ingredient");
+                    addTooltip(components, null, "tooltip.createfood.sausage_ingredient", "tooltip.createfood.mushroom_ingredient");
                     super.appendHoverText(stack, context, components, flag);
                 }
             });
@@ -222,7 +232,7 @@ public class ModBlocks {
             () -> new BlockItem(ModBlocks.RAW_SAUSAGE_ONION_PIZZA.get(), new Item.Properties()) {
                 @Override
                 public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addModTooltip(components, "tooltip.createfood.default", "tooltip.createfood.sausage_ingredient", "tooltip.createfood.onion_ingredient");
+                    addTooltip(components, null, "tooltip.createfood.sausage_ingredient", "tooltip.createfood.onion_ingredient");
                     super.appendHoverText(stack, context, components, flag);
                 }
             });
@@ -233,7 +243,7 @@ public class ModBlocks {
             () -> new BlockItem(ModBlocks.RAW_SAUSAGE_PIZZA.get(), new Item.Properties()) {
                 @Override
                 public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addModTooltip(components, "tooltip.createfood.default", "tooltip.createfood.sausage_ingredient");
+                    addTooltip(components, null, "tooltip.createfood.sausage_ingredient");
                     super.appendHoverText(stack, context, components, flag);
                 }
             });
@@ -244,7 +254,7 @@ public class ModBlocks {
             () -> new BlockItem(ModBlocks.BACON_PIZZA.get(), new Item.Properties()) {
                 @Override
                 public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addModTooltip(components, "tooltip.createfood.default", "tooltip.createfood.bacon_ingredient");
+                    addTooltip(components, null, "tooltip.createfood.bacon_ingredient");
                     super.appendHoverText(stack, context, components, flag);
                 }
             });
@@ -255,7 +265,7 @@ public class ModBlocks {
             () -> new BlockItem(ModBlocks.CHEESE_PIZZA.get(), new Item.Properties()) {
                 @Override
                 public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addModTooltip(components, "tooltip.createfood.default", "tooltip.createfood.cheese_ingredient");
+                    addTooltip(components, null, "tooltip.createfood.cheese_ingredient");
                     super.appendHoverText(stack, context, components, flag);
                 }
             });
@@ -266,7 +276,7 @@ public class ModBlocks {
             () -> new BlockItem(ModBlocks.FISH_BACON_PIZZA.get(), new Item.Properties()) {
                 @Override
                 public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addModTooltip(components, "tooltip.createfood.default", "tooltip.createfood.fish_ingredient", "tooltip.createfood.bacon_ingredient");
+                    addTooltip(components, null, "tooltip.createfood.fish_ingredient", "tooltip.createfood.bacon_ingredient");
                     super.appendHoverText(stack, context, components, flag);
                 }
             });
@@ -277,7 +287,7 @@ public class ModBlocks {
             () -> new BlockItem(ModBlocks.FISH_ONION_PIZZA.get(), new Item.Properties()) {
                 @Override
                 public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addModTooltip(components, "tooltip.createfood.default", "tooltip.createfood.fish_ingredient", "tooltip.createfood.onion_ingredient");
+                    addTooltip(components, null, "tooltip.createfood.fish_ingredient", "tooltip.createfood.onion_ingredient");
                     super.appendHoverText(stack, context, components, flag);
                 }
             });
@@ -288,7 +298,7 @@ public class ModBlocks {
             () -> new BlockItem(ModBlocks.FISH_PIZZA.get(), new Item.Properties()) {
                 @Override
                 public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addModTooltip(components, "tooltip.createfood.default", "tooltip.createfood.fish_ingredient");
+                    addTooltip(components, null, "tooltip.createfood.fish_ingredient");
                     super.appendHoverText(stack, context, components, flag);
                 }
             });
@@ -299,7 +309,7 @@ public class ModBlocks {
             () -> new BlockItem(ModBlocks.MUSHROOM_BACON_PIZZA.get(), new Item.Properties()) {
                 @Override
                 public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addModTooltip(components, "tooltip.createfood.default", "tooltip.createfood.mushroom_ingredient", "tooltip.createfood.bacon_ingredient");
+                    addTooltip(components, null, "tooltip.createfood.mushroom_ingredient", "tooltip.createfood.bacon_ingredient");
                     super.appendHoverText(stack, context, components, flag);
                 }
             });
@@ -310,7 +320,7 @@ public class ModBlocks {
             () -> new BlockItem(ModBlocks.MUSHROOM_FISH_PIZZA.get(), new Item.Properties()) {
                 @Override
                 public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addModTooltip(components, "tooltip.createfood.default", "tooltip.createfood.mushroom_ingredient", "tooltip.createfood.fish_ingredient");
+                    addTooltip(components, null, "tooltip.createfood.mushroom_ingredient", "tooltip.createfood.fish_ingredient");
                     super.appendHoverText(stack, context, components, flag);
                 }
             });
@@ -321,7 +331,7 @@ public class ModBlocks {
             () -> new BlockItem(ModBlocks.MUSHROOM_ONION_PIZZA.get(), new Item.Properties()) {
                 @Override
                 public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addModTooltip(components, "tooltip.createfood.default", "tooltip.createfood.mushroom_ingredient", "tooltip.createfood.onion_ingredient");
+                    addTooltip(components, null, "tooltip.createfood.mushroom_ingredient", "tooltip.createfood.onion_ingredient");
                     super.appendHoverText(stack, context, components, flag);
                 }
             });
@@ -332,7 +342,7 @@ public class ModBlocks {
             () -> new BlockItem(ModBlocks.MUSHROOM_PIZZA.get(), new Item.Properties()) {
                 @Override
                 public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addModTooltip(components, "tooltip.createfood.default", "tooltip.createfood.mushroom_ingredient");
+                    addTooltip(components, null, "tooltip.createfood.mushroom_ingredient");
                     super.appendHoverText(stack, context, components, flag);
                 }
             });
@@ -343,7 +353,7 @@ public class ModBlocks {
             () -> new BlockItem(ModBlocks.ONION_BACON_PIZZA.get(), new Item.Properties()) {
                 @Override
                 public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addModTooltip(components, "tooltip.createfood.default", "tooltip.createfood.onion_ingredient", "tooltip.createfood.bacon_ingredient");
+                    addTooltip(components, null, "tooltip.createfood.onion_ingredient", "tooltip.createfood.bacon_ingredient");
                     super.appendHoverText(stack, context, components, flag);
                 }
             });
@@ -354,7 +364,7 @@ public class ModBlocks {
             () -> new BlockItem(ModBlocks.ONION_PIZZA.get(), new Item.Properties()) {
                 @Override
                 public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addModTooltip(components, "tooltip.createfood.default", "tooltip.createfood.onion_ingredient");
+                    addTooltip(components, null, "tooltip.createfood.onion_ingredient");
                     super.appendHoverText(stack, context, components, flag);
                 }
             });
@@ -365,7 +375,7 @@ public class ModBlocks {
             () -> new BlockItem(ModBlocks.SAUSAGE_BACON_PIZZA.get(), new Item.Properties()) {
                 @Override
                 public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addModTooltip(components, "tooltip.createfood.default", "tooltip.createfood.sausage_ingredient", "tooltip.createfood.bacon_ingredient");
+                    addTooltip(components, null, "tooltip.createfood.sausage_ingredient", "tooltip.createfood.bacon_ingredient");
                     super.appendHoverText(stack, context, components, flag);
                 }
             });
@@ -376,7 +386,7 @@ public class ModBlocks {
             () -> new BlockItem(ModBlocks.SAUSAGE_FISH_PIZZA.get(), new Item.Properties()) {
                 @Override
                 public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addModTooltip(components, "tooltip.createfood.default", "tooltip.createfood.sausage_ingredient", "tooltip.createfood.fish_ingredient");
+                    addTooltip(components, null, "tooltip.createfood.sausage_ingredient", "tooltip.createfood.fish_ingredient");
                     super.appendHoverText(stack, context, components, flag);
                 }
             });
@@ -387,7 +397,7 @@ public class ModBlocks {
             () -> new BlockItem(ModBlocks.SAUSAGE_MUSHROOM_PIZZA.get(), new Item.Properties()) {
                 @Override
                 public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addModTooltip(components, "tooltip.createfood.default", "tooltip.createfood.sausage_ingredient", "tooltip.createfood.mushroom_ingredient");
+                    addTooltip(components, null, "tooltip.createfood.sausage_ingredient", "tooltip.createfood.mushroom_ingredient");
                     super.appendHoverText(stack, context, components, flag);
                 }
             });
@@ -398,7 +408,7 @@ public class ModBlocks {
             () -> new BlockItem(ModBlocks.SAUSAGE_ONION_PIZZA.get(), new Item.Properties()) {
                 @Override
                 public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addModTooltip(components, "tooltip.createfood.default", "tooltip.createfood.sausage_ingredient", "tooltip.createfood.onion_ingredient");
+                    addTooltip(components, null, "tooltip.createfood.sausage_ingredient", "tooltip.createfood.onion_ingredient");
                     super.appendHoverText(stack, context, components, flag);
                 }
             });
@@ -409,7 +419,7 @@ public class ModBlocks {
             () -> new BlockItem(ModBlocks.SAUSAGE_PIZZA.get(), new Item.Properties()) {
                 @Override
                 public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addModTooltip(components, "tooltip.createfood.default", "tooltip.createfood.sausage_ingredient");
+                    addTooltip(components, null, "tooltip.createfood.sausage_ingredient");
                     super.appendHoverText(stack, context, components, flag);
                 }
             });
@@ -465,7 +475,7 @@ public class ModBlocks {
             () -> new BlockItem(ModBlocks.RAW_CHOCOLATE_PIE_GRAHAM_CRACKER.get(), new Item.Properties()) {
                 @Override
                 public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addModTooltip(components, "tooltip.createfood.default", "tooltip.createfood.graham_cracker_pie_crust_ingredient");
+                    addTooltip(components, null, "tooltip.createfood.graham_cracker_pie_crust_ingredient");
                     super.appendHoverText(stack, context, components, flag);
                 }
             });
@@ -486,7 +496,7 @@ public class ModBlocks {
             () -> new BlockItem(ModBlocks.RAW_CREAM_PIE_CHOCOLATE_GRAHAM_CRACKER.get(), new Item.Properties()) {
                 @Override
                 public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addModTooltip(components, "tooltip.createfood.default", "tooltip.createfood.chocolate_graham_cracker_pie_crust_ingredient");
+                    addTooltip(components, null, "tooltip.createfood.chocolate_graham_cracker_pie_crust_ingredient");
                     super.appendHoverText(stack, context, components, flag);
                 }
             });
@@ -497,7 +507,7 @@ public class ModBlocks {
             () -> new BlockItem(ModBlocks.RAW_CREAM_PIE_GRAHAM_CRACKER.get(), new Item.Properties()) {
                 @Override
                 public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addModTooltip(components, "tooltip.createfood.default", "tooltip.createfood.graham_cracker_pie_crust_ingredient");
+                    addTooltip(components, null, "tooltip.createfood.graham_cracker_pie_crust_ingredient");
                     super.appendHoverText(stack, context, components, flag);
                 }
             });
@@ -538,7 +548,7 @@ public class ModBlocks {
             () -> new BlockItem(ModBlocks.CHOCOLATE_PIE_GRAHAM_CRACKER.get(), new Item.Properties()) {
                 @Override
                 public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addModTooltip(components, "tooltip.createfood.default", "tooltip.createfood.graham_cracker_pie_crust_ingredient");
+                    addTooltip(components, null, "tooltip.createfood.graham_cracker_pie_crust_ingredient");
                     super.appendHoverText(stack, context, components, flag);
                 }
             });
@@ -564,7 +574,7 @@ public class ModBlocks {
             () -> new BlockItem(ModBlocks.CREAM_PIE_CHOCOLATE_GRAHAM_CRACKER.get(), new Item.Properties()) {
                 @Override
                 public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addModTooltip(components, "tooltip.createfood.default", "tooltip.createfood.chocolate_graham_cracker_pie_crust_ingredient");
+                    addTooltip(components, null, "tooltip.createfood.chocolate_graham_cracker_pie_crust_ingredient");
                     super.appendHoverText(stack, context, components, flag);
                 }
             });
@@ -575,7 +585,7 @@ public class ModBlocks {
             () -> new BlockItem(ModBlocks.CREAM_PIE_GRAHAM_CRACKER.get(), new Item.Properties()) {
                 @Override
                 public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addModTooltip(components, "tooltip.createfood.default", "tooltip.createfood.graham_cracker_pie_crust_ingredient");
+                    addTooltip(components, null, "tooltip.createfood.graham_cracker_pie_crust_ingredient");
                     super.appendHoverText(stack, context, components, flag);
                 }
             });
@@ -606,7 +616,7 @@ public class ModBlocks {
             () -> new BlockItem(ModBlocks.BUTTERSCOTCH_CHIP_WAFFLE.get(), new Item.Properties()) {
                 @Override
                 public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addModTooltip(components, "tooltip.createfood.default", "tooltip.createfood.butterscotch_chips_ingredient");
+                    addTooltip(components, null, "tooltip.createfood.butterscotch_chips_ingredient");
                     super.appendHoverText(stack, context, components, flag);
                 }
             });
@@ -617,7 +627,7 @@ public class ModBlocks {
             () -> new BlockItem(ModBlocks.CARAMEL_CHIP_WAFFLE.get(), new Item.Properties()) {
                 @Override
                 public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addModTooltip(components, "tooltip.createfood.default", "tooltip.createfood.caramel_chips_ingredient");
+                    addTooltip(components, null, "tooltip.createfood.caramel_chips_ingredient");
                     super.appendHoverText(stack, context, components, flag);
                 }
             });
@@ -628,7 +638,7 @@ public class ModBlocks {
             () -> new BlockItem(ModBlocks.CHOCOLATE_CHIP_WAFFLE.get(), new Item.Properties()) {
                 @Override
                 public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addModTooltip(components, "tooltip.createfood.default", "tooltip.createfood.chocolate_chips_ingredient");
+                    addTooltip(components, null, "tooltip.createfood.chocolate_chips_ingredient");
                     super.appendHoverText(stack, context, components, flag);
                 }
             });
@@ -639,7 +649,7 @@ public class ModBlocks {
             () -> new BlockItem(ModBlocks.DARK_CHOCOLATE_CHIP_WAFFLE.get(), new Item.Properties()) {
                 @Override
                 public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addModTooltip(components, "tooltip.createfood.default", "tooltip.createfood.dark_chocolate_chips_ingredient");
+                    addTooltip(components, null, "tooltip.createfood.dark_chocolate_chips_ingredient");
                     super.appendHoverText(stack, context, components, flag);
                 }
             });
@@ -649,7 +659,7 @@ public class ModBlocks {
             () -> new BlockItem(ModBlocks.WHITE_CHOCOLATE_CHIP_WAFFLE.get(), new Item.Properties()) {
                 @Override
                 public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addModTooltip(components, "tooltip.createfood.default", "tooltip.createfood.white_chocolate_chips_ingredient");
+                    addTooltip(components, null, "tooltip.createfood.white_chocolate_chips_ingredient");
                     super.appendHoverText(stack, context, components, flag);
                 }
             });
@@ -660,7 +670,7 @@ public class ModBlocks {
             () -> new BlockItem(ModBlocks.TOFFEE_CHIP_WAFFLE.get(), new Item.Properties()) {
                 @Override
                 public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addModTooltip(components, "tooltip.createfood.default", "tooltip.createfood.toffee_chips_ingredient");
+                    addTooltip(components, null, "tooltip.createfood.toffee_chips_ingredient");
                     super.appendHoverText(stack, context, components, flag);
                 }
             });
@@ -668,20 +678,26 @@ public class ModBlocks {
     public static final DeferredBlock<Block> CAKE_BASE = BLOCKS.register("cake_base",
             () -> new CakeBaseBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE)));
     public static final DeferredItem<Item> CAKE_BASE_ITEM = ITEMS.register("cake_base",
-            () -> new BlockItem(ModBlocks.CAKE_BASE.get(), new Item.Properties()));
+            () -> new BlockItem(ModBlocks.CAKE_BASE.get(), new Item.Properties().stacksTo(1)));
 
     public static final DeferredBlock<Block> UBE_CAKE_BASE = BLOCKS.register("ube_cake_base",
             () -> new CakeBaseBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE)));
     public static final DeferredItem<Item> UBE_CAKE_BASE_ITEM = ITEMS.register("ube_cake_base",
-            () -> new BlockItem(ModBlocks.UBE_CAKE_BASE.get(), new Item.Properties()));
+            () -> new BlockItem(ModBlocks.UBE_CAKE_BASE.get(), new Item.Properties().stacksTo(1)) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
+                    addTooltip(components, "tooltip.compat.ube", null);
+                    super.appendHoverText(stack, context, components, flag);
+                }
+            });
 
     public static final DeferredBlock<Block> BERRY_CREAM_CAKE = BLOCKS.register("berry_cream_cake",
             () -> new ModCakeBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), ModItems.BERRY_CREAM_CAKE_SLICE));
     public static final DeferredItem<Item> BERRY_CREAM_CAKE_ITEM = ITEMS.register("berry_cream_cake",
-            () -> new BlockItem(ModBlocks.BERRY_CREAM_CAKE.get(), new Item.Properties()) {
+            () -> new BlockItem(ModBlocks.BERRY_CREAM_CAKE.get(), new Item.Properties().stacksTo(1)) {
                 @Override
                 public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addModTooltip(components, "tooltip.createfood.default", "tooltip.createfood.berry_cream_frosting_ingredient");
+                    addTooltip(components, null, "tooltip.createfood.berry_cream_frosting_ingredient");
                     super.appendHoverText(stack, context, components, flag);
                 }
             });
@@ -689,10 +705,10 @@ public class ModBlocks {
     public static final DeferredBlock<Block> APPLE_CREAM_CAKE = BLOCKS.register("apple_cream_cake",
             () -> new ModCakeBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), ModItems.APPLE_CREAM_CAKE_SLICE));
     public static final DeferredItem<Item> APPLE_CREAM_CAKE_ITEM = ITEMS.register("apple_cream_cake",
-            () -> new BlockItem(ModBlocks.APPLE_CREAM_CAKE.get(), new Item.Properties()) {
+            () -> new BlockItem(ModBlocks.APPLE_CREAM_CAKE.get(), new Item.Properties().stacksTo(1)) {
                 @Override
                 public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addModTooltip(components, "tooltip.createfood.default", "tooltip.createfood.apple_cream_frosting_ingredient");
+                    addTooltip(components, null, "tooltip.createfood.apple_cream_frosting_ingredient");
                     super.appendHoverText(stack, context, components, flag);
                 }
             });
@@ -700,10 +716,10 @@ public class ModBlocks {
     public static final DeferredBlock<Block> MELON_CREAM_CAKE = BLOCKS.register("melon_cream_cake",
             () -> new ModCakeBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), ModItems.MELON_CREAM_CAKE_SLICE));
     public static final DeferredItem<Item> MELON_CREAM_CAKE_ITEM = ITEMS.register("melon_cream_cake",
-            () -> new BlockItem(ModBlocks.MELON_CREAM_CAKE.get(), new Item.Properties()) {
+            () -> new BlockItem(ModBlocks.MELON_CREAM_CAKE.get(), new Item.Properties().stacksTo(1)) {
                 @Override
                 public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addModTooltip(components, "tooltip.createfood.default", "tooltip.createfood.melon_cream_frosting_ingredient");
+                    addTooltip(components, null, "tooltip.createfood.melon_cream_frosting_ingredient");
                     super.appendHoverText(stack, context, components, flag);
                 }
             });
@@ -711,10 +727,10 @@ public class ModBlocks {
     public static final DeferredBlock<Block> CHOCOLATE_CREAM_CAKE = BLOCKS.register("chocolate_cream_cake",
             () -> new ModCakeBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), ModItems.CHOCOLATE_CREAM_CAKE_SLICE));
     public static final DeferredItem<Item> CHOCOLATE_CREAM_CAKE_ITEM = ITEMS.register("chocolate_cream_cake",
-            () -> new BlockItem(ModBlocks.CHOCOLATE_CREAM_CAKE.get(), new Item.Properties()) {
+            () -> new BlockItem(ModBlocks.CHOCOLATE_CREAM_CAKE.get(), new Item.Properties().stacksTo(1)) {
                 @Override
                 public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addModTooltip(components, "tooltip.createfood.default", "tooltip.createfood.chocolate_cream_frosting_ingredient");
+                    addTooltip(components, null, "tooltip.createfood.chocolate_cream_frosting_ingredient");
                     super.appendHoverText(stack, context, components, flag);
                 }
             });
@@ -722,10 +738,10 @@ public class ModBlocks {
     public static final DeferredBlock<Block> CHORUS_FRUIT_CREAM_CAKE = BLOCKS.register("chorus_fruit_cream_cake",
             () -> new ModCakeBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), ModItems.CHORUS_FRUIT_CREAM_CAKE_SLICE));
     public static final DeferredItem<Item> CHORUS_FRUIT_CREAM_CAKE_ITEM = ITEMS.register("chorus_fruit_cream_cake",
-            () -> new BlockItem(ModBlocks.CHORUS_FRUIT_CREAM_CAKE.get(), new Item.Properties()) {
+            () -> new BlockItem(ModBlocks.CHORUS_FRUIT_CREAM_CAKE.get(), new Item.Properties().stacksTo(1)) {
                 @Override
                 public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addModTooltip(components, "tooltip.createfood.default", "tooltip.createfood.chorus_fruit_cream_frosting_ingredient");
+                    addTooltip(components, null, "tooltip.createfood.chorus_fruit_cream_frosting_ingredient");
                     super.appendHoverText(stack, context, components, flag);
                 }
             });
@@ -733,10 +749,10 @@ public class ModBlocks {
     public static final DeferredBlock<Block> CREAM_CAKE = BLOCKS.register("cream_cake",
             () -> new ModCakeBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), ModItems.CREAM_CAKE_SLICE));
     public static final DeferredItem<Item> CREAM_CAKE_ITEM = ITEMS.register("cream_cake",
-            () -> new BlockItem(ModBlocks.CREAM_CAKE.get(), new Item.Properties()) {
+            () -> new BlockItem(ModBlocks.CREAM_CAKE.get(), new Item.Properties().stacksTo(1)) {
                 @Override
                 public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addModTooltip(components, "tooltip.createfood.default", "tooltip.createfood.cream_frosting_ingredient");
+                    addTooltip(components, null, "tooltip.createfood.cream_frosting_ingredient");
                     super.appendHoverText(stack, context, components, flag);
                 }
             });
@@ -744,10 +760,10 @@ public class ModBlocks {
     public static final DeferredBlock<Block> GLOW_BERRY_CREAM_CREAM_CAKE = BLOCKS.register("glow_berry_cream_cake",
             () -> new ModCakeBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), ModItems.GLOW_BERRY_CREAM_CAKE_SLICE));
     public static final DeferredItem<Item> GLOW_BERRY_CREAM_CREAM_CAKE_ITEM = ITEMS.register("glow_berry_cream_cake",
-            () -> new BlockItem(ModBlocks.GLOW_BERRY_CREAM_CREAM_CAKE.get(), new Item.Properties()) {
+            () -> new BlockItem(ModBlocks.GLOW_BERRY_CREAM_CREAM_CAKE.get(), new Item.Properties().stacksTo(1)) {
                 @Override
                 public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addModTooltip(components, "tooltip.createfood.default", "tooltip.createfood.glow_berry_cream_frosting_ingredient");
+                    addTooltip(components, null, "tooltip.createfood.glow_berry_cream_frosting_ingredient");
                     super.appendHoverText(stack, context, components, flag);
                 }
             });
@@ -755,21 +771,22 @@ public class ModBlocks {
     public static final DeferredBlock<Block> UBE_CREAM_UBE_CAKE = BLOCKS.register("ube_cream_ube_cake",
             () -> new ModCakeBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), ModItems.UBE_CREAM_UBE_CAKE_SLICE));
     public static final DeferredItem<Item> UBE_CREAM_UBE_CAKE_ITEM = ITEMS.register("ube_cream_ube_cake",
-            () -> new BlockItem(ModBlocks.UBE_CREAM_UBE_CAKE.get(), new Item.Properties()) {
+            () -> new BlockItem(ModBlocks.UBE_CREAM_UBE_CAKE.get(), new Item.Properties().stacksTo(1)) {
                 @Override
                 public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addModTooltip(components, "tooltip.createfood.default", "tooltip.createfood.ube_cream_frosting_ingredient");
+                    addTooltip(components, "tooltip.compat.ube", null);
                     super.appendHoverText(stack, context, components, flag);
+                    addTooltip(components, null, "tooltip.createfood.ube_cream_frosting_ingredient");
                 }
             });
 
     public static final DeferredBlock<Block> CREAM_CAKE_CHORUS_FRUIT = BLOCKS.register("cream_cake_chorus_fruit",
             () -> new ModCakeBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), ModItems.CREAM_CAKE_SLICE_CHORUS_FRUIT));
     public static final DeferredItem<Item> CREAM_CAKE_CHORUS_FRUIT_ITEM = ITEMS.register("cream_cake_chorus_fruit",
-            () -> new BlockItem(ModBlocks.CREAM_CAKE_CHORUS_FRUIT.get(), new Item.Properties()) {
+            () -> new BlockItem(ModBlocks.CREAM_CAKE_CHORUS_FRUIT.get(), new Item.Properties().stacksTo(1)) {
                 @Override
                 public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addModTooltip(components, "tooltip.createfood.default", "tooltip.createfood.cream_frosting_ingredient", "tooltip.createfood.chorus_fruit_ingredient");
+                    addTooltip(components, null, "tooltip.createfood.cream_frosting_ingredient", "tooltip.createfood.chorus_fruit_ingredient");
                     super.appendHoverText(stack, context, components, flag);
                 }
             });
@@ -777,20 +794,20 @@ public class ModBlocks {
     public static final DeferredBlock<Block> CREAM_CAKE_GLOW_BERRY = BLOCKS.register("cream_cake_glow_berry",
             () -> new ModCakeBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), ModItems.CREAM_CAKE_SLICE_GLOW_BERRY));
     public static final DeferredItem<Item> CREAM_CAKE_GLOW_BERRY_ITEM = ITEMS.register("cream_cake_glow_berry",
-            () -> new BlockItem(ModBlocks.CREAM_CAKE_GLOW_BERRY.get(), new Item.Properties()) {
+            () -> new BlockItem(ModBlocks.CREAM_CAKE_GLOW_BERRY.get(), new Item.Properties().stacksTo(1)) {
                 @Override
                 public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addModTooltip(components, "tooltip.createfood.default", "tooltip.createfood.cream_frosting_ingredient", "tooltip.createfood.glow_berry_ingredient");
+                    addTooltip(components, null, "tooltip.createfood.cream_frosting_ingredient", "tooltip.createfood.glow_berry_ingredient");
                     super.appendHoverText(stack, context, components, flag);
                 }
             });
     public static final DeferredBlock<Block> BERRY_CREAM_CAKE_SWEET_BERRY = BLOCKS.register("berry_cream_cake_sweet_berry",
             () -> new ModCakeBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), ModItems.BERRY_CREAM_CAKE_SLICE_SWEET_BERRY));
     public static final DeferredItem<Item> BERRY_CREAM_CAKE_SWEET_BERRY_ITEM = ITEMS.register("berry_cream_cake_sweet_berry",
-            () -> new BlockItem(ModBlocks.BERRY_CREAM_CAKE_SWEET_BERRY.get(), new Item.Properties()) {
+            () -> new BlockItem(ModBlocks.BERRY_CREAM_CAKE_SWEET_BERRY.get(), new Item.Properties().stacksTo(1)) {
                 @Override
                 public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addModTooltip(components, "tooltip.createfood.default", "tooltip.createfood.berry_cream_frosting_ingredient", "tooltip.createfood.berry_ingredient");
+                    addTooltip(components, null, "tooltip.createfood.berry_cream_frosting_ingredient", "tooltip.createfood.berry_ingredient");
                     super.appendHoverText(stack, context, components, flag);
                 }
             });
@@ -798,10 +815,10 @@ public class ModBlocks {
     public static final DeferredBlock<Block> BERRY_CREAM_CAKE_CHORUS_FRUIT = BLOCKS.register("berry_cream_cake_chorus_fruit",
             () -> new ModCakeBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), ModItems.BERRY_CREAM_CAKE_SLICE_CHORUS_FRUIT));
     public static final DeferredItem<Item> BERRY_CREAM_CAKE_CHORUS_FRUIT_ITEM = ITEMS.register("berry_cream_cake_chorus_fruit",
-            () -> new BlockItem(ModBlocks.BERRY_CREAM_CAKE_CHORUS_FRUIT.get(), new Item.Properties()) {
+            () -> new BlockItem(ModBlocks.BERRY_CREAM_CAKE_CHORUS_FRUIT.get(), new Item.Properties().stacksTo(1)) {
                 @Override
                 public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addModTooltip(components, "tooltip.createfood.default", "tooltip.createfood.berry_cream_frosting_ingredient", "tooltip.createfood.chorus_fruit_ingredient");
+                    addTooltip(components, null, "tooltip.createfood.berry_cream_frosting_ingredient", "tooltip.createfood.chorus_fruit_ingredient");
                     super.appendHoverText(stack, context, components, flag);
                 }
             });
@@ -809,10 +826,10 @@ public class ModBlocks {
     public static final DeferredBlock<Block> BERRY_CREAM_CAKE_GLOW_BERRY = BLOCKS.register("berry_cream_cake_glow_berry",
             () -> new ModCakeBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), ModItems.BERRY_CREAM_CAKE_SLICE_GLOW_BERRY));
     public static final DeferredItem<Item> BERRY_CREAM_CAKE_GLOW_BERRY_ITEM = ITEMS.register("berry_cream_cake_glow_berry",
-            () -> new BlockItem(ModBlocks.BERRY_CREAM_CAKE_GLOW_BERRY.get(), new Item.Properties()) {
+            () -> new BlockItem(ModBlocks.BERRY_CREAM_CAKE_GLOW_BERRY.get(), new Item.Properties().stacksTo(1)) {
                 @Override
                 public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addModTooltip(components, "tooltip.createfood.default", "tooltip.createfood.berry_cream_frosting_ingredient", "tooltip.createfood.glow_berry_ingredient");
+                    addTooltip(components, null, "tooltip.createfood.berry_cream_frosting_ingredient", "tooltip.createfood.glow_berry_ingredient");
                     super.appendHoverText(stack, context, components, flag);
                 }
             });
@@ -820,10 +837,10 @@ public class ModBlocks {
     public static final DeferredBlock<Block> CHOCOLATE_CREAM_CAKE_BUTTERSCOTCH = BLOCKS.register("chocolate_cream_cake_butterscotch",
             () -> new ModCakeBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), ModItems.CHOCOLATE_CREAM_CAKE_SLICE_BUTTERSCOTCH));
     public static final DeferredItem<Item> CHOCOLATE_CREAM_CAKE_BUTTERSCOTCH_ITEM = ITEMS.register("chocolate_cream_cake_butterscotch",
-            () -> new BlockItem(ModBlocks.CHOCOLATE_CREAM_CAKE_BUTTERSCOTCH.get(), new Item.Properties()) {
+            () -> new BlockItem(ModBlocks.CHOCOLATE_CREAM_CAKE_BUTTERSCOTCH.get(), new Item.Properties().stacksTo(1)) {
                 @Override
                 public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addModTooltip(components, "tooltip.createfood.default", "tooltip.createfood.chocolate_cream_frosting_ingredient", "tooltip.createfood.butterscotch_chips_ingredient");
+                    addTooltip(components, null, "tooltip.createfood.chocolate_cream_frosting_ingredient", "tooltip.createfood.butterscotch_chips_ingredient");
                     super.appendHoverText(stack, context, components, flag);
                 }
             });
@@ -831,10 +848,10 @@ public class ModBlocks {
     public static final DeferredBlock<Block> CHOCOLATE_CREAM_CAKE_CARAMEL = BLOCKS.register("chocolate_cream_cake_caramel",
             () -> new ModCakeBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), ModItems.CHOCOLATE_CREAM_CAKE_SLICE_CARAMEL));
     public static final DeferredItem<Item> CHOCOLATE_CREAM_CAKE_CARAMEL_ITEM = ITEMS.register("chocolate_cream_cake_caramel",
-            () -> new BlockItem(ModBlocks.CHOCOLATE_CREAM_CAKE_CARAMEL.get(), new Item.Properties()) {
+            () -> new BlockItem(ModBlocks.CHOCOLATE_CREAM_CAKE_CARAMEL.get(), new Item.Properties().stacksTo(1)) {
                 @Override
                 public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addModTooltip(components, "tooltip.createfood.default", "tooltip.createfood.chocolate_cream_frosting_ingredient", "tooltip.createfood.caramel_chips_ingredient");
+                    addTooltip(components, null, "tooltip.createfood.chocolate_cream_frosting_ingredient", "tooltip.createfood.caramel_chips_ingredient");
                     super.appendHoverText(stack, context, components, flag);
                 }
             });
@@ -842,10 +859,10 @@ public class ModBlocks {
     public static final DeferredBlock<Block> CHOCOLATE_CREAM_CAKE_CHOCOLATE = BLOCKS.register("chocolate_cream_cake_chocolate",
             () -> new ModCakeBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), ModItems.CHOCOLATE_CREAM_CAKE_SLICE_CHOCOLATE));
     public static final DeferredItem<Item> CHOCOLATE_CREAM_CAKE_CHOCOLATE_ITEM = ITEMS.register("chocolate_cream_cake_chocolate",
-            () -> new BlockItem(ModBlocks.CHOCOLATE_CREAM_CAKE_CHOCOLATE.get(), new Item.Properties()) {
+            () -> new BlockItem(ModBlocks.CHOCOLATE_CREAM_CAKE_CHOCOLATE.get(), new Item.Properties().stacksTo(1)) {
                 @Override
                 public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addModTooltip(components, "tooltip.createfood.default", "tooltip.createfood.chocolate_cream_frosting_ingredient", "tooltip.createfood.chocolate_chips_ingredient");
+                    addTooltip(components, null, "tooltip.createfood.chocolate_cream_frosting_ingredient", "tooltip.createfood.chocolate_chips_ingredient");
                     super.appendHoverText(stack, context, components, flag);
                 }
             });
@@ -853,20 +870,20 @@ public class ModBlocks {
     public static final DeferredBlock<Block> CHOCOLATE_CREAM_CAKE_DARK_CHOCOLATE = BLOCKS.register("chocolate_cream_cake_dark_chocolate",
             () -> new ModCakeBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), ModItems.CHOCOLATE_CREAM_CAKE_SLICE_DARK_CHOCOLATE));
     public static final DeferredItem<Item> CHOCOLATE_CREAM_CAKE_DARK_CHOCOLATE_ITEM = ITEMS.register("chocolate_cream_cake_dark_chocolate",
-            () -> new BlockItem(ModBlocks.CHOCOLATE_CREAM_CAKE_DARK_CHOCOLATE.get(), new Item.Properties()) {
+            () -> new BlockItem(ModBlocks.CHOCOLATE_CREAM_CAKE_DARK_CHOCOLATE.get(), new Item.Properties().stacksTo(1)) {
                 @Override
                 public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addModTooltip(components, "tooltip.createfood.default", "tooltip.createfood.chocolate_cream_frosting_ingredient", "tooltip.createfood.dark_chocolate_chips_ingredient");
+                    addTooltip(components, null, "tooltip.createfood.chocolate_cream_frosting_ingredient", "tooltip.createfood.dark_chocolate_chips_ingredient");
                     super.appendHoverText(stack, context, components, flag);
                 }
             });
     public static final DeferredBlock<Block> CHOCOLATE_CREAM_CAKE_TOFFEE = BLOCKS.register("chocolate_cream_cake_toffee",
             () -> new ModCakeBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), ModItems.CHOCOLATE_CREAM_CAKE_SLICE_TOFFEE));
     public static final DeferredItem<Item> CHOCOLATE_CREAM_CAKE_TOFFEE_ITEM = ITEMS.register("chocolate_cream_cake_toffee",
-            () -> new BlockItem(ModBlocks.CHOCOLATE_CREAM_CAKE_TOFFEE.get(), new Item.Properties()) {
+            () -> new BlockItem(ModBlocks.CHOCOLATE_CREAM_CAKE_TOFFEE.get(), new Item.Properties().stacksTo(1)) {
                 @Override
                 public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addModTooltip(components, "tooltip.createfood.default", "tooltip.createfood.chocolate_cream_frosting_ingredient", "tooltip.createfood.toffee_chips_ingredient");
+                    addTooltip(components, null, "tooltip.createfood.chocolate_cream_frosting_ingredient", "tooltip.createfood.toffee_chips_ingredient");
                     super.appendHoverText(stack, context, components, flag);
                 }
             });
@@ -874,10 +891,10 @@ public class ModBlocks {
     public static final DeferredBlock<Block> CHOCOLATE_CREAM_CAKE_WHITE_CHOCOLATE = BLOCKS.register("chocolate_cream_cake_white_chocolate",
             () -> new ModCakeBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), ModItems.CHOCOLATE_CREAM_CAKE_SLICE_WHITE_CHOCOLATE));
     public static final DeferredItem<Item> CHOCOLATE_CREAM_CAKE_WHITE_CHOCOLATE_ITEM = ITEMS.register("chocolate_cream_cake_white_chocolate",
-            () -> new BlockItem(ModBlocks.CHOCOLATE_CREAM_CAKE_WHITE_CHOCOLATE.get(), new Item.Properties()) {
+            () -> new BlockItem(ModBlocks.CHOCOLATE_CREAM_CAKE_WHITE_CHOCOLATE.get(), new Item.Properties().stacksTo(1)) {
                 @Override
                 public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addModTooltip(components, "tooltip.createfood.default", "tooltip.createfood.chocolate_cream_frosting_ingredient", "tooltip.createfood.white_chocolate_chips_ingredient");
+                    addTooltip(components, null, "tooltip.createfood.chocolate_cream_frosting_ingredient", "tooltip.createfood.white_chocolate_chips_ingredient");
                     super.appendHoverText(stack, context, components, flag);
                 }
             });
@@ -885,10 +902,10 @@ public class ModBlocks {
     public static final DeferredBlock<Block> CHORUS_FRUIT_CREAM_CAKE_SWEET_BERRY = BLOCKS.register("chorus_fruit_cream_cake_sweet_berry",
             () -> new ModCakeBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), ModItems.CHORUS_FRUIT_CREAM_CAKE_SLICE_SWEET_BERRY));
     public static final DeferredItem<Item> CHORUS_FRUIT_CREAM_CAKE_SWEET_BERRY_ITEM = ITEMS.register("chorus_fruit_cream_cake_sweet_berry",
-            () -> new BlockItem(ModBlocks.CHORUS_FRUIT_CREAM_CAKE_SWEET_BERRY.get(), new Item.Properties()) {
+            () -> new BlockItem(ModBlocks.CHORUS_FRUIT_CREAM_CAKE_SWEET_BERRY.get(), new Item.Properties().stacksTo(1)) {
                 @Override
                 public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addModTooltip(components, "tooltip.createfood.default", "tooltip.createfood.chorus_fruit_cream_frosting_ingredient", "tooltip.createfood.berry_ingredient");
+                    addTooltip(components, null, "tooltip.createfood.chorus_fruit_cream_frosting_ingredient", "tooltip.createfood.berry_ingredient");
                     super.appendHoverText(stack, context, components, flag);
                 }
             });
@@ -896,10 +913,10 @@ public class ModBlocks {
     public static final DeferredBlock<Block> CHORUS_FRUIT_CREAM_CAKE_CHORUS_FRUIT = BLOCKS.register("chorus_fruit_cream_cake_chorus_fruit",
             () -> new ModCakeBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), ModItems.CHORUS_FRUIT_CREAM_CAKE_SLICE_CHORUS_FRUIT));
     public static final DeferredItem<Item> CHORUS_FRUIT_CREAM_CAKE_CHORUS_FRUIT_ITEM = ITEMS.register("chorus_fruit_cream_cake_chorus_fruit",
-            () -> new BlockItem(ModBlocks.CHORUS_FRUIT_CREAM_CAKE_CHORUS_FRUIT.get(), new Item.Properties()) {
+            () -> new BlockItem(ModBlocks.CHORUS_FRUIT_CREAM_CAKE_CHORUS_FRUIT.get(), new Item.Properties().stacksTo(1)) {
                 @Override
                 public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addModTooltip(components, "tooltip.createfood.default", "tooltip.createfood.chorus_fruit_cream_frosting_ingredient", "tooltip.createfood.chorus_fruit_ingredient");
+                    addTooltip(components, null, "tooltip.createfood.chorus_fruit_cream_frosting_ingredient", "tooltip.createfood.chorus_fruit_ingredient");
                     super.appendHoverText(stack, context, components, flag);
                 }
             });
@@ -907,10 +924,10 @@ public class ModBlocks {
     public static final DeferredBlock<Block> CHORUS_FRUIT_CREAM_CAKE_GLOW_BERRY = BLOCKS.register("chorus_fruit_cream_cake_glow_berry",
             () -> new ModCakeBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), ModItems.CHORUS_FRUIT_CREAM_CAKE_SLICE_GLOW_BERRY));
     public static final DeferredItem<Item> CHORUS_FRUIT_CREAM_CAKE_GLOW_BERRY_ITEM = ITEMS.register("chorus_fruit_cream_cake_glow_berry",
-            () -> new BlockItem(ModBlocks.CHORUS_FRUIT_CREAM_CAKE_GLOW_BERRY.get(), new Item.Properties()) {
+            () -> new BlockItem(ModBlocks.CHORUS_FRUIT_CREAM_CAKE_GLOW_BERRY.get(), new Item.Properties().stacksTo(1)) {
                 @Override
                 public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addModTooltip(components, "tooltip.createfood.default", "tooltip.createfood.chorus_fruit_cream_frosting_ingredient", "tooltip.createfood.glow_berry_ingredient");
+                    addTooltip(components, null, "tooltip.createfood.chorus_fruit_cream_frosting_ingredient", "tooltip.createfood.glow_berry_ingredient");
                     super.appendHoverText(stack, context, components, flag);
                 }
             });
@@ -918,10 +935,10 @@ public class ModBlocks {
     public static final DeferredBlock<Block> GLOW_BERRY_CREAM_CAKE_SWEET_BERRY = BLOCKS.register("glow_berry_cream_cake_sweet_berry",
             () -> new ModCakeBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), ModItems.GLOW_BERRY_CREAM_CAKE_SLICE_SWEET_BERRY));
     public static final DeferredItem<Item> GLOW_BERRY_CREAM_CREAM_CAKE_SWEET_BERRY_ITEM = ITEMS.register("glow_berry_cream_cake_sweet_berry",
-            () -> new BlockItem(ModBlocks.GLOW_BERRY_CREAM_CAKE_SWEET_BERRY.get(), new Item.Properties()) {
+            () -> new BlockItem(ModBlocks.GLOW_BERRY_CREAM_CAKE_SWEET_BERRY.get(), new Item.Properties().stacksTo(1)) {
                 @Override
                 public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addModTooltip(components, "tooltip.createfood.default", "tooltip.createfood.glow_berry_cream_frosting_ingredient", "tooltip.createfood.berry_ingredient");
+                    addTooltip(components, null, "tooltip.createfood.glow_berry_cream_frosting_ingredient", "tooltip.createfood.berry_ingredient");
                     super.appendHoverText(stack, context, components, flag);
                 }
             });
@@ -929,10 +946,10 @@ public class ModBlocks {
     public static final DeferredBlock<Block> GLOW_BERRY_CREAM_CAKE_CHORUS_FRUIT = BLOCKS.register("glow_berry_cream_cake_chorus_fruit",
             () -> new ModCakeBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), ModItems.GLOW_BERRY_CREAM_CAKE_SLICE_CHORUS_FRUIT));
     public static final DeferredItem<Item> GLOW_BERRY_CREAM_CREAM_CAKE_CHORUS_FRUIT_ITEM = ITEMS.register("glow_berry_cream_cake_chorus_fruit",
-            () -> new BlockItem(ModBlocks.GLOW_BERRY_CREAM_CAKE_CHORUS_FRUIT.get(), new Item.Properties()) {
+            () -> new BlockItem(ModBlocks.GLOW_BERRY_CREAM_CAKE_CHORUS_FRUIT.get(), new Item.Properties().stacksTo(1)) {
                 @Override
                 public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addModTooltip(components, "tooltip.createfood.default", "tooltip.createfood.glow_berry_cream_frosting_ingredient", "tooltip.createfood.chorus_fruit_ingredient");
+                    addTooltip(components, null, "tooltip.createfood.glow_berry_cream_frosting_ingredient", "tooltip.createfood.chorus_fruit_ingredient");
                     super.appendHoverText(stack, context, components, flag);
                 }
             });
@@ -940,10 +957,10 @@ public class ModBlocks {
     public static final DeferredBlock<Block> GLOW_BERRY_CREAM_CAKE_GLOW_BERRY = BLOCKS.register("glow_berry_cream_cake_glow_berry",
             () -> new ModCakeBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), ModItems.GLOW_BERRY_CREAM_CAKE_SLICE_GLOW_BERRY));
     public static final DeferredItem<Item> GLOW_BERRY_CREAM_CREAM_CAKE_GLOW_BERRY_ITEM = ITEMS.register("glow_berry_cream_cake_glow_berry",
-            () -> new BlockItem(ModBlocks.GLOW_BERRY_CREAM_CAKE_GLOW_BERRY.get(), new Item.Properties()) {
+            () -> new BlockItem(ModBlocks.GLOW_BERRY_CREAM_CAKE_GLOW_BERRY.get(), new Item.Properties().stacksTo(1)) {
                 @Override
                 public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addModTooltip(components, "tooltip.createfood.default", "tooltip.createfood.glow_berry_cream_frosting_ingredient", "tooltip.createfood.glow_berry_ingredient");
+                    addTooltip(components, null, "tooltip.createfood.glow_berry_cream_frosting_ingredient", "tooltip.createfood.glow_berry_ingredient");
                     super.appendHoverText(stack, context, components, flag);
                 }
             });

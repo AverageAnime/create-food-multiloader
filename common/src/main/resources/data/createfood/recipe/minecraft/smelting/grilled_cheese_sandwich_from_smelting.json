@@ -9,5 +9,11 @@
     "result": {
         "count": 1,
         "id": "createfood:grilled_cheese_sandwich"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "grilled_cheese_sandwich"
+        }
+    ]
 }

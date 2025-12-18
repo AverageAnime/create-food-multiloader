@@ -22,5 +22,11 @@
             "amount": 500,
             "id": "createfood:coffee_toffee_fudge"
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "coffee_toffee_fudge"
+        }
     ]
 }

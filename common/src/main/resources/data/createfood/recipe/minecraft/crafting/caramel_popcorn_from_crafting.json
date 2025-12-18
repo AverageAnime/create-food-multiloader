@@ -6,6 +6,10 @@
                 "type": "neoforge:tag_empty",
                 "tag": "c:popcorn"
             }
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "caramel_popcorn"
         }
     ],
     "type": "minecraft:crafting_shapeless",

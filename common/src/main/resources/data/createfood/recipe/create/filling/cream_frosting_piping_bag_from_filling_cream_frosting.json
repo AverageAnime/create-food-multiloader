@@ -16,5 +16,11 @@
                 "id": "createfood:cream_frosting_piping_bag"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "cream_frosting_piping_bag"
+        }
     ]
 }

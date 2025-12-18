@@ -10,5 +10,11 @@
     ],
     "result": {
         "id": "createfood:strider_meatball_sandwich"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "strider_meatball_sandwich"
+        }
+    ]
 }

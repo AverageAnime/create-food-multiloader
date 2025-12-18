@@ -15,5 +15,11 @@
                 "id": "createfood:raw_chocolate_chip_chocolate_cookie"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "raw_chocolate_chip_chocolate_cookie"
+        }
     ]
 }

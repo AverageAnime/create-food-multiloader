@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:hollow_dark_chocolate"
+        },
+        {
+            "tag": "c:butterscotch"
+        }
+    ],
+    "result": {
+        "id": "createfood:butterscotch_dark_chocolate"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "butterscotch_dark_chocolate"
+        }
+    ]
+}

@@ -14,5 +14,11 @@
     },
     "result": {
         "id": "createfood:endermite_meatball_sandwich"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "endermite_meatball_sandwich"
+        }
+    ]
 }

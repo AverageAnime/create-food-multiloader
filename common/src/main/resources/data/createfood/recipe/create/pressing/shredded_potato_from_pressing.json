@@ -12,5 +12,11 @@
                 "id": "createfood:shredded_potato"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "shredded_potato"
+        }
     ]
 }

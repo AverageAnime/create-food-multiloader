@@ -25,5 +25,11 @@
     ],
     "result": {
         "id": "createfood:chocolate_cream_cake_white_chocolate"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "chocolate_cream_cake_white_chocolate"
+        }
+    ]
 }

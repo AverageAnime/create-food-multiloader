@@ -15,5 +15,11 @@
             "amount": 1000,
             "id": "createfood:heavy_cream"
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "heavy_cream"
+        }
     ]
 }

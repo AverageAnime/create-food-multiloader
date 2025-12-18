@@ -5,7 +5,211 @@
       "can_villager_compost": true
     },
     "createfood:boiled_egg_peeled": {
+      "chance": 1,
+      "can_villager_compost": true
+    },
+    "createfood:apple_cream_cake": {
+      "chance": 1,
+      "can_villager_compost": true
+    },
+    "createfood:berry_cream_cake": {
+      "chance": 1,
+      "can_villager_compost": true
+    },
+    "createfood:chorus_fruit_cream_cake": {
+      "chance": 1,
+      "can_villager_compost": true
+    },
+    "createfood:cream_cake": {
+      "chance": 1,
+      "can_villager_compost": true
+    },
+    "createfood:chocolate_cream_cake": {
+      "chance": 1,
+      "can_villager_compost": true
+    },
+    "createfood:glow_berry_cream_cake": {
+      "chance": 1,
+      "can_villager_compost": true
+    },
+    "createfood:ube_cream_ube_cake": {
+      "chance": 1,
+      "can_villager_compost": true
+    },
+    "createfood:apple_cheesecake": {
+      "chance": 1,
+      "can_villager_compost": true
+    },
+    "createfood:cheesecake": {
+      "chance": 1,
+      "can_villager_compost": true
+    },
+    "createfood:chorus_fruit_cheesecake": {
+      "chance": 1,
+      "can_villager_compost": true
+    },
+    "createfood:glow_berry_cheesecake": {
+      "chance": 1,
+      "can_villager_compost": true
+    },
+    "createfood:apple_cream_cake_slice": {
+      "chance": 0.85,
+      "can_villager_compost": true
+    },
+    "createfood:berry_cream_cake_slice": {
+      "chance": 0.85,
+      "can_villager_compost": true
+    },
+    "createfood:chorus_fruit_cream_cake_slice": {
+      "chance": 0.85,
+      "can_villager_compost": true
+    },
+    "createfood:cream_cake_slice": {
+      "chance": 0.85,
+      "can_villager_compost": true
+    },
+    "createfood:chocolate_cream_cake_slice": {
+      "chance": 0.85,
+      "can_villager_compost": true
+    },
+    "createfood:glow_berry_cream_cake_slice": {
+      "chance": 0.85,
+      "can_villager_compost": true
+    },
+    "createfood:ube_cream_ube_cake_slice": {
+      "chance": 0.85,
+      "can_villager_compost": true
+    },
+    "createfood:apple_cheesecake_slice": {
+      "chance": 0.85,
+      "can_villager_compost": true
+    },
+    "createfood:cheesecake_slice": {
+      "chance": 0.85,
+      "can_villager_compost": true
+    },
+    "createfood:chorus_fruit_cheesecake_slice": {
+      "chance": 0.85,
+      "can_villager_compost": true
+    },
+    "createfood:glow_berry_cheesecake_slice": {
+      "chance": 0.85,
+      "can_villager_compost": true
+    },
+    "createfood:berry_pie_slice": {
+      "chance": 0.85,
+      "can_villager_compost": true
+    },
+    "createfood:chorus_fruit_pie_slice": {
+      "chance": 0.85,
+      "can_villager_compost": true
+    },
+    "createfood:glow_berry_pie_slice": {
+      "chance": 0.85,
+      "can_villager_compost": true
+    },
+    "createfood:white_chocolate_chip_cookie": {
+      "chance": 0.85,
+      "can_villager_compost": true
+    },
+    "createfood:white_chocolate_chip_chocolate_cookie": {
+      "chance": 0.85,
+      "can_villager_compost": true
+    },
+    "createfood:toffee_chip_cookie": {
+      "chance": 0.85,
+      "can_villager_compost": true
+    },
+    "createfood:toffee_chip_chocolate_cookie": {
+      "chance": 0.85,
+      "can_villager_compost": true
+    },
+    "createfood:dark_chocolate_chip_cookie": {
+      "chance": 0.85,
+      "can_villager_compost": true
+    },
+    "createfood:dark_chocolate_chip_chocolate_cookie": {
+      "chance": 0.85,
+      "can_villager_compost": true
+    },
+    "createfood:chocolate_chip_chocolate_cookie": {
+      "chance": 0.85,
+      "can_villager_compost": true
+    },
+    "createfood:caramel_chip_cookie": {
+      "chance": 0.85,
+      "can_villager_compost": true
+    },
+    "createfood:caramel_chip_chocolate_cookie": {
+      "chance": 0.85,
+      "can_villager_compost": true
+    },
+    "createfood:butterscotch_chip_cookie": {
+      "chance": 0.85,
+      "can_villager_compost": true
+    },
+    "createfood:butterscotch_chip_chocolate_cookie": {
+      "chance": 0.85,
+      "can_villager_compost": true
+    },
+    "createfood:chorus_fruit_cookie": {
+      "chance": 0.85,
+      "can_villager_compost": true
+    },
+    "createfood:glow_berry_cookie": {
+      "chance": 0.85,
+      "can_villager_compost": true
+    },
+    "createfood:chocolate_graham_cracker_pie_crust": {
       "chance": 0.65,
+      "can_villager_compost": true
+    },
+    "createfood:graham_cracker_pie_crust": {
+      "chance": 0.65,
+      "can_villager_compost": true
+    },
+    "createfood:sliced_beetroot": {
+      "chance": 0.50,
+      "can_villager_compost": true
+    },
+    "createfood:sliced_brown_mushroom": {
+      "chance": 0.50,
+      "can_villager_compost": true
+    },
+    "createfood:sliced_carrot": {
+      "chance": 0.50,
+      "can_villager_compost": true
+    },
+    "createfood:sliced_onion": {
+      "chance": 0.50,
+      "can_villager_compost": true
+    },
+    "createfood:sliced_potato": {
+      "chance": 0.50,
+      "can_villager_compost": true
+    },
+    "createfood:sliced_red_mushroom": {
+      "chance": 0.50,
+      "can_villager_compost": true
+    },
+    "createfood:sliced_tomato": {
+      "chance": 0.50,
+      "can_villager_compost": true
+    },
+    "createfood:chorus_fruit_slice": {
+      "chance": 0.50,
+      "can_villager_compost": true
+    },
+    "createfood:apple_slice": {
+      "chance": 0.50,
+      "can_villager_compost": true
+    },
+    "createfood:mini_chocolate_graham_cracker_pie_crust": {
+      "chance": 0.30,
+      "can_villager_compost": true
+    },
+    "createfood:mini_graham_cracker_pie_crust": {
+      "chance": 0.30,
       "can_villager_compost": true
     }
   }

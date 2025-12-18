@@ -16,5 +16,11 @@
     ],
     "result": {
         "id": "farmersdelight:rich_soil"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "farmersdelight:rich_soil"
+        }
+    ]
 }

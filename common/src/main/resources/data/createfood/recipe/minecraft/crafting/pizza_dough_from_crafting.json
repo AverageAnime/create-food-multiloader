@@ -7,5 +7,11 @@
     ],
     "result": {
         "id": "createfood:pizza_dough"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "pizza_dough"
+        }
+    ]
 }

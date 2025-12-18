@@ -23,5 +23,11 @@
             "amount": 1000,
             "id": "createfood:berry_milkshake"
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "berry_milkshake"
+        }
     ]
 }

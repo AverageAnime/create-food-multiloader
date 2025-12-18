@@ -6,6 +6,10 @@
                 "type": "neoforge:tag_empty",
                 "tag": "c:coffee_beans"
             }
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "espresso_powder"
         }
     ],
     "type": "create:milling",

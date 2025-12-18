@@ -14,5 +14,10 @@
         "count": 1,
         "id": "createfood:rabbit_jerky"
     },
-    "neoforge:conditions": []
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "rabbit_jerky"
+        }
+    ]
 }

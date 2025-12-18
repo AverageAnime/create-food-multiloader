@@ -8,10 +8,16 @@
             "item": "minecraft:stick"
         },
         "T": {
-            "item": "minecraft:wool"
+            "tag": "minecraft:wool"
         }
     },
     "result": {
         "id": "createfood:cloth_filter"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "cloth_filter"
+        }
+    ]
 }

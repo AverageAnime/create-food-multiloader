@@ -3,6 +3,10 @@
         {
             "type": "neoforge:mod_loaded",
             "modid": "jmc"
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "jmc:glow_berry_cake"
         }
     ],
     "type": "minecraft:crafting_shapeless",

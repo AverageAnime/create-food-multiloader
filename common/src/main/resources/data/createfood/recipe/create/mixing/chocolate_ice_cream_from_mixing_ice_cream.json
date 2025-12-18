@@ -15,5 +15,11 @@
             "amount": 1000,
             "id": "createfood:chocolate_ice_cream"
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "chocolate_ice_cream"
+        }
     ]
 }

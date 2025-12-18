@@ -6,6 +6,10 @@
                 "type": "neoforge:tag_empty",
                 "tag": "c:chili_pepper"
             }
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "spicy_sausages"
         }
     ],
     "type": "minecraft:crafting_shapeless",

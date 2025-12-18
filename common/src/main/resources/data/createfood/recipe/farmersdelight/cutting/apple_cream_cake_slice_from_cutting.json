@@ -15,5 +15,11 @@
                 "id": "createfood:apple_cream_cake_slice"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "apple_cream_cake_slice"
+        }
     ]
 }

@@ -20,5 +20,11 @@
     "result": {
         "count": 6,
         "id": "createfood:salt_dough"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "salt_dough"
+        }
+    ]
 }

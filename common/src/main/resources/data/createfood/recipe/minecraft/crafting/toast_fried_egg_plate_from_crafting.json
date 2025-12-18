@@ -10,5 +10,11 @@
     ],
     "result": {
         "id": "createfood:toast_fried_egg_plate"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "toast_fried_egg_plate"
+        }
+    ]
 }

@@ -10,5 +10,11 @@
     ],
     "result": {
         "id": "createfood:bread_lettuce_carrot"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "bread_lettuce_carrot"
+        }
+    ]
 }

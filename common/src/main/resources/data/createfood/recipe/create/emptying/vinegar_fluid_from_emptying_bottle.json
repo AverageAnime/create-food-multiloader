@@ -15,5 +15,11 @@
             "amount": 250,
             "id": "createfood:vinegar"
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "vinegar"
+        }
     ]
 }

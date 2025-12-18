@@ -28,5 +28,11 @@
     ],
     "result": {
         "id": "createfood:chocolate_ice_cream_bucket"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "chocolate_ice_cream_bucket"
+        }
+    ]
 }

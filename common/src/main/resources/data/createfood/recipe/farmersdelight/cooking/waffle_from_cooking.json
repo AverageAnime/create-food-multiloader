@@ -11,5 +11,10 @@
         "count": 1,
         "id": "createfood:waffle"
     },
-    "neoforge:conditions": []
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "waffle"
+        }
+    ]
 }

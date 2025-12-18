@@ -15,5 +15,11 @@
                 "id": "createfood:glow_berry_pie_slice"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "glow_berry_pie_slice"
+        }
     ]
 }

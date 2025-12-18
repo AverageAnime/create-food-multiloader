@@ -14,5 +14,11 @@
     },
     "result": {
         "id": "createfood:chorus_fruit_cream_chocolate_donut"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "chorus_fruit_cream_chocolate_donut"
+        }
+    ]
 }

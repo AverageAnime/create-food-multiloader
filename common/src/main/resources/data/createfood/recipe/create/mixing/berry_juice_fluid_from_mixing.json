@@ -16,5 +16,11 @@
             "amount": 333,
             "id": "createfood:berry_juice"
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "berry_juice"
+        }
     ]
 }

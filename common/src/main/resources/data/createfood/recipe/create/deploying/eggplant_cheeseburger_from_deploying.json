@@ -6,6 +6,10 @@
                 "type": "neoforge:tag_empty",
                 "tag": "c:eggplant_bun_cheese"
             }
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "eggplant_cheeseburger"
         }
     ],
     "type": "create:deploying",

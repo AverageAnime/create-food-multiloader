@@ -26,5 +26,11 @@
                 "id": "createfood:chocolate_graham_cracker"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "chocolate_graham_cracker"
+        }
     ]
 }

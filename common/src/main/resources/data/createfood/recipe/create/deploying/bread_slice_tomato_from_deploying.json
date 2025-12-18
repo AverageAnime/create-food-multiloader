@@ -14,5 +14,11 @@
                 "id": "createfood:bread_slice_tomato"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "bread_slice_tomato"
+        }
     ]
 }

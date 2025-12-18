@@ -10,5 +10,11 @@
     ],
     "result": {
         "id": "createfood:chocolate_chocolate_pastry"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "chocolate_chocolate_pastry"
+        }
+    ]
 }

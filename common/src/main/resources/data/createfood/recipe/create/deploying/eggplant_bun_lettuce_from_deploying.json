@@ -14,5 +14,11 @@
                 "id": "createfood:eggplant_bun_lettuce"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "eggplant_bun_lettuce"
+        }
     ]
 }

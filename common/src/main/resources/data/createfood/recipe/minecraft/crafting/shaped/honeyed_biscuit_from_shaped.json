@@ -14,5 +14,11 @@
     },
     "result": {
         "id": "createfood:honeyed_biscuit"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "honeyed_biscuit"
+        }
+    ]
 }

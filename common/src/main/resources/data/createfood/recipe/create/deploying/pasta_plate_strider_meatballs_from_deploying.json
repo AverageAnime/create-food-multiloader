@@ -14,5 +14,11 @@
                 "id": "createfood:pasta_plate_strider_meatballs"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "pasta_plate_strider_meatballs"
+        }
     ]
 }

@@ -15,5 +15,11 @@
             "amount": 250,
             "id": "createfood:fruit_smoothie"
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "fruit_smoothie"
+        }
     ]
 }

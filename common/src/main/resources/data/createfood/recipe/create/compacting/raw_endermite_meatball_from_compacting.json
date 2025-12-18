@@ -12,5 +12,11 @@
                 "id": "createfood:raw_endermite_meatball"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "raw_endermite_meatball"
+        }
     ]
 }

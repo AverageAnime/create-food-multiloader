@@ -17,5 +17,11 @@
                 "id": "createfood:potato_chips"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "potato_chips"
+        }
     ]
 }

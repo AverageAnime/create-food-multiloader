@@ -1,5 +1,10 @@
 {
-    "neoforge:conditions": [],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "melon_cream_chocolate_cupcake"
+        }
+    ],
     "type": "create:filling",
     "ingredients": [
         {

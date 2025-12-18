@@ -9,5 +9,11 @@
     "result": {
         "count": 1,
         "id": "createfood:mini_cream_pie_chocolate_graham_cracker"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "mini_cream_pie_chocolate_graham_cracker"
+        }
+    ]
 }

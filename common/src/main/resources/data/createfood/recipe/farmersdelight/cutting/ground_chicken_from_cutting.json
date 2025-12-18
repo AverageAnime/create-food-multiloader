@@ -14,5 +14,11 @@
                 "id": "createfood:ground_chicken"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "ground_chicken"
+        }
     ]
 }

@@ -10,5 +10,11 @@
     ],
     "result": {
         "id": "farmersdelight:squid_ink_pasta"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "farmersdelight:squid_ink_pasta"
+        }
+    ]
 }

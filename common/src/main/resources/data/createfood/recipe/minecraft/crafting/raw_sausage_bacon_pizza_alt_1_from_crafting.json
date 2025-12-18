@@ -19,5 +19,11 @@
     ],
     "result": {
         "id": "createfood:raw_sausage_bacon_pizza"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "raw_sausage_bacon_pizza"
+        }
+    ]
 }

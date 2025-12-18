@@ -1,0 +1,19 @@
+{
+    "type": "minecraft:smoking",
+    "category": "food",
+    "cookingtime": 100,
+    "experience": 0.35,
+    "ingredient": {
+        "tag": "c:raw_chorus_fruit_cookie"
+    },
+    "result": {
+        "count": 1,
+        "id": "createfood:chorus_fruit_cookie"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "chorus_fruit_cookie"
+        }
+    ]
+}

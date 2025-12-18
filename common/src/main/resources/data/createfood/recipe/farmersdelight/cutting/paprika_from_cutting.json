@@ -24,5 +24,11 @@
                 "tag": "c:chili_pepper"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "paprika"
+        }
     ]
 }

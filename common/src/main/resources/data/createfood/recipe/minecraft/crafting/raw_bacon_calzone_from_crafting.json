@@ -10,5 +10,11 @@
     ],
     "result": {
         "id": "createfood:raw_bacon_calzone"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "raw_bacon_calzone"
+        }
+    ]
 }

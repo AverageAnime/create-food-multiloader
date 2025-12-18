@@ -22,5 +22,11 @@
                 "id": "createfood:hot_white_chocolate_bucket"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "hot_white_chocolate_bucket"
+        }
     ]
 }

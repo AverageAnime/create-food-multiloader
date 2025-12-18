@@ -10,5 +10,11 @@
     ],
     "result": {
         "id": "createfood:honeyed_cupcake"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "honeyed_cupcake"
+        }
+    ]
 }

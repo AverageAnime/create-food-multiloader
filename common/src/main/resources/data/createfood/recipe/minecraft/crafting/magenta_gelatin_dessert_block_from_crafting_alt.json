@@ -10,5 +10,11 @@
     ],
     "result": {
         "id": "createfood:magenta_gelatin_dessert_block"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "magenta_gelatin_dessert_block"
+        }
+    ]
 }

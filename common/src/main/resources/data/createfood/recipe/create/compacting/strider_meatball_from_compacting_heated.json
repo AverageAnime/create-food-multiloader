@@ -6,6 +6,10 @@
                 "type": "neoforge:tag_empty",
                 "tag": "c:ground_strider"
             }
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "strider_meatball"
         }
     ],
     "type": "create:compacting",

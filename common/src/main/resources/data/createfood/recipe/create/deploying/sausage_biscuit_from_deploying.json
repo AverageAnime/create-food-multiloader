@@ -14,5 +14,11 @@
                 "id": "createfood:sausage_biscuit"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "sausage_biscuit"
+        }
     ]
 }

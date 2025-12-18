@@ -17,5 +17,11 @@
     "result": {
         "count": 3,
         "id": "createfood:ice_cream_stick"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "ice_cream_stick"
+        }
+    ]
 }

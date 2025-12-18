@@ -3,6 +3,10 @@
         {
             "type": "neoforge:mod_loaded",
             "modid": "frightsdelight"
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "frightsdelight:pasta_with_slimeballs"
         }
     ],
     "type": "minecraft:crafting_shaped",

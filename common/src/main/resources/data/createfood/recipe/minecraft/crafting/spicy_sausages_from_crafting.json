@@ -10,5 +10,11 @@
     ],
     "result": {
         "id": "createfood:spicy_sausages"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "spicy_sausages"
+        }
+    ]
 }

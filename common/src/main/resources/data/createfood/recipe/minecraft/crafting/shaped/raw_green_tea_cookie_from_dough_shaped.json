@@ -6,6 +6,10 @@
                 "type": "neoforge:tag_empty",
                 "tag": "c:crops/green_tea_leaves"
             }
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "raw_green_tea_cookie"
         }
     ],
     "type": "minecraft:crafting_shaped",

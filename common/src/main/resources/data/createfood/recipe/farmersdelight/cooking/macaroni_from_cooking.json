@@ -17,5 +17,10 @@
         "count": 1,
         "id": "createfood:macaroni"
     },
-    "neoforge:conditions": []
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "macaroni"
+        }
+    ]
 }

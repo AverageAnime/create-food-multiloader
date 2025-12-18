@@ -16,5 +16,11 @@
                 "id": "createfood:berry_cream_chocolate_donut"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "berry_cream_chocolate_donut"
+        }
     ]
 }

@@ -19,5 +19,11 @@
     ],
     "result": {
         "id": "createfood:chicken_burger_bacon_lettuce"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "chicken_burger_bacon_lettuce"
+        }
+    ]
 }

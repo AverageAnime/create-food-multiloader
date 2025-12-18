@@ -17,5 +17,11 @@
                 "id": "createfood:raw_honey_cookie"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "raw_honey_cookie"
+        }
     ]
 }

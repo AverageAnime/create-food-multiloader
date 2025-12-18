@@ -1,5 +1,10 @@
 {
-    "neoforge:conditions": [],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "macaroni_bowl_cheese_bacon"
+        }
+    ],
     "type": "minecraft:crafting_shaped",
     "pattern": [
         "1 ",

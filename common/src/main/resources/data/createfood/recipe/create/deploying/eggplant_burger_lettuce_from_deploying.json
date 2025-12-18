@@ -14,5 +14,11 @@
                 "id": "createfood:eggplant_burger_lettuce"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "eggplant_burger_lettuce"
+        }
     ]
 }

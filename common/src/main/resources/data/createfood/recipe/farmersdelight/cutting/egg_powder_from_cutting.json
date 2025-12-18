@@ -2,7 +2,7 @@
     "type": "farmersdelight:cutting",
     "ingredients": [
         {
-            "tag": "c:cooked_eggs"
+            "tag": "c:powderable_eggs"
         }
     ],
     "tool": {
@@ -14,6 +14,12 @@
                 "count": 2,
                 "id": "createfood:egg_powder"
             }
+        }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "egg_powder"
         }
     ]
 }

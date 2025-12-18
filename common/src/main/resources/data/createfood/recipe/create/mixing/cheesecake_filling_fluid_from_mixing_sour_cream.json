@@ -33,5 +33,11 @@
             "amount": 1000,
             "id": "createfood:cheesecake_filling"
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "cheesecake_filling"
+        }
     ]
 }

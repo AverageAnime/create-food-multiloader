@@ -14,5 +14,11 @@
                 "id": "createfood:chocolate_chip_milkshake_bottle"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "chocolate_chip_milkshake_bottle"
+        }
     ]
 }

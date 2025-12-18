@@ -1,0 +1,32 @@
+{
+    "type": "create:mixing",
+    "heat_requirement": "heated",
+    "ingredients": [
+        {
+            "type": "fluid_tag",
+            "amount": 1000,
+            "fluid_tag": "minecraft:water"
+        },
+        {
+            "tag": "c:foods/vegetable"
+        },
+        {
+            "item": "minecraft:leather"
+        },
+        {
+            "item": "minecraft:leather"
+        }
+    ],
+    "results": [
+        {
+            "amount": 1000,
+            "id": "createfood:leather_soup"
+        }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "leather_soup"
+        }
+    ]
+}

@@ -1,0 +1,27 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:leather_soup_bucket"
+        },
+        {
+            "tag": "c:bowl"
+        },
+        {
+            "tag": "c:bowl"
+        },
+        {
+            "tag": "c:bowl"
+        }
+    ],
+    "result": {
+        "count": 3,
+        "id": "createfood:leather_soup_bowl"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "leather_soup_bowl"
+        }
+    ]
+}

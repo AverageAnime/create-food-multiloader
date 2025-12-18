@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:sweet_berries"
+        },
+        {
+            "tag": "c:toffee"
+        }
+    ],
+    "result": {
+        "id": "createfood:toffee_berries"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "toffee_berries"
+        }
+    ]
+}

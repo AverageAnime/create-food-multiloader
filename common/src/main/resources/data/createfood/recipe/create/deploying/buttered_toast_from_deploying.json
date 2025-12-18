@@ -14,5 +14,11 @@
                 "id": "createfood:buttered_toast"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "buttered_toast"
+        }
     ]
 }

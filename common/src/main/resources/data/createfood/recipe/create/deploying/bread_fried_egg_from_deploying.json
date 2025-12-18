@@ -14,5 +14,11 @@
                 "id": "createfood:bread_fried_egg"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "bread_fried_egg"
+        }
     ]
 }

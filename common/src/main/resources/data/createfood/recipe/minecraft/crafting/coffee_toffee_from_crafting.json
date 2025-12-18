@@ -8,5 +8,11 @@
     "result": {
         "count": 2,
         "id": "createfood:coffee_toffee"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "coffee_toffee"
+        }
+    ]
 }

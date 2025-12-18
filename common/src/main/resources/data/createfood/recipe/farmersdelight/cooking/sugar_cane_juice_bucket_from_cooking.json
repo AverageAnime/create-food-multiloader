@@ -16,5 +16,11 @@
     "result": {
         "count": 1,
         "id": "createfood:sugar_cane_juice_bucket"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "sugar_cane_juice_bucket"
+        }
+    ]
 }

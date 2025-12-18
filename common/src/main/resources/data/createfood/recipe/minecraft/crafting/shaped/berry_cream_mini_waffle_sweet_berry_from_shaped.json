@@ -14,5 +14,11 @@
     },
     "result": {
         "id": "createfood:berry_cream_mini_waffle_sweet_berry"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "berry_cream_mini_waffle_sweet_berry"
+        }
+    ]
 }

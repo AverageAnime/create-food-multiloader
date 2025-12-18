@@ -14,5 +14,11 @@
                 "id": "createfood:raw_toffee_chip_muffin"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "raw_toffee_chip_muffin"
+        }
     ]
 }

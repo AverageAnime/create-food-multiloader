@@ -14,5 +14,11 @@
             "amount": 500,
             "id": "createfood:toffee"
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "toffee"
+        }
     ]
 }

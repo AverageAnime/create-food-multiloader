@@ -13,5 +13,11 @@
     ],
     "result": {
         "id": "createfood:chorus_fruit_ice_cream_bucket"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "chorus_fruit_ice_cream_bucket"
+        }
+    ]
 }

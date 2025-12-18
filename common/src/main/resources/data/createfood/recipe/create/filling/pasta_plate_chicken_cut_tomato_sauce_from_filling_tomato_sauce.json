@@ -3,6 +3,10 @@
         {
             "type": "neoforge:mod_loaded",
             "modid": "create_central_kitchen"
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "pasta_plate_chicken_cut_tomato_sauce"
         }
     ],
     "type": "create:filling",

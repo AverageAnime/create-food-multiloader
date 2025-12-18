@@ -1,5 +1,10 @@
 {
-    "neoforge:conditions": [],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "chocolate_graham_cracker_berry_ice_cream"
+        }
+    ],
     "type": "minecraft:crafting_shaped",
     "pattern": [
         "1 ",

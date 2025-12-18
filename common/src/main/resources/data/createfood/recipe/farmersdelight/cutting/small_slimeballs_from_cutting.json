@@ -14,5 +14,11 @@
                 "id": "createfood:small_slimeballs"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "small_slimeballs"
+        }
     ]
 }

@@ -15,5 +15,11 @@
             "amount": 500,
             "id": "createfood:cream_frosting"
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "cream_frosting"
+        }
     ]
 }

@@ -23,5 +23,11 @@
                 "id": "createfood:marshmallow_toffee_fudge"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "marshmallow_toffee_fudge"
+        }
     ]
 }

@@ -13,5 +13,11 @@
                 "id": "createfood:butterscotch_fudge"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "butterscotch_fudge"
+        }
     ]
 }

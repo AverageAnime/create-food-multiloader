@@ -9,5 +9,11 @@
     "result": {
         "count": 1,
         "id": "createfood:cacao_nibs"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "cacao_nibs"
+        }
+    ]
 }

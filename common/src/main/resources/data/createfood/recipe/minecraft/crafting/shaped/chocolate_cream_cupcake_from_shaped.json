@@ -14,5 +14,11 @@
     },
     "result": {
         "id": "createfood:chocolate_cream_cupcake"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "chocolate_cream_cupcake"
+        }
+    ]
 }

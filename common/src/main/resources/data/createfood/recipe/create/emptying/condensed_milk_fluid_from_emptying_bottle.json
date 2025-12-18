@@ -15,5 +15,11 @@
             "amount": 250,
             "id": "createfood:condensed_milk"
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "condensed_milk"
+        }
     ]
 }

@@ -20,5 +20,11 @@
     "result": {
         "count": 4,
         "id": "createfood:yogurt_bottle"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "yogurt_bottle"
+        }
+    ]
 }

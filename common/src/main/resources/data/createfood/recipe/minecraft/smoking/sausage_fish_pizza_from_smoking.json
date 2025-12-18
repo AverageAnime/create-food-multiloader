@@ -9,5 +9,11 @@
     "result": {
         "count": 1,
         "id": "createfood:sausage_fish_pizza"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "sausage_fish_pizza"
+        }
+    ]
 }

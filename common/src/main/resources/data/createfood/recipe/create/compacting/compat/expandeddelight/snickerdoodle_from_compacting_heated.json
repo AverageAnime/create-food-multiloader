@@ -3,6 +3,10 @@
         {
             "type": "neoforge:mod_loaded",
             "modid": "expandeddelight"
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "expandeddelight:snickerdoodle"
         }
     ],
     "type": "create:compacting",

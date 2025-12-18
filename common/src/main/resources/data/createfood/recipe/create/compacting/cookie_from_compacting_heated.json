@@ -16,5 +16,11 @@
                 "id": "minecraft:cookie"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "minecraft:cookie"
+        }
     ]
 }

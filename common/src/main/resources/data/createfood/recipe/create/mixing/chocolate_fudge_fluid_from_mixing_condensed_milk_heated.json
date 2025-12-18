@@ -19,5 +19,11 @@
             "amount": 500,
             "id": "createfood:chocolate_fudge"
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "chocolate_fudge"
+        }
     ]
 }

@@ -14,5 +14,11 @@
     },
     "result": {
         "id": "createfood:bacon_sandwich_lettuce"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "bacon_sandwich_lettuce"
+        }
+    ]
 }

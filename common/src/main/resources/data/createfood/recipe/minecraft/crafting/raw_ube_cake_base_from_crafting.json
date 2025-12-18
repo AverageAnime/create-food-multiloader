@@ -13,5 +13,11 @@
     ],
     "result": {
         "id": "createfood:raw_ube_cake_base"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "raw_ube_cake_base"
+        }
+    ]
 }

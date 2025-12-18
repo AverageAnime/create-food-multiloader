@@ -16,5 +16,11 @@
                 "id": "createfood:hot_white_chocolate_bottle"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "hot_white_chocolate_bottle"
+        }
     ]
 }

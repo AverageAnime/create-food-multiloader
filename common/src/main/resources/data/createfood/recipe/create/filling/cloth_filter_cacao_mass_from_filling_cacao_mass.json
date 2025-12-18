@@ -16,5 +16,11 @@
                 "id": "createfood:cloth_filter_cacao_mass"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "cloth_filter_cacao_mass"
+        }
     ]
 }

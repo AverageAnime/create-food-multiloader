@@ -25,5 +25,11 @@
     ],
     "result": {
         "id": "createfood:vegetable_oil_bucket"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "vegetable_oil_bucket"
+        }
+    ]
 }

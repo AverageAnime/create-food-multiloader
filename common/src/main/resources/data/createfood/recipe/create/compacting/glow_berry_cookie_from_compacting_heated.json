@@ -1,0 +1,26 @@
+{
+    "type": "create:compacting",
+    "heat_requirement": "heated",
+    "ingredients": [
+        {
+            "item": "minecraft:glow_berries"
+        },
+        {
+            "tag": "c:sweet_dough"
+        }
+    ],
+    "results": [
+        {
+            "count": 8,
+            "item": {
+                "id": "createfood:glow_berry_cookie"
+            }
+        }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "glow_berry_cookie"
+        }
+    ]
+}

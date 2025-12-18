@@ -14,5 +14,11 @@
     },
     "result": {
         "id": "createfood:pasta_plate_tomato_sauce"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "pasta_plate_tomato_sauce"
+        }
+    ]
 }

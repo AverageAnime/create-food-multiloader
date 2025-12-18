@@ -17,5 +17,11 @@
                 "id": "createfood:pasta"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "pasta"
+        }
     ]
 }

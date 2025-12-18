@@ -14,5 +14,11 @@
                 "id": "createfood:graham_cracker_crumbs"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "graham_cracker_crumbs"
+        }
     ]
 }

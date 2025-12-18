@@ -16,5 +16,11 @@
                 "id": "createfood:dark_chocolate_chip_chocolate_cookie"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "dark_chocolate_chip_chocolate_cookie"
+        }
     ]
 }

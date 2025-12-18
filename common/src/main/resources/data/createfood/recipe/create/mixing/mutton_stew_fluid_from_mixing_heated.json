@@ -1,0 +1,27 @@
+{
+    "type": "create:mixing",
+    "heat_requirement": "heated",
+    "ingredients": [
+      {
+        "tag": "c:onion"
+      },
+      {
+        "tag": "c:eggs"
+      },
+      {
+        "tag": "c:potato"
+      }
+    ],
+    "results": [
+        {
+            "amount": 1000,
+            "id": "createfood:mutton_stew"
+        }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "mutton_stew"
+        }
+    ]
+}

@@ -14,5 +14,11 @@
                 "id": "createfood:raw_fish_pizza"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "raw_fish_pizza"
+        }
     ]
 }

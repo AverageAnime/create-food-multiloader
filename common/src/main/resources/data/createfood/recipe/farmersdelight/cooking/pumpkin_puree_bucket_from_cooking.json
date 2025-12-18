@@ -20,5 +20,10 @@
         "count": 1,
         "id": "createfood:pumpkin_puree_bucket"
     },
-    "neoforge:conditions": []
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "pumpkin_puree_bucket"
+        }
+    ]
 }

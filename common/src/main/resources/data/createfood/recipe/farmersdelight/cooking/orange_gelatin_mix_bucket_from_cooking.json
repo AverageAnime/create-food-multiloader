@@ -22,5 +22,11 @@
     "result": {
         "count": 1,
         "id": "createfood:orange_gelatin_mix_bucket"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "orange_gelatin_mix_bucket"
+        }
+    ]
 }

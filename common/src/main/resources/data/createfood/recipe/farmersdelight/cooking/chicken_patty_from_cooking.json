@@ -19,5 +19,11 @@
     "result": {
         "count": 1,
         "id": "createfood:chicken_patty"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "chicken_patty"
+        }
+    ]
 }

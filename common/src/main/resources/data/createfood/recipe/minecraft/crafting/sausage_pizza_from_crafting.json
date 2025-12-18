@@ -16,5 +16,11 @@
     ],
     "result": {
         "id": "createfood:sausage_pizza"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "sausage_pizza"
+        }
+    ]
 }

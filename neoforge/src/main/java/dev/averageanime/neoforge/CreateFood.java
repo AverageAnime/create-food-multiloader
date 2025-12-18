@@ -3,15 +3,15 @@ package dev.averageanime.neoforge;
 import com.mojang.logging.LogUtils;
 import dev.averageanime.CommonClass;
 import dev.averageanime.neoforge.block.ModBlocks;
-import dev.averageanime.neoforge.creativetab.ModCreativeModeTabs;
+import dev.averageanime.neoforge.config.condition.ModConditions;
+import dev.averageanime.neoforge.config.ModConfig;
+import dev.averageanime.neoforge.config.ConfigScreen;
+import dev.averageanime.neoforge.fluid.builder.CustomFluidType;
+import dev.averageanime.neoforge.tab.ModTabs;
 import dev.averageanime.neoforge.fluid.ModFluids;
 import dev.averageanime.neoforge.item.ModItems;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
-import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.Item;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -22,26 +22,34 @@ import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
-import net.neoforged.neoforge.registries.RegisterEvent;
 import org.slf4j.Logger;
+import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
+import java.util.function.Supplier;
+
 
 @Mod(CommonClass.ID)
 public class CreateFood {
     public static final Logger LOGGER = LogUtils.getLogger();
 
     public CreateFood(IEventBus modEventBus, ModContainer modContainer) {
-
         modEventBus.addListener(this::commonSetup);
 
-        NeoForge.EVENT_BUS.register(this);
+        modContainer.registerConfig(
+                net.neoforged.fml.config.ModConfig.Type.CLIENT,
+                ModConfig.BUILDER.build(),
+                "createfood-client.toml"
+        );
 
+        modContainer.registerExtensionPoint(IConfigScreenFactory.class,
+                (Supplier<IConfigScreenFactory>) ConfigScreen::new);
+
+        ModConditions.register(modEventBus);
+
+        NeoForge.EVENT_BUS.register(this);
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
         ModFluids.register(modEventBus);
-        ModCreativeModeTabs.register(modEventBus);
-
-        modEventBus.addListener(this::setupClient);
-
+        ModTabs.register(modEventBus);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
@@ -55,61 +63,39 @@ public class CreateFood {
 
     @EventBusSubscriber(modid = CommonClass.ID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
     public static class ClientModEvents {
+
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
-            event.enqueueWork(() -> {
+            setFluidRenderLayers(ModFluids.SQUID_INK_FLUID);
+            setFluidRenderLayers(ModFluids.VEGETABLE_OIL_FLUID);
+            setFluidRenderLayers(ModFluids.VINEGAR_FLUID);
 
-            });
+            setFluidRenderLayers(ModFluids.APPLE_JUICE_FLUID);
+            setFluidRenderLayers(ModFluids.BERRY_JUICE_FLUID);
+            setFluidRenderLayers(ModFluids.CHORUS_FRUIT_JUICE_FLUID);
+            setFluidRenderLayers(ModFluids.GLOW_BERRY_JUICE_FLUID);
+
+            setFluidRenderLayers(ModFluids.BLACK_GELATIN_MIX_FLUID);
+            setFluidRenderLayers(ModFluids.BLUE_GELATIN_MIX_FLUID);
+            setFluidRenderLayers(ModFluids.BROWN_GELATIN_MIX_FLUID);
+            setFluidRenderLayers(ModFluids.CYAN_GELATIN_MIX_FLUID);
+            setFluidRenderLayers(ModFluids.GELATIN_MIX_FLUID);
+            setFluidRenderLayers(ModFluids.GRAY_GELATIN_MIX_FLUID);
+            setFluidRenderLayers(ModFluids.GREEN_GELATIN_MIX_FLUID);
+            setFluidRenderLayers(ModFluids.LIGHT_BLUE_GELATIN_MIX_FLUID);
+            setFluidRenderLayers(ModFluids.LIGHT_GRAY_GELATIN_MIX_FLUID);
+            setFluidRenderLayers(ModFluids.LIME_GELATIN_MIX_FLUID);
+            setFluidRenderLayers(ModFluids.MAGENTA_GELATIN_MIX_FLUID);
+            setFluidRenderLayers(ModFluids.ORANGE_GELATIN_MIX_FLUID);
+            setFluidRenderLayers(ModFluids.PINK_GELATIN_MIX_FLUID);
+            setFluidRenderLayers(ModFluids.PURPLE_GELATIN_MIX_FLUID);
+            setFluidRenderLayers(ModFluids.RED_GELATIN_MIX_FLUID);
+            setFluidRenderLayers(ModFluids.YELLOW_GELATIN_MIX_FLUID);
         }
 
-    }
-
-    private void setupClient(final FMLClientSetupEvent event) {
-        ItemBlockRenderTypes.setRenderLayer(ModFluids.GLOW_BERRY_JUICE_FLUID.FLOWING.get(), RenderType.translucent());
-        ItemBlockRenderTypes.setRenderLayer(ModFluids.GLOW_BERRY_JUICE_FLUID.SOURCE.get(), RenderType.translucent());
-        ItemBlockRenderTypes.setRenderLayer(ModFluids.CHORUS_FRUIT_JUICE_FLUID.FLOWING.get(), RenderType.translucent());
-        ItemBlockRenderTypes.setRenderLayer(ModFluids.CHORUS_FRUIT_JUICE_FLUID.SOURCE.get(), RenderType.translucent());
-        ItemBlockRenderTypes.setRenderLayer(ModFluids.BERRY_JUICE_FLUID.FLOWING.get(), RenderType.translucent());
-        ItemBlockRenderTypes.setRenderLayer(ModFluids.BERRY_JUICE_FLUID.SOURCE.get(), RenderType.translucent());
-        ItemBlockRenderTypes.setRenderLayer(ModFluids.APPLE_JUICE_FLUID.FLOWING.get(), RenderType.translucent());
-        ItemBlockRenderTypes.setRenderLayer(ModFluids.APPLE_JUICE_FLUID.SOURCE.get(), RenderType.translucent());
-        ItemBlockRenderTypes.setRenderLayer(ModFluids.VEGETABLE_OIL_FLUID.FLOWING.get(), RenderType.translucent());
-        ItemBlockRenderTypes.setRenderLayer(ModFluids.VEGETABLE_OIL_FLUID.SOURCE.get(), RenderType.translucent());
-        ItemBlockRenderTypes.setRenderLayer(ModFluids.VINEGAR_FLUID.FLOWING.get(), RenderType.translucent());
-        ItemBlockRenderTypes.setRenderLayer(ModFluids.VINEGAR_FLUID.SOURCE.get(), RenderType.translucent());
-        ItemBlockRenderTypes.setRenderLayer(ModFluids.SQUID_INK_FLUID.FLOWING.get(), RenderType.translucent());
-        ItemBlockRenderTypes.setRenderLayer(ModFluids.SQUID_INK_FLUID.SOURCE.get(), RenderType.translucent());
-        ItemBlockRenderTypes.setRenderLayer(ModFluids.YELLOW_GELATIN_MIX_FLUID.FLOWING.get(), RenderType.translucent());
-        ItemBlockRenderTypes.setRenderLayer(ModFluids.YELLOW_GELATIN_MIX_FLUID.SOURCE.get(), RenderType.translucent());
-        ItemBlockRenderTypes.setRenderLayer(ModFluids.GELATIN_MIX_FLUID.FLOWING.get(), RenderType.translucent());
-        ItemBlockRenderTypes.setRenderLayer(ModFluids.GELATIN_MIX_FLUID.SOURCE.get(), RenderType.translucent());
-        ItemBlockRenderTypes.setRenderLayer(ModFluids.ORANGE_GELATIN_MIX_FLUID.FLOWING.get(), RenderType.translucent());
-        ItemBlockRenderTypes.setRenderLayer(ModFluids.ORANGE_GELATIN_MIX_FLUID.SOURCE.get(), RenderType.translucent());
-        ItemBlockRenderTypes.setRenderLayer(ModFluids.MAGENTA_GELATIN_MIX_FLUID.FLOWING.get(), RenderType.translucent());
-        ItemBlockRenderTypes.setRenderLayer(ModFluids.MAGENTA_GELATIN_MIX_FLUID.SOURCE.get(), RenderType.translucent());
-        ItemBlockRenderTypes.setRenderLayer(ModFluids.LIGHT_BLUE_GELATIN_MIX_FLUID.FLOWING.get(), RenderType.translucent());
-        ItemBlockRenderTypes.setRenderLayer(ModFluids.LIGHT_BLUE_GELATIN_MIX_FLUID.SOURCE.get(), RenderType.translucent());
-        ItemBlockRenderTypes.setRenderLayer(ModFluids.LIME_GELATIN_MIX_FLUID.FLOWING.get(), RenderType.translucent());
-        ItemBlockRenderTypes.setRenderLayer(ModFluids.LIME_GELATIN_MIX_FLUID.SOURCE.get(), RenderType.translucent());
-        ItemBlockRenderTypes.setRenderLayer(ModFluids.PINK_GELATIN_MIX_FLUID.FLOWING.get(), RenderType.translucent());
-        ItemBlockRenderTypes.setRenderLayer(ModFluids.PINK_GELATIN_MIX_FLUID.SOURCE.get(), RenderType.translucent());
-        ItemBlockRenderTypes.setRenderLayer(ModFluids.GRAY_GELATIN_MIX_FLUID.FLOWING.get(), RenderType.translucent());
-        ItemBlockRenderTypes.setRenderLayer(ModFluids.GRAY_GELATIN_MIX_FLUID.SOURCE.get(), RenderType.translucent());
-        ItemBlockRenderTypes.setRenderLayer(ModFluids.LIGHT_GRAY_GELATIN_MIX_FLUID.FLOWING.get(), RenderType.translucent());
-        ItemBlockRenderTypes.setRenderLayer(ModFluids.LIGHT_GRAY_GELATIN_MIX_FLUID.SOURCE.get(), RenderType.translucent());
-        ItemBlockRenderTypes.setRenderLayer(ModFluids.CYAN_GELATIN_MIX_FLUID.FLOWING.get(), RenderType.translucent());
-        ItemBlockRenderTypes.setRenderLayer(ModFluids.CYAN_GELATIN_MIX_FLUID.SOURCE.get(), RenderType.translucent());
-        ItemBlockRenderTypes.setRenderLayer(ModFluids.PURPLE_GELATIN_MIX_FLUID.FLOWING.get(), RenderType.translucent());
-        ItemBlockRenderTypes.setRenderLayer(ModFluids.PURPLE_GELATIN_MIX_FLUID.SOURCE.get(), RenderType.translucent());
-        ItemBlockRenderTypes.setRenderLayer(ModFluids.BLUE_GELATIN_MIX_FLUID.FLOWING.get(), RenderType.translucent());
-        ItemBlockRenderTypes.setRenderLayer(ModFluids.BLUE_GELATIN_MIX_FLUID.SOURCE.get(), RenderType.translucent());
-        ItemBlockRenderTypes.setRenderLayer(ModFluids.BROWN_GELATIN_MIX_FLUID.FLOWING.get(), RenderType.translucent());
-        ItemBlockRenderTypes.setRenderLayer(ModFluids.BROWN_GELATIN_MIX_FLUID.SOURCE.get(), RenderType.translucent());
-        ItemBlockRenderTypes.setRenderLayer(ModFluids.GREEN_GELATIN_MIX_FLUID.FLOWING.get(), RenderType.translucent());
-        ItemBlockRenderTypes.setRenderLayer(ModFluids.GREEN_GELATIN_MIX_FLUID.SOURCE.get(), RenderType.translucent());
-        ItemBlockRenderTypes.setRenderLayer(ModFluids.RED_GELATIN_MIX_FLUID.FLOWING.get(), RenderType.translucent());
-        ItemBlockRenderTypes.setRenderLayer(ModFluids.RED_GELATIN_MIX_FLUID.SOURCE.get(), RenderType.translucent());
-        ItemBlockRenderTypes.setRenderLayer(ModFluids.BLACK_GELATIN_MIX_FLUID.FLOWING.get(), RenderType.translucent());
-        ItemBlockRenderTypes.setRenderLayer(ModFluids.BLACK_GELATIN_MIX_FLUID.SOURCE.get(), RenderType.translucent());
+        private static void setFluidRenderLayers(CustomFluidType fluid) {
+            ItemBlockRenderTypes.setRenderLayer(fluid.FLOWING.get(), RenderType.translucent());
+            ItemBlockRenderTypes.setRenderLayer(fluid.SOURCE.get(), RenderType.translucent());
+        }
     }
 }

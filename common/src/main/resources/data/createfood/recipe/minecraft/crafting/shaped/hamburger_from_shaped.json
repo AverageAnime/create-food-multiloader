@@ -14,5 +14,11 @@
     },
     "result": {
         "id": "createfood:hamburger"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "hamburger"
+        }
+    ]
 }

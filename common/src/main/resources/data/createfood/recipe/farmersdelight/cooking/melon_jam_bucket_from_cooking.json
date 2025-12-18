@@ -19,5 +19,11 @@
     "result": {
         "count": 1,
         "id": "createfood:melon_jam_bucket"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "melon_jam_bucket"
+        }
+    ]
 }

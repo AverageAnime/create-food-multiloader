@@ -16,5 +16,11 @@
                 "id": "createfood:cream_dark_chocolate"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "cream_dark_chocolate"
+        }
     ]
 }

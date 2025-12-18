@@ -15,5 +15,11 @@
                 "id": "createfood:sliced_carrot"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "sliced_carrot"
+        }
     ]
 }

@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "": {
+            "model": "createfood:block/mutton_stew_block"
+        }
+    }
+}

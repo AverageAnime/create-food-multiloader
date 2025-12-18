@@ -15,5 +15,11 @@
                 "id": "createfood:cheese_slice"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "cheese_slice"
+        }
     ]
 }

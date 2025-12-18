@@ -28,5 +28,11 @@
                 "id": "createfood:dark_chocolate_bucket"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "dark_chocolate_bucket"
+        }
     ]
 }

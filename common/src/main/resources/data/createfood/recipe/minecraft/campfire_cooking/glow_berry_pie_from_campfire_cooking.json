@@ -9,5 +9,11 @@
     "result": {
         "count": 1,
         "id": "createfood:glow_berry_pie"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "glow_berry_pie"
+        }
+    ]
 }

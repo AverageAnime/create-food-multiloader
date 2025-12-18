@@ -14,5 +14,11 @@
     },
     "result": {
         "id": "createfood:apple_cream_mini_waffle"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "apple_cream_mini_waffle"
+        }
+    ]
 }

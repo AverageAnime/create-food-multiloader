@@ -16,5 +16,11 @@
                 "id": "createfood:caramel_chip_chocolate_cookie"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "caramel_chip_chocolate_cookie"
+        }
     ]
 }

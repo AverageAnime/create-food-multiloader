@@ -15,5 +15,11 @@
             "amount": 111,
             "id": "createfood:apple_ice_cream"
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "apple_ice_cream"
+        }
     ]
 }

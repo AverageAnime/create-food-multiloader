@@ -1,0 +1,25 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "1 ",
+        "2 "
+    ],
+    "key": {
+        "1": {
+            "item": "minecraft:glow_berries"
+        },
+        "2": {
+            "tag": "c:sweet_dough"
+        }
+    },
+    "result": {
+        "count": 8,
+        "id": "createfood:raw_glow_berry_cookie"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "raw_glow_berry_cookie"
+        }
+    ]
+}

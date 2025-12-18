@@ -1,5 +1,10 @@
 {
-    "neoforge:conditions": [],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "cream_mini_waffle_sweet_berry"
+        }
+    ],
     "type": "minecraft:crafting_shaped",
     "pattern": [
         " 1 ",

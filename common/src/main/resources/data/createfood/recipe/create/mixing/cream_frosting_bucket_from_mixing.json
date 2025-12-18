@@ -1,5 +1,10 @@
 {
-    "neoforge:conditions": [],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "cream_frosting_bucket"
+        }
+    ],
     "type": "create:mixing",
     "ingredients": [
         {

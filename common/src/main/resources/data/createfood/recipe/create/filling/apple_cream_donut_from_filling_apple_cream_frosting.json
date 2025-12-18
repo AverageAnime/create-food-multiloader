@@ -16,5 +16,11 @@
                 "id": "createfood:apple_cream_donut"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "apple_cream_donut"
+        }
     ]
 }

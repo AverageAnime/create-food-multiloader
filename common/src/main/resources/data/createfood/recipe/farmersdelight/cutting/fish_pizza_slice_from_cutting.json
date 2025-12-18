@@ -15,5 +15,11 @@
                 "id": "createfood:fish_pizza_slice"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "fish_pizza_slice"
+        }
     ]
 }

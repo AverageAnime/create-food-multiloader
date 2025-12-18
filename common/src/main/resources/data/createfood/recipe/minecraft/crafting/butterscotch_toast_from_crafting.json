@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:toast"
+        },
+        {
+            "tag": "c:butterscotch"
+        }
+    ],
+    "result": {
+        "id": "createfood:butterscotch_toast"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "butterscotch_toast"
+        }
+    ]
+}

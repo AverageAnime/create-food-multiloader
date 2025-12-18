@@ -7,5 +7,11 @@
     ],
     "result": {
         "id": "createfood:boiled_egg_peeled"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "boiled_egg_peeled"
+        }
+    ]
 }

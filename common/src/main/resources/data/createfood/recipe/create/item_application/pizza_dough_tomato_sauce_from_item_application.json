@@ -13,6 +13,17 @@
             "item": {
                 "id": "createfood:pizza_dough_tomato_sauce"
             }
+        },
+      {
+        "item": {
+          "id": "minecraft:bowl"
+        }
+      }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "pizza_dough_tomato_sauce"
         }
     ]
 }

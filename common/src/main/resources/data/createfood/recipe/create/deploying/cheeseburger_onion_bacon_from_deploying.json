@@ -14,5 +14,11 @@
                 "id": "createfood:cheeseburger_onion_bacon"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "cheeseburger_onion_bacon"
+        }
     ]
 }

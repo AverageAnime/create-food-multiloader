@@ -14,5 +14,11 @@
     },
     "result": {
         "id": "createfood:eggplant_burger"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "eggplant_burger"
+        }
+    ]
 }

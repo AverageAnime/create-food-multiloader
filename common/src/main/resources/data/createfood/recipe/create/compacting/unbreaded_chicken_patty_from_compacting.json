@@ -12,5 +12,11 @@
                 "id": "createfood:unbreaded_chicken_patty"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "unbreaded_chicken_patty"
+        }
     ]
 }

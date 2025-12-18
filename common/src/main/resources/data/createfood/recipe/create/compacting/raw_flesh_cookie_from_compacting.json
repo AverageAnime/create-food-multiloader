@@ -15,5 +15,11 @@
                 "id": "createfood:raw_flesh_cookie"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "raw_flesh_cookie"
+        }
     ]
 }

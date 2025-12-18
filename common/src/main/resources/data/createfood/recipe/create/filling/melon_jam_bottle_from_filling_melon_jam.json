@@ -16,5 +16,11 @@
                 "id": "createfood:melon_jam_bottle"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "melon_jam_bottle"
+        }
     ]
 }

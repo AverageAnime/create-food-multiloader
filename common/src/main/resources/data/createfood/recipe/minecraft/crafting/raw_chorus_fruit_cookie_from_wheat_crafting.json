@@ -1,0 +1,27 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:wheat"
+        },
+        {
+            "tag": "c:sugar"
+        },
+        {
+            "item": "minecraft:water_bucket"
+        },
+        {
+            "item": "minecraft:sweet_berries"
+        }
+    ],
+    "result": {
+        "count": 8,
+        "id": "createfood:raw_chorus_fruit_cookie"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "raw_chorus_fruit_cookie"
+        }
+    ]
+}

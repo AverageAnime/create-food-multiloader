@@ -14,5 +14,11 @@
     },
     "result": {
         "id": "createfood:raw_berry_cheesecake"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "raw_berry_cheesecake"
+        }
+    ]
 }

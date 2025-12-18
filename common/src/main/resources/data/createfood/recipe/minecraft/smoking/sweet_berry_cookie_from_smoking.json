@@ -4,10 +4,16 @@
     "cookingtime": 100,
     "experience": 0.35,
     "ingredient": {
-        "tag": "c:raw_sweet_berry_cookie"
+        "tag": "c:raw_berry_cookie"
     },
     "result": {
         "count": 1,
         "id": "farmersdelight:sweet_berry_cookie"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "sweet_berry_cookie"
+        }
+    ]
 }

@@ -10,5 +10,11 @@
     ],
     "result": {
         "id": "minecraft:cake"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "minecraft:cake"
+        }
+    ]
 }

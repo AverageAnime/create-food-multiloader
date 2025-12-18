@@ -15,5 +15,11 @@
                 "id": "createfood:butter_dough_small"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "butter_dough_small"
+        }
     ]
 }

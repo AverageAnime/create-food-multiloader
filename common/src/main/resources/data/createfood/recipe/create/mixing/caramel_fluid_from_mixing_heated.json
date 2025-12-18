@@ -14,5 +14,11 @@
             "amount": 500,
             "id": "createfood:caramel"
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "caramel"
+        }
     ]
 }

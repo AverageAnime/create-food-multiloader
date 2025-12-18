@@ -15,5 +15,11 @@
     "result": {
         "count": 8,
         "id": "createfood:raw_caramel_chip_chocolate_cookie"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "raw_caramel_chip_chocolate_cookie"
+        }
+    ]
 }

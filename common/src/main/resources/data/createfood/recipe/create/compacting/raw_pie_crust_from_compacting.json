@@ -25,5 +25,11 @@
                 "id": "createfood:raw_pie_crust"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "raw_pie_crust"
+        }
     ]
 }

@@ -16,5 +16,11 @@
                 "id": "createfood:melon_ice_cream_bowl"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "melon_ice_cream_bowl"
+        }
     ]
 }

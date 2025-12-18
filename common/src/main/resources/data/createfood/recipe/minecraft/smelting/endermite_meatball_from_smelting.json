@@ -9,5 +9,11 @@
     "result": {
         "count": 1,
         "id": "createfood:endermite_meatball"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "endermite_meatball"
+        }
+    ]
 }

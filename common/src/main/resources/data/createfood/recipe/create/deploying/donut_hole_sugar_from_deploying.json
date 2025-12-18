@@ -14,5 +14,11 @@
                 "id": "createfood:donut_hole_sugar"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "donut_hole_sugar"
+        }
     ]
 }

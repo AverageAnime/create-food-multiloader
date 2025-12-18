@@ -15,5 +15,11 @@
                 "id": "createfood:diced_onion"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "diced_onion"
+        }
     ]
 }

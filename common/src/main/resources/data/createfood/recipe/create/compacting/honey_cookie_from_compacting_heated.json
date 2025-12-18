@@ -18,5 +18,11 @@
                 "id": "farmersdelight:honey_cookie"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "farmersdelight:honey_cookie"
+        }
     ]
 }

@@ -7,8 +7,14 @@
     ],
     "results": [
         {
-            "amount": 166,
+            "amount": 125,
             "id": "createfood:dark_chocolate"
+        }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "dark_chocolate"
         }
     ]
 }

@@ -14,5 +14,11 @@
     },
     "result": {
         "id": "farmersdelight:pasta_with_mutton_chop"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "farmersdelight:pasta_with_mutton_chop"
+        }
+    ]
 }

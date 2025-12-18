@@ -14,5 +14,11 @@
     },
     "result": {
         "id": "createfood:mini_smores_pie"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "mini_smores_pie"
+        }
+    ]
 }

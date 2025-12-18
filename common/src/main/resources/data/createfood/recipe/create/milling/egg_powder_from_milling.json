@@ -2,7 +2,7 @@
     "type": "create:milling",
     "ingredients": [
         {
-            "tag": "c:cooked_eggs"
+            "tag": "c:powderable_eggs"
         }
     ],
     "processingTime": 50,
@@ -18,6 +18,12 @@
             "item": {
                 "id": "createfood:egg_powder"
             }
+        }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "egg_powder"
         }
     ]
 }

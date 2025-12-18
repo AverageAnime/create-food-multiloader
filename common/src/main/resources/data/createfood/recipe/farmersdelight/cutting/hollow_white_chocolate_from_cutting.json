@@ -15,5 +15,11 @@
                 "id": "createfood:hollow_white_chocolate"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "hollow_white_chocolate"
+        }
     ]
 }

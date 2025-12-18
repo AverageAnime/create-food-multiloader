@@ -1,5 +1,10 @@
 {
-    "neoforge:conditions": [],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "toffee_chip_waffle"
+        }
+    ],
     "type": "create:compacting",
     "heat_requirement": "heated",
     "ingredients": [

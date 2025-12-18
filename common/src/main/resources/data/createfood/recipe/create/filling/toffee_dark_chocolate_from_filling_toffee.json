@@ -1,0 +1,26 @@
+{
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "tag": "c:hollow_dark_chocolate"
+        },
+        {
+            "type": "fluid_tag",
+            "amount": 125,
+            "fluid_tag": "c:toffee"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:toffee_dark_chocolate"
+            }
+        }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "toffee_dark_chocolate"
+        }
+    ]
+}

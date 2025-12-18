@@ -5,10 +5,16 @@
             "tag": "c:pastry_base"
         },
         {
-            "tag": "c:apple_cream_frosting_piping_bag"
+            "tag": "c:apple_cream_frosting"
         }
     ],
     "result": {
         "id": "createfood:apple_cream_pastry"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "apple_cream_pastry"
+        }
+    ]
 }

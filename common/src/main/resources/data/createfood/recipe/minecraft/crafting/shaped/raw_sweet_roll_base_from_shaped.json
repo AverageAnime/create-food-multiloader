@@ -14,5 +14,11 @@
     },
     "result": {
         "id": "createfood:raw_sweet_roll_base"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "raw_sweet_roll_base"
+        }
+    ]
 }

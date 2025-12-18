@@ -15,5 +15,11 @@
             "amount": 500,
             "id": "createfood:apple_milkshake"
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "apple_milkshake"
+        }
     ]
 }

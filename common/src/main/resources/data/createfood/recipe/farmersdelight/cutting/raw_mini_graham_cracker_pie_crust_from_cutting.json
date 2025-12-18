@@ -15,5 +15,11 @@
                 "id": "createfood:raw_mini_graham_cracker_pie_crust"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "raw_mini_graham_cracker_pie_crust"
+        }
     ]
 }

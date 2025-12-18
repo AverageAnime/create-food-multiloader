@@ -14,5 +14,11 @@
                 "id": "createfood:raw_chorus_fruit_pie"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "raw_chorus_fruit_pie"
+        }
     ]
 }

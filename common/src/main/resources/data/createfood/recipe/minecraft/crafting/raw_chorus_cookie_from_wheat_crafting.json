@@ -3,6 +3,10 @@
         {
             "type": "neoforge:mod_loaded",
             "modid": "ends_delight"
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "raw_chorus_cookie"
         }
     ],
     "type": "minecraft:crafting_shapeless",

@@ -1,24 +1,41 @@
 ### *** 2.0.0 ***
-* Display names are now simplified to be closer to default naming. Ingredient and mod compatibility information is now displayed in tooltips. Recommend enable 'searchAdvancedTooltips' if using JEI.
+
+#### Note: Repository has [moved](https://github.com/AverageAnime/create-food-multiloader). Includes `1.21.1-neoforge`, `1.20.1-fabric`, and `1.20.1-forge`.
+![newprev200](https://github.com/user-attachments/assets/7a11cedb-519d-45ac-b0fb-5ec4c350a2f3)
+
+#### Changes:
+* 50+ new items.
+* Display names are now simplified to be closer to vanilla naming. 
+* Ingredient and mod compatibility information is now displayed in tooltips. Recommend enable `searchAdvancedTooltips` if using JEI.
+* New config `createfood-client.toml`. Disable items & adjust tooltips to your liking.
+* Add upright on belt tags. [(#86)](https://github.com/AverageAnime/create-food/issues/86)
+* Basic support for Display Delight. [(#90)](https://github.com/AverageAnime/create-food/issues/90)
+* Balancing changes for cake recipes. [(#91)](https://github.com/AverageAnime/create-food/issues/91)
+* Pumpkin pie, cheese block, and all frosted cakes are now placeable & sliceable.
+* Standardize some fluid amounts.
+* Adjust saturation for some biscuit sandwiches.
+* Add composting for various items.
+* Various minor texture updates.
+* Cakes are no longer stackable to match vanilla behavior.
+* Changed IDs:
+    * `raw_chorus_cookie` -> `raw_chorus_fruit_cookie`
+    * `raw_sweet_berry_cookie` -> `raw_berry_cookie`
+* Removed items:
+    * `mutton_wrap_onion_lettuce_tomato`
+    * `mutton_wrap_onion_tomato`
+
+#### Fixes:
 * Fix chicken patty recipe. [(#79)](https://github.com/AverageAnime/create-food/issues/79)
 * Fix missing melon jam filling recipe. [(#85)](https://github.com/AverageAnime/create-food/issues/85)
-* Add upright on belt tags. [(#86)](https://github.com/AverageAnime/create-food/issues/86)
-* Translation support for Display Delight. [(#90)](https://github.com/AverageAnime/create-food/issues/90)
-* Adjust and standardize frosting recipes. Uses new piping bags. [(#91)](https://github.com/AverageAnime/create-food/issues/91)
 * Fix cotton candy stick mixing recipe. [(#92)](https://github.com/AverageAnime/create-food/issues/92)
 * Fix cloth filter recipe. [(#95)](https://github.com/AverageAnime/create-food/issues/95)
-* Add conditions to fix crashes/errors related to tomato sauce filling recipes. [(#96)](https://github.com/AverageAnime/create-food/issues/96)
-* Various minor texture updates.
-* Adjust saturation for some biscuit sandwiches.
+* Fix crashes/errors related to tomato sauce filling recipes. [(#96)](https://github.com/AverageAnime/create-food/issues/96)
 * Fix gelatin dessert block cutting recipe.
 * Fix some emptying recipes using old fabric amounts.
 * Fix cream cake textures having incorrect sides.
-* Standardize fluid amounts and recipes for apples & berries.
-* Frosted cakes can now be sliced & eaten.
-* Add cooking recipes for pumpkin pie.
-* Pumpkin pies are now placeable/sliceable.
+* Fix missing cooking recipes for pumpkin pie.
 * Fix some missing saturation values.
-* Add composting datamap for eggshells & boiled eggs.
+* Fix some item application & deploying recipes not having remainder items.
 
 ### *** 1.21.1 Beta 3 ***
 * 100+ item ID changes for naming consistency. **Existing versions will be removed when updating**. 

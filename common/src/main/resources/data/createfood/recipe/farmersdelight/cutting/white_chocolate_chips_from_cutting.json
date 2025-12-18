@@ -15,5 +15,11 @@
                 "id": "createfood:white_chocolate_chips"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "white_chocolate_chips"
+        }
     ]
 }

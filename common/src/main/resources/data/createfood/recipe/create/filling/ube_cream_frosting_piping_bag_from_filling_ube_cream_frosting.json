@@ -16,5 +16,11 @@
                 "id": "createfood:ube_cream_frosting_piping_bag"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "ube_cream_frosting_piping_bag"
+        }
     ]
 }

@@ -10,5 +10,11 @@
     "result": {
         "count": 1,
         "id": "createfood:hot_dark_chocolate_bottle"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "hot_dark_chocolate_bottle"
+        }
+    ]
 }

@@ -16,5 +16,11 @@
     ],
     "result": {
         "id": "createfood:chocolate_milkshake_bucket"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "chocolate_milkshake_bucket"
+        }
+    ]
 }

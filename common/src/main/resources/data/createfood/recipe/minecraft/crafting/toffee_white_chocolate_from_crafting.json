@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:hollow_white_chocolate"
+        },
+        {
+            "tag": "c:toffee"
+        }
+    ],
+    "result": {
+        "id": "createfood:toffee_white_chocolate"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "toffee_white_chocolate"
+        }
+    ]
+}

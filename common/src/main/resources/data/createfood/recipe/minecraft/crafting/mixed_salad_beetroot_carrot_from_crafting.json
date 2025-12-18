@@ -1,5 +1,10 @@
 {
-    "neoforge:conditions": [],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "mixed_salad_beetroot_carrot"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {

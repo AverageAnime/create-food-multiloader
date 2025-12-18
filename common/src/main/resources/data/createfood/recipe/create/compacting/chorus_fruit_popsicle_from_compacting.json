@@ -20,5 +20,11 @@
                 "id": "createfood:chorus_fruit_popsicle"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "chorus_fruit_popsicle"
+        }
     ]
 }

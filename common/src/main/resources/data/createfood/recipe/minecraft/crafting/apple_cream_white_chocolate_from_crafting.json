@@ -5,10 +5,16 @@
             "tag": "c:hollow_white_chocolate"
         },
         {
-            "tag": "c:apple_cream_frosting_piping_bag"
+            "tag": "c:apple_cream_frosting"
         }
     ],
     "result": {
         "id": "createfood:apple_cream_white_chocolate"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "apple_cream_white_chocolate"
+        }
+    ]
 }

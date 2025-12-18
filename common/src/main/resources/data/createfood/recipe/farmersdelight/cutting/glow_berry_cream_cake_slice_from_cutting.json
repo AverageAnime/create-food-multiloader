@@ -15,5 +15,11 @@
                 "id": "createfood:glow_berry_cream_cake_slice"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "glow_berry_cream_cake_slice"
+        }
     ]
 }

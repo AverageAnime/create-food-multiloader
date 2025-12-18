@@ -10,5 +10,11 @@
     ],
     "result": {
         "id": "createfood:raw_pastry_base"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "raw_pastry_base"
+        }
+    ]
 }

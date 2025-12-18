@@ -1,0 +1,27 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:pork_stew_bucket"
+        },
+        {
+            "tag": "c:bowl"
+        },
+        {
+            "tag": "c:bowl"
+        },
+        {
+            "tag": "c:bowl"
+        }
+    ],
+    "result": {
+        "count": 3,
+        "id": "createfood:pork_stew_bowl"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "pork_stew_bowl"
+        }
+    ]
+}

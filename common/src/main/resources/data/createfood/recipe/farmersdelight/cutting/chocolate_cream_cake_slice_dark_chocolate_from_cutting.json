@@ -15,5 +15,11 @@
                 "id": "createfood:chocolate_cream_cake_slice_dark_chocolate"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "chocolate_cream_cake_slice_dark_chocolate"
+        }
     ]
 }

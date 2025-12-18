@@ -21,5 +21,11 @@
             }
         }
     ],
-    "neoc:conditions": []
+    "neoc:conditions": [],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "rabbit_cuts"
+        }
+    ]
 }

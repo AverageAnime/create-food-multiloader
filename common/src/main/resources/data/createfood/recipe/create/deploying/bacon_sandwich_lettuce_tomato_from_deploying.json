@@ -14,5 +14,11 @@
                 "id": "farmersdelight:bacon_sandwich"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "farmersdelight:bacon_sandwich"
+        }
     ]
 }

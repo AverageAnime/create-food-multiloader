@@ -14,5 +14,11 @@
     },
     "result": {
         "id": "createfood:ice_cream_sandwich_neapolitan"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "ice_cream_sandwich_neapolitan"
+        }
+    ]
 }

@@ -1,18 +1,24 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "ingredients": [
-    {
-      "tag": "c:nuggets/copper"
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:nuggets/copper"
+        },
+        {
+            "item": "minecraft:paper"
+        },
+        {
+            "tag": "c:strings"
+        }
+    ],
+    "result": {
+        "count": 2,
+        "id": "createfood:piping_bag"
     },
-    {
-      "item": "minecraft:paper"
-    },
-    {
-      "tag": "c:strings"
-    }
-  ],
-  "result": {
-    "count": 2,
-    "id": "createfood:piping_bag"
-  }
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "piping_bag"
+        }
+    ]
 }

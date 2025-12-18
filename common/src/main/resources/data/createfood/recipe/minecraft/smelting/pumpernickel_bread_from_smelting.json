@@ -9,5 +9,11 @@
     "result": {
         "count": 1,
         "id": "createfood:pumpernickel_bread"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "pumpernickel_bread"
+        }
+    ]
 }

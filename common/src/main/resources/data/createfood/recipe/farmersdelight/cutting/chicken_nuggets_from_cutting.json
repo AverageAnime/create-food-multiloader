@@ -14,5 +14,11 @@
                 "id": "createfood:chicken_nuggets"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "chicken_nuggets"
+        }
     ]
 }

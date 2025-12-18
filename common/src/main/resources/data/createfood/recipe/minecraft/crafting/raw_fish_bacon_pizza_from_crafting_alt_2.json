@@ -1,5 +1,10 @@
 {
-    "neoforge:conditions": [],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "raw_fish_bacon_pizza"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {

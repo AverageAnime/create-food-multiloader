@@ -15,5 +15,11 @@
                 "id": "createfood:cookie_cream_pie_slice"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "cookie_cream_pie_slice"
+        }
     ]
 }

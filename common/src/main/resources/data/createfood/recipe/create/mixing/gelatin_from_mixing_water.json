@@ -35,5 +35,11 @@
                 "id": "createfood:gelatin"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "gelatin"
+        }
     ]
 }

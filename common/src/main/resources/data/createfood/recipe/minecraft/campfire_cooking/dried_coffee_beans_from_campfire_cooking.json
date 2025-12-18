@@ -17,6 +17,10 @@
                 "type": "neoforge:tag_empty",
                 "tag": "c:coffee_beans"
             }
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "dried_coffee_beans"
         }
     ]
 }

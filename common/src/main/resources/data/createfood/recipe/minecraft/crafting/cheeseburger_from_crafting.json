@@ -10,5 +10,11 @@
     ],
     "result": {
         "id": "createfood:cheeseburger"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "cheeseburger"
+        }
+    ]
 }

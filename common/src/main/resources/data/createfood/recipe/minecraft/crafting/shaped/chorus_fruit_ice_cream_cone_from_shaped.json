@@ -14,5 +14,11 @@
     },
     "result": {
         "id": "createfood:chorus_fruit_ice_cream_cone"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "chorus_fruit_ice_cream_cone"
+        }
+    ]
 }

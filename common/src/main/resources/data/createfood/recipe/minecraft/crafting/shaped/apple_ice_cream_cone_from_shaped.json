@@ -14,5 +14,11 @@
     },
     "result": {
         "id": "createfood:apple_ice_cream_cone"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "apple_ice_cream_cone"
+        }
+    ]
 }

@@ -10,5 +10,11 @@
     ],
     "result": {
         "id": "createfood:mini_cookie_cream_pie"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "mini_cookie_cream_pie"
+        }
+    ]
 }

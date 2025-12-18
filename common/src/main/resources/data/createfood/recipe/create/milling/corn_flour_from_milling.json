@@ -6,6 +6,10 @@
                 "type": "neoforge:tag_empty",
                 "tag": "c:corn_kernel"
             }
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "corn_flour"
         }
     ],
     "type": "create:milling",

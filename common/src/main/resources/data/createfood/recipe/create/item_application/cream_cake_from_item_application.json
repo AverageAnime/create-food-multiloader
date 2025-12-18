@@ -13,6 +13,17 @@
             "item": {
                 "id": "createfood:cream_cake"
             }
+        },
+      {
+        "item": {
+          "id": "createfood:piping_bag"
+        }
+      }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "cream_cake"
         }
     ]
 }

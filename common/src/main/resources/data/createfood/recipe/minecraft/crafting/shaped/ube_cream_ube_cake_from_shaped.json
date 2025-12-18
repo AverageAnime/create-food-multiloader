@@ -6,7 +6,7 @@
     ],
     "key": {
         "1": {
-            "tag": "c:ube_cream_frosting_piping_bag"
+            "tag": "c:ube_cream_frosting"
         },
         "2": {
             "tag": "c:ube_cake_base"
@@ -14,5 +14,11 @@
     },
     "result": {
         "id": "createfood:ube_cream_ube_cake"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "ube_cream_ube_cake"
+        }
+    ]
 }

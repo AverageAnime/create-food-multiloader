@@ -15,5 +15,11 @@
                 "id": "createfood:lime_gelatin_dessert_slice"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "lime_gelatin_dessert_slice"
+        }
     ]
 }

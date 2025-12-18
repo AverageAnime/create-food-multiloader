@@ -10,5 +10,11 @@
     ],
     "result": {
         "id": "createfood:magma_cream_marshmallow_stick"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "magma_cream_marshmallow_stick"
+        }
+    ]
 }

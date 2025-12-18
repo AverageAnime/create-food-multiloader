@@ -16,5 +16,11 @@
                 "id": "createfood:apple_juice_bottle"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "apple_juice_bottle"
+        }
     ]
 }

@@ -16,5 +16,11 @@
     "result": {
         "count": 1,
         "id": "createfood:caramel_fudge"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "caramel_fudge"
+        }
+    ]
 }

@@ -20,5 +20,11 @@
     "result": {
         "count": 4,
         "id": "createfood:condensed_milk_bottle"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "condensed_milk_bottle"
+        }
+    ]
 }

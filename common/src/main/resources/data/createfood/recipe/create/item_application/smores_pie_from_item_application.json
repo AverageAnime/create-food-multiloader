@@ -14,5 +14,11 @@
                 "id": "createfood:smores_pie"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "smores_pie"
+        }
     ]
 }

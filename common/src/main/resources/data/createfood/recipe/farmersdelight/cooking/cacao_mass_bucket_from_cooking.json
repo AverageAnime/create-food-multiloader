@@ -19,5 +19,11 @@
     "result": {
         "count": 1,
         "id": "createfood:cacao_mass_bucket"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "cacao_mass_bucket"
+        }
+    ]
 }

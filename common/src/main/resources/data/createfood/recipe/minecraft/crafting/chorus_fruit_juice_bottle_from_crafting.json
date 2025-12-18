@@ -20,5 +20,11 @@
     "result": {
         "count": 4,
         "id": "createfood:chorus_fruit_juice_bottle"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "chorus_fruit_juice_bottle"
+        }
+    ]
 }

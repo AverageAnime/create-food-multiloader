@@ -14,5 +14,11 @@
                 "id": "createfood:chocolate_cream_cake_butterscotch"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "chocolate_cream_cake_butterscotch"
+        }
     ]
 }

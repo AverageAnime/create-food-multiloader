@@ -16,5 +16,11 @@
                 "id": "createfood:white_chocolate_apple"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "white_chocolate_apple"
+        }
     ]
 }

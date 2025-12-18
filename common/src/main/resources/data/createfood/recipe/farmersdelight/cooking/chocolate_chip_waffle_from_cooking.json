@@ -15,5 +15,10 @@
         "count": 1,
         "id": "createfood:chocolate_chip_waffle"
     },
-    "neoforge:conditions": []
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "chocolate_chip_waffle"
+        }
+    ]
 }

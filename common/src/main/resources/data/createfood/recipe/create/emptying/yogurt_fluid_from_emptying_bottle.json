@@ -15,5 +15,11 @@
             "amount": 250,
             "id": "createfood:yogurt"
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "yogurt"
+        }
     ]
 }

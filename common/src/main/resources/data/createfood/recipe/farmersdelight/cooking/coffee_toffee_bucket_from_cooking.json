@@ -25,5 +25,11 @@
     "result": {
         "count": 1,
         "id": "createfood:coffee_toffee_bucket"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "coffee_toffee_bucket"
+        }
+    ]
 }

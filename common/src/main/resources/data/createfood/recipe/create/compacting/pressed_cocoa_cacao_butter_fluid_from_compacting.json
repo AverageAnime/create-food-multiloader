@@ -20,5 +20,11 @@
             "amount": 1000,
             "id": "createfood:cacao_butter"
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "cloth_filter"
+        }
     ]
 }

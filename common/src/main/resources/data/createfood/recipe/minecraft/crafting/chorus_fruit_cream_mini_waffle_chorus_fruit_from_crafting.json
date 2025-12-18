@@ -10,5 +10,11 @@
     ],
     "result": {
         "id": "createfood:chorus_fruit_cream_mini_waffle_chorus_fruit"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "chorus_fruit_cream_mini_waffle_chorus_fruit"
+        }
+    ]
 }

@@ -1,0 +1,30 @@
+{
+    "type": "farmersdelight:cooking",
+    "experience": 0.1,
+    "container": {
+        "count": 1,
+        "id": "minecraft:bowl"
+    },
+    "ingredients": [
+        {
+          "tag": "c:onion"
+        },
+        {
+          "tag": "c:carrot"
+        },
+        {
+          "tag": "c:tomato"
+        }
+    ],
+    "recipe_book_tab": "drinks",
+    "result": {
+        "count": 3,
+        "id": "createfood:pork_stew_bowl"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "pork_stew_bowl"
+        }
+    ]
+}

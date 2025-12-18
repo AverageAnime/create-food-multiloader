@@ -15,5 +15,11 @@
             "amount": 500,
             "id": "createfood:molasses"
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "molasses"
+        }
     ]
 }

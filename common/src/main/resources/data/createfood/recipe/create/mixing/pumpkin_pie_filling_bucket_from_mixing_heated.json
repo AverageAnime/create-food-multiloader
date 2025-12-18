@@ -1,5 +1,10 @@
 {
-    "neoforge:conditions": [],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "pumpkin_pie_filling_bucket"
+        }
+    ],
     "type": "create:mixing",
     "heat_requirement": "heated",
     "ingredients": [

@@ -14,5 +14,11 @@
     },
     "result": {
         "id": "createfood:raw_apple_pie"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "raw_apple_pie"
+        }
+    ]
 }

@@ -19,5 +19,11 @@
     "result": {
         "count": 1,
         "id": "createfood:marshmallow_butterscotch_fudge"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "marshmallow_butterscotch_fudge"
+        }
+    ]
 }

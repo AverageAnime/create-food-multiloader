@@ -16,5 +16,11 @@
     ],
     "result": {
         "id": "createfood:mushroom_bacon_pizza"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "mushroom_bacon_pizza"
+        }
+    ]
 }

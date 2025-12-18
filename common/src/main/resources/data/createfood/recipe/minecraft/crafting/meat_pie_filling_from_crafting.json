@@ -1,0 +1,26 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:ground_sausage"
+        },
+        {
+            "tag": "c:carrot"
+        },
+        {
+            "tag": "c:onion"
+        },
+        {
+            "tag": "c:potato"
+        }
+    ],
+    "result": {
+        "id": "createfood:meat_pie_filling"
+    },
+    "neoforge:conditions": [
+      {
+        "type": "createfood:enabled",
+        "id": "meat_pie_filling"
+      }
+    ]
+}

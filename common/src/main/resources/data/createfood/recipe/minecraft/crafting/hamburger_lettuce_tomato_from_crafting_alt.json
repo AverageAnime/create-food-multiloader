@@ -19,5 +19,11 @@
     ],
     "result": {
         "id": "createfood:hamburger_lettuce_tomato"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "hamburger_lettuce_tomato"
+        }
+    ]
 }

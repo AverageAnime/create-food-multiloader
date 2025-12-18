@@ -1,5 +1,10 @@
 {
-    "neoforge:conditions": [],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "caramel_chip_ice_cream_cone"
+        }
+    ],
     "type": "create:deploying",
     "ingredients": [
         {

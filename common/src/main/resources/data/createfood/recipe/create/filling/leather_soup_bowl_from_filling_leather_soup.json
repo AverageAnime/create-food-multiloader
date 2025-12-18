@@ -1,0 +1,26 @@
+{
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "tag": "c:bowl"
+        },
+        {
+            "type": "fluid_tag",
+            "amount": 333,
+            "fluid_tag": "c:leather_soup"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:leather_soup_bowl"
+            }
+        }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "leather_soup_bowl"
+        }
+    ]
+}

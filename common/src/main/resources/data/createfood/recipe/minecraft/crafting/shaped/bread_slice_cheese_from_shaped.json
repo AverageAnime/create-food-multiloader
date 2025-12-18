@@ -14,5 +14,11 @@
     },
     "result": {
         "id": "createfood:bread_slice_cheese"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "bread_slice_cheese"
+        }
+    ]
 }

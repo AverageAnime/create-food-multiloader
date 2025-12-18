@@ -18,5 +18,11 @@
             "amount": 250,
             "id": "createfood:apple_juice"
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "apple_juice"
+        }
     ]
 }

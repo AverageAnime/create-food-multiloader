@@ -1,0 +1,24 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "1 ",
+        "2 "
+    ],
+    "key": {
+        "1": {
+            "tag": "c:butterscotch"
+        },
+        "2": {
+            "tag": "c:sweet_roll_base"
+        }
+    },
+    "result": {
+        "id": "createfood:butterscotch_sweet_roll"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "butterscotch_sweet_roll"
+        }
+    ]
+}

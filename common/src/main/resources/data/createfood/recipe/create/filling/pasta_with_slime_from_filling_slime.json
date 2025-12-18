@@ -16,5 +16,11 @@
                 "id": "createfood:pasta_plate_slime"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "pasta_plate_slime"
+        }
     ]
 }

@@ -9,5 +9,11 @@
     "result": {
         "count": 1,
         "id": "createfood:muffin_base"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "muffin_base"
+        }
+    ]
 }

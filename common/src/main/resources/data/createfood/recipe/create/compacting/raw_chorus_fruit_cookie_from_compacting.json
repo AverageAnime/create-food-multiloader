@@ -1,0 +1,25 @@
+{
+    "type": "create:compacting",
+    "ingredients": [
+        {
+            "item": "minecraft:sweet_berries"
+        },
+        {
+            "tag": "c:sweet_dough"
+        }
+    ],
+    "results": [
+        {
+            "count": 8,
+            "item": {
+                "id": "createfood:raw_chorus_fruit_cookie"
+            }
+        }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "raw_chorus_fruit_cookie"
+        }
+    ]
+}

@@ -14,5 +14,11 @@
     },
     "result": {
         "id": "createfood:pizza_dough_tomato_sauce"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "pizza_dough_tomato_sauce"
+        }
+    ]
 }

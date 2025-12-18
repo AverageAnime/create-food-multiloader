@@ -18,5 +18,11 @@
     ],
     "result": {
         "id": "createfood:apple_popsicle"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "apple_popsicle"
+        }
+    ]
 }

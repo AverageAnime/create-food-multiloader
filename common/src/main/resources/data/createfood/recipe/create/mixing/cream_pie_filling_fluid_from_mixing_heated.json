@@ -25,5 +25,11 @@
             "amount": 1000,
             "id": "createfood:cream_pie_filling"
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "cream_pie_filling"
+        }
     ]
 }

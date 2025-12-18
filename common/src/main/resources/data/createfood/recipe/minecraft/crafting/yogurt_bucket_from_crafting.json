@@ -19,5 +19,11 @@
     ],
     "result": {
         "id": "createfood:yogurt_bucket"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "yogurt_bucket"
+        }
+    ]
 }

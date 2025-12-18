@@ -14,5 +14,11 @@
                 "id": "createfood:bread_slice_lettuce"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "bread_slice_lettuce"
+        }
     ]
 }

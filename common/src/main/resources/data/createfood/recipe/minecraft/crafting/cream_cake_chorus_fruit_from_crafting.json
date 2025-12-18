@@ -10,5 +10,11 @@
     ],
     "result": {
         "id": "createfood:cream_cake_chorus_fruit"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "cream_cake_chorus_fruit"
+        }
+    ]
 }

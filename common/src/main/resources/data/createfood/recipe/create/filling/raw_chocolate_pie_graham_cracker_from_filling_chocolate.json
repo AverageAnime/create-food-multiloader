@@ -16,5 +16,11 @@
                 "id": "createfood:raw_chocolate_pie_graham_cracker"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "raw_chocolate_pie_graham_cracker"
+        }
     ]
 }

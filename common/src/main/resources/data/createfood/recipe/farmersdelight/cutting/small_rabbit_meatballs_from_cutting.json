@@ -15,5 +15,11 @@
             }
         }
     ],
-    "neoc:conditions": []
+    "neoc:conditions": [],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "small_rabbit_meatballs"
+        }
+    ]
 }

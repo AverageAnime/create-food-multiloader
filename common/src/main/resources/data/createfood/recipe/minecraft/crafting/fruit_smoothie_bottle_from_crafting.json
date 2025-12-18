@@ -20,5 +20,11 @@
     "result": {
         "count": 4,
         "id": "createfood:fruit_smoothie_bottle"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "fruit_smoothie_bottle"
+        }
+    ]
 }

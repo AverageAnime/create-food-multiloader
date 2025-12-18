@@ -25,5 +25,11 @@
             "amount": 1000,
             "id": "createfood:red_gelatin_mix"
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "red_gelatin_mix"
+        }
     ]
 }

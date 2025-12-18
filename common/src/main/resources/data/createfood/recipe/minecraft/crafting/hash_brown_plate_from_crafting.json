@@ -10,5 +10,11 @@
     ],
     "result": {
         "id": "createfood:hash_brown_plate"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "hash_brown_plate"
+        }
+    ]
 }

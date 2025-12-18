@@ -14,5 +14,11 @@
                 "id": "createfood:beef_meatball_sandwich"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "beef_meatball_sandwich"
+        }
     ]
 }

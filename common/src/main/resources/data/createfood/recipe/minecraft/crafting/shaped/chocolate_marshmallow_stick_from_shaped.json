@@ -14,5 +14,11 @@
     },
     "result": {
         "id": "createfood:chocolate_marshmallow_stick"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "chocolate_marshmallow_stick"
+        }
+    ]
 }

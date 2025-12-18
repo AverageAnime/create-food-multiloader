@@ -8,8 +8,14 @@
     ],
     "results": [
         {
-            "amount": 333,
+            "amount": 250,
             "id": "createfood:white_chocolate"
+        }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "white_chocolate"
         }
     ]
 }

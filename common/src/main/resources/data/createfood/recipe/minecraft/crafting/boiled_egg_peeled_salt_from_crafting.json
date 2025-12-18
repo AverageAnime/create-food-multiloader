@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:boiled_egg_peeled"
+        },
+        {
+            "tag": "c:salt"
+        }
+    ],
+    "result": {
+        "id": "createfood:boiled_egg_peeled_salt"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "boiled_egg_peeled_salt"
+        }
+    ]
+}

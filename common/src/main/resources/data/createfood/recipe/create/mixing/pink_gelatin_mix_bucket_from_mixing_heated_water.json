@@ -24,5 +24,11 @@
                 "id": "createfood:pink_gelatin_mix_bucket"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "pink_gelatin_mix_bucket"
+        }
     ]
 }

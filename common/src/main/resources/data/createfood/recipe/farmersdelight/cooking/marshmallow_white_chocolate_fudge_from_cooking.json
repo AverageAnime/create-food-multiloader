@@ -19,5 +19,11 @@
     "result": {
         "count": 1,
         "id": "createfood:marshmallow_white_chocolate_fudge"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "marshmallow_white_chocolate_fudge"
+        }
+    ]
 }

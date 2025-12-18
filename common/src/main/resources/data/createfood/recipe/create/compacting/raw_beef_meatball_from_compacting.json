@@ -12,5 +12,11 @@
                 "id": "createfood:raw_beef_meatball"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "raw_beef_meatball"
+        }
     ]
 }

@@ -14,5 +14,11 @@
                 "id": "createfood:hamburger_onion_lettuce"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "hamburger_onion_lettuce"
+        }
     ]
 }

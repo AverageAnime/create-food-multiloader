@@ -19,5 +19,11 @@
                 "id": "createfood:chocolate_donut_hole"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "chocolate_donut_hole"
+        }
     ]
 }

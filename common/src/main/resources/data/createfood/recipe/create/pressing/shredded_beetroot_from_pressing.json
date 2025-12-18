@@ -1,5 +1,10 @@
 {
-    "neoforge:conditions": [],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "shredded_beetroot"
+        }
+    ],
     "type": "create:pressing",
     "ingredients": [
         {

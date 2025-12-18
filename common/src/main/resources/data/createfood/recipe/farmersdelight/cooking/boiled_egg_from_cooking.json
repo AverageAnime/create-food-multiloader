@@ -20,5 +20,11 @@
     "result": {
         "count": 1,
         "id": "createfood:boiled_egg"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "boiled_egg"
+        }
+    ]
 }

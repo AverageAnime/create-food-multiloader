@@ -15,5 +15,11 @@
             "amount": 1000,
             "id": "createfood:chorus_fruit_ice_cream"
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "chorus_fruit_ice_cream"
+        }
     ]
 }

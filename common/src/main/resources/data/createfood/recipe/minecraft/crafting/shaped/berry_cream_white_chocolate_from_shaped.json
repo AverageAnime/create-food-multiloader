@@ -6,7 +6,7 @@
     ],
     "key": {
         "1": {
-            "tag": "c:berry_cream_frosting_piping_bag"
+            "tag": "c:berry_cream_frosting"
         },
         "2": {
             "tag": "c:hollow_white_chocolate"
@@ -14,5 +14,11 @@
     },
     "result": {
         "id": "createfood:berry_cream_white_chocolate"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "berry_cream_white_chocolate"
+        }
+    ]
 }

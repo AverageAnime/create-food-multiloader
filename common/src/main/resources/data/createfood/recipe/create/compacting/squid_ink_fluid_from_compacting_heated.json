@@ -10,5 +10,11 @@
             "amount": 1000,
             "id": "createfood:squid_ink"
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "squid_ink"
+        }
     ]
 }

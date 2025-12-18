@@ -8,5 +8,11 @@
     "result": {
         "count": 3,
         "id": "createfood:cream_cheese"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "cream_cheese"
+        }
+    ]
 }

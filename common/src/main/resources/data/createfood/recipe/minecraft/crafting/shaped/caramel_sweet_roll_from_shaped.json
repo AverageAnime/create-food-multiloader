@@ -14,5 +14,11 @@
     },
     "result": {
         "id": "createfood:caramel_sweet_roll"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "caramel_sweet_roll"
+        }
+    ]
 }

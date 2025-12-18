@@ -13,5 +13,11 @@
     ],
     "result": {
         "id": "createfood:berry_jam_bucket"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "berry_jam_bucket"
+        }
+    ]
 }

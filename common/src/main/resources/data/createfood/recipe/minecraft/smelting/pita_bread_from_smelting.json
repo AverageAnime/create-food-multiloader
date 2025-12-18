@@ -10,5 +10,10 @@
         "count": 1,
         "id": "createfood:pita_bread"
     },
-    "neoforge:conditions": []
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "pita_bread"
+        }
+    ]
 }

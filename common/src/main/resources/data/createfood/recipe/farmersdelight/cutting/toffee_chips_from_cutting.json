@@ -15,5 +15,11 @@
                 "id": "createfood:toffee_chips"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "toffee_chips"
+        }
     ]
 }

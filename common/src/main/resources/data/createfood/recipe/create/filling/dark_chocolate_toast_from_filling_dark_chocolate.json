@@ -16,5 +16,11 @@
                 "id": "createfood:dark_chocolate_toast"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "dark_chocolate_toast"
+        }
     ]
 }

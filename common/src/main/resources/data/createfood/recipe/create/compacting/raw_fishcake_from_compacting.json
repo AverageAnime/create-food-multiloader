@@ -26,5 +26,11 @@
                 "id": "createfood:raw_fishcake"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "raw_fishcake"
+        }
     ]
 }

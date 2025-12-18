@@ -14,5 +14,11 @@
     },
     "result": {
         "id": "createfood:chocolate_chip_ice_cream_cone"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "chocolate_chip_ice_cream_cone"
+        }
+    ]
 }

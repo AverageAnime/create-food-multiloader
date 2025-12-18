@@ -6,6 +6,10 @@
                 "type": "neoforge:tag_empty",
                 "tag": "c:vegetables/ube"
             }
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "raw_ube_cookie"
         }
     ],
     "type": "minecraft:crafting_shapeless",

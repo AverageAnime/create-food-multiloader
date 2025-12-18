@@ -18,5 +18,11 @@
                 "id": "minecraft:bone_meal"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "minecraft:bone_meal"
+        }
     ]
 }

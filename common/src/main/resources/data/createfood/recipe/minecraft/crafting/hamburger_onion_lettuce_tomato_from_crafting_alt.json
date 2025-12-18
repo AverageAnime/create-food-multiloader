@@ -22,5 +22,11 @@
     ],
     "result": {
         "id": "farmersdelight:hamburger"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "farmersdelight:hamburger"
+        }
+    ]
 }

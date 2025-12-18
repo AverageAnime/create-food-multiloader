@@ -18,5 +18,11 @@
                 "id": "createfood:powdered_sugar"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "powdered_sugar"
+        }
     ]
 }

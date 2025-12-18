@@ -14,5 +14,11 @@
     },
     "result": {
         "id": "createfood:raw_chocolate_pie"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "raw_chocolate_pie"
+        }
+    ]
 }

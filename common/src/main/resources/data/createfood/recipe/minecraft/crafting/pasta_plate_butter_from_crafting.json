@@ -10,5 +10,11 @@
     ],
     "result": {
         "id": "createfood:pasta_plate_butter"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "pasta_plate_butter"
+        }
+    ]
 }

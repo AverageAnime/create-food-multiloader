@@ -32,5 +32,11 @@
             "amount": 1000,
             "id": "createfood:glow_berry_ice_cream"
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "glow_berry_ice_cream"
+        }
     ]
 }

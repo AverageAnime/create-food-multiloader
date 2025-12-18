@@ -3,6 +3,10 @@
         {
             "type": "neoforge:mod_loaded",
             "modid": "jmc"
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "jmc:crimson_fungus_cake"
         }
     ],
     "type": "minecraft:crafting_shapeless",

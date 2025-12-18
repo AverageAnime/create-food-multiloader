@@ -19,5 +19,11 @@
     ],
     "result": {
         "id": "createfood:hot_dark_chocolate_bucket"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "hot_dark_chocolate_bucket"
+        }
+    ]
 }

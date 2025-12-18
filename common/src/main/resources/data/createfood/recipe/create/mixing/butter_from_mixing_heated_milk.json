@@ -17,5 +17,11 @@
                 "id": "createfood:butter"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "butter"
+        }
     ]
 }

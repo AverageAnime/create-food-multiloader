@@ -10,5 +10,11 @@
     ],
     "result": {
         "id": "createfood:apple_cream_chocolate_sweet_roll"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "apple_cream_chocolate_sweet_roll"
+        }
+    ]
 }

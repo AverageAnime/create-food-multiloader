@@ -12,5 +12,11 @@
                 "id": "createfood:ground_beef"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "ground_beef"
+        }
     ]
 }

@@ -10,5 +10,11 @@
     "result": {
         "count": 1,
         "id": "createfood:salt"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "salt"
+        }
+    ]
 }

@@ -10,5 +10,11 @@
     ],
     "result": {
         "id": "createfood:dragon_bun"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "dragon_bun"
+        }
+    ]
 }

@@ -15,5 +15,11 @@
                 "id": "createfood:cyan_gelatin_dessert_slice"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "cyan_gelatin_dessert_slice"
+        }
     ]
 }

@@ -10,5 +10,10 @@
         "count": 1,
         "id": "createfood:gyro_meat_block"
     },
-    "neoforge:conditions": []
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "gyro_meat_block"
+        }
+    ]
 }

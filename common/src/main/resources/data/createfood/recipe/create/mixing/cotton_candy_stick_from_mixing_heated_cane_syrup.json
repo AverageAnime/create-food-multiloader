@@ -23,5 +23,11 @@
                 "id": "createfood:cotton_candy_stick"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "cotton_candy_stick"
+        }
     ]
 }

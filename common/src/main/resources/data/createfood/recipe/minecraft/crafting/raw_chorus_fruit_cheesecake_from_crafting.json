@@ -10,5 +10,11 @@
     ],
     "result": {
         "id": "createfood:raw_chorus_fruit_cheesecake"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "raw_chorus_fruit_cheesecake"
+        }
+    ]
 }

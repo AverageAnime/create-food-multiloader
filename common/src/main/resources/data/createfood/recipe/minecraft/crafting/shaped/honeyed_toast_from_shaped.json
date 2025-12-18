@@ -14,5 +14,11 @@
     },
     "result": {
         "id": "createfood:honeyed_toast"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "honeyed_toast"
+        }
+    ]
 }

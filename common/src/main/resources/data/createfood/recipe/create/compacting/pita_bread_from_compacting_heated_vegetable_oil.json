@@ -1,5 +1,10 @@
 {
-    "neoforge:conditions": [],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "pita_bread"
+        }
+    ],
     "type": "create:compacting",
     "heat_requirement": "heated",
     "ingredients": [

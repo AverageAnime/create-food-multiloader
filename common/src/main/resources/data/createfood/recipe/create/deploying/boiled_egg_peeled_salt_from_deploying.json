@@ -1,0 +1,24 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "boiled_egg_peeled_salt"
+        }
+    ],
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "c:boiled_egg_peeled"
+        },
+        {
+            "tag": "c:salt"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:boiled_egg_peeled_salt"
+            }
+        }
+    ]
+}

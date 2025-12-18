@@ -14,5 +14,11 @@
                 "id": "createfood:chicken_bun_cheese_lettuce_tomato"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "chicken_bun_cheese_lettuce_tomato"
+        }
     ]
 }

@@ -9,5 +9,11 @@
     "result": {
         "count": 1,
         "id": "farmersdelight:chocolate_pie"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "farmersdelight:chocolate_pie"
+        }
+    ]
 }

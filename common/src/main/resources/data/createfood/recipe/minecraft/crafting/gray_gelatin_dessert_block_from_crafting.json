@@ -13,5 +13,11 @@
     ],
     "result": {
         "id": "createfood:gray_gelatin_dessert_block"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "gray_gelatin_dessert_block"
+        }
+    ]
 }

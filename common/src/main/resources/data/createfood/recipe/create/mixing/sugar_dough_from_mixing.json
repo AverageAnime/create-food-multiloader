@@ -18,5 +18,11 @@
                 "id": "createfood:sugar_dough"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "sugar_dough"
+        }
     ]
 }

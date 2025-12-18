@@ -14,5 +14,11 @@
     },
     "result": {
         "id": "createfood:cacao_butter_bucket"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "cacao_butter_bucket"
+        }
+    ]
 }

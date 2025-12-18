@@ -22,5 +22,11 @@
             "amount": 1000,
             "id": "createfood:slime"
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "slime"
+        }
     ]
 }

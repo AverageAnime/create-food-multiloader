@@ -10,5 +10,11 @@
     ],
     "result": {
         "id": "createfood:raw_glow_berry_cheesecake"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "raw_glow_berry_cheesecake"
+        }
+    ]
 }

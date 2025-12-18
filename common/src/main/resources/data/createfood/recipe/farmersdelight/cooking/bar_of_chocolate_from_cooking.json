@@ -13,5 +13,11 @@
     "result": {
         "count": 1,
         "id": "create:bar_of_chocolate"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "create:bar_of_chocolate"
+        }
+    ]
 }

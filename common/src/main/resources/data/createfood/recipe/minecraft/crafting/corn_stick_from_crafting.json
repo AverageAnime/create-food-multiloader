@@ -6,6 +6,10 @@
                 "type": "neoforge:tag_empty",
                 "tag": "c:corn"
             }
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "corn_stick"
         }
     ],
     "type": "minecraft:crafting_shapeless",

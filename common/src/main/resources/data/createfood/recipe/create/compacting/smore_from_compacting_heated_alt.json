@@ -18,5 +18,11 @@
                 "id": "createfood:smore"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "smore"
+        }
     ]
 }

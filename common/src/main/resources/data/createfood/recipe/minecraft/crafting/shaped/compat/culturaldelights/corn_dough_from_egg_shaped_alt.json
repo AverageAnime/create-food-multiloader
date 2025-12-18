@@ -3,6 +3,10 @@
         {
             "type": "neoforge:mod_loaded",
             "modid": "culturaldelights"
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "culturaldelights:corn_dough"
         }
     ],
     "type": "minecraft:crafting_shaped",

@@ -9,5 +9,11 @@
     "result": {
         "count": 1,
         "id": "createfood:chocolate_chip_chocolate_cookie"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "chocolate_chip_chocolate_cookie"
+        }
+    ]
 }

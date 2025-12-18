@@ -9,5 +9,11 @@
     "result": {
         "count": 1,
         "id": "createfood:pumpernickel_toast_slice"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "pumpernickel_toast_slice"
+        }
+    ]
 }

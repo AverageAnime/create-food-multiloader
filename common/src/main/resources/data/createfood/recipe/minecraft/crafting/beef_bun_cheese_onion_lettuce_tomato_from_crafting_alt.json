@@ -22,5 +22,11 @@
     ],
     "result": {
         "id": "createfood:beef_bun_cheese_onion_lettuce_tomato"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "beef_bun_cheese_onion_lettuce_tomato"
+        }
+    ]
 }

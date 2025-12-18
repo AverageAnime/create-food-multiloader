@@ -9,5 +9,11 @@
     "result": {
         "count": 1,
         "id": "createfood:ube_cake_base"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "ube_cake_base"
+        }
+    ]
 }

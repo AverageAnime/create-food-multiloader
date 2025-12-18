@@ -14,5 +14,11 @@
     },
     "result": {
         "id": "createfood:raw_glow_berry_pie"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "raw_glow_berry_pie"
+        }
+    ]
 }

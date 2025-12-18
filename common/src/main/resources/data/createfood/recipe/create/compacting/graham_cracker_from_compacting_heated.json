@@ -26,5 +26,11 @@
                 "id": "createfood:graham_cracker"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "graham_cracker"
+        }
     ]
 }

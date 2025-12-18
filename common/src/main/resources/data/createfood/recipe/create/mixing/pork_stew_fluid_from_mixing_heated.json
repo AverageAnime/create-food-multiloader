@@ -1,0 +1,27 @@
+{
+    "type": "create:mixing",
+    "heat_requirement": "heated",
+    "ingredients": [
+      {
+        "tag": "c:onion"
+      },
+      {
+        "tag": "c:carrot"
+      },
+      {
+        "tag": "c:tomato"
+      }
+    ],
+    "results": [
+        {
+            "amount": 1000,
+            "id": "createfood:pork_stew"
+        }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "pork_stew"
+        }
+    ]
+}

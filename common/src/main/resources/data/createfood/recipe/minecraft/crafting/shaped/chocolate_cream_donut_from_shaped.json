@@ -14,5 +14,11 @@
     },
     "result": {
         "id": "createfood:chocolate_cream_donut"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "chocolate_cream_donut"
+        }
+    ]
 }

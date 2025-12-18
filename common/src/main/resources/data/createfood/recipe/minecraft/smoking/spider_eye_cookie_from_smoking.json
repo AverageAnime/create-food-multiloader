@@ -14,6 +14,10 @@
         {
             "type": "neoforge:mod_loaded",
             "modid": "frightsdelight:cookie_spidereye"
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "frightsdelight:cookie_spidereye"
         }
     ]
 }

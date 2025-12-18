@@ -1,0 +1,26 @@
+{
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "tag": "c:bowl"
+        },
+        {
+            "type": "fluid_tag",
+            "amount": 333,
+            "fluid_tag": "c:pork_stew"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:pork_stew_bowl"
+            }
+        }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "pork_stew_bowl"
+        }
+    ]
+}

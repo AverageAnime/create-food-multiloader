@@ -25,5 +25,11 @@
                 "chance": 0.25
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "boiled_egg_peeled"
+        }
     ]
 }

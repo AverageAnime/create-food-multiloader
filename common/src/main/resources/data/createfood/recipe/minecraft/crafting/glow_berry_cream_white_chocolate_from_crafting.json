@@ -5,10 +5,16 @@
             "tag": "c:hollow_white_chocolate"
         },
         {
-            "tag": "c:glow_berry_cream_frosting_piping_bag"
+            "tag": "c:glow_berry_cream_frosting"
         }
     ],
     "result": {
         "id": "createfood:glow_berry_cream_white_chocolate"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "glow_berry_cream_white_chocolate"
+        }
+    ]
 }

@@ -1,5 +1,10 @@
 {
-    "neoforge:conditions": [],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "farmersdelight:pasta_with_meatballs"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {

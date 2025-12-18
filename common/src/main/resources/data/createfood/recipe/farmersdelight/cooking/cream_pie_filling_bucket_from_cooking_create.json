@@ -22,5 +22,11 @@
     "result": {
         "count": 1,
         "id": "createfood:cream_pie_filling_bucket"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "cream_pie_filling_bucket"
+        }
+    ]
 }

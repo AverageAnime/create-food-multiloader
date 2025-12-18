@@ -24,5 +24,11 @@
                 "id": "createfood:lime_gelatin_mix_bucket"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "lime_gelatin_mix_bucket"
+        }
     ]
 }

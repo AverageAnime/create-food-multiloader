@@ -1,5 +1,10 @@
 {
-    "neoforge:conditions": [],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "beef_bun_cheese_onion_lettuce"
+        }
+    ],
     "type": "create:deploying",
     "ingredients": [
         {

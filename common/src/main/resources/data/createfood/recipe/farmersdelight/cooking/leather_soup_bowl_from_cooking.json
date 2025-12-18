@@ -1,0 +1,33 @@
+{
+    "type": "farmersdelight:cooking",
+    "experience": 0.1,
+    "container": {
+        "count": 1,
+        "id": "minecraft:bowl"
+    },
+    "ingredients": [
+        {
+            "item": "minecraft:water_bucket"
+        },
+        {
+            "tag": "c:foods/vegetable"
+        },
+        {
+            "item": "minecraft:leather"
+        },
+        {
+            "item": "minecraft:leather"
+        }
+    ],
+    "recipe_book_tab": "drinks",
+    "result": {
+        "count": 3,
+        "id": "createfood:leather_soup_bowl"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "leather_soup_bowl"
+        }
+    ]
+}

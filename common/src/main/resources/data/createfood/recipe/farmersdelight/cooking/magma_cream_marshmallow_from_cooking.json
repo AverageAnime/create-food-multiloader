@@ -24,6 +24,10 @@
                 "type": "neoforge:tag_empty",
                 "tag": "c:magma_gelatin"
             }
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "magma_cream_marshmallow"
         }
     ]
 }

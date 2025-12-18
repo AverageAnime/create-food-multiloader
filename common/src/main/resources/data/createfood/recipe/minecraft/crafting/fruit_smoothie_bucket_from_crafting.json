@@ -19,5 +19,11 @@
     ],
     "result": {
         "id": "createfood:fruit_smoothie_bucket"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "fruit_smoothie_bucket"
+        }
+    ]
 }

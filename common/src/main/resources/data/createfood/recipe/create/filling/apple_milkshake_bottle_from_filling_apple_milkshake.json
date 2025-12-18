@@ -16,5 +16,11 @@
                 "id": "createfood:apple_milkshake_bottle"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "apple_milkshake_bottle"
+        }
     ]
 }

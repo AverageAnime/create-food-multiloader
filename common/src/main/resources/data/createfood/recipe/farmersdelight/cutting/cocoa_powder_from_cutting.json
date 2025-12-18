@@ -15,5 +15,11 @@
                 "id": "createfood:cocoa_powder"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "cocoa_powder"
+        }
     ]
 }

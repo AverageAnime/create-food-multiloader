@@ -15,5 +15,11 @@
             "amount": 250,
             "id": "createfood:ube_cream_frosting"
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "ube_cream_frosting"
+        }
     ]
 }

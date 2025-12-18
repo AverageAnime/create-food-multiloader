@@ -1,5 +1,10 @@
 {
-    "neoforge:conditions": [],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "rabbit_jerky"
+        }
+    ],
     "type": "create:compacting",
     "heat_requirement": "heated",
     "ingredients": [

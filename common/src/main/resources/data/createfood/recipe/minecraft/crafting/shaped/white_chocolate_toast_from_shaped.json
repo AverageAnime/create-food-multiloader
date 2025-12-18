@@ -14,5 +14,11 @@
     },
     "result": {
         "id": "createfood:white_chocolate_toast"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "white_chocolate_toast"
+        }
+    ]
 }

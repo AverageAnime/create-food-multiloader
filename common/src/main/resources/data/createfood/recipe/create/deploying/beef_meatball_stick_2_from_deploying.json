@@ -14,5 +14,11 @@
                 "id": "createfood:beef_meatball_stick_2"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "beef_meatball_stick_2"
+        }
     ]
 }

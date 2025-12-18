@@ -13,5 +13,11 @@
     ],
     "result": {
         "id": "createfood:mutton_sandwich"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "mutton_sandwich"
+        }
+    ]
 }

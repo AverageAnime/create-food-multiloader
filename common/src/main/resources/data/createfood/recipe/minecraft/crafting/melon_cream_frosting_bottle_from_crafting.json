@@ -20,5 +20,11 @@
     "result": {
         "count": 4,
         "id": "createfood:melon_cream_frosting_bottle"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "melon_cream_frosting_bottle"
+        }
+    ]
 }

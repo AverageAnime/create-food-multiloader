@@ -25,5 +25,11 @@
             "amount": 1000,
             "id": "createfood:light_blue_gelatin_mix"
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "light_blue_gelatin_mix"
+        }
     ]
 }

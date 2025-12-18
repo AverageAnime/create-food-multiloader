@@ -13,5 +13,11 @@
     ],
     "result": {
         "id": "createfood:strider_meatball_stick_2"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "strider_meatball_stick_2"
+        }
+    ]
 }

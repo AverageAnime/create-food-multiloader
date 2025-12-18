@@ -13,5 +13,11 @@
     ],
     "result": {
         "id": "createfood:molasses_bucket"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "molasses_bucket"
+        }
+    ]
 }

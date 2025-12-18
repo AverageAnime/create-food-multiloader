@@ -13,5 +13,11 @@
     ],
     "result": {
         "id": "createfood:black_gelatin_mix_bucket"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "black_gelatin_mix_bucket"
+        }
+    ]
 }

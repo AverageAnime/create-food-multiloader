@@ -15,5 +15,11 @@
                 "id": "createfood:sugar_dough_small"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "sugar_dough_small"
+        }
     ]
 }

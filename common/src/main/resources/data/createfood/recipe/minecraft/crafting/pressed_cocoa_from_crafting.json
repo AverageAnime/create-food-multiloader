@@ -7,5 +7,11 @@
     ],
     "result": {
         "id": "createfood:pressed_cocoa"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "pressed_cocoa"
+        }
+    ]
 }

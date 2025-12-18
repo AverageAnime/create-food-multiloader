@@ -13,5 +13,11 @@
     ],
     "result": {
         "id": "createfood:pasta_plate_endermite_meatballs_tomato_sauce"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "pasta_plate_endermite_meatballs_tomato_sauce"
+        }
+    ]
 }

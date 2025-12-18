@@ -3,6 +3,10 @@
         {
             "type": "neoforge:mod_loaded",
             "modid": "culturaldelights"
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "culturaldelights:eggplant_burger"
         }
     ],
     "type": "minecraft:crafting_shaped",

@@ -1,0 +1,26 @@
+{
+    "type": "create:compacting",
+    "heat_requirement": "heated",
+    "ingredients": [
+        {
+            "item": "minecraft:chorus_fruit"
+        },
+        {
+            "tag": "c:sweet_dough"
+        }
+    ],
+    "results": [
+        {
+            "count": 8,
+            "item": {
+                "id": "createfood:chorus_fruit_cookie"
+            }
+        }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "chorus_fruit_cookie"
+        }
+    ]
+}

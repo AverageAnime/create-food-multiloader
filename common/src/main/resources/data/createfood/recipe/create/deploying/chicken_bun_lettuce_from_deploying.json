@@ -14,5 +14,11 @@
                 "id": "createfood:chicken_bun_lettuce"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "chicken_bun_lettuce"
+        }
     ]
 }

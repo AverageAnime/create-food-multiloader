@@ -16,5 +16,11 @@
                 "id": "createfood:blackstrap_molasses_bottle"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "blackstrap_molasses_bottle"
+        }
     ]
 }

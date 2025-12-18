@@ -1,0 +1,32 @@
+{
+    "type": "create:mixing",
+    "ingredients": [
+        {
+            "type": "fluid_tag",
+            "amount": 1000,
+            "fluid_tag": "c:pork_stew"
+        },
+        {
+            "item": "minecraft:bowl"
+        },
+        {
+            "item": "minecraft:bowl"
+        },
+        {
+            "item": "minecraft:bowl"
+        }
+    ],
+    "results": [
+      {
+        "item": {
+          "id": "createfood:pork_stew_bowl"
+        }
+      }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "pork_stew_bowl"
+        }
+    ]
+}

@@ -9,5 +9,11 @@
     "result": {
         "count": 1,
         "id": "createfood:toast_slice"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "toast_slice"
+        }
+    ]
 }

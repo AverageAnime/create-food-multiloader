@@ -14,5 +14,11 @@
     },
     "result": {
         "id": "createfood:raw_butterscotch_chip_muffin"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "raw_butterscotch_chip_muffin"
+        }
+    ]
 }

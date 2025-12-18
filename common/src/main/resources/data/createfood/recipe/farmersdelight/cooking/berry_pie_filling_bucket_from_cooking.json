@@ -25,5 +25,11 @@
     "result": {
         "count": 1,
         "id": "createfood:berry_pie_filling_bucket"
-    }
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "berry_pie_filling_bucket"
+        }
+    ]
 }

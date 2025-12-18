@@ -1,5 +1,10 @@
 {
-    "neoforge:conditions": [],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "pasta_plate_fish_tomato_sauce"
+        }
+    ],
     "type": "create:deploying",
     "ingredients": [
         {
@@ -14,6 +19,11 @@
             "item": {
                 "id": "createfood:pasta_plate_fish_tomato_sauce"
             }
+        },
+      {
+        "item": {
+          "id": "minecraft:bowl"
         }
+      }
     ]
 }

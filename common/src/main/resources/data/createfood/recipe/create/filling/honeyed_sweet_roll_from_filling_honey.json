@@ -16,5 +16,11 @@
                 "id": "createfood:honeyed_sweet_roll"
             }
         }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "honeyed_sweet_roll"
+        }
     ]
 }

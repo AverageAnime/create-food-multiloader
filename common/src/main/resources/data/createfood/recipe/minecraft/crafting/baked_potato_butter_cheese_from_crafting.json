@@ -1,5 +1,10 @@
 {
-    "neoforge:conditions": [],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "baked_potato_butter_cheese"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {
