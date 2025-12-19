@@ -1,3 +1,13 @@
+### *** 2.0.0a ***
+
+#### Changes:
+* Add missing loot tables for block items.
+
+#### Fixes:
+* Fix crash on servers. [(#2)](https://github.com/AverageAnime/create-food-multiloader/issues/2)
+* Pumpkin pie fixes.
+* Fix filled piping bags crafting recipes.
+
 ### *** 2.0.0 ***
 
 #### Note: Repository has [moved](https://github.com/AverageAnime/create-food-multiloader). Includes `1.21.1-neoforge`, `1.20.1-fabric`, and `1.20.1-forge`.
