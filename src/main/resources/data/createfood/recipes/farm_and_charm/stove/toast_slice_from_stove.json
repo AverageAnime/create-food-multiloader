@@ -26,7 +26,9 @@
             "tag": "c:bread_slice"
         }
     ],
-    "item": "createfood:toast_slice",
-    "count": 3,
-    "experience": 0.15
+    "result": {
+        "item": "createfood:toast_slice",
+        "count": 3,
+        "experience": 0.15
+    }
 }

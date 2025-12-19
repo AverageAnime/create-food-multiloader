@@ -26,7 +26,9 @@
             "tag": "c:chocolate_bottle"
         }
     ],
-    "item": "createfood:hot_chocolate_bottle",
-    "count": 3,
-    "experience": 0.15
+    "result": {
+        "item": "createfood:hot_chocolate_bottle",
+        "count": 3,
+        "experience": 0.15
+    }
 }

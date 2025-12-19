@@ -25,7 +25,9 @@
             "tag": "c:raw_apple_pie"
         }
     ],
-    "item": "farmersdelight:apple_pie",
-    "count": 3,
-    "experience": 1.5
+    "result": {
+        "item": "farmersdelight:apple_pie",
+        "count": 3,
+        "experience": 1.5
+    }
 }

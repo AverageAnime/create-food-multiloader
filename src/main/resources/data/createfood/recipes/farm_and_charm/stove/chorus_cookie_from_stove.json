@@ -27,7 +27,9 @@
             "tag": "c:raw_chorus_cookie"
         }
     ],
-    "item": "ends_delight:chorus_cookie",
-    "count": 3,
-    "experience": 0.45
+    "result": {
+        "item": "ends_delight:chorus_cookie",
+        "count": 3,
+        "experience": 0.45
+    }
 }

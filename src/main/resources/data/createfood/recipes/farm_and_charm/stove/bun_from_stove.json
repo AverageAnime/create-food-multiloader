@@ -26,7 +26,9 @@
             "tag": "c:salt_dough"
         }
     ],
-    "item": "createfood:bun",
-    "count": 3,
-    "experience": 0.1
+    "result": {
+        "item": "createfood:bun",
+        "count": 3,
+        "experience": 0.1
+    }
 }

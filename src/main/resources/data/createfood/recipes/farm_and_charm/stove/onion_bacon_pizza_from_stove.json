@@ -26,7 +26,9 @@
             "tag": "c:raw_onion_bacon_pizza"
         }
     ],
-    "item": "createfood:onion_bacon_pizza",
-    "count": 3,
-    "experience": 0.4
+    "result": {
+        "item": "createfood:onion_bacon_pizza",
+        "count": 3,
+        "experience": 0.4
+    }
 }

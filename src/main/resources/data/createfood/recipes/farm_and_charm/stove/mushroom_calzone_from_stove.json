@@ -26,7 +26,9 @@
             "tag": "c:raw_mushroom_calzone"
         }
     ],
-    "item": "createfood:mushroom_calzone",
-    "count": 3,
-    "experience": 0.25
+    "result": {
+        "item": "createfood:mushroom_calzone",
+        "count": 3,
+        "experience": 0.25
+    }
 }

@@ -25,7 +25,9 @@
             "item": "minecraft:cocoa_beans"
         }
     ],
-    "item": "createfood:cacao_nibs",
-    "count": 3,
-    "experience": 0.35
+    "result": {
+        "item": "createfood:cacao_nibs",
+        "count": 3,
+        "experience": 0.35
+    }
 }

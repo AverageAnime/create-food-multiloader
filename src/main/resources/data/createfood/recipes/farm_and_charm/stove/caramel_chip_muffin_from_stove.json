@@ -26,7 +26,9 @@
             "tag": "c:raw_caramel_chip_muffin"
         }
     ],
-    "item": "createfood:caramel_chip_muffin",
-    "count": 3,
-    "experience": 0.25
+    "result": {
+        "item": "createfood:caramel_chip_muffin",
+        "count": 3,
+        "experience": 0.25
+    }
 }

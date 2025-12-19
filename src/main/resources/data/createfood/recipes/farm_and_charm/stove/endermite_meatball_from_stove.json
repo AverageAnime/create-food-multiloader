@@ -26,7 +26,9 @@
             "tag": "c:raw_endermite_meatball"
         }
     ],
-    "item": "createfood:endermite_meatball",
-    "count": 3,
-    "experience": 0.15
+    "result": {
+        "item": "createfood:endermite_meatball",
+        "count": 3,
+        "experience": 0.15
+    }
 }

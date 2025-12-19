@@ -26,7 +26,9 @@
             "tag": "c:raw_chocolate_cookie"
         }
     ],
-    "item": "createfood:chocolate_cookie",
-    "count": 3,
-    "experience": 0.45
+    "result": {
+        "item": "createfood:chocolate_cookie",
+        "count": 3,
+        "experience": 0.45
+    }
 }

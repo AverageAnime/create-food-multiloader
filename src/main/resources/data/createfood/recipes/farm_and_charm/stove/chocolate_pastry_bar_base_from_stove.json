@@ -26,7 +26,9 @@
             "tag": "c:raw_chocolate_pastry_bar_base"
         }
     ],
-    "item": "createfood:chocolate_pastry_bar_base",
-    "count": 3,
-    "experience": 0.15
+    "result": {
+        "item": "createfood:chocolate_pastry_bar_base",
+        "count": 3,
+        "experience": 0.15
+    }
 }

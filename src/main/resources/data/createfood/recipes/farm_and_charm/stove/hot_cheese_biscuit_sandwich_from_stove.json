@@ -26,7 +26,9 @@
             "tag": "c:cheese_biscuit_sandwich"
         }
     ],
-    "item": "createfood:hot_cheese_biscuit_sandwich",
-    "count": 3,
-    "experience": 0.15
+    "result": {
+        "item": "createfood:hot_cheese_biscuit_sandwich",
+        "count": 3,
+        "experience": 0.15
+    }
 }

@@ -26,7 +26,9 @@
             "tag": "c:raw_toffee_chips_chocolate_cookie"
         }
     ],
-    "item": "createfood:toffee_chips_chocolate_cookie",
-    "count": 3,
-    "experience": 0.45
+    "result": {
+        "item": "createfood:toffee_chips_chocolate_cookie",
+        "count": 3,
+        "experience": 0.45
+    }
 }

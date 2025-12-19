@@ -26,7 +26,9 @@
             "tag": "c:raw_chorus_fruit_cheesecake"
         }
     ],
-    "item": "createfood:chorus_fruit_cheesecake",
-    "count": 3,
-    "experience": 1.5
+    "result": {
+        "item": "createfood:chorus_fruit_cheesecake",
+        "count": 3,
+        "experience": 1.5
+    }
 }

@@ -25,7 +25,9 @@
             "tag": "c:raw_pie_crust"
         }
     ],
-    "item": "farmersdelight:pie_crust",
-    "count": 3,
-    "experience": 0.4
+    "result": {
+        "item": "farmersdelight:pie_crust",
+        "count": 3,
+        "experience": 0.4
+    }
 }

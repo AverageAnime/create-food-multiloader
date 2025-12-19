@@ -25,7 +25,9 @@
             "tag": "c:raw_sweet_berry_cookie"
         }
     ],
-    "item": "farmersdelight:sweet_berry_cookie",
-    "count": 3,
-    "experience": 0.45
+    "result": {
+        "item": "farmersdelight:sweet_berry_cookie",
+        "count": 3,
+        "experience": 0.45
+    }
 }
