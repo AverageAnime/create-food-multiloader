@@ -1,6 +1,7 @@
 ### *** 1.1.12 ***
 
 #### General:
+* Fix recipe errors. [(#81)](https://github.com/AverageAnime/create-food/issues/81)
 * Fix missing melon jam filling recipe. [(#85)](https://github.com/AverageAnime/create-food/issues/85)
 * Add upright on belt tags. [(#86)](https://github.com/AverageAnime/create-food/issues/86)
 * Fix cloth filter recipe. [(#95)](https://github.com/AverageAnime/create-food/issues/95)
