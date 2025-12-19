@@ -17,7 +17,9 @@
             "tag": "forge:raw_strider_meatball"
         }
     ],
-    "item": "createfood:strider_meatball",
-    "count": 3,
-    "experience": 0.15
+    "result": {
+        "item": "createfood:strider_meatball",
+        "count": 3,
+        "experience": 0.15
+    }
 }

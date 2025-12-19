@@ -17,7 +17,9 @@
             "tag": "forge:raw_cinnamon_sweet_roll_base"
         }
     ],
-    "item": "createfood:cinnamon_sweet_roll_base",
-    "count": 3,
-    "experience": 0.25
+    "result": {
+        "item": "createfood:cinnamon_sweet_roll_base",
+        "count": 3,
+        "experience": 0.25
+    }
 }

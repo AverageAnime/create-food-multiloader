@@ -17,7 +17,9 @@
             "tag": "forge:raw_bacon_pizza"
         }
     ],
-    "item": "createfood:bacon_pizza",
-    "count": 3,
-    "experience": 3
+    "result": {
+        "item": "createfood:bacon_pizza",
+        "count": 3,
+        "experience": 3
+    }
 }

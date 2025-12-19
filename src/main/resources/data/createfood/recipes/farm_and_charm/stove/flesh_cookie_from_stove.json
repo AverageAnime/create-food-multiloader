@@ -17,7 +17,9 @@
             "tag": "forge:raw_flesh_cookie"
         }
     ],
-    "item": "frightsdelight:cookie_flesh",
-    "count": 3,
-    "experience": 0.45
+    "result": {
+        "item": "frightsdelight:cookie_flesh",
+        "count": 3,
+        "experience": 0.45
+    }
 }

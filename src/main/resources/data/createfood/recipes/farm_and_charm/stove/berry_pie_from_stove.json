@@ -17,7 +17,9 @@
             "tag": "forge:raw_berry_pie"
         }
     ],
-    "item": "createfood:berry_pie",
-    "count": 3,
-    "experience": 1.5
+    "result": {
+        "item": "createfood:berry_pie",
+        "count": 3,
+        "experience": 1.5
+    }
 }

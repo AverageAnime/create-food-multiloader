@@ -17,7 +17,9 @@
             "tag": "forge:raw_chocolate_pie_graham_cracker"
         }
     ],
-    "item": "createfood:chocolate_pie_graham_cracker",
-    "count": 3,
-    "experience": 1.5
+    "result": {
+        "item": "createfood:chocolate_pie_graham_cracker",
+        "count": 3,
+        "experience": 1.5
+    }
 }

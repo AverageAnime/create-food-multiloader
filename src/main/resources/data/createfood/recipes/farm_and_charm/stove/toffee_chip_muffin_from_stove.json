@@ -17,7 +17,9 @@
             "tag": "forge:raw_toffee_chip_muffin"
         }
     ],
-    "item": "createfood:toffee_chip_muffin",
-    "count": 3,
-    "experience": 0.25
+    "result": {
+        "item": "createfood:toffee_chip_muffin",
+        "count": 3,
+        "experience": 0.25
+    }
 }

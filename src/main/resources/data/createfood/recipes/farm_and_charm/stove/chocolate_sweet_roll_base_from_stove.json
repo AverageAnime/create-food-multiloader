@@ -17,7 +17,9 @@
             "tag": "forge:raw_chocolate_sweet_roll_base"
         }
     ],
-    "item": "createfood:chocolate_sweet_roll_base",
-    "count": 3,
-    "experience": 0.3
+    "result": {
+        "item": "createfood:chocolate_sweet_roll_base",
+        "count": 3,
+        "experience": 0.3
+    }
 }

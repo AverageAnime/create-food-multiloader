@@ -17,7 +17,9 @@
             "tag": "forge:raw_cake_base"
         }
     ],
-    "item": "createfood:cake_base",
-    "count": 3,
-    "experience": 0.5
+    "result": {
+        "item": "createfood:cake_base",
+        "count": 3,
+        "experience": 0.5
+    }
 }

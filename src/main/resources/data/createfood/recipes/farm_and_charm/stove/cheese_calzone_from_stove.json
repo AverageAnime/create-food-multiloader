@@ -17,7 +17,9 @@
             "tag": "forge:raw_cheese_calzone"
         }
     ],
-    "item": "createfood:cheese_calzone",
-    "count": 3,
-    "experience": 0.25
+    "result": {
+        "item": "createfood:cheese_calzone",
+        "count": 3,
+        "experience": 0.25
+    }
 }

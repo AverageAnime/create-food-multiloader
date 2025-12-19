@@ -17,7 +17,9 @@
             "tag": "forge:raw_bacon_calzone"
         }
     ],
-    "item": "createfood:bacon_calzone",
-    "count": 3,
-    "experience": 0.25
+    "result": {
+        "item": "createfood:bacon_calzone",
+        "count": 3,
+        "experience": 0.25
+    }
 }
