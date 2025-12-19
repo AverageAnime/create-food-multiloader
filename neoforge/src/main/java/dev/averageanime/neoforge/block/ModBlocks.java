@@ -43,8 +43,6 @@ public class ModBlocks {
 
     public static final DeferredBlock<Block> PUMPKIN_PIE_BLOCK = BLOCKS.register("pumpkin_pie_block",
             () -> new ModPieBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), ModItems.PUMPKIN_PIE_SLICE));
-    public static final DeferredItem<Item> PUMPKIN_PIE_ITEM = ITEMS.register("pumpkin_pie_block",
-            () -> new BlockItem(ModBlocks.PUMPKIN_PIE_BLOCK.get(), new Item.Properties()));
 
     public static final DeferredBlock<Block> GYRO_MEAT_BLOCK = BLOCKS.register("gyro_meat_block",
             () -> new GyroMeatBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE)));

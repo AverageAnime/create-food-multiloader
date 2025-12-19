@@ -12,6 +12,10 @@ import dev.averageanime.neoforge.fluid.ModFluids;
 import dev.averageanime.neoforge.item.ModItems;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.Item;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -22,6 +26,7 @@ import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
+import net.neoforged.neoforge.registries.RegisterEvent;
 import org.slf4j.Logger;
 import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
 import java.util.function.Supplier;
@@ -40,8 +45,10 @@ public class CreateFood {
                 "createfood-client.toml"
         );
 
-        modContainer.registerExtensionPoint(IConfigScreenFactory.class,
-                (Supplier<IConfigScreenFactory>) ConfigScreen::new);
+        modEventBus.addListener((FMLClientSetupEvent event) -> {
+            IConfigScreenFactory factory = new ConfigScreen();
+            modContainer.registerExtensionPoint(IConfigScreenFactory.class, factory);
+        });
 
         ModConditions.register(modEventBus);
 

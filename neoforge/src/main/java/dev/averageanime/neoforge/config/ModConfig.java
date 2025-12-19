@@ -91,7 +91,11 @@ public class ModConfig {
     }
 
     public static boolean isItemEnabled(String itemId) {
-        List<? extends String> disabledItems = DISABLE_ITEMS.get();
-        return !disabledItems.contains(itemId);
+        try {
+            List<? extends String> disabledItems = DISABLE_ITEMS.get();
+            return !disabledItems.contains(itemId);
+        } catch (IllegalStateException e) {
+            return true;
+        }
     }
 }
