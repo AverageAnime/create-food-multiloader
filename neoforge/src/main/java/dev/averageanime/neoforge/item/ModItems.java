@@ -315,7 +315,7 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
 
     public static final DeferredItem<Item> CHORUS_FRUIT_CREAM_FROSTING_PIPING_BAG = ITEMS.register("chorus_fruit_cream_frosting_piping_bag",
-            () -> new Item(new Item.Properties().stacksTo(1).craftRemainder(PIPING_BAG.get())) {
+            () -> new Item(new Item.Properties().stacksTo(2).craftRemainder(PIPING_BAG.get())) {
                 @Override
                 public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> components, TooltipFlag flag) {
                     super.appendHoverText(stack, context, components, flag);
@@ -324,7 +324,7 @@ public class ModItems {
             });
 
     public static final DeferredItem<Item> MELON_CREAM_FROSTING_PIPING_BAG = ITEMS.register("melon_cream_frosting_piping_bag",
-            () -> new Item(new Item.Properties().stacksTo(1).craftRemainder(PIPING_BAG.get())) {
+            () -> new Item(new Item.Properties().stacksTo(2).craftRemainder(PIPING_BAG.get())) {
                 @Override
                 public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> components, TooltipFlag flag) {
                     super.appendHoverText(stack, context, components, flag);
@@ -333,7 +333,7 @@ public class ModItems {
             });
 
     public static final DeferredItem<Item> APPLE_CREAM_FROSTING_PIPING_BAG = ITEMS.register("apple_cream_frosting_piping_bag",
-            () -> new Item(new Item.Properties().stacksTo(1).craftRemainder(PIPING_BAG.get())) {
+            () -> new Item(new Item.Properties().stacksTo(2).craftRemainder(PIPING_BAG.get())) {
                 @Override
                 public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> components, TooltipFlag flag) {
                     super.appendHoverText(stack, context, components, flag);
@@ -342,7 +342,7 @@ public class ModItems {
             });
 
     public static final DeferredItem<Item> GLOW_BERRY_CREAM_FROSTING_PIPING_BAG = ITEMS.register("glow_berry_cream_frosting_piping_bag",
-            () -> new Item(new Item.Properties().stacksTo(1).craftRemainder(PIPING_BAG.get())) {
+            () -> new Item(new Item.Properties().stacksTo(2).craftRemainder(PIPING_BAG.get())) {
                 @Override
                 public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> components, TooltipFlag flag) {
                     super.appendHoverText(stack, context, components, flag);
@@ -351,7 +351,7 @@ public class ModItems {
             });
 
     public static final DeferredItem<Item> UBE_CREAM_FROSTING_PIPING_BAG = ITEMS.register("ube_cream_frosting_piping_bag",
-            () -> new Item(new Item.Properties().stacksTo(1).craftRemainder(PIPING_BAG.get())) {
+            () -> new Item(new Item.Properties().stacksTo(2).craftRemainder(PIPING_BAG.get())) {
                 @Override
                 public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> components, TooltipFlag flag) {
                     super.appendHoverText(stack, context, components, flag);
@@ -360,7 +360,7 @@ public class ModItems {
             });
 
     public static final DeferredItem<Item> BERRY_CREAM_FROSTING_PIPING_BAG = ITEMS.register("berry_cream_frosting_piping_bag",
-            () -> new Item(new Item.Properties().stacksTo(1).craftRemainder(PIPING_BAG.get())) {
+            () -> new Item(new Item.Properties().stacksTo(2).craftRemainder(PIPING_BAG.get())) {
                 @Override
                 public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> components, TooltipFlag flag) {
                     super.appendHoverText(stack, context, components, flag);
@@ -369,7 +369,7 @@ public class ModItems {
             });
 
     public static final DeferredItem<Item> CHOCOLATE_CREAM_FROSTING_PIPING_BAG = ITEMS.register("chocolate_cream_frosting_piping_bag",
-            () -> new Item(new Item.Properties().stacksTo(1).craftRemainder(PIPING_BAG.get())) {
+            () -> new Item(new Item.Properties().stacksTo(2).craftRemainder(PIPING_BAG.get())) {
                 @Override
                 public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> components, TooltipFlag flag) {
                     super.appendHoverText(stack, context, components, flag);
@@ -378,7 +378,7 @@ public class ModItems {
             });
 
     public static final DeferredItem<Item> CREAM_FROSTING_PIPING_BAG = ITEMS.register("cream_frosting_piping_bag",
-            () -> new Item(new Item.Properties().stacksTo(1).craftRemainder(PIPING_BAG.get())) {
+            () -> new Item(new Item.Properties().stacksTo(2).craftRemainder(PIPING_BAG.get())) {
                 @Override
                 public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> components, TooltipFlag flag) {
                     super.appendHoverText(stack, context, components, flag);

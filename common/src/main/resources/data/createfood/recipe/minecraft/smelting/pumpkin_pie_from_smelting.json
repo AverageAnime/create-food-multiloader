@@ -9,11 +9,5 @@
     "result": {
         "count": 1,
         "id": "minecraft:pumpkin_pie"
-    },
-    "neoforge:conditions": [
-        {
-            "type": "createfood:enabled",
-            "id": "minecraft:pumpkin_pie"
-        }
-    ]
+    }
 }

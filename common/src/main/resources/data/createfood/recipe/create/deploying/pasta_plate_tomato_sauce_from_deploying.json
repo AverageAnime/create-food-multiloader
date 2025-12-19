@@ -1,29 +1,29 @@
 {
-    "type": "create:deploying",
-    "ingredients": [
-        {
-            "tag": "c:pasta_plate"
-        },
-        {
-            "item": "farmersdelight:tomato_sauce"
-        }
-    ],
-    "results": [
-        {
-            "item": {
-                "id": "createfood:pasta_plate_tomato_sauce"
-            }
-        }
-    ],
-    "neoforge:conditions": [
-        {
-            "type": "createfood:enabled",
-            "id": "pasta_plate_tomato_sauce"
-        },
-      {
-        "item": {
-          "id": "minecraft:bowl"
-        }
+  "type": "create:deploying",
+  "ingredients": [
+    {
+      "tag": "c:pasta_plate"
+    },
+    {
+      "item": "farmersdelight:tomato_sauce"
+    }
+  ],
+  "results": [
+    {
+      "item": {
+        "id": "createfood:pasta_plate_tomato_sauce"
       }
-    ]
+    },
+    {
+      "item": {
+        "id": "minecraft:bowl"
+      }
+    }
+  ],
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "pasta_plate_tomato_sauce"
+    }
+  ]
 }
