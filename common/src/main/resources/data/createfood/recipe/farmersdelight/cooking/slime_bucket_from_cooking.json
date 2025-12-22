@@ -3,7 +3,7 @@
     "experience": 0.1,
     "ingredients": [
         {
-            "tag": "c:crops/grains"
+            "tag": "c:crops/grain"
         },
         {
             "tag": "c:gelatin"
