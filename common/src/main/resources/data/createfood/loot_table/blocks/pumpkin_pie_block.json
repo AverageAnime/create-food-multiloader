@@ -22,7 +22,7 @@
                 },
                 {
                     "condition": "minecraft:block_state_property",
-                    "block": "minecraft:pumpkin_pie",
+                    "block": "createfood:pumpkin_pie_block",
                     "properties": {
                         "bites": "0"
                     }
@@ -47,7 +47,7 @@
                 },
                 {
                     "condition": "minecraft:block_state_property",
-                    "block": "minecraft:pumpkin_pie",
+                    "block": "createfood:pumpkin_pie_block",
                     "properties": {
                         "bites": "0"
                     }
@@ -72,7 +72,7 @@
                 },
                 {
                     "condition": "minecraft:block_state_property",
-                    "block": "minecraft:pumpkin_pie",
+                    "block": "createfood:pumpkin_pie_block",
                     "properties": {
                         "bites": "1"
                     }
@@ -97,7 +97,7 @@
                 },
                 {
                     "condition": "minecraft:block_state_property",
-                    "block": "minecraft:pumpkin_pie",
+                    "block": "createfood:pumpkin_pie_block",
                     "properties": {
                         "bites": "2"
                     }
@@ -119,7 +119,7 @@
                 },
                 {
                     "condition": "minecraft:block_state_property",
-                    "block": "minecraft:pumpkin_pie",
+                    "block": "createfood:pumpkin_pie_block",
                     "properties": {
                         "bites": "3"
                     }
