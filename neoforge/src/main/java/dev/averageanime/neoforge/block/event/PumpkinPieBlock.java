@@ -1,11 +1,10 @@
-package dev.averageanime.neoforge.block;
+package dev.averageanime.neoforge.block.event;
 
 import dev.averageanime.CommonClass;
 import dev.averageanime.neoforge.block.ModBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
-import net.minecraft.world.InteractionResult;
 import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.context.UseOnContext;
@@ -16,7 +15,7 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.entity.player.UseItemOnBlockEvent;
 
 @EventBusSubscriber(modid = CommonClass.ID, bus = EventBusSubscriber.Bus.GAME)
-public class CustomBlock {
+public class PumpkinPieBlock {
 
     @SubscribeEvent
     public static void onUseItemOnBlock(UseItemOnBlockEvent event) {

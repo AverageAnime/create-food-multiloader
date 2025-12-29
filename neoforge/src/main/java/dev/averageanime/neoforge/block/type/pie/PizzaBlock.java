@@ -1,4 +1,4 @@
-package dev.averageanime.neoforge.block.type;
+package dev.averageanime.neoforge.block.type.pie;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;

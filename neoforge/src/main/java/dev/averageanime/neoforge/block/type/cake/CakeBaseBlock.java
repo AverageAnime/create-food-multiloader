@@ -1,4 +1,4 @@
-package dev.averageanime.neoforge.block.type;
+package dev.averageanime.neoforge.block.type.cake;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.item.context.BlockPlaceContext;
@@ -10,17 +10,18 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import org.jetbrains.annotations.NotNull;
 
-public class RawPizzaBlock extends Block {
+public class CakeBaseBlock extends Block {
 
     public static final DirectionProperty FACING;
     protected static VoxelShape SHAPE;
 
-    public RawPizzaBlock(Properties properties) {
+    public CakeBaseBlock(Properties properties) {
         super(properties);
     }
 
-    public VoxelShape getShape(BlockState State, BlockGetter level, BlockPos pos, CollisionContext context) {
+    public @NotNull VoxelShape getShape(@NotNull BlockState State, @NotNull BlockGetter level, @NotNull BlockPos pos, @NotNull CollisionContext context) {
         return SHAPE;
     }
 
@@ -35,6 +36,6 @@ public class RawPizzaBlock extends Block {
 
     static {
         FACING = BlockStateProperties.HORIZONTAL_FACING;
-        SHAPE = Block.box(2.0D, 0.0D, 2.0D, 14.0D, 2.0D, 14.0D);
+        SHAPE = Block.box(1.0D, 0.0D, 1.0D, 15.0D, 8.0D, 15.0D);
         }
 }

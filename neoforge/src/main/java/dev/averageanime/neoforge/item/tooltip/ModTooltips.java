@@ -16,7 +16,7 @@ import java.util.List;
 import java.util.Map;
 
 @EventBusSubscriber(modid = CommonClass.ID, bus = EventBusSubscriber.Bus.GAME, value = Dist.CLIENT)
-public class CustomTooltips {
+public class ModTooltips {
 
     private static final String TOOLTIP_PREFIX = "tooltip.createfood.";
     private static final String TOOLTIP_SUFFIX = "_ingredient";

@@ -1,4 +1,4 @@
-package dev.averageanime.neoforge.block.type;
+package dev.averageanime.neoforge.block.type.cake;
 
 import dev.averageanime.neoforge.item.ModItems;
 import net.minecraft.core.BlockPos;

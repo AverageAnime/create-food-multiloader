@@ -1,12 +1,8 @@
 package dev.averageanime.neoforge.fluid;
 
 import dev.averageanime.CommonClass;
-import dev.averageanime.neoforge.fluid.builder.CustomFluid;
-import dev.averageanime.neoforge.fluid.builder.CustomFluidType;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.world.level.material.Fluid;
 import net.neoforged.bus.api.IEventBus;
-import net.neoforged.neoforge.fluids.FluidType;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.neoforged.neoforge.registries.NeoForgeRegistries;
 
@@ -15,194 +11,194 @@ import static dev.averageanime.neoforge.CreateFood.LOGGER;
 @SuppressWarnings("unused")
 public class ModFluids {
 
-    public static final DeferredRegister<Fluid> FLUIDS =
+    public static final DeferredRegister<net.minecraft.world.level.material.Fluid> FLUIDS =
             DeferredRegister.create(Registries.FLUID, CommonClass.ID);
-    public static final DeferredRegister<FluidType> FLUID_TYPES =
+    public static final DeferredRegister<net.neoforged.neoforge.fluids.FluidType> FLUID_TYPES =
             DeferredRegister.create(NeoForgeRegistries.FLUID_TYPES, CommonClass.ID);
 
-    public static final CustomFluidType PORK_STEW_FLUID = new CustomFluid("pork_stew").build();
+    public static final FluidEntry.FluidType PORK_STEW_FLUID = new FluidEntry("pork_stew").build();
 
-    public static final CustomFluidType MUTTON_STEW_FLUID = new CustomFluid("mutton_stew").build();
+    public static final FluidEntry.FluidType MUTTON_STEW_FLUID = new FluidEntry("mutton_stew").build();
 
-    public static final CustomFluidType LEATHER_SOUP_FLUID = new CustomFluid("leather_soup").build();
+    public static final FluidEntry.FluidType LEATHER_SOUP_FLUID = new FluidEntry("leather_soup").build();
 
-    public static final CustomFluidType APPLE_CREAM_FROSTING_FLUID = new CustomFluid("apple_cream_frosting").build();
+    public static final FluidEntry.FluidType APPLE_CREAM_FROSTING_FLUID = new FluidEntry("apple_cream_frosting").build();
 
-    public static final CustomFluidType APPLE_ICE_CREAM_FLUID = new CustomFluid("apple_ice_cream").build();
+    public static final FluidEntry.FluidType APPLE_ICE_CREAM_FLUID = new FluidEntry("apple_ice_cream").build();
 
-    public static final CustomFluidType APPLE_JAM_FLUID = new CustomFluid("apple_jam").flow(2, 4).build();
+    public static final FluidEntry.FluidType APPLE_JAM_FLUID = new FluidEntry("apple_jam").flow(2, 4).build();
 
-    public static final CustomFluidType APPLE_JUICE_FLUID = new CustomFluid("apple_juice").flow(3, 2).build();
+    public static final FluidEntry.FluidType APPLE_JUICE_FLUID = new FluidEntry("apple_juice").flow(3, 2).build();
 
-    public static final CustomFluidType APPLE_MILKSHAKE_FLUID = new CustomFluid("apple_milkshake").flow(2, 4).build();
+    public static final FluidEntry.FluidType APPLE_MILKSHAKE_FLUID = new FluidEntry("apple_milkshake").flow(2, 4).build();
 
-    public static final CustomFluidType APPLE_PIE_FILLING_FLUID = new CustomFluid("apple_pie_filling").build();
+    public static final FluidEntry.FluidType APPLE_PIE_FILLING_FLUID = new FluidEntry("apple_pie_filling").build();
 
-    public static final CustomFluidType BERRY_CREAM_FROSTING_FLUID = new CustomFluid("berry_cream_frosting").build();
+    public static final FluidEntry.FluidType BERRY_CREAM_FROSTING_FLUID = new FluidEntry("berry_cream_frosting").build();
 
-    public static final CustomFluidType BERRY_ICE_CREAM_FLUID = new CustomFluid("berry_ice_cream").build();
+    public static final FluidEntry.FluidType BERRY_ICE_CREAM_FLUID = new FluidEntry("berry_ice_cream").build();
 
-    public static final CustomFluidType BERRY_JAM_FLUID = new CustomFluid("berry_jam").flow(2, 4).build();
+    public static final FluidEntry.FluidType BERRY_JAM_FLUID = new FluidEntry("berry_jam").flow(2, 4).build();
 
-    public static final CustomFluidType BERRY_JUICE_FLUID = new CustomFluid("berry_juice").flow(3, 2).build();
+    public static final FluidEntry.FluidType BERRY_JUICE_FLUID = new FluidEntry("berry_juice").flow(3, 2).build();
 
-    public static final CustomFluidType BERRY_MILKSHAKE_FLUID = new CustomFluid("berry_milkshake").flow(2, 4).build();
+    public static final FluidEntry.FluidType BERRY_MILKSHAKE_FLUID = new FluidEntry("berry_milkshake").flow(2, 4).build();
 
-    public static final CustomFluidType BERRY_PIE_FILLING_FLUID = new CustomFluid("berry_pie_filling").build();
+    public static final FluidEntry.FluidType BERRY_PIE_FILLING_FLUID = new FluidEntry("berry_pie_filling").build();
 
-    public static final CustomFluidType BLACK_GELATIN_MIX_FLUID = new CustomFluid("black_gelatin_mix").build();
+    public static final FluidEntry.FluidType BLACK_GELATIN_MIX_FLUID = new FluidEntry("black_gelatin_mix").build();
 
-    public static final CustomFluidType BLACKSTRAP_MOLASSES_FLUID = new CustomFluid("blackstrap_molasses").build();
+    public static final FluidEntry.FluidType BLACKSTRAP_MOLASSES_FLUID = new FluidEntry("blackstrap_molasses").build();
 
-    public static final CustomFluidType BLUE_GELATIN_MIX_FLUID = new CustomFluid("blue_gelatin_mix").build();
+    public static final FluidEntry.FluidType BLUE_GELATIN_MIX_FLUID = new FluidEntry("blue_gelatin_mix").build();
 
-    public static final CustomFluidType BROWN_GELATIN_MIX_FLUID = new CustomFluid("brown_gelatin_mix").build();
+    public static final FluidEntry.FluidType BROWN_GELATIN_MIX_FLUID = new FluidEntry("brown_gelatin_mix").build();
 
-    public static final CustomFluidType BUTTERSCOTCH_FLUID = new CustomFluid("butterscotch").build();
+    public static final FluidEntry.FluidType BUTTERSCOTCH_FLUID = new FluidEntry("butterscotch").build();
 
-    public static final CustomFluidType BUTTERSCOTCH_FUDGE_FLUID = new CustomFluid("butterscotch_fudge").build();
+    public static final FluidEntry.FluidType BUTTERSCOTCH_FUDGE_FLUID = new FluidEntry("butterscotch_fudge").build();
 
-    public static final CustomFluidType CACAO_BUTTER_FLUID = new CustomFluid("cacao_butter").build();
+    public static final FluidEntry.FluidType CACAO_BUTTER_FLUID = new FluidEntry("cacao_butter").build();
 
-    public static final CustomFluidType CACAO_MASS_FLUID = new CustomFluid("cacao_mass").build();
+    public static final FluidEntry.FluidType CACAO_MASS_FLUID = new FluidEntry("cacao_mass").build();
 
-    public static final CustomFluidType CANE_SYRUP_FLUID = new CustomFluid("cane_syrup").build();
+    public static final FluidEntry.FluidType CANE_SYRUP_FLUID = new FluidEntry("cane_syrup").build();
 
-    public static final CustomFluidType CARAMEL_FLUID = new CustomFluid("caramel").build();
+    public static final FluidEntry.FluidType CARAMEL_FLUID = new FluidEntry("caramel").build();
 
-    public static final CustomFluidType CARAMEL_FUDGE_FLUID = new CustomFluid("caramel_fudge").build();
+    public static final FluidEntry.FluidType CARAMEL_FUDGE_FLUID = new FluidEntry("caramel_fudge").build();
 
-    public static final CustomFluidType CHEESECAKE_FILLING_FLUID = new CustomFluid("cheesecake_filling").build();
+    public static final FluidEntry.FluidType CHEESECAKE_FILLING_FLUID = new FluidEntry("cheesecake_filling").build();
 
-    public static final CustomFluidType CHOCOLATE_CREAM_FROSTING_FLUID = new CustomFluid("chocolate_cream_frosting").build();
+    public static final FluidEntry.FluidType CHOCOLATE_CREAM_FROSTING_FLUID = new FluidEntry("chocolate_cream_frosting").build();
 
-    public static final CustomFluidType CHOCOLATE_FUDGE_FLUID = new CustomFluid("chocolate_fudge").build();
+    public static final FluidEntry.FluidType CHOCOLATE_FUDGE_FLUID = new FluidEntry("chocolate_fudge").build();
 
-    public static final CustomFluidType CHOCOLATE_ICE_CREAM_FLUID = new CustomFluid("chocolate_ice_cream").build();
+    public static final FluidEntry.FluidType CHOCOLATE_ICE_CREAM_FLUID = new FluidEntry("chocolate_ice_cream").build();
 
-    public static final CustomFluidType CHOCOLATE_MILK_FLUID = new CustomFluid("chocolate_milk").build();
+    public static final FluidEntry.FluidType CHOCOLATE_MILK_FLUID = new FluidEntry("chocolate_milk").build();
 
-    public static final CustomFluidType CHOCOLATE_MILKSHAKE_FLUID = new CustomFluid("chocolate_milkshake").flow(2, 4).build();
+    public static final FluidEntry.FluidType CHOCOLATE_MILKSHAKE_FLUID = new FluidEntry("chocolate_milkshake").flow(2, 4).build();
 
-    public static final CustomFluidType CHORUS_FRUIT_CREAM_FROSTING_FLUID = new CustomFluid("chorus_fruit_cream_frosting").build();
+    public static final FluidEntry.FluidType CHORUS_FRUIT_CREAM_FROSTING_FLUID = new FluidEntry("chorus_fruit_cream_frosting").build();
 
-    public static final CustomFluidType CHORUS_FRUIT_ICE_CREAM_FLUID = new CustomFluid("chorus_fruit_ice_cream").build();
+    public static final FluidEntry.FluidType CHORUS_FRUIT_ICE_CREAM_FLUID = new FluidEntry("chorus_fruit_ice_cream").build();
 
-    public static final CustomFluidType CHORUS_FRUIT_JAM_FLUID = new CustomFluid("chorus_fruit_jam").flow(2, 4).build();
+    public static final FluidEntry.FluidType CHORUS_FRUIT_JAM_FLUID = new FluidEntry("chorus_fruit_jam").flow(2, 4).build();
 
-    public static final CustomFluidType CHORUS_FRUIT_JUICE_FLUID = new CustomFluid("chorus_fruit_juice").flow(3, 2).build();
+    public static final FluidEntry.FluidType CHORUS_FRUIT_JUICE_FLUID = new FluidEntry("chorus_fruit_juice").flow(3, 2).build();
 
-    public static final CustomFluidType CHORUS_FRUIT_MILKSHAKE_FLUID = new CustomFluid("chorus_fruit_milkshake").flow(2, 4).build();
+    public static final FluidEntry.FluidType CHORUS_FRUIT_MILKSHAKE_FLUID = new FluidEntry("chorus_fruit_milkshake").flow(2, 4).build();
 
-    public static final CustomFluidType CHORUS_FRUIT_PIE_FILLING_FLUID = new CustomFluid("chorus_fruit_pie_filling").build();
+    public static final FluidEntry.FluidType CHORUS_FRUIT_PIE_FILLING_FLUID = new FluidEntry("chorus_fruit_pie_filling").build();
 
-    public static final CustomFluidType COFFEE_TOFFEE_FLUID = new CustomFluid("coffee_toffee").build();
+    public static final FluidEntry.FluidType COFFEE_TOFFEE_FLUID = new FluidEntry("coffee_toffee").build();
 
-    public static final CustomFluidType COFFEE_TOFFEE_FUDGE_FLUID = new CustomFluid("coffee_toffee_fudge").build();
+    public static final FluidEntry.FluidType COFFEE_TOFFEE_FUDGE_FLUID = new FluidEntry("coffee_toffee_fudge").build();
 
-    public static final CustomFluidType CONDENSED_MILK_FLUID = new CustomFluid("condensed_milk").build();
+    public static final FluidEntry.FluidType CONDENSED_MILK_FLUID = new FluidEntry("condensed_milk").build();
 
-    public static final CustomFluidType CREAM_CHEESE_FLUID = new CustomFluid("cream_cheese").build();
+    public static final FluidEntry.FluidType CREAM_CHEESE_FLUID = new FluidEntry("cream_cheese").build();
 
-    public static final CustomFluidType CREAM_FROSTING_FLUID = new CustomFluid("cream_frosting").build();
+    public static final FluidEntry.FluidType CREAM_FROSTING_FLUID = new FluidEntry("cream_frosting").build();
 
-    public static final CustomFluidType CREAM_PIE_FILLING_FLUID = new CustomFluid("cream_pie_filling").build();
+    public static final FluidEntry.FluidType CREAM_PIE_FILLING_FLUID = new FluidEntry("cream_pie_filling").build();
 
-    public static final CustomFluidType CYAN_GELATIN_MIX_FLUID = new CustomFluid("cyan_gelatin_mix").build();
+    public static final FluidEntry.FluidType CYAN_GELATIN_MIX_FLUID = new FluidEntry("cyan_gelatin_mix").build();
 
-    public static final CustomFluidType DARK_CHOCOLATE_FLUID = new CustomFluid("dark_chocolate").build();
+    public static final FluidEntry.FluidType DARK_CHOCOLATE_FLUID = new FluidEntry("dark_chocolate").build();
 
-    public static final CustomFluidType DARK_CHOCOLATE_FUDGE_FLUID = new CustomFluid("dark_chocolate_fudge").build();
+    public static final FluidEntry.FluidType DARK_CHOCOLATE_FUDGE_FLUID = new FluidEntry("dark_chocolate_fudge").build();
 
-    public static final CustomFluidType FRUIT_SMOOTHIE_FLUID = new CustomFluid("fruit_smoothie").build();
+    public static final FluidEntry.FluidType FRUIT_SMOOTHIE_FLUID = new FluidEntry("fruit_smoothie").build();
 
-    public static final CustomFluidType GELATIN_MIX_FLUID = new CustomFluid("gelatin_mix").build();
+    public static final FluidEntry.FluidType GELATIN_MIX_FLUID = new FluidEntry("gelatin_mix").build();
 
-    public static final CustomFluidType GLOW_BERRY_CREAM_FROSTING_FLUID = new CustomFluid("glow_berry_cream_frosting").build();
+    public static final FluidEntry.FluidType GLOW_BERRY_CREAM_FROSTING_FLUID = new FluidEntry("glow_berry_cream_frosting").build();
 
-    public static final CustomFluidType GLOW_BERRY_ICE_CREAM_FLUID = new CustomFluid("glow_berry_ice_cream").build();
+    public static final FluidEntry.FluidType GLOW_BERRY_ICE_CREAM_FLUID = new FluidEntry("glow_berry_ice_cream").build();
 
-    public static final CustomFluidType GLOW_BERRY_JAM_FLUID = new CustomFluid("glow_berry_jam").flow(2, 4).build();
+    public static final FluidEntry.FluidType GLOW_BERRY_JAM_FLUID = new FluidEntry("glow_berry_jam").flow(2, 4).build();
 
-    public static final CustomFluidType GLOW_BERRY_JUICE_FLUID = new CustomFluid("glow_berry_juice").flow(3, 2).build();
+    public static final FluidEntry.FluidType GLOW_BERRY_JUICE_FLUID = new FluidEntry("glow_berry_juice").flow(3, 2).build();
 
-    public static final CustomFluidType GLOW_BERRY_MILKSHAKE_FLUID = new CustomFluid("glow_berry_milkshake").flow(2, 4).build();
+    public static final FluidEntry.FluidType GLOW_BERRY_MILKSHAKE_FLUID = new FluidEntry("glow_berry_milkshake").flow(2, 4).build();
 
-    public static final CustomFluidType GLOW_BERRY_PIE_FILLING_FLUID = new CustomFluid("glow_berry_pie_filling").build();
+    public static final FluidEntry.FluidType GLOW_BERRY_PIE_FILLING_FLUID = new FluidEntry("glow_berry_pie_filling").build();
 
-    public static final CustomFluidType GRAY_GELATIN_MIX_FLUID = new CustomFluid("gray_gelatin_mix").build();
+    public static final FluidEntry.FluidType GRAY_GELATIN_MIX_FLUID = new FluidEntry("gray_gelatin_mix").build();
 
-    public static final CustomFluidType GREEN_GELATIN_MIX_FLUID = new CustomFluid("green_gelatin_mix").build();
+    public static final FluidEntry.FluidType GREEN_GELATIN_MIX_FLUID = new FluidEntry("green_gelatin_mix").build();
 
-    public static final CustomFluidType HEAVY_CREAM_FLUID = new CustomFluid("heavy_cream").build();
+    public static final FluidEntry.FluidType HEAVY_CREAM_FLUID = new FluidEntry("heavy_cream").build();
 
-    public static final CustomFluidType HOT_CHOCOLATE_FLUID = new CustomFluid("hot_chocolate").build();
+    public static final FluidEntry.FluidType HOT_CHOCOLATE_FLUID = new FluidEntry("hot_chocolate").build();
 
-    public static final CustomFluidType HOT_DARK_CHOCOLATE_FLUID = new CustomFluid("hot_dark_chocolate").build();
+    public static final FluidEntry.FluidType HOT_DARK_CHOCOLATE_FLUID = new FluidEntry("hot_dark_chocolate").build();
 
-    public static final CustomFluidType HOT_WHITE_CHOCOLATE_FLUID = new CustomFluid("hot_white_chocolate").build();
+    public static final FluidEntry.FluidType HOT_WHITE_CHOCOLATE_FLUID = new FluidEntry("hot_white_chocolate").build();
 
-    public static final CustomFluidType ICE_CREAM_FLUID = new CustomFluid("ice_cream").build();
+    public static final FluidEntry.FluidType ICE_CREAM_FLUID = new FluidEntry("ice_cream").build();
 
-    public static final CustomFluidType LIGHT_BLUE_GELATIN_MIX_FLUID = new CustomFluid("light_blue_gelatin_mix").build();
+    public static final FluidEntry.FluidType LIGHT_BLUE_GELATIN_MIX_FLUID = new FluidEntry("light_blue_gelatin_mix").build();
 
-    public static final CustomFluidType LIGHT_GRAY_GELATIN_MIX_FLUID = new CustomFluid("light_gray_gelatin_mix").build();
+    public static final FluidEntry.FluidType LIGHT_GRAY_GELATIN_MIX_FLUID = new FluidEntry("light_gray_gelatin_mix").build();
 
-    public static final CustomFluidType LIME_GELATIN_MIX_FLUID = new CustomFluid("lime_gelatin_mix").build();
+    public static final FluidEntry.FluidType LIME_GELATIN_MIX_FLUID = new FluidEntry("lime_gelatin_mix").build();
 
-    public static final CustomFluidType MAGENTA_GELATIN_MIX_FLUID = new CustomFluid("magenta_gelatin_mix").build();
+    public static final FluidEntry.FluidType MAGENTA_GELATIN_MIX_FLUID = new FluidEntry("magenta_gelatin_mix").build();
 
-    public static final CustomFluidType MELON_CREAM_FROSTING_FLUID = new CustomFluid("melon_cream_frosting").build();
+    public static final FluidEntry.FluidType MELON_CREAM_FROSTING_FLUID = new FluidEntry("melon_cream_frosting").build();
 
-    public static final CustomFluidType MELON_ICE_CREAM_FLUID = new CustomFluid("melon_ice_cream").build();
+    public static final FluidEntry.FluidType MELON_ICE_CREAM_FLUID = new FluidEntry("melon_ice_cream").build();
 
-    public static final CustomFluidType MELON_JAM_FLUID = new CustomFluid("melon_jam").flow(2, 4).build();
+    public static final FluidEntry.FluidType MELON_JAM_FLUID = new FluidEntry("melon_jam").flow(2, 4).build();
 
-    public static final CustomFluidType MELON_MILKSHAKE_FLUID = new CustomFluid("melon_milkshake").flow(2, 4).build();
+    public static final FluidEntry.FluidType MELON_MILKSHAKE_FLUID = new FluidEntry("melon_milkshake").flow(2, 4).build();
 
-    public static final CustomFluidType MILKSHAKE_FLUID = new CustomFluid("milkshake").flow(2, 4).build();
+    public static final FluidEntry.FluidType MILKSHAKE_FLUID = new FluidEntry("milkshake").flow(2, 4).build();
 
-    public static final CustomFluidType MOLASSES_FLUID = new CustomFluid("molasses").build();
+    public static final FluidEntry.FluidType MOLASSES_FLUID = new FluidEntry("molasses").build();
 
-    public static final CustomFluidType ORANGE_GELATIN_MIX_FLUID = new CustomFluid("orange_gelatin_mix").build();
+    public static final FluidEntry.FluidType ORANGE_GELATIN_MIX_FLUID = new FluidEntry("orange_gelatin_mix").build();
 
-    public static final CustomFluidType PINK_GELATIN_MIX_FLUID = new CustomFluid("pink_gelatin_mix").build();
+    public static final FluidEntry.FluidType PINK_GELATIN_MIX_FLUID = new FluidEntry("pink_gelatin_mix").build();
 
-    public static final CustomFluidType PUMPKIN_PIE_FILLING_FLUID = new CustomFluid("pumpkin_pie_filling").build();
+    public static final FluidEntry.FluidType PUMPKIN_PIE_FILLING_FLUID = new FluidEntry("pumpkin_pie_filling").build();
 
-    public static final CustomFluidType PUMPKIN_PUREE_FLUID = new CustomFluid("pumpkin_puree").build();
+    public static final FluidEntry.FluidType PUMPKIN_PUREE_FLUID = new FluidEntry("pumpkin_puree").build();
 
-    public static final CustomFluidType PURPLE_GELATIN_MIX_FLUID = new CustomFluid("purple_gelatin_mix").build();
+    public static final FluidEntry.FluidType PURPLE_GELATIN_MIX_FLUID = new FluidEntry("purple_gelatin_mix").build();
 
-    public static final CustomFluidType RED_GELATIN_MIX_FLUID = new CustomFluid("red_gelatin_mix").build();
+    public static final FluidEntry.FluidType RED_GELATIN_MIX_FLUID = new FluidEntry("red_gelatin_mix").build();
 
-    public static final CustomFluidType SLIME_FLUID = new CustomFluid("slime").build();
+    public static final FluidEntry.FluidType SLIME_FLUID = new FluidEntry("slime").build();
 
-    public static final CustomFluidType SOUR_CREAM_FLUID = new CustomFluid("sour_cream").build();
+    public static final FluidEntry.FluidType SOUR_CREAM_FLUID = new FluidEntry("sour_cream").build();
 
-    public static final CustomFluidType SQUID_INK_FLUID = new CustomFluid("squid_ink").build();
+    public static final FluidEntry.FluidType SQUID_INK_FLUID = new FluidEntry("squid_ink").build();
 
-    public static final CustomFluidType SUGAR_CANE_JUICE_FLUID = new CustomFluid("sugar_cane_juice").flow(3, 2).build();
+    public static final FluidEntry.FluidType SUGAR_CANE_JUICE_FLUID = new FluidEntry("sugar_cane_juice").flow(3, 2).build();
 
-    public static final CustomFluidType TOFFEE_FLUID = new CustomFluid("toffee").build();
+    public static final FluidEntry.FluidType TOFFEE_FLUID = new FluidEntry("toffee").build();
 
-    public static final CustomFluidType TOFFEE_FUDGE_FLUID = new CustomFluid("toffee_fudge").build();
+    public static final FluidEntry.FluidType TOFFEE_FUDGE_FLUID = new FluidEntry("toffee_fudge").build();
 
-    public static final CustomFluidType UBE_CREAM_FROSTING_FLUID = new CustomFluid("ube_cream_frosting").build();
+    public static final FluidEntry.FluidType UBE_CREAM_FROSTING_FLUID = new FluidEntry("ube_cream_frosting").build();
 
-    public static final CustomFluidType VEGETABLE_OIL_FLUID = new CustomFluid("vegetable_oil").build();
+    public static final FluidEntry.FluidType VEGETABLE_OIL_FLUID = new FluidEntry("vegetable_oil").build();
 
-    public static final CustomFluidType VINEGAR_FLUID = new CustomFluid("vinegar").build();
+    public static final FluidEntry.FluidType VINEGAR_FLUID = new FluidEntry("vinegar").build();
 
-    public static final CustomFluidType WHITE_CHOCOLATE_FLUID = new CustomFluid("white_chocolate").build();
+    public static final FluidEntry.FluidType WHITE_CHOCOLATE_FLUID = new FluidEntry("white_chocolate").build();
 
-    public static final CustomFluidType WHITE_CHOCOLATE_FUDGE_FLUID = new CustomFluid("white_chocolate_fudge").build();
+    public static final FluidEntry.FluidType WHITE_CHOCOLATE_FUDGE_FLUID = new FluidEntry("white_chocolate_fudge").build();
 
-    public static final CustomFluidType YELLOW_GELATIN_MIX_FLUID = new CustomFluid("yellow_gelatin_mix").build();
+    public static final FluidEntry.FluidType YELLOW_GELATIN_MIX_FLUID = new FluidEntry("yellow_gelatin_mix").build();
 
-    public static final CustomFluidType YOGURT_FLUID = new CustomFluid("yogurt").build();
+    public static final FluidEntry.FluidType YOGURT_FLUID = new FluidEntry("yogurt").build();
 
-    public static final CustomFluidType WAFFLE_BATTER_FLUID = new CustomFluid("waffle_batter").build();
+    public static final FluidEntry.FluidType WAFFLE_BATTER_FLUID = new FluidEntry("waffle_batter").build();
 
     public static void register(IEventBus eventBus) {
         LOGGER.info("Create: Food - Registering Fluids");
