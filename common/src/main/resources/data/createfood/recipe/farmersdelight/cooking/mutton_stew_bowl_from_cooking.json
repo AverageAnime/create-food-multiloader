@@ -18,7 +18,6 @@
     ],
     "recipe_book_tab": "drinks",
     "result": {
-        "count": 3,
         "id": "createfood:mutton_stew_bowl"
     },
     "neoforge:conditions": [
