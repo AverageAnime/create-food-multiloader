@@ -1,0 +1,88 @@
+package dev.averageanime.neoforge.block.type.display;
+
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.particles.ParticleOptions;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.util.RandomSource;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.VoxelShape;
+import org.jetbrains.annotations.NotNull;
+
+import java.util.function.Supplier;
+
+public class BottleFoodBlock extends FoodBlock {
+    protected final VoxelShape shape;
+    protected final double shapeHeight; // Height in pixels (0-16)
+
+    private final boolean hasParticles;
+    private final Supplier<ParticleOptions> particleType;
+
+    // Constructor without particles and default height (existing bottles)
+    public BottleFoodBlock(Supplier<Item> displayItem) {
+        this(displayItem, 0.0, false, null);
+    }
+
+    // Constructor with custom height, no particles
+    public BottleFoodBlock(Supplier<Item> displayItem, double heightInPixels) {
+        this(displayItem, heightInPixels, false, null);
+    }
+
+    // Full constructor with height and particle support
+    public BottleFoodBlock(Supplier<Item> displayItem, double heightInPixels, boolean hasParticles, Supplier<ParticleOptions> particleType) {
+        super(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS), displayItem, 1);
+        this.shapeHeight = Math.max(1.0, Math.min(16.0, heightInPixels));
+        this.shape = Block.box(5.5, 0.0, 5.5, 10.5, this.shapeHeight, 10.5);
+        this.hasParticles = hasParticles;
+        this.particleType = particleType;
+    }
+
+    @Override
+    public @NotNull VoxelShape getShape(@NotNull BlockState state, @NotNull BlockGetter level, @NotNull BlockPos pos, @NotNull CollisionContext context) {
+        return shape;
+    }
+
+    @Override
+    protected void handleLastItemRemoved(BlockState state, Level level, BlockPos pos) {
+        level.removeBlock(pos, false);
+    }
+
+    @Override
+    public SoundEvent getAddSound() {
+        return SoundEvents.BOTTLE_FILL;
+    }
+
+    @Override
+    protected SoundEvent getRemoveSound() {
+        return SoundEvents.BOTTLE_EMPTY;
+    }
+
+    @Override
+    public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource random) {
+        if (!hasParticles || particleType == null) {
+            return;
+        }
+
+        if (random.nextInt(5) == 0) {
+            double x = pos.getX() + 0.5;
+            double y = pos.getY() + 0.5;
+            double z = pos.getZ() + 0.5;
+
+            double offsetX = (random.nextDouble() - 0.5) * 0.25;
+            double offsetZ = (random.nextDouble() - 0.5) * 0.25;
+
+            level.addParticle(particleType.get(),
+                    x + offsetX,
+                    y,
+                    z + offsetZ,
+                    0.0, 0.02, 0.0); // Small upward velocity
+        }
+    }
+}

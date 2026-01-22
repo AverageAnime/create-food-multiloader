@@ -16,7 +16,7 @@ import vectorwing.farmersdelight.common.registry.ModEffects;
 import java.util.List;
 
 import static dev.averageanime.neoforge.CreateFood.LOGGER;
-import static dev.averageanime.neoforge.item.tooltip.CustomTooltips.addTooltip;
+import static dev.averageanime.neoforge.item.tooltip.ModTooltips.addTooltip;
 
 @SuppressWarnings({"NullableProblems", "unused"})
 public class ModItems {
@@ -423,7 +423,13 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
 
     public static final DeferredItem<Item> CORN_FLOUR = ITEMS.register("corn_flour",
-            () -> new Item(new Item.Properties()));
+            () -> new Item(new Item.Properties()) {
+                @Override
+                public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> components, TooltipFlag flag) {
+                    super.appendHoverText(stack, context, components, flag);
+                    addTooltip(components, "tooltip.compat.corn", null);
+                }
+            });
 
     public static final DeferredItem<Item> CREAM_CHEESE = ITEMS.register("cream_cheese",
             () -> new Item(new Item.Properties()));
@@ -447,9 +453,6 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
 
     public static final DeferredItem<Item> COCOA_POWDER = ITEMS.register("cocoa_powder",
-            () -> new Item(new Item.Properties()));
-
-    public static final DeferredItem<Item> CONDENSED_MILK_BOTTLE = ITEMS.register("condensed_milk_bottle",
             () -> new Item(new Item.Properties()));
 
     public static final DeferredItem<Item> DRIED_COFFEE_BEANS = ITEMS.register("dried_coffee_beans",
@@ -939,9 +942,6 @@ public class ModItems {
 
                 }
             });
-
-    public static final DeferredItem<Item> MOLASSES_BOTTLE = ITEMS.register("molasses_bottle",
-            () -> new Item(new Item.Properties()));
 
     public static final DeferredItem<Item> PAPRIKA = ITEMS.register("paprika",
             () -> new Item(new Item.Properties()) {
@@ -1618,6 +1618,12 @@ public class ModItems {
 
     public static final DeferredItem<Item> SLICED_BROWN_MUSHROOM = ITEMS.register("sliced_brown_mushroom",
             () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(1).saturationModifier(1.1f).fast().build())));
+
+    public static final DeferredItem<Item> SLICED_WARPED_FUNGUS = ITEMS.register("sliced_warped_fungus",
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(2).saturationModifier(0.9f).fast().build())));
+
+    public static final DeferredItem<Item> SLICED_CRIMSON_FUNGUS = ITEMS.register("sliced_crimson_fungus",
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(2).saturationModifier(0.9f).fast().build())));
 
     public static final DeferredItem<Item> SLICED_CARROT = ITEMS.register("sliced_carrot",
             () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(1).saturationModifier(0.4f).fast().build())));
@@ -5424,7 +5430,13 @@ public class ModItems {
             () -> new Item(new Item.Properties().stacksTo(16).food(new FoodProperties.Builder().nutrition(3).saturationModifier(0.3f).usingConvertsTo(Items.BOWL).build())));
 
     public static final DeferredItem<Item> TORTILLA_CHIP_BOWL = ITEMS.register("tortilla_chip_bowl",
-            () -> new Item(new Item.Properties().stacksTo(16).food(new FoodProperties.Builder().nutrition(4).saturationModifier(0.7f).usingConvertsTo(Items.BOWL).build())));
+            () -> new Item(new Item.Properties().stacksTo(16).food(new FoodProperties.Builder().nutrition(4).saturationModifier(0.7f).usingConvertsTo(Items.BOWL).build())) {
+        @Override
+        public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> components, TooltipFlag flag) {
+            super.appendHoverText(stack, context, components, flag);
+            addTooltip(components, "tooltip.compat.corn", null);
+        }
+    });
 
     public static final DeferredItem<Item> APPLE_ICE_CREAM_STICK = ITEMS.register("apple_ice_cream_stick",
             () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(1).saturationModifier(0.6f).fast().usingConvertsTo(Items.STICK).build()).craftRemainder(Items.STICK)));
@@ -5584,6 +5596,11 @@ public class ModItems {
                     addTooltip(components, null, "tooltip.createfood.white_chocolate_ingredient");
                 }
             });
+    public static final DeferredItem<Item> CONDENSED_MILK_BOTTLE = ITEMS.register("condensed_milk_bottle",
+            () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> MOLASSES_BOTTLE = ITEMS.register("molasses_bottle",
+            () -> new Item(new Item.Properties()));
 
     public static final DeferredItem<Item> APPLE_CREAM_FROSTING_BOTTLE = ITEMS.register("apple_cream_frosting_bottle",
             () -> new DrinkableItem(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationModifier(0.7f).usingConvertsTo(Items.GLASS_BOTTLE).build()).stacksTo(16).craftRemainder(Items.GLASS_BOTTLE)));

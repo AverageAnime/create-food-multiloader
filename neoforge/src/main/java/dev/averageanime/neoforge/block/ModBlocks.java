@@ -1,8 +1,17 @@
 package dev.averageanime.neoforge.block;
 
 import dev.averageanime.CommonClass;
-import dev.averageanime.neoforge.block.type.*;
+import dev.averageanime.neoforge.block.type.cake.CakeBaseBlock;
+import dev.averageanime.neoforge.block.type.cake.CheeseBlock;
+import dev.averageanime.neoforge.block.type.cake.GyroMeatBlock;
+import dev.averageanime.neoforge.block.type.cake.ModCakeBlock;
+import dev.averageanime.neoforge.block.type.pie.ModPieBlock;
+import dev.averageanime.neoforge.block.type.pie.RawPieBlock;
+import dev.averageanime.neoforge.block.type.pie.PizzaBlock;
+import dev.averageanime.neoforge.block.type.pie.RawPizzaBlock;
+import dev.averageanime.neoforge.block.type.display.plate.EmptyPlateBlock;
 import dev.averageanime.neoforge.item.ModItems;
+import dev.averageanime.neoforge.block.type.display.plate.SmallPlateBlock;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -16,10 +25,11 @@ import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.util.List;
+import java.util.function.Supplier;
 
 import static dev.averageanime.neoforge.CreateFood.LOGGER;
 import static dev.averageanime.neoforge.item.ModItems.ITEMS;
-import static dev.averageanime.neoforge.item.tooltip.CustomTooltips.addTooltip;
+import static dev.averageanime.neoforge.item.tooltip.ModTooltips.addTooltip;
 
 @SuppressWarnings("unused")
 public class ModBlocks {
@@ -27,652 +37,261 @@ public class ModBlocks {
     public static final DeferredRegister.Blocks BLOCKS =
             DeferredRegister.createBlocks(CommonClass.ID);
 
-    private static <T extends Block> void registerBlockItem(String name, DeferredBlock<T> block) {
+    private static DeferredBlock<Block> registerBlock(String name, Supplier<Block> blockSupplier) {
+        DeferredBlock<Block> block = BLOCKS.register(name, blockSupplier);
         ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
+        return block;
     }
 
-    public static final DeferredBlock<Block> RAW_MEAT_PIE = BLOCKS.register("raw_meat_pie",
-            () -> new RawPieBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE)));
-    public static final DeferredItem<Item> RAW_MEAT_PIE_ITEM = ITEMS.register("raw_meat_pie",
-            () -> new BlockItem(ModBlocks.RAW_MEAT_PIE.get(), new Item.Properties()));
+    private static DeferredBlock<Block> registerBlockWithTooltips(String name,
+                                                                  Supplier<Block> blockSupplier,
+                                                                  String compatTooltip,
+                                                                  String... ingredientTooltips) {
+        DeferredBlock<Block> block = BLOCKS.register(name, blockSupplier);
+        ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()) {
+            @Override
+            public void appendHoverText(ItemStack stack, TooltipContext context,
+                                        List<Component> components, TooltipFlag flag) {
+                addTooltip(components, compatTooltip, ingredientTooltips);
+                super.appendHoverText(stack, context, components, flag);
+            }
+        });
+        return block;
+    }
 
-    public static final DeferredBlock<Block> MEAT_PIE = BLOCKS.register("meat_pie",
-            () -> new ModPieBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), ModItems.MEAT_PIE_SLICE));
-    public static final DeferredItem<Item> MEAT_PIE_ITEM = ITEMS.register("meat_pie",
-            () -> new BlockItem(ModBlocks.MEAT_PIE.get(), new Item.Properties()));
+    private static DeferredBlock<Block> registerRawPizza(String name,
+                                                         String compatTooltip,
+                                                         String... ingredientTooltips) {
+        Supplier<Block> blockSupplier = () -> new RawPizzaBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE));
 
-    public static final DeferredBlock<Block> PUMPKIN_PIE_BLOCK = BLOCKS.register("pumpkin_pie_block",
-            () -> new ModPieBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), ModItems.PUMPKIN_PIE_SLICE));
+        if ((compatTooltip != null && !compatTooltip.isEmpty()) ||
+                (ingredientTooltips != null && ingredientTooltips.length > 0)) {
+            return registerBlockWithTooltips(name, blockSupplier, compatTooltip, ingredientTooltips);
+        }
+        return registerBlock(name, blockSupplier);
+    }
 
-    public static final DeferredBlock<Block> GYRO_MEAT_BLOCK = BLOCKS.register("gyro_meat_block",
+    private static DeferredBlock<Block> registerCookedPizza(String name,
+                                                            Supplier<Item> sliceItem,
+                                                            String compatTooltip,
+                                                            String... ingredientTooltips) {
+        Supplier<Block> blockSupplier = () -> new PizzaBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), sliceItem);
+
+        if ((compatTooltip != null && !compatTooltip.isEmpty()) ||
+                (ingredientTooltips != null && ingredientTooltips.length > 0)) {
+            return registerBlockWithTooltips(name, blockSupplier, compatTooltip, ingredientTooltips);
+        }
+        return registerBlock(name, blockSupplier);
+    }
+
+    private static DeferredBlock<Block> registerRawPie(String name,
+                                                       String compatTooltip,
+                                                       String... ingredientTooltips) {
+        Supplier<Block> blockSupplier = () -> new RawPieBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE));
+
+        if ((compatTooltip != null && !compatTooltip.isEmpty()) ||
+                (ingredientTooltips != null && ingredientTooltips.length > 0)) {
+            return registerBlockWithTooltips(name, blockSupplier, compatTooltip, ingredientTooltips);
+        }
+        return registerBlock(name, blockSupplier);
+    }
+
+    private static DeferredBlock<Block> registerCookedPie(String name,
+                                                          Supplier<Item> sliceItem,
+                                                          String compatTooltip,
+                                                          String... ingredientTooltips) {
+        Supplier<Block> blockSupplier = () -> new ModPieBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), sliceItem);
+
+        if ((compatTooltip != null && !compatTooltip.isEmpty()) ||
+                (ingredientTooltips != null && ingredientTooltips.length > 0)) {
+            return registerBlockWithTooltips(name, blockSupplier, compatTooltip, ingredientTooltips);
+        }
+        return registerBlock(name, blockSupplier);
+    }
+
+    private static DeferredBlock<Block> registerCake(String name,
+                                                     Supplier<Item> sliceItem,
+                                                     int stackSize,
+                                                     String compatTooltip,
+                                                     String... ingredientTooltips) {
+        Supplier<Block> blockSupplier = () -> new ModCakeBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), sliceItem);
+        DeferredBlock<Block> block = BLOCKS.register(name, blockSupplier);
+
+        ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties().stacksTo(stackSize)) {
+            @Override
+            public void appendHoverText(ItemStack stack, TooltipContext context,
+                                        List<Component> components, TooltipFlag flag) {
+                if (compatTooltip != null || ingredientTooltips != null) {
+                    addTooltip(components, compatTooltip, ingredientTooltips);
+                }
+                super.appendHoverText(stack, context, components, flag);
+            }
+        });
+        return block;
+    }
+
+    private static DeferredBlock<Block> registerWaffle(String name,
+                                                       Supplier<Item> sliceItem,
+                                                       String compatTooltip,
+                                                       String... ingredientTooltips) {
+        return registerCookedPizza(name, sliceItem, compatTooltip, ingredientTooltips);
+    }
+
+    private static DeferredBlock<Block> registerGelatinBlock(String name) {
+        return registerBlock(name, () -> new SlimeBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.SLIME_BLOCK)));
+    }
+
+    public static final DeferredBlock<Block> SMALL_PLATE_BLOCK = BLOCKS.register("small_plate_block",
+            () -> new SmallPlateBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS)));
+
+    public static final DeferredBlock<Block> PLATE_BLOCK = BLOCKS.register("plate_block",
+            () -> new EmptyPlateBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS), SMALL_PLATE_BLOCK));
+
+    // Raw Pies
+    public static final DeferredBlock<Block> RAW_MEAT_PIE = registerRawPie("raw_meat_pie", null);
+    public static final DeferredBlock<Block> MEAT_PIE = registerCookedPie("meat_pie", ModItems.MEAT_PIE_SLICE, null);
+    public static final DeferredBlock<Block> PUMPKIN_PIE_BLOCK = registerCookedPie("pumpkin_pie_block", ModItems.PUMPKIN_PIE_SLICE, null);
+
+    // Gyro & Cheese
+    public static final DeferredBlock<Block> GYRO_MEAT_BLOCK = registerBlock("gyro_meat_block",
             () -> new GyroMeatBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE)));
-    public static final DeferredItem<Item> GYRO_MEAT_BLOCK_ITEM = ITEMS.register("gyro_meat_block",
-            () -> new BlockItem(ModBlocks.GYRO_MEAT_BLOCK.get(), new Item.Properties()));
-
-    public static final DeferredBlock<Block> CHEESE_BLOCK = BLOCKS.register("cheese_block",
+    public static final DeferredBlock<Block> CHEESE_BLOCK = registerBlock("cheese_block",
             () -> new CheeseBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE)));
-    public static final DeferredItem<Item> CHEESE_BLOCK_ITEM = ITEMS.register("cheese_block",
-            () -> new BlockItem(ModBlocks.CHEESE_BLOCK.get(), new Item.Properties()));
 
-    public static final DeferredBlock<Block> PIZZA_DOUGH = BLOCKS.register("pizza_dough",
-            () -> new RawPizzaBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE)));
-    public static final DeferredItem<Item> PIZZA_DOUGH_ITEM = ITEMS.register("pizza_dough",
-            () -> new BlockItem(ModBlocks.PIZZA_DOUGH.get(), new Item.Properties()));
-
-    public static final DeferredBlock<Block> PIZZA_DOUGH_TOMATO_SAUCE = BLOCKS.register("pizza_dough_tomato_sauce",
-            () -> new RawPizzaBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE)));
-    public static final DeferredItem<Item> PIZZA_DOUGH_TOMATO_SAUCE_ITEM = ITEMS.register("pizza_dough_tomato_sauce",
-            () -> new BlockItem(ModBlocks.PIZZA_DOUGH_TOMATO_SAUCE.get(), new Item.Properties()) {
-                @Override
-                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addTooltip(components, null, "tooltip.createfood.tomato_sauce_ingredient");
-                    super.appendHoverText(stack, context, components, flag);
-                }
-            });
-
-    public static final DeferredBlock<Block> RAW_BACON_PIZZA = BLOCKS.register("raw_bacon_pizza",
-            () -> new RawPizzaBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE)));
-    public static final DeferredItem<Item> RAW_BACON_PIZZA_ITEM = ITEMS.register("raw_bacon_pizza",
-            () -> new BlockItem(ModBlocks.RAW_BACON_PIZZA.get(), new Item.Properties()) {
-                @Override
-                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addTooltip(components, null, "tooltip.createfood.bacon_ingredient");
-                    super.appendHoverText(stack, context, components, flag);
-                }
-            });
-
-    public static final DeferredBlock<Block> RAW_CHEESE_PIZZA = BLOCKS.register("raw_cheese_pizza",
-            () -> new RawPizzaBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE)));
-    public static final DeferredItem<Item> RAW_CHEESE_PIZZA_ITEM = ITEMS.register("raw_cheese_pizza",
-            () -> new BlockItem(ModBlocks.RAW_CHEESE_PIZZA.get(), new Item.Properties()) {
-                @Override
-                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addTooltip(components, null, "tooltip.createfood.cheese_ingredient");
-                    super.appendHoverText(stack, context, components, flag);
-                }
-            });
-
-    public static final DeferredBlock<Block> RAW_FISH_BACON_PIZZA = BLOCKS.register("raw_fish_bacon_pizza",
-            () -> new RawPizzaBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE)));
-    public static final DeferredItem<Item> RAW_FISH_BACON_PIZZA_ITEM = ITEMS.register("raw_fish_bacon_pizza",
-            () -> new BlockItem(ModBlocks.RAW_FISH_BACON_PIZZA.get(), new Item.Properties()) {
-                @Override
-                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addTooltip(components, null, "tooltip.createfood.fish_ingredient", "tooltip.createfood.bacon_ingredient");
-                    super.appendHoverText(stack, context, components, flag);
-                }
-            });
-
-    public static final DeferredBlock<Block> RAW_FISH_ONION_PIZZA = BLOCKS.register("raw_fish_onion_pizza",
-            () -> new RawPizzaBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE)));
-    public static final DeferredItem<Item> RAW_FISH_ONION_PIZZA_ITEM = ITEMS.register("raw_fish_onion_pizza",
-            () -> new BlockItem(ModBlocks.RAW_FISH_ONION_PIZZA.get(), new Item.Properties()) {
-                @Override
-                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addTooltip(components, null, "tooltip.createfood.fish_ingredient", "tooltip.createfood.onion_ingredient");
-                    super.appendHoverText(stack, context, components, flag);
-                }
-            });
-
-    public static final DeferredBlock<Block> RAW_FISH_PIZZA = BLOCKS.register("raw_fish_pizza",
-            () -> new RawPizzaBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE)));
-    public static final DeferredItem<Item> RAW_FISH_PIZZA_ITEM = ITEMS.register("raw_fish_pizza",
-            () -> new BlockItem(ModBlocks.RAW_FISH_PIZZA.get(), new Item.Properties()) {
-                @Override
-                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addTooltip(components, null, "tooltip.createfood.fish_ingredient");
-                    super.appendHoverText(stack, context, components, flag);
-                }
-            });
-
-    public static final DeferredBlock<Block> RAW_MUSHROOM_BACON_PIZZA = BLOCKS.register("raw_mushroom_bacon_pizza",
-            () -> new RawPizzaBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE)));
-    public static final DeferredItem<Item> RAW_MUSHROOM_BACON_PIZZA_ITEM = ITEMS.register("raw_mushroom_bacon_pizza",
-            () -> new BlockItem(ModBlocks.RAW_MUSHROOM_BACON_PIZZA.get(), new Item.Properties()) {
-                @Override
-                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addTooltip(components, null, "tooltip.createfood.mushroom_ingredient", "tooltip.createfood.bacon_ingredient");
-                    super.appendHoverText(stack, context, components, flag);
-                }
-            });
-
-    public static final DeferredBlock<Block> RAW_MUSHROOM_FISH_PIZZA = BLOCKS.register("raw_mushroom_fish_pizza",
-            () -> new RawPizzaBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE)));
-    public static final DeferredItem<Item> RAW_MUSHROOM_FISH_PIZZA_ITEM = ITEMS.register("raw_mushroom_fish_pizza",
-            () -> new BlockItem(ModBlocks.RAW_MUSHROOM_FISH_PIZZA.get(), new Item.Properties()) {
-                @Override
-                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addTooltip(components, null, "tooltip.createfood.mushroom_ingredient", "tooltip.createfood.fish_ingredient");
-                    super.appendHoverText(stack, context, components, flag);
-                }
-            });
-
-    public static final DeferredBlock<Block> RAW_MUSHROOM_ONION_PIZZA = BLOCKS.register("raw_mushroom_onion_pizza",
-            () -> new RawPizzaBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE)));
-    public static final DeferredItem<Item> RAW_MUSHROOM_ONION_PIZZA_ITEM = ITEMS.register("raw_mushroom_onion_pizza",
-            () -> new BlockItem(ModBlocks.RAW_MUSHROOM_ONION_PIZZA.get(), new Item.Properties()) {
-                @Override
-                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addTooltip(components, null, "tooltip.createfood.mushroom_ingredient", "tooltip.createfood.onion_ingredient");
-                    super.appendHoverText(stack, context, components, flag);
-                }
-            });
-
-    public static final DeferredBlock<Block> RAW_MUSHROOM_PIZZA = BLOCKS.register("raw_mushroom_pizza",
-            () -> new RawPizzaBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE)));
-    public static final DeferredItem<Item> RAW_MUSHROOM_PIZZA_ITEM = ITEMS.register("raw_mushroom_pizza",
-            () -> new BlockItem(ModBlocks.RAW_MUSHROOM_PIZZA.get(), new Item.Properties()) {
-                @Override
-                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addTooltip(components, null, "tooltip.createfood.mushroom_ingredient");
-                    super.appendHoverText(stack, context, components, flag);
-                }
-            });
-
-    public static final DeferredBlock<Block> RAW_ONION_BACON_PIZZA = BLOCKS.register("raw_onion_bacon_pizza",
-            () -> new RawPizzaBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE)));
-    public static final DeferredItem<Item> RAW_ONION_BACON_PIZZA_ITEM = ITEMS.register("raw_onion_bacon_pizza",
-            () -> new BlockItem(ModBlocks.RAW_ONION_BACON_PIZZA.get(), new Item.Properties()) {
-                @Override
-                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addTooltip(components, null, "tooltip.createfood.onion_ingredient", "tooltip.createfood.bacon_ingredient");
-                    super.appendHoverText(stack, context, components, flag);
-                }
-            });
-
-    public static final DeferredBlock<Block> RAW_ONION_PIZZA = BLOCKS.register("raw_onion_pizza",
-            () -> new RawPizzaBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE)));
-    public static final DeferredItem<Item> RAW_ONION_PIZZA_ITEM = ITEMS.register("raw_onion_pizza",
-            () -> new BlockItem(ModBlocks.RAW_ONION_PIZZA.get(), new Item.Properties()) {
-                @Override
-                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addTooltip(components, null, "tooltip.createfood.onion_ingredient");
-                    super.appendHoverText(stack, context, components, flag);
-                }
-            });
-
-    public static final DeferredBlock<Block> RAW_SAUSAGE_BACON_PIZZA = BLOCKS.register("raw_sausage_bacon_pizza",
-            () -> new RawPizzaBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE)));
-    public static final DeferredItem<Item> RAW_SAUSAGE_BACON_PIZZA_ITEM = ITEMS.register("raw_sausage_bacon_pizza",
-            () -> new BlockItem(ModBlocks.RAW_SAUSAGE_BACON_PIZZA.get(), new Item.Properties()) {
-                @Override
-                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addTooltip(components, null, "tooltip.createfood.sausage_ingredient", "tooltip.createfood.bacon_ingredient");
-                    super.appendHoverText(stack, context, components, flag);
-                }
-            });
-
-    public static final DeferredBlock<Block> RAW_SAUSAGE_FISH_PIZZA = BLOCKS.register("raw_sausage_fish_pizza",
-            () -> new RawPizzaBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE)));
-    public static final DeferredItem<Item> RAW_SAUSAGE_FISH_PIZZA_ITEM = ITEMS.register("raw_sausage_fish_pizza",
-            () -> new BlockItem(ModBlocks.RAW_SAUSAGE_FISH_PIZZA.get(), new Item.Properties()) {
-                @Override
-                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addTooltip(components, null, "tooltip.createfood.sausage_ingredient", "tooltip.createfood.fish_ingredient");
-                    super.appendHoverText(stack, context, components, flag);
-                }
-            });
-
-    public static final DeferredBlock<Block> RAW_SAUSAGE_MUSHROOM_PIZZA = BLOCKS.register("raw_sausage_mushroom_pizza",
-            () -> new RawPizzaBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE)));
-    public static final DeferredItem<Item> RAW_SAUSAGE_MUSHROOM_PIZZA_ITEM = ITEMS.register("raw_sausage_mushroom_pizza",
-            () -> new BlockItem(ModBlocks.RAW_SAUSAGE_MUSHROOM_PIZZA.get(), new Item.Properties()) {
-                @Override
-                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addTooltip(components, null, "tooltip.createfood.sausage_ingredient", "tooltip.createfood.mushroom_ingredient");
-                    super.appendHoverText(stack, context, components, flag);
-                }
-            });
-
-    public static final DeferredBlock<Block> RAW_SAUSAGE_ONION_PIZZA = BLOCKS.register("raw_sausage_onion_pizza",
-            () -> new RawPizzaBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE)));
-    public static final DeferredItem<Item> RAW_SAUSAGE_ONION_PIZZA_ITEM = ITEMS.register("raw_sausage_onion_pizza",
-            () -> new BlockItem(ModBlocks.RAW_SAUSAGE_ONION_PIZZA.get(), new Item.Properties()) {
-                @Override
-                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addTooltip(components, null, "tooltip.createfood.sausage_ingredient", "tooltip.createfood.onion_ingredient");
-                    super.appendHoverText(stack, context, components, flag);
-                }
-            });
-
-    public static final DeferredBlock<Block> RAW_SAUSAGE_PIZZA = BLOCKS.register("raw_sausage_pizza",
-            () -> new RawPizzaBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE)));
-    public static final DeferredItem<Item> RAW_SAUSAGE_PIZZA_ITEM = ITEMS.register("raw_sausage_pizza",
-            () -> new BlockItem(ModBlocks.RAW_SAUSAGE_PIZZA.get(), new Item.Properties()) {
-                @Override
-                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addTooltip(components, null, "tooltip.createfood.sausage_ingredient");
-                    super.appendHoverText(stack, context, components, flag);
-                }
-            });
-
-    public static final DeferredBlock<Block> BACON_PIZZA = BLOCKS.register("bacon_pizza",
-            () -> new PizzaBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), ModItems.BACON_PIZZA_SLICE));
-    public static final DeferredItem<Item> BACON_PIZZA_ITEM = ITEMS.register("bacon_pizza",
-            () -> new BlockItem(ModBlocks.BACON_PIZZA.get(), new Item.Properties()) {
-                @Override
-                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addTooltip(components, null, "tooltip.createfood.bacon_ingredient");
-                    super.appendHoverText(stack, context, components, flag);
-                }
-            });
-
-    public static final DeferredBlock<Block> CHEESE_PIZZA = BLOCKS.register("cheese_pizza",
-            () -> new PizzaBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), ModItems.CHEESE_PIZZA_SLICE));
-    public static final DeferredItem<Item> CHEESE_PIZZA_ITEM = ITEMS.register("cheese_pizza",
-            () -> new BlockItem(ModBlocks.CHEESE_PIZZA.get(), new Item.Properties()) {
-                @Override
-                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addTooltip(components, null, "tooltip.createfood.cheese_ingredient");
-                    super.appendHoverText(stack, context, components, flag);
-                }
-            });
-
-    public static final DeferredBlock<Block> FISH_BACON_PIZZA = BLOCKS.register("fish_bacon_pizza",
-            () -> new PizzaBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), ModItems.FISH_BACON_PIZZA_SLICE));
-    public static final DeferredItem<Item> FISH_BACON_PIZZA_ITEM = ITEMS.register("fish_bacon_pizza",
-            () -> new BlockItem(ModBlocks.FISH_BACON_PIZZA.get(), new Item.Properties()) {
-                @Override
-                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addTooltip(components, null, "tooltip.createfood.fish_ingredient", "tooltip.createfood.bacon_ingredient");
-                    super.appendHoverText(stack, context, components, flag);
-                }
-            });
-
-    public static final DeferredBlock<Block> FISH_ONION_PIZZA = BLOCKS.register("fish_onion_pizza",
-            () -> new PizzaBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), ModItems.FISH_ONION_PIZZA_SLICE));
-    public static final DeferredItem<Item> FISH_ONION_PIZZA_ITEM = ITEMS.register("fish_onion_pizza",
-            () -> new BlockItem(ModBlocks.FISH_ONION_PIZZA.get(), new Item.Properties()) {
-                @Override
-                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addTooltip(components, null, "tooltip.createfood.fish_ingredient", "tooltip.createfood.onion_ingredient");
-                    super.appendHoverText(stack, context, components, flag);
-                }
-            });
-
-    public static final DeferredBlock<Block> FISH_PIZZA = BLOCKS.register("fish_pizza",
-            () -> new PizzaBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), ModItems.FISH_PIZZA_SLICE));
-    public static final DeferredItem<Item> FISH_PIZZA_ITEM = ITEMS.register("fish_pizza",
-            () -> new BlockItem(ModBlocks.FISH_PIZZA.get(), new Item.Properties()) {
-                @Override
-                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addTooltip(components, null, "tooltip.createfood.fish_ingredient");
-                    super.appendHoverText(stack, context, components, flag);
-                }
-            });
-
-    public static final DeferredBlock<Block> MUSHROOM_BACON_PIZZA = BLOCKS.register("mushroom_bacon_pizza",
-            () -> new PizzaBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), ModItems.MUSHROOM_BACON_PIZZA_SLICE));
-    public static final DeferredItem<Item> MUSHROOM_BACON_PIZZA_ITEM = ITEMS.register("mushroom_bacon_pizza",
-            () -> new BlockItem(ModBlocks.MUSHROOM_BACON_PIZZA.get(), new Item.Properties()) {
-                @Override
-                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addTooltip(components, null, "tooltip.createfood.mushroom_ingredient", "tooltip.createfood.bacon_ingredient");
-                    super.appendHoverText(stack, context, components, flag);
-                }
-            });
-
-    public static final DeferredBlock<Block> MUSHROOM_FISH_PIZZA = BLOCKS.register("mushroom_fish_pizza",
-            () -> new PizzaBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), ModItems.MUSHROOM_FISH_PIZZA_SLICE));
-    public static final DeferredItem<Item> MUSHROOM_FISH_PIZZA_ITEM = ITEMS.register("mushroom_fish_pizza",
-            () -> new BlockItem(ModBlocks.MUSHROOM_FISH_PIZZA.get(), new Item.Properties()) {
-                @Override
-                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addTooltip(components, null, "tooltip.createfood.mushroom_ingredient", "tooltip.createfood.fish_ingredient");
-                    super.appendHoverText(stack, context, components, flag);
-                }
-            });
-
-    public static final DeferredBlock<Block> MUSHROOM_ONION_PIZZA = BLOCKS.register("mushroom_onion_pizza",
-            () -> new PizzaBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), ModItems.MUSHROOM_ONION_PIZZA_SLICE));
-    public static final DeferredItem<Item> MUSHROOM_ONION_PIZZA_ITEM = ITEMS.register("mushroom_onion_pizza",
-            () -> new BlockItem(ModBlocks.MUSHROOM_ONION_PIZZA.get(), new Item.Properties()) {
-                @Override
-                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addTooltip(components, null, "tooltip.createfood.mushroom_ingredient", "tooltip.createfood.onion_ingredient");
-                    super.appendHoverText(stack, context, components, flag);
-                }
-            });
-
-    public static final DeferredBlock<Block> MUSHROOM_PIZZA = BLOCKS.register("mushroom_pizza",
-            () -> new PizzaBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), ModItems.MUSHROOM_PIZZA_SLICE));
-    public static final DeferredItem<Item> MUSHROOM_PIZZA_ITEM = ITEMS.register("mushroom_pizza",
-            () -> new BlockItem(ModBlocks.MUSHROOM_PIZZA.get(), new Item.Properties()) {
-                @Override
-                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addTooltip(components, null, "tooltip.createfood.mushroom_ingredient");
-                    super.appendHoverText(stack, context, components, flag);
-                }
-            });
-
-    public static final DeferredBlock<Block> ONION_BACON_PIZZA = BLOCKS.register("onion_bacon_pizza",
-            () -> new PizzaBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), ModItems.ONION_BACON_PIZZA_SLICE));
-    public static final DeferredItem<Item> ONION_BACON_PIZZA_ITEM = ITEMS.register("onion_bacon_pizza",
-            () -> new BlockItem(ModBlocks.ONION_BACON_PIZZA.get(), new Item.Properties()) {
-                @Override
-                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addTooltip(components, null, "tooltip.createfood.onion_ingredient", "tooltip.createfood.bacon_ingredient");
-                    super.appendHoverText(stack, context, components, flag);
-                }
-            });
-
-    public static final DeferredBlock<Block> ONION_PIZZA = BLOCKS.register("onion_pizza",
-            () -> new PizzaBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), ModItems.ONION_PIZZA_SLICE));
-    public static final DeferredItem<Item> ONION_PIZZA_ITEM = ITEMS.register("onion_pizza",
-            () -> new BlockItem(ModBlocks.ONION_PIZZA.get(), new Item.Properties()) {
-                @Override
-                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addTooltip(components, null, "tooltip.createfood.onion_ingredient");
-                    super.appendHoverText(stack, context, components, flag);
-                }
-            });
-
-    public static final DeferredBlock<Block> SAUSAGE_BACON_PIZZA = BLOCKS.register("sausage_bacon_pizza",
-            () -> new PizzaBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), ModItems.SAUSAGE_BACON_PIZZA_SLICE));
-    public static final DeferredItem<Item> SAUSAGE_BACON_PIZZA_ITEM = ITEMS.register("sausage_bacon_pizza",
-            () -> new BlockItem(ModBlocks.SAUSAGE_BACON_PIZZA.get(), new Item.Properties()) {
-                @Override
-                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addTooltip(components, null, "tooltip.createfood.sausage_ingredient", "tooltip.createfood.bacon_ingredient");
-                    super.appendHoverText(stack, context, components, flag);
-                }
-            });
-
-    public static final DeferredBlock<Block> SAUSAGE_FISH_PIZZA = BLOCKS.register("sausage_fish_pizza",
-            () -> new PizzaBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), ModItems.SAUSAGE_FISH_PIZZA_SLICE));
-    public static final DeferredItem<Item> SAUSAGE_FISH_PIZZA_ITEM = ITEMS.register("sausage_fish_pizza",
-            () -> new BlockItem(ModBlocks.SAUSAGE_FISH_PIZZA.get(), new Item.Properties()) {
-                @Override
-                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addTooltip(components, null, "tooltip.createfood.sausage_ingredient", "tooltip.createfood.fish_ingredient");
-                    super.appendHoverText(stack, context, components, flag);
-                }
-            });
-
-    public static final DeferredBlock<Block> SAUSAGE_MUSHROOM_PIZZA = BLOCKS.register("sausage_mushroom_pizza",
-            () -> new PizzaBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), ModItems.SAUSAGE_MUSHROOM_PIZZA_SLICE));
-    public static final DeferredItem<Item> SAUSAGE_MUSHROOM_PIZZA_ITEM = ITEMS.register("sausage_mushroom_pizza",
-            () -> new BlockItem(ModBlocks.SAUSAGE_MUSHROOM_PIZZA.get(), new Item.Properties()) {
-                @Override
-                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addTooltip(components, null, "tooltip.createfood.sausage_ingredient", "tooltip.createfood.mushroom_ingredient");
-                    super.appendHoverText(stack, context, components, flag);
-                }
-            });
-
-    public static final DeferredBlock<Block> SAUSAGE_ONION_PIZZA = BLOCKS.register("sausage_onion_pizza",
-            () -> new PizzaBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), ModItems.SAUSAGE_ONION_PIZZA_SLICE));
-    public static final DeferredItem<Item> SAUSAGE_ONION_PIZZA_ITEM = ITEMS.register("sausage_onion_pizza",
-            () -> new BlockItem(ModBlocks.SAUSAGE_ONION_PIZZA.get(), new Item.Properties()) {
-                @Override
-                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addTooltip(components, null, "tooltip.createfood.sausage_ingredient", "tooltip.createfood.onion_ingredient");
-                    super.appendHoverText(stack, context, components, flag);
-                }
-            });
-
-    public static final DeferredBlock<Block> SAUSAGE_PIZZA = BLOCKS.register("sausage_pizza",
-            () -> new PizzaBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), ModItems.SAUSAGE_PIZZA_SLICE));
-    public static final DeferredItem<Item> SAUSAGE_PIZZA_ITEM = ITEMS.register("sausage_pizza",
-            () -> new BlockItem(ModBlocks.SAUSAGE_PIZZA.get(), new Item.Properties()) {
-                @Override
-                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addTooltip(components, null, "tooltip.createfood.sausage_ingredient");
-                    super.appendHoverText(stack, context, components, flag);
-                }
-            });
-
-    public static final DeferredBlock<Block> RAW_CHOCOLATE_GRAHAM_CRACKER_PIE_CRUST = BLOCKS.register("raw_chocolate_graham_cracker_pie_crust",
-            () -> new RawPieBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE)));
-    public static final DeferredItem<Item> RAW_CHOCOLATE_GRAHAM_CRACKER_PIE_CRUST_ITEM = ITEMS.register("raw_chocolate_graham_cracker_pie_crust",
-            () -> new BlockItem(ModBlocks.RAW_CHOCOLATE_GRAHAM_CRACKER_PIE_CRUST.get(), new Item.Properties()));
-
-    public static final DeferredBlock<Block> RAW_GRAHAM_CRACKER_PIE_CRUST = BLOCKS.register("raw_graham_cracker_pie_crust",
-            () -> new RawPieBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE)));
-    public static final DeferredItem<Item> RAW_GRAHAM_CRACKER_PIE_CRUST_ITEM = ITEMS.register("raw_graham_cracker_pie_crust",
-            () -> new BlockItem(ModBlocks.RAW_GRAHAM_CRACKER_PIE_CRUST.get(), new Item.Properties()));
-
-    public static final DeferredBlock<Block> RAW_PIE_CRUST = BLOCKS.register("raw_pie_crust",
-            () -> new RawPieBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE)));
-    public static final DeferredItem<Item> RAW_PIE_CRUST_ITEM = ITEMS.register("raw_pie_crust",
-            () -> new BlockItem(ModBlocks.RAW_PIE_CRUST.get(), new Item.Properties()));
-
-    public static final DeferredBlock<Block> RAW_APPLE_CHEESECAKE = BLOCKS.register("raw_apple_cheesecake",
-            () -> new RawPieBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE)));
-    public static final DeferredItem<Item> RAW_APPLE_CHEESECAKE_ITEM = ITEMS.register("raw_apple_cheesecake",
-            () -> new BlockItem(ModBlocks.RAW_APPLE_CHEESECAKE.get(), new Item.Properties()));
-
-    public static final DeferredBlock<Block> RAW_APPLE_PIE = BLOCKS.register("raw_apple_pie",
-            () -> new RawPieBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE)));
-    public static final DeferredItem<Item> RAW_APPLE_PIE_ITEM = ITEMS.register("raw_apple_pie",
-            () -> new BlockItem(ModBlocks.RAW_APPLE_PIE.get(), new Item.Properties()));
-
-    public static final DeferredBlock<Block> RAW_BERRY_CHEESECAKE = BLOCKS.register("raw_berry_cheesecake",
-            () -> new RawPieBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE)));
-    public static final DeferredItem<Item> RAW_BERRY_CHEESECAKE_ITEM = ITEMS.register("raw_berry_cheesecake",
-            () -> new BlockItem(ModBlocks.RAW_BERRY_CHEESECAKE.get(), new Item.Properties()));
-
-    public static final DeferredBlock<Block> RAW_BERRY_PIE = BLOCKS.register("raw_berry_pie",
-            () -> new RawPieBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE)));
-    public static final DeferredItem<Item> RAW_BERRY_PIE_ITEM = ITEMS.register("raw_berry_pie",
-            () -> new BlockItem(ModBlocks.RAW_BERRY_PIE.get(), new Item.Properties()));
-
-    public static final DeferredBlock<Block> RAW_CHEESECAKE = BLOCKS.register("raw_cheesecake",
-            () -> new RawPieBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE)));
-    public static final DeferredItem<Item> RAW_CHEESECAKE_ITEM = ITEMS.register("raw_cheesecake",
-            () -> new BlockItem(ModBlocks.RAW_CHEESECAKE.get(), new Item.Properties()));
-
-    public static final DeferredBlock<Block> RAW_CHOCOLATE_PIE = BLOCKS.register("raw_chocolate_pie",
-            () -> new RawPieBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE)));
-    public static final DeferredItem<Item> RAW_CHOCOLATE_PIE_ITEM = ITEMS.register("raw_chocolate_pie",
-            () -> new BlockItem(ModBlocks.RAW_CHOCOLATE_PIE.get(), new Item.Properties()));
-
-    public static final DeferredBlock<Block> RAW_CHOCOLATE_PIE_GRAHAM_CRACKER = BLOCKS.register("raw_chocolate_pie_graham_cracker",
-            () -> new RawPieBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE)));
-    public static final DeferredItem<Item> RAW_CHOCOLATE_PIE_GRAHAM_CRACKER_ITEM = ITEMS.register("raw_chocolate_pie_graham_cracker",
-            () -> new BlockItem(ModBlocks.RAW_CHOCOLATE_PIE_GRAHAM_CRACKER.get(), new Item.Properties()) {
-                @Override
-                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addTooltip(components, null, "tooltip.createfood.graham_cracker_pie_crust_ingredient");
-                    super.appendHoverText(stack, context, components, flag);
-                }
-            });
-
-    public static final DeferredBlock<Block> RAW_CHORUS_FRUIT_CHEESECAKE = BLOCKS.register("raw_chorus_fruit_cheesecake",
-            () -> new RawPieBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE)));
-    public static final DeferredItem<Item> RAW_CHORUS_FRUIT_CHEESECAKE_ITEM = ITEMS.register("raw_chorus_fruit_cheesecake",
-            () -> new BlockItem(ModBlocks.RAW_CHORUS_FRUIT_CHEESECAKE.get(), new Item.Properties()));
-
-    public static final DeferredBlock<Block> RAW_CHORUS_FRUIT_PIE = BLOCKS.register("raw_chorus_fruit_pie",
-            () -> new RawPieBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE)));
-    public static final DeferredItem<Item> RAW_CHORUS_FRUIT_PIE_ITEM = ITEMS.register("raw_chorus_fruit_pie",
-            () -> new BlockItem(ModBlocks.RAW_CHORUS_FRUIT_PIE.get(), new Item.Properties()));
-
-    public static final DeferredBlock<Block> RAW_CREAM_PIE_CHOCOLATE_GRAHAM_CRACKER = BLOCKS.register("raw_cream_pie_chocolate_graham_cracker",
-            () -> new RawPieBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE)));
-    public static final DeferredItem<Item> RAW_CREAM_PIE_CHOCOLATE_GRAHAM_CRACKER_ITEM = ITEMS.register("raw_cream_pie_chocolate_graham_cracker",
-            () -> new BlockItem(ModBlocks.RAW_CREAM_PIE_CHOCOLATE_GRAHAM_CRACKER.get(), new Item.Properties()) {
-                @Override
-                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addTooltip(components, null, "tooltip.createfood.chocolate_graham_cracker_pie_crust_ingredient");
-                    super.appendHoverText(stack, context, components, flag);
-                }
-            });
-
-    public static final DeferredBlock<Block> RAW_CREAM_PIE_GRAHAM_CRACKER = BLOCKS.register("raw_cream_pie_graham_cracker",
-            () -> new RawPieBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE)));
-    public static final DeferredItem<Item> RAW_CREAM_PIE_GRAHAM_CRACKER_ITEM = ITEMS.register("raw_cream_pie_graham_cracker",
-            () -> new BlockItem(ModBlocks.RAW_CREAM_PIE_GRAHAM_CRACKER.get(), new Item.Properties()) {
-                @Override
-                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addTooltip(components, null, "tooltip.createfood.graham_cracker_pie_crust_ingredient");
-                    super.appendHoverText(stack, context, components, flag);
-                }
-            });
-
-    public static final DeferredBlock<Block> RAW_GLOW_BERRY_CHEESECAKE = BLOCKS.register("raw_glow_berry_cheesecake",
-            () -> new RawPieBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE)));
-    public static final DeferredItem<Item> RAW_GLOW_BERRY_CHEESECAKE_ITEM = ITEMS.register("raw_glow_berry_cheesecake",
-            () -> new BlockItem(ModBlocks.RAW_GLOW_BERRY_CHEESECAKE.get(), new Item.Properties()));
-
-    public static final DeferredBlock<Block> RAW_GLOW_BERRY_PIE = BLOCKS.register("raw_glow_berry_pie",
-            () -> new RawPieBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE)));
-    public static final DeferredItem<Item> RAW_GLOW_BERRY_PIE_ITEM = ITEMS.register("raw_glow_berry_pie",
-            () -> new BlockItem(ModBlocks.RAW_GLOW_BERRY_PIE.get(), new Item.Properties()));
-
-    public static final DeferredBlock<Block> RAW_PUMPKIN_PIE = BLOCKS.register("raw_pumpkin_pie",
-            () -> new RawPieBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE)));
-    public static final DeferredItem<Item> RAW_PUMPKIN_PIE_ITEM = ITEMS.register("raw_pumpkin_pie",
-            () -> new BlockItem(ModBlocks.RAW_PUMPKIN_PIE.get(), new Item.Properties()));
-
-    public static final DeferredBlock<Block> APPLE_CHEESECAKE = BLOCKS.register("apple_cheesecake",
-            () -> new ModPieBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), ModItems.APPLE_CHEESECAKE_SLICE));
-    public static final DeferredItem<Item> APPLE_CHEESECAKE_ITEM = ITEMS.register("apple_cheesecake",
-            () -> new BlockItem(ModBlocks.APPLE_CHEESECAKE.get(), new Item.Properties()));
-
-    public static final DeferredBlock<Block> BERRY_PIE = BLOCKS.register("berry_pie",
-            () -> new ModPieBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), ModItems.BERRY_PIE_SLICE));
-    public static final DeferredItem<Item> BERRY_PIE_ITEM = ITEMS.register("berry_pie",
-            () -> new BlockItem(ModBlocks.BERRY_PIE.get(), new Item.Properties()));
-
-    public static final DeferredBlock<Block> CHEESECAKE = BLOCKS.register("cheesecake",
-            () -> new ModPieBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), ModItems.CHEESECAKE_SLICE));
-    public static final DeferredItem<Item> CHEESECAKE_ITEM = ITEMS.register("cheesecake",
-            () -> new BlockItem(ModBlocks.CHEESECAKE.get(), new Item.Properties()));
-
-    public static final DeferredBlock<Block> CHOCOLATE_PIE_GRAHAM_CRACKER = BLOCKS.register("chocolate_pie_graham_cracker",
-            () -> new ModPieBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), ModItems.CHOCOLATE_PIE_GRAHAM_CRACKER_SLICE));
-    public static final DeferredItem<Item> CHOCOLATE_PIE_GRAHAM_CRACKER_ITEM = ITEMS.register("chocolate_pie_graham_cracker",
-            () -> new BlockItem(ModBlocks.CHOCOLATE_PIE_GRAHAM_CRACKER.get(), new Item.Properties()) {
-                @Override
-                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addTooltip(components, null, "tooltip.createfood.graham_cracker_pie_crust_ingredient");
-                    super.appendHoverText(stack, context, components, flag);
-                }
-            });
-
-    public static final DeferredBlock<Block> CHORUS_FRUIT_CHEESECAKE = BLOCKS.register("chorus_fruit_cheesecake",
-            () -> new ModPieBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), ModItems.CHORUS_FRUIT_CHEESECAKE_SLICE));
-    public static final DeferredItem<Item> CHORUS_FRUIT_CHEESECAKE_ITEM = ITEMS.register("chorus_fruit_cheesecake",
-            () -> new BlockItem(ModBlocks.CHORUS_FRUIT_CHEESECAKE.get(), new Item.Properties()));
-
-    public static final DeferredBlock<Block> CHORUS_FRUIT_PIE = BLOCKS.register("chorus_fruit_pie",
-            () -> new ModPieBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), ModItems.CHORUS_FRUIT_PIE_SLICE));
-    public static final DeferredItem<Item> CHORUS_FRUIT_PIE_ITEM = ITEMS.register("chorus_fruit_pie",
-            () -> new BlockItem(ModBlocks.CHORUS_FRUIT_PIE.get(), new Item.Properties()));
-
-    public static final DeferredBlock<Block> COOKIE_CREAM_PIE = BLOCKS.register("cookie_cream_pie",
-            () -> new ModPieBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), ModItems.COOKIE_CREAM_PIE_SLICE));
-    public static final DeferredItem<Item> COOKIE_CREAM_PIE_ITEM = ITEMS.register("cookie_cream_pie",
-            () -> new BlockItem(ModBlocks.COOKIE_CREAM_PIE.get(), new Item.Properties()));
-
-    public static final DeferredBlock<Block> CREAM_PIE_CHOCOLATE_GRAHAM_CRACKER = BLOCKS.register("cream_pie_chocolate_graham_cracker",
-            () -> new ModPieBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), ModItems.CREAM_PIE_CHOCOLATE_GRAHAM_CRACKER_SLICE));
-    public static final DeferredItem<Item> CREAM_PIE_CHOCOLATE_GRAHAM_CRACKER_ITEM = ITEMS.register("cream_pie_chocolate_graham_cracker",
-            () -> new BlockItem(ModBlocks.CREAM_PIE_CHOCOLATE_GRAHAM_CRACKER.get(), new Item.Properties()) {
-                @Override
-                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addTooltip(components, null, "tooltip.createfood.chocolate_graham_cracker_pie_crust_ingredient");
-                    super.appendHoverText(stack, context, components, flag);
-                }
-            });
-
-    public static final DeferredBlock<Block> CREAM_PIE_GRAHAM_CRACKER = BLOCKS.register("cream_pie_graham_cracker",
-            () -> new ModPieBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), ModItems.CREAM_PIE_GRAHAM_CRACKER_SLICE));
-    public static final DeferredItem<Item> CREAM_PIE_GRAHAM_CRACKER_ITEM = ITEMS.register("cream_pie_graham_cracker",
-            () -> new BlockItem(ModBlocks.CREAM_PIE_GRAHAM_CRACKER.get(), new Item.Properties()) {
-                @Override
-                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addTooltip(components, null, "tooltip.createfood.graham_cracker_pie_crust_ingredient");
-                    super.appendHoverText(stack, context, components, flag);
-                }
-            });
-
-    public static final DeferredBlock<Block> GLOW_BERRY_CHEESECAKE = BLOCKS.register("glow_berry_cheesecake",
-            () -> new ModPieBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), ModItems.GLOW_BERRY_CHEESECAKE_SLICE));
-    public static final DeferredItem<Item> GLOW_BERRY_CHEESECAKE_ITEM = ITEMS.register("glow_berry_cheesecake",
-            () -> new BlockItem(ModBlocks.GLOW_BERRY_CHEESECAKE.get(), new Item.Properties()));
-
-    public static final DeferredBlock<Block> GLOW_BERRY_PIE = BLOCKS.register("glow_berry_pie",
-            () -> new ModPieBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), ModItems.GLOW_BERRY_PIE_SLICE));
-    public static final DeferredItem<Item> GLOW_BERRY_PIE_ITEM = ITEMS.register("glow_berry_pie",
-            () -> new BlockItem(ModBlocks.GLOW_BERRY_PIE.get(), new Item.Properties()));
-
-    public static final DeferredBlock<Block> SMORES_PIE = BLOCKS.register("smores_pie",
-            () -> new ModPieBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), ModItems.SMORES_PIE_SLICE));
-    public static final DeferredItem<Item> SMORES_PIE_ITEM = ITEMS.register("smores_pie",
-            () -> new BlockItem(ModBlocks.SMORES_PIE.get(), new Item.Properties()));
-
-    public static final DeferredBlock<Block> WAFFLE = BLOCKS.register("waffle",
-            () -> new PizzaBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), ModItems.MINI_WAFFLE));
-    public static final DeferredItem<Item> WAFFLE_ITEM = ITEMS.register("waffle",
-            () -> new BlockItem(ModBlocks.WAFFLE.get(), new Item.Properties()));
-
-    public static final DeferredBlock<Block> BUTTERSCOTCH_CHIP_WAFFLE = BLOCKS.register("butterscotch_chip_waffle",
-            () -> new PizzaBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), ModItems.BUTTERSCOTCH_CHIP_MINI_WAFFLE));
-    public static final DeferredItem<Item> BUTTERSCOTCH_CHIP_WAFFLE_ITEM = ITEMS.register("butterscotch_chip_waffle",
-            () -> new BlockItem(ModBlocks.BUTTERSCOTCH_CHIP_WAFFLE.get(), new Item.Properties()) {
-                @Override
-                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addTooltip(components, null, "tooltip.createfood.butterscotch_chips_ingredient");
-                    super.appendHoverText(stack, context, components, flag);
-                }
-            });
-
-    public static final DeferredBlock<Block> CARAMEL_CHIP_WAFFLE = BLOCKS.register("caramel_chip_waffle",
-            () -> new PizzaBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), ModItems.CARAMEL_CHIP_MINI_WAFFLE));
-    public static final DeferredItem<Item> CARAMEL_CHIP_WAFFLE_ITEM = ITEMS.register("caramel_chip_waffle",
-            () -> new BlockItem(ModBlocks.CARAMEL_CHIP_WAFFLE.get(), new Item.Properties()) {
-                @Override
-                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addTooltip(components, null, "tooltip.createfood.caramel_chips_ingredient");
-                    super.appendHoverText(stack, context, components, flag);
-                }
-            });
-
-    public static final DeferredBlock<Block> CHOCOLATE_CHIP_WAFFLE = BLOCKS.register("chocolate_chip_waffle",
-            () -> new PizzaBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), ModItems.CHOCOLATE_CHIP_MINI_WAFFLE));
-    public static final DeferredItem<Item> CHOCOLATE_CHIP_WAFFLE_ITEM = ITEMS.register("chocolate_chip_waffle",
-            () -> new BlockItem(ModBlocks.CHOCOLATE_CHIP_WAFFLE.get(), new Item.Properties()) {
-                @Override
-                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addTooltip(components, null, "tooltip.createfood.chocolate_chips_ingredient");
-                    super.appendHoverText(stack, context, components, flag);
-                }
-            });
-
-    public static final DeferredBlock<Block> DARK_CHOCOLATE_CHIP_WAFFLE = BLOCKS.register("dark_chocolate_chip_waffle",
-            () -> new PizzaBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), ModItems.DARK_CHOCOLATE_CHIP_MINI_WAFFLE));
-    public static final DeferredItem<Item> DARK_CHOCOLATE_CHIP_WAFFLE_ITEM = ITEMS.register("dark_chocolate_chip_waffle",
-            () -> new BlockItem(ModBlocks.DARK_CHOCOLATE_CHIP_WAFFLE.get(), new Item.Properties()) {
-                @Override
-                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addTooltip(components, null, "tooltip.createfood.dark_chocolate_chips_ingredient");
-                    super.appendHoverText(stack, context, components, flag);
-                }
-            });
-    public static final DeferredBlock<Block> WHITE_CHOCOLATE_CHIP_WAFFLE = BLOCKS.register("white_chocolate_chip_waffle",
-            () -> new PizzaBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), ModItems.WHITE_CHOCOLATE_CHIP_MINI_WAFFLE));
-    public static final DeferredItem<Item> WHITE_CHOCOLATE_CHIP_WAFFLE_ITEM = ITEMS.register("white_chocolate_chip_waffle",
-            () -> new BlockItem(ModBlocks.WHITE_CHOCOLATE_CHIP_WAFFLE.get(), new Item.Properties()) {
-                @Override
-                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addTooltip(components, null, "tooltip.createfood.white_chocolate_chips_ingredient");
-                    super.appendHoverText(stack, context, components, flag);
-                }
-            });
-
-    public static final DeferredBlock<Block> TOFFEE_CHIP_WAFFLE = BLOCKS.register("toffee_chip_waffle",
-            () -> new PizzaBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), ModItems.TOFFEE_CHIP_MINI_WAFFLE));
-    public static final DeferredItem<Item> TOFFEE_CHIP_WAFFLE_ITEM = ITEMS.register("toffee_chip_waffle",
-            () -> new BlockItem(ModBlocks.TOFFEE_CHIP_WAFFLE.get(), new Item.Properties()) {
-                @Override
-                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addTooltip(components, null, "tooltip.createfood.toffee_chips_ingredient");
-                    super.appendHoverText(stack, context, components, flag);
-                }
-            });
-
+    // Raw Pizzas - Base
+    public static final DeferredBlock<Block> PIZZA_DOUGH = registerRawPizza("pizza_dough", null);
+    public static final DeferredBlock<Block> PIZZA_DOUGH_TOMATO_SAUCE = registerRawPizza("pizza_dough_tomato_sauce",
+            null, "tooltip.createfood.tomato_sauce_ingredient");
+
+    // Raw Pizzas - Single Topping
+    public static final DeferredBlock<Block> RAW_BACON_PIZZA = registerRawPizza("raw_bacon_pizza",
+            null, "tooltip.createfood.bacon_ingredient");
+    public static final DeferredBlock<Block> RAW_CHEESE_PIZZA = registerRawPizza("raw_cheese_pizza",
+            null, "tooltip.createfood.cheese_ingredient");
+    public static final DeferredBlock<Block> RAW_FISH_PIZZA = registerRawPizza("raw_fish_pizza",
+            null, "tooltip.createfood.fish_ingredient");
+    public static final DeferredBlock<Block> RAW_MUSHROOM_PIZZA = registerRawPizza("raw_mushroom_pizza",
+            null, "tooltip.createfood.mushroom_ingredient");
+    public static final DeferredBlock<Block> RAW_ONION_PIZZA = registerRawPizza("raw_onion_pizza",
+            null, "tooltip.createfood.onion_ingredient");
+    public static final DeferredBlock<Block> RAW_SAUSAGE_PIZZA = registerRawPizza("raw_sausage_pizza",
+            null, "tooltip.createfood.sausage_ingredient");
+
+    // Raw Pizzas - Double Toppings
+    public static final DeferredBlock<Block> RAW_FISH_BACON_PIZZA = registerRawPizza("raw_fish_bacon_pizza",
+            null, "tooltip.createfood.fish_ingredient", "tooltip.createfood.bacon_ingredient");
+    public static final DeferredBlock<Block> RAW_FISH_ONION_PIZZA = registerRawPizza("raw_fish_onion_pizza",
+            null, "tooltip.createfood.fish_ingredient", "tooltip.createfood.onion_ingredient");
+    public static final DeferredBlock<Block> RAW_MUSHROOM_BACON_PIZZA = registerRawPizza("raw_mushroom_bacon_pizza",
+            null, "tooltip.createfood.mushroom_ingredient", "tooltip.createfood.bacon_ingredient");
+    public static final DeferredBlock<Block> RAW_MUSHROOM_FISH_PIZZA = registerRawPizza("raw_mushroom_fish_pizza",
+            null, "tooltip.createfood.mushroom_ingredient", "tooltip.createfood.fish_ingredient");
+    public static final DeferredBlock<Block> RAW_MUSHROOM_ONION_PIZZA = registerRawPizza("raw_mushroom_onion_pizza",
+            null, "tooltip.createfood.mushroom_ingredient", "tooltip.createfood.onion_ingredient");
+    public static final DeferredBlock<Block> RAW_ONION_BACON_PIZZA = registerRawPizza("raw_onion_bacon_pizza",
+            null, "tooltip.createfood.onion_ingredient", "tooltip.createfood.bacon_ingredient");
+    public static final DeferredBlock<Block> RAW_SAUSAGE_BACON_PIZZA = registerRawPizza("raw_sausage_bacon_pizza",
+            null, "tooltip.createfood.sausage_ingredient", "tooltip.createfood.bacon_ingredient");
+    public static final DeferredBlock<Block> RAW_SAUSAGE_FISH_PIZZA = registerRawPizza("raw_sausage_fish_pizza",
+            null, "tooltip.createfood.sausage_ingredient", "tooltip.createfood.fish_ingredient");
+    public static final DeferredBlock<Block> RAW_SAUSAGE_MUSHROOM_PIZZA = registerRawPizza("raw_sausage_mushroom_pizza",
+            null, "tooltip.createfood.sausage_ingredient", "tooltip.createfood.mushroom_ingredient");
+    public static final DeferredBlock<Block> RAW_SAUSAGE_ONION_PIZZA = registerRawPizza("raw_sausage_onion_pizza",
+            null, "tooltip.createfood.sausage_ingredient", "tooltip.createfood.onion_ingredient");
+
+    // Cooked Pizzas - Single Topping
+    public static final DeferredBlock<Block> BACON_PIZZA = registerCookedPizza("bacon_pizza",
+            ModItems.BACON_PIZZA_SLICE, null, "tooltip.createfood.bacon_ingredient");
+    public static final DeferredBlock<Block> CHEESE_PIZZA = registerCookedPizza("cheese_pizza",
+            ModItems.CHEESE_PIZZA_SLICE, null, "tooltip.createfood.cheese_ingredient");
+    public static final DeferredBlock<Block> FISH_PIZZA = registerCookedPizza("fish_pizza",
+            ModItems.FISH_PIZZA_SLICE, null, "tooltip.createfood.fish_ingredient");
+    public static final DeferredBlock<Block> MUSHROOM_PIZZA = registerCookedPizza("mushroom_pizza",
+            ModItems.MUSHROOM_PIZZA_SLICE, null, "tooltip.createfood.mushroom_ingredient");
+    public static final DeferredBlock<Block> ONION_PIZZA = registerCookedPizza("onion_pizza",
+            ModItems.ONION_PIZZA_SLICE, null, "tooltip.createfood.onion_ingredient");
+    public static final DeferredBlock<Block> SAUSAGE_PIZZA = registerCookedPizza("sausage_pizza",
+            ModItems.SAUSAGE_PIZZA_SLICE, null, "tooltip.createfood.sausage_ingredient");
+
+    // Cooked Pizzas - Double Toppings
+    public static final DeferredBlock<Block> FISH_BACON_PIZZA = registerCookedPizza("fish_bacon_pizza",
+            ModItems.FISH_BACON_PIZZA_SLICE, null, "tooltip.createfood.fish_ingredient", "tooltip.createfood.bacon_ingredient");
+    public static final DeferredBlock<Block> FISH_ONION_PIZZA = registerCookedPizza("fish_onion_pizza",
+            ModItems.FISH_ONION_PIZZA_SLICE, null, "tooltip.createfood.fish_ingredient", "tooltip.createfood.onion_ingredient");
+    public static final DeferredBlock<Block> MUSHROOM_BACON_PIZZA = registerCookedPizza("mushroom_bacon_pizza",
+            ModItems.MUSHROOM_BACON_PIZZA_SLICE, null, "tooltip.createfood.mushroom_ingredient", "tooltip.createfood.bacon_ingredient");
+    public static final DeferredBlock<Block> MUSHROOM_FISH_PIZZA = registerCookedPizza("mushroom_fish_pizza",
+            ModItems.MUSHROOM_FISH_PIZZA_SLICE, null, "tooltip.createfood.mushroom_ingredient", "tooltip.createfood.fish_ingredient");
+    public static final DeferredBlock<Block> MUSHROOM_ONION_PIZZA = registerCookedPizza("mushroom_onion_pizza",
+            ModItems.MUSHROOM_ONION_PIZZA_SLICE, null, "tooltip.createfood.mushroom_ingredient", "tooltip.createfood.onion_ingredient");
+    public static final DeferredBlock<Block> ONION_BACON_PIZZA = registerCookedPizza("onion_bacon_pizza",
+            ModItems.ONION_BACON_PIZZA_SLICE, null, "tooltip.createfood.onion_ingredient", "tooltip.createfood.bacon_ingredient");
+    public static final DeferredBlock<Block> SAUSAGE_BACON_PIZZA = registerCookedPizza("sausage_bacon_pizza",
+            ModItems.SAUSAGE_BACON_PIZZA_SLICE, null, "tooltip.createfood.sausage_ingredient", "tooltip.createfood.bacon_ingredient");
+    public static final DeferredBlock<Block> SAUSAGE_FISH_PIZZA = registerCookedPizza("sausage_fish_pizza",
+            ModItems.SAUSAGE_FISH_PIZZA_SLICE, null, "tooltip.createfood.sausage_ingredient", "tooltip.createfood.fish_ingredient");
+    public static final DeferredBlock<Block> SAUSAGE_MUSHROOM_PIZZA = registerCookedPizza("sausage_mushroom_pizza",
+            ModItems.SAUSAGE_MUSHROOM_PIZZA_SLICE, null, "tooltip.createfood.sausage_ingredient", "tooltip.createfood.mushroom_ingredient");
+    public static final DeferredBlock<Block> SAUSAGE_ONION_PIZZA = registerCookedPizza("sausage_onion_pizza",
+            ModItems.SAUSAGE_ONION_PIZZA_SLICE, null, "tooltip.createfood.sausage_ingredient", "tooltip.createfood.onion_ingredient");
+
+    // Raw Pie Crusts
+    public static final DeferredBlock<Block> RAW_CHOCOLATE_GRAHAM_CRACKER_PIE_CRUST = registerRawPie("raw_chocolate_graham_cracker_pie_crust", null);
+    public static final DeferredBlock<Block> RAW_GRAHAM_CRACKER_PIE_CRUST = registerRawPie("raw_graham_cracker_pie_crust", null);
+    public static final DeferredBlock<Block> RAW_PIE_CRUST = registerRawPie("raw_pie_crust", null);
+
+    // Raw Pies - Various
+    public static final DeferredBlock<Block> RAW_APPLE_CHEESECAKE = registerRawPie("raw_apple_cheesecake", null);
+    public static final DeferredBlock<Block> RAW_APPLE_PIE = registerRawPie("raw_apple_pie", null);
+    public static final DeferredBlock<Block> RAW_BERRY_CHEESECAKE = registerRawPie("raw_berry_cheesecake", null);
+    public static final DeferredBlock<Block> RAW_BERRY_PIE = registerRawPie("raw_berry_pie", null);
+    public static final DeferredBlock<Block> RAW_CHEESECAKE = registerRawPie("raw_cheesecake", null);
+    public static final DeferredBlock<Block> RAW_CHOCOLATE_PIE = registerRawPie("raw_chocolate_pie", null);
+    public static final DeferredBlock<Block> RAW_CHOCOLATE_PIE_GRAHAM_CRACKER = registerRawPie("raw_chocolate_pie_graham_cracker",
+            null, "tooltip.createfood.graham_cracker_pie_crust_ingredient");
+    public static final DeferredBlock<Block> RAW_CHORUS_FRUIT_CHEESECAKE = registerRawPie("raw_chorus_fruit_cheesecake", null);
+    public static final DeferredBlock<Block> RAW_CHORUS_FRUIT_PIE = registerRawPie("raw_chorus_fruit_pie", null);
+    public static final DeferredBlock<Block> RAW_CREAM_PIE_CHOCOLATE_GRAHAM_CRACKER = registerRawPie("raw_cream_pie_chocolate_graham_cracker",
+            null, "tooltip.createfood.chocolate_graham_cracker_pie_crust_ingredient");
+    public static final DeferredBlock<Block> RAW_CREAM_PIE_GRAHAM_CRACKER = registerRawPie("raw_cream_pie_graham_cracker",
+            null, "tooltip.createfood.graham_cracker_pie_crust_ingredient");
+    public static final DeferredBlock<Block> RAW_GLOW_BERRY_CHEESECAKE = registerRawPie("raw_glow_berry_cheesecake", null);
+    public static final DeferredBlock<Block> RAW_GLOW_BERRY_PIE = registerRawPie("raw_glow_berry_pie", null);
+    public static final DeferredBlock<Block> RAW_PUMPKIN_PIE = registerRawPie("raw_pumpkin_pie", null);
+
+    // Cooked Pies
+    public static final DeferredBlock<Block> APPLE_CHEESECAKE = registerCookedPie("apple_cheesecake", ModItems.APPLE_CHEESECAKE_SLICE, null);
+    public static final DeferredBlock<Block> BERRY_PIE = registerCookedPie("berry_pie", ModItems.BERRY_PIE_SLICE, null);
+    public static final DeferredBlock<Block> CHEESECAKE = registerCookedPie("cheesecake", ModItems.CHEESECAKE_SLICE, null);
+    public static final DeferredBlock<Block> CHOCOLATE_PIE_GRAHAM_CRACKER = registerCookedPie("chocolate_pie_graham_cracker",
+            ModItems.CHOCOLATE_PIE_GRAHAM_CRACKER_SLICE, null, "tooltip.createfood.graham_cracker_pie_crust_ingredient");
+    public static final DeferredBlock<Block> CHORUS_FRUIT_CHEESECAKE = registerCookedPie("chorus_fruit_cheesecake", ModItems.CHORUS_FRUIT_CHEESECAKE_SLICE, null);
+    public static final DeferredBlock<Block> CHORUS_FRUIT_PIE = registerCookedPie("chorus_fruit_pie", ModItems.CHORUS_FRUIT_PIE_SLICE, null);
+    public static final DeferredBlock<Block> COOKIE_CREAM_PIE = registerCookedPie("cookie_cream_pie", ModItems.COOKIE_CREAM_PIE_SLICE, null);
+    public static final DeferredBlock<Block> CREAM_PIE_CHOCOLATE_GRAHAM_CRACKER = registerCookedPie("cream_pie_chocolate_graham_cracker",
+            ModItems.CREAM_PIE_CHOCOLATE_GRAHAM_CRACKER_SLICE, null, "tooltip.createfood.chocolate_graham_cracker_pie_crust_ingredient");
+    public static final DeferredBlock<Block> CREAM_PIE_GRAHAM_CRACKER = registerCookedPie("cream_pie_graham_cracker",
+            ModItems.CREAM_PIE_GRAHAM_CRACKER_SLICE, null, "tooltip.createfood.graham_cracker_pie_crust_ingredient");
+    public static final DeferredBlock<Block> GLOW_BERRY_CHEESECAKE = registerCookedPie("glow_berry_cheesecake", ModItems.GLOW_BERRY_CHEESECAKE_SLICE, null);
+    public static final DeferredBlock<Block> GLOW_BERRY_PIE = registerCookedPie("glow_berry_pie", ModItems.GLOW_BERRY_PIE_SLICE, null);
+    public static final DeferredBlock<Block> SMORES_PIE = registerCookedPie("smores_pie", ModItems.SMORES_PIE_SLICE, null);
+
+    // Waffles
+    public static final DeferredBlock<Block> WAFFLE = registerWaffle("waffle", ModItems.MINI_WAFFLE, null);
+    public static final DeferredBlock<Block> BUTTERSCOTCH_CHIP_WAFFLE = registerWaffle("butterscotch_chip_waffle",
+            ModItems.BUTTERSCOTCH_CHIP_MINI_WAFFLE, null, "tooltip.createfood.butterscotch_chips_ingredient");
+    public static final DeferredBlock<Block> CARAMEL_CHIP_WAFFLE = registerWaffle("caramel_chip_waffle",
+            ModItems.CARAMEL_CHIP_MINI_WAFFLE, null, "tooltip.createfood.caramel_chips_ingredient");
+    public static final DeferredBlock<Block> CHOCOLATE_CHIP_WAFFLE = registerWaffle("chocolate_chip_waffle",
+            ModItems.CHOCOLATE_CHIP_MINI_WAFFLE, null, "tooltip.createfood.chocolate_chips_ingredient");
+    public static final DeferredBlock<Block> DARK_CHOCOLATE_CHIP_WAFFLE = registerWaffle("dark_chocolate_chip_waffle",
+            ModItems.DARK_CHOCOLATE_CHIP_MINI_WAFFLE, null, "tooltip.createfood.dark_chocolate_chips_ingredient");
+    public static final DeferredBlock<Block> WHITE_CHOCOLATE_CHIP_WAFFLE = registerWaffle("white_chocolate_chip_waffle",
+            ModItems.WHITE_CHOCOLATE_CHIP_MINI_WAFFLE, null, "tooltip.createfood.white_chocolate_chips_ingredient");
+    public static final DeferredBlock<Block> TOFFEE_CHIP_WAFFLE = registerWaffle("toffee_chip_waffle",
+            ModItems.TOFFEE_CHIP_MINI_WAFFLE, null, "tooltip.createfood.toffee_chips_ingredient");
+
+    // Cake Bases
     public static final DeferredBlock<Block> CAKE_BASE = BLOCKS.register("cake_base",
             () -> new CakeBaseBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE)));
     public static final DeferredItem<Item> CAKE_BASE_ITEM = ITEMS.register("cake_base",
@@ -689,363 +308,80 @@ public class ModBlocks {
                 }
             });
 
-    public static final DeferredBlock<Block> BERRY_CREAM_CAKE = BLOCKS.register("berry_cream_cake",
-            () -> new ModCakeBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), ModItems.BERRY_CREAM_CAKE_SLICE));
-    public static final DeferredItem<Item> BERRY_CREAM_CAKE_ITEM = ITEMS.register("berry_cream_cake",
-            () -> new BlockItem(ModBlocks.BERRY_CREAM_CAKE.get(), new Item.Properties().stacksTo(1)) {
-                @Override
-                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addTooltip(components, null, "tooltip.createfood.berry_cream_frosting_ingredient");
-                    super.appendHoverText(stack, context, components, flag);
-                }
-            });
+    // Cakes - Single Frosting
+    public static final DeferredBlock<Block> BERRY_CREAM_CAKE = registerCake("berry_cream_cake",
+            ModItems.BERRY_CREAM_CAKE_SLICE, 1, null, "tooltip.createfood.berry_cream_frosting_ingredient");
+    public static final DeferredBlock<Block> APPLE_CREAM_CAKE = registerCake("apple_cream_cake",
+            ModItems.APPLE_CREAM_CAKE_SLICE, 1, null, "tooltip.createfood.apple_cream_frosting_ingredient");
+    public static final DeferredBlock<Block> MELON_CREAM_CAKE = registerCake("melon_cream_cake",
+            ModItems.MELON_CREAM_CAKE_SLICE, 1, null, "tooltip.createfood.melon_cream_frosting_ingredient");
+    public static final DeferredBlock<Block> CHOCOLATE_CREAM_CAKE = registerCake("chocolate_cream_cake",
+            ModItems.CHOCOLATE_CREAM_CAKE_SLICE, 1, null, "tooltip.createfood.chocolate_cream_frosting_ingredient");
+    public static final DeferredBlock<Block> CHORUS_FRUIT_CREAM_CAKE = registerCake("chorus_fruit_cream_cake",
+            ModItems.CHORUS_FRUIT_CREAM_CAKE_SLICE, 1, null, "tooltip.createfood.chorus_fruit_cream_frosting_ingredient");
+    public static final DeferredBlock<Block> CREAM_CAKE = registerCake("cream_cake",
+            ModItems.CREAM_CAKE_SLICE, 1, null, "tooltip.createfood.cream_frosting_ingredient");
+    public static final DeferredBlock<Block> GLOW_BERRY_CREAM_CAKE = registerCake("glow_berry_cream_cake",
+            ModItems.GLOW_BERRY_CREAM_CAKE_SLICE, 1, null, "tooltip.createfood.glow_berry_cream_frosting_ingredient");
+    public static final DeferredBlock<Block> UBE_CREAM_UBE_CAKE = registerCake("ube_cream_ube_cake",
+            ModItems.UBE_CREAM_UBE_CAKE_SLICE, 1, "tooltip.compat.ube", "tooltip.createfood.ube_cream_frosting_ingredient");
 
-    public static final DeferredBlock<Block> APPLE_CREAM_CAKE = BLOCKS.register("apple_cream_cake",
-            () -> new ModCakeBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), ModItems.APPLE_CREAM_CAKE_SLICE));
-    public static final DeferredItem<Item> APPLE_CREAM_CAKE_ITEM = ITEMS.register("apple_cream_cake",
-            () -> new BlockItem(ModBlocks.APPLE_CREAM_CAKE.get(), new Item.Properties().stacksTo(1)) {
-                @Override
-                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addTooltip(components, null, "tooltip.createfood.apple_cream_frosting_ingredient");
-                    super.appendHoverText(stack, context, components, flag);
-                }
-            });
+    // Cakes - Frosting + Topping
+    public static final DeferredBlock<Block> CREAM_CAKE_CHORUS_FRUIT = registerCake("cream_cake_chorus_fruit",
+            ModItems.CREAM_CAKE_SLICE_CHORUS_FRUIT, 1, null, "tooltip.createfood.cream_frosting_ingredient", "tooltip.createfood.chorus_fruit_ingredient");
+    public static final DeferredBlock<Block> CREAM_CAKE_GLOW_BERRY = registerCake("cream_cake_glow_berry",
+            ModItems.CREAM_CAKE_SLICE_GLOW_BERRY, 1, null, "tooltip.createfood.cream_frosting_ingredient", "tooltip.createfood.glow_berry_ingredient");
+    public static final DeferredBlock<Block> BERRY_CREAM_CAKE_SWEET_BERRY = registerCake("berry_cream_cake_sweet_berry",
+            ModItems.BERRY_CREAM_CAKE_SLICE_SWEET_BERRY, 1, null, "tooltip.createfood.berry_cream_frosting_ingredient", "tooltip.createfood.berry_ingredient");
+    public static final DeferredBlock<Block> BERRY_CREAM_CAKE_CHORUS_FRUIT = registerCake("berry_cream_cake_chorus_fruit",
+            ModItems.BERRY_CREAM_CAKE_SLICE_CHORUS_FRUIT, 1, null, "tooltip.createfood.berry_cream_frosting_ingredient", "tooltip.createfood.chorus_fruit_ingredient");
+    public static final DeferredBlock<Block> BERRY_CREAM_CAKE_GLOW_BERRY = registerCake("berry_cream_cake_glow_berry",
+            ModItems.BERRY_CREAM_CAKE_SLICE_GLOW_BERRY, 1, null, "tooltip.createfood.berry_cream_frosting_ingredient", "tooltip.createfood.glow_berry_ingredient");
+    public static final DeferredBlock<Block> CHOCOLATE_CREAM_CAKE_BUTTERSCOTCH = registerCake("chocolate_cream_cake_butterscotch",
+            ModItems.CHOCOLATE_CREAM_CAKE_SLICE_BUTTERSCOTCH, 1, null, "tooltip.createfood.chocolate_cream_frosting_ingredient", "tooltip.createfood.butterscotch_chips_ingredient");
+    public static final DeferredBlock<Block> CHOCOLATE_CREAM_CAKE_CARAMEL = registerCake("chocolate_cream_cake_caramel",
+            ModItems.CHOCOLATE_CREAM_CAKE_SLICE_CARAMEL, 1, null, "tooltip.createfood.chocolate_cream_frosting_ingredient", "tooltip.createfood.caramel_chips_ingredient");
+    public static final DeferredBlock<Block> CHOCOLATE_CREAM_CAKE_CHOCOLATE = registerCake("chocolate_cream_cake_chocolate",
+            ModItems.CHOCOLATE_CREAM_CAKE_SLICE_CHOCOLATE, 1, null, "tooltip.createfood.chocolate_cream_frosting_ingredient", "tooltip.createfood.chocolate_chips_ingredient");
+    public static final DeferredBlock<Block> CHOCOLATE_CREAM_CAKE_DARK_CHOCOLATE = registerCake("chocolate_cream_cake_dark_chocolate",
+            ModItems.CHOCOLATE_CREAM_CAKE_SLICE_DARK_CHOCOLATE, 1, null, "tooltip.createfood.chocolate_cream_frosting_ingredient", "tooltip.createfood.dark_chocolate_chips_ingredient");
+    public static final DeferredBlock<Block> CHOCOLATE_CREAM_CAKE_TOFFEE = registerCake("chocolate_cream_cake_toffee",
+            ModItems.CHOCOLATE_CREAM_CAKE_SLICE_TOFFEE, 1, null, "tooltip.createfood.chocolate_cream_frosting_ingredient", "tooltip.createfood.toffee_chips_ingredient");
+    public static final DeferredBlock<Block> CHOCOLATE_CREAM_CAKE_WHITE_CHOCOLATE = registerCake("chocolate_cream_cake_white_chocolate",
+            ModItems.CHOCOLATE_CREAM_CAKE_SLICE_WHITE_CHOCOLATE, 1, null, "tooltip.createfood.chocolate_cream_frosting_ingredient", "tooltip.createfood.white_chocolate_chips_ingredient");
+    public static final DeferredBlock<Block> CHORUS_FRUIT_CREAM_CAKE_SWEET_BERRY = registerCake("chorus_fruit_cream_cake_sweet_berry",
+            ModItems.CHORUS_FRUIT_CREAM_CAKE_SLICE_SWEET_BERRY, 1, null, "tooltip.createfood.chorus_fruit_cream_frosting_ingredient", "tooltip.createfood.berry_ingredient");
+    public static final DeferredBlock<Block> CHORUS_FRUIT_CREAM_CAKE_CHORUS_FRUIT = registerCake("chorus_fruit_cream_cake_chorus_fruit",
+            ModItems.CHORUS_FRUIT_CREAM_CAKE_SLICE_CHORUS_FRUIT, 1, null, "tooltip.createfood.chorus_fruit_cream_frosting_ingredient", "tooltip.createfood.chorus_fruit_ingredient");
+    public static final DeferredBlock<Block> CHORUS_FRUIT_CREAM_CAKE_GLOW_BERRY = registerCake("chorus_fruit_cream_cake_glow_berry",
+            ModItems.CHORUS_FRUIT_CREAM_CAKE_SLICE_GLOW_BERRY, 1, null, "tooltip.createfood.chorus_fruit_cream_frosting_ingredient", "tooltip.createfood.glow_berry_ingredient");
+    public static final DeferredBlock<Block> GLOW_BERRY_CREAM_CAKE_SWEET_BERRY = registerCake("glow_berry_cream_cake_sweet_berry",
+            ModItems.GLOW_BERRY_CREAM_CAKE_SLICE_SWEET_BERRY, 1, null, "tooltip.createfood.glow_berry_cream_frosting_ingredient", "tooltip.createfood.berry_ingredient");
+    public static final DeferredBlock<Block> GLOW_BERRY_CREAM_CAKE_CHORUS_FRUIT = registerCake("glow_berry_cream_cake_chorus_fruit",
+            ModItems.GLOW_BERRY_CREAM_CAKE_SLICE_CHORUS_FRUIT, 1, null, "tooltip.createfood.glow_berry_cream_frosting_ingredient", "tooltip.createfood.chorus_fruit_ingredient");
+    public static final DeferredBlock<Block> GLOW_BERRY_CREAM_CAKE_GLOW_BERRY = registerCake("glow_berry_cream_cake_glow_berry",
+            ModItems.GLOW_BERRY_CREAM_CAKE_SLICE_GLOW_BERRY, 1, null, "tooltip.createfood.glow_berry_cream_frosting_ingredient", "tooltip.createfood.glow_berry_ingredient");
 
-    public static final DeferredBlock<Block> MELON_CREAM_CAKE = BLOCKS.register("melon_cream_cake",
-            () -> new ModCakeBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), ModItems.MELON_CREAM_CAKE_SLICE));
-    public static final DeferredItem<Item> MELON_CREAM_CAKE_ITEM = ITEMS.register("melon_cream_cake",
-            () -> new BlockItem(ModBlocks.MELON_CREAM_CAKE.get(), new Item.Properties().stacksTo(1)) {
-                @Override
-                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addTooltip(components, null, "tooltip.createfood.melon_cream_frosting_ingredient");
-                    super.appendHoverText(stack, context, components, flag);
-                }
-            });
-
-    public static final DeferredBlock<Block> CHOCOLATE_CREAM_CAKE = BLOCKS.register("chocolate_cream_cake",
-            () -> new ModCakeBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), ModItems.CHOCOLATE_CREAM_CAKE_SLICE));
-    public static final DeferredItem<Item> CHOCOLATE_CREAM_CAKE_ITEM = ITEMS.register("chocolate_cream_cake",
-            () -> new BlockItem(ModBlocks.CHOCOLATE_CREAM_CAKE.get(), new Item.Properties().stacksTo(1)) {
-                @Override
-                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addTooltip(components, null, "tooltip.createfood.chocolate_cream_frosting_ingredient");
-                    super.appendHoverText(stack, context, components, flag);
-                }
-            });
-
-    public static final DeferredBlock<Block> CHORUS_FRUIT_CREAM_CAKE = BLOCKS.register("chorus_fruit_cream_cake",
-            () -> new ModCakeBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), ModItems.CHORUS_FRUIT_CREAM_CAKE_SLICE));
-    public static final DeferredItem<Item> CHORUS_FRUIT_CREAM_CAKE_ITEM = ITEMS.register("chorus_fruit_cream_cake",
-            () -> new BlockItem(ModBlocks.CHORUS_FRUIT_CREAM_CAKE.get(), new Item.Properties().stacksTo(1)) {
-                @Override
-                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addTooltip(components, null, "tooltip.createfood.chorus_fruit_cream_frosting_ingredient");
-                    super.appendHoverText(stack, context, components, flag);
-                }
-            });
-
-    public static final DeferredBlock<Block> CREAM_CAKE = BLOCKS.register("cream_cake",
-            () -> new ModCakeBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), ModItems.CREAM_CAKE_SLICE));
-    public static final DeferredItem<Item> CREAM_CAKE_ITEM = ITEMS.register("cream_cake",
-            () -> new BlockItem(ModBlocks.CREAM_CAKE.get(), new Item.Properties().stacksTo(1)) {
-                @Override
-                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addTooltip(components, null, "tooltip.createfood.cream_frosting_ingredient");
-                    super.appendHoverText(stack, context, components, flag);
-                }
-            });
-
-    public static final DeferredBlock<Block> GLOW_BERRY_CREAM_CREAM_CAKE = BLOCKS.register("glow_berry_cream_cake",
-            () -> new ModCakeBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), ModItems.GLOW_BERRY_CREAM_CAKE_SLICE));
-    public static final DeferredItem<Item> GLOW_BERRY_CREAM_CREAM_CAKE_ITEM = ITEMS.register("glow_berry_cream_cake",
-            () -> new BlockItem(ModBlocks.GLOW_BERRY_CREAM_CREAM_CAKE.get(), new Item.Properties().stacksTo(1)) {
-                @Override
-                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addTooltip(components, null, "tooltip.createfood.glow_berry_cream_frosting_ingredient");
-                    super.appendHoverText(stack, context, components, flag);
-                }
-            });
-
-    public static final DeferredBlock<Block> UBE_CREAM_UBE_CAKE = BLOCKS.register("ube_cream_ube_cake",
-            () -> new ModCakeBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), ModItems.UBE_CREAM_UBE_CAKE_SLICE));
-    public static final DeferredItem<Item> UBE_CREAM_UBE_CAKE_ITEM = ITEMS.register("ube_cream_ube_cake",
-            () -> new BlockItem(ModBlocks.UBE_CREAM_UBE_CAKE.get(), new Item.Properties().stacksTo(1)) {
-                @Override
-                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addTooltip(components, "tooltip.compat.ube", null);
-                    super.appendHoverText(stack, context, components, flag);
-                    addTooltip(components, null, "tooltip.createfood.ube_cream_frosting_ingredient");
-                }
-            });
-
-    public static final DeferredBlock<Block> CREAM_CAKE_CHORUS_FRUIT = BLOCKS.register("cream_cake_chorus_fruit",
-            () -> new ModCakeBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), ModItems.CREAM_CAKE_SLICE_CHORUS_FRUIT));
-    public static final DeferredItem<Item> CREAM_CAKE_CHORUS_FRUIT_ITEM = ITEMS.register("cream_cake_chorus_fruit",
-            () -> new BlockItem(ModBlocks.CREAM_CAKE_CHORUS_FRUIT.get(), new Item.Properties().stacksTo(1)) {
-                @Override
-                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addTooltip(components, null, "tooltip.createfood.cream_frosting_ingredient", "tooltip.createfood.chorus_fruit_ingredient");
-                    super.appendHoverText(stack, context, components, flag);
-                }
-            });
-
-    public static final DeferredBlock<Block> CREAM_CAKE_GLOW_BERRY = BLOCKS.register("cream_cake_glow_berry",
-            () -> new ModCakeBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), ModItems.CREAM_CAKE_SLICE_GLOW_BERRY));
-    public static final DeferredItem<Item> CREAM_CAKE_GLOW_BERRY_ITEM = ITEMS.register("cream_cake_glow_berry",
-            () -> new BlockItem(ModBlocks.CREAM_CAKE_GLOW_BERRY.get(), new Item.Properties().stacksTo(1)) {
-                @Override
-                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addTooltip(components, null, "tooltip.createfood.cream_frosting_ingredient", "tooltip.createfood.glow_berry_ingredient");
-                    super.appendHoverText(stack, context, components, flag);
-                }
-            });
-    public static final DeferredBlock<Block> BERRY_CREAM_CAKE_SWEET_BERRY = BLOCKS.register("berry_cream_cake_sweet_berry",
-            () -> new ModCakeBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), ModItems.BERRY_CREAM_CAKE_SLICE_SWEET_BERRY));
-    public static final DeferredItem<Item> BERRY_CREAM_CAKE_SWEET_BERRY_ITEM = ITEMS.register("berry_cream_cake_sweet_berry",
-            () -> new BlockItem(ModBlocks.BERRY_CREAM_CAKE_SWEET_BERRY.get(), new Item.Properties().stacksTo(1)) {
-                @Override
-                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addTooltip(components, null, "tooltip.createfood.berry_cream_frosting_ingredient", "tooltip.createfood.berry_ingredient");
-                    super.appendHoverText(stack, context, components, flag);
-                }
-            });
-
-    public static final DeferredBlock<Block> BERRY_CREAM_CAKE_CHORUS_FRUIT = BLOCKS.register("berry_cream_cake_chorus_fruit",
-            () -> new ModCakeBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), ModItems.BERRY_CREAM_CAKE_SLICE_CHORUS_FRUIT));
-    public static final DeferredItem<Item> BERRY_CREAM_CAKE_CHORUS_FRUIT_ITEM = ITEMS.register("berry_cream_cake_chorus_fruit",
-            () -> new BlockItem(ModBlocks.BERRY_CREAM_CAKE_CHORUS_FRUIT.get(), new Item.Properties().stacksTo(1)) {
-                @Override
-                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addTooltip(components, null, "tooltip.createfood.berry_cream_frosting_ingredient", "tooltip.createfood.chorus_fruit_ingredient");
-                    super.appendHoverText(stack, context, components, flag);
-                }
-            });
-
-    public static final DeferredBlock<Block> BERRY_CREAM_CAKE_GLOW_BERRY = BLOCKS.register("berry_cream_cake_glow_berry",
-            () -> new ModCakeBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), ModItems.BERRY_CREAM_CAKE_SLICE_GLOW_BERRY));
-    public static final DeferredItem<Item> BERRY_CREAM_CAKE_GLOW_BERRY_ITEM = ITEMS.register("berry_cream_cake_glow_berry",
-            () -> new BlockItem(ModBlocks.BERRY_CREAM_CAKE_GLOW_BERRY.get(), new Item.Properties().stacksTo(1)) {
-                @Override
-                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addTooltip(components, null, "tooltip.createfood.berry_cream_frosting_ingredient", "tooltip.createfood.glow_berry_ingredient");
-                    super.appendHoverText(stack, context, components, flag);
-                }
-            });
-
-    public static final DeferredBlock<Block> CHOCOLATE_CREAM_CAKE_BUTTERSCOTCH = BLOCKS.register("chocolate_cream_cake_butterscotch",
-            () -> new ModCakeBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), ModItems.CHOCOLATE_CREAM_CAKE_SLICE_BUTTERSCOTCH));
-    public static final DeferredItem<Item> CHOCOLATE_CREAM_CAKE_BUTTERSCOTCH_ITEM = ITEMS.register("chocolate_cream_cake_butterscotch",
-            () -> new BlockItem(ModBlocks.CHOCOLATE_CREAM_CAKE_BUTTERSCOTCH.get(), new Item.Properties().stacksTo(1)) {
-                @Override
-                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addTooltip(components, null, "tooltip.createfood.chocolate_cream_frosting_ingredient", "tooltip.createfood.butterscotch_chips_ingredient");
-                    super.appendHoverText(stack, context, components, flag);
-                }
-            });
-
-    public static final DeferredBlock<Block> CHOCOLATE_CREAM_CAKE_CARAMEL = BLOCKS.register("chocolate_cream_cake_caramel",
-            () -> new ModCakeBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), ModItems.CHOCOLATE_CREAM_CAKE_SLICE_CARAMEL));
-    public static final DeferredItem<Item> CHOCOLATE_CREAM_CAKE_CARAMEL_ITEM = ITEMS.register("chocolate_cream_cake_caramel",
-            () -> new BlockItem(ModBlocks.CHOCOLATE_CREAM_CAKE_CARAMEL.get(), new Item.Properties().stacksTo(1)) {
-                @Override
-                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addTooltip(components, null, "tooltip.createfood.chocolate_cream_frosting_ingredient", "tooltip.createfood.caramel_chips_ingredient");
-                    super.appendHoverText(stack, context, components, flag);
-                }
-            });
-
-    public static final DeferredBlock<Block> CHOCOLATE_CREAM_CAKE_CHOCOLATE = BLOCKS.register("chocolate_cream_cake_chocolate",
-            () -> new ModCakeBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), ModItems.CHOCOLATE_CREAM_CAKE_SLICE_CHOCOLATE));
-    public static final DeferredItem<Item> CHOCOLATE_CREAM_CAKE_CHOCOLATE_ITEM = ITEMS.register("chocolate_cream_cake_chocolate",
-            () -> new BlockItem(ModBlocks.CHOCOLATE_CREAM_CAKE_CHOCOLATE.get(), new Item.Properties().stacksTo(1)) {
-                @Override
-                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addTooltip(components, null, "tooltip.createfood.chocolate_cream_frosting_ingredient", "tooltip.createfood.chocolate_chips_ingredient");
-                    super.appendHoverText(stack, context, components, flag);
-                }
-            });
-
-    public static final DeferredBlock<Block> CHOCOLATE_CREAM_CAKE_DARK_CHOCOLATE = BLOCKS.register("chocolate_cream_cake_dark_chocolate",
-            () -> new ModCakeBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), ModItems.CHOCOLATE_CREAM_CAKE_SLICE_DARK_CHOCOLATE));
-    public static final DeferredItem<Item> CHOCOLATE_CREAM_CAKE_DARK_CHOCOLATE_ITEM = ITEMS.register("chocolate_cream_cake_dark_chocolate",
-            () -> new BlockItem(ModBlocks.CHOCOLATE_CREAM_CAKE_DARK_CHOCOLATE.get(), new Item.Properties().stacksTo(1)) {
-                @Override
-                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addTooltip(components, null, "tooltip.createfood.chocolate_cream_frosting_ingredient", "tooltip.createfood.dark_chocolate_chips_ingredient");
-                    super.appendHoverText(stack, context, components, flag);
-                }
-            });
-    public static final DeferredBlock<Block> CHOCOLATE_CREAM_CAKE_TOFFEE = BLOCKS.register("chocolate_cream_cake_toffee",
-            () -> new ModCakeBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), ModItems.CHOCOLATE_CREAM_CAKE_SLICE_TOFFEE));
-    public static final DeferredItem<Item> CHOCOLATE_CREAM_CAKE_TOFFEE_ITEM = ITEMS.register("chocolate_cream_cake_toffee",
-            () -> new BlockItem(ModBlocks.CHOCOLATE_CREAM_CAKE_TOFFEE.get(), new Item.Properties().stacksTo(1)) {
-                @Override
-                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addTooltip(components, null, "tooltip.createfood.chocolate_cream_frosting_ingredient", "tooltip.createfood.toffee_chips_ingredient");
-                    super.appendHoverText(stack, context, components, flag);
-                }
-            });
-
-    public static final DeferredBlock<Block> CHOCOLATE_CREAM_CAKE_WHITE_CHOCOLATE = BLOCKS.register("chocolate_cream_cake_white_chocolate",
-            () -> new ModCakeBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), ModItems.CHOCOLATE_CREAM_CAKE_SLICE_WHITE_CHOCOLATE));
-    public static final DeferredItem<Item> CHOCOLATE_CREAM_CAKE_WHITE_CHOCOLATE_ITEM = ITEMS.register("chocolate_cream_cake_white_chocolate",
-            () -> new BlockItem(ModBlocks.CHOCOLATE_CREAM_CAKE_WHITE_CHOCOLATE.get(), new Item.Properties().stacksTo(1)) {
-                @Override
-                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addTooltip(components, null, "tooltip.createfood.chocolate_cream_frosting_ingredient", "tooltip.createfood.white_chocolate_chips_ingredient");
-                    super.appendHoverText(stack, context, components, flag);
-                }
-            });
-
-    public static final DeferredBlock<Block> CHORUS_FRUIT_CREAM_CAKE_SWEET_BERRY = BLOCKS.register("chorus_fruit_cream_cake_sweet_berry",
-            () -> new ModCakeBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), ModItems.CHORUS_FRUIT_CREAM_CAKE_SLICE_SWEET_BERRY));
-    public static final DeferredItem<Item> CHORUS_FRUIT_CREAM_CAKE_SWEET_BERRY_ITEM = ITEMS.register("chorus_fruit_cream_cake_sweet_berry",
-            () -> new BlockItem(ModBlocks.CHORUS_FRUIT_CREAM_CAKE_SWEET_BERRY.get(), new Item.Properties().stacksTo(1)) {
-                @Override
-                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addTooltip(components, null, "tooltip.createfood.chorus_fruit_cream_frosting_ingredient", "tooltip.createfood.berry_ingredient");
-                    super.appendHoverText(stack, context, components, flag);
-                }
-            });
-
-    public static final DeferredBlock<Block> CHORUS_FRUIT_CREAM_CAKE_CHORUS_FRUIT = BLOCKS.register("chorus_fruit_cream_cake_chorus_fruit",
-            () -> new ModCakeBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), ModItems.CHORUS_FRUIT_CREAM_CAKE_SLICE_CHORUS_FRUIT));
-    public static final DeferredItem<Item> CHORUS_FRUIT_CREAM_CAKE_CHORUS_FRUIT_ITEM = ITEMS.register("chorus_fruit_cream_cake_chorus_fruit",
-            () -> new BlockItem(ModBlocks.CHORUS_FRUIT_CREAM_CAKE_CHORUS_FRUIT.get(), new Item.Properties().stacksTo(1)) {
-                @Override
-                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addTooltip(components, null, "tooltip.createfood.chorus_fruit_cream_frosting_ingredient", "tooltip.createfood.chorus_fruit_ingredient");
-                    super.appendHoverText(stack, context, components, flag);
-                }
-            });
-
-    public static final DeferredBlock<Block> CHORUS_FRUIT_CREAM_CAKE_GLOW_BERRY = BLOCKS.register("chorus_fruit_cream_cake_glow_berry",
-            () -> new ModCakeBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), ModItems.CHORUS_FRUIT_CREAM_CAKE_SLICE_GLOW_BERRY));
-    public static final DeferredItem<Item> CHORUS_FRUIT_CREAM_CAKE_GLOW_BERRY_ITEM = ITEMS.register("chorus_fruit_cream_cake_glow_berry",
-            () -> new BlockItem(ModBlocks.CHORUS_FRUIT_CREAM_CAKE_GLOW_BERRY.get(), new Item.Properties().stacksTo(1)) {
-                @Override
-                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addTooltip(components, null, "tooltip.createfood.chorus_fruit_cream_frosting_ingredient", "tooltip.createfood.glow_berry_ingredient");
-                    super.appendHoverText(stack, context, components, flag);
-                }
-            });
-
-    public static final DeferredBlock<Block> GLOW_BERRY_CREAM_CAKE_SWEET_BERRY = BLOCKS.register("glow_berry_cream_cake_sweet_berry",
-            () -> new ModCakeBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), ModItems.GLOW_BERRY_CREAM_CAKE_SLICE_SWEET_BERRY));
-    public static final DeferredItem<Item> GLOW_BERRY_CREAM_CREAM_CAKE_SWEET_BERRY_ITEM = ITEMS.register("glow_berry_cream_cake_sweet_berry",
-            () -> new BlockItem(ModBlocks.GLOW_BERRY_CREAM_CAKE_SWEET_BERRY.get(), new Item.Properties().stacksTo(1)) {
-                @Override
-                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addTooltip(components, null, "tooltip.createfood.glow_berry_cream_frosting_ingredient", "tooltip.createfood.berry_ingredient");
-                    super.appendHoverText(stack, context, components, flag);
-                }
-            });
-
-    public static final DeferredBlock<Block> GLOW_BERRY_CREAM_CAKE_CHORUS_FRUIT = BLOCKS.register("glow_berry_cream_cake_chorus_fruit",
-            () -> new ModCakeBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), ModItems.GLOW_BERRY_CREAM_CAKE_SLICE_CHORUS_FRUIT));
-    public static final DeferredItem<Item> GLOW_BERRY_CREAM_CREAM_CAKE_CHORUS_FRUIT_ITEM = ITEMS.register("glow_berry_cream_cake_chorus_fruit",
-            () -> new BlockItem(ModBlocks.GLOW_BERRY_CREAM_CAKE_CHORUS_FRUIT.get(), new Item.Properties().stacksTo(1)) {
-                @Override
-                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addTooltip(components, null, "tooltip.createfood.glow_berry_cream_frosting_ingredient", "tooltip.createfood.chorus_fruit_ingredient");
-                    super.appendHoverText(stack, context, components, flag);
-                }
-            });
-
-    public static final DeferredBlock<Block> GLOW_BERRY_CREAM_CAKE_GLOW_BERRY = BLOCKS.register("glow_berry_cream_cake_glow_berry",
-            () -> new ModCakeBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), ModItems.GLOW_BERRY_CREAM_CAKE_SLICE_GLOW_BERRY));
-    public static final DeferredItem<Item> GLOW_BERRY_CREAM_CREAM_CAKE_GLOW_BERRY_ITEM = ITEMS.register("glow_berry_cream_cake_glow_berry",
-            () -> new BlockItem(ModBlocks.GLOW_BERRY_CREAM_CAKE_GLOW_BERRY.get(), new Item.Properties().stacksTo(1)) {
-                @Override
-                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addTooltip(components, null, "tooltip.createfood.glow_berry_cream_frosting_ingredient", "tooltip.createfood.glow_berry_ingredient");
-                    super.appendHoverText(stack, context, components, flag);
-                }
-            });
-
-    public static final DeferredBlock<Block> YELLOW_GELATIN_DESSERT_BLOCK = BLOCKS.register("yellow_gelatin_dessert_block",
-            () -> new SlimeBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.SLIME_BLOCK)));
-    public static final DeferredItem<Item> YELLOW_GELATIN_DESSERT_BLOCK_ITEM = ITEMS.register("yellow_gelatin_dessert_block",
-            () -> new BlockItem(ModBlocks.YELLOW_GELATIN_DESSERT_BLOCK.get(), new Item.Properties()));
-
-    public static final DeferredBlock<Block> GELATIN_DESSERT_BLOCK = BLOCKS.register("gelatin_dessert_block",
-            () -> new SlimeBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.SLIME_BLOCK)));
-    public static final DeferredItem<Item> GELATIN_DESSERT_BLOCK_ITEM = ITEMS.register("gelatin_dessert_block",
-            () -> new BlockItem(ModBlocks.GELATIN_DESSERT_BLOCK.get(), new Item.Properties()));
-
-    public static final DeferredBlock<Block> ORANGE_GELATIN_DESSERT_BLOCK = BLOCKS.register("orange_gelatin_dessert_block",
-            () -> new SlimeBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.SLIME_BLOCK)));
-    public static final DeferredItem<Item> ORANGE_GELATIN_DESSERT_BLOCK_ITEM = ITEMS.register("orange_gelatin_dessert_block",
-            () -> new BlockItem(ModBlocks.ORANGE_GELATIN_DESSERT_BLOCK.get(), new Item.Properties()));
-
-    public static final DeferredBlock<Block> MAGENTA_GELATIN_DESSERT_BLOCK = BLOCKS.register("magenta_gelatin_dessert_block",
-            () -> new SlimeBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.SLIME_BLOCK)));
-    public static final DeferredItem<Item> MAGENTA_GELATIN_DESSERT_BLOCK_ITEM = ITEMS.register("magenta_gelatin_dessert_block",
-            () -> new BlockItem(ModBlocks.MAGENTA_GELATIN_DESSERT_BLOCK.get(), new Item.Properties()));
-
-    public static final DeferredBlock<Block> LIGHT_BLUE_GELATIN_DESSERT_BLOCK = BLOCKS.register("light_blue_gelatin_dessert_block",
-            () -> new SlimeBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.SLIME_BLOCK)));
-    public static final DeferredItem<Item> LIGHT_BLUE_GELATIN_DESSERT_BLOCK_ITEM = ITEMS.register("light_blue_gelatin_dessert_block",
-            () -> new BlockItem(ModBlocks.LIGHT_BLUE_GELATIN_DESSERT_BLOCK.get(), new Item.Properties()));
-
-    public static final DeferredBlock<Block> LIME_GELATIN_DESSERT_BLOCK = BLOCKS.register("lime_gelatin_dessert_block",
-            () -> new SlimeBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.SLIME_BLOCK)));
-    public static final DeferredItem<Item> LIME_GELATIN_DESSERT_BLOCK_ITEM = ITEMS.register("lime_gelatin_dessert_block",
-            () -> new BlockItem(ModBlocks.LIME_GELATIN_DESSERT_BLOCK.get(), new Item.Properties()));
-
-    public static final DeferredBlock<Block> PINK_GELATIN_DESSERT_BLOCK = BLOCKS.register("pink_gelatin_dessert_block",
-            () -> new SlimeBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.SLIME_BLOCK)));
-    public static final DeferredItem<Item> PINK_GELATIN_DESSERT_BLOCK_ITEM = ITEMS.register("pink_gelatin_dessert_block",
-            () -> new BlockItem(ModBlocks.PINK_GELATIN_DESSERT_BLOCK.get(), new Item.Properties()));
-
-    public static final DeferredBlock<Block> GRAY_GELATIN_DESSERT_BLOCK = BLOCKS.register("gray_gelatin_dessert_block",
-            () -> new SlimeBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.SLIME_BLOCK)));
-    public static final DeferredItem<Item> GRAY_GELATIN_DESSERT_BLOCK_ITEM = ITEMS.register("gray_gelatin_dessert_block",
-            () -> new BlockItem(ModBlocks.GRAY_GELATIN_DESSERT_BLOCK.get(), new Item.Properties()));
-
-    public static final DeferredBlock<Block> LIGHT_GRAY_GELATIN_DESSERT_BLOCK = BLOCKS.register("light_gray_gelatin_dessert_block",
-            () -> new SlimeBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.SLIME_BLOCK)));
-    public static final DeferredItem<Item> LIGHT_GRAY_GELATIN_DESSERT_BLOCK_ITEM = ITEMS.register("light_gray_gelatin_dessert_block",
-            () -> new BlockItem(ModBlocks.LIGHT_GRAY_GELATIN_DESSERT_BLOCK.get(), new Item.Properties()));
-
-    public static final DeferredBlock<Block> CYAN_GELATIN_DESSERT_BLOCK = BLOCKS.register("cyan_gelatin_dessert_block",
-            () -> new SlimeBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.SLIME_BLOCK)));
-    public static final DeferredItem<Item> CYAN_GELATIN_DESSERT_BLOCK_ITEM = ITEMS.register("cyan_gelatin_dessert_block",
-            () -> new BlockItem(ModBlocks.CYAN_GELATIN_DESSERT_BLOCK.get(), new Item.Properties()));
-
-    public static final DeferredBlock<Block> PURPLE_GELATIN_DESSERT_BLOCK = BLOCKS.register("purple_gelatin_dessert_block",
-            () -> new SlimeBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.SLIME_BLOCK)));
-    public static final DeferredItem<Item> PURPLE_GELATIN_DESSERT_BLOCK_ITEM = ITEMS.register("purple_gelatin_dessert_block",
-            () -> new BlockItem(ModBlocks.PURPLE_GELATIN_DESSERT_BLOCK.get(), new Item.Properties()));
-
-    public static final DeferredBlock<Block> BLUE_GELATIN_DESSERT_BLOCK = BLOCKS.register("blue_gelatin_dessert_block",
-            () -> new SlimeBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.SLIME_BLOCK)));
-    public static final DeferredItem<Item> BLUE_GELATIN_DESSERT_BLOCK_ITEM = ITEMS.register("blue_gelatin_dessert_block",
-            () -> new BlockItem(ModBlocks.BLUE_GELATIN_DESSERT_BLOCK.get(), new Item.Properties()));
-
-    public static final DeferredBlock<Block> BROWN_GELATIN_DESSERT_BLOCK = BLOCKS.register("brown_gelatin_dessert_block",
-            () -> new SlimeBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.SLIME_BLOCK)));
-    public static final DeferredItem<Item> BROWN_GELATIN_DESSERT_BLOCK_ITEM = ITEMS.register("brown_gelatin_dessert_block",
-            () -> new BlockItem(ModBlocks.BROWN_GELATIN_DESSERT_BLOCK.get(), new Item.Properties()));
-
-    public static final DeferredBlock<Block> GREEN_GELATIN_DESSERT_BLOCK = BLOCKS.register("green_gelatin_dessert_block",
-            () -> new SlimeBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.SLIME_BLOCK)));
-    public static final DeferredItem<Item> GREEN_GELATIN_DESSERT_BLOCK_ITEM = ITEMS.register("green_gelatin_dessert_block",
-            () -> new BlockItem(ModBlocks.GREEN_GELATIN_DESSERT_BLOCK.get(), new Item.Properties()));
-
-    public static final DeferredBlock<Block> RED_GELATIN_DESSERT_BLOCK = BLOCKS.register("red_gelatin_dessert_block",
-            () -> new SlimeBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.SLIME_BLOCK)));
-    public static final DeferredItem<Item> RED_GELATIN_DESSERT_BLOCK_ITEM = ITEMS.register("red_gelatin_dessert_block",
-            () -> new BlockItem(ModBlocks.RED_GELATIN_DESSERT_BLOCK.get(), new Item.Properties()));
-
-    public static final DeferredBlock<Block> BLACK_GELATIN_DESSERT_BLOCK = BLOCKS.register("black_gelatin_dessert_block",
-            () -> new SlimeBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.SLIME_BLOCK)));
-    public static final DeferredItem<Item> BLACK_GELATIN_DESSERT_BLOCK_ITEM = ITEMS.register("black_gelatin_dessert_block",
-            () -> new BlockItem(ModBlocks.BLACK_GELATIN_DESSERT_BLOCK.get(), new Item.Properties()));
+    // Gelatin Dessert Blocks
+    public static final DeferredBlock<Block> YELLOW_GELATIN_DESSERT_BLOCK = registerGelatinBlock("yellow_gelatin_dessert_block");
+    public static final DeferredBlock<Block> GELATIN_DESSERT_BLOCK = registerGelatinBlock("gelatin_dessert_block");
+    public static final DeferredBlock<Block> ORANGE_GELATIN_DESSERT_BLOCK = registerGelatinBlock("orange_gelatin_dessert_block");
+    public static final DeferredBlock<Block> MAGENTA_GELATIN_DESSERT_BLOCK = registerGelatinBlock("magenta_gelatin_dessert_block");
+    public static final DeferredBlock<Block> LIGHT_BLUE_GELATIN_DESSERT_BLOCK = registerGelatinBlock("light_blue_gelatin_dessert_block");
+    public static final DeferredBlock<Block> LIME_GELATIN_DESSERT_BLOCK = registerGelatinBlock("lime_gelatin_dessert_block");
+    public static final DeferredBlock<Block> PINK_GELATIN_DESSERT_BLOCK = registerGelatinBlock("pink_gelatin_dessert_block");
+    public static final DeferredBlock<Block> GRAY_GELATIN_DESSERT_BLOCK = registerGelatinBlock("gray_gelatin_dessert_block");
+    public static final DeferredBlock<Block> LIGHT_GRAY_GELATIN_DESSERT_BLOCK = registerGelatinBlock("light_gray_gelatin_dessert_block");
+    public static final DeferredBlock<Block> CYAN_GELATIN_DESSERT_BLOCK = registerGelatinBlock("cyan_gelatin_dessert_block");
+    public static final DeferredBlock<Block> PURPLE_GELATIN_DESSERT_BLOCK = registerGelatinBlock("purple_gelatin_dessert_block");
+    public static final DeferredBlock<Block> BLUE_GELATIN_DESSERT_BLOCK = registerGelatinBlock("blue_gelatin_dessert_block");
+    public static final DeferredBlock<Block> BROWN_GELATIN_DESSERT_BLOCK = registerGelatinBlock("brown_gelatin_dessert_block");
+    public static final DeferredBlock<Block> GREEN_GELATIN_DESSERT_BLOCK = registerGelatinBlock("green_gelatin_dessert_block");
+    public static final DeferredBlock<Block> RED_GELATIN_DESSERT_BLOCK = registerGelatinBlock("red_gelatin_dessert_block");
+    public static final DeferredBlock<Block> BLACK_GELATIN_DESSERT_BLOCK = registerGelatinBlock("black_gelatin_dessert_block");
 
     public static void register(IEventBus eventBus) {
         LOGGER.info("Create: Food - Registering Blocks");
         BLOCKS.register(eventBus);
     }
-
 }

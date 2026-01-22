@@ -1,0 +1,117 @@
+{
+	"format_version": "1.9.0",
+	"credit": "Made with Blockbench",
+	"parent": "minecraft:block/block",
+	"textures": {
+		"2": "createfood:block/small_toast",
+		"4": "createfood:item/hash_browns",
+		"particle": "createfood:block/plate_block",
+		"plate": "createfood:block/plate_block"
+	},
+	"elements": [
+		{
+			"from": [1, 0, 1],
+			"to": [15, 1, 15],
+			"faces": {
+				"north": {"uv": [0, 0, 16, 1], "texture": "#plate"},
+				"east": {"uv": [15, 16, 16, 0], "rotation": 90, "texture": "#plate"},
+				"south": {"uv": [16, 15, 0, 16], "texture": "#plate"},
+				"west": {"uv": [0, 0, 1, 16], "rotation": 90, "texture": "#plate"},
+				"up": {"uv": [0, 0, 16, 16], "texture": "#plate"},
+				"down": {"uv": [16, 0, 0, 16], "texture": "#plate"}
+			}
+		},
+		{
+			"from": [1, 1, 1],
+			"to": [15, 2, 15],
+			"rotation": {"angle": 0, "axis": "x", "origin": [0, 1, 0]},
+			"faces": {
+				"north": {"uv": [16, 0, 0, 1], "texture": "#plate"},
+				"east": {"uv": [15, 0, 16, 16], "rotation": 90, "texture": "#plate"},
+				"south": {"uv": [0, 15, 16, 16], "texture": "#plate"},
+				"west": {"uv": [1, 16, 0, 0], "rotation": 90, "texture": "#plate"},
+				"up": {"uv": [0, 0, 16, 16], "texture": "#plate"},
+				"down": {"uv": [0, 16, 16, 0], "texture": "#plate"}
+			}
+		},
+		{
+			"from": [8.0993, 2, 3.08826],
+			"to": [13.0993, 3, 8.08826],
+			"rotation": {"angle": -22.5, "axis": "y", "origin": [7.70617, 3, 7.45565]},
+			"faces": {
+				"north": {"uv": [5, 0, 10, 1], "texture": "#2"},
+				"east": {"uv": [5, 0, 10, 1], "texture": "#2"},
+				"south": {"uv": [5, 0, 10, 1], "texture": "#2"},
+				"west": {"uv": [5, 0, 10, 1], "texture": "#2"},
+				"up": {"uv": [5, 5, 0, 0], "rotation": 270, "texture": "#2"},
+				"down": {"uv": [5, 5, 0, 10], "rotation": 90, "texture": "#2"}
+			}
+		},
+		{
+			"from": [13.0993, 2, 4.08826],
+			"to": [14.0993, 3, 7.08826],
+			"rotation": {"angle": -22.5, "axis": "y", "origin": [7.70617, 3, 7.45565]},
+			"faces": {
+				"north": {"uv": [5, 4, 6, 5], "texture": "#2"},
+				"east": {"uv": [5, 2, 8, 3], "texture": "#2"},
+				"south": {"uv": [5, 4, 6, 5], "texture": "#2"},
+				"west": {"uv": [5, 1, 8, 2], "texture": "#2"},
+				"up": {"uv": [8, 4, 5, 3], "rotation": 270, "texture": "#2"},
+				"down": {"uv": [5, 3, 8, 4], "rotation": 90, "texture": "#2"}
+			}
+		},
+		{
+			"from": [9.10345, 2, 9.63572],
+			"to": [11.10345, 3, 14.63572],
+			"rotation": {"angle": -22.5, "axis": "y", "origin": [7.70617, 3, 7.45565]},
+			"faces": {
+				"north": {"uv": [9, 11, 11, 12], "texture": "#4"},
+				"east": {"uv": [10, 12, 9, 7], "rotation": 90, "texture": "#4"},
+				"south": {"uv": [11, 7, 9, 8], "texture": "#4"},
+				"west": {"uv": [10, 7, 11, 12], "rotation": 90, "texture": "#4"},
+				"up": {"uv": [9, 7, 11, 12], "rotation": 180, "texture": "#4"},
+				"down": {"uv": [0, 0, 2, 5], "rotation": 180, "texture": "#4"}
+			}
+		},
+		{
+			"from": [4.10345, 2, 8.63572],
+			"to": [9.10345, 3, 13.63572],
+			"rotation": {"angle": -22.5, "axis": "y", "origin": [7.70617, 3, 7.45565]},
+			"faces": {
+				"north": {"uv": [4, 10, 9, 11], "texture": "#4"},
+				"east": {"uv": [4, 11, 5, 6], "rotation": 90, "texture": "#4"},
+				"south": {"uv": [9, 6, 4, 7], "texture": "#4"},
+				"west": {"uv": [10, 10, 5, 11], "texture": "#4"},
+				"up": {"uv": [4, 6, 9, 11], "rotation": 180, "texture": "#4"},
+				"down": {"uv": [0, 0, 5, 5], "rotation": 180, "texture": "#4"}
+			}
+		},
+		{
+			"from": [7.10345, 3, 10.63572],
+			"to": [10.10345, 4, 13.63572],
+			"rotation": {"angle": -22.5, "axis": "y", "origin": [7.70617, 3, 7.45565]},
+			"faces": {
+				"north": {"uv": [7, 6, 4, 7], "texture": "#4"},
+				"east": {"uv": [4, 6, 7, 7], "texture": "#4"},
+				"south": {"uv": [4, 8, 7, 9], "texture": "#4"},
+				"west": {"uv": [4, 9, 5, 6], "rotation": 90, "texture": "#4"},
+				"up": {"uv": [4, 6, 7, 9], "texture": "#4"},
+				"down": {"uv": [0, 0, 5, 5], "texture": "#4"}
+			}
+		}
+	],
+	"groups": [
+		{
+			"name": "plate",
+			"origin": [0, 1, 0],
+			"color": 0,
+			"children": [0, 1]
+		},
+		{
+			"name": "bread",
+			"origin": [8, 8, 8],
+			"color": 0,
+			"children": [2, 3, 4, 5, 6]
+		}
+	]
+}

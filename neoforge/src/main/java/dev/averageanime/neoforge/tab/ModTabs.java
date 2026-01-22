@@ -1,6 +1,7 @@
 package dev.averageanime.neoforge.tab;
 
 import dev.averageanime.CommonClass;
+import dev.averageanime.neoforge.block.ModDisplayBlocks;
 import dev.averageanime.neoforge.config.ModConfig;
 import dev.averageanime.neoforge.fluid.ModFluids;
 import dev.averageanime.neoforge.item.ModItems;
@@ -15,7 +16,6 @@ import java.util.Comparator;
 import java.util.function.Supplier;
 import static dev.averageanime.neoforge.CreateFood.LOGGER;
 
-
 public class ModTabs {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TAB =
             DeferredRegister.create(Registries.CREATIVE_MODE_TAB, CommonClass.ID);
@@ -25,6 +25,12 @@ public class ModTabs {
                     .title(Component.translatable("tab.createfood"))
                     .displayItems((params, output) -> ModItems.ITEMS.getEntries().stream()
                             .filter(holder -> !holder.getId().getPath().endsWith("_bucket"))
+                            .filter(holder -> !holder.getId().getPath().endsWith("pumpkin_pie_block"))
+                            .filter(holder -> {
+                                String itemPath = holder.getId().getPath();
+                                return ModDisplayBlocks.BLOCKS.getEntries().stream()
+                                        .noneMatch(blockHolder -> blockHolder.getId().getPath().equals(itemPath));
+                            })
                             .sorted(Comparator.comparing(a -> a.getId().getPath()))
                             .forEach(holder -> {
                                 String itemId = holder.getId().getPath();
@@ -44,6 +50,19 @@ public class ModTabs {
                                 String itemId = holder.getId().getPath();
                                 if (ModConfig.isItemEnabled(itemId)) {
                                     output.accept(holder.get());
+                                }
+                            }))
+                    .build());
+
+    public static final Supplier<CreativeModeTab> CREATEFOOD_TAB_BLOCK = CREATIVE_MODE_TAB.register("createfood_display",
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModDisplayBlocks.CREAM_SWEET_ROLL_PLATE.get()))
+                    .title(Component.translatable("tab.createfood.display"))
+                    .displayItems((params, output) -> ModDisplayBlocks.BLOCKS.getEntries().stream()
+                            .sorted(Comparator.comparing(a -> a.getId().getPath()))
+                            .forEach(holder -> {
+                                String blockId = holder.getId().getPath();
+                                if (ModConfig.isDisplayBlockEnabled(blockId)) {
+                                    output.accept(holder.get().asItem());
                                 }
                             }))
                     .build());

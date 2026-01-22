@@ -3,19 +3,16 @@ package dev.averageanime.neoforge;
 import com.mojang.logging.LogUtils;
 import dev.averageanime.CommonClass;
 import dev.averageanime.neoforge.block.ModBlocks;
+import dev.averageanime.neoforge.block.ModDisplayBlocks;
 import dev.averageanime.neoforge.config.condition.ModConditions;
 import dev.averageanime.neoforge.config.ModConfig;
 import dev.averageanime.neoforge.config.ConfigScreen;
-import dev.averageanime.neoforge.fluid.builder.CustomFluidType;
+import dev.averageanime.neoforge.fluid.FluidEntry;
 import dev.averageanime.neoforge.tab.ModTabs;
 import dev.averageanime.neoforge.fluid.ModFluids;
 import dev.averageanime.neoforge.item.ModItems;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
-import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.Item;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -26,10 +23,8 @@ import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
-import net.neoforged.neoforge.registries.RegisterEvent;
 import org.slf4j.Logger;
 import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
-import java.util.function.Supplier;
 
 
 @Mod(CommonClass.ID)
@@ -55,6 +50,7 @@ public class CreateFood {
         NeoForge.EVENT_BUS.register(this);
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+        ModDisplayBlocks.register(modEventBus);
         ModFluids.register(modEventBus);
         ModTabs.register(modEventBus);
     }
@@ -100,7 +96,7 @@ public class CreateFood {
             setFluidRenderLayers(ModFluids.YELLOW_GELATIN_MIX_FLUID);
         }
 
-        private static void setFluidRenderLayers(CustomFluidType fluid) {
+        private static void setFluidRenderLayers(FluidEntry.FluidType fluid) {
             ItemBlockRenderTypes.setRenderLayer(fluid.FLOWING.get(), RenderType.translucent());
             ItemBlockRenderTypes.setRenderLayer(fluid.SOURCE.get(), RenderType.translucent());
         }
