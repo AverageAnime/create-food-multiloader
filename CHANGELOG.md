@@ -1,3 +1,23 @@
+### *** 2.1.0 ***
+
+#### Changes:
+* Create is no longer a required dependency.
+* Most Create: Food items can now be displayed on plates. Read more [here](https://github.com/AverageAnime/create-food-multiloader/wiki/Display-Blocks-Guide).
+    * Create's bar of chocolate, builder's tea, and sweet roll can also be displayed.
+* Compatibility items are now hidden by default.
+* New sliced crimson fungus and sliced warped fungus. 
+    * No current uses, will add in next update.
+
+#### Fixes:
+* Fix missing recipes for gyro meat slices and Farmer's Delight wrap. [(#3)](https://github.com/AverageAnime/create-food-multiloader/issues/3)
+* Fix grain tag used for slime bucket recipe. [(#4)](https://github.com/AverageAnime/create-food-multiloader/issues/4)
+* Fix missing loot table. [(#5)](https://github.com/AverageAnime/create-food-multiloader/issues/5)
+* Fix missing translation key. [(#10)](https://github.com/AverageAnime/create-food-multiloader/issues/10)
+* Fix amount of cheese slices received when using cutting board recipe. 
+* Fix amount of stews received in cooking and mixing recipes.
+* Fix folder for `create:upright_on_belt` tag.
+* Fix missing compat tooltip for corn flour.
+
 ### *** 2.0.0a ***
 
 #### Changes:
