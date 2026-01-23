@@ -1,9 +1,8 @@
 ![cflogobanner](https://github.com/user-attachments/assets/459fad44-da37-49a6-99e9-83085f49c48d)
 ### **About:**
-Create: Food is an add-on for [Farmer's Delight](https://www.curseforge.com/minecraft/mc-mods/farmers-delight) based on expanding food content found in Create, Farmer's Delight, and vanilla MC.
+Create: Food is an add-on for [Farmer's Delight](https://www.curseforge.com/minecraft/mc-mods/farmers-delight) based on expanding food content found in [Create](https://www.curseforge.com/minecraft/mc-mods/create), Farmer's Delight, and vanilla MC.
 
 ### **Required Dependencies:**
-* [Create](https://www.curseforge.com/minecraft/mc-mods/create)
 * [Farmer's Delight](https://www.curseforge.com/minecraft/mc-mods/farmers-delight)
 
 ### **Current Content:**
@@ -12,6 +11,7 @@ Information on versions prior to 2.0.0 can be found [here](https://github.com/Av
 * Hundreds of new food-related items and dozens of new fluids. View the item list [here](https://github.com/AverageAnime/create-food-multiloader/wiki/Item-list).
 * Compatible with various Create and Farmer's Delight addons. Read more [here](https://github.com/AverageAnime/create-food-multiloader/wiki/Compatibility).
 * Placeable pizzas, cakes, pies (including pumpkin pie), and more.
+    * Most other food can be displayed on plates. Read the guide [here](https://github.com/AverageAnime/create-food-multiloader/wiki/Display-Blocks-Guide).
 * Configurable tooltips to display ingredients and mod compatibility info.
 * Hide any item and their recipes from the config.
 * Animated textures for hot drinks.
