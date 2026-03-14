@@ -1,0 +1,24 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "fish_taco_kelp_taco_sauce"
+        }
+    ],
+    "type": "create:deploying",
+    "ingredients": [
+      {
+        "tag": "c:fish_taco_kelp"
+      },
+      {
+        "tag": "c:taco_sauce_bottle"
+      }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:fish_taco_kelp_taco_sauce"
+            }
+        }
+    ]
+}

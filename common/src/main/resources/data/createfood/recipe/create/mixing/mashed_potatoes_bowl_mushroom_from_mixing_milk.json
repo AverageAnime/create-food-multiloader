@@ -1,0 +1,35 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "type": "fluid_tag",
+      "amount": 250,
+      "fluid_tag": "c:milk"
+    },
+    {
+      "tag": "c:potato"
+    },
+    {
+      "tag": "c:butter"
+    },
+    {
+      "tag": "c:mushrooms"
+    },
+    {
+      "tag": "c:bowl"
+    }
+  ],
+  "results": [
+    {
+      "item": {
+        "id": "createfood:mashed_potatoes_bowl_mushroom"
+      }
+    }
+  ],
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "mashed_potatoes_bowl_mushroom"
+    }
+  ]
+}

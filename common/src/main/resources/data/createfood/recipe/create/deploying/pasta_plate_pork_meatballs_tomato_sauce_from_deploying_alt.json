@@ -19,11 +19,6 @@
             "item": {
                 "id": "createfood:pasta_plate_pork_meatballs_tomato_sauce"
             }
-        },
-      {
-        "item": {
-          "id": "minecraft:bowl"
         }
-      }
     ]
 }

@@ -1,0 +1,24 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "chicken_taco_lettuce"
+        }
+    ],
+    "type": "create:deploying",
+    "ingredients": [
+      {
+        "tag": "c:chicken_taco"
+      },
+      {
+        "tag": "c:foods/leafy_green"
+      }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:chicken_taco_lettuce"
+            }
+        }
+    ]
+}

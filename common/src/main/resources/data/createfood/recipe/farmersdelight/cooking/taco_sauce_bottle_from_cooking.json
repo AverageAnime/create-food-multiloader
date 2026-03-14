@@ -1,0 +1,32 @@
+{
+  "type": "farmersdelight:cooking",
+  "experience": 0.55,
+  "container": {
+    "id": "minecraft:glass_bottle"
+  },
+  "ingredients": [
+    {
+      "tag": "c:tomato"
+    },
+    {
+      "tag": "c:paprika"
+    },
+    {
+      "tag": "c:onion"
+    },
+    {
+      "tag": "c:sugar"
+    }
+  ],
+  "recipe_book_tab": "drinks",
+  "result": {
+    "count": 1,
+    "id": "createfood:taco_sauce_bottle"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "taco_sauce_bottle"
+    }
+  ]
+}

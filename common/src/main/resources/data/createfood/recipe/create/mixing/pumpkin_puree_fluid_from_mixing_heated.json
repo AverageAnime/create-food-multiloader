@@ -10,20 +10,11 @@
     "ingredients": [
         {
             "item": "farmersdelight:pumpkin_slice"
-        },
-        {
-            "item": "farmersdelight:pumpkin_slice"
-        },
-        {
-            "item": "farmersdelight:pumpkin_slice"
-        },
-        {
-            "item": "farmersdelight:pumpkin_slice"
         }
     ],
     "results": [
         {
-            "amount": 1000,
+            "amount": 250,
             "id": "createfood:pumpkin_puree"
         }
     ]

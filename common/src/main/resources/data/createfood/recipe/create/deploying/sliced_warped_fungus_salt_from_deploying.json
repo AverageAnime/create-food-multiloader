@@ -1,0 +1,24 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "sliced_warped_fungus_salt"
+        }
+    ],
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "c:sliced_warped_fungus"
+        },
+        {
+            "tag": "c:salt"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:sliced_warped_fungus_salt"
+            }
+        }
+    ]
+}

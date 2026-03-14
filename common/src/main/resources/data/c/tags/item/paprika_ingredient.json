@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "#c:chili_pepper",
+      "required": false
+    },
+    {
+      "id": "minecraft:nether_wart",
+      "required": false
+    }
+  ]
+}

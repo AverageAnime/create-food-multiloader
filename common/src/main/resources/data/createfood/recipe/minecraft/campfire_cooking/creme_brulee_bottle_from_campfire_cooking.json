@@ -1,0 +1,19 @@
+{
+    "type": "minecraft:campfire_cooking",
+    "category": "food",
+    "cookingtime": 100,
+    "experience": 0.1,
+    "ingredient": {
+        "tag": "c:custard_sugar_bottle"
+    },
+    "result": {
+        "count": 1,
+        "id": "createfood:creme_brulee_bottle"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "creme_brulee_bottle"
+        }
+    ]
+}

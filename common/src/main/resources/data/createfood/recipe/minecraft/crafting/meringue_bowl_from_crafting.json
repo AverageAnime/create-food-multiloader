@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:egg_whites_bottle"
+        },
+        {
+            "tag": "c:sugar"
+        },
+        {
+            "tag": "c:bowl"
+        }
+    ],
+    "result": {
+        "id": "createfood:meringue_bowl"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "meringue_bowl"
+        }
+    ]
+}

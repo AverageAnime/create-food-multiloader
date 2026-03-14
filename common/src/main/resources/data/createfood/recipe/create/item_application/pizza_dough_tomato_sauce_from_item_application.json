@@ -13,12 +13,7 @@
             "item": {
                 "id": "createfood:pizza_dough_tomato_sauce"
             }
-        },
-      {
-        "item": {
-          "id": "minecraft:bowl"
         }
-      }
     ],
     "neoforge:conditions": [
         {

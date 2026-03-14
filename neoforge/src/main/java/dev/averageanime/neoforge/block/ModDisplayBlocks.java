@@ -2,8 +2,10 @@ package dev.averageanime.neoforge.block;
 
 import dev.averageanime.CommonClass;
 import dev.averageanime.neoforge.block.type.display.*;
+import dev.averageanime.neoforge.block.type.display.plate.EmptyPlateBlock;
 import dev.averageanime.neoforge.block.type.display.plate.ModPlateBlocks;
 import dev.averageanime.neoforge.block.type.display.plate.PlateBlock;
+import dev.averageanime.neoforge.block.type.display.plate.SmallPlateBlock;
 import dev.averageanime.neoforge.item.ModItems;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
@@ -12,6 +14,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -22,18 +25,26 @@ import java.util.*;
 import java.util.function.Supplier;
 
 import static dev.averageanime.neoforge.CreateFood.LOGGER;
-import static dev.averageanime.neoforge.block.ModBlocks.PLATE_BLOCK;
 import static dev.averageanime.neoforge.item.ModItems.ITEMS;
-import static dev.averageanime.neoforge.item.tooltip.ModTooltips.addTooltip;
+import static dev.averageanime.neoforge.item.ModTooltips.addTooltip;
 
 @SuppressWarnings("unused")
 public class ModDisplayBlocks {
+    private static final Map<String, Object> DATAPACK_CONFIGS = new LinkedHashMap<>();
 
     public static final DeferredRegister.Blocks BLOCKS =
             DeferredRegister.createBlocks(CommonClass.ID);
 
+    public static final DeferredBlock<Block> SMALL_PLATE_BLOCK = BLOCKS.register("small_plate_block",
+            () -> new SmallPlateBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS)));
+
+    public static final DeferredBlock<Block> PLATE_BLOCK = BLOCKS.register("plate_block",
+            () -> new EmptyPlateBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS), SMALL_PLATE_BLOCK));
+
     private static final Set<String> EXCLUDED_ITEMS = Set.of(
             "apple_slice",
+            "fish_sticks",
+            "mozzarella_sticks",
             "cookie_crumbs",
             "chorus_fruit_slice",
             "caramel_apple_slice",
@@ -46,10 +57,18 @@ public class ModDisplayBlocks {
             "chocolate_graham_cracker_chocolate_ice_cream"
     );
 
-    // Configuration for different display block types
     private static final Map<String, Object> DISPLAY_CONFIGS = new LinkedHashMap<>();
 
     static {
+        registerMultiConfig("kelp_roll_slice",
+                new DisplayBlockConfig(DisplayType.PLATE, 6),
+                new DisplayBlockConfig(DisplayType.SMALL_PLATE)
+        );
+        registerMultiConfig("meringue_cookie",
+                new DisplayBlockConfig(DisplayType.PLATE, 9),
+                new DisplayBlockConfig(DisplayType.SMALL_PLATE)
+        );
+        registerConfig("kelp_roll", DisplayType.PLATE, 3);
         registerConfig("gelatin_dessert", DisplayType.PLATE, 6);//
         registerConfig("slice", DisplayType.SMALL_PLATE);
         registerConfig("cream_mini_waffle", DisplayType.PLATE, 1);
@@ -82,27 +101,32 @@ public class ModDisplayBlocks {
         registerConfig("hot_white_chocolate_bottle", DisplayType.BOTTLE, 8, true, () -> ParticleTypes.WHITE_SMOKE);
 
         registerConfig("_jam_bottle", DisplayType.BOTTLE, 9, false, null);
+        registerConfig("taco_sauce_bottle", DisplayType.BOTTLE, 9, false, null);
+        registerConfig("egg_whites_bottle", DisplayType.BOTTLE, 9, false, null);
         registerConfig("_juice_bottle", DisplayType.BOTTLE, 10, false, null);
         registerConfig("chocolate_bottle", DisplayType.BOTTLE, 8, false, null);
         registerConfig("dark_chocolate_bottle", DisplayType.BOTTLE, 8, false, null);
         registerConfig("white_chocolate_bottle", DisplayType.BOTTLE, 8, false, null);
         registerConfig("chocolate_milk_bottle", DisplayType.BOTTLE, 8, false, null);
         registerConfig("fruit_smoothie_bottle", DisplayType.BOTTLE, 8, false, null);
-        registerConfig("_bottle", DisplayType.BOTTLE, 12, false, null); // Default for all other bottles
+        registerConfig("_bottle", DisplayType.BOTTLE, 12, false, null);
 
         registerConfig("ice_cream_bowl", DisplayType.BOWL, 4.5, true, () -> ParticleTypes.SNOWFLAKE);
         registerConfig("soup_bowl", DisplayType.BOWL, 4, true, () -> ParticleTypes.WHITE_SMOKE);
         registerConfig("stew_bowl", DisplayType.BOWL, 4, true, () -> ParticleTypes.WHITE_SMOKE);
-        registerConfig("_bowl", DisplayType.BOWL, 4, false, null); // Default for all other bowls
+        registerConfig("_bowl", DisplayType.BOWL, 4, false, null);
 
         registerConfig("salad", DisplayType.SALAD_BOWL);
 
         registerConfig("pasta_plate", DisplayType.PLATE_FOOD);
         registerConfig("breakfast_plate", DisplayType.PLATE_FOOD);
         registerConfig("egg_plate", DisplayType.PLATE_FOOD);
+        registerConfig("eggs_plate", DisplayType.PLATE_FOOD);
         registerConfig("hash_brown_plate", DisplayType.PLATE_FOOD);
         registerConfig("cookie", DisplayType.PLATE, 4);
         registerConfig("wrap", DisplayType.PLATE, 2);
+        registerConfig("taco", DisplayType.PLATE, 2);
+        registerConfig("burrito", DisplayType.PLATE, 2);
         registerConfig("ice_cream_stick", DisplayType.PLATE, 2);
         registerConfig("corn_stick", DisplayType.PLATE, 2);
         registerConfig("cotton_candy_stick", DisplayType.PLATE, 2);
@@ -194,7 +218,7 @@ public class ModDisplayBlocks {
                         itemName.contains("chocolate_apple") ||
                         itemName.contains("bread_slice") ||
                         itemName.contains("toast_slice") ||
-
+                        itemName.contains("taco_shell") ||
                         itemName.contains("donut_hole") ||
                         itemName.contains("pie_crust") ||
                         itemName.contains("sliced")) {
@@ -314,7 +338,7 @@ public class ModDisplayBlocks {
                                      DisplayBlockConfig config) {
         return switch (config.type) {
             case PLATE -> new PlateBlock(itemSupplier, config.maxStack, PLATE_BLOCK);
-            case SMALL_PLATE -> new SmallPlateFoodBlock(itemSupplier, ModBlocks.SMALL_PLATE_BLOCK);
+            case SMALL_PLATE -> new SmallPlateFoodBlock(itemSupplier, SMALL_PLATE_BLOCK);
             case BOTTLE -> new BottleFoodBlock(itemSupplier, config.height,
                     config.hasParticles, config.particleType);
             case BOWL -> new BowlFoodBlock(itemSupplier, config.height,
@@ -370,7 +394,6 @@ public class ModDisplayBlocks {
                     @Override
                     public void appendHoverText(ItemStack stack, TooltipContext context,
                                                 List<Component> components, TooltipFlag flag) {
-                        // Inherit tooltips from the original block item
                         Item originalItem = itemSupplier.get();
                         if (originalItem != null && originalItem != Items.BARRIER) {
                             ItemStack originalStack = new ItemStack(originalItem);
@@ -398,13 +421,11 @@ public class ModDisplayBlocks {
                     @Override
                     public void appendHoverText(ItemStack stack, TooltipContext context,
                                                 List<Component> components, TooltipFlag flag) {
-                        // Inherit tooltips from the original block item
                         Item originalItem = itemSupplier.get();
                         if (originalItem != null && originalItem != Items.BARRIER) {
                             ItemStack originalStack = new ItemStack(originalItem);
                             originalItem.appendHoverText(originalStack, context, components, flag);
                         }
-                        // Add additional custom tooltips
                         addTooltip(components, compatTooltip, ingredientTooltips);
                         super.appendHoverText(stack, context, components, flag);
                     }
@@ -487,13 +508,11 @@ public class ModDisplayBlocks {
         eventBus.addListener((net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent event) -> {
             event.enqueueWork(() -> {
                 registerBlockItems();
-                // Register compatible plate items from other mods
                 ModPlateBlocks.registerCompatiblePlates();
             });
         });
     }
 
-    // Helper classes
     private enum DisplayType {
         PLATE, SMALL_PLATE, BOTTLE, BOWL, SALAD_BOWL, PLATE_FOOD
     }

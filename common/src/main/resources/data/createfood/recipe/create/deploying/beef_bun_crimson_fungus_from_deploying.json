@@ -1,0 +1,24 @@
+{
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "c:beef_bun"
+        },
+        {
+            "tag": "c:crimson_fungus"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:beef_bun_crimson_fungus"
+            }
+        }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "beef_bun_crimson_fungus"
+        }
+    ]
+}

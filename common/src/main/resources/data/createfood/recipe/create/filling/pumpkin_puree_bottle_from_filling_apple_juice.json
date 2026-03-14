@@ -1,0 +1,26 @@
+{
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "item": "minecraft:glass_bottle"
+        },
+        {
+            "type": "fluid_tag",
+            "amount": 250,
+            "fluid_tag": "c:pumpkin_puree"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:pumpkin_puree_bottle"
+            }
+        }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "pumpkin_puree_bottle"
+        }
+    ]
+}

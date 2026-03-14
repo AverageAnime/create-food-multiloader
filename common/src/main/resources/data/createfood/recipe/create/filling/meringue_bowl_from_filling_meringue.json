@@ -1,0 +1,26 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "meringue_bowl"
+        }
+    ],
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "tag": "c:bowl"
+        },
+        {
+            "type": "fluid_tag",
+            "amount": 333,
+            "fluid_tag": "c:meringue"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:meringue_bowl"
+            }
+        }
+    ]
+}

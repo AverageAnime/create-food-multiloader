@@ -1,0 +1,19 @@
+{
+    "type": "minecraft:smoking",
+    "category": "food",
+    "cookingtime": 100,
+    "experience": 0.35,
+    "ingredient": {
+        "tag": "c:raw_sausages"
+    },
+    "result": {
+        "count": 1,
+        "id": "createfood:sausages"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "sausages"
+        }
+    ]
+}

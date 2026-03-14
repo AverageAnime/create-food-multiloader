@@ -4,12 +4,12 @@ import com.mojang.logging.LogUtils;
 import dev.averageanime.CommonClass;
 import dev.averageanime.neoforge.block.ModBlocks;
 import dev.averageanime.neoforge.block.ModDisplayBlocks;
-import dev.averageanime.neoforge.config.condition.ModConditions;
+import dev.averageanime.neoforge.config.ModConditions;
 import dev.averageanime.neoforge.config.ModConfig;
-import dev.averageanime.neoforge.config.ConfigScreen;
-import dev.averageanime.neoforge.fluid.FluidEntry;
+import dev.averageanime.neoforge.block.type.fluid.FluidEntry;
+import dev.averageanime.neoforge.tab.ModDisplayTabs;
 import dev.averageanime.neoforge.tab.ModTabs;
-import dev.averageanime.neoforge.fluid.ModFluids;
+import dev.averageanime.neoforge.block.ModFluids;
 import dev.averageanime.neoforge.item.ModItems;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
@@ -31,6 +31,15 @@ import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
 public class CreateFood {
     public static final Logger LOGGER = LogUtils.getLogger();
 
+    private static boolean isClassPresent(String className) {
+        try {
+            Class.forName(className);
+            return true;
+        } catch (ClassNotFoundException e) {
+            return false;
+        }
+    }
+
     public CreateFood(IEventBus modEventBus, ModContainer modContainer) {
         modEventBus.addListener(this::commonSetup);
 
@@ -39,9 +48,13 @@ public class CreateFood {
                 ModConfig.BUILDER.build(),
                 "createfood-client.toml"
         );
-
+        modContainer.registerConfig(
+                net.neoforged.fml.config.ModConfig.Type.SERVER,
+                ModConfig.SERVER_BUILDER.build(),
+                "createfood-server.toml"
+        );
         modEventBus.addListener((FMLClientSetupEvent event) -> {
-            IConfigScreenFactory factory = new ConfigScreen();
+            IConfigScreenFactory factory = new ModConfig.ConfigScreen();
             modContainer.registerExtensionPoint(IConfigScreenFactory.class, factory);
         });
 
@@ -50,9 +63,14 @@ public class CreateFood {
         NeoForge.EVENT_BUS.register(this);
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
-        ModDisplayBlocks.register(modEventBus);
+        if (isClassPresent("dev.averageanime.neoforge.block.ModDisplayBlocks")) {
+            ModDisplayBlocks.register(modEventBus);
+        }
         ModFluids.register(modEventBus);
         ModTabs.register(modEventBus);
+        if (isClassPresent("dev.averageanime.neoforge.tab.ModDisplayTabs")) {
+            ModDisplayTabs.register(modEventBus);
+        }
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {

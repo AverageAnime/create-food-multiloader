@@ -1,0 +1,26 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "chicken_taco_lettuce_taco_sauce"
+        }
+    ],
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "tag": "c:chicken_taco_lettuce"
+        },
+        {
+            "type": "fluid_tag",
+            "amount": 250,
+            "fluid_tag": "c:taco_sauce"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:chicken_taco_lettuce_taco_sauce"
+            }
+        }
+    ]
+}

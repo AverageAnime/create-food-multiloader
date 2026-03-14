@@ -1,0 +1,24 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "mutton_taco_lettuce_taco_sauce"
+        }
+    ],
+    "type": "create:deploying",
+    "ingredients": [
+      {
+        "tag": "c:mutton_taco_lettuce"
+      },
+      {
+        "tag": "c:taco_sauce_bottle"
+      }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:mutton_taco_lettuce_taco_sauce"
+            }
+        }
+    ]
+}

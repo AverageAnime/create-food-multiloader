@@ -1,17 +1,17 @@
 {
-    "type": "minecraft:crafting_shapeless",
-    "ingredients": [
-        {
-            "tag": "c:cloth_filter_cacao_mass"
-        }
-    ],
-    "result": {
-        "id": "createfood:pressed_cocoa"
-    },
-    "neoforge:conditions": [
-        {
-            "type": "createfood:enabled",
-            "id": "pressed_cocoa"
-        }
-    ]
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "pressed_cocoa"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "c:cloth_filter_pressed_cocoa"
+    }
+  ],
+  "result": {
+    "id": "createfood:pressed_cocoa"
+  }
 }

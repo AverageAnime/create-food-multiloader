@@ -1,0 +1,27 @@
+{
+    "type": "create:mixing",
+    "heat_requirement": "heated",
+    "ingredients": [
+        {
+            "tag": "c:raw_onion_rings"
+        },
+        {
+            "type": "fluid_tag",
+            "amount": 125,
+            "fluid_tag": "c:vegetable_oil"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:onion_rings"
+            }
+        }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "onion_rings"
+        }
+    ]
+}

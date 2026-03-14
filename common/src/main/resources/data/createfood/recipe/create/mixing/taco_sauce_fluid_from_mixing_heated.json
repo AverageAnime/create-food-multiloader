@@ -1,0 +1,30 @@
+{
+    "type": "create:mixing",
+    "heat_requirement": "heated",
+    "ingredients": [
+        {
+            "tag": "c:tomato"
+        },
+        {
+            "tag": "c:paprika"
+        },
+        {
+            "tag": "c:onion"
+        },
+        {
+            "tag": "c:sugar"
+        }
+    ],
+    "results": [
+        {
+            "amount": 250,
+            "id": "createfood:taco_sauce"
+        }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "taco_sauce"
+        }
+    ]
+}

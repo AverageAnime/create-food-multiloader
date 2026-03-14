@@ -2,6 +2,58 @@
   "replace": false,
   "values": [
     {
+      "id": "createfood:pumpkin_custard_bottle",
+      "required": false
+    },
+    {
+      "id": "createfood:melon_custard_bottle",
+      "required": false
+    },
+    {
+      "id": "createfood:creme_brulee_bottle",
+      "required": false
+    },
+    {
+      "id": "createfood:custard_sugar_bottle",
+      "required": false
+    },
+    {
+      "id": "createfood:custard_bottle",
+      "required": false
+    },
+    {
+      "id": "createfood:chorus_fruit_custard_bottle",
+      "required": false
+    },
+    {
+      "id": "createfood:chocolate_custard_bottle",
+      "required": false
+    },
+    {
+      "id": "createfood:berry_custard_bottle",
+      "required": false
+    },
+    {
+      "id": "createfood:apple_custard_bottle",
+      "required": false
+    },
+    {
+      "id": "createfood:meringue_bowl",
+      "required": false
+    },
+    {
+      "id": "createfood:mashed_potatoes_bowl",
+      "required": false
+    },
+    {
+      "id": "createfood:mashed_potatoes_bowl_bacon",
+      "required": false
+    },
+    {
+      "id": "createfood:mashed_potatoes_bowl_mushroom",
+      "required": false
+    },
+    {
       "id": "createfood:chocolate_filled_mini_graham_cracker_pie_crust",
       "required": false
     },

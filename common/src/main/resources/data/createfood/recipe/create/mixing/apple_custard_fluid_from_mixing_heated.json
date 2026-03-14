@@ -1,0 +1,32 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "apple_custard"
+    }
+  ],
+  "type": "create:mixing",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "type": "fluid_tag",
+      "amount": 250,
+      "fluid_tag": "c:milk"
+    },
+    {
+      "tag": "c:egg_yolk"
+    },
+    {
+      "tag": "c:sugar"
+    },
+    {
+      "tag": "c:apple"
+    }
+  ],
+  "results": [
+    {
+      "amount": 250,
+      "id": "createfood:apple_custard"
+    }
+  ]
+}

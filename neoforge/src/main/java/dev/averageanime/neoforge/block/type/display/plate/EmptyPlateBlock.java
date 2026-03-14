@@ -19,6 +19,8 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
+import net.minecraft.world.level.block.state.properties.IntegerProperty;
+import net.minecraft.world.level.block.state.properties.Property;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
@@ -60,7 +62,6 @@ public class EmptyPlateBlock extends Block {
     @Override
     protected @NotNull ItemInteractionResult useItemOn(@NotNull ItemStack heldStack, @NotNull BlockState state, Level level, @NotNull BlockPos pos,
                                                        @NotNull Player player, @NotNull InteractionHand hand, @NotNull BlockHitResult hit) {
-        // Check if player is shift-clicking to convert to small plate
         if (player.isShiftKeyDown() && smallPlateBlock != null) {
             if (level.isClientSide) {
                 return ItemInteractionResult.SUCCESS;
@@ -78,17 +79,15 @@ public class EmptyPlateBlock extends Block {
         }
 
         if (level.isClientSide) {
-            if (FoodBlock.Registry.isRegistered(heldStack.getItem())) {
+            if (FoodBlock.Registry.canPlaceOnPlate(heldStack.getItem(), false)) {
                 return ItemInteractionResult.SUCCESS;
             }
             return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
         }
 
-        // Get all possible blocks for this item
         List<Supplier<Block>> stackBlockSuppliers = FoodBlock.Registry.getAllBlocks(heldStack.getItem());
 
         if (stackBlockSuppliers != null && !stackBlockSuppliers.isEmpty()) {
-            // Find a PlateBlock (not SmallPlateFoodBlock)
             Block stackBlock = null;
             for (Supplier<Block> supplier : stackBlockSuppliers) {
                 Block block = supplier.get();
@@ -121,12 +120,35 @@ public class EmptyPlateBlock extends Block {
             }
         }
 
+        Block displayDelightPlate = FoodBlock.Registry.getDisplayDelightPlateBlock(heldStack.getItem());
+        if (displayDelightPlate != null) {
+            BlockState newState = displayDelightPlate.defaultBlockState();
+
+            if (newState.hasProperty(FACING)) {
+                newState = newState.setValue(FACING, state.getValue(FACING));
+            }
+            for (Property<?> property : newState.getProperties()) {
+                if (property.getName().equals("stacks") && property instanceof IntegerProperty) {
+                    newState = newState.setValue((IntegerProperty) property, 1);
+                    break;
+                }
+            }
+            level.setBlock(pos, newState, 3);
+
+            if (!player.isCreative()) {
+                heldStack.shrink(1);
+            }
+
+            level.playSound(null, pos, SoundEvents.ITEM_FRAME_ADD_ITEM, SoundSource.BLOCKS, 1.0F, 1.0F);
+
+            return ItemInteractionResult.SUCCESS;
+        }
+
         return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
     }
 
     @Override
     protected @NotNull InteractionResult useWithoutItem(@NotNull BlockState state, Level level, @NotNull BlockPos pos, @NotNull Player player, @NotNull BlockHitResult hit) {
-        // If shift-clicking with empty hand, convert to small plate (handled in useItemOn)
         if (player.isShiftKeyDown()) {
             return InteractionResult.PASS;
         }
@@ -140,10 +162,8 @@ public class EmptyPlateBlock extends Block {
                     pos.getX() + 0.5, pos.getY() + 0.3, pos.getZ() + 0.5,
                     direction.getStepX() * 0.15, 0.05, direction.getStepZ() * 0.15);
 
-            // Remove the block
             level.removeBlock(pos, false);
 
-            // Play sound
             level.playSound(null, pos, SoundEvents.ITEM_FRAME_REMOVE_ITEM, SoundSource.BLOCKS, 0.8F, 0.8F);
         }
         return InteractionResult.SUCCESS;

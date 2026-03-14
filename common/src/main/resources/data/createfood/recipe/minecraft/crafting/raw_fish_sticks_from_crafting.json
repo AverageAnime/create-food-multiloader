@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:foods/raw_fish"
+        },
+        {
+            "item": "minecraft:egg"
+        },
+        {
+            "tag": "c:bread_crumbs"
+        }
+    ],
+    "result": {
+        "id": "createfood:raw_fish_sticks"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "raw_fish_sticks"
+        }
+    ]
+}

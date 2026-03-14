@@ -1,0 +1,24 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "fish_taco"
+        }
+    ],
+    "type": "create:deploying",
+    "ingredients": [
+      {
+        "tag": "c:taco_shell"
+      },
+      {
+        "tag": "c:cooked_fishes"
+      }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:fish_taco"
+            }
+        }
+    ]
+}

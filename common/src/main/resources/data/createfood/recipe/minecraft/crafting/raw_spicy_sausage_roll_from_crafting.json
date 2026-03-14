@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "c:raw_spicy_sausages"
+    },
+    {
+      "tag": "c:butter_dough"
+    }
+  ],
+  "result": {
+    "id": "createfood:raw_spicy_sausage_roll",
+    "count": 3
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "raw_spicy_sausage_roll"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "rabbit_taco"
+        }
+    ],
+    "type": "create:deploying",
+    "ingredients": [
+      {
+        "tag": "c:taco_shell"
+      },
+      {
+        "tag": "c:cooked_rabbit"
+      }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:rabbit_taco"
+            }
+        }
+    ]
+}

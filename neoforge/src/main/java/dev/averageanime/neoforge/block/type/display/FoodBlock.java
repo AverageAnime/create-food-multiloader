@@ -6,6 +6,8 @@ import dev.averageanime.neoforge.block.type.display.plate.PlateBlock;
 import dev.averageanime.neoforge.block.type.display.plate.SmallPlateBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -20,6 +22,7 @@ import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -67,16 +70,6 @@ public abstract class FoodBlock extends Block {
     }
 
     @Override
-    protected @NotNull ItemInteractionResult useItemOn(ItemStack heldStack, @NotNull BlockState state, @NotNull Level level, @NotNull BlockPos pos,
-                                                       @NotNull Player player, @NotNull InteractionHand hand, @NotNull BlockHitResult hit) {
-        if (heldStack.is(this.displayItem.get())) {
-            return addItem(state, level, pos, player, heldStack);
-        }
-
-        return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
-    }
-
-    @Override
     protected @NotNull InteractionResult useWithoutItem(@NotNull BlockState state, Level level, @NotNull BlockPos pos, @NotNull Player player, @NotNull BlockHitResult hit) {
         if (!level.isClientSide) {
             if (player.isShiftKeyDown()) {
@@ -108,6 +101,16 @@ public abstract class FoodBlock extends Block {
         level.playSound(null, pos, getAddSound(), SoundSource.BLOCKS, 1.0F, 1.0F);
 
         return ItemInteractionResult.SUCCESS;
+    }
+
+    @Override
+    protected @NotNull ItemInteractionResult useItemOn(ItemStack heldStack, @NotNull BlockState state, @NotNull Level level, @NotNull BlockPos pos,
+                                                       @NotNull Player player, @NotNull InteractionHand hand, @NotNull BlockHitResult hit) {
+        if (heldStack.is(this.displayItem.get())) {
+            return addItem(state, level, pos, player, heldStack);
+        }
+
+        return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
     }
 
     protected void removeItem(BlockState state, Level level, BlockPos pos, Player player) {
@@ -168,12 +171,9 @@ public abstract class FoodBlock extends Block {
         return SoundEvents.ITEM_FRAME_REMOVE_ITEM;
     }
 
-// Replace the Registry inner class in FoodBlock.java with this:
-
     public static class Registry {
 
         private static final Map<Item, List<Supplier<Block>>> ITEM_TO_BLOCKS = new HashMap<>();
-        // NEW: Track compatible blocks from other mods and which block they should be treated as
         private static final Map<Block, Supplier<Block>> COMPAT_BLOCK_MAPPING = new HashMap<>();
 
         public static void register(Supplier<Item> item, Supplier<Block> block) {
@@ -218,6 +218,114 @@ public abstract class FoodBlock extends Block {
         public static void clear() {
             ITEM_TO_BLOCKS.clear();
             COMPAT_BLOCK_MAPPING.clear();
+        }
+
+        public static Block getDisplayDelightPlateBlock(Item item) {
+            try {
+                ResourceLocation itemId = BuiltInRegistries.ITEM.getKey(item);
+                String namespace = itemId.getNamespace();
+                String path = itemId.getPath();
+
+                Map<String, String> modAbbreviations = new HashMap<>();
+                modAbbreviations.put("culturaldelights", "ctd");
+                modAbbreviations.put("endersdelight", "erd");
+                modAbbreviations.put("mynethersdelight", "mnd");
+                modAbbreviations.put("oceansdelight", "od");
+                modAbbreviations.put("nethersdelight", "nd");
+                modAbbreviations.put("corn_delight", "cd");
+                modAbbreviations.put("expanded_delight", "ed");
+                modAbbreviations.put("delightful", "df");
+                modAbbreviations.put("pineapple_delight", "pd");
+                modAbbreviations.put("alexsdelight", "ad");
+                modAbbreviations.put("largemeals", "lm");
+                modAbbreviations.put("festivedelight", "fd");
+                modAbbreviations.put("brewinandchewin", "bnc");
+                modAbbreviations.put("ends_delight", "edd");
+                modAbbreviations.put("crabbersdelight", "crd");
+                modAbbreviations.put("aquaculturedelight", "acd");
+
+                String modPrefix = modAbbreviations.getOrDefault(namespace, "");
+
+                String[] patterns = {
+                        modPrefix.isEmpty() ? null : modPrefix + "_plated_" + path,
+                        "plated_" + path,
+                        namespace + "_plated_" + path,
+                        "plated_" + path.replaceFirst("^[a-z]+_", ""),
+                        path.replaceFirst("^([a-z]+)_", "$1_plated_")
+                };
+
+                for (String pattern : patterns) {
+                    if (pattern == null) continue;
+
+                    ResourceLocation plateBlockId = ResourceLocation.fromNamespaceAndPath("displaydelight", pattern);
+                    Block plateBlock = BuiltInRegistries.BLOCK.get(plateBlockId);
+                    if (plateBlock != null && plateBlock != Blocks.AIR) {
+                        return plateBlock;
+                    }
+                }
+            } catch (Exception ignored) {
+            }
+            return null;
+        }
+
+        public static Block getDisplayDelightSmallPlateBlock(Item item) {
+            try {
+                ResourceLocation itemId = BuiltInRegistries.ITEM.getKey(item);
+                String namespace = itemId.getNamespace();
+                String path = itemId.getPath();
+
+                Map<String, String> modAbbreviations = new HashMap<>();
+                modAbbreviations.put("culturaldelights", "ctd");
+                modAbbreviations.put("endersdelight", "erd");
+                modAbbreviations.put("mynethersdelight", "mnd");
+                modAbbreviations.put("oceansdelight", "od");
+                modAbbreviations.put("nethersdelight", "nd");
+                modAbbreviations.put("corn_delight", "cd");
+                modAbbreviations.put("expanded_delight", "ed");
+                modAbbreviations.put("delightful", "df");
+                modAbbreviations.put("pineapple_delight", "pd");
+                modAbbreviations.put("alexsdelight", "ad");
+                modAbbreviations.put("largemeals", "lm");
+                modAbbreviations.put("festivedelight", "fd");
+                modAbbreviations.put("brewinandchewin", "bnc");
+                modAbbreviations.put("ends_delight", "edd");
+                modAbbreviations.put("crabbersdelight", "crd");
+                modAbbreviations.put("aquaculturedelight", "acd");
+
+                String modPrefix = modAbbreviations.getOrDefault(namespace, "");
+
+                String[] patterns = {
+                        modPrefix.isEmpty() ? null : modPrefix + "_small_plated_" + path,
+                        "small_plated_" + path,
+                        namespace + "_small_plated_" + path,
+                        "small_plated_" + path.replaceFirst("^[a-z]+_", ""),
+                        path.replaceFirst("^([a-z]+)_", "$1_small_plated_")
+                };
+
+                for (String pattern : patterns) {
+                    if (pattern == null) continue;
+
+                    ResourceLocation plateBlockId = ResourceLocation.fromNamespaceAndPath("displaydelight", pattern);
+                    Block plateBlock = BuiltInRegistries.BLOCK.get(plateBlockId);
+                    if (plateBlock != null && plateBlock != Blocks.AIR) {
+                        return plateBlock;
+                    }
+                }
+            } catch (Exception ignored) {
+            }
+            return null;
+        }
+
+        public static boolean canPlaceOnPlate(Item item, boolean isSmallPlate) {
+            if (isRegistered(item)) {
+                return true;
+            }
+
+            if (isSmallPlate) {
+                return getDisplayDelightSmallPlateBlock(item) != null;
+            } else {
+                return getDisplayDelightPlateBlock(item) != null;
+            }
         }
     }
 

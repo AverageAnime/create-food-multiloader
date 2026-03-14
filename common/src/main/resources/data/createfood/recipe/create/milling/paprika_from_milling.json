@@ -1,13 +1,6 @@
 {
     "neoforge:conditions": [
         {
-            "type": "neoforge:not",
-            "value": {
-                "type": "neoforge:tag_empty",
-                "tag": "c:paprika_pepper"
-            }
-        },
-        {
             "type": "createfood:enabled",
             "id": "paprika"
         }
@@ -15,10 +8,10 @@
     "type": "create:milling",
     "ingredients": [
         {
-            "tag": "c:paprika_pepper"
+            "tag": "c:paprika_ingredient"
         }
     ],
-    "processingTime": 80,
+    "processing_time": 80,
     "results": [
         {
             "count": 2,

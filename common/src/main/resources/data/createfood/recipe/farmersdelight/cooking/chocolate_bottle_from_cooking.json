@@ -3,7 +3,7 @@
     "experience": 0.25,
     "ingredients": [
         {
-            "tag": "c:hollow_chocolate"
+            "tag": "c:bar_of_chocolate"
         }
     ],
     "recipe_book_tab": "drinks",

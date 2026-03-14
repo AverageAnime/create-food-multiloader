@@ -1,0 +1,23 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "rabbit_burrito_rice"
+        }
+    ],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+          "tag": "c:taco_shell_ingredient"
+        },
+        {
+            "tag": "c:cooked_rabbit"
+        },
+        {
+            "tag": "c:cooked_rice"
+        }
+    ],
+    "result": {
+        "id": "createfood:rabbit_burrito_rice"
+    }
+}

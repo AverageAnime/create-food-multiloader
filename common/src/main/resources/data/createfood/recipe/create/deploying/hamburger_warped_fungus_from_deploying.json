@@ -1,0 +1,24 @@
+{
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "c:beef_bun_warped_fungus"
+        },
+        {
+            "tag": "c:bun"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:hamburger_warped_fungus"
+            }
+        }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "hamburger_warped_fungus"
+        }
+    ]
+}

@@ -16,11 +16,387 @@ import vectorwing.farmersdelight.common.registry.ModEffects;
 import java.util.List;
 
 import static dev.averageanime.neoforge.CreateFood.LOGGER;
-import static dev.averageanime.neoforge.item.tooltip.ModTooltips.addTooltip;
+import static dev.averageanime.neoforge.item.ModTooltips.addTooltip;
 
 @SuppressWarnings({"NullableProblems", "unused"})
 public class ModItems {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(CommonClass.ID);
+
+    public static final DeferredItem<Item> BEEF_BUN_CRIMSON_FUNGUS = ITEMS.register("beef_bun_crimson_fungus",
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(8).saturationModifier(0.5f).build())) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
+                    super.appendHoverText(stack, context, components, flag);
+                    addTooltip(components, null, "tooltip.createfood.crimson_fungus_ingredient");
+                }
+            });
+
+    public static final DeferredItem<Item> BEEF_BUN_WARPED_FUNGUS = ITEMS.register("beef_bun_warped_fungus",
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(8).saturationModifier(0.6f).build())) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
+                    super.appendHoverText(stack, context, components, flag);
+                    addTooltip(components, null, "tooltip.createfood.warped_fungus_ingredient");
+                }
+            });
+
+    public static final DeferredItem<Item> HAMBURGER_CRIMSON_FUNGUS = ITEMS.register("hamburger_crimson_fungus",
+            () -> new ConsumableItem(new Item.Properties().food(new FoodProperties.Builder().nutrition(11).saturationModifier(0.5f).effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT, 3600, 0), 1.0f).effect(() -> new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 1200, 0), 1.0f).build()), true) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
+                    super.appendHoverText(stack, context, components, flag);
+                    addTooltip(components, null, "tooltip.createfood.crimson_fungus_ingredient");
+                }
+            });
+
+    public static final DeferredItem<Item> HAMBURGER_WARPED_FUNGUS = ITEMS.register("hamburger_warped_fungus",
+            () -> new ConsumableItem(new Item.Properties().food(new FoodProperties.Builder().nutrition(11).saturationModifier(0.6f).effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT, 3600, 0), 1.0f).effect(() -> new MobEffectInstance(MobEffects.SLOW_FALLING, 1200, 0), 1.0f).build()), true) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
+                    super.appendHoverText(stack, context, components, flag);
+                    addTooltip(components, null, "tooltip.createfood.warped_fungus_ingredient");
+                }
+            });
+
+    public static final DeferredItem<Item> CUSTARD_BOTTLE = ITEMS.register("custard_bottle",
+            () -> new DrinkableItem(new Item.Properties().food(new FoodProperties.Builder().nutrition(5).saturationModifier(0.8f).usingConvertsTo(Items.GLASS_BOTTLE).build()).stacksTo(16).craftRemainder(Items.GLASS_BOTTLE)));
+
+    public static final DeferredItem<Item> CUSTARD_SUGAR_BOTTLE = ITEMS.register("custard_sugar_bottle",
+            () -> new DrinkableItem(new Item.Properties().food(new FoodProperties.Builder().nutrition(6).saturationModifier(0.6f).usingConvertsTo(Items.GLASS_BOTTLE).build()).stacksTo(16).craftRemainder(Items.GLASS_BOTTLE)) {
+                @Override
+                public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> components, TooltipFlag flag) {
+                    super.appendHoverText(stack, context, components, flag);
+                    addTooltip(components, null, "tooltip.createfood.sugar_ingredient");
+                }
+            });
+
+    public static final DeferredItem<Item> APPLE_CUSTARD_BOTTLE = ITEMS.register("apple_custard_bottle",
+            () -> new DrinkableItem(new Item.Properties().food(new FoodProperties.Builder().nutrition(6).saturationModifier(0.9f).usingConvertsTo(Items.GLASS_BOTTLE).build()).stacksTo(16).craftRemainder(Items.GLASS_BOTTLE)));
+
+    public static final DeferredItem<Item> BERRY_CUSTARD_BOTTLE = ITEMS.register("berry_custard_bottle",
+            () -> new DrinkableItem(new Item.Properties().food(new FoodProperties.Builder().nutrition(8).saturationModifier(0.9f).usingConvertsTo(Items.GLASS_BOTTLE).build()).stacksTo(16).craftRemainder(Items.GLASS_BOTTLE)));
+
+    public static final DeferredItem<Item> CHOCOLATE_CUSTARD_BOTTLE = ITEMS.register("chocolate_custard_bottle",
+            () -> new DrinkableItem(new Item.Properties().food(new FoodProperties.Builder().nutrition(7).saturationModifier(1.0f).usingConvertsTo(Items.GLASS_BOTTLE).build()).stacksTo(16).craftRemainder(Items.GLASS_BOTTLE)));
+
+    public static final DeferredItem<Item> CHORUS_FRUIT_CUSTARD_BOTTLE = ITEMS.register("chorus_fruit_custard_bottle",
+            () -> new DrinkableItem(new Item.Properties().food(new FoodProperties.Builder().nutrition(9).saturationModifier(0.9f).usingConvertsTo(Items.GLASS_BOTTLE).build()).stacksTo(16).craftRemainder(Items.GLASS_BOTTLE)));
+
+    public static final DeferredItem<Item> MELON_CUSTARD_BOTTLE = ITEMS.register("melon_custard_bottle",
+            () -> new DrinkableItem(new Item.Properties().food(new FoodProperties.Builder().nutrition(9).saturationModifier(0.8f).usingConvertsTo(Items.GLASS_BOTTLE).build()).stacksTo(16).craftRemainder(Items.GLASS_BOTTLE)));
+
+    public static final DeferredItem<Item> PUMPKIN_CUSTARD_BOTTLE = ITEMS.register("pumpkin_custard_bottle",
+            () -> new DrinkableItem(new Item.Properties().food(new FoodProperties.Builder().nutrition(10).saturationModifier(0.6f).usingConvertsTo(Items.GLASS_BOTTLE).build()).stacksTo(16).craftRemainder(Items.GLASS_BOTTLE)));
+
+    public static final DeferredItem<Item> CREME_BRULEE_BOTTLE = ITEMS.register("creme_brulee_bottle",
+            () -> new ConsumableItem(new Item.Properties().food(new FoodProperties.Builder().nutrition(10).saturationModifier(1.0f).usingConvertsTo(Items.GLASS_BOTTLE).build()).stacksTo(16).craftRemainder(Items.GLASS_BOTTLE)));
+
+    public static final DeferredItem<Item> SCRAMBLED_EGGS_PLATE = ITEMS.register("scrambled_eggs_plate",
+            () -> new ConsumableItem(new Item.Properties().food(new FoodProperties.Builder().nutrition(6).saturationModifier(0.7f).usingConvertsTo(Items.BOWL).build()).stacksTo(16)));
+
+    public static final DeferredItem<Item> SCRAMBLED_EGGS_PLATE_BACON = ITEMS.register("scrambled_eggs_plate_bacon",
+            () -> new ConsumableItem(new Item.Properties().food(new FoodProperties.Builder().nutrition(8).saturationModifier(0.8f).usingConvertsTo(Items.BOWL).build()).stacksTo(16)) {
+                @Override
+                public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> components, TooltipFlag flag) {
+                    super.appendHoverText(stack, context, components, flag);
+                    addTooltip(components, null, "tooltip.createfood.bacon_ingredient");
+                }
+            });
+
+    public static final DeferredItem<Item> SCRAMBLED_EGGS_PLATE_CHEESE = ITEMS.register("scrambled_eggs_plate_cheese",
+            () -> new ConsumableItem(new Item.Properties().food(new FoodProperties.Builder().nutrition(7).saturationModifier(0.8f).usingConvertsTo(Items.BOWL).build()).stacksTo(16)) {
+                @Override
+                public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> components, TooltipFlag flag) {
+                    super.appendHoverText(stack, context, components, flag);
+                    addTooltip(components, null, "tooltip.createfood.cheese_ingredient");
+                }
+            });
+
+    public static final DeferredItem<Item> SCRAMBLED_EGGS_PLATE_MUSHROOM = ITEMS.register("scrambled_eggs_plate_mushroom",
+            () -> new ConsumableItem(new Item.Properties().food(new FoodProperties.Builder().nutrition(7).saturationModifier(0.7f).usingConvertsTo(Items.BOWL).build()).stacksTo(16)) {
+                @Override
+                public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> components, TooltipFlag flag) {
+                    super.appendHoverText(stack, context, components, flag);
+                    addTooltip(components, null, "tooltip.createfood.mushroom_ingredient");
+                }
+            });
+
+    public static final DeferredItem<Item> SCRAMBLED_EGGS_PLATE_TOMATO = ITEMS.register("scrambled_eggs_plate_tomato",
+            () -> new ConsumableItem(new Item.Properties().food(new FoodProperties.Builder().nutrition(7).saturationModifier(0.7f).usingConvertsTo(Items.BOWL).build()).stacksTo(16)) {
+                @Override
+                public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> components, TooltipFlag flag) {
+                    super.appendHoverText(stack, context, components, flag);
+                    addTooltip(components, null, "tooltip.createfood.tomato_ingredient");
+                }
+            });
+
+    public static final DeferredItem<Item> BREAD_SLICE_SCRAMBLED_EGG = ITEMS.register("bread_slice_scrambled_egg",
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(7).saturationModifier(0.8f).build())) {
+                @Override
+                public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> components, TooltipFlag flag) {
+                    super.appendHoverText(stack, context, components, flag);
+                    addTooltip(components, null, "tooltip.createfood.scrambled_egg_ingredient");
+                }
+            });
+
+    public static final DeferredItem<Item> SCRAMBLED_EGG_SANDWICH = ITEMS.register("scrambled_egg_sandwich",
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(9).saturationModifier(0.9f).build())) {
+                @Override
+                public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> components, TooltipFlag flag) {
+                    super.appendHoverText(stack, context, components, flag);
+                    addTooltip(components, null, "tooltip.createfood.scrambled_egg_ingredient");
+                }
+            });
+
+    public static final DeferredItem<Item> MASHED_POTATOES_BOWL = ITEMS.register("mashed_potatoes_bowl",
+            () -> new ConsumableItem(new Item.Properties().food(new FoodProperties.Builder().nutrition(7).saturationModifier(0.8f).usingConvertsTo(Items.BOWL).build()).stacksTo(16)));
+
+    public static final DeferredItem<Item> MASHED_POTATOES_BOWL_BACON = ITEMS.register("mashed_potatoes_bowl_bacon",
+            () -> new ConsumableItem(new Item.Properties().food(new FoodProperties.Builder().nutrition(9).saturationModifier(1.0f).usingConvertsTo(Items.BOWL).build()).stacksTo(16)) {
+                @Override
+                public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> components, TooltipFlag flag) {
+                    super.appendHoverText(stack, context, components, flag);
+                    addTooltip(components, null, "tooltip.createfood.bacon_ingredient");
+                }
+            });
+
+    public static final DeferredItem<Item> MASHED_POTATOES_BOWL_MUSHROOM = ITEMS.register("mashed_potatoes_bowl_mushroom",
+            () -> new ConsumableItem(new Item.Properties().food(new FoodProperties.Builder().nutrition(8).saturationModifier(0.8f).usingConvertsTo(Items.BOWL).build()).stacksTo(16)) {
+                @Override
+                public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> components, TooltipFlag flag) {
+                    super.appendHoverText(stack, context, components, flag);
+                    addTooltip(components, null, "tooltip.createfood.mushroom_ingredient");
+                }
+            });
+
+    public static final DeferredItem<Item> PORK_BURRITO_RICE = ITEMS.register("pork_burrito_rice",
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(13).saturationModifier(0.6f).build())) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
+                    super.appendHoverText(stack, context, components, flag);
+                    addTooltip(components, null, "tooltip.createfood.pork_ingredient", "tooltip.createfood.rice_ingredient");
+                }
+            });
+
+    public static final DeferredItem<Item> PORK_TACO = ITEMS.register("pork_taco",
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(10).saturationModifier(0.5f).build())) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
+                    super.appendHoverText(stack, context, components, flag);
+                    addTooltip(components, null, "tooltip.createfood.pork_ingredient");
+                }
+            });
+
+    public static final DeferredItem<Item> PORK_TACO_LETTUCE = ITEMS.register("pork_taco_lettuce",
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(11).saturationModifier(0.6f).build())) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
+                    super.appendHoverText(stack, context, components, flag);
+                    addTooltip(components, null, "tooltip.createfood.pork_ingredient", "tooltip.createfood.lettuce_ingredient");
+                }
+            });
+
+    public static final DeferredItem<Item> PORK_TACO_LETTUCE_TACO_SAUCE = ITEMS.register("pork_taco_lettuce_taco_sauce",
+            () -> new ConsumableItem(new Item.Properties().food(new FoodProperties.Builder().nutrition(12).saturationModifier(0.7f).effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT, 1200, 0), 1.0f).build()), true) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
+                    super.appendHoverText(stack, context, components, flag);
+                    addTooltip(components, null, "tooltip.createfood.pork_ingredient", "tooltip.createfood.lettuce_ingredient", "tooltip.createfood.taco_sauce_ingredient");
+                }
+            });
+
+    public static final DeferredItem<Item> PORK_WRAP_ONION_LETTUCE = ITEMS.register("pork_wrap_onion_lettuce",
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(11).saturationModifier(0.6f).build())) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
+                    super.appendHoverText(stack, context, components, flag);
+                    addTooltip(components, null, "tooltip.createfood.pork_ingredient", "tooltip.createfood.onion_ingredient", "tooltip.createfood.lettuce_ingredient");
+                }
+            });
+
+    // Rabbit items (lower nutrition, lower saturation - lean meat)
+    public static final DeferredItem<Item> RABBIT_BURRITO_RICE = ITEMS.register("rabbit_burrito_rice",
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(10).saturationModifier(0.6f).build())) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
+                    super.appendHoverText(stack, context, components, flag);
+                    addTooltip(components, null, "tooltip.createfood.rabbit_ingredient", "tooltip.createfood.rice_ingredient");
+                }
+            });
+
+    public static final DeferredItem<Item> RABBIT_TACO = ITEMS.register("rabbit_taco",
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(8).saturationModifier(0.5f).build())) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
+                    super.appendHoverText(stack, context, components, flag);
+                    addTooltip(components, null, "tooltip.createfood.rabbit_ingredient");
+                }
+            });
+
+    public static final DeferredItem<Item> RABBIT_TACO_LETTUCE = ITEMS.register("rabbit_taco_lettuce",
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(9).saturationModifier(0.5f).build())) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
+                    super.appendHoverText(stack, context, components, flag);
+                    addTooltip(components, null, "tooltip.createfood.rabbit_ingredient", "tooltip.createfood.lettuce_ingredient");
+                }
+            });
+
+    public static final DeferredItem<Item> RABBIT_TACO_LETTUCE_TACO_SAUCE = ITEMS.register("rabbit_taco_lettuce_taco_sauce",
+            () -> new ConsumableItem(new Item.Properties().food(new FoodProperties.Builder().nutrition(10).saturationModifier(0.7f).effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT, 1200, 0), 1.0f).build()), true) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
+                    super.appendHoverText(stack, context, components, flag);
+                    addTooltip(components, null, "tooltip.createfood.rabbit_ingredient", "tooltip.createfood.lettuce_ingredient", "tooltip.createfood.taco_sauce_ingredient");
+                }
+            });
+
+    public static final DeferredItem<Item> RABBIT_WRAP_ONION_POTATO = ITEMS.register("rabbit_wrap_onion_potato",
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(10).saturationModifier(0.6f).build())) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
+                    super.appendHoverText(stack, context, components, flag);
+                    addTooltip(components, null, "tooltip.createfood.rabbit_ingredient", "tooltip.createfood.onion_ingredient", "tooltip.createfood.potato_ingredient");
+                }
+            });
+
+    // Beef items (highest nutrition, high saturation - hearty meat)
+    public static final DeferredItem<Item> BEEF_BURRITO_RICE = ITEMS.register("beef_burrito_rice",
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(14).saturationModifier(0.8f).build())) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
+                    super.appendHoverText(stack, context, components, flag);
+                    addTooltip(components, null, "tooltip.createfood.beef_ingredient", "tooltip.createfood.rice_ingredient");
+                }
+            });
+
+    public static final DeferredItem<Item> BEEF_TACO = ITEMS.register("beef_taco",
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(11).saturationModifier(0.6f).build())) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
+                    super.appendHoverText(stack, context, components, flag);
+                    addTooltip(components, null, "tooltip.createfood.beef_ingredient");
+                }
+            });
+
+    public static final DeferredItem<Item> BEEF_TACO_LETTUCE = ITEMS.register("beef_taco_lettuce",
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(12).saturationModifier(0.7f).build())) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
+                    super.appendHoverText(stack, context, components, flag);
+                    addTooltip(components, null, "tooltip.createfood.beef_ingredient", "tooltip.createfood.lettuce_ingredient");
+                }
+            });
+
+    public static final DeferredItem<Item> BEEF_TACO_LETTUCE_TACO_SAUCE = ITEMS.register("beef_taco_lettuce_taco_sauce",
+            () -> new ConsumableItem(new Item.Properties().food(new FoodProperties.Builder().nutrition(13).saturationModifier(0.8f).effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT, 1200, 0), 1.0f).build()), true) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
+                    super.appendHoverText(stack, context, components, flag);
+                    addTooltip(components, null, "tooltip.createfood.beef_ingredient", "tooltip.createfood.lettuce_ingredient", "tooltip.createfood.taco_sauce_ingredient");
+                }
+            });
+
+    public static final DeferredItem<Item> BEEF_WRAP_LETTUCE_BEETROOT = ITEMS.register("beef_wrap_lettuce_beetroot",
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(12).saturationModifier(0.7f).build())) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
+                    super.appendHoverText(stack, context, components, flag);
+                    addTooltip(components, null, "tooltip.createfood.beef_ingredient", "tooltip.createfood.lettuce_ingredient", "tooltip.createfood.beetroot_ingredient");
+                }
+            });
+
+    // Chicken items (moderate nutrition, good saturation - balanced lean meat)
+    public static final DeferredItem<Item> CHICKEN_BURRITO_RICE = ITEMS.register("chicken_burrito_rice",
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(11).saturationModifier(0.7f).build())) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
+                    super.appendHoverText(stack, context, components, flag);
+                    addTooltip(components, null, "tooltip.createfood.chicken_ingredient", "tooltip.createfood.rice_ingredient");
+                }
+            });
+
+    public static final DeferredItem<Item> CHICKEN_TACO = ITEMS.register("chicken_taco",
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(9).saturationModifier(0.6f).build())) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
+                    super.appendHoverText(stack, context, components, flag);
+                    addTooltip(components, null, "tooltip.createfood.chicken_ingredient");
+                }
+            });
+
+    public static final DeferredItem<Item> CHICKEN_TACO_LETTUCE = ITEMS.register("chicken_taco_lettuce",
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(10).saturationModifier(0.6f).build())) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
+                    super.appendHoverText(stack, context, components, flag);
+                    addTooltip(components, null, "tooltip.createfood.chicken_ingredient", "tooltip.createfood.lettuce_ingredient");
+                }
+            });
+
+    public static final DeferredItem<Item> CHICKEN_TACO_LETTUCE_TACO_SAUCE = ITEMS.register("chicken_taco_lettuce_taco_sauce",
+            () -> new ConsumableItem(new Item.Properties().food(new FoodProperties.Builder().nutrition(11).saturationModifier(0.8f).effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT, 1200, 0), 1.0f).build()), true) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
+                    super.appendHoverText(stack, context, components, flag);
+                    addTooltip(components, null, "tooltip.createfood.chicken_ingredient", "tooltip.createfood.lettuce_ingredient", "tooltip.createfood.taco_sauce_ingredient");
+                }
+            });
+
+    public static final DeferredItem<Item> CHICKEN_WRAP_ONION_TOMATO = ITEMS.register("chicken_wrap_onion_tomato",
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(10).saturationModifier(0.7f).build())) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
+                    super.appendHoverText(stack, context, components, flag);
+                    addTooltip(components, null, "tooltip.createfood.chicken_ingredient", "tooltip.createfood.onion_ingredient", "tooltip.createfood.tomato_ingredient");
+                }
+            });
+
+    // Fish items (moderate-low nutrition, lower saturation - light protein)
+    public static final DeferredItem<Item> FISH_BURRITO_RICE = ITEMS.register("fish_burrito_rice",
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(11).saturationModifier(0.6f).build())) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
+                    super.appendHoverText(stack, context, components, flag);
+                    addTooltip(components, null, "tooltip.createfood.fish_ingredient", "tooltip.createfood.rice_ingredient");
+                }
+            });
+
+    public static final DeferredItem<Item> FISH_TACO = ITEMS.register("fish_taco",
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(8).saturationModifier(0.5f).build())) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
+                    super.appendHoverText(stack, context, components, flag);
+                    addTooltip(components, null, "tooltip.createfood.fish_ingredient");
+                }
+            });
+
+    public static final DeferredItem<Item> FISH_TACO_KELP = ITEMS.register("fish_taco_kelp",
+            () -> new ConsumableItem(new Item.Properties().food(new FoodProperties.Builder().nutrition(9).saturationModifier(0.5f).effect(() -> new MobEffectInstance(MobEffects.WATER_BREATHING, 600, 0), 1.0f).build()), true) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
+                    super.appendHoverText(stack, context, components, flag);
+                    addTooltip(components, null, "tooltip.createfood.fish_ingredient", "tooltip.createfood.kelp_ingredient");
+                }
+            });
+
+    public static final DeferredItem<Item> FISH_TACO_KELP_TACO_SAUCE = ITEMS.register("fish_taco_kelp_taco_sauce",
+            () -> new ConsumableItem(new Item.Properties().food(new FoodProperties.Builder().nutrition(10).saturationModifier(0.7f).effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT, 1200, 0), 1.0f).effect(() -> new MobEffectInstance(MobEffects.WATER_BREATHING, 1200, 0), 1.0f).build()), true) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
+                    super.appendHoverText(stack, context, components, flag);
+                    addTooltip(components, null, "tooltip.createfood.fish_ingredient", "tooltip.createfood.kelp_ingredient", "tooltip.createfood.taco_sauce_ingredient");
+                }
+            });
+
+    public static final DeferredItem<Item> FISH_WRAP_KELP_ONION = ITEMS.register("fish_wrap_kelp_onion",
+            () -> new ConsumableItem(new Item.Properties().food(new FoodProperties.Builder().nutrition(10).saturationModifier(0.6f).effect(() -> new MobEffectInstance(MobEffects.WATER_BREATHING, 600, 0), 1.0f).build()), true) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
+                    super.appendHoverText(stack, context, components, flag);
+                    addTooltip(components, null, "tooltip.createfood.fish_ingredient", "tooltip.createfood.kelp_ingredient", "tooltip.createfood.onion_ingredient");
+                }
+            });
 
     public static final DeferredItem<Item> CHORUS_FRUIT_COOKIE = ITEMS.register("chorus_fruit_cookie",
             () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationModifier(0.8f).build())) {
@@ -452,6 +828,36 @@ public class ModItems {
     public static final DeferredItem<Item> CLOTH_FILTER = ITEMS.register("cloth_filter",
             () -> new Item(new Item.Properties()));
 
+    public static final DeferredItem<Item> EGG_YOLK = ITEMS.register("egg_yolk",
+            () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> RAW_ONION_RINGS = ITEMS.register("raw_onion_rings",
+            () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> ONION_RINGS = ITEMS.register("onion_rings",
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(5).saturationModifier(0.6f).build())));
+
+    public static final DeferredItem<Item> RAW_FISH_STICKS = ITEMS.register("raw_fish_sticks",
+            () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> FISH_STICKS = ITEMS.register("fish_sticks",
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(6).saturationModifier(0.7f).build())));
+
+    public static final DeferredItem<Item> RAW_TATER_TOTS = ITEMS.register("raw_tater_tots",
+            () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> TATER_TOTS = ITEMS.register("tater_tots",
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationModifier(0.6f).build())));
+
+    public static final DeferredItem<Item> RAW_MOZZARELLA_STICKS = ITEMS.register("raw_mozzarella_sticks",
+            () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> MOZZARELLA_STICKS = ITEMS.register("mozzarella_sticks",
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(5).saturationModifier(0.7f).build())));
+
+    public static final DeferredItem<Item> RAW_CHICKEN_PATTY = ITEMS.register("raw_chicken_patty",
+            () -> new Item(new Item.Properties()));
+
     public static final DeferredItem<Item> COCOA_POWDER = ITEMS.register("cocoa_powder",
             () -> new Item(new Item.Properties()));
 
@@ -673,6 +1079,100 @@ public class ModItems {
 
     public static final DeferredItem<Item> RAW_FISHCAKE = ITEMS.register("raw_fishcake",
             () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> RAW_SAUSAGES = ITEMS.register("raw_sausages",
+            () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> RAW_SPICY_SAUSAGES = ITEMS.register("raw_spicy_sausages",
+            () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> RAW_SAUSAGE_ROLL = ITEMS.register("raw_sausage_roll",
+            () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> RAW_SPICY_SAUSAGE_ROLL = ITEMS.register("raw_spicy_sausage_roll",
+            () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> RAW_SAUSAGE_ROLL_CHEESE = ITEMS.register("raw_sausage_roll_cheese",
+            () -> new Item(new Item.Properties()) {
+                @Override
+                public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> components, TooltipFlag flag) {
+                    super.appendHoverText(stack, context, components, flag);
+                    addTooltip(components, null, "tooltip.createfood.cheese_ingredient");
+                }
+            });
+
+
+    public static final DeferredItem<Item> RAW_SPICY_SAUSAGE_ROLL_CHEESE = ITEMS.register("raw_spicy_sausage_roll_cheese",
+            () -> new Item(new Item.Properties()) {
+                @Override
+                public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> components, TooltipFlag flag) {
+                    super.appendHoverText(stack, context, components, flag);
+                    addTooltip(components, null, "tooltip.createfood.cheese_ingredient");
+                }
+            });
+
+    public static final DeferredItem<Item> EGG_BURRITO = ITEMS.register("egg_burrito",
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(10).saturationModifier(0.6f).build())) {
+                @Override
+                public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> components, TooltipFlag flag) {
+                    super.appendHoverText(stack, context, components, flag);
+                    addTooltip(components, null, "tooltip.createfood.egg_ingredient");
+                }
+            });
+
+    public static final DeferredItem<Item> EGG_BURRITO_SAUSAGE = ITEMS.register("egg_burrito_sausage",
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(12).saturationModifier(0.7f).build())) {
+                @Override
+                public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> components, TooltipFlag flag) {
+                    super.appendHoverText(stack, context, components, flag);
+                    addTooltip(components, null, "tooltip.createfood.egg_ingredient", "tooltip.createfood.sausage_ingredient");
+                }
+            });
+
+    public static final DeferredItem<Item> EGG_BURRITO_BACON = ITEMS.register("egg_burrito_bacon",
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(12).saturationModifier(0.7f).build())) {
+                @Override
+                public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> components, TooltipFlag flag) {
+                    super.appendHoverText(stack, context, components, flag);
+                    addTooltip(components, null, "tooltip.createfood.egg_ingredient", "tooltip.createfood.bacon_ingredient");
+                }
+            });
+
+    public static final DeferredItem<Item> EGG_BURRITO_CHEESE = ITEMS.register("egg_burrito_cheese",
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(11).saturationModifier(0.7f).build())) {
+                @Override
+                public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> components, TooltipFlag flag) {
+                    super.appendHoverText(stack, context, components, flag);
+                    addTooltip(components, null, "tooltip.createfood.egg_ingredient", "tooltip.createfood.cheese_ingredient");
+                }
+            });
+
+    public static final DeferredItem<Item> EGG_BURRITO_CHEESE_BACON = ITEMS.register("egg_burrito_cheese_bacon",
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(13).saturationModifier(0.8f).build())) {
+                @Override
+                public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> components, TooltipFlag flag) {
+                    super.appendHoverText(stack, context, components, flag);
+                    addTooltip(components, null, "tooltip.createfood.egg_ingredient", "tooltip.createfood.cheese_ingredient", "tooltip.createfood.bacon_ingredient");
+                }
+            });
+
+    public static final DeferredItem<Item> EGG_BURRITO_CHEESE_SAUSAGE = ITEMS.register("egg_burrito_cheese_sausage",
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(13).saturationModifier(0.8f).build())) {
+                @Override
+                public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> components, TooltipFlag flag) {
+                    super.appendHoverText(stack, context, components, flag);
+                    addTooltip(components, null, "tooltip.createfood.egg_ingredient", "tooltip.createfood.cheese_ingredient", "tooltip.createfood.sausage_ingredient");
+                }
+            });
+
+    public static final DeferredItem<Item> EGG_BURRITO_CHEESE_SAUSAGE_BACON = ITEMS.register("egg_burrito_cheese_sausage_bacon",
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(14).saturationModifier(0.8f).build())) {
+                @Override
+                public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> components, TooltipFlag flag) {
+                    super.appendHoverText(stack, context, components, flag);
+                    addTooltip(components, null, "tooltip.createfood.egg_ingredient", "tooltip.createfood.cheese_ingredient", "tooltip.createfood.sausage_ingredient", "tooltip.createfood.bacon_ingredient");
+                }
+            });
 
     public static final DeferredItem<Item> RAW_FISH_CALZONE = ITEMS.register("raw_fish_calzone",
             () -> new Item(new Item.Properties()) {
@@ -933,6 +1433,9 @@ public class ModItems {
     public static final DeferredItem<Item> MILK_POWDER = ITEMS.register("milk_powder",
             () -> new Item(new Item.Properties()));
 
+    public static final DeferredItem<Item> MERINGUE_COOKIE = ITEMS.register("meringue_cookie",
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(2).saturationModifier(0.4f).build())));
+
     public static final DeferredItem<Item> MINCED_DRAGON = ITEMS.register("minced_dragon",
             () -> new Item(new Item.Properties()) {
                 @Override
@@ -944,16 +1447,12 @@ public class ModItems {
             });
 
     public static final DeferredItem<Item> PAPRIKA = ITEMS.register("paprika",
-            () -> new Item(new Item.Properties()) {
-                @Override
-                public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    super.appendHoverText(stack, context, components, flag);
-                    addTooltip(components, "tooltip.compat.paprika", null);
-
-                }
-            });
+            () -> new Item(new Item.Properties()));
 
     public static final DeferredItem<Item> PITA_DOUGH = ITEMS.register("pita_dough",
+            () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> TACO_SHELL = ITEMS.register("taco_shell",
             () -> new Item(new Item.Properties()));
 
     public static final DeferredItem<Item> POWDERED_SUGAR = ITEMS.register("powdered_sugar",
@@ -1321,6 +1820,42 @@ public class ModItems {
                 }
             });
 
+    public static final DeferredItem<Item> MUTTON_TACO_LETTUCE_TACO_SAUCE = ITEMS.register("mutton_taco_lettuce_taco_sauce",
+            () -> new ConsumableItem(new Item.Properties().food(new FoodProperties.Builder().nutrition(11).saturationModifier(0.8f).effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT, 1200, 0), 1.0f).build()), true) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
+                    super.appendHoverText(stack, context, components, flag);
+                    addTooltip(components, null, "tooltip.createfood.mutton_ingredient", "tooltip.createfood.lettuce_ingredient", "tooltip.createfood.taco_sauce_ingredient");
+                }
+            });
+
+    public static final DeferredItem<Item> MUTTON_TACO_LETTUCE = ITEMS.register("mutton_taco_lettuce",
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(11).saturationModifier(0.6f).build())) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
+                    super.appendHoverText(stack, context, components, flag);
+                    addTooltip(components, null, "tooltip.createfood.mutton_ingredient", "tooltip.createfood.lettuce_ingredient");
+                }
+            });
+
+    public static final DeferredItem<Item> MUTTON_TACO = ITEMS.register("mutton_taco",
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(9).saturationModifier(0.6f).build())) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
+                    super.appendHoverText(stack, context, components, flag);
+                    addTooltip(components, null, "tooltip.createfood.mutton_ingredient");
+                }
+            });
+
+    public static final DeferredItem<Item> MUTTON_BURRITO_RICE = ITEMS.register("mutton_burrito_rice",
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(12).saturationModifier(0.7f).build())) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
+                    super.appendHoverText(stack, context, components, flag);
+                    addTooltip(components, null, "tooltip.createfood.mutton_ingredient", "tooltip.createfood.rice_ingredient");
+                }
+            });
+
     public static final DeferredItem<Item> ONION_BACON_PIZZA_SLICE = ITEMS.register("onion_bacon_pizza_slice",
             () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(7).saturationModifier(0.7f).build())) {
                 @Override
@@ -1448,10 +1983,10 @@ public class ModItems {
             });
 
     public static final DeferredItem<Item> SAUSAGE_BISCUIT = ITEMS.register("sausage_biscuit",
-            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(14).saturationModifier(0.4f).build())));
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(12).saturationModifier(0.4f).build())));
 
     public static final DeferredItem<Item> SAUSAGE_BISCUIT_BACON = ITEMS.register("sausage_biscuit_bacon",
-            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(15).saturationModifier(0.6f).build())) {
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(13).saturationModifier(0.6f).build())) {
                 @Override
                 public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
                     super.appendHoverText(stack, context, components, flag);
@@ -1460,7 +1995,7 @@ public class ModItems {
             });
 
     public static final DeferredItem<Item> SAUSAGE_BISCUIT_CHEESE_BACON = ITEMS.register("sausage_biscuit_cheese_bacon",
-            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(17).saturationModifier(0.4f).build())) {
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(15).saturationModifier(0.4f).build())) {
                 @Override
                 public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
                     super.appendHoverText(stack, context, components, flag);
@@ -1469,7 +2004,7 @@ public class ModItems {
             });
 
     public static final DeferredItem<Item> SAUSAGE_BISCUIT_CHEESE_FRIED_EGG = ITEMS.register("sausage_biscuit_cheese_fried_egg",
-            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(16).saturationModifier(0.6f).build())) {
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(14).saturationModifier(0.6f).build())) {
                 @Override
                 public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
                     super.appendHoverText(stack, context, components, flag);
@@ -1478,7 +2013,7 @@ public class ModItems {
             });
 
     public static final DeferredItem<Item> SAUSAGE_BISCUIT_CHEESE_FRIED_EGG_BACON = ITEMS.register("sausage_biscuit_cheese_fried_egg_bacon",
-            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(18).saturationModifier(0.6f).build())) {
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(16).saturationModifier(0.6f).build())) {
                 @Override
                 public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
                     super.appendHoverText(stack, context, components, flag);
@@ -1488,7 +2023,7 @@ public class ModItems {
 
 
     public static final DeferredItem<Item> SAUSAGE_BISCUIT_FRIED_EGG = ITEMS.register("sausage_biscuit_fried_egg",
-            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(14).saturationModifier(0.8f).build())) {
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(12).saturationModifier(0.8f).build())) {
                 @Override
                 public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
                     super.appendHoverText(stack, context, components, flag);
@@ -1497,7 +2032,7 @@ public class ModItems {
             });
 
     public static final DeferredItem<Item> SAUSAGE_BISCUIT_FRIED_EGG_BACON = ITEMS.register("sausage_biscuit_fried_egg_bacon",
-            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(16).saturationModifier(0.8f).build())) {
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(14).saturationModifier(0.8f).build())) {
                 @Override
                 public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
                     super.appendHoverText(stack, context, components, flag);
@@ -1506,10 +2041,10 @@ public class ModItems {
             });
 
     public static final DeferredItem<Item> SAUSAGE_BISCUIT_SANDWICH = ITEMS.register("sausage_biscuit_sandwich",
-            () -> new ConsumableItem(new Item.Properties().food(new FoodProperties.Builder().nutrition(19).saturationModifier(0.5f).effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT, 600, 0), 1.0f).build()), true));
+            () -> new ConsumableItem(new Item.Properties().food(new FoodProperties.Builder().nutrition(17).saturationModifier(0.5f).effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT, 600, 0), 1.0f).build()), true));
 
     public static final DeferredItem<Item> SAUSAGE_BISCUIT_SANDWICH_BACON = ITEMS.register("sausage_biscuit_sandwich_bacon",
-            () -> new ConsumableItem(new Item.Properties().food(new FoodProperties.Builder().nutrition(20).saturationModifier(0.6f).effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT, 600, 0), 1.0f).build()), true) {
+            () -> new ConsumableItem(new Item.Properties().food(new FoodProperties.Builder().nutrition(18).saturationModifier(0.6f).effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT, 600, 0), 1.0f).build()), true) {
                 @Override
                 public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
                     super.appendHoverText(stack, context, components, flag);
@@ -1518,7 +2053,7 @@ public class ModItems {
             });
 
     public static final DeferredItem<Item> SAUSAGE_BISCUIT_SANDWICH_CHEESE_BACON = ITEMS.register("sausage_biscuit_sandwich_cheese_bacon",
-            () -> new ConsumableItem(new Item.Properties().food(new FoodProperties.Builder().nutrition(22).saturationModifier(0.7f).effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT, 600, 0), 1.0f).build()), true) {
+            () -> new ConsumableItem(new Item.Properties().food(new FoodProperties.Builder().nutrition(20).saturationModifier(0.7f).effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT, 600, 0), 1.0f).build()), true) {
                 @Override
                 public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
                     super.appendHoverText(stack, context, components, flag);
@@ -1527,7 +2062,7 @@ public class ModItems {
             });
 
     public static final DeferredItem<Item> SAUSAGE_BISCUIT_SANDWICH_CHEESE_FRIED_EGG = ITEMS.register("sausage_biscuit_sandwich_cheese_fried_egg",
-            () -> new ConsumableItem(new Item.Properties().food(new FoodProperties.Builder().nutrition(21).saturationModifier(0.7f).effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT, 600, 0), 1.0f).build()), true) {
+            () -> new ConsumableItem(new Item.Properties().food(new FoodProperties.Builder().nutrition(19).saturationModifier(0.7f).effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT, 600, 0), 1.0f).build()), true) {
                 @Override
                 public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
                     super.appendHoverText(stack, context, components, flag);
@@ -1536,7 +2071,7 @@ public class ModItems {
             });
 
     public static final DeferredItem<Item> SAUSAGE_BISCUIT_SANDWICH_CHEESE_FRIED_EGG_BACON = ITEMS.register("sausage_biscuit_sandwich_cheese_fried_egg_bacon",
-            () -> new ConsumableItem(new Item.Properties().food(new FoodProperties.Builder().nutrition(23).saturationModifier(0.7f).effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT, 600, 0), 1.0f).build()), true) {
+            () -> new ConsumableItem(new Item.Properties().food(new FoodProperties.Builder().nutrition(21).saturationModifier(0.7f).effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT, 600, 0), 1.0f).build()), true) {
                 @Override
                 public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
                     super.appendHoverText(stack, context, components, flag);
@@ -1545,7 +2080,7 @@ public class ModItems {
             });
 
     public static final DeferredItem<Item> SAUSAGE_BISCUIT_SANDWICH_FRIED_EGG = ITEMS.register("sausage_biscuit_sandwich_fried_egg",
-            () -> new ConsumableItem(new Item.Properties().food(new FoodProperties.Builder().nutrition(19).saturationModifier(0.6f).effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT, 600, 0), 1.0f).build()), true) {
+            () -> new ConsumableItem(new Item.Properties().food(new FoodProperties.Builder().nutrition(17).saturationModifier(0.6f).effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT, 600, 0), 1.0f).build()), true) {
                 @Override
                 public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
                     super.appendHoverText(stack, context, components, flag);
@@ -1554,7 +2089,7 @@ public class ModItems {
             });
 
     public static final DeferredItem<Item> SAUSAGE_BISCUIT_SANDWICH_FRIED_EGG_BACON = ITEMS.register("sausage_biscuit_sandwich_fried_egg_bacon",
-            () -> new ConsumableItem(new Item.Properties().food(new FoodProperties.Builder().nutrition(21).saturationModifier(0.6f).effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT, 600, 0), 1.0f).build()), true) {
+            () -> new ConsumableItem(new Item.Properties().food(new FoodProperties.Builder().nutrition(19).saturationModifier(0.6f).effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT, 600, 0), 1.0f).build()), true) {
                 @Override
                 public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
                     super.appendHoverText(stack, context, components, flag);
@@ -1615,6 +2150,216 @@ public class ModItems {
 
     public static final DeferredItem<Item> SLICED_BEETROOT = ITEMS.register("sliced_beetroot",
             () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(2).saturationModifier(0.3f).fast().build())));
+
+    public static final DeferredItem<Item> SLICED_RED_MUSHROOM_SALT = ITEMS.register("sliced_red_mushroom_salt",
+            () -> new ConsumableItem(new ConsumableItem.Properties().food(new FoodProperties.Builder().nutrition(1).saturationModifier(1.1f).fast().effect(() -> new MobEffectInstance(MobEffects.NIGHT_VISION, 100, 0), 1.0f).build()), true) {
+                @Override
+                public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> components, TooltipFlag flag) {
+                    super.appendHoverText(stack, context, components, flag);
+                    addTooltip(components, null, "tooltip.createfood.salt_ingredient");
+
+                }
+            });
+
+    public static final DeferredItem<Item> SLICED_BROWN_MUSHROOM_SALT = ITEMS.register("sliced_brown_mushroom_salt",
+            () -> new ConsumableItem(new ConsumableItem.Properties().food(new FoodProperties.Builder().nutrition(1).saturationModifier(1.1f).fast().effect(() -> new MobEffectInstance(MobEffects.NIGHT_VISION, 100, 0), 1.0f).build()), true) {
+                @Override
+                public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> components, TooltipFlag flag) {
+                    super.appendHoverText(stack, context, components, flag);
+                    addTooltip(components, null, "tooltip.createfood.salt_ingredient");
+
+                }
+            });
+
+    public static final DeferredItem<Item> SLICED_WARPED_FUNGUS_SALT = ITEMS.register("sliced_warped_fungus_salt",
+            () -> new ConsumableItem(new ConsumableItem.Properties().food(new FoodProperties.Builder().nutrition(2).saturationModifier(0.9f).fast().effect(() -> new MobEffectInstance(MobEffects.NIGHT_VISION, 600, 0), 1.0f).build()), true) {
+                @Override
+                public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> components, TooltipFlag flag) {
+                    super.appendHoverText(stack, context, components, flag);
+                    addTooltip(components, null, "tooltip.createfood.salt_ingredient");
+
+                }
+            });
+
+    public static final DeferredItem<Item> SLICED_CRIMSON_FUNGUS_SALT = ITEMS.register("sliced_crimson_fungus_salt",
+            () -> new ConsumableItem(new ConsumableItem.Properties().food(new FoodProperties.Builder().nutrition(2).saturationModifier(0.9f).fast().effect(() -> new MobEffectInstance(MobEffects.NIGHT_VISION, 600, 0), 1.0f).build()), true) {
+                @Override
+                public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> components, TooltipFlag flag) {
+                    super.appendHoverText(stack, context, components, flag);
+                    addTooltip(components, null, "tooltip.createfood.salt_ingredient");
+
+                }
+            });
+
+    public static final DeferredItem<Item> KELP_ROLL_TOMATO = ITEMS.register("kelp_roll_tomato",
+            () -> new ConsumableItem(new ConsumableItem.Properties().food(new FoodProperties.Builder().nutrition(12).saturationModifier(0.5f).build())) {
+                @Override
+                public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> components, TooltipFlag flag) {
+                    super.appendHoverText(stack, context, components, flag);
+                    addTooltip(components, null, "tooltip.createfood.tomato_ingredient");
+                }
+            });
+
+    public static final DeferredItem<Item> KELP_ROLL_SLICE_TOMATO = ITEMS.register("kelp_roll_slice_tomato",
+            () -> new ConsumableItem(new ConsumableItem.Properties().food(new FoodProperties.Builder().nutrition(6).saturationModifier(0.5f).build())) {
+                @Override
+                public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> components, TooltipFlag flag) {
+                    super.appendHoverText(stack, context, components, flag);
+                    addTooltip(components, null, "tooltip.createfood.tomato_ingredient");
+                }
+            });
+
+    // Crimson Fungus (Nether fungi - hearty)
+    public static final DeferredItem<Item> KELP_ROLL_CRIMSON_FUNGUS = ITEMS.register("kelp_roll_crimson_fungus",
+            () -> new ConsumableItem(new ConsumableItem.Properties().food(new FoodProperties.Builder().nutrition(13).saturationModifier(0.6f).build())) {
+                @Override
+                public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> components, TooltipFlag flag) {
+                    super.appendHoverText(stack, context, components, flag);
+                    addTooltip(components, null, "tooltip.createfood.crimson_fungus_ingredient");
+                }
+            });
+
+    public static final DeferredItem<Item> KELP_ROLL_SLICE_CRIMSON_FUNGUS = ITEMS.register("kelp_roll_slice_crimson_fungus",
+            () -> new ConsumableItem(new ConsumableItem.Properties().food(new FoodProperties.Builder().nutrition(7).saturationModifier(0.6f).build())) {
+                @Override
+                public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> components, TooltipFlag flag) {
+                    super.appendHoverText(stack, context, components, flag);
+                    addTooltip(components, null, "tooltip.createfood.crimson_fungus_ingredient");
+                }
+            });
+
+    // Beetroot (Root vegetable - hearty)
+    public static final DeferredItem<Item> KELP_ROLL_BEETROOT = ITEMS.register("kelp_roll_beetroot",
+            () -> new ConsumableItem(new ConsumableItem.Properties().food(new FoodProperties.Builder().nutrition(13).saturationModifier(0.6f).build())) {
+                @Override
+                public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> components, TooltipFlag flag) {
+                    super.appendHoverText(stack, context, components, flag);
+                    addTooltip(components, null, "tooltip.createfood.beetroot_ingredient");
+                }
+            });
+
+    public static final DeferredItem<Item> KELP_ROLL_SLICE_BEETROOT = ITEMS.register("kelp_roll_slice_beetroot",
+            () -> new ConsumableItem(new ConsumableItem.Properties().food(new FoodProperties.Builder().nutrition(6).saturationModifier(0.6f).build())) {
+                @Override
+                public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> components, TooltipFlag flag) {
+                    super.appendHoverText(stack, context, components, flag);
+                    addTooltip(components, null, "tooltip.createfood.beetroot_ingredient");
+                }
+            });
+
+    // Onion (Crisp vegetable - slightly less nutrition, better saturation)
+    public static final DeferredItem<Item> KELP_ROLL_ONION = ITEMS.register("kelp_roll_onion",
+            () -> new ConsumableItem(new ConsumableItem.Properties().food(new FoodProperties.Builder().nutrition(11).saturationModifier(0.6f).build())) {
+                @Override
+                public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> components, TooltipFlag flag) {
+                    super.appendHoverText(stack, context, components, flag);
+                    addTooltip(components, null, "tooltip.createfood.onion_ingredient");
+                }
+            });
+
+    public static final DeferredItem<Item> KELP_ROLL_SLICE_ONION = ITEMS.register("kelp_roll_slice_onion",
+            () -> new ConsumableItem(new ConsumableItem.Properties().food(new FoodProperties.Builder().nutrition(5).saturationModifier(0.6f).build())) {
+                @Override
+                public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> components, TooltipFlag flag) {
+                    super.appendHoverText(stack, context, components, flag);
+                    addTooltip(components, null, "tooltip.createfood.onion_ingredient");
+                }
+            });
+
+    // Lettuce (Leafy - lower nutrition, lower saturation)
+    public static final DeferredItem<Item> KELP_ROLL_LETTUCE = ITEMS.register("kelp_roll_lettuce",
+            () -> new ConsumableItem(new ConsumableItem.Properties().food(new FoodProperties.Builder().nutrition(10).saturationModifier(0.4f).build())) {
+                @Override
+                public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> components, TooltipFlag flag) {
+                    super.appendHoverText(stack, context, components, flag);
+                    addTooltip(components, null, "tooltip.createfood.lettuce_ingredient");
+                }
+            });
+
+    public static final DeferredItem<Item> KELP_ROLL_SLICE_LETTUCE = ITEMS.register("kelp_roll_slice_lettuce",
+            () -> new ConsumableItem(new ConsumableItem.Properties().food(new FoodProperties.Builder().nutrition(5).saturationModifier(0.4f).build())) {
+                @Override
+                public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> components, TooltipFlag flag) {
+                    super.appendHoverText(stack, context, components, flag);
+                    addTooltip(components, null, "tooltip.createfood.lettuce_ingredient");
+                }
+            });
+
+    // Rice (Grain - standard nutrition, good saturation)
+    public static final DeferredItem<Item> KELP_ROLL_RICE = ITEMS.register("kelp_roll_rice",
+            () -> new ConsumableItem(new ConsumableItem.Properties().food(new FoodProperties.Builder().nutrition(12).saturationModifier(0.7f).build())) {
+                @Override
+                public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> components, TooltipFlag flag) {
+                    super.appendHoverText(stack, context, components, flag);
+                    addTooltip(components, null, "tooltip.createfood.rice_ingredient");
+                }
+            });
+
+    public static final DeferredItem<Item> KELP_ROLL_SLICE_RICE = ITEMS.register("kelp_roll_slice_rice",
+            () -> new ConsumableItem(new ConsumableItem.Properties().food(new FoodProperties.Builder().nutrition(6).saturationModifier(0.7f).build())) {
+                @Override
+                public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> components, TooltipFlag flag) {
+                    super.appendHoverText(stack, context, components, flag);
+                    addTooltip(components, null, "tooltip.createfood.rice_ingredient");
+                }
+            });
+
+    // Red Mushroom (Earthy - standard nutrition, better saturation than tomato)
+    public static final DeferredItem<Item> KELP_ROLL_RED_MUSHROOM = ITEMS.register("kelp_roll_red_mushroom",
+            () -> new ConsumableItem(new ConsumableItem.Properties().food(new FoodProperties.Builder().nutrition(12).saturationModifier(0.6f).build())) {
+                @Override
+                public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> components, TooltipFlag flag) {
+                    super.appendHoverText(stack, context, components, flag);
+                    addTooltip(components, null, "tooltip.createfood.red_mushroom_ingredient");
+                }
+            });
+
+    public static final DeferredItem<Item> KELP_ROLL_SLICE_RED_MUSHROOM = ITEMS.register("kelp_roll_slice_red_mushroom",
+            () -> new ConsumableItem(new ConsumableItem.Properties().food(new FoodProperties.Builder().nutrition(6).saturationModifier(0.6f).build())) {
+                @Override
+                public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> components, TooltipFlag flag) {
+                    super.appendHoverText(stack, context, components, flag);
+                    addTooltip(components, null, "tooltip.createfood.red_mushroom_ingredient");
+                }
+            });
+
+    // Brown Mushroom (Earthy - standard nutrition, better saturation than tomato)
+    public static final DeferredItem<Item> KELP_ROLL_BROWN_MUSHROOM = ITEMS.register("kelp_roll_brown_mushroom",
+            () -> new ConsumableItem(new ConsumableItem.Properties().food(new FoodProperties.Builder().nutrition(12).saturationModifier(0.6f).build())) {
+                @Override
+                public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> components, TooltipFlag flag) {
+                    super.appendHoverText(stack, context, components, flag);
+                    addTooltip(components, null, "tooltip.createfood.brown_mushroom_ingredient");
+                }
+            });
+
+    public static final DeferredItem<Item> KELP_ROLL_SLICE_BROWN_MUSHROOM = ITEMS.register("kelp_roll_slice_brown_mushroom",
+            () -> new ConsumableItem(new ConsumableItem.Properties().food(new FoodProperties.Builder().nutrition(6).saturationModifier(0.6f).build())) {
+                @Override
+                public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> components, TooltipFlag flag) {
+                    super.appendHoverText(stack, context, components, flag);
+                    addTooltip(components, null, "tooltip.createfood.brown_mushroom_ingredient");
+                }
+            });
+
+    // Warped Fungus (Nether fungi - hearty)
+    public static final DeferredItem<Item> KELP_ROLL_WARPED_FUNGUS = ITEMS.register("kelp_roll_warped_fungus",
+            () -> new ConsumableItem(new ConsumableItem.Properties().food(new FoodProperties.Builder().nutrition(13).saturationModifier(0.6f).build())) {
+                @Override
+                public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> components, TooltipFlag flag) {
+                    super.appendHoverText(stack, context, components, flag);
+                    addTooltip(components, null, "tooltip.createfood.warped_fungus_ingredient");
+                }
+            });
+
+    public static final DeferredItem<Item> KELP_ROLL_SLICE_WARPED_FUNGUS = ITEMS.register("kelp_roll_slice_warped_fungus",
+            () -> new ConsumableItem(new ConsumableItem.Properties().food(new FoodProperties.Builder().nutrition(7).saturationModifier(0.6f).build())) {
+                @Override
+                public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> components, TooltipFlag flag) {
+                    super.appendHoverText(stack, context, components, flag);
+                    addTooltip(components, null, "tooltip.createfood.warped_fungus_ingredient");
+                }
+            });
 
     public static final DeferredItem<Item> SLICED_BROWN_MUSHROOM = ITEMS.register("sliced_brown_mushroom",
             () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(1).saturationModifier(1.1f).fast().build())));
@@ -1678,22 +2423,10 @@ public class ModItems {
             () -> new ConsumableItem(new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationModifier(0.8f).effect(() -> new MobEffectInstance(ModEffects.COMFORT, 1800, 0), 1.0f).build()), true));
 
     public static final DeferredItem<Item> SPICY_SAUSAGES = ITEMS.register("spicy_sausages",
-            () -> new ConsumableItem(new Item.Properties().food(new FoodProperties.Builder().nutrition(6).saturationModifier(0.8f).effect(() -> new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 600, 0), 1.0f).effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT, 3600, 0), 1.0f).build()), true) {
-                @Override
-                public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addTooltip(components, "tooltip.compat.paprika", null);
-                    super.appendHoverText(stack, context, components, flag);
-                }
-            });
+            () -> new ConsumableItem(new Item.Properties().food(new FoodProperties.Builder().nutrition(6).saturationModifier(0.8f).effect(() -> new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 600, 0), 1.0f).effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT, 3600, 0), 1.0f).build()), true));
 
     public static final DeferredItem<Item> SPICY_CHICKEN_NUGGETS = ITEMS.register("spicy_chicken_nuggets",
-            () -> new ConsumableItem(new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationModifier(1.1f).effect(() -> new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 600, 0), 1.0f).effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT, 1200, 0), 1.0f).build()), true) {
-                @Override
-                public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> components, TooltipFlag flag) {
-                    addTooltip(components, "tooltip.compat.paprika", null);
-                    super.appendHoverText(stack, context, components, flag);
-                }
-            });
+            () -> new ConsumableItem(new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationModifier(1.1f).effect(() -> new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 600, 0), 1.0f).effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT, 1200, 0), 1.0f).build()), true));
 
     public static final DeferredItem<Item> STRIDER_MEATBALL = ITEMS.register("strider_meatball",
             () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationModifier(0.6f).build())) {
@@ -2739,12 +3472,39 @@ public class ModItems {
                 }
             });
 
+    public static final DeferredItem<Item> CLOTH_FILTER_PRESSED_COCOA = ITEMS.register("cloth_filter_pressed_cocoa",
+            () -> new Item(new Item.Properties().craftRemainder(ModItems.CLOTH_FILTER.get())) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
+                    super.appendHoverText(stack, context, components, flag);
+                    addTooltip(components, null, "tooltip.createfood.pressed_cocoa_ingredient");
+                }
+            });
+
     public static final DeferredItem<Item> CLOTH_FILTER_CACAO_MASS = ITEMS.register("cloth_filter_cacao_mass",
-            () -> new Item(new Item.Properties()) {
+            () -> new Item(new Item.Properties().craftRemainder(ModItems.CLOTH_FILTER_PRESSED_COCOA.get())) {
                 @Override
                 public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
                     super.appendHoverText(stack, context, components, flag);
                     addTooltip(components, null, "tooltip.createfood.cacao_mass_ingredient");
+                }
+            });
+
+    public static final DeferredItem<Item> CLOTH_FILTER_EGG_YOLK = ITEMS.register("cloth_filter_egg_yolk",
+            () -> new Item(new Item.Properties().craftRemainder(ModItems.CLOTH_FILTER.get())) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
+                    super.appendHoverText(stack, context, components, flag);
+                    addTooltip(components, null, "tooltip.createfood.egg_yolk_ingredient");
+                }
+            });
+
+    public static final DeferredItem<Item> CLOTH_FILTER_EGG = ITEMS.register("cloth_filter_egg",
+            () -> new Item(new Item.Properties().craftRemainder(ModItems.CLOTH_FILTER_EGG_YOLK.get())) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
+                    super.appendHoverText(stack, context, components, flag);
+                    addTooltip(components, null, "tooltip.createfood.egg_ingredient");
                 }
             });
 
@@ -4029,7 +4789,7 @@ public class ModItems {
             });
 
     public static final DeferredItem<Item> SAUSAGE_BISCUIT_CHEESE = ITEMS.register("sausage_biscuit_cheese",
-            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(16).saturationModifier(0.4f).build())) {
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(14).saturationModifier(0.4f).build())) {
                 @Override
                 public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> components, TooltipFlag flag) {
                     super.appendHoverText(stack, context, components, flag);
@@ -4038,7 +4798,7 @@ public class ModItems {
             });
 
     public static final DeferredItem<Item> SAUSAGE_BISCUIT_SANDWICH_CHEESE = ITEMS.register("sausage_biscuit_sandwich_cheese",
-            () -> new ConsumableItem(new Item.Properties().food(new FoodProperties.Builder().nutrition(21).saturationModifier(0.6f).effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT, 600, 0), 1.0f).build()), true) {
+            () -> new ConsumableItem(new Item.Properties().food(new FoodProperties.Builder().nutrition(19).saturationModifier(0.6f).effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT, 600, 0), 1.0f).build()), true) {
                 @Override
                 public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> components, TooltipFlag flag) {
                     super.appendHoverText(stack, context, components, flag);
@@ -4414,6 +5174,30 @@ public class ModItems {
 
     public static final DeferredItem<Item> BISCUIT = ITEMS.register("biscuit",
             () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(9).saturationModifier(0.7f).fast().build())));
+
+    public static final DeferredItem<Item> SAUSAGE_ROLL = ITEMS.register("sausage_roll",
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationModifier(0.5f).fast().build())));
+
+    public static final DeferredItem<Item> SPICY_SAUSAGE_ROLL = ITEMS.register("spicy_sausage_roll",
+            () -> new ConsumableItem(new Item.Properties().food(new FoodProperties.Builder().nutrition(5).saturationModifier(0.5f).effect(() -> new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 1200, 0), 1.0f).fast().build()), true));
+
+    public static final DeferredItem<Item> SAUSAGE_ROLL_CHEESE = ITEMS.register("sausage_roll_cheese",
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationModifier(0.6f).fast().build())) {
+                @Override
+                public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> components, TooltipFlag flag) {
+                    super.appendHoverText(stack, context, components, flag);
+                    addTooltip(components, null, "tooltip.createfood.cheese_ingredient");
+                }
+            });
+
+    public static final DeferredItem<Item> SPICY_SAUSAGE_ROLL_CHEESE = ITEMS.register("spicy_sausage_roll_cheese",
+            () -> new ConsumableItem(new Item.Properties().food(new FoodProperties.Builder().nutrition(5).saturationModifier(0.6f).effect(() -> new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 1200, 0), 1.0f).fast().build()), true) {
+        @Override
+        public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> components, TooltipFlag flag) {
+            super.appendHoverText(stack, context, components, flag);
+            addTooltip(components, null, "tooltip.createfood.cheese_ingredient");
+        }
+    });
 
     public static final DeferredItem<Item> BLACK_GELATIN_DESSERT_SLICE = ITEMS.register("black_gelatin_dessert_slice",
             () -> new ConsumableItem(new Item.Properties().food(new FoodProperties.Builder().nutrition(5).saturationModifier(0.3f).effect(() -> new MobEffectInstance(ModEffects.COMFORT, 1200, 0), 1.0f).build()), true));
@@ -5154,6 +5938,9 @@ public class ModItems {
     public static final DeferredItem<Item> HASH_BROWN_PLATE = ITEMS.register("hash_brown_plate",
             () -> new Item(new Item.Properties().stacksTo(16).food(new FoodProperties.Builder().nutrition(4).saturationModifier(0.6f).usingConvertsTo(Items.BOWL).build())));
 
+    public static final DeferredItem<Item> MERINGUE_BOWL = ITEMS.register("meringue_bowl",
+            () -> new Item(new Item.Properties().stacksTo(16).craftRemainder(Items.BOWL)));
+
     public static final DeferredItem<Item> HASH_BROWN_TOAST_PLATE = ITEMS.register("hash_brown_toast_plate",
             () -> new Item(new Item.Properties().stacksTo(16).food(new FoodProperties.Builder().nutrition(8).saturationModifier(0.7f).usingConvertsTo(Items.BOWL).build())));
 
@@ -5596,11 +6383,18 @@ public class ModItems {
                     addTooltip(components, null, "tooltip.createfood.white_chocolate_ingredient");
                 }
             });
+
+    public static final DeferredItem<Item> TACO_SAUCE_BOTTLE = ITEMS.register("taco_sauce_bottle",
+            () -> new Item(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE)));
+
+    public static final DeferredItem<Item> PUMPKIN_PUREE_BOTTLE = ITEMS.register("pumpkin_puree_bottle",
+            () -> new Item(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE)));
+
     public static final DeferredItem<Item> CONDENSED_MILK_BOTTLE = ITEMS.register("condensed_milk_bottle",
-            () -> new Item(new Item.Properties()));
+            () -> new Item(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE)));
 
     public static final DeferredItem<Item> MOLASSES_BOTTLE = ITEMS.register("molasses_bottle",
-            () -> new Item(new Item.Properties()));
+            () -> new Item(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE)));
 
     public static final DeferredItem<Item> APPLE_CREAM_FROSTING_BOTTLE = ITEMS.register("apple_cream_frosting_bottle",
             () -> new DrinkableItem(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationModifier(0.7f).usingConvertsTo(Items.GLASS_BOTTLE).build()).stacksTo(16).craftRemainder(Items.GLASS_BOTTLE)));
@@ -5797,8 +6591,11 @@ public class ModItems {
     public static final DeferredItem<Item> VINEGAR_BOTTLE = ITEMS.register("vinegar_bottle",
             () -> new DrinkableItem(new Item.Properties().stacksTo(16).craftRemainder(Items.GLASS_BOTTLE)));
 
+    public static final DeferredItem<Item> EGG_WHITES_BOTTLE = ITEMS.register("egg_whites_bottle",
+            () -> new DrinkableItem(new Item.Properties().stacksTo(16).craftRemainder(Items.GLASS_BOTTLE)));
+
     public static final DeferredItem<Item> WHITE_CHOCOLATE_BOTTLE = ITEMS.register("white_chocolate_bottle",
-            () -> new DrinkableItem(new Item.Properties().food(new FoodProperties.Builder().nutrition(6).saturationModifier(0.5f).usingConvertsTo(Items.GLASS_BOTTLE).build()).stacksTo(64).craftRemainder(Items.GLASS_BOTTLE)));
+            () -> new DrinkableItem(new Item.Properties().food(new FoodProperties.Builder().nutrition(6).saturationModifier(0.5f).usingConvertsTo(Items.GLASS_BOTTLE).build()).craftRemainder(Items.GLASS_BOTTLE)));
 
     public static final DeferredItem<Item> WHITE_CHOCOLATE_CHIP_CHOCOLATE_MILKSHAKE_BOTTLE = ITEMS.register("white_chocolate_chip_chocolate_milkshake_bottle",
             () -> new DrinkableItem(new Item.Properties().food(new FoodProperties.Builder().nutrition(6).saturationModifier(1.2f).effect(() -> new MobEffectInstance(ModEffects.COMFORT, 1800, 0), 1.0f).usingConvertsTo(Items.GLASS_BOTTLE).build()).stacksTo(16).craftRemainder(Items.GLASS_BOTTLE), true) {

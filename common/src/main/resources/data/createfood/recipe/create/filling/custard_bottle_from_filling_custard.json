@@ -1,0 +1,26 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "custard_bottle"
+        }
+    ],
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "item": "minecraft:glass_bottle"
+        },
+        {
+            "type": "fluid_tag",
+            "amount": 250,
+            "fluid_tag": "c:custard"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:custard_bottle"
+            }
+        }
+    ]
+}

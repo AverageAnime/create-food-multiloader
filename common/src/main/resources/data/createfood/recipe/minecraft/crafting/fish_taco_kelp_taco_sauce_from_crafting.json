@@ -1,0 +1,26 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "fish_taco_kelp_taco_sauce"
+        }
+    ],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:taco_shell"
+        },
+        {
+            "tag": "c:cooked_fishes"
+        },
+        {
+          "item": "minecraft:dried_kelp"
+        },
+        {
+          "tag": "c:taco_sauce_bottle"
+        }
+    ],
+    "result": {
+        "id": "createfood:fish_taco_kelp_taco_sauce"
+    }
+}

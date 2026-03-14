@@ -1,0 +1,19 @@
+{
+    "type": "minecraft:smoking",
+    "category": "food",
+    "cookingtime": 150,
+    "experience": 0.30,
+    "ingredient": {
+        "tag": "c:meringue_bowl"
+    },
+    "result": {
+        "count": 3,
+        "id": "createfood:meringue_cookie"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "meringue_cookie"
+        }
+    ]
+}

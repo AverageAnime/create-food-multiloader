@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:sliced_crimson_fungus"
+        },
+        {
+            "tag": "c:salt"
+        }
+    ],
+    "result": {
+        "id": "createfood:sliced_crimson_fungus_salt"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "sliced_crimson_fungus_salt"
+        }
+    ]
+}

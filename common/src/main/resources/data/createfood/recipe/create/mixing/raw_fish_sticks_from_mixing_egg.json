@@ -1,0 +1,29 @@
+{
+    "type": "create:mixing",
+    "ingredients": [
+        {
+            "type": "fluid_tag",
+            "amount": 250,
+            "fluid_tag": "c:egg"
+        },
+      {
+        "tag": "c:foods/raw_fish"
+      },
+      {
+        "tag": "c:bread_crumbs"
+      }
+    ],
+    "results": [
+      {
+        "item": {
+          "id": "createfood:raw_fish_sticks"
+        }
+      }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "raw_fish_sticks"
+        }
+    ]
+}

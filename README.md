@@ -11,14 +11,14 @@ Information on versions prior to 2.0.0 can be found [here](https://github.com/Av
 * Hundreds of new food-related items and dozens of new fluids. View the item list [here](https://github.com/AverageAnime/create-food-multiloader/wiki/Item-list).
 * Compatible with various Create and Farmer's Delight addons. Read more [here](https://github.com/AverageAnime/create-food-multiloader/wiki/Compatibility).
 * Placeable pizzas, cakes, pies (including pumpkin pie), and more.
-    * Most other food can be displayed on plates. Read the guide [here](https://github.com/AverageAnime/create-food-multiloader/wiki/Display-Blocks-Guide).
+* Most food can be displayed on plates. Read the guide [here](https://github.com/AverageAnime/create-food-multiloader/wiki/Display-Blocks-Guide).
 * Configurable tooltips to display ingredients and mod compatibility info.
 * Hide any item and their recipes from the config.
 * Animated textures for hot drinks.
 
-### **Item Preview (2.0.0)**
-![fullprev200](https://github.com/user-attachments/assets/1de77228-e028-45c1-bb38-c076540c4523)
-![bucketprev200](https://github.com/user-attachments/assets/20a0d4fa-73da-4d98-a432-6df050af558f)
+### **Item Preview (2.2.0)**
+![fullprev220](https://github.com/user-attachments/assets/1d477248-3932-42fb-8ec5-62cbf82916de)
+![bucketprev220](https://github.com/user-attachments/assets/d64c05ce-e46f-48e5-86fc-ea887d3cf085)
 
 ### **My Other Mods**
 * [Create: Engineers](https://www.curseforge.com/minecraft/mc-mods/create-engineers)

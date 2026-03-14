@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:beef_bun"
+        },
+        {
+            "tag": "c:crimson_fungus"
+        }
+    ],
+    "result": {
+        "id": "createfood:beef_bun_crimson_fungus"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "beef_bun_crimson_fungus"
+        }
+    ]
+}

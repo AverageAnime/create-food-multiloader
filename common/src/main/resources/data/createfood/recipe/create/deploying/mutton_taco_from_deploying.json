@@ -1,0 +1,24 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "mutton_taco"
+        }
+    ],
+    "type": "create:deploying",
+    "ingredients": [
+      {
+        "tag": "c:taco_shell"
+      },
+      {
+        "tag": "c:gyro_mutton_ingredient"
+      }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:mutton_taco"
+            }
+        }
+    ]
+}

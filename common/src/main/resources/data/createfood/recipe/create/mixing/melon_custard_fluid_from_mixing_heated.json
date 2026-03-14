@@ -1,0 +1,32 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "melon_custard"
+    }
+  ],
+  "type": "create:mixing",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "type": "fluid_tag",
+      "amount": 250,
+      "fluid_tag": "c:milk"
+    },
+    {
+      "tag": "c:egg_yolk"
+    },
+    {
+      "tag": "c:sugar"
+    },
+    {
+      "tag": "c:melon"
+    }
+  ],
+  "results": [
+    {
+      "amount": 250,
+      "id": "createfood:melon_custard"
+    }
+  ]
+}

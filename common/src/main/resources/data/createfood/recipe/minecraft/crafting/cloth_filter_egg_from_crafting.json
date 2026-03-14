@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "c:cloth_filter"
+    },
+    {
+      "tag": "c:cloth_filter"
+    },
+    {
+      "tag": "c:cloth_filter"
+    },
+    {
+      "tag": "c:cloth_filter"
+    },
+    {
+      "tag": "c:egg_bucket"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "id": "createfood:cloth_filter_egg"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "cloth_filter_egg"
+    }
+  ]
+}

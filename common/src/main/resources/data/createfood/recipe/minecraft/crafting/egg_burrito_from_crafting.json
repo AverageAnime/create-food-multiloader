@@ -1,0 +1,23 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "egg_burrito"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "c:taco_shell_ingredient"
+    },
+    {
+      "tag": "c:egg_burrito_ingredients"
+    },
+    {
+      "tag": "c:egg_burrito_ingredients"
+    }
+  ],
+  "result": {
+    "id": "createfood:egg_burrito"
+  }
+}

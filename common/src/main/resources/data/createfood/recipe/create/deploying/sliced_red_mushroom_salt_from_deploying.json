@@ -1,0 +1,24 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "sliced_red_mushroom_salt"
+        }
+    ],
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "c:sliced_red_mushroom"
+        },
+        {
+            "tag": "c:salt"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:sliced_red_mushroom_salt"
+            }
+        }
+    ]
+}

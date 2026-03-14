@@ -1,0 +1,23 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "beef_taco_lettuce"
+        }
+    ],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:taco_shell"
+        },
+        {
+            "tag": "c:cooked_beef"
+        },
+        {
+          "tag": "c:foods/leafy_green"
+        }
+    ],
+    "result": {
+        "id": "createfood:beef_taco_lettuce"
+    }
+}

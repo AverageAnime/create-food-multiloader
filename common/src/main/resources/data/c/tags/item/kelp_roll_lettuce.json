@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "createfood:kelp_roll_lettuce",
+      "required": false
+    }
+  ]
+}

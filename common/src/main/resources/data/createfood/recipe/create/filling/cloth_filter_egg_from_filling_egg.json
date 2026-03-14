@@ -1,0 +1,26 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "egg"
+        }
+    ],
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "tag": "c:cloth_filter"
+        },
+        {
+            "type": "fluid_tag",
+            "amount": 250,
+            "fluid_tag": "c:egg"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:cloth_filter_egg"
+            }
+        }
+    ]
+}

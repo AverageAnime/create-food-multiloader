@@ -3,16 +3,13 @@
     "experience": 0.2,
     "ingredients": [
         {
-            "tag": "c:milk_bottle"
+            "tag": "c:unbreaded_chicken_patty"
         },
         {
-            "tag": "c:eggs"
+            "item": "minecraft:egg"
         },
         {
             "tag": "c:bread_crumbs"
-        },
-        {
-            "tag": "c:unbreaded_chicken_patty"
         }
     ],
     "recipe_book_tab": "misc",

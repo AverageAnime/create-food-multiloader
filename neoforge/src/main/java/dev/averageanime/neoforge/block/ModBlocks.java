@@ -9,9 +9,7 @@ import dev.averageanime.neoforge.block.type.pie.ModPieBlock;
 import dev.averageanime.neoforge.block.type.pie.RawPieBlock;
 import dev.averageanime.neoforge.block.type.pie.PizzaBlock;
 import dev.averageanime.neoforge.block.type.pie.RawPizzaBlock;
-import dev.averageanime.neoforge.block.type.display.plate.EmptyPlateBlock;
 import dev.averageanime.neoforge.item.ModItems;
-import dev.averageanime.neoforge.block.type.display.plate.SmallPlateBlock;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -29,7 +27,7 @@ import java.util.function.Supplier;
 
 import static dev.averageanime.neoforge.CreateFood.LOGGER;
 import static dev.averageanime.neoforge.item.ModItems.ITEMS;
-import static dev.averageanime.neoforge.item.tooltip.ModTooltips.addTooltip;
+import static dev.averageanime.neoforge.item.ModTooltips.addTooltip;
 
 @SuppressWarnings("unused")
 public class ModBlocks {
@@ -141,29 +139,20 @@ public class ModBlocks {
         return registerBlock(name, () -> new SlimeBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.SLIME_BLOCK)));
     }
 
-    public static final DeferredBlock<Block> SMALL_PLATE_BLOCK = BLOCKS.register("small_plate_block",
-            () -> new SmallPlateBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS)));
 
-    public static final DeferredBlock<Block> PLATE_BLOCK = BLOCKS.register("plate_block",
-            () -> new EmptyPlateBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS), SMALL_PLATE_BLOCK));
-
-    // Raw Pies
     public static final DeferredBlock<Block> RAW_MEAT_PIE = registerRawPie("raw_meat_pie", null);
     public static final DeferredBlock<Block> MEAT_PIE = registerCookedPie("meat_pie", ModItems.MEAT_PIE_SLICE, null);
     public static final DeferredBlock<Block> PUMPKIN_PIE_BLOCK = registerCookedPie("pumpkin_pie_block", ModItems.PUMPKIN_PIE_SLICE, null);
 
-    // Gyro & Cheese
     public static final DeferredBlock<Block> GYRO_MEAT_BLOCK = registerBlock("gyro_meat_block",
             () -> new GyroMeatBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE)));
     public static final DeferredBlock<Block> CHEESE_BLOCK = registerBlock("cheese_block",
             () -> new CheeseBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE)));
 
-    // Raw Pizzas - Base
     public static final DeferredBlock<Block> PIZZA_DOUGH = registerRawPizza("pizza_dough", null);
     public static final DeferredBlock<Block> PIZZA_DOUGH_TOMATO_SAUCE = registerRawPizza("pizza_dough_tomato_sauce",
             null, "tooltip.createfood.tomato_sauce_ingredient");
 
-    // Raw Pizzas - Single Topping
     public static final DeferredBlock<Block> RAW_BACON_PIZZA = registerRawPizza("raw_bacon_pizza",
             null, "tooltip.createfood.bacon_ingredient");
     public static final DeferredBlock<Block> RAW_CHEESE_PIZZA = registerRawPizza("raw_cheese_pizza",
@@ -177,7 +166,6 @@ public class ModBlocks {
     public static final DeferredBlock<Block> RAW_SAUSAGE_PIZZA = registerRawPizza("raw_sausage_pizza",
             null, "tooltip.createfood.sausage_ingredient");
 
-    // Raw Pizzas - Double Toppings
     public static final DeferredBlock<Block> RAW_FISH_BACON_PIZZA = registerRawPizza("raw_fish_bacon_pizza",
             null, "tooltip.createfood.fish_ingredient", "tooltip.createfood.bacon_ingredient");
     public static final DeferredBlock<Block> RAW_FISH_ONION_PIZZA = registerRawPizza("raw_fish_onion_pizza",
@@ -199,7 +187,6 @@ public class ModBlocks {
     public static final DeferredBlock<Block> RAW_SAUSAGE_ONION_PIZZA = registerRawPizza("raw_sausage_onion_pizza",
             null, "tooltip.createfood.sausage_ingredient", "tooltip.createfood.onion_ingredient");
 
-    // Cooked Pizzas - Single Topping
     public static final DeferredBlock<Block> BACON_PIZZA = registerCookedPizza("bacon_pizza",
             ModItems.BACON_PIZZA_SLICE, null, "tooltip.createfood.bacon_ingredient");
     public static final DeferredBlock<Block> CHEESE_PIZZA = registerCookedPizza("cheese_pizza",
@@ -213,7 +200,6 @@ public class ModBlocks {
     public static final DeferredBlock<Block> SAUSAGE_PIZZA = registerCookedPizza("sausage_pizza",
             ModItems.SAUSAGE_PIZZA_SLICE, null, "tooltip.createfood.sausage_ingredient");
 
-    // Cooked Pizzas - Double Toppings
     public static final DeferredBlock<Block> FISH_BACON_PIZZA = registerCookedPizza("fish_bacon_pizza",
             ModItems.FISH_BACON_PIZZA_SLICE, null, "tooltip.createfood.fish_ingredient", "tooltip.createfood.bacon_ingredient");
     public static final DeferredBlock<Block> FISH_ONION_PIZZA = registerCookedPizza("fish_onion_pizza",
@@ -235,12 +221,10 @@ public class ModBlocks {
     public static final DeferredBlock<Block> SAUSAGE_ONION_PIZZA = registerCookedPizza("sausage_onion_pizza",
             ModItems.SAUSAGE_ONION_PIZZA_SLICE, null, "tooltip.createfood.sausage_ingredient", "tooltip.createfood.onion_ingredient");
 
-    // Raw Pie Crusts
     public static final DeferredBlock<Block> RAW_CHOCOLATE_GRAHAM_CRACKER_PIE_CRUST = registerRawPie("raw_chocolate_graham_cracker_pie_crust", null);
     public static final DeferredBlock<Block> RAW_GRAHAM_CRACKER_PIE_CRUST = registerRawPie("raw_graham_cracker_pie_crust", null);
     public static final DeferredBlock<Block> RAW_PIE_CRUST = registerRawPie("raw_pie_crust", null);
 
-    // Raw Pies - Various
     public static final DeferredBlock<Block> RAW_APPLE_CHEESECAKE = registerRawPie("raw_apple_cheesecake", null);
     public static final DeferredBlock<Block> RAW_APPLE_PIE = registerRawPie("raw_apple_pie", null);
     public static final DeferredBlock<Block> RAW_BERRY_CHEESECAKE = registerRawPie("raw_berry_cheesecake", null);
@@ -259,7 +243,6 @@ public class ModBlocks {
     public static final DeferredBlock<Block> RAW_GLOW_BERRY_PIE = registerRawPie("raw_glow_berry_pie", null);
     public static final DeferredBlock<Block> RAW_PUMPKIN_PIE = registerRawPie("raw_pumpkin_pie", null);
 
-    // Cooked Pies
     public static final DeferredBlock<Block> APPLE_CHEESECAKE = registerCookedPie("apple_cheesecake", ModItems.APPLE_CHEESECAKE_SLICE, null);
     public static final DeferredBlock<Block> BERRY_PIE = registerCookedPie("berry_pie", ModItems.BERRY_PIE_SLICE, null);
     public static final DeferredBlock<Block> CHEESECAKE = registerCookedPie("cheesecake", ModItems.CHEESECAKE_SLICE, null);
@@ -276,7 +259,6 @@ public class ModBlocks {
     public static final DeferredBlock<Block> GLOW_BERRY_PIE = registerCookedPie("glow_berry_pie", ModItems.GLOW_BERRY_PIE_SLICE, null);
     public static final DeferredBlock<Block> SMORES_PIE = registerCookedPie("smores_pie", ModItems.SMORES_PIE_SLICE, null);
 
-    // Waffles
     public static final DeferredBlock<Block> WAFFLE = registerWaffle("waffle", ModItems.MINI_WAFFLE, null);
     public static final DeferredBlock<Block> BUTTERSCOTCH_CHIP_WAFFLE = registerWaffle("butterscotch_chip_waffle",
             ModItems.BUTTERSCOTCH_CHIP_MINI_WAFFLE, null, "tooltip.createfood.butterscotch_chips_ingredient");
@@ -291,7 +273,6 @@ public class ModBlocks {
     public static final DeferredBlock<Block> TOFFEE_CHIP_WAFFLE = registerWaffle("toffee_chip_waffle",
             ModItems.TOFFEE_CHIP_MINI_WAFFLE, null, "tooltip.createfood.toffee_chips_ingredient");
 
-    // Cake Bases
     public static final DeferredBlock<Block> CAKE_BASE = BLOCKS.register("cake_base",
             () -> new CakeBaseBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE)));
     public static final DeferredItem<Item> CAKE_BASE_ITEM = ITEMS.register("cake_base",
@@ -308,7 +289,6 @@ public class ModBlocks {
                 }
             });
 
-    // Cakes - Single Frosting
     public static final DeferredBlock<Block> BERRY_CREAM_CAKE = registerCake("berry_cream_cake",
             ModItems.BERRY_CREAM_CAKE_SLICE, 1, null, "tooltip.createfood.berry_cream_frosting_ingredient");
     public static final DeferredBlock<Block> APPLE_CREAM_CAKE = registerCake("apple_cream_cake",
@@ -326,7 +306,6 @@ public class ModBlocks {
     public static final DeferredBlock<Block> UBE_CREAM_UBE_CAKE = registerCake("ube_cream_ube_cake",
             ModItems.UBE_CREAM_UBE_CAKE_SLICE, 1, "tooltip.compat.ube", "tooltip.createfood.ube_cream_frosting_ingredient");
 
-    // Cakes - Frosting + Topping
     public static final DeferredBlock<Block> CREAM_CAKE_CHORUS_FRUIT = registerCake("cream_cake_chorus_fruit",
             ModItems.CREAM_CAKE_SLICE_CHORUS_FRUIT, 1, null, "tooltip.createfood.cream_frosting_ingredient", "tooltip.createfood.chorus_fruit_ingredient");
     public static final DeferredBlock<Block> CREAM_CAKE_GLOW_BERRY = registerCake("cream_cake_glow_berry",
@@ -362,7 +341,6 @@ public class ModBlocks {
     public static final DeferredBlock<Block> GLOW_BERRY_CREAM_CAKE_GLOW_BERRY = registerCake("glow_berry_cream_cake_glow_berry",
             ModItems.GLOW_BERRY_CREAM_CAKE_SLICE_GLOW_BERRY, 1, null, "tooltip.createfood.glow_berry_cream_frosting_ingredient", "tooltip.createfood.glow_berry_ingredient");
 
-    // Gelatin Dessert Blocks
     public static final DeferredBlock<Block> YELLOW_GELATIN_DESSERT_BLOCK = registerGelatinBlock("yellow_gelatin_dessert_block");
     public static final DeferredBlock<Block> GELATIN_DESSERT_BLOCK = registerGelatinBlock("gelatin_dessert_block");
     public static final DeferredBlock<Block> ORANGE_GELATIN_DESSERT_BLOCK = registerGelatinBlock("orange_gelatin_dessert_block");

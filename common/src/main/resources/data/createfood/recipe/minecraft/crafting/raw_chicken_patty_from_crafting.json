@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:unbreaded_chicken_patty"
+        },
+        {
+            "item": "minecraft:egg"
+        },
+        {
+            "tag": "c:bread_crumbs"
+        }
+    ],
+    "result": {
+        "id": "createfood:raw_chicken_patty"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "raw_chicken_patty"
+        }
+    ]
+}
