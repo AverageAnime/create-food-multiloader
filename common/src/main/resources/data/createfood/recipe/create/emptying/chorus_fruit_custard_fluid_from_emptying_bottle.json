@@ -1,0 +1,25 @@
+{
+    "type": "create:emptying",
+    "ingredients": [
+        {
+            "tag": "c:chorus_fruit_custard_bottle"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "minecraft:glass_bottle"
+            }
+        },
+        {
+            "amount": 250,
+            "id": "createfood:chorus_fruit_custard"
+        }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "chorus_fruit_custard"
+        }
+    ]
+}

@@ -54,18 +54,6 @@
 			"children": [0]
 		},
 		{
-			"name": "content",
-			"origin": [8, 8, 8],
-			"color": 0,
-			"children": []
-		},
-		{
-			"name": "plate",
-			"origin": [0, 1, 0],
-			"color": 0,
-			"children": []
-		},
-		{
 			"name": "potato_1",
 			"origin": [8, 8, 8],
 			"color": 0,

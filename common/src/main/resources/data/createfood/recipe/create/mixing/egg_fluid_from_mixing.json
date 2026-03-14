@@ -1,0 +1,25 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "item": "minecraft:egg"
+    }
+  ],
+  "results": [
+    {
+      "amount": 250,
+      "id": "createfood:egg"
+    },
+    {
+      "item": {
+        "id": "createfood:eggshell"
+      }
+    }
+  ],
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "egg"
+    }
+  ]
+}

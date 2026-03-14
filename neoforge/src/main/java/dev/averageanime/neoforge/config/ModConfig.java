@@ -1,17 +1,32 @@
 package dev.averageanime.neoforge.config;
 
+import net.minecraft.client.gui.screens.Screen;
+import net.neoforged.fml.ModContainer;
+import net.neoforged.neoforge.client.gui.ConfigurationScreen;
+import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
 import net.neoforged.neoforge.common.ModConfigSpec;
+import org.jetbrains.annotations.NotNull;
+
 import java.util.List;
 
 public class ModConfig {
     public static final ModConfigSpec.Builder BUILDER = new ModConfigSpec.Builder();
 
     public static final ModConfigSpec.ConfigValue<List<? extends String>> DISABLE_ITEMS;
-
     public static final ModConfigSpec.ConfigValue<List<? extends String>> CUSTOM_TOOLTIPS;
+
     public static final ModConfigSpec.BooleanValue REQUIRE_SHIFT_FOR_TOOLTIPS;
     public static final ModConfigSpec.BooleanValue SHOW_COMPATIBILITY;
     public static final ModConfigSpec.BooleanValue SHOW_INGREDIENTS;
+
+    public static final ModConfigSpec.Builder SERVER_BUILDER = new ModConfigSpec.Builder();
+
+    public static final ModConfigSpec.BooleanValue ENABLE_HAND_CRAFTING;
+    public static final ModConfigSpec.ConfigValue<List<? extends String>> HAND_CRAFTING_FILTER;
+    public static final ModConfigSpec.ConfigValue<List<? extends String>> CRAFTING_REMAINDERS;
+    public static final ModConfigSpec.BooleanValue ENABLE_EGG_IMPACT_REMAINDER;
+    public static final ModConfigSpec.BooleanValue ENABLE_FILTER_INTERACTIONS;
+    public static final ModConfigSpec.ConfigValue<List<? extends String>> FILTER_INTERACTIONS;
 
     static {
         DISABLE_ITEMS = BUILDER
@@ -61,7 +76,6 @@ public class ModConfig {
                                 "marshmallow_coffee_toffee_fudge",
                                 "marshmallow_dark_chocolate",
                                 "minced_dragon",
-                                "paprika",
                                 "pasta_plate_eggplant",
                                 "pasta_plate_endermite_meatballs",
                                 "pasta_plate_endermite_meatballs_tomato_sauce",
@@ -83,8 +97,6 @@ public class ModConfig {
                                 "raw_ube_cookie",
                                 "small_endermite_meatballs",
                                 "small_strider_meatballs",
-                                "spicy_chicken_nuggets",
-                                "spicy_sausages",
                                 "strider_meatball",
                                 "strider_meatball_sandwich",
                                 "strider_meatball_stick_1",
@@ -124,6 +136,9 @@ public class ModConfig {
                                 "culturaldelights:eggplant_burger|lettuce,tomato",
                                 "culturaldelights:mutton_sandwich|mutton,beetroot,fried_egg",
                                 "culturaldelights:pork_wrap|pork,apple,lettuce",
+                                "culturaldelights:beef_burrito|beef,rice,avocado",
+                                "culturaldelights:fish_taco|fish,lettuce,tomato",
+                                "culturaldelights:chicken_taco|chicken,cucumber,corn,tomato",
                                 "delightfulcreators:incomplete_chicken_sandwich|chicken",
                                 "delightfulcreators:incomplete_pasta_with_meatballs|beef_meatballs",
                                 "delightfulcreators:incomplete_pasta_with_mutton_chop|mutton",
@@ -166,11 +181,61 @@ public class ModConfig {
                                 "farmersdelight:sweet_berry_cookie|berry",
                                 "minecraft:cake|cream_frosting,berry",
                                 "minecraft:cookie|chocolate_chips"
-                                ),
+                        ),
                         () -> "item_key|ingredients",
                         obj -> obj instanceof String
                 );
         BUILDER.pop();
+
+        SERVER_BUILDER.push("hand_craft");
+
+        ENABLE_HAND_CRAFTING = SERVER_BUILDER
+                .define("enable_hand_crafting", true);
+
+        HAND_CRAFTING_FILTER = SERVER_BUILDER
+                .defineListAllowEmpty("hand_craft_filter",
+                        List.of(),
+                        () -> "mod:mod_id,  item:mod_id:item_id,  tag:mod_id:tag_name",
+                        obj -> obj instanceof String
+                );
+
+        SERVER_BUILDER.pop();
+
+        SERVER_BUILDER.push("interactions");
+
+        ENABLE_FILTER_INTERACTIONS = SERVER_BUILDER
+                .define("enable_filter_interactions", true);
+
+        FILTER_INTERACTIONS = SERVER_BUILDER
+                .defineListAllowEmpty("filter_interactions",
+                        List.of(
+                                "createfood:cloth_filter_egg|minecraft:glass_bottle|createfood:cloth_filter_egg_yolk|createfood:egg_whites_bottle",
+                                "createfood:cloth_filter_egg_yolk|none|createfood:cloth_filter|createfood:egg_yolk",
+                                "createfood:cloth_filter_cacao_mass|minecraft:bucket|createfood:cloth_filter_pressed_cocoa|createfood:cacao_butter_bucket",
+                                "createfood:cloth_filter_pressed_cocoa|none|createfood:cloth_filter|createfood:pressed_cocoa"
+                        ),
+                        () -> "filter_item|offhand_item|filter_result|container_result",
+                        obj -> obj instanceof String s && s.split("\\|").length == 4
+                );
+
+        SERVER_BUILDER.pop();
+
+        SERVER_BUILDER.push("remainders");
+
+        ENABLE_EGG_IMPACT_REMAINDER = SERVER_BUILDER
+                .define("enable_egg_impact_remainder", true);
+
+        CRAFTING_REMAINDERS = SERVER_BUILDER
+                .defineListAllowEmpty("crafting_remainders",
+                        List.of(
+                                "minecraft:egg|createfood:eggshell"
+                        ),
+                        () -> "input_item|remainder_item",
+                        obj -> obj instanceof String
+                );
+
+        SERVER_BUILDER.pop();
+
     }
 
     public static boolean isItemEnabled(String itemId) {
@@ -183,23 +248,25 @@ public class ModConfig {
     }
 
     public static boolean isDisplayBlockEnabled(String blockId) {
-        // First check if the block itself is disabled
         if (!isItemEnabled(blockId)) {
             return false;
         }
 
-        // Extract the base item name and check if it's enabled
         String baseItemId = extractBaseItemId(blockId);
         return isItemEnabled(baseItemId);
     }
 
-    // Helper to extract base item from display block name
     private static String extractBaseItemId(String blockId) {
         return blockId
-                .replace("_plate_block", "")
                 .replace("_small_plate_block", "")
-                .replace("_bowl_block", "")
-                .replace("_bottle_block", "")
+                .replace("_plate_block", "")
                 .replace("_block", "");
+    }
+
+    public static class ConfigScreen implements IConfigScreenFactory {
+        @Override
+        public @NotNull Screen createScreen(@NotNull ModContainer modContainer, @NotNull Screen parent) {
+            return new ConfigurationScreen(modContainer, parent);
+        }
     }
 }

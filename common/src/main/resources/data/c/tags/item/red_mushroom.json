@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "minecraft:red_mushroom",
+      "required": false
+    },
+    {
+      "id": "createfood:sliced_red_mushroom",
+      "required": false
+    }
+  ]
+}

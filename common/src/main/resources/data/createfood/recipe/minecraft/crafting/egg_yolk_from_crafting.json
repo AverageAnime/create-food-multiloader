@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "egg_yolk"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "c:cloth_filter_egg_yolk"
+    }
+  ],
+  "result": {
+    "id": "createfood:egg_yolk"
+  }
+}

@@ -1,0 +1,24 @@
+{
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "c:bread_slice"
+        },
+        {
+            "tag": "c:scrambled_eggs_plate"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:bread_slice_scrambled_egg"
+            }
+        }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "bread_slice_scrambled_egg"
+        }
+    ]
+}

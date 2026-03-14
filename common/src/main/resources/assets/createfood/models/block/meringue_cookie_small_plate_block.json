@@ -1,0 +1,65 @@
+{
+	"format_version": "1.9.0",
+	"credit": "Made with Blockbench",
+	"parent": "minecraft:block/block",
+	"texture_size": [32, 32],
+	"textures": {
+		"1": "createfood:block/meringue",
+		"plate": "createfood:block/small_plate_block",
+		"particle": "createfood:block/meringue"
+	},
+	"elements": [
+		{
+			"from": [4, 0, 4],
+			"to": [12, 1, 12],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 1.25, 8]},
+			"faces": {
+				"north": {"uv": [16, 15, 0, 16], "texture": "#plate"},
+				"east": {"uv": [15, 0, 16, 16], "rotation": 90, "texture": "#plate"},
+				"south": {"uv": [0, 15, 16, 16], "texture": "#plate"},
+				"west": {"uv": [1, 16, 0, 0], "rotation": 90, "texture": "#plate"},
+				"up": {"uv": [16, 16, 0, 0], "rotation": 180, "texture": "#plate"}
+			}
+		},
+		{
+			"from": [7, 1, 7],
+			"to": [9, 2, 9],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 1.75, 8]},
+			"faces": {
+				"north": {"uv": [0, 0.5, 1, 1], "texture": "#1"},
+				"east": {"uv": [0, 0.5, 1, 1], "texture": "#1"},
+				"south": {"uv": [0, 0.5, 1, 1], "texture": "#1"},
+				"west": {"uv": [0, 0.5, 1, 1], "texture": "#1"},
+				"up": {"uv": [0, 0, 1, 1], "texture": "#1"},
+				"down": {"uv": [0, 0, 1, 1], "texture": "#1"}
+			}
+		},
+		{
+			"from": [7.5, 1.5, 7.5],
+			"to": [8.5, 2.5, 8.5],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 1.75, 8]},
+			"faces": {
+				"north": {"uv": [0.5, 0.5, 1, 1], "texture": "#1"},
+				"east": {"uv": [0.5, 0.5, 1, 1], "texture": "#1"},
+				"south": {"uv": [0, 0.5, 0.5, 1], "texture": "#1"},
+				"west": {"uv": [0, 0.5, 0.5, 1], "texture": "#1"},
+				"up": {"uv": [0, 0, 0.5, 0.5], "texture": "#1"},
+				"down": {"uv": [0, 0.5, 0.5, 1], "texture": "#1"}
+			}
+		}
+	],
+	"groups": [
+		{
+			"name": "plate",
+			"origin": [0, 1, 0],
+			"color": 0,
+			"children": [0]
+		},
+		{
+			"name": "cookie_1",
+			"origin": [2, 2, 2],
+			"color": 0,
+			"children": [1, 2]
+		}
+	]
+}

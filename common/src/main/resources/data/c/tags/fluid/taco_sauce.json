@@ -1,0 +1,13 @@
+{
+    "replace": false,
+    "values": [
+        {
+            "id": "createfood:flowing_taco_sauce",
+            "required": false
+        },
+        {
+            "id": "createfood:taco_sauce",
+            "required": false
+        }
+    ]
+}

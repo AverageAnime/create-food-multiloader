@@ -1,0 +1,26 @@
+{
+  "type": "farmersdelight:cooking",
+  "experience": 0.2,
+  "ingredients": [
+    {
+      "tag": "c:shredded_potato"
+    },
+    {
+      "tag": "c:flours"
+    },
+    {
+      "tag": "c:salt"
+    }
+  ],
+  "recipe_book_tab": "misc",
+  "result": {
+    "count": 1,
+    "id": "createfood:tater_tots"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "tater_tots"
+    }
+  ]
+}

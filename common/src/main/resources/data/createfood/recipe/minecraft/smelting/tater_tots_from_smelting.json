@@ -1,0 +1,19 @@
+{
+    "type": "minecraft:smelting",
+    "category": "food",
+    "cookingtime": 250,
+    "experience": 0.15,
+    "ingredient": {
+        "tag": "c:raw_tater_tots"
+    },
+    "result": {
+        "count": 1,
+        "id": "createfood:tater_tots"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "tater_tots"
+        }
+    ]
+}

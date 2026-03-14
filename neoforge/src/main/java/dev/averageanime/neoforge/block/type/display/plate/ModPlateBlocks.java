@@ -1,6 +1,6 @@
 package dev.averageanime.neoforge.block.type.display.plate;
 
-import dev.averageanime.neoforge.block.ModBlocks;
+import dev.averageanime.neoforge.block.ModDisplayBlocks;
 import dev.averageanime.neoforge.block.type.display.FoodBlock;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
@@ -20,7 +20,6 @@ public class ModPlateBlocks {
     private static final List<PlateEntry> COMPATIBLE_SMALL_PLATES = new ArrayList<>();
 
     static {
-        // Format: modId, itemName, blockName
         COMPATIBLE_PLATES.add(new PlateEntry("displaydelight", "food_plate", "food_plate"));
         COMPATIBLE_SMALL_PLATES.add(new PlateEntry("displaydelight", "small_food_plate", "small_food_plate"));
     }
@@ -30,13 +29,13 @@ public class ModPlateBlocks {
         int smallPlatesFound = 0;
 
         for (PlateEntry entry : COMPATIBLE_PLATES) {
-            if (registerPlateEntry(entry, ModBlocks.PLATE_BLOCK.get(), "normal")) {
+            if (registerPlateEntry(entry, ModDisplayBlocks.PLATE_BLOCK.get(), "normal")) {
                 normalPlatesFound++;
             }
         }
 
         for (PlateEntry entry : COMPATIBLE_SMALL_PLATES) {
-            if (registerPlateEntry(entry, ModBlocks.SMALL_PLATE_BLOCK.get(), "small")) {
+            if (registerPlateEntry(entry, ModDisplayBlocks.SMALL_PLATE_BLOCK.get(), "small")) {
                 smallPlatesFound++;
             }
         }
@@ -87,12 +86,11 @@ public class ModPlateBlocks {
 
     /**
      * Helper method to manually register a plate item and block from another mod.
-     * Useful for adding compatibility at runtime or through config.
      */
     public static boolean registerPlate(String modId, String itemName, String blockName, boolean isSmallPlate) {
         Block targetBlock = isSmallPlate ?
-                ModBlocks.SMALL_PLATE_BLOCK.get() :
-                ModBlocks.PLATE_BLOCK.get();
+                ModDisplayBlocks.SMALL_PLATE_BLOCK.get() :
+                ModDisplayBlocks.PLATE_BLOCK.get();
 
         PlateEntry entry = new PlateEntry(modId, itemName, blockName);
         return registerPlateEntry(entry, targetBlock, isSmallPlate ? "small" : "normal");

@@ -1,9 +1,8 @@
 package dev.averageanime.neoforge.tab;
 
 import dev.averageanime.CommonClass;
-import dev.averageanime.neoforge.block.ModDisplayBlocks;
 import dev.averageanime.neoforge.config.ModConfig;
-import dev.averageanime.neoforge.fluid.ModFluids;
+import dev.averageanime.neoforge.block.ModFluids;
 import dev.averageanime.neoforge.item.ModItems;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
@@ -27,9 +26,11 @@ public class ModTabs {
                             .filter(holder -> !holder.getId().getPath().endsWith("_bucket"))
                             .filter(holder -> !holder.getId().getPath().endsWith("pumpkin_pie_block"))
                             .filter(holder -> {
-                                String itemPath = holder.getId().getPath();
-                                return ModDisplayBlocks.BLOCKS.getEntries().stream()
-                                        .noneMatch(blockHolder -> blockHolder.getId().getPath().equals(itemPath));
+                                // Filter out display blocks if ModDisplayBlocks is present
+                                if (isModDisplayBlocksPresent()) {
+                                    return !isDisplayBlock(holder.getId().getPath());
+                                }
+                                return true;
                             })
                             .sorted(Comparator.comparing(a -> a.getId().getPath()))
                             .forEach(holder -> {
@@ -39,6 +40,40 @@ public class ModTabs {
                                 }
                             }))
                     .build());
+
+    private static boolean isModDisplayBlocksPresent() {
+        try {
+            Class.forName("dev.averageanime.neoforge.block.ModDisplayBlocks");
+            return true;
+        } catch (ClassNotFoundException e) {
+            return false;
+        }
+    }
+
+    private static boolean isDisplayBlock(String itemPath) {
+        try {
+            Class<?> modDisplayBlocks = Class.forName("dev.averageanime.neoforge.block.ModDisplayBlocks");
+            Object blocksRegister = modDisplayBlocks.getField("BLOCKS").get(null);
+
+            // Use reflection to check if this item path exists in ModDisplayBlocks.BLOCKS
+            var getEntriesMethod = blocksRegister.getClass().getMethod("getEntries");
+            var entries = (java.util.Collection<?>) getEntriesMethod.invoke(blocksRegister);
+
+            for (Object entry : entries) {
+                var getIdMethod = entry.getClass().getMethod("getId");
+                var resourceLocation = getIdMethod.invoke(entry);
+                var getPathMethod = resourceLocation.getClass().getMethod("getPath");
+                String blockPath = (String) getPathMethod.invoke(resourceLocation);
+
+                if (blockPath.equals(itemPath)) {
+                    return true;
+                }
+            }
+        } catch (Exception e) {
+            // If anything fails, just don't filter
+        }
+        return false;
+    }
 
     public static final Supplier<CreativeModeTab> CREATEFOOD_TAB_FLUID = CREATIVE_MODE_TAB.register("createfood_fluid",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModFluids.CREAM_PIE_FILLING_FLUID.BUCKET.get()))
@@ -50,19 +85,6 @@ public class ModTabs {
                                 String itemId = holder.getId().getPath();
                                 if (ModConfig.isItemEnabled(itemId)) {
                                     output.accept(holder.get());
-                                }
-                            }))
-                    .build());
-
-    public static final Supplier<CreativeModeTab> CREATEFOOD_TAB_BLOCK = CREATIVE_MODE_TAB.register("createfood_display",
-            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModDisplayBlocks.CREAM_SWEET_ROLL_PLATE.get()))
-                    .title(Component.translatable("tab.createfood.display"))
-                    .displayItems((params, output) -> ModDisplayBlocks.BLOCKS.getEntries().stream()
-                            .sorted(Comparator.comparing(a -> a.getId().getPath()))
-                            .forEach(holder -> {
-                                String blockId = holder.getId().getPath();
-                                if (ModConfig.isDisplayBlockEnabled(blockId)) {
-                                    output.accept(holder.get().asItem());
                                 }
                             }))
                     .build());

@@ -1,0 +1,26 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "chicken_wrap_onion_tomato"
+        }
+    ],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:taco_shell_ingredient"
+        },
+        {
+            "tag": "c:cooked_chicken"
+        },
+        {
+            "tag": "c:onion"
+        },
+        {
+            "tag": "c:tomato"
+        }
+    ],
+    "result": {
+        "id": "createfood:chicken_wrap_onion_tomato"
+    }
+}

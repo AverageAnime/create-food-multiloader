@@ -8,13 +8,13 @@
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {
-            "tag": "c:pita_bread"
+            "tag": "c:taco_shell_ingredient"
         },
         {
-            "tag": "c:gyro_meat_slice"
+            "tag": "c:gyro_mutton_ingredient"
         },
         {
-            "tag": "c:gyro_meat_slice"
+            "tag": "c:gyro_mutton_ingredient"
         },
         {
             "tag": "c:foods/leafy_green"

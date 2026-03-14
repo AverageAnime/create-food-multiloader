@@ -7,6 +7,9 @@
     },
     "ingredients": [
         {
+          "tag": "c:foods/raw_mutton"
+        },
+        {
           "tag": "c:onion"
         },
         {

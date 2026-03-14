@@ -1,0 +1,38 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "item": "minecraft:egg"
+    },
+    {
+      "tag": "c:cloth_filter"
+    }
+  ],
+  "results": [
+    {
+      "amount": 250,
+      "id": "createfood:egg_whites"
+    },
+    {
+      "item": {
+        "id": "createfood:eggshell"
+      }
+    },
+    {
+      "item": {
+        "id": "createfood:egg_yolk"
+      }
+    },
+    {
+      "item": {
+        "id": "createfood:cloth_filter"
+      }
+    }
+  ],
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "egg"
+    }
+  ]
+}

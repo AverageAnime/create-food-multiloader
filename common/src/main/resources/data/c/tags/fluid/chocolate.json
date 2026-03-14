@@ -1,0 +1,13 @@
+{
+    "replace": false,
+    "values": [
+        {
+            "id": "create:flowing_chocolate",
+            "required": false
+        },
+        {
+            "id": "create:chocolate",
+            "required": false
+        }
+    ]
+}

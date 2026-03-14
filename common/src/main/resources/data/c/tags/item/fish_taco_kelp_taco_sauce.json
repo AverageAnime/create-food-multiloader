@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "createfood:fish_taco_kelp_taco_sauce",
+      "required": false
+    }
+  ]
+}

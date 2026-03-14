@@ -1,0 +1,13 @@
+{
+    "replace": false,
+    "values": [
+        {
+            "id": "createfood:flowing_meringue",
+            "required": false
+        },
+        {
+            "id": "createfood:meringue",
+            "required": false
+        }
+    ]
+}

@@ -1,0 +1,26 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "pork_wrap_onion_lettuce"
+        }
+    ],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:taco_shell_ingredient"
+        },
+        {
+            "tag": "c:cooked_pork"
+        },
+        {
+            "tag": "c:onion"
+        },
+        {
+            "tag": "c:foods/leafy_green"
+        }
+    ],
+    "result": {
+        "id": "createfood:pork_wrap_onion_lettuce"
+    }
+}

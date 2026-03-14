@@ -1,3 +1,34 @@
+### *** 2.2.0 ***
+![newprev220](https://github.com/user-attachments/assets/944db275-845a-4832-a174-8ba1d8f1c699)
+
+#### Changes:
+* New settings in`createfood-server.toml`.  Read more [here](https://github.com/AverageAnime/create-food-multiloader/wiki/Config-Options).
+* Crafting recipes with only two ingredients can now be made by holding the ingredients in each hand and using `RMB`. Read more [here](https://github.com/AverageAnime/create-food-multiloader/wiki/Hand-Crafting-Guide).
+* Filled cloth filters now have right click interactions to strain the contents. Read more [here](https://github.com/AverageAnime/create-food-multiloader/wiki/Cloth-Filters-Guide).
+* Display Delight supported items can now be placed onto Create: Food plates.
+* Create: Food plates now support bulk serving placement using `Shift + RMB`.
+    * Bulk placement does not work for Create: Food supported items placed on Display Delight plates. Only single placement will occur.
+* Eggshells can now be obtained by using eggs in crafting recipes and by throwing them.
+* Increased amount of eggshells used to make rich soil from 3 to 8.
+* Chicken patty recipes have been updated to match new items.
+* The following are no longer compat items and are no longer hidden by default:
+    * Paprika can now be made from nether wart if chili peppers aren't available
+        * Cinder flour can also be used as a substitute for paprika.
+    * Spicy chicken nuggets
+    * Spicy sausages
+* Decreased nutrition values for sausage biscuit items by 2.
+
+#### Fixes:
+* Fix milling recipes. [(#11)](https://github.com/AverageAnime/create-food-multiloader/issues/11) / [(#18)](https://github.com/AverageAnime/create-food-multiloader/issues/18)
+* Fix bowl duplication. [(#14)](https://github.com/AverageAnime/create-food-multiloader/issues/14)
+* Fix chocolate cooking pot and mixing recipes. [(#16)](https://github.com/AverageAnime/create-food-multiloader/issues/16)
+* Fix tomato sauce and chocolate filling recipes + tags. [(#17)](https://github.com/AverageAnime/create-food-multiloader/issues/17)
+* Fix recipe conflict from `c:powderable_eggs` tag. [(#21)](https://github.com/AverageAnime/create-food-multiloader/issues/21)
+* Fix stew recipes.
+* Restore some blockstate files to remove log errors.
+* Fix missing cloth filter remainder.
+* Fix missing some bottle crafting remainders.
+
 ### *** 2.1.0 ***
 
 #### Changes:

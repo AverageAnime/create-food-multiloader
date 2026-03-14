@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:raw_sausages"
+        },
+        {
+            "tag": "c:paprika"
+        }
+    ],
+    "result": {
+        "id": "createfood:raw_spicy_sausages"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "raw_spicy_sausages"
+        }
+    ]
+}

@@ -5,7 +5,7 @@
             "tag": "c:chocolate_graham_cracker"
         }
     ],
-    "processingTime": 80,
+    "processing_time": 80,
     "results": [
         {
             "count": 2,

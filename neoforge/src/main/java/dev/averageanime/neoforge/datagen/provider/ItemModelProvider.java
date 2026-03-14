@@ -34,9 +34,6 @@ public class ItemModelProvider extends net.neoforged.neoforge.client.model.gener
         });
     }
 
-    /**
-     * Creates a simple block item that references its block model
-     */
     private void simpleBlockItem(DeferredBlock<Block> block) {
         String name = block.getId().getPath();
         getBuilder(name)
@@ -44,9 +41,6 @@ public class ItemModelProvider extends net.neoforged.neoforge.client.model.gener
                         ResourceLocation.fromNamespaceAndPath(CommonClass.ID, "block/" + name)));
     }
 
-    /**
-     * Creates a plate block item with stack size variant
-     */
     private void plateBlockItem(DeferredBlock<Block> block, int maxStack) {
         String name = block.getId().getPath();
         getBuilder(name)

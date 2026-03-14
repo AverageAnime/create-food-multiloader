@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:cheeses"
+        },
+        {
+            "item": "minecraft:egg"
+        },
+        {
+            "tag": "c:bread_crumbs"
+        }
+    ],
+    "result": {
+        "id": "createfood:raw_mozzarella_sticks"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "raw_mozzarella_sticks"
+        }
+    ]
+}

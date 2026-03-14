@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "createfood:scrambled_egg_sandwich",
+      "required": false
+    }
+  ]
+}

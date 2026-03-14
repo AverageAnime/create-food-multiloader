@@ -109,7 +109,6 @@ public class LootTablesProvider extends net.minecraft.data.loot.BlockLootSubProv
 
             LootTable.Builder builder = LootTable.lootTable();
 
-            // Stack size maxStack: drop the plate block itself
             builder.withPool(LootPool.lootPool()
                     .setRolls(ConstantValue.exactly(1))
                     .add(LootItem.lootTableItem(theBlock))
@@ -117,7 +116,6 @@ public class LootTablesProvider extends net.minecraft.data.loot.BlockLootSubProv
                             .setProperties(net.minecraft.advancements.critereon.StatePropertiesPredicate.Builder.properties()
                                     .hasProperty(PlateBlock.STACK_SIZE, maxStack))));
 
-            // Stack sizes 1 to maxStack: drop food items
             for (int stack = 1; stack < maxStack; stack++) {
                 builder.withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(stack))
@@ -127,7 +125,6 @@ public class LootTablesProvider extends net.minecraft.data.loot.BlockLootSubProv
                                         .hasProperty(PlateBlock.STACK_SIZE, stack))));
             }
 
-            // Bowl drop (for stack sizes 1 to maxStack - 1)
             builder.withPool(LootPool.lootPool()
                     .setRolls(ConstantValue.exactly(1))
                     .add(LootItem.lootTableItem(Items.BOWL))
@@ -145,6 +142,8 @@ public class LootTablesProvider extends net.minecraft.data.loot.BlockLootSubProv
         return (Iterable<Block>) ModDisplayBlocks.BLOCKS.getEntries()
                 .stream()
                 .map(holder -> holder.get())
+                .filter(block -> block != ModDisplayBlocks.SMALL_PLATE_BLOCK.get())
+                .filter(block -> block != ModDisplayBlocks.PLATE_BLOCK.get())
                 .toList();
     }
 }

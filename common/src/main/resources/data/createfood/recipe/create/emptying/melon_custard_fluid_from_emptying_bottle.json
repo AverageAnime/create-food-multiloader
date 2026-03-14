@@ -1,0 +1,25 @@
+{
+    "type": "create:emptying",
+    "ingredients": [
+        {
+            "tag": "c:melon_custard_bottle"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "minecraft:glass_bottle"
+            }
+        },
+        {
+            "amount": 250,
+            "id": "createfood:melon_custard"
+        }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "melon_custard"
+        }
+    ]
+}

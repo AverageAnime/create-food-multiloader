@@ -4,6 +4,10 @@
     {
       "id": "createfood:paprika",
       "required": false
+    },
+    {
+      "id": "create:cinder_flour",
+      "required": false
     }
   ]
 }

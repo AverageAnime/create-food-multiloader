@@ -1,20 +1,21 @@
 {
-    "type": "create:mixing",
-    "ingredients": [
-        {
-            "tag": "c:hollow_chocolate"
-        }
-    ],
-    "results": [
-        {
-            "amount": 125,
-            "id": "create:chocolate"
-        }
-    ],
-    "neoforge:conditions": [
-        {
-            "type": "createfood:enabled",
-            "id": "create:chocolate"
-        }
-    ]
+  "type": "create:mixing",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "tag": "c:hollow_chocolate"
+    }
+  ],
+  "results": [
+    {
+      "amount": 125,
+      "id": "create:chocolate"
+    }
+  ],
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "create:chocolate"
+    }
+  ]
 }

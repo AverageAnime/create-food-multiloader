@@ -1,0 +1,22 @@
+{
+    "type": "create:compacting",
+    "heat_requirement": "heated",
+    "ingredients": [
+        {
+            "tag": "c:taco_shell_ingredient"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:taco_shell"
+            }
+        }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "taco_shell"
+        }
+    ]
+}

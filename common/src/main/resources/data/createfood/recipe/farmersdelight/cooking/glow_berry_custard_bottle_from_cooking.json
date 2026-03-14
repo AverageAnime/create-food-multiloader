@@ -1,0 +1,29 @@
+{
+  "type": "farmersdelight:cooking",
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "c:egg_yolk"
+    },
+    {
+      "tag": "c:foods/milk"
+    },
+    {
+      "tag": "c:sugar"
+    },
+    {
+      "item": "minecraft:glow_berries"
+    }
+  ],
+  "recipe_book_tab": "drinks",
+  "result": {
+    "count": 1,
+    "id": "farmersdelight:glow_berry_custard"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "berry_custard_bottle"
+    }
+  ]
+}

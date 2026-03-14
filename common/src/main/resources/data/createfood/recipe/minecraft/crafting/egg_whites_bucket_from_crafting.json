@@ -1,0 +1,29 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "egg_whites_bucket"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:bucket"
+    },
+    {
+      "tag": "c:egg_whites_bottle"
+    },
+    {
+      "tag": "c:egg_whites_bottle"
+    },
+    {
+      "tag": "c:egg_whites_bottle"
+    },
+    {
+      "tag": "c:egg_whites_bottle"
+    }
+  ],
+  "result": {
+    "id": "createfood:egg_whites_bucket"
+  }
+}

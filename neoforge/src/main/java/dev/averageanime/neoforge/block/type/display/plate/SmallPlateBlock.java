@@ -1,6 +1,6 @@
 package dev.averageanime.neoforge.block.type.display.plate;
 
-import dev.averageanime.neoforge.block.ModBlocks;
+import dev.averageanime.neoforge.block.ModDisplayBlocks;
 import dev.averageanime.neoforge.block.type.display.FoodBlock;
 import dev.averageanime.neoforge.block.type.display.SmallPlateFoodBlock;
 import net.minecraft.core.BlockPos;
@@ -58,13 +58,12 @@ public class SmallPlateBlock extends Block {
     @Override
     protected @NotNull ItemInteractionResult useItemOn(@NotNull ItemStack heldStack, @NotNull BlockState state, Level level, @NotNull BlockPos pos,
                                                        @NotNull Player player, @NotNull InteractionHand hand, @NotNull BlockHitResult hit) {
-        // Check if player is shift-clicking to convert back to normal plate
         if (player.isShiftKeyDown()) {
             if (level.isClientSide) {
                 return ItemInteractionResult.SUCCESS;
             }
 
-            BlockState normalPlate = ModBlocks.PLATE_BLOCK.get().defaultBlockState();
+            BlockState normalPlate = ModDisplayBlocks.PLATE_BLOCK.get().defaultBlockState();
             if (normalPlate.hasProperty(FACING)) {
                 normalPlate = normalPlate.setValue(FACING, state.getValue(FACING));
             }
@@ -76,17 +75,15 @@ public class SmallPlateBlock extends Block {
         }
 
         if (level.isClientSide) {
-            if (FoodBlock.Registry.isRegistered(heldStack.getItem())) {
+            if (FoodBlock.Registry.canPlaceOnPlate(heldStack.getItem(), true)) {
                 return ItemInteractionResult.SUCCESS;
             }
             return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
         }
 
-        // Get all possible blocks for this item
         List<Supplier<Block>> stackBlockSuppliers = FoodBlock.Registry.getAllBlocks(heldStack.getItem());
 
         if (stackBlockSuppliers != null && !stackBlockSuppliers.isEmpty()) {
-            // Find a SmallPlateFoodBlock
             Block stackBlock = null;
             for (Supplier<Block> supplier : stackBlockSuppliers) {
                 Block block = supplier.get();
@@ -119,13 +116,31 @@ public class SmallPlateBlock extends Block {
             }
         }
 
+        Block displayDelightSmallPlate = FoodBlock.Registry.getDisplayDelightSmallPlateBlock(heldStack.getItem());
+        if (displayDelightSmallPlate != null) {
+            BlockState newState = displayDelightSmallPlate.defaultBlockState();
+
+            if (newState.hasProperty(FACING)) {
+                newState = newState.setValue(FACING, state.getValue(FACING));
+            }
+
+            level.setBlock(pos, newState, 3);
+
+            if (!player.isCreative()) {
+                heldStack.shrink(1);
+            }
+
+            level.playSound(null, pos, SoundEvents.ITEM_FRAME_ADD_ITEM, SoundSource.BLOCKS, 1.0F, 1.0F);
+
+            return ItemInteractionResult.SUCCESS;
+        }
+
         return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
     }
 
     @Override
     protected @NotNull InteractionResult useWithoutItem(@NotNull BlockState state, Level level, @NotNull BlockPos pos, @NotNull Player player, @NotNull BlockHitResult hit) {
         if (!level.isClientSide) {
-            // Drop a minecraft bowl
             Direction direction = player.getDirection().getOpposite();
             ItemStack dropStack = new ItemStack(Items.BOWL);
 
@@ -133,10 +148,8 @@ public class SmallPlateBlock extends Block {
                     pos.getX() + 0.5, pos.getY() + 0.3, pos.getZ() + 0.5,
                     direction.getStepX() * 0.15, 0.05, direction.getStepZ() * 0.15);
 
-            // Remove the block
             level.removeBlock(pos, false);
 
-            // Play sound
             level.playSound(null, pos, SoundEvents.ITEM_FRAME_REMOVE_ITEM, SoundSource.BLOCKS, 0.8F, 0.8F);
         }
         return InteractionResult.SUCCESS;

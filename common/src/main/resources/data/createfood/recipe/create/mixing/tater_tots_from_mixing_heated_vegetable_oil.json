@@ -1,0 +1,27 @@
+{
+    "type": "create:mixing",
+    "heat_requirement": "heated",
+    "ingredients": [
+        {
+            "tag": "c:raw_tater_tots"
+        },
+        {
+            "type": "fluid_tag",
+            "amount": 125,
+            "fluid_tag": "c:vegetable_oil"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:tater_tots"
+            }
+        }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "tater_tots"
+        }
+    ]
+}

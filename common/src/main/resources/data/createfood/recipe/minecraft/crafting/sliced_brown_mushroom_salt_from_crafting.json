@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:sliced_brown_mushroom"
+        },
+        {
+            "tag": "c:salt"
+        }
+    ],
+    "result": {
+        "id": "createfood:sliced_brown_mushroom_salt"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "sliced_brown_mushroom_salt"
+        }
+    ]
+}

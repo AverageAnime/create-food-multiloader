@@ -1,0 +1,25 @@
+{
+    "type": "farmersdelight:cutting",
+    "ingredients": [
+        {
+            "tag": "c:kelp_roll_crimson_fungus"
+        }
+    ],
+    "tool": {
+        "tag": "c:tools/knife"
+    },
+    "result": [
+        {
+            "item": {
+                "count": 3,
+                "id": "createfood:kelp_roll_slice_crimson_fungus"
+            }
+        }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "kelp_roll_slice_crimson_fungus"
+        }
+    ]
+}

@@ -1,0 +1,27 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "kelp_roll_beetroot"
+        }
+    ],
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "232",
+        "111"
+    ],
+    "key": {
+        "1": {
+            "item": "minecraft:dried_kelp"
+        },
+        "2": {
+          "item": "farmersdelight:cooked_rice"
+        },
+        "3": {
+          "tag": "c:beetroot"
+        }
+    },
+    "result": {
+        "id": "createfood:kelp_roll_beetroot"
+    }
+}

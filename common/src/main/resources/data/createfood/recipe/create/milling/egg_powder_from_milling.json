@@ -5,7 +5,7 @@
             "tag": "c:powderable_eggs"
         }
     ],
-    "processingTime": 50,
+    "processing_time": 50,
     "results": [
         {
             "count": 2,

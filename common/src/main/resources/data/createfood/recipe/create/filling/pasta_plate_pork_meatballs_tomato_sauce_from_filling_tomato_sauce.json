@@ -2,7 +2,7 @@
     "neoforge:conditions": [
         {
             "type": "neoforge:mod_loaded",
-            "modid": "create_central_kitchen"
+            "modid": "delightfulcreators"
         },
         {
             "type": "createfood:enabled",

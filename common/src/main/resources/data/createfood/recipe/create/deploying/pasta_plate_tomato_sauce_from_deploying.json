@@ -13,11 +13,6 @@
       "item": {
         "id": "createfood:pasta_plate_tomato_sauce"
       }
-    },
-    {
-      "item": {
-        "id": "minecraft:bowl"
-      }
     }
   ],
   "neoforge:conditions": [

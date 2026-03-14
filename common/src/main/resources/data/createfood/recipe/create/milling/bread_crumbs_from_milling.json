@@ -5,7 +5,7 @@
             "tag": "c:bread_slice"
         }
     ],
-    "processingTime": 80,
+    "processing_time": 80,
     "results": [
         {
             "count": 2,

@@ -2,7 +2,7 @@
     "type": "farmersdelight:cutting",
     "ingredients": [
         {
-            "tag": "c:chili_pepper"
+            "tag": "c:paprika_ingredient"
         }
     ],
     "tool": {

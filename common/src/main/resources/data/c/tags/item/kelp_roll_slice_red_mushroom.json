@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "createfood:kelp_roll_slice_red_mushroom",
+      "required": false
+    }
+  ]
+}

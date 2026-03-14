@@ -1,20 +1,21 @@
 {
-    "type": "create:mixing",
-    "ingredients": [
-        {
-            "tag": "c:bar_of_dark_chocolate"
-        }
-    ],
-    "results": [
-        {
-            "amount": 250,
-            "id": "createfood:dark_chocolate"
-        }
-    ],
-    "neoforge:conditions": [
-        {
-            "type": "createfood:enabled",
-            "id": "dark_chocolate"
-        }
-    ]
+  "type": "create:mixing",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "tag": "c:bar_of_dark_chocolate"
+    }
+  ],
+  "results": [
+    {
+      "amount": 250,
+      "id": "createfood:dark_chocolate"
+    }
+  ],
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "dark_chocolate"
+    }
+  ]
 }

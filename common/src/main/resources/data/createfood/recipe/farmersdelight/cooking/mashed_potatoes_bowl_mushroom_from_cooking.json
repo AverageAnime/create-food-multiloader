@@ -1,0 +1,33 @@
+{
+  "type": "farmersdelight:cooking",
+  "experience": 0.5,
+  "container": {
+    "count": 1,
+    "id": "minecraft:bowl"
+  },
+  "ingredients": [
+    {
+      "tag": "c:potato"
+    },
+    {
+      "tag": "c:milk_bottle"
+    },
+    {
+      "tag": "c:butter"
+    },
+    {
+      "tag": "c:mushrooms"
+    }
+  ],
+  "recipe_book_tab": "misc",
+  "result": {
+    "count": 1,
+    "id": "createfood:mashed_potatoes_bowl_mushroom"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "mashed_potatoes_bowl_mushroom"
+    }
+  ]
+}

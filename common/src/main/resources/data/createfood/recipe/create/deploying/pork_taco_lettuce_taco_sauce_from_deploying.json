@@ -1,0 +1,24 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "pork_taco_lettuce_taco_sauce"
+        }
+    ],
+    "type": "create:deploying",
+    "ingredients": [
+      {
+        "tag": "c:pork_taco_lettuce"
+      },
+      {
+        "tag": "c:taco_sauce_bottle"
+      }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:pork_taco_lettuce_taco_sauce"
+            }
+        }
+    ]
+}

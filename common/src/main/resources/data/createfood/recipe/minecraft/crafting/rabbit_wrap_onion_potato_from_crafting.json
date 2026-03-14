@@ -1,0 +1,26 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "rabbit_wrap_onion_potato"
+        }
+    ],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:taco_shell_ingredient"
+        },
+        {
+            "tag": "c:cooked_rabbit"
+        },
+        {
+            "tag": "c:onion"
+        },
+        {
+            "tag": "c:potato"
+        }
+    ],
+    "result": {
+        "id": "createfood:rabbit_wrap_onion_potato"
+    }
+}

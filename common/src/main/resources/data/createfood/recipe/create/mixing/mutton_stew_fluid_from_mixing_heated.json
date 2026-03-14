@@ -3,6 +3,9 @@
     "heat_requirement": "heated",
     "ingredients": [
       {
+        "tag": "c:foods/raw_mutton"
+      },
+      {
         "tag": "c:onion"
       },
       {

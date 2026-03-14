@@ -1,0 +1,29 @@
+{
+    "type": "create:mixing",
+    "ingredients": [
+        {
+            "type": "fluid_tag",
+            "amount": 250,
+            "fluid_tag": "c:egg"
+        },
+      {
+        "tag": "c:unbreaded_chicken_patty"
+      },
+      {
+        "tag": "c:bread_crumbs"
+      }
+    ],
+    "results": [
+      {
+        "item": {
+          "id": "createfood:raw_chicken_patty"
+        }
+      }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "raw_chicken_patty"
+        }
+    ]
+}

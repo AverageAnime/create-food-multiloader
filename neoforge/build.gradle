@@ -5,7 +5,6 @@ plugins {
 
 neoForge {
     version = neoforge_version
-    // Automatically enable neoforge AccessTransformers if the file exists
     def at = project(':common').file('src/main/resources/META-INF/accesstransformer.cfg')
     if (at.exists()) {
         accessTransformers.from(at.absolutePath)
@@ -66,3 +65,39 @@ neoForge {
 }
 
 sourceSets.main.resources { srcDir 'src/generated/resources' }
+
+tasks.register('liteJar', Jar) {
+    archiveClassifier = 'lite'
+
+    from sourceSets.main.output
+
+    exclude '**/block/type/display/**'
+    exclude '**/block/ModDisplayBlocks.class'
+    exclude '**/tab/ModDisplayTabs.class'
+
+    exclude '**/blockstates/*_plate_block.json'
+    exclude '**/blockstates/plate_block.json'
+    exclude '**/blockstates/small_plate_block.json'
+    exclude '**/models/item/*_plate_block.json'
+    exclude '**/models/item/*_bottle_block.json'
+    exclude '**/models/item/*_bowl_block.json'
+    exclude '**/models/block/*_plate_block.json'
+    exclude '**/models/block/*_bottle_block.json'
+    exclude '**/models/block/*_bowl_block.json'
+    exclude '**/models/block/*_plate_block_1.json'
+    exclude '**/models/block/*_plate_block_2.json'
+    exclude '**/models/block/*_plate_block_3.json'
+    exclude '**/models/block/*_plate_block_4.json'
+    exclude '**/models/block/*_plate_block_5.json'
+    exclude '**/models/block/*_plate_block_6.json'
+    exclude '**/models/block/*_plate_block_7.json'
+    exclude '**/models/block/*_plate_block_8.json'
+    exclude '**/models/block/*_plate_block_9.json'
+    exclude '**/models/block/plate_block.json'
+    exclude '**/models/block/small_plate_block.json'
+    exclude '**/loot_table/blocks/*_plate_block.json'
+    exclude '**/loot_table/blocks/plate_block.json'
+    exclude '**/loot_table/blocks/small_plate_block.json'
+}
+
+build.dependsOn liteJar

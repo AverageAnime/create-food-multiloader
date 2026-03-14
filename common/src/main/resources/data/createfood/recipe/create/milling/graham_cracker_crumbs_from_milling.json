@@ -5,7 +5,8 @@
             "tag": "c:graham_cracker"
         }
     ],
-    "results": [
+  "processing_time": 80,
+  "results": [
         {
             "count": 2,
             "item": {

@@ -1,0 +1,29 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "pumpkin_puree_bucket"
+        }
+    ],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:bucket"
+        },
+        {
+            "tag": "c:pumpkin_puree"
+        },
+        {
+            "tag": "c:pumpkin_puree"
+        },
+        {
+            "tag": "c:pumpkin_puree"
+        },
+        {
+            "tag": "c:pumpkin_puree"
+        }
+    ],
+    "result": {
+        "id": "createfood:pumpkin_puree_bucket"
+    }
+}

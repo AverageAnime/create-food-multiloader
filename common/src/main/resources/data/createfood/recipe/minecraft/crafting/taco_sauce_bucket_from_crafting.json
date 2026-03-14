@@ -1,0 +1,29 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "taco_sauce_bucket"
+        }
+    ],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:bucket"
+        },
+        {
+            "tag": "c:taco_sauce_bottle"
+        },
+        {
+            "tag": "c:taco_sauce_bottle"
+        },
+        {
+            "tag": "c:taco_sauce_bottle"
+        },
+        {
+            "tag": "c:taco_sauce_bottle"
+        }
+    ],
+    "result": {
+        "id": "createfood:taco_sauce_bucket"
+    }
+}
