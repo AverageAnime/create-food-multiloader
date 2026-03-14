@@ -1,3 +1,9 @@
+### *** 1.1.13 ***
+
+#### General:
+* Fix cloth filter recipe. [(#12)](https://github.com/AverageAnime/create-food-multiloader/issues/12) / [(#19)](https://github.com/AverageAnime/create-food-multiloader/issues/19)
+* Add pumpkin pie recipes. [(#6)](https://github.com/AverageAnime/create-food-multiloader/issues/6)
+
 ### *** 1.1.12 ***
 
 #### General:
