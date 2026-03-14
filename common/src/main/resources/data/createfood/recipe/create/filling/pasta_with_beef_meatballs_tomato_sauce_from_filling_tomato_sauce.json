@@ -12,7 +12,7 @@
     "type": "create:filling",
     "ingredients": [
         {
-            "tag": "c:pasta_plate_meatballs"
+            "tag": "c:pasta_plate_beef_meatballs"
         },
         {
             "type": "fluid_tag",
