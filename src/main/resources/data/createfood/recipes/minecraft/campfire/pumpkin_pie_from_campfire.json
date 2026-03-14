@@ -1,0 +1,17 @@
+{
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:tags_populated",
+            "values": [
+                "c:raw_pumpkin_pie"
+            ]
+        }
+    ],
+    "type": "minecraft:campfire_cooking",
+    "ingredient": {
+        "tag": "c:raw_pumpkin_pie"
+    },
+    "result": "minecraft:pumpkin_pie",
+    "experience": 0.95,
+    "cookingtime": 550
+}
