@@ -20,6 +20,7 @@
 
 #### Fixes:
 * Fix milling recipes. [(#11)](https://github.com/AverageAnime/create-food-multiloader/issues/11) / [(#18)](https://github.com/AverageAnime/create-food-multiloader/issues/18)
+* Fix ube tags. [(#13)](https://github.com/AverageAnime/create-food-multiloader/issues/13)
 * Fix bowl duplication. [(#14)](https://github.com/AverageAnime/create-food-multiloader/issues/14)
 * Fix chocolate cooking pot and mixing recipes. [(#16)](https://github.com/AverageAnime/create-food-multiloader/issues/16)
 * Fix tomato sauce and chocolate filling recipes + tags. [(#17)](https://github.com/AverageAnime/create-food-multiloader/issues/17)
@@ -28,6 +29,7 @@
 * Restore some blockstate files to remove log errors.
 * Fix missing cloth filter remainder.
 * Fix missing some bottle crafting remainders.
+* Fix pasta with meatballs filling recipe.
 
 ### *** 2.1.0 ***
 
