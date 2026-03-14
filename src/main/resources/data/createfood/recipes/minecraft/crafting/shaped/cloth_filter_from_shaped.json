@@ -16,7 +16,7 @@
             "item": "minecraft:stick"
         },
         "T": {
-            "item": "minecraft:wool"
+            "tag": "minecraft:wool"
         }
     },
     "result": {
