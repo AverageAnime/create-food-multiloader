@@ -17,9 +17,7 @@
             "tag": "forge:raw_dark_chips_chocolate_cookie"
         }
     ],
-    "result": {
-        "item": "createfood:dark_chips_chocolate_cookie",
-        "count": 3,
-        "experience": 0.45
-    }
+    "item": "createfood:dark_chips_chocolate_cookie",
+    "count": 3,
+    "experience": 0.45
 }

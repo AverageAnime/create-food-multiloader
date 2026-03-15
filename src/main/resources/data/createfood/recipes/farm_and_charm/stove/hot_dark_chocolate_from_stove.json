@@ -17,9 +17,7 @@
             "tag": "forge:dark_chocolate_bottle"
         }
     ],
-    "result": {
-        "item": "createfood:hot_dark_chocolate_bottle",
-        "count": 3,
-        "experience": 0.15
-    }
+    "item": "createfood:hot_dark_chocolate_bottle",
+    "count": 3,
+    "experience": 0.15
 }

@@ -17,9 +17,7 @@
             "tag": "forge:raw_cheese_pizza"
         }
     ],
-    "result": {
-        "item": "createfood:cheese_pizza",
-        "count": 3,
-        "experience": 0.3
-    }
+    "item": "createfood:cheese_pizza",
+    "count": 3,
+    "experience": 0.3
 }

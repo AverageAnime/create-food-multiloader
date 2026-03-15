@@ -17,9 +17,7 @@
             "tag": "forge:raw_caramel_chips_cookie"
         }
     ],
-    "result": {
-        "item": "createfood:caramel_chips_cookie",
-        "count": 3,
-        "experience": 0.45
-    }
+    "item": "createfood:caramel_chips_cookie",
+    "count": 3,
+    "experience": 0.45
 }

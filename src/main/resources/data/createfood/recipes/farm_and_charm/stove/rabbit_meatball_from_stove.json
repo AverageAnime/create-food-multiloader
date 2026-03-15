@@ -17,9 +17,7 @@
             "tag": "forge:raw_rabbit_meatball"
         }
     ],
-    "result": {
-        "item": "createfood:rabbit_meatball",
-        "count": 3,
-        "experience": 0.15
-    }
+    "item": "createfood:rabbit_meatball",
+    "count": 3,
+    "experience": 0.15
 }

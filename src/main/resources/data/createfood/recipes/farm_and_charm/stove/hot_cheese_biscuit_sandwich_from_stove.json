@@ -17,9 +17,7 @@
             "tag": "forge:cheese_biscuit_sandwich"
         }
     ],
-    "result": {
-        "item": "createfood:hot_cheese_biscuit_sandwich",
-        "count": 3,
-        "experience": 0.15
-    }
+    "item": "createfood:hot_cheese_biscuit_sandwich",
+    "count": 3,
+    "experience": 0.15
 }

@@ -17,9 +17,7 @@
             "tag": "forge:raw_pastry_bar_base"
         }
     ],
-    "result": {
-        "item": "createfood:pastry_bar_base",
-        "count": 3,
-        "experience": 0.15
-    }
+    "item": "createfood:pastry_bar_base",
+    "count": 3,
+    "experience": 0.15
 }

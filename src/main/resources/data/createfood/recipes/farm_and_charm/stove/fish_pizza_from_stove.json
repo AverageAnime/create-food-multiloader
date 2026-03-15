@@ -17,9 +17,7 @@
             "tag": "forge:raw_fish_pizza"
         }
     ],
-    "result": {
-        "item": "createfood:fish_pizza",
-        "count": 3,
-        "experience": 0.3
-    }
+    "item": "createfood:fish_pizza",
+    "count": 3,
+    "experience": 0.3
 }

@@ -17,9 +17,7 @@
             "tag": "forge:coffee_beans"
         }
     ],
-    "result": {
-        "item": "createfood:dried_coffee_beans",
-        "count": 3,
-        "experience": 0.15
-    }
+    "item": "createfood:dried_coffee_beans",
+    "count": 3,
+    "experience": 0.15
 }

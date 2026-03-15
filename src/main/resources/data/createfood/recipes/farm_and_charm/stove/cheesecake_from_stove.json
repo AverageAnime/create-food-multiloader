@@ -17,9 +17,7 @@
             "tag": "forge:raw_cheesecake"
         }
     ],
-    "result": {
-        "item": "createfood:cheesecake",
-        "count": 3,
-        "experience": 1.5
-    }
+    "item": "createfood:cheesecake",
+    "count": 3,
+    "experience": 1.5
 }

@@ -17,9 +17,7 @@
             "tag": "forge:raw_dark_chocolate_chip_muffin"
         }
     ],
-    "result": {
-        "item": "createfood:dark_chocolate_chip_muffin",
-        "count": 3,
-        "experience": 0.25
-    }
+    "item": "createfood:dark_chocolate_chip_muffin",
+    "count": 3,
+    "experience": 0.25
 }

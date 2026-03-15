@@ -17,9 +17,7 @@
             "tag": "forge:raw_mini_cream_pie_graham_cracker"
         }
     ],
-    "result": {
-        "item": "createfood:mini_cream_pie_graham_cracker",
-        "count": 3,
-        "experience": 0.2
-    }
+    "item": "createfood:mini_cream_pie_graham_cracker",
+    "count": 3,
+    "experience": 0.2
 }

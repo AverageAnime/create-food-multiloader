@@ -17,9 +17,7 @@
             "tag": "forge:salt_dough"
         }
     ],
-    "result": {
-        "item": "createfood:bun",
-        "count": 3,
-        "experience": 0.1
-    }
+    "item": "createfood:bun",
+    "count": 3,
+    "experience": 0.1
 }

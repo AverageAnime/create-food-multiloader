@@ -17,9 +17,7 @@
             "tag": "forge:pumpernickel_bread_slice"
         }
     ],
-    "result": {
-        "item": "createfood:pumpernickel_toast_slice",
-        "count": 3,
-        "experience": 0.15
-    }
+    "item": "createfood:pumpernickel_toast_slice",
+    "count": 3,
+    "experience": 0.15
 }

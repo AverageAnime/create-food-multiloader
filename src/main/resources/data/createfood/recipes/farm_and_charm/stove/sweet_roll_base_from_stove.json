@@ -17,9 +17,7 @@
             "tag": "forge:raw_sweet_roll_base"
         }
     ],
-    "result": {
-        "item": "createfood:sweet_roll_base",
-        "count": 3,
-        "experience": 0.25
-    }
+    "item": "createfood:sweet_roll_base",
+    "count": 3,
+    "experience": 0.25
 }

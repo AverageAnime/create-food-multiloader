@@ -17,9 +17,7 @@
             "tag": "forge:bread_slice"
         }
     ],
-    "result": {
-        "item": "createfood:toast_slice",
-        "count": 3,
-        "experience": 0.15
-    }
+    "item": "createfood:toast_slice",
+    "count": 3,
+    "experience": 0.15
 }

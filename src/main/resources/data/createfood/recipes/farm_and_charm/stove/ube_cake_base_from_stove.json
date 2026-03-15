@@ -17,9 +17,7 @@
             "tag": "forge:raw_ube_cake_base"
         }
     ],
-  "result": {
     "item": "createfood:ube_cake_base",
     "count": 3,
     "experience": 0.15
-  }
 }

@@ -17,9 +17,7 @@
             "tag": "forge:minced_dragon"
         }
     ],
-    "result": {
-        "item": "createfood:dragon_patty",
-        "count": 3,
-        "experience": 0.15
-    }
+    "item": "createfood:dragon_patty",
+    "count": 3,
+    "experience": 0.15
 }

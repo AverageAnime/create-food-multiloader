@@ -17,9 +17,7 @@
             "tag": "forge:raw_chorus_fruit_pie"
         }
     ],
-    "result": {
-        "item": "createfood:chorus_fruit_pie",
-        "count": 3,
-        "experience": 1.5
-    }
+    "item": "createfood:chorus_fruit_pie",
+    "count": 3,
+    "experience": 1.5
 }

@@ -17,9 +17,7 @@
             "tag": "forge:raw_sweet_berry_cookie"
         }
     ],
-    "result": {
-        "item": "farmersdelight:sweet_berry_cookie",
-        "count": 3,
-        "experience": 0.45
-    }
+    "item": "farmersdelight:sweet_berry_cookie",
+    "count": 3,
+    "experience": 0.45
 }

@@ -17,9 +17,7 @@
             "tag": "forge:raw_onion_calzone"
         }
     ],
-    "result": {
-        "item": "createfood:onion_calzone",
-        "count": 3,
-        "experience": 0.25
-    }
+    "item": "createfood:onion_calzone",
+    "count": 3,
+    "experience": 0.25
 }

@@ -17,9 +17,7 @@
             "tag": "forge:raw_sausage_pizza"
         }
     ],
-    "result": {
-        "item": "createfood:sausage_pizza",
-        "count": 3,
-        "experience": 0.3
-    }
+    "item": "createfood:sausage_pizza",
+    "count": 3,
+    "experience": 0.3
 }

@@ -17,9 +17,7 @@
             "tag": "forge:raw_butterscotch_chip_muffin"
         }
     ],
-    "result": {
-        "item": "createfood:butterscotch_chip_muffin",
-        "count": 3,
-        "experience": 0.25
-    }
+    "item": "createfood:butterscotch_chip_muffin",
+    "count": 3,
+    "experience": 0.25
 }

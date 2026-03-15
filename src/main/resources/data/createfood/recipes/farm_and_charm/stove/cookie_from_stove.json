@@ -17,9 +17,7 @@
             "tag": "forge:raw_cookie"
         }
     ],
-    "result": {
-        "item": "minecraft:cookie",
-        "count": 3,
-        "experience": 0.45
-    }
+    "item": "minecraft:cookie",
+    "count": 3,
+    "experience": 0.45
 }

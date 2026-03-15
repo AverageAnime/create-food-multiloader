@@ -17,9 +17,7 @@
             "tag": "forge:raw_graham_cracker_pie_crust"
         }
     ],
-    "result": {
-        "item": "createfood:graham_cracker_pie_crust",
-        "count": 3,
-        "experience": 0.4
-    }
+    "item": "createfood:graham_cracker_pie_crust",
+    "count": 3,
+    "experience": 0.4
 }

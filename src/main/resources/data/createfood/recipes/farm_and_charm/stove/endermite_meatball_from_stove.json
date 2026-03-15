@@ -17,9 +17,7 @@
             "tag": "forge:raw_endermite_meatball"
         }
     ],
-    "result": {
-        "item": "createfood:endermite_meatball",
-        "count": 3,
-        "experience": 0.15
-    }
+    "item": "createfood:endermite_meatball",
+    "count": 3,
+    "experience": 0.15
 }

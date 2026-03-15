@@ -17,9 +17,7 @@
             "tag": "forge:raw_green_tea_cookie"
         }
     ],
-    "result": {
-        "item": "farmersrespite:green_tea_cookie",
-        "count": 3,
-        "experience": 0.45
-    }
+    "item": "farmersrespite:green_tea_cookie",
+    "count": 3,
+    "experience": 0.45
 }

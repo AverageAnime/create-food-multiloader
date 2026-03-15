@@ -17,9 +17,7 @@
             "tag": "forge:raw_fish_onion_pizza"
         }
     ],
-    "result": {
-        "item": "createfood:fish_onion_pizza",
-        "count": 3,
-        "experience": 0.4
-    }
+    "item": "createfood:fish_onion_pizza",
+    "count": 3,
+    "experience": 0.4
 }

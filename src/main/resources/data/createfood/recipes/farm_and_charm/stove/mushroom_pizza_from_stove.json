@@ -17,9 +17,7 @@
             "tag": "forge:raw_mushroom_pizza"
         }
     ],
-    "result": {
-        "item": "createfood:mushroom_pizza",
-        "count": 3,
-        "experience": 0.3
-    }
+    "item": "createfood:mushroom_pizza",
+    "count": 3,
+    "experience": 0.3
 }

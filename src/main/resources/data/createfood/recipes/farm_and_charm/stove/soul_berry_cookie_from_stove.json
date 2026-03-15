@@ -17,9 +17,7 @@
             "tag": "forge:raw_soul_berry_cookie"
         }
     ],
-    "result": {
-        "item": "frightsdelight:cookie_soul_berry",
-        "count": 3,
-        "experience": 0.45
-    }
+    "item": "frightsdelight:cookie_soul_berry",
+    "count": 3,
+    "experience": 0.45
 }

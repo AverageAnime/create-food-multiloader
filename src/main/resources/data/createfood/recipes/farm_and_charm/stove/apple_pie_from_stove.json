@@ -17,9 +17,7 @@
             "tag": "forge:raw_apple_pie"
         }
     ],
-    "result": {
-        "item": "farmersdelight:apple_pie",
-        "count": 3,
-        "experience": 1.5
-    }
+    "item": "farmersdelight:apple_pie",
+    "count": 3,
+    "experience": 1.5
 }

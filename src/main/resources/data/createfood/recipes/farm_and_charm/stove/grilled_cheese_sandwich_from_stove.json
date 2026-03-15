@@ -17,9 +17,7 @@
             "tag": "forge:cheese_sandwich"
         }
     ],
-    "result": {
-        "item": "createfood:grilled_cheese_sandwich",
-        "count": 3,
-        "experience": 0.15
-    }
+    "item": "createfood:grilled_cheese_sandwich",
+    "count": 3,
+    "experience": 0.15
 }

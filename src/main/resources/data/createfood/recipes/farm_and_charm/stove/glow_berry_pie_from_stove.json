@@ -17,9 +17,7 @@
             "tag": "forge:raw_glow_berry_pie"
         }
     ],
-    "result": {
-        "item": "createfood:glow_berry_pie",
-        "count": 3,
-        "experience": 1.5
-    }
+    "item": "createfood:glow_berry_pie",
+    "count": 3,
+    "experience": 1.5
 }

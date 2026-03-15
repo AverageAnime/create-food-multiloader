@@ -17,9 +17,7 @@
             "tag": "forge:raw_honey_cookie"
         }
     ],
-    "result": {
-        "item": "farmersdelight:honey_cookie",
-        "count": 3,
-        "experience": 0.45
-    }
+    "item": "farmersdelight:honey_cookie",
+    "count": 3,
+    "experience": 0.45
 }

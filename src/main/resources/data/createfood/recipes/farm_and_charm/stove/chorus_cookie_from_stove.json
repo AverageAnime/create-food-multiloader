@@ -17,9 +17,7 @@
             "tag": "forge:raw_chorus_cookie"
         }
     ],
-    "result": {
-        "item": "ends_delight:chorus_cookie",
-        "count": 3,
-        "experience": 0.45
-    }
+    "item": "ends_delight:chorus_cookie",
+    "count": 3,
+    "experience": 0.45
 }

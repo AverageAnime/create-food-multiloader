@@ -17,9 +17,7 @@
             "tag": "forge:raw_fish_calzone"
         }
     ],
-    "result": {
-        "item": "createfood:fish_calzone",
-        "count": 3,
-        "experience": 0.25
-    }
+    "item": "createfood:fish_calzone",
+    "count": 3,
+    "experience": 0.25
 }

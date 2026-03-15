@@ -17,9 +17,7 @@
             "tag": "forge:raw_muffin"
         }
     ],
-    "result": {
-        "item": "createfood:muffin_base",
-        "count": 3,
-        "experience": 0.25
-    }
+    "item": "createfood:muffin_base",
+    "count": 3,
+    "experience": 0.25
 }

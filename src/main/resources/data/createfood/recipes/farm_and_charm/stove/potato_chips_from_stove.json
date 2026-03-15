@@ -17,9 +17,7 @@
             "tag": "forge:sliced_potato"
         }
     ],
-    "result": {
-        "item": "createfood:potato_chips",
-        "count": 3,
-        "experience": 0.15
-    }
+    "item": "createfood:potato_chips",
+    "count": 3,
+    "experience": 0.15
 }

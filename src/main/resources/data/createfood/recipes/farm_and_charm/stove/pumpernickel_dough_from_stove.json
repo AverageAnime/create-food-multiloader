@@ -17,9 +17,7 @@
             "tag": "forge:pumpernickel_dough"
         }
     ],
-    "result": {
-        "item": "createfood:pumpernickel_bread",
-        "count": 3,
-        "experience": 0.1
-    }
+    "item": "createfood:pumpernickel_bread",
+    "count": 3,
+    "experience": 0.1
 }

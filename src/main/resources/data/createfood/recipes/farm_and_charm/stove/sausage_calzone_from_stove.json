@@ -17,9 +17,7 @@
             "tag": "forge:raw_sausage_calzone"
         }
     ],
-    "result": {
-        "item": "createfood:sausage_calzone",
-        "count": 3,
-        "experience": 0.25
-    }
+    "item": "createfood:sausage_calzone",
+    "count": 3,
+    "experience": 0.25
 }

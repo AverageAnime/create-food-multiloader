@@ -17,9 +17,7 @@
             "tag": "forge:raw_pork_meatball"
         }
     ],
-    "result": {
-        "item": "createfood:pork_meatball",
-        "count": 3,
-        "experience": 0.15
-    }
+    "item": "createfood:pork_meatball",
+    "count": 3,
+    "experience": 0.15
 }

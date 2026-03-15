@@ -17,9 +17,7 @@
             "tag": "forge:raw_pie_crust"
         }
     ],
-    "result": {
-        "item": "farmersdelight:pie_crust",
-        "count": 3,
-        "experience": 0.4
-    }
+    "item": "farmersdelight:pie_crust",
+    "count": 3,
+    "experience": 0.4
 }

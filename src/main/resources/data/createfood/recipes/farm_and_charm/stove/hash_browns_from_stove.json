@@ -17,9 +17,7 @@
             "tag": "forge:shredded_potato"
         }
     ],
-    "result": {
-        "item": "createfood:hash_browns",
-        "count": 3,
-        "experience": 0.4
-    }
+    "item": "createfood:hash_browns",
+    "count": 3,
+    "experience": 0.4
 }

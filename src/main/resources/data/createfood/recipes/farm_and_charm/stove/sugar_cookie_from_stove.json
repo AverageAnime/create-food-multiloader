@@ -17,9 +17,7 @@
             "tag": "forge:raw_sugar_cookie"
         }
     ],
-    "result": {
-        "item": "expandeddelight:sugar_cookie",
-        "count": 3,
-        "experience": 0.45
-    }
+    "item": "expandeddelight:sugar_cookie",
+    "count": 3,
+    "experience": 0.45
 }
