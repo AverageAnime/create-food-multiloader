@@ -31,10 +31,6 @@ import static dev.averageanime.neoforge.block.ModFluids.FLUIDS;
 import static dev.averageanime.neoforge.block.ModFluids.FLUID_TYPES;
 import static dev.averageanime.neoforge.item.ModItems.ITEMS;
 
-/**
- * Builder class for creating fluid entries.
- * Provides defaults for all properties.
- */
 @SuppressWarnings("unused")
 public class FluidEntry {
     private final String name;
@@ -127,7 +123,6 @@ public class FluidEntry {
      * @return The created FluidEntry
      */
     public FluidType build() {
-        // Auto-detect color from texture if not manually set
         Vector3f finalColor = fogColor;
         if (finalColor == null) {
             finalColor = extractColorFromTexture(name);

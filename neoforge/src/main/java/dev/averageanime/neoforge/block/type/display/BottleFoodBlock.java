@@ -20,22 +20,19 @@ import java.util.function.Supplier;
 
 public class BottleFoodBlock extends FoodBlock {
     protected final VoxelShape shape;
-    protected final double shapeHeight; // Height in pixels (0-16)
+    protected final double shapeHeight;
 
     private final boolean hasParticles;
     private final Supplier<ParticleOptions> particleType;
 
-    // Constructor without particles and default height (existing bottles)
     public BottleFoodBlock(Supplier<Item> displayItem) {
         this(displayItem, 0.0, false, null);
     }
 
-    // Constructor with custom height, no particles
     public BottleFoodBlock(Supplier<Item> displayItem, double heightInPixels) {
         this(displayItem, heightInPixels, false, null);
     }
 
-    // Full constructor with height and particle support
     public BottleFoodBlock(Supplier<Item> displayItem, double heightInPixels, boolean hasParticles, Supplier<ParticleOptions> particleType) {
         super(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS), displayItem, 1);
         this.shapeHeight = Math.max(1.0, Math.min(16.0, heightInPixels));
@@ -65,7 +62,7 @@ public class BottleFoodBlock extends FoodBlock {
     }
 
     @Override
-    public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource random) {
+    public void animateTick(@NotNull BlockState state, @NotNull Level level, @NotNull BlockPos pos, @NotNull RandomSource random) {
         if (!hasParticles || particleType == null) {
             return;
         }
@@ -82,7 +79,7 @@ public class BottleFoodBlock extends FoodBlock {
                     x + offsetX,
                     y,
                     z + offsetZ,
-                    0.0, 0.02, 0.0); // Small upward velocity
+                    0.0, 0.02, 0.0);
         }
     }
 }

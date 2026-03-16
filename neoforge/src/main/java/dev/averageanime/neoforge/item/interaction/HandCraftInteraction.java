@@ -19,7 +19,7 @@ import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
 import java.util.List;
 import java.util.Optional;
 
-@EventBusSubscriber(modid = CommonClass.ID, bus = EventBusSubscriber.Bus.GAME)
+@EventBusSubscriber(modid = CommonClass.ID)
 public class HandCraftInteraction {
 
     private static boolean isAllowedByFilter(ItemStack result) {

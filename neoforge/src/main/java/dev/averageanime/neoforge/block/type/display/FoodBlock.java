@@ -329,7 +329,7 @@ public abstract class FoodBlock extends Block {
         }
     }
 
-    @EventBusSubscriber(modid = CommonClass.ID, bus = EventBusSubscriber.Bus.GAME)
+    @EventBusSubscriber(modid = CommonClass.ID)
     public static class PlacementHandler {
 
         @SubscribeEvent

@@ -14,7 +14,7 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
 import java.util.List;
 
-@EventBusSubscriber(modid = CommonClass.ID, bus = EventBusSubscriber.Bus.GAME)
+@EventBusSubscriber(modid = CommonClass.ID)
 public class ClothFilterInteraction {
 
     private static List<Interaction> loadInteractions() {
