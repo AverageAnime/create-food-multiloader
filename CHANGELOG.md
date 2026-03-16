@@ -1,3 +1,10 @@
+### *** 1.1.13a ***
+
+#### Forge:
+* Fix [(#23)](https://github.com/AverageAnime/create-food-multiloader/issues/23)
+* Update pot cooking & stove recipes for Farm & Charm new format.
+* Fix fluid log spam.
+
 ### *** 1.1.13 ***
 
 #### General:
