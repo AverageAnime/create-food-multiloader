@@ -19,22 +19,19 @@ import java.util.function.Supplier;
 
 public class BowlFoodBlock extends FoodBlock {
     protected final VoxelShape shape;
-    protected final double shapeHeight; // Height in pixels (0-16)
+    protected final double shapeHeight;
 
     private final boolean hasParticles;
     private final Supplier<ParticleOptions> particleType;
 
-    // Constructor without particles and default height
     public BowlFoodBlock(Supplier<Item> displayItem) {
         this(displayItem, 0.0, false, null);
     }
 
-    // Constructor with custom height, no particles
     public BowlFoodBlock(Supplier<Item> displayItem, double heightInPixels) {
         this(displayItem, heightInPixels, false, null);
     }
 
-    // Full constructor with height and particle support
     public BowlFoodBlock(Supplier<Item> displayItem, double heightInPixels, boolean hasParticles, Supplier<ParticleOptions> particleType) {
         super(Properties.ofFullCopy(Blocks.OAK_PLANKS), displayItem, 1);
         this.shapeHeight = Math.max(1.0, Math.min(16.0, heightInPixels));
@@ -64,18 +61,16 @@ public class BowlFoodBlock extends FoodBlock {
     }
 
     @Override
-    public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource random) {
+    public void animateTick(@NotNull BlockState state, @NotNull Level level, @NotNull BlockPos pos, @NotNull RandomSource random) {
         if (!hasParticles || particleType == null) {
             return;
         }
 
-        // Spawn particles at the top of the bottle
         if (random.nextInt(5) == 0) {
             double x = pos.getX() + 0.5;
             double y = pos.getY() + (7.5 / 16.0);
             double z = pos.getZ() + 0.5;
 
-            // Add slight randomness to x and z position
             double offsetX = (random.nextDouble() - 0.5) * 0.25;
             double offsetZ = (random.nextDouble() - 0.5) * 0.25;
 
@@ -83,7 +78,7 @@ public class BowlFoodBlock extends FoodBlock {
                     x + offsetX,
                     y,
                     z + offsetZ,
-                    0.0, 0.02, 0.0); // Small upward velocity
+                    0.0, 0.02, 0.0);
         }
     }
 }
