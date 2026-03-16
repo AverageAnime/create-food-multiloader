@@ -21,7 +21,7 @@ import net.neoforged.neoforge.event.entity.player.UseItemOnBlockEvent;
 import java.util.List;
 import java.util.function.Supplier;
 
-@EventBusSubscriber(modid = CommonClass.ID, bus = EventBusSubscriber.Bus.GAME)
+@EventBusSubscriber(modid = CommonClass.ID)
 public class BowlBlock {
 
     @SubscribeEvent
