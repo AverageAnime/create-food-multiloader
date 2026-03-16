@@ -1,3 +1,9 @@
+### *** 2.2.0a ***
+
+#### Fixes:
+* Fix projectile crash. [(#24)](https://github.com/AverageAnime/create-food-multiloader/issues/24)
+* Fix crafting crash. [(#25)](https://github.com/AverageAnime/create-food-multiloader/issues/25)
+
 ### *** 2.2.0 ***
 ![newprev220](https://github.com/user-attachments/assets/944db275-845a-4832-a174-8ba1d8f1c699)
 
