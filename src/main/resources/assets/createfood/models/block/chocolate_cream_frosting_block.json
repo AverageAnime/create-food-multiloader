@@ -1,10 +1,10 @@
 {
     "parent": "block/block",
     "textures": {
-        "particle": "createfood:block/chocolate_frosting_flow",
-        "down": "createfood:block/chocolate_frosting_flow",
-        "up": "createfood:block/chocolate_frosting_flow",
-        "side": "createfood:block/chocolate_frosting_flow"
+        "particle": "createfood:block/chocolate_cream_frosting_flow",
+        "down": "createfood:block/chocolate_cream_frosting_flow",
+        "up": "createfood:block/chocolate_cream_frosting_flow",
+        "side": "createfood:block/chocolate_cream_frosting_flow"
     },
     "elements": [
         {   "from": [ 0, 0, 0 ],

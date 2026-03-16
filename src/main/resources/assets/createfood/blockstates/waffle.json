@@ -59,6 +59,51 @@
     "bites=3,facing=west": {
       "model": "createfood:block/mini_waffle3",
       "y": 270
+    },
+    "bites=4,facing=east": {
+      "model": "createfood:block/mini_waffle3",
+      "y": 90
+    },
+    "bites=4,facing=north": {
+      "model": "createfood:block/mini_waffle3"
+    },
+    "bites=4,facing=south": {
+      "model": "createfood:block/mini_waffle3",
+      "y": 180
+    },
+    "bites=4,facing=west": {
+      "model": "createfood:block/mini_waffle3",
+      "y": 270
+    },
+    "bites=5,facing=east": {
+      "model": "createfood:block/mini_waffle3",
+      "y": 90
+    },
+    "bites=5,facing=north": {
+      "model": "createfood:block/mini_waffle3"
+    },
+    "bites=5,facing=south": {
+      "model": "createfood:block/mini_waffle3",
+      "y": 180
+    },
+    "bites=5,facing=west": {
+      "model": "createfood:block/mini_waffle3",
+      "y": 270
+    },
+    "bites=6,facing=east": {
+      "model": "createfood:block/mini_waffle3",
+      "y": 90
+    },
+    "bites=6,facing=north": {
+      "model": "createfood:block/mini_waffle3"
+    },
+    "bites=6,facing=south": {
+      "model": "createfood:block/mini_waffle3",
+      "y": 180
+    },
+    "bites=6,facing=west": {
+      "model": "createfood:block/mini_waffle3",
+      "y": 270
     }
   }
 }
