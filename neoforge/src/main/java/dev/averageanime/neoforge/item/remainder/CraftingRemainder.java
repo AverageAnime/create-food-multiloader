@@ -16,11 +16,12 @@ import net.neoforged.neoforge.event.entity.player.PlayerEvent;
 import java.util.HashMap;
 import java.util.Map;
 
-@EventBusSubscriber(modid = CommonClass.ID, bus = EventBusSubscriber.Bus.GAME)
+@EventBusSubscriber(modid = CommonClass.ID)
 public class CraftingRemainder {
 
     @SubscribeEvent
     public static void onItemCrafted(PlayerEvent.ItemCraftedEvent event) {
+        if (event.getEntity().level().isClientSide()) return;
         if (!(event.getInventory() instanceof CraftingContainer craftingMatrix)) return;
 
         Map<Item, Integer> remainderCounts = new HashMap<>();
@@ -53,10 +54,9 @@ public class CraftingRemainder {
 
     @SubscribeEvent
     public static void onEggImpact(ProjectileImpactEvent event) {
-        if (!ModConfig.ENABLE_EGG_IMPACT_REMAINDER.get()) return;
         if (!(event.getProjectile() instanceof ThrownEgg egg)) return;
-
         if (egg.level().isClientSide()) return;
+        if (!ModConfig.ENABLE_EGG_IMPACT_REMAINDER.get()) return;
 
         Item eggshellItem = resolveItem("createfood:eggshell");
         if (!ModConfig.isItemEnabled(BuiltInRegistries.ITEM.getKey(eggshellItem).getPath())) return;
