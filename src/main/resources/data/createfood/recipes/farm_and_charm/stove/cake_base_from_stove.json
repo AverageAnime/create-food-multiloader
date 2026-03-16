@@ -1,23 +1,26 @@
 {
-    "conditions": [
-        {
-            "type": "forge:mod_loaded",
-            "modid": "farm_and_charm"
-        }
-    ],
-    "type": "farm_and_charm:stove",
-    "ingredients": [
-        {
-            "tag": "forge:raw_cake_base"
-        },
-        {
-            "tag": "forge:raw_cake_base"
-        },
-        {
-            "tag": "forge:raw_cake_base"
-        }
-    ],
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "farm_and_charm"
+    }
+  ],
+  "type": "farm_and_charm:stove",
+  "ingredients": [
+    {
+      "tag": "forge:raw_cake_base"
+    },
+    {
+      "tag": "forge:raw_cake_base"
+    },
+    {
+      "tag": "forge:raw_cake_base"
+    }
+  ],
+  "experience": 0.5,
+  "result": {
     "item": "createfood:cake_base",
-    "count": 3,
-    "experience": 0.5
+    "count": 3
+  },
+  "requiresLearning": false
 }

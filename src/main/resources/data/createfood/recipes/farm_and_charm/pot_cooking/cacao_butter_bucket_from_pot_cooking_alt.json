@@ -1,26 +1,30 @@
 {
-    "conditions": [
-        {
-            "type": "forge:mod_loaded",
-            "modid": "farm_and_charm"
-        }
-    ],
-    "type": "farm_and_charm:pot_cooking",
-    "ingredients": [
-        {
-            "tag": "forge:cacao_butter"
-        },
-        {
-            "tag": "forge:cacao_butter"
-        },
-        {
-            "tag": "forge:cacao_butter"
-        }
-    ],
-    "container": {
-        "item": "minecraft:bucket"
-    },
-    "result": {
-        "item": "createfood:cacao_butter_bucket"
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "farm_and_charm"
     }
+  ],
+  "type": "farm_and_charm:pot_cooking",
+  "ingredients": [
+    {
+      "tag": "forge:cacao_butter"
+    },
+    {
+      "tag": "forge:cacao_butter"
+    },
+    {
+      "tag": "forge:cacao_butter"
+    }
+  ],
+  "container": {
+    "required": true,
+    "item": {
+      "item": "minecraft:bucket"
+    }
+  },
+  "result": {
+    "item": "createfood:cacao_butter_bucket"
+  },
+  "requiresLearning": false
 }

@@ -1,23 +1,27 @@
 {
-    "conditions": [
-        {
-            "type": "forge:mod_loaded",
-            "modid": "farm_and_charm"
-        }
-    ],
-    "type": "farm_and_charm:pot_cooking",
-    "ingredients": [
-        {
-            "tag": "forge:sugar"
-        },
-        {
-            "tag": "forge:sugar"
-        }
-    ],
-    "container": {
-        "item": "minecraft:bowl"
-    },
-    "result": {
-        "item": "createfood:caramel"
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "farm_and_charm"
     }
+  ],
+  "type": "farm_and_charm:pot_cooking",
+  "ingredients": [
+    {
+      "tag": "forge:sugar"
+    },
+    {
+      "tag": "forge:sugar"
+    }
+  ],
+  "container": {
+    "required": true,
+    "item": {
+      "item": "minecraft:bowl"
+    }
+  },
+  "result": {
+    "item": "createfood:caramel"
+  },
+  "requiresLearning": false
 }

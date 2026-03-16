@@ -1,23 +1,30 @@
 {
-    "conditions": [
-        {
-            "type": "forge:mod_loaded",
-            "modid": "farm_and_charm"
-        }
-    ],
-    "type": "farm_and_charm:stove",
-    "ingredients": [
-        {
-            "tag": "forge:raw_flesh_cookie"
-        },
-        {
-            "tag": "forge:raw_flesh_cookie"
-        },
-        {
-            "tag": "forge:raw_flesh_cookie"
-        }
-    ],
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "farm_and_charm"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "frightsdelight"
+    }
+  ],
+  "type": "farm_and_charm:stove",
+  "ingredients": [
+    {
+      "tag": "forge:raw_flesh_cookie"
+    },
+    {
+      "tag": "forge:raw_flesh_cookie"
+    },
+    {
+      "tag": "forge:raw_flesh_cookie"
+    }
+  ],
+  "experience": 0.45,
+  "result": {
     "item": "frightsdelight:cookie_flesh",
-    "count": 3,
-    "experience": 0.45
+    "count": 3
+  },
+  "requiresLearning": false
 }

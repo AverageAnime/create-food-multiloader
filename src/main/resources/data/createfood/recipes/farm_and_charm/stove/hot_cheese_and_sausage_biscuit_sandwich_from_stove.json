@@ -1,23 +1,26 @@
 {
-    "conditions": [
-        {
-            "type": "forge:mod_loaded",
-            "modid": "farm_and_charm"
-        }
-    ],
-    "type": "farm_and_charm:stove",
-    "ingredients": [
-        {
-            "tag": "forge:cheese_and_sausage_biscuit_sandwich"
-        },
-        {
-            "tag": "forge:cheese_and_sausage_biscuit_sandwich"
-        },
-        {
-            "tag": "forge:cheese_and_sausage_biscuit_sandwich"
-        }
-    ],
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "farm_and_charm"
+    }
+  ],
+  "type": "farm_and_charm:stove",
+  "ingredients": [
+    {
+      "tag": "forge:cheese_and_sausage_biscuit_sandwich"
+    },
+    {
+      "tag": "forge:cheese_and_sausage_biscuit_sandwich"
+    },
+    {
+      "tag": "forge:cheese_and_sausage_biscuit_sandwich"
+    }
+  ],
+  "experience": 0.15,
+  "result": {
     "item": "createfood:hot_cheese_and_sausage_biscuit_sandwich",
-    "count": 3,
-    "experience": 0.15
+    "count": 3
+  },
+  "requiresLearning": false
 }

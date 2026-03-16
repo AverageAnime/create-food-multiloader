@@ -1,23 +1,26 @@
 {
-    "conditions": [
-        {
-            "type": "forge:mod_loaded",
-            "modid": "farm_and_charm"
-        }
-    ],
-    "type": "farm_and_charm:stove",
-    "ingredients": [
-        {
-            "tag": "forge:raw_sausage_fish_pizza"
-        },
-        {
-            "tag": "forge:raw_sausage_fish_pizza"
-        },
-        {
-            "tag": "forge:raw_sausage_fish_pizza"
-        }
-    ],
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "farm_and_charm"
+    }
+  ],
+  "type": "farm_and_charm:stove",
+  "ingredients": [
+    {
+      "tag": "forge:raw_sausage_fish_pizza"
+    },
+    {
+      "tag": "forge:raw_sausage_fish_pizza"
+    },
+    {
+      "tag": "forge:raw_sausage_fish_pizza"
+    }
+  ],
+  "experience": 0.4,
+  "result": {
     "item": "createfood:sausage_fish_pizza",
-    "count": 3,
-    "experience": 0.4
+    "count": 3
+  },
+  "requiresLearning": false
 }

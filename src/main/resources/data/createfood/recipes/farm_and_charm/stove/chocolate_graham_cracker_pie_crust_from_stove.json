@@ -1,23 +1,26 @@
 {
-    "conditions": [
-        {
-            "type": "forge:mod_loaded",
-            "modid": "farm_and_charm"
-        }
-    ],
-    "type": "farm_and_charm:stove",
-    "ingredients": [
-        {
-            "tag": "forge:raw_chocolate_graham_cracker_pie_crust"
-        },
-        {
-            "tag": "forge:raw_chocolate_graham_cracker_pie_crust"
-        },
-        {
-            "tag": "forge:raw_chocolate_graham_cracker_pie_crust"
-        }
-    ],
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "farm_and_charm"
+    }
+  ],
+  "type": "farm_and_charm:stove",
+  "ingredients": [
+    {
+      "tag": "forge:raw_chocolate_graham_cracker_pie_crust"
+    },
+    {
+      "tag": "forge:raw_chocolate_graham_cracker_pie_crust"
+    },
+    {
+      "tag": "forge:raw_chocolate_graham_cracker_pie_crust"
+    }
+  ],
+  "experience": 0.55,
+  "result": {
     "item": "createfood:chocolate_graham_cracker_pie_crust",
-    "count": 3,
-    "experience": 0.55
+    "count": 3
+  },
+  "requiresLearning": false
 }

@@ -1,23 +1,26 @@
 {
-    "conditions": [
-        {
-            "type": "forge:mod_loaded",
-            "modid": "farm_and_charm"
-        }
-    ],
-    "type": "farm_and_charm:stove",
-    "ingredients": [
-        {
-            "tag": "forge:raw_cinnamon_sweet_roll_base"
-        },
-        {
-            "tag": "forge:raw_cinnamon_sweet_roll_base"
-        },
-        {
-            "tag": "forge:raw_cinnamon_sweet_roll_base"
-        }
-    ],
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "farm_and_charm"
+    }
+  ],
+  "type": "farm_and_charm:stove",
+  "ingredients": [
+    {
+      "tag": "forge:raw_cinnamon_sweet_roll_base"
+    },
+    {
+      "tag": "forge:raw_cinnamon_sweet_roll_base"
+    },
+    {
+      "tag": "forge:raw_cinnamon_sweet_roll_base"
+    }
+  ],
+  "experience": 0.25,
+  "result": {
     "item": "createfood:cinnamon_sweet_roll_base",
-    "count": 3,
-    "experience": 0.25
+    "count": 3
+  },
+  "requiresLearning": false
 }

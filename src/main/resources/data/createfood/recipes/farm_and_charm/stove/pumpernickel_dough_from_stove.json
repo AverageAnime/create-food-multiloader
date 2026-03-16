@@ -1,23 +1,26 @@
 {
-    "conditions": [
-        {
-            "type": "forge:mod_loaded",
-            "modid": "farm_and_charm"
-        }
-    ],
-    "type": "farm_and_charm:stove",
-    "ingredients": [
-        {
-            "tag": "forge:pumpernickel_dough"
-        },
-        {
-            "tag": "forge:pumpernickel_dough"
-        },
-        {
-            "tag": "forge:pumpernickel_dough"
-        }
-    ],
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "farm_and_charm"
+    }
+  ],
+  "type": "farm_and_charm:stove",
+  "ingredients": [
+    {
+      "tag": "forge:pumpernickel_dough"
+    },
+    {
+      "tag": "forge:pumpernickel_dough"
+    },
+    {
+      "tag": "forge:pumpernickel_dough"
+    }
+  ],
+  "experience": 0.1,
+  "result": {
     "item": "createfood:pumpernickel_bread",
-    "count": 3,
-    "experience": 0.1
+    "count": 3
+  },
+  "requiresLearning": false
 }

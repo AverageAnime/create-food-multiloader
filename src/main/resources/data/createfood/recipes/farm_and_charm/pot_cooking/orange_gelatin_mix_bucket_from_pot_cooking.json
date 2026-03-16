@@ -1,32 +1,36 @@
 {
-    "conditions": [
-        {
-            "type": "forge:mod_loaded",
-            "modid": "farm_and_charm"
-        }
-    ],
-    "type": "farm_and_charm:pot_cooking",
-    "ingredients": [
-        {
-            "tag": "forge:gelatin"
-        },
-        {
-            "tag": "forge:gelatin"
-        },
-        {
-            "tag": "forge:gelatin"
-        },
-        {
-            "item": "minecraft:water_bucket"
-        },
-        {
-            "tag": "forge:orange_dyes"
-        }
-    ],
-    "container": {
-        "item": "minecraft:bucket"
-    },
-    "result": {
-        "item": "createfood:orange_gelatin_mix_bucket"
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "farm_and_charm"
     }
+  ],
+  "type": "farm_and_charm:pot_cooking",
+  "ingredients": [
+    {
+      "tag": "forge:gelatin"
+    },
+    {
+      "tag": "forge:gelatin"
+    },
+    {
+      "tag": "forge:gelatin"
+    },
+    {
+      "item": "minecraft:water_bucket"
+    },
+    {
+      "tag": "forge:orange_dyes"
+    }
+  ],
+  "container": {
+    "required": true,
+    "item": {
+      "item": "minecraft:bucket"
+    }
+  },
+  "result": {
+    "item": "createfood:orange_gelatin_mix_bucket"
+  },
+  "requiresLearning": false
 }

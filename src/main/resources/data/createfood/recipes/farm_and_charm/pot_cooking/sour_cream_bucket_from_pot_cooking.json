@@ -1,23 +1,27 @@
 {
-    "conditions": [
-        {
-            "type": "forge:mod_loaded",
-            "modid": "farm_and_charm"
-        }
-    ],
-    "type": "farm_and_charm:pot_cooking",
-    "ingredients": [
-        {
-            "tag": "forge:heavy_cream_bucket"
-        },
-        {
-            "tag": "forge:milks"
-        }
-    ],
-    "container": {
-        "item": "minecraft:bucket"
-    },
-    "result": {
-        "item": "createfood:sour_cream_bucket"
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "farm_and_charm"
     }
+  ],
+  "type": "farm_and_charm:pot_cooking",
+  "ingredients": [
+    {
+      "tag": "forge:heavy_cream_bucket"
+    },
+    {
+      "tag": "forge:milks"
+    }
+  ],
+  "container": {
+    "required": true,
+    "item": {
+      "item": "minecraft:bucket"
+    }
+  },
+  "result": {
+    "item": "createfood:sour_cream_bucket"
+  },
+  "requiresLearning": false
 }

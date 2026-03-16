@@ -1,23 +1,27 @@
 {
-    "conditions": [
-        {
-            "type": "forge:mod_loaded",
-            "modid": "farm_and_charm"
-        }
-    ],
-    "type": "farm_and_charm:pot_cooking",
-    "ingredients": [
-        {
-            "tag": "forge:sour_cream_bottle"
-        },
-        {
-            "tag": "forge:milks"
-        }
-    ],
-    "container": {
-        "item": "minecraft:glass_bottle"
-    },
-    "result": {
-        "item": "createfood:yogurt_bottle"
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "farm_and_charm"
     }
+  ],
+  "type": "farm_and_charm:pot_cooking",
+  "ingredients": [
+    {
+      "tag": "forge:sour_cream_bottle"
+    },
+    {
+      "tag": "forge:milks"
+    }
+  ],
+  "container": {
+    "required": true,
+    "item": {
+      "item": "minecraft:glass_bottle"
+    }
+  },
+  "result": {
+    "item": "createfood:yogurt_bottle"
+  },
+  "requiresLearning": false
 }

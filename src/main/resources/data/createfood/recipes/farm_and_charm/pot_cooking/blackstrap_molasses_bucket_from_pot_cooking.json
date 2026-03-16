@@ -1,20 +1,24 @@
 {
-    "conditions": [
-        {
-            "type": "forge:mod_loaded",
-            "modid": "farm_and_charm"
-        }
-    ],
-    "type": "farm_and_charm:pot_cooking",
-    "ingredients": [
-        {
-            "tag": "forge:molasses_bucket"
-        }
-    ],
-    "container": {
-        "item": "minecraft:bucket"
-    },
-    "result": {
-        "item": "createfood:blackstrap_molasses_bucket"
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "farm_and_charm"
     }
+  ],
+  "type": "farm_and_charm:pot_cooking",
+  "ingredients": [
+    {
+      "tag": "forge:molasses_bucket"
+    }
+  ],
+  "container": {
+    "required": true,
+    "item": {
+      "item": "minecraft:bucket"
+    }
+  },
+  "result": {
+    "item": "createfood:blackstrap_molasses_bucket"
+  },
+  "requiresLearning": false
 }
