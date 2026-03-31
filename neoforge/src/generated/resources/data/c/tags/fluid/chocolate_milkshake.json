@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "createfood:flowing_chocolate_milkshake",
+      "required": false
+    },
+    {
+      "id": "createfood:chocolate_milkshake",
+      "required": false
+    }
+  ]
+}

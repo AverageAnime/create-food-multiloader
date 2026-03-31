@@ -1,0 +1,8 @@
+{
+  "values": [
+    {
+      "id": "createfood:bar_of_white_chocolate",
+      "required": false
+    }
+  ]
+}

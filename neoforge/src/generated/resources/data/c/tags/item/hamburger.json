@@ -1,0 +1,16 @@
+{
+  "values": [
+    {
+      "id": "createfood:hamburger",
+      "required": false
+    },
+    {
+      "id": "createfood:hamburger",
+      "required": false
+    },
+    {
+      "id": "delightfulcreators:incomplete_hamburger",
+      "required": false
+    }
+  ]
+}

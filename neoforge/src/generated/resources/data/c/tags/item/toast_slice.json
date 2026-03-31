@@ -1,0 +1,16 @@
+{
+  "values": [
+    {
+      "id": "createfood:toast_slice",
+      "required": false
+    },
+    {
+      "id": "createfood:toast_slice",
+      "required": false
+    },
+    {
+      "id": "moredelight:toast",
+      "required": false
+    }
+  ]
+}

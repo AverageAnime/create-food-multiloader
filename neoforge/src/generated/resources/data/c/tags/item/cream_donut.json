@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "createfood:cream_donut",
+      "required": false
+    },
+    {
+      "id": "create_snt:sweet_donut",
+      "required": false
+    }
+  ]
+}

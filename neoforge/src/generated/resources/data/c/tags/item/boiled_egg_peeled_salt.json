@@ -1,0 +1,8 @@
+{
+  "values": [
+    {
+      "id": "createfood:boiled_egg_peeled_salt",
+      "required": false
+    }
+  ]
+}

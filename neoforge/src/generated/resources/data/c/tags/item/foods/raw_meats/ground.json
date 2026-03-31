@@ -1,0 +1,24 @@
+{
+  "values": [
+    {
+      "id": "createfood:ground_beef",
+      "required": false
+    },
+    {
+      "id": "createfood:ground_chicken",
+      "required": false
+    },
+    {
+      "id": "createfood:ground_mutton",
+      "required": false
+    },
+    {
+      "id": "createfood:ground_pork",
+      "required": false
+    },
+    {
+      "id": "createfood:ground_rabbit",
+      "required": false
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "values": [
+    {
+      "id": "createfood:sliced_onion",
+      "required": false
+    }
+  ]
+}

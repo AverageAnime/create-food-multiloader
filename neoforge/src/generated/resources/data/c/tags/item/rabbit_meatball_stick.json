@@ -1,0 +1,16 @@
+{
+  "values": [
+    {
+      "id": "createfood:rabbit_meatball_stick_1",
+      "required": false
+    },
+    {
+      "id": "createfood:rabbit_meatball_stick_2",
+      "required": false
+    },
+    {
+      "id": "createfood:rabbit_meatball_stick_3",
+      "required": false
+    }
+  ]
+}

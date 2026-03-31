@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "createfood:flowing_condensed_milk",
+      "required": false
+    },
+    {
+      "id": "createfood:condensed_milk",
+      "required": false
+    }
+  ]
+}

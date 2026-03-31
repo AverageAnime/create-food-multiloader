@@ -1,0 +1,8 @@
+{
+  "values": [
+    {
+      "id": "createfood:chicken_bun_cheese_lettuce",
+      "required": false
+    }
+  ]
+}

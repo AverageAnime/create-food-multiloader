@@ -1,0 +1,8 @@
+{
+  "values": [
+    {
+      "id": "createfood:chicken_burrito_rice",
+      "required": false
+    }
+  ]
+}
