@@ -1,9 +1,0 @@
-{
-  "replace": false,
-  "values": [
-    {
-      "id": "createfood:chocolate_ice_cream_cone",
-      "required": false
-    }
-  ]
-}

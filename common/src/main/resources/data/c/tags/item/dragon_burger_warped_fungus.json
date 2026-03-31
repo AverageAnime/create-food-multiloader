@@ -1,9 +1,0 @@
-{
-  "replace": false,
-  "values": [
-    {
-      "id": "createfood:dragon_burger_warped_fungus",
-      "required": false
-    }
-  ]
-}

@@ -1,9 +1,0 @@
-{
-  "replace": false,
-  "values": [
-    {
-      "id": "createfood:green_gelatin_dessert_slice",
-      "required": false
-    }
-  ]
-}

@@ -1,9 +1,0 @@
-{
-  "replace": false,
-  "values": [
-    {
-      "id": "createfood:cream_frosting_bucket",
-      "required": false
-    }
-  ]
-}

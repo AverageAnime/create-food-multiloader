@@ -1,9 +1,0 @@
-{
-  "replace": false,
-  "values": [
-    {
-      "id": "createfood:chocolate_pie_graham_cracker",
-      "required": false
-    }
-  ]
-}

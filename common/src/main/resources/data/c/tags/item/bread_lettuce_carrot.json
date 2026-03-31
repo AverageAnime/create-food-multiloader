@@ -1,9 +1,0 @@
-{
-  "replace": false,
-  "values": [
-    {
-      "id": "createfood:bread_lettuce_carrot",
-      "required": false
-    }
-  ]
-}

@@ -1,9 +1,0 @@
-{
-  "replace": false,
-  "values": [
-    {
-      "id": "createfood:berry_juice_bucket",
-      "required": false
-    }
-  ]
-}

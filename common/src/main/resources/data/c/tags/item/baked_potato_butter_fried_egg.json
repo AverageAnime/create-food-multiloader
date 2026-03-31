@@ -1,9 +1,0 @@
-{
-  "replace": false,
-  "values": [
-    {
-      "id": "createfood:baked_potato_butter_fried_egg",
-      "required": false
-    }
-  ]
-}

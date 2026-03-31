@@ -1,9 +1,0 @@
-{
-  "replace": false,
-  "values": [
-    {
-      "id": "createfood:slime_bucket",
-      "required": false
-    }
-  ]
-}

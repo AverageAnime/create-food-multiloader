@@ -1,9 +1,0 @@
-{
-  "replace": false,
-  "values": [
-    {
-      "id": "createfood:white_chocolate_fudge",
-      "required": false
-    }
-  ]
-}

@@ -1,9 +1,0 @@
-{
-  "replace": false,
-  "values": [
-    {
-      "id": "createfood:meringue_cookie",
-      "required": false
-    }
-  ]
-}

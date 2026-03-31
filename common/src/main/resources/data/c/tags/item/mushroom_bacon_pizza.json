@@ -1,9 +1,0 @@
-{
-  "replace": false,
-  "values": [
-    {
-      "id": "createfood:mushroom_bacon_pizza",
-      "required": false
-    }
-  ]
-}

@@ -1,9 +1,0 @@
-{
-  "replace": false,
-  "values": [
-    {
-      "id": "createfood:leather_soup_bowl",
-      "required": false
-    }
-  ]
-}

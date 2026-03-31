@@ -1,9 +1,0 @@
-{
-  "replace": false,
-  "values": [
-    {
-      "id": "bakery:bread_knife",
-      "required": false
-    }
-  ]
-}

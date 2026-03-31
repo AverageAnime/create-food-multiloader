@@ -1,9 +1,0 @@
-{
-  "replace": false,
-  "values": [
-    {
-      "id": "createfood:cheesecake_filling_bucket",
-      "required": false
-    }
-  ]
-}

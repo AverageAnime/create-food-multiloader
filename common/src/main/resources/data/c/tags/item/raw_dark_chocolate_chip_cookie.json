@@ -1,9 +1,0 @@
-{
-    "replace": false,
-    "values": [
-        {
-            "id": "createfood:raw_dark_chocolate_chip_cookie",
-            "required": false
-        }
-    ]
-}

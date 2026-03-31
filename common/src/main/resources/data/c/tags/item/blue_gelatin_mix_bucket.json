@@ -1,9 +1,0 @@
-{
-  "replace": false,
-  "values": [
-    {
-      "id": "createfood:blue_gelatin_mix_bucket",
-      "required": false
-    }
-  ]
-}

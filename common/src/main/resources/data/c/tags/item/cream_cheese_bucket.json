@@ -1,9 +1,0 @@
-{
-  "replace": false,
-  "values": [
-    {
-      "id": "createfood:cream_cheese_bucket",
-      "required": false
-    }
-  ]
-}

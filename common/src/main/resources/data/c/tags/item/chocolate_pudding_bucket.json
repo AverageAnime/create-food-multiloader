@@ -1,9 +1,0 @@
-{
-  "replace": false,
-  "values": [
-    {
-      "id": "createfood:chocolate_pudding_bucket",
-      "required": false
-    }
-  ]
-}

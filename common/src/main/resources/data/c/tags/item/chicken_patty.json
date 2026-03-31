@@ -1,9 +1,0 @@
-{
-  "replace": false,
-  "values": [
-    {
-      "id": "createfood:chicken_patty",
-      "required": false
-    }
-  ]
-}

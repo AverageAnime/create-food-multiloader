@@ -1,9 +1,0 @@
-{
-  "replace": false,
-  "values": [
-    {
-      "id": "createfood:lime_gelatin_dessert_block",
-      "required": false
-    }
-  ]
-}

@@ -1,9 +1,0 @@
-{
-  "replace": false,
-  "values": [
-    {
-      "id": "createfood:squid_ink_bucket",
-      "required": false
-    }
-  ]
-}

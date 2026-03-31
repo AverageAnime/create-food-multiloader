@@ -1,9 +1,0 @@
-{
-  "replace": false,
-  "values": [
-    {
-      "id": "createfood:chicken_cheeseburger_lettuce_tomato",
-      "required": false
-    }
-  ]
-}

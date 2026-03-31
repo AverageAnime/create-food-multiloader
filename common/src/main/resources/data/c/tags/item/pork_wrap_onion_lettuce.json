@@ -1,9 +1,0 @@
-{
-  "replace": false,
-  "values": [
-    {
-      "id": "createfood:pork_wrap_onion_lettuce",
-      "required": false
-    }
-  ]
-}

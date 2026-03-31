@@ -1,9 +1,0 @@
-{
-  "replace": false,
-  "values": [
-    {
-      "id": "createfood:egg_burrito",
-      "required": false
-    }
-  ]
-}

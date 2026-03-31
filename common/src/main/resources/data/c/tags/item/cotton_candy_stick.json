@@ -1,9 +1,0 @@
-{
-  "replace": false,
-  "values": [
-    {
-      "id": "createfood:cotton_candy_stick",
-      "required": false
-    }
-  ]
-}

@@ -1,9 +1,0 @@
-{
-  "replace": false,
-  "values": [
-    {
-      "id": "createfood:mini_cream_pie_graham_cracker",
-      "required": false
-    }
-  ]
-}

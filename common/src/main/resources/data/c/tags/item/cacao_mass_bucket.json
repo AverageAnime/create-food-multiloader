@@ -1,9 +1,0 @@
-{
-  "replace": false,
-  "values": [
-    {
-      "id": "createfood:cacao_mass_bucket",
-      "required": false
-    }
-  ]
-}

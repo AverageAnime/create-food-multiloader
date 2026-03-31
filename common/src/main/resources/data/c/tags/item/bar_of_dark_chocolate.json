@@ -1,9 +1,0 @@
-{
-  "replace": false,
-  "values": [
-    {
-      "id": "createfood:bar_of_dark_chocolate",
-      "required": false
-    }
-  ]
-}

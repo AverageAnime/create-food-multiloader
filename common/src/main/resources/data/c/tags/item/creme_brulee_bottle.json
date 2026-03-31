@@ -1,9 +1,0 @@
-{
-  "replace": false,
-  "values": [
-    {
-      "id": "createfood:creme_brulee_bottle",
-      "required": false
-    }
-  ]
-}
