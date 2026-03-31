@@ -13,7 +13,6 @@ import dev.averageanime.neoforge.block.ModFluids;
 import dev.averageanime.neoforge.item.ModItems;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
-import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;
@@ -82,7 +81,7 @@ public class CreateFood {
         LOGGER.info("Create: Food - Server Startup");
     }
 
-    @EventBusSubscriber(modid = CommonClass.ID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+    @EventBusSubscriber(modid = CommonClass.ID)
     public static class ClientModEvents {
 
         @SubscribeEvent
