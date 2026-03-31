@@ -3,6 +3,9 @@ plugins {
     id 'net.neoforged.moddev'
 }
 
+def commonResources = rootProject.project(':common').projectDir.toPath()
+        .resolve('src/main/resources').toFile().absolutePath
+
 neoForge {
     version = neoforge_version
     def at = project(':common').file('src/main/resources/META-INF/accesstransformer.cfg')
@@ -23,7 +26,10 @@ neoForge {
         }
         data {
             data()
-            programArguments.addAll '--mod', mod_id, '--all', '--output', file('src/generated/resources/').getAbsolutePath(), '--existing', file('src/main/resources/').getAbsolutePath()
+            programArguments.addAll '--mod', mod_id, '--all',
+                    '--output', file('src/generated/resources/').getAbsolutePath(),
+                    '--existing', file('src/main/resources/').getAbsolutePath(),
+                    '--existing', commonResources
         }
         server {
             server()
@@ -98,6 +104,10 @@ tasks.register('liteJar', Jar) {
     exclude '**/loot_table/blocks/*_plate_block.json'
     exclude '**/loot_table/blocks/plate_block.json'
     exclude '**/loot_table/blocks/small_plate_block.json'
+}
+
+tasks.named('processResources') {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 }
 
 build.dependsOn liteJar

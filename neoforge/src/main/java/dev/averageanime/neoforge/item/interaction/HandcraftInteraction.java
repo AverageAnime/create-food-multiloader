@@ -20,10 +20,10 @@ import java.util.List;
 import java.util.Optional;
 
 @EventBusSubscriber(modid = CommonClass.ID)
-public class HandCraftInteraction {
+public class HandcraftInteraction {
 
     private static boolean isAllowedByFilter(ItemStack result) {
-        List<? extends String> filter = ModConfig.HAND_CRAFTING_FILTER.get();
+        List<? extends String> filter = ModConfig.HANDCRAFTING_FILTER.get();
         if (filter.isEmpty()) return true;
 
         String resultModId  = result.getItem().builtInRegistryHolder().key().location().getNamespace();
@@ -45,7 +45,7 @@ public class HandCraftInteraction {
     public static void onRightClick(PlayerInteractEvent.RightClickItem event) {
         if (event.getHand() != InteractionHand.MAIN_HAND) return;
         if (event.getLevel().isClientSide()) return;
-        if (!ModConfig.ENABLE_HAND_CRAFTING.get()) return;
+        if (!ModConfig.ENABLE_HANDCRAFTING.get()) return;
         if (!(event.getEntity() instanceof ServerPlayer player)) return;
 
         ItemStack mainHand = player.getMainHandItem();
