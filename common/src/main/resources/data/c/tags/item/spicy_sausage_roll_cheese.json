@@ -1,9 +1,0 @@
-{
-  "replace": false,
-  "values": [
-    {
-      "id": "createfood:spicy_sausage_roll_cheese",
-      "required": false
-    }
-  ]
-}

@@ -1,9 +1,0 @@
-{
-  "replace": false,
-  "values": [
-    {
-      "id": "createfood:bread_slice_berry_jam",
-      "required": false
-    }
-  ]
-}

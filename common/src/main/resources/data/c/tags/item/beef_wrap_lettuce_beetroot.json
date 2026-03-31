@@ -1,9 +1,0 @@
-{
-  "replace": false,
-  "values": [
-    {
-      "id": "createfood:beef_wrap_lettuce_beetroot",
-      "required": false
-    }
-  ]
-}

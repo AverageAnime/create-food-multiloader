@@ -1,9 +1,0 @@
-{
-  "replace": false,
-  "values": [
-    {
-      "id": "createfood:pork_meatball_sandwich",
-      "required": false
-    }
-  ]
-}

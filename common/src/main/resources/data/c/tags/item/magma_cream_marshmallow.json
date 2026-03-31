@@ -1,9 +1,0 @@
-{
-  "replace": false,
-  "values": [
-    {
-      "id": "createfood:magma_cream_marshmallow",
-      "required": false
-    }
-  ]
-}

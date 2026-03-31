@@ -1,9 +1,0 @@
-{
-  "replace": false,
-  "values": [
-    {
-      "id": "createfood:taco_sauce_bottle",
-      "required": false
-    }
-  ]
-}

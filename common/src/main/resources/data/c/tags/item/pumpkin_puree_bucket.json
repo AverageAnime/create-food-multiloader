@@ -1,9 +1,0 @@
-{
-  "replace": false,
-  "values": [
-    {
-      "id": "createfood:pumpkin_puree_bucket",
-      "required": false
-    }
-  ]
-}

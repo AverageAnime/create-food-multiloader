@@ -1,9 +1,0 @@
-{
-  "replace": false,
-  "values": [
-    {
-      "id": "createfood:raw_sweet_roll_base",
-      "required": false
-    }
-  ]
-}

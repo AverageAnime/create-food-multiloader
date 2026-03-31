@@ -1,9 +1,0 @@
-{
-  "replace": false,
-  "values": [
-    {
-      "id": "createfood:bread_slice_mutton_beetroot",
-      "required": false
-    }
-  ]
-}

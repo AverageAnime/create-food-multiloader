@@ -1,9 +1,0 @@
-{
-  "replace": false,
-  "values": [
-    {
-      "id": "createfood:custard_bottle",
-      "required": false
-    }
-  ]
-}

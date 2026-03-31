@@ -1,9 +1,0 @@
-{
-  "replace": false,
-  "values": [
-    {
-      "id": "createfood:mini_cookie_cream_pie",
-      "required": false
-    }
-  ]
-}

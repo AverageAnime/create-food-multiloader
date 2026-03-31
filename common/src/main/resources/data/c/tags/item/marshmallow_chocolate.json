@@ -1,9 +1,0 @@
-{
-  "replace": false,
-  "values": [
-    {
-      "id": "createfood:marshmallow_chocolate",
-      "required": false
-    }
-  ]
-}

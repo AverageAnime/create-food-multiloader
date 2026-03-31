@@ -1,9 +1,0 @@
-{
-  "replace": false,
-  "values": [
-    {
-      "id": "createfood:marshmallow_coffee_toffee_fudge",
-      "required": false
-    }
-  ]
-}

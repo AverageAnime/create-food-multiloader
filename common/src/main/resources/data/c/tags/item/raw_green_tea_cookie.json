@@ -1,9 +1,0 @@
-{
-  "replace": false,
-  "values": [
-    {
-      "id": "createfood:raw_green_tea_cookie",
-      "required": false
-    }
-  ]
-}

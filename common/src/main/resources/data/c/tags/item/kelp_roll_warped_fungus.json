@@ -1,9 +1,0 @@
-{
-  "replace": false,
-  "values": [
-    {
-      "id": "createfood:kelp_roll_warped_fungus",
-      "required": false
-    }
-  ]
-}

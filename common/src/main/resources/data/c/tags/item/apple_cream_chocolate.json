@@ -1,9 +1,0 @@
-{
-  "replace": false,
-  "values": [
-    {
-      "id": "createfood:apple_cream_chocolate",
-      "required": false
-    }
-  ]
-}

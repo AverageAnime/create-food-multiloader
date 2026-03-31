@@ -1,9 +1,0 @@
-{
-  "replace": false,
-  "values": [
-    {
-      "id": "createfood:melon_ice_cream_stick",
-      "required": false
-    }
-  ]
-}

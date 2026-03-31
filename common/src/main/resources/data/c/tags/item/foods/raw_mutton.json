@@ -1,9 +1,0 @@
-{
-  "replace": false,
-  "values": [
-    {
-      "id": "createfood:ground_mutton",
-      "required": false
-    }
-  ]
-}

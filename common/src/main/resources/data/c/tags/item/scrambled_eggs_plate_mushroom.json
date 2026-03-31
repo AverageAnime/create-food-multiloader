@@ -1,9 +1,0 @@
-{
-  "replace": false,
-  "values": [
-    {
-      "id": "createfood:scrambled_eggs_plate_mushroom",
-      "required": false
-    }
-  ]
-}

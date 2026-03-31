@@ -1,9 +1,0 @@
-{
-  "replace": false,
-  "values": [
-    {
-      "id": "createfood:pumpkin_pie_filling_bucket",
-      "required": false
-    }
-  ]
-}

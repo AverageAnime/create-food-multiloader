@@ -1,9 +1,0 @@
-{
-  "replace": false,
-  "values": [
-    {
-      "id": "createfood:raw_soul_berry_cookie",
-      "required": false
-    }
-  ]
-}

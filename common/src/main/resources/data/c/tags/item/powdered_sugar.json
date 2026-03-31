@@ -1,9 +1,0 @@
-{
-  "replace": false,
-  "values": [
-    {
-      "id": "createfood:powdered_sugar",
-      "required": false
-    }
-  ]
-}

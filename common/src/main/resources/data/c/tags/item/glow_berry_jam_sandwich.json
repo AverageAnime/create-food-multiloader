@@ -1,9 +1,0 @@
-{
-  "replace": false,
-  "values": [
-    {
-      "id": "createfood:glow_berry_jam_sandwich",
-      "required": false
-    }
-  ]
-}
