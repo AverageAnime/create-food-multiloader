@@ -1,0 +1,16 @@
+{
+  "values": [
+    {
+      "id": "createfood:pasta_plate",
+      "required": false
+    },
+    {
+      "id": "createfood:pasta_plate",
+      "required": false
+    },
+    {
+      "id": "delightfulcreators:incomplete_pasta_dish",
+      "required": false
+    }
+  ]
+}

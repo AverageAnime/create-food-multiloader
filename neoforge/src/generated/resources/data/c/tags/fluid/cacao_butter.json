@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "createfood:flowing_cacao_butter",
+      "required": false
+    },
+    {
+      "id": "createfood:cacao_butter",
+      "required": false
+    }
+  ]
+}

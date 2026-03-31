@@ -1,0 +1,8 @@
+{
+  "values": [
+    {
+      "id": "createfood:rabbit_meatball",
+      "required": false
+    }
+  ]
+}

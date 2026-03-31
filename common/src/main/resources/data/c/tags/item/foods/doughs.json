@@ -1,9 +1,0 @@
-{
-  "replace": false,
-  "values": [
-    {
-      "id": "create:dough",
-      "required": false
-    }
-  ]
-}

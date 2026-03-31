@@ -1,0 +1,16 @@
+{
+  "values": [
+    {
+      "id": "createfood:paprika",
+      "required": false
+    },
+    {
+      "id": "createfood:paprika",
+      "required": false
+    },
+    {
+      "id": "create:cinder_flour",
+      "required": false
+    }
+  ]
+}

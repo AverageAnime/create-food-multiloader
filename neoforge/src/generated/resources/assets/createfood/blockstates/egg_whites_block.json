@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "createfood:block/egg_whites_block"
+    }
+  }
+}

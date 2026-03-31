@@ -1,0 +1,65 @@
+package dev.averageanime.neoforge.datagen.provider;
+
+import dev.averageanime.CommonClass;
+import dev.averageanime.neoforge.block.ModFluids;
+import dev.averageanime.neoforge.block.type.fluid.FluidEntry;
+import net.minecraft.data.PackOutput;
+import net.minecraft.resources.ResourceLocation;
+import net.neoforged.neoforge.common.data.ExistingFileHelper;
+
+import java.lang.reflect.Field;
+import java.lang.reflect.Modifier;
+
+public class BlockModelProvider extends net.neoforged.neoforge.client.model.generators.BlockModelProvider {
+
+    public BlockModelProvider(PackOutput output, ExistingFileHelper existingFileHelper) {
+        super(output, CommonClass.ID, existingFileHelper);
+    }
+
+    @Override
+    protected void registerModels() {
+        for (Field field : ModFluids.class.getDeclaredFields()) {
+            if (!Modifier.isStatic(field.getModifiers())) continue;
+            try {
+                Object value = field.get(null);
+                if (value instanceof FluidEntry.FluidType fluidType) {
+                    String fluidId = fluidType.SOURCE.getId().getPath();
+                    fluidBlockModel(fluidId);
+                }
+            } catch (IllegalAccessException ignored) {}
+        }
+    }
+
+    private void fluidBlockModel(String fluidId) {
+        String blockModelName = fluidId + "_block";
+        withExistingParent("block/" + blockModelName, mcLoc("block/block"))
+                .texture("particle", cf("fluid/" + fluidId + "_flow"))
+                .texture("down",     cf("fluid/" + fluidId + "_flow"))
+                .texture("up",       cf("fluid/" + fluidId + "_flow"))
+                .texture("side",     cf("fluid/" + fluidId + "_flow"))
+                .element()
+                .from(1, 1, 1).to(15, 15, 15)
+                .face(net.minecraft.core.Direction.DOWN).uvs(1, 1, 15, 15).texture("#down").end()
+                .face(net.minecraft.core.Direction.UP).uvs(1, 1, 15, 15).texture("#up").end()
+                .face(net.minecraft.core.Direction.NORTH).uvs(1, 1, 15, 15).texture("#side").end()
+                .face(net.minecraft.core.Direction.SOUTH).uvs(1, 1, 15, 15).texture("#side").end()
+                .face(net.minecraft.core.Direction.WEST).uvs(1, 1, 15, 15).texture("#side").end()
+                .face(net.minecraft.core.Direction.EAST).uvs(1, 1, 15, 15).texture("#side").end()
+                .end()
+                .element()
+                    .from(0, 0, 0).to(16, 16, 16)
+                    .face(net.minecraft.core.Direction.DOWN).texture("#down").cullface(net.minecraft.core.Direction.DOWN).end()
+                    .face(net.minecraft.core.Direction.UP).texture("#down").cullface(net.minecraft.core.Direction.UP).end()
+                    .face(net.minecraft.core.Direction.NORTH).texture("#down").cullface(net.minecraft.core.Direction.NORTH).end()
+                    .face(net.minecraft.core.Direction.SOUTH).texture("#down").cullface(net.minecraft.core.Direction.SOUTH).end()
+                    .face(net.minecraft.core.Direction.WEST).texture("#down").cullface(net.minecraft.core.Direction.WEST).end()
+                    .face(net.minecraft.core.Direction.EAST).texture("#down").cullface(net.minecraft.core.Direction.EAST).end()
+                .end();
+    }
+
+    /** Shorthand for a createfood-namespaced resource location. */
+    private ResourceLocation cf(String path) {
+        return ResourceLocation.fromNamespaceAndPath(CommonClass.ID, path);
+    }
+
+}

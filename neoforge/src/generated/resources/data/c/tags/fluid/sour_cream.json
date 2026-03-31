@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "createfood:flowing_sour_cream",
+      "required": false
+    },
+    {
+      "id": "createfood:sour_cream",
+      "required": false
+    }
+  ]
+}

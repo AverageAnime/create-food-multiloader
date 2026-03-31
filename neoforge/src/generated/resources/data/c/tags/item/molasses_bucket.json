@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "createfood:molasses_bucket",
+      "required": false
+    },
+    {
+      "id": "createfood:molasses_bucket",
+      "required": false
+    }
+  ]
+}

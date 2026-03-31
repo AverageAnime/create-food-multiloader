@@ -1,9 +1,0 @@
-{
-  "replace": false,
-  "values": [
-    {
-      "id": "farmersdelight:cooked_bacon",
-      "required": false
-    }
-  ]
-}
