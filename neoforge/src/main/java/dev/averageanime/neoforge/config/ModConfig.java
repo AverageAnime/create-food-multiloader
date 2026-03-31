@@ -21,8 +21,8 @@ public class ModConfig {
 
     public static final ModConfigSpec.Builder SERVER_BUILDER = new ModConfigSpec.Builder();
 
-    public static final ModConfigSpec.BooleanValue ENABLE_HAND_CRAFTING;
-    public static final ModConfigSpec.ConfigValue<List<? extends String>> HAND_CRAFTING_FILTER;
+    public static final ModConfigSpec.BooleanValue ENABLE_HANDCRAFTING;
+    public static final ModConfigSpec.ConfigValue<List<? extends String>> HANDCRAFTING_FILTER;
     public static final ModConfigSpec.ConfigValue<List<? extends String>> CRAFTING_REMAINDERS;
     public static final ModConfigSpec.BooleanValue ENABLE_EGG_IMPACT_REMAINDER;
     public static final ModConfigSpec.BooleanValue ENABLE_FILTER_INTERACTIONS;
@@ -74,7 +74,6 @@ public class ModConfig {
                                 "hamburger_peanut_butter",
                                 "hamburger_peanut_butter_bacon",
                                 "marshmallow_coffee_toffee_fudge",
-                                "marshmallow_dark_chocolate",
                                 "minced_dragon",
                                 "pasta_plate_eggplant",
                                 "pasta_plate_endermite_meatballs",
@@ -160,8 +159,10 @@ public class ModConfig {
                                 "displaydelight:plated_chicken_sandwich|chicken,lettuce,carrot",
                                 "displaydelight:plated_egg_sandwich|fried_egg",
                                 "displaydelight:plated_hamburger|onion,lettuce,tomato",
+                                "displaydelight:plated_kelp_roll|carrot",
                                 "displaydelight:plated_mutton_wrap|mutton,onion,lettuce",
                                 "displaydelight:small_plated_cake_slice|cream_frosting,berry",
+                                "displaydelight:small_plated_kelp_roll_slice|carrot",
                                 "displaydelight:squid_ink_pasta|squid_ink,fish",
                                 "expandeddelight:berry_sweet_roll|berry",
                                 "expandeddelight:glow_berry_jelly_sandwich|peanut_butter,glow_berry_jam",
@@ -173,6 +174,8 @@ public class ModConfig {
                                 "farmersdelight:chicken_sandwich|chicken,lettuce,carrot",
                                 "farmersdelight:egg_sandwich|fried_egg",
                                 "farmersdelight:hamburger|onion,lettuce,tomato",
+                                "farmersdelight:kelp_roll_slice|carrot",
+                                "farmersdelight:kelp_roll|carrot",
                                 "farmersdelight:mixed_salad|beetroot,tomato",
                                 "farmersdelight:mutton_wrap|mutton,onion,lettuce",
                                 "farmersdelight:pasta_with_meatballs|tomato_sauce,beef_meatballs",
@@ -187,13 +190,13 @@ public class ModConfig {
                 );
         BUILDER.pop();
 
-        SERVER_BUILDER.push("hand_craft");
+        SERVER_BUILDER.push("handcraft");
 
-        ENABLE_HAND_CRAFTING = SERVER_BUILDER
-                .define("enable_hand_crafting", true);
+        ENABLE_HANDCRAFTING = SERVER_BUILDER
+                .define("enable_handcrafting", true);
 
-        HAND_CRAFTING_FILTER = SERVER_BUILDER
-                .defineListAllowEmpty("hand_craft_filter",
+        HANDCRAFTING_FILTER = SERVER_BUILDER
+                .defineListAllowEmpty("handcraft_filter",
                         List.of(),
                         () -> "mod:mod_id,  item:mod_id:item_id,  tag:mod_id:tag_name",
                         obj -> obj instanceof String
