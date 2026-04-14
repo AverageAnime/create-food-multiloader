@@ -142,20 +142,27 @@ Array of effect objects. Each has:
 | `life_leech`        | Drains health from nearby hostiles and heals the user |
 | `lightning`         | Chance to strike target with lightning |
 | `mining`            | Mining speed bonus based on depth |
+| `mustard`           | Creepers nearby will flee from you |
 | `nourishment`       | Nourishment/saturation |
 | `pacify`            | Reduces enemy aggression; Endermen safe |
 | `party_starter`     | Fireworks on hit + bonus damage |
+| `preservation`      | Eating rotten flesh, raw chicken, poisonous potatoes, pufferfish, or spider eyes will not cause debuffs |
 | `repulsion`         | Periodically pushes enemies away |
 | `rested`            | Bonus experience gain |
+| `satiated_shield`   | Hunger value acts as extra health; damage is absorbed by hunger first |
 | `satiation`         | Hunger management |
 | `sugar_rush`        | Stacking speed buff |
+| `sulfur`            | Phantoms will flee from you |
 | `sustenance`        | Periodic hunger or health restoration |
 | `touch_absorb`      | Melee attacks grant Absorption |
 | `touch_heal`        | Melee attacks heal the target |
 | `touch_poison`      | Melee attacks apply Poison |
 | `touch_regen`       | Melee attacks apply Regeneration |
 | `tough`             | Grants Absorption, Regeneration, and Resistance |
+| `tundra_strider`    | Increased movement speed on snow, ice, and powder snow; prevents sinking into powder snow |
+| `vigor`             | Running does not consume hunger |
 | `vitality`          | Exhaustion reduction |
+| `warmth`            | Slowly regenerates health when near heat sources (stoves, campfires, lava) |
 
 ```json
 "effects": [
