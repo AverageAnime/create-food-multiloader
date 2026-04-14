@@ -14,8 +14,8 @@ public class ChocolateCreamCakeCaramel extends ModCakeBlock {
         super(properties, (Supplier<Item>) ModItems.CHOCOLATE_CREAM_CAKE_SLICE_CARAMEL);
     }
 
+    @Override
     public ItemStack getPieSliceItem() {
         return new ItemStack((ItemLike) ModItems.CHOCOLATE_CREAM_CAKE_SLICE_CARAMEL);
     }
-
 }
