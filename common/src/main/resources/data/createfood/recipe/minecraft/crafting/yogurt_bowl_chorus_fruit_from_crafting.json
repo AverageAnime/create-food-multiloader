@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "c:yogurt_bowl"
+    },
+    {
+      "tag": "c:chorus_fruit"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "createfood:yogurt_bowl_chorus_fruit"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "yogurt_bowl_chorus_fruit"
+    }
+  ]
+}

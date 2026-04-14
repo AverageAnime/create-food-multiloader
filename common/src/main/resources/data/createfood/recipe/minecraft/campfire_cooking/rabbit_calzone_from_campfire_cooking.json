@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:campfire_cooking",
+  "category": "food",
+  "cookingtime": 250,
+  "experience": 0.15,
+  "ingredient": {
+    "tag": "c:raw_rabbit_calzone"
+  },
+  "result": {
+    "count": 1,
+    "id": "createfood:rabbit_calzone"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "rabbit_calzone"
+    }
+  ]
+}

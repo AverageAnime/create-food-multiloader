@@ -15,7 +15,7 @@
             "item": "minecraft:dried_kelp"
         },
         "2": {
-          "item": "farmersdelight:cooked_rice"
+          "tag": "c:cooked_rice"
         },
         "3": {
           "tag": "c:brown_mushroom"

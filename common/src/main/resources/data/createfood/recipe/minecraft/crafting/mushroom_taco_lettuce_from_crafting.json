@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "c:taco_shell"
+    },
+    {
+      "tag": "c:mushrooms"
+    },
+    {
+      "tag": "c:foods/leafy_green"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "createfood:mushroom_taco_lettuce"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "mushroom_taco_lettuce"
+    }
+  ]
+}

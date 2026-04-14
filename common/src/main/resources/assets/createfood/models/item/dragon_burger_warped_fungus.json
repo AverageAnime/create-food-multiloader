@@ -1,6 +1,0 @@
-{
-  "parent": "item/generated",
-  "textures": {
-  "layer0": "createfood:item/dragon_burger_warped_fungus"
-  }
-}

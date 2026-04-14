@@ -1,0 +1,31 @@
+{
+  "type": "create:mixing",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "type": "fluid_tag",
+      "amount": 500,
+      "fluid_tag": "c:egg"
+    },
+    {
+      "tag": "c:onion"
+    },
+    {
+      "tag": "c:bowl"
+    }
+  ],
+  "results": [
+    {
+      "count": 1,
+      "item": {
+        "id": "createfood:scrambled_eggs_plate_onion"
+      }
+    }
+  ],
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "scrambled_eggs_plate_onion"
+    }
+  ]
+}

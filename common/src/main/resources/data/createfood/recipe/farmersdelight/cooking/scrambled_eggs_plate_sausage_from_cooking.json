@@ -1,0 +1,26 @@
+{
+  "type": "farmersdelight:cooking",
+  "experience": 0.5,
+  "ingredients": [
+    {
+      "tag": "c:egg_bucket"
+    },
+    {
+      "tag": "c:sausages"
+    },
+    {
+      "tag": "c:sausages"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "count": 2,
+    "id": "createfood:scrambled_eggs_plate_sausage"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "scrambled_eggs_plate_sausage"
+    }
+  ]
+}

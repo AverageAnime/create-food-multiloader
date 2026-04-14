@@ -1,0 +1,29 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:bucket"
+        },
+        {
+            "tag": "c:chorus_fruit_custard"
+        },
+        {
+            "tag": "c:chorus_fruit_custard"
+        },
+        {
+            "tag": "c:chorus_fruit_custard"
+        },
+        {
+            "tag": "c:chorus_fruit_custard"
+        }
+    ],
+    "result": {
+        "id": "createfood:chorus_fruit_custard_bucket"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "chorus_fruit_custard_bucket"
+        }
+    ]
+}

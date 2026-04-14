@@ -1,0 +1,25 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "pasta_plate_mushroom_tomato_sauce"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "1": {
+      "item": "farmersdelight:tomato_sauce"
+    },
+    "2": {
+      "tag": "c:pasta_plate_mushroom"
+    }
+  },
+  "pattern": [
+    "1",
+    "2"
+  ],
+  "result": {
+    "count": 1,
+    "id": "createfood:pasta_plate_mushroom_tomato_sauce"
+  }
+}

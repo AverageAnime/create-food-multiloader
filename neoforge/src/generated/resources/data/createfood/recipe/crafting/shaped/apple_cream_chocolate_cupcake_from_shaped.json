@@ -1,0 +1,24 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "apple_cream_chocolate_cupcake"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "1": {
+      "tag": "c:apple_cream_frosting"
+    },
+    "2": {
+      "tag": "c:chocolate_cupcake_base"
+    }
+  },
+  "pattern": [
+    "1",
+    "2"
+  ],
+  "result": {
+    "id": "createfood:apple_cream_chocolate_cupcake"
+  }
+}

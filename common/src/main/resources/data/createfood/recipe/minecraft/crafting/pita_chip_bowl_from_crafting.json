@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "tag": "c:pita_chips"
+    },
+    {
+      "tag": "c:pita_chips"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "createfood:pita_chip_bowl"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "pita_chip_bowl"
+    }
+  ]
+}
