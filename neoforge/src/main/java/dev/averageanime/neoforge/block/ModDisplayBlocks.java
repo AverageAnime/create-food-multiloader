@@ -2,10 +2,10 @@ package dev.averageanime.neoforge.block;
 
 import dev.averageanime.CommonClass;
 import dev.averageanime.neoforge.block.type.display.*;
-import dev.averageanime.neoforge.block.type.display.plate.EmptyPlateBlock;
-import dev.averageanime.neoforge.block.type.display.plate.ModPlateBlocks;
-import dev.averageanime.neoforge.block.type.display.plate.PlateBlock;
-import dev.averageanime.neoforge.block.type.display.plate.SmallPlateBlock;
+import dev.averageanime.neoforge.block.type.plate.EmptyPlateBlock;
+import dev.averageanime.neoforge.block.type.plate.ModPlateBlocks;
+import dev.averageanime.neoforge.block.type.plate.PlateBlock;
+import dev.averageanime.neoforge.block.type.plate.SmallPlateBlock;
 import dev.averageanime.neoforge.item.ModItems;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
@@ -47,7 +47,6 @@ public class ModDisplayBlocks {
             "mozzarella_sticks",
             "cookie_crumbs",
             "chorus_fruit_slice",
-            "caramel_apple_slice",
             "waffle_cone",
             "meat_pie_filling",
             "dumpling_wrappers",
@@ -55,7 +54,7 @@ public class ModDisplayBlocks {
             "graham_cracker_chocolate_marshmallow",
             "graham_cracker_chocolate",
             "chocolate_graham_cracker_chocolate_ice_cream"
-    );
+            );
 
     private static final Map<String, Object> DISPLAY_CONFIGS = new LinkedHashMap<>();
 
@@ -218,6 +217,9 @@ public class ModDisplayBlocks {
                         itemName.contains("chocolate_apple") ||
                         itemName.contains("bread_slice") ||
                         itemName.contains("toast_slice") ||
+                        itemName.contains("apple_slice") ||
+                        itemName.contains("tropical_fish_slice") ||
+                        itemName.contains("pretzel_stick") ||
                         itemName.contains("taco_shell") ||
                         itemName.contains("donut_hole") ||
                         itemName.contains("pie_crust") ||

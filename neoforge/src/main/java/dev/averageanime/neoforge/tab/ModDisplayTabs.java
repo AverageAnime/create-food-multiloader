@@ -34,7 +34,7 @@ public class ModDisplayTabs {
                     .build());
 
     public static void register(IEventBus eventBus) {
-        LOGGER.info("Create: Food - Registering Creative Tabs (Display Block)");
+        LOGGER.info("Create: Food - Registering Creative Tabs (Display Blocks)");
         CREATIVE_MODE_TAB.register(eventBus);
     }
 }

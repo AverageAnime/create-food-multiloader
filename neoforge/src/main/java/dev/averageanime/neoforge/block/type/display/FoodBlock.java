@@ -1,9 +1,9 @@
 package dev.averageanime.neoforge.block.type.display;
 
 import dev.averageanime.CommonClass;
-import dev.averageanime.neoforge.block.type.display.plate.EmptyPlateBlock;
-import dev.averageanime.neoforge.block.type.display.plate.PlateBlock;
-import dev.averageanime.neoforge.block.type.display.plate.SmallPlateBlock;
+import dev.averageanime.neoforge.block.type.plate.EmptyPlateBlock;
+import dev.averageanime.neoforge.block.type.plate.PlateBlock;
+import dev.averageanime.neoforge.block.type.plate.SmallPlateBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -35,8 +35,7 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.entity.player.UseItemOnBlockEvent;
 import org.jetbrains.annotations.NotNull;
-import vectorwing.farmersdelight.common.utility.ItemUtils;
-
+import dev.averageanime.neoforge.item.util.ItemSpawn;
 import java.util.*;
 import java.util.function.Supplier;
 
@@ -118,7 +117,7 @@ public abstract class FoodBlock extends Block {
 
         Direction direction = player.getDirection().getOpposite();
         ItemStack dropStack = new ItemStack(this.displayItem.get());
-        ItemUtils.spawnItemEntity(level, dropStack,
+        ItemSpawn.spawnItemEntity(level, dropStack,
                 pos.getX() + 0.5, pos.getY() + 0.3, pos.getZ() + 0.5,
                 direction.getStepX() * 0.15, 0.05, direction.getStepZ() * 0.15);
 
@@ -137,7 +136,7 @@ public abstract class FoodBlock extends Block {
         Direction direction = player.getDirection().getOpposite();
         ItemStack dropStack = new ItemStack(this.displayItem.get(), currentStack);
 
-        ItemUtils.spawnItemEntity(level, dropStack,
+        ItemSpawn.spawnItemEntity(level, dropStack,
                 pos.getX() + 0.5, pos.getY() + 0.3, pos.getZ() + 0.5,
                 direction.getStepX() * 0.15, 0.05, direction.getStepZ() * 0.15);
 

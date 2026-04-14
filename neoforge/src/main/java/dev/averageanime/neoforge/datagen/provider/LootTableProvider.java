@@ -5,12 +5,18 @@ import dev.averageanime.neoforge.block.ModDisplayBlocks;
 import dev.averageanime.neoforge.block.ModFluids;
 import dev.averageanime.neoforge.block.type.cake.ModCakeBlock;
 import dev.averageanime.neoforge.block.type.display.*;
-import dev.averageanime.neoforge.block.type.display.plate.EmptyPlateBlock;
-import dev.averageanime.neoforge.block.type.display.plate.PlateBlock;
-import dev.averageanime.neoforge.block.type.display.plate.SmallPlateBlock;
+import dev.averageanime.neoforge.block.type.plate.EmptyPlateBlock;
+import dev.averageanime.neoforge.block.type.plate.PlateBlock;
+import dev.averageanime.neoforge.block.type.plate.SmallPlateBlock;
 import dev.averageanime.neoforge.block.type.fluid.FluidEntry;
-import dev.averageanime.neoforge.block.type.pie.ModPieBlock;
+import dev.averageanime.neoforge.block.type.ConsumableBlock;
+import dev.averageanime.neoforge.block.type.pie.PieBlock;
 import dev.averageanime.neoforge.block.type.pie.PizzaBlock;
+import java.lang.reflect.Field;
+import java.lang.reflect.Modifier;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.stream.Stream;
 import net.minecraft.advancements.critereon.ItemPredicate;
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.core.HolderLookup;
@@ -27,12 +33,7 @@ import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.predicates.*;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.neoforged.neoforge.registries.DeferredBlock;
-
-import java.lang.reflect.Field;
-import java.lang.reflect.Modifier;
-import java.util.HashSet;
-import java.util.Set;
-import java.util.stream.Stream;
+import org.jetbrains.annotations.NotNull;
 
 public class LootTableProvider extends net.minecraft.data.loot.BlockLootSubProvider {
 
@@ -138,7 +139,7 @@ public class LootTableProvider extends net.minecraft.data.loot.BlockLootSubProvi
 
             if (block instanceof ModCakeBlock cakeBlock) {
                 add(block, slicedLootTable(block, cakeBlock.pieSlice.get(), 7));
-            } else if (block instanceof ModPieBlock || block instanceof PizzaBlock) {
+            } else if (block instanceof PieBlock || block instanceof PizzaBlock) {
                 Item sliceItem = getSliceItemFromFD(block);
                 if (sliceItem != null) {
                     add(block, slicedLootTable(block, sliceItem, 4));
@@ -212,12 +213,10 @@ public class LootTableProvider extends net.minecraft.data.loot.BlockLootSubProvi
     @SuppressWarnings("unchecked")
     private static Item getSliceItemFromFD(Block block) {
         try {
-            Class<?> fdPieBlock = Class.forName("vectorwing.farmersdelight.common.block.PieBlock");
-            java.lang.reflect.Field f = fdPieBlock.getDeclaredField("pieSlice");
-            f.setAccessible(true);
-            java.util.function.Supplier<Item> supplier =
-                    (java.util.function.Supplier<Item>) f.get(block);
-            return supplier != null ? supplier.get() : null;
+            if (block instanceof ConsumableBlock biteable) {
+                return biteable.getSliceItem().getItem();
+            }
+            return null;
         } catch (Exception e) {
             return null;
         }
@@ -229,7 +228,7 @@ public class LootTableProvider extends net.minecraft.data.loot.BlockLootSubProvi
      * generateFoodBlockLoot() — they have no block item and fail validation.
      */
     @Override
-    protected Iterable<Block> getKnownBlocks() {
+    protected @NotNull Iterable<Block> getKnownBlocks() {
         Set<Block> fluidBlocks = getFluidBlocks();
 
         return Stream.concat(

@@ -3,12 +3,12 @@ package dev.averageanime.neoforge.datagen.provider;
 import dev.averageanime.CommonClass;
 import dev.averageanime.neoforge.block.ModFluids;
 import dev.averageanime.neoforge.block.type.fluid.FluidEntry;
+import java.lang.reflect.Field;
+import java.lang.reflect.Modifier;
+import java.util.Map;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
-
-import java.lang.reflect.Field;
-import java.lang.reflect.Modifier;
 
 public class BlockModelProvider extends net.neoforged.neoforge.client.model.generators.BlockModelProvider {
 
@@ -18,6 +18,11 @@ public class BlockModelProvider extends net.neoforged.neoforge.client.model.gene
 
     @Override
     protected void registerModels() {
+        registerFluidBlockModels();
+        registerSharedDisplayModels();
+    }
+
+    private void registerFluidBlockModels() {
         for (Field field : ModFluids.class.getDeclaredFields()) {
             if (!Modifier.isStatic(field.getModifiers())) continue;
             try {
@@ -55,6 +60,33 @@ public class BlockModelProvider extends net.neoforged.neoforge.client.model.gene
                     .face(net.minecraft.core.Direction.WEST).texture("#down").cullface(net.minecraft.core.Direction.WEST).end()
                     .face(net.minecraft.core.Direction.EAST).texture("#down").cullface(net.minecraft.core.Direction.EAST).end()
                 .end();
+    }
+
+    private static final Map<String, String> SHARED_DISPLAY_MODELS = Map.ofEntries(
+            Map.entry("bacon_calzone_plate_block_1",    "createfood:block/cheese_calzone_plate_block_1"),
+            Map.entry("bacon_calzone_plate_block_2",    "createfood:block/cheese_calzone_plate_block_2"),
+            Map.entry("beef_calzone_plate_block_1",     "createfood:block/cheese_calzone_plate_block_1"),
+            Map.entry("beef_calzone_plate_block_2",     "createfood:block/cheese_calzone_plate_block_2"),
+            Map.entry("chicken_calzone_plate_block_1",  "createfood:block/cheese_calzone_plate_block_1"),
+            Map.entry("chicken_calzone_plate_block_2",  "createfood:block/cheese_calzone_plate_block_2"),
+            Map.entry("fish_calzone_plate_block_1",     "createfood:block/cheese_calzone_plate_block_1"),
+            Map.entry("fish_calzone_plate_block_2",     "createfood:block/cheese_calzone_plate_block_2"),
+            Map.entry("mushroom_calzone_plate_block_1", "createfood:block/cheese_calzone_plate_block_1"),
+            Map.entry("mushroom_calzone_plate_block_2", "createfood:block/cheese_calzone_plate_block_2"),
+            Map.entry("onion_calzone_plate_block_1",    "createfood:block/cheese_calzone_plate_block_1"),
+            Map.entry("onion_calzone_plate_block_2",    "createfood:block/cheese_calzone_plate_block_2"),
+            Map.entry("sausage_calzone_plate_block_1",  "createfood:block/cheese_calzone_plate_block_1"),
+            Map.entry("sausage_calzone_plate_block_2",  "createfood:block/cheese_calzone_plate_block_2"),
+            Map.entry("rabbit_calzone_plate_block_1",  "createfood:block/cheese_calzone_plate_block_1"),
+            Map.entry("rabbit_calzone_plate_block_2",  "createfood:block/cheese_calzone_plate_block_2"),
+            Map.entry("mutton_calzone_plate_block_1",  "createfood:block/cheese_calzone_plate_block_1"),
+            Map.entry("mutton_calzone_plate_block_2",  "createfood:block/cheese_calzone_plate_block_2")
+    );
+
+    private void registerSharedDisplayModels() {
+        SHARED_DISPLAY_MODELS.forEach((blockModelId, parentId) ->
+                withExistingParent("block/" + blockModelId,
+                        ResourceLocation.parse(parentId)));
     }
 
     /** Shorthand for a createfood-namespaced resource location. */

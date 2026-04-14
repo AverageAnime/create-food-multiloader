@@ -1,4 +1,4 @@
-package dev.averageanime.neoforge.block.type.display.plate;
+package dev.averageanime.neoforge.block.type.plate;
 
 import dev.averageanime.neoforge.block.ModDisplayBlocks;
 import dev.averageanime.neoforge.block.type.display.FoodBlock;

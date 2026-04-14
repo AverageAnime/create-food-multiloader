@@ -5,6 +5,9 @@ import dev.averageanime.neoforge.block.ModBlocks;
 import dev.averageanime.neoforge.block.ModFluids;
 import dev.averageanime.neoforge.block.type.fluid.FluidEntry;
 import dev.averageanime.neoforge.item.ModItems;
+import java.lang.reflect.Field;
+import java.lang.reflect.Modifier;
+import java.util.concurrent.CompletableFuture;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
@@ -15,10 +18,6 @@ import net.minecraft.world.item.Item;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.registries.DeferredItem;
 import org.jetbrains.annotations.NotNull;
-
-import java.lang.reflect.Field;
-import java.lang.reflect.Modifier;
-import java.util.concurrent.CompletableFuture;
 
 public class ItemTagProvider extends TagsProvider<Item> {
 
@@ -33,6 +32,10 @@ public class ItemTagProvider extends TagsProvider<Item> {
         ModItems.ITEMS.getEntries().forEach(holder -> {
             String id = holder.getId().getPath();
             tag(cTag(id)).addOptional(ResourceLocation.fromNamespaceAndPath(CommonClass.ID, id));
+            if (id.endsWith("_bottle")) {
+                String baseId = id.substring(0, id.length() - "_bottle".length());
+                tag(cTag(baseId)).addOptional(ResourceLocation.fromNamespaceAndPath(CommonClass.ID, id));
+            }
         });
 
         ModBlocks.BLOCKS.getEntries().forEach(holder -> {
@@ -51,6 +54,16 @@ public class ItemTagProvider extends TagsProvider<Item> {
                 }
             } catch (IllegalAccessException ignored) {}
         }
+        tag(cTag("foods/raw_fish")).addOptional(ResourceLocation.parse("createfood:tropical_fish_slice"));
+        tag(cTag("foods/raw_tropical_fish")).addOptional(ResourceLocation.parse("minecraft:tropical_fish")).addOptional(ResourceLocation.parse("createfood:tropical_fish_slice"));
+        tag(cTag("foods/safe_raw_fish")).addOptional(ResourceLocation.parse("createfood:tropical_fish_slice"));
+        tag(cTag("foods/cooked_fish")).addOptional(ResourceLocation.parse("createfood:cooked_tropical_fish")).addOptional(ResourceLocation.parse("createfood:cooked_tropical_fish_slice"));
+        tag(cTag("foods/cooked_tropical_fish")).addOptional(ResourceLocation.parse("createfood:cooked_tropical_fish")).addOptional(ResourceLocation.parse("createfood:cooked_tropical_fish_slice"));
+
+        tag(modTag("farmersdelight", "cabbage_roll_ingredients")).addOptional(ResourceLocation.parse("createfood:tropical_fish_slice"));
+        tag(modTag("minecraft", "fishes")).addOptional(ResourceLocation.parse("createfood:cooked_tropical_fish"));
+        tag(cTag("honeyed_apple")).addOptional(ResourceLocation.parse("create:honeyed_apple"));
+        tag(cTag("tortilla_chip_bowl")).addOptional(ResourceLocation.parse("createfood:pita_chip_bowl"));
 
         tag(cTag("apple")).addOptional(ResourceLocation.parse("minecraft:apple")).addOptional(ResourceLocation.parse("createfood:apple_slice"));
         tag(cTag("apple_jam_bottle")).addOptional(ResourceLocation.parse("bakery:apple_jam"));
@@ -102,7 +115,7 @@ public class ItemTagProvider extends TagsProvider<Item> {
         tag(cTag("cooked_chicken")).addOptional(ResourceLocation.parse("farmersdelight:cooked_chicken_cuts")).addOptional(ResourceLocation.parse("minecraft:cooked_chicken"));
         tag(cTag("cooked_eggplant")).addOptional(ResourceLocation.parse("culturaldelights:smoked_eggplant")).addOptional(ResourceLocation.parse("culturaldelights:smoked_cut_eggplant"));
         tag(cTag("cooked_eggs")).addOptional(ResourceLocation.parse("farmersdelight:fried_egg"));
-        tag(cTag("cooked_fishes")).addOptional(ResourceLocation.parse("minecraft:cooked_salmon")).addOptional(ResourceLocation.parse("farmersdelight:cooked_salmon_slice")).addOptional(ResourceLocation.parse("minecraft:cooked_cod")).addOptional(ResourceLocation.parse("farmersdelight:cooked_cod_slice"));
+        tag(cTag("cooked_fishes")).addOptional(ResourceLocation.parse("minecraft:cooked_salmon")).addOptional(ResourceLocation.parse("farmersdelight:cooked_salmon_slice")).addOptional(ResourceLocation.parse("minecraft:cooked_cod")).addOptional(ResourceLocation.parse("farmersdelight:cooked_cod_slice")).addOptional(ResourceLocation.parse("createfood:cooked_tropical_fish")).addOptional(ResourceLocation.parse("createfood:cooked_tropical_fish_slice"));
         tag(cTag("cooked_mutton")).addOptional(ResourceLocation.parse("minecraft:cooked_mutton")).addOptional(ResourceLocation.parse("farmersdelight:cooked_mutton_chops"));
         tag(cTag("cooked_pasta")).addOptional(ResourceLocation.parse("createfood:pasta"));
         tag(cTag("cooked_pork")).addOptional(ResourceLocation.parse("croptopia:cooked_bacon")).addOptional(ResourceLocation.parse("farmersdelight:cooked_bacon")).addOptional(ResourceLocation.parse("minecraft:cooked_porkchop")).addOptional(ResourceLocation.parse("createfood:bacon_bits"));
@@ -248,11 +261,16 @@ public class ItemTagProvider extends TagsProvider<Item> {
         tag(cTag("vinegar_bottle")).addOptional(ResourceLocation.parse("createfood:vinegar_bottle")).addOptional(ResourceLocation.parse("dumplings_delight:vinegar"));
         tag(cTag("warped_fungus")).addOptional(ResourceLocation.parse("minecraft:warped_fungus")).addOptional(ResourceLocation.parse("createfood:sliced_warped_fungus"));
         tag(cTag("wheat_dough")).addOptional(ResourceLocation.parse("create:dough")).addOptional(ResourceLocation.parse("farmersdelight:wheat_dough"));
+        tag(cTag("chocolate_sweet_dough")).addOptional(ResourceLocation.parse("createfood:chocolate_sugar_dough"));
 
     }
 
     /** Build a TagKey under the {@code c} namespace for the given item ID. */
     private static TagKey<Item> cTag(String id) {
         return TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", id));
+    }
+
+    private static TagKey<Item> modTag(String namespace, String id) {
+        return TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(namespace, id));
     }
 }

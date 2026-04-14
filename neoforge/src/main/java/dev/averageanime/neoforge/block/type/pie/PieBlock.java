@@ -14,11 +14,11 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.function.Supplier;
 
-public class PizzaBlock extends ConsumableBlock {
+public class PieBlock extends ConsumableBlock {
 
     protected static VoxelShape[] SHAPE_BY_BITE;
 
-    public PizzaBlock(Properties properties, Supplier<Item> pieSlice) {
+    public PieBlock(Properties properties, Supplier<Item> pieSlice) {
         super(properties, pieSlice);
     }
 
@@ -32,13 +32,13 @@ public class PizzaBlock extends ConsumableBlock {
 
     static {
         SHAPE_BY_BITE = new VoxelShape[]{
-                Block.box(2, 0, 2, 14, 2, 14),
+                Block.box(2, 0, 2, 14, 4, 14),
                 Shapes.or(
-                        Block.box(2, 0, 8, 8, 2, 14),
-                        Block.box(2, 0, 2, 14, 2, 8)
+                        Block.box(2, 0, 8, 8, 4, 14),
+                        Block.box(2, 0, 2, 14, 4, 8)
                 ),
-                Block.box(2, 0, 2, 14, 2, 8),
-                Block.box(8, 0, 2, 14, 2, 8),
+                Block.box(2, 0, 2, 14, 4, 8),
+                Block.box(8, 0, 2, 14, 4, 8),
         };
     }
 }

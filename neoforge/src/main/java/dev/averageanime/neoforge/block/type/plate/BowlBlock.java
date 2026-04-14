@@ -1,4 +1,4 @@
-package dev.averageanime.neoforge.block.type.display.plate;
+package dev.averageanime.neoforge.block.type.plate;
 
 import dev.averageanime.CommonClass;
 import dev.averageanime.neoforge.block.ModDisplayBlocks;
