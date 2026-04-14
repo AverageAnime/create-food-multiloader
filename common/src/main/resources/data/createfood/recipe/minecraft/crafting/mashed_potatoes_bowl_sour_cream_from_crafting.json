@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "c:mashed_potatoes_bowl"
+    },
+    {
+      "tag": "c:sour_cream_bottle"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "createfood:mashed_potatoes_bowl_sour_cream"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "mashed_potatoes_bowl_sour_cream"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "c:nacho_bowl_beef"
+    },
+    {
+      "tag": "c:taco_sauce_bottle"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "createfood:nacho_bowl_beef_taco_sauce"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "nacho_bowl_beef_taco_sauce"
+    }
+  ]
+}

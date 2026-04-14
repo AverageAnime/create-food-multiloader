@@ -1,0 +1,24 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "sausage_biscuit_cheese_fried_egg"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "1": {
+      "tag": "c:cooked_eggs"
+    },
+    "2": {
+      "tag": "c:sausage_biscuit_cheese"
+    }
+  },
+  "pattern": [
+    "1",
+    "2"
+  ],
+  "result": {
+    "id": "createfood:sausage_biscuit_cheese_fried_egg"
+  }
+}

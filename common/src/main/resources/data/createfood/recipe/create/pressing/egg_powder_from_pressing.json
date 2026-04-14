@@ -1,0 +1,22 @@
+{
+  "type": "create:pressing",
+  "ingredients": [
+    {
+      "tag": "c:powderable_eggs"
+    }
+  ],
+  "results": [
+    {
+      "count": 2,
+      "item": {
+        "id": "createfood:egg_powder"
+      }
+    }
+  ],
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "egg_powder"
+    }
+  ]
+}

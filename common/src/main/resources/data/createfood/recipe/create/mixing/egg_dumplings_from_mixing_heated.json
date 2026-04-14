@@ -1,0 +1,32 @@
+{
+  "type": "create:mixing",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "tag": "c:dumpling_wrappers"
+    },
+    {
+      "tag": "c:eggs"
+    },
+    {
+      "tag": "c:onion"
+    },
+    {
+      "tag": "c:crops/cabbage"
+    }
+  ],
+  "results": [
+    {
+      "count": 2,
+      "item": {
+        "id": "createfood:egg_dumplings"
+      }
+    }
+  ],
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "egg_dumplings"
+    }
+  ]
+}

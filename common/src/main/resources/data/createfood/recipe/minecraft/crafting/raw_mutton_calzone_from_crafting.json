@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "c:raw_cheese_calzone"
+    },
+    {
+      "tag": "c:gyro_mutton_ingredient"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "createfood:raw_mutton_calzone"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "raw_mutton_calzone"
+    }
+  ]
+}

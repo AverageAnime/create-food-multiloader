@@ -1,0 +1,24 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "ice_cream_sandwich_neapolitan"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "1": {
+      "tag": "c:chocolate_graham_cracker"
+    },
+    "2": {
+      "tag": "c:chocolate_graham_cracker_neapolitan_scoop_3"
+    }
+  },
+  "pattern": [
+    "1",
+    "2"
+  ],
+  "result": {
+    "id": "createfood:ice_cream_sandwich_neapolitan"
+  }
+}

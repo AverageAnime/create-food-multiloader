@@ -1,0 +1,29 @@
+{
+  "type": "farmersdelight:cooking",
+  "experience": 0.5,
+  "ingredients": [
+    {
+      "tag": "c:dumpling_wrappers"
+    },
+    {
+      "tag": "c:potato"
+    },
+    {
+      "tag": "c:cheeses"
+    },
+    {
+      "tag": "c:onion"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "count": 1,
+    "id": "createfood:cheese_potato_dumplings"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "cheese_potato_dumplings"
+    }
+  ]
+}

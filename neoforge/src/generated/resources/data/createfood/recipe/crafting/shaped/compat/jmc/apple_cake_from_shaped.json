@@ -1,0 +1,28 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "jmc"
+    },
+    {
+      "type": "createfood:enabled",
+      "id": "jmc:apple_cake"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "1": {
+      "tag": "c:apple"
+    },
+    "2": {
+      "tag": "c:cream_cake"
+    }
+  },
+  "pattern": [
+    "1",
+    "2"
+  ],
+  "result": {
+    "id": "jmc:apple_cake"
+  }
+}

@@ -1,0 +1,29 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:bucket"
+        },
+        {
+            "tag": "c:chocolate_custard"
+        },
+        {
+            "tag": "c:chocolate_custard"
+        },
+        {
+            "tag": "c:chocolate_custard"
+        },
+        {
+            "tag": "c:chocolate_custard"
+        }
+    ],
+    "result": {
+        "id": "createfood:chocolate_custard_bucket"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "chocolate_custard_bucket"
+        }
+    ]
+}

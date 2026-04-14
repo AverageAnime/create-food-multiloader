@@ -1,0 +1,26 @@
+{
+  "type": "create:mixing",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "tag": "c:salt"
+    },
+    {
+      "type": "fluid_tag",
+      "amount": 1000,
+      "fluid_tag": "c:milk"
+    }
+  ],
+  "results": [
+    {
+      "amount": 1000,
+      "id": "createfood:liquid_cheese"
+    }
+  ],
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "liquid_cheese"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "type": "create:mixing",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "tag": "c:cheese_block"
+    }
+  ],
+  "results": [
+    {
+      "amount": 1000,
+      "id": "createfood:liquid_cheese"
+    }
+  ],
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "liquid_cheese"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "type": "farmersdelight:cooking",
+  "experience": 0.1,
+  "ingredients": [
+    {
+      "tag": "c:vegetable_oil_bucket"
+    },
+    {
+      "tag": "c:pita_bread"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "count": 1,
+    "id": "createfood:fried_pita_bread"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "fried_pita_bread"
+    }
+  ]
+}

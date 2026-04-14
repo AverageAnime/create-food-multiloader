@@ -1,0 +1,26 @@
+{
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "tag": "c:apple_slice"
+        },
+        {
+            "type": "fluid_tag",
+            "amount": 125,
+            "fluid_tag": "c:toffee"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:toffee_apple_slice"
+            }
+        }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "toffee_apple_slice"
+        }
+    ]
+}

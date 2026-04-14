@@ -1,0 +1,24 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "pizza_dough_tomato_sauce"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "1": {
+      "tag": "c:tomato_sauce"
+    },
+    "2": {
+      "tag": "c:pizza_dough"
+    }
+  },
+  "pattern": [
+    "1",
+    "2"
+  ],
+  "result": {
+    "id": "createfood:pizza_dough_tomato_sauce"
+  }
+}

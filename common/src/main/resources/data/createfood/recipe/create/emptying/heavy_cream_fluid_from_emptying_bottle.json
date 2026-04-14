@@ -1,0 +1,26 @@
+{
+  "type": "create:emptying",
+  "ingredients": [
+    {
+      "tag": "c:heavy_cream_bottle"
+    }
+  ],
+  "results": [
+    {
+      "count": 1,
+      "item": {
+        "id": "minecraft:glass_bottle"
+      }
+    },
+    {
+      "amount": 250,
+      "id": "createfood:heavy_cream"
+    }
+  ],
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "heavy_cream_bottle"
+    }
+  ]
+}
