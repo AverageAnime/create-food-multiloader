@@ -52,7 +52,7 @@ bottle("my_bottle", 5, 0.8f, tips("tooltip.compat.peanut_butter", "peanut_butter
 
 > **Toolkit:** Ingredient key selection is in the Tooltips section of the Item tab. Existing keys are shown as clickable buttons. Custom keys can be added (they generate a lang entry automatically). The compat key toggle is also in the Tooltips section.
 
-**Existing ingredient keys:** apple, apple_cream_frosting, apple_ice_cream, apple_jam, bacon, beef, beef_meatballs, beetroot, berry, berry_cream_frosting, berry_ice_cream, berry_jam, brown_mushroom, butter, butterscotch, butterscotch_chips, cacao_mass, caramel, caramel_chips, carrot, cheese, chicken, chocolate, chocolate_chips, chocolate_cream_frosting, chocolate_ice_cream, chorus_fruit, chorus_fruit_cream_frosting, chorus_fruit_ice_cream, chorus_fruit_jam, cream_frosting, crimson_fungus, dark_chocolate, dark_chocolate_chips, egg, egg_yolk, fish, fried_egg, glow_berry, glow_berry_cream_frosting, glow_berry_ice_cream, glow_berry_jam, graham_cracker_pie_crust, chocolate_graham_cracker_pie_crust, hash_browns, honey, ice_cream, kelp, lettuce, marshmallow, melon_cream_frosting, melon_ice_cream, melon_jam, mushroom, mutton, onion, pork, pork_meatballs, potato, pressed_cocoa, rabbit, rabbit_meatballs, red_mushroom, rice, salt, sausage, scrambled_egg, slime, slimeballs, squid_ink, sugar, taco_sauce, toast, toffee, toffee_chips, tomato, tomato_sauce, warped_fungus, white_chocolate, white_chocolate_chips
+**Existing ingredient keys:** apple, apple_cream_frosting, apple_ice_cream, apple_jam, avocado, bacon, beef, beef_meatballs, beetroot, berry, berry_cream_frosting, berry_ice_cream, berry_jam, brown_mushroom, butter, butterscotch, butterscotch_chips, cacao_mass, caramel, caramel_chips, carrot, cheese, chicken, chocolate, chocolate_chips, chocolate_cream_frosting, chocolate_ice_cream, chocolate_graham_cracker_pie_crust, chorus_fruit, chorus_fruit_cream_frosting, chorus_fruit_ice_cream, chorus_fruit_jam, corn, cream_frosting, crimson_fungus, cucumber, dark_chocolate, dark_chocolate_chips, egg, egg_yolk, eggplant, endermite_meatballs, fish, flesh, fried_egg, ginger, glow_berry, glow_berry_cream_frosting, glow_berry_ice_cream, glow_berry_jam, graham_cracker_pie_crust, green_tea, hash_browns, honey, ice_cream, kelp, lettuce, marshmallow, melon_cream_frosting, melon_ice_cream, melon_jam, mushroom, mutton, onion, peanut_butter, pork, pork_meatballs, potato, pressed_cocoa, rabbit, rabbit_meatballs, red_mushroom, rice, salt, sausage, scrambled_egg, slime, slimeballs, soul_berry, spider_eye, squid_ink, strider_meatballs, sugar, taco_sauce, toast, toffee, toffee_chips, tomato, tomato_sauce, ube_cream_frosting, warped_fungus, white_chocolate, white_chocolate_chips
 
 ### Custom Tooltips (Config)
 
@@ -173,6 +173,9 @@ Pattern-matched automatically: pizza, slice, pie, sandwich, burger, taco, burrit
 | `enable_egg_impact_remainder` | `true` | Drop eggshell when thrown egg hits surface |
 | `enable_filter_interactions` | `true` | Toggle cloth filter RMB interactions |
 | `filter_interactions` | *(4 default entries)* | Define filter item → result interactions |
+| `category_overrides` | *(empty)* | Override which effect fires for a named category. Format: `"category_name\|mod_id:effect_id"` |
+| `item_overrides` | *(empty)* | Override or suppress effects on specific items. Format: `"item_id\|category_or_effect_id\|duration\|amplifier"` or `"item_id\|category_or_effect_id\|remove"` |
+| `nutrition_saturation` | *(empty)* | Override nutrition and/or saturation for any item. Format: `"item_id\|nutrition\|saturation"` — use `-` to keep the built-in value |
 
 ---
 
