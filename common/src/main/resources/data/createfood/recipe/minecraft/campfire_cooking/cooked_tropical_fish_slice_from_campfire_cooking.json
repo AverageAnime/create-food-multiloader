@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:campfire_cooking",
+  "category": "food",
+  "cookingtime": 200,
+  "experience": 0.35,
+  "ingredient": {
+    "tag": "c:tropical_fish_slice"
+  },
+  "result": {
+    "count": 1,
+    "id": "createfood:cooked_tropical_fish_slice"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "cooked_tropical_fish_slice"
+    }
+  ]
+}

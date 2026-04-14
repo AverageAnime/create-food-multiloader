@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:marshmallow_stick"
+        },
+        {
+            "tag": "c:toffee"
+        }
+    ],
+    "result": {
+        "id": "createfood:toffee_marshmallow_stick"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "toffee_marshmallow_stick"
+        }
+    ]
+}

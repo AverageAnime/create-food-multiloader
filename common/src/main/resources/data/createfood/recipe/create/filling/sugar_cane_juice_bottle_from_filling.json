@@ -1,0 +1,27 @@
+{
+  "type": "create:filling",
+  "ingredients": [
+    {
+      "item": "minecraft:glass_bottle"
+    },
+    {
+      "type": "fluid_tag",
+      "amount": 250,
+      "fluid_tag": "c:sugar_cane_juice"
+    }
+  ],
+  "results": [
+    {
+      "count": 1,
+      "item": {
+        "id": "createfood:sugar_cane_juice_bottle"
+      }
+    }
+  ],
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "sugar_cane_juice_bottle"
+    }
+  ]
+}

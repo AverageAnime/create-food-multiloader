@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:smelting",
+  "category": "food",
+  "cookingtime": 250,
+  "experience": 0.15,
+  "ingredient": {
+    "tag": "c:raw_mutton_calzone"
+  },
+  "result": {
+    "count": 1,
+    "id": "createfood:mutton_calzone"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "mutton_calzone"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "graham_cracker_chocolate_marshmallow"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "1": {
+      "tag": "c:marshmallow"
+    },
+    "2": {
+      "tag": "c:graham_cracker_chocolate"
+    }
+  },
+  "pattern": [
+    "1",
+    "2"
+  ],
+  "result": {
+    "id": "createfood:graham_cracker_chocolate_marshmallow"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "type": "create:filling",
+  "ingredients": [
+    {
+      "tag": "c:nacho_bowl"
+    },
+    {
+      "type": "fluid_tag",
+      "amount": 125,
+      "fluid_tag": "c:taco_sauce"
+    }
+  ],
+  "results": [
+    {
+      "count": 1,
+      "item": {
+        "id": "createfood:nacho_bowl_taco_sauce"
+      }
+    }
+  ],
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "nacho_bowl_taco_sauce"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "jmc"
+    },
+    {
+      "type": "createfood:enabled",
+      "id": "jmc:red_velvet_cake"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "1": {
+      "item": "minecraft:red_dye"
+    },
+    "2": {
+      "tag": "c:cream_cake"
+    }
+  },
+  "pattern": [
+    "1",
+    "2"
+  ],
+  "result": {
+    "id": "jmc:red_velvet_cake"
+  }
+}

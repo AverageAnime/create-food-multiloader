@@ -1,0 +1,27 @@
+{
+  "type": "create:filling",
+  "ingredients": [
+    {
+      "tag": "c:mashed_potatoes_bowl"
+    },
+    {
+      "type": "fluid_tag",
+      "amount": 250,
+      "fluid_tag": "c:sour_cream"
+    }
+  ],
+  "results": [
+    {
+      "count": 1,
+      "item": {
+        "id": "createfood:mashed_potatoes_bowl_sour_cream"
+      }
+    }
+  ],
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "mashed_potatoes_bowl_sour_cream"
+    }
+  ]
+}

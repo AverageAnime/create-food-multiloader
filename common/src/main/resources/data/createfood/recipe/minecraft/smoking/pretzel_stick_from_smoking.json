@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:smoking",
+  "category": "food",
+  "cookingtime": 200,
+  "experience": 0.1,
+  "ingredient": {
+    "tag": "c:raw_pretzel_stick"
+  },
+  "result": {
+    "count": 1,
+    "id": "createfood:pretzel_stick"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "pretzel_stick"
+    }
+  ]
+}

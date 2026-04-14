@@ -1,0 +1,29 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:bucket"
+        },
+        {
+            "tag": "c:sugar_cane_juice"
+        },
+        {
+            "tag": "c:sugar_cane_juice"
+        },
+        {
+            "tag": "c:sugar_cane_juice"
+        },
+        {
+            "tag": "c:sugar_cane_juice"
+        }
+    ],
+    "result": {
+        "id": "createfood:sugar_cane_juice_bucket"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "sugar_cane_juice_bucket"
+        }
+    ]
+}

@@ -1,0 +1,27 @@
+{
+  "type": "create:filling",
+  "ingredients": [
+    {
+      "tag": "c:mushroom_taco_lettuce"
+    },
+    {
+      "type": "fluid_tag",
+      "amount": 250,
+      "fluid_tag": "c:taco_sauce"
+    }
+  ],
+  "results": [
+    {
+      "count": 1,
+      "item": {
+        "id": "createfood:mushroom_taco_lettuce_taco_sauce"
+      }
+    }
+  ],
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "mushroom_taco_lettuce_taco_sauce"
+    }
+  ]
+}

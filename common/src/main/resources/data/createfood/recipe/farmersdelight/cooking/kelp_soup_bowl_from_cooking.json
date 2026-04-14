@@ -1,0 +1,36 @@
+{
+  "type": "farmersdelight:cooking",
+  "experience": 0.35,
+  "container": {
+    "count": 1,
+    "id": "minecraft:bowl"
+  },
+  "ingredients": [
+    {
+      "tag": "c:foods/raw_fish"
+    },
+    {
+      "item": "minecraft:kelp"
+    },
+    {
+      "tag": "c:onion"
+    },
+    {
+      "tag": "c:salt"
+    },
+    {
+      "item": "minecraft:water_bucket"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "count": 1,
+    "id": "createfood:kelp_soup_bowl"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "kelp_soup_bowl"
+    }
+  ]
+}

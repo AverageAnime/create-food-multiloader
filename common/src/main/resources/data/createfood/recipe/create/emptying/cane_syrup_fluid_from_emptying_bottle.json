@@ -1,0 +1,26 @@
+{
+  "type": "create:emptying",
+  "ingredients": [
+    {
+      "tag": "c:cane_syrup_bottle"
+    }
+  ],
+  "results": [
+    {
+      "count": 1,
+      "item": {
+        "id": "minecraft:glass_bottle"
+      }
+    },
+    {
+      "amount": 250,
+      "id": "createfood:cane_syrup"
+    }
+  ],
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "cane_syrup_bottle"
+    }
+  ]
+}

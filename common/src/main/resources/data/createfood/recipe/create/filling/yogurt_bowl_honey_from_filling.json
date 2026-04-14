@@ -1,0 +1,27 @@
+{
+  "type": "create:filling",
+  "ingredients": [
+    {
+      "tag": "c:yogurt_bowl"
+    },
+    {
+      "type": "fluid_tag",
+      "amount": 125,
+      "fluid_tag": "c:honey"
+    }
+  ],
+  "results": [
+    {
+      "count": 1,
+      "item": {
+        "id": "createfood:yogurt_bowl_honey"
+      }
+    }
+  ],
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "yogurt_bowl_honey"
+    }
+  ]
+}
