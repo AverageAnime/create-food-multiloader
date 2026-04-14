@@ -1,6 +1,0 @@
-{
-  "parent": "item/generated",
-  "textures": {
-  "layer0": "createfood:item/scrambled_eggs_plate_bacon"
-  }
-}

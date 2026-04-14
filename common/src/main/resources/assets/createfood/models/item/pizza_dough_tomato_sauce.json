@@ -1,6 +1,0 @@
-{
-  "parent": "item/generated",
-  "textures": {
-  "layer0": "createfood:item/pizza_dough_tomato_sauce"
-  }
-}
