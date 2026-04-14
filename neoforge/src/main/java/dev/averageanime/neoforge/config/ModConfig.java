@@ -6,27 +6,29 @@ import net.neoforged.neoforge.client.gui.ConfigurationScreen;
 import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
 import net.neoforged.neoforge.common.ModConfigSpec;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ModConfig {
     public static final ModConfigSpec.Builder BUILDER = new ModConfigSpec.Builder();
+    public static final ModConfigSpec.Builder SERVER_BUILDER = new ModConfigSpec.Builder();
 
-    public static final ModConfigSpec.ConfigValue<List<? extends String>> DISABLE_ITEMS;
-    public static final ModConfigSpec.ConfigValue<List<? extends String>> CUSTOM_TOOLTIPS;
-
+    public static final ModConfigSpec.BooleanValue ENABLE_EGG_IMPACT_REMAINDER;
+    public static final ModConfigSpec.BooleanValue ENABLE_FILTER_INTERACTIONS;
+    public static final ModConfigSpec.BooleanValue ENABLE_HANDCRAFTING;
     public static final ModConfigSpec.BooleanValue REQUIRE_SHIFT_FOR_TOOLTIPS;
     public static final ModConfigSpec.BooleanValue SHOW_COMPATIBILITY;
     public static final ModConfigSpec.BooleanValue SHOW_INGREDIENTS;
-
-    public static final ModConfigSpec.Builder SERVER_BUILDER = new ModConfigSpec.Builder();
-
-    public static final ModConfigSpec.BooleanValue ENABLE_HANDCRAFTING;
-    public static final ModConfigSpec.ConfigValue<List<? extends String>> HANDCRAFTING_FILTER;
+    public static final ModConfigSpec.ConfigValue<List<? extends String>> CATEGORY_EFFECT_OVERRIDES;
     public static final ModConfigSpec.ConfigValue<List<? extends String>> CRAFTING_REMAINDERS;
-    public static final ModConfigSpec.BooleanValue ENABLE_EGG_IMPACT_REMAINDER;
-    public static final ModConfigSpec.BooleanValue ENABLE_FILTER_INTERACTIONS;
+    public static final ModConfigSpec.ConfigValue<List<? extends String>> CUSTOM_TOOLTIPS;
+    public static final ModConfigSpec.ConfigValue<List<? extends String>> DISABLE_ITEMS;
     public static final ModConfigSpec.ConfigValue<List<? extends String>> FILTER_INTERACTIONS;
+    public static final ModConfigSpec.ConfigValue<List<? extends String>> HANDCRAFTING_FILTER;
+    public static final ModConfigSpec.ConfigValue<List<? extends String>> ITEM_EFFECT_OVERRIDES;
+    public static final ModConfigSpec.ConfigValue<List<? extends String>> ITEM_NUTRITION_OVERRIDES;
 
     static {
         DISABLE_ITEMS = BUILDER
@@ -188,7 +190,40 @@ public class ModConfig {
                         () -> "item_key|ingredients",
                         obj -> obj instanceof String
                 );
+
         BUILDER.pop();
+
+        SERVER_BUILDER.push("effects");
+
+        CATEGORY_EFFECT_OVERRIDES = SERVER_BUILDER
+                .defineListAllowEmpty("category_overrides",
+                        List.of(),
+                        () -> "category_name|mod_id:effect_id",
+                        obj -> obj instanceof String s && s.split("\\|").length == 2
+                );
+
+        ITEM_EFFECT_OVERRIDES = SERVER_BUILDER
+                .defineListAllowEmpty("item_overrides",
+                        List.of(),
+                        () -> "item_id|category_or_effect_id|duration|amplifier  OR  item_id|category_or_effect_id|remove",
+                        obj -> {
+                            if (!(obj instanceof String s)) return false;
+                            String[] p = s.split("\\|");
+                            if (p.length == 3) return p[2].equals("remove");
+                            if (p.length == 4) {
+                                try {
+                                    Integer.parseInt(p[2]);
+                                    Integer.parseInt(p[3]);
+                                    return true;
+                                } catch (NumberFormatException e) {
+                                    return false;
+                                }
+                            }
+                            return false;
+                        }
+                );
+
+        SERVER_BUILDER.pop();
 
         SERVER_BUILDER.push("handcraft");
 
@@ -223,6 +258,36 @@ public class ModConfig {
 
         SERVER_BUILDER.pop();
 
+        SERVER_BUILDER.push("food");
+
+        ITEM_NUTRITION_OVERRIDES = SERVER_BUILDER
+                .defineListAllowEmpty("nutrition_saturation",
+                        List.of(),
+                        () -> "item_id|nutrition|saturation",
+                        obj -> {
+                            if (!(obj instanceof String s)) return false;
+                            String[] p = s.split("\\|");
+                            if (p.length != 3) return false;
+                            if (!p[1].equals("-")) {
+                                try {
+                                    if (Integer.parseInt(p[1]) < 0) return false;
+                                } catch (NumberFormatException e) {
+                                    return false;
+                                }
+                            }
+                            if (!p[2].equals("-")) {
+                                try {
+                                    if (Float.parseFloat(p[2]) < 0f) return false;
+                                } catch (NumberFormatException e) {
+                                    return false;
+                                }
+                            }
+                            return true;
+                        }
+                );
+
+        SERVER_BUILDER.pop();
+
         SERVER_BUILDER.push("remainders");
 
         ENABLE_EGG_IMPACT_REMAINDER = SERVER_BUILDER
@@ -238,8 +303,166 @@ public class ModConfig {
                 );
 
         SERVER_BUILDER.pop();
-
     }
+
+    // -------------------------------------------------------------------------
+    // Helper accessors
+    // -------------------------------------------------------------------------
+    private static boolean effectIdsMatch(String configId, String itemId) {
+        if (configId.equals(itemId)) return true;
+        // Allow unqualified vanilla effect names: "strength" ↔ "minecraft:strength"
+        if (!configId.contains(":") && itemId.equals("minecraft:" + configId)) return true;
+        if (!itemId.contains(":") && configId.equals("minecraft:" + itemId)) return true;
+        return false;
+    }
+    /**
+     * Parsed result of a per-item effect override entry.
+     *
+     * @param duration  replacement duration in ticks (ignored when {@code remove} is true)
+     * @param amplifier replacement amplifier (0 = level I; ignored when {@code remove} is true)
+     * @param remove    when true the effect is suppressed entirely for this item
+     */
+    public record ItemEffectOverride(String categoryOrEffectId, int duration, int amplifier, boolean remove) {}
+
+    /**
+     * Returns the override for the given {@code (itemId, categoryOrEffectId)} pair,
+     * or {@code null} if no override is configured.
+     *
+     * <p>Matching is done via {@link #effectIdsMatch} so that unqualified names
+     * (e.g. {@code "strength"}) correctly find entries whose item Fx stores the
+     * fully-qualified ID ({@code "minecraft:strength"}), and vice-versa.
+     *
+     * <p>The first matching entry wins; entries are checked top-to-bottom.
+     */
+    @Nullable
+    public static ItemEffectOverride getItemEffectOverride(String itemId, String categoryOrEffectId) {
+        try {
+            for (String entry : ITEM_EFFECT_OVERRIDES.get()) {
+                String[] p = entry.split("\\|");
+                if (p.length < 3) continue;
+                if (!p[0].equals(itemId)) continue;
+                if (!effectIdsMatch(p[1], categoryOrEffectId)) continue;
+                if (p.length == 3 && p[2].equals("remove")) {
+                    return new ItemEffectOverride(categoryOrEffectId, 0, 0, true);
+                }
+                if (p.length == 4) {
+                    try {
+                        return new ItemEffectOverride(
+                                categoryOrEffectId,
+                                Integer.parseInt(p[2]),
+                                Integer.parseInt(p[3]),
+                                false
+                        );
+                    } catch (NumberFormatException ignored) {}
+                }
+            }
+        } catch (IllegalStateException ignored) {
+            // Config not yet loaded — return null and let the default apply.
+        }
+        return null;
+    }
+
+    /**
+     * Returns every {@code item_overrides} entry for {@code itemId}, regardless
+     * of which category or effect it targets.
+     *
+     * <p>{@link dev.averageanime.neoforge.item.type.EffectFood} uses this to find
+     * config-driven additions — entries whose {@link ItemEffectOverride#categoryOrEffectId}
+     * does not resolve to an effect already in the item's built-in definition.
+     *
+     * <p>The {@code categoryOrEffectId} stored in each returned override preserves
+     * the original string from the config so that  can handle it.
+     *
+     * <p>Returns an empty list when the config is not yet loaded.
+     */
+    public static List<ItemEffectOverride> getItemOverrideEntries(String itemId) {
+        List<ItemEffectOverride> result = new ArrayList<>();
+        try {
+            for (String entry : ITEM_EFFECT_OVERRIDES.get()) {
+                String[] p = entry.split("\\|");
+                if (p.length < 3 || !p[0].equals(itemId)) continue;
+                if (p.length == 3 && p[2].equals("remove")) {
+                    result.add(new ItemEffectOverride(p[1], 0, 0, true));
+                } else if (p.length == 4) {
+                    try {
+                        result.add(new ItemEffectOverride(
+                                p[1],
+                                Integer.parseInt(p[2]),
+                                Integer.parseInt(p[3]),
+                                false
+                        ));
+                    } catch (NumberFormatException ignored) {}
+                }
+            }
+        } catch (IllegalStateException ignored) {
+            // Config not yet loaded — return empty list.
+        }
+        return result;
+    }
+
+    /**
+     * Parsed result of a per-item nutrition/saturation override entry.
+     *
+     * <p>Either field may be  ({@code -1} / {@code -1f}) to indicate
+     * that the item's built-in default should be used for that field.
+     *
+     * @param nutrition   replacement hunger points, or {@link #KEEP_INT} if unset
+     * @param saturation  replacement saturation modifier, or {@link #KEEP_FLOAT} if unset
+     */
+    public record ItemNutritionOverride(int nutrition, float saturation) {
+        /** Sentinel meaning "keep the item's built-in nutrition value". */
+        public static final int   KEEP_INT   = -1;
+        /** Sentinel meaning "keep the item's built-in saturation value". */
+        public static final float KEEP_FLOAT = -1f;
+
+        public boolean hasNutritionOverride()   { return nutrition   != KEEP_INT;   }
+        public boolean hasSaturationOverride()  { return saturation  != KEEP_FLOAT; }
+    }
+
+    /**
+     * Returns the nutrition/saturation override for {@code itemId}, or {@code null}
+     * if no entry is configured. Either field of the returned record may be a
+     * {@link ItemNutritionOverride#KEEP_INT} / {@link ItemNutritionOverride#KEEP_FLOAT}
+     * sentinel indicating that the item's built-in default should be used.
+     *
+     * <p>The first matching entry wins; entries are checked top-to-bottom.
+     */
+    @Nullable
+    public static ItemNutritionOverride getItemNutritionOverride(String itemId) {
+        try {
+            for (String entry : ITEM_NUTRITION_OVERRIDES.get()) {
+                String[] p = entry.split("\\|");
+                if (p.length != 3 || !p[0].equals(itemId)) continue;
+                int nutrition   = p[1].equals("-") ? ItemNutritionOverride.KEEP_INT
+                        : Integer.parseInt(p[1]);
+                float saturation = p[2].equals("-") ? ItemNutritionOverride.KEEP_FLOAT
+                        : Float.parseFloat(p[2]);
+                return new ItemNutritionOverride(nutrition, saturation);
+            }
+        } catch (IllegalStateException ignored) {
+            // Config not yet loaded — return null and use the item's built-in values.
+        }
+        return null;
+    }
+
+    /**
+     * Returns the effect ID override for a named category, or {@code null} if none
+     * is configured. Used by {@code FoodEffect.resolve()} as its first lookup step.
+     */
+    @Nullable
+    public static String getCategoryEffectOverride(String categoryName) {
+        try {
+            for (String entry : CATEGORY_EFFECT_OVERRIDES.get()) {
+                String[] p = entry.split("\\|");
+                if (p.length == 2 && p[0].equals(categoryName)) return p[1];
+            }
+        } catch (IllegalStateException ignored) {}
+        return null;
+    }
+
+    // -------------------------------------------------------------------------
+    // Existing helpers (unchanged)
+    // -------------------------------------------------------------------------
 
     public static boolean isItemEnabled(String itemId) {
         try {

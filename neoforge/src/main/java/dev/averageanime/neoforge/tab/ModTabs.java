@@ -90,7 +90,7 @@ public class ModTabs {
                     .build());
 
     public static void register(IEventBus eventBus) {
-        LOGGER.info("Create: Food - Registering Creative Tabs");
+        LOGGER.info("Create: Food - Registering Creative Tabs (Items + Fluids)");
         CREATIVE_MODE_TAB.register(eventBus);
     }
 }

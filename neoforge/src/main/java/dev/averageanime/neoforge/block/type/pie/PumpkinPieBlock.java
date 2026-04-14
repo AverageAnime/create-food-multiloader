@@ -2,7 +2,7 @@ package dev.averageanime.neoforge.block.type.pie;
 
 import dev.averageanime.CommonClass;
 import dev.averageanime.neoforge.block.ModBlocks;
-import dev.averageanime.neoforge.block.type.display.plate.EmptyPlateBlock;
+import dev.averageanime.neoforge.block.type.plate.EmptyPlateBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;

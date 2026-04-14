@@ -4,6 +4,7 @@ import com.mojang.logging.LogUtils;
 import dev.averageanime.CommonClass;
 import dev.averageanime.neoforge.block.ModBlocks;
 import dev.averageanime.neoforge.block.ModDisplayBlocks;
+import dev.averageanime.neoforge.item.ModEffectCategories;
 import dev.averageanime.neoforge.config.ModConditions;
 import dev.averageanime.neoforge.config.ModConfig;
 import dev.averageanime.neoforge.block.type.fluid.FluidEntry;

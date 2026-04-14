@@ -1,12 +1,7 @@
 package dev.averageanime.neoforge.datagen;
 
 import dev.averageanime.CommonClass;
-import dev.averageanime.neoforge.datagen.provider.LootTableProvider;
-import dev.averageanime.neoforge.datagen.provider.BlockStateProvider;
-import dev.averageanime.neoforge.datagen.provider.FluidTagProvider;
-import dev.averageanime.neoforge.datagen.provider.ItemTagProvider;
-import dev.averageanime.neoforge.datagen.provider.BlockModelProvider;
-import dev.averageanime.neoforge.datagen.provider.ItemModelProvider;
+import dev.averageanime.neoforge.datagen.provider.*;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
@@ -47,5 +42,7 @@ public class ModDataGenerators {
                 new ItemTagProvider(output, lookupProvider, existingFileHelper));
         generator.addProvider(event.includeServer(),
                 new FluidTagProvider(output, lookupProvider, existingFileHelper));
+        generator.addProvider(event.includeServer(),
+                new RecipeProvider(output));
     }
 }

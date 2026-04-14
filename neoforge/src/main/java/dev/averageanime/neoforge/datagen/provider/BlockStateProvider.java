@@ -6,11 +6,14 @@ import dev.averageanime.neoforge.block.ModDisplayBlocks;
 import dev.averageanime.neoforge.block.ModFluids;
 import dev.averageanime.neoforge.block.type.cake.ModCakeBlock;
 import dev.averageanime.neoforge.block.type.display.*;
-import dev.averageanime.neoforge.block.type.display.plate.PlateBlock;
+import dev.averageanime.neoforge.block.type.plate.PlateBlock;
 import dev.averageanime.neoforge.block.type.fluid.FluidEntry;
-import dev.averageanime.neoforge.block.type.pie.ModPieBlock;
+import dev.averageanime.neoforge.block.type.pie.PieBlock;
 import dev.averageanime.neoforge.block.type.pie.PizzaBlock;
 import dev.averageanime.neoforge.block.type.pie.RawPieBlock;
+import java.lang.reflect.Field;
+import java.lang.reflect.Modifier;
+import java.util.Set;
 import net.minecraft.core.Direction;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
@@ -21,10 +24,6 @@ import net.neoforged.neoforge.client.model.generators.ModelFile;
 import net.neoforged.neoforge.client.model.generators.VariantBlockStateBuilder;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.registries.DeferredBlock;
-
-import java.lang.reflect.Field;
-import java.lang.reflect.Modifier;
-import java.util.Set;
 
 public class BlockStateProvider extends net.neoforged.neoforge.client.model.generators.BlockStateProvider {
 
@@ -42,18 +41,15 @@ public class BlockStateProvider extends net.neoforged.neoforge.client.model.gene
     private void registerDisplayBlockStates() {
         ModDisplayBlocks.BLOCKS.getEntries().forEach(blockEntry -> {
             Block block = blockEntry.get();
-            if (block instanceof BottleFoodBlock) {
-                bottleBlock((DeferredBlock<Block>) blockEntry);
-            } else if (block instanceof BowlFoodBlock) {
-                bowlBlock((DeferredBlock<Block>) blockEntry);
-            } else if (block instanceof SaladBowlFoodBlock) {
-                bowlBlock((DeferredBlock<Block>) blockEntry);
-            } else if (block instanceof PlateFoodBlock) {
-                bowlBlock((DeferredBlock<Block>) blockEntry);
-            } else if (block instanceof SmallPlateFoodBlock) {
-                smallPlateBlock((DeferredBlock<Block>) blockEntry);
-            } else if (block instanceof PlateBlock) {
-                plateBlock((DeferredBlock<Block>) blockEntry);
+            switch (block) {
+                case BottleFoodBlock bottleFoodBlock -> bottleBlock((DeferredBlock<Block>) blockEntry);
+                case BowlFoodBlock bowlFoodBlock -> bowlBlock((DeferredBlock<Block>) blockEntry);
+                case SaladBowlFoodBlock saladBowlFoodBlock -> bowlBlock((DeferredBlock<Block>) blockEntry);
+                case PlateFoodBlock plateFoodBlock -> bowlBlock((DeferredBlock<Block>) blockEntry);
+                case SmallPlateFoodBlock smallPlateFoodBlock -> smallPlateBlock((DeferredBlock<Block>) blockEntry);
+                case PlateBlock plateBlock -> plateBlock((DeferredBlock<Block>) blockEntry);
+                default -> {
+                }
             }
         });
     }
@@ -133,7 +129,6 @@ public class BlockStateProvider extends net.neoforged.neoforge.client.model.gene
 
     private int getYRotation(Direction facing) {
         return switch (facing) {
-            case SOUTH -> 0;
             case WEST  -> 90;
             case NORTH -> 180;
             case EAST  -> 270;
@@ -160,16 +155,12 @@ public class BlockStateProvider extends net.neoforged.neoforge.client.model.gene
 
             String id = entry.getId().getPath();
 
-            if (block instanceof ModCakeBlock) {
-                cakeBlockState(block, id, 6);
-            } else if (block instanceof ModPieBlock) {
-                pieBlockState(block, id, 3);
-            } else if (block instanceof PizzaBlock) {
-                waffleOrPizzaBlockState(block, id, 3);
-            } else if (block instanceof RawPieBlock) {
-                rawPieBlockState(block, id);
-            } else {
-                simpleBlock(block, unchecked("block/" + id));
+            switch (block) {
+                case ModCakeBlock modCakeBlock -> cakeBlockState(block, id);
+                case PieBlock modPieBlock -> pieBlockState(block, id);
+                case PizzaBlock pizzaBlock -> waffleOrPizzaBlockState(block, id);
+                case RawPieBlock rawPieBlock -> rawPieBlockState(block, id);
+                default -> simpleBlock(block, unchecked("block/" + id));
             }
         });
     }
@@ -187,32 +178,32 @@ public class BlockStateProvider extends net.neoforged.neoforge.client.model.gene
         }
     }
 
-    private void cakeBlockState(Block block, String id, int maxBites) {
+    private void cakeBlockState(Block block, String id) {
         VariantBlockStateBuilder builder = getVariantBuilder(block);
-        for (int bite = 0; bite <= maxBites; bite++) {
+        for (int bite = 0; bite <= 6; bite++) {
             ModelFile model = unchecked(bite == 0 ? "block/" + id : "block/" + id + "_slice" + bite);
             forEachFacing(builder, block, bite, model);
         }
     }
 
-    private void pieBlockState(Block block, String id, int maxBites) {
+    private void pieBlockState(Block block, String id) {
         VariantBlockStateBuilder builder = getVariantBuilder(block);
-        for (int bite = 0; bite <= maxBites; bite++) {
+        for (int bite = 0; bite <= 3; bite++) {
             ModelFile model = unchecked(bite == 0 ? "block/" + id : "block/" + id + "_slice" + bite);
             forEachFacing(builder, block, bite, model);
         }
     }
 
-    private void waffleOrPizzaBlockState(Block block, String id, int maxBites) {
+    private void waffleOrPizzaBlockState(Block block, String id) {
         if (id.endsWith("_waffle") || id.equals("waffle")) {
             String prefix = id.equals("waffle") ? "" : id.replace("_waffle", "_");
             VariantBlockStateBuilder builder = getVariantBuilder(block);
-            for (int bite = 0; bite <= maxBites; bite++) {
+            for (int bite = 0; bite <= 3; bite++) {
                 ModelFile model = unchecked(bite == 0 ? "block/" + id : "block/" + prefix + "mini_waffle" + bite);
                 forEachFacing(builder, block, bite, model);
             }
         } else {
-            pieBlockState(block, id, maxBites);
+            pieBlockState(block, id);
         }
     }
 

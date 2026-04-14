@@ -3,17 +3,16 @@ package dev.averageanime.neoforge.datagen.provider;
 import dev.averageanime.CommonClass;
 import dev.averageanime.neoforge.block.ModDisplayBlocks;
 import dev.averageanime.neoforge.block.type.display.*;
-import dev.averageanime.neoforge.block.type.display.plate.PlateBlock;
+import dev.averageanime.neoforge.block.type.plate.PlateBlock;
 import dev.averageanime.neoforge.item.ModItems;
+import java.util.Map;
+import java.util.Set;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.client.model.generators.ModelFile;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.registries.DeferredBlock;
-
-import java.util.Map;
-import java.util.Set;
 
 public class ItemModelProvider extends net.neoforged.neoforge.client.model.generators.ItemModelProvider {
 
@@ -47,23 +46,30 @@ public class ItemModelProvider extends net.neoforged.neoforge.client.model.gener
      * Add entries here when a new item reuses an existing texture rather than
      * having its own dedicated PNG.
      */
-    /**
-     * Items whose layer0 texture is a shared sprite rather than {@code item/{id}}.
-     * Key = item registry ID, value = full resource location string for layer0.
-     */
     private static final Map<String, String> ALL_TEXTURE_OVERRIDES = Map.ofEntries(
             Map.entry("bacon_calzone",    "createfood:item/calzone"),
+            Map.entry("beef_calzone",     "createfood:item/calzone"),
             Map.entry("cheese_calzone",   "createfood:item/calzone"),
+            Map.entry("chicken_calzone",  "createfood:item/calzone"),
             Map.entry("fish_calzone",     "createfood:item/calzone"),
             Map.entry("mushroom_calzone", "createfood:item/calzone"),
             Map.entry("onion_calzone",    "createfood:item/calzone"),
             Map.entry("sausage_calzone",  "createfood:item/calzone"),
             Map.entry("raw_bacon_calzone",    "createfood:item/raw_calzone"),
+            Map.entry("raw_beef_calzone",     "createfood:item/raw_calzone"),
             Map.entry("raw_cheese_calzone",   "createfood:item/raw_calzone"),
+            Map.entry("raw_chicken_calzone",  "createfood:item/raw_calzone"),
             Map.entry("raw_fish_calzone",     "createfood:item/raw_calzone"),
             Map.entry("raw_mushroom_calzone", "createfood:item/raw_calzone"),
             Map.entry("raw_onion_calzone",    "createfood:item/raw_calzone"),
             Map.entry("raw_sausage_calzone",  "createfood:item/raw_calzone"),
+            Map.entry("raw_rabbit_calzone",  "createfood:item/raw_calzone"),
+            Map.entry("raw_mutton_calzone",  "createfood:item/raw_calzone"),
+            Map.entry("rabbit_calzone",  "createfood:item/calzone"),
+            Map.entry("mutton_calzone",  "createfood:item/calzone"),
+            Map.entry("egg_dumplings",  "farmersdelight:item/dumplings"),
+            Map.entry("cheese_potato_dumplings",  "farmersdelight:item/dumplings"),
+
             Map.entry("chocolate_sweet_dough", "createfood:item/chocolate_sugar_dough"),
             Map.entry("corn_stick",            "createfood:item/smoked_corn_stick"),
             Map.entry("pumpkin_pie_block", "minecraft:item/pumpkin_pie"),
