@@ -1,6 +1,5 @@
 package dev.averageanime.fabric.block;
 
-
 import dev.averageanime.fabric.CreateFood;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;

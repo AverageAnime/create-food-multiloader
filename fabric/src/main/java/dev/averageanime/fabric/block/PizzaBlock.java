@@ -10,7 +10,6 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
-import net.minecraft.world.level.block.state.properties.Property;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
@@ -27,39 +26,31 @@ public class PizzaBlock extends PieBlock {
         super(properties, pieSlice);
     }
 
-    public VoxelShape getShape(BlockState State, BlockGetter level, BlockPos pos, CollisionContext context) {
-        VoxelShape baseShape = SHAPE_BY_BITE[State.getValue(BITES)];
-        Direction facing = State.getValue(FACING);
-
-        if (facing == Direction.EAST) {
-            return rotateShape(baseShape, Direction.EAST);
-        } else if (facing == Direction.SOUTH) {
-            return rotateShape(baseShape, Direction.SOUTH);
-        } else if (facing == Direction.WEST) {
-            return rotateShape(baseShape, Direction.WEST);
-        } else {
-            return baseShape;
-        }
+    @Override
+    public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
+        return rotateShape(SHAPE_BY_BITE[state.getValue(BITES)], state.getValue(FACING));
     }
 
     private VoxelShape rotateShape(VoxelShape shape, Direction direction) {
         VoxelShape[] buffer = new VoxelShape[]{shape, Shapes.empty()};
-
         int times = (direction.get2DDataValue() - Direction.NORTH.get2DDataValue() + 4) % 4;
         for (int i = 0; i < times; i++) {
-            buffer[0].forAllBoxes((minX, minY, minZ, maxX, maxY, maxZ) -> buffer[1] = Shapes.or(buffer[1], Shapes.box(1 - maxZ, minY, minX, 1 - minZ, maxY, maxX)));
+            buffer[0].forAllBoxes((minX, minY, minZ, maxX, maxY, maxZ) ->
+                    buffer[1] = Shapes.or(buffer[1], Shapes.box(1 - maxZ, minY, minX, 1 - minZ, maxY, maxX)));
             buffer[0] = buffer[1];
             buffer[1] = Shapes.empty();
         }
         return buffer[0];
     }
 
+    @Override
     public BlockState getStateForPlacement(BlockPlaceContext context) {
-        return (BlockState)this.defaultBlockState().setValue(FACING, context.getHorizontalDirection());
+        return this.defaultBlockState().setValue(FACING, context.getHorizontalDirection());
     }
 
+    @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-        builder.add(new Property[]{FACING, BITES});
+        builder.add(FACING, BITES);
     }
 
     static {
@@ -74,5 +65,4 @@ public class PizzaBlock extends PieBlock {
                 Block.box(8.0D, 0.0D, 2.0D, 14.0D, 2.0D, 8.0D)
         };
     }
-
 }

@@ -163,7 +163,7 @@ public abstract class ConsumableBlock extends Block {
         builder.add(FACING, BITES);
     }
 
-    protected VoxelShape rotateShape(VoxelShape shape, Direction direction) {
+    public static VoxelShape rotateShape(VoxelShape shape, Direction direction) {
         VoxelShape[] buffer = new VoxelShape[]{shape, Shapes.empty()};
         int times = (direction.get2DDataValue() - Direction.NORTH.get2DDataValue() + 4) % 4;
         for (int i = 0; i < times; i++) {
