@@ -1,0 +1,31 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:cooked_eggplant"
+      }
+    },
+    {
+      "type": "createfood:enabled",
+      "id": "eggplant_bun_cheese_tomato"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "1": {
+      "tag": "c:cheeses"
+    },
+    "2": {
+      "tag": "c:eggplant_bun_tomato"
+    }
+  },
+  "pattern": [
+    "1",
+    "2"
+  ],
+  "result": {
+    "id": "createfood:eggplant_bun_cheese_tomato"
+  }
+}

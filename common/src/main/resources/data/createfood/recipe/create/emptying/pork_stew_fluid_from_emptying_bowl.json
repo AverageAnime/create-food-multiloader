@@ -1,0 +1,25 @@
+{
+  "type": "create:emptying",
+  "ingredients": [
+    {
+      "tag": "c:pork_stew_bowl"
+    }
+  ],
+  "results": [
+    {
+      "item": {
+        "id": "minecraft:bowl"
+      }
+    },
+    {
+      "amount": 333,
+      "id": "createfood:pork_stew"
+    }
+  ],
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "pork_stew"
+    }
+  ]
+}

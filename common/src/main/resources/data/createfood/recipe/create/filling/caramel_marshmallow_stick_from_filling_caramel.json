@@ -1,0 +1,26 @@
+{
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "tag": "c:marshmallow_stick"
+        },
+        {
+            "type": "fluid_tag",
+            "amount": 125,
+            "fluid_tag": "c:caramel"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:caramel_marshmallow_stick"
+            }
+        }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "caramel_marshmallow_stick"
+        }
+    ]
+}

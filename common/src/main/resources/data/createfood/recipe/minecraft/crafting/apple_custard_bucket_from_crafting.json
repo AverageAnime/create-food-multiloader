@@ -1,0 +1,29 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:bucket"
+        },
+        {
+            "tag": "c:apple_custard"
+        },
+        {
+            "tag": "c:apple_custard"
+        },
+        {
+            "tag": "c:apple_custard"
+        },
+        {
+            "tag": "c:apple_custard"
+        }
+    ],
+    "result": {
+        "id": "createfood:apple_custard_bucket"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "apple_custard_bucket"
+        }
+    ]
+}

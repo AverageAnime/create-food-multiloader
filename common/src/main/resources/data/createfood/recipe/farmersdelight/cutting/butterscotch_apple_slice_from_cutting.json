@@ -1,0 +1,25 @@
+{
+    "type": "farmersdelight:cutting",
+    "ingredients": [
+        {
+            "tag": "c:butterscotch_apple"
+        }
+    ],
+    "tool": {
+        "tag": "c:tools/knife"
+    },
+    "result": [
+        {
+            "item": {
+                "count": 2,
+                "id": "createfood:butterscotch_apple_slice"
+            }
+        }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "butterscotch_apple_slice"
+        }
+    ]
+}

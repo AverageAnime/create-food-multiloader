@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "c:taco_shell_ingredient"
+    },
+    {
+      "tag": "c:foods/leafy_green"
+    },
+    {
+      "tag": "c:onion"
+    },
+    {
+      "tag": "c:tomato"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "createfood:vegetable_wrap_onion_lettuce_tomato"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "vegetable_wrap_onion_lettuce_tomato"
+    }
+  ]
+}

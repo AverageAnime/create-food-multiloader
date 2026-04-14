@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "c:nacho_bowl"
+    },
+    {
+      "tag": "c:cooked_beef"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "createfood:nacho_bowl_beef"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "nacho_bowl_beef"
+    }
+  ]
+}

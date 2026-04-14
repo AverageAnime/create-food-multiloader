@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "createfood:flowing_kelp_soup",
+      "required": false
+    },
+    {
+      "id": "createfood:kelp_soup",
+      "required": false
+    }
+  ]
+}

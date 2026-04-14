@@ -1,0 +1,30 @@
+{
+  "type": "farmersdelight:cooking",
+  "experience": 0.5,
+  "container": {
+    "count": 1,
+    "id": "minecraft:bowl"
+  },
+  "ingredients": [
+    {
+      "tag": "c:egg_bucket"
+    },
+    {
+      "tag": "c:onion"
+    },
+    {
+      "tag": "c:onion"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "count": 2,
+    "id": "createfood:scrambled_eggs_plate_onion"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "scrambled_eggs_plate_onion"
+    }
+  ]
+}

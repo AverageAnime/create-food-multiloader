@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "c:pretzel_stick"
+    },
+    {
+      "tag": "c:toffee"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "createfood:toffee_pretzel_stick"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "toffee_pretzel_stick"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+    "type": "farmersdelight:cutting",
+    "ingredients": [
+        {
+            "item": "minecraft:tropical_fish"
+        }
+    ],
+    "tool": {
+        "tag": "c:tools/knife"
+    },
+    "result": [
+        {
+            "item": {
+                "count": 2,
+                "id": "createfood:tropical_fish_slice"
+            }
+        },
+        {
+            "item": {
+                "id": "minecraft:bone_meal"
+            }
+        }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "tropical_fish_slice"
+        }
+    ]
+}

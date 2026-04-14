@@ -1,0 +1,17 @@
+{
+  "type": "create:filling",
+  "ingredients": [
+    { "tag": "c:tortilla_chip_bowl" },
+    {
+      "type": "fluid_tag",
+      "amount": 125,
+      "fluid_tag": "c:liquid_cheese"
+    }
+  ],
+  "results": [
+    { "item": { "id": "createfood:nacho_bowl" } }
+  ],
+  "neoforge:conditions": [
+    { "type": "createfood:enabled", "id": "nacho_bowl" }
+  ]
+}

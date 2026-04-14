@@ -1,0 +1,25 @@
+{
+  "type": "create:deploying",
+  "ingredients": [
+    {
+      "tag": "c:baked_potato_butter"
+    },
+    {
+      "tag": "c:sour_cream_bottle"
+    }
+  ],
+  "results": [
+    {
+      "count": 1,
+      "item": {
+        "id": "createfood:baked_potato_butter_sour_cream"
+      }
+    }
+  ],
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "baked_potato_butter_sour_cream"
+    }
+  ]
+}

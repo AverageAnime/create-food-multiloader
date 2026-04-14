@@ -1,0 +1,26 @@
+{
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "tag": "c:apple_slice"
+        },
+        {
+            "type": "fluid_tag",
+            "amount": 125,
+            "fluid_tag": "c:white_chocolate"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:white_chocolate_apple_slice"
+            }
+        }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "white_chocolate_apple_slice"
+        }
+    ]
+}

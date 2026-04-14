@@ -1,0 +1,25 @@
+{
+    "type": "create:emptying",
+    "ingredients": [
+        {
+            "tag": "c:milkshake_bottle"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "minecraft:glass_bottle"
+            }
+        },
+        {
+            "amount": 500,
+            "id": "createfood:milkshake"
+        }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "milkshake"
+        }
+    ]
+}

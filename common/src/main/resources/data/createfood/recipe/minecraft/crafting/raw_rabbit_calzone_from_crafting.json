@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "c:raw_cheese_calzone"
+    },
+    {
+      "tag": "c:cooked_rabbit"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "createfood:raw_rabbit_calzone"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "raw_rabbit_calzone"
+    }
+  ]
+}
