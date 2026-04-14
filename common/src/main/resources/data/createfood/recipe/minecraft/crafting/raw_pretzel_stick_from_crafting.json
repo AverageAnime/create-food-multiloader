@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:salt_dough_small"
+        }
+    ],
+    "result": {
+        "id": "createfood:raw_pretzel_stick"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "raw_pretzel_stick"
+        }
+    ]
+}

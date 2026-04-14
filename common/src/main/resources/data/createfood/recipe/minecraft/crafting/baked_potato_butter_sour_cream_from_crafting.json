@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "c:baked_potato_butter"
+    },
+    {
+      "tag": "c:sour_cream_bottle"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "createfood:baked_potato_butter_sour_cream"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "baked_potato_butter_sour_cream"
+    }
+  ]
+}

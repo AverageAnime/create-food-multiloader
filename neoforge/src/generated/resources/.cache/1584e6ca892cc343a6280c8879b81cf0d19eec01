@@ -1,4 +1,4 @@
-// 1.21.1	2026-03-22T14:50:32.8307128	Tags for minecraft:fluid mod id createfood
+// 1.21.1	2026-04-10T14:43:39.0810659	Tags for minecraft:fluid mod id createfood
 f056cd23c8d63376dba02a2935e32b56e1bed2c5 data/c/tags/fluid/apple_cream_frosting.json
 eae0e1bd65fdcc607d52d2937fa8160f815d51d2 data/c/tags/fluid/apple_custard.json
 1ecded27e95697475dbe2e600b84f334eed90688 data/c/tags/fluid/apple_ice_cream.json
@@ -50,6 +50,7 @@ beef7bf8c18bc82d61505a128dc804760737f048 data/c/tags/fluid/custard.json
 1eb607c2870eab9c34e67137063f3ac2e6aa1189 data/c/tags/fluid/dark_chocolate_fudge.json
 5135c3104cf7f3c857dd95ae55a7a9f9707a4289 data/c/tags/fluid/egg.json
 3fa06e849e13088c788eeaf4a3ad9805137d2006 data/c/tags/fluid/egg_whites.json
+e96e7fb32febc79400008ce7cca20d894e2a0543 data/c/tags/fluid/fish_chowder.json
 f93fab8074881256c0fa75217c9c0192d5e6e2e3 data/c/tags/fluid/fruit_smoothie.json
 96d08e67d87b7cfd6c2dfc7f47a6fb6df1776c50 data/c/tags/fluid/gelatin_mix.json
 9a7986c84ac50738c82b36d4570fe91db69c13fe data/c/tags/fluid/glow_berry_cream_frosting.json
@@ -65,10 +66,12 @@ b33a56719b11e40ada9103adf2a5c6e8143d5a12 data/c/tags/fluid/hot_chocolate.json
 c547ea39f6f9fd10486cf8c481fcf0a9d363d674 data/c/tags/fluid/hot_dark_chocolate.json
 859c58538fd3bf1cf3506609b9e469ad26f829cc data/c/tags/fluid/hot_white_chocolate.json
 17ddba221e218abd987470d7ecad66380c1f0fc8 data/c/tags/fluid/ice_cream.json
+795290f3b89500d23cf3c557f7538c80deba2bb4 data/c/tags/fluid/kelp_soup.json
 11b662ab4d5405c678282f9cf3f3f07a99a3e836 data/c/tags/fluid/leather_soup.json
 47e4f44352b3fd0c29312af79dcffb22c08c0547 data/c/tags/fluid/light_blue_gelatin_mix.json
 2aae83a5f2edfd78ea9a101f44194c3c88e5c8d5 data/c/tags/fluid/light_gray_gelatin_mix.json
 7b210832c3899610d393a4ccff57fb6ee0b288a7 data/c/tags/fluid/lime_gelatin_mix.json
+de96b214a040533932bc1d5eaa5b117fc3854cd2 data/c/tags/fluid/liquid_cheese.json
 77d2d58a6f4244cedacc1b99eb7779643e96048a data/c/tags/fluid/magenta_gelatin_mix.json
 8ec78047659fa96c8c898b057908bfd1e1d04d51 data/c/tags/fluid/melon_cream_frosting.json
 4aee6fc81ed01aeb72d01c2ead2c17eb369bd085 data/c/tags/fluid/melon_custard.json
@@ -87,6 +90,7 @@ f313662aab8332d11b81285f2206132d0d935fc0 data/c/tags/fluid/pumpkin_custard.json
 d1458173cf4bd5e717dbdca32ca68428093cf981 data/c/tags/fluid/pumpkin_puree.json
 c8648bdda3171ab8ef0332bc860f8c2e46a7447e data/c/tags/fluid/purple_gelatin_mix.json
 27d1c44dde828f8aaad4c6c4e35c6e9c29cb3984 data/c/tags/fluid/red_gelatin_mix.json
+029dc0adf5d0cf0c034ca9bce672de9594dfd3e2 data/c/tags/fluid/rice_pudding.json
 8dd6dba0bd8b8f842c8d8ff73a54231dc4c59185 data/c/tags/fluid/slime.json
 d44769068b002c0b091d51c6fc592a92aada69e2 data/c/tags/fluid/sour_cream.json
 2544ec71928e329b728ace6bf6a8991fccce5e2e data/c/tags/fluid/squid_ink.json

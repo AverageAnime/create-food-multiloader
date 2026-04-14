@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "c:pretzel_stick"
+    },
+    {
+      "tag": "c:white_chocolate_bottle"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "createfood:white_chocolate_pretzel_stick"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "white_chocolate_pretzel_stick"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "c:taco_shell_ingredient"
+    },
+    {
+      "tag": "c:mushrooms"
+    },
+    {
+      "tag": "c:foods/leafy_green"
+    },
+    {
+      "tag": "c:potato"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "createfood:mushroom_wrap_lettuce_potato"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "mushroom_wrap_lettuce_potato"
+    }
+  ]
+}

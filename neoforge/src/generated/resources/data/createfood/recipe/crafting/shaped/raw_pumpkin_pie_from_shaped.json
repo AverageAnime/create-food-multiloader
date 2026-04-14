@@ -1,0 +1,24 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "raw_pumpkin_pie"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "1": {
+      "tag": "c:pumpkin_pie_filling_bucket"
+    },
+    "2": {
+      "tag": "c:raw_pie_crust"
+    }
+  },
+  "pattern": [
+    "1",
+    "2"
+  ],
+  "result": {
+    "id": "createfood:raw_pumpkin_pie"
+  }
+}

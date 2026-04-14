@@ -1,0 +1,29 @@
+{
+  "type": "create:mixing",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "tag": "c:foods/raw_fish"
+    },
+    {
+      "tag": "c:crops/rice"
+    },
+    {
+      "item": "minecraft:dried_kelp"
+    }
+  ],
+  "results": [
+    {
+      "count": 1,
+      "item": {
+        "id": "createfood:fish_rice_bowl"
+      }
+    }
+  ],
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "fish_rice_bowl"
+    }
+  ]
+}

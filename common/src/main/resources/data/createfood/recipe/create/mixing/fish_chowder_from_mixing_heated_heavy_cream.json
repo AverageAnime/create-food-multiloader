@@ -1,0 +1,32 @@
+{
+  "type": "create:mixing",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "type": "fluid_tag",
+      "amount": 250,
+      "fluid_tag": "c:heavy_cream"
+    },
+    {
+      "tag": "c:foods/raw_fish"
+    },
+    {
+      "tag": "c:potato"
+    },
+    {
+      "tag": "c:salt"
+    }
+  ],
+  "results": [
+    {
+      "amount": 333,
+      "id": "createfood:fish_chowder"
+    }
+  ],
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "fish_chowder"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "eggplant_burger"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "1": {
+      "tag": "c:bun"
+    },
+    "2": {
+      "tag": "c:eggplant_bun"
+    }
+  },
+  "pattern": [
+    "1",
+    "2"
+  ],
+  "result": {
+    "id": "createfood:eggplant_burger"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "toffee_apple_slice"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "1": {
+      "tag": "c:toffee"
+    },
+    "2": {
+      "tag": "c:apple_slice"
+    }
+  },
+  "pattern": [
+    "1",
+    "2"
+  ],
+  "result": {
+    "id": "createfood:toffee_apple_slice"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "type": "create:filling",
+  "ingredients": [
+    {
+      "tag": "c:pretzel_stick"
+    },
+    {
+      "type": "fluid_tag",
+      "amount": 125,
+      "fluid_tag": "c:white_chocolate"
+    }
+  ],
+  "results": [
+    {
+      "count": 1,
+      "item": {
+        "id": "createfood:white_chocolate_pretzel_stick"
+      }
+    }
+  ],
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "white_chocolate_pretzel_stick"
+    }
+  ]
+}

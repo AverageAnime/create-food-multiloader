@@ -1,0 +1,25 @@
+{
+  "type": "create:deploying",
+  "ingredients": [
+    {
+      "tag": "c:raw_cheese_calzone"
+    },
+    {
+      "tag": "c:gyro_mutton_ingredient"
+    }
+  ],
+  "results": [
+    {
+      "count": 1,
+      "item": {
+        "id": "createfood:raw_mutton_calzone"
+      }
+    }
+  ],
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "raw_mutton_calzone"
+    }
+  ]
+}

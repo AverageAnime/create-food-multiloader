@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "c:taco_shell_ingredient"
+    },
+    {
+      "tag": "c:mushrooms"
+    },
+    {
+      "tag": "c:cooked_rice"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "createfood:mushroom_burrito_rice"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "mushroom_burrito_rice"
+    }
+  ]
+}

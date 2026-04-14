@@ -1,0 +1,24 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "mutton_taco"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "1": {
+      "tag": "c:gyro_mutton_ingredient"
+    },
+    "2": {
+      "tag": "c:taco_shell"
+    }
+  },
+  "pattern": [
+    "1",
+    "2"
+  ],
+  "result": {
+    "id": "createfood:mutton_taco"
+  }
+}

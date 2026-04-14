@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:smoking",
+  "category": "food",
+  "cookingtime": 250,
+  "experience": 0.15,
+  "ingredient": {
+    "item": "createfood:raw_beef_calzone"
+  },
+  "result": {
+    "count": 1,
+    "id": "createfood:beef_calzone"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "beef_calzone"
+    }
+  ]
+}

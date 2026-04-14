@@ -1,0 +1,26 @@
+{
+  "type": "create:filling",
+  "ingredients": [
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "type": "fluid_tag",
+      "amount": 333,
+      "fluid_tag": "c:rice_pudding"
+    }
+  ],
+  "results": [
+    {
+      "item": {
+        "id": "createfood:rice_pudding_bowl"
+      }
+    }
+  ],
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "rice_pudding_bowl"
+    }
+  ]
+}

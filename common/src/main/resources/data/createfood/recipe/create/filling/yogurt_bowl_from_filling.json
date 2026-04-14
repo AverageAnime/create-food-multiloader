@@ -1,0 +1,27 @@
+{
+  "type": "create:filling",
+  "ingredients": [
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "type": "fluid_tag",
+      "amount": 333,
+      "fluid_tag": "c:yogurt"
+    }
+  ],
+  "results": [
+    {
+      "count": 1,
+      "item": {
+        "id": "createfood:yogurt_bowl"
+      }
+    }
+  ],
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "yogurt_bowl"
+    }
+  ]
+}

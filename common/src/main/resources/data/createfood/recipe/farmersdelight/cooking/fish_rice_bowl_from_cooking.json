@@ -1,0 +1,30 @@
+{
+  "type": "farmersdelight:cooking",
+  "experience": 0.2,
+  "container": {
+    "count": 1,
+    "id": "minecraft:bowl"
+  },
+  "ingredients": [
+    {
+      "tag": "c:foods/raw_fish"
+    },
+    {
+      "tag": "c:crops/rice"
+    },
+    {
+      "item": "minecraft:dried_kelp"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "count": 1,
+    "id": "createfood:fish_rice_bowl"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "fish_rice_bowl"
+    }
+  ]
+}

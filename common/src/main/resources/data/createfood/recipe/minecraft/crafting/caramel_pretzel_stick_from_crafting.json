@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "c:pretzel_stick"
+    },
+    {
+      "tag": "c:caramel"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "createfood:caramel_pretzel_stick"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "caramel_pretzel_stick"
+    }
+  ]
+}

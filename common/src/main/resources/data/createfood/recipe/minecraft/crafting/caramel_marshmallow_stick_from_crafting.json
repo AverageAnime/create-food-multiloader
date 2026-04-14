@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:marshmallow_stick"
+        },
+        {
+            "tag": "c:caramel"
+        }
+    ],
+    "result": {
+        "id": "createfood:caramel_marshmallow_stick"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "caramel_marshmallow_stick"
+        }
+    ]
+}

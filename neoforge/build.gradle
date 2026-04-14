@@ -65,7 +65,7 @@ neoForge {
         //runtimeOnly("dev.engine-room.flywheel:flywheel-neoforge-${minecraft_version}:${flywheel_version}")
         //implementation("com.tterrag.registrate:Registrate:${registrate_version}")
 
-        implementation "curse.maven:farmers-delight-398521:5566383"
+        compileOnly "curse.maven:farmers-delight-398521:5566383"
 
     }
 }
