@@ -1,0 +1,25 @@
+{
+  "type": "create:deploying",
+  "ingredients": [
+    {
+      "tag": "c:nacho_bowl"
+    },
+    {
+      "tag": "c:cooked_beef"
+    }
+  ],
+  "results": [
+    {
+      "count": 1,
+      "item": {
+        "id": "createfood:nacho_bowl_beef"
+      }
+    }
+  ],
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "nacho_bowl_beef"
+    }
+  ]
+}

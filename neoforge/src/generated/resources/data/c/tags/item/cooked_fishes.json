@@ -15,6 +15,14 @@
     {
       "id": "farmersdelight:cooked_cod_slice",
       "required": false
+    },
+    {
+      "id": "createfood:cooked_tropical_fish",
+      "required": false
+    },
+    {
+      "id": "createfood:cooked_tropical_fish_slice",
+      "required": false
     }
   ]
 }

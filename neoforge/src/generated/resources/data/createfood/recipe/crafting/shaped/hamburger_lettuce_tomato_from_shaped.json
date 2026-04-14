@@ -1,0 +1,24 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "hamburger_lettuce_tomato"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "1": {
+      "tag": "c:bun"
+    },
+    "2": {
+      "tag": "c:beef_bun_lettuce_tomato"
+    }
+  },
+  "pattern": [
+    "1",
+    "2"
+  ],
+  "result": {
+    "id": "createfood:hamburger_lettuce_tomato"
+  }
+}

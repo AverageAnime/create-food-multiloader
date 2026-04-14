@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:bucket"
+    },
+    {
+      "tag": "c:rice_pudding_bowl"
+    },
+    {
+      "tag": "c:rice_pudding_bowl"
+    },
+    {
+      "tag": "c:rice_pudding_bowl"
+    }
+  ],
+  "result": {
+    "id": "createfood:rice_pudding_bucket"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "rice_pudding_bowl"
+    }
+  ]
+}

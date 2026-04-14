@@ -1,0 +1,29 @@
+{
+  "type": "farmersdelight:cooking",
+  "experience": 0.35,
+  "ingredients": [
+    {
+      "tag": "c:dumpling_wrappers"
+    },
+    {
+      "tag": "c:eggs"
+    },
+    {
+      "tag": "c:onion"
+    },
+    {
+      "tag": "c:crops/cabbage"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "count": 1,
+    "id": "createfood:egg_dumplings"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "egg_dumplings"
+    }
+  ]
+}

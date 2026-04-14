@@ -1,0 +1,26 @@
+{
+  "type": "create:filling",
+  "ingredients": [
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "type": "fluid_tag",
+      "amount": 333,
+      "fluid_tag": "c:fish_chowder"
+    }
+  ],
+  "results": [
+    {
+      "item": {
+        "id": "createfood:fish_chowder_bowl"
+      }
+    }
+  ],
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "fish_chowder_bowl"
+    }
+  ]
+}

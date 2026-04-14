@@ -1,0 +1,33 @@
+{
+  "type": "create:mixing",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "type": "fluid_tag",
+      "amount": 250,
+      "fluid_tag": "c:milk"
+    },
+    {
+      "tag": "c:potato"
+    },
+    {
+      "tag": "c:butter"
+    },
+    {
+      "tag": "c:bowl"
+    }
+  ],
+  "results": [
+    {
+      "item": {
+        "id": "createfood:mashed_potatoes_bowl"
+      }
+    }
+  ],
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "mashed_potatoes_bowl"
+    }
+  ]
+}

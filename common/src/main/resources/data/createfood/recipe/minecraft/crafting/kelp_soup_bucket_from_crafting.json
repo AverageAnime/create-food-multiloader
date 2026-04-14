@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:bucket"
+    },
+    {
+      "tag": "c:kelp_soup_bowl"
+    },
+    {
+      "tag": "c:kelp_soup_bowl"
+    },
+    {
+      "tag": "c:kelp_soup_bowl"
+    }
+  ],
+  "result": {
+    "id": "createfood:kelp_soup_bucket"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "kelp_soup_bowl"
+    }
+  ]
+}

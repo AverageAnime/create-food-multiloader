@@ -1,0 +1,29 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:bucket"
+        },
+        {
+            "tag": "c:berry_custard"
+        },
+        {
+            "tag": "c:berry_custard"
+        },
+        {
+            "tag": "c:berry_custard"
+        },
+        {
+            "tag": "c:berry_custard"
+        }
+    ],
+    "result": {
+        "id": "createfood:berry_custard_bucket"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "berry_custard_bucket"
+        }
+    ]
+}

@@ -1,3 +1,19 @@
+### *** 2.3.0 *** - UNFINISHED
+fix creme brulee not drink
+
+remove "marshmallow_dark_chocolate", from default disabled list
+add default tooltips for farmers delight kelp roll + slice + display delight blocks
+adjust translation edits for display delight 
+hand crafting > handcrafting
+datagen update 
+fix missing heated requirement for some recipes
+fix translations 
+cheese added to calzone tooltip
+fd no longer dependency
+misc minor recipe fixes + texture updates
+new food effects for let's do and kaleidoscope. configurable.
+configurable nutrition/saturation
+
 ### *** 2.2.0a ***
 
 #### Fixes:

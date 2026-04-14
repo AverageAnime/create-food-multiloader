@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:bucket"
+    },
+    {
+      "tag": "c:fish_chowder_bowl"
+    },
+    {
+      "tag": "c:fish_chowder_bowl"
+    },
+    {
+      "tag": "c:fish_chowder_bowl"
+    }
+  ],
+  "result": {
+    "id": "createfood:fish_chowder_bucket"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "fish_chowder_bowl"
+    }
+  ]
+}

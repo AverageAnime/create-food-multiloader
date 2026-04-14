@@ -21,7 +21,6 @@
             }
         }
     ],
-    "neoc:conditions": [],
     "neoforge:conditions": [
         {
             "type": "createfood:enabled",
