@@ -21,7 +21,7 @@ public class FluidTagProvider extends TagsProvider<Fluid> {
     public FluidTagProvider(PackOutput output,
                             CompletableFuture<HolderLookup.Provider> lookupProvider,
                             ExistingFileHelper existingFileHelper) {
-        super(output, Registries.FLUID, lookupProvider, CommonClass.ID, existingFileHelper);
+        super(output, Registries.FLUID, lookupProvider, CommonClass.MOD_ID, existingFileHelper);
     }
 
     @Override
@@ -38,8 +38,8 @@ public class FluidTagProvider extends TagsProvider<Fluid> {
                             ResourceLocation.fromNamespaceAndPath("c", fluidId));
 
                     tag(tag)
-                            .addOptional(ResourceLocation.fromNamespaceAndPath(CommonClass.ID, flowingId))
-                            .addOptional(ResourceLocation.fromNamespaceAndPath(CommonClass.ID, fluidId));
+                            .addOptional(ResourceLocation.fromNamespaceAndPath(CommonClass.MOD_ID, flowingId))
+                            .addOptional(ResourceLocation.fromNamespaceAndPath(CommonClass.MOD_ID, fluidId));
                 }
             } catch (IllegalAccessException ignored) {}
         }

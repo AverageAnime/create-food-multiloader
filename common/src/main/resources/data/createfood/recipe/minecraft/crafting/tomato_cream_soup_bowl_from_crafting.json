@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "c:tomato_cream_soup_bucket"
+    },
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "item": "minecraft:bowl"
+    }
+  ],
+  "result": {
+    "id": "createfood:tomato_cream_soup_bowl",
+    "count": 3
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "tomato_cream_soup_bowl"
+    }
+  ]
+}

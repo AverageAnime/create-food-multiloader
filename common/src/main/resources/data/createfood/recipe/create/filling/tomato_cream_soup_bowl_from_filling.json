@@ -1,0 +1,26 @@
+{
+  "type": "create:filling",
+  "ingredients": [
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "type": "fluid_tag",
+      "amount": 333,
+      "fluid_tag": "c:tomato_cream_soup"
+    }
+  ],
+  "results": [
+    {
+      "item": {
+        "id": "createfood:tomato_cream_soup_bowl"
+      }
+    }
+  ],
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "tomato_cream_soup_bowl"
+    }
+  ]
+}

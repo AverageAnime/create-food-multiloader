@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "XX ",
+    "YY ",
+    "   "
+  ],
+  "key": {
+    "X": {
+      "tag": "c:rods/wooden"
+    },
+    "Y": {
+      "tag": "minecraft:wooden_slabs"
+    }
+  },
+  "result": {
+    "count": 1,
+    "id": "createfood:ration_box"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "ration_box"
+    }
+  ]
+}

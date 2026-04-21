@@ -24,23 +24,23 @@ public class ItemTagProvider extends TagsProvider<Item> {
     public ItemTagProvider(PackOutput output,
                            CompletableFuture<HolderLookup.Provider> lookupProvider,
                            ExistingFileHelper existingFileHelper) {
-        super(output, Registries.ITEM, lookupProvider, CommonClass.ID, existingFileHelper);
+        super(output, Registries.ITEM, lookupProvider, CommonClass.MOD_ID, existingFileHelper);
     }
 
     @Override
     protected void addTags(HolderLookup.@NotNull Provider provider) {
         ModItems.ITEMS.getEntries().forEach(holder -> {
             String id = holder.getId().getPath();
-            tag(cTag(id)).addOptional(ResourceLocation.fromNamespaceAndPath(CommonClass.ID, id));
+            tag(cTag(id)).addOptional(ResourceLocation.fromNamespaceAndPath(CommonClass.MOD_ID, id));
             if (id.endsWith("_bottle")) {
                 String baseId = id.substring(0, id.length() - "_bottle".length());
-                tag(cTag(baseId)).addOptional(ResourceLocation.fromNamespaceAndPath(CommonClass.ID, id));
+                tag(cTag(baseId)).addOptional(ResourceLocation.fromNamespaceAndPath(CommonClass.MOD_ID, id));
             }
         });
 
         ModBlocks.BLOCKS.getEntries().forEach(holder -> {
             String id = holder.getId().getPath();
-            tag(cTag(id)).addOptional(ResourceLocation.fromNamespaceAndPath(CommonClass.ID, id));
+            tag(cTag(id)).addOptional(ResourceLocation.fromNamespaceAndPath(CommonClass.MOD_ID, id));
         });
 
         for (Field field : ModFluids.class.getDeclaredFields()) {
@@ -50,20 +50,10 @@ public class ItemTagProvider extends TagsProvider<Item> {
                 if (value instanceof FluidEntry.FluidType fluidType) {
                     DeferredItem<?> bucket = fluidType.BUCKET;
                     String id = bucket.getId().getPath();
-                    tag(cTag(id)).addOptional(ResourceLocation.fromNamespaceAndPath(CommonClass.ID, id));
+                    tag(cTag(id)).addOptional(ResourceLocation.fromNamespaceAndPath(CommonClass.MOD_ID, id));
                 }
             } catch (IllegalAccessException ignored) {}
         }
-        tag(cTag("foods/raw_fish")).addOptional(ResourceLocation.parse("createfood:tropical_fish_slice"));
-        tag(cTag("foods/raw_tropical_fish")).addOptional(ResourceLocation.parse("minecraft:tropical_fish")).addOptional(ResourceLocation.parse("createfood:tropical_fish_slice"));
-        tag(cTag("foods/safe_raw_fish")).addOptional(ResourceLocation.parse("createfood:tropical_fish_slice"));
-        tag(cTag("foods/cooked_fish")).addOptional(ResourceLocation.parse("createfood:cooked_tropical_fish")).addOptional(ResourceLocation.parse("createfood:cooked_tropical_fish_slice"));
-        tag(cTag("foods/cooked_tropical_fish")).addOptional(ResourceLocation.parse("createfood:cooked_tropical_fish")).addOptional(ResourceLocation.parse("createfood:cooked_tropical_fish_slice"));
-
-        tag(modTag("farmersdelight", "cabbage_roll_ingredients")).addOptional(ResourceLocation.parse("createfood:tropical_fish_slice"));
-        tag(modTag("minecraft", "fishes")).addOptional(ResourceLocation.parse("createfood:cooked_tropical_fish"));
-        tag(cTag("honeyed_apple")).addOptional(ResourceLocation.parse("create:honeyed_apple"));
-        tag(cTag("tortilla_chip_bowl")).addOptional(ResourceLocation.parse("createfood:pita_chip_bowl"));
 
         tag(cTag("apple")).addOptional(ResourceLocation.parse("minecraft:apple")).addOptional(ResourceLocation.parse("createfood:apple_slice"));
         tag(cTag("apple_jam_bottle")).addOptional(ResourceLocation.parse("bakery:apple_jam"));
@@ -99,6 +89,7 @@ public class ItemTagProvider extends TagsProvider<Item> {
         tag(cTag("chocolate_chip_chocolate_cookie")).addOptional(ResourceLocation.parse("expandeddelight:chocolate_chip_chocolate_cookie"));
         tag(cTag("chocolate_milkshake_bottle")).addOptional(ResourceLocation.parse("beachparty:chocolate_milkshake")).addOptional(ResourceLocation.parse("create_dd:chocolate_milkshake"));
         tag(cTag("chocolate_milkshake_bucket")).addOptional(ResourceLocation.parse("create_dd:chocolate_milkshake_bucket"));
+        tag(cTag("chocolate_sweet_dough")).addOptional(ResourceLocation.parse("createfood:chocolate_sugar_dough"));
         tag(cTag("chocolate_toast")).addOptional(ResourceLocation.parse("moredelight:chocolate_toast"));
         tag(cTag("chorus_cookie")).addOptional(ResourceLocation.parse("ends_delight:chorus_cookie"));
         tag(cTag("chorus_fruit")).addOptional(ResourceLocation.parse("minecraft:chorus_fruit")).addOptional(ResourceLocation.parse("createfood:chorus_fruit_slice"));
@@ -139,11 +130,14 @@ public class ItemTagProvider extends TagsProvider<Item> {
         tag(cTag("flesh_cookie")).addOptional(ResourceLocation.parse("frightsdelight:cookie_flesh"));
         tag(cTag("flour")).addOptional(ResourceLocation.parse("farm_and_charm:flour"));
         tag(cTag("food_plates")).addOptional(ResourceLocation.parse("displaydelight:food_plate")).addOptional(ResourceLocation.parse("displaydelight:small_food_plate"));
+        tag(cTag("foods/cooked_fish")).addOptional(ResourceLocation.parse("createfood:cooked_tropical_fish")).addOptional(ResourceLocation.parse("createfood:cooked_tropical_fish_slice"));
         tag(cTag("foods/cooked_meats/cooked_rabbit")).addOptional(ResourceLocation.parse("minecraft:cooked_rabbit")).addOptional(ResourceLocation.parse("createfood:cooked_rabbit_cuts"));
+        tag(cTag("foods/cooked_tropical_fish")).addOptional(ResourceLocation.parse("createfood:cooked_tropical_fish")).addOptional(ResourceLocation.parse("createfood:cooked_tropical_fish_slice"));
         tag(cTag("foods/doughs")).addOptional(ResourceLocation.parse("create:dough"));
         tag(cTag("foods/raw_bacon")).addOptional(ResourceLocation.parse("farmersdelight:bacon"));
         tag(cTag("foods/raw_beef")).addOptional(ResourceLocation.parse("createfood:ground_beef"));
         tag(cTag("foods/raw_chicken")).addOptional(ResourceLocation.parse("createfood:ground_chicken"));
+        tag(cTag("foods/raw_fish")).addOptional(ResourceLocation.parse("createfood:tropical_fish_slice"));
         tag(cTag("foods/raw_meats/ground")).addOptional(ResourceLocation.parse("createfood:ground_beef")).addOptional(ResourceLocation.parse("createfood:ground_chicken")).addOptional(ResourceLocation.parse("createfood:ground_mutton")).addOptional(ResourceLocation.parse("createfood:ground_pork")).addOptional(ResourceLocation.parse("createfood:ground_rabbit"));
         tag(cTag("foods/raw_meats/raw_bacon")).addOptional(ResourceLocation.parse("farmersdelight:bacon"));
         tag(cTag("foods/raw_meats/raw_beef")).addOptional(ResourceLocation.parse("createfood:ground_beef"));
@@ -154,6 +148,8 @@ public class ItemTagProvider extends TagsProvider<Item> {
         tag(cTag("foods/raw_mutton")).addOptional(ResourceLocation.parse("createfood:ground_mutton"));
         tag(cTag("foods/raw_pork")).addOptional(ResourceLocation.parse("createfood:ground_pork"));
         tag(cTag("foods/raw_rabbit")).addOptional(ResourceLocation.parse("minecraft:rabbit")).addOptional(ResourceLocation.parse("createfood:rabbit_cuts")).addOptional(ResourceLocation.parse("createfood:ground_rabbit"));
+        tag(cTag("foods/raw_tropical_fish")).addOptional(ResourceLocation.parse("minecraft:tropical_fish")).addOptional(ResourceLocation.parse("createfood:tropical_fish_slice"));
+        tag(cTag("foods/safe_raw_fish")).addOptional(ResourceLocation.parse("createfood:tropical_fish_slice"));
         tag(cTag("frosting_ingredients")).addOptionalTag(cTag("cream_cheese")).addOptionalTag(cTag("butter"));
         tag(cTag("fruits")).addOptionalTag(cTag("apple")).addOptionalTag(cTag("melon")).addOptionalTag(cTag("chorus_fruit")).addOptionalTag(cTag("foods/berries"));
         tag(cTag("gelatin_dessert_block")).addOptional(ResourceLocation.parse("createfood:gelatin_dessert_block")).addOptional(ResourceLocation.parse("createfood:black_gelatin_dessert_block")).addOptional(ResourceLocation.parse("createfood:blue_gelatin_dessert_block")).addOptional(ResourceLocation.parse("createfood:brown_gelatin_dessert_block")).addOptional(ResourceLocation.parse("createfood:cyan_gelatin_dessert_block")).addOptional(ResourceLocation.parse("createfood:gray_gelatin_dessert_block")).addOptional(ResourceLocation.parse("createfood:green_gelatin_dessert_block")).addOptional(ResourceLocation.parse("createfood:light_gray_gelatin_dessert_block")).addOptional(ResourceLocation.parse("createfood:lime_gelatin_dessert_block")).addOptional(ResourceLocation.parse("createfood:magenta_gelatin_dessert_block")).addOptional(ResourceLocation.parse("createfood:orange_gelatin_dessert_block")).addOptional(ResourceLocation.parse("createfood:pink_gelatin_dessert_block")).addOptional(ResourceLocation.parse("createfood:purple_gelatin_dessert_block")).addOptional(ResourceLocation.parse("createfood:red_gelatin_dessert_block")).addOptional(ResourceLocation.parse("createfood:yellow_gelatin_dessert_block"));
@@ -174,6 +170,7 @@ public class ItemTagProvider extends TagsProvider<Item> {
         tag(cTag("hamburger_onion_lettuce_tomato")).addOptional(ResourceLocation.parse("farmersdelight:hamburger"));
         tag(cTag("hidden_from_recipe_viewers")).addOptional(ResourceLocation.parse("createfood:icon"));
         tag(cTag("honey_cookie")).addOptional(ResourceLocation.parse("farmersdelight:honey_cookie"));
+        tag(cTag("honeyed_apple")).addOptional(ResourceLocation.parse("create:honeyed_apple"));
         tag(cTag("honeyed_donut")).addOptional(ResourceLocation.parse("createfood:honeyed_donut")).addOptional(ResourceLocation.parse("create_snt:honey_donut"));
         tag(cTag("hot_chocolate")).addOptional(ResourceLocation.parse("createfood:hot_chocolate_bottle"));
         tag(cTag("hot_chocolate_bottle")).addOptional(ResourceLocation.parse("createfood:hot_chocolate_bottle")).addOptional(ResourceLocation.parse("create_dd:hot_chocolate"));
@@ -249,6 +246,7 @@ public class ItemTagProvider extends TagsProvider<Item> {
         tag(cTag("tomato_sauce")).addOptional(ResourceLocation.parse("farmersdelight:tomato_sauce"));
         tag(cTag("tools/knife")).addOptional(ResourceLocation.parse("bakery:bread_knife"));
         tag(cTag("tortilla")).addOptional(ResourceLocation.parse("culturaldelights:tortilla"));
+        tag(cTag("tortilla_chip_bowl")).addOptional(ResourceLocation.parse("createfood:pita_chip_bowl"));
         tag(cTag("tortilla_chips")).addOptional(ResourceLocation.parse("culturaldelights:tortilla_chips"));
         tag(cTag("ube_cookie")).addOptional(ResourceLocation.parse("ubesdelight:cookie_ube"));
         tag(cTag("ube_cream_frosting")).addOptional(ResourceLocation.parse("createfood:ube_cream_frosting_bottle"));
@@ -261,11 +259,11 @@ public class ItemTagProvider extends TagsProvider<Item> {
         tag(cTag("vinegar_bottle")).addOptional(ResourceLocation.parse("createfood:vinegar_bottle")).addOptional(ResourceLocation.parse("dumplings_delight:vinegar"));
         tag(cTag("warped_fungus")).addOptional(ResourceLocation.parse("minecraft:warped_fungus")).addOptional(ResourceLocation.parse("createfood:sliced_warped_fungus"));
         tag(cTag("wheat_dough")).addOptional(ResourceLocation.parse("create:dough")).addOptional(ResourceLocation.parse("farmersdelight:wheat_dough"));
-        tag(cTag("chocolate_sweet_dough")).addOptional(ResourceLocation.parse("createfood:chocolate_sugar_dough"));
+        tag(modTag("farmersdelight", "cabbage_roll_ingredients")).addOptional(ResourceLocation.parse("createfood:tropical_fish_slice"));
+        tag(modTag("minecraft", "fishes")).addOptional(ResourceLocation.parse("createfood:cooked_tropical_fish"));
 
     }
 
-    /** Build a TagKey under the {@code c} namespace for the given item ID. */
     private static TagKey<Item> cTag(String id) {
         return TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", id));
     }

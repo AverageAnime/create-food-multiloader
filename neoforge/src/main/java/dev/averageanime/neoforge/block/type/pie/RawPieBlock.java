@@ -22,10 +22,9 @@ public class RawPieBlock extends Block {
         super(properties);
     }
 
-    public VoxelShape getShape(@NotNull BlockState State, @NotNull BlockGetter level, @NotNull BlockPos pos, @NotNull CollisionContext context) {
+    public VoxelShape getShape(@NotNull BlockState state, @NotNull BlockGetter level, @NotNull BlockPos pos, @NotNull CollisionContext context) {
         return SHAPE;
     }
-
 
     public BlockState getStateForPlacement(BlockPlaceContext context) {
         return this.defaultBlockState().setValue(FACING, context.getHorizontalDirection());
@@ -38,5 +37,5 @@ public class RawPieBlock extends Block {
     static {
         FACING = BlockStateProperties.HORIZONTAL_FACING;
         SHAPE = Block.box(2.0D, 0.0D, 2.0D, 14.0D, 4.0D, 14.0D);
-        }
+    }
 }

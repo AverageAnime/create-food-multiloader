@@ -11,6 +11,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import org.jetbrains.annotations.NotNull;
 
 public class CheeseBlock extends ModCakeBlock {
 
@@ -32,7 +33,7 @@ public class CheeseBlock extends ModCakeBlock {
         return new ItemStack((ItemLike) ModItems.CHEESE_SLICE);
     }
 
-    public VoxelShape getShape(BlockState State, BlockGetter level, BlockPos pos, CollisionContext context) {
+    public @NotNull VoxelShape getShape(BlockState State, BlockGetter level, BlockPos pos, CollisionContext context) {
         VoxelShape baseShape = SHAPE_BY_BITE[State.getValue(BITES)];
         Direction facing = State.getValue(FACING);
 

@@ -1,4 +1,4 @@
-// 1.21.1	2026-04-10T19:23:54.3951451	Block Models: createfood
+// 1.21.1	2026-04-17T13:55:53.4528953	Block Models: createfood
 19dd695d861aefefdbcc2ac201a225aff4c789a8 assets/createfood/models/block/apple_cream_frosting_block.json
 cf5d2fe71e9f8d8726b0f91af6ac08c4fd201d66 assets/createfood/models/block/apple_custard_block.json
 0be7a62b220221f1742a3a9730a7c1b3449e370f assets/createfood/models/block/apple_ice_cream_block.json
@@ -20,6 +20,7 @@ fcb7719bc57c396f656600e3e2651966ddad7794 assets/createfood/models/block/berry_ju
 3b69954bc6ad26489b8af5dd80e14140fd8b4c51 assets/createfood/models/block/blackstrap_molasses_block.json
 f2ba679603e45c98167081f96f913183bffbb884 assets/createfood/models/block/black_gelatin_mix_block.json
 e1ce28ab3182bac0b5ee5958ea60ac38288db199 assets/createfood/models/block/blue_gelatin_mix_block.json
+0439cbb73668d7140a373a8311c2554edeb42f17 assets/createfood/models/block/bread_pudding_block.json
 642214930dcb003a732d934aa0a79483a4241de5 assets/createfood/models/block/brown_gelatin_mix_block.json
 88ad1a035c55cd493b5a5143d4bff1083f49ac86 assets/createfood/models/block/butterscotch_block.json
 d07cd3c64ae02eb4d695e7cf284abaf95b4aaab6 assets/createfood/models/block/butterscotch_fudge_block.json
@@ -91,6 +92,7 @@ a915db9ef7611f0015629e256e3784b4c9c89a0a assets/createfood/models/block/meringue
 d1014a664aaaf98ff48968853580caf21875fc4f assets/createfood/models/block/molasses_block.json
 2e9003eca74f3dc0eb8d46eb49d7783640dc90c5 assets/createfood/models/block/mushroom_calzone_plate_block_1.json
 fb1cc4005b9963e2d232a89f93bee435c07c45d6 assets/createfood/models/block/mushroom_calzone_plate_block_2.json
+20e339dcf61d018315ad5d0349bd7d9f8d4eea5f assets/createfood/models/block/mushroom_cream_soup_block.json
 2e9003eca74f3dc0eb8d46eb49d7783640dc90c5 assets/createfood/models/block/mutton_calzone_plate_block_1.json
 fb1cc4005b9963e2d232a89f93bee435c07c45d6 assets/createfood/models/block/mutton_calzone_plate_block_2.json
 e952b1c03600a5296e3775cc6b96a0b57f2dcd91 assets/createfood/models/block/mutton_stew_block.json
@@ -99,6 +101,7 @@ fb1cc4005b9963e2d232a89f93bee435c07c45d6 assets/createfood/models/block/onion_ca
 afd0ed376d1215615ba36da2f4d18537d91ea2be assets/createfood/models/block/orange_gelatin_mix_block.json
 5f7311974647bcef4f9a95ffc253b358c487fd90 assets/createfood/models/block/pink_gelatin_mix_block.json
 05bd3f04a2567ab8a1d4a011d203680a213b7704 assets/createfood/models/block/pork_stew_block.json
+95ae22ead1ae2f708d544e69d971280077e1c56a assets/createfood/models/block/potato_cream_soup_block.json
 d277beb522a5dfa2db8e9c54c542c22551fdfbdb assets/createfood/models/block/pumpkin_custard_block.json
 62db39951c79bcefba33cc34dbaca488e2d265d6 assets/createfood/models/block/pumpkin_pie_filling_block.json
 3573ea76c1d00234cc8d9e9355433e8fa1d152f2 assets/createfood/models/block/pumpkin_puree_block.json
@@ -116,6 +119,7 @@ c13aeab2608c3e780d07d195b574aade52e4d57b assets/createfood/models/block/sugar_ca
 176e0cda2b3bb003d49386b3863cab24ae44b24c assets/createfood/models/block/taco_sauce_block.json
 53a4ac2aa84b777d9b7482d78a0308e39e868e46 assets/createfood/models/block/toffee_block.json
 e49e536ce290f2f3597b30e7892fc0e8bf2f4950 assets/createfood/models/block/toffee_fudge_block.json
+fb095e1c6dbb255fe6e7d9ea25ee3b3718f0040c assets/createfood/models/block/tomato_cream_soup_block.json
 5af1bd7da5c0d4b66b78f7f533764896f9b3d262 assets/createfood/models/block/ube_cream_frosting_block.json
 eedb2c61a33671b754c9fcc99eb05a4f6e53c451 assets/createfood/models/block/vegetable_oil_block.json
 f90b2dce1860ef88407a167a5fafa6376fbce810 assets/createfood/models/block/vinegar_block.json

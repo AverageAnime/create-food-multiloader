@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "c:scone"
+    },
+    {
+      "tag": "c:chorus_fruit_jam_bottle"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "createfood:scone_chorus_fruit_jam"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "scone_chorus_fruit_jam"
+    }
+  ]
+}

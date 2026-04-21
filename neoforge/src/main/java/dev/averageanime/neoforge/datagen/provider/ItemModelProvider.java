@@ -17,8 +17,7 @@ import net.neoforged.neoforge.registries.DeferredBlock;
 public class ItemModelProvider extends net.neoforged.neoforge.client.model.generators.ItemModelProvider {
 
     /**
-     * Block item IDs whose inventory model should parent the block model
-     * rather than using {@code item/generated}.
+     * Block item IDs whose inventory model should parent the block model.
      */
     private static final Set<String> BLOCK_MODEL_ITEMS = Set.of(
             "black_gelatin_dessert_block",
@@ -40,45 +39,40 @@ public class ItemModelProvider extends net.neoforged.neoforge.client.model.gener
     );
 
     /**
-     * Items whose layer0 texture is a shared sprite rather than {@code item/{id}}.
-     *
-     * <p>Key = item registry ID, value = full resource location string for layer0.
-     * Add entries here when a new item reuses an existing texture rather than
-     * having its own dedicated PNG.
+     * Items whose layer0 texture is a shared sprite.
      */
     private static final Map<String, String> ALL_TEXTURE_OVERRIDES = Map.ofEntries(
             Map.entry("bacon_calzone",    "createfood:item/calzone"),
             Map.entry("beef_calzone",     "createfood:item/calzone"),
             Map.entry("cheese_calzone",   "createfood:item/calzone"),
+            Map.entry("cheese_potato_dumplings",  "farmersdelight:item/dumplings"),
             Map.entry("chicken_calzone",  "createfood:item/calzone"),
+            Map.entry("chocolate_sweet_dough", "createfood:item/chocolate_sugar_dough"),
+            Map.entry("corn_stick",            "createfood:item/smoked_corn_stick"),
+            Map.entry("egg_dumplings",  "farmersdelight:item/dumplings"),
             Map.entry("fish_calzone",     "createfood:item/calzone"),
             Map.entry("mushroom_calzone", "createfood:item/calzone"),
+            Map.entry("mutton_calzone",  "createfood:item/calzone"),
             Map.entry("onion_calzone",    "createfood:item/calzone"),
-            Map.entry("sausage_calzone",  "createfood:item/calzone"),
+            Map.entry("plate_block",       "minecraft:item/bowl"),
+            Map.entry("pumpkin_pie_block", "minecraft:item/pumpkin_pie"),
+            Map.entry("rabbit_calzone",  "createfood:item/calzone"),
             Map.entry("raw_bacon_calzone",    "createfood:item/raw_calzone"),
             Map.entry("raw_beef_calzone",     "createfood:item/raw_calzone"),
             Map.entry("raw_cheese_calzone",   "createfood:item/raw_calzone"),
             Map.entry("raw_chicken_calzone",  "createfood:item/raw_calzone"),
             Map.entry("raw_fish_calzone",     "createfood:item/raw_calzone"),
             Map.entry("raw_mushroom_calzone", "createfood:item/raw_calzone"),
-            Map.entry("raw_onion_calzone",    "createfood:item/raw_calzone"),
-            Map.entry("raw_sausage_calzone",  "createfood:item/raw_calzone"),
-            Map.entry("raw_rabbit_calzone",  "createfood:item/raw_calzone"),
             Map.entry("raw_mutton_calzone",  "createfood:item/raw_calzone"),
-            Map.entry("rabbit_calzone",  "createfood:item/calzone"),
-            Map.entry("mutton_calzone",  "createfood:item/calzone"),
-            Map.entry("egg_dumplings",  "farmersdelight:item/dumplings"),
-            Map.entry("cheese_potato_dumplings",  "farmersdelight:item/dumplings"),
-
-            Map.entry("chocolate_sweet_dough", "createfood:item/chocolate_sugar_dough"),
-            Map.entry("corn_stick",            "createfood:item/smoked_corn_stick"),
-            Map.entry("pumpkin_pie_block", "minecraft:item/pumpkin_pie"),
-            Map.entry("plate_block",       "minecraft:item/bowl"),
+            Map.entry("raw_onion_calzone",    "createfood:item/raw_calzone"),
+            Map.entry("raw_rabbit_calzone",  "createfood:item/raw_calzone"),
+            Map.entry("raw_sausage_calzone",  "createfood:item/raw_calzone"),
+            Map.entry("sausage_calzone",  "createfood:item/calzone"),
             Map.entry("small_plate_block", "minecraft:item/bowl")
     );
 
     public ItemModelProvider(PackOutput output, ExistingFileHelper existingFileHelper) {
-        super(output, CommonClass.ID, existingFileHelper);
+        super(output, CommonClass.MOD_ID, existingFileHelper);
     }
 
     @Override
@@ -111,36 +105,27 @@ public class ItemModelProvider extends net.neoforged.neoforge.client.model.gener
         });
     }
 
-    /** Display block: item model parents the block's placed model directly. */
     private void simpleBlockItem(DeferredBlock<Block> block) {
         String name = block.getId().getPath();
         getBuilder(name).parent(new ModelFile.UncheckedModelFile(
-                ResourceLocation.fromNamespaceAndPath(CommonClass.ID, "block/" + name)));
+                ResourceLocation.fromNamespaceAndPath(CommonClass.MOD_ID, "block/" + name)));
     }
 
-    /** Display plate block: item model parents the full-stack plate model. */
     private void plateBlockItem(DeferredBlock<Block> block, int maxStack) {
         String name = block.getId().getPath();
         getBuilder(name).parent(new ModelFile.UncheckedModelFile(
-                ResourceLocation.fromNamespaceAndPath(CommonClass.ID, "block/" + name + "_" + maxStack)));
+                ResourceLocation.fromNamespaceAndPath(CommonClass.MOD_ID, "block/" + name + "_" + maxStack)));
     }
 
-    /**
-     * Standard flat-sprite item model.
-     *
-     * <p>If {@code id} has an entry in {@link #ALL_TEXTURE_OVERRIDES}, that texture
-     * is used for layer0 instead of the default {@code createfood:item/{id}}.
-     */
     private void generatedItem(String id) {
         String layer0 = ALL_TEXTURE_OVERRIDES.getOrDefault(id,
-                ResourceLocation.fromNamespaceAndPath(CommonClass.ID, "item/" + id).toString());
+                ResourceLocation.fromNamespaceAndPath(CommonClass.MOD_ID, "item/" + id).toString());
         withExistingParent(id, "item/generated")
                 .texture("layer0", ResourceLocation.parse(layer0));
     }
 
-    /** Block item whose inventory model parents the block model geometry. */
     private void blockParentItem(String id) {
         getBuilder(id).parent(new ModelFile.UncheckedModelFile(
-                ResourceLocation.fromNamespaceAndPath(CommonClass.ID, "block/" + id)));
+                ResourceLocation.fromNamespaceAndPath(CommonClass.MOD_ID, "block/" + id)));
     }
 }

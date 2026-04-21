@@ -1,0 +1,25 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "scone_apple_jam"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "1": {
+      "tag": "c:apple_jam_bottle"
+    },
+    "2": {
+      "tag": "c:scone"
+    }
+  },
+  "pattern": [
+    "1",
+    "2"
+  ],
+  "result": {
+    "count": 1,
+    "id": "createfood:scone_apple_jam"
+  }
+}

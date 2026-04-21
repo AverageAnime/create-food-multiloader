@@ -13,7 +13,7 @@ import net.neoforged.neoforge.common.data.ExistingFileHelper;
 public class BlockModelProvider extends net.neoforged.neoforge.client.model.generators.BlockModelProvider {
 
     public BlockModelProvider(PackOutput output, ExistingFileHelper existingFileHelper) {
-        super(output, CommonClass.ID, existingFileHelper);
+        super(output, CommonClass.MOD_ID, existingFileHelper);
     }
 
     @Override
@@ -89,9 +89,8 @@ public class BlockModelProvider extends net.neoforged.neoforge.client.model.gene
                         ResourceLocation.parse(parentId)));
     }
 
-    /** Shorthand for a createfood-namespaced resource location. */
     private ResourceLocation cf(String path) {
-        return ResourceLocation.fromNamespaceAndPath(CommonClass.ID, path);
+        return ResourceLocation.fromNamespaceAndPath(CommonClass.MOD_ID, path);
     }
 
 }

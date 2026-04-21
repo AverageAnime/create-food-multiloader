@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "c:potato_cream_soup_bowl"
+    },
+    {
+      "tag": "c:cheeses"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "createfood:potato_cream_soup_bowl_cheese"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "potato_cream_soup_bowl_cheese"
+    }
+  ]
+}

@@ -18,7 +18,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.function.Supplier;
 
-public class BottleFoodBlock extends FoodBlock {
+public class BottleFoodBlock extends DisplayFoodBlock {
     protected final VoxelShape shape;
     protected final double shapeHeight;
 
@@ -35,7 +35,7 @@ public class BottleFoodBlock extends FoodBlock {
 
     public BottleFoodBlock(Supplier<Item> displayItem, double heightInPixels, boolean hasParticles, Supplier<ParticleOptions> particleType) {
         super(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS), displayItem, 1);
-        this.shapeHeight = Math.max(1.0, Math.min(16.0, heightInPixels));
+        this.shapeHeight = Math.clamp(heightInPixels, 1.0, 16.0);
         this.shape = Block.box(5.5, 0.0, 5.5, 10.5, this.shapeHeight, 10.5);
         this.hasParticles = hasParticles;
         this.particleType = particleType;
@@ -44,11 +44,6 @@ public class BottleFoodBlock extends FoodBlock {
     @Override
     public @NotNull VoxelShape getShape(@NotNull BlockState state, @NotNull BlockGetter level, @NotNull BlockPos pos, @NotNull CollisionContext context) {
         return shape;
-    }
-
-    @Override
-    protected void handleLastItemRemoved(BlockState state, Level level, BlockPos pos) {
-        level.removeBlock(pos, false);
     }
 
     @Override

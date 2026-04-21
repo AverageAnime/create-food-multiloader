@@ -1,0 +1,36 @@
+{
+  "type": "farmersdelight:cooking",
+  "experience": 0.5,
+  "ingredients": [
+    {
+      "tag": "c:tomato"
+    },
+    {
+      "tag": "c:tomato"
+    },
+    {
+      "tag": "c:tomato"
+    },
+    {
+      "tag": "c:heavy_cream_bottle"
+    },
+    {
+      "tag": "c:salt"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "container": {
+    "count": 1,
+    "id": "minecraft:bowl"
+  },
+  "result": {
+    "count": 1,
+    "id": "createfood:tomato_cream_soup_bowl"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "tomato_cream_soup_bowl"
+    }
+  ]
+}

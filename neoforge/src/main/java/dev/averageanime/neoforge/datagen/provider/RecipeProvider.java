@@ -20,7 +20,7 @@ public record RecipeProvider(PackOutput output) implements DataProvider {
     @Override
     public @NotNull CompletableFuture<?> run(@NotNull CachedOutput cache) {
         Path recipeRoot = output.getOutputFolder(PackOutput.Target.DATA_PACK)
-                .resolve(CommonClass.ID)
+                .resolve(CommonClass.MOD_ID)
                 .resolve("recipe");
         Path shapedRoot = recipeRoot.resolve("crafting").resolve("shaped");
 
@@ -88,11 +88,11 @@ public record RecipeProvider(PackOutput output) implements DataProvider {
     }
 
     private Path locateSourceRecipes() {
-        return Path.of("../../common/src/main/resources/data/" + CommonClass.ID + "/recipe/minecraft/crafting");
+        return Path.of("../../common/src/main/resources/data/" + CommonClass.MOD_ID + "/recipe/minecraft/crafting");
     }
 
     @Override
     public @NotNull String getName() {
-        return "Shaped Recipes: " + CommonClass.ID;
+        return "Shaped Recipes: " + CommonClass.MOD_ID;
     }
 }

@@ -31,6 +31,7 @@ import net.minecraft.world.level.pathfinder.PathComputationType;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.function.Supplier;
 
@@ -62,17 +63,17 @@ public abstract class ConsumableBlock extends Block {
     );
 
     @Override
-    public ItemInteractionResult useItemOn(ItemStack heldStack, BlockState state, Level level,
-                                           BlockPos pos, Player player, InteractionHand hand,
-                                           BlockHitResult hit) {
+    public @NotNull ItemInteractionResult useItemOn(ItemStack heldStack, @NotNull BlockState state, @NotNull Level level,
+                                                    @NotNull BlockPos pos, @NotNull Player player, @NotNull InteractionHand hand,
+                                                    @NotNull BlockHitResult hit) {
         return heldStack.is(KNIVES)
                 ? cutSlice(level, pos, state, player)
                 : ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
     }
 
     @Override
-    protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos,
-                                               Player player, BlockHitResult hitResult) {
+    protected @NotNull InteractionResult useWithoutItem(@NotNull BlockState state, Level level, @NotNull BlockPos pos,
+                                                        @NotNull Player player, @NotNull BlockHitResult hitResult) {
         if (level.isClientSide) {
             if (consumeBite(level, pos, state, player).consumesAction()) {
                 return InteractionResult.SUCCESS;
@@ -131,30 +132,30 @@ public abstract class ConsumableBlock extends Block {
     }
 
     @Override
-    public BlockState updateShape(BlockState state, Direction facing, BlockState facingState,
-                                  LevelAccessor level, BlockPos pos, BlockPos facingPos) {
+    public @NotNull BlockState updateShape(@NotNull BlockState state, @NotNull Direction facing, @NotNull BlockState facingState,
+                                           @NotNull LevelAccessor level, @NotNull BlockPos pos, @NotNull BlockPos facingPos) {
         return facing == Direction.DOWN && !state.canSurvive(level, pos)
                 ? Blocks.AIR.defaultBlockState()
                 : super.updateShape(state, facing, facingState, level, pos, facingPos);
     }
 
     @Override
-    public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
+    public boolean canSurvive(@NotNull BlockState state, LevelReader level, BlockPos pos) {
         return level.getBlockState(pos.below()).isSolid();
     }
 
     @Override
-    public boolean hasAnalogOutputSignal(BlockState state) {
+    public boolean hasAnalogOutputSignal(@NotNull BlockState state) {
         return true;
     }
 
     @Override
-    public int getAnalogOutputSignal(BlockState state, Level level, BlockPos pos) {
+    public int getAnalogOutputSignal(BlockState state, @NotNull Level level, @NotNull BlockPos pos) {
         return getMaxBites() - state.getValue(BITES);
     }
 
     @Override
-    public boolean isPathfindable(BlockState state, PathComputationType type) {
+    public boolean isPathfindable(@NotNull BlockState state, @NotNull PathComputationType type) {
         return false;
     }
 

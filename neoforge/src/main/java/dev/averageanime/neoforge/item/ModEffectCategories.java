@@ -21,11 +21,6 @@ public final class ModEffectCategories {
         return effect;
     }
 
-    /**
-     * Looks up a {@link FoodEffect} by its category name (e.g. {@code "comfort"}).
-     * Returns empty if the name is not a known category — callers should fall back
-     * to treating the string as a direct registry ID.
-     */
     public static Optional<FoodEffect> getByName(String name) {
         return Optional.ofNullable(BY_NAME.get(name));
     }
@@ -168,11 +163,7 @@ public final class ModEffectCategories {
                     .build()
     );
 
-    /**
-     * Increases mining speed based on depth.
-     * brewery:mining and herbalbrews:deeprush are functionally equivalent,
-     * so only the first loaded mod's effect fires.
-     */
+    /** Increases mining speed based on depth. */
     public static final FoodEffect MINING = register(
             FoodEffect.category("mining")
                     .or("brewery",      "brewery:mining")
@@ -278,10 +269,7 @@ public final class ModEffectCategories {
                     .build()
     );
 
-    /**
-     * Eating rotten flesh, raw chicken, poisonous potatoes, pufferfish, or
-     * spider eyes will not cause debuffs.
-     */
+    /** Eating rotten flesh, raw chicken, poisonous potatoes, pufferfish, or spider eyes will not cause debuffs. */
     public static final FoodEffect PRESERVATION = register(
             FoodEffect.category("preservation")
                     .or("kaleidoscope_cookery",  "kaleidoscope_cookery:preservation")
