@@ -1,5 +1,6 @@
 package dev.averageanime.neoforge.block;
 
+import com.electronwill.nightconfig.core.file.FileConfig;
 import dev.averageanime.CommonClass;
 import dev.averageanime.neoforge.block.type.display.*;
 import dev.averageanime.neoforge.block.type.plate.EmptyPlateBlock;
@@ -16,11 +17,13 @@ import net.minecraft.world.item.*;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.neoforged.bus.api.IEventBus;
+import net.neoforged.fml.loading.FMLPaths;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import org.jetbrains.annotations.NotNull;
 
 import java.lang.reflect.Field;
+import java.nio.file.Files;
 import java.util.*;
 import java.util.function.Supplier;
 
@@ -33,7 +36,7 @@ public class ModDisplayBlocks {
     private static final Map<String, Object> DATAPACK_CONFIGS = new LinkedHashMap<>();
 
     public static final DeferredRegister.Blocks BLOCKS =
-            DeferredRegister.createBlocks(CommonClass.ID);
+            DeferredRegister.createBlocks(CommonClass.MOD_ID);
 
     public static final DeferredBlock<Block> SMALL_PLATE_BLOCK = BLOCKS.register("small_plate_block",
             () -> new SmallPlateBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS)));
@@ -101,6 +104,7 @@ public class ModDisplayBlocks {
 
         registerConfig("_jam_bottle", DisplayType.BOTTLE, 9, false, null);
         registerConfig("taco_sauce_bottle", DisplayType.BOTTLE, 9, false, null);
+        registerConfig("sugar_cane_juice_bottle", DisplayType.BOTTLE, 9, false, null);
         registerConfig("egg_whites_bottle", DisplayType.BOTTLE, 9, false, null);
         registerConfig("_juice_bottle", DisplayType.BOTTLE, 10, false, null);
         registerConfig("chocolate_bottle", DisplayType.BOTTLE, 8, false, null);
@@ -130,6 +134,10 @@ public class ModDisplayBlocks {
         registerConfig("corn_stick", DisplayType.PLATE, 2);
         registerConfig("cotton_candy_stick", DisplayType.PLATE, 2);
         registerConfig("stick", DisplayType.PLATE, 3);
+        registerMultiConfig("scone",
+                new DisplayBlockConfig(DisplayType.PLATE, 4),
+                new DisplayBlockConfig(DisplayType.SMALL_PLATE)
+        );
         registerConfig("cone", DisplayType.PLATE, 2);
         registerConfig("muffin", DisplayType.PLATE, 4);//
         registerConfig("pastry", DisplayType.PLATE, 4);//
@@ -169,39 +177,7 @@ public class ModDisplayBlocks {
 
     public static void autoRegisterDisplayBlocks() {
         try {
-            List<String> itemNames = new ArrayList<>();
-
-            for (Field field : ModItems.class.getDeclaredFields()) {
-                if (java.lang.reflect.Modifier.isStatic(field.getModifiers()) &&
-                        java.lang.reflect.Modifier.isPublic(field.getModifiers())) {
-
-                    try {
-                        Object value = field.get(null);
-                        if (value instanceof net.neoforged.neoforge.registries.DeferredItem<?> deferredItem) {
-                            String itemName = deferredItem.getId().getPath();
-                            itemNames.add(itemName);
-                        }
-                    } catch (Exception e) {
-                    }
-                }
-            }
-
-            for (Field field : ModBlocks.class.getDeclaredFields()) {
-                if (java.lang.reflect.Modifier.isStatic(field.getModifiers()) &&
-                        java.lang.reflect.Modifier.isPublic(field.getModifiers())) {
-
-                    try {
-                        Object value = field.get(null);
-                        if (value instanceof net.neoforged.neoforge.registries.DeferredBlock<?> deferredBlock) {
-                            String blockName = deferredBlock.getId().getPath();
-                            if (!blockName.contains("_dessert_block")) {
-                                itemNames.add(blockName);
-                            }
-                        }
-                    } catch (Exception e) {
-                    }
-                }
-            }
+            List<String> itemNames = getItemNames();
 
             for (String itemName : itemNames) {
                 if (EXCLUDED_ITEMS.contains(itemName)) {
@@ -239,12 +215,49 @@ public class ModDisplayBlocks {
         }
     }
 
+    private static @NotNull List<String> getItemNames() {
+        List<String> itemNames = new ArrayList<>();
+
+        for (Field field : ModItems.class.getDeclaredFields()) {
+            if (java.lang.reflect.Modifier.isStatic(field.getModifiers()) &&
+                    java.lang.reflect.Modifier.isPublic(field.getModifiers())) {
+
+                try {
+                    Object value = field.get(null);
+                    if (value instanceof net.neoforged.neoforge.registries.DeferredItem<?> deferredItem) {
+                        String itemName = deferredItem.getId().getPath();
+                        itemNames.add(itemName);
+                    }
+                } catch (Exception ignored) {
+                }
+            }
+        }
+
+        for (Field field : ModBlocks.class.getDeclaredFields()) {
+            if (java.lang.reflect.Modifier.isStatic(field.getModifiers()) &&
+                    java.lang.reflect.Modifier.isPublic(field.getModifiers())) {
+
+                try {
+                    Object value = field.get(null);
+                    if (value instanceof DeferredBlock<?> deferredBlock) {
+                        String blockName = deferredBlock.getId().getPath();
+                        if (!blockName.contains("_dessert_block")) {
+                            itemNames.add(blockName);
+                        }
+                    }
+                } catch (Exception ignored) {
+                }
+            }
+        }
+        return itemNames;
+    }
+
     private static List<DisplayBlockConfig> findMatchingConfigs(String itemName) {
         for (Map.Entry<String, Object> entry : DISPLAY_CONFIGS.entrySet()) {
             if (itemName.contains(entry.getKey())) {
                 Object value = entry.getValue();
-                if (value instanceof MultiDisplayConfig multi) {
-                    return multi.configs;
+                if (value instanceof MultiDisplayConfig(List<DisplayBlockConfig> configs)) {
+                    return configs;
                 } else if (value instanceof DisplayBlockConfig single) {
                     return Collections.singletonList(single);
                 }
@@ -310,7 +323,7 @@ public class ModDisplayBlocks {
         ITEMS.register(blockName, () ->
                 new BlockItem(block.get(), new Item.Properties()) {
                     @Override
-                    public Component getName(ItemStack stack) {
+                    public @NotNull Component getName(@NotNull ItemStack stack) {
                         Item originalItem = itemSupplier.get();
                         if (originalItem != null && originalItem != Items.BARRIER) {
                             return Component.translatable(
@@ -323,8 +336,8 @@ public class ModDisplayBlocks {
                     }
 
                     @Override
-                    public void appendHoverText(ItemStack stack, TooltipContext context,
-                                                List<Component> components, TooltipFlag flag) {
+                    public void appendHoverText(@NotNull ItemStack stack, @NotNull TooltipContext context,
+                                                @NotNull List<Component> components, @NotNull TooltipFlag flag) {
                         Item originalItem = itemSupplier.get();
                         if (originalItem != null && originalItem != Items.BARRIER) {
                             ItemStack originalStack = new ItemStack(originalItem);
@@ -361,8 +374,8 @@ public class ModDisplayBlocks {
         ITEMS.register(name,
                 () -> new BlockItem(block.get(), new Item.Properties()) {
                     @Override
-                    public void appendHoverText(ItemStack stack, TooltipContext context,
-                                                List<Component> components, TooltipFlag flag) {
+                    public void appendHoverText(@NotNull ItemStack stack, @NotNull TooltipContext context,
+                                                @NotNull List<Component> components, @NotNull TooltipFlag flag) {
                         addTooltip(components, compatTooltip, ingredientTooltips);
                         super.appendHoverText(stack, context, components, flag);
                     }
@@ -394,8 +407,8 @@ public class ModDisplayBlocks {
         ITEMS.register(name,
                 () -> new BlockItem(block.get(), new Item.Properties()) {
                     @Override
-                    public void appendHoverText(ItemStack stack, TooltipContext context,
-                                                List<Component> components, TooltipFlag flag) {
+                    public void appendHoverText(@NotNull ItemStack stack, @NotNull TooltipContext context,
+                                                @NotNull List<Component> components, @NotNull TooltipFlag flag) {
                         Item originalItem = itemSupplier.get();
                         if (originalItem != null && originalItem != Items.BARRIER) {
                             ItemStack originalStack = new ItemStack(originalItem);
@@ -421,8 +434,8 @@ public class ModDisplayBlocks {
         ITEMS.register(name,
                 () -> new BlockItem(block.get(), new Item.Properties()) {
                     @Override
-                    public void appendHoverText(ItemStack stack, TooltipContext context,
-                                                List<Component> components, TooltipFlag flag) {
+                    public void appendHoverText(@NotNull ItemStack stack, @NotNull TooltipContext context,
+                                                @NotNull List<Component> components, @NotNull TooltipFlag flag) {
                         Item originalItem = itemSupplier.get();
                         if (originalItem != null && originalItem != Items.BARRIER) {
                             ItemStack originalStack = new ItemStack(originalItem);
@@ -451,8 +464,8 @@ public class ModDisplayBlocks {
             ITEMS.register(name,
                     () -> new BlockItem(block.get(), new Item.Properties()) {
                         @Override
-                        public void appendHoverText(ItemStack stack, TooltipContext context,
-                                                    List<Component> components, TooltipFlag flag) {
+                        public void appendHoverText(@NotNull ItemStack stack, @NotNull TooltipContext context,
+                                                    @NotNull List<Component> components, @NotNull TooltipFlag flag) {
                             addTooltip(components, compatTooltip, ingredientTooltips);
                             super.appendHoverText(stack, context, components, flag);
                         }
@@ -485,7 +498,7 @@ public class ModDisplayBlocks {
             try {
                 ResourceLocation itemRL = ResourceLocation.parse(modItemId);
                 Item item = BuiltInRegistries.ITEM.get(itemRL);
-                return (item != null && item != Items.AIR) ? item : Items.BARRIER;
+                return item != Items.AIR ? item : Items.BARRIER;
             } catch (Exception e) {
                 return Items.BARRIER;
             }
@@ -502,9 +515,96 @@ public class ModDisplayBlocks {
         });
     }
 
+    private static void registerConfigDisplayBlocks() {
+        var configFile = FMLPaths.CONFIGDIR.get().resolve("createfood-client.toml");
+        if (!Files.exists(configFile)) return;
+
+        try (FileConfig raw = FileConfig.of(configFile)) {
+            raw.load();
+            List<String> entries = raw.getOrElse("display.custom_display_block", List.of());
+            for (String entry : entries) {
+                String[] p = entry.split("\\|");
+                if (p.length != 3) {
+                    LOGGER.warn("Create: Food - Skipping invalid custom_display_block entry: {}", entry);
+                    continue;
+                }
+                String modItemId = p[0];
+                String typeStr = p[1].toLowerCase();
+                int maxStack;
+                try {
+                    maxStack = Integer.parseInt(p[2]);
+                } catch (NumberFormatException e) {
+                    LOGGER.warn("Create: Food - Invalid max_stack in custom_display_block entry: {}", entry);
+                    continue;
+                }
+                DisplayType displayType = switch (typeStr) {
+                    case "plate"       -> DisplayType.PLATE;
+                    case "small_plate" -> DisplayType.SMALL_PLATE;
+                    case "bottle"      -> DisplayType.BOTTLE;
+                    case "bowl"        -> DisplayType.BOWL;
+                    case "salad_bowl"  -> DisplayType.SALAD_BOWL;
+                    default            -> null;
+                };
+                if (displayType == null) {
+                    LOGGER.warn("Create: Food - Unknown display_type '{}' in custom_display_block entry: {}", typeStr, entry);
+                    continue;
+                }
+                ResourceLocation itemRL = ResourceLocation.tryParse(modItemId);
+                if (itemRL == null) {
+                    LOGGER.warn("Create: Food - Invalid item ID '{}' in custom_display_block entry: {}", modItemId, entry);
+                    continue;
+                }
+                String blockName = itemRL.getNamespace() + "_" + getBlockName(itemRL.getPath(), displayType);
+                DisplayBlockConfig config = new DisplayBlockConfig(displayType, maxStack);
+                registerDisplayBlockFromSupplier(blockName, createCompatItemSupplier(modItemId), config);
+            }
+        } catch (Exception e) {
+            LOGGER.warn("Create: Food - Failed to read custom_display_block from config", e);
+        }
+    }
+
+    private static void registerDisplayBlockFromSupplier(String blockName, Supplier<Item> itemSupplier,
+                                                         DisplayBlockConfig config) {
+        String suffixKey = switch (config.type) {
+            case PLATE, SMALL_PLATE, PLATE_FOOD -> "display.createfood.suffix.plate";
+            case BOWL, SALAD_BOWL               -> "display.createfood.suffix.bowl";
+            case BOTTLE                         -> "display.createfood.suffix.bottle";
+        };
+
+        DeferredBlock<Block> block = BLOCKS.register(blockName, () -> createBlock(itemSupplier, config));
+
+        ITEMS.register(blockName, () ->
+                new BlockItem(block.get(), new Item.Properties()) {
+                    @Override
+                    public @NotNull Component getName(@NotNull ItemStack stack) {
+                        Item original = itemSupplier.get();
+                        if (original != null && original != Items.BARRIER) {
+                            return Component.translatable(
+                                    "display.createfood.format",
+                                    original.getDescription(),
+                                    Component.translatable(suffixKey)
+                            );
+                        }
+                        return super.getName(stack);
+                    }
+
+                    @Override
+                    public void appendHoverText(@NotNull ItemStack stack, @NotNull TooltipContext context,
+                                                @NotNull List<Component> components, @NotNull TooltipFlag flag) {
+                        Item original = itemSupplier.get();
+                        if (original != null && original != Items.BARRIER) {
+                            original.appendHoverText(new ItemStack(original), context, components, flag);
+                        }
+                        super.appendHoverText(stack, context, components, flag);
+                    }
+                }
+        );
+    }
+
     public static void register(IEventBus eventBus) {
         LOGGER.info("Create: Food - Registering Display Blocks");
         autoRegisterDisplayBlocks();
+        registerConfigDisplayBlocks();
         BLOCKS.register(eventBus);
 
         eventBus.addListener((net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent event) -> {
@@ -519,45 +619,30 @@ public class ModDisplayBlocks {
         PLATE, SMALL_PLATE, BOTTLE, BOWL, SALAD_BOWL, PLATE_FOOD
     }
 
-    private static class MultiDisplayConfig {
-        final List<DisplayBlockConfig> configs;
-
-        MultiDisplayConfig(DisplayBlockConfig... configs) {
-            this.configs = Arrays.asList(configs);
-        }
-    }
-
-    private static class DisplayBlockConfig {
-        final DisplayType type;
-        final int maxStack;
-        final double height;
-        final boolean hasParticles;
-        final Supplier<ParticleOptions> particleType;
-
-        DisplayBlockConfig(DisplayType type) {
-            this(type, 1, 12, false, null);
+    private record MultiDisplayConfig(List<DisplayBlockConfig> configs) {
+            private MultiDisplayConfig(DisplayBlockConfig... configs) {
+                this(Arrays.asList(configs));
+            }
         }
 
-        DisplayBlockConfig(DisplayType type, int maxStack) {
-            this(type, maxStack, 12, false, null);
-        }
+    private record DisplayBlockConfig(DisplayType type, int maxStack, double height, boolean hasParticles,
+                                      Supplier<ParticleOptions> particleType) {
+            DisplayBlockConfig(DisplayType type) {
+                this(type, 1, 12, false, null);
+            }
 
-        DisplayBlockConfig(DisplayType type, double height) {
-            this(type, 1, height, false, null);
-        }
+            DisplayBlockConfig(DisplayType type, int maxStack) {
+                this(type, maxStack, 12, false, null);
+            }
 
-        DisplayBlockConfig(DisplayType type, double height, boolean hasParticles,
-                           Supplier<ParticleOptions> particleType) {
-            this(type, 1, height, hasParticles, particleType);
-        }
+            DisplayBlockConfig(DisplayType type, double height) {
+                this(type, 1, height, false, null);
+            }
 
-        DisplayBlockConfig(DisplayType type, int maxStack, double height,
-                           boolean hasParticles, Supplier<ParticleOptions> particleType) {
-            this.type = type;
-            this.maxStack = maxStack;
-            this.height = height;
-            this.hasParticles = hasParticles;
-            this.particleType = particleType;
-        }
+            DisplayBlockConfig(DisplayType type, double height, boolean hasParticles,
+                               Supplier<ParticleOptions> particleType) {
+                this(type, 1, height, hasParticles, particleType);
+            }
+
     }
 }

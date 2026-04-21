@@ -1,0 +1,27 @@
+{
+  "type": "create:filling",
+  "ingredients": [
+    {
+      "tag": "c:scone"
+    },
+    {
+      "type": "fluid_tag",
+      "amount": 125,
+      "fluid_tag": "c:glow_berry_jam"
+    }
+  ],
+  "results": [
+    {
+      "count": 1,
+      "item": {
+        "id": "createfood:scone_glow_berry_jam"
+      }
+    }
+  ],
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "scone_glow_berry_jam"
+    }
+  ]
+}

@@ -2,8 +2,6 @@ package dev.averageanime.neoforge.block.type.display;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleOptions;
-import net.minecraft.sounds.SoundEvent;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.BlockGetter;
@@ -17,7 +15,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.function.Supplier;
 
-public class BowlFoodBlock extends FoodBlock {
+public class BowlFoodBlock extends DisplayFoodBlock {
     protected final VoxelShape shape;
     protected final double shapeHeight;
 
@@ -34,7 +32,7 @@ public class BowlFoodBlock extends FoodBlock {
 
     public BowlFoodBlock(Supplier<Item> displayItem, double heightInPixels, boolean hasParticles, Supplier<ParticleOptions> particleType) {
         super(Properties.ofFullCopy(Blocks.OAK_PLANKS), displayItem, 1);
-        this.shapeHeight = Math.max(1.0, Math.min(16.0, heightInPixels));
+        this.shapeHeight = Math.clamp(heightInPixels, 1.0, 16.0);
         this.shape = Block.box(5, 0.0, 5, 11, this.shapeHeight, 11);
         this.hasParticles = hasParticles;
         this.particleType = particleType;
@@ -43,21 +41,6 @@ public class BowlFoodBlock extends FoodBlock {
     @Override
     public @NotNull VoxelShape getShape(@NotNull BlockState state, @NotNull BlockGetter level, @NotNull BlockPos pos, @NotNull CollisionContext context) {
         return shape;
-    }
-
-    @Override
-    protected void handleLastItemRemoved(BlockState state, Level level, BlockPos pos) {
-        level.removeBlock(pos, false);
-    }
-
-    @Override
-    public SoundEvent getAddSound() {
-        return SoundEvents.WOOD_PLACE;
-    }
-
-    @Override
-    protected SoundEvent getRemoveSound() {
-        return SoundEvents.WOOD_BREAK;
     }
 
     @Override

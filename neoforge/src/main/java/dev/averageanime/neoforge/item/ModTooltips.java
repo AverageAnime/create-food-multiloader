@@ -14,7 +14,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@EventBusSubscriber(modid = CommonClass.ID)
+@EventBusSubscriber(modid = CommonClass.MOD_ID)
 public class ModTooltips {
 
     private static final String TOOLTIP_PREFIX = "tooltip.createfood.";

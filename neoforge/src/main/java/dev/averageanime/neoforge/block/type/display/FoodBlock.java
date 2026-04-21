@@ -51,7 +51,7 @@ public abstract class FoodBlock extends Block {
     public FoodBlock(Properties properties, Supplier<Item> displayItem, int maxStackSize) {
         super(properties);
         this.displayItem = displayItem;
-        this.maxStackSize = Math.min(9, Math.max(1, maxStackSize));
+        this.maxStackSize = Math.clamp(maxStackSize, 1, 9);
 
         this.registerDefaultState(this.stateDefinition.any()
                 .setValue(FACING, Direction.NORTH)
@@ -181,7 +181,7 @@ public abstract class FoodBlock extends Block {
 
         public static Supplier<Block> getBlock(Item item) {
             List<Supplier<Block>> blocks = ITEM_TO_BLOCKS.get(item);
-            return blocks != null && !blocks.isEmpty() ? blocks.get(0) : null;
+            return blocks != null && !blocks.isEmpty() ? blocks.getFirst() : null;
         }
 
         public static List<Supplier<Block>> getAllBlocks(Item item) {
@@ -258,7 +258,7 @@ public abstract class FoodBlock extends Block {
 
                     ResourceLocation plateBlockId = ResourceLocation.fromNamespaceAndPath("displaydelight", pattern);
                     Block plateBlock = BuiltInRegistries.BLOCK.get(plateBlockId);
-                    if (plateBlock != null && plateBlock != Blocks.AIR) {
+                    if (plateBlock != Blocks.AIR) {
                         return plateBlock;
                     }
                 }
@@ -306,7 +306,7 @@ public abstract class FoodBlock extends Block {
 
                     ResourceLocation plateBlockId = ResourceLocation.fromNamespaceAndPath("displaydelight", pattern);
                     Block plateBlock = BuiltInRegistries.BLOCK.get(plateBlockId);
-                    if (plateBlock != null && plateBlock != Blocks.AIR) {
+                    if (plateBlock != Blocks.AIR) {
                         return plateBlock;
                     }
                 }
@@ -328,7 +328,7 @@ public abstract class FoodBlock extends Block {
         }
     }
 
-    @EventBusSubscriber(modid = CommonClass.ID)
+    @EventBusSubscriber(modid = CommonClass.MOD_ID)
     public static class PlacementHandler {
 
         @SubscribeEvent

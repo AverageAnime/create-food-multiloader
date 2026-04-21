@@ -9,6 +9,8 @@ import dev.averageanime.neoforge.block.type.plate.EmptyPlateBlock;
 import dev.averageanime.neoforge.block.type.plate.PlateBlock;
 import dev.averageanime.neoforge.block.type.plate.SmallPlateBlock;
 import dev.averageanime.neoforge.block.type.fluid.FluidEntry;
+import dev.averageanime.neoforge.block.type.storage.ClothSackBlock;
+import dev.averageanime.neoforge.block.type.storage.RationBoxBlock;
 import dev.averageanime.neoforge.block.type.ConsumableBlock;
 import dev.averageanime.neoforge.block.type.pie.PieBlock;
 import dev.averageanime.neoforge.block.type.pie.PizzaBlock;
@@ -44,11 +46,6 @@ public class LootTableProvider extends net.minecraft.data.loot.BlockLootSubProvi
         super(Set.of(), FeatureFlags.REGISTRY.allFlags(), registries);
     }
 
-    /**
-     * Returns all fluid source blocks registered in ModFluids.
-     * Fluid blocks have no block item, so attempting to build a loot table
-     * for them produces a minecraft:empty key and fails validation.
-     */
     private Set<Block> getFluidBlocks() {
         Set<Block> fluidBlocks = new HashSet<>();
         for (Field field : ModFluids.class.getDeclaredFields()) {
@@ -137,10 +134,12 @@ public class LootTableProvider extends net.minecraft.data.loot.BlockLootSubProvi
 
             if (fluidBlocks.contains(block)) return;
 
-            if (block instanceof ModCakeBlock cakeBlock) {
+            if (block instanceof RationBoxBlock || block instanceof ClothSackBlock) {
+                add(block, LootTable.lootTable());
+            } else if (block instanceof ModCakeBlock cakeBlock) {
                 add(block, slicedLootTable(block, cakeBlock.pieSlice.get(), 7));
             } else if (block instanceof PieBlock || block instanceof PizzaBlock) {
-                Item sliceItem = getSliceItemFromFD(block);
+                Item sliceItem = getSliceItem(block);
                 if (sliceItem != null) {
                     add(block, slicedLootTable(block, sliceItem, 4));
                 } else {
@@ -152,15 +151,6 @@ public class LootTableProvider extends net.minecraft.data.loot.BlockLootSubProvi
         });
     }
 
-    /**
-     * Builds a loot table for a sliceable block (cake, pie, pizza).
-     *
-     * <ul>
-     *   <li>bites=0, no knife → drop the whole block item
-     *   <li>bites=0..maxSlices-2, knife → drop (maxSlices - bite) slices
-     *   <li>bites=maxSlices-1 → always drop 1 slice (survives_explosion)
-     * </ul>
-     */
     private LootTable.Builder slicedLootTable(Block block, Item sliceItem, int maxSlices) {
         LootTable.Builder builder = LootTable.lootTable();
 
@@ -207,11 +197,7 @@ public class LootTableProvider extends net.minecraft.data.loot.BlockLootSubProvi
                         .hasProperty(PlateBlock.STACK_SIZE, size));
     }
 
-    /**
-     * Retrieves the slice item from Farmer's Delight's PieBlock via reflection.
-     */
-    @SuppressWarnings("unchecked")
-    private static Item getSliceItemFromFD(Block block) {
+    private static Item getSliceItem(Block block) {
         try {
             if (block instanceof ConsumableBlock biteable) {
                 return biteable.getSliceItem().getItem();
@@ -222,11 +208,6 @@ public class LootTableProvider extends net.minecraft.data.loot.BlockLootSubProvi
         }
     }
 
-    /**
-     * Must match exactly the set of blocks for which we called add() above.
-     * Fluid blocks are excluded here for the same reason they are excluded in
-     * generateFoodBlockLoot() — they have no block item and fail validation.
-     */
     @Override
     protected @NotNull Iterable<Block> getKnownBlocks() {
         Set<Block> fluidBlocks = getFluidBlocks();

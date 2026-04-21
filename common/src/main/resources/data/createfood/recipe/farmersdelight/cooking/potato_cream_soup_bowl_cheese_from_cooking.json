@@ -1,0 +1,39 @@
+{
+  "type": "farmersdelight:cooking",
+  "experience": 0.5,
+  "ingredients": [
+    {
+      "tag": "c:potato"
+    },
+    {
+      "tag": "c:potato"
+    },
+    {
+      "tag": "c:heavy_cream_bottle"
+    },
+    {
+      "tag": "c:butter"
+    },
+    {
+      "tag": "c:onion"
+    },
+    {
+      "tag": "c:cheeses"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "container": {
+    "count": 1,
+    "id": "minecraft:bowl"
+  },
+  "result": {
+    "count": 1,
+    "id": "createfood:potato_cream_soup_bowl"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "potato_cream_soup_bowl_cheese"
+    }
+  ]
+}

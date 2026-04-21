@@ -25,7 +25,7 @@ public class NeoForgePlatform implements IPlatform {
 
     @Override
     public boolean isServer() {
-        return FMLLoader.getDist().isServer();
+        return FMLLoader.getDist().isDedicatedServer();
     }
 
     @Override

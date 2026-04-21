@@ -1,6 +1,6 @@
 ### ***2.3.0***
-
 _Note: Display blocks are not currently obtainable via recipes._
+> Custom display blocks can be added via config.
 
 **Plates:**
 

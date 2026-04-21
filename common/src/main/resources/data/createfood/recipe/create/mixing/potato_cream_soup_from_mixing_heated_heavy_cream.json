@@ -1,0 +1,35 @@
+{
+  "type": "create:mixing",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "tag": "c:potato"
+    },
+    {
+      "tag": "c:potato"
+    },
+    {
+      "type": "fluid_tag",
+      "amount": 250,
+      "fluid_tag": "c:heavy_cream"
+    },
+    {
+      "tag": "c:butter"
+    },
+    {
+      "tag": "c:onion"
+    }
+  ],
+  "results": [
+    {
+      "amount": 333,
+      "id": "createfood:potato_cream_soup"
+    }
+  ],
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "potato_cream_soup"
+    }
+  ]
+}

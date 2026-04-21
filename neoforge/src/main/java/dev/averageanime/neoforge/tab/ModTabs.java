@@ -17,7 +17,7 @@ import static dev.averageanime.neoforge.CreateFood.LOGGER;
 
 public class ModTabs {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TAB =
-            DeferredRegister.create(Registries.CREATIVE_MODE_TAB, CommonClass.ID);
+            DeferredRegister.create(Registries.CREATIVE_MODE_TAB, CommonClass.MOD_ID);
 
     public static final Supplier<CreativeModeTab> CREATEFOOD_TAB = CREATIVE_MODE_TAB.register("createfood",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.BREAKFAST_PLATE.get()))
@@ -26,7 +26,6 @@ public class ModTabs {
                             .filter(holder -> !holder.getId().getPath().endsWith("_bucket"))
                             .filter(holder -> !holder.getId().getPath().endsWith("pumpkin_pie_block"))
                             .filter(holder -> {
-                                // Filter out display blocks if ModDisplayBlocks is present
                                 if (isModDisplayBlocksPresent()) {
                                     return !isDisplayBlock(holder.getId().getPath());
                                 }
@@ -55,7 +54,6 @@ public class ModTabs {
             Class<?> modDisplayBlocks = Class.forName("dev.averageanime.neoforge.block.ModDisplayBlocks");
             Object blocksRegister = modDisplayBlocks.getField("BLOCKS").get(null);
 
-            // Use reflection to check if this item path exists in ModDisplayBlocks.BLOCKS
             var getEntriesMethod = blocksRegister.getClass().getMethod("getEntries");
             var entries = (java.util.Collection<?>) getEntriesMethod.invoke(blocksRegister);
 
@@ -69,8 +67,7 @@ public class ModTabs {
                     return true;
                 }
             }
-        } catch (Exception e) {
-            // If anything fails, just don't filter
+        } catch (Exception ignored) {
         }
         return false;
     }

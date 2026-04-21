@@ -1,0 +1,35 @@
+{
+  "type": "create:mixing",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "tag": "c:bread_crumbs"
+    },
+    {
+      "tag": "c:bread_crumbs"
+    },
+    {
+      "type": "fluid_tag",
+      "amount": 250,
+      "fluid_tag": "c:custard"
+    },
+    {
+      "tag": "c:eggs"
+    },
+    {
+      "tag": "c:sugar"
+    }
+  ],
+  "results": [
+    {
+      "amount": 333,
+      "id": "createfood:bread_pudding"
+    }
+  ],
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "bread_pudding"
+    }
+  ]
+}

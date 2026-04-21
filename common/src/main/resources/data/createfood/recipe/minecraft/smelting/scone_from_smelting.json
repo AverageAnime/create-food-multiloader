@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:smelting",
+  "category": "food",
+  "cookingtime": 200,
+  "experience": 0.1,
+  "ingredient": {
+    "item": "createfood:raw_scone"
+  },
+  "result": {
+    "count": 1,
+    "id": "createfood:scone"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "scone"
+    }
+  ]
+}

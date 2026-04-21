@@ -1,4 +1,4 @@
-// 1.21.1	2026-04-10T14:43:39.0635442	Tags for minecraft:item mod id createfood
+// 1.21.1	2026-04-17T21:44:08.1148751	Tags for minecraft:item mod id createfood
 4bdfbba0d3aed33e3527ddbbc01a53f19dec59df data/c/tags/item/apple.json
 4d20caa3a0113e8806b6500e3bbb358a698c83c3 data/c/tags/item/apple_cheesecake.json
 aec4e27fdb9dd07c234bc0ef0866d979a7d866a2 data/c/tags/item/apple_cheesecake_plate_block.json
@@ -282,6 +282,10 @@ e8793f90da0a8dbb894e7e97fb71ec61e28ba292 data/c/tags/item/bread_crumbs.json
 70a0e3854c924f3c649ef6e77cc8cce602bf135a data/c/tags/item/bread_fried_egg.json
 077fedd9c951d779a2c0586f659dc1a8c1151c49 data/c/tags/item/bread_lettuce.json
 94d706714ac2262961b5bfe868e89301e4bca2d7 data/c/tags/item/bread_lettuce_carrot.json
+3a512cf72eb1b40a9af018ed51550aac751001c3 data/c/tags/item/bread_pudding_block.json
+26b06cf5356b77c5910d571d31153188e695481a data/c/tags/item/bread_pudding_bowl.json
+e67c0f8050b4e4a924f0fc547b0600d043066f95 data/c/tags/item/bread_pudding_bowl_block.json
+253ecc0f1765110f1d1c1cc077829add3745767d data/c/tags/item/bread_pudding_bucket.json
 c474dd305a04b1dffee45f3cf7fd095c5954dd52 data/c/tags/item/bread_slice.json
 9ec2565526e9ef2e89ab71a62dcfec98f894d3be data/c/tags/item/bread_slice_apple_jam.json
 396320ca55e52fa1dd7507d018ec294fa2bdc7c1 data/c/tags/item/bread_slice_bacon.json
@@ -782,6 +786,7 @@ e414e43abda54b5e8a94b0b8730f70aa5a0ab5b4 data/c/tags/item/cloth_filter_cacao_mas
 c90b5b55506abadc3efe419352a88689e0d39d5a data/c/tags/item/cloth_filter_egg.json
 70dd72e9fab940e926f23ffceed8d3b05e147f2f data/c/tags/item/cloth_filter_egg_yolk.json
 7f737a0288f3b2e8486b309645408f6e424e1fd2 data/c/tags/item/cloth_filter_pressed_cocoa.json
+a1cd33f9c91b13f6af8103135bb2b94bcdb8bd08 data/c/tags/item/cloth_sack.json
 3604cd4ff5d0f03dec567acd72d45967d5d61bab data/c/tags/item/cocoa_powder.json
 21cdebf8c36592852b50beac61bfb8cca8e23410 data/c/tags/item/coffee_beans.json
 495fcd9931c5b84804dc97436734570c81dae878 data/c/tags/item/coffee_toffee.json
@@ -1594,6 +1599,10 @@ f0d65519f7ed138aed0c3f3d58f62a633bbfbca0 data/c/tags/item/mushroom_burrito_rice.
 4aa98bb278dea1c88c398641b1b4f1e97ec45b6d data/c/tags/item/mushroom_burrito_rice_plate_block.json
 efc9a849d814ea4292dbe18e357cc24904d7ec7e data/c/tags/item/mushroom_calzone.json
 91530222093d3dc50875d1933a609bb61ad370cd data/c/tags/item/mushroom_calzone_plate_block.json
+d73d80a5e6f7668a38b085463f5af8525ca980c0 data/c/tags/item/mushroom_cream_soup_block.json
+0b2e393422f331f4dcaa60adb66a35e369a49c9b data/c/tags/item/mushroom_cream_soup_bowl.json
+cb14eab7fb46be0420cdba2152427101364c24e3 data/c/tags/item/mushroom_cream_soup_bowl_block.json
+dfca08a1b2dd8a6bf7428369d543fede354447cd data/c/tags/item/mushroom_cream_soup_bucket.json
 c5f3cb5632ab7012b8dec440e2f1f9a4504d8a7a data/c/tags/item/mushroom_fish_pizza.json
 f95465f513153d971a62073c1392ac8cb1a2a1bc data/c/tags/item/mushroom_fish_pizza_plate_block.json
 8fa1f291e8c4e3c4952125d1b9b620c06609235e data/c/tags/item/mushroom_fish_pizza_slice.json
@@ -1769,6 +1778,12 @@ e20e837c4f2a42c0999f52fd8747ebe03f80e684 data/c/tags/item/pork_wrap_onion_lettuc
 34354d04814897576a2ef35afc2a36f82f5b559f data/c/tags/item/potato_chips.json
 5a0ecc7e56ff6bcc55f2fd3f2ad3a81aec4899eb data/c/tags/item/potato_chip_bowl.json
 531bd8b8933ecdaccf162c9e2fc9bef11b8940cc data/c/tags/item/potato_chip_bowl_block.json
+7823cef5a1520b999ee6cf7b707a84d60d57019f data/c/tags/item/potato_cream_soup_block.json
+d497c09f3631acbfa6911dfbeb389219c1f6818d data/c/tags/item/potato_cream_soup_bowl.json
+449255582b12893164f04c9eb4f77a6d5b6f58a1 data/c/tags/item/potato_cream_soup_bowl_block.json
+115833286e8e3dce627f0211997328a03faa6d20 data/c/tags/item/potato_cream_soup_bowl_cheese.json
+e5ebfdb37e3b096925393af0b7d1a5e884e62c44 data/c/tags/item/potato_cream_soup_bowl_cheese_block.json
+c98553659db738664b1fe10a06d7d6985ea7dcea data/c/tags/item/potato_cream_soup_bucket.json
 a7fd303fa5850e7de10cad5144d89db7c605fd21 data/c/tags/item/powderable_eggs.json
 2f46b50af82fb190cb6aea9495f59125408b5762 data/c/tags/item/powdered_sugar.json
 137688a69a1727ece7e27d1753dd01d4b5334d23 data/c/tags/item/pressed_cocoa.json
@@ -1822,6 +1837,7 @@ daac4e5e65a255e2f606915215fa1909c36c4d7b data/c/tags/item/rabbit_taco_lettuce.js
 0dc7ad09fb79bec775129a3b86e9042847fb99eb data/c/tags/item/rabbit_taco_plate_block.json
 3fffe9d33d7967dd7d98ec8f59bf41f564a3b52d data/c/tags/item/rabbit_wrap_onion_potato.json
 e851ae1479cf314c91654331231e76b60f3f6bb9 data/c/tags/item/rabbit_wrap_onion_potato_plate_block.json
+8cac8953c8609b4a844be4dcc7212f51e387d93a data/c/tags/item/ration_box.json
 c321ddf845beb8fc6712b3c6c2ad73f3eb035372 data/c/tags/item/raw_apple_cheesecake.json
 470d319843cb18c254f082f9959b05b3922cd1d2 data/c/tags/item/raw_apple_pie.json
 6f0a92d105b2bfbf1c2b5db69758a907a9112618 data/c/tags/item/raw_bacon_calzone.json
@@ -1917,6 +1933,7 @@ f4e358f94fa15acb320363f6821f0405623ed9b0 data/c/tags/item/raw_sausage_fish_pizza
 22fdd8b3c8032840c81a35e7c63c9feb53e45b2a data/c/tags/item/raw_sausage_pizza.json
 1f8632cdca19babdf42a7a0fdb22b889f4dc7ca3 data/c/tags/item/raw_sausage_roll.json
 c2d28a63a1a808750a1e9094f2191bfbbfff8d31 data/c/tags/item/raw_sausage_roll_cheese.json
+b602ca16e1bf50e9b18817d407c60b8ebb723f38 data/c/tags/item/raw_scone.json
 d100c8d6ea1d215a1da48209aa25a42cda304799 data/c/tags/item/raw_snickerdoodle.json
 adf9ea5e303885805edd60eb08393ec80d02537c data/c/tags/item/raw_soul_berry_cookie.json
 378a867bf48de7fe1507fca195e4dae2c1ce0359 data/c/tags/item/raw_spicy_sausages.json
@@ -2002,6 +2019,24 @@ d3ccc7183d549deb47dd4bca65d82237d7e31de7 data/c/tags/item/sausage_pizza_slice.js
 68dbfa16e04e8db13b8c63a3f318e48a63b43f1e data/c/tags/item/sausage_pizza_slice_small_plate_block.json
 234ff4c2296a339e72f4bb76445bccd68405d7d1 data/c/tags/item/sausage_roll.json
 20b26e8fdca3a738668ae5fe981d46617e0568ad data/c/tags/item/sausage_roll_cheese.json
+2bdf385c5fdf518e6496cb51ac6f6083c7b16c24 data/c/tags/item/scone.json
+a8c6b13af43574b520afa1fa039711b3bd83eaa9 data/c/tags/item/scone_apple_jam.json
+0b9fb926a4cb3e642e0aa7e0fd0bfc8bc90f2a7e data/c/tags/item/scone_apple_jam_plate_block.json
+04cf203800ddd5397fe1c773c2d47a8baa3344cd data/c/tags/item/scone_apple_jam_small_plate_block.json
+923ce468462624eb0736a882464396597b18d467 data/c/tags/item/scone_berry_jam.json
+f999789815c4db67792a276af24abc786315c002 data/c/tags/item/scone_berry_jam_plate_block.json
+1fdc6f5d70c5be3db89df9e4089855350248317e data/c/tags/item/scone_berry_jam_small_plate_block.json
+2abcb12080c8dd1632ee01b0768750d4671a8ec9 data/c/tags/item/scone_chorus_fruit_jam.json
+efe72bb597ae611494024cf8051a419f52ac96d1 data/c/tags/item/scone_chorus_fruit_jam_plate_block.json
+4ae925b1afc9bfe7ee7f4a0c0d829822b594ac52 data/c/tags/item/scone_chorus_fruit_jam_small_plate_block.json
+f86aeb99ea11e55937b58c1cf55726285547ad94 data/c/tags/item/scone_glow_berry_jam.json
+4b686986b7ee369f1bca96b85a68e5cb5aab04c9 data/c/tags/item/scone_glow_berry_jam_plate_block.json
+d5fdf1029ce97e09bb77821598881e81e5ce7655 data/c/tags/item/scone_glow_berry_jam_small_plate_block.json
+2854987e4f10b77a835490c308fccfca1301c2c5 data/c/tags/item/scone_melon_jam.json
+75c0b799af34ff070d0f03a6a4cf914411c3bf22 data/c/tags/item/scone_melon_jam_plate_block.json
+ba3096b227aff9f3a96d9237efa50d1cd2014465 data/c/tags/item/scone_melon_jam_small_plate_block.json
+5bb78109dd05a956d223d22b372a71330c1edb9b data/c/tags/item/scone_plate_block.json
+117b01a9e361ae104b9aeb4b1dfaac2106e912ae data/c/tags/item/scone_small_plate_block.json
 0ac01f1d97ccfb5c61da81ed01bf8a1c64e0432e data/c/tags/item/scrambled_eggs_plate.json
 9ddafadf923cbb4b1a1bf30ac89cd91d90d0b905 data/c/tags/item/scrambled_eggs_plate_bacon.json
 37c7c5c0a8ba273c2cb7bc2d935b9797113b6d07 data/c/tags/item/scrambled_eggs_plate_bacon_block.json
@@ -2147,6 +2182,10 @@ e1e1d3af59e3b556987f3d7945c576fe2d794466 data/c/tags/item/toffee_sweet_roll.json
 1cfa7a3aa351b174ef70119024fdbf7f2090d732 data/c/tags/item/toffee_white_chocolate.json
 a4d2f986e3f8c416267b81a87de364c67433846d data/c/tags/item/toffee_white_chocolate_plate_block.json
 25a874f05abcd27f84c6e876f72cb371715e6dc4 data/c/tags/item/tomato.json
+8539b3e4537bf795c726504aee59f46a37b6c4e3 data/c/tags/item/tomato_cream_soup_block.json
+93fa141684d53caf1e9a424b9d9e905aff0912c7 data/c/tags/item/tomato_cream_soup_bowl.json
+b66b62d777320c4025ff473515e0864127f6dcbd data/c/tags/item/tomato_cream_soup_bowl_block.json
+f0951908eb5d94d6376e72d64f92edf5bcdf5d58 data/c/tags/item/tomato_cream_soup_bucket.json
 c68ba955af6297b26858063374d029ca602940aa data/c/tags/item/tomato_sauce.json
 9f267e57e35b0ea288de1f40928ec94e000a0f41 data/c/tags/item/tools/knife.json
 3f42128b4b110e2faf9c39acc4ea8cec58684613 data/c/tags/item/tortilla.json

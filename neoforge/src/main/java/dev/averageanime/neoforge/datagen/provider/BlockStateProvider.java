@@ -11,6 +11,8 @@ import dev.averageanime.neoforge.block.type.fluid.FluidEntry;
 import dev.averageanime.neoforge.block.type.pie.PieBlock;
 import dev.averageanime.neoforge.block.type.pie.PizzaBlock;
 import dev.averageanime.neoforge.block.type.pie.RawPieBlock;
+import dev.averageanime.neoforge.block.type.storage.ClothSackBlock;
+import dev.averageanime.neoforge.block.type.storage.RationBoxBlock;
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 import java.util.Set;
@@ -28,7 +30,7 @@ import net.neoforged.neoforge.registries.DeferredBlock;
 public class BlockStateProvider extends net.neoforged.neoforge.client.model.generators.BlockStateProvider {
 
     public BlockStateProvider(PackOutput output, ExistingFileHelper exFileHelper) {
-        super(output, CommonClass.ID, exFileHelper);
+        super(output, CommonClass.MOD_ID, exFileHelper);
     }
 
     @Override
@@ -62,7 +64,7 @@ public class BlockStateProvider extends net.neoforged.neoforge.client.model.gene
             for (Direction facing : Direction.Plane.HORIZONTAL) {
                 int yRot = getYRotation(facing);
                 ModelFile model = stack == 1
-                        ? new ModelFile.UncheckedModelFile(ResourceLocation.fromNamespaceAndPath(CommonClass.ID, "block/" + name))
+                        ? new ModelFile.UncheckedModelFile(ResourceLocation.fromNamespaceAndPath(CommonClass.MOD_ID, "block/" + name))
                         : models().withExistingParent("empty_" + stack, "minecraft:block/air");
                 builder.partialState()
                         .with(BottleFoodBlock.FACING, facing)
@@ -80,7 +82,7 @@ public class BlockStateProvider extends net.neoforged.neoforge.client.model.gene
             for (Direction facing : Direction.Plane.HORIZONTAL) {
                 int yRot = getYRotation(facing);
                 ModelFile model = stack == 1
-                        ? new ModelFile.UncheckedModelFile(ResourceLocation.fromNamespaceAndPath(CommonClass.ID, "block/" + name))
+                        ? new ModelFile.UncheckedModelFile(ResourceLocation.fromNamespaceAndPath(CommonClass.MOD_ID, "block/" + name))
                         : models().withExistingParent("empty_bowl_" + stack, "minecraft:block/air");
                 builder.partialState()
                         .with(BowlFoodBlock.FACING, facing)
@@ -98,7 +100,7 @@ public class BlockStateProvider extends net.neoforged.neoforge.client.model.gene
             for (Direction facing : Direction.Plane.HORIZONTAL) {
                 int yRot = getYRotation(facing);
                 ModelFile model = stack == 1
-                        ? new ModelFile.UncheckedModelFile(ResourceLocation.fromNamespaceAndPath(CommonClass.ID, "block/" + name))
+                        ? new ModelFile.UncheckedModelFile(ResourceLocation.fromNamespaceAndPath(CommonClass.MOD_ID, "block/" + name))
                         : models().withExistingParent("empty_small_plate_" + stack, "minecraft:block/air");
                 builder.partialState()
                         .with(SmallPlateFoodBlock.FACING, facing)
@@ -117,7 +119,7 @@ public class BlockStateProvider extends net.neoforged.neoforge.client.model.gene
             for (Direction facing : Direction.Plane.HORIZONTAL) {
                 int yRot = getYRotation(facing);
                 ModelFile model = stack <= maxStack
-                        ? new ModelFile.UncheckedModelFile(ResourceLocation.fromNamespaceAndPath(CommonClass.ID, "block/" + name + "_" + stack))
+                        ? new ModelFile.UncheckedModelFile(ResourceLocation.fromNamespaceAndPath(CommonClass.MOD_ID, "block/" + name + "_" + stack))
                         : models().withExistingParent("empty_plate_" + stack, "minecraft:block/air");
                 builder.partialState()
                         .with(PlateBlock.FACING, facing)
@@ -160,6 +162,8 @@ public class BlockStateProvider extends net.neoforged.neoforge.client.model.gene
                 case PieBlock modPieBlock -> pieBlockState(block, id);
                 case PizzaBlock pizzaBlock -> waffleOrPizzaBlockState(block, id);
                 case RawPieBlock rawPieBlock -> rawPieBlockState(block, id);
+                case RationBoxBlock rationBoxBlock -> rationBoxBlockState(block);
+                case ClothSackBlock clothSackBlock -> clothSackBlockState(block);
                 default -> simpleBlock(block, unchecked("block/" + id));
             }
         });
@@ -235,8 +239,46 @@ public class BlockStateProvider extends net.neoforged.neoforge.client.model.gene
         }
     }
 
+    private void clothSackBlockState(Block block) {
+        ModelFile closed = unchecked("block/cloth_sack_closed");
+        ModelFile open   = unchecked("block/cloth_sack_open");
+
+        VariantBlockStateBuilder builder = getVariantBuilder(block);
+
+        int[] yRots   = {180, 270,   0,  90};
+        String[] dirs = {"south", "west", "north", "east"};
+
+        for (int f = 0; f < 4; f++) {
+            Direction facing = Direction.byName(dirs[f]);
+            int yRot = yRots[f];
+
+            builder.partialState()
+                    .with(ClothSackBlock.FACING, facing)
+                    .with(ClothSackBlock.OPEN, false)
+                    .setModels(ConfiguredModel.builder().modelFile(closed).rotationY(yRot).build());
+
+            builder.partialState()
+                    .with(ClothSackBlock.FACING, facing)
+                    .with(ClothSackBlock.OPEN, true)
+                    .setModels(ConfiguredModel.builder().modelFile(open).rotationY(yRot).build());
+        }
+    }
+
+    private void rationBoxBlockState(Block block) {
+        ModelFile model = unchecked("block/ration_box");
+        VariantBlockStateBuilder builder = getVariantBuilder(block);
+        int[] yRots   = {180, 270,   0,  90};
+        String[] dirs = {"south", "west", "north", "east"};
+        for (int f = 0; f < 4; f++) {
+            Direction facing = Direction.byName(dirs[f]);
+            builder.partialState()
+                    .with(RationBoxBlock.FACING, facing)
+                    .setModels(ConfiguredModel.builder().modelFile(model).rotationY(yRots[f]).build());
+        }
+    }
+
     private ModelFile unchecked(String path) {
         return new ModelFile.UncheckedModelFile(
-                ResourceLocation.fromNamespaceAndPath(CommonClass.ID, path));
+                ResourceLocation.fromNamespaceAndPath(CommonClass.MOD_ID, path));
     }
 }

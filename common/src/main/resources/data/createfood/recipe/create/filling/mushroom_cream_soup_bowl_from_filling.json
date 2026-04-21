@@ -1,0 +1,26 @@
+{
+  "type": "create:filling",
+  "ingredients": [
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "type": "fluid_tag",
+      "amount": 333,
+      "fluid_tag": "c:mushroom_cream_soup"
+    }
+  ],
+  "results": [
+    {
+      "item": {
+        "id": "createfood:mushroom_cream_soup_bowl"
+      }
+    }
+  ],
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "mushroom_cream_soup_bowl"
+    }
+  ]
+}

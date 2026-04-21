@@ -9,17 +9,6 @@ import net.neoforged.fml.ModList;
 
 import java.util.Optional;
 
-/**
- * Represents a logical effect category (e.g. "comfort", "nourishment") that
- * can be fulfilled by any number of mods in priority order. The first candidate
- * whose mod is loaded and whose effect exists in the registry wins.
- *
- * Resolution order:
- *   1. Per-category config override (createfood-server.toml → effects.category_overrides)
- *   2. Candidate list, top-to-bottom (first loaded mod wins)
- *
- * Add new candidates via builder. Order matters — highest priority first.
- */
 public final class FoodEffect {
 
     private final String categoryName;
@@ -63,11 +52,6 @@ public final class FoodEffect {
         return Optional.ofNullable(resolved);
     }
 
-    /**
-     * Clears the cached resolution so the next call to {@link #get()} re-evaluates
-     * the config overrides and candidate list. Call this if config is reloaded at
-     * runtime (not normally needed — effects are resolved lazily at item-use time).
-     */
     public void invalidate() {
         resolved = null;
         resolveAttempted = false;

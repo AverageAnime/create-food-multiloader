@@ -1,18 +1,25 @@
-### *** 2.3.0 *** - UNFINISHED
-fix creme brulee not drink
+### *** 2.3.0 ***
+![newprev230](https://github.com/user-attachments/assets/92ce9b96-dbfe-41eb-9b98-da327b60b537)
 
-remove "marshmallow_dark_chocolate", from default disabled list
-add default tooltips for farmers delight kelp roll + slice + display delight blocks
-adjust translation edits for display delight 
-hand crafting > handcrafting
-datagen update 
-fix missing heated requirement for some recipes
-fix translations 
-cheese added to calzone tooltip
-fd no longer dependency
-misc minor recipe fixes + texture updates
-new food effects for let's do and kaleidoscope. configurable.
-configurable nutrition/saturation
+#### Changes:
+* Farmer's Delight is no longer a required dependency.
+* New settings in`createfood-server.toml`.  Read more [here](https://github.com/AverageAnime/create-food-multiloader/wiki/Config-Options).
+  * New `handcraft_exclude` list in config. [(#26)](https://github.com/AverageAnime/create-food-multiloader/issues/26)
+  * Add your own display blocks with `custom_display_block`.
+  * New `nutrition_saturation` setting to modify values on food items.
+  * Customize food effects. Read about supported effects [here](https://github.com/AverageAnime/create-food-multiloader/wiki/Compatibility).
+* `hand_craft` / `Hand Craft` renamed to `handcraft` / `Handcraft`.
+* New storage items: `cloth_sack` and `ration_box`. Read more [here](https://github.com/AverageAnime/create-food-multiloader/wiki/Storage-Blocks-Guide).
+* Nachos are no longer a compat item and are no longer hidden by default.
+* Add ingredient tooltips for Farmer's Delight `kelp_roll`.
+* Add more Display Delight translations.
+
+#### Fixes:
+* Fix `creme_brulee` not being a drink.
+* Fix missing heated requirement for some recipes.
+* Fix cheese not being in calzone tooltip.
+* Fix various translations, recipes, and textures.
+* Fix `marshmallow_dark_chocolate` being hidden by default.
 
 ### *** 2.2.0a ***
 

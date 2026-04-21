@@ -1,0 +1,27 @@
+{
+  "type": "create:filling",
+  "ingredients": [
+    {
+      "tag": "c:potato_cream_soup_bowl"
+    },
+    {
+      "type": "fluid_tag",
+      "amount": 125,
+      "fluid_tag": "c:cheese"
+    }
+  ],
+  "results": [
+    {
+      "count": 1,
+      "item": {
+        "id": "createfood:potato_cream_soup_bowl_cheese"
+      }
+    }
+  ],
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "potato_cream_soup_bowl_cheese"
+    }
+  ]
+}

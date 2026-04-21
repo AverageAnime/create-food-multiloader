@@ -1,0 +1,25 @@
+{
+  "type": "create:emptying",
+  "ingredients": [
+    {
+      "tag": "c:potato_cream_soup_bowl"
+    }
+  ],
+  "results": [
+    {
+      "item": {
+        "id": "minecraft:bowl"
+      }
+    },
+    {
+      "amount": 333,
+      "id": "createfood:potato_cream_soup"
+    }
+  ],
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "potato_cream_soup"
+    }
+  ]
+}

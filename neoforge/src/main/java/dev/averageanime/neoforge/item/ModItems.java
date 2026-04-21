@@ -1,12 +1,7 @@
 package dev.averageanime.neoforge.item;
 
-import dev.averageanime.CommonClass;
-import dev.averageanime.neoforge.config.ModConfig;
-import dev.averageanime.neoforge.item.effect.FoodEffect;
-import dev.averageanime.neoforge.item.type.EffectFood;
-import dev.averageanime.neoforge.item.type.EffectDrink;
-import net.minecraft.network.chat.Component;
 import net.minecraft.core.Holder;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -15,6 +10,14 @@ import net.minecraft.world.item.*;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
+import dev.averageanime.CommonClass;
+import dev.averageanime.neoforge.config.ModConfig;
+import dev.averageanime.neoforge.item.effect.FoodEffect;
+import dev.averageanime.neoforge.item.type.EffectDrink;
+import dev.averageanime.neoforge.item.type.EffectFood;
+import dev.averageanime.util.Tip;
+import dev.averageanime.util.Tooltips;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,12 +29,13 @@ import static dev.averageanime.neoforge.item.ModTooltips.addTooltip;
 @SuppressWarnings({"NullableProblems", "unused"})
 public class ModItems {
 
-    public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(CommonClass.ID);
-
-    record Tip(String compat, String[] keys) {}
+    public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(CommonClass.MOD_ID);
 
     record Fx(java.util.function.Supplier<Holder<MobEffect>> effect, int duration, int amplifier, String categoryOrEffectId) {}
-    private static Tip tips(String compat, String... shortKeys) { return new Tip(compat != null ? COMPAT_PREFIX + compat : null, shortKeys); }
+
+    private static Tip tips(String compat, String... shortKeys) {
+        return Tooltips.tips(compat, shortKeys);
+    }
 
     private static Fx fx(FoodEffect effect, int duration) {
         if (!effect.hasAnyLoadedCandidate()) return null;
@@ -52,9 +56,6 @@ public class ModItems {
         String id = effect.unwrapKey().map(k -> k.location().toString()).orElse("unknown");
         return new Fx(() -> effect, duration, amplifier, id);
     }
-
-    private static final String TIP_PREFIX    = "tooltip.createfood.";
-    private static final String COMPAT_PREFIX = "tooltip.compat.";
 
     private static void splitArgs(Object[] args, Tip[] outTip, List<Fx> outFx) {
         for (Object a : args) {
@@ -89,7 +90,7 @@ public class ModItems {
         String[] fullKeys = new String[tip.keys().length];
         for (int i = 0; i < tip.keys().length; i++) {
             String k = tip.keys()[i];
-            fullKeys[i] = k.startsWith("tooltip.") ? k : TIP_PREFIX + k;
+            fullKeys[i] = k.startsWith("tooltip.") ? k : Tooltips.TIP_PREFIX + k;
         }
         addTooltip(l, tip.compat(), fullKeys);
     }
@@ -99,7 +100,7 @@ public class ModItems {
     }
 
     private static DeferredItem<Item> plain(String id, String compat, String... keys) {
-        final Tip tip = new Tip(compat != null ? COMPAT_PREFIX + compat : null, keys);
+        final Tip tip = new Tip(compat != null ? Tooltips.COMPAT_PREFIX + compat : null, keys);
         return ITEMS.register(id, () -> new Item(new Item.Properties()) {
             @Override public void appendHoverText(ItemStack s, TooltipContext c, List<Component> l, TooltipFlag f) {
                 super.appendHoverText(s, c, l, f); doTip(l, tip);
@@ -112,7 +113,7 @@ public class ModItems {
     }
 
     private static DeferredItem<Item> plainCr(String id, java.util.function.Supplier<Item> remainder, String compat, String... keys) {
-        final Tip tip = new Tip(compat != null ? COMPAT_PREFIX + compat : null, keys);
+        final Tip tip = new Tip(compat != null ? Tooltips.COMPAT_PREFIX + compat : null, keys);
         return ITEMS.register(id, () -> new Item(new Item.Properties().craftRemainder(remainder.get())) {
             @Override public void appendHoverText(ItemStack s, TooltipContext c, List<Component> l, TooltipFlag f) {
                 super.appendHoverText(s, c, l, f); doTip(l, tip);
@@ -134,7 +135,7 @@ public class ModItems {
     }
 
     private static DeferredItem<Item> pipingBag(String id, String compat, String... fullKeys) {
-        final Tip tip = new Tip(compat != null ? COMPAT_PREFIX + compat : null, fullKeys);
+        final Tip tip = new Tip(compat != null ? Tooltips.COMPAT_PREFIX + compat : null, fullKeys);
         return ITEMS.register(id, () -> new Item(new Item.Properties().stacksTo(2).craftRemainder(PIPING_BAG.get())) {
             @Override public void appendHoverText(ItemStack s, TooltipContext c, List<Component> l, TooltipFlag f) {
                 super.appendHoverText(s, c, l, f); doTip(l, tip);
@@ -149,7 +150,7 @@ public class ModItems {
         final var existingIds = buildExistingIds(fx);
         if (t == null) return ITEMS.register(id, () -> new EffectFood(fp, existingIds));
         return ITEMS.register(id, () -> new EffectFood(fp, existingIds) {
-            @Override public void appendHoverText(ItemStack s, TooltipContext c, List<Component> l, TooltipFlag f) {
+            @Override public void appendHoverText(@NotNull ItemStack s, @NotNull TooltipContext c, @NotNull List<Component> l, @NotNull TooltipFlag f) {
                 super.appendHoverText(s, c, l, f); doTip(l, t);
             }
         });
@@ -162,17 +163,12 @@ public class ModItems {
         final var existingIds = buildExistingIds(fx);
         if (t == null) return ITEMS.register(id, () -> new EffectFood(fp, existingIds));
         return ITEMS.register(id, () -> new EffectFood(fp, existingIds) {
-            @Override public void appendHoverText(ItemStack s, TooltipContext c, List<Component> l, TooltipFlag f) {
+            @Override public void appendHoverText(@NotNull ItemStack s, @NotNull TooltipContext c, @NotNull List<Component> l, @NotNull TooltipFlag f) {
                 super.appendHoverText(s, c, l, f); doTip(l, t);
             }
         });
     }
 
-    /**
-     * Builds the set of category/effect IDs that are already built into an
-     * item's FoodProperties definition. Passed to {@link EffectFood} so it can
-     * distinguish existing effects from config-driven additions.
-     */
     private static Set<String> buildExistingIds(List<Fx> fx) {
         return fx.stream()
                 .map(Fx::categoryOrEffectId)
@@ -186,7 +182,7 @@ public class ModItems {
         final var existingIds = buildExistingIds(fx);
         if (t == null) return ITEMS.register(id, () -> new EffectFood(fp, existingIds));
         return ITEMS.register(id, () -> new EffectFood(fp, existingIds) {
-            @Override public void appendHoverText(ItemStack s, TooltipContext c, List<Component> l, TooltipFlag f) {
+            @Override public void appendHoverText(@NotNull ItemStack s, @NotNull TooltipContext c, @NotNull List<Component> l, @NotNull TooltipFlag f) {
                 super.appendHoverText(s, c, l, f); doTip(l, t);
             }
         });
@@ -201,7 +197,7 @@ public class ModItems {
         final var existingIds = buildExistingIds(fx);
         if (t == null) return ITEMS.register(id, () -> new EffectFood(finalFp, existingIds));
         return ITEMS.register(id, () -> new EffectFood(finalFp, existingIds) {
-            @Override public void appendHoverText(ItemStack s, TooltipContext c, List<Component> l, TooltipFlag f) {
+            @Override public void appendHoverText(@NotNull ItemStack s, @NotNull TooltipContext c, @NotNull List<Component> l, @NotNull TooltipFlag f) {
                 super.appendHoverText(s, c, l, f); doTip(l, t);
             }
         });
@@ -215,13 +211,12 @@ public class ModItems {
         final var existingIds = buildExistingIds(fx);
         if (t == null) return ITEMS.register(id, () -> new EffectDrink(fp, existingIds));
         return ITEMS.register(id, () -> new EffectDrink(fp, existingIds) {
-            @Override public void appendHoverText(ItemStack s, Item.TooltipContext c, List<Component> l, TooltipFlag f) {
+            @Override public void appendHoverText(@NotNull ItemStack s, Item.@NotNull TooltipContext c, @NotNull List<Component> l, @NotNull TooltipFlag f) {
                 super.appendHoverText(s, c, l, f); doTip(l, t);
             }
         });
     }
 
-    //
     public static final DeferredItem<Item> PIPING_BAG = plain("piping_bag");
     public static final DeferredItem<Item> CLOTH_FILTER = plain("cloth_filter");
     public static final DeferredItem<Item> CLOTH_FILTER_PRESSED_COCOA = plainCr("cloth_filter_pressed_cocoa", ModItems.CLOTH_FILTER, null, "pressed_cocoa_ingredient");
@@ -229,7 +224,6 @@ public class ModItems {
     public static final DeferredItem<Item> CLOTH_FILTER_EGG = plainCr("cloth_filter_egg", ModItems.CLOTH_FILTER_EGG_YOLK, null, "egg_ingredient");
     public static final DeferredItem<Item> CLOTH_FILTER_CACAO_MASS = plainCr("cloth_filter_cacao_mass", ModItems.CLOTH_FILTER_PRESSED_COCOA, null, "cacao_mass_ingredient");
     public static final DeferredItem<Item> EGGSHELL = plain("eggshell");
-    //
 
     public static final DeferredItem<Item> APPLE_CHEESECAKE_SLICE = food("apple_cheesecake_slice", 3, 0.1f, fx(ModEffectCategories.COMFORT, 1200));
     public static final DeferredItem<Item> APPLE_CREAM_CAKE_SLICE = food("apple_cream_cake_slice", 2, 0.3f, tips(null, "apple_cream_frosting_ingredient"));
@@ -355,6 +349,7 @@ public class ModItems {
     public static final DeferredItem<Item> BREAD_FRIED_EGG = food("bread_fried_egg", 6, 0.6f, tips(null, "fried_egg_ingredient"));
     public static final DeferredItem<Item> BREAD_LETTUCE = food("bread_lettuce", 7, 0.3f, tips(null, "lettuce_ingredient"));
     public static final DeferredItem<Item> BREAD_LETTUCE_CARROT = food("bread_lettuce_carrot", 8, 0.5f, tips(null, "lettuce_ingredient", "carrot_ingredient"));
+    public static final DeferredItem<Item> BREAD_PUDDING_BOWL = bowlFood("bread_pudding_bowl", 7, 0.9f, fx(ModEffectCategories.COMFORT, 1200));
     public static final DeferredItem<Item> BREAD_SLICE = fastFood("bread_slice", 2, 0.2f);
     public static final DeferredItem<Item> BREAD_SLICE_APPLE_JAM = food("bread_slice_apple_jam", 5, 0.6f, tips(null, "apple_jam_ingredient"));
     public static final DeferredItem<Item> BREAD_SLICE_BACON = food("bread_slice_bacon", 5, 0.6f, tips(null, "bacon_ingredient"));
@@ -906,6 +901,7 @@ public class ModItems {
     public static final DeferredItem<Item> MUSHROOM_BACON_PIZZA_SLICE = food("mushroom_bacon_pizza_slice", 5, 0.9f, tips(null, "mushroom_ingredient", "bacon_ingredient"));
     public static final DeferredItem<Item> MUSHROOM_BURRITO_RICE = food("mushroom_burrito_rice", 8, 0.6f, tips(null, "mushroom_ingredient", "rice_ingredient"), fx(ModEffectCategories.SUSTENANCE, 3600), fx(ModEffectCategories.FARMERS_BLESSING, 1200));
     public static final DeferredItem<Item> MUSHROOM_CALZONE = fastFood("mushroom_calzone", 6, 0.6f, tips(null, "cheese_ingredient", "mushroom_ingredient"), fx(ModEffectCategories.NOURISHMENT, 600));
+    public static final DeferredItem<Item> MUSHROOM_CREAM_SOUP_BOWL = bowlFood("mushroom_cream_soup_bowl", 7, 0.9f, fx(ModEffectCategories.COMFORT, 1200));
     public static final DeferredItem<Item> MUSHROOM_FISH_PIZZA_SLICE = food("mushroom_fish_pizza_slice", 6, 0.9f, tips(null, "mushroom_ingredient", "fish_ingredient"));
     public static final DeferredItem<Item> MUSHROOM_ONION_PIZZA_SLICE = food("mushroom_onion_pizza_slice", 7, 0.7f, tips(null, "mushroom_ingredient", "onion_ingredient"), fx(ModEffectCategories.REPULSION, 300));
     public static final DeferredItem<Item> MUSHROOM_PIZZA_SLICE = food("mushroom_pizza_slice", 5, 0.6f, tips(null, "mushroom_ingredient"));
@@ -981,6 +977,8 @@ public class ModItems {
     public static final DeferredItem<Item> PORK_WRAP_ONION_LETTUCE = food("pork_wrap_onion_lettuce", 11, 0.6f, tips(null, "pork_ingredient", "onion_ingredient", "lettuce_ingredient"), fx(ModEffectCategories.REPULSION, 300));
     public static final DeferredItem<Item> POTATO_CHIPS = fastFood("potato_chips", 2, 0.2f, fx(ModEffectCategories.COMFORT, 600), fx(MobEffects.LUCK, 600));
     public static final DeferredItem<Item> POTATO_CHIP_BOWL = bowlFood("potato_chip_bowl", 4, 0.5f, fx(ModEffectCategories.COMFORT, 1200), fx(MobEffects.LUCK, 1200));
+    public static final DeferredItem<Item> POTATO_CREAM_SOUP_BOWL = bowlFood("potato_cream_soup_bowl", 8, 0.9f, fx(ModEffectCategories.COMFORT, 1200));
+    public static final DeferredItem<Item> POTATO_CREAM_SOUP_BOWL_CHEESE = bowlFood("potato_cream_soup_bowl_cheese", 9, 0.9f, tips(null, "cheese_ingredient"), fx(ModEffectCategories.COMFORT, 1800));
     public static final DeferredItem<Item> POWDERED_SUGAR = plain("powdered_sugar");
     public static final DeferredItem<Item> PRESSED_COCOA = plain("pressed_cocoa");
     public static final DeferredItem<Item> PRETZEL_STICK = fastFood("pretzel_stick", 2, 0.5f, fx(ModEffectCategories.COMFORT, 300));
@@ -1064,6 +1062,7 @@ public class ModItems {
     public static final DeferredItem<Item> RAW_SAUSAGE_PATTY = plain("raw_sausage_patty");
     public static final DeferredItem<Item> RAW_SAUSAGE_ROLL = plain("raw_sausage_roll");
     public static final DeferredItem<Item> RAW_SAUSAGE_ROLL_CHEESE = plain("raw_sausage_roll_cheese", null, "cheese_ingredient");
+    public static final DeferredItem<Item> RAW_SCONE = plain("raw_scone");
     public static final DeferredItem<Item> RAW_SNICKERDOODLE = plain("raw_snickerdoodle", "raw_snickerdoodle");
     public static final DeferredItem<Item> RAW_SOUL_BERRY_COOKIE = plain("raw_soul_berry_cookie", "raw_flesh_cookie", "soul_berry_ingredient");
     public static final DeferredItem<Item> RAW_SPICY_SAUSAGES = plain("raw_spicy_sausages");
@@ -1114,6 +1113,12 @@ public class ModItems {
     public static final DeferredItem<Item> SAUSAGE_PIZZA_SLICE = food("sausage_pizza_slice", 6, 0.5f, tips(null, "sausage_ingredient"));
     public static final DeferredItem<Item> SAUSAGE_ROLL = fastFood("sausage_roll", 4, 0.5f);
     public static final DeferredItem<Item> SAUSAGE_ROLL_CHEESE = fastFood("sausage_roll_cheese", 4, 0.6f, tips(null, "cheese_ingredient"));
+    public static final DeferredItem<Item> SCONE = food("scone", 3, 0.5f);
+    public static final DeferredItem<Item> SCONE_APPLE_JAM = food("scone_apple_jam", 5, 0.8f, tips(null, "apple_jam_ingredient"), fx(ModEffectCategories.COMFORT, 600));
+    public static final DeferredItem<Item> SCONE_BERRY_JAM = food("scone_berry_jam", 5, 0.8f, tips(null, "berry_jam_ingredient"), fx(ModEffectCategories.COMFORT, 600));
+    public static final DeferredItem<Item> SCONE_CHORUS_FRUIT_JAM = food("scone_chorus_fruit_jam", 5, 0.8f, tips(null, "chorus_fruit_jam_ingredient"), fx(ModEffectCategories.COMFORT, 600));
+    public static final DeferredItem<Item> SCONE_GLOW_BERRY_JAM = food("scone_glow_berry_jam", 5, 0.8f, tips(null, "glow_berry_jam_ingredient"), fx(MobEffects.NIGHT_VISION, 300), fx(ModEffectCategories.COMFORT, 600));
+    public static final DeferredItem<Item> SCONE_MELON_JAM = food("scone_melon_jam", 5, 0.8f, tips(null, "melon_jam_ingredient"), fx(ModEffectCategories.COMFORT, 600));
     public static final DeferredItem<Item> SCRAMBLED_EGGS_PLATE = bowlFood("scrambled_eggs_plate", 6, 0.7f, fx(ModEffectCategories.VIGOR, 1200));
     public static final DeferredItem<Item> SCRAMBLED_EGGS_PLATE_BACON = bowlFood("scrambled_eggs_plate_bacon", 8, 0.8f, tips(null, "bacon_ingredient"), fx(ModEffectCategories.VIGOR, 1200));
     public static final DeferredItem<Item> SCRAMBLED_EGGS_PLATE_CHEESE = bowlFood("scrambled_eggs_plate_cheese", 7, 0.8f, tips(null, "cheese_ingredient"), fx(ModEffectCategories.VIGOR, 1200));
@@ -1189,6 +1194,7 @@ public class ModItems {
     public static final DeferredItem<Item> TOFFEE_SWEET_ROLL = food("toffee_sweet_roll", 6, 0.7f, tips(null, "toffee_ingredient"), fx(ModEffectCategories.COMFORT, 600));
     public static final DeferredItem<Item> TOFFEE_TOAST = food("toffee_toast", 3, 0.9f, tips(null, "toffee_ingredient"), fx(ModEffectCategories.COMFORT, 600));
     public static final DeferredItem<Item> TOFFEE_WHITE_CHOCOLATE = food("toffee_white_chocolate", 6, 0.9f, tips(null, "toffee_ingredient"), fx(ModEffectCategories.COMFORT, 3600));
+    public static final DeferredItem<Item> TOMATO_CREAM_SOUP_BOWL = bowlFood("tomato_cream_soup_bowl", 7, 0.8f, fx(ModEffectCategories.COMFORT, 1200));
     public static final DeferredItem<Item> TORTILLA_CHIP_BOWL = bowlFood("tortilla_chip_bowl", 4, 0.7f, tips("corn"));
     public static final DeferredItem<Item> TROPICAL_FISH_SLICE = fastFood("tropical_fish_slice", 1, 1.0f);
     public static final DeferredItem<Item> UBE_CREAM_FROSTING_BOTTLE = bottle("ube_cream_frosting_bottle", 5, 0.7f, tips("ube"));

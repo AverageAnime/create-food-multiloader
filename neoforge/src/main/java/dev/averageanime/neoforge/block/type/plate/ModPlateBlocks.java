@@ -68,7 +68,7 @@ public class ModPlateBlocks {
         try {
             ResourceLocation itemRL = ResourceLocation.fromNamespaceAndPath(modId, itemName);
             Item item = BuiltInRegistries.ITEM.get(itemRL);
-            return (item != null && item != Items.AIR) ? item : null;
+            return item != Items.AIR ? item : null;
         } catch (Exception e) {
             return null;
         }
@@ -78,15 +78,12 @@ public class ModPlateBlocks {
         try {
             ResourceLocation blockRL = ResourceLocation.fromNamespaceAndPath(modId, blockName);
             Block block = BuiltInRegistries.BLOCK.get(blockRL);
-            return (block != null && block != Blocks.AIR) ? block : null;
+            return block != Blocks.AIR ? block : null;
         } catch (Exception e) {
             return null;
         }
     }
 
-    /**
-     * Helper method to manually register a plate item and block from another mod.
-     */
     public static boolean registerPlate(String modId, String itemName, String blockName, boolean isSmallPlate) {
         Block targetBlock = isSmallPlate ?
                 ModDisplayBlocks.SMALL_PLATE_BLOCK.get() :
@@ -96,15 +93,6 @@ public class ModPlateBlocks {
         return registerPlateEntry(entry, targetBlock, isSmallPlate ? "small" : "normal");
     }
 
-    private static class PlateEntry {
-        final String modId;
-        final String itemName;
-        final String blockName;
-
-        PlateEntry(String modId, String itemName, String blockName) {
-            this.modId = modId;
-            this.itemName = itemName;
-            this.blockName = blockName;
-        }
+    private record PlateEntry(String modId, String itemName, String blockName) {
     }
 }

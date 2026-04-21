@@ -16,7 +16,7 @@ import net.neoforged.neoforge.event.entity.player.PlayerEvent;
 import java.util.HashMap;
 import java.util.Map;
 
-@EventBusSubscriber(modid = CommonClass.ID)
+@EventBusSubscriber(modid = CommonClass.MOD_ID)
 public class CraftingRemainder {
 
     @SubscribeEvent

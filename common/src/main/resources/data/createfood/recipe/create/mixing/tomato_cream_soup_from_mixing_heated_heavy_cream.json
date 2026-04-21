@@ -1,0 +1,35 @@
+{
+  "type": "create:mixing",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "tag": "c:tomato"
+    },
+    {
+      "tag": "c:tomato"
+    },
+    {
+      "tag": "c:tomato"
+    },
+    {
+      "type": "fluid_tag",
+      "amount": 250,
+      "fluid_tag": "c:heavy_cream"
+    },
+    {
+      "tag": "c:salt"
+    }
+  ],
+  "results": [
+    {
+      "amount": 333,
+      "id": "createfood:tomato_cream_soup"
+    }
+  ],
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "tomato_cream_soup"
+    }
+  ]
+}

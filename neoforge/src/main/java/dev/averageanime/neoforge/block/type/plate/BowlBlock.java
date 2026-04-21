@@ -21,7 +21,7 @@ import net.neoforged.neoforge.event.entity.player.UseItemOnBlockEvent;
 import java.util.List;
 import java.util.function.Supplier;
 
-@EventBusSubscriber(modid = CommonClass.ID)
+@EventBusSubscriber(modid = CommonClass.MOD_ID)
 public class BowlBlock {
 
     @SubscribeEvent
@@ -81,7 +81,7 @@ public class BowlBlock {
                 } else {
                     List<Supplier<Block>> registeredBlocks = FoodBlock.Registry.getAllBlocks(heldItem);
                     if (registeredBlocks != null && !registeredBlocks.isEmpty()) {
-                        blockToPlace = registeredBlocks.get(0).get();
+                        blockToPlace = registeredBlocks.getFirst().get();
                     } else {
                         blockToPlace = ModDisplayBlocks.PLATE_BLOCK.get();
                     }
@@ -113,13 +113,13 @@ public class BowlBlock {
             }
         }
 
-        if ((isFoodItem || isCompatFoodItem) && (isEmptyPlate || isSmallPlate)) {
+        if (isEmptyPlate || isSmallPlate) {
             Block targetFoodBlock = null;
 
             if (isFoodItem) {
                 List<Supplier<Block>> stackBlockSuppliers = FoodBlock.Registry.getAllBlocks(heldItem);
                 if (stackBlockSuppliers != null && !stackBlockSuppliers.isEmpty()) {
-                    if (isEmptyPlate && !isSmallPlate) {
+                    if (isEmptyPlate) {
                         for (Supplier<Block> supplier : stackBlockSuppliers) {
                             Block block = supplier.get();
                             if (block instanceof PlateBlock) {
@@ -127,7 +127,7 @@ public class BowlBlock {
                                 break;
                             }
                         }
-                    } else if (isSmallPlate) {
+                    } else {
                         for (Supplier<Block> supplier : stackBlockSuppliers) {
                             Block block = supplier.get();
                             if (block instanceof dev.averageanime.neoforge.block.type.display.SmallPlateFoodBlock) {
@@ -140,9 +140,9 @@ public class BowlBlock {
             }
 
             if (targetFoodBlock == null && isCompatFoodItem) {
-                if (isEmptyPlate && !isSmallPlate) {
+                if (isEmptyPlate) {
                     targetFoodBlock = FoodBlock.Registry.getDisplayDelightPlateBlock(heldItem);
-                } else if (isSmallPlate) {
+                } else {
                     targetFoodBlock = FoodBlock.Registry.getDisplayDelightSmallPlateBlock(heldItem);
                 }
             }
@@ -201,7 +201,7 @@ public class BowlBlock {
             return;
         }
 
-        if ((isFoodItem || isCompatFoodItem) && clickedBlock instanceof FoodBlock foodBlock) {
+        if (clickedBlock instanceof FoodBlock foodBlock) {
             if (!context.getItemInHand().is(foodBlock.displayItem.get())) {
                 return;
             }

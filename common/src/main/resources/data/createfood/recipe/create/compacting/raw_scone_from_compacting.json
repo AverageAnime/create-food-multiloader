@@ -1,0 +1,25 @@
+{
+  "type": "create:compacting",
+  "ingredients": [
+    {
+      "tag": "c:butter_dough_small"
+    },
+    {
+      "tag": "c:sugar_dough_small"
+    }
+  ],
+  "results": [
+    {
+      "count": 2,
+      "item": {
+        "id": "createfood:raw_scone"
+      }
+    }
+  ],
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "raw_scone"
+    }
+  ]
+}

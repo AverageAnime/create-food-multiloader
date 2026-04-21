@@ -3,12 +3,9 @@ package dev.averageanime.neoforge.item.interaction;
 import dev.averageanime.CommonClass;
 import dev.averageanime.neoforge.config.ModConfig;
 import net.minecraft.core.NonNullList;
-import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
-import net.minecraft.tags.TagKey;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.*;
@@ -19,26 +16,15 @@ import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
 import java.util.List;
 import java.util.Optional;
 
-@EventBusSubscriber(modid = CommonClass.ID)
+@EventBusSubscriber(modid = CommonClass.MOD_ID)
 public class HandcraftInteraction {
 
     private static boolean isAllowedByFilter(ItemStack result) {
+        if (ModConfig.matchesFilterList(result, ModConfig.HANDCRAFTING_EXCLUDE.get())) return false;
+
         List<? extends String> filter = ModConfig.HANDCRAFTING_FILTER.get();
         if (filter.isEmpty()) return true;
-
-        String resultModId  = result.getItem().builtInRegistryHolder().key().location().getNamespace();
-        String resultItemId = result.getItem().builtInRegistryHolder().key().location().toString();
-
-        for (String entry : filter) {
-            if (entry.startsWith("mod:") && entry.substring(4).equals(resultModId)) return true;
-            if (entry.startsWith("item:") && entry.substring(5).equals(resultItemId)) return true;
-            if (entry.startsWith("tag:")) {
-                ResourceLocation tagLoc = ResourceLocation.tryParse(entry.substring(4));
-                if (tagLoc != null && result.is(TagKey.create(Registries.ITEM, tagLoc))) return true;
-            }
-        }
-
-        return false;
+        return ModConfig.matchesFilterList(result, filter);
     }
 
     @SubscribeEvent

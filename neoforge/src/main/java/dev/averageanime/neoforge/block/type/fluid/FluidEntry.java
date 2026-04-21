@@ -1,8 +1,5 @@
 package dev.averageanime.neoforge.block.type.fluid;
 
-import com.mojang.blaze3d.shaders.FogShape;
-import com.mojang.blaze3d.systems.RenderSystem;
-import dev.averageanime.CommonClass;
 import net.minecraft.client.Camera;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.renderer.FogRenderer;
@@ -23,6 +20,9 @@ import net.neoforged.neoforge.fluids.BaseFlowingFluid;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredItem;
+import dev.averageanime.CommonClass;
+import com.mojang.blaze3d.shaders.FogShape;
+import com.mojang.blaze3d.systems.RenderSystem;
 import org.joml.Vector3f;
 
 import static dev.averageanime.neoforge.CreateFood.LOGGER;
@@ -34,7 +34,7 @@ import static dev.averageanime.neoforge.item.ModItems.ITEMS;
 @SuppressWarnings("unused")
 public class FluidEntry {
     private final String name;
-    private Vector3f fogColor = null; // null means auto-detect from texture
+    private Vector3f fogColor = null;
     private int density = 1400;
     private int viscosity = 1500;
     private int lightLevel = 0;
@@ -42,86 +42,42 @@ public class FluidEntry {
     private int levelDecreasePerBlock = 3;
     private SoundEvent drinkSound = SoundEvents.HONEY_DRINK;
 
-    /**
-     * Creates a new FluidBuilder with the given name.
-     * Auto-detects color from texture unless manually set.
-     * @param name The name of the fluid (will be used for registration and texture paths)
-     */
     public FluidEntry(String name) {
         this.name = name;
     }
 
-    /**
-     * Sets the fog color when the player is submerged in this fluid.
-     * @param r Red component (0.0 - 1.0)
-     * @param g Green component (0.0 - 1.0)
-     * @param b Blue component (0.0 - 1.0)
-     * @return This builder for chaining
-     */
     public FluidEntry color(float r, float g, float b) {
         this.fogColor = new Vector3f(r, g, b);
         return this;
     }
 
-    /**
-     * Sets the fog color using a Vector3f.
-     * @param color The fog color vector
-     * @return This builder for chaining
-     */
     public FluidEntry color(Vector3f color) {
         this.fogColor = color;
         return this;
     }
 
-    /**
-     * Sets the density and viscosity of the fluid.
-     * @param density How dense the fluid is (affects movement)
-     * @param viscosity How thick/sticky the fluid is (affects flow speed)
-     * @return This builder for chaining
-     */
     public FluidEntry physics(int density, int viscosity) {
         this.density = density;
         this.viscosity = viscosity;
         return this;
     }
 
-    /**
-     * Sets how the fluid flows and spreads.
-     * @param slopeFindDistance How far the fluid searches for slopes to flow down
-     * @param levelDecreasePerBlock How much the fluid level decreases per block
-     * @return This builder for chaining
-     */
     public FluidEntry flow(int slopeFindDistance, int levelDecreasePerBlock) {
         this.slopeFindDistance = slopeFindDistance;
         this.levelDecreasePerBlock = levelDecreasePerBlock;
         return this;
     }
 
-    /**
-     * Sets the light level emitted by this fluid.
-     * @param lightLevel Light level (0-15)
-     * @return This builder for chaining
-     */
     public FluidEntry lightLevel(int lightLevel) {
         this.lightLevel = lightLevel;
         return this;
     }
 
-    /**
-     * Sets the sound played when drinking this fluid.
-     * @param sound The sound event
-     * @return This builder for chaining
-     */
     public FluidEntry drinkSound(SoundEvent sound) {
         this.drinkSound = sound;
         return this;
     }
 
-    /**
-     * Builds and registers the FluidEntry with all configured properties.
-     * If no color was set, attempts to auto-detect from texture.
-     * @return The created FluidEntry
-     */
     public FluidType build() {
         Vector3f finalColor = fogColor;
         if (finalColor == null) {
@@ -137,15 +93,9 @@ public class FluidEntry {
         return new FluidType(name, finalColor, properties, slopeFindDistance, levelDecreasePerBlock);
     }
 
-    /**
-     * Extracts the average color from a fluid texture.
-     * Falls back to white if texture cannot be read.
-     * @param fluidName The name of the fluid
-     * @return The average color as a Vector3f (0.0-1.0 range)
-     */
     private static Vector3f extractColorFromTexture(String fluidName) {
         try {
-            String texturePath = "/assets/" + CommonClass.ID + "/textures/fluid/" + fluidName + "_still.png";
+            String texturePath = "/assets/" + CommonClass.MOD_ID + "/textures/fluid/" + fluidName + "_still.png";
             java.io.InputStream stream = FluidEntry.class.getResourceAsStream(texturePath);
 
             if (stream == null) {
@@ -197,10 +147,6 @@ public class FluidEntry {
         }
     }
 
-    /**
-     * Represents a complete fluid registration including the fluid type, source, flowing variants,
-     * block, and bucket item. This class handles all the NeoForge registration and client rendering.
-     */
     @SuppressWarnings("NullableProblems")
     public static class FluidType {
         public final DeferredHolder<net.neoforged.neoforge.fluids.FluidType, net.neoforged.neoforge.fluids.FluidType> FLUID_TYPE;
@@ -213,20 +159,10 @@ public class FluidEntry {
         private final int slopeFindDistance;
         private final int levelDecreasePerBlock;
 
-        /**
-         * Creates a new FluidType and registers all associated objects.
-         * This should typically only be called from FluidBuilder.build().
-         *
-         * @param name The name of the fluid
-         * @param fogColor The fog color to use when submerged
-         * @param fluidTypeProperties The fluid type properties
-         * @param slopeFindDistance How far the fluid searches for slopes
-         * @param levelDecreasePerBlock How much the fluid level decreases per block
-         */
         public FluidType(String name, Vector3f fogColor, net.neoforged.neoforge.fluids.FluidType.Properties fluidTypeProperties,
                          int slopeFindDistance, int levelDecreasePerBlock) {
-            this.stillTexture = ResourceLocation.fromNamespaceAndPath(CommonClass.ID, "fluid/" + name + "_still");
-            this.flowingTexture = ResourceLocation.fromNamespaceAndPath(CommonClass.ID, "fluid/" + name + "_flow");
+            this.stillTexture = ResourceLocation.fromNamespaceAndPath(CommonClass.MOD_ID, "fluid/" + name + "_still");
+            this.flowingTexture = ResourceLocation.fromNamespaceAndPath(CommonClass.MOD_ID, "fluid/" + name + "_flow");
             this.slopeFindDistance = slopeFindDistance;
             this.levelDecreasePerBlock = levelDecreasePerBlock;
 
@@ -273,10 +209,6 @@ public class FluidEntry {
                     () -> new BucketItem(SOURCE.get(), new Item.Properties().stacksTo(1).craftRemainder(Items.BUCKET)));
         }
 
-        /**
-         * Creates the fluid properties for this fluid entry.
-         * @return The configured BaseFlowingFluid.Properties
-         */
         private BaseFlowingFluid.Properties createFluidPropertiesInternal() {
             return new BaseFlowingFluid.Properties(
                     FLUID_TYPE,

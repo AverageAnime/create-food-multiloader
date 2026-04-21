@@ -1,3 +1,8 @@
+import groovy.json.JsonOutput
+import groovy.json.JsonSlurper
+
+import javax.imageio.ImageIO
+
 plugins {
     id 'java-library'
     id 'maven-publish'
@@ -103,6 +108,50 @@ processResources {
         expand expandProps
     }
     inputs.properties(expandProps)
+
+    doLast {
+        def slurper = new JsonSlurper()
+        def jsonTotal = 0L, jsonSaved = 0L
+        def pngTotal = 0L, pngSaved = 0L
+        destinationDir.eachFileRecurse(groovy.io.FileType.FILES) { f ->
+            def name = f.name
+            if (name.endsWith('.json') || name.endsWith('.mcmeta')) {
+                def before = f.length()
+                try {
+                    def parsed = slurper.parse(f, 'UTF-8')
+                    def compact = JsonOutput.toJson(parsed)
+                    f.setText(compact, 'UTF-8')
+                    jsonTotal += before
+                    jsonSaved += before - f.length()
+                } catch (Exception ignored) { }
+            } else if (name.endsWith('.png')) {
+                def before = f.length()
+                pngTotal += before
+                try {
+                    def img = ImageIO.read(f)
+                    if (img == null) return
+                    def tmp = new File(f.parentFile, f.name + '.tmp')
+                    if (!ImageIO.write(img, 'png', tmp)) {
+                        tmp.delete()
+                        return
+                    }
+                    if (tmp.length() > 0 && tmp.length() < before) {
+                        pngSaved += before - tmp.length()
+                        f.delete()
+                        tmp.renameTo(f)
+                    } else {
+                        tmp.delete()
+                    }
+                } catch (Exception ignored) { }
+            }
+        }
+        if (jsonTotal > 0) {
+            logger.lifecycle("JSON minify: ${jsonSaved} / ${jsonTotal} bytes saved (${(int)(jsonSaved * 100 / jsonTotal)}%)")
+        }
+        if (pngTotal > 0) {
+            logger.lifecycle("PNG re-encode: ${pngSaved} / ${pngTotal} bytes saved (${(int)(pngSaved * 100 / pngTotal)}%)")
+        }
+    }
 }
 
 publishing {
@@ -115,3 +164,5 @@ publishing {
         }
     }
 }
+
+def void register(String s, Class<MavenPublication> mavenPublicationClass, Closure<MavenArtifact> mavenArtifactClosure) {}

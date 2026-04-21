@@ -5,10 +5,8 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.shapes.CollisionContext;
-import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.NotNull;
 
@@ -16,7 +14,7 @@ import java.util.function.Supplier;
 
 public class PizzaBlock extends ConsumableBlock {
 
-    protected static VoxelShape[] SHAPE_BY_BITE;
+    protected static final VoxelShape[] SHAPE_BY_BITE = PieVoxelShapes.byBite(2);
 
     public PizzaBlock(Properties properties, Supplier<Item> pieSlice) {
         super(properties, pieSlice);
@@ -28,17 +26,5 @@ public class PizzaBlock extends ConsumableBlock {
         VoxelShape base = SHAPE_BY_BITE[state.getValue(BITES)];
         Direction facing = state.getValue(FACING);
         return facing == Direction.NORTH ? base : rotateShape(base, facing);
-    }
-
-    static {
-        SHAPE_BY_BITE = new VoxelShape[]{
-                Block.box(2, 0, 2, 14, 2, 14),
-                Shapes.or(
-                        Block.box(2, 0, 8, 8, 2, 14),
-                        Block.box(2, 0, 2, 14, 2, 8)
-                ),
-                Block.box(2, 0, 2, 14, 2, 8),
-                Block.box(8, 0, 2, 14, 2, 8),
-        };
     }
 }

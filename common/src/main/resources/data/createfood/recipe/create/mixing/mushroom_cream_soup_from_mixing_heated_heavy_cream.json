@@ -1,0 +1,35 @@
+{
+  "type": "create:mixing",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "tag": "c:mushrooms"
+    },
+    {
+      "tag": "c:mushrooms"
+    },
+    {
+      "type": "fluid_tag",
+      "amount": 250,
+      "fluid_tag": "c:heavy_cream"
+    },
+    {
+      "tag": "c:butter"
+    },
+    {
+      "tag": "c:salt"
+    }
+  ],
+  "results": [
+    {
+      "amount": 333,
+      "id": "createfood:mushroom_cream_soup"
+    }
+  ],
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "mushroom_cream_soup"
+    }
+  ]
+}

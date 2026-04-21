@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "XXX",
+    " Y ",
+    " Z "
+  ],
+  "key": {
+    "X": {
+      "tag": "c:strings"
+    },
+    "Y": {
+      "tag": "minecraft:wool"
+    },
+    "Z": {
+      "tag": "c:leathers"
+    }
+  },
+  "result": {
+    "count": 1,
+    "id": "createfood:cloth_sack"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "cloth_sack"
+    }
+  ]
+}

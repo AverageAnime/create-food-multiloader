@@ -13,11 +13,18 @@ import static dev.averageanime.neoforge.CreateFood.LOGGER;
 public class ModFluids {
 
     public static final DeferredRegister<net.minecraft.world.level.material.Fluid> FLUIDS =
-            DeferredRegister.create(Registries.FLUID, CommonClass.ID);
+            DeferredRegister.create(Registries.FLUID, CommonClass.MOD_ID);
     public static final DeferredRegister<net.neoforged.neoforge.fluids.FluidType> FLUID_TYPES =
-            DeferredRegister.create(NeoForgeRegistries.FLUID_TYPES, CommonClass.ID);
+            DeferredRegister.create(NeoForgeRegistries.FLUID_TYPES, CommonClass.MOD_ID);
     public static final FluidEntry.FluidType RICE_PUDDING_FLUID = new FluidEntry("rice_pudding").build();
 
+    public static final FluidEntry.FluidType TOMATO_CREAM_SOUP_FLUID = new FluidEntry("tomato_cream_soup").build();
+
+    public static final FluidEntry.FluidType MUSHROOM_CREAM_SOUP_FLUID = new FluidEntry("mushroom_cream_soup").build();
+
+    public static final FluidEntry.FluidType POTATO_CREAM_SOUP_FLUID = new FluidEntry("potato_cream_soup").build();
+
+    public static final FluidEntry.FluidType BREAD_PUDDING_FLUID = new FluidEntry("bread_pudding").build();
     public static final FluidEntry.FluidType FISH_CHOWDER_FLUID = new FluidEntry("fish_chowder").build();
     public static final FluidEntry.FluidType LIQUID_CHEESE_FLUID = new FluidEntry("liquid_cheese").build();
     public static final FluidEntry.FluidType KELP_SOUP_FLUID = new FluidEntry("kelp_soup").build();

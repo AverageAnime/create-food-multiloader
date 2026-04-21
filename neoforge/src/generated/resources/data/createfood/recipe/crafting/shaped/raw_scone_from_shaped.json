@@ -1,0 +1,25 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "raw_scone"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "1": {
+      "tag": "c:sugar_dough_small"
+    },
+    "2": {
+      "tag": "c:butter_dough_small"
+    }
+  },
+  "pattern": [
+    "1",
+    "2"
+  ],
+  "result": {
+    "count": 2,
+    "id": "createfood:raw_scone"
+  }
+}

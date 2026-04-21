@@ -1,4 +1,4 @@
-// 1.21.1	2026-04-10T14:43:39.0810659	Tags for minecraft:fluid mod id createfood
+// 1.21.1	2026-04-17T13:55:53.4508884	Tags for minecraft:fluid mod id createfood
 f056cd23c8d63376dba02a2935e32b56e1bed2c5 data/c/tags/fluid/apple_cream_frosting.json
 eae0e1bd65fdcc607d52d2937fa8160f815d51d2 data/c/tags/fluid/apple_custard.json
 1ecded27e95697475dbe2e600b84f334eed90688 data/c/tags/fluid/apple_ice_cream.json
@@ -16,6 +16,7 @@ b00102212d59dbbad12d9fdc3b41413684e13ee2 data/c/tags/fluid/berry_pie_filling.jso
 6f6f3802da7bf12d5a38bb20e93be477fc2b36f9 data/c/tags/fluid/blackstrap_molasses.json
 ae91c621fbd760e2436fdeb8b5f7c0d4e92fe414 data/c/tags/fluid/black_gelatin_mix.json
 679ae59d4183c5102f0284910eecfd18dffbb2ba data/c/tags/fluid/blue_gelatin_mix.json
+6fb48f9662b01da891fa625db38936d114713456 data/c/tags/fluid/bread_pudding.json
 6540dab6c5236a9d993209bd5be5b98654db4819 data/c/tags/fluid/brown_gelatin_mix.json
 4daad69c06886a51f5fc255e26fc21d4d5f97ad2 data/c/tags/fluid/butterscotch.json
 9a797358d49587d17c000954f7c449283b5c8844 data/c/tags/fluid/butterscotch_fudge.json
@@ -81,10 +82,12 @@ ef92415f7481d2167312929184a6ac6c5defb44f data/c/tags/fluid/melon_milkshake.json
 b05da63f32db18a006950e6f59705f3ec0517cb6 data/c/tags/fluid/meringue.json
 e217d21e92102365b0fa21458e081180d7380ce1 data/c/tags/fluid/milkshake.json
 f4ceb24ac8030ef207aee43220c4e579f861145c data/c/tags/fluid/molasses.json
+7bd382cdc764e9576cb02c79395554983d0e0ee4 data/c/tags/fluid/mushroom_cream_soup.json
 94e2ae1ae838441b29080cdfc57457c468150cd2 data/c/tags/fluid/mutton_stew.json
 76ea0f2236b4d58b617b1efae83bf321bc307d05 data/c/tags/fluid/orange_gelatin_mix.json
 7b8f23cb6dd1f60d98c7eb1f4b18812f5dff0f8c data/c/tags/fluid/pink_gelatin_mix.json
 b5256f025330a24361faaa972790650c1fdf2ca7 data/c/tags/fluid/pork_stew.json
+3c91cceadc2258e8dbeecadce5ead89c14f7488f data/c/tags/fluid/potato_cream_soup.json
 f313662aab8332d11b81285f2206132d0d935fc0 data/c/tags/fluid/pumpkin_custard.json
 000730834633adbbd10d913260577c1b03afe45b data/c/tags/fluid/pumpkin_pie_filling.json
 d1458173cf4bd5e717dbdca32ca68428093cf981 data/c/tags/fluid/pumpkin_puree.json
@@ -98,6 +101,7 @@ d44769068b002c0b091d51c6fc592a92aada69e2 data/c/tags/fluid/sour_cream.json
 16604ba0782f633e964568c370562a600ced5111 data/c/tags/fluid/taco_sauce.json
 9d9fc7a9c04441447365b9cb0b117a36c4e7664d data/c/tags/fluid/toffee.json
 b4d4793cee85d8d4a36428d12c6cdad75b707fb1 data/c/tags/fluid/toffee_fudge.json
+a4c5b5971cfced042828a1b745df5de71ede1ad3 data/c/tags/fluid/tomato_cream_soup.json
 8d5318f07e046a655acfd78acc0ab1f28c1f848a data/c/tags/fluid/ube_cream_frosting.json
 ee4e47d39676e2ea4582201a26b49b3d66714866 data/c/tags/fluid/vegetable_oil.json
 833d0cc27b9d8569e021f78f05b917c231a6de59 data/c/tags/fluid/vinegar.json

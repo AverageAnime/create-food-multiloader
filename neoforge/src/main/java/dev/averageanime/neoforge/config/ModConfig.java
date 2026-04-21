@@ -1,6 +1,11 @@
 package dev.averageanime.neoforge.config;
 
 import net.minecraft.client.gui.screens.Screen;
+import net.minecraft.core.component.DataComponents;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.ItemStack;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.neoforge.client.gui.ConfigurationScreen;
 import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
@@ -10,25 +15,42 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 public class ModConfig {
     public static final ModConfigSpec.Builder BUILDER = new ModConfigSpec.Builder();
     public static final ModConfigSpec.Builder SERVER_BUILDER = new ModConfigSpec.Builder();
 
+    public static final ModConfigSpec.BooleanValue CLOTH_SACK_ALLOW_FOOD;
+    public static final ModConfigSpec.BooleanValue CLOTH_SACK_EAT_FROM_ITEM;
+    public static final ModConfigSpec.BooleanValue CLOTH_SACK_INVENTORY_ENABLED;
+    public static final ModConfigSpec.BooleanValue CLOTH_SACK_STACK;
     public static final ModConfigSpec.BooleanValue ENABLE_EGG_IMPACT_REMAINDER;
     public static final ModConfigSpec.BooleanValue ENABLE_FILTER_INTERACTIONS;
     public static final ModConfigSpec.BooleanValue ENABLE_HANDCRAFTING;
+    public static final ModConfigSpec.BooleanValue RATION_BOX_ALLOW_FOOD;
+    public static final ModConfigSpec.BooleanValue RATION_BOX_EAT_FROM_ITEM;
+    public static final ModConfigSpec.BooleanValue RATION_BOX_INVENTORY_ENABLED;
+    public static final ModConfigSpec.BooleanValue RATION_BOX_STACK;
     public static final ModConfigSpec.BooleanValue REQUIRE_SHIFT_FOR_TOOLTIPS;
     public static final ModConfigSpec.BooleanValue SHOW_COMPATIBILITY;
     public static final ModConfigSpec.BooleanValue SHOW_INGREDIENTS;
+    public static final ModConfigSpec.BooleanValue SHOW_SACK_BLOCK_ICONS;
+    public static final ModConfigSpec.BooleanValue SHOW_STORAGE_TOOLTIP_ICONS;
     public static final ModConfigSpec.ConfigValue<List<? extends String>> CATEGORY_EFFECT_OVERRIDES;
+    public static final ModConfigSpec.ConfigValue<List<? extends String>> CLOTH_SACK_EXCLUDE;
+    public static final ModConfigSpec.ConfigValue<List<? extends String>> CLOTH_SACK_FILTER;
     public static final ModConfigSpec.ConfigValue<List<? extends String>> CRAFTING_REMAINDERS;
+    public static final ModConfigSpec.ConfigValue<List<? extends String>> CUSTOM_DISPLAY_BLOCK;
     public static final ModConfigSpec.ConfigValue<List<? extends String>> CUSTOM_TOOLTIPS;
     public static final ModConfigSpec.ConfigValue<List<? extends String>> DISABLE_ITEMS;
     public static final ModConfigSpec.ConfigValue<List<? extends String>> FILTER_INTERACTIONS;
+    public static final ModConfigSpec.ConfigValue<List<? extends String>> HANDCRAFTING_EXCLUDE;
     public static final ModConfigSpec.ConfigValue<List<? extends String>> HANDCRAFTING_FILTER;
     public static final ModConfigSpec.ConfigValue<List<? extends String>> ITEM_EFFECT_OVERRIDES;
     public static final ModConfigSpec.ConfigValue<List<? extends String>> ITEM_NUTRITION_OVERRIDES;
+    public static final ModConfigSpec.ConfigValue<List<? extends String>> RATION_BOX_EXCLUDE;
+    public static final ModConfigSpec.ConfigValue<List<? extends String>> RATION_BOX_FILTER;
 
     static {
         DISABLE_ITEMS = BUILDER
@@ -114,6 +136,36 @@ public class ModConfig {
                         () -> "item_id",
                         obj -> obj instanceof String
                 );
+
+        BUILDER.push("display");
+
+        CUSTOM_DISPLAY_BLOCK = BUILDER
+                .gameRestart()
+                .defineListAllowEmpty("custom_display_block",
+                        List.of(),
+                        () -> "mod:item_id|display_type|max_stack",
+                        obj -> {
+                            if (!(obj instanceof String s)) return false;
+                            String[] p = s.split("\\|");
+                            if (p.length != 3) return false;
+                            Set<String> validTypes = Set.of("plate", "small_plate", "bottle", "bowl", "salad_bowl");
+                            if (!validTypes.contains(p[1].toLowerCase())) return false;
+                            try { Integer.parseInt(p[2]); return true; }
+                            catch (NumberFormatException e) { return false; }
+                        }
+                );
+
+        BUILDER.pop();
+
+        BUILDER.push("storage");
+
+        SHOW_STORAGE_TOOLTIP_ICONS = BUILDER
+                .define("show_tooltip_icons", true);
+
+        SHOW_SACK_BLOCK_ICONS = BUILDER
+                .define("show_sack_block_icons", true);
+
+        BUILDER.pop();
 
         BUILDER.push("tooltips");
 
@@ -225,39 +277,6 @@ public class ModConfig {
 
         SERVER_BUILDER.pop();
 
-        SERVER_BUILDER.push("handcraft");
-
-        ENABLE_HANDCRAFTING = SERVER_BUILDER
-                .define("enable_handcrafting", true);
-
-        HANDCRAFTING_FILTER = SERVER_BUILDER
-                .defineListAllowEmpty("handcraft_filter",
-                        List.of(),
-                        () -> "mod:mod_id,  item:mod_id:item_id,  tag:mod_id:tag_name",
-                        obj -> obj instanceof String
-                );
-
-        SERVER_BUILDER.pop();
-
-        SERVER_BUILDER.push("interactions");
-
-        ENABLE_FILTER_INTERACTIONS = SERVER_BUILDER
-                .define("enable_filter_interactions", true);
-
-        FILTER_INTERACTIONS = SERVER_BUILDER
-                .defineListAllowEmpty("filter_interactions",
-                        List.of(
-                                "createfood:cloth_filter_egg|minecraft:glass_bottle|createfood:cloth_filter_egg_yolk|createfood:egg_whites_bottle",
-                                "createfood:cloth_filter_egg_yolk|none|createfood:cloth_filter|createfood:egg_yolk",
-                                "createfood:cloth_filter_cacao_mass|minecraft:bucket|createfood:cloth_filter_pressed_cocoa|createfood:cacao_butter_bucket",
-                                "createfood:cloth_filter_pressed_cocoa|none|createfood:cloth_filter|createfood:pressed_cocoa"
-                        ),
-                        () -> "filter_item|offhand_item|filter_result|container_result",
-                        obj -> obj instanceof String s && s.split("\\|").length == 4
-                );
-
-        SERVER_BUILDER.pop();
-
         SERVER_BUILDER.push("food");
 
         ITEM_NUTRITION_OVERRIDES = SERVER_BUILDER
@@ -288,6 +307,46 @@ public class ModConfig {
 
         SERVER_BUILDER.pop();
 
+        SERVER_BUILDER.push("handcraft");
+
+        ENABLE_HANDCRAFTING = SERVER_BUILDER
+                .define("enable_handcrafting", true);
+
+        HANDCRAFTING_FILTER = SERVER_BUILDER
+                .defineListAllowEmpty("handcraft_filter",
+                        List.of(),
+                        () -> "mod:mod_id,  item:mod_id:item_id,  tag:mod_id:tag_name",
+                        obj -> obj instanceof String
+                );
+
+        HANDCRAFTING_EXCLUDE = SERVER_BUILDER
+                .defineListAllowEmpty("handcraft_exclude",
+                        List.of(),
+                        () -> "mod:mod_id,  item:mod_id:item_id,  tag:mod_id:tag_name",
+                        obj -> obj instanceof String
+                );
+
+        SERVER_BUILDER.pop();
+
+        SERVER_BUILDER.push("interactions");
+
+        ENABLE_FILTER_INTERACTIONS = SERVER_BUILDER
+                .define("enable_filter_interactions", true);
+
+        FILTER_INTERACTIONS = SERVER_BUILDER
+                .defineListAllowEmpty("filter_interactions",
+                        List.of(
+                                "createfood:cloth_filter_egg|minecraft:glass_bottle|createfood:cloth_filter_egg_yolk|createfood:egg_whites_bottle",
+                                "createfood:cloth_filter_egg_yolk|none|createfood:cloth_filter|createfood:egg_yolk",
+                                "createfood:cloth_filter_cacao_mass|minecraft:bucket|createfood:cloth_filter_pressed_cocoa|createfood:cacao_butter_bucket",
+                                "createfood:cloth_filter_pressed_cocoa|none|createfood:cloth_filter|createfood:pressed_cocoa"
+                        ),
+                        () -> "filter_item|offhand_item|filter_result|container_result",
+                        obj -> obj instanceof String s && s.split("\\|").length == 4
+                );
+
+        SERVER_BUILDER.pop();
+
         SERVER_BUILDER.push("remainders");
 
         ENABLE_EGG_IMPACT_REMAINDER = SERVER_BUILDER
@@ -303,37 +362,83 @@ public class ModConfig {
                 );
 
         SERVER_BUILDER.pop();
+
+        SERVER_BUILDER.push("storage");
+
+        SERVER_BUILDER.push("cloth_sack");
+
+        CLOTH_SACK_INVENTORY_ENABLED = SERVER_BUILDER
+                .define("cloth_sack_inventory", true);
+
+        CLOTH_SACK_EAT_FROM_ITEM = SERVER_BUILDER
+                .define("cloth_sack_eat_from_item", false);
+
+        CLOTH_SACK_ALLOW_FOOD = SERVER_BUILDER
+                .define("cloth_sack_allow_food", false);
+
+        CLOTH_SACK_STACK = SERVER_BUILDER
+                .define("cloth_sack_stack", true);
+
+        CLOTH_SACK_FILTER = SERVER_BUILDER
+                .defineListAllowEmpty("cloth_sack_filter",
+                        List.of(),
+                        () -> "mod:mod_id,  item:mod_id:item_id,  tag:mod_id:tag_name",
+                        obj -> obj instanceof String
+                );
+
+        CLOTH_SACK_EXCLUDE = SERVER_BUILDER
+                .defineListAllowEmpty("cloth_sack_exclude",
+                        List.of(
+                                "item:createfood:cloth_sack"
+                        ),
+                        () -> "mod:mod_id,  item:mod_id:item_id,  tag:mod_id:tag_name",
+                        obj -> obj instanceof String
+                );
+
+        SERVER_BUILDER.pop();
+
+        SERVER_BUILDER.push("ration_box");
+
+        RATION_BOX_INVENTORY_ENABLED = SERVER_BUILDER
+                .define("ration_box_inventory", true);
+
+        RATION_BOX_EAT_FROM_ITEM = SERVER_BUILDER
+                .define("ration_box_eat_from_item", true);
+
+        RATION_BOX_ALLOW_FOOD = SERVER_BUILDER
+                .define("ration_box_allow_food", true);
+
+        RATION_BOX_STACK = SERVER_BUILDER
+                .define("ration_box_stack", false);
+
+        RATION_BOX_FILTER = SERVER_BUILDER
+                .defineListAllowEmpty("ration_box_filter",
+                        List.of(),
+                        () -> "mod:mod_id,  item:mod_id:item_id,  tag:mod_id:tag_name",
+                        obj -> obj instanceof String
+                );
+
+        RATION_BOX_EXCLUDE = SERVER_BUILDER
+                .defineListAllowEmpty("ration_box_exclude",
+                        List.of(),
+                        () -> "mod:mod_id,  item:mod_id:item_id,  tag:mod_id:tag_name",
+                        obj -> obj instanceof String
+                );
+
+        SERVER_BUILDER.pop();
+
+        SERVER_BUILDER.pop();
     }
 
-    // -------------------------------------------------------------------------
-    // Helper accessors
-    // -------------------------------------------------------------------------
     private static boolean effectIdsMatch(String configId, String itemId) {
         if (configId.equals(itemId)) return true;
         // Allow unqualified vanilla effect names: "strength" ↔ "minecraft:strength"
         if (!configId.contains(":") && itemId.equals("minecraft:" + configId)) return true;
-        if (!itemId.contains(":") && configId.equals("minecraft:" + itemId)) return true;
-        return false;
+        return !itemId.contains(":") && configId.equals("minecraft:" + itemId);
     }
-    /**
-     * Parsed result of a per-item effect override entry.
-     *
-     * @param duration  replacement duration in ticks (ignored when {@code remove} is true)
-     * @param amplifier replacement amplifier (0 = level I; ignored when {@code remove} is true)
-     * @param remove    when true the effect is suppressed entirely for this item
-     */
+
     public record ItemEffectOverride(String categoryOrEffectId, int duration, int amplifier, boolean remove) {}
 
-    /**
-     * Returns the override for the given {@code (itemId, categoryOrEffectId)} pair,
-     * or {@code null} if no override is configured.
-     *
-     * <p>Matching is done via {@link #effectIdsMatch} so that unqualified names
-     * (e.g. {@code "strength"}) correctly find entries whose item Fx stores the
-     * fully-qualified ID ({@code "minecraft:strength"}), and vice-versa.
-     *
-     * <p>The first matching entry wins; entries are checked top-to-bottom.
-     */
     @Nullable
     public static ItemEffectOverride getItemEffectOverride(String itemId, String categoryOrEffectId) {
         try {
@@ -362,19 +467,6 @@ public class ModConfig {
         return null;
     }
 
-    /**
-     * Returns every {@code item_overrides} entry for {@code itemId}, regardless
-     * of which category or effect it targets.
-     *
-     * <p>{@link dev.averageanime.neoforge.item.type.EffectFood} uses this to find
-     * config-driven additions — entries whose {@link ItemEffectOverride#categoryOrEffectId}
-     * does not resolve to an effect already in the item's built-in definition.
-     *
-     * <p>The {@code categoryOrEffectId} stored in each returned override preserves
-     * the original string from the config so that  can handle it.
-     *
-     * <p>Returns an empty list when the config is not yet loaded.
-     */
     public static List<ItemEffectOverride> getItemOverrideEntries(String itemId) {
         List<ItemEffectOverride> result = new ArrayList<>();
         try {
@@ -400,33 +492,14 @@ public class ModConfig {
         return result;
     }
 
-    /**
-     * Parsed result of a per-item nutrition/saturation override entry.
-     *
-     * <p>Either field may be  ({@code -1} / {@code -1f}) to indicate
-     * that the item's built-in default should be used for that field.
-     *
-     * @param nutrition   replacement hunger points, or {@link #KEEP_INT} if unset
-     * @param saturation  replacement saturation modifier, or {@link #KEEP_FLOAT} if unset
-     */
     public record ItemNutritionOverride(int nutrition, float saturation) {
-        /** Sentinel meaning "keep the item's built-in nutrition value". */
         public static final int   KEEP_INT   = -1;
-        /** Sentinel meaning "keep the item's built-in saturation value". */
         public static final float KEEP_FLOAT = -1f;
 
         public boolean hasNutritionOverride()   { return nutrition   != KEEP_INT;   }
         public boolean hasSaturationOverride()  { return saturation  != KEEP_FLOAT; }
     }
 
-    /**
-     * Returns the nutrition/saturation override for {@code itemId}, or {@code null}
-     * if no entry is configured. Either field of the returned record may be a
-     * {@link ItemNutritionOverride#KEEP_INT} / {@link ItemNutritionOverride#KEEP_FLOAT}
-     * sentinel indicating that the item's built-in default should be used.
-     *
-     * <p>The first matching entry wins; entries are checked top-to-bottom.
-     */
     @Nullable
     public static ItemNutritionOverride getItemNutritionOverride(String itemId) {
         try {
@@ -440,15 +513,10 @@ public class ModConfig {
                 return new ItemNutritionOverride(nutrition, saturation);
             }
         } catch (IllegalStateException ignored) {
-            // Config not yet loaded — return null and use the item's built-in values.
         }
         return null;
     }
 
-    /**
-     * Returns the effect ID override for a named category, or {@code null} if none
-     * is configured. Used by {@code FoodEffect.resolve()} as its first lookup step.
-     */
     @Nullable
     public static String getCategoryEffectOverride(String categoryName) {
         try {
@@ -459,10 +527,6 @@ public class ModConfig {
         } catch (IllegalStateException ignored) {}
         return null;
     }
-
-    // -------------------------------------------------------------------------
-    // Existing helpers (unchanged)
-    // -------------------------------------------------------------------------
 
     public static boolean isItemEnabled(String itemId) {
         try {
@@ -487,6 +551,81 @@ public class ModConfig {
                 .replace("_small_plate_block", "")
                 .replace("_plate_block", "")
                 .replace("_block", "");
+    }
+
+    public static boolean matchesFilterList(ItemStack stack, List<? extends String> list) {
+        if (list.isEmpty()) return false;
+        String modId  = stack.getItem().builtInRegistryHolder().key().location().getNamespace();
+        String itemId = stack.getItem().builtInRegistryHolder().key().location().toString();
+        for (String entry : list) {
+            if (entry.startsWith("mod:")  && entry.substring(4).equals(modId))  return true;
+            if (entry.startsWith("item:") && entry.substring(5).equals(itemId)) return true;
+            if (entry.startsWith("tag:")) {
+                ResourceLocation tagLoc = ResourceLocation.tryParse(entry.substring(4));
+                if (tagLoc != null && stack.is(TagKey.create(Registries.ITEM, tagLoc))) return true;
+            }
+        }
+        return false;
+    }
+
+    public static boolean isClothSackItemAllowed(ItemStack stack) {
+        try {
+            if (matchesFilterList(stack, CLOTH_SACK_EXCLUDE.get())) return false;
+            boolean isFood = stack.has(DataComponents.FOOD);
+            boolean allowFood = CLOTH_SACK_ALLOW_FOOD.get();
+            if (allowFood && isFood) return true;
+            List<? extends String> filter = CLOTH_SACK_FILTER.get();
+            if (!filter.isEmpty()) return matchesFilterList(stack, filter);
+            return !allowFood;
+        } catch (IllegalStateException ignored) {
+            return true;
+        }
+    }
+
+    public static boolean isClothSackInventoryEnabled() {
+        try { return CLOTH_SACK_INVENTORY_ENABLED.get(); } catch (IllegalStateException e) { return true; }
+    }
+
+    public static boolean isClothSackEatFromItem() {
+        try { return CLOTH_SACK_EAT_FROM_ITEM.get(); } catch (IllegalStateException e) { return false; }
+    }
+
+    public static boolean isClothSackStacking() {
+        try { return CLOTH_SACK_STACK.get(); } catch (IllegalStateException e) { return true; }
+    }
+
+    public static boolean isRationBoxInventoryEnabled() {
+        try { return RATION_BOX_INVENTORY_ENABLED.get(); } catch (IllegalStateException e) { return true; }
+    }
+
+    public static boolean isRationBoxEatFromItemEnabled() {
+        try { return RATION_BOX_EAT_FROM_ITEM.get(); } catch (IllegalStateException e) { return true; }
+    }
+
+    public static boolean isRationBoxStacking() {
+        try { return RATION_BOX_STACK.get(); } catch (IllegalStateException e) { return false; }
+    }
+
+    public static boolean isRationBoxItemAllowed(ItemStack stack) {
+        try {
+            if (matchesFilterList(stack, RATION_BOX_EXCLUDE.get())) return false;
+            boolean isFood = stack.has(DataComponents.FOOD);
+            boolean allowFood = RATION_BOX_ALLOW_FOOD.get();
+            if (allowFood && isFood) return true;
+            List<? extends String> filter = RATION_BOX_FILTER.get();
+            if (!filter.isEmpty()) return matchesFilterList(stack, filter);
+            return !allowFood;
+        } catch (IllegalStateException ignored) {
+            return true;
+        }
+    }
+
+    public static boolean isStorageTooltipIconsEnabled() {
+        try { return SHOW_STORAGE_TOOLTIP_ICONS.get(); } catch (IllegalStateException e) { return true; }
+    }
+
+    public static boolean isSackBlockIconsEnabled() {
+        try { return SHOW_SACK_BLOCK_ICONS.get(); } catch (IllegalStateException e) { return true; }
     }
 
     public static class ConfigScreen implements IConfigScreenFactory {
