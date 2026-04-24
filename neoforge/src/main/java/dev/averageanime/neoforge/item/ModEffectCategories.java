@@ -96,28 +96,28 @@ public final class ModEffectCategories {
     /** Melee attacks apply Poison to the hit entity. */
     public static final FoodEffect TOUCH_POISON = register(
             FoodEffect.category("touch_poison")
-                    .or("brewery",  "brewery:toxic_touch")
+                    .or("brewery",  "brewery:toxictouch")
                     .build()
     );
 
     /** Melee attacks apply Regeneration to the hit entity. */
     public static final FoodEffect TOUCH_REGEN = register(
             FoodEffect.category("touch_regen")
-                    .or("brewery",  "brewery:renewing_touch")
+                    .or("brewery",  "brewery:renewingtouch")
                     .build()
     );
 
     /** Melee attacks grant Absorption to the attacker. */
     public static final FoodEffect TOUCH_ABSORB = register(
             FoodEffect.category("touch_absorb")
-                    .or("brewery",  "brewery:protective_touch")
+                    .or("brewery",  "brewery:protectivetouch")
                     .build()
     );
 
     /** Melee attacks directly heal the hit entity. */
     public static final FoodEffect TOUCH_HEAL = register(
             FoodEffect.category("touch_heal")
-                    .or("brewery",  "brewery:healing_touch")
+                    .or("brewery",  "brewery:healingtouch")
                     .build()
     );
 
@@ -145,7 +145,7 @@ public final class ModEffectCategories {
     /** Attacks have a small chance to strike the target with lightning. */
     public static final FoodEffect LIGHTNING = register(
             FoodEffect.category("lightning")
-                    .or("brewery",  "brewery:lightning")
+                    .or("brewery",  "brewery:lightning_strike")
                     .build()
     );
 
@@ -181,14 +181,14 @@ public final class ModEffectCategories {
     /** Reduces villager trading prices by ~10%. */
     public static final FoodEffect CHARISMA = register(
             FoodEffect.category("charisma")
-                    .or("brewery",  "brewery:pint_charisma")
+                    .or("brewery",  "brewery:pintcharisma")
                     .build()
     );
 
     /** Nearby animals feel unusually friendly and stick around. */
     public static final FoodEffect ANIMAL_CHARM = register(
             FoodEffect.category("animal_charm")
-                    .or("brewery",  "brewery:snow_white")
+                    .or("brewery",  "brewery:snowwhite")
                     .build()
     );
 
