@@ -69,9 +69,10 @@ public class ModItems {
         if (fast) b.fast();
         if (converts != null) b.usingConvertsTo(converts);
         for (Fx f : fxList) {
+            if (f == null) continue;
+            Holder<MobEffect> holder = f.effect().get();
+            if (holder == null) continue;
             b.effect(() -> {
-                Holder<MobEffect> holder = f.effect().get();
-                if (holder == null) return null;
                 ModConfig.ItemEffectOverride override =
                         ModConfig.getItemEffectOverride(itemId, f.categoryOrEffectId());
                 if (override != null) {
