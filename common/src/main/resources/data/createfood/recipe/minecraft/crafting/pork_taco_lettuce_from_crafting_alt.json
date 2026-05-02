@@ -5,13 +5,19 @@
             "id": "pork_taco_lettuce"
         }
     ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "pork_taco_lettuce"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {
             "tag": "c:pork_taco"
         },
         {
-          "tag": "c:foods/leafy_green"
+            "tag": "c:foods/leafy_green"
         }
     ],
     "result": {

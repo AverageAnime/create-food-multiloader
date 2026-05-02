@@ -7,16 +7,16 @@
     },
     "ingredients": [
         {
-          "tag": "c:foods/raw_mutton"
+            "tag": "c:foods/raw_mutton"
         },
         {
-          "tag": "c:onion"
+            "tag": "c:onion"
         },
         {
-          "tag": "c:eggs"
+            "tag": "c:eggs"
         },
         {
-          "tag": "c:potato"
+            "tag": "c:potato"
         }
     ],
     "recipe_book_tab": "drinks",
@@ -25,7 +25,23 @@
     },
     "neoforge:conditions": [
         {
+            "type": "neoforge:mod_loaded",
+            "modid": "farmersdelight"
+        },
+        {
             "type": "createfood:enabled",
+            "id": "mutton_stew_bowl"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "farmersdelight"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
             "id": "mutton_stew_bowl"
         }
     ]

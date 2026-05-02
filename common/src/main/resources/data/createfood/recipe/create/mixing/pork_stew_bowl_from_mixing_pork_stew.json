@@ -17,15 +17,31 @@
         }
     ],
     "results": [
-      {
-        "item": {
-          "id": "createfood:pork_stew_bowl"
+        {
+            "item": {
+                "id": "createfood:pork_stew_bowl"
+            }
         }
-      }
     ],
     "neoforge:conditions": [
         {
+            "type": "neoforge:mod_loaded",
+            "modid": "create"
+        },
+        {
             "type": "createfood:enabled",
+            "id": "pork_stew_bowl"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "create"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
             "id": "pork_stew_bowl"
         }
     ]

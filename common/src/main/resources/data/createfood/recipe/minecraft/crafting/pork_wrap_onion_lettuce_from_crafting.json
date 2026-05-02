@@ -5,6 +5,12 @@
             "id": "pork_wrap_onion_lettuce"
         }
     ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "pork_wrap_onion_lettuce"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {

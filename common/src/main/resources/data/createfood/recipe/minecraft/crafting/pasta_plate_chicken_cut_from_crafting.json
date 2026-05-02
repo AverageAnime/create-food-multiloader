@@ -5,6 +5,12 @@
             "id": "pasta_plate_chicken_cut"
         }
     ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "pasta_plate_chicken_cut"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {

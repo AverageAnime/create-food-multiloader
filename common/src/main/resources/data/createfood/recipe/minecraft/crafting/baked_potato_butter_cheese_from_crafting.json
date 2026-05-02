@@ -5,6 +5,12 @@
             "id": "baked_potato_butter_cheese"
         }
     ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "baked_potato_butter_cheese"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {

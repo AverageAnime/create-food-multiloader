@@ -16,5 +16,11 @@
             "type": "createfood:enabled",
             "id": "dragon_burger_warped_fungus"
         }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "dragon_burger_warped_fungus"
+        }
     ]
 }

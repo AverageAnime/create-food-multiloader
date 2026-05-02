@@ -21,7 +21,7 @@ import dev.averageanime.neoforge.block.ModBlocks;
 import dev.averageanime.neoforge.block.ModDisplayBlocks;
 import dev.averageanime.neoforge.block.ModFluids;
 import dev.averageanime.neoforge.block.type.fluid.FluidEntry;
-import dev.averageanime.neoforge.blockentity.ModBlockEntities;
+import dev.averageanime.neoforge.block.type.blockentity.ModBlockEntities;
 import dev.averageanime.neoforge.client.renderer.ClothSackRenderer;
 import dev.averageanime.neoforge.client.screen.ClothSackItemScreen;
 import dev.averageanime.neoforge.client.screen.ClothSackScreen;
@@ -37,7 +37,6 @@ import dev.averageanime.neoforge.tab.ModDisplayTabs;
 import dev.averageanime.neoforge.tab.ModTabs;
 import com.mojang.logging.LogUtils;
 import org.slf4j.Logger;
-
 
 @Mod(CommonClass.MOD_ID)
 public class CreateFood {

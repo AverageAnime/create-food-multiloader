@@ -17,5 +17,11 @@
             "type": "createfood:enabled",
             "id": "raw_glow_berry_cookie"
         }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "raw_glow_berry_cookie"
+        }
     ]
 }

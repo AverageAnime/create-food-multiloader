@@ -19,5 +19,11 @@
             "type": "createfood:enabled",
             "id": "apple_jam_bucket"
         }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "apple_jam_bucket"
+        }
     ]
 }

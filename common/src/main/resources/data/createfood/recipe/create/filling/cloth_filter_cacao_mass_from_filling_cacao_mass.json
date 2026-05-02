@@ -19,7 +19,23 @@
     ],
     "neoforge:conditions": [
         {
+            "type": "neoforge:mod_loaded",
+            "modid": "create"
+        },
+        {
             "type": "createfood:enabled",
+            "id": "cloth_filter_cacao_mass"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "create"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
             "id": "cloth_filter_cacao_mass"
         }
     ]

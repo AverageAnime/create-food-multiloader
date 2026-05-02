@@ -16,5 +16,11 @@
             "type": "createfood:enabled",
             "id": "beef_bun_crimson_fungus"
         }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "beef_bun_crimson_fungus"
+        }
     ]
 }

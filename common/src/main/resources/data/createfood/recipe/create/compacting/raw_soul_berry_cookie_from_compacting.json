@@ -2,10 +2,32 @@
     "neoforge:conditions": [
         {
             "type": "neoforge:mod_loaded",
+            "modid": "create"
+        },
+        {
+            "type": "neoforge:mod_loaded",
             "modid": "frightsdelight"
         },
         {
             "type": "createfood:enabled",
+            "id": "raw_soul_berry_cookie"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "create"
+            ]
+        },
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "frightsdelight"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
             "id": "raw_soul_berry_cookie"
         }
     ],

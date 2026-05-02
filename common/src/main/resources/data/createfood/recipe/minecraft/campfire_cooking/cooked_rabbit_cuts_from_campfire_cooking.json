@@ -15,5 +15,11 @@
             "type": "createfood:enabled",
             "id": "cooked_rabbit_cuts"
         }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "cooked_rabbit_cuts"
+        }
     ]
 }

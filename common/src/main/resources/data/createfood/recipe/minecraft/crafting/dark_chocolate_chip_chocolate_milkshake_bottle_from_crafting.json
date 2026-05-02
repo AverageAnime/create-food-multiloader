@@ -5,6 +5,12 @@
             "id": "dark_chocolate_chip_chocolate_milkshake_bottle"
         }
     ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "dark_chocolate_chip_chocolate_milkshake_bottle"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {

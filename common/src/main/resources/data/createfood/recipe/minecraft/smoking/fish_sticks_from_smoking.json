@@ -15,5 +15,11 @@
             "type": "createfood:enabled",
             "id": "fish_sticks"
         }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "fish_sticks"
+        }
     ]
 }

@@ -4,7 +4,7 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
 import dev.averageanime.neoforge.block.type.storage.ClothSackBlock;
 import dev.averageanime.neoforge.config.ModConfig;
-import dev.averageanime.neoforge.blockentity.ClothSackBlockEntity;
+import dev.averageanime.neoforge.block.type.blockentity.ClothSackBlockEntity;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.LightTexture;
 import net.minecraft.client.renderer.MultiBufferSource;

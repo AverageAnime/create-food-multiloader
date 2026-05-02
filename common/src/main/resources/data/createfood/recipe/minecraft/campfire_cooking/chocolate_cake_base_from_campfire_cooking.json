@@ -1,0 +1,25 @@
+{
+    "type": "minecraft:campfire_cooking",
+    "category": "food",
+    "cookingtime": 200,
+    "experience": 0.1,
+    "ingredient": {
+        "tag": "c:chocolate_cake_batter_bucket"
+    },
+    "result": {
+        "count": 1,
+        "id": "createfood:chocolate_cake_base"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "chocolate_cake_base"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "chocolate_cake_base"
+        }
+    ]
+}

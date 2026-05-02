@@ -5,8 +5,8 @@
             "tag": "c:mini_graham_cracker_pie_crust"
         }
     ],
-  "processing_time": 80,
-  "results": [
+    "processing_time": 80,
+    "results": [
         {
             "item": {
                 "id": "createfood:graham_cracker_crumbs"
@@ -15,7 +15,23 @@
     ],
     "neoforge:conditions": [
         {
+            "type": "neoforge:mod_loaded",
+            "modid": "create"
+        },
+        {
             "type": "createfood:enabled",
+            "id": "graham_cracker_crumbs"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "create"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
             "id": "graham_cracker_crumbs"
         }
     ]

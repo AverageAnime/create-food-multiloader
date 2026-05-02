@@ -16,5 +16,11 @@
             "type": "createfood:enabled",
             "id": "vegetable_sandwich_beetroot_lettuce"
         }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "vegetable_sandwich_beetroot_lettuce"
+        }
     ]
 }

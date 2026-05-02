@@ -5,6 +5,12 @@
             "id": "beef_taco"
         }
     ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "beef_taco"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {

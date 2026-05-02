@@ -2,10 +2,32 @@
     "neoforge:conditions": [
         {
             "type": "neoforge:mod_loaded",
+            "modid": "create"
+        },
+        {
+            "type": "neoforge:mod_loaded",
             "modid": "delightfulcreators"
         },
         {
             "type": "createfood:enabled",
+            "id": "pasta_plate_endermite_meatballs_tomato_sauce"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "create"
+            ]
+        },
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "delightfulcreators"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
             "id": "pasta_plate_endermite_meatballs_tomato_sauce"
         }
     ],

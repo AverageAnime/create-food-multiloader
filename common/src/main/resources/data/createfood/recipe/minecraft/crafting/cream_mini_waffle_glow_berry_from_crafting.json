@@ -5,6 +5,12 @@
             "id": "cream_mini_waffle_glow_berry"
         }
     ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "cream_mini_waffle_glow_berry"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {

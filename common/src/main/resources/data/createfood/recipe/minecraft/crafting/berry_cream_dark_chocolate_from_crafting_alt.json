@@ -5,25 +5,31 @@
             "tag": "c:hollow_dark_chocolate"
         },
         {
-          "tag": "c:hollow_dark_chocolate"
+            "tag": "c:hollow_dark_chocolate"
         },
         {
-          "tag": "c:hollow_dark_chocolate"
+            "tag": "c:hollow_dark_chocolate"
         },
         {
-          "tag": "c:hollow_dark_chocolate"
+            "tag": "c:hollow_dark_chocolate"
         },
         {
             "tag": "c:berry_cream_frosting_piping_bag"
         }
     ],
     "result": {
-      "count": 4,
-      "id": "createfood:berry_cream_dark_chocolate"
+        "count": 4,
+        "id": "createfood:berry_cream_dark_chocolate"
     },
     "neoforge:conditions": [
         {
             "type": "createfood:enabled",
+            "id": "berry_cream_dark_chocolate"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
             "id": "berry_cream_dark_chocolate"
         }
     ]

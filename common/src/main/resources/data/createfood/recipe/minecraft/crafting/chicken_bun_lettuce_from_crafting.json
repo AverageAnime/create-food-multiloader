@@ -16,5 +16,11 @@
             "type": "createfood:enabled",
             "id": "chicken_bun_lettuce"
         }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "chicken_bun_lettuce"
+        }
     ]
 }

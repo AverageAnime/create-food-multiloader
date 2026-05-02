@@ -9,6 +9,18 @@
             "id": "frightsdelight:pasta_with_slimeballs"
         }
     ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "frightsdelight"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
+            "id": "frightsdelight:pasta_with_slimeballs"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {

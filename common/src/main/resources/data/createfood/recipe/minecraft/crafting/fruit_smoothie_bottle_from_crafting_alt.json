@@ -19,5 +19,11 @@
             "type": "createfood:enabled",
             "id": "fruit_smoothie_bottle"
         }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "fruit_smoothie_bottle"
+        }
     ]
 }

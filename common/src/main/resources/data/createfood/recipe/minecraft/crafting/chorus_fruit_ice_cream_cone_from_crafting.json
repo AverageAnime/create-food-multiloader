@@ -5,6 +5,12 @@
             "id": "chorus_fruit_ice_cream_cone"
         }
     ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "chorus_fruit_ice_cream_cone"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {

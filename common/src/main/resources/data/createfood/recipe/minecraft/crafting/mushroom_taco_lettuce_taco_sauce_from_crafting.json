@@ -23,5 +23,11 @@
       "type": "createfood:enabled",
       "id": "mushroom_taco_lettuce_taco_sauce"
     }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "mushroom_taco_lettuce_taco_sauce"
+    }
   ]
 }

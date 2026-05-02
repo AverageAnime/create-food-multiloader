@@ -5,6 +5,12 @@
             "id": "rabbit_wrap_onion_potato"
         }
     ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "rabbit_wrap_onion_potato"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {

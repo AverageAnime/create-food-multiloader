@@ -5,6 +5,12 @@
             "id": "chicken_taco_lettuce"
         }
     ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "chicken_taco_lettuce"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {
@@ -14,7 +20,7 @@
             "tag": "c:cooked_chicken"
         },
         {
-          "tag": "c:foods/leafy_green"
+            "tag": "c:foods/leafy_green"
         }
     ],
     "result": {

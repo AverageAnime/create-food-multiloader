@@ -1,18 +1,34 @@
 {
     "neoforge:conditions": [
         {
+            "type": "neoforge:mod_loaded",
+            "modid": "create"
+        },
+        {
             "type": "createfood:enabled",
+            "id": "mutton_taco"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "create"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
             "id": "mutton_taco"
         }
     ],
     "type": "create:deploying",
     "ingredients": [
-      {
-        "tag": "c:taco_shell"
-      },
-      {
-        "tag": "c:gyro_mutton_ingredient"
-      }
+        {
+            "tag": "c:taco_shell"
+        },
+        {
+            "tag": "c:gyro_mutton_ingredient"
+        }
     ],
     "results": [
         {

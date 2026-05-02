@@ -12,6 +12,19 @@
             "id": "peanut_butter_apple_jam_sandwich"
         }
     ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:tags_populated",
+            "registry": "minecraft:item",
+            "values": [
+                "c:peanut_butter"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
+            "id": "peanut_butter_apple_jam_sandwich"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {

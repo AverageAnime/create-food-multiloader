@@ -15,5 +15,11 @@
             "type": "createfood:enabled",
             "id": "gyro_meat_block"
         }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "gyro_meat_block"
+        }
     ]
 }

@@ -5,6 +5,12 @@
             "id": "mutton_wrap_lettuce_tomato"
         }
     ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "mutton_wrap_lettuce_tomato"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {

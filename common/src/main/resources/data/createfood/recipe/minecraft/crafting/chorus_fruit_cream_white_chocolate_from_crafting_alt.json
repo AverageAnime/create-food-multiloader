@@ -5,25 +5,31 @@
             "tag": "c:hollow_white_chocolate"
         },
         {
-          "tag": "c:hollow_white_chocolate"
+            "tag": "c:hollow_white_chocolate"
         },
         {
-          "tag": "c:hollow_white_chocolate"
+            "tag": "c:hollow_white_chocolate"
         },
         {
-          "tag": "c:hollow_white_chocolate"
+            "tag": "c:hollow_white_chocolate"
         },
         {
             "tag": "c:chorus_fruit_cream_frosting_piping_bag"
         }
     ],
     "result": {
-      "count": 4,
-      "id": "createfood:chorus_fruit_cream_white_chocolate"
+        "count": 4,
+        "id": "createfood:chorus_fruit_cream_white_chocolate"
     },
     "neoforge:conditions": [
         {
             "type": "createfood:enabled",
+            "id": "chorus_fruit_cream_white_chocolate"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
             "id": "chorus_fruit_cream_white_chocolate"
         }
     ]

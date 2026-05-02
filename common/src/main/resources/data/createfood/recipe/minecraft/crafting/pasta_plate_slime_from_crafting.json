@@ -16,5 +16,11 @@
             "type": "createfood:enabled",
             "id": "pasta_plate_slime"
         }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "pasta_plate_slime"
+        }
     ]
 }

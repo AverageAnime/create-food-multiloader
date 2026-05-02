@@ -1,0 +1,25 @@
+{
+	"format_version": "1.9.0",
+	"credit": "Made with Blockbench",
+	"textures": {
+		"bottom": "createfood:block/chocolate_cake_bottom",
+		"top": "createfood:block/cream_cake_top",
+		"particle": "createfood:block/chocolate_cream_chocolate_cake_side",
+		"side": "createfood:block/chocolate_cream_chocolate_cake_side",
+		"inside": "createfood:block/chocolate_cream_chocolate_cake_inner"
+	},
+	"elements": [
+		{
+			"from": [3, 0, 1],
+			"to": [15, 8, 15],
+			"faces": {
+				"north": {"uv": [1, 8, 13, 16], "texture": "#side"},
+				"east": {"uv": [1, 8, 15, 16], "texture": "#side"},
+				"south": {"uv": [3, 8, 15, 16], "texture": "#side"},
+				"west": {"uv": [1, 8, 15, 16], "texture": "#inside"},
+				"up": {"uv": [3, 1, 15, 15], "texture": "#top"},
+				"down": {"uv": [3, 1, 15, 15], "texture": "#bottom", "cullface": "down"}
+			}
+		}
+	]
+}

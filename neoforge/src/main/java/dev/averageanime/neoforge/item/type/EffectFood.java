@@ -1,8 +1,8 @@
 package dev.averageanime.neoforge.item.type;
 
 import dev.averageanime.neoforge.config.ModConfig;
-import dev.averageanime.neoforge.item.ModEffectCategories;
-import dev.averageanime.neoforge.item.effect.FoodEffect;
+import dev.averageanime.item.ModEffectCategories;
+import dev.averageanime.item.effect.FoodEffect;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -27,22 +27,32 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
+import java.util.function.Supplier;
 
 public class EffectFood extends Item {
 
+    /** Carries the data needed to resolve and apply a mod-dependent effect at consumption time. */
+    public record DeferredFx(String categoryOrEffectId, Supplier<Optional<Holder<MobEffect>>> effect, int duration, int amplifier) {}
+
     private final Set<String> existingEffectIds;
+    private final List<DeferredFx> deferredEffects;
 
     public EffectFood(Properties properties) {
-        this(properties, Set.of());
+        this(properties, Set.of(), List.of());
     }
 
     public EffectFood(Properties properties, boolean ignored) {
-        this(properties, Set.of());
+        this(properties, Set.of(), List.of());
     }
 
     public EffectFood(Properties properties, Set<String> existingEffectIds) {
+        this(properties, existingEffectIds, List.of());
+    }
+
+    public EffectFood(Properties properties, Set<String> existingEffectIds, List<DeferredFx> deferredEffects) {
         super(properties);
         this.existingEffectIds = Set.copyOf(existingEffectIds);
+        this.deferredEffects = List.copyOf(deferredEffects);
     }
 
     @Override
@@ -81,6 +91,7 @@ public class EffectFood extends Item {
         if (stack.getFoodProperties(consumer) != null) {
             ItemStack result = super.finishUsingItem(stack, level, consumer);
             applyAdditions(level, consumer);
+            applyDeferredEffects(level, consumer);
             return result;
         }
 
@@ -98,6 +109,7 @@ public class EffectFood extends Item {
 
         if (stack.isEmpty()) {
             applyAdditions(level, consumer);
+            applyDeferredEffects(level, consumer);
             return remainder;
         }
 
@@ -108,7 +120,22 @@ public class EffectFood extends Item {
         }
 
         applyAdditions(level, consumer);
+        applyDeferredEffects(level, consumer);
         return stack;
+    }
+
+    private void applyDeferredEffects(Level level, LivingEntity consumer) {
+        if (level.isClientSide) return;
+        String itemId = BuiltInRegistries.ITEM.getKey(this).getPath();
+        for (DeferredFx deferred : deferredEffects) {
+            ModConfig.ItemEffectOverride override = ModConfig.getItemEffectOverride(itemId, deferred.categoryOrEffectId());
+            if (override != null && override.remove()) continue;
+            deferred.effect().get().ifPresent(holder -> {
+                int dur = override != null ? override.duration() : deferred.duration();
+                int amp = override != null ? override.amplifier() : deferred.amplifier();
+                consumer.addEffect(new MobEffectInstance(holder, dur, amp));
+            });
+        }
     }
 
     private void applyAdditions(Level level, LivingEntity consumer) {
@@ -145,6 +172,16 @@ public class EffectFood extends Item {
                             new MobEffectInstance(holder, addition.duration(), addition.amplifier()),
                             context)
             );
+        }
+
+        for (DeferredFx deferred : deferredEffects) {
+            ModConfig.ItemEffectOverride override = ModConfig.getItemEffectOverride(itemId, deferred.categoryOrEffectId());
+            if (override != null && override.remove()) continue;
+            deferred.effect().get().ifPresent(holder -> {
+                int dur = override != null ? override.duration() : deferred.duration();
+                int amp = override != null ? override.amplifier() : deferred.amplifier();
+                addEffectLine(tooltip, new MobEffectInstance(holder, dur, amp), context);
+            });
         }
     }
 

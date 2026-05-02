@@ -23,5 +23,11 @@
             "type": "createfood:enabled",
             "id": "chocolate_graham_cracker_neapolitan_scoop_1"
         }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "chocolate_graham_cracker_neapolitan_scoop_1"
+        }
     ]
 }

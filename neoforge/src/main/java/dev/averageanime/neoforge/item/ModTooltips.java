@@ -30,7 +30,7 @@ public class ModTooltips {
         }
 
         if (shouldShow) {
-            if (ingredientLines != null && ModConfig.SHOW_INGREDIENTS.get()) {
+            if (ingredientLines != null && ingredientLines.length > 0 && ModConfig.SHOW_INGREDIENTS.get()) {
                 tooltips.add(Component.translatable("tooltip.createfood.ingredients")
                         .withStyle(ChatFormatting.GOLD, ChatFormatting.ITALIC));
                 for (String line : ingredientLines) {

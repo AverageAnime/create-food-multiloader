@@ -5,6 +5,12 @@
             "id": "waffle_batter_bucket"
         }
     ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "waffle_batter_bucket"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {
@@ -17,7 +23,7 @@
             "tag": "c:flours/wheat"
         },
         {
-            "tag": "c:eggs"
+            "tag": "c:egg_whites"
         },
         {
             "tag": "c:butter"

@@ -13,5 +13,11 @@
             "type": "createfood:enabled",
             "id": "minecraft:slime_block"
         }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "minecraft:slime_block"
+        }
     ]
 }

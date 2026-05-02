@@ -11,7 +11,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.neoforged.neoforge.items.ItemStackHandler;
-import dev.averageanime.neoforge.blockentity.ModBlockEntities;
+import dev.averageanime.neoforge.block.type.blockentity.ModBlockEntities;
 import dev.averageanime.neoforge.config.ModConfig;
 import dev.averageanime.neoforge.menu.RationBoxItemMenu;
 import org.jetbrains.annotations.NotNull;

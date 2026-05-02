@@ -16,5 +16,11 @@
             "type": "createfood:enabled",
             "id": "fried_egg_hash_brown_sandwich"
         }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "fried_egg_hash_brown_sandwich"
+        }
     ]
 }

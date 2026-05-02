@@ -23,5 +23,11 @@
             "type": "createfood:enabled",
             "id": "raw_chocolate_chip_chocolate_cookie"
         }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "raw_chocolate_chip_chocolate_cookie"
+        }
     ]
 }

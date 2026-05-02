@@ -5,6 +5,12 @@
             "id": "eggplant_bun_cheese_lettuce"
         }
     ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "eggplant_bun_cheese_lettuce"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {

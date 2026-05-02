@@ -20,5 +20,11 @@
             "type": "createfood:enabled",
             "id": "raw_spider_eye_cookie"
         }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "raw_spider_eye_cookie"
+        }
     ]
 }

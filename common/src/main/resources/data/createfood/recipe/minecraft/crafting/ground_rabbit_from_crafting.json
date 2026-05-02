@@ -5,6 +5,12 @@
             "id": "ground_rabbit"
         }
     ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "ground_rabbit"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {

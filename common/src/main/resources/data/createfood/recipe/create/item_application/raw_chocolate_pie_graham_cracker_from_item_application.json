@@ -5,7 +5,7 @@
             "tag": "c:raw_graham_cracker_pie_crust"
         },
         {
-          "tag": "c:buckets/chocolate"
+            "tag": "c:buckets/chocolate"
         }
     ],
     "results": [
@@ -17,7 +17,23 @@
     ],
     "neoforge:conditions": [
         {
+            "type": "neoforge:mod_loaded",
+            "modid": "create"
+        },
+        {
             "type": "createfood:enabled",
+            "id": "raw_chocolate_pie_graham_cracker"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "create"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
             "id": "raw_chocolate_pie_graham_cracker"
         }
     ]

@@ -5,6 +5,12 @@
             "id": "glow_berry_cream_chocolate_cupcake"
         }
     ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "glow_berry_cream_chocolate_cupcake"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {

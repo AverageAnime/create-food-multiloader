@@ -16,5 +16,11 @@
             "type": "createfood:enabled",
             "id": "endermite_meatball_sandwich"
         }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "endermite_meatball_sandwich"
+        }
     ]
 }

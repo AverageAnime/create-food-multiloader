@@ -16,5 +16,11 @@
             "type": "createfood:enabled",
             "id": "chorus_fruit_cream_chocolate_sweet_roll_chorus_fruit"
         }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "chorus_fruit_cream_chocolate_sweet_roll_chorus_fruit"
+        }
     ]
 }

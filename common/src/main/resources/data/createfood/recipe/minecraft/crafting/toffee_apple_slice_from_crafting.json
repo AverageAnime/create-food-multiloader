@@ -16,5 +16,11 @@
             "type": "createfood:enabled",
             "id": "toffee_apple_slice"
         }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "toffee_apple_slice"
+        }
     ]
 }

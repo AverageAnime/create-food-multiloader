@@ -22,5 +22,11 @@
       "type": "createfood:enabled",
       "id": "potato_cream_soup_bowl"
     }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "potato_cream_soup_bowl"
+    }
   ]
 }

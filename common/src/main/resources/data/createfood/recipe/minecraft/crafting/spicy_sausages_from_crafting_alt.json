@@ -12,6 +12,19 @@
             "id": "spicy_sausages"
         }
     ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:tags_populated",
+            "registry": "minecraft:item",
+            "values": [
+                "c:chili_pepper"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
+            "id": "spicy_sausages"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {
