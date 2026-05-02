@@ -12,6 +12,19 @@
             "id": "tortilla_chip_bowl"
         }
     ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:tags_populated",
+            "registry": "minecraft:item",
+            "values": [
+                "c:tortilla_chips"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
+            "id": "tortilla_chip_bowl"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {

@@ -1,6 +1,10 @@
 {
     "neoforge:conditions": [
         {
+            "type": "neoforge:mod_loaded",
+            "modid": "create"
+        },
+        {
             "type": "neoforge:not",
             "value": {
                 "type": "neoforge:tag_empty",
@@ -9,6 +13,25 @@
         },
         {
             "type": "createfood:enabled",
+            "id": "eggplant_bun_cheese_lettuce"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "create"
+            ]
+        },
+        {
+            "condition": "fabric:tags_populated",
+            "registry": "minecraft:item",
+            "values": [
+                "c:cooked_eggplant"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
             "id": "eggplant_bun_cheese_lettuce"
         }
     ],

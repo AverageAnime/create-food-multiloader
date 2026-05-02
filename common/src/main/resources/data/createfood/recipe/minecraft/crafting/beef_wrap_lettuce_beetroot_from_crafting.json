@@ -5,6 +5,12 @@
             "id": "beef_wrap_lettuce_beetroot"
         }
     ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "beef_wrap_lettuce_beetroot"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {

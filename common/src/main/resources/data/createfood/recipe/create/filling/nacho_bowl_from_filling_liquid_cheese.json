@@ -1,7 +1,9 @@
 {
   "type": "create:filling",
   "ingredients": [
-    { "tag": "c:tortilla_chip_bowl" },
+    {
+      "tag": "c:tortilla_chip_bowl"
+    },
     {
       "type": "fluid_tag",
       "amount": 125,
@@ -9,9 +11,32 @@
     }
   ],
   "results": [
-    { "item": { "id": "createfood:nacho_bowl" } }
+    {
+      "item": {
+        "id": "createfood:nacho_bowl"
+      }
+    }
   ],
   "neoforge:conditions": [
-    { "type": "createfood:enabled", "id": "nacho_bowl" }
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    },
+    {
+      "type": "createfood:enabled",
+      "id": "nacho_bowl"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "create"
+      ]
+    },
+    {
+      "condition": "createfood:enabled",
+      "id": "nacho_bowl"
+    }
   ]
 }

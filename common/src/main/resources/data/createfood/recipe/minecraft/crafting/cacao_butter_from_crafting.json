@@ -14,5 +14,11 @@
             "type": "createfood:enabled",
             "id": "cacao_butter"
         }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "cacao_butter"
+        }
     ]
 }

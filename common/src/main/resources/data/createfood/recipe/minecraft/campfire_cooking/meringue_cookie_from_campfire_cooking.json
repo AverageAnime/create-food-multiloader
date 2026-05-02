@@ -2,7 +2,7 @@
     "type": "minecraft:campfire_cooking",
     "category": "food",
     "cookingtime": 150,
-    "experience": 0.30,
+    "experience": 0.3,
     "ingredient": {
         "tag": "c:meringue_bowl"
     },
@@ -13,6 +13,12 @@
     "neoforge:conditions": [
         {
             "type": "createfood:enabled",
+            "id": "meringue_cookie"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
             "id": "meringue_cookie"
         }
     ]

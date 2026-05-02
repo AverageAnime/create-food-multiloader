@@ -22,5 +22,11 @@
             "type": "createfood:enabled",
             "id": "breakfast_plate"
         }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "breakfast_plate"
+        }
     ]
 }

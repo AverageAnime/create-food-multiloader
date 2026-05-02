@@ -6,23 +6,39 @@
             "amount": 250,
             "fluid_tag": "c:egg"
         },
-      {
-        "tag": "c:foods/raw_fish"
-      },
-      {
-        "tag": "c:bread_crumbs"
-      }
+        {
+            "tag": "c:foods/raw_fish"
+        },
+        {
+            "tag": "c:bread_crumbs"
+        }
     ],
     "results": [
-      {
-        "item": {
-          "id": "createfood:raw_fish_sticks"
+        {
+            "item": {
+                "id": "createfood:raw_fish_sticks"
+            }
         }
-      }
     ],
     "neoforge:conditions": [
         {
+            "type": "neoforge:mod_loaded",
+            "modid": "create"
+        },
+        {
             "type": "createfood:enabled",
+            "id": "raw_fish_sticks"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "create"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
             "id": "raw_fish_sticks"
         }
     ]

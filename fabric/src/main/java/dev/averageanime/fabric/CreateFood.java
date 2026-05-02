@@ -1,53 +1,49 @@
 package dev.averageanime.fabric;
 
 import dev.averageanime.fabric.block.ModBlocks;
-import dev.averageanime.fabric.fluid.ModFluids;
+import dev.averageanime.fabric.block.ModDisplayBlocks;
+import dev.averageanime.fabric.block.type.pie.PumpkinPieBlock;
+import dev.averageanime.fabric.block.type.blockentity.ModBlockEntities;
+import dev.averageanime.fabric.config.ModConditions;
+import dev.averageanime.fabric.config.ModConfig;
+import dev.averageanime.fabric.block.ModFluids;
 import dev.averageanime.fabric.item.ModItems;
+import dev.averageanime.fabric.item.interaction.ClothFilterInteraction;
+import dev.averageanime.fabric.block.handler.BowlPlacementHandler;
+import dev.averageanime.fabric.item.interaction.HandcraftInteraction;
+import dev.averageanime.fabric.menu.ModMenus;
+import dev.averageanime.fabric.tab.ModTabs;
+import io.github.fabricators_of_create.porting_lib.config.ConfigRegistry;
 import net.fabricmc.api.ModInitializer;
-import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
-import net.minecraft.core.registries.BuiltInRegistries;
-
-import net.minecraft.core.Registry;
-import net.minecraft.resources.ResourceLocation;
-
-import net.minecraft.network.chat.Component;
-import net.minecraft.world.item.ItemStack;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 
 public class CreateFood implements ModInitializer {
 	public static final String MOD_ID = "createfood";
 	public static final Logger LOGGER = LoggerFactory.getLogger("createfood");
 
-	public static final ResourceLocation ITEM_GROUP_ID = ResourceLocation.fromNamespaceAndPath(MOD_ID, "tab");
-
 	@Override
 	public void onInitialize() {
+		ConfigRegistry.registerConfig(MOD_ID,
+				io.github.fabricators_of_create.porting_lib.config.ModConfig.Type.CLIENT,
+				ModConfig.CLIENT_SPEC);
+		ConfigRegistry.registerConfig(MOD_ID,
+				io.github.fabricators_of_create.porting_lib.config.ModConfig.Type.SERVER,
+				ModConfig.SERVER_SPEC);
 
-			Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, ITEM_GROUP_ID, FabricItemGroup.builder()
-					.title(Component.translatable("itemgroup.createfood"))
-					.icon(() -> new ItemStack(ModItems.APPLE_CREAM_CHOCOLATE))
-					.displayItems((itemDisplayParameters, output) -> {
-						output.accept(new ItemStack(ModItems.APPLE_CHEESECAKE));
-						output.accept(new ItemStack(ModItems.APPLE_CHEESECAKE_SLICE));
-						output.accept(new ItemStack(ModItems.APPLE_CREAM_CHOCOLATE));
-						output.accept(new ItemStack(ModItems.APPLE_CREAM_FROSTING_BUCKET));
-						output.accept(new ItemStack(ModItems.CHOCOLATE_CREAM_CAKE_CARAMEL));
-						output.accept(new ItemStack(ModItems.CHOCOLATE_CREAM_CAKE_SLICE_CARAMEL));
-						output.accept(new ItemStack(ModItems.GYRO_MEAT_BLOCK));
-						output.accept(new ItemStack(ModItems.GYRO_MEAT_SLICE));
-						output.accept(new ItemStack(ModItems.YOGURT_BOTTLE));
-					})
-					.build());
-
-		ModBlocks.registerModBlocks();
+		ModConditions.register();
+		ModBlocks.init();
+		PumpkinPieBlock.register();
+		ModFluids.init();
 		ModItems.registerModItems();
+		ModBlockEntities.init();
+		ModMenus.init();
+		ModDisplayBlocks.init();
 
+		HandcraftInteraction.register();
+		ClothFilterInteraction.register();
+		BowlPlacementHandler.register();
 
-
+		ModTabs.init();
 	}
-
-
 }
-

@@ -5,6 +5,12 @@
             "id": "beef_bun_onion_bacon"
         }
     ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "beef_bun_onion_bacon"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {

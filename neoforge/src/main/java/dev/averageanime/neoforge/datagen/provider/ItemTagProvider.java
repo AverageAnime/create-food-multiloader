@@ -86,6 +86,7 @@ public class ItemTagProvider extends TagsProvider<Item> {
         tag(cTag("cheeses")).addOptional(ResourceLocation.parse("createfood:cheese_slice")).addOptional(ResourceLocation.parse("brewinandchewin:flaxen_cheese_wedge")).addOptional(ResourceLocation.parse("expandeddelight:cheese_slice")).addOptional(ResourceLocation.parse("meadow:piece_of_cheese")).addOptional(ResourceLocation.parse("casualness_delight:cheese_wheel_slice")).addOptional(ResourceLocation.parse("create_bic_bit:unripe_cheese_wedge")).addOptional(ResourceLocation.parse("create_bic_bit:young_cheese_wedge")).addOptional(ResourceLocation.parse("create_bic_bit:aged_cheese_wedge"));
         tag(cTag("chicken_nuggets")).addOptional(ResourceLocation.parse("create_deepfried:chicken_nuggets"));
         tag(cTag("chili_pepper")).addOptional(ResourceLocation.parse("expandeddelight:chili_pepper")).addOptional(ResourceLocation.parse("croptopia:chile_pepper")).addOptional(ResourceLocation.parse("rusticdelight:bell_pepper_red")).addOptional(ResourceLocation.parse("rusticdelight:roasted_bell_pepper_red"));
+        tag(cTag("chocolate_cake_base"));
         tag(cTag("chocolate_chip_chocolate_cookie")).addOptional(ResourceLocation.parse("expandeddelight:chocolate_chip_chocolate_cookie"));
         tag(cTag("chocolate_milkshake_bottle")).addOptional(ResourceLocation.parse("beachparty:chocolate_milkshake")).addOptional(ResourceLocation.parse("create_dd:chocolate_milkshake"));
         tag(cTag("chocolate_milkshake_bucket")).addOptional(ResourceLocation.parse("create_dd:chocolate_milkshake_bucket"));
@@ -122,6 +123,7 @@ public class ItemTagProvider extends TagsProvider<Item> {
         tag(cTag("dough")).addOptional(ResourceLocation.parse("farmersdelight:wheat_dough"));
         tag(cTag("dried_coffee_beans")).addOptional(ResourceLocation.parse("rusticdelight:roasted_coffee_beans"));
         tag(cTag("dried_coffee_beans_compat")).addOptional(ResourceLocation.parse("createfood:dried_coffee_beans"));
+        tag(cTag("dumpling_ingredients")).addOptionalTag(cTag("foods/raw_pork")).addOptionalTag(cTag("foods/raw_chicken")).addOptionalTag(cTag("foods/raw_beef")).addOptionalTag(cTag("foods/raw_mutton")).addOptionalTag(cTag("mushrooms"));
         tag(cTag("dumplings")).addOptional(ResourceLocation.parse("brewery:dumplings")).addOptional(ResourceLocation.parse("farmersdelight:dumplings"));
         tag(cTag("egg_burrito_ingredients")).addOptional(ResourceLocation.parse("createfood:boiled_egg_peeled")).addOptional(ResourceLocation.parse("farmersdelight:fried_egg"));
         tag(cTag("eggplant_burger")).addOptional(ResourceLocation.parse("culturalcreators:incomplete_eggplant_burger"));
@@ -219,7 +221,6 @@ public class ItemTagProvider extends TagsProvider<Item> {
         tag(cTag("pumpkin")).addOptional(ResourceLocation.parse("minecraft:pumpkin")).addOptional(ResourceLocation.parse("farmersdelight:pumpkin_slice"));
         tag(cTag("pumpkin_pie")).addOptional(ResourceLocation.parse("minecraft:pumpkin_pie"));
         tag(cTag("rabbit_meatball_stick")).addOptional(ResourceLocation.parse("createfood:rabbit_meatball_stick_1")).addOptional(ResourceLocation.parse("createfood:rabbit_meatball_stick_2")).addOptional(ResourceLocation.parse("createfood:rabbit_meatball_stick_3"));
-        tag(cTag("raw_cake_base")).addOptional(ResourceLocation.parse("createfood:raw_cake_base")).addOptional(ResourceLocation.parse("createadditions:cake_base_baked"));
         tag(cTag("raw_dragon_meat_cuts")).addOptional(ResourceLocation.parse("ends_delight:raw_dragon_meat_cuts"));
         tag(cTag("raw_pasta")).addOptional(ResourceLocation.parse("farmersdelight:raw_pasta")).addOptional(ResourceLocation.parse("farm_and_charm:raw_pasta"));
         tag(cTag("red_mushroom")).addOptional(ResourceLocation.parse("minecraft:red_mushroom")).addOptional(ResourceLocation.parse("createfood:sliced_red_mushroom"));
@@ -261,7 +262,6 @@ public class ItemTagProvider extends TagsProvider<Item> {
         tag(cTag("wheat_dough")).addOptional(ResourceLocation.parse("create:dough")).addOptional(ResourceLocation.parse("farmersdelight:wheat_dough"));
         tag(modTag("farmersdelight", "cabbage_roll_ingredients")).addOptional(ResourceLocation.parse("createfood:tropical_fish_slice"));
         tag(modTag("minecraft", "fishes")).addOptional(ResourceLocation.parse("createfood:cooked_tropical_fish"));
-
     }
 
     private static TagKey<Item> cTag(String id) {

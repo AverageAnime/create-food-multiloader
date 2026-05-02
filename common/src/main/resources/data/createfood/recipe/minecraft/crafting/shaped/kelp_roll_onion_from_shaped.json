@@ -5,6 +5,12 @@
             "id": "kelp_roll_onion"
         }
     ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "kelp_roll_onion"
+        }
+    ],
     "type": "minecraft:crafting_shaped",
     "pattern": [
         "232",
@@ -15,10 +21,10 @@
             "item": "minecraft:dried_kelp"
         },
         "2": {
-          "tag": "c:cooked_rice"
+            "tag": "c:cooked_rice"
         },
         "3": {
-          "tag": "c:onion"
+            "tag": "c:onion"
         }
     },
     "result": {

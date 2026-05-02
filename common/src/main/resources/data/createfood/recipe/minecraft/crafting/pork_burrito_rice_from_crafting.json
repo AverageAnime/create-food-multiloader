@@ -5,10 +5,16 @@
             "id": "pork_burrito_rice"
         }
     ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "pork_burrito_rice"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {
-          "tag": "c:taco_shell_ingredient"
+            "tag": "c:taco_shell_ingredient"
         },
         {
             "tag": "c:cooked_pork"

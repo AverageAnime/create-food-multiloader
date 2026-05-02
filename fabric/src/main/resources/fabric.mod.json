@@ -8,8 +8,8 @@
         "${mod_author}"
     ],
     "contact": {
-        "homepage": "https://fabricmc.net/",
-        "sources": "https://github.com/FabricMC/fabric-example-mod"
+        "homepage": "https://github.com/AverageAnime/create-food-multiloader/wiki",
+        "sources": "https://github.com/AverageAnime/create-food-multiloader"
     },
     "license": "${license}",
     "icon": "${mod_id}.png",
@@ -17,10 +17,12 @@
     "entrypoints": {
         "main": [
             "dev.averageanime.fabric.CreateFood"
+        ],
+        "client": [
+          "dev.averageanime.fabric.CreateFoodClient"
         ]
     },
     "mixins": [
-        "${mod_id}.mixins.json",
         "${mod_id}.fabric.mixins.json"
     ],
     "depends": {
@@ -33,4 +35,3 @@
         "another-mod": "*"
     }
 }
-  

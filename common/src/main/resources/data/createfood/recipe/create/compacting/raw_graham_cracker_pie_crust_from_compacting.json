@@ -2,9 +2,7 @@
     "type": "create:compacting",
     "ingredients": [
         {
-            "type": "fluid_tag",
-            "amount": 250,
-            "fluid_tag": "c:milk"
+            "tag": "c:sugar"
         },
         {
             "tag": "c:graham_cracker_crumbs"
@@ -28,7 +26,23 @@
     ],
     "neoforge:conditions": [
         {
+            "type": "neoforge:mod_loaded",
+            "modid": "create"
+        },
+        {
             "type": "createfood:enabled",
+            "id": "raw_graham_cracker_pie_crust"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "create"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
             "id": "raw_graham_cracker_pie_crust"
         }
     ]

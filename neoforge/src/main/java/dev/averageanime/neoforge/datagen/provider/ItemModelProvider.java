@@ -2,8 +2,8 @@ package dev.averageanime.neoforge.datagen.provider;
 
 import dev.averageanime.CommonClass;
 import dev.averageanime.neoforge.block.ModDisplayBlocks;
-import dev.averageanime.neoforge.block.type.display.*;
-import dev.averageanime.neoforge.block.type.plate.PlateBlock;
+import dev.averageanime.block.type.display.*;
+import dev.averageanime.block.type.plate.PlateBlock;
 import dev.averageanime.neoforge.item.ModItems;
 import java.util.Map;
 import java.util.Set;

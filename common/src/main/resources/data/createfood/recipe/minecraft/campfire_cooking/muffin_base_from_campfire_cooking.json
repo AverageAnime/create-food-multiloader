@@ -4,15 +4,21 @@
     "cookingtime": 150,
     "experience": 0.15,
     "ingredient": {
-        "tag": "c:raw_muffin_base"
+        "tag": "c:muffin_batter_bucket"
     },
     "result": {
-        "count": 1,
+        "count": 4,
         "id": "createfood:muffin_base"
     },
     "neoforge:conditions": [
         {
             "type": "createfood:enabled",
+            "id": "muffin_base"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
             "id": "muffin_base"
         }
     ]

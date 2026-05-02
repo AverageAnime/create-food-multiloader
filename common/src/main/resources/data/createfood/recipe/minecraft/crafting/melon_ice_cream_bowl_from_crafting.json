@@ -23,5 +23,11 @@
             "type": "createfood:enabled",
             "id": "melon_ice_cream_bowl"
         }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "melon_ice_cream_bowl"
+        }
     ]
 }

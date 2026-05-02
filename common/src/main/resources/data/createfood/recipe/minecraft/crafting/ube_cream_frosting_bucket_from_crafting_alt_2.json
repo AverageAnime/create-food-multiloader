@@ -9,6 +9,18 @@
             "id": "ube_cream_frosting_bucket"
         }
     ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "ubesdelight"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
+            "id": "ube_cream_frosting_bucket"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {

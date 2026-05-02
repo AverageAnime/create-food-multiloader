@@ -5,6 +5,12 @@
             "id": "waffle_cone"
         }
     ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "waffle_cone"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {

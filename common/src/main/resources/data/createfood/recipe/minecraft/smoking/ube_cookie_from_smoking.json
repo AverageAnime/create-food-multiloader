@@ -11,9 +11,25 @@
         "id": "ubesdelight:cookie_ube"
     },
     "neoforge:conditions": [
-      {
-        "type": "createfood:enabled",
-        "id": "raw_ube_cookie"
-      }
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "ubesdelight"
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "raw_ube_cookie"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "ubesdelight"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
+            "id": "raw_ube_cookie"
+        }
     ]
 }

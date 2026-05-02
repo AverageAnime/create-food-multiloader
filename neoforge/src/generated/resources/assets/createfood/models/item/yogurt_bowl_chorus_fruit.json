@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "createfood:item/yogurt_bowl_chorus_fruit"
-  }
-}

@@ -2,10 +2,32 @@
     "neoforge:conditions": [
         {
             "type": "neoforge:mod_loaded",
+            "modid": "create"
+        },
+        {
+            "type": "neoforge:mod_loaded",
             "modid": "ubesdelight"
         },
         {
             "type": "createfood:enabled",
+            "id": "ubesdelight:cookie_ube"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "create"
+            ]
+        },
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "ubesdelight"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
             "id": "ubesdelight:cookie_ube"
         }
     ],

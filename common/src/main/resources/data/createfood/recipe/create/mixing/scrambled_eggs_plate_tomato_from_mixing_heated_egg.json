@@ -23,7 +23,23 @@
   ],
   "neoforge:conditions": [
     {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    },
+    {
       "type": "createfood:enabled",
+      "id": "scrambled_eggs_plate_tomato"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "create"
+      ]
+    },
+    {
+      "condition": "createfood:enabled",
       "id": "scrambled_eggs_plate_tomato"
     }
   ]

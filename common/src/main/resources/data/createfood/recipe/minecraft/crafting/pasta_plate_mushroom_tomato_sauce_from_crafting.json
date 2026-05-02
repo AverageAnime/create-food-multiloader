@@ -17,5 +17,11 @@
       "type": "createfood:enabled",
       "id": "pasta_plate_mushroom_tomato_sauce"
     }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "pasta_plate_mushroom_tomato_sauce"
+    }
   ]
 }

@@ -5,6 +5,12 @@
             "id": "raw_gyro_meat_block"
         }
     ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "raw_gyro_meat_block"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {

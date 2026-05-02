@@ -12,6 +12,19 @@
             "id": "eggplant_bun_tomato"
         }
     ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:tags_populated",
+            "registry": "minecraft:item",
+            "values": [
+                "c:cooked_eggplant"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
+            "id": "eggplant_bun_tomato"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {

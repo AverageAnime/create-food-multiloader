@@ -5,6 +5,12 @@
             "id": "mutton_taco_lettuce_taco_sauce"
         }
     ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "mutton_taco_lettuce_taco_sauce"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {
@@ -14,10 +20,10 @@
             "tag": "c:gyro_mutton_ingredient"
         },
         {
-          "tag": "c:foods/leafy_green"
+            "tag": "c:foods/leafy_green"
         },
         {
-          "tag": "c:taco_sauce_bottle"
+            "tag": "c:taco_sauce_bottle"
         }
     ],
     "result": {

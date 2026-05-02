@@ -5,6 +5,12 @@
             "id": "taco_sauce_bucket"
         }
     ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "taco_sauce_bucket"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {

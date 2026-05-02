@@ -5,6 +5,12 @@
             "id": "bread_slice_bacon_lettuce"
         }
     ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "bread_slice_bacon_lettuce"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {

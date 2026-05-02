@@ -1,6 +1,6 @@
 package dev.averageanime.neoforge.block.type.storage;
 
-import dev.averageanime.neoforge.blockentity.RationBoxBlockEntity;
+import dev.averageanime.neoforge.block.type.blockentity.RationBoxBlockEntity;
 import dev.averageanime.neoforge.config.ModConfig;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
@@ -87,11 +87,6 @@ public class RationBoxBlock extends BaseEntityBlock {
         return InteractionResult.sidedSuccess(level.isClientSide);
     }
 
-    /**
-     * Drop the block item WITH its stored inventory whenever the block is removed
-     * (survival break, explosion, command, etc.). Must be called before super so
-     * the block entity still exists when we call saveToItem.
-     */
     @Override
     public void onRemove(@NotNull BlockState state, @NotNull Level level,
             @NotNull BlockPos pos, @NotNull BlockState newState, boolean movedByPiston) {
@@ -106,7 +101,6 @@ public class RationBoxBlock extends BaseEntityBlock {
         super.onRemove(state, level, pos, newState, movedByPiston);
     }
 
-    /** Preserve inventory in creative-mode pick-block (middle-click). */
     @Override
     public @NotNull ItemStack getCloneItemStack(@NotNull LevelReader level,
             @NotNull BlockPos pos, @NotNull BlockState state) {

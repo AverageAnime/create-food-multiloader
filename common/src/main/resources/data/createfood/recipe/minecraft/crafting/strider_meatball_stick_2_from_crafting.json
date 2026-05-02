@@ -16,5 +16,11 @@
             "type": "createfood:enabled",
             "id": "strider_meatball_stick_2"
         }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "strider_meatball_stick_2"
+        }
     ]
 }

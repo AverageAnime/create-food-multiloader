@@ -15,5 +15,11 @@
             "type": "createfood:enabled",
             "id": "chorus_fruit_cheesecake"
         }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "chorus_fruit_cheesecake"
+        }
     ]
 }

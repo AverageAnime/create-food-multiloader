@@ -19,5 +19,11 @@
             "type": "createfood:enabled",
             "id": "light_gray_gelatin_dessert_block"
         }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "light_gray_gelatin_dessert_block"
+        }
     ]
 }

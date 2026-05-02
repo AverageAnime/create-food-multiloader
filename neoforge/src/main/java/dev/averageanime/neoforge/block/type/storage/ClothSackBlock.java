@@ -25,7 +25,7 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import dev.averageanime.neoforge.blockentity.ClothSackBlockEntity;
+import dev.averageanime.neoforge.block.type.blockentity.ClothSackBlockEntity;
 import dev.averageanime.neoforge.config.ModConfig;
 import com.mojang.serialization.MapCodec;
 import org.jetbrains.annotations.NotNull;

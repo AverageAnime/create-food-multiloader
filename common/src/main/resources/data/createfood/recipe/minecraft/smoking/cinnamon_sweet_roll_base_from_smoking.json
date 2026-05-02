@@ -15,5 +15,11 @@
             "type": "createfood:enabled",
             "id": "cinnamon_sweet_roll_base"
         }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "cinnamon_sweet_roll_base"
+        }
     ]
 }

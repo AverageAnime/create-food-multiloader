@@ -13,5 +13,11 @@
             "type": "createfood:enabled",
             "id": "ground_beef"
         }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "ground_beef"
+        }
     ]
 }

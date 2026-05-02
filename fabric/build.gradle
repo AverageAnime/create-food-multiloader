@@ -18,14 +18,18 @@ dependencies {
     modImplementation "net.fabricmc:fabric-loader:${fabric_loader_version}"
     modImplementation "net.fabricmc.fabric-api:fabric-api:${fabric_version}"
 
-    modImplementation "curse.maven:farmers-delight-refabricated-993166:5852406"
-
     for (String module in port_lib_modules.split(",")) {
         modApi("io.github.fabricators_of_create.Porting-Lib:$module:$port_lib_version")
     }
 
 }
-
+sourceSets {
+    main {
+        resources {
+            srcDir '../common/src/generated/resources'
+        }
+    }
+}
 loom {
     def aw = project(':common').file("src/main/resources/${mod_id}.accesswidener")
     if (aw.exists()) {

@@ -13,7 +13,23 @@
     },
     "neoforge:conditions": [
         {
+            "type": "neoforge:mod_loaded",
+            "modid": "farmersdelight"
+        },
+        {
             "type": "createfood:enabled",
+            "id": "farmersdelight:pasta_with_meatballs"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "farmersdelight"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
             "id": "farmersdelight:pasta_with_meatballs"
         }
     ]

@@ -16,5 +16,11 @@
             "type": "createfood:enabled",
             "id": "honeyed_chocolate_donut"
         }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "honeyed_chocolate_donut"
+        }
     ]
 }

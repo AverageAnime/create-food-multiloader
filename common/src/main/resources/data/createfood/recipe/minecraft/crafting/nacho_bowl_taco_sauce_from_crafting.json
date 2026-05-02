@@ -17,5 +17,11 @@
       "type": "createfood:enabled",
       "id": "nacho_bowl_taco_sauce"
     }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "nacho_bowl_taco_sauce"
+    }
   ]
 }

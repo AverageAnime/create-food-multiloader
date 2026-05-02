@@ -26,5 +26,11 @@
             "type": "createfood:enabled",
             "id": "white_chocolate_bottle"
         }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "white_chocolate_bottle"
+        }
     ]
 }

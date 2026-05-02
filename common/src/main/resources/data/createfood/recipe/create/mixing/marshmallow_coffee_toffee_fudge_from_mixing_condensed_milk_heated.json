@@ -12,7 +12,7 @@
             "tag": "c:marshmallow"
         },
         {
-          "tag": "c:espresso_powder"
+            "tag": "c:espresso_powder"
         },
         {
             "type": "fluid_tag",
@@ -29,7 +29,23 @@
     ],
     "neoforge:conditions": [
         {
+            "type": "neoforge:mod_loaded",
+            "modid": "create"
+        },
+        {
             "type": "createfood:enabled",
+            "id": "marshmallow_coffee_toffee_fudge"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "create"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
             "id": "marshmallow_coffee_toffee_fudge"
         }
     ]
