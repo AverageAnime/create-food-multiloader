@@ -1,0 +1,30 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "mutton_taco_lettuce"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "mutton_taco_lettuce"
+    }
+  ],
+  "key": {
+    "1": {
+      "tag": "c:foods/leafy_green"
+    },
+    "2": {
+      "tag": "c:mutton_taco"
+    }
+  },
+  "pattern": [
+    "1",
+    "2"
+  ],
+  "result": {
+    "id": "createfood:mutton_taco_lettuce"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "createfood:apple_milkshake_bucket",
+      "required": false
+    },
+    {
+      "id": "createfood:apple_milkshake_bucket",
+      "required": false
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "createfood:flowing_chorus_fruit_custard",
+      "required": false
+    },
+    {
+      "id": "createfood:chorus_fruit_custard",
+      "required": false
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "createfood:chocolate_cake_base",
+      "required": false
+    },
+    {
+      "id": "createfood:chocolate_cake_base",
+      "required": false
+    }
+  ]
+}

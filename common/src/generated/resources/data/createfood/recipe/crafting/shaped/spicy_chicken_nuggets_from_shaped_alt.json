@@ -1,0 +1,44 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:chili_pepper"
+      }
+    },
+    {
+      "type": "createfood:enabled",
+      "id": "spicy_chicken_nuggets"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:tags_populated",
+      "registry": "minecraft:item",
+      "values": [
+        "c:chili_pepper"
+      ]
+    },
+    {
+      "condition": "createfood:enabled",
+      "id": "spicy_chicken_nuggets"
+    }
+  ],
+  "key": {
+    "1": {
+      "tag": "c:chili_pepper"
+    },
+    "2": {
+      "tag": "c:chicken_nuggets"
+    }
+  },
+  "pattern": [
+    "1",
+    "2"
+  ],
+  "result": {
+    "id": "createfood:spicy_chicken_nuggets"
+  }
+}

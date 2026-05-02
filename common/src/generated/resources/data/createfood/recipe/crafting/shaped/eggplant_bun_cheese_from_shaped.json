@@ -1,0 +1,44 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:eggplant_bun_cheese"
+      }
+    },
+    {
+      "type": "createfood:enabled",
+      "id": "eggplant_bun_cheese"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:tags_populated",
+      "registry": "minecraft:item",
+      "values": [
+        "c:eggplant_bun_cheese"
+      ]
+    },
+    {
+      "condition": "createfood:enabled",
+      "id": "eggplant_bun_cheese"
+    }
+  ],
+  "key": {
+    "1": {
+      "tag": "c:cheeses"
+    },
+    "2": {
+      "tag": "c:eggplant_bun"
+    }
+  },
+  "pattern": [
+    "1",
+    "2"
+  ],
+  "result": {
+    "id": "createfood:eggplant_bun_cheese"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "mini_cookie_cream_pie"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "mini_cookie_cream_pie"
+    }
+  ],
+  "key": {
+    "1": {
+      "tag": "c:cookie_crumbs"
+    },
+    "2": {
+      "tag": "c:mini_cream_pie_chocolate_graham_cracker"
+    }
+  },
+  "pattern": [
+    "1",
+    "2"
+  ],
+  "result": {
+    "id": "createfood:mini_cookie_cream_pie"
+  }
+}

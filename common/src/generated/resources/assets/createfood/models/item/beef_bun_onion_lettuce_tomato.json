@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "createfood:item/beef_bun_onion_lettuce_tomato"
+  }
+}

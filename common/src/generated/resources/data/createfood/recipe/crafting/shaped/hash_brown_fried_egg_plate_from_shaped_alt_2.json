@@ -1,0 +1,30 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "hash_brown_fried_egg_plate"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "hash_brown_fried_egg_plate"
+    }
+  ],
+  "key": {
+    "1": {
+      "tag": "c:hash_browns"
+    },
+    "2": {
+      "tag": "c:fried_egg_plate"
+    }
+  },
+  "pattern": [
+    "1",
+    "2"
+  ],
+  "result": {
+    "id": "createfood:hash_brown_fried_egg_plate"
+  }
+}

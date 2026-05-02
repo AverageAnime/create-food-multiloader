@@ -1,0 +1,31 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "mashed_potatoes_bowl_sour_cream"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "mashed_potatoes_bowl_sour_cream"
+    }
+  ],
+  "key": {
+    "1": {
+      "tag": "c:sour_cream_bottle"
+    },
+    "2": {
+      "tag": "c:mashed_potatoes_bowl"
+    }
+  },
+  "pattern": [
+    "1",
+    "2"
+  ],
+  "result": {
+    "count": 1,
+    "id": "createfood:mashed_potatoes_bowl_sour_cream"
+  }
+}

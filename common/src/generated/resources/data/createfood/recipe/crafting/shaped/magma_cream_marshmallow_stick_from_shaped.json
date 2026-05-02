@@ -1,0 +1,30 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "magma_cream_marshmallow_stick"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "magma_cream_marshmallow_stick"
+    }
+  ],
+  "key": {
+    "1": {
+      "tag": "c:magma_cream_marshmallow"
+    },
+    "2": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "1",
+    "2"
+  ],
+  "result": {
+    "id": "createfood:magma_cream_marshmallow_stick"
+  }
+}

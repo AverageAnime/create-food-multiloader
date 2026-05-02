@@ -1,0 +1,30 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "endermite_meatball_stick_1"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "endermite_meatball_stick_1"
+    }
+  ],
+  "key": {
+    "1": {
+      "tag": "c:endermite_meatball"
+    },
+    "2": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "1",
+    "2"
+  ],
+  "result": {
+    "id": "createfood:endermite_meatball_stick_1"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "values": [
+    {
+      "id": "createfood:ice_cream_block",
+      "required": false
+    }
+  ]
+}

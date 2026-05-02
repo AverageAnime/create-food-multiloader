@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "createfood:waffle",
+      "required": false
+    },
+    {
+      "id": "createfood:waffle",
+      "required": false
+    }
+  ]
+}

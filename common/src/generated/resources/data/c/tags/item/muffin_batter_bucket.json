@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "createfood:muffin_batter_bucket",
+      "required": false
+    },
+    {
+      "id": "createfood:muffin_batter_bucket",
+      "required": false
+    }
+  ]
+}

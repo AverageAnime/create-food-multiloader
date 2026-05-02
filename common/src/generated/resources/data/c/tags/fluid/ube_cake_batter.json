@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "createfood:flowing_ube_cake_batter",
+      "required": false
+    },
+    {
+      "id": "createfood:ube_cake_batter",
+      "required": false
+    }
+  ]
+}

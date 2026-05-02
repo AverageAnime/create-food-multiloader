@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "minecraft:sugar",
+      "required": false
+    },
+    {
+      "id": "createfood:powdered_sugar",
+      "required": false
+    }
+  ]
+}

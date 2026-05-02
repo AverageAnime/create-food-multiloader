@@ -1,0 +1,8 @@
+{
+  "values": [
+    {
+      "id": "createfood:corn_flour",
+      "required": false
+    }
+  ]
+}

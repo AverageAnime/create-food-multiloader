@@ -1,0 +1,40 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "jmc"
+    },
+    {
+      "type": "createfood:enabled",
+      "id": "jmc:sculk_cake"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "jmc"
+      ]
+    },
+    {
+      "condition": "createfood:enabled",
+      "id": "jmc:sculk_cake"
+    }
+  ],
+  "key": {
+    "1": {
+      "item": "minecraft:echo_shard"
+    },
+    "2": {
+      "tag": "c:cream_cake"
+    }
+  },
+  "pattern": [
+    "1",
+    "2"
+  ],
+  "result": {
+    "id": "jmc:sculk_cake"
+  }
+}
