@@ -28,6 +28,7 @@ public class ModConfig {
     public static final ModConfigSpec.BooleanValue ENABLE_EGG_IMPACT_REMAINDER;
     public static final ModConfigSpec.BooleanValue ENABLE_FILTER_INTERACTIONS;
     public static final ModConfigSpec.BooleanValue ENABLE_HANDCRAFTING;
+    public static final ModConfigSpec.BooleanValue ENABLE_PUMPKIN_PIE_PLACEMENT;
     public static final ModConfigSpec.BooleanValue RATION_BOX_ALLOW_FOOD;
     public static final ModConfigSpec.BooleanValue RATION_BOX_EAT_FROM_ITEM;
     public static final ModConfigSpec.BooleanValue RATION_BOX_INVENTORY_ENABLED;
@@ -37,13 +38,17 @@ public class ModConfig {
     public static final ModConfigSpec.BooleanValue SHOW_INGREDIENTS;
     public static final ModConfigSpec.BooleanValue SHOW_SACK_BLOCK_ICONS;
     public static final ModConfigSpec.BooleanValue SHOW_STORAGE_TOOLTIP_ICONS;
+
     public static final ModConfigSpec.ConfigValue<List<? extends String>> CATEGORY_EFFECT_OVERRIDES;
     public static final ModConfigSpec.ConfigValue<List<? extends String>> CLOTH_SACK_EXCLUDE;
     public static final ModConfigSpec.ConfigValue<List<? extends String>> CLOTH_SACK_FILTER;
     public static final ModConfigSpec.ConfigValue<List<? extends String>> CRAFTING_REMAINDERS;
+    public static final ModConfigSpec.ConfigValue<List<? extends String>> CUSTOM_BLOCK;
     public static final ModConfigSpec.ConfigValue<List<? extends String>> CUSTOM_DISPLAY_BLOCK;
+    public static final ModConfigSpec.ConfigValue<List<? extends String>> CUSTOM_FLUID;
+    public static final ModConfigSpec.ConfigValue<List<? extends String>> CUSTOM_ITEM;
     public static final ModConfigSpec.ConfigValue<List<? extends String>> CUSTOM_TOOLTIPS;
-    public static final ModConfigSpec.ConfigValue<List<? extends String>> DISABLE_ITEMS;
+    public static final ModConfigSpec.ConfigValue<List<? extends String>> HIDE_ITEMS;
     public static final ModConfigSpec.ConfigValue<List<? extends String>> FILTER_INTERACTIONS;
     public static final ModConfigSpec.ConfigValue<List<? extends String>> HANDCRAFTING_EXCLUDE;
     public static final ModConfigSpec.ConfigValue<List<? extends String>> HANDCRAFTING_FILTER;
@@ -53,8 +58,30 @@ public class ModConfig {
     public static final ModConfigSpec.ConfigValue<List<? extends String>> RATION_BOX_FILTER;
 
     static {
-        DISABLE_ITEMS = BUILDER
-                .defineListAllowEmpty("disable_items",
+        BUILDER.push("display");
+
+        CUSTOM_DISPLAY_BLOCK = BUILDER
+                .gameRestart()
+                .defineListAllowEmpty("display_block",
+                        List.of(),
+                        () -> "mod:item_id|display_type|max_stack",
+                        obj -> {
+                            if (!(obj instanceof String s)) return false;
+                            String[] p = s.split("\\|");
+                            if (p.length != 3) return false;
+                            Set<String> validTypes = Set.of("plate", "small_plate", "bottle", "bowl", "salad_bowl");
+                            if (!validTypes.contains(p[1].toLowerCase())) return false;
+                            try { Integer.parseInt(p[2]); return true; }
+                            catch (NumberFormatException e) { return false; }
+                        }
+                );
+
+        BUILDER.pop();
+
+        BUILDER.push("items");
+
+        HIDE_ITEMS = BUILDER
+                .defineListAllowEmpty("hide_items",
                         List.of(
                                 "beef_bun_peanut_butter",
                                 "beef_bun_peanut_butter_bacon",
@@ -131,43 +158,36 @@ public class ModConfig {
                                 "ube_cream_frosting_piping_bag",
                                 "ube_cream_ube_cake",
                                 "ube_cream_ube_cake_slice",
+                                "ube_cream_ube_cupcake",
+                                "ube_cupcake_base",
                                 "ube_sugar_dough"
                         ),
                         () -> "item_id",
                         obj -> obj instanceof String
                 );
 
-        BUILDER.push("display");
-
-        CUSTOM_DISPLAY_BLOCK = BUILDER
+        CUSTOM_ITEM = BUILDER
                 .gameRestart()
-                .defineListAllowEmpty("custom_display_block",
+                .defineListAllowEmpty("item",
                         List.of(),
-                        () -> "mod:item_id|display_type|max_stack",
+                        () -> "name|type|nutrition|saturation  OR  name|type",
                         obj -> {
                             if (!(obj instanceof String s)) return false;
                             String[] p = s.split("\\|");
-                            if (p.length != 3) return false;
-                            Set<String> validTypes = Set.of("plate", "small_plate", "bottle", "bowl", "salad_bowl");
-                            if (!validTypes.contains(p[1].toLowerCase())) return false;
-                            try { Integer.parseInt(p[2]); return true; }
+                            if (p.length < 2) return false;
+                            Set<String> ingredientTypes = Set.of("plain", "ingredient_bottle", "ingredient_bowl", "piping_bag");
+                            Set<String> foodTypes = Set.of("food", "fast_food", "bowl", "bowl_cr", "bottle", "stick", "stick_cr");
+                            String type = p[1].toLowerCase();
+                            if (ingredientTypes.contains(type)) return p.length == 2;
+                            if (!foodTypes.contains(type)) return false;
+                            if (p.length < 4) return false;
+                            try { Integer.parseInt(p[2]); Float.parseFloat(p[3]); return true; }
                             catch (NumberFormatException e) { return false; }
                         }
                 );
 
-        BUILDER.pop();
-
-        BUILDER.push("storage");
-
-        SHOW_STORAGE_TOOLTIP_ICONS = BUILDER
-                .define("show_tooltip_icons", true);
-
-        SHOW_SACK_BLOCK_ICONS = BUILDER
-                .define("show_sack_block_icons", true);
-
-        BUILDER.pop();
-
         BUILDER.push("tooltips");
+
 
         SHOW_COMPATIBILITY = BUILDER
                 .define("show_compatibility", true);
@@ -226,6 +246,7 @@ public class ModConfig {
                                 "farmersdelight:bacon_sandwich|bacon,lettuce,tomato",
                                 "farmersdelight:cake_slice|cream_frosting,berry",
                                 "farmersdelight:chicken_sandwich|chicken,lettuce,carrot",
+                                "farmersdelight:dumplings|protein,onion",
                                 "farmersdelight:egg_sandwich|fried_egg",
                                 "farmersdelight:hamburger|onion,lettuce,tomato",
                                 "farmersdelight:kelp_roll_slice|carrot",
@@ -243,7 +264,85 @@ public class ModConfig {
                         obj -> obj instanceof String
                 );
 
-        BUILDER.pop();
+        BUILDER.pop(); // items.tooltips
+        BUILDER.pop(); // items
+
+        BUILDER.push("blocks");
+
+        CUSTOM_BLOCK = BUILDER
+                .gameRestart()
+                .defineListAllowEmpty("block",
+                        List.of(),
+                        () -> "name|type|slice_item_id  OR  name|type",
+                        obj -> {
+                            if (!(obj instanceof String s)) return false;
+                            String[] p = s.split("\\|");
+                            if (p.length < 2) return false;
+                            Set<String> unsliced = Set.of("raw_pie", "raw_pizza", "gelatin");
+                            Set<String> sliced = Set.of("cake", "pie", "pizza", "waffle");
+                            String type = p[1].toLowerCase();
+                            if (unsliced.contains(type)) return p.length == 2;
+                            if (sliced.contains(type)) return p.length == 3 && !p[2].isBlank();
+                            return false;
+                        }
+                );
+
+        BUILDER.push("storage");
+
+        SHOW_STORAGE_TOOLTIP_ICONS = BUILDER
+                .define("show_tooltip_icons", true);
+
+        SHOW_SACK_BLOCK_ICONS = BUILDER
+                .define("show_sack_block_icons", true);
+
+        BUILDER.pop(); // blocks.storage
+        BUILDER.pop(); // blocks
+
+        BUILDER.push("fluids");
+
+        CUSTOM_FLUID = BUILDER
+                .gameRestart()
+                .defineListAllowEmpty("fluid",
+                        List.of(),
+                        () -> "name|slopeFindDistance|levelDecreasePerBlock",
+                        obj -> {
+                            if (!(obj instanceof String s)) return false;
+                            String[] p = s.split("\\|");
+                            if (p.length != 3) return false;
+                            try { Integer.parseInt(p[1]); Integer.parseInt(p[2]); return true; }
+                            catch (NumberFormatException e) { return false; }
+                        }
+                );
+
+        BUILDER.pop(); // fluids
+
+        SERVER_BUILDER.push("items");
+
+        ITEM_NUTRITION_OVERRIDES = SERVER_BUILDER
+                .defineListAllowEmpty("nutrition_saturation",
+                        List.of(),
+                        () -> "item_id|nutrition|saturation",
+                        obj -> {
+                            if (!(obj instanceof String s)) return false;
+                            String[] p = s.split("\\|");
+                            if (p.length != 3) return false;
+                            if (!p[1].equals("-")) {
+                                try {
+                                    if (Integer.parseInt(p[1]) < 0) return false;
+                                } catch (NumberFormatException e) {
+                                    return false;
+                                }
+                            }
+                            if (!p[2].equals("-")) {
+                                try {
+                                    if (Float.parseFloat(p[2]) < 0f) return false;
+                                } catch (NumberFormatException e) {
+                                    return false;
+                                }
+                            }
+                            return true;
+                        }
+                );
 
         SERVER_BUILDER.push("effects");
 
@@ -275,77 +374,7 @@ public class ModConfig {
                         }
                 );
 
-        SERVER_BUILDER.pop();
-
-        SERVER_BUILDER.push("food");
-
-        ITEM_NUTRITION_OVERRIDES = SERVER_BUILDER
-                .defineListAllowEmpty("nutrition_saturation",
-                        List.of(),
-                        () -> "item_id|nutrition|saturation",
-                        obj -> {
-                            if (!(obj instanceof String s)) return false;
-                            String[] p = s.split("\\|");
-                            if (p.length != 3) return false;
-                            if (!p[1].equals("-")) {
-                                try {
-                                    if (Integer.parseInt(p[1]) < 0) return false;
-                                } catch (NumberFormatException e) {
-                                    return false;
-                                }
-                            }
-                            if (!p[2].equals("-")) {
-                                try {
-                                    if (Float.parseFloat(p[2]) < 0f) return false;
-                                } catch (NumberFormatException e) {
-                                    return false;
-                                }
-                            }
-                            return true;
-                        }
-                );
-
-        SERVER_BUILDER.pop();
-
-        SERVER_BUILDER.push("handcraft");
-
-        ENABLE_HANDCRAFTING = SERVER_BUILDER
-                .define("enable_handcrafting", true);
-
-        HANDCRAFTING_FILTER = SERVER_BUILDER
-                .defineListAllowEmpty("handcraft_filter",
-                        List.of(),
-                        () -> "mod:mod_id,  item:mod_id:item_id,  tag:mod_id:tag_name",
-                        obj -> obj instanceof String
-                );
-
-        HANDCRAFTING_EXCLUDE = SERVER_BUILDER
-                .defineListAllowEmpty("handcraft_exclude",
-                        List.of(),
-                        () -> "mod:mod_id,  item:mod_id:item_id,  tag:mod_id:tag_name",
-                        obj -> obj instanceof String
-                );
-
-        SERVER_BUILDER.pop();
-
-        SERVER_BUILDER.push("interactions");
-
-        ENABLE_FILTER_INTERACTIONS = SERVER_BUILDER
-                .define("enable_filter_interactions", true);
-
-        FILTER_INTERACTIONS = SERVER_BUILDER
-                .defineListAllowEmpty("filter_interactions",
-                        List.of(
-                                "createfood:cloth_filter_egg|minecraft:glass_bottle|createfood:cloth_filter_egg_yolk|createfood:egg_whites_bottle",
-                                "createfood:cloth_filter_egg_yolk|none|createfood:cloth_filter|createfood:egg_yolk",
-                                "createfood:cloth_filter_cacao_mass|minecraft:bucket|createfood:cloth_filter_pressed_cocoa|createfood:cacao_butter_bucket",
-                                "createfood:cloth_filter_pressed_cocoa|none|createfood:cloth_filter|createfood:pressed_cocoa"
-                        ),
-                        () -> "filter_item|offhand_item|filter_result|container_result",
-                        obj -> obj instanceof String s && s.split("\\|").length == 4
-                );
-
-        SERVER_BUILDER.pop();
+        SERVER_BUILDER.pop(); // items.effects
 
         SERVER_BUILDER.push("remainders");
 
@@ -361,7 +390,50 @@ public class ModConfig {
                         obj -> obj instanceof String
                 );
 
-        SERVER_BUILDER.pop();
+        SERVER_BUILDER.pop(); // items.remainders
+        SERVER_BUILDER.pop(); // items
+
+        SERVER_BUILDER.push("interactions");
+
+        ENABLE_FILTER_INTERACTIONS = SERVER_BUILDER
+                .define("enable_filter_interactions", true);
+
+        ENABLE_PUMPKIN_PIE_PLACEMENT = SERVER_BUILDER
+                .define("enable_pumpkin_pie_placement", false);
+
+        FILTER_INTERACTIONS = SERVER_BUILDER
+                .defineListAllowEmpty("filter_interactions",
+                        List.of(
+                                "createfood:cloth_filter_egg|minecraft:glass_bottle|createfood:cloth_filter_egg_yolk|createfood:egg_whites_bottle",
+                                "createfood:cloth_filter_egg_yolk|none|createfood:cloth_filter|createfood:egg_yolk",
+                                "createfood:cloth_filter_cacao_mass|minecraft:bucket|createfood:cloth_filter_pressed_cocoa|createfood:cacao_butter_bucket",
+                                "createfood:cloth_filter_pressed_cocoa|none|createfood:cloth_filter|createfood:pressed_cocoa"
+                        ),
+                        () -> "filter_item|offhand_item|filter_result|container_result",
+                        obj -> obj instanceof String s && s.split("\\|").length == 4
+                );
+
+        SERVER_BUILDER.push("handcraft");
+
+        ENABLE_HANDCRAFTING = SERVER_BUILDER
+                .define("enable_handcrafting", true);
+
+        HANDCRAFTING_FILTER = SERVER_BUILDER
+                .defineListAllowEmpty("filter",
+                        List.of(),
+                        () -> "mod:mod_id,  item:mod_id:item_id,  tag:mod_id:tag_name",
+                        obj -> obj instanceof String
+                );
+
+        HANDCRAFTING_EXCLUDE = SERVER_BUILDER
+                .defineListAllowEmpty("exclude",
+                        List.of(),
+                        () -> "mod:mod_id,  item:mod_id:item_id,  tag:mod_id:tag_name",
+                        obj -> obj instanceof String
+                );
+
+        SERVER_BUILDER.pop(); // interactions.handcraft
+        SERVER_BUILDER.pop(); // interactions
 
         SERVER_BUILDER.push("storage");
 
@@ -530,8 +602,7 @@ public class ModConfig {
 
     public static boolean isItemEnabled(String itemId) {
         try {
-            List<? extends String> disabledItems = DISABLE_ITEMS.get();
-            return !disabledItems.contains(itemId);
+            return !HIDE_ITEMS.get().contains(itemId);
         } catch (IllegalStateException e) {
             return true;
         }

@@ -5,6 +5,12 @@
             "id": "sausage_biscuit_bacon"
         }
     ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "sausage_biscuit_bacon"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {

@@ -5,6 +5,12 @@
       "id": "egg_burrito_sausage"
     }
   ],
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "egg_burrito_sausage"
+    }
+  ],
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {

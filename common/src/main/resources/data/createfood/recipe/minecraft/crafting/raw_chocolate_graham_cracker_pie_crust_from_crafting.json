@@ -14,7 +14,7 @@
             "tag": "c:butter"
         },
         {
-            "tag": "c:milk_bottle"
+            "tag": "c:sugar"
         }
     ],
     "result": {
@@ -23,6 +23,12 @@
     "neoforge:conditions": [
         {
             "type": "createfood:enabled",
+            "id": "raw_chocolate_graham_cracker_pie_crust"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
             "id": "raw_chocolate_graham_cracker_pie_crust"
         }
     ]

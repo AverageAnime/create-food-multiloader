@@ -5,6 +5,12 @@
             "id": "fish_wrap_kelp_onion"
         }
     ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "fish_wrap_kelp_onion"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {

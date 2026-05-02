@@ -2,7 +2,8 @@ package dev.averageanime.neoforge.block.type.pie;
 
 import dev.averageanime.CommonClass;
 import dev.averageanime.neoforge.block.ModBlocks;
-import dev.averageanime.neoforge.block.type.plate.EmptyPlateBlock;
+import dev.averageanime.neoforge.config.ModConfig;
+import dev.averageanime.block.type.plate.EmptyPlateBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -26,12 +27,16 @@ public class PumpkinPieBlock {
             return;
         }
 
+        if (!ModConfig.ENABLE_PUMPKIN_PIE_PLACEMENT.get()) {
+            return;
+        }
+
         Level level = context.getLevel();
         BlockPos clickedPos = context.getClickedPos();
         BlockState clickedState = level.getBlockState(clickedPos);
 
         if (clickedState.getBlock() instanceof EmptyPlateBlock) {
-            return; // Let the plate placement handler take over
+            return;
         }
 
         if (clickedState.is(ModBlocks.PUMPKIN_PIE_BLOCK.get())) {

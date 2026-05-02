@@ -5,6 +5,12 @@
             "id": "fish_taco_kelp_taco_sauce"
         }
     ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "fish_taco_kelp_taco_sauce"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {
@@ -14,10 +20,10 @@
             "tag": "c:cooked_fishes"
         },
         {
-          "item": "minecraft:dried_kelp"
+            "item": "minecraft:dried_kelp"
         },
         {
-          "tag": "c:taco_sauce_bottle"
+            "tag": "c:taco_sauce_bottle"
         }
     ],
     "result": {

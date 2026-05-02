@@ -20,5 +20,11 @@
       "type": "createfood:enabled",
       "id": "pita_chip_bowl"
     }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "pita_chip_bowl"
+    }
   ]
 }

@@ -5,6 +5,12 @@
             "id": "pasta_plate_rabbit_meatballs"
         }
     ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "pasta_plate_rabbit_meatballs"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {

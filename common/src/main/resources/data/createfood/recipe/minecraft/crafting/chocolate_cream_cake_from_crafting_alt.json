@@ -31,5 +31,11 @@
             "type": "createfood:enabled",
             "id": "chocolate_cream_cake"
         }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "chocolate_cream_cake"
+        }
     ]
 }

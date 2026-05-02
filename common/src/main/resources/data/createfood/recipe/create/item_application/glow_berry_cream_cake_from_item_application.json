@@ -14,15 +14,31 @@
                 "id": "createfood:glow_berry_cream_cake"
             }
         },
-      {
-        "item": {
-          "id": "createfood:piping_bag"
+        {
+            "item": {
+                "id": "createfood:piping_bag"
+            }
         }
-      }
     ],
     "neoforge:conditions": [
         {
+            "type": "neoforge:mod_loaded",
+            "modid": "create"
+        },
+        {
             "type": "createfood:enabled",
+            "id": "glow_berry_cream_cake"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "create"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
             "id": "glow_berry_cream_cake"
         }
     ]

@@ -15,5 +15,11 @@
             "type": "createfood:enabled",
             "id": "spicy_sausages"
         }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "spicy_sausages"
+        }
     ]
 }

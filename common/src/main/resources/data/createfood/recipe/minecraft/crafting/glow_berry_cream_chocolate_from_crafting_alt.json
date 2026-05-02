@@ -5,25 +5,31 @@
             "tag": "c:hollow_chocolate"
         },
         {
-          "tag": "c:hollow_chocolate"
+            "tag": "c:hollow_chocolate"
         },
         {
-          "tag": "c:hollow_chocolate"
+            "tag": "c:hollow_chocolate"
         },
         {
-          "tag": "c:hollow_chocolate"
+            "tag": "c:hollow_chocolate"
         },
         {
             "tag": "c:glow_berry_cream_frosting_piping_bag"
         }
     ],
     "result": {
-      "count": 4,
-      "id": "createfood:glow_berry_cream_chocolate"
+        "count": 4,
+        "id": "createfood:glow_berry_cream_chocolate"
     },
     "neoforge:conditions": [
         {
             "type": "createfood:enabled",
+            "id": "glow_berry_cream_chocolate"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
             "id": "glow_berry_cream_chocolate"
         }
     ]

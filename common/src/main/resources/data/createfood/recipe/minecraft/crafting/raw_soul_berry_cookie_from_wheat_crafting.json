@@ -9,6 +9,18 @@
             "id": "raw_soul_berry_cookie"
         }
     ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "frightsdelight"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
+            "id": "raw_soul_berry_cookie"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {

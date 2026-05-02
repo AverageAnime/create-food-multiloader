@@ -20,5 +20,11 @@
       "type": "createfood:enabled",
       "id": "mushroom_burrito_rice"
     }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "mushroom_burrito_rice"
+    }
   ]
 }

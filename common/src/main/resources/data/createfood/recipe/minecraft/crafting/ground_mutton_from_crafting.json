@@ -5,6 +5,12 @@
             "id": "ground_mutton"
         }
     ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "ground_mutton"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {

@@ -1,9 +1,12 @@
 package dev.averageanime.neoforge.block;
 
 import net.minecraft.network.chat.Component;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -11,14 +14,14 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import dev.averageanime.CommonClass;
-import dev.averageanime.neoforge.block.type.cake.CakeBaseBlock;
-import dev.averageanime.neoforge.block.type.cake.CheeseBlock;
-import dev.averageanime.neoforge.block.type.cake.GyroMeatBlock;
-import dev.averageanime.neoforge.block.type.cake.ModCakeBlock;
-import dev.averageanime.neoforge.block.type.pie.PieBlock;
-import dev.averageanime.neoforge.block.type.pie.PizzaBlock;
-import dev.averageanime.neoforge.block.type.pie.RawPieBlock;
-import dev.averageanime.neoforge.block.type.pie.RawPizzaBlock;
+import dev.averageanime.block.ModCakeBlock;
+import dev.averageanime.block.type.cake.CakeBaseBlock;
+import dev.averageanime.block.type.cake.CheeseBlock;
+import dev.averageanime.block.type.cake.GyroMeatBlock;
+import dev.averageanime.block.type.pie.PieBlock;
+import dev.averageanime.block.type.pie.PizzaBlock;
+import dev.averageanime.block.type.pie.RawPieBlock;
+import dev.averageanime.block.type.pie.RawPizzaBlock;
 import dev.averageanime.neoforge.block.type.storage.ClothSackBlock;
 import dev.averageanime.neoforge.block.type.storage.RationBoxBlock;
 import dev.averageanime.neoforge.item.ModItems;
@@ -136,8 +139,9 @@ public class ModBlocks {
     public static final DeferredBlock<Block> CAKE_BASE = registerCakeBase("cake_base", null);
     public static final DeferredBlock<Block> CARAMEL_CHIP_WAFFLE = registerWaffle("caramel_chip_waffle", ModItems.CARAMEL_CHIP_MINI_WAFFLE, tips(null, "caramel_chips_ingredient"));
     public static final DeferredBlock<Block> CHEESECAKE = registerCookedPie("cheesecake", ModItems.CHEESECAKE_SLICE, null);
-    public static final DeferredBlock<Block> CHEESE_BLOCK = registerBlock("cheese_block", () -> new CheeseBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE)));
+    public static final DeferredBlock<Block> CHEESE_BLOCK = registerBlock("cheese_block", () -> new CheeseBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), ModItems.CHEESE_SLICE));
     public static final DeferredBlock<Block> CHEESE_PIZZA = registerCookedPizza("cheese_pizza", ModItems.CHEESE_PIZZA_SLICE, tips(null, "cheese_ingredient"));
+    public static final DeferredBlock<Block> CHOCOLATE_CAKE_BASE = registerCakeBase("chocolate_cake_base", null);
     public static final DeferredBlock<Block> CHOCOLATE_CHIP_WAFFLE = registerWaffle("chocolate_chip_waffle", ModItems.CHOCOLATE_CHIP_MINI_WAFFLE, tips(null, "chocolate_chips_ingredient"));
     public static final DeferredBlock<Block> CHOCOLATE_CREAM_CAKE = registerCake("chocolate_cream_cake", ModItems.CHOCOLATE_CREAM_CAKE_SLICE, tips(null, "chocolate_cream_frosting_ingredient"));
     public static final DeferredBlock<Block> CHOCOLATE_CREAM_CAKE_BUTTERSCOTCH = registerCake("chocolate_cream_cake_butterscotch", ModItems.CHOCOLATE_CREAM_CAKE_SLICE_BUTTERSCOTCH, tips(null, "chocolate_cream_frosting_ingredient", "butterscotch_chips_ingredient"));
@@ -146,6 +150,7 @@ public class ModBlocks {
     public static final DeferredBlock<Block> CHOCOLATE_CREAM_CAKE_DARK_CHOCOLATE = registerCake("chocolate_cream_cake_dark_chocolate", ModItems.CHOCOLATE_CREAM_CAKE_SLICE_DARK_CHOCOLATE, tips(null, "chocolate_cream_frosting_ingredient", "dark_chocolate_chips_ingredient"));
     public static final DeferredBlock<Block> CHOCOLATE_CREAM_CAKE_TOFFEE = registerCake("chocolate_cream_cake_toffee", ModItems.CHOCOLATE_CREAM_CAKE_SLICE_TOFFEE, tips(null, "chocolate_cream_frosting_ingredient", "toffee_chips_ingredient"));
     public static final DeferredBlock<Block> CHOCOLATE_CREAM_CAKE_WHITE_CHOCOLATE = registerCake("chocolate_cream_cake_white_chocolate", ModItems.CHOCOLATE_CREAM_CAKE_SLICE_WHITE_CHOCOLATE, tips(null, "chocolate_cream_frosting_ingredient", "white_chocolate_chips_ingredient"));
+    public static final DeferredBlock<Block> CHOCOLATE_CREAM_CHOCOLATE_CAKE = registerCake("chocolate_cream_chocolate_cake", ModItems.CHOCOLATE_CREAM_CHOCOLATE_CAKE_SLICE, tips(null, "chocolate_cream_frosting_ingredient"));
     public static final DeferredBlock<Block> CHOCOLATE_PIE_GRAHAM_CRACKER = registerCookedPie("chocolate_pie_graham_cracker", ModItems.CHOCOLATE_PIE_GRAHAM_CRACKER_SLICE, tips(null, "graham_cracker_pie_crust_ingredient"));
     public static final DeferredBlock<Block> CHORUS_FRUIT_CHEESECAKE = registerCookedPie("chorus_fruit_cheesecake", ModItems.CHORUS_FRUIT_CHEESECAKE_SLICE, null);
     public static final DeferredBlock<Block> CHORUS_FRUIT_CREAM_CAKE = registerCake("chorus_fruit_cream_cake", ModItems.CHORUS_FRUIT_CREAM_CAKE_SLICE, tips(null, "chorus_fruit_cream_frosting_ingredient"));
@@ -157,6 +162,7 @@ public class ModBlocks {
     public static final DeferredBlock<Block> CREAM_CAKE = registerCake("cream_cake", ModItems.CREAM_CAKE_SLICE, tips(null, "cream_frosting_ingredient"));
     public static final DeferredBlock<Block> CREAM_CAKE_CHORUS_FRUIT = registerCake("cream_cake_chorus_fruit", ModItems.CREAM_CAKE_SLICE_CHORUS_FRUIT, tips(null, "cream_frosting_ingredient", "chorus_fruit_ingredient"));
     public static final DeferredBlock<Block> CREAM_CAKE_GLOW_BERRY = registerCake("cream_cake_glow_berry", ModItems.CREAM_CAKE_SLICE_GLOW_BERRY, tips(null, "cream_frosting_ingredient", "glow_berry_ingredient"));
+    public static final DeferredBlock<Block> CREAM_CHOCOLATE_CAKE = registerCake("cream_chocolate_cake", ModItems.CREAM_CHOCOLATE_CAKE_SLICE, tips(null, "cream_frosting_ingredient"));
     public static final DeferredBlock<Block> CREAM_PIE_CHOCOLATE_GRAHAM_CRACKER = registerCookedPie("cream_pie_chocolate_graham_cracker", ModItems.CREAM_PIE_CHOCOLATE_GRAHAM_CRACKER_SLICE, tips(null, "chocolate_graham_cracker_pie_crust_ingredient"));
     public static final DeferredBlock<Block> CREAM_PIE_GRAHAM_CRACKER = registerCookedPie("cream_pie_graham_cracker", ModItems.CREAM_PIE_GRAHAM_CRACKER_SLICE, tips(null, "graham_cracker_pie_crust_ingredient"));
     public static final DeferredBlock<Block> CYAN_GELATIN_DESSERT_BLOCK = registerGelatinBlock("cyan_gelatin_dessert_block");
@@ -173,7 +179,7 @@ public class ModBlocks {
     public static final DeferredBlock<Block> GLOW_BERRY_PIE = registerCookedPie("glow_berry_pie", ModItems.GLOW_BERRY_PIE_SLICE, null);
     public static final DeferredBlock<Block> GRAY_GELATIN_DESSERT_BLOCK = registerGelatinBlock("gray_gelatin_dessert_block");
     public static final DeferredBlock<Block> GREEN_GELATIN_DESSERT_BLOCK = registerGelatinBlock("green_gelatin_dessert_block");
-    public static final DeferredBlock<Block> GYRO_MEAT_BLOCK = registerBlock("gyro_meat_block", () -> new GyroMeatBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE)));
+    public static final DeferredBlock<Block> GYRO_MEAT_BLOCK = registerBlock("gyro_meat_block", () -> new GyroMeatBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), ModItems.GYRO_MEAT_SLICE));
     public static final DeferredBlock<Block> LIGHT_BLUE_GELATIN_DESSERT_BLOCK = registerGelatinBlock("light_blue_gelatin_dessert_block");
     public static final DeferredBlock<Block> LIGHT_GRAY_GELATIN_DESSERT_BLOCK = registerGelatinBlock("light_gray_gelatin_dessert_block");
     public static final DeferredBlock<Block> LIME_GELATIN_DESSERT_BLOCK = registerGelatinBlock("lime_gelatin_dessert_block");
@@ -264,8 +270,54 @@ public class ModBlocks {
                     .noOcclusion()),
             block -> new ClothSackItem(block, new Item.Properties()));
 
+    private static void registerConfigBlocks() {
+        var configFile = net.neoforged.fml.loading.FMLPaths.CONFIGDIR.get().resolve("createfood-client.toml");
+        if (!java.nio.file.Files.exists(configFile)) return;
+        try (var raw = com.electronwill.nightconfig.core.file.FileConfig.of(configFile.toFile())) {
+            raw.load();
+            List<String> entries = raw.getOrElse("blocks.block", List.of());
+            for (String entry : entries) {
+                String[] p = entry.split("\\|");
+                if (p.length < 2) {
+                    LOGGER.warn("Create: Food - Skipping invalid custom_block entry (too few fields): {}", entry);
+                    continue;
+                }
+                String name = p[0];
+                String type = p[1].toLowerCase();
+                if (type.equals("raw_pie")) {
+                    registerRawPie(name, null);
+                } else if (type.equals("raw_pizza")) {
+                    registerRawPizza(name, null);
+                } else if (type.equals("gelatin")) {
+                    registerGelatinBlock(name);
+                } else if (type.equals("cake") || type.equals("pie") || type.equals("pizza") || type.equals("waffle")) {
+                    if (p.length < 3 || p[2].isBlank()) {
+                        LOGGER.warn("Create: Food - Skipping custom_block entry missing slice item: {}", entry);
+                        continue;
+                    }
+                    String sliceId = p[2];
+                    Supplier<Item> sliceSupplier = () -> {
+                        ResourceLocation rl = ResourceLocation.tryParse(sliceId);
+                        if (rl == null) return Items.BARRIER;
+                        Item item = BuiltInRegistries.ITEM.get(rl);
+                        return item != Items.AIR ? item : Items.BARRIER;
+                    };
+                    if (type.equals("cake"))             registerCake(name, sliceSupplier, null);
+                    else if (type.equals("pie"))         registerCookedPie(name, sliceSupplier, null);
+                    else if (type.equals("pizza"))       registerCookedPizza(name, sliceSupplier, null);
+                    else if (type.equals("waffle"))      registerWaffle(name, sliceSupplier, null);
+                } else {
+                    LOGGER.warn("Create: Food - Skipping custom_block entry with unknown type '{}': {}", type, entry);
+                }
+            }
+        } catch (Exception e) {
+            LOGGER.warn("Create: Food - Failed to read custom_block from config", e);
+        }
+    }
+
     public static void register(IEventBus eventBus) {
         LOGGER.info("Create: Food - Registering Blocks");
+        registerConfigBlocks();
         BLOCKS.register(eventBus);
     }
 }

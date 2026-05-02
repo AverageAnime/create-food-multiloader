@@ -1,12 +1,13 @@
 ![cflogobanner](https://github.com/user-attachments/assets/459fad44-da37-49a6-99e9-83085f49c48d)
 ### **About:**
 Create: Food is an add-on based on expanding food content found in Create & Farmer's Delight.
-### **Recommended:**
-Create: Food has no required dependencies. However, for full use as intended, these mods are essential. Without them, many items are impossible to craft and the log will be full of recipe errors.
+
+### **Recommended Mods:**
+These are not required dependencies, however, for full intended use, these mods are essential. Without them, many items are impossible to craft.
 * [Create](https://www.curseforge.com/minecraft/mc-mods/create)
 * [Farmer's Delight](https://www.curseforge.com/minecraft/mc-mods/farmers-delight)
 
-These mods are non-essential, but still recommended. Without them, there are noticeable gaps.
+These mods are non-essential, but recommended. Without them, there are noticeable gaps.
 * [Delightful Creators](https://www.curseforge.com/minecraft/mc-mods/delightful-creators-forge)
 * [Display Delight](https://www.curseforge.com/minecraft/mc-mods/display-delight)
 
@@ -14,21 +15,20 @@ These mods are non-essential, but still recommended. Without them, there are not
 
 * Over 1000 food-related items and over 100 new fluids. View the item list [here](https://github.com/AverageAnime/create-food-multiloader/wiki/Item-list).
 * Compatible with various Create and Farmer's Delight addons. Read more [here](https://github.com/AverageAnime/create-food-multiloader/wiki/Compatibility).
-* Handcrafting system for simple recipes. Read more [here](https://github.com/AverageAnime/create-food-multiloader/wiki/Handcrafting-Guide).
-* Most food can be displayed on plates. Add custom display plates through the config. Read the guide [here](https://github.com/AverageAnime/create-food-multiloader/wiki/Display-Blocks-Guide).
-* Cloth filers usable by hand or in recipes. Read more [here](https://github.com/AverageAnime/create-food-multiloader/wiki/Cloth-Filters-Guide).
-* Two storage blocks. Read more [here](https://github.com/AverageAnime/create-food-multiloader/wiki/Storage-Blocks-Guide).
-* Everything is highly configurable, including modifying nutrition & saturation. Read more about the config [here](https://github.com/AverageAnime/create-food-multiloader/wiki/Config-Options).
+* Everything is highly configurable, including hiding items, modifying nutrition/saturation values, and adding your own custom items, blocks, fluids, and display plates. Read more [here](https://github.com/AverageAnime/create-food-multiloader/wiki/Config-Options).
 * Fully implemented effects from [Farmer's Delight](https://www.curseforge.com/minecraft/mc-mods/farmers-delight), the [Let's Do series](https://lets-do.ch/), and [Kaleidoscope Cookery](https://www.curseforge.com/minecraft/mc-mods/kaleidoscope-cookery).
+* Handcrafting system for simple recipes. Read more [here](https://github.com/AverageAnime/create-food-multiloader/wiki/Handcrafting-Guide).
+* Most food can be displayed on plates. Read the guide [here](https://github.com/AverageAnime/create-food-multiloader/wiki/Display-Blocks-Guide).
+* Cloth filters usable by hand or in recipes. Read more [here](https://github.com/AverageAnime/create-food-multiloader/wiki/Cloth-Filters-Guide).
+* Two storage blocks, the cloth sack and the ration box. Read more [here](https://github.com/AverageAnime/create-food-multiloader/wiki/Storage-Blocks-Guide).
 * Placeable pizzas, cakes, pies (including pumpkin pie), and more.
-* Hide any Create: Food item and their recipes from the config.
 * Animated textures for hot drinks.
 
 Information on versions prior to 2.0.0 can be found [here](https://github.com/AverageAnime/create-food/wiki).
 
-### **Item Preview (2.3.0)**
-![fullprev230](https://github.com/user-attachments/assets/959b72f0-b34d-4741-b84d-881b4d5d9521)
-![bucketprev230](https://github.com/user-attachments/assets/aa2adaad-f415-4c2e-88f3-6abe197e8355)
+### **Item Preview (2.4.0)**
+![fullprev240](https://github.com/user-attachments/assets/508fc303-50e1-433f-9283-5f28ddc60f75)
+![bucketprev240](https://github.com/user-attachments/assets/993237fc-c7c8-4325-a47b-9e9401f5b213)
 
 ### **My Other Mods**
 * [Create: Engineers](https://www.curseforge.com/minecraft/mc-mods/create-engineers)

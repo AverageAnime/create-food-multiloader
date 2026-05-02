@@ -28,5 +28,11 @@
             "type": "createfood:enabled",
             "id": "cheeseburger_onion_lettuce"
         }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "cheeseburger_onion_lettuce"
+        }
     ]
 }

@@ -5,6 +5,12 @@
             "id": "raw_pumpkin_pie"
         }
     ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "raw_pumpkin_pie"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {

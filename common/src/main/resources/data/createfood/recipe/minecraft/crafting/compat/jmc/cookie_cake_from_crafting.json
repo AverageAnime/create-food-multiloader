@@ -9,6 +9,18 @@
             "id": "jmc:cookie_cake"
         }
     ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "jmc"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
+            "id": "jmc:cookie_cake"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {

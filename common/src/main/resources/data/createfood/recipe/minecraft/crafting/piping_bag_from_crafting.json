@@ -20,5 +20,11 @@
             "type": "createfood:enabled",
             "id": "piping_bag"
         }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "piping_bag"
+        }
     ]
 }

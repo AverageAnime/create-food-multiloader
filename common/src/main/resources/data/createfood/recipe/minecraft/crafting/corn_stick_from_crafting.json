@@ -12,6 +12,19 @@
             "id": "corn_stick"
         }
     ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:tags_populated",
+            "registry": "minecraft:item",
+            "values": [
+                "c:corn"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
+            "id": "corn_stick"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {

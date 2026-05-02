@@ -22,5 +22,11 @@
             "type": "createfood:enabled",
             "id": "meat_pie"
         }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "meat_pie"
+        }
     ]
 }

@@ -28,5 +28,11 @@
             "type": "createfood:enabled",
             "id": "chicken_cheeseburger_lettuce_tomato"
         }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "chicken_cheeseburger_lettuce_tomato"
+        }
     ]
 }

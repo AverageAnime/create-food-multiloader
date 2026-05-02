@@ -12,6 +12,19 @@
             "id": "eggplant_bun_cheese_lettuce_tomato"
         }
     ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:tags_populated",
+            "registry": "minecraft:item",
+            "values": [
+                "c:eggplant_bun_cheese"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
+            "id": "eggplant_bun_cheese_lettuce_tomato"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {

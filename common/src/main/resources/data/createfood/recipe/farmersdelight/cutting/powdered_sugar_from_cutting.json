@@ -17,7 +17,23 @@
     ],
     "neoforge:conditions": [
         {
+            "type": "neoforge:mod_loaded",
+            "modid": "farmersdelight"
+        },
+        {
             "type": "createfood:enabled",
+            "id": "powdered_sugar"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "farmersdelight"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
             "id": "powdered_sugar"
         }
     ]

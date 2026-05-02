@@ -22,5 +22,11 @@
             "type": "createfood:enabled",
             "id": "pork_stew_bucket"
         }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "pork_stew_bucket"
+        }
     ]
 }

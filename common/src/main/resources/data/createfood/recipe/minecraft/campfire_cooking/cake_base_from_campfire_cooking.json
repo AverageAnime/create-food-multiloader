@@ -4,7 +4,7 @@
     "cookingtime": 200,
     "experience": 0.1,
     "ingredient": {
-        "tag": "c:raw_cake_base"
+        "tag": "c:cake_batter_bucket"
     },
     "result": {
         "count": 1,
@@ -13,6 +13,12 @@
     "neoforge:conditions": [
         {
             "type": "createfood:enabled",
+            "id": "cake_base"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
             "id": "cake_base"
         }
     ]

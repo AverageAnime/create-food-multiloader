@@ -5,6 +5,12 @@
             "id": "chorus_fruit_cream_mini_waffle"
         }
     ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "chorus_fruit_cream_mini_waffle"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {

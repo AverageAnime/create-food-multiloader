@@ -16,5 +16,11 @@
             "type": "createfood:enabled",
             "id": "marshmallow_stick"
         }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "marshmallow_stick"
+        }
     ]
 }

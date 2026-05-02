@@ -19,5 +19,11 @@
             "type": "createfood:enabled",
             "id": "scrambled_egg_sandwich"
         }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "scrambled_egg_sandwich"
+        }
     ]
 }

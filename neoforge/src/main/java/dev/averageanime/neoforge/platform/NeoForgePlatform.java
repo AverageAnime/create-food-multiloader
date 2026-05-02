@@ -1,5 +1,6 @@
 package dev.averageanime.neoforge.platform;
 
+import dev.averageanime.neoforge.config.ModConfig;
 import dev.averageanime.platform.IPlatform;
 import net.neoforged.fml.ModList;
 import net.neoforged.fml.loading.FMLLoader;
@@ -36,5 +37,10 @@ public class NeoForgePlatform implements IPlatform {
     @Override
     public boolean isNeoforge() {
         return true;
+    }
+
+    @Override
+    public String getCategoryEffectOverride(String categoryName) {
+        return ModConfig.getCategoryEffectOverride(categoryName);
     }
 }

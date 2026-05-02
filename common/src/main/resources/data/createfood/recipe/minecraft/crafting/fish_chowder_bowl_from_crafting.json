@@ -23,5 +23,11 @@
       "type": "createfood:enabled",
       "id": "fish_chowder_bowl"
     }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "fish_chowder_bowl"
+    }
   ]
 }

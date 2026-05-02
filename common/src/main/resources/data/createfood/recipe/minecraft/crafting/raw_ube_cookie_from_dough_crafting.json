@@ -12,6 +12,19 @@
             "id": "raw_ube_cookie"
         }
     ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:tags_populated",
+            "registry": "minecraft:item",
+            "values": [
+                "c:vegetables/ube"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
+            "id": "raw_ube_cookie"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {

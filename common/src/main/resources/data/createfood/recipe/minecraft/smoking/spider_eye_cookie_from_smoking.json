@@ -13,10 +13,32 @@
     "neoforge:conditions": [
         {
             "type": "neoforge:mod_loaded",
+            "modid": "frightsdelight"
+        },
+        {
+            "type": "neoforge:mod_loaded",
             "modid": "frightsdelight:cookie_spidereye"
         },
         {
             "type": "createfood:enabled",
+            "id": "frightsdelight:cookie_spidereye"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "frightsdelight"
+            ]
+        },
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "frightsdelight:cookie_spidereye"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
             "id": "frightsdelight:cookie_spidereye"
         }
     ]

@@ -19,5 +19,11 @@
             "type": "createfood:enabled",
             "id": "smore"
         }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "smore"
+        }
     ]
 }

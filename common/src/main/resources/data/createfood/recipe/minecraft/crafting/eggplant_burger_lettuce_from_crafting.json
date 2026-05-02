@@ -19,5 +19,11 @@
             "type": "createfood:enabled",
             "id": "eggplant_burger_lettuce"
         }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "eggplant_burger_lettuce"
+        }
     ]
 }

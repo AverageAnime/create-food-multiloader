@@ -16,5 +16,11 @@
             "type": "createfood:enabled",
             "id": "magma_cream_marshmallow_stick"
         }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "magma_cream_marshmallow_stick"
+        }
     ]
 }

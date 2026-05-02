@@ -5,13 +5,19 @@
             "id": "fish_taco_kelp"
         }
     ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "fish_taco_kelp"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {
             "tag": "c:fish_taco"
         },
         {
-          "item": "minecraft:dried_kelp"
+            "item": "minecraft:dried_kelp"
         }
     ],
     "result": {

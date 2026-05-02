@@ -13,5 +13,11 @@
             "type": "createfood:enabled",
             "id": "boiled_egg_peeled"
         }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "boiled_egg_peeled"
+        }
     ]
 }

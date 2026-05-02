@@ -1,0 +1,35 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "heavy_cream_bucket"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "heavy_cream_bucket"
+        }
+    ],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:bucket"
+        },
+        {
+            "tag": "c:heavy_cream"
+        },
+        {
+            "tag": "c:heavy_cream"
+        },
+        {
+            "tag": "c:heavy_cream"
+        },
+        {
+            "tag": "c:heavy_cream"
+        }
+    ],
+    "result": {
+        "id": "createfood:heavy_cream_bucket"
+    }
+}

@@ -17,5 +17,11 @@
       "type": "createfood:enabled",
       "id": "scone_apple_jam"
     }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "scone_apple_jam"
+    }
   ]
 }

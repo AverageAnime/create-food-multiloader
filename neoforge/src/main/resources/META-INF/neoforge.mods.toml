@@ -10,8 +10,6 @@ logoFile="${mod_id}.png" #optional
 authors = "${mod_author}" #optional
 description = '''${description}''' #mandatory (Supports multiline text)
 [[mixins]]
-config = "${mod_id}.mixins.json"
-[[mixins]]
 config = "${mod_id}.neoforge.mixins.json"
 [[dependencies.${mod_id}]] #optional
 modId = "neoforge" #mandatory

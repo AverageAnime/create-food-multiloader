@@ -1,8 +1,8 @@
 package dev.averageanime.neoforge.menu;
 
 import dev.averageanime.CommonClass;
-import dev.averageanime.neoforge.blockentity.ClothSackBlockEntity;
-import dev.averageanime.neoforge.blockentity.RationBoxBlockEntity;
+import dev.averageanime.neoforge.block.type.blockentity.ClothSackBlockEntity;
+import dev.averageanime.neoforge.block.type.blockentity.RationBoxBlockEntity;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.inventory.MenuType;
 import net.neoforged.bus.api.IEventBus;

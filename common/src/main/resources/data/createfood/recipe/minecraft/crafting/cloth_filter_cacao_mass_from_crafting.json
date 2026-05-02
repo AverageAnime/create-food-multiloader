@@ -16,5 +16,11 @@
             "type": "createfood:enabled",
             "id": "cloth_filter_cacao_mass"
         }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "cloth_filter_cacao_mass"
+        }
     ]
 }

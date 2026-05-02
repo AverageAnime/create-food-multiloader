@@ -1,0 +1,41 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:cream_chocolate_cake_slice"
+        },
+        {
+            "tag": "c:cream_chocolate_cake_slice"
+        },
+        {
+            "tag": "c:cream_chocolate_cake_slice"
+        },
+        {
+            "tag": "c:cream_chocolate_cake_slice"
+        },
+        {
+            "tag": "c:cream_chocolate_cake_slice"
+        },
+        {
+            "tag": "c:cream_chocolate_cake_slice"
+        },
+        {
+            "tag": "c:cream_chocolate_cake_slice"
+        }
+    ],
+    "result": {
+        "id": "createfood:cream_chocolate_cake"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "cream_chocolate_cake"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "cream_chocolate_cake"
+        }
+    ]
+}

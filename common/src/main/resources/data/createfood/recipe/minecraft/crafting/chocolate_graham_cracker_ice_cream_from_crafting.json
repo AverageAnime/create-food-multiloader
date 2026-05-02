@@ -16,5 +16,11 @@
             "type": "createfood:enabled",
             "id": "chocolate_graham_cracker_ice_cream"
         }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "chocolate_graham_cracker_ice_cream"
+        }
     ]
 }

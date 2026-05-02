@@ -34,5 +34,11 @@
             "type": "createfood:enabled",
             "id": "fruit_smoothie_bucket"
         }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "fruit_smoothie_bucket"
+        }
     ]
 }

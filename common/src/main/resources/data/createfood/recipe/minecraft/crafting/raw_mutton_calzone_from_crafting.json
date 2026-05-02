@@ -17,5 +17,11 @@
       "type": "createfood:enabled",
       "id": "raw_mutton_calzone"
     }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "raw_mutton_calzone"
+    }
   ]
 }

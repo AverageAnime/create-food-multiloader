@@ -17,5 +17,11 @@
       "type": "createfood:enabled",
       "id": "yogurt_bowl_chorus_fruit"
     }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "yogurt_bowl_chorus_fruit"
+    }
   ]
 }

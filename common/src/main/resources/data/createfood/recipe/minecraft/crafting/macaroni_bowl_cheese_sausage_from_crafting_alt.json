@@ -5,6 +5,12 @@
             "id": "macaroni_bowl_cheese_sausage"
         }
     ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "macaroni_bowl_cheese_sausage"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {

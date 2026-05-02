@@ -19,5 +19,11 @@
             "type": "createfood:enabled",
             "id": "hash_brown_toast_plate"
         }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "hash_brown_toast_plate"
+        }
     ]
 }

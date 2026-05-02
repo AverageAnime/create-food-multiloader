@@ -23,5 +23,11 @@
       "type": "createfood:enabled",
       "id": "mushroom_wrap_lettuce_potato"
     }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "mushroom_wrap_lettuce_potato"
+    }
   ]
 }

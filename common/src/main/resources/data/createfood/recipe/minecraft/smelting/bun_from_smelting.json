@@ -15,5 +15,11 @@
             "type": "createfood:enabled",
             "id": "bun"
         }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "bun"
+        }
     ]
 }

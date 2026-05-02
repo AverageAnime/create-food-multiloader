@@ -20,5 +20,11 @@
             "type": "createfood:enabled",
             "id": "apple_milkshake_bottle"
         }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "apple_milkshake_bottle"
+        }
     ]
 }

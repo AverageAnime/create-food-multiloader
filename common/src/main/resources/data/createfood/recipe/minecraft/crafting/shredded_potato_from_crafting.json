@@ -13,5 +13,11 @@
             "type": "createfood:enabled",
             "id": "shredded_potato"
         }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "shredded_potato"
+        }
     ]
 }

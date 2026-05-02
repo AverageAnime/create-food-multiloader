@@ -22,5 +22,11 @@
             "type": "createfood:enabled",
             "id": "milkshake_bucket"
         }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "milkshake_bucket"
+        }
     ]
 }

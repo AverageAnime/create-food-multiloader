@@ -25,5 +25,11 @@
             "type": "createfood:enabled",
             "id": "ice_cream_sandwich_neapolitan"
         }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "ice_cream_sandwich_neapolitan"
+        }
     ]
 }

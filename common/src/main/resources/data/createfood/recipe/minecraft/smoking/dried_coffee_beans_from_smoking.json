@@ -22,5 +22,18 @@
             "type": "createfood:enabled",
             "id": "dried_coffee_beans"
         }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:tags_populated",
+            "registry": "minecraft:item",
+            "values": [
+                "c:coffee_beans"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
+            "id": "dried_coffee_beans"
+        }
     ]
 }

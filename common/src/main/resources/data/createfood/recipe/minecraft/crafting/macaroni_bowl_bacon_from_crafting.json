@@ -5,6 +5,12 @@
             "id": "macaroni_bowl_bacon"
         }
     ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "macaroni_bowl_bacon"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {
