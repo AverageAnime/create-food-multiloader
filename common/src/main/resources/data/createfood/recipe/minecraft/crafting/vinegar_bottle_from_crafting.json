@@ -26,5 +26,11 @@
             "type": "createfood:enabled",
             "id": "vinegar_bottle"
         }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "vinegar_bottle"
+        }
     ]
 }

@@ -25,5 +25,11 @@
             "type": "createfood:enabled",
             "id": "raw_pie_crust"
         }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "raw_pie_crust"
+        }
     ]
 }

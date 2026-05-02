@@ -5,6 +5,12 @@
             "id": "chocolate_graham_cracker_glow_berry_ice_cream"
         }
     ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "chocolate_graham_cracker_glow_berry_ice_cream"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {

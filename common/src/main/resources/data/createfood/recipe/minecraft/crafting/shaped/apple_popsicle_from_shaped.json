@@ -24,5 +24,11 @@
             "type": "createfood:enabled",
             "id": "apple_popsicle"
         }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "apple_popsicle"
+        }
     ]
 }

@@ -5,6 +5,12 @@
             "id": "chicken_wrap_onion_tomato"
         }
     ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "chicken_wrap_onion_tomato"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {

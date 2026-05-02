@@ -2,11 +2,10 @@ package dev.averageanime.neoforge.block;
 
 import com.electronwill.nightconfig.core.file.FileConfig;
 import dev.averageanime.CommonClass;
-import dev.averageanime.neoforge.block.type.display.*;
-import dev.averageanime.neoforge.block.type.plate.EmptyPlateBlock;
-import dev.averageanime.neoforge.block.type.plate.ModPlateBlocks;
-import dev.averageanime.neoforge.block.type.plate.PlateBlock;
-import dev.averageanime.neoforge.block.type.plate.SmallPlateBlock;
+import dev.averageanime.block.type.display.*;
+import dev.averageanime.block.type.plate.EmptyPlateBlock;
+import dev.averageanime.block.type.plate.PlateBlock;
+import dev.averageanime.block.type.plate.SmallPlateBlock;
 import dev.averageanime.neoforge.item.ModItems;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
@@ -39,10 +38,10 @@ public class ModDisplayBlocks {
             DeferredRegister.createBlocks(CommonClass.MOD_ID);
 
     public static final DeferredBlock<Block> SMALL_PLATE_BLOCK = BLOCKS.register("small_plate_block",
-            () -> new SmallPlateBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS)));
+            () -> new SmallPlateBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS), ModDisplayBlocks.PLATE_BLOCK));
 
     public static final DeferredBlock<Block> PLATE_BLOCK = BLOCKS.register("plate_block",
-            () -> new EmptyPlateBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS), SMALL_PLATE_BLOCK));
+            () -> new EmptyPlateBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS), ModDisplayBlocks.SMALL_PLATE_BLOCK));
 
     private static final Set<String> EXCLUDED_ITEMS = Set.of(
             "apple_slice",
@@ -70,38 +69,35 @@ public class ModDisplayBlocks {
                 new DisplayBlockConfig(DisplayType.PLATE, 9),
                 new DisplayBlockConfig(DisplayType.SMALL_PLATE)
         );
-        registerConfig("kelp_roll", DisplayType.PLATE, 3);
-        registerConfig("gelatin_dessert", DisplayType.PLATE, 6);//
+        registerConfig("kelp_roll", 3);
+        registerConfig("gelatin_dessert", 6);//
         registerConfig("slice", DisplayType.SMALL_PLATE);
-        registerConfig("cream_mini_waffle", DisplayType.PLATE, 1);
-        registerConfig("honeyed_mini_waffle", DisplayType.PLATE, 1);
-        registerConfig("mini_waffle", DisplayType.PLATE, 4);
-
-        registerConfig("pizza", DisplayType.PLATE, 1);
-        registerConfig("cheese_block", DisplayType.PLATE, 1);
-        registerConfig("gyro", DisplayType.PLATE, 1);
-        registerConfig("waffle", DisplayType.PLATE, 1);
-        registerConfig("cupcake", DisplayType.PLATE, 4);
-        registerConfig("cake", DisplayType.PLATE, 1);
+        registerConfig("cream_mini_waffle", 1);
+        registerConfig("honeyed_mini_waffle", 1);
+        registerConfig("mini_waffle", 4);
+        registerConfig("pizza", 1);
+        registerConfig("cheese_block", 1);
+        registerConfig("gyro", 1);
+        registerConfig("waffle", 1);
+        registerConfig("cupcake", 4);
+        registerConfig("cake", 1);
         registerConfig("mini_cream_pie", DisplayType.SMALL_PLATE);
         registerConfig("mini_smores_pie", DisplayType.SMALL_PLATE);
         registerConfig("mini_cookie_cream_pie", DisplayType.SMALL_PLATE);
         registerConfig("mini_chocolate_pie", DisplayType.SMALL_PLATE);
-        registerConfig("pie", DisplayType.PLATE, 1);
-        registerConfig("burger", DisplayType.PLATE, 1);
-        registerConfig("meatball_sandwich", DisplayType.PLATE, 2);
-        registerConfig("hash_brown_sandwich", DisplayType.PLATE, 2);
-        registerConfig("sandwich", DisplayType.PLATE, 1);
+        registerConfig("pie", 1);
+        registerConfig("burger", 1);
+        registerConfig("meatball_sandwich", 2);
+        registerConfig("hash_brown_sandwich", 2);
+        registerConfig("sandwich", 1);
         registerConfig("toast_plate", DisplayType.PLATE_FOOD);
         registerConfig("toast_fried_egg_plate", DisplayType.PLATE_FOOD);
-        registerConfig("toast", DisplayType.PLATE, 1);
-        registerConfig("calzone", DisplayType.PLATE, 2);
-        registerConfig("smore", DisplayType.PLATE, 1);
-
+        registerConfig("toast", 1);
+        registerConfig("calzone", 2);
+        registerConfig("smore", 1);
         registerConfig("hot_chocolate_bottle", DisplayType.BOTTLE, 8, true, () -> ParticleTypes.WHITE_SMOKE);
         registerConfig("hot_dark_chocolate_bottle", DisplayType.BOTTLE, 8, true, () -> ParticleTypes.WHITE_SMOKE);
         registerConfig("hot_white_chocolate_bottle", DisplayType.BOTTLE, 8, true, () -> ParticleTypes.WHITE_SMOKE);
-
         registerConfig("_jam_bottle", DisplayType.BOTTLE, 9, false, null);
         registerConfig("taco_sauce_bottle", DisplayType.BOTTLE, 9, false, null);
         registerConfig("sugar_cane_juice_bottle", DisplayType.BOTTLE, 9, false, null);
@@ -113,53 +109,50 @@ public class ModDisplayBlocks {
         registerConfig("chocolate_milk_bottle", DisplayType.BOTTLE, 8, false, null);
         registerConfig("fruit_smoothie_bottle", DisplayType.BOTTLE, 8, false, null);
         registerConfig("_bottle", DisplayType.BOTTLE, 12, false, null);
-
         registerConfig("ice_cream_bowl", DisplayType.BOWL, 4.5, true, () -> ParticleTypes.SNOWFLAKE);
         registerConfig("soup_bowl", DisplayType.BOWL, 4, true, () -> ParticleTypes.WHITE_SMOKE);
         registerConfig("stew_bowl", DisplayType.BOWL, 4, true, () -> ParticleTypes.WHITE_SMOKE);
         registerConfig("_bowl", DisplayType.BOWL, 4, false, null);
-
         registerConfig("salad", DisplayType.SALAD_BOWL);
-
         registerConfig("pasta_plate", DisplayType.PLATE_FOOD);
         registerConfig("breakfast_plate", DisplayType.PLATE_FOOD);
         registerConfig("egg_plate", DisplayType.PLATE_FOOD);
         registerConfig("eggs_plate", DisplayType.PLATE_FOOD);
         registerConfig("hash_brown_plate", DisplayType.PLATE_FOOD);
-        registerConfig("cookie", DisplayType.PLATE, 4);
-        registerConfig("wrap", DisplayType.PLATE, 2);
-        registerConfig("taco", DisplayType.PLATE, 2);
-        registerConfig("burrito", DisplayType.PLATE, 2);
-        registerConfig("ice_cream_stick", DisplayType.PLATE, 2);
-        registerConfig("corn_stick", DisplayType.PLATE, 2);
-        registerConfig("cotton_candy_stick", DisplayType.PLATE, 2);
-        registerConfig("stick", DisplayType.PLATE, 3);
+        registerConfig("cookie", 4);
+        registerConfig("wrap", 2);
+        registerConfig("taco", 2);
+        registerConfig("burrito", 2);
+        registerConfig("ice_cream_stick", 2);
+        registerConfig("corn_stick", 2);
+        registerConfig("cotton_candy_stick", 2);
+        registerConfig("stick", 3);
         registerMultiConfig("scone",
                 new DisplayBlockConfig(DisplayType.PLATE, 4),
                 new DisplayBlockConfig(DisplayType.SMALL_PLATE)
         );
-        registerConfig("cone", DisplayType.PLATE, 2);
-        registerConfig("muffin", DisplayType.PLATE, 4);//
-        registerConfig("pastry", DisplayType.PLATE, 4);//
-        registerConfig("sweet_roll", DisplayType.PLATE, 4);//
-        registerConfig("donut", DisplayType.PLATE, 5);//
-        registerConfig("fudge", DisplayType.PLATE, 2);//
-        registerConfig("bar_of", DisplayType.PLATE, 6);
-        registerConfig("popsicle", DisplayType.PLATE, 2);
-        registerConfig("breakfast_bar", DisplayType.PLATE, 6);
+        registerConfig("cone", 2);
+        registerConfig("muffin", 4);//
+        registerConfig("pastry", 4);//
+        registerConfig("sweet_roll", 4);//
+        registerConfig("donut", 5);//
+        registerConfig("fudge", 2);//
+        registerConfig("bar_of", 6);
+        registerConfig("popsicle", 2);
+        registerConfig("breakfast_bar", 6);
         registerMultiConfig("baked_potato",
                 new DisplayBlockConfig(DisplayType.PLATE, 3),
                 new DisplayBlockConfig(DisplayType.SMALL_PLATE)
         );
-        registerConfig("_chocolate", DisplayType.PLATE, 6);
+        registerConfig("_chocolate", 6);
     }
 
     private static void registerConfig(String pattern, DisplayType type) {
         DISPLAY_CONFIGS.put(pattern, new DisplayBlockConfig(type));
     }
 
-    private static void registerConfig(String pattern, DisplayType type, int maxStack) {
-        DISPLAY_CONFIGS.put(pattern, new DisplayBlockConfig(type, maxStack));
+    private static void registerConfig(String pattern, int maxStack) {
+        DISPLAY_CONFIGS.put(pattern, new DisplayBlockConfig(DisplayType.PLATE, maxStack));
     }
 
     private static void registerConfig(String pattern, DisplayType type, double height) {
@@ -521,7 +514,7 @@ public class ModDisplayBlocks {
 
         try (FileConfig raw = FileConfig.of(configFile)) {
             raw.load();
-            List<String> entries = raw.getOrElse("display.custom_display_block", List.of());
+            List<String> entries = raw.getOrElse("display.display_block", List.of());
             for (String entry : entries) {
                 String[] p = entry.split("\\|");
                 if (p.length != 3) {
@@ -607,12 +600,10 @@ public class ModDisplayBlocks {
         registerConfigDisplayBlocks();
         BLOCKS.register(eventBus);
 
-        eventBus.addListener((net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent event) -> {
-            event.enqueueWork(() -> {
-                registerBlockItems();
-                ModPlateBlocks.registerCompatiblePlates();
-            });
-        });
+        eventBus.addListener((net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent event) -> event.enqueueWork(() -> {
+            registerBlockItems();
+            ModPlateBlocks.registerCompatiblePlates();
+        }));
     }
 
     private enum DisplayType {

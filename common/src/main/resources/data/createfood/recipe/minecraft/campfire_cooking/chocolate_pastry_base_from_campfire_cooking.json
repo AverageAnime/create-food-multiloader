@@ -15,5 +15,11 @@
             "type": "createfood:enabled",
             "id": "chocolate_pastry_base"
         }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "chocolate_pastry_base"
+        }
     ]
 }

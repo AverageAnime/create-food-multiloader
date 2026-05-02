@@ -12,6 +12,19 @@
             "id": "raw_snickerdoodle"
         }
     ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:tags_populated",
+            "registry": "minecraft:item",
+            "values": [
+                "c:dusts/cinnamon"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
+            "id": "raw_snickerdoodle"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {

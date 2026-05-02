@@ -12,6 +12,19 @@
             "id": "spicy_chicken_nuggets"
         }
     ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:tags_populated",
+            "registry": "minecraft:item",
+            "values": [
+                "c:chili_pepper"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
+            "id": "spicy_chicken_nuggets"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {

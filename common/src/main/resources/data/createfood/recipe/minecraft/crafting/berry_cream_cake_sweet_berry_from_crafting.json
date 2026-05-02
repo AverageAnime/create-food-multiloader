@@ -16,5 +16,11 @@
             "type": "createfood:enabled",
             "id": "berry_cream_cake_sweet_berry"
         }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "berry_cream_cake_sweet_berry"
+        }
     ]
 }

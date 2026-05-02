@@ -5,6 +5,12 @@
             "id": "pork_taco"
         }
     ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "pork_taco"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {

@@ -4,13 +4,15 @@
   "package": "dev.averageanime.fabric.mixin",
   "refmap": "${mod_id}.refmap.json",
   "compatibilityLevel": "JAVA_21",
-  "mixins": [],
+  "mixins": [
+    "ResultSlotMixin"
+  ],
   "client": [
-
+    "FogRendererMixin"
   ],
   "server": [],
   "injectors": {
     "defaultRequire": 1
   }
 }
-  
+

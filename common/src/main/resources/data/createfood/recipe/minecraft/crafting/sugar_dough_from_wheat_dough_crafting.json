@@ -5,6 +5,12 @@
             "id": "sugar_dough"
         }
     ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "sugar_dough"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {

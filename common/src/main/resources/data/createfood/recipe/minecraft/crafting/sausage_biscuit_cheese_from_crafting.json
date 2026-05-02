@@ -16,5 +16,11 @@
             "type": "createfood:enabled",
             "id": "sausage_biscuit_cheese"
         }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "sausage_biscuit_cheese"
+        }
     ]
 }

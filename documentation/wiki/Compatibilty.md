@@ -50,34 +50,35 @@
 
 **Food Effects:**
 
-| Effect              | Description |
-|---------------------|---|
-| `animal_charm`      | Attracts and calms nearby animals |
-| `balanced`          | Grants nearby players Absorption |
-| `bonding`           | Grants nearby players Absorption and Regeneration |
-| `charisma`          | Reduces villager trading prices |
-| `combustion`        | Ignites nearby enemies |
-| `comfort`           | General comfort/wellbeing |
-| `explosion`         | Chance to launch a fireball on attack |
-| `farmers_blessing`  | Cleanses all negative effects |
-| `feast`             | Combined sustenance + satiation super-buff |
-| `flight`            | Temporary creative-like flight |
-| `fortune`           | Increases Luck |
-| `grandmas_blessing` | Cleanses negatives + Luck +2 |
+| Effect              | Description                                           |
+|---------------------|-------------------------------------------------------|
+| `animal_charm`      | Attracts and calms nearby animals                     |
+| `balanced`          | Grants nearby players Absorption                      |
+| `bonding`           | Grants nearby players Absorption and Regeneration     |
+| `charisma`          | Reduces villager trading prices                       |
+| `combustion`        | Ignites nearby enemies                                |
+| `comfort`           | General comfort/wellbeing                             |
+| `explosion`         | Chance to launch a fireball on attack                 |
+| `farmers_blessing`  | Cleanses all negative effects                         |
+| `feast`             | Combined sustenance + satiation super-buff            |
+| `flight`            | Temporary creative-like flight                        |
+| `fortune`           | Increases Luck                                        |
+| `grandmas_blessing` | Cleanses negatives + Luck +2                          |
 | `life_leech`        | Drains health from nearby hostiles and heals the user |
-| `lightning`         | Chance to strike target with lightning |
-| `mining`            | Mining speed bonus based on depth |
-| `nourishment`       | Nourishment/saturation |
-| `pacify`            | Reduces enemy aggression; Endermen safe |
-| `party_starter`     | Fireworks on hit + bonus damage |
-| `repulsion`         | Periodically pushes enemies away |
-| `rested`            | Bonus experience gain |
-| `satiation`         | Hunger management |
-| `sugar_rush`        | Stacking speed buff |
-| `sustenance`        | Periodic hunger or health restoration |
-| `touch_absorb`      | Melee attacks grant Absorption |
-| `touch_heal`        | Melee attacks heal the target |
-| `touch_poison`      | Melee attacks apply Poison |
-| `touch_regen`       | Melee attacks apply Regeneration |
-| `tough`             | Grants Absorption, Regeneration, and Resistance |
-| `vitality`          | Exhaustion reduction |
+| `lightning`         | Chance to strike target with lightning                |
+| `mining`            | Mining speed bonus based on depth                     |
+| `nourishment`       | Nourishment/saturation                                |
+| `pacify`            | Reduces enemy aggression; Endermen safe               |
+| `party_starter`     | Fireworks on hit + bonus damage                       |
+| `repulsion`         | Periodically pushes enemies away                      |
+| `rested`            | Bonus experience gain                                 |
+| `satiation`         | Hunger management                                     |
+| `stout_heart`       | Knockback resistance                                  |
+| `sugar_rush`        | Stacking speed buff                                   |
+| `sustenance`        | Periodic hunger or health restoration                 |
+| `touch_absorb`      | Melee attacks grant Absorption                        |
+| `touch_heal`        | Melee attacks heal the target                         |
+| `touch_poison`      | Melee attacks apply Poison                            |
+| `touch_regen`       | Melee attacks apply Regeneration                      |
+| `tough`             | Grants Absorption, Regeneration, and Resistance       |
+| `vitality`          | Exhaustion reduction                                  |

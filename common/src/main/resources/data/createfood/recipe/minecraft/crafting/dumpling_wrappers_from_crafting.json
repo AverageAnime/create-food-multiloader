@@ -17,5 +17,11 @@
             "type": "createfood:enabled",
             "id": "dumpling_wrappers"
         }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "dumpling_wrappers"
+        }
     ]
 }

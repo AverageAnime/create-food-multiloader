@@ -22,5 +22,11 @@
             "type": "createfood:enabled",
             "id": "cookie_cream_pie"
         }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "cookie_cream_pie"
+        }
     ]
 }

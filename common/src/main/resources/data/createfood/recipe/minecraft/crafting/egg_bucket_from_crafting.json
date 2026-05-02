@@ -5,6 +5,12 @@
       "id": "egg_bucket"
     }
   ],
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "egg_bucket"
+    }
+  ],
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {

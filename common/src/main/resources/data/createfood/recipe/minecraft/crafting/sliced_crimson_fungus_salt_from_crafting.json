@@ -16,5 +16,11 @@
             "type": "createfood:enabled",
             "id": "sliced_crimson_fungus_salt"
         }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "sliced_crimson_fungus_salt"
+        }
     ]
 }

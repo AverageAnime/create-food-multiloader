@@ -74,6 +74,9 @@ public record RecipeProvider(PackOutput output) implements DataProvider {
             if (json.has("neoforge:conditions")) {
                 shaped.add("neoforge:conditions", json.get("neoforge:conditions").deepCopy());
             }
+            if (json.has("fabric:load_conditions")) {
+                shaped.add("fabric:load_conditions", json.get("fabric:load_conditions").deepCopy());
+            }
 
             Path relative = sourceRoot.relativize(sourcePath.getParent());
             String outFileName = sourcePath.getFileName().toString()

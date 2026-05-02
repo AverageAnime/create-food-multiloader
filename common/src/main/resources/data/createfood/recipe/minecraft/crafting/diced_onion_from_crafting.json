@@ -5,6 +5,12 @@
             "id": "diced_onion"
         }
     ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "diced_onion"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {

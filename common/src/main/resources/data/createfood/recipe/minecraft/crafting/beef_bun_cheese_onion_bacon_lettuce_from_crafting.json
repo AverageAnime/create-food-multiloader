@@ -16,5 +16,11 @@
             "type": "createfood:enabled",
             "id": "beef_bun_cheese_onion_bacon_lettuce"
         }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "beef_bun_cheese_onion_bacon_lettuce"
+        }
     ]
 }

@@ -12,6 +12,19 @@
             "id": "ube_sugar_dough"
         }
     ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:tags_populated",
+            "registry": "minecraft:item",
+            "values": [
+                "c:crops/ube"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
+            "id": "ube_sugar_dough"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {

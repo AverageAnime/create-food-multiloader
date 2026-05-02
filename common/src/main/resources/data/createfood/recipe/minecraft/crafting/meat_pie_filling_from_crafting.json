@@ -18,9 +18,15 @@
         "id": "createfood:meat_pie_filling"
     },
     "neoforge:conditions": [
-      {
-        "type": "createfood:enabled",
-        "id": "meat_pie_filling"
-      }
+        {
+            "type": "createfood:enabled",
+            "id": "meat_pie_filling"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "meat_pie_filling"
+        }
     ]
 }

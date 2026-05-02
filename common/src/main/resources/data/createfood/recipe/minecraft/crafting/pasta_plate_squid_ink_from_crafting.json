@@ -16,5 +16,11 @@
             "type": "createfood:enabled",
             "id": "pasta_plate_squid_ink"
         }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "pasta_plate_squid_ink"
+        }
     ]
 }

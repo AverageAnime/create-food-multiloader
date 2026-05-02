@@ -23,5 +23,11 @@
             "type": "createfood:enabled",
             "id": "raw_butterscotch_chip_cookie"
         }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "raw_butterscotch_chip_cookie"
+        }
     ]
 }

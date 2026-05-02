@@ -5,6 +5,12 @@
             "id": "butter_dough"
         }
     ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "butter_dough"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {

@@ -1,5 +1,6 @@
 package dev.averageanime.fabric.platform;
 
+import dev.averageanime.fabric.config.ModConfig;
 import dev.averageanime.platform.IPlatform;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.loader.api.FabricLoader;
@@ -36,5 +37,10 @@ public class FabricPlatform implements IPlatform {
     @Override
     public boolean isNeoforge() {
         return false;
+    }
+
+    @Override
+    public String getCategoryEffectOverride(String categoryName) {
+        return ModConfig.getCategoryEffectOverride(categoryName);
     }
 }

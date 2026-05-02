@@ -18,7 +18,23 @@
     ],
     "neoforge:conditions": [
         {
+            "type": "neoforge:mod_loaded",
+            "modid": "farmersdelight"
+        },
+        {
             "type": "createfood:enabled",
+            "id": "sliced_crimson_fungus"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "farmersdelight"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
             "id": "sliced_crimson_fungus"
         }
     ]

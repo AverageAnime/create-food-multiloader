@@ -16,5 +16,11 @@
             "type": "createfood:enabled",
             "id": "toffee_toast"
         }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "toffee_toast"
+        }
     ]
 }

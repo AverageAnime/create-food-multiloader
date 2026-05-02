@@ -5,10 +5,16 @@
             "id": "mutton_burrito_rice"
         }
     ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "mutton_burrito_rice"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {
-          "tag": "c:taco_shell_ingredient"
+            "tag": "c:taco_shell_ingredient"
         },
         {
             "tag": "c:gyro_mutton_ingredient"

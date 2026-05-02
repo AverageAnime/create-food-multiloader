@@ -5,6 +5,12 @@
             "id": "baked_potato_butter_mushroom"
         }
     ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "baked_potato_butter_mushroom"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {

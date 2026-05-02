@@ -6,6 +6,9 @@
             "tag": "c:pumpkin_puree_bucket"
         },
         {
+            "tag": "c:condensed_milk_bottle"
+        },
+        {
             "tag": "c:eggs"
         },
         {
@@ -19,7 +22,23 @@
     },
     "neoforge:conditions": [
         {
+            "type": "neoforge:mod_loaded",
+            "modid": "farmersdelight"
+        },
+        {
             "type": "createfood:enabled",
+            "id": "pumpkin_pie_filling_bucket"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "farmersdelight"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
             "id": "pumpkin_pie_filling_bucket"
         }
     ]

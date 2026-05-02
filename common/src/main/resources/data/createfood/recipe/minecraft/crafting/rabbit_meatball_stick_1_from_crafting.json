@@ -5,6 +5,12 @@
             "id": "rabbit_meatball_stick_1"
         }
     ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "rabbit_meatball_stick_1"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {

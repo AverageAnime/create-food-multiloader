@@ -5,6 +5,12 @@
             "id": "mutton_taco"
         }
     ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "mutton_taco"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {

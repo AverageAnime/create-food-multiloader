@@ -16,5 +16,11 @@
             "type": "createfood:enabled",
             "id": "butterscotch_toast"
         }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "butterscotch_toast"
+        }
     ]
 }

@@ -1,0 +1,26 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:ube_cupcake_base"
+        },
+        {
+            "tag": "c:ube_cream_frosting"
+        }
+    ],
+    "result": {
+        "id": "createfood:ube_cream_ube_cupcake"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "ube_cream_ube_cupcake"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "ube_cream_ube_cupcake"
+        }
+    ]
+}

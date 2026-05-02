@@ -16,5 +16,11 @@
             "type": "createfood:enabled",
             "id": "raw_mini_chocolate_pie_graham_cracker"
         }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "raw_mini_chocolate_pie_graham_cracker"
+        }
     ]
 }

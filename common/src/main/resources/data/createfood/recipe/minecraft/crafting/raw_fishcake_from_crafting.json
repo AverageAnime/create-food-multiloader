@@ -28,5 +28,11 @@
             "type": "createfood:enabled",
             "id": "raw_fishcake"
         }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "raw_fishcake"
+        }
     ]
 }

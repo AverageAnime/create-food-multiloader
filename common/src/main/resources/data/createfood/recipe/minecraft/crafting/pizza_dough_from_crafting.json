@@ -13,5 +13,11 @@
             "type": "createfood:enabled",
             "id": "pizza_dough"
         }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "pizza_dough"
+        }
     ]
 }

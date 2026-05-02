@@ -19,5 +19,11 @@
             "type": "createfood:enabled",
             "id": "green_gelatin_mix_bucket"
         }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "green_gelatin_mix_bucket"
+        }
     ]
 }

@@ -12,6 +12,19 @@
             "id": "hamburger_peanut_butter"
         }
     ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:tags_populated",
+            "registry": "minecraft:item",
+            "values": [
+                "c:peanut_butter"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
+            "id": "hamburger_peanut_butter"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {

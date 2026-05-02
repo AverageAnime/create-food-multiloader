@@ -1,6 +1,6 @@
 package dev.averageanime.neoforge.menu;
 
-import dev.averageanime.neoforge.blockentity.ModBlockEntities;
+import dev.averageanime.neoforge.block.type.blockentity.ModBlockEntities;
 import dev.averageanime.neoforge.config.ModConfig;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.sounds.SoundEvents;

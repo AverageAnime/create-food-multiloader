@@ -5,6 +5,12 @@
             "id": "mixed_salad_beetroot_carrot"
         }
     ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "mixed_salad_beetroot_carrot"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {

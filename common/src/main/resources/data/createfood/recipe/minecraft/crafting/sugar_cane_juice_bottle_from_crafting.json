@@ -26,5 +26,11 @@
       "type": "createfood:enabled",
       "id": "sugar_cane_juice_bottle"
     }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "sugar_cane_juice_bottle"
+    }
   ]
 }

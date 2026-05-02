@@ -26,5 +26,11 @@
       "type": "createfood:enabled",
       "id": "heavy_cream_bottle"
     }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "heavy_cream_bottle"
+    }
   ]
 }

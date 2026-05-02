@@ -1,18 +1,34 @@
 {
     "neoforge:conditions": [
         {
+            "type": "neoforge:mod_loaded",
+            "modid": "create"
+        },
+        {
             "type": "createfood:enabled",
+            "id": "fish_taco_kelp"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "create"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
             "id": "fish_taco_kelp"
         }
     ],
     "type": "create:deploying",
     "ingredients": [
-      {
-        "tag": "c:fish_taco"
-      },
-      {
-        "item": "minecraft:dried_kelp"
-      }
+        {
+            "tag": "c:fish_taco"
+        },
+        {
+            "item": "minecraft:dried_kelp"
+        }
     ],
     "results": [
         {

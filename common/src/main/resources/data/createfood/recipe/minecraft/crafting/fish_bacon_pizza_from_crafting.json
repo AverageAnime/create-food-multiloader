@@ -22,5 +22,11 @@
             "type": "createfood:enabled",
             "id": "fish_bacon_pizza"
         }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "fish_bacon_pizza"
+        }
     ]
 }

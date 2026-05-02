@@ -1,9 +1,32 @@
+### *** 2.4.0 ***
+![newprev240](https://github.com/user-attachments/assets/730ab5d3-46b5-4521-8ccf-81a8e88b4d41)
+
+#### Changes:
+```
+Fabric version released.
+```
+* Restructure config + added new settings: `custom_item`, `custom_block`, `custom_fluid`, `enable_pumpkin_pie_placement`. Read more [here](https://github.com/AverageAnime/create-food-multiloader/wiki/Config-Options).
+* Updated recipe chains: `cakes`, `cupcakes`, `butter`, `heavy_cream`, `sour_cream`, `yogurt`, `graham_cracker_pie_crust`, `pumpkin_pie_filling`.
+* Removed items: `raw_cake_base`, `raw_ube_cake_base`, `raw_cupcake_base`, `raw_chocolate_cupcake_base`, `raw_muffin_base`, `raw_chocolate_chip_muffin`, `raw_caramel_chip_muffin`, `raw_dark_chocolate_chip_muffin`, `raw_toffee_chip_muffin`, `raw_white_chocolate_chip_muffin`,`raw_butterscotch_chip_muffin`.
+* Updated translations: `zh_cn.json` [(#30)](  https://github.com/AverageAnime/create-food-multiloader/pull/30), `ru_ru.json`.
+  * Added: `de_de.json`, `fr_fr.json`.
+* Updated custard recipes to use new milk tag. [(#33)](https://github.com/AverageAnime/create-food-multiloader/issues/33)
+* Update NeoForge version to `21.1.219`.
+* Change Farmer's Delight `kelp_roll` recipe to use `c:carrot`.
+
+#### Fixes:
+* Fix crash related to brewery effect ids. [(#29)](  https://github.com/AverageAnime/create-food-multiloader/pull/29), [(#32)](https://github.com/AverageAnime/create-food-multiloader/issues/32), [(#34)](https://github.com/AverageAnime/create-food-multiloader/issues/34)
+* Fix model/texture mip level issues related to plate textures. [(#31)](https://github.com/AverageAnime/create-food-multiloader/issues/31)
+* Fix crafting remainders: `ice_cream_bowls`, `meatball_sticks`.
+* Fix some ingredient tooltips.
+* Fix some incorrect recipes.
+
 ### *** 2.3.0 ***
 ![newprev230](https://github.com/user-attachments/assets/92ce9b96-dbfe-41eb-9b98-da327b60b537)
 
 #### Changes:
 * Farmer's Delight is no longer a required dependency.
-* New settings in`createfood-server.toml`.  Read more [here](https://github.com/AverageAnime/create-food-multiloader/wiki/Config-Options).
+* New settings in `createfood-server.toml`.  Read more [here](https://github.com/AverageAnime/create-food-multiloader/wiki/Config-Options).
   * New `handcraft_exclude` list in config. [(#26)](https://github.com/AverageAnime/create-food-multiloader/issues/26)
   * Add your own display blocks with `custom_display_block`.
   * New `nutrition_saturation` setting to modify values on food items.

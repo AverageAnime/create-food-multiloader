@@ -1,0 +1,71 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "create"
+        },
+        {
+            "type": "neoforge:not",
+            "value": {
+                "type": "neoforge:tag_empty",
+                "tag": "c:vegetables/ube"
+            }
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "ube_cake_batter_bucket"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "create"
+            ]
+        },
+        {
+            "condition": "fabric:tags_populated",
+            "registry": "minecraft:item",
+            "values": [
+                "c:vegetables/ube"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
+            "id": "ube_cake_batter_bucket"
+        }
+    ],
+    "type": "create:mixing",
+    "ingredients": [
+        {
+            "type": "fluid_tag",
+            "amount": 1000,
+            "fluid_tag": "c:milk"
+        },
+        {
+            "tag": "c:sugar"
+        },
+        {
+            "tag": "c:flours/wheat"
+        },
+        {
+            "tag": "c:eggs"
+        },
+        {
+            "tag": "c:butter"
+        },
+        {
+            "tag": "c:vegetables/ube"
+        },
+        {
+            "item": "minecraft:bucket"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:ube_cake_batter_bucket"
+            }
+        }
+    ]
+}

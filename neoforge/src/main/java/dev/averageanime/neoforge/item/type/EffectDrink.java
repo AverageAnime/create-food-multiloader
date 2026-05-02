@@ -10,6 +10,7 @@ import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.List;
 import java.util.Set;
 
 public class EffectDrink extends EffectFood {
@@ -20,6 +21,10 @@ public class EffectDrink extends EffectFood {
 
     public EffectDrink(Properties properties, Set<String> existingEffectIds) {
         super(properties, existingEffectIds);
+    }
+
+    public EffectDrink(Properties properties, Set<String> existingEffectIds, List<DeferredFx> deferredEffects) {
+        super(properties, existingEffectIds, deferredEffects);
     }
 
     @Override

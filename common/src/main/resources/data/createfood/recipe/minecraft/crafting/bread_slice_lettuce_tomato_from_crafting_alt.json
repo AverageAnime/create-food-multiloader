@@ -19,5 +19,11 @@
             "type": "createfood:enabled",
             "id": "bread_slice_lettuce_tomato"
         }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "bread_slice_lettuce_tomato"
+        }
     ]
 }
