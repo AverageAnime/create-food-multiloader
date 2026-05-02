@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "createfood:fruit_smoothie_bucket",
+      "required": false
+    },
+    {
+      "id": "createfood:fruit_smoothie_bucket",
+      "required": false
+    }
+  ]
+}

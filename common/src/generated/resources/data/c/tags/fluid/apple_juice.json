@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "createfood:flowing_apple_juice",
+      "required": false
+    },
+    {
+      "id": "createfood:apple_juice",
+      "required": false
+    }
+  ]
+}

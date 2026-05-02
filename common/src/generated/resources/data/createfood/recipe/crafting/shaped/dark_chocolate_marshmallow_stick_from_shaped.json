@@ -1,0 +1,30 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "dark_chocolate_marshmallow_stick"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "dark_chocolate_marshmallow_stick"
+    }
+  ],
+  "key": {
+    "1": {
+      "tag": "c:dark_chocolate_bottle"
+    },
+    "2": {
+      "tag": "c:marshmallow_stick"
+    }
+  },
+  "pattern": [
+    "1",
+    "2"
+  ],
+  "result": {
+    "id": "createfood:dark_chocolate_marshmallow_stick"
+  }
+}

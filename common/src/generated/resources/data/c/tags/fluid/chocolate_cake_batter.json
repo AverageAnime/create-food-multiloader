@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "createfood:flowing_chocolate_cake_batter",
+      "required": false
+    },
+    {
+      "id": "createfood:chocolate_cake_batter",
+      "required": false
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "scone_berry_jam"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "scone_berry_jam"
+    }
+  ],
+  "key": {
+    "1": {
+      "tag": "c:berry_jam_bottle"
+    },
+    "2": {
+      "tag": "c:scone"
+    }
+  },
+  "pattern": [
+    "1",
+    "2"
+  ],
+  "result": {
+    "count": 1,
+    "id": "createfood:scone_berry_jam"
+  }
+}

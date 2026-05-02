@@ -1,0 +1,16 @@
+{
+  "values": [
+    {
+      "id": "createfood:sausages",
+      "required": false
+    },
+    {
+      "id": "createfood:sausages",
+      "required": false
+    },
+    {
+      "id": "createfood:sausage_bits",
+      "required": false
+    }
+  ]
+}

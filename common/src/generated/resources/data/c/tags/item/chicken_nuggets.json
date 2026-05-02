@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "createfood:chicken_nuggets",
+      "required": false
+    },
+    {
+      "id": "create_deepfried:chicken_nuggets",
+      "required": false
+    }
+  ]
+}

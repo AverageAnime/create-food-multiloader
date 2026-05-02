@@ -1,0 +1,40 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "farmersdelight"
+    },
+    {
+      "type": "createfood:enabled",
+      "id": "farmersdelight:hamburger"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "farmersdelight"
+      ]
+    },
+    {
+      "condition": "createfood:enabled",
+      "id": "farmersdelight:hamburger"
+    }
+  ],
+  "key": {
+    "1": {
+      "tag": "c:bun"
+    },
+    "2": {
+      "tag": "c:beef_bun_onion_lettuce_tomato"
+    }
+  },
+  "pattern": [
+    "1",
+    "2"
+  ],
+  "result": {
+    "id": "farmersdelight:hamburger"
+  }
+}

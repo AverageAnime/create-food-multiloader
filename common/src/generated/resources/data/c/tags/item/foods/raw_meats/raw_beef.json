@@ -1,0 +1,8 @@
+{
+  "values": [
+    {
+      "id": "createfood:ground_beef",
+      "required": false
+    }
+  ]
+}

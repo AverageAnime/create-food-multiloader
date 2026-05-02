@@ -1,0 +1,30 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "chorus_fruit_cream_sweet_roll_chorus_fruit"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "chorus_fruit_cream_sweet_roll_chorus_fruit"
+    }
+  ],
+  "key": {
+    "1": {
+      "tag": "c:chorus_fruit"
+    },
+    "2": {
+      "tag": "c:chorus_fruit_cream_sweet_roll"
+    }
+  },
+  "pattern": [
+    "1",
+    "2"
+  ],
+  "result": {
+    "id": "createfood:chorus_fruit_cream_sweet_roll_chorus_fruit"
+  }
+}

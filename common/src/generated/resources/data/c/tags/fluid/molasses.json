@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "createfood:flowing_molasses",
+      "required": false
+    },
+    {
+      "id": "createfood:molasses",
+      "required": false
+    }
+  ]
+}

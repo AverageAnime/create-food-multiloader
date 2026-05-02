@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "createfood:flowing_cream_frosting",
+      "required": false
+    },
+    {
+      "id": "createfood:cream_frosting",
+      "required": false
+    }
+  ]
+}

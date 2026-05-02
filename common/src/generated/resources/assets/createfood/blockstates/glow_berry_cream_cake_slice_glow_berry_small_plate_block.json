@@ -1,0 +1,139 @@
+{
+  "variants": {
+    "facing=east,stack_size=1": {
+      "model": "createfood:block/glow_berry_cream_cake_slice_glow_berry_small_plate_block",
+      "y": 270
+    },
+    "facing=east,stack_size=2": {
+      "model": "createfood:block/empty_small_plate_2",
+      "y": 270
+    },
+    "facing=east,stack_size=3": {
+      "model": "createfood:block/empty_small_plate_3",
+      "y": 270
+    },
+    "facing=east,stack_size=4": {
+      "model": "createfood:block/empty_small_plate_4",
+      "y": 270
+    },
+    "facing=east,stack_size=5": {
+      "model": "createfood:block/empty_small_plate_5",
+      "y": 270
+    },
+    "facing=east,stack_size=6": {
+      "model": "createfood:block/empty_small_plate_6",
+      "y": 270
+    },
+    "facing=east,stack_size=7": {
+      "model": "createfood:block/empty_small_plate_7",
+      "y": 270
+    },
+    "facing=east,stack_size=8": {
+      "model": "createfood:block/empty_small_plate_8",
+      "y": 270
+    },
+    "facing=east,stack_size=9": {
+      "model": "createfood:block/empty_small_plate_9",
+      "y": 270
+    },
+    "facing=north,stack_size=1": {
+      "model": "createfood:block/glow_berry_cream_cake_slice_glow_berry_small_plate_block",
+      "y": 180
+    },
+    "facing=north,stack_size=2": {
+      "model": "createfood:block/empty_small_plate_2",
+      "y": 180
+    },
+    "facing=north,stack_size=3": {
+      "model": "createfood:block/empty_small_plate_3",
+      "y": 180
+    },
+    "facing=north,stack_size=4": {
+      "model": "createfood:block/empty_small_plate_4",
+      "y": 180
+    },
+    "facing=north,stack_size=5": {
+      "model": "createfood:block/empty_small_plate_5",
+      "y": 180
+    },
+    "facing=north,stack_size=6": {
+      "model": "createfood:block/empty_small_plate_6",
+      "y": 180
+    },
+    "facing=north,stack_size=7": {
+      "model": "createfood:block/empty_small_plate_7",
+      "y": 180
+    },
+    "facing=north,stack_size=8": {
+      "model": "createfood:block/empty_small_plate_8",
+      "y": 180
+    },
+    "facing=north,stack_size=9": {
+      "model": "createfood:block/empty_small_plate_9",
+      "y": 180
+    },
+    "facing=south,stack_size=1": {
+      "model": "createfood:block/glow_berry_cream_cake_slice_glow_berry_small_plate_block"
+    },
+    "facing=south,stack_size=2": {
+      "model": "createfood:block/empty_small_plate_2"
+    },
+    "facing=south,stack_size=3": {
+      "model": "createfood:block/empty_small_plate_3"
+    },
+    "facing=south,stack_size=4": {
+      "model": "createfood:block/empty_small_plate_4"
+    },
+    "facing=south,stack_size=5": {
+      "model": "createfood:block/empty_small_plate_5"
+    },
+    "facing=south,stack_size=6": {
+      "model": "createfood:block/empty_small_plate_6"
+    },
+    "facing=south,stack_size=7": {
+      "model": "createfood:block/empty_small_plate_7"
+    },
+    "facing=south,stack_size=8": {
+      "model": "createfood:block/empty_small_plate_8"
+    },
+    "facing=south,stack_size=9": {
+      "model": "createfood:block/empty_small_plate_9"
+    },
+    "facing=west,stack_size=1": {
+      "model": "createfood:block/glow_berry_cream_cake_slice_glow_berry_small_plate_block",
+      "y": 90
+    },
+    "facing=west,stack_size=2": {
+      "model": "createfood:block/empty_small_plate_2",
+      "y": 90
+    },
+    "facing=west,stack_size=3": {
+      "model": "createfood:block/empty_small_plate_3",
+      "y": 90
+    },
+    "facing=west,stack_size=4": {
+      "model": "createfood:block/empty_small_plate_4",
+      "y": 90
+    },
+    "facing=west,stack_size=5": {
+      "model": "createfood:block/empty_small_plate_5",
+      "y": 90
+    },
+    "facing=west,stack_size=6": {
+      "model": "createfood:block/empty_small_plate_6",
+      "y": 90
+    },
+    "facing=west,stack_size=7": {
+      "model": "createfood:block/empty_small_plate_7",
+      "y": 90
+    },
+    "facing=west,stack_size=8": {
+      "model": "createfood:block/empty_small_plate_8",
+      "y": 90
+    },
+    "facing=west,stack_size=9": {
+      "model": "createfood:block/empty_small_plate_9",
+      "y": 90
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "createfood:flowing_magenta_gelatin_mix",
+      "required": false
+    },
+    {
+      "id": "createfood:magenta_gelatin_mix",
+      "required": false
+    }
+  ]
+}

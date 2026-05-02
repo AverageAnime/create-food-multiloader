@@ -1,0 +1,30 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "caramel_pastry"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "caramel_pastry"
+    }
+  ],
+  "key": {
+    "1": {
+      "tag": "c:caramel"
+    },
+    "2": {
+      "tag": "c:pastry_base"
+    }
+  },
+  "pattern": [
+    "1",
+    "2"
+  ],
+  "result": {
+    "id": "createfood:caramel_pastry"
+  }
+}

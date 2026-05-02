@@ -1,0 +1,30 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "chorus_fruit_cream_cupcake"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "chorus_fruit_cream_cupcake"
+    }
+  ],
+  "key": {
+    "1": {
+      "tag": "c:chorus_fruit_cream_frosting"
+    },
+    "2": {
+      "tag": "c:cupcake_base"
+    }
+  },
+  "pattern": [
+    "1",
+    "2"
+  ],
+  "result": {
+    "id": "createfood:chorus_fruit_cream_cupcake"
+  }
+}

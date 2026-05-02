@@ -1,0 +1,16 @@
+{
+  "values": [
+    {
+      "id": "createfood:muffin_base",
+      "required": false
+    },
+    {
+      "id": "createfood:muffin_base",
+      "required": false
+    },
+    {
+      "id": "create_snt:muffin",
+      "required": false
+    }
+  ]
+}

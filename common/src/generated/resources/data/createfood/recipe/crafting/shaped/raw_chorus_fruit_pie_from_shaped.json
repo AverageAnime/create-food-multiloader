@@ -1,0 +1,30 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "raw_chorus_fruit_pie"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "raw_chorus_fruit_pie"
+    }
+  ],
+  "key": {
+    "1": {
+      "tag": "c:chorus_fruit_pie_filling_bucket"
+    },
+    "2": {
+      "tag": "c:raw_pie_crust"
+    }
+  },
+  "pattern": [
+    "1",
+    "2"
+  ],
+  "result": {
+    "id": "createfood:raw_chorus_fruit_pie"
+  }
+}

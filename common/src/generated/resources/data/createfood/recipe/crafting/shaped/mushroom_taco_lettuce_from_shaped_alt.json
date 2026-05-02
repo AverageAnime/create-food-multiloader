@@ -1,0 +1,30 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "mushroom_taco_lettuce"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "mushroom_taco_lettuce"
+    }
+  ],
+  "key": {
+    "1": {
+      "tag": "c:foods/leafy_green"
+    },
+    "2": {
+      "tag": "c:mushroom_taco"
+    }
+  },
+  "pattern": [
+    "1",
+    "2"
+  ],
+  "result": {
+    "id": "createfood:mushroom_taco_lettuce"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "createfood:pork_stew_bucket",
+      "required": false
+    },
+    {
+      "id": "createfood:pork_stew_bucket",
+      "required": false
+    }
+  ]
+}

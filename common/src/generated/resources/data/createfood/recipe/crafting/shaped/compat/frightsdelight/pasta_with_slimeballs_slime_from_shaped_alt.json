@@ -1,0 +1,40 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "frightsdelight"
+    },
+    {
+      "type": "createfood:enabled",
+      "id": "frightsdelight:pasta_with_slimeballs"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "frightsdelight"
+      ]
+    },
+    {
+      "condition": "createfood:enabled",
+      "id": "frightsdelight:pasta_with_slimeballs"
+    }
+  ],
+  "key": {
+    "1": {
+      "tag": "c:slime_bucket"
+    },
+    "2": {
+      "tag": "c:pasta_plate_slimeballs"
+    }
+  },
+  "pattern": [
+    "1",
+    "2"
+  ],
+  "result": {
+    "id": "frightsdelight:pasta_with_slimeballs"
+  }
+}

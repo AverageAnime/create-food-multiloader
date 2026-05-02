@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "createfood:chocolate_milk_bucket",
+      "required": false
+    },
+    {
+      "id": "createfood:chocolate_milk_bucket",
+      "required": false
+    }
+  ]
+}

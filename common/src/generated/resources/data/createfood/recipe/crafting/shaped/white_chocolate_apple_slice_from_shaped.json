@@ -1,0 +1,30 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "white_chocolate_apple_slice"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "white_chocolate_apple_slice"
+    }
+  ],
+  "key": {
+    "1": {
+      "tag": "c:white_chocolate"
+    },
+    "2": {
+      "tag": "c:apple_slice"
+    }
+  },
+  "pattern": [
+    "1",
+    "2"
+  ],
+  "result": {
+    "id": "createfood:white_chocolate_apple_slice"
+  }
+}

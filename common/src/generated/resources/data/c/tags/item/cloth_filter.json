@@ -1,0 +1,8 @@
+{
+  "values": [
+    {
+      "id": "createfood:cloth_filter",
+      "required": false
+    }
+  ]
+}

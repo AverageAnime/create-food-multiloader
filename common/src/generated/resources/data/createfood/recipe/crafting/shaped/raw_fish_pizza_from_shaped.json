@@ -1,0 +1,30 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "raw_fish_pizza"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "raw_fish_pizza"
+    }
+  ],
+  "key": {
+    "1": {
+      "tag": "c:cooked_fishes"
+    },
+    "2": {
+      "tag": "c:raw_cheese_pizza"
+    }
+  },
+  "pattern": [
+    "1",
+    "2"
+  ],
+  "result": {
+    "id": "createfood:raw_fish_pizza"
+  }
+}

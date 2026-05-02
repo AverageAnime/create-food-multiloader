@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "createfood:marshmallow_white_chocolate_fudge",
+      "required": false
+    },
+    {
+      "id": "createfood:marshmallow_chocolate_fudge",
+      "required": false
+    }
+  ]
+}

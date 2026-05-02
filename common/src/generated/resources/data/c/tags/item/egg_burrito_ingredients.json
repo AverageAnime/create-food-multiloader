@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "createfood:boiled_egg_peeled",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:fried_egg",
+      "required": false
+    }
+  ]
+}

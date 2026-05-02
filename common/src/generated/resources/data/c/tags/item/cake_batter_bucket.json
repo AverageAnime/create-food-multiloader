@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "createfood:cake_batter_bucket",
+      "required": false
+    },
+    {
+      "id": "createfood:cake_batter_bucket",
+      "required": false
+    }
+  ]
+}
