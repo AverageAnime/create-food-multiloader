@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:cheeses"
+        },
+        {
+            "item": "minecraft:egg"
+        },
+        {
+            "tag": "forge:bread_crumbs"
+        }
+    ],
+    "result": {
+        "item": "createfood:raw_mozzarella_sticks"
+    }
+}

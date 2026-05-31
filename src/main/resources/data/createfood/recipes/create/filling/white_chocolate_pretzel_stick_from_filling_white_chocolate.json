@@ -1,0 +1,18 @@
+{
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "tag": "forge:pretzel_stick"
+        },
+        {
+            "amount": 125,
+            "fluidTag": "forge:white_chocolate"
+        }
+    ],
+    "results": [
+        {
+            "count": 1,
+            "item": "createfood:white_chocolate_pretzel_stick"
+        }
+    ]
+}

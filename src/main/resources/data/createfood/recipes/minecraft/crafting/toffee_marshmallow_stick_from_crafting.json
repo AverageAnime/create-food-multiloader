@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:marshmallow_stick"
+        },
+        {
+            "tag": "forge:toffee"
+        }
+    ],
+    "result": {
+        "item": "createfood:toffee_marshmallow_stick"
+    }
+}

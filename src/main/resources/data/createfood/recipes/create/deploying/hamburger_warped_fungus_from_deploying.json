@@ -1,0 +1,16 @@
+{
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "forge:beef_bun_warped_fungus"
+        },
+        {
+            "tag": "forge:bun"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:hamburger_warped_fungus"
+        }
+    ]
+}

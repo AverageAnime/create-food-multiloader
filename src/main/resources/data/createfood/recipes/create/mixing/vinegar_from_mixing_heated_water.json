@@ -1,0 +1,31 @@
+{
+    "type": "create:mixing",
+    "heat_requirement": "heated",
+    "ingredients": [
+        {
+            "amount": 1000,
+            "fluidTag": "forge:water"
+        },
+        {
+            "tag": "forge:sugar"
+        },
+        {
+            "tag": "forge:sugar"
+        },
+        {
+            "tag": "forge:fruits"
+        },
+        {
+            "tag": "forge:fruits"
+        },
+        {
+            "tag": "forge:fruits"
+        }
+    ],
+    "results": [
+        {
+            "amount": 1000,
+            "fluid": "createfood:vinegar"
+        }
+    ]
+}

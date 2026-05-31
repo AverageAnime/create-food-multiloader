@@ -1,0 +1,19 @@
+{
+    "type": "farmersdelight:cutting",
+    "ingredients": [
+        {
+            "tag": "forge:ube_cream_ube_cake"
+        }
+    ],
+    "tool": {
+        "tag": "forge:tools/knife"
+    },
+    "result": [
+        {
+            "item": {
+                "count": 7,
+                "id": "createfood:ube_cream_ube_cake_slice"
+            }
+        }
+    ]
+}

@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:bucket"
+        },
+        {
+            "tag": "forge:tomato_cream_soup_bowl"
+        },
+        {
+            "tag": "forge:tomato_cream_soup_bowl"
+        },
+        {
+            "tag": "forge:tomato_cream_soup_bowl"
+        }
+    ],
+    "result": {
+        "item": "createfood:tomato_cream_soup_bucket"
+    }
+}

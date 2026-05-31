@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:taco_shell"
+        },
+        {
+            "tag": "forge:gyro_mutton_ingredient"
+        }
+    ],
+    "result": {
+        "item": "createfood:mutton_taco"
+    }
+}

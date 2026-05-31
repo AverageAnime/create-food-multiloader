@@ -1,0 +1,19 @@
+{
+    "type": "farmersdelight:cutting",
+    "ingredients": [
+        {
+            "tag": "forge:kelp_roll_tomato"
+        }
+    ],
+    "tool": {
+        "tag": "forge:tools/knife"
+    },
+    "result": [
+        {
+            "item": {
+                "count": 3,
+                "id": "createfood:kelp_roll_slice_tomato"
+            }
+        }
+    ]
+}

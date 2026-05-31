@@ -1,0 +1,16 @@
+{
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "forge:chicken_bun_cheese"
+        },
+        {
+            "tag": "forge:foods/leafy_green"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:chicken_bun_cheese_lettuce"
+        }
+    ]
+}

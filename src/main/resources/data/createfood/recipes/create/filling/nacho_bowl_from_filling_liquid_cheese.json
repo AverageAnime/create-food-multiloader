@@ -1,0 +1,17 @@
+{
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "tag": "forge:tortilla_chip_bowl"
+        },
+        {
+            "amount": 125,
+            "fluidTag": "forge:liquid_cheese"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:nacho_bowl"
+        }
+    ]
+}

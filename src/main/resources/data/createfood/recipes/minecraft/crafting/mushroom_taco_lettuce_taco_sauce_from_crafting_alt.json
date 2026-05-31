@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:mushroom_taco_lettuce"
+        },
+        {
+            "tag": "forge:taco_sauce_bottle"
+        }
+    ],
+    "result": {
+        "item": "createfood:mushroom_taco_lettuce_taco_sauce"
+    }
+}

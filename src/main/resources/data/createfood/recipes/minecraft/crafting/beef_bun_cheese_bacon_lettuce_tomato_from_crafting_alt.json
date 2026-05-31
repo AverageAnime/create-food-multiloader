@@ -1,0 +1,26 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:bun"
+        },
+        {
+            "tag": "forge:tomato"
+        },
+        {
+            "tag": "forge:cooked_pork"
+        },
+        {
+            "tag": "forge:foods/leafy_green"
+        },
+        {
+            "tag": "forge:cheeses"
+        },
+        {
+            "tag": "forge:cooked_beef"
+        }
+    ],
+    "result": {
+        "item": "createfood:beef_bun_cheese_bacon_lettuce_tomato"
+    }
+}

@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:bucket"
+        },
+        {
+            "tag": "forge:taco_sauce_bottle"
+        },
+        {
+            "tag": "forge:taco_sauce_bottle"
+        },
+        {
+            "tag": "forge:taco_sauce_bottle"
+        },
+        {
+            "tag": "forge:taco_sauce_bottle"
+        }
+    ],
+    "result": {
+        "item": "createfood:taco_sauce_bucket"
+    }
+}

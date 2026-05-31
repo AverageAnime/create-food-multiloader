@@ -1,0 +1,23 @@
+{
+    "type": "create:mixing",
+    "heat_requirement": "heated",
+    "ingredients": [
+        {
+            "tag": "forge:pumpkin_puree_bucket"
+        },
+        {
+            "tag": "forge:condensed_milk_bottle"
+        },
+        {
+            "tag": "forge:eggs"
+        },
+        {
+            "tag": "forge:brown_sugar"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:pumpkin_pie_filling_bucket"
+        }
+    ]
+}

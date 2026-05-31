@@ -1,0 +1,14 @@
+{
+    "type": "create:pressing",
+    "ingredients": [
+        {
+            "tag": "forge:powderable_eggs"
+        }
+    ],
+    "results": [
+        {
+            "count": 2,
+            "item": "createfood:egg_powder"
+        }
+    ]
+}

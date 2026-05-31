@@ -1,0 +1,17 @@
+{
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "item": "minecraft:sweet_berries"
+        },
+        {
+            "amount": 250,
+            "fluidTag": "forge:toffee"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:toffee_berries"
+        }
+    ]
+}

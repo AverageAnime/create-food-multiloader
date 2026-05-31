@@ -1,0 +1,17 @@
+{
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "tag": "forge:cupcake_base"
+        },
+        {
+            "amount": 250,
+            "fluidTag": "forge:cream_frosting"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:cream_cupcake"
+        }
+    ]
+}

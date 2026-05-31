@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:taco_shell_ingredient"
+        },
+        {
+            "tag": "forge:cooked_pork"
+        },
+        {
+            "tag": "forge:onion"
+        },
+        {
+            "tag": "forge:foods/leafy_green"
+        }
+    ],
+    "result": {
+        "item": "createfood:pork_wrap_onion_lettuce"
+    }
+}

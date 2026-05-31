@@ -1,0 +1,24 @@
+{
+    "type": "farmersdelight:cutting",
+    "ingredients": [
+        {
+            "item": "createfood:cooked_tropical_fish"
+        }
+    ],
+    "tool": {
+        "tag": "forge:tools/knife"
+    },
+    "result": [
+        {
+            "item": {
+                "count": 2,
+                "id": "createfood:cooked_tropical_fish_slice"
+            }
+        },
+        {
+            "item": {
+                "id": "minecraft:bone_meal"
+            }
+        }
+    ]
+}

@@ -1,0 +1,17 @@
+{
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "forge:nacho_bowl"
+        },
+        {
+            "tag": "forge:taco_sauce_bottle"
+        }
+    ],
+    "results": [
+        {
+            "count": 1,
+            "item": "createfood:nacho_bowl_taco_sauce"
+        }
+    ]
+}

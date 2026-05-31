@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:heavy_cream_bottle"
+        },
+        {
+            "tag": "forge:salt"
+        }
+    ],
+    "result": {
+        "item": "createfood:butter"
+    }
+}

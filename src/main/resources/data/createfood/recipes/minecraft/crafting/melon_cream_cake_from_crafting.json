@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:cake_base"
+        },
+        {
+            "tag": "forge:melon_cream_frosting_piping_bag"
+        }
+    ],
+    "result": {
+        "item": "createfood:melon_cream_cake"
+    }
+}

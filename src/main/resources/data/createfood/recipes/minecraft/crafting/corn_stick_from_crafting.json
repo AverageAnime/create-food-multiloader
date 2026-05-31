@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:stick"
+        },
+        {
+            "tag": "forge:corn"
+        }
+    ],
+    "result": {
+        "item": "createfood:corn_stick"
+    }
+}

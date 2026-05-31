@@ -1,0 +1,24 @@
+{
+    "type": "farmersdelight:cooking",
+    "experience": 0.5,
+    "container": {
+        "count": 1,
+        "id": "minecraft:bowl"
+    },
+    "ingredients": [
+        {
+            "tag": "forge:egg_bucket"
+        },
+        {
+            "tag": "forge:tomato"
+        },
+        {
+            "tag": "forge:tomato"
+        }
+    ],
+    "recipe_book_tab": "misc",
+    "result": {
+        "count": 2,
+        "item": "createfood:scrambled_eggs_plate_tomato"
+    }
+}

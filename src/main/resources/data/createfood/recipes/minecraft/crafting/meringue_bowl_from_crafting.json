@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:egg_whites_bottle"
+        },
+        {
+            "tag": "forge:sugar"
+        },
+        {
+            "tag": "forge:bowl"
+        }
+    ],
+    "result": {
+        "item": "createfood:meringue_bowl"
+    }
+}

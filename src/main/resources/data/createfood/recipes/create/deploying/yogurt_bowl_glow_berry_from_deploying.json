@@ -1,0 +1,17 @@
+{
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "forge:yogurt_bowl"
+        },
+        {
+            "item": "minecraft:glow_berries"
+        }
+    ],
+    "results": [
+        {
+            "count": 1,
+            "item": "createfood:yogurt_bowl_glow_berry"
+        }
+    ]
+}

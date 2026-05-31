@@ -1,0 +1,17 @@
+{
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "tag": "forge:bowl"
+        },
+        {
+            "amount": 333,
+            "fluidTag": "forge:meringue"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:meringue_bowl"
+        }
+    ]
+}

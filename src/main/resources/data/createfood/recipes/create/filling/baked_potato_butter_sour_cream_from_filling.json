@@ -1,0 +1,18 @@
+{
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "tag": "forge:baked_potato_butter"
+        },
+        {
+            "amount": 125,
+            "fluidTag": "forge:sour_cream"
+        }
+    ],
+    "results": [
+        {
+            "count": 1,
+            "item": "createfood:baked_potato_butter_sour_cream"
+        }
+    ]
+}

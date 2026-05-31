@@ -1,0 +1,17 @@
+{
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "forge:baked_potato_butter"
+        },
+        {
+            "tag": "forge:sour_cream_bottle"
+        }
+    ],
+    "results": [
+        {
+            "count": 1,
+            "item": "createfood:baked_potato_butter_sour_cream"
+        }
+    ]
+}

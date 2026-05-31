@@ -1,0 +1,29 @@
+{
+    "type": "farmersdelight:cooking",
+    "experience": 0.35,
+    "ingredients": [
+        {
+            "tag": "forge:flours/wheat"
+        },
+        {
+            "tag": "forge:sugar"
+        },
+        {
+            "tag": "forge:eggs"
+        },
+        {
+            "tag": "forge:butter"
+        },
+        {
+            "tag": "forge:cocoa_powder"
+        },
+        {
+            "item": "minecraft:milk_bucket"
+        }
+    ],
+    "recipe_book_tab": "misc",
+    "result": {
+        "count": 1,
+        "item": "createfood:chocolate_cake_batter_bucket"
+    }
+}

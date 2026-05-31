@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:pork_taco"
+        },
+        {
+            "tag": "forge:foods/leafy_green"
+        }
+    ],
+    "result": {
+        "item": "createfood:pork_taco_lettuce"
+    }
+}

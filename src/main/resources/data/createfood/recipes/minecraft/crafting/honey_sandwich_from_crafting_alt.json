@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:bread_slice"
+        },
+        {
+            "item": "minecraft:honey_bottle"
+        },
+        {
+            "tag": "forge:bread_slice"
+        }
+    ],
+    "result": {
+        "item": "createfood:honey_sandwich"
+    }
+}

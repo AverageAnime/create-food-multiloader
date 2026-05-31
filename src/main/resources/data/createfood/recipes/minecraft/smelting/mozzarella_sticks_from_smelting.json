@@ -1,0 +1,9 @@
+{
+    "type": "minecraft:smelting",
+    "cookingtime": 250,
+    "experience": 0.15,
+    "ingredient": {
+        "tag": "forge:raw_mozzarella_sticks"
+    },
+    "result": "createfood:mozzarella_sticks"
+}

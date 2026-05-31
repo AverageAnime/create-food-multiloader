@@ -1,0 +1,20 @@
+{
+    "type": "farmersdelight:cooking",
+    "experience": 1.0,
+    "ingredients": [
+        {
+            "tag": "forge:egg_yolk"
+        },
+        {
+            "tag": "forge:drinks/milk"
+        },
+        {
+            "tag": "forge:sugar"
+        }
+    ],
+    "recipe_book_tab": "drinks",
+    "result": {
+        "count": 1,
+        "item": "createfood:custard_bottle"
+    }
+}

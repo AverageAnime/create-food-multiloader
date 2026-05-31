@@ -1,0 +1,20 @@
+{
+    "type": "farmersdelight:cooking",
+    "experience": 0.5,
+    "ingredients": [
+        {
+            "tag": "forge:egg_bucket"
+        },
+        {
+            "tag": "forge:sausages"
+        },
+        {
+            "tag": "forge:sausages"
+        }
+    ],
+    "recipe_book_tab": "meals",
+    "result": {
+        "count": 2,
+        "item": "createfood:scrambled_eggs_plate_sausage"
+    }
+}

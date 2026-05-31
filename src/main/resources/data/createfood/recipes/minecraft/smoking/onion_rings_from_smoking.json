@@ -1,0 +1,9 @@
+{
+    "type": "minecraft:smoking",
+    "cookingtime": 250,
+    "experience": 0.15,
+    "ingredient": {
+        "tag": "forge:raw_onion_rings"
+    },
+    "result": "createfood:onion_rings"
+}

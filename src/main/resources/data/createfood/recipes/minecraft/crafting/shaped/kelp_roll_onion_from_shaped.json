@@ -1,0 +1,21 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "232",
+        "111"
+    ],
+    "key": {
+        "1": {
+            "item": "minecraft:dried_kelp"
+        },
+        "2": {
+            "tag": "forge:cooked_rice"
+        },
+        "3": {
+            "tag": "forge:onion"
+        }
+    },
+    "result": {
+        "item": "createfood:kelp_roll_onion"
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:baked_potato_butter"
+        },
+        {
+            "tag": "forge:cooked_pork"
+        }
+    ],
+    "result": {
+        "count": 1,
+        "item": "createfood:baked_potato_butter_bacon"
+    }
+}

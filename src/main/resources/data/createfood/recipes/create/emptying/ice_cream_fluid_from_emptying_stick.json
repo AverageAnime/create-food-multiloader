@@ -1,0 +1,17 @@
+{
+    "type": "create:emptying",
+    "ingredients": [
+        {
+            "tag": "forge:ice_cream_stick"
+        }
+    ],
+    "results": [
+        {
+            "item": "minecraft:stick"
+        },
+        {
+            "amount": 111,
+            "fluid": "createfood:ice_cream"
+        }
+    ]
+}

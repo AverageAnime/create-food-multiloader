@@ -1,0 +1,15 @@
+{
+    "type": "create:mixing",
+    "heat_requirement": "heated",
+    "ingredients": [
+        {
+            "tag": "forge:cheese_block"
+        }
+    ],
+    "results": [
+        {
+            "amount": 1000,
+            "fluid": "createfood:liquid_cheese"
+        }
+    ]
+}

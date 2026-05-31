@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:sweet_berries"
+        },
+        {
+            "tag": "forge:butterscotch"
+        }
+    ],
+    "result": {
+        "item": "createfood:butterscotch_berries"
+    }
+}

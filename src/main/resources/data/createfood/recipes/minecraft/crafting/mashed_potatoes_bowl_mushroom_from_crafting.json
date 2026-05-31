@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:mashed_potatoes_bowl"
+        },
+        {
+            "tag": "forge:mushrooms"
+        }
+    ],
+    "result": {
+        "item": "createfood:mashed_potatoes_bowl_mushroom"
+    }
+}

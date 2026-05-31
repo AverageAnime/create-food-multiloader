@@ -1,0 +1,28 @@
+{
+    "type": "create:mixing",
+    "heat_requirement": "heated",
+    "ingredients": [
+        {
+            "tag": "forge:potato"
+        },
+        {
+            "tag": "forge:potato"
+        },
+        {
+            "amount": 250,
+            "fluidTag": "forge:heavy_cream"
+        },
+        {
+            "tag": "forge:butter"
+        },
+        {
+            "tag": "forge:onion"
+        }
+    ],
+    "results": [
+        {
+            "amount": 333,
+            "fluid": "createfood:potato_cream_soup"
+        }
+    ]
+}

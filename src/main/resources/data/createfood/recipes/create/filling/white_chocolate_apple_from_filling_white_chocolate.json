@@ -1,0 +1,17 @@
+{
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "item": "minecraft:apple"
+        },
+        {
+            "amount": 250,
+            "fluidTag": "forge:white_chocolate"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:white_chocolate_apple"
+        }
+    ]
+}

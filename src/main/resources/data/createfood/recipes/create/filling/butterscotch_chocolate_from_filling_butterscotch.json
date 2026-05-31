@@ -1,0 +1,17 @@
+{
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "tag": "forge:hollow_chocolate"
+        },
+        {
+            "amount": 125,
+            "fluidTag": "forge:butterscotch"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:butterscotch_chocolate"
+        }
+    ]
+}

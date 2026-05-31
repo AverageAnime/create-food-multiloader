@@ -1,0 +1,19 @@
+{
+    "type": "farmersdelight:cutting",
+    "ingredients": [
+        {
+            "tag": "forge:white_chocolate_apple"
+        }
+    ],
+    "tool": {
+        "tag": "forge:tools/knife"
+    },
+    "result": [
+        {
+            "item": {
+                "count": 2,
+                "id": "createfood:white_chocolate_apple_slice"
+            }
+        }
+    ]
+}

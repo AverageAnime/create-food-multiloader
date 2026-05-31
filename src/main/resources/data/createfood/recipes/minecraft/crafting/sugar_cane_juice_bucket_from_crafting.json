@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:bucket"
+        },
+        {
+            "tag": "forge:sugar_cane_juice_bottle"
+        },
+        {
+            "tag": "forge:sugar_cane_juice_bottle"
+        },
+        {
+            "tag": "forge:sugar_cane_juice_bottle"
+        },
+        {
+            "tag": "forge:sugar_cane_juice_bottle"
+        }
+    ],
+    "result": {
+        "item": "createfood:sugar_cane_juice_bucket"
+    }
+}

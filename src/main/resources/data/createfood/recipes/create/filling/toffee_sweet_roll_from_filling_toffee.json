@@ -1,0 +1,17 @@
+{
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "item": "createfood:sweet_roll_base"
+        },
+        {
+            "amount": 250,
+            "fluidTag": "forge:toffee"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:toffee_sweet_roll"
+        }
+    ]
+}

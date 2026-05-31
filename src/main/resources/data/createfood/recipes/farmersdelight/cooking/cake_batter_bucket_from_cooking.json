@@ -1,0 +1,26 @@
+{
+    "type": "farmersdelight:cooking",
+    "experience": 0.35,
+    "ingredients": [
+        {
+            "tag": "forge:flours/wheat"
+        },
+        {
+            "tag": "forge:sugar"
+        },
+        {
+            "tag": "forge:eggs"
+        },
+        {
+            "tag": "forge:butter"
+        },
+        {
+            "item": "minecraft:milk_bucket"
+        }
+    ],
+    "recipe_book_tab": "misc",
+    "result": {
+        "count": 1,
+        "item": "createfood:cake_batter_bucket"
+    }
+}

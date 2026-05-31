@@ -1,0 +1,16 @@
+{
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "item": "create:sweet_roll"
+        },
+        {
+            "tag": "forge:chorus_fruit"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:cream_sweet_roll_chorus_fruit"
+        }
+    ]
+}

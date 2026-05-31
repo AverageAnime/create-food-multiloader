@@ -1,0 +1,18 @@
+{
+    "type": "create:compacting",
+    "heat_requirement": "heated",
+    "ingredients": [
+        {
+            "tag": "forge:white_chocolate_chips"
+        },
+        {
+            "tag": "forge:chocolate_sweet_dough"
+        }
+    ],
+    "results": [
+        {
+            "count": 8,
+            "item": "createfood:white_chocolate_chip_chocolate_cookie"
+        }
+    ]
+}

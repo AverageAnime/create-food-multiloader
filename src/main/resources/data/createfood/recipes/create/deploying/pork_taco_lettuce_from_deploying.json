@@ -1,0 +1,16 @@
+{
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "forge:pork_taco"
+        },
+        {
+            "tag": "forge:foods/leafy_green"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:pork_taco_lettuce"
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:bowl"
+        },
+        {
+            "tag": "forge:pita_chips"
+        },
+        {
+            "tag": "forge:pita_chips"
+        }
+    ],
+    "result": {
+        "count": 1,
+        "item": "createfood:pita_chip_bowl"
+    }
+}

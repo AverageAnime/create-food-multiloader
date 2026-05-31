@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:shredded_potato"
+        },
+        {
+            "tag": "forge:flours/wheat"
+        },
+        {
+            "tag": "forge:salt"
+        }
+    ],
+    "result": {
+        "item": "createfood:raw_tater_tots"
+    }
+}

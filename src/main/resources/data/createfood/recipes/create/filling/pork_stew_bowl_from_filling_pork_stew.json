@@ -1,0 +1,17 @@
+{
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "tag": "forge:bowl"
+        },
+        {
+            "amount": 333,
+            "fluidTag": "forge:pork_stew"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:pork_stew_bowl"
+        }
+    ]
+}

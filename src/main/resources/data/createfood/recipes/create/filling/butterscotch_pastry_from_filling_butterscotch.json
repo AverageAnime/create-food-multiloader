@@ -1,0 +1,17 @@
+{
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "tag": "forge:pastry_base"
+        },
+        {
+            "amount": 250,
+            "fluidTag": "forge:butterscotch"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:butterscotch_pastry"
+        }
+    ]
+}

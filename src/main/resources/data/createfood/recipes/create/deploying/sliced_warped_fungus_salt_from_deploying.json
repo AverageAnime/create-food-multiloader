@@ -1,0 +1,16 @@
+{
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "forge:sliced_warped_fungus"
+        },
+        {
+            "tag": "forge:salt"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:sliced_warped_fungus_salt"
+        }
+    ]
+}

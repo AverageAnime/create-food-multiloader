@@ -1,0 +1,16 @@
+{
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "forge:taco_shell"
+        },
+        {
+            "tag": "forge:cooked_pork"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:pork_taco"
+        }
+    ]
+}

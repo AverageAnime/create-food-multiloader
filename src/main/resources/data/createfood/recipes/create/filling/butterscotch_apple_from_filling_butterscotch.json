@@ -1,0 +1,17 @@
+{
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "item": "minecraft:apple"
+        },
+        {
+            "amount": 250,
+            "fluidTag": "forge:butterscotch"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:butterscotch_apple"
+        }
+    ]
+}

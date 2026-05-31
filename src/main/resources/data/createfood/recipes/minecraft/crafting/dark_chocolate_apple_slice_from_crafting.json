@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:apple_slice"
+        },
+        {
+            "tag": "forge:dark_chocolate"
+        }
+    ],
+    "result": {
+        "item": "createfood:dark_chocolate_apple_slice"
+    }
+}

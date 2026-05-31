@@ -1,0 +1,25 @@
+{
+    "type": "create:mixing",
+    "heat_requirement": "heated",
+    "ingredients": [
+        {
+            "amount": 250,
+            "fluidTag": "forge:heavy_cream"
+        },
+        {
+            "tag": "forge:foods/raw_fish"
+        },
+        {
+            "tag": "forge:potato"
+        },
+        {
+            "tag": "forge:salt"
+        }
+    ],
+    "results": [
+        {
+            "amount": 333,
+            "fluid": "createfood:fish_chowder"
+        }
+    ]
+}

@@ -1,0 +1,17 @@
+{
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "tag": "forge:fish_taco_kelp"
+        },
+        {
+            "amount": 250,
+            "fluidTag": "forge:taco_sauce"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:fish_taco_kelp_taco_sauce"
+        }
+    ]
+}

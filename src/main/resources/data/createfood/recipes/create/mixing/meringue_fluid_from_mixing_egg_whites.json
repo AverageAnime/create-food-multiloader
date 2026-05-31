@@ -1,0 +1,18 @@
+{
+    "type": "create:mixing",
+    "ingredients": [
+        {
+            "amount": 250,
+            "fluidTag": "forge:egg_whites"
+        },
+        {
+            "tag": "forge:sugar"
+        }
+    ],
+    "results": [
+        {
+            "amount": 333,
+            "fluid": "createfood:meringue"
+        }
+    ]
+}

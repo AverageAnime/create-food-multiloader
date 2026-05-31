@@ -1,0 +1,15 @@
+{
+    "type": "create:compacting",
+    "heat_requirement": "heated",
+    "ingredients": [
+        {
+            "amount": 1000,
+            "fluidTag": "forge:cake_batter"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:cake_base"
+        }
+    ]
+}

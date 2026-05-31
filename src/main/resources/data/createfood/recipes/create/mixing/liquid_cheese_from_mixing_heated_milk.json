@@ -1,0 +1,19 @@
+{
+    "type": "create:mixing",
+    "heat_requirement": "heated",
+    "ingredients": [
+        {
+            "tag": "forge:salt"
+        },
+        {
+            "amount": 1000,
+            "fluidTag": "forge:milk"
+        }
+    ],
+    "results": [
+        {
+            "amount": 1000,
+            "fluid": "createfood:liquid_cheese"
+        }
+    ]
+}

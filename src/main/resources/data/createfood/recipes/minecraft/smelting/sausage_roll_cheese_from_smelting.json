@@ -1,0 +1,9 @@
+{
+    "type": "minecraft:smelting",
+    "cookingtime": 50,
+    "experience": 0.15,
+    "ingredient": {
+        "tag": "forge:raw_sausage_roll_cheese"
+    },
+    "result": "createfood:sausage_roll_cheese"
+}

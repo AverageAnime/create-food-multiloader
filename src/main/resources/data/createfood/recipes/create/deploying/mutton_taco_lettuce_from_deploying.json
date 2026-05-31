@@ -1,0 +1,16 @@
+{
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "forge:mutton_taco"
+        },
+        {
+            "tag": "forge:foods/leafy_green"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:mutton_taco_lettuce"
+        }
+    ]
+}

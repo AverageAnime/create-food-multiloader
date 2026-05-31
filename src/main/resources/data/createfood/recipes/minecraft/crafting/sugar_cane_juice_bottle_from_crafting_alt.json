@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:glass_bottle"
+        },
+        {
+            "tag": "forge:sugar_cane"
+        }
+    ],
+    "result": {
+        "item": "createfood:sugar_cane_juice_bottle"
+    }
+}

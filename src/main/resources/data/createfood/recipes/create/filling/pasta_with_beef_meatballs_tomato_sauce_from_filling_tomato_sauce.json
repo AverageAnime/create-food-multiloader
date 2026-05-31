@@ -1,0 +1,17 @@
+{
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "tag": "forge:pasta_plate_beef_meatballs"
+        },
+        {
+            "amount": 250,
+            "fluidTag": "forge:tomato_sauce"
+        }
+    ],
+    "results": [
+        {
+            "item": "farmersdelight:pasta_with_meatballs"
+        }
+    ]
+}

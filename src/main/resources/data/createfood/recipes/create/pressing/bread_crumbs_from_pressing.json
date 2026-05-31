@@ -1,0 +1,14 @@
+{
+    "type": "create:pressing",
+    "ingredients": [
+        {
+            "tag": "forge:bread_slice"
+        }
+    ],
+    "results": [
+        {
+            "count": 2,
+            "item": "createfood:bread_crumbs"
+        }
+    ]
+}

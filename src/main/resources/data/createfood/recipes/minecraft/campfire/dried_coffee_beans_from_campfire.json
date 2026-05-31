@@ -1,0 +1,9 @@
+{
+    "type": "minecraft:campfire_cooking",
+    "cookingtime": 25,
+    "experience": 0.1,
+    "ingredient": {
+        "tag": "forge:coffee_beans"
+    },
+    "result": "createfood:dried_coffee_beans"
+}

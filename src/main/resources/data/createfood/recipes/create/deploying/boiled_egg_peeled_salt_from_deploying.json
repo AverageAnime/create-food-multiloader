@@ -1,0 +1,16 @@
+{
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "forge:boiled_egg_peeled"
+        },
+        {
+            "tag": "forge:salt"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:boiled_egg_peeled_salt"
+        }
+    ]
+}

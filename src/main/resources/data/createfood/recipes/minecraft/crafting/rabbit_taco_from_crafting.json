@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:taco_shell"
+        },
+        {
+            "tag": "forge:cooked_rabbit"
+        }
+    ],
+    "result": {
+        "item": "createfood:rabbit_taco"
+    }
+}

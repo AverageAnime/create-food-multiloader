@@ -1,0 +1,15 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:scone"
+        },
+        {
+            "tag": "forge:berry_jam_bottle"
+        }
+    ],
+    "result": {
+        "count": 1,
+        "item": "createfood:scone_berry_jam"
+    }
+}

@@ -1,0 +1,16 @@
+{
+    "type": "create:compacting",
+    "heat_requirement": "heated",
+    "ingredients": [
+        {
+            "amount": 1000,
+            "fluidTag": "forge:muffin_batter"
+        }
+    ],
+    "results": [
+        {
+            "count": 4,
+            "item": "createfood:muffin_base"
+        }
+    ]
+}

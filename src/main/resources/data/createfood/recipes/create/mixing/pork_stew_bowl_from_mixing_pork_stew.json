@@ -1,0 +1,23 @@
+{
+    "type": "create:mixing",
+    "ingredients": [
+        {
+            "amount": 1000,
+            "fluidTag": "forge:pork_stew"
+        },
+        {
+            "item": "minecraft:bowl"
+        },
+        {
+            "item": "minecraft:bowl"
+        },
+        {
+            "item": "minecraft:bowl"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:pork_stew_bowl"
+        }
+    ]
+}

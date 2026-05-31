@@ -1,0 +1,30 @@
+{
+    "type": "farmersdelight:cooking",
+    "experience": 0.5,
+    "ingredients": [
+        {
+            "tag": "forge:bread_crumbs"
+        },
+        {
+            "tag": "forge:bread_crumbs"
+        },
+        {
+            "tag": "forge:custard_bottle"
+        },
+        {
+            "tag": "forge:eggs"
+        },
+        {
+            "tag": "forge:sugar"
+        }
+    ],
+    "recipe_book_tab": "meals",
+    "container": {
+        "count": 1,
+        "id": "minecraft:bowl"
+    },
+    "result": {
+        "count": 1,
+        "item": "createfood:bread_pudding_bowl"
+    }
+}

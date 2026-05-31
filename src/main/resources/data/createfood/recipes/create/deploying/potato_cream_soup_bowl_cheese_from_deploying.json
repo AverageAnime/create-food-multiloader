@@ -1,0 +1,17 @@
+{
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "forge:potato_cream_soup_bowl"
+        },
+        {
+            "tag": "forge:cheeses"
+        }
+    ],
+    "results": [
+        {
+            "count": 1,
+            "item": "createfood:potato_cream_soup_bowl_cheese"
+        }
+    ]
+}

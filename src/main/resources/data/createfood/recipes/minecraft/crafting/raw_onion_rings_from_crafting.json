@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:onion"
+        },
+        {
+            "item": "minecraft:egg"
+        },
+        {
+            "tag": "forge:bread_crumbs"
+        }
+    ],
+    "result": {
+        "item": "createfood:raw_onion_rings"
+    }
+}

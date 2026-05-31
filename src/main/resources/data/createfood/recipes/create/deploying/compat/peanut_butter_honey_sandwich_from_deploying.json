@@ -1,0 +1,16 @@
+{
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "forge:bread_slice_peanut_butter"
+        },
+        {
+            "tag": "forge:bread_slice_honey"
+        }
+    ],
+    "results": [
+        {
+            "item": "expandeddelight:peanut_butter_honey_sandwich"
+        }
+    ]
+}

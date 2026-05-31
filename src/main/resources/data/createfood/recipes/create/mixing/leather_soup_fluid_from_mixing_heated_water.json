@@ -1,0 +1,25 @@
+{
+    "type": "create:mixing",
+    "heat_requirement": "heated",
+    "ingredients": [
+        {
+            "amount": 1000,
+            "fluidTag": "minecraft:water"
+        },
+        {
+            "tag": "forge:foods/vegetable"
+        },
+        {
+            "item": "minecraft:leather"
+        },
+        {
+            "item": "minecraft:leather"
+        }
+    ],
+    "results": [
+        {
+            "amount": 1000,
+            "fluid": "createfood:leather_soup"
+        }
+    ]
+}

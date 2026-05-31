@@ -1,0 +1,18 @@
+{
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "tag": "forge:pretzel_stick"
+        },
+        {
+            "amount": 125,
+            "fluidTag": "forge:butterscotch"
+        }
+    ],
+    "results": [
+        {
+            "count": 1,
+            "item": "createfood:butterscotch_pretzel_stick"
+        }
+    ]
+}

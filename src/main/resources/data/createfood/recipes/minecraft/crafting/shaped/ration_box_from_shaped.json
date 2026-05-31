@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "XX ",
+        "YY ",
+        "   "
+    ],
+    "key": {
+        "X": {
+            "tag": "forge:rods/wooden"
+        },
+        "Y": {
+            "tag": "minecraft:wooden_slabs"
+        }
+    },
+    "result": {
+        "count": 1,
+        "item": "createfood:ration_box"
+    }
+}

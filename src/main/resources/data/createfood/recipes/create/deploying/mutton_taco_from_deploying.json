@@ -1,0 +1,16 @@
+{
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "forge:taco_shell"
+        },
+        {
+            "tag": "forge:gyro_mutton_ingredient"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:mutton_taco"
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+{
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "tag": "forge:scone"
+        },
+        {
+            "amount": 125,
+            "fluidTag": "forge:apple_jam"
+        }
+    ],
+    "results": [
+        {
+            "count": 1,
+            "item": "createfood:scone_apple_jam"
+        }
+    ]
+}

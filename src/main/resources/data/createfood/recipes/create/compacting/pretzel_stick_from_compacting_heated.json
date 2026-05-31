@@ -1,0 +1,15 @@
+{
+    "type": "create:compacting",
+    "heat_requirement": "heated",
+    "ingredients": [
+        {
+            "tag": "forge:salt_dough_small"
+        }
+    ],
+    "results": [
+        {
+            "count": 1,
+            "item": "createfood:pretzel_stick"
+        }
+    ]
+}

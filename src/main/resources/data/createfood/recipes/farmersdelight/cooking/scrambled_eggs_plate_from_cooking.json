@@ -1,0 +1,18 @@
+{
+    "type": "farmersdelight:cooking",
+    "experience": 0.5,
+    "container": {
+        "count": 1,
+        "id": "minecraft:bowl"
+    },
+    "ingredients": [
+        {
+            "tag": "forge:egg_bucket"
+        }
+    ],
+    "recipe_book_tab": "misc",
+    "result": {
+        "count": 2,
+        "item": "createfood:scrambled_eggs_plate"
+    }
+}

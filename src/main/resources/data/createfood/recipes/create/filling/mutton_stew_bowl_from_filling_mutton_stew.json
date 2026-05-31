@@ -1,0 +1,17 @@
+{
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "tag": "forge:bowl"
+        },
+        {
+            "amount": 333,
+            "fluidTag": "forge:mutton_stew"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:mutton_stew_bowl"
+        }
+    ]
+}

@@ -1,0 +1,9 @@
+{
+    "type": "minecraft:smelting",
+    "cookingtime": 100,
+    "experience": 0.1,
+    "ingredient": {
+        "tag": "forge:custard_sugar_bottle"
+    },
+    "result": "createfood:creme_brulee_bottle"
+}

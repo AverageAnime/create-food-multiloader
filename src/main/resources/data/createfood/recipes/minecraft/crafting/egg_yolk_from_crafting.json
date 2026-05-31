@@ -1,0 +1,11 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:cloth_filter_egg_yolk"
+        }
+    ],
+    "result": {
+        "item": "createfood:egg_yolk"
+    }
+}

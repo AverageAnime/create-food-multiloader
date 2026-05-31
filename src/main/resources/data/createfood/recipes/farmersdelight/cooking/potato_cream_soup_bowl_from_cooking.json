@@ -1,0 +1,30 @@
+{
+    "type": "farmersdelight:cooking",
+    "experience": 0.5,
+    "ingredients": [
+        {
+            "tag": "forge:potato"
+        },
+        {
+            "tag": "forge:potato"
+        },
+        {
+            "tag": "forge:heavy_cream_bottle"
+        },
+        {
+            "tag": "forge:butter"
+        },
+        {
+            "tag": "forge:onion"
+        }
+    ],
+    "recipe_book_tab": "meals",
+    "container": {
+        "count": 1,
+        "id": "minecraft:bowl"
+    },
+    "result": {
+        "count": 1,
+        "item": "createfood:potato_cream_soup_bowl"
+    }
+}

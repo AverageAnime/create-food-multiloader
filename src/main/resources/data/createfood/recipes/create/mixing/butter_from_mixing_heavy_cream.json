@@ -1,0 +1,17 @@
+{
+    "type": "create:mixing",
+    "ingredients": [
+        {
+            "amount": 250,
+            "fluidTag": "forge:heavy_cream"
+        },
+        {
+            "tag": "forge:salt"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:butter"
+        }
+    ]
+}

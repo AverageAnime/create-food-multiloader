@@ -1,0 +1,28 @@
+{
+    "type": "create:mixing",
+    "heat_requirement": "heated",
+    "ingredients": [
+        {
+            "tag": "forge:foods/raw_fish"
+        },
+        {
+            "item": "minecraft:kelp"
+        },
+        {
+            "tag": "forge:onion"
+        },
+        {
+            "tag": "forge:salt"
+        },
+        {
+            "amount": 1000,
+            "fluidTag": "forge:water"
+        }
+    ],
+    "results": [
+        {
+            "amount": 333,
+            "fluid": "createfood:kelp_soup"
+        }
+    ]
+}

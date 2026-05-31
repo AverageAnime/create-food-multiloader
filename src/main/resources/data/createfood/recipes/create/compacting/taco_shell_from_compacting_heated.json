@@ -1,0 +1,14 @@
+{
+    "type": "create:compacting",
+    "heat_requirement": "heated",
+    "ingredients": [
+        {
+            "tag": "forge:taco_shell_ingredient"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:taco_shell"
+        }
+    ]
+}

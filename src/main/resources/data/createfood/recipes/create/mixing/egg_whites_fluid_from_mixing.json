@@ -1,0 +1,26 @@
+{
+    "type": "create:mixing",
+    "ingredients": [
+        {
+            "item": "minecraft:egg"
+        },
+        {
+            "tag": "forge:cloth_filter"
+        }
+    ],
+    "results": [
+        {
+            "amount": 250,
+            "fluid": "createfood:egg_whites"
+        },
+        {
+            "item": "createfood:eggshell"
+        },
+        {
+            "item": "createfood:egg_yolk"
+        },
+        {
+            "item": "createfood:cloth_filter"
+        }
+    ]
+}

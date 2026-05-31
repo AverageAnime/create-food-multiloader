@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:chocolate_cake_base"
+        },
+        {
+            "tag": "forge:cream_frosting_piping_bag"
+        }
+    ],
+    "result": {
+        "item": "createfood:cream_chocolate_cake"
+    }
+}

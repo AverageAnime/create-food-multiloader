@@ -1,0 +1,9 @@
+{
+    "type": "minecraft:smelting",
+    "cookingtime": 50,
+    "experience": 0.1,
+    "ingredient": {
+        "tag": "forge:taco_shell_ingredient"
+    },
+    "result": "createfood:taco_shell"
+}

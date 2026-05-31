@@ -1,0 +1,16 @@
+{
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "forge:toast_fried_egg_plate"
+        },
+        {
+            "tag": "forge:hash_browns"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:breakfast_plate"
+        }
+    ]
+}

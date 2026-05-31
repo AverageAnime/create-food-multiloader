@@ -1,0 +1,26 @@
+{
+    "type": "create:mixing",
+    "heat_requirement": "heated",
+    "ingredients": [
+        {
+            "amount": 1000,
+            "fluidTag": "forge:pumpkin_puree"
+        },
+        {
+            "amount": 250,
+            "fluidTag": "forge:condensed_milk"
+        },
+        {
+            "tag": "forge:eggs"
+        },
+        {
+            "tag": "forge:brown_sugar"
+        }
+    ],
+    "results": [
+        {
+            "amount": 1000,
+            "fluid": "createfood:pumpkin_pie_filling"
+        }
+    ]
+}

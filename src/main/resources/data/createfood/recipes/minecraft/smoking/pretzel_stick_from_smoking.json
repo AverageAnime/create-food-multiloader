@@ -1,0 +1,9 @@
+{
+    "type": "minecraft:smoking",
+    "cookingtime": 200,
+    "experience": 0.1,
+    "ingredient": {
+        "tag": "forge:raw_pretzel_stick"
+    },
+    "result": "createfood:pretzel_stick"
+}

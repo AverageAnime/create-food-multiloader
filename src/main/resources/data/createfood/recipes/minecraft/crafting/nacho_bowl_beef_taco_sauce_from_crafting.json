@@ -1,0 +1,15 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:nacho_bowl_beef"
+        },
+        {
+            "tag": "forge:taco_sauce_bottle"
+        }
+    ],
+    "result": {
+        "count": 1,
+        "item": "createfood:nacho_bowl_beef_taco_sauce"
+    }
+}

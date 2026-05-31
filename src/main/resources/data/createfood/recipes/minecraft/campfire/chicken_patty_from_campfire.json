@@ -1,0 +1,9 @@
+{
+    "type": "minecraft:campfire_cooking",
+    "cookingtime": 250,
+    "experience": 0.15,
+    "ingredient": {
+        "tag": "forge:raw_chicken_patty"
+    },
+    "result": "createfood:chicken_patty"
+}

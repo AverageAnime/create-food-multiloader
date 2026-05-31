@@ -1,0 +1,28 @@
+{
+    "type": "create:compacting",
+    "heat_requirement": "heated",
+    "ingredients": [
+        {
+            "amount": 1000,
+            "fluidTag": "forge:muffin_batter"
+        },
+        {
+            "tag": "forge:caramel_chips"
+        },
+        {
+            "tag": "forge:caramel_chips"
+        },
+        {
+            "tag": "forge:caramel_chips"
+        },
+        {
+            "tag": "forge:caramel_chips"
+        }
+    ],
+    "results": [
+        {
+            "count": 4,
+            "item": "createfood:caramel_chip_muffin"
+        }
+    ]
+}

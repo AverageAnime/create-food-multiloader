@@ -1,0 +1,16 @@
+{
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "forge:sausages"
+        },
+        {
+            "tag": "forge:paprika"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:spicy_sausages"
+        }
+    ]
+}

@@ -1,0 +1,27 @@
+{
+    "type": "farmersdelight:cooking",
+    "experience": 0.5,
+    "ingredients": [
+        {
+            "tag": "forge:heavy_cream_bottle"
+        },
+        {
+            "tag": "forge:foods/raw_fish"
+        },
+        {
+            "tag": "forge:potato"
+        },
+        {
+            "tag": "forge:salt"
+        }
+    ],
+    "recipe_book_tab": "meals",
+    "container": {
+        "count": 1,
+        "id": "minecraft:bowl"
+    },
+    "result": {
+        "count": 1,
+        "item": "createfood:fish_chowder_bowl"
+    }
+}

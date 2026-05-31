@@ -1,0 +1,22 @@
+{
+    "type": "create:mixing",
+    "heat_requirement": "heated",
+    "ingredients": [
+        {
+            "item": "minecraft:glass_bottle"
+        },
+        {
+            "amount": 250,
+            "fluidTag": "forge:milk"
+        },
+        {
+            "amount": 250,
+            "fluidTag": "forge:vinegar"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:yogurt_bottle"
+        }
+    ]
+}

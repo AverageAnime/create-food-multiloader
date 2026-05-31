@@ -1,0 +1,18 @@
+{
+    "type": "create:mixing",
+    "heat_requirement": "heated",
+    "ingredients": [
+        {
+            "tag": "forge:raw_onion_rings"
+        },
+        {
+            "amount": 125,
+            "fluidTag": "forge:vegetable_oil"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:onion_rings"
+        }
+    ]
+}

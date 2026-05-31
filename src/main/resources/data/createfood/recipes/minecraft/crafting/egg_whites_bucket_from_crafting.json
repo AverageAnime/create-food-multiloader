@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:bucket"
+        },
+        {
+            "tag": "forge:egg_whites_bottle"
+        },
+        {
+            "tag": "forge:egg_whites_bottle"
+        },
+        {
+            "tag": "forge:egg_whites_bottle"
+        },
+        {
+            "tag": "forge:egg_whites_bottle"
+        }
+    ],
+    "result": {
+        "item": "createfood:egg_whites_bucket"
+    }
+}

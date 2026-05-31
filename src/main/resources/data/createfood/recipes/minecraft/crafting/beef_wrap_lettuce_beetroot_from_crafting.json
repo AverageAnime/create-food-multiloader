@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:taco_shell_ingredient"
+        },
+        {
+            "tag": "forge:cooked_beef"
+        },
+        {
+            "tag": "forge:foods/leafy_green"
+        },
+        {
+            "tag": "forge:beetroot"
+        }
+    ],
+    "result": {
+        "item": "createfood:beef_wrap_lettuce_beetroot"
+    }
+}

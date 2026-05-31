@@ -1,0 +1,17 @@
+{
+    "type": "create:compacting",
+    "ingredients": [
+        {
+            "item": "minecraft:glow_berries"
+        },
+        {
+            "tag": "forge:sweet_dough"
+        }
+    ],
+    "results": [
+        {
+            "count": 8,
+            "item": "createfood:raw_glow_berry_cookie"
+        }
+    ]
+}

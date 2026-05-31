@@ -1,0 +1,22 @@
+{
+    "type": "create:mixing",
+    "heat_requirement": "heated",
+    "ingredients": [
+        {
+            "amount": 250,
+            "fluidTag": "forge:condensed_milk"
+        },
+        {
+            "tag": "forge:crops/rice"
+        },
+        {
+            "tag": "forge:sugar"
+        }
+    ],
+    "results": [
+        {
+            "amount": 333,
+            "fluid": "createfood:rice_pudding"
+        }
+    ]
+}

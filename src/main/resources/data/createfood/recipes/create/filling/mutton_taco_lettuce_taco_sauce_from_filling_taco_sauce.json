@@ -1,0 +1,17 @@
+{
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "tag": "forge:mutton_taco_lettuce"
+        },
+        {
+            "amount": 250,
+            "fluidTag": "forge:taco_sauce"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:mutton_taco_lettuce_taco_sauce"
+        }
+    ]
+}

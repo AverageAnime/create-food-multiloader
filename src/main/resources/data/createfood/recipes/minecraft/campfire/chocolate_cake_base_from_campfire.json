@@ -1,0 +1,9 @@
+{
+    "type": "minecraft:campfire_cooking",
+    "cookingtime": 200,
+    "experience": 0.1,
+    "ingredient": {
+        "tag": "forge:chocolate_cake_batter_bucket"
+    },
+    "result": "createfood:chocolate_cake_base"
+}

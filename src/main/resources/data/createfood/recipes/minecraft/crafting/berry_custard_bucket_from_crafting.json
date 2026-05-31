@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:bucket"
+        },
+        {
+            "tag": "forge:berry_custard"
+        },
+        {
+            "tag": "forge:berry_custard"
+        },
+        {
+            "tag": "forge:berry_custard"
+        },
+        {
+            "tag": "forge:berry_custard"
+        }
+    ],
+    "result": {
+        "item": "createfood:berry_custard_bucket"
+    }
+}

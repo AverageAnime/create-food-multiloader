@@ -1,0 +1,16 @@
+{
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "forge:custard_bottle"
+        },
+        {
+            "tag": "forge:sugar"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:custard_sugar_bottle"
+        }
+    ]
+}

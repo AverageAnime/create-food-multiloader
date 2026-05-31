@@ -1,0 +1,28 @@
+{
+    "type": "create:compacting",
+    "heat_requirement": "heated",
+    "ingredients": [
+        {
+            "amount": 1000,
+            "fluidTag": "forge:muffin_batter"
+        },
+        {
+            "tag": "forge:chocolate_chips"
+        },
+        {
+            "tag": "forge:chocolate_chips"
+        },
+        {
+            "tag": "forge:chocolate_chips"
+        },
+        {
+            "tag": "forge:chocolate_chips"
+        }
+    ],
+    "results": [
+        {
+            "count": 4,
+            "item": "createfood:chocolate_chip_muffin"
+        }
+    ]
+}

@@ -1,0 +1,20 @@
+{
+    "type": "farmersdelight:cooking",
+    "experience": 0.2,
+    "ingredients": [
+        {
+            "tag": "forge:foods/raw_fish"
+        },
+        {
+            "item": "minecraft:egg"
+        },
+        {
+            "tag": "forge:bread_crumbs"
+        }
+    ],
+    "recipe_book_tab": "misc",
+    "result": {
+        "count": 1,
+        "item": "createfood:fish_sticks"
+    }
+}

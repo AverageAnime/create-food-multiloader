@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:bun"
+        },
+        {
+            "tag": "forge:cooked_beef"
+        },
+        {
+            "tag": "forge:warped_fungus"
+        }
+    ],
+    "result": {
+        "item": "createfood:beef_bun_warped_fungus"
+    }
+}

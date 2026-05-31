@@ -1,0 +1,29 @@
+{
+    "type": "create:mixing",
+    "heat_requirement": "heated",
+    "ingredients": [
+        {
+            "amount": 250,
+            "fluidTag": "forge:milk"
+        },
+        {
+            "tag": "forge:potato"
+        },
+        {
+            "tag": "forge:butter"
+        },
+        {
+            "amount": 250,
+            "fluidTag": "forge:sour_cream"
+        },
+        {
+            "tag": "forge:bowl"
+        }
+    ],
+    "results": [
+        {
+            "count": 1,
+            "item": "createfood:mashed_potatoes_bowl_sour_cream"
+        }
+    ]
+}

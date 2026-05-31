@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:ground_sausage"
+        },
+        {
+            "tag": "forge:carrot"
+        },
+        {
+            "tag": "forge:onion"
+        },
+        {
+            "tag": "forge:potato"
+        }
+    ],
+    "result": {
+        "item": "createfood:meat_pie_filling"
+    }
+}

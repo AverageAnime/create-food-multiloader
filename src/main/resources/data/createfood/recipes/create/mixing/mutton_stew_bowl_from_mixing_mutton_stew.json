@@ -1,0 +1,23 @@
+{
+    "type": "create:mixing",
+    "ingredients": [
+        {
+            "amount": 1000,
+            "fluidTag": "forge:mutton_stew"
+        },
+        {
+            "item": "minecraft:bowl"
+        },
+        {
+            "item": "minecraft:bowl"
+        },
+        {
+            "item": "minecraft:bowl"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:mutton_stew_bowl"
+        }
+    ]
+}

@@ -1,0 +1,28 @@
+{
+    "type": "create:compacting",
+    "heat_requirement": "heated",
+    "ingredients": [
+        {
+            "amount": 1000,
+            "fluidTag": "forge:muffin_batter"
+        },
+        {
+            "tag": "forge:butterscotch_chips"
+        },
+        {
+            "tag": "forge:butterscotch_chips"
+        },
+        {
+            "tag": "forge:butterscotch_chips"
+        },
+        {
+            "tag": "forge:butterscotch_chips"
+        }
+    ],
+    "results": [
+        {
+            "count": 4,
+            "item": "createfood:butterscotch_chip_muffin"
+        }
+    ]
+}

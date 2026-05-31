@@ -1,0 +1,9 @@
+{
+    "type": "minecraft:smelting",
+    "cookingtime": 150,
+    "experience": 0.3,
+    "ingredient": {
+        "tag": "forge:meringue_bowl"
+    },
+    "result": "createfood:meringue_cookie"
+}

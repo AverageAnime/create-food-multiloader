@@ -1,0 +1,17 @@
+{
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "forge:yogurt_bowl"
+        },
+        {
+            "tag": "forge:chorus_fruit"
+        }
+    ],
+    "results": [
+        {
+            "count": 1,
+            "item": "createfood:yogurt_bowl_chorus_fruit"
+        }
+    ]
+}

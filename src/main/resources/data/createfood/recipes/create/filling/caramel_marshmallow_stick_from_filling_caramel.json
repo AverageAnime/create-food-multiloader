@@ -1,0 +1,17 @@
+{
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "tag": "forge:marshmallow_stick"
+        },
+        {
+            "amount": 125,
+            "fluidTag": "forge:caramel"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:caramel_marshmallow_stick"
+        }
+    ]
+}

@@ -1,0 +1,20 @@
+{
+    "type": "farmersdelight:cooking",
+    "experience": 0.2,
+    "ingredients": [
+        {
+            "tag": "forge:onion"
+        },
+        {
+            "item": "minecraft:egg"
+        },
+        {
+            "tag": "forge:bread_crumbs"
+        }
+    ],
+    "recipe_book_tab": "misc",
+    "result": {
+        "count": 1,
+        "item": "createfood:onion_rings"
+    }
+}

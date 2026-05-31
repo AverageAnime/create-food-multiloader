@@ -1,0 +1,26 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:taco_shell_ingredient"
+        },
+        {
+            "tag": "forge:egg_burrito_ingredients"
+        },
+        {
+            "tag": "forge:egg_burrito_ingredients"
+        },
+        {
+            "tag": "forge:cheeses"
+        },
+        {
+            "tag": "forge:sausages"
+        },
+        {
+            "tag": "forge:cooked_pork"
+        }
+    ],
+    "result": {
+        "item": "createfood:egg_burrito_cheese_sausage_bacon"
+    }
+}

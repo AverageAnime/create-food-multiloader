@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:bucket"
+        },
+        {
+            "tag": "forge:bread_pudding_bowl"
+        },
+        {
+            "tag": "forge:bread_pudding_bowl"
+        },
+        {
+            "tag": "forge:bread_pudding_bowl"
+        }
+    ],
+    "result": {
+        "item": "createfood:bread_pudding_bucket"
+    }
+}

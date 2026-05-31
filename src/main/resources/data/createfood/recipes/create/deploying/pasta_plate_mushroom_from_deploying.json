@@ -1,0 +1,17 @@
+{
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "forge:pasta_plate"
+        },
+        {
+            "tag": "forge:mushrooms"
+        }
+    ],
+    "results": [
+        {
+            "count": 1,
+            "item": "createfood:pasta_plate_mushroom"
+        }
+    ]
+}

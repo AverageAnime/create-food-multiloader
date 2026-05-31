@@ -1,0 +1,18 @@
+{
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "tag": "forge:yogurt_bowl"
+        },
+        {
+            "amount": 125,
+            "fluidTag": "forge:honey"
+        }
+    ],
+    "results": [
+        {
+            "count": 1,
+            "item": "createfood:yogurt_bowl_honey"
+        }
+    ]
+}

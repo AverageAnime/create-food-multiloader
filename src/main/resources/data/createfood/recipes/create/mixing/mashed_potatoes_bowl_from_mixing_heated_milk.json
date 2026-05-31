@@ -1,0 +1,24 @@
+{
+    "type": "create:mixing",
+    "heat_requirement": "heated",
+    "ingredients": [
+        {
+            "amount": 250,
+            "fluidTag": "forge:milk"
+        },
+        {
+            "tag": "forge:potato"
+        },
+        {
+            "tag": "forge:butter"
+        },
+        {
+            "tag": "forge:bowl"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:mashed_potatoes_bowl"
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:raw_sausages"
+        },
+        {
+            "tag": "forge:butter_dough"
+        },
+        {
+            "tag": "forge:cheeses"
+        }
+    ],
+    "result": {
+        "count": 3,
+        "item": "createfood:raw_sausage_roll_cheese"
+    }
+}

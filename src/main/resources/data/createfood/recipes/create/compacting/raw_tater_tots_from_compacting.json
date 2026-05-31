@@ -1,0 +1,20 @@
+{
+    "type": "create:compacting",
+    "heat_requirement": "heated",
+    "ingredients": [
+        {
+            "tag": "forge:shredded_potato"
+        },
+        {
+            "tag": "forge:flours/wheat"
+        },
+        {
+            "tag": "forge:salt"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:tater_tots"
+        }
+    ]
+}

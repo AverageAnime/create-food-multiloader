@@ -1,0 +1,14 @@
+{
+    "type": "farmersdelight:cooking",
+    "experience": 0.05,
+    "ingredients": [
+        {
+            "item": "farmersdelight:pumpkin_slice"
+        }
+    ],
+    "recipe_book_tab": "drinks",
+    "result": {
+        "count": 1,
+        "item": "createfood:pumpkin_puree_bottle"
+    }
+}

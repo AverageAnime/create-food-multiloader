@@ -1,0 +1,22 @@
+{
+    "type": "create:mixing",
+    "heat_requirement": "heated",
+    "ingredients": [
+        {
+            "item": "minecraft:bucket"
+        },
+        {
+            "amount": 1000,
+            "fluidTag": "forge:milk"
+        },
+        {
+            "amount": 1000,
+            "fluidTag": "forge:vinegar"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:yogurt_bucket"
+        }
+    ]
+}

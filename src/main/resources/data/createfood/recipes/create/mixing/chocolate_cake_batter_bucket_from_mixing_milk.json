@@ -1,0 +1,33 @@
+{
+    "type": "create:mixing",
+    "requiredSpeed": 32,
+    "ingredients": [
+        {
+            "amount": 1000,
+            "fluidTag": "forge:milk"
+        },
+        {
+            "tag": "forge:sugar"
+        },
+        {
+            "tag": "forge:flours/wheat"
+        },
+        {
+            "tag": "forge:eggs"
+        },
+        {
+            "tag": "forge:butter"
+        },
+        {
+            "tag": "forge:cocoa_powder"
+        },
+        {
+            "item": "minecraft:bucket"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:chocolate_cake_batter_bucket"
+        }
+    ]
+}

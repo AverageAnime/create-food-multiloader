@@ -1,0 +1,28 @@
+{
+    "type": "create:mixing",
+    "heat_requirement": "heated",
+    "ingredients": [
+        {
+            "tag": "forge:tomato"
+        },
+        {
+            "tag": "forge:tomato"
+        },
+        {
+            "tag": "forge:tomato"
+        },
+        {
+            "amount": 250,
+            "fluidTag": "forge:heavy_cream"
+        },
+        {
+            "tag": "forge:salt"
+        }
+    ],
+    "results": [
+        {
+            "amount": 333,
+            "fluid": "createfood:tomato_cream_soup"
+        }
+    ]
+}

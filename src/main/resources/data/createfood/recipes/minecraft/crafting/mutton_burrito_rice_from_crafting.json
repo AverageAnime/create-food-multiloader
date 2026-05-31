@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:taco_shell_ingredient"
+        },
+        {
+            "tag": "forge:gyro_mutton_ingredient"
+        },
+        {
+            "tag": "forge:cooked_rice"
+        }
+    ],
+    "result": {
+        "item": "createfood:mutton_burrito_rice"
+    }
+}

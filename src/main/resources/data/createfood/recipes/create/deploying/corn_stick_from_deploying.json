@@ -1,0 +1,16 @@
+{
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "item": "minecraft:stick"
+        },
+        {
+            "tag": "forge:corn"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:corn_stick"
+        }
+    ]
+}

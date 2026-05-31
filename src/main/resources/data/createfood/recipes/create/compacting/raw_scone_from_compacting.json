@@ -1,0 +1,17 @@
+{
+    "type": "create:compacting",
+    "ingredients": [
+        {
+            "tag": "forge:butter_dough_small"
+        },
+        {
+            "tag": "forge:sugar_dough_small"
+        }
+    ],
+    "results": [
+        {
+            "count": 2,
+            "item": "createfood:raw_scone"
+        }
+    ]
+}

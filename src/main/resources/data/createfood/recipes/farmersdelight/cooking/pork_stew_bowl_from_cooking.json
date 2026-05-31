@@ -1,0 +1,26 @@
+{
+    "type": "farmersdelight:cooking",
+    "experience": 0.1,
+    "container": {
+        "count": 1,
+        "id": "minecraft:bowl"
+    },
+    "ingredients": [
+        {
+            "tag": "forge:foods/raw_pork"
+        },
+        {
+            "tag": "forge:onion"
+        },
+        {
+            "tag": "forge:carrot"
+        },
+        {
+            "tag": "forge:tomato"
+        }
+    ],
+    "recipe_book_tab": "drinks",
+    "result": {
+        "item": "createfood:pork_stew_bowl"
+    }
+}

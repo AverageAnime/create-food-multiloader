@@ -1,0 +1,18 @@
+{
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "item": "minecraft:glass_bottle"
+        },
+        {
+            "amount": 250,
+            "fluidTag": "forge:cane_syrup"
+        }
+    ],
+    "results": [
+        {
+            "count": 1,
+            "item": "createfood:cane_syrup_bottle"
+        }
+    ]
+}

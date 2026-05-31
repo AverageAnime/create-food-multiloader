@@ -1,0 +1,9 @@
+{
+    "type": "minecraft:smoking",
+    "cookingtime": 250,
+    "experience": 0.15,
+    "ingredient": {
+        "tag": "forge:raw_rabbit_calzone"
+    },
+    "result": "createfood:rabbit_calzone"
+}

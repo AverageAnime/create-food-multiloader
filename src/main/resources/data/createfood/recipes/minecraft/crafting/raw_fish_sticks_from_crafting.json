@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:foods/raw_fish"
+        },
+        {
+            "item": "minecraft:egg"
+        },
+        {
+            "tag": "forge:bread_crumbs"
+        }
+    ],
+    "result": {
+        "item": "createfood:raw_fish_sticks"
+    }
+}

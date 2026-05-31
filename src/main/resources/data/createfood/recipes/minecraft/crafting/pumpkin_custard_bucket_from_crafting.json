@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:bucket"
+        },
+        {
+            "tag": "forge:pumpkin_custard"
+        },
+        {
+            "tag": "forge:pumpkin_custard"
+        },
+        {
+            "tag": "forge:pumpkin_custard"
+        },
+        {
+            "tag": "forge:pumpkin_custard"
+        }
+    ],
+    "result": {
+        "item": "createfood:pumpkin_custard_bucket"
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "type": "minecraft:campfire_cooking",
+    "cookingtime": 250,
+    "experience": 0.15,
+    "ingredient": {
+        "item": "createfood:raw_beef_calzone"
+    },
+    "result": "createfood:beef_calzone"
+}

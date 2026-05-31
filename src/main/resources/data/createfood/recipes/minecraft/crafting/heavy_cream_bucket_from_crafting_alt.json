@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:bucket"
+        },
+        {
+            "tag": "forge:heavy_cream"
+        },
+        {
+            "tag": "forge:heavy_cream"
+        },
+        {
+            "tag": "forge:heavy_cream"
+        },
+        {
+            "tag": "forge:heavy_cream"
+        }
+    ],
+    "result": {
+        "item": "createfood:heavy_cream_bucket"
+    }
+}

@@ -1,0 +1,16 @@
+{
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "forge:rabbit_taco"
+        },
+        {
+            "tag": "forge:foods/leafy_green"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:rabbit_taco_lettuce"
+        }
+    ]
+}

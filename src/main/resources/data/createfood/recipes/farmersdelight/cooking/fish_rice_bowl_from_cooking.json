@@ -1,0 +1,24 @@
+{
+    "type": "farmersdelight:cooking",
+    "experience": 0.2,
+    "container": {
+        "count": 1,
+        "id": "minecraft:bowl"
+    },
+    "ingredients": [
+        {
+            "tag": "forge:foods/raw_fish"
+        },
+        {
+            "tag": "forge:crops/rice"
+        },
+        {
+            "item": "minecraft:dried_kelp"
+        }
+    ],
+    "recipe_book_tab": "meals",
+    "result": {
+        "count": 1,
+        "item": "createfood:fish_rice_bowl"
+    }
+}

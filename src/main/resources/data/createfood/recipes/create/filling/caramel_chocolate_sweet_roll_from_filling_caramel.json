@@ -1,0 +1,17 @@
+{
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "item": "createfood:chocolate_sweet_roll_base"
+        },
+        {
+            "amount": 250,
+            "fluidTag": "forge:caramel"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:caramel_chocolate_sweet_roll"
+        }
+    ]
+}

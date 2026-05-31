@@ -1,0 +1,9 @@
+{
+    "type": "minecraft:smoking",
+    "cookingtime": 200,
+    "experience": 0.35,
+    "ingredient": {
+        "tag": "forge:tropical_fish_slice"
+    },
+    "result": "createfood:cooked_tropical_fish_slice"
+}

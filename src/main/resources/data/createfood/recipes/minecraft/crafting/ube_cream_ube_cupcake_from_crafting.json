@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:ube_cupcake_base"
+        },
+        {
+            "tag": "forge:ube_cream_frosting"
+        }
+    ],
+    "result": {
+        "item": "createfood:ube_cream_ube_cupcake"
+    }
+}

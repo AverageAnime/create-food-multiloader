@@ -1,0 +1,9 @@
+{
+    "type": "minecraft:smelting",
+    "cookingtime": 550,
+    "experience": 0.95,
+    "ingredient": {
+        "tag": "forge:raw_meat_pie"
+    },
+    "result": "createfood:meat_pie"
+}

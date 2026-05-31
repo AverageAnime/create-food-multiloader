@@ -1,0 +1,9 @@
+{
+    "type": "minecraft:campfire_cooking",
+    "cookingtime": 200,
+    "experience": 0.1,
+    "ingredient": {
+        "tag": "forge:raw_butterscotch_chip_cookie"
+    },
+    "result": "createfood:butterscotch_chip_cookie"
+}

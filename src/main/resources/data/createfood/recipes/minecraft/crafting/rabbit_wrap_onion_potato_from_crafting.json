@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:taco_shell_ingredient"
+        },
+        {
+            "tag": "forge:cooked_rabbit"
+        },
+        {
+            "tag": "forge:onion"
+        },
+        {
+            "tag": "forge:potato"
+        }
+    ],
+    "result": {
+        "item": "createfood:rabbit_wrap_onion_potato"
+    }
+}

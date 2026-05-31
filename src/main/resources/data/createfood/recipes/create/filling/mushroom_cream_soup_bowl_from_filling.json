@@ -1,0 +1,17 @@
+{
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "item": "minecraft:bowl"
+        },
+        {
+            "amount": 333,
+            "fluidTag": "forge:mushroom_cream_soup"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:mushroom_cream_soup_bowl"
+        }
+    ]
+}

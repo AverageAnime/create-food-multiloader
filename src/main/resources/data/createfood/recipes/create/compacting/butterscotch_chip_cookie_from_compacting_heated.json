@@ -1,0 +1,18 @@
+{
+    "type": "create:compacting",
+    "heat_requirement": "heated",
+    "ingredients": [
+        {
+            "tag": "forge:butterscotch_chips"
+        },
+        {
+            "tag": "forge:sweet_dough"
+        }
+    ],
+    "results": [
+        {
+            "count": 8,
+            "item": "createfood:butterscotch_chip_cookie"
+        }
+    ]
+}

@@ -1,0 +1,28 @@
+{
+    "type": "create:mixing",
+    "requiredSpeed": 32,
+    "ingredients": [
+        {
+            "amount": 1000,
+            "fluidTag": "forge:milk"
+        },
+        {
+            "tag": "forge:sugar"
+        },
+        {
+            "tag": "forge:flours/wheat"
+        },
+        {
+            "tag": "forge:eggs"
+        },
+        {
+            "tag": "forge:vegetable_oil"
+        }
+    ],
+    "results": [
+        {
+            "amount": 1000,
+            "fluid": "createfood:muffin_batter"
+        }
+    ]
+}

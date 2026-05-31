@@ -1,0 +1,18 @@
+{
+    "type": "create:mixing",
+    "heat_requirement": "heated",
+    "ingredients": [
+        {
+            "tag": "forge:raw_fish_sticks"
+        },
+        {
+            "amount": 125,
+            "fluidTag": "forge:vegetable_oil"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:fish_sticks"
+        }
+    ]
+}

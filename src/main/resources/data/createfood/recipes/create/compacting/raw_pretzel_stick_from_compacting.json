@@ -1,0 +1,14 @@
+{
+    "type": "create:compacting",
+    "ingredients": [
+        {
+            "tag": "forge:salt_dough_small"
+        }
+    ],
+    "results": [
+        {
+            "count": 1,
+            "item": "createfood:raw_pretzel_stick"
+        }
+    ]
+}

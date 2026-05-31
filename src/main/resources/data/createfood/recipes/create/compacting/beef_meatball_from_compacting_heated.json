@@ -1,0 +1,15 @@
+{
+    "type": "create:compacting",
+    "heat_requirement": "heated",
+    "ingredients": [
+        {
+            "tag": "forge:ground_beef"
+        }
+    ],
+    "results": [
+        {
+            "count": 2,
+            "item": "createfood:beef_meatball"
+        }
+    ]
+}

@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:fish_taco"
+        },
+        {
+            "item": "minecraft:dried_kelp"
+        }
+    ],
+    "result": {
+        "item": "createfood:fish_taco_kelp"
+    }
+}

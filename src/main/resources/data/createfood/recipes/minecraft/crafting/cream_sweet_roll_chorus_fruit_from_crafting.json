@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "create:sweet_roll"
+        },
+        {
+            "tag": "forge:chorus_fruit"
+        }
+    ],
+    "result": {
+        "item": "createfood:cream_sweet_roll_chorus_fruit"
+    }
+}

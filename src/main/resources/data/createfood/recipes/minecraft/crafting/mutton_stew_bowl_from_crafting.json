@@ -1,0 +1,21 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:mutton_stew_bucket"
+        },
+        {
+            "tag": "forge:bowl"
+        },
+        {
+            "tag": "forge:bowl"
+        },
+        {
+            "tag": "forge:bowl"
+        }
+    ],
+    "result": {
+        "count": 3,
+        "item": "createfood:mutton_stew_bowl"
+    }
+}

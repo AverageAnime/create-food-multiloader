@@ -1,0 +1,15 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:nacho_bowl"
+        },
+        {
+            "tag": "forge:cooked_beef"
+        }
+    ],
+    "result": {
+        "count": 1,
+        "item": "createfood:nacho_bowl_beef"
+    }
+}

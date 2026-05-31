@@ -1,0 +1,27 @@
+{
+    "type": "create:mixing",
+    "heat_requirement": "heated",
+    "ingredients": [
+        {
+            "tag": "forge:dumpling_wrappers"
+        },
+        {
+            "tag": "forge:potato"
+        },
+        {
+            "tag": "forge:cheeses"
+        },
+        {
+            "tag": "forge:onion"
+        },
+        {
+            "tag": "forge:crops/cabbage"
+        }
+    ],
+    "results": [
+        {
+            "count": 2,
+            "item": "createfood:cheese_potato_dumplings"
+        }
+    ]
+}

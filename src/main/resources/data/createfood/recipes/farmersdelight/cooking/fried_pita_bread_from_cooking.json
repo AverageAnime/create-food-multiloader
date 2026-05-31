@@ -1,0 +1,17 @@
+{
+    "type": "farmersdelight:cooking",
+    "experience": 0.1,
+    "ingredients": [
+        {
+            "tag": "forge:vegetable_oil_bucket"
+        },
+        {
+            "tag": "forge:pita_bread"
+        }
+    ],
+    "recipe_book_tab": "meals",
+    "result": {
+        "count": 1,
+        "item": "createfood:fried_pita_bread"
+    }
+}

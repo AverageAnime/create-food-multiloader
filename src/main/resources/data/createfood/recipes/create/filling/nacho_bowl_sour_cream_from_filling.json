@@ -1,0 +1,18 @@
+{
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "tag": "forge:nacho_bowl"
+        },
+        {
+            "amount": 125,
+            "fluidTag": "forge:sour_cream"
+        }
+    ],
+    "results": [
+        {
+            "count": 1,
+            "item": "createfood:nacho_bowl_sour_cream"
+        }
+    ]
+}

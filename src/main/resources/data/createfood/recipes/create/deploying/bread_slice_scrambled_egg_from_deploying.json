@@ -1,0 +1,16 @@
+{
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "forge:bread_slice"
+        },
+        {
+            "tag": "forge:scrambled_eggs_plate"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:bread_slice_scrambled_egg"
+        }
+    ]
+}

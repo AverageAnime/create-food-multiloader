@@ -1,0 +1,18 @@
+{
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "tag": "forge:pasta_plate_mushroom"
+        },
+        {
+            "amount": 250,
+            "fluidTag": "forge:tomato_sauce"
+        }
+    ],
+    "results": [
+        {
+            "count": 1,
+            "item": "createfood:pasta_plate_mushroom_tomato_sauce"
+        }
+    ]
+}

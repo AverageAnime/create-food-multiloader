@@ -1,0 +1,18 @@
+{
+    "type": "farmersdelight:cooking",
+    "experience": 0.75,
+    "ingredients": [
+        {
+            "tag": "forge:muffin_batter_bucket"
+        },
+        {
+            "count": 4,
+            "tag": "forge:white_chocolate_chips"
+        }
+    ],
+    "recipe_book_tab": "misc",
+    "result": {
+        "count": 4,
+        "item": "createfood:white_chocolate_chip_muffin"
+    }
+}

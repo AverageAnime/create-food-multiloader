@@ -1,0 +1,19 @@
+{
+    "type": "create:mixing",
+    "heat_requirement": "heated",
+    "ingredients": [
+        {
+            "amount": 125,
+            "fluidTag": "forge:vegetable_oil"
+        },
+        {
+            "tag": "forge:pita_bread"
+        }
+    ],
+    "results": [
+        {
+            "count": 1,
+            "item": "createfood:fried_pita_bread"
+        }
+    ]
+}

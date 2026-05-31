@@ -1,0 +1,29 @@
+{
+    "type": "create:mixing",
+    "requiredSpeed": 32,
+    "heat_requirement": "heated",
+    "ingredients": [
+        {
+            "tag": "forge:bread_crumbs"
+        },
+        {
+            "tag": "forge:bread_crumbs"
+        },
+        {
+            "amount": 250,
+            "fluidTag": "forge:custard"
+        },
+        {
+            "tag": "forge:eggs"
+        },
+        {
+            "tag": "forge:sugar"
+        }
+    ],
+    "results": [
+        {
+            "amount": 333,
+            "fluid": "createfood:bread_pudding"
+        }
+    ]
+}

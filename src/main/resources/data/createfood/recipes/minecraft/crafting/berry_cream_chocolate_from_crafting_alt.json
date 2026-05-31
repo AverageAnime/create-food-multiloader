@@ -1,0 +1,24 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:hollow_chocolate"
+        },
+        {
+            "tag": "forge:hollow_chocolate"
+        },
+        {
+            "tag": "forge:hollow_chocolate"
+        },
+        {
+            "tag": "forge:hollow_chocolate"
+        },
+        {
+            "tag": "forge:berry_cream_frosting_piping_bag"
+        }
+    ],
+    "result": {
+        "count": 4,
+        "item": "createfood:berry_cream_chocolate"
+    }
+}

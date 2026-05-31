@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:bread_slice_scrambled_egg"
+        },
+        {
+            "tag": "forge:bread_slice"
+        }
+    ],
+    "result": {
+        "item": "createfood:scrambled_egg_sandwich"
+    }
+}

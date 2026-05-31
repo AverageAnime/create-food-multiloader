@@ -1,0 +1,16 @@
+{
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "forge:fish_taco"
+        },
+        {
+            "item": "minecraft:dried_kelp"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:fish_taco_kelp"
+        }
+    ]
+}

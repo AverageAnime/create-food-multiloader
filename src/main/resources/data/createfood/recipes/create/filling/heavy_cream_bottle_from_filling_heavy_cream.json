@@ -1,0 +1,18 @@
+{
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "item": "minecraft:glass_bottle"
+        },
+        {
+            "amount": 250,
+            "fluidTag": "forge:heavy_cream"
+        }
+    ],
+    "results": [
+        {
+            "count": 1,
+            "item": "createfood:heavy_cream_bottle"
+        }
+    ]
+}

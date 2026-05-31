@@ -1,0 +1,11 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:food_plates"
+        }
+    ],
+    "result": {
+        "item": "minecraft:bowl"
+    }
+}

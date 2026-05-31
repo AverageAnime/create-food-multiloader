@@ -1,0 +1,9 @@
+{
+    "type": "minecraft:smelting",
+    "cookingtime": 250,
+    "experience": 0.15,
+    "ingredient": {
+        "item": "createfood:raw_chicken_calzone"
+    },
+    "result": "createfood:chicken_calzone"
+}

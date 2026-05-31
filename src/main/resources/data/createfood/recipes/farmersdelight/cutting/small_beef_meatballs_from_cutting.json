@@ -1,0 +1,18 @@
+{
+    "type": "farmersdelight:cutting",
+    "ingredients": [
+        {
+            "tag": "forge:beef_meatball"
+        }
+    ],
+    "tool": {
+        "tag": "forge:tools/knife"
+    },
+    "result": [
+        {
+            "item": {
+                "id": "createfood:small_beef_meatballs"
+            }
+        }
+    ]
+}

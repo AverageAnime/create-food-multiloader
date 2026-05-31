@@ -1,0 +1,9 @@
+{
+    "type": "minecraft:campfire_cooking",
+    "cookingtime": 200,
+    "experience": 0.1,
+    "ingredient": {
+        "tag": "forge:raw_glow_berry_cookie"
+    },
+    "result": "createfood:glow_berry_cookie"
+}

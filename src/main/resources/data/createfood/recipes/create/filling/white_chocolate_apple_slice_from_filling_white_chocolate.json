@@ -1,0 +1,17 @@
+{
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "tag": "forge:apple_slice"
+        },
+        {
+            "amount": 125,
+            "fluidTag": "forge:white_chocolate"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:white_chocolate_apple_slice"
+        }
+    ]
+}

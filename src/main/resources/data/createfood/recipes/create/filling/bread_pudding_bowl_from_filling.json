@@ -1,0 +1,17 @@
+{
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "item": "minecraft:bowl"
+        },
+        {
+            "amount": 333,
+            "fluidTag": "forge:bread_pudding"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:bread_pudding_bowl"
+        }
+    ]
+}

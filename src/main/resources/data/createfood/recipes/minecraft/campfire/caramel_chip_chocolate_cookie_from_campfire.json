@@ -1,0 +1,9 @@
+{
+    "type": "minecraft:campfire_cooking",
+    "cookingtime": 200,
+    "experience": 0.1,
+    "ingredient": {
+        "tag": "forge:raw_caramel_chip_chocolate_cookie"
+    },
+    "result": "createfood:caramel_chip_chocolate_cookie"
+}

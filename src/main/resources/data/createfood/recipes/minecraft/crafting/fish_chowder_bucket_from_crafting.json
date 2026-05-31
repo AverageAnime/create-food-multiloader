@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:bucket"
+        },
+        {
+            "tag": "forge:fish_chowder_bowl"
+        },
+        {
+            "tag": "forge:fish_chowder_bowl"
+        },
+        {
+            "tag": "forge:fish_chowder_bowl"
+        }
+    ],
+    "result": {
+        "item": "createfood:fish_chowder_bucket"
+    }
+}

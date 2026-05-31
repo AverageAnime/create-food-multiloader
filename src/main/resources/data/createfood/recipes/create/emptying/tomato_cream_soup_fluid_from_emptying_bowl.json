@@ -1,0 +1,17 @@
+{
+    "type": "create:emptying",
+    "ingredients": [
+        {
+            "tag": "forge:tomato_cream_soup_bowl"
+        }
+    ],
+    "results": [
+        {
+            "item": "minecraft:bowl"
+        },
+        {
+            "amount": 333,
+            "fluid": "createfood:tomato_cream_soup"
+        }
+    ]
+}

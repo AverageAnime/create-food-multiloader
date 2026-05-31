@@ -1,0 +1,17 @@
+{
+    "type": "create:mixing",
+    "ingredients": [
+        {
+            "item": "minecraft:egg"
+        }
+    ],
+    "results": [
+        {
+            "amount": 250,
+            "fluid": "createfood:egg"
+        },
+        {
+            "item": "createfood:eggshell"
+        }
+    ]
+}

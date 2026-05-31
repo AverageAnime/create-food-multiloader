@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:bucket"
+        },
+        {
+            "tag": "forge:pumpkin_puree_bottle"
+        },
+        {
+            "tag": "forge:pumpkin_puree_bottle"
+        },
+        {
+            "tag": "forge:pumpkin_puree_bottle"
+        },
+        {
+            "tag": "forge:pumpkin_puree_bottle"
+        }
+    ],
+    "result": {
+        "item": "createfood:pumpkin_puree_bucket"
+    }
+}

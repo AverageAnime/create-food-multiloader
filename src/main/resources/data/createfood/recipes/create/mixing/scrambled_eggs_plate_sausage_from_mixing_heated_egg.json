@@ -1,0 +1,22 @@
+{
+    "type": "create:mixing",
+    "heat_requirement": "heated",
+    "ingredients": [
+        {
+            "amount": 500,
+            "fluidTag": "forge:egg"
+        },
+        {
+            "tag": "forge:sausages"
+        },
+        {
+            "tag": "forge:bowl"
+        }
+    ],
+    "results": [
+        {
+            "count": 1,
+            "item": "createfood:scrambled_eggs_plate_sausage"
+        }
+    ]
+}

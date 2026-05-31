@@ -1,0 +1,18 @@
+{
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "item": "minecraft:bowl"
+        },
+        {
+            "amount": 333,
+            "fluidTag": "forge:kelp_soup"
+        }
+    ],
+    "results": [
+        {
+            "count": 1,
+            "item": "createfood:kelp_soup_bowl"
+        }
+    ]
+}

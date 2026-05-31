@@ -1,0 +1,26 @@
+{
+    "type": "farmersdelight:cooking",
+    "experience": 0.1,
+    "container": {
+        "count": 1,
+        "id": "minecraft:bowl"
+    },
+    "ingredients": [
+        {
+            "tag": "forge:foods/raw_mutton"
+        },
+        {
+            "tag": "forge:onion"
+        },
+        {
+            "tag": "forge:eggs"
+        },
+        {
+            "tag": "forge:potato"
+        }
+    ],
+    "recipe_book_tab": "drinks",
+    "result": {
+        "item": "createfood:mutton_stew_bowl"
+    }
+}

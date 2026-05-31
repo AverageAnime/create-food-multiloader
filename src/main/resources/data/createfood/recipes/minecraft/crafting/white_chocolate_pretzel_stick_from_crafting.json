@@ -1,0 +1,15 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:pretzel_stick"
+        },
+        {
+            "tag": "forge:white_chocolate_bottle"
+        }
+    ],
+    "result": {
+        "count": 1,
+        "item": "createfood:white_chocolate_pretzel_stick"
+    }
+}

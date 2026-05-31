@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:custard_bottle"
+        },
+        {
+            "tag": "forge:sugar"
+        }
+    ],
+    "result": {
+        "item": "createfood:custard_sugar_bottle"
+    }
+}

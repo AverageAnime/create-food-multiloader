@@ -1,0 +1,16 @@
+{
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "forge:eggplant_bun_cheese"
+        },
+        {
+            "tag": "forge:foods/leafy_green"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:eggplant_bun_cheese_lettuce"
+        }
+    ]
+}

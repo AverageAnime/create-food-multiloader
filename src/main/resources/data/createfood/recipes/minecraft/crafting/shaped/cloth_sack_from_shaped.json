@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "XXX",
+        " Y ",
+        " Z "
+    ],
+    "key": {
+        "X": {
+            "tag": "forge:strings"
+        },
+        "Y": {
+            "tag": "minecraft:wool"
+        },
+        "Z": {
+            "tag": "forge:leathers"
+        }
+    },
+    "result": {
+        "count": 1,
+        "item": "createfood:cloth_sack"
+    }
+}

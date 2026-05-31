@@ -1,0 +1,9 @@
+{
+    "type": "minecraft:campfire_cooking",
+    "cookingtime": 200,
+    "experience": 0.1,
+    "ingredient": {
+        "tag": "forge:raw_white_chocolate_chip_cookie"
+    },
+    "result": "createfood:white_chocolate_chip_cookie"
+}

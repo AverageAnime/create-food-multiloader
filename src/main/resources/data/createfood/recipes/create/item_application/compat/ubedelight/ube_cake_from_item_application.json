@@ -1,0 +1,16 @@
+{
+    "type": "create:item_application",
+    "ingredients": [
+        {
+            "tag": "forge:ube_cream_ube_cake"
+        },
+        {
+            "item": "ubesdelight:ube"
+        }
+    ],
+    "results": [
+        {
+            "item": "ubesdelight:ube_cake"
+        }
+    ]
+}

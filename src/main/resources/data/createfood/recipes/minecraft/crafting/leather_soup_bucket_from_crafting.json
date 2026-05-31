@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:bucket"
+        },
+        {
+            "tag": "forge:leather_soup_bowl"
+        },
+        {
+            "tag": "forge:leather_soup_bowl"
+        },
+        {
+            "tag": "forge:leather_soup_bowl"
+        }
+    ],
+    "result": {
+        "item": "createfood:leather_soup_bucket"
+    }
+}

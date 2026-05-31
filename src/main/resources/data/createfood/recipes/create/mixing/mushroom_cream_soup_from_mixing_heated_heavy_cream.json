@@ -1,0 +1,28 @@
+{
+    "type": "create:mixing",
+    "heat_requirement": "heated",
+    "ingredients": [
+        {
+            "tag": "forge:mushrooms"
+        },
+        {
+            "tag": "forge:mushrooms"
+        },
+        {
+            "amount": 250,
+            "fluidTag": "forge:heavy_cream"
+        },
+        {
+            "tag": "forge:butter"
+        },
+        {
+            "tag": "forge:salt"
+        }
+    ],
+    "results": [
+        {
+            "amount": 333,
+            "fluid": "createfood:mushroom_cream_soup"
+        }
+    ]
+}

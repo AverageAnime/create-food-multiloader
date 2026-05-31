@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:sweet_berries"
+        },
+        {
+            "tag": "forge:bar_of_dark_chocolate"
+        }
+    ],
+    "result": {
+        "item": "createfood:dark_chocolate_berries"
+    }
+}

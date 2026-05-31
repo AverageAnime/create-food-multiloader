@@ -1,0 +1,23 @@
+{
+    "type": "farmersdelight:cooking",
+    "experience": 0.35,
+    "ingredients": [
+        {
+            "tag": "forge:dumpling_wrappers"
+        },
+        {
+            "tag": "forge:eggs"
+        },
+        {
+            "tag": "forge:onion"
+        },
+        {
+            "tag": "forge:crops/cabbage"
+        }
+    ],
+    "recipe_book_tab": "meals",
+    "result": {
+        "count": 1,
+        "item": "createfood:egg_dumplings"
+    }
+}

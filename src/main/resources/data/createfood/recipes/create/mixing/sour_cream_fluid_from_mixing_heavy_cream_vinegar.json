@@ -1,0 +1,19 @@
+{
+    "type": "create:mixing",
+    "ingredients": [
+        {
+            "amount": 1000,
+            "fluidTag": "forge:heavy_cream"
+        },
+        {
+            "amount": 250,
+            "fluidTag": "forge:vinegar"
+        }
+    ],
+    "results": [
+        {
+            "amount": 1000,
+            "fluid": "createfood:sour_cream"
+        }
+    ]
+}

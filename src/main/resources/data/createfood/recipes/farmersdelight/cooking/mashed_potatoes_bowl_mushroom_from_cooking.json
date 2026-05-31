@@ -1,0 +1,27 @@
+{
+    "type": "farmersdelight:cooking",
+    "experience": 0.5,
+    "container": {
+        "count": 1,
+        "id": "minecraft:bowl"
+    },
+    "ingredients": [
+        {
+            "tag": "forge:milk_bottle"
+        },
+        {
+            "tag": "forge:potato"
+        },
+        {
+            "tag": "forge:butter"
+        },
+        {
+            "tag": "forge:mushrooms"
+        }
+    ],
+    "recipe_book_tab": "misc",
+    "result": {
+        "count": 1,
+        "item": "createfood:mashed_potatoes_bowl_mushroom"
+    }
+}

@@ -1,0 +1,17 @@
+{
+    "type": "create:emptying",
+    "ingredients": [
+        {
+            "tag": "forge:fish_chowder_bowl"
+        }
+    ],
+    "results": [
+        {
+            "item": "minecraft:bowl"
+        },
+        {
+            "amount": 333,
+            "fluid": "createfood:fish_chowder"
+        }
+    ]
+}

@@ -1,0 +1,17 @@
+{
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "item": "minecraft:glass_bottle"
+        },
+        {
+            "amount": 250,
+            "fluidTag": "forge:pumpkin_puree"
+        }
+    ],
+    "results": [
+        {
+            "item": "createfood:pumpkin_puree_bottle"
+        }
+    ]
+}
