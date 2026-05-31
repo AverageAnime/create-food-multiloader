@@ -1,9 +1,0 @@
-{
-  "replace": false,
-  "values": [
-    {
-      "id": "createfood:raw_caramel_chips_chocolate_cookie",
-      "required": false
-    }
-  ]
-}

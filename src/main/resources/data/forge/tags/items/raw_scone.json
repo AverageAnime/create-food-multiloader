@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "createfood:raw_scone",
+      "required": false
+    }
+  ]
+}

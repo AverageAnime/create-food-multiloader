@@ -1,9 +1,0 @@
-{
-  "replace": false,
-  "values": [
-    {
-      "id": "createfood:cheese_and_beef_bun",
-      "required": false
-    }
-  ]
-}

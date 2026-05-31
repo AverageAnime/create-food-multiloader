@@ -1,9 +1,0 @@
-{
-    "replace": false,
-    "values": [
-        {
-            "id": "createfood:frosted_mini_waffle_chorus_fruit",
-            "required": false
-        }
-    ]
-}

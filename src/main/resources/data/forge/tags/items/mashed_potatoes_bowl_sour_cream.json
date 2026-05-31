@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "createfood:mashed_potatoes_bowl_sour_cream",
+      "required": false
+    }
+  ]
+}

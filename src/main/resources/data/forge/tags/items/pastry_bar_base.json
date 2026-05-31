@@ -1,9 +1,0 @@
-{
-  "replace": false,
-  "values": [
-    {
-      "id": "createfood:pastry_bar_base",
-      "required": false
-    }
-  ]
-}

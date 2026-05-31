@@ -1,0 +1,13 @@
+{
+    "replace": false,
+    "values": [
+        {
+            "id": "createfood:flowing_tomato_cream_soup",
+            "required": false
+        },
+        {
+            "id": "createfood:tomato_cream_soup",
+            "required": false
+        }
+    ]
+}

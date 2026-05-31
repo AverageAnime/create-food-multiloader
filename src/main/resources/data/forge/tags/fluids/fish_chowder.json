@@ -1,0 +1,13 @@
+{
+    "replace": false,
+    "values": [
+        {
+            "id": "createfood:flowing_fish_chowder",
+            "required": false
+        },
+        {
+            "id": "createfood:fish_chowder",
+            "required": false
+        }
+    ]
+}

@@ -1,9 +1,0 @@
-{
-  "replace": false,
-  "values": [
-    {
-      "id": "createfood:ube_cream_frosted_ube_cake",
-      "required": false
-    }
-  ]
-}

@@ -1,0 +1,13 @@
+{
+    "replace": false,
+    "values": [
+        {
+            "id": "createfood:flowing_mushroom_cream_soup",
+            "required": false
+        },
+        {
+            "id": "createfood:mushroom_cream_soup",
+            "required": false
+        }
+    ]
+}

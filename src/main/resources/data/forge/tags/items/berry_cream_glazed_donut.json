@@ -1,9 +1,0 @@
-{
-  "replace": false,
-  "values": [
-    {
-      "id": "createfood:berry_cream_glazed_donut",
-      "required": false
-    }
-  ]
-}

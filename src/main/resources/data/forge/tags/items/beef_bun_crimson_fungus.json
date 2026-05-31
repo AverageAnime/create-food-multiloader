@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "createfood:beef_bun_crimson_fungus",
+      "required": false
+    }
+  ]
+}
