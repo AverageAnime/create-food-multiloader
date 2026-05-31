@@ -24,6 +24,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.fml.loading.FMLEnvironment;
 import org.slf4j.Logger;
+import net.averageanime.createfood.config.CreateFoodConfig;
 import net.averageanime.createfood.creativetab.ModCreativeTab;
 import net.averageanime.createfood.fluid.ModFluids;
 import net.averageanime.createfood.item.ModItems;
@@ -41,6 +42,7 @@ public class CreateFood {
     public CreateFood() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
+        CreateFoodConfig.register();
         ModBlocks.register();
         ModFluids.register();
         ModItems.ITEMS.register(modEventBus);
