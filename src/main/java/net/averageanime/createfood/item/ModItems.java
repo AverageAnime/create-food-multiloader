@@ -1194,4 +1194,659 @@ public class ModItems {
                 .food(new FoodProperties.Builder().nutrition(3).saturationMod(0.4F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).fast().build())));
 
 
+
+
+    // ===== Phase 4: New items from 1.21.1 =====
+    public static final RegistryObject<Item> APPLE_CREAM_CAKE_SLICE = ITEMS.register("apple_cream_cake_slice", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(2).saturationMod(0.3f).build())));
+    public static final RegistryObject<Item> APPLE_CREAM_FROSTING_PIPING_BAG = ITEMS.register("apple_cream_frosting_piping_bag", () -> new Item(new Item.Properties().stacksTo(1)));
+    public static final RegistryObject<BottleFoodItem> APPLE_CUSTARD_BOTTLE = ITEMS.register("apple_custard_bottle", () -> new BottleFoodItem(new Item.Properties()
+                .craftRemainder(Items.GLASS_BOTTLE)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(6).saturationMod(0.9f).build())));
+    public static final RegistryObject<Item> APPLE_JAM_CHOCOLATE_DONUT = ITEMS.register("apple_jam_chocolate_donut", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(5).saturationMod(0.9f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> APPLE_JAM_DONUT = ITEMS.register("apple_jam_donut", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(5).saturationMod(0.9f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> BAKED_POTATO_BUTTER_BACON = ITEMS.register("baked_potato_butter_bacon", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(5).saturationMod(0.9f).build())));
+    public static final RegistryObject<Item> BAKED_POTATO_BUTTER_SOUR_CREAM = ITEMS.register("baked_potato_butter_sour_cream", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(5).saturationMod(0.8f).build())));
+    public static final RegistryObject<Item> BEEF_BUN_CRIMSON_FUNGUS = ITEMS.register("beef_bun_crimson_fungus", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(8).saturationMod(0.5f).build())));
+    public static final RegistryObject<Item> BEEF_BUN_WARPED_FUNGUS = ITEMS.register("beef_bun_warped_fungus", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(8).saturationMod(0.6f).build())));
+    public static final RegistryObject<Item> BEEF_BURRITO_RICE = ITEMS.register("beef_burrito_rice", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(14).saturationMod(0.8f).build())));
+    public static final RegistryObject<Item> BEEF_CALZONE = ITEMS.register("beef_calzone", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(6).saturationMod(0.9f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).fast().build())));
+    public static final RegistryObject<BowlFoodItem> BEEF_RICE_BOWL = ITEMS.register("beef_rice_bowl", () -> new BowlFoodItem(new Item.Properties()
+                .craftRemainder(Items.BOWL)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(9).saturationMod(0.75f).build())));
+    public static final RegistryObject<Item> BEEF_TACO = ITEMS.register("beef_taco", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(11).saturationMod(0.6f).build())));
+    public static final RegistryObject<Item> BEEF_TACO_LETTUCE = ITEMS.register("beef_taco_lettuce", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(12).saturationMod(0.7f).build())));
+    public static final RegistryObject<Item> BEEF_TACO_LETTUCE_TACO_SAUCE = ITEMS.register("beef_taco_lettuce_taco_sauce", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(13).saturationMod(0.8f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f).build())));
+    public static final RegistryObject<Item> BEEF_WRAP_LETTUCE_BEETROOT = ITEMS.register("beef_wrap_lettuce_beetroot", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(12).saturationMod(0.7f).build())));
+    public static final RegistryObject<Item> BERRY_CREAM_CAKE_SLICE = ITEMS.register("berry_cream_cake_slice", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(2).saturationMod(0.3f).build())));
+    public static final RegistryObject<Item> BERRY_CREAM_FROSTING_PIPING_BAG = ITEMS.register("berry_cream_frosting_piping_bag", () -> new Item(new Item.Properties().stacksTo(1)));
+    public static final RegistryObject<BottleFoodItem> BERRY_CUSTARD_BOTTLE = ITEMS.register("berry_custard_bottle", () -> new BottleFoodItem(new Item.Properties()
+                .craftRemainder(Items.GLASS_BOTTLE)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(8).saturationMod(0.9f).build())));
+    public static final RegistryObject<Item> BERRY_JAM_CHOCOLATE_DONUT = ITEMS.register("berry_jam_chocolate_donut", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(5).saturationMod(0.9f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> BERRY_JAM_DONUT = ITEMS.register("berry_jam_donut", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(5).saturationMod(0.9f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> BERRY_MUFFIN = ITEMS.register("berry_muffin", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(4).saturationMod(0.7f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> BOILED_EGG_PEELED_SALT = ITEMS.register("boiled_egg_peeled_salt", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(6).saturationMod(0.2f).effect(new MobEffectInstance(MobEffects.LUCK, 300, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> BREAD_SLICE_SCRAMBLED_EGG = ITEMS.register("bread_slice_scrambled_egg", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(7).saturationMod(0.8f).build())));
+    public static final RegistryObject<Item> BUTTERSCOTCH_APPLE = ITEMS.register("butterscotch_apple", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(8).saturationMod(0.8f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> BUTTERSCOTCH_APPLE_SLICE = ITEMS.register("butterscotch_apple_slice", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(4).saturationMod(0.5f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).effect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 600, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> BUTTERSCOTCH_BERRIES = ITEMS.register("butterscotch_berries", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(6).saturationMod(0.9f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build())));
+    public static final RegistryObject<Item> BUTTERSCOTCH_CHOCOLATE = ITEMS.register("butterscotch_chocolate", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(7).saturationMod(0.8f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> BUTTERSCOTCH_CHOCOLATE_PASTRY = ITEMS.register("butterscotch_chocolate_pastry", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(3).saturationMod(1.1f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> BUTTERSCOTCH_CHOCOLATE_SWEET_ROLL = ITEMS.register("butterscotch_chocolate_sweet_roll", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(7).saturationMod(0.8f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build())));
+    public static final RegistryObject<Item> BUTTERSCOTCH_DARK_CHOCOLATE = ITEMS.register("butterscotch_dark_chocolate", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(8).saturationMod(0.7f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1.0f).build())));
+    public static final RegistryObject<BowlFoodItem> BUTTERSCOTCH_FUDGE_ICE_CREAM_BOWL = ITEMS.register("butterscotch_fudge_ice_cream_bowl", () -> new BowlFoodItem(new Item.Properties()
+                .craftRemainder(Items.BOWL)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(8).saturationMod(0.8f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).build())));
+    public static final RegistryObject<StickFoodItem> BUTTERSCOTCH_MARSHMALLOW_STICK = ITEMS.register("butterscotch_marshmallow_stick", () -> new StickFoodItem(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(3).saturationMod(0.7f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.DIG_SPEED, 600, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> BUTTERSCOTCH_PASTRY = ITEMS.register("butterscotch_pastry", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(2).saturationMod(1.1f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.DIG_SPEED, 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> BUTTERSCOTCH_PRETZEL_STICK = ITEMS.register("butterscotch_pretzel_stick", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(3).saturationMod(0.9f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 600, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> BUTTERSCOTCH_SWEET_ROLL = ITEMS.register("butterscotch_sweet_roll", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(6).saturationMod(0.7f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> BUTTERSCOTCH_TOAST = ITEMS.register("butterscotch_toast", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(3).saturationMod(0.9f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> BUTTERSCOTCH_WHITE_CHOCOLATE = ITEMS.register("butterscotch_white_chocolate", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(6).saturationMod(0.9f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1.0f).build())));
+    public static final RegistryObject<BowlFoodItem> CANE_SYRUP_BOTTLE = ITEMS.register("cane_syrup_bottle", () -> new BowlFoodItem(new Item.Properties()
+                .craftRemainder(Items.BOWL)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(1).saturationMod(1.0f).build())));
+    public static final RegistryObject<BowlFoodItem> CARAMEL_FUDGE_ICE_CREAM_BOWL = ITEMS.register("caramel_fudge_ice_cream_bowl", () -> new BowlFoodItem(new Item.Properties()
+                .craftRemainder(Items.BOWL)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(8).saturationMod(0.8f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).build())));
+    public static final RegistryObject<StickFoodItem> CARAMEL_MARSHMALLOW_STICK = ITEMS.register("caramel_marshmallow_stick", () -> new StickFoodItem(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(3).saturationMod(0.8f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 600, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> CARAMEL_PRETZEL_STICK = ITEMS.register("caramel_pretzel_stick", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(3).saturationMod(0.8f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 600, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> CHEESE_POTATO_DUMPLINGS = ITEMS.register("cheese_potato_dumplings", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(7).saturationMod(0.7f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> CHEESE_PRETZEL_STICK = ITEMS.register("cheese_pretzel_stick", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(4).saturationMod(0.5f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> CHICKEN_BURRITO_RICE = ITEMS.register("chicken_burrito_rice", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(11).saturationMod(0.7f).build())));
+    public static final RegistryObject<Item> CHICKEN_CALZONE = ITEMS.register("chicken_calzone", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(6).saturationMod(0.8f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).fast().build())));
+    public static final RegistryObject<BowlFoodItem> CHICKEN_RICE_BOWL = ITEMS.register("chicken_rice_bowl", () -> new BowlFoodItem(new Item.Properties()
+                .craftRemainder(Items.BOWL)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(8).saturationMod(0.7f).build())));
+    public static final RegistryObject<Item> CHICKEN_TACO = ITEMS.register("chicken_taco", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(9).saturationMod(0.6f).build())));
+    public static final RegistryObject<Item> CHICKEN_TACO_LETTUCE = ITEMS.register("chicken_taco_lettuce", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(10).saturationMod(0.6f).build())));
+    public static final RegistryObject<Item> CHICKEN_TACO_LETTUCE_TACO_SAUCE = ITEMS.register("chicken_taco_lettuce_taco_sauce", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(11).saturationMod(0.8f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f).build())));
+    public static final RegistryObject<Item> CHICKEN_WRAP_ONION_TOMATO = ITEMS.register("chicken_wrap_onion_tomato", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(10).saturationMod(0.7f).build())));
+    public static final RegistryObject<Item> CHOCOLATE_APPLE_SLICE = ITEMS.register("chocolate_apple_slice", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(4).saturationMod(0.4f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1800, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> CHOCOLATE_CHIP_CHOCOLATE_COOKIE = ITEMS.register("chocolate_chip_chocolate_cookie", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(3).saturationMod(0.5f).build())));
+    public static final RegistryObject<Item> CHOCOLATE_CREAM_CAKE_SLICE = ITEMS.register("chocolate_cream_cake_slice", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(2).saturationMod(0.3f).build())));
+    public static final RegistryObject<Item> CHOCOLATE_CREAM_CHOCOLATE_CAKE_SLICE = ITEMS.register("chocolate_cream_chocolate_cake_slice", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(2).saturationMod(0.3f).build())));
+    public static final RegistryObject<Item> CHOCOLATE_CREAM_CHOCOLATE_DONUT = ITEMS.register("chocolate_cream_chocolate_donut", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(4).saturationMod(0.7f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> CHOCOLATE_CREAM_CHOCOLATE_SWEET_ROLL = ITEMS.register("chocolate_cream_chocolate_sweet_roll", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(6).saturationMod(0.6f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build())));
+    public static final RegistryObject<Item> CHOCOLATE_CREAM_DONUT = ITEMS.register("chocolate_cream_donut", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(3).saturationMod(0.7f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build())));
+    public static final RegistryObject<Item> CHOCOLATE_CREAM_FROSTING_PIPING_BAG = ITEMS.register("chocolate_cream_frosting_piping_bag", () -> new Item(new Item.Properties().stacksTo(1)));
+    public static final RegistryObject<Item> CHOCOLATE_CREAM_SWEET_ROLL = ITEMS.register("chocolate_cream_sweet_roll", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(5).saturationMod(0.5f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).build())));
+    public static final RegistryObject<BottleFoodItem> CHOCOLATE_CUSTARD_BOTTLE = ITEMS.register("chocolate_custard_bottle", () -> new BottleFoodItem(new Item.Properties()
+                .craftRemainder(Items.GLASS_BOTTLE)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(7).saturationMod(1.0f).build())));
+    public static final RegistryObject<BowlFoodItem> CHOCOLATE_FUDGE_ICE_CREAM_BOWL = ITEMS.register("chocolate_fudge_ice_cream_bowl", () -> new BowlFoodItem(new Item.Properties()
+                .craftRemainder(Items.BOWL)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(8).saturationMod(0.7f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> CHOCOLATE_PRETZEL_STICK = ITEMS.register("chocolate_pretzel_stick", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(4).saturationMod(0.6f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> CHORUS_FRUIT_COOKIE = ITEMS.register("chorus_fruit_cookie", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(3).saturationMod(0.8f).build())));
+    public static final RegistryObject<Item> CHORUS_FRUIT_CREAM_CAKE_SLICE = ITEMS.register("chorus_fruit_cream_cake_slice", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(2).saturationMod(0.3f).build())));
+    public static final RegistryObject<Item> CHORUS_FRUIT_CREAM_FROSTING_PIPING_BAG = ITEMS.register("chorus_fruit_cream_frosting_piping_bag", () -> new Item(new Item.Properties().stacksTo(1)));
+    public static final RegistryObject<BottleFoodItem> CHORUS_FRUIT_CUSTARD_BOTTLE = ITEMS.register("chorus_fruit_custard_bottle", () -> new BottleFoodItem(new Item.Properties()
+                .craftRemainder(Items.GLASS_BOTTLE)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(9).saturationMod(0.9f).build())));
+    public static final RegistryObject<Item> CHORUS_FRUIT_JAM_CHOCOLATE_DONUT = ITEMS.register("chorus_fruit_jam_chocolate_donut", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(6).saturationMod(0.9f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> CHORUS_FRUIT_JAM_DONUT = ITEMS.register("chorus_fruit_jam_donut", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(6).saturationMod(0.9f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> CHORUS_FRUIT_MUFFIN = ITEMS.register("chorus_fruit_muffin", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(4).saturationMod(0.7f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> CLOTH_FILTER_EGG_YOLK = ITEMS.register("cloth_filter_egg_yolk", () -> new Item(new Item.Properties().craftRemainder(CLOTH_FILTER.get())));
+    public static final RegistryObject<Item> CLOTH_FILTER_EGG = ITEMS.register("cloth_filter_egg", () -> new Item(new Item.Properties().craftRemainder(CLOTH_FILTER_EGG_YOLK.get())));
+    public static final RegistryObject<Item> CLOTH_FILTER_PRESSED_COCOA = ITEMS.register("cloth_filter_pressed_cocoa", () -> new Item(new Item.Properties().craftRemainder(CLOTH_FILTER.get())));
+    public static final RegistryObject<Item> COOKED_TROPICAL_FISH = ITEMS.register("cooked_tropical_fish", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(5).saturationMod(0.8f).build())));
+    public static final RegistryObject<Item> COOKED_TROPICAL_FISH_SLICE = ITEMS.register("cooked_tropical_fish_slice", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(5).saturationMod(0.8f).fast().build())));
+    public static final RegistryObject<StickFoodItem> CORN_STICK = ITEMS.register("corn_stick", () -> new StickFoodItem(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(4).saturationMod(0.7f).fast().build())));
+    public static final RegistryObject<Item> CREAM_CAKE_SLICE = ITEMS.register("cream_cake_slice", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(2).saturationMod(0.3f).build())));
+    public static final RegistryObject<Item> CREAM_CAKE_SLICE_CHORUS_FRUIT = ITEMS.register("cream_cake_slice_chorus_fruit", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(4).saturationMod(0.4f).build())));
+    public static final RegistryObject<Item> CREAM_CAKE_SLICE_GLOW_BERRY = ITEMS.register("cream_cake_slice_glow_berry", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(3).saturationMod(0.3f).build())));
+    public static final RegistryObject<Item> CREAM_CHOCOLATE_CAKE_SLICE = ITEMS.register("cream_chocolate_cake_slice", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(2).saturationMod(0.3f).build())));
+    public static final RegistryObject<Item> CREAM_CHOCOLATE_SWEET_ROLL = ITEMS.register("cream_chocolate_sweet_roll", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(6).saturationMod(0.8f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build())));
+    public static final RegistryObject<Item> CREAM_FROSTING_PIPING_BAG = ITEMS.register("cream_frosting_piping_bag", () -> new Item(new Item.Properties().stacksTo(1)));
+    public static final RegistryObject<BottleFoodItem> CREME_BRULEE_BOTTLE = ITEMS.register("creme_brulee_bottle", () -> new BottleFoodItem(new Item.Properties()
+                .craftRemainder(Items.GLASS_BOTTLE)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(10).saturationMod(1.0f).build())));
+    public static final RegistryObject<BottleFoodItem> CUSTARD_BOTTLE = ITEMS.register("custard_bottle", () -> new BottleFoodItem(new Item.Properties()
+                .craftRemainder(Items.GLASS_BOTTLE)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(5).saturationMod(0.8f).build())));
+    public static final RegistryObject<BottleFoodItem> CUSTARD_SUGAR_BOTTLE = ITEMS.register("custard_sugar_bottle", () -> new BottleFoodItem(new Item.Properties()
+                .craftRemainder(Items.GLASS_BOTTLE)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(6).saturationMod(0.6f).build())));
+    public static final RegistryObject<Item> DARK_CHOCOLATE_APPLE_SLICE = ITEMS.register("dark_chocolate_apple_slice", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(5).saturationMod(0.5f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1800, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> DARK_CHOCOLATE_PRETZEL_STICK = ITEMS.register("dark_chocolate_pretzel_stick", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(4).saturationMod(0.5f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 300, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> EGG_BURRITO = ITEMS.register("egg_burrito", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(10).saturationMod(0.6f).build())));
+    public static final RegistryObject<Item> EGG_BURRITO_BACON = ITEMS.register("egg_burrito_bacon", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(12).saturationMod(0.7f).build())));
+    public static final RegistryObject<Item> EGG_BURRITO_CHEESE = ITEMS.register("egg_burrito_cheese", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(11).saturationMod(0.7f).build())));
+    public static final RegistryObject<Item> EGG_BURRITO_CHEESE_BACON = ITEMS.register("egg_burrito_cheese_bacon", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(13).saturationMod(0.8f).build())));
+    public static final RegistryObject<Item> EGG_BURRITO_CHEESE_SAUSAGE = ITEMS.register("egg_burrito_cheese_sausage", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(13).saturationMod(0.8f).build())));
+    public static final RegistryObject<Item> EGG_BURRITO_CHEESE_SAUSAGE_BACON = ITEMS.register("egg_burrito_cheese_sausage_bacon", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(14).saturationMod(0.8f).build())));
+    public static final RegistryObject<Item> EGG_BURRITO_SAUSAGE = ITEMS.register("egg_burrito_sausage", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(12).saturationMod(0.7f).build())));
+    public static final RegistryObject<Item> EGG_DUMPLINGS = ITEMS.register("egg_dumplings", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(5).saturationMod(0.6f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).build())));
+    public static final RegistryObject<BottleFoodItem> EGG_WHITES_BOTTLE = ITEMS.register("egg_whites_bottle", () -> new BottleFoodItem(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE).stacksTo(16)));
+    public static final RegistryObject<Item> EGG_YOLK = ITEMS.register("egg_yolk", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> FISH_BURRITO_RICE = ITEMS.register("fish_burrito_rice", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(11).saturationMod(0.6f).build())));
+    public static final RegistryObject<BowlFoodItem> FISH_CHOWDER_BOWL = ITEMS.register("fish_chowder_bowl", () -> new BowlFoodItem(new Item.Properties()
+                .craftRemainder(Items.BOWL)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(8).saturationMod(0.8f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).build())));
+    public static final RegistryObject<BowlFoodItem> FISH_RICE_BOWL = ITEMS.register("fish_rice_bowl", () -> new BowlFoodItem(new Item.Properties()
+                .craftRemainder(Items.BOWL)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(8).saturationMod(0.8f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> FISH_STICKS = ITEMS.register("fish_sticks", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(6).saturationMod(0.7f).build())));
+    public static final RegistryObject<Item> FISH_TACO = ITEMS.register("fish_taco", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(8).saturationMod(0.5f).build())));
+    public static final RegistryObject<Item> FISH_TACO_KELP = ITEMS.register("fish_taco_kelp", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(9).saturationMod(0.5f).build())));
+    public static final RegistryObject<Item> FISH_TACO_KELP_TACO_SAUCE = ITEMS.register("fish_taco_kelp_taco_sauce", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(10).saturationMod(0.7f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f).build())));
+    public static final RegistryObject<Item> FISH_WRAP_KELP_ONION = ITEMS.register("fish_wrap_kelp_onion", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(10).saturationMod(0.6f).build())));
+    public static final RegistryObject<Item> FRIED_PITA_BREAD = ITEMS.register("fried_pita_bread", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(2).saturationMod(0.3f).build())));
+    public static final RegistryObject<Item> GLOW_BERRY_COOKIE = ITEMS.register("glow_berry_cookie", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(2).saturationMod(0.5f).build())));
+    public static final RegistryObject<Item> GLOW_BERRY_CREAM_CAKE_SLICE = ITEMS.register("glow_berry_cream_cake_slice", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(2).saturationMod(0.3f).build())));
+    public static final RegistryObject<Item> GLOW_BERRY_CREAM_FROSTING_PIPING_BAG = ITEMS.register("glow_berry_cream_frosting_piping_bag", () -> new Item(new Item.Properties().stacksTo(1)));
+    public static final RegistryObject<Item> GLOW_BERRY_JAM_CHOCOLATE_DONUT = ITEMS.register("glow_berry_jam_chocolate_donut", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(5).saturationMod(0.9f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.NIGHT_VISION, 100, 0), 1.0f).build())));
+    public static final RegistryObject<Item> GLOW_BERRY_JAM_DONUT = ITEMS.register("glow_berry_jam_donut", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(5).saturationMod(0.9f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.NIGHT_VISION, 100, 0), 1.0f).build())));
+    public static final RegistryObject<Item> GLOW_BERRY_MUFFIN = ITEMS.register("glow_berry_muffin", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(4).saturationMod(0.8f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 300, 0), 1.0f).effect(new MobEffectInstance(MobEffects.NIGHT_VISION, 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> GROUND_CHICKEN = ITEMS.register("ground_chicken", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> GROUND_SAUSAGE = ITEMS.register("ground_sausage", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> HAMBURGER_CRIMSON_FUNGUS = ITEMS.register("hamburger_crimson_fungus", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(11).saturationMod(0.5f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 1200, 0), 1.0f).build())));
+    public static final RegistryObject<Item> HAMBURGER_WARPED_FUNGUS = ITEMS.register("hamburger_warped_fungus", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(11).saturationMod(0.6f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1.0f).build())));
+    public static final RegistryObject<BottleFoodItem> HEAVY_CREAM_BOTTLE = ITEMS.register("heavy_cream_bottle", () -> new BottleFoodItem(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE).stacksTo(16)));
+    public static final RegistryObject<Item> HONEY_SANDWICH = ITEMS.register("honey_sandwich", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(7).saturationMod(0.7f).effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 600, 0), 1.0f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> HONEYED_APPLE_SLICE = ITEMS.register("honeyed_apple_slice", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(4).saturationMod(0.9f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).effect(new MobEffectInstance(MobEffects.LUCK, 600, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> HONEYED_PRETZEL_STICK = ITEMS.register("honeyed_pretzel_stick", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(3).saturationMod(0.8f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.REGENERATION, 600, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> KELP_ROLL_BEETROOT = ITEMS.register("kelp_roll_beetroot", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(13).saturationMod(0.6f).build())));
+    public static final RegistryObject<Item> KELP_ROLL_BROWN_MUSHROOM = ITEMS.register("kelp_roll_brown_mushroom", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(12).saturationMod(0.6f).build())));
+    public static final RegistryObject<Item> KELP_ROLL_CRIMSON_FUNGUS = ITEMS.register("kelp_roll_crimson_fungus", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(13).saturationMod(0.6f).build())));
+    public static final RegistryObject<Item> KELP_ROLL_FISH = ITEMS.register("kelp_roll_fish", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(11).saturationMod(0.6f).build())));
+    public static final RegistryObject<Item> KELP_ROLL_LETTUCE = ITEMS.register("kelp_roll_lettuce", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(10).saturationMod(0.4f).build())));
+    public static final RegistryObject<Item> KELP_ROLL_ONION = ITEMS.register("kelp_roll_onion", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(11).saturationMod(0.6f).build())));
+    public static final RegistryObject<Item> KELP_ROLL_RED_MUSHROOM = ITEMS.register("kelp_roll_red_mushroom", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(12).saturationMod(0.6f).build())));
+    public static final RegistryObject<Item> KELP_ROLL_RICE = ITEMS.register("kelp_roll_rice", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(12).saturationMod(0.7f).build())));
+    public static final RegistryObject<Item> KELP_ROLL_SLICE_BEETROOT = ITEMS.register("kelp_roll_slice_beetroot", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(6).saturationMod(0.6f).build())));
+    public static final RegistryObject<Item> KELP_ROLL_SLICE_BROWN_MUSHROOM = ITEMS.register("kelp_roll_slice_brown_mushroom", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(6).saturationMod(0.6f).build())));
+    public static final RegistryObject<Item> KELP_ROLL_SLICE_CRIMSON_FUNGUS = ITEMS.register("kelp_roll_slice_crimson_fungus", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(7).saturationMod(0.6f).build())));
+    public static final RegistryObject<Item> KELP_ROLL_SLICE_FISH = ITEMS.register("kelp_roll_slice_fish", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(5).saturationMod(0.6f).build())));
+    public static final RegistryObject<Item> KELP_ROLL_SLICE_LETTUCE = ITEMS.register("kelp_roll_slice_lettuce", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(5).saturationMod(0.4f).build())));
+    public static final RegistryObject<Item> KELP_ROLL_SLICE_ONION = ITEMS.register("kelp_roll_slice_onion", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(5).saturationMod(0.6f).build())));
+    public static final RegistryObject<Item> KELP_ROLL_SLICE_RED_MUSHROOM = ITEMS.register("kelp_roll_slice_red_mushroom", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(6).saturationMod(0.6f).build())));
+    public static final RegistryObject<Item> KELP_ROLL_SLICE_RICE = ITEMS.register("kelp_roll_slice_rice", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(6).saturationMod(0.7f).build())));
+    public static final RegistryObject<Item> KELP_ROLL_SLICE_TOMATO = ITEMS.register("kelp_roll_slice_tomato", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(6).saturationMod(0.5f).build())));
+    public static final RegistryObject<Item> KELP_ROLL_SLICE_WARPED_FUNGUS = ITEMS.register("kelp_roll_slice_warped_fungus", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(7).saturationMod(0.6f).build())));
+    public static final RegistryObject<Item> KELP_ROLL_TOMATO = ITEMS.register("kelp_roll_tomato", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(12).saturationMod(0.5f).build())));
+    public static final RegistryObject<Item> KELP_ROLL_WARPED_FUNGUS = ITEMS.register("kelp_roll_warped_fungus", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(13).saturationMod(0.6f).build())));
+    public static final RegistryObject<BowlFoodItem> KELP_SOUP_BOWL = ITEMS.register("kelp_soup_bowl", () -> new BowlFoodItem(new Item.Properties()
+                .craftRemainder(Items.BOWL)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(11).saturationMod(0.7f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f).build())));
+    public static final RegistryObject<BowlFoodItem> LEATHER_SOUP_BOWL = ITEMS.register("leather_soup_bowl", () -> new BowlFoodItem(new Item.Properties()
+                .craftRemainder(Items.BOWL)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(3).saturationMod(1.5f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 300, 0), 1.0f).build())));
+    public static final RegistryObject<BottleFoodItem> MARSHMALLOW_HOT_CHOCOLATE_BOTTLE = ITEMS.register("marshmallow_hot_chocolate_bottle", () -> new BottleFoodItem(new Item.Properties()
+                .craftRemainder(Items.GLASS_BOTTLE)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(9).saturationMod(1.0f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 3000, 0), 1.0f).build())));
+    public static final RegistryObject<BottleFoodItem> MARSHMALLOW_HOT_DARK_CHOCOLATE_BOTTLE = ITEMS.register("marshmallow_hot_dark_chocolate_bottle", () -> new BottleFoodItem(new Item.Properties()
+                .craftRemainder(Items.GLASS_BOTTLE)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(10).saturationMod(0.9f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 3000, 0), 1.0f).build())));
+    public static final RegistryObject<BottleFoodItem> MARSHMALLOW_HOT_WHITE_CHOCOLATE_BOTTLE = ITEMS.register("marshmallow_hot_white_chocolate_bottle", () -> new BottleFoodItem(new Item.Properties()
+                .craftRemainder(Items.GLASS_BOTTLE)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(8).saturationMod(1.1f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 3000, 0), 1.0f).build())));
+    public static final RegistryObject<BowlFoodItem> MASHED_POTATOES_BOWL = ITEMS.register("mashed_potatoes_bowl", () -> new BowlFoodItem(new Item.Properties()
+                .craftRemainder(Items.BOWL)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(7).saturationMod(0.8f).build())));
+    public static final RegistryObject<BowlFoodItem> MASHED_POTATOES_BOWL_BACON = ITEMS.register("mashed_potatoes_bowl_bacon", () -> new BowlFoodItem(new Item.Properties()
+                .craftRemainder(Items.BOWL)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(9).saturationMod(1.0f).build())));
+    public static final RegistryObject<BowlFoodItem> MASHED_POTATOES_BOWL_CHEESE = ITEMS.register("mashed_potatoes_bowl_cheese", () -> new BowlFoodItem(new Item.Properties()
+                .craftRemainder(Items.BOWL)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(9).saturationMod(1.0f).build())));
+    public static final RegistryObject<BowlFoodItem> MASHED_POTATOES_BOWL_MUSHROOM = ITEMS.register("mashed_potatoes_bowl_mushroom", () -> new BowlFoodItem(new Item.Properties()
+                .craftRemainder(Items.BOWL)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(8).saturationMod(0.8f).build())));
+    public static final RegistryObject<BowlFoodItem> MASHED_POTATOES_BOWL_SOUR_CREAM = ITEMS.register("mashed_potatoes_bowl_sour_cream", () -> new BowlFoodItem(new Item.Properties()
+                .craftRemainder(Items.BOWL)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(8).saturationMod(0.9f).build())));
+    public static final RegistryObject<Item> MEAT_PIE_FILLING = ITEMS.register("meat_pie_filling", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> MEAT_PIE_SLICE = ITEMS.register("meat_pie_slice", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(5).saturationMod(0.8f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f).build())));
+    public static final RegistryObject<Item> MELON_CREAM_CAKE_SLICE = ITEMS.register("melon_cream_cake_slice", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(2).saturationMod(0.3f).build())));
+    public static final RegistryObject<Item> MELON_CREAM_FROSTING_PIPING_BAG = ITEMS.register("melon_cream_frosting_piping_bag", () -> new Item(new Item.Properties().stacksTo(1)));
+    public static final RegistryObject<BottleFoodItem> MELON_CUSTARD_BOTTLE = ITEMS.register("melon_custard_bottle", () -> new BottleFoodItem(new Item.Properties()
+                .craftRemainder(Items.GLASS_BOTTLE)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(9).saturationMod(0.8f).build())));
+    public static final RegistryObject<Item> MELON_JAM_CHOCOLATE_DONUT = ITEMS.register("melon_jam_chocolate_donut", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(5).saturationMod(0.9f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> MELON_JAM_DONUT = ITEMS.register("melon_jam_donut", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(5).saturationMod(0.9f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> MERINGUE_COOKIE = ITEMS.register("meringue_cookie", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(2).saturationMod(0.4f).build())));
+    public static final RegistryObject<Item> MOZZARELLA_STICKS = ITEMS.register("mozzarella_sticks", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(5).saturationMod(0.7f).build())));
+    public static final RegistryObject<Item> MUSHROOM_BURRITO_RICE = ITEMS.register("mushroom_burrito_rice", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(8).saturationMod(0.6f).build())));
+    public static final RegistryObject<BowlFoodItem> MUSHROOM_CREAM_SOUP_BOWL = ITEMS.register("mushroom_cream_soup_bowl", () -> new BowlFoodItem(new Item.Properties()
+                .craftRemainder(Items.BOWL)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(7).saturationMod(0.9f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build())));
+    public static final RegistryObject<BowlFoodItem> MUSHROOM_RICE_BOWL = ITEMS.register("mushroom_rice_bowl", () -> new BowlFoodItem(new Item.Properties()
+                .craftRemainder(Items.BOWL)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(7).saturationMod(0.65f).build())));
+    public static final RegistryObject<Item> MUSHROOM_TACO = ITEMS.register("mushroom_taco", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(7).saturationMod(0.5f).build())));
+    public static final RegistryObject<Item> MUSHROOM_TACO_LETTUCE = ITEMS.register("mushroom_taco_lettuce", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(8).saturationMod(0.6f).build())));
+    public static final RegistryObject<Item> MUSHROOM_TACO_LETTUCE_TACO_SAUCE = ITEMS.register("mushroom_taco_lettuce_taco_sauce", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(9).saturationMod(0.7f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f).build())));
+    public static final RegistryObject<Item> MUSHROOM_WRAP_LETTUCE_POTATO = ITEMS.register("mushroom_wrap_lettuce_potato", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(9).saturationMod(0.7f).build())));
+    public static final RegistryObject<Item> MUTTON_BURRITO_RICE = ITEMS.register("mutton_burrito_rice", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(12).saturationMod(0.7f).build())));
+    public static final RegistryObject<Item> MUTTON_CALZONE = ITEMS.register("mutton_calzone", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(7).saturationMod(0.5f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).fast().build())));
+    public static final RegistryObject<BowlFoodItem> MUTTON_STEW_BOWL = ITEMS.register("mutton_stew_bowl", () -> new BowlFoodItem(new Item.Properties()
+                .craftRemainder(Items.BOWL)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(12).saturationMod(0.9f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> MUTTON_TACO = ITEMS.register("mutton_taco", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(9).saturationMod(0.6f).build())));
+    public static final RegistryObject<Item> MUTTON_TACO_LETTUCE = ITEMS.register("mutton_taco_lettuce", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(11).saturationMod(0.6f).build())));
+    public static final RegistryObject<Item> MUTTON_TACO_LETTUCE_TACO_SAUCE = ITEMS.register("mutton_taco_lettuce_taco_sauce", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(11).saturationMod(0.8f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f).build())));
+    public static final RegistryObject<BowlFoodItem> NACHO_BOWL_BEEF = ITEMS.register("nacho_bowl_beef", () -> new BowlFoodItem(new Item.Properties()
+                .craftRemainder(Items.BOWL)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(9).saturationMod(0.8f).effect(new MobEffectInstance(MobEffects.LUCK, 1200, 0), 1.0f).build())));
+    public static final RegistryObject<BowlFoodItem> NACHO_BOWL_BEEF_TACO_SAUCE = ITEMS.register("nacho_bowl_beef_taco_sauce", () -> new BowlFoodItem(new Item.Properties()
+                .craftRemainder(Items.BOWL)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(11).saturationMod(0.8f).effect(new MobEffectInstance(MobEffects.LUCK, 1200, 0), 1.0f).build())));
+    public static final RegistryObject<BowlFoodItem> NACHO_BOWL_SOUR_CREAM = ITEMS.register("nacho_bowl_sour_cream", () -> new BowlFoodItem(new Item.Properties()
+                .craftRemainder(Items.BOWL)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(7).saturationMod(0.9f).effect(new MobEffectInstance(MobEffects.LUCK, 1200, 0), 1.0f).build())));
+    public static final RegistryObject<BowlFoodItem> NACHO_BOWL_TACO_SAUCE = ITEMS.register("nacho_bowl_taco_sauce", () -> new BowlFoodItem(new Item.Properties()
+                .craftRemainder(Items.BOWL)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(8).saturationMod(0.7f).effect(new MobEffectInstance(MobEffects.LUCK, 1200, 0), 1.0f).build())));
+    public static final RegistryObject<Item> ONION_RINGS = ITEMS.register("onion_rings", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(5).saturationMod(0.6f).build())));
+    public static final RegistryObject<BowlFoodItem> PASTA_PLATE_MUSHROOM = ITEMS.register("pasta_plate_mushroom", () -> new BowlFoodItem(new Item.Properties()
+                .craftRemainder(Items.BOWL)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(7).saturationMod(0.7f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f).build())));
+    public static final RegistryObject<BowlFoodItem> PASTA_PLATE_MUSHROOM_TOMATO_SAUCE = ITEMS.register("pasta_plate_mushroom_tomato_sauce", () -> new BowlFoodItem(new Item.Properties()
+                .craftRemainder(Items.BOWL)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(9).saturationMod(0.9f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> PIPING_BAG = ITEMS.register("piping_bag", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<BowlFoodItem> PITA_CHIP_BOWL = ITEMS.register("pita_chip_bowl", () -> new BowlFoodItem(new Item.Properties()
+                .craftRemainder(Items.BOWL)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(4).saturationMod(0.4f).build())));
+    public static final RegistryObject<Item> PITA_CHIPS = ITEMS.register("pita_chips", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(2).saturationMod(0.3f).fast().build())));
+    public static final RegistryObject<Item> PORK_BURRITO_RICE = ITEMS.register("pork_burrito_rice", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(13).saturationMod(0.6f).build())));
+    public static final RegistryObject<BowlFoodItem> PORK_STEW_BOWL = ITEMS.register("pork_stew_bowl", () -> new BowlFoodItem(new Item.Properties()
+                .craftRemainder(Items.BOWL)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(12).saturationMod(0.9f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> PORK_TACO = ITEMS.register("pork_taco", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(10).saturationMod(0.5f).build())));
+    public static final RegistryObject<Item> PORK_TACO_LETTUCE = ITEMS.register("pork_taco_lettuce", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(11).saturationMod(0.6f).build())));
+    public static final RegistryObject<Item> PORK_TACO_LETTUCE_TACO_SAUCE = ITEMS.register("pork_taco_lettuce_taco_sauce", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(12).saturationMod(0.7f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f).build())));
+    public static final RegistryObject<Item> PORK_WRAP_ONION_LETTUCE = ITEMS.register("pork_wrap_onion_lettuce", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(11).saturationMod(0.6f).build())));
+    public static final RegistryObject<BowlFoodItem> POTATO_CREAM_SOUP_BOWL = ITEMS.register("potato_cream_soup_bowl", () -> new BowlFoodItem(new Item.Properties()
+                .craftRemainder(Items.BOWL)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(8).saturationMod(0.9f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build())));
+    public static final RegistryObject<BowlFoodItem> POTATO_CREAM_SOUP_BOWL_CHEESE = ITEMS.register("potato_cream_soup_bowl_cheese", () -> new BowlFoodItem(new Item.Properties()
+                .craftRemainder(Items.BOWL)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(9).saturationMod(0.9f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1800, 0), 1.0f).build())));
+    public static final RegistryObject<Item> PRETZEL_STICK = ITEMS.register("pretzel_stick", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(2).saturationMod(0.5f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 300, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> PUMPERNICKEL_TOAST_CREAM_CHEESE = ITEMS.register("pumpernickel_toast_cream_cheese", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(6).saturationMod(0.6f).build())));
+    public static final RegistryObject<Item> PUMPERNICKEL_TOAST_CREAM_CHEESE_BEETROOT = ITEMS.register("pumpernickel_toast_cream_cheese_beetroot", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(7).saturationMod(0.5f).build())));
+    public static final RegistryObject<Item> PUMPERNICKEL_TOAST_CREAM_CHEESE_BEETROOT_HONEY = ITEMS.register("pumpernickel_toast_cream_cheese_beetroot_honey", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(8).saturationMod(0.6f).effect(new MobEffectInstance(MobEffects.REGENERATION, 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> PUMPERNICKEL_TOAST_CREAM_CHEESE_MUSHROOM = ITEMS.register("pumpernickel_toast_cream_cheese_mushroom", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(7).saturationMod(0.6f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 300, 0), 1.0f).build())));
+    public static final RegistryObject<Item> PUMPERNICKEL_TOAST_CREAM_CHEESE_MUSHROOM_BACON = ITEMS.register("pumpernickel_toast_cream_cheese_mushroom_bacon", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(8).saturationMod(0.8f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> PUMPERNICKEL_TOAST_CREAM_CHEESE_SALMON = ITEMS.register("pumpernickel_toast_cream_cheese_salmon", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(7).saturationMod(0.7f).build())));
+    public static final RegistryObject<Item> PUMPERNICKEL_TOAST_CREAM_CHEESE_SALMON_ONION = ITEMS.register("pumpernickel_toast_cream_cheese_salmon_onion", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(8).saturationMod(0.7f).build())));
+    public static final RegistryObject<BottleFoodItem> PUMPKIN_CUSTARD_BOTTLE = ITEMS.register("pumpkin_custard_bottle", () -> new BottleFoodItem(new Item.Properties()
+                .craftRemainder(Items.GLASS_BOTTLE)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(10).saturationMod(0.6f).build())));
+    public static final RegistryObject<Item> PUMPKIN_PIE_SLICE = ITEMS.register("pumpkin_pie_slice", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(3).saturationMod(1.0f).build())));
+    public static final RegistryObject<BottleFoodItem> PUMPKIN_PUREE_BOTTLE = ITEMS.register("pumpkin_puree_bottle", () -> new BottleFoodItem(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE).stacksTo(16)));
+    public static final RegistryObject<Item> RABBIT_BURRITO_RICE = ITEMS.register("rabbit_burrito_rice", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(10).saturationMod(0.6f).build())));
+    public static final RegistryObject<Item> RABBIT_CALZONE = ITEMS.register("rabbit_calzone", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(6).saturationMod(0.6f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> RABBIT_TACO = ITEMS.register("rabbit_taco", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(8).saturationMod(0.5f).build())));
+    public static final RegistryObject<Item> RABBIT_TACO_LETTUCE = ITEMS.register("rabbit_taco_lettuce", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(9).saturationMod(0.5f).build())));
+    public static final RegistryObject<Item> RABBIT_TACO_LETTUCE_TACO_SAUCE = ITEMS.register("rabbit_taco_lettuce_taco_sauce", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(10).saturationMod(0.7f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f).build())));
+    public static final RegistryObject<Item> RABBIT_WRAP_ONION_POTATO = ITEMS.register("rabbit_wrap_onion_potato", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(10).saturationMod(0.6f).build())));
+    public static final RegistryObject<Item> RAW_BEEF_CALZONE = ITEMS.register("raw_beef_calzone", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RAW_CHICKEN_CALZONE = ITEMS.register("raw_chicken_calzone", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RAW_CHICKEN_PATTY = ITEMS.register("raw_chicken_patty", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RAW_CHOCOLATE_CHIP_CHOCOLATE_COOKIE = ITEMS.register("raw_chocolate_chip_chocolate_cookie", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RAW_FISH_STICKS = ITEMS.register("raw_fish_sticks", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RAW_GLOW_BERRY_COOKIE = ITEMS.register("raw_glow_berry_cookie", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RAW_MOZZARELLA_STICKS = ITEMS.register("raw_mozzarella_sticks", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RAW_MUTTON_CALZONE = ITEMS.register("raw_mutton_calzone", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RAW_ONION_RINGS = ITEMS.register("raw_onion_rings", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RAW_PRETZEL_STICK = ITEMS.register("raw_pretzel_stick", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RAW_RABBIT_CALZONE = ITEMS.register("raw_rabbit_calzone", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RAW_SAUSAGE_ROLL = ITEMS.register("raw_sausage_roll", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RAW_SAUSAGE_ROLL_CHEESE = ITEMS.register("raw_sausage_roll_cheese", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RAW_SAUSAGES = ITEMS.register("raw_sausages", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RAW_SCONE = ITEMS.register("raw_scone", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RAW_SPICY_SAUSAGE_ROLL = ITEMS.register("raw_spicy_sausage_roll", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RAW_SPICY_SAUSAGE_ROLL_CHEESE = ITEMS.register("raw_spicy_sausage_roll_cheese", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RAW_SPICY_SAUSAGES = ITEMS.register("raw_spicy_sausages", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RAW_TATER_TOTS = ITEMS.register("raw_tater_tots", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<BowlFoodItem> RICE_PUDDING_BOWL = ITEMS.register("rice_pudding_bowl", () -> new BowlFoodItem(new Item.Properties()
+                .craftRemainder(Items.BOWL)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(6).saturationMod(0.8f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> SAUSAGE_ROLL = ITEMS.register("sausage_roll", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(4).saturationMod(0.5f).fast().build())));
+    public static final RegistryObject<Item> SAUSAGE_ROLL_CHEESE = ITEMS.register("sausage_roll_cheese", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(4).saturationMod(0.6f).fast().build())));
+    public static final RegistryObject<Item> SAUSAGES = ITEMS.register("sausages", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(6).saturationMod(0.4f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f).build())));
+    public static final RegistryObject<Item> SCONE = ITEMS.register("scone", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(3).saturationMod(0.5f).build())));
+    public static final RegistryObject<Item> SCONE_APPLE_JAM = ITEMS.register("scone_apple_jam", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(5).saturationMod(0.8f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> SCONE_BERRY_JAM = ITEMS.register("scone_berry_jam", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(5).saturationMod(0.8f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> SCONE_BUTTER = ITEMS.register("scone_butter", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(5).saturationMod(0.65f).build())));
+    public static final RegistryObject<Item> SCONE_CHORUS_FRUIT_JAM = ITEMS.register("scone_chorus_fruit_jam", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(5).saturationMod(0.8f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> SCONE_GLOW_BERRY_JAM = ITEMS.register("scone_glow_berry_jam", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(5).saturationMod(0.8f).effect(new MobEffectInstance(MobEffects.NIGHT_VISION, 300, 0), 1.0f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> SCONE_MELON_JAM = ITEMS.register("scone_melon_jam", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(5).saturationMod(0.8f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> SCRAMBLED_EGG_SANDWICH = ITEMS.register("scrambled_egg_sandwich", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(9).saturationMod(0.9f).build())));
+    public static final RegistryObject<BowlFoodItem> SCRAMBLED_EGGS_PLATE = ITEMS.register("scrambled_eggs_plate", () -> new BowlFoodItem(new Item.Properties()
+                .craftRemainder(Items.BOWL)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(6).saturationMod(0.7f).build())));
+    public static final RegistryObject<BowlFoodItem> SCRAMBLED_EGGS_PLATE_BACON = ITEMS.register("scrambled_eggs_plate_bacon", () -> new BowlFoodItem(new Item.Properties()
+                .craftRemainder(Items.BOWL)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(8).saturationMod(0.8f).build())));
+    public static final RegistryObject<BowlFoodItem> SCRAMBLED_EGGS_PLATE_CHEESE = ITEMS.register("scrambled_eggs_plate_cheese", () -> new BowlFoodItem(new Item.Properties()
+                .craftRemainder(Items.BOWL)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(7).saturationMod(0.8f).build())));
+    public static final RegistryObject<BowlFoodItem> SCRAMBLED_EGGS_PLATE_MUSHROOM = ITEMS.register("scrambled_eggs_plate_mushroom", () -> new BowlFoodItem(new Item.Properties()
+                .craftRemainder(Items.BOWL)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(7).saturationMod(0.7f).build())));
+    public static final RegistryObject<BowlFoodItem> SCRAMBLED_EGGS_PLATE_ONION = ITEMS.register("scrambled_eggs_plate_onion", () -> new BowlFoodItem(new Item.Properties()
+                .craftRemainder(Items.BOWL)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(7).saturationMod(0.7f).build())));
+    public static final RegistryObject<BowlFoodItem> SCRAMBLED_EGGS_PLATE_SAUSAGE = ITEMS.register("scrambled_eggs_plate_sausage", () -> new BowlFoodItem(new Item.Properties()
+                .craftRemainder(Items.BOWL)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(8).saturationMod(0.7f).build())));
+    public static final RegistryObject<BowlFoodItem> SCRAMBLED_EGGS_PLATE_TOMATO = ITEMS.register("scrambled_eggs_plate_tomato", () -> new BowlFoodItem(new Item.Properties()
+                .craftRemainder(Items.BOWL)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(7).saturationMod(0.7f).build())));
+    public static final RegistryObject<Item> SLICED_BROWN_MUSHROOM_SALT = ITEMS.register("sliced_brown_mushroom_salt", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(1).saturationMod(1.1f).effect(new MobEffectInstance(MobEffects.NIGHT_VISION, 100, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> SLICED_CRIMSON_FUNGUS = ITEMS.register("sliced_crimson_fungus", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(2).saturationMod(0.9f).fast().build())));
+    public static final RegistryObject<Item> SLICED_CRIMSON_FUNGUS_SALT = ITEMS.register("sliced_crimson_fungus_salt", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(2).saturationMod(0.9f).effect(new MobEffectInstance(MobEffects.NIGHT_VISION, 600, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> SLICED_RED_MUSHROOM_SALT = ITEMS.register("sliced_red_mushroom_salt", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(1).saturationMod(1.1f).effect(new MobEffectInstance(MobEffects.NIGHT_VISION, 100, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> SLICED_WARPED_FUNGUS = ITEMS.register("sliced_warped_fungus", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(2).saturationMod(0.9f).fast().build())));
+    public static final RegistryObject<Item> SLICED_WARPED_FUNGUS_SALT = ITEMS.register("sliced_warped_fungus_salt", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(2).saturationMod(0.9f).effect(new MobEffectInstance(MobEffects.NIGHT_VISION, 600, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> SPICY_SAUSAGE_ROLL = ITEMS.register("spicy_sausage_roll", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(5).saturationMod(0.5f).effect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 1200, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> SPICY_SAUSAGE_ROLL_CHEESE = ITEMS.register("spicy_sausage_roll_cheese", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(5).saturationMod(0.6f).effect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 1200, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> SPICY_SAUSAGES = ITEMS.register("spicy_sausages", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(6).saturationMod(0.8f).effect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 600, 0), 1.0f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1.0f).build())));
+    public static final RegistryObject<BottleFoodItem> SUGAR_CANE_JUICE_BOTTLE = ITEMS.register("sugar_cane_juice_bottle", () -> new BottleFoodItem(new Item.Properties()
+                .craftRemainder(Items.GLASS_BOTTLE)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(3).saturationMod(0.4f).build())));
+    public static final RegistryObject<BottleFoodItem> TACO_SAUCE_BOTTLE = ITEMS.register("taco_sauce_bottle", () -> new BottleFoodItem(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE).stacksTo(16)));
+    public static final RegistryObject<Item> TACO_SHELL = ITEMS.register("taco_shell", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> TATER_TOTS = ITEMS.register("tater_tots", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(4).saturationMod(0.6f).build())));
+    public static final RegistryObject<Item> TOFFEE_APPLE = ITEMS.register("toffee_apple", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(8).saturationMod(0.8f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> TOFFEE_APPLE_SLICE = ITEMS.register("toffee_apple_slice", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(4).saturationMod(0.5f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1800, 0), 1.0f).effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 600, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> TOFFEE_BERRIES = ITEMS.register("toffee_berries", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(6).saturationMod(0.9f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build())));
+    public static final RegistryObject<Item> TOFFEE_CHOCOLATE = ITEMS.register("toffee_chocolate", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(7).saturationMod(0.8f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> TOFFEE_CHOCOLATE_PASTRY = ITEMS.register("toffee_chocolate_pastry", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(3).saturationMod(1.1f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> TOFFEE_CHOCOLATE_SWEET_ROLL = ITEMS.register("toffee_chocolate_sweet_roll", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(7).saturationMod(0.8f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build())));
+    public static final RegistryObject<Item> TOFFEE_DARK_CHOCOLATE = ITEMS.register("toffee_dark_chocolate", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(8).saturationMod(0.7f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1.0f).build())));
+    public static final RegistryObject<BowlFoodItem> TOFFEE_FUDGE_ICE_CREAM_BOWL = ITEMS.register("toffee_fudge_ice_cream_bowl", () -> new BowlFoodItem(new Item.Properties()
+                .craftRemainder(Items.BOWL)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(8).saturationMod(0.8f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).build())));
+    public static final RegistryObject<StickFoodItem> TOFFEE_MARSHMALLOW_STICK = ITEMS.register("toffee_marshmallow_stick", () -> new StickFoodItem(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(3).saturationMod(0.9f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 600, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> TOFFEE_PASTRY = ITEMS.register("toffee_pastry", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(2).saturationMod(1.1f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> TOFFEE_PRETZEL_STICK = ITEMS.register("toffee_pretzel_stick", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(3).saturationMod(0.8f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 600, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> TOFFEE_SWEET_ROLL = ITEMS.register("toffee_sweet_roll", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(6).saturationMod(0.7f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> TOFFEE_TOAST = ITEMS.register("toffee_toast", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(3).saturationMod(0.9f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> TOFFEE_WHITE_CHOCOLATE = ITEMS.register("toffee_white_chocolate", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(6).saturationMod(0.9f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1.0f).build())));
+    public static final RegistryObject<BowlFoodItem> TOMATO_CREAM_SOUP_BOWL = ITEMS.register("tomato_cream_soup_bowl", () -> new BowlFoodItem(new Item.Properties()
+                .craftRemainder(Items.BOWL)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(7).saturationMod(0.8f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build())));
+    public static final RegistryObject<Item> TROPICAL_FISH_SLICE = ITEMS.register("tropical_fish_slice", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(1).saturationMod(1.0f).fast().build())));
+    public static final RegistryObject<Item> UBE_CREAM_FROSTING_PIPING_BAG = ITEMS.register("ube_cream_frosting_piping_bag", () -> new Item(new Item.Properties().stacksTo(1)));
+    public static final RegistryObject<Item> UBE_CREAM_UBE_CAKE_SLICE = ITEMS.register("ube_cream_ube_cake_slice", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(3).saturationMod(0.3f).build())));
+    public static final RegistryObject<Item> UBE_CREAM_UBE_CUPCAKE = ITEMS.register("ube_cream_ube_cupcake", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(3).saturationMod(1.0f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> UBE_CUPCAKE_BASE = ITEMS.register("ube_cupcake_base", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(2).saturationMod(0.9f).fast().build())));
+    public static final RegistryObject<Item> VEGETABLE_WRAP_ONION_LETTUCE_TOMATO = ITEMS.register("vegetable_wrap_onion_lettuce_tomato", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(8).saturationMod(0.7f).build())));
+    public static final RegistryObject<Item> WHITE_CHOCOLATE_APPLE_SLICE = ITEMS.register("white_chocolate_apple_slice", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(4).saturationMod(0.6f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1800, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> WHITE_CHOCOLATE_PRETZEL_STICK = ITEMS.register("white_chocolate_pretzel_stick", () -> new Item(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(3).saturationMod(0.7f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).fast().build())));
+    public static final RegistryObject<BowlFoodItem> YOGURT_BOWL = ITEMS.register("yogurt_bowl", () -> new BowlFoodItem(new Item.Properties()
+                .craftRemainder(Items.BOWL)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(4).saturationMod(0.6f).build())));
+    public static final RegistryObject<BowlFoodItem> YOGURT_BOWL_BERRY = ITEMS.register("yogurt_bowl_berry", () -> new BowlFoodItem(new Item.Properties()
+                .craftRemainder(Items.BOWL)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(5).saturationMod(0.8f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).build())));
+    public static final RegistryObject<BowlFoodItem> YOGURT_BOWL_CHORUS_FRUIT = ITEMS.register("yogurt_bowl_chorus_fruit", () -> new BowlFoodItem(new Item.Properties()
+                .craftRemainder(Items.BOWL)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(6).saturationMod(0.7f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).build())));
+    public static final RegistryObject<BowlFoodItem> YOGURT_BOWL_GLOW_BERRY = ITEMS.register("yogurt_bowl_glow_berry", () -> new BowlFoodItem(new Item.Properties()
+                .craftRemainder(Items.BOWL)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(5).saturationMod(0.7f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).build())));
+    public static final RegistryObject<BowlFoodItem> YOGURT_BOWL_HONEY = ITEMS.register("yogurt_bowl_honey", () -> new BowlFoodItem(new Item.Properties()
+                .craftRemainder(Items.BOWL)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(4).saturationMod(0.8f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.REGENERATION, 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.LUCK, 600, 0), 1.0f).build())));
+
+    public static final RegistryObject<BowlFoodItem> BREAD_PUDDING_BOWL = ITEMS.register("bread_pudding_bowl", () -> new BowlFoodItem(new Item.Properties()
+                .craftRemainder(Items.BOWL)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(7).saturationMod(0.9f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build())));
+
+    public static final RegistryObject<Item> MERINGUE_BOWL = ITEMS.register("meringue_bowl", () -> new Item(new Item.Properties().craftRemainder(Items.BOWL).stacksTo(16)));
+
 }
