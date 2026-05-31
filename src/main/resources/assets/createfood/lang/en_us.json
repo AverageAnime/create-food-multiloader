@@ -1145,5 +1145,7 @@
   "item.createfood.rice_pudding_bucket": "Rice Pudding Bucket",
   "item.createfood.taco_sauce_bucket": "Taco Sauce Bucket",
   "item.createfood.tomato_cream_soup_bucket": "Tomato Cream Soup Bucket",
-  "item.createfood.ube_cake_batter_bucket": "Ube Cake Batter Bucket"
+  "item.createfood.ube_cake_batter_bucket": "Ube Cake Batter Bucket",
+  "block.createfood.empty_plate": "Plate",
+  "block.createfood.generic_display_plate": "Food Plate"
 }

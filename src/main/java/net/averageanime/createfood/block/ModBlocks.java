@@ -8,6 +8,9 @@ import net.averageanime.createfood.block.gyro.GyroMeatBlock;
 import net.averageanime.createfood.block.pie.*;
 import net.averageanime.createfood.block.pizza.*;
 import net.averageanime.createfood.block.waffle.*;
+import net.averageanime.createfood.block.plate.EmptyPlateBlock;
+import net.averageanime.createfood.block.plate.GenericDisplayPlateBlock;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SlimeBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 
@@ -152,6 +155,17 @@ public class ModBlocks {
     public static final BlockEntry<SlimeBlock> RED_GELATIN_DESSERT_BLOCK = REGISTRATE.block("red_gelatin_dessert_block", SlimeBlock::new).properties(BlockBehaviour.Properties::noOcclusion).item().build().register();
     public static final BlockEntry<SlimeBlock> YELLOW_GELATIN_DESSERT_BLOCK = REGISTRATE.block("yellow_gelatin_dessert_block", SlimeBlock::new).properties(BlockBehaviour.Properties::noOcclusion).item().build().register();
 
+
+    // ===== Phase 11: Display plate blocks =====
+    public static final BlockEntry<EmptyPlateBlock> EMPTY_PLATE =
+            REGISTRATE.block("empty_plate", EmptyPlateBlock::new)
+                    .properties(p -> BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS))
+                    .item().build().register();
+
+    public static final BlockEntry<GenericDisplayPlateBlock> GENERIC_DISPLAY_PLATE =
+            REGISTRATE.block("generic_display_plate", GenericDisplayPlateBlock::new)
+                    .properties(p -> BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS))
+                    .item().build().register();
 
     public static void register() {}
 }

@@ -24,11 +24,15 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.fml.loading.FMLEnvironment;
 import org.slf4j.Logger;
+import net.averageanime.createfood.block.ModBlockEntities;
 import net.averageanime.createfood.config.CreateFoodConfig;
 import net.averageanime.createfood.creativetab.ModCreativeTab;
 import net.averageanime.createfood.fluid.ModFluids;
 import net.averageanime.createfood.item.ModItems;
+import net.averageanime.createfood.block.ModBlockEntities;
+import net.averageanime.createfood.client.renderer.GenericDisplayPlateRenderer;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.client.event.RegisterClientReloadListenersEvent;
 
 
@@ -44,6 +48,7 @@ public class CreateFood {
 
         CreateFoodConfig.register();
         ModBlocks.register();
+        ModBlockEntities.register(modEventBus);
         ModFluids.register();
         ModItems.ITEMS.register(modEventBus);
 
@@ -60,4 +65,11 @@ public class CreateFood {
         return new ResourceLocation(ID, path);
     }
 
+    @net.minecraftforge.fml.common.Mod.EventBusSubscriber(modid = ID, bus = net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+    public static class ClientEvents {
+        @SubscribeEvent
+        public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
+            event.registerBlockEntityRenderer(ModBlockEntities.GENERIC_DISPLAY_PLATE.get(), GenericDisplayPlateRenderer::new);
+        }
+    }
 }
