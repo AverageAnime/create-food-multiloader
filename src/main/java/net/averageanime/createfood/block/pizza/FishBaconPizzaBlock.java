@@ -21,7 +21,7 @@ public class FishBaconPizzaBlock extends ModPieBlock {
     }
 
     public ItemStack getPieSliceItem() {
-        return new ItemStack((ItemLike) ModItems.FISH_BACON_PIZZA_SLICE.get());
+        return new ItemStack(ModItems.FISH_BACON_PIZZA_SLICE.get());
     }
 
     protected InteractionResult consumeBite(LevelAccessor pLevel, BlockPos pPos, BlockState pState, Player pPlayer) {

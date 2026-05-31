@@ -19,7 +19,7 @@ public class BerryPieBlock extends ModPieBlock {
     }
 
     public ItemStack getPieSliceItem() {
-        return new ItemStack((ItemLike) ModItems.BERRY_PIE_SLICE.get());
+        return new ItemStack(ModItems.BERRY_PIE_SLICE.get());
     }
 
     protected InteractionResult consumeBite(LevelAccessor pLevel, BlockPos pPos, BlockState pState, Player pPlayer) {

@@ -35,7 +35,7 @@ public class GlowBerryCreamCakeSweetBerryBlock extends ModCakeBlock {
     }
 
     public ItemStack getPieSliceItem() {
-        return new ItemStack((ItemLike) ModItems.GLOW_BERRY_CREAM_CAKE_SLICE_SWEET_BERRY);
+        return new ItemStack(ModItems.GLOW_BERRY_CREAM_CAKE_SLICE_SWEET_BERRY.get());
     }
 
     protected static InteractionResult consumeBite(LevelAccessor pLevel, BlockPos pPos, BlockState pState, Player pPlayer) {

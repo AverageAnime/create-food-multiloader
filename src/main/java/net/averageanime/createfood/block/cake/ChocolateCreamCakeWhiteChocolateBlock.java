@@ -37,7 +37,7 @@ public class ChocolateCreamCakeWhiteChocolateBlock extends ModCakeBlock {
 
 
     public ItemStack getPieSliceItem() {
-        return new ItemStack((ItemLike) ModItems.CHOCOLATE_CREAM_CAKE_SLICE_WHITE_CHOCOLATE);
+        return new ItemStack(ModItems.CHOCOLATE_CREAM_CAKE_SLICE_WHITE_CHOCOLATE.get());
     }
 
     protected static InteractionResult consumeBite(LevelAccessor pLevel, BlockPos pPos, BlockState pState, Player pPlayer) {

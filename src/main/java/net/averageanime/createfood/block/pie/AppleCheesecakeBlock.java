@@ -19,7 +19,7 @@ public class AppleCheesecakeBlock extends ModPieBlock {
     }
 
     public ItemStack getPieSliceItem() {
-        return new ItemStack((ItemLike) ModItems.APPLE_CHEESECAKE_SLICE.get());
+        return new ItemStack(ModItems.APPLE_CHEESECAKE_SLICE.get());
     }
 
     protected InteractionResult consumeBite(LevelAccessor pLevel, BlockPos pPos, BlockState pState, Player pPlayer) {

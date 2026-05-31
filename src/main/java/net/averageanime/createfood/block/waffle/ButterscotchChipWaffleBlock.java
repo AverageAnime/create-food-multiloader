@@ -21,7 +21,7 @@ public class ButterscotchChipWaffleBlock extends ModPieBlock {
     }
 
     public ItemStack getPieSliceItem() {
-        return new ItemStack((ItemLike) ModItems.BUTTERSCOTCH_CHIP_MINI_WAFFLE.get());
+        return new ItemStack(ModItems.BUTTERSCOTCH_CHIP_MINI_WAFFLE.get());
     }
 
     protected InteractionResult consumeBite(LevelAccessor pLevel, BlockPos pPos, BlockState pState, Player pPlayer) {

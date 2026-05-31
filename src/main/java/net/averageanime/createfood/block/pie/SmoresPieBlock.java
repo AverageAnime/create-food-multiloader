@@ -19,7 +19,7 @@ public class SmoresPieBlock extends ModPieBlock {
     }
 
     public ItemStack getPieSliceItem() {
-        return new ItemStack((ItemLike) ModItems.SMORES_PIE_SLICE.get());
+        return new ItemStack(ModItems.SMORES_PIE_SLICE.get());
     }
 
     protected InteractionResult consumeBite(LevelAccessor pLevel, BlockPos pPos, BlockState pState, Player pPlayer) {

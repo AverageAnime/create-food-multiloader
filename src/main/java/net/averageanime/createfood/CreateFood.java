@@ -43,11 +43,10 @@ public class CreateFood {
 
         ModBlocks.register();
         ModFluids.register();
-        ModItems.register();
+        ModItems.ITEMS.register(modEventBus);
 
-        IEventBus modBus = FMLJavaModLoadingContext.get().getModEventBus();
         ModCreativeTab.register(modEventBus);
-        REGISTRATE.registerEventListeners(modBus);
+        REGISTRATE.registerEventListeners(modEventBus);
 
     }
 

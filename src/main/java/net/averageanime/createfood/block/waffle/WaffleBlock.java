@@ -83,7 +83,7 @@ public class WaffleBlock extends CakeBlock {
     }
 
     public ItemStack getPieSliceItem() {
-        return new ItemStack((ItemLike) ModItems.MINI_WAFFLE.get());
+        return new ItemStack(ModItems.MINI_WAFFLE.get());
     }
 
     protected static InteractionResult consumeBite(LevelAccessor pLevel, BlockPos pPos, BlockState pState, Player pPlayer) {

@@ -21,7 +21,7 @@ public class FishOnionPizzaBlock extends ModPieBlock {
     }
 
     public ItemStack getPieSliceItem() {
-        return new ItemStack((ItemLike) ModItems.FISH_ONION_PIZZA_SLICE.get());
+        return new ItemStack(ModItems.FISH_ONION_PIZZA_SLICE.get());
     }
 
     protected InteractionResult consumeBite(LevelAccessor pLevel, BlockPos pPos, BlockState pState, Player pPlayer) {

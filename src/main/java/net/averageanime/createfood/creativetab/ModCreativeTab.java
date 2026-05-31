@@ -38,7 +38,7 @@ public class ModCreativeTab {
         CREATIVE_TAB = REGISTER.register("base", () -> {
             return CreativeModeTab.builder().title(Component.literal("Create: Food"))
                     .withTabsBefore(AllCreativeModeTabs.BASE_CREATIVE_TAB.getKey(),AllCreativeModeTabs.PALETTES_CREATIVE_TAB.getKey())
-                    .icon(ModItems.BREAKFAST_PLATE::asStack)
+                    .icon(() -> new ItemStack(ModItems.BREAKFAST_PLATE.get()))
                     .displayItems(new DisplayItemsGenerator())
                     .build();
         });
@@ -73,16 +73,12 @@ public class ModCreativeTab {
 
         private List<Item> collectItems() {
             List<Item> items = new ReferenceArrayList();
-            Iterator var3 = REGISTRATE.getAll(Registries.ITEM).iterator();
-
-            while(var3.hasNext()) {
-                RegistryEntry<Item> entry = (RegistryEntry)var3.next();
+            for (RegistryObject<Item> entry : ModItems.ITEMS.getEntries()) {
                 Item item = entry.get();
                 if (!(item instanceof BlockItem) && !(item instanceof BucketItem)) {
                     items.add(item);
                 }
             }
-
             return items;
         }
 

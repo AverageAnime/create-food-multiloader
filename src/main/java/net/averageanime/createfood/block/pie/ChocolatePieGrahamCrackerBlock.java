@@ -19,7 +19,7 @@ public class ChocolatePieGrahamCrackerBlock extends ModPieBlock {
     }
 
     public ItemStack getPieSliceItem() {
-        return new ItemStack((ItemLike) ModItems.CHOCOLATE_PIE_GRAHAM_CRACKER_SLICE.get());
+        return new ItemStack(ModItems.CHOCOLATE_PIE_GRAHAM_CRACKER_SLICE.get());
     }
 
     protected InteractionResult consumeBite(LevelAccessor pLevel, BlockPos pPos, BlockState pState, Player pPlayer) {

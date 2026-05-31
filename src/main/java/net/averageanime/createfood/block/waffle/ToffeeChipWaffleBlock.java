@@ -21,7 +21,7 @@ public class ToffeeChipWaffleBlock extends ModPieBlock {
     }
 
     public ItemStack getPieSliceItem() {
-        return new ItemStack((ItemLike) ModItems.TOFFEE_CHIP_MINI_WAFFLE.get());
+        return new ItemStack(ModItems.TOFFEE_CHIP_MINI_WAFFLE.get());
     }
 
     protected InteractionResult consumeBite(LevelAccessor pLevel, BlockPos pPos, BlockState pState, Player pPlayer) {

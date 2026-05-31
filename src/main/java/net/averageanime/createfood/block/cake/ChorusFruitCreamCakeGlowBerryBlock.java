@@ -34,7 +34,7 @@ public class ChorusFruitCreamCakeGlowBerryBlock extends ModCakeBlock {
     }
 
     public ItemStack getPieSliceItem() {
-        return new ItemStack((ItemLike) ModItems.CHORUS_FRUIT_CREAM_CAKE_SLICE_GLOW_BERRY);
+        return new ItemStack(ModItems.CHORUS_FRUIT_CREAM_CAKE_SLICE_GLOW_BERRY.get());
     }
 
     protected static InteractionResult consumeBite(LevelAccessor pLevel, BlockPos pPos, BlockState pState, Player pPlayer) {

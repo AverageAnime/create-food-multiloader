@@ -19,7 +19,7 @@ public class ChorusFruitPieBlock extends ModPieBlock {
     }
 
     public ItemStack getPieSliceItem() {
-        return new ItemStack((ItemLike) ModItems.CHORUS_FRUIT_PIE_SLICE.get());
+        return new ItemStack(ModItems.CHORUS_FRUIT_PIE_SLICE.get());
     }
 
     protected InteractionResult consumeBite(LevelAccessor pLevel, BlockPos pPos, BlockState pState, Player pPlayer) {

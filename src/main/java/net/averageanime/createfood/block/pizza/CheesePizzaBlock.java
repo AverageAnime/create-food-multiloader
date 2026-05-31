@@ -20,7 +20,7 @@ public class CheesePizzaBlock extends ModPieBlock {
     }
 
     public ItemStack getPieSliceItem() {
-        return new ItemStack((ItemLike) ModItems.CHEESE_PIZZA_SLICE.get());
+        return new ItemStack(ModItems.CHEESE_PIZZA_SLICE.get());
     }
 
     protected InteractionResult consumeBite(LevelAccessor pLevel, BlockPos pPos, BlockState pState, Player pPlayer) {

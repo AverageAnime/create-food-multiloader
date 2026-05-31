@@ -1,1649 +1,1197 @@
 package net.averageanime.createfood.item;
 
-import com.simibubi.create.foundation.data.CreateRegistrate;
-import com.tterrag.registrate.util.entry.ItemEntry;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
 import net.averageanime.createfood.CreateFood;
 import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.RegistryObject;
 import net.minecraftforge.registries.ForgeRegistries;
-import vectorwing.farmersdelight.common.item.ConsumableItem;
-import vectorwing.farmersdelight.common.registry.ModEffects;
-import com.tterrag.registrate.util.entry.ItemEntry;
-import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.item.Item;
+import net.averageanime.createfood.effect.ModEffects;
 
 public class ModItems {
-
-    private static final CreateRegistrate REGISTRATE = CreateFood.registrate();
 
     public static final DeferredRegister<Item> ITEMS =
             DeferredRegister.create(ForgeRegistries.ITEMS, CreateFood.ID);
 
-    public static final ItemEntry<Item> APPLE_CHEESECAKE_SLICE = REGISTRATE.item("apple_cheesecake_slice", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(3).saturationMod(0.1F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> APPLE_CREAM_CHOCOLATE = REGISTRATE.item("apple_cream_chocolate", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(6).saturationMod(0.5F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).fast().build())).register();
-    public static final ItemEntry<Item> APPLE_CREAM_CHOCOLATE_PASTRY_BAR = REGISTRATE.item("apple_cream_chocolate_pastry_bar", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(3).saturationMod(1.0F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> APPLE_CREAM_DARK_CHOCOLATE = REGISTRATE.item("apple_cream_dark_chocolate", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(5).saturationMod(0.6F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).fast().build())).register();
-    public static final ItemEntry<Item> APPLE_CREAM_FROSTED_CHOCOLATE_SWEET_ROLL = REGISTRATE.item("apple_cream_frosted_chocolate_sweet_roll", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(5).saturationMod(0.6F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> APPLE_CREAM_FROSTED_CHOCOLATE_CUPCAKE = REGISTRATE.item("apple_cream_frosted_chocolate_cupcake", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(4).saturationMod(1.1F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).fast().build())).register();
-    public static final ItemEntry<Item> APPLE_CREAM_FROSTED_CUPCAKE = REGISTRATE.item("apple_cream_frosted_cupcake", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(3).saturationMod(1.0F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).fast().build())).register();
-    public static final ItemEntry<Item> APPLE_CREAM_FROSTED_MINI_WAFFLE = REGISTRATE.item("apple_cream_frosted_mini_waffle", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(3).saturationMod(1.6F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.LUCK, 600, 0), 1.0f).fast().build())).register();
-    public static final ItemEntry<Item> APPLE_CREAM_FROSTED_SWEET_ROLL = REGISTRATE.item("apple_cream_frosted_sweet_roll", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(4).saturationMod(0.7F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> APPLE_CREAM_GLAZED_CHOCOLATE_DONUT = REGISTRATE.item("apple_cream_glazed_chocolate_donut", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(4).saturationMod(0.8F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> APPLE_CREAM_GLAZED_DONUT = REGISTRATE.item("apple_cream_glazed_donut", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(3).saturationMod(0.8F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> APPLE_CREAM_PASTRY_BAR = REGISTRATE.item("apple_cream_pastry_bar", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(2).saturationMod(1.0F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> APPLE_CREAM_WHITE_CHOCOLATE = REGISTRATE.item("apple_cream_white_chocolate", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(7).saturationMod(0.4F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> APPLE_ICE_CREAM_CONE = REGISTRATE.item("apple_ice_cream_cone", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(2).saturationMod(0.6F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.LUCK, 600, 0), 1.0f).fast().build())).register();
-    public static final ItemEntry<Item> APPLE_ICE_CREAM_SANDWICH = REGISTRATE.item("apple_ice_cream_sandwich", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(6).saturationMod(0.6F).build())).register();
-    public static final ItemEntry<Item> APPLE_JAM_SANDWICH = REGISTRATE.item("apple_jam_sandwich", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(7).saturationMod(0.7F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).fast().build())).register();
-    public static final ItemEntry<Item> APPLE_SLICE = REGISTRATE.item("apple_slice", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(2).saturationMod(0.4F).fast().build())).register();
-    public static final ItemEntry<Item> BACON_BITS = REGISTRATE.item("bacon_bits", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(1).saturationMod(0.4F).build())).register();
-    public static final ItemEntry<Item> BACON_CALZONE = REGISTRATE.item("bacon_calzone", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(6).saturationMod(0.4F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).fast().build())).register();
-    public static final ItemEntry<Item> BACON_PIZZA_SLICE = REGISTRATE.item("bacon_pizza_slice", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(5).saturationMod(0.6F).build())).register();
-    public static final ItemEntry<Item> BACON_SANDWICH = REGISTRATE.item("bacon_sandwich", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(7).saturationMod(0.6F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> BACON_SANDWICH_LETTUCE = REGISTRATE.item("bacon_sandwich_lettuce", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(9).saturationMod(0.5F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> BAKED_POTATO_BUTTER = REGISTRATE.item("baked_potato_butter", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(5).saturationMod(0.8F).build())).register();
-    public static final ItemEntry<Item> BAKED_POTATO_BUTTER_CHEESE = REGISTRATE.item("baked_potato_butter_cheese", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(5).saturationMod(0.9F).build())).register();
-    public static final ItemEntry<Item> BAKED_POTATO_BUTTER_FISH = REGISTRATE.item("baked_potato_butter_fish", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(5).saturationMod(0.9F).build())).register();
-    public static final ItemEntry<Item> BAKED_POTATO_BUTTER_FRIED_EGG = REGISTRATE.item("baked_potato_butter_fried_egg", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(5).saturationMod(0.7F).build())).register();
-    public static final ItemEntry<Item> BAKED_POTATO_BUTTER_MUSHROOM = REGISTRATE.item("baked_potato_butter_mushroom", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(5).saturationMod(1.1F).build())).register();
-    public static final ItemEntry<Item> BAR_OF_DARK_CHOCOLATE = REGISTRATE.item("bar_of_dark_chocolate", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(7).saturationMod(0.2F).build())).register();
-    public static final ItemEntry<Item> BAR_OF_WHITE_CHOCOLATE = REGISTRATE.item("bar_of_white_chocolate", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(5).saturationMod(0.4F).build())).register();
-    public static final ItemEntry<Item> BEEF_BUN = REGISTRATE.item("beef_bun", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(6).saturationMod(0.6F).build())).register();
-    public static final ItemEntry<Item> BEEF_BUN_BACON = REGISTRATE.item("beef_bun_bacon", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(8).saturationMod(0.6F).build())).register();
-    public static final ItemEntry<Item> BEEF_BUN_BACON_LETTUCE = REGISTRATE.item("beef_bun_bacon_lettuce", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(9).saturationMod(0.7F).build())).register();
-    public static final ItemEntry<Item> BEEF_BUN_BACON_LETTUCE_TOMATO = REGISTRATE.item("beef_bun_bacon_lettuce_tomato", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(9).saturationMod(0.8F).build())).register();
-    public static final ItemEntry<Item> BEEF_BUN_LETTUCE = REGISTRATE.item("beef_bun_lettuce", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(7).saturationMod(0.7F).build())).register();
-    public static final ItemEntry<Item> BEEF_BUN_LETTUCE_TOMATO = REGISTRATE.item("beef_bun_lettuce_tomato", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(7).saturationMod(0.8F).build())).register();
-    public static final ItemEntry<Item> BEEF_BUN_ONION = REGISTRATE.item("beef_bun_onion", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(6).saturationMod(0.8F).build())).register();
-    public static final ItemEntry<Item> BEEF_BUN_ONION_BACON = REGISTRATE.item("beef_bun_onion_bacon", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(9).saturationMod(0.8F).build())).register();
-    public static final ItemEntry<Item> BEEF_BUN_ONION_BACON_LETTUCE = REGISTRATE.item("beef_bun_onion_bacon_lettuce", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(10).saturationMod(0.9F).build())).register();
-    public static final ItemEntry<Item> BEEF_BUN_ONION_LETTUCE = REGISTRATE.item("beef_bun_onion_lettuce", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(8).saturationMod(0.9F).build())).register();
-    public static final ItemEntry<Item> BEEF_BUN_ONION_LETTUCE_TOMATO = REGISTRATE.item("beef_bun_onion_lettuce_tomato", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(8).saturationMod(1.0F).build())).register();
-    public static final ItemEntry<Item> BEEF_BUN_PEANUT_BUTTER = REGISTRATE.item("beef_bun_peanut_butter", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(6).saturationMod(0.9F).build())).register();
-    public static final ItemEntry<Item> BEEF_BUN_PEANUT_BUTTER_BACON = REGISTRATE.item("beef_bun_peanut_butter_bacon", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(8).saturationMod(0.9F).build())).register();
-    public static final ItemEntry<Item> BEEF_BUN_CHEESE_TOMATO = REGISTRATE.item("beef_bun_cheese_tomato", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(9).saturationMod(0.8F).build())).register();
-    public static final ItemEntry<Item> BEEF_BUN_TOMATO = REGISTRATE.item("beef_bun_tomato", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(7).saturationMod(0.7F).build())).register();
-    public static final ItemEntry<Item> BERRY_CREAM_CAKE_SLICE_CHORUS_FRUIT = REGISTRATE.item("berry_cream_cake_slice_chorus_fruit", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(2).saturationMod(0.3F).build())).register();
-    public static final ItemEntry<Item> BERRY_CREAM_CAKE_SLICE_GLOW_BERRY = REGISTRATE.item("berry_cream_cake_slice_glow_berry", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(2).saturationMod(0.2F).build())).register();
-    public static final ItemEntry<Item> BERRY_CREAM_CAKE_SLICE_SWEET_BERRY = REGISTRATE.item("berry_cream_cake_slice_sweet_berry", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(2).saturationMod(0.2F).build())).register();
-    public static final ItemEntry<Item> BERRY_CREAM_CHOCOLATE = REGISTRATE.item("berry_cream_chocolate", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(7).saturationMod(0.4F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).fast().build())).register();
-    public static final ItemEntry<Item> BERRY_CREAM_CHOCOLATE_PASTRY_BAR = REGISTRATE.item("berry_cream_chocolate_pastry_bar", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(3).saturationMod(1.0F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> BERRY_CREAM_DARK_CHOCOLATE = REGISTRATE.item("berry_cream_dark_chocolate", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(8).saturationMod(0.3F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).fast().build())).register();
-    public static final ItemEntry<Item> BERRY_CREAM_FROSTED_CHOCOLATE_SWEET_ROLL = REGISTRATE.item("berry_cream_frosted_chocolate_sweet_roll", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(6).saturationMod(0.7F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> BERRY_CREAM_FROSTED_CHOCOLATE_SWEET_ROLL_SWEET_BERRY = REGISTRATE.item("berry_cream_frosted_chocolate_sweet_roll_sweet_berry", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(6).saturationMod(0.7F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).effect(new MobEffectInstance(MobEffects.DIG_SPEED, 1200, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> BERRY_CREAM_FROSTED_CHOCOLATE_CUPCAKE = REGISTRATE.item("berry_cream_frosted_chocolate_cupcake", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(4).saturationMod(1.1F).effect(new MobEffectInstance(MobEffects.DIG_SPEED, 1200, 0), 1.0f).fast().build())).register();
-    public static final ItemEntry<Item> BERRY_CREAM_FROSTED_CUPCAKE = REGISTRATE.item("berry_cream_frosted_cupcake", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(3).saturationMod(1.0F).effect(new MobEffectInstance(MobEffects.DIG_SPEED, 600, 0), 1.0f).fast().build())).register();
-    public static final ItemEntry<Item> BERRY_CREAM_FROSTED_MINI_WAFFLE = REGISTRATE.item("berry_cream_frosted_mini_waffle", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(3).saturationMod(1.9F).effect(new MobEffectInstance(MobEffects.DIG_SPEED, 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.LUCK, 600, 0), 1.0f).fast().build())).register();
-    public static final ItemEntry<Item> BERRY_CREAM_FROSTED_MINI_WAFFLE_SWEET_BERRY = REGISTRATE.item("berry_cream_frosted_mini_waffle_sweet_berry", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(3).saturationMod(1.9F).effect(new MobEffectInstance(MobEffects.DIG_SPEED, 1200, 0), 1.0f).effect(new MobEffectInstance(MobEffects.LUCK, 600, 0), 1.0f).fast().build())).register();
-    public static final ItemEntry<Item> BERRY_CREAM_FROSTED_SWEET_ROLL = REGISTRATE.item("berry_cream_frosted_sweet_roll", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(5).saturationMod(0.6F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> BERRY_CREAM_FROSTED_SWEET_ROLL_SWEET_BERRY = REGISTRATE.item("berry_cream_frosted_sweet_roll_sweet_berry", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(5).saturationMod(0.6F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.DIG_SPEED, 600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> BERRY_CREAM_GLAZED_CHOCOLATE_DONUT = REGISTRATE.item("berry_cream_glazed_chocolate_donut", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(4).saturationMod(0.7F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> BERRY_CREAM_GLAZED_DONUT = REGISTRATE.item("berry_cream_glazed_donut", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(3).saturationMod(0.7F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> BERRY_CREAM_PASTRY_BAR = REGISTRATE.item("berry_cream_pastry_bar", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(2).saturationMod(1.0F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> BERRY_CREAM_WHITE_CHOCOLATE = REGISTRATE.item("berry_cream_white_chocolate", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(6).saturationMod(0.5F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).fast().build())).register();
-    public static final ItemEntry<Item> BERRY_ICE_CREAM_CONE = REGISTRATE.item("berry_ice_cream_cone", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(2).saturationMod(0.9F).effect(new MobEffectInstance(MobEffects.DIG_SPEED, 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.LUCK, 600, 0), 1.0f).fast().build())).register();
-    public static final ItemEntry<Item> BERRY_ICE_CREAM_SANDWICH = REGISTRATE.item("berry_ice_cream_sandwich", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(6).saturationMod(0.6F).build())).register();
-    public static final ItemEntry<Item> BERRY_JAM_SANDWICH = REGISTRATE.item("berry_jam_sandwich", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(9).saturationMod(0.4F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> BERRY_PIE_SLICE = REGISTRATE.item("berry_pie_slice", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(3).saturationMod(0.1F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> BISCUIT = REGISTRATE.item("biscuit", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(9).saturationMod(0.7F).fast().build())).register();
-    public static final ItemEntry<Item> BLACK_GELATIN_DESSERT_SLICE = REGISTRATE.item("black_gelatin_dessert_slice", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(5).saturationMod(0.3F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> BLUE_GELATIN_DESSERT_SLICE = REGISTRATE.item("blue_gelatin_dessert_slice", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(5).saturationMod(0.3F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> EGGSHELL = REGISTRATE.item("eggshell", Item::new).register();
-    public static final ItemEntry<Item> BOILED_EGG = REGISTRATE.item("boiled_egg", Item::new)
-            .properties(prop -> {
-                prop.craftRemainder(EGGSHELL.get());
-                prop.stacksTo(16);
-                return prop;
-            })
-            .register();
-    public static final ItemEntry<Item> BOILED_EGG_PEELED = REGISTRATE.item("boiled_egg_peeled", Item::new)
-            .properties(prop -> {
-                prop.stacksTo(16);
-                prop.food(new FoodProperties.Builder().nutrition(6).saturationMod(0.1F).fast().build());
-                return prop;
-            })
-            .register();
-    public static final ItemEntry<Item> BREAD_CRUMBS = REGISTRATE.item("bread_crumbs", Item::new).register();
-    public static final ItemEntry<Item> BREAD_CARROT = REGISTRATE.item("bread_carrot", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(7).saturationMod(0.4F).build())).register();
-    public static final ItemEntry<Item> BREAD_FRIED_EGG = REGISTRATE.item("bread_fried_egg", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(6).saturationMod(0.6F).build())).register();
-    public static final ItemEntry<Item> BREAD_LETTUCE = REGISTRATE.item("bread_lettuce", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(7).saturationMod(0.3F).build())).register();
-    public static final ItemEntry<Item> BREAD_LETTUCE_CARROT = REGISTRATE.item("bread_lettuce_carrot", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(8).saturationMod(0.5F).build())).register();
-    public static final ItemEntry<Item> BREAD_SLICE = REGISTRATE.item("bread_slice", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(2).saturationMod(0.2F).fast().build())).register();
-    public static final ItemEntry<Item> BREAD_SLICE_APPLE_JAM = REGISTRATE.item("bread_slice_apple_jam", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(5).saturationMod(0.6F).build())).register();
-    public static final ItemEntry<Item> BREAD_SLICE_BACON = REGISTRATE.item("bread_slice_bacon", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(5).saturationMod(0.6F).build())).register();
-    public static final ItemEntry<Item> BREAD_SLICE_BACON_LETTUCE = REGISTRATE.item("bread_slice_bacon_lettuce", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(6).saturationMod(0.8F).build())).register();
-    public static final ItemEntry<Item> BREAD_SLICE_BACON_LETTUCE_TOMATO = REGISTRATE.item("bread_slice_bacon_lettuce_tomato", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(9).saturationMod(0.5F).build())).register();
-    public static final ItemEntry<Item> BREAD_SLICE_BEETROOT = REGISTRATE.item("bread_slice_beetroot", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(7).saturationMod(0.3F).build())).register();
-    public static final ItemEntry<Item> BREAD_SLICE_BEETROOT_LETTUCE = REGISTRATE.item("bread_slice_beetroot_lettuce", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(7).saturationMod(0.5F).build())).register();
-    public static final ItemEntry<Item> BREAD_SLICE_BERRY_JAM = REGISTRATE.item("bread_slice_berry_jam", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(7).saturationMod(0.4F).build())).register();
-    public static final ItemEntry<Item> BREAD_SLICE_CHEESE = REGISTRATE.item("bread_slice_cheese", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(5).saturationMod(0.3F).build())).register();
-    public static final ItemEntry<Item> BREAD_SLICE_CHORUS_FRUIT_JAM = REGISTRATE.item("bread_slice_chorus_fruit_jam", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(8).saturationMod(0.5F).build())).register();
-    public static final ItemEntry<Item> BREAD_SLICE_GLOW_BERRY_JAM = REGISTRATE.item("bread_slice_glow_berry_jam", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(7).saturationMod(0.4F).build())).register();
-    public static final ItemEntry<Item> BREAD_SLICE_HONEY = REGISTRATE.item("bread_slice_honey", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(7).saturationMod(0.4F).build())).register();
-    public static final ItemEntry<Item> BREAD_SLICE_LETTUCE = REGISTRATE.item("bread_slice_lettuce", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(7).saturationMod(0.3F).build())).register();
-    public static final ItemEntry<Item> BREAD_SLICE_LETTUCE_TOMATO = REGISTRATE.item("bread_slice_lettuce_tomato", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(7).saturationMod(0.4F).build())).register();
-    public static final ItemEntry<Item> BREAD_SLICE_MELON_JAM = REGISTRATE.item("bread_slice_melon_jam", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(8).saturationMod(0.5F).build())).register();
-    public static final ItemEntry<Item> BREAD_SLICE_MUTTON = REGISTRATE.item("bread_slice_mutton", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(5).saturationMod(0.6F).build())).register();
-    public static final ItemEntry<Item> BREAD_SLICE_MUTTON_BEETROOT = REGISTRATE.item("bread_slice_mutton_beetroot", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(5).saturationMod(0.8F).build())).register();
-    public static final ItemEntry<Item> BREAD_SLICE_PEANUT_BUTTER = REGISTRATE.item("bread_slice_peanut_butter", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(7).saturationMod(0.4F).build())).register();
-    public static final ItemEntry<Item> BREAD_SLICE_TOMATO = REGISTRATE.item("bread_slice_tomato", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(7).saturationMod(0.3F).build())).register();
-    public static final ItemEntry<Item> BREAKFAST_BAR = REGISTRATE.item("breakfast_bar", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(2).saturationMod(4.1F).effect(new MobEffectInstance(MobEffects.DIG_SPEED, 600, 0), 1.0f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1.0f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> BREAKFAST_SAUSAGES = REGISTRATE.item("breakfast_sausages", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(6).saturationMod(0.4F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> BROWN_GELATIN_DESSERT_SLICE = REGISTRATE.item("brown_gelatin_dessert_slice", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(5).saturationMod(0.3F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> BROWN_SUGAR = REGISTRATE.item("brown_sugar", Item::new).register();
-    public static final ItemEntry<Item> BUN = REGISTRATE.item("bun", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(2).saturationMod(0.5F).fast().build())).register();
-    public static final ItemEntry<Item> BUTTER = REGISTRATE.item("butter", Item::new).register();
-    public static final ItemEntry<Item> BUTTERED_TOAST = REGISTRATE.item("buttered_toast", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(2).saturationMod(1.2F).build())).register();
-    public static final ItemEntry<Item> BUTTERSCOTCH = REGISTRATE.item("butterscotch", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(1).saturationMod(1.0F).fast().build())).register();
-    public static final ItemEntry<Item> BUTTERSCOTCH_CHIPS = REGISTRATE.item("butterscotch_chips", Item::new).register();
-    public static final ItemEntry<Item> BUTTERSCOTCH_CHIPS_CHOCOLATE_COOKIE = REGISTRATE.item("butterscotch_chips_chocolate_cookie", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(2).saturationMod(1.3F).build())).register();
-    public static final ItemEntry<Item> BUTTERSCOTCH_CHIPS_COOKIE = REGISTRATE.item("butterscotch_chips_cookie", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(1).saturationMod(1.2F).build())).register();
-    public static final ItemEntry<Item> BUTTERSCOTCH_CHIP_ICE_CREAM_CONE = REGISTRATE.item("butterscotch_chip_ice_cream_cone", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(2).saturationMod(1.2F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.DIG_SPEED, 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.LUCK, 600, 0), 1.0f).fast().build())).register();
-    public static final ItemEntry<Item> BUTTERSCOTCH_CHIP_MUFFIN = REGISTRATE.item("butterscotch_chip_muffin", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(3).saturationMod(0.8F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.DIG_SPEED, 600, 0), 1.0f).fast().build())).register();
-    public static final ItemEntry<Item> BUTTERSCOTCH_CHIP_MINI_WAFFLE = REGISTRATE.item("butterscotch_chip_mini_waffle", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(3).saturationMod(1.7F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.DIG_SPEED, 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.LUCK, 600, 0), 1.0f).fast().build())).register();
-    public static final ItemEntry<Item> BUTTERSCOTCH_FUDGE = REGISTRATE.item("butterscotch_fudge", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(3).saturationMod(0.8F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.DIG_SPEED, 3600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> BUTTER_DOUGH = REGISTRATE.item("butter_dough", Item::new).register();
-    public static final ItemEntry<Item> BUTTER_DOUGH_SMALL = REGISTRATE.item("butter_dough_small", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().fast().build())).register();
-    public static final ItemEntry<Item> CACAO_BUTTER = REGISTRATE.item("cacao_butter", Item::new).register();
-    public static final ItemEntry<Item> CACAO_NIBS = REGISTRATE.item("cacao_nibs", Item::new).register();
-    public static final ItemEntry<Item> CAKE_SLICE_CHORUS_FRUIT = REGISTRATE.item("cake_slice_chorus_fruit", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(4).saturationMod(0.4F).build())).register();
-    public static final ItemEntry<Item> CAKE_SLICE_GLOW_BERRY = REGISTRATE.item("cake_slice_glow_berry", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(3).saturationMod(0.3F).build())).register();
-    public static final ItemEntry<Item> CARAMEL = REGISTRATE.item("caramel", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(1).saturationMod(0.8F).fast().build())).register();
-    public static final ItemEntry<Item> CARAMEL_APPLE_SLICE = REGISTRATE.item("caramel_apple_slice", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(3).saturationMod(0.6F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 600, 0), 1.0f).fast().build())).register();
-    public static final ItemEntry<Item> CARAMEL_CHIPS = REGISTRATE.item("caramel_chips", Item::new).register();
-    public static final ItemEntry<Item> CARAMEL_CHIPS_CHOCOLATE_COOKIE = REGISTRATE.item("caramel_chips_chocolate_cookie", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(2).saturationMod(1.1F).build())).register();
-    public static final ItemEntry<Item> CARAMEL_CHIPS_COOKIE = REGISTRATE.item("caramel_chips_cookie", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(2).saturationMod(0.8F).build())).register();
-    public static final ItemEntry<Item> CARAMEL_CHIP_ICE_CREAM_CONE = REGISTRATE.item("caramel_chip_ice_cream_cone", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(2).saturationMod(1.2F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.LUCK, 600, 0), 1.0f).fast().build())).register();
-    public static final ItemEntry<Item> CARAMEL_CHIP_MUFFIN = REGISTRATE.item("caramel_chip_muffin", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(3).saturationMod(0.9F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 600, 0), 1.0f).fast().build())).register();
-    public static final ItemEntry<Item> CARAMEL_CHIP_MINI_WAFFLE = REGISTRATE.item("caramel_chip_mini_waffle", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(3).saturationMod(1.7F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.LUCK, 600, 0), 1.0f).fast().build())).register();
-    public static final ItemEntry<Item> CARAMEL_CHOCOLATE = REGISTRATE.item("caramel_chocolate", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(7).saturationMod(0.7F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> CARAMEL_CHOCOLATE_PASTRY_BAR = REGISTRATE.item("caramel_chocolate_pastry_bar", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(3).saturationMod(1.0F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> CARAMEL_DARK_CHOCOLATE = REGISTRATE.item("caramel_dark_chocolate", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(8).saturationMod(0.6F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> CARAMEL_FUDGE = REGISTRATE.item("caramel_fudge", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(5).saturationMod(0.4F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 3600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> CARAMEL_GLAZED_APPLE = REGISTRATE.item("caramel_glazed_apple", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(6).saturationMod(1.0F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> CARAMEL_GLAZED_BERRIES = REGISTRATE.item("caramel_glazed_berries", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(6).saturationMod(0.9F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> CARAMEL_GLAZED_CHOCOLATE_SWEET_ROLL = REGISTRATE.item("caramel_glazed_chocolate_sweet_roll", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(7).saturationMod(0.7F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> CARAMEL_GLAZED_SWEET_ROLL = REGISTRATE.item("caramel_glazed_sweet_roll", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(6).saturationMod(0.6F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> CARAMEL_PASTRY_BAR = REGISTRATE.item("caramel_pastry_bar", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(2).saturationMod(1.0F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> CARAMEL_POPCORN = REGISTRATE.item("caramel_popcorn", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(3).saturationMod(0.8F).effect(new MobEffectInstance(MobEffects.LUCK, 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> CARAMEL_TOAST = REGISTRATE.item("caramel_toast", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(3).saturationMod(0.8F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> CARAMEL_WHITE_CHOCOLATE = REGISTRATE.item("caramel_white_chocolate", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(6).saturationMod(0.8F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> CHEESEBURGER = REGISTRATE.item("cheeseburger", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(10).saturationMod(0.7F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> CHEESEBURGER_BACON = REGISTRATE.item("cheeseburger_bacon", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(12).saturationMod(0.7F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> CHEESEBURGER_BACON_LETTUCE = REGISTRATE.item("cheeseburger_bacon_lettuce", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(12).saturationMod(0.8F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> CHEESEBURGER_BACON_LETTUCE_TOMATO = REGISTRATE.item("cheeseburger_bacon_lettuce_tomato", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(13).saturationMod(0.9F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 6000, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> CHEESEBURGER_LETTUCE = REGISTRATE.item("cheeseburger_lettuce", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(11).saturationMod(0.8F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> CHEESEBURGER_LETTUCE_TOMATO = REGISTRATE.item("cheeseburger_lettuce_tomato", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(11).saturationMod(0.9F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> CHEESEBURGER_ONION = REGISTRATE.item("cheeseburger_onion", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(11).saturationMod(0.8F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> CHEESEBURGER_ONION_BACON = REGISTRATE.item("cheeseburger_onion_bacon", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(13).saturationMod(0.8F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> CHEESEBURGER_ONION_BACON_LETTUCE = REGISTRATE.item("cheeseburger_onion_bacon_lettuce", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(13).saturationMod(0.9F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 6000, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> CHEESEBURGER_ONION_LETTUCE = REGISTRATE.item("cheeseburger_onion_lettuce", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(11).saturationMod(0.9F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> CHEESEBURGER_ONION_LETTUCE_TOMATO = REGISTRATE.item("cheeseburger_onion_lettuce_tomato", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(12).saturationMod(1.0F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 6000, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> CHEESEBURGER_TOMATO = REGISTRATE.item("cheeseburger_tomato", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(11).saturationMod(0.8F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> CHEESECAKE_SLICE = REGISTRATE.item("cheesecake_slice", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(2).saturationMod(0.3F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> CHEESE_AND_BEEF_BUN = REGISTRATE.item("cheese_and_beef_bun", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(8).saturationMod(0.7F).build())).register();
-    public static final ItemEntry<Item> CHEESE_AND_BEEF_BUN_BACON = REGISTRATE.item("cheese_and_beef_bun_bacon", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(9).saturationMod(0.7F).build())).register();
-    public static final ItemEntry<Item> CHEESE_AND_BEEF_BUN_BACON_LETTUCE = REGISTRATE.item("cheese_and_beef_bun_bacon_lettuce", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(10).saturationMod(0.8F).build())).register();
-    public static final ItemEntry<Item> CHEESE_AND_BEEF_BUN_BACON_LETTUCE_TOMATO = REGISTRATE.item("cheese_and_beef_bun_bacon_lettuce_tomato", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(10).saturationMod(0.9F).build())).register();
-    public static final ItemEntry<Item> CHEESE_AND_BEEF_BUN_LETTUCE = REGISTRATE.item("cheese_and_beef_bun_lettuce", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(9).saturationMod(0.8F).build())).register();
-    public static final ItemEntry<Item> CHEESE_AND_BEEF_BUN_LETTUCE_TOMATO = REGISTRATE.item("cheese_and_beef_bun_lettuce_tomato", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(9).saturationMod(0.9F).build())).register();
-    public static final ItemEntry<Item> CHEESE_AND_BEEF_BUN_ONION = REGISTRATE.item("cheese_and_beef_bun_onion", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(9).saturationMod(0.9F).build())).register();
-    public static final ItemEntry<Item> CHEESE_AND_BEEF_BUN_ONION_BACON = REGISTRATE.item("cheese_and_beef_bun_onion_bacon", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(10).saturationMod(0.9F).build())).register();
-    public static final ItemEntry<Item> CHEESE_AND_BEEF_BUN_ONION_BACON_LETTUCE = REGISTRATE.item("cheese_and_beef_bun_onion_bacon_lettuce", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(12).saturationMod(1.0F).build())).register();
-    public static final ItemEntry<Item> CHEESE_AND_BEEF_BUN_ONION_LETTUCE = REGISTRATE.item("cheese_and_beef_bun_onion_lettuce", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(10).saturationMod(1.0F).build())).register();
-    public static final ItemEntry<Item> CHEESE_AND_BEEF_BUN_ONION_LETTUCE_TOMATO = REGISTRATE.item("cheese_and_beef_bun_onion_lettuce_tomato", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(10).saturationMod(1.1F).build())).register();
-    public static final ItemEntry<Item> CHEESE_AND_CHICKEN_BUN = REGISTRATE.item("cheese_and_chicken_bun", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(11).saturationMod(0.7F).build())).register();
-    public static final ItemEntry<Item> CHEESE_AND_CHICKEN_BUN_BACON_LETTUCE = REGISTRATE.item("cheese_and_chicken_bun_bacon_lettuce", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(13).saturationMod(0.8F).build())).register();
-    public static final ItemEntry<Item> CHEESE_AND_CHICKEN_BUN_LETTUCE = REGISTRATE.item("cheese_and_chicken_bun_lettuce", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(11).saturationMod(0.8F).build())).register();
-    public static final ItemEntry<Item> CHEESE_AND_CHICKEN_BUN_LETTUCE_TOMATO = REGISTRATE.item("cheese_and_chicken_bun_lettuce_tomato", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(11).saturationMod(0.9F).build())).register();
-    public static final ItemEntry<Item> CHEESE_AND_EGGPLANT_BUN = REGISTRATE.item("cheese_and_eggplant_bun", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(8).saturationMod(0.9F).build())).register();
-    public static final ItemEntry<Item> CHEESE_AND_EGGPLANT_BUN_LETTUCE = REGISTRATE.item("cheese_and_eggplant_bun_lettuce", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(10).saturationMod(0.9F).build())).register();
-    public static final ItemEntry<Item> CHEESE_AND_EGGPLANT_BUN_LETTUCE_TOMATO = REGISTRATE.item("cheese_and_eggplant_bun_lettuce_tomato", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(10).saturationMod(1.0F).build())).register();
-    public static final ItemEntry<Item> CHEESE_AND_SAUSAGE_BISCUIT = REGISTRATE.item("cheese_and_sausage_biscuit", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(16).saturationMod(0.4F).build())).register();
-    public static final ItemEntry<Item> CHEESE_AND_SAUSAGE_BISCUIT_SANDWICH = REGISTRATE.item("cheese_and_sausage_biscuit_sandwich", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(21).saturationMod(0.5F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> CHEESE_BISCUIT = REGISTRATE.item("cheese_biscuit", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(7).saturationMod(0.5F).build())).register();
-    public static final ItemEntry<Item> CHEESE_BISCUIT_SANDWICH = REGISTRATE.item("cheese_biscuit_sandwich", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(12).saturationMod(0.4F).build())).register();
-    public static final ItemEntry<Item> CHEESE_BLOCK = REGISTRATE.item("cheese_block", Item::new).register();
-    public static final ItemEntry<Item> CHEESE_CALZONE = REGISTRATE.item("cheese_calzone", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(5).saturationMod(0.4F).fast().build())).register();
-    public static final ItemEntry<Item> CHEESE_PIZZA_SLICE = REGISTRATE.item("cheese_pizza_slice", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(5).saturationMod(0.4F).build())).register();
-    public static final ItemEntry<Item> CHEESE_SANDWICH = REGISTRATE.item("cheese_sandwich", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(8).saturationMod(0.4F).build())).register();
-    public static final ItemEntry<Item> CHEESE_SLICE = REGISTRATE.item("cheese_slice", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(2).saturationMod(0.1F).fast().build())).register();
-    public static final ItemEntry<Item> CHICKEN_BUN = REGISTRATE.item("chicken_bun", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(9).saturationMod(0.6F).build())).register();
-    public static final ItemEntry<Item> CHICKEN_BUN_BACON = REGISTRATE.item("chicken_bun_bacon", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(11).saturationMod(0.6F).build())).register();
-    public static final ItemEntry<Item> CHICKEN_BUN_BACON_LETTUCE = REGISTRATE.item("chicken_bun_bacon_lettuce", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(12).saturationMod(0.7F).build())).register();
-    public static final ItemEntry<Item> CHICKEN_BUN_CHEESE_BACON = REGISTRATE.item("chicken_bun_cheese_bacon", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(12).saturationMod(0.7F).build())).register();
-    public static final ItemEntry<Item> CHICKEN_BUN_CHEESE_TOMATO = REGISTRATE.item("chicken_bun_cheese_tomato", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(11).saturationMod(0.8F).build())).register();
-    public static final ItemEntry<Item> CHICKEN_BUN_LETTUCE = REGISTRATE.item("chicken_bun_lettuce", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(10).saturationMod(0.7F).build())).register();
-    public static final ItemEntry<Item> CHICKEN_BUN_LETTUCE_TOMATO = REGISTRATE.item("chicken_bun_lettuce_tomato", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(10).saturationMod(0.8F).build())).register();
-    public static final ItemEntry<Item> CHICKEN_BUN_TOMATO = REGISTRATE.item("chicken_bun_tomato", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(10).saturationMod(0.7F).build())).register();
-    public static final ItemEntry<Item> CHICKEN_BURGER = REGISTRATE.item("chicken_burger", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(9).saturationMod(0.7F).build())).register();
-    public static final ItemEntry<Item> CHICKEN_BURGER_BACON = REGISTRATE.item("chicken_burger_bacon", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(13).saturationMod(0.5F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> CHICKEN_BURGER_BACON_LETTUCE = REGISTRATE.item("chicken_burger_bacon_lettuce", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(14).saturationMod(0.7F).build())).register();
-    public static final ItemEntry<Item> CHICKEN_BURGER_LETTUCE = REGISTRATE.item("chicken_burger_lettuce", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(12).saturationMod(0.6F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> CHICKEN_BURGER_LETTUCE_TOMATO = REGISTRATE.item("chicken_burger_lettuce_tomato", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(12).saturationMod(0.7F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> CHICKEN_BURGER_TOMATO = REGISTRATE.item("chicken_burger_tomato", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(12).saturationMod(0.6F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> CHICKEN_CHEESEBURGER = REGISTRATE.item("chicken_cheeseburger", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(9).saturationMod(0.8F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> CHICKEN_CHEESEBURGER_BACON = REGISTRATE.item("chicken_cheeseburger_bacon", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(13).saturationMod(0.6F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> CHICKEN_CHEESEBURGER_BACON_LETTUCE = REGISTRATE.item("chicken_cheeseburger_bacon_lettuce", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(15).saturationMod(0.8F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 6000, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> CHICKEN_CHEESEBURGER_LETTUCE = REGISTRATE.item("chicken_cheeseburger_lettuce", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(12).saturationMod(0.7F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> CHICKEN_CHEESEBURGER_LETTUCE_TOMATO = REGISTRATE.item("chicken_cheeseburger_lettuce_tomato", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(12).saturationMod(0.8F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 6000, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> CHICKEN_CHEESEBURGER_TOMATO = REGISTRATE.item("chicken_cheeseburger_tomato", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(12).saturationMod(0.7F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> CHICKEN_NUGGETS = REGISTRATE.item("chicken_nuggets", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(4).saturationMod(0.9F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> CHICKEN_PATTY = REGISTRATE.item("chicken_patty", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(6).saturationMod(0.8F).build())).register();
-    public static final ItemEntry<Item> CHOCOLATE_CHIPS = REGISTRATE.item("chocolate_chips", Item::new).register();
-    public static final ItemEntry<Item> CHOCOLATE_CHIP_ICE_CREAM_CONE = REGISTRATE.item("chocolate_chip_ice_cream_cone", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(2).saturationMod(1.2F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.LUCK, 600, 0), 1.0f).fast().build())).register();
-    public static final ItemEntry<Item> CHOCOLATE_CHIP_MUFFIN = REGISTRATE.item("chocolate_chip_muffin", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(3).saturationMod(0.8F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).fast().build())).register();
-    public static final ItemEntry<Item> CHOCOLATE_CHIP_MINI_WAFFLE = REGISTRATE.item("chocolate_chip_mini_waffle", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(3).saturationMod(1.7F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.LUCK, 600, 0), 1.0f).fast().build())).register();
-    public static final ItemEntry<Item> CHOCOLATE_CHOCOLATE_PASTRY = REGISTRATE.item("chocolate_chocolate_pastry", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(3).saturationMod(1.0F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> CHOCOLATE_COOKIE = REGISTRATE.item("chocolate_cookie", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(3).saturationMod(0.5F).build())).register();
-    public static final ItemEntry<Item> CHOCOLATE_CREAM_CAKE_SLICE_BUTTERSCOTCH = REGISTRATE.item("chocolate_cream_cake_slice_butterscotch", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(4).saturationMod(0.4F).effect(new MobEffectInstance(MobEffects.DIG_SPEED, 600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> CHOCOLATE_CREAM_CAKE_SLICE_CARAMEL = REGISTRATE.item("chocolate_cream_cake_slice_caramel", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(2).saturationMod(0.4F).effect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> CHOCOLATE_CREAM_CAKE_SLICE_CHOCOLATE = REGISTRATE.item("chocolate_cream_cake_slice_chocolate", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(4).saturationMod(0.3F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> CHOCOLATE_CREAM_CAKE_SLICE_DARK_CHOCOLATE = REGISTRATE.item("chocolate_cream_cake_slice_dark_chocolate", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(5).saturationMod(0.2F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> CHOCOLATE_CREAM_CAKE_SLICE_TOFFEE = REGISTRATE.item("chocolate_cream_cake_slice_toffee", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(3).saturationMod(0.4F).effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> CHOCOLATE_CREAM_CAKE_SLICE_WHITE_CHOCOLATE = REGISTRATE.item("chocolate_cream_cake_slice_white_chocolate", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(3).saturationMod(0.5F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> CHOCOLATE_CREAM_FROSTED_CHOCOLATE_CUPCAKE = REGISTRATE.item("chocolate_cream_frosted_chocolate_cupcake", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(4).saturationMod(1.3F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 2400, 0), 1.0f).fast().build())).register();
-    public static final ItemEntry<Item> CHOCOLATE_CREAM_FROSTED_CUPCAKE = REGISTRATE.item("chocolate_cream_frosted_cupcake", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(3).saturationMod(1.2F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).fast().build())).register();
-    public static final ItemEntry<Item> CHOCOLATE_CREAM_FROSTED_MINI_WAFFLE = REGISTRATE.item("chocolate_cream_frosted_mini_waffle", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(3).saturationMod(1.7F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f).effect(new MobEffectInstance(MobEffects.LUCK, 600, 0), 1.0f).fast().build())).register();
-    public static final ItemEntry<Item> CHOCOLATE_CUPCAKE_BASE = REGISTRATE.item("chocolate_cupcake_base", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(3).saturationMod(0.9F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> CHOCOLATE_DONUT_BASE = REGISTRATE.item("chocolate_donut_base", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(2).saturationMod(1.2F).build())).register();
-    public static final ItemEntry<Item> CHOCOLATE_DONUT_HOLE = REGISTRATE.item("chocolate_donut_hole", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(1).saturationMod(0.8F).build())).register();
-    public static final ItemEntry<Item> CHOCOLATE_DONUT_HOLE_SUGAR = REGISTRATE.item("chocolate_donut_hole_sugar", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(1).saturationMod(0.8F).effect(new MobEffectInstance(MobEffects.LUCK, 600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> CHOCOLATE_DONUT_SUGAR = REGISTRATE.item("chocolate_donut_sugar", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(4).saturationMod(0.6F).effect(new MobEffectInstance(MobEffects.LUCK, 600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> CHOCOLATE_FROSTED_CHOCOLATE_SWEET_ROLL = REGISTRATE.item("chocolate_frosted_chocolate_sweet_roll", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(6).saturationMod(0.6F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> CHOCOLATE_FROSTED_SWEET_ROLL = REGISTRATE.item("chocolate_frosted_sweet_roll", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(5).saturationMod(0.5F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> CHOCOLATE_FUDGE = REGISTRATE.item("chocolate_fudge", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(3).saturationMod(0.6F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> CHOCOLATE_GLAZED_APPLE = REGISTRATE.item("chocolate_glazed_apple", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(8).saturationMod(0.7F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> CHOCOLATE_GLAZED_CHOCOLATE_DONUT = REGISTRATE.item("chocolate_glazed_chocolate_donut", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(4).saturationMod(0.7F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> CHOCOLATE_GLAZED_DONUT = REGISTRATE.item("chocolate_glazed_donut", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(3).saturationMod(0.7F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> CHOCOLATE_GRAHAM_CRACKER = REGISTRATE.item("chocolate_graham_cracker", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(3).saturationMod(0.8F).build())).register();
-    public static final ItemEntry<Item> CHOCOLATE_GRAHAM_CRACKER_CRUMBS = REGISTRATE.item("chocolate_graham_cracker_crumbs", Item::new).register();
-    public static final ItemEntry<Item> CHOCOLATE_GRAHAM_CRACKER_APPLE_ICE_CREAM = REGISTRATE.item("chocolate_graham_cracker_apple_ice_cream", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(5).saturationMod(0.8F).build())).register();
-    public static final ItemEntry<Item> CHOCOLATE_GRAHAM_CRACKER_BERRY_ICE_CREAM = REGISTRATE.item("chocolate_graham_cracker_berry_ice_cream", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(5).saturationMod(0.8F).build())).register();
-    public static final ItemEntry<Item> CHOCOLATE_GRAHAM_CRACKER_CHOCOLATE_ICE_CREAM = REGISTRATE.item("chocolate_graham_cracker_chocolate_ice_cream", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(5).saturationMod(1.0F).build())).register();
-    public static final ItemEntry<Item> CHOCOLATE_GRAHAM_CRACKER_CHORUS_FRUIT_ICE_CREAM = REGISTRATE.item("chocolate_graham_cracker_chorus_fruit_ice_cream", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(6).saturationMod(1.0F).build())).register();
-    public static final ItemEntry<Item> CHOCOLATE_GRAHAM_CRACKER_GLOW_BERRY_ICE_CREAM = REGISTRATE.item("chocolate_graham_cracker_glow_berry_ice_cream", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(5).saturationMod(0.8F).build())).register();
-    public static final ItemEntry<Item> CHOCOLATE_GRAHAM_CRACKER_ICE_CREAM = REGISTRATE.item("chocolate_graham_cracker_ice_cream", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(5).saturationMod(0.9F).build())).register();
-    public static final ItemEntry<Item> CHOCOLATE_GRAHAM_CRACKER_MELON_ICE_CREAM = REGISTRATE.item("chocolate_graham_cracker_melon_ice_cream", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(5).saturationMod(0.9F).build())).register();
-    public static final ItemEntry<Item> CHOCOLATE_GRAHAM_CRACKER_NEAPOLITAN_SCOOP_1 = REGISTRATE.item("chocolate_graham_cracker_neapolitan_scoop_1", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(4).saturationMod(0.7F).build())).register();
-    public static final ItemEntry<Item> CHOCOLATE_GRAHAM_CRACKER_NEAPOLITAN_SCOOP_2 = REGISTRATE.item("chocolate_graham_cracker_neapolitan_scoop_2", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(5).saturationMod(0.6F).build())).register();
-    public static final ItemEntry<Item> CHOCOLATE_GRAHAM_CRACKER_NEAPOLITAN_SCOOP_3 = REGISTRATE.item("chocolate_graham_cracker_neapolitan_scoop_3", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(6).saturationMod(0.7F).build())).register();
-    public static final ItemEntry<Item> CHOCOLATE_GRAHAM_CRACKER_PIE_CRUST = REGISTRATE.item("chocolate_graham_cracker_pie_crust", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(7).saturationMod(0.6F).build())).register();
-    public static final ItemEntry<Item> CHOCOLATE_ICE_CREAM_CONE = REGISTRATE.item("chocolate_ice_cream_cone", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(2).saturationMod(1.2F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).effect(new MobEffectInstance(MobEffects.LUCK, 600, 0), 1.0f).fast().build())).register();
-    public static final ItemEntry<Item> CHOCOLATE_ICE_CREAM_SANDWICH = REGISTRATE.item("chocolate_ice_cream_sandwich", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(6).saturationMod(0.8F).build())).register();
-    public static final ItemEntry<Item> CHOCOLATE_PASTRY = REGISTRATE.item("chocolate_pastry", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(2).saturationMod(1.0F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> CHOCOLATE_PASTRY_BAR_BASE = REGISTRATE.item("chocolate_pastry_bar_base", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(4).saturationMod(0.8F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> CHOCOLATE_PASTRY_BASE = REGISTRATE.item("chocolate_pastry_base", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(4).saturationMod(0.8F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> CHOCOLATE_PIE_GRAHAM_CRACKER_SLICE = REGISTRATE.item("chocolate_pie_graham_cracker_slice", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(4).saturationMod(0.3F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> CHOCOLATE_SUGAR_DOUGH = REGISTRATE.item("chocolate_sugar_dough", Item::new).register();
-    public static final ItemEntry<Item> CHOCOLATE_SUGAR_DOUGH_SMALL = REGISTRATE.item("chocolate_sugar_dough_small", Item::new).register();
-    public static final ItemEntry<Item> CHOCOLATE_SWEET_ROLL = REGISTRATE.item("chocolate_sweet_roll", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(6).saturationMod(0.8F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> CHOCOLATE_SWEET_ROLL_BASE = REGISTRATE.item("chocolate_sweet_roll_base", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(5).saturationMod(0.7F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> CHOCOLATE_TOAST = REGISTRATE.item("chocolate_toast", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(4).saturationMod(0.6F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> CHORUS_FRUIT_CHEESECAKE_SLICE = REGISTRATE.item("chorus_fruit_cheesecake_slice", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(4).saturationMod(0.3F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> CHORUS_FRUIT_CREAM_CAKE_SLICE_CHORUS_FRUIT = REGISTRATE.item("chorus_fruit_cream_cake_slice_chorus_fruit", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(4).saturationMod(0.5F).build())).register();
-    public static final ItemEntry<Item> CHORUS_FRUIT_CREAM_CAKE_SLICE_GLOW_BERRY = REGISTRATE.item("chorus_fruit_cream_cake_slice_glow_berry", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(4).saturationMod(0.4F).build())).register();
-    public static final ItemEntry<Item> CHORUS_FRUIT_CREAM_CAKE_SLICE_SWEET_BERRY = REGISTRATE.item("chorus_fruit_cream_cake_slice_sweet_berry", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(4).saturationMod(0.4F).build())).register();
-    public static final ItemEntry<Item> CHORUS_FRUIT_CREAM_CHOCOLATE = REGISTRATE.item("chorus_fruit_cream_chocolate", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(9).saturationMod(0.5F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).fast().build())).register();
-    public static final ItemEntry<Item> CHORUS_FRUIT_CREAM_CHOCOLATE_PASTRY_BAR = REGISTRATE.item("chorus_fruit_cream_chocolate_pastry_bar", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(4).saturationMod(1.0F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> CHORUS_FRUIT_CREAM_DARK_CHOCOLATE = REGISTRATE.item("chorus_fruit_cream_dark_chocolate", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(10).saturationMod(0.4F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).fast().build())).register();
-    public static final ItemEntry<Item> CHORUS_FRUIT_CREAM_FROSTED_CHOCOLATE_SWEET_ROLL = REGISTRATE.item("chorus_fruit_cream_frosted_chocolate_sweet_roll", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(8).saturationMod(0.8F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> CHORUS_FRUIT_CREAM_FROSTED_CHOCOLATE_SWEET_ROLL_CHORUS_FRUIT = REGISTRATE.item("chorus_fruit_cream_frosted_chocolate_sweet_roll_chorus_fruit", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(8).saturationMod(0.8F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.JUMP, 1200, 0), 1.0f).effect(new MobEffectInstance(MobEffects.SLOW_FALLING, 1200, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> CHORUS_FRUIT_CREAM_FROSTED_CHOCOLATE_CUPCAKE = REGISTRATE.item("chorus_fruit_cream_frosted_chocolate_cupcake", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(5).saturationMod(1.2F).effect(new MobEffectInstance(MobEffects.JUMP, 1200, 0), 1.0f).effect(new MobEffectInstance(MobEffects.SLOW_FALLING, 1200, 0), 1.0f).fast().build())).register();
-    public static final ItemEntry<Item> CHORUS_FRUIT_CREAM_FROSTED_CUPCAKE = REGISTRATE.item("chorus_fruit_cream_frosted_cupcake", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(4).saturationMod(1.1F).effect(new MobEffectInstance(MobEffects.JUMP, 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.SLOW_FALLING, 600, 0), 1.0f).fast().build())).register();
-    public static final ItemEntry<Item> CHORUS_FRUIT_CREAM_FROSTED_MINI_WAFFLE = REGISTRATE.item("chorus_fruit_cream_frosted_mini_waffle", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(4).saturationMod(1.9F).effect(new MobEffectInstance(MobEffects.JUMP, 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.SLOW_FALLING, 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.LUCK, 600, 0), 1.0f).fast().build())).register();
-    public static final ItemEntry<Item> CHORUS_FRUIT_CREAM_FROSTED_MINI_WAFFLE_CHORUS_FRUIT = REGISTRATE.item("chorus_fruit_cream_frosted_mini_waffle_chorus_fruit", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(4).saturationMod(1.9F).effect(new MobEffectInstance(MobEffects.JUMP, 1200, 0), 1.0f).effect(new MobEffectInstance(MobEffects.SLOW_FALLING, 1200, 0), 1.0f).effect(new MobEffectInstance(MobEffects.LUCK, 600, 0), 1.0f).fast().build())).register();
-    public static final ItemEntry<Item> CHORUS_FRUIT_CREAM_FROSTED_SWEET_ROLL = REGISTRATE.item("chorus_fruit_cream_frosted_sweet_roll", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(7).saturationMod(0.7F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> CHORUS_FRUIT_CREAM_FROSTED_SWEET_ROLL_CHORUS_FRUIT = REGISTRATE.item("chorus_fruit_cream_frosted_sweet_roll_chorus_fruit", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(7).saturationMod(0.7F).effect(new MobEffectInstance(MobEffects.JUMP, 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.SLOW_FALLING, 600, 0), 1.0f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> CHORUS_FRUIT_CREAM_GLAZED_CHOCOLATE_DONUT = REGISTRATE.item("chorus_fruit_cream_glazed_chocolate_donut", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(4).saturationMod(0.7F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> CHORUS_FRUIT_CREAM_GLAZED_DONUT = REGISTRATE.item("chorus_fruit_cream_glazed_donut", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(3).saturationMod(0.7F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> CHORUS_FRUIT_CREAM_PASTRY_BAR = REGISTRATE.item("chorus_fruit_cream_pastry_bar", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(3).saturationMod(1.0F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> CHORUS_FRUIT_CREAM_WHITE_CHOCOLATE = REGISTRATE.item("chorus_fruit_cream_white_chocolate", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(8).saturationMod(0.6F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).fast().build())).register();
-    public static final ItemEntry<Item> CHORUS_FRUIT_ICE_CREAM_CONE = REGISTRATE.item("chorus_fruit_ice_cream_cone", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(3).saturationMod(0.9F).effect(new MobEffectInstance(MobEffects.JUMP, 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.SLOW_FALLING, 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.LUCK, 600, 0), 1.0f).fast().build())).register();
-    public static final ItemEntry<Item> CHORUS_FRUIT_ICE_CREAM_SANDWICH = REGISTRATE.item("chorus_fruit_ice_cream_sandwich", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(7).saturationMod(0.8F).build())).register();
-    public static final ItemEntry<Item> CHORUS_FRUIT_JAM_SANDWICH = REGISTRATE.item("chorus_fruit_jam_sandwich", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(10).saturationMod(0.5F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> CHORUS_FRUIT_PIE_SLICE = REGISTRATE.item("chorus_fruit_pie_slice", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(4).saturationMod(0.3F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> CHORUS_FRUIT_SLICE = REGISTRATE.item("chorus_fruit_slice", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(4).saturationMod(0.9F).fast().build())).register();
-    public static final ItemEntry<Item> CINNAMON_SWEET_ROLL_BASE = REGISTRATE.item("cinnamon_sweet_roll_base", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(4).saturationMod(0.6F).build())).register();
-    public static final ItemEntry<Item> CLOTH_FILTER = REGISTRATE.item("cloth_filter", Item::new).register();
-    public static final ItemEntry<Item> CLOTH_FILTER_CACAO_MASS = REGISTRATE.item("cloth_filter_cacao_mass", Item::new)
-            .properties(prop -> prop.craftRemainder(CLOTH_FILTER.get())).register();
-    public static final ItemEntry<Item> COCOA_POWDER = REGISTRATE.item("cocoa_powder", Item::new).register();
-    public static final ItemEntry<Item> COFFEE_TOFFEE = REGISTRATE.item("coffee_toffee", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(1).saturationMod(2.0F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.DIG_SPEED, 600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> COFFEE_TOFFEE_FUDGE = REGISTRATE.item("coffee_toffee_fudge", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(4).saturationMod(0.7F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.DIG_SPEED, 600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> CONDENSED_MILK_BOTTLE = REGISTRATE.item("condensed_milk_bottle", Item::new).register();
-    public static final ItemEntry<Item> COOKED_RABBIT_CUTS = REGISTRATE.item("cooked_rabbit_cuts", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(3).saturationMod(0.6F).build())).register();
-    public static final ItemEntry<Item> COOKIE_CREAM_PIE_SLICE = REGISTRATE.item("cookie_cream_pie_slice", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(5).saturationMod(0.7F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> COOKIE_CRUMBS = REGISTRATE.item("cookie_crumbs", Item::new).register();
-    public static final ItemEntry<Item> CORN_FLOUR = REGISTRATE.item("corn_flour", Item::new).register();
-    public static final ItemEntry<Item> CREAM_CHEESE = REGISTRATE.item("cream_cheese", Item::new).register();
-    public static final ItemEntry<Item> CREAM_CHOCOLATE = REGISTRATE.item("cream_chocolate", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(6).saturationMod(0.4F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).fast().build())).register();
-    public static final ItemEntry<Item> CREAM_CHOCOLATE_PASTRY = REGISTRATE.item("cream_chocolate_pastry", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(3).saturationMod(0.9F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> CREAM_DARK_CHOCOLATE = REGISTRATE.item("cream_dark_chocolate", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(7).saturationMod(0.3F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).fast().build())).register();
-    public static final ItemEntry<Item> CREAM_GLAZED_CHOCOLATE_DONUT = REGISTRATE.item("cream_glazed_chocolate_donut", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(4).saturationMod(0.6F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> CREAM_GLAZED_DONUT = REGISTRATE.item("cream_glazed_donut", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(3).saturationMod(0.7F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> CREAM_PASTRY = REGISTRATE.item("cream_pastry", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(2).saturationMod(0.9F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> CREAM_PIE_CHOCOLATE_GRAHAM_CRACKER_SLICE = REGISTRATE.item("cream_pie_chocolate_graham_cracker_slice", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(4).saturationMod(0.5F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> CREAM_PIE_GRAHAM_CRACKER_SLICE = REGISTRATE.item("cream_pie_graham_cracker_slice", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(3).saturationMod(0.6F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> CREAM_WHITE_CHOCOLATE = REGISTRATE.item("cream_white_chocolate", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(5).saturationMod(0.5F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).fast().build())).register();
-    public static final ItemEntry<Item> CUPCAKE_BASE = REGISTRATE.item("cupcake_base", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(2).saturationMod(0.9F).fast().build())).register();
-    public static final ItemEntry<Item> CYAN_GELATIN_DESSERT_SLICE = REGISTRATE.item("cyan_gelatin_dessert_slice", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(5).saturationMod(0.3F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).fast().build())).register();
-    public static final ItemEntry<Item> DARK_CHIPS_CHOCOLATE_COOKIE = REGISTRATE.item("dark_chips_chocolate_cookie", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(4).saturationMod(0.4F).build())).register();
-    public static final ItemEntry<Item> DARK_CHIPS_COOKIE = REGISTRATE.item("dark_chips_cookie", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(2).saturationMod(0.5F).build())).register();
-    public static final ItemEntry<Item> DARK_CHOCOLATE_CHIPS = REGISTRATE.item("dark_chocolate_chips", Item::new).register();
-    public static final ItemEntry<Item> DARK_CHOCOLATE_CHIP_ICE_CREAM_CONE = REGISTRATE.item("dark_chocolate_chip_ice_cream_cone", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(2).saturationMod(1.2F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.LUCK, 600, 0), 1.0f).fast().build())).register();
-    public static final ItemEntry<Item> DARK_CHOCOLATE_CHIP_MUFFIN = REGISTRATE.item("dark_chocolate_chip_muffin", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(4).saturationMod(0.9F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).fast().build())).register();
-    public static final ItemEntry<Item> DARK_CHOCOLATE_CHIP_MINI_WAFFLE = REGISTRATE.item("dark_chocolate_chip_mini_waffle", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(3).saturationMod(1.7F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f).effect(new MobEffectInstance(MobEffects.LUCK, 600, 0), 1.0f).fast().build())).register();
-    public static final ItemEntry<Item> DARK_CHOCOLATE_CHOCOLATE_PASTRY = REGISTRATE.item("dark_chocolate_chocolate_pastry", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(4).saturationMod(0.9F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> DARK_CHOCOLATE_FUDGE = REGISTRATE.item("dark_chocolate_fudge", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(4).saturationMod(0.5F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> DARK_CHOCOLATE_GLAZED_APPLE = REGISTRATE.item("dark_chocolate_glazed_apple", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(9).saturationMod(0.8F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> DARK_CHOCOLATE_GLAZED_BERRIES = REGISTRATE.item("dark_chocolate_glazed_berries", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(8).saturationMod(0.7F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> DARK_CHOCOLATE_PASTRY = REGISTRATE.item("dark_chocolate_pastry", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(3).saturationMod(0.9F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> DARK_CHOCOLATE_TOAST = REGISTRATE.item("dark_chocolate_toast", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(5).saturationMod(0.5F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> DICED_ONION = REGISTRATE.item("diced_onion", Item::new).register();
-    public static final ItemEntry<Item> DICED_TOMATO = REGISTRATE.item("diced_tomato", Item::new).register();
-    public static final ItemEntry<Item> DONUT_BASE = REGISTRATE.item("donut_base", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(1).saturationMod(1.1F).build())).register();
-    public static final ItemEntry<Item> DONUT_HOLE = REGISTRATE.item("donut_hole", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(1).saturationMod(0.4F).build())).register();
-    public static final ItemEntry<Item> DONUT_HOLE_SUGAR = REGISTRATE.item("donut_hole_sugar", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(1).saturationMod(0.4F).effect(new MobEffectInstance(MobEffects.LUCK, 600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> DONUT_SUGAR = REGISTRATE.item("donut_sugar", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(3).saturationMod(0.6F).effect(new MobEffectInstance(MobEffects.LUCK, 600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> DRAGON_BUN = REGISTRATE.item("dragon_bun", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(9).saturationMod(0.4F).build())).register();
-    public static final ItemEntry<Item> DRAGON_BUN_CRIMSON_FUNGUS = REGISTRATE.item("dragon_bun_crimson_fungus", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(9).saturationMod(0.5F).build())).register();
-    public static final ItemEntry<Item> DRAGON_BUN_WARPED_FUNGUS = REGISTRATE.item("dragon_bun_warped_fungus", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(9).saturationMod(0.6F).build())).register();
-    public static final ItemEntry<Item> DRAGON_BURGER = REGISTRATE.item("dragon_burger", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(11).saturationMod(0.4F).effect(new MobEffectInstance(MobEffects.ABSORPTION, 1200, 0), 1.0f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> DRAGON_BURGER_CRIMSON_FUNGUS = REGISTRATE.item("dragon_burger_crimson_fungus", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(11).saturationMod(0.5F).effect(new MobEffectInstance(MobEffects.ABSORPTION, 6000, 0), 1.0f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 1200, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> DRAGON_BURGER_WARPED_FUNGUS = REGISTRATE.item("dragon_burger_warped_fungus", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(11).saturationMod(0.6F).effect(new MobEffectInstance(MobEffects.ABSORPTION, 6000, 0), 1.0f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.JUMP, 1200, 0), 1.0f).effect(new MobEffectInstance(MobEffects.SLOW_FALLING, 1200, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> DRAGON_PATTY = REGISTRATE.item("dragon_patty", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(7).saturationMod(0.6F).build())).register();
-    public static final ItemEntry<Item> DRIED_COFFEE_BEANS = REGISTRATE.item("dried_coffee_beans", Item::new).register();
-    public static final ItemEntry<Item> DUMPLING_WRAPPERS = REGISTRATE.item("dumpling_wrappers", Item::new).register();
-    public static final ItemEntry<Item> EGGPLANT_BUN = REGISTRATE.item("eggplant_bun", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(5).saturationMod(0.9F).build())).register();
-    public static final ItemEntry<Item> EGGPLANT_BUN_CHEESE_TOMATO = REGISTRATE.item("eggplant_bun_cheese_tomato", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(10).saturationMod(0.9F).build())).register();
-    public static final ItemEntry<Item> EGGPLANT_BUN_LETTUCE = REGISTRATE.item("eggplant_bun_lettuce", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(7).saturationMod(1.0F).build())).register();
-    public static final ItemEntry<Item> EGGPLANT_BUN_LETTUCE_TOMATO = REGISTRATE.item("eggplant_bun_lettuce_tomato", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(7).saturationMod(1.1F).build())).register();
-    public static final ItemEntry<Item> EGGPLANT_BUN_TOMATO = REGISTRATE.item("eggplant_bun_tomato", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(7).saturationMod(1.0F).build())).register();
-    public static final ItemEntry<Item> EGGPLANT_BURGER = REGISTRATE.item("eggplant_burger", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(7).saturationMod(0.9F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> EGGPLANT_BURGER_LETTUCE = REGISTRATE.item("eggplant_burger_lettuce", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(9).saturationMod(1.0F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> EGGPLANT_BURGER_TOMATO = REGISTRATE.item("eggplant_burger_tomato", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(9).saturationMod(1.0F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> EGGPLANT_CHEESEBURGER = REGISTRATE.item("eggplant_cheeseburger", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(10).saturationMod(0.9F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> EGGPLANT_CHEESEBURGER_LETTUCE = REGISTRATE.item("eggplant_cheeseburger_lettuce", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(12).saturationMod(0.9F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 6000, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> EGGPLANT_CHEESEBURGER_LETTUCE_TOMATO = REGISTRATE.item("eggplant_cheeseburger_lettuce_tomato", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(12).saturationMod(1.0F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 6000, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> EGGPLANT_CHEESEBURGER_TOMATO = REGISTRATE.item("eggplant_cheeseburger_tomato", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(12).saturationMod(0.9F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 6000, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> EGG_POWDER = REGISTRATE.item("egg_powder", Item::new).register();
-    public static final ItemEntry<Item> ENDERMITE_MEATBALL = REGISTRATE.item("endermite_meatball", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(4).saturationMod(0.6F).build())).register();
-    public static final ItemEntry<Item> ENDERMITE_MEATBALL_SANDWICH = REGISTRATE.item("endermite_meatball_sandwich", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(10).saturationMod(0.4F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f).effect(new MobEffectInstance(MobEffects.REGENERATION, 1200, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> ESPRESSO_POWDER = REGISTRATE.item("espresso_powder", Item::new).register();
-    public static final ItemEntry<Item> FISH_BACON_PIZZA_SLICE = REGISTRATE.item("fish_bacon_pizza_slice", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(6).saturationMod(0.9F).build())).register();
-    public static final ItemEntry<Item> FISHCAKE = REGISTRATE.item("fishcake", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(4).saturationMod(0.9F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.WATER_BREATHING, 3600, 0), 1.0f).fast().build())).register();
-    public static final ItemEntry<Item> FISH_CALZONE = REGISTRATE.item("fish_calzone", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(7).saturationMod(0.4F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).fast().build())).register();
-    public static final ItemEntry<Item> FISH_ONION_PIZZA_SLICE = REGISTRATE.item("fish_onion_pizza_slice", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(8).saturationMod(0.7F).build())).register();
-    public static final ItemEntry<Item> FISH_PIZZA_SLICE = REGISTRATE.item("fish_pizza_slice", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(6).saturationMod(0.6F).build())).register();
-    public static final ItemEntry<Item> FRIED_EGG_HASH_BROWN_SANDWICH = REGISTRATE.item("fried_egg_hash_brown_sandwich", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(9).saturationMod(1.2F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> FROSTED_CHOCOLATE_CUPCAKE = REGISTRATE.item("frosted_chocolate_cupcake", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(4).saturationMod(1.2F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).fast().build())).register();
-    public static final ItemEntry<Item> FROSTED_CHOCOLATE_SWEET_ROLL_SWEET_BERRY = REGISTRATE.item("frosted_chocolate_sweet_roll_sweet_berry", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(6).saturationMod(0.5F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.DIG_SPEED, 600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> FROSTED_CHOCOLATE_SWEET_ROLL_CHORUS_FRUIT = REGISTRATE.item("frosted_chocolate_sweet_roll_chorus_fruit", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(9).saturationMod(0.7F).effect(new MobEffectInstance(MobEffects.JUMP, 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.SLOW_FALLING, 600, 0), 1.0f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> FROSTED_CHOCOLATE_SWEET_ROLL_GLOW_BERRY = REGISTRATE.item("frosted_chocolate_sweet_roll_glow_berry", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(7).saturationMod(0.6F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.GLOWING, 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.NIGHT_VISION, 600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> FROSTED_CUPCAKE = REGISTRATE.item("frosted_cupcake", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(3).saturationMod(1.1F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).fast().build())).register();
-    public static final ItemEntry<Item> FROSTED_MINI_WAFFLE = REGISTRATE.item("frosted_mini_waffle", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(3).saturationMod(1.8F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.LUCK, 600, 0), 1.0f).fast().build())).register();
-    public static final ItemEntry<Item> FROSTED_MINI_WAFFLE_SWEET_BERRY = REGISTRATE.item("frosted_mini_waffle_sweet_berry", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(3).saturationMod(1.8F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.DIG_SPEED, 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.LUCK, 600, 0), 1.0f).fast().build())).register();
-    public static final ItemEntry<Item> FROSTED_MINI_WAFFLE_CHORUS_FRUIT = REGISTRATE.item("frosted_mini_waffle_chorus_fruit", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(3).saturationMod(1.9F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.JUMP, 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.SLOW_FALLING, 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.LUCK, 600, 0), 1.0f).fast().build())).register();
-    public static final ItemEntry<Item> FROSTED_MINI_WAFFLE_GLOW_BERRY = REGISTRATE.item("frosted_mini_waffle_glow_berry", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(3).saturationMod(1.8F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.GLOWING, 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.NIGHT_VISION, 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.LUCK, 600, 0), 1.0f).fast().build())).register();
-    public static final ItemEntry<Item> FROSTED_SWEET_ROLL_SWEET_BERRY = REGISTRATE.item("frosted_sweet_roll_sweet_berry", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(5).saturationMod(0.6F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 300, 0), 1.0f).effect(new MobEffectInstance(MobEffects.DIG_SPEED, 300, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> FROSTED_SWEET_ROLL_CHORUS_FRUIT = REGISTRATE.item("frosted_sweet_roll_chorus_fruit", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(8).saturationMod(0.8F).effect(new MobEffectInstance(MobEffects.JUMP, 300, 0), 1.0f).effect(new MobEffectInstance(MobEffects.SLOW_FALLING, 300, 0), 1.0f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> FROSTED_SWEET_ROLL_GLOW_BERRY = REGISTRATE.item("frosted_sweet_roll_glow_berry", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(6).saturationMod(0.7F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 300, 0), 1.0f).effect(new MobEffectInstance(MobEffects.GLOWING, 300, 0), 1.0f).effect(new MobEffectInstance(MobEffects.NIGHT_VISION, 300, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> GELATIN = REGISTRATE.item("gelatin", Item::new).register();
-    public static final ItemEntry<Item> GELATIN_DESSERT_SLICE = REGISTRATE.item("gelatin_dessert_slice", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(5).saturationMod(0.3F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).fast().build())).register();
-    public static final ItemEntry<Item> GLOW_BERRY_CHEESECAKE_SLICE = REGISTRATE.item("glow_berry_cheesecake_slice", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(3).saturationMod(0.3F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> GLOW_BERRY_CREAM_CAKE_SLICE_CHORUS_FRUIT = REGISTRATE.item("glow_berry_cream_cake_slice_chorus_fruit", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(3).saturationMod(0.4F).build())).register();
-    public static final ItemEntry<Item> GLOW_BERRY_CREAM_CAKE_SLICE_GLOW_BERRY = REGISTRATE.item("glow_berry_cream_cake_slice_glow_berry", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(3).saturationMod(0.3F).build())).register();
-    public static final ItemEntry<Item> GLOW_BERRY_CREAM_CAKE_SLICE_SWEET_BERRY = REGISTRATE.item("glow_berry_cream_cake_slice_sweet_berry", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(3).saturationMod(0.3F).build())).register();
-    public static final ItemEntry<Item> GLOW_BERRY_CREAM_CHOCOLATE = REGISTRATE.item("glow_berry_cream_chocolate", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(7).saturationMod(0.4F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).fast().build())).register();
-    public static final ItemEntry<Item> GLOW_BERRY_CREAM_CHOCOLATE_PASTRY_BAR = REGISTRATE.item("glow_berry_cream_chocolate_pastry_bar", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(3).saturationMod(1.0F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> GLOW_BERRY_CREAM_DARK_CHOCOLATE = REGISTRATE.item("glow_berry_cream_dark_chocolate", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(8).saturationMod(0.3F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).fast().build())).register();
-    public static final ItemEntry<Item> GLOW_BERRY_CREAM_FROSTED_CHOCOLATE_SWEET_ROLL = REGISTRATE.item("glow_berry_cream_frosted_chocolate_sweet_roll", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(6).saturationMod(0.7F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> GLOW_BERRY_CREAM_FROSTED_CHOCOLATE_SWEET_ROLL_GLOW_BERRY = REGISTRATE.item("glow_berry_cream_frosted_chocolate_sweet_roll_glow_berry", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(6).saturationMod(0.7F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).effect(new MobEffectInstance(MobEffects.GLOWING, 1200, 0), 1.0f).effect(new MobEffectInstance(MobEffects.NIGHT_VISION, 1200, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> GLOW_BERRY_CREAM_FROSTED_CHOCOLATE_CUPCAKE = REGISTRATE.item("glow_berry_cream_frosted_chocolate_cupcake", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(4).saturationMod(1.1F).effect(new MobEffectInstance(MobEffects.GLOWING, 1200, 0), 1.0f).effect(new MobEffectInstance(MobEffects.NIGHT_VISION, 1200, 0), 1.0f).fast().build())).register();
-    public static final ItemEntry<Item> GLOW_BERRY_CREAM_FROSTED_CUPCAKE = REGISTRATE.item("glow_berry_cream_frosted_cupcake", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(3).saturationMod(1.0F).effect(new MobEffectInstance(MobEffects.GLOWING, 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.NIGHT_VISION, 600, 0), 1.0f).fast().build())).register();
-    public static final ItemEntry<Item> GLOW_BERRY_CREAM_FROSTED_MINI_WAFFLE = REGISTRATE.item("glow_berry_cream_frosted_mini_waffle", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(3).saturationMod(1.9F).effect(new MobEffectInstance(MobEffects.GLOWING, 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.NIGHT_VISION, 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.LUCK, 600, 0), 1.0f).fast().build())).register();
-    public static final ItemEntry<Item> GLOW_BERRY_CREAM_FROSTED_MINI_WAFFLE_GLOW_BERRY = REGISTRATE.item("glow_berry_cream_frosted_mini_waffle_glow_berry", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(3).saturationMod(1.9F).effect(new MobEffectInstance(MobEffects.GLOWING, 1200, 0), 1.0f).effect(new MobEffectInstance(MobEffects.NIGHT_VISION, 1200, 0), 1.0f).effect(new MobEffectInstance(MobEffects.LUCK, 600, 0), 1.0f).fast().build())).register();
-    public static final ItemEntry<Item> GLOW_BERRY_CREAM_FROSTED_SWEET_ROLL = REGISTRATE.item("glow_berry_cream_frosted_sweet_roll", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(5).saturationMod(0.6F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> GLOW_BERRY_CREAM_FROSTED_SWEET_ROLL_GLOW_BERRY = REGISTRATE.item("glow_berry_cream_frosted_sweet_roll_glow_berry", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(5).saturationMod(0.6F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.GLOWING, 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.NIGHT_VISION, 600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> GLOW_BERRY_CREAM_GLAZED_CHOCOLATE_DONUT = REGISTRATE.item("glow_berry_cream_glazed_chocolate_donut", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(4).saturationMod(0.7F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> GLOW_BERRY_CREAM_GLAZED_DONUT = REGISTRATE.item("glow_berry_cream_glazed_donut", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(3).saturationMod(0.7F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> GLOW_BERRY_CREAM_PASTRY_BAR = REGISTRATE.item("glow_berry_cream_pastry_bar", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(2).saturationMod(1.0F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).effect(new MobEffectInstance(MobEffects.GLOWING, 1200, 0), 1.0f).effect(new MobEffectInstance(MobEffects.NIGHT_VISION, 1200, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> GLOW_BERRY_CREAM_WHITE_CHOCOLATE = REGISTRATE.item("glow_berry_cream_white_chocolate", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(6).saturationMod(0.5F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).fast().build())).register();
-    public static final ItemEntry<Item> GLOW_BERRY_ICE_CREAM_CONE = REGISTRATE.item("glow_berry_ice_cream_cone", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(2).saturationMod(0.9F).effect(new MobEffectInstance(MobEffects.GLOWING, 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.NIGHT_VISION, 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.LUCK, 600, 0), 1.0f).fast().build())).register();
-    public static final ItemEntry<Item> GLOW_BERRY_ICE_CREAM_SANDWICH = REGISTRATE.item("glow_berry_ice_cream_sandwich", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(6).saturationMod(0.6F).build())).register();
-    public static final ItemEntry<Item> GLOW_BERRY_JAM_SANDWICH = REGISTRATE.item("glow_berry_jam_sandwich", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(9).saturationMod(0.4F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> GLOW_BERRY_PIE_SLICE = REGISTRATE.item("glow_berry_pie_slice", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(3).saturationMod(0.3F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> GRAHAM_CRACKER = REGISTRATE.item("graham_cracker", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(2).saturationMod(0.8F).build())).register();
-    public static final ItemEntry<Item> GRAHAM_CRACKER_CHOCOLATE = REGISTRATE.item("graham_cracker_chocolate", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(4).saturationMod(0.8F).build())).register();
-    public static final ItemEntry<Item> GRAHAM_CRACKER_CHOCOLATE_MARSHMALLOW = REGISTRATE.item("graham_cracker_chocolate_marshmallow", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(6).saturationMod(0.7F).build())).register();
-    public static final ItemEntry<Item> GRAHAM_CRACKER_CRUMBS = REGISTRATE.item("graham_cracker_crumbs", Item::new).register();
-    public static final ItemEntry<Item> GRAHAM_CRACKER_MARSHMALLOW = REGISTRATE.item("graham_cracker_marshmallow", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(3).saturationMod(0.7F).build())).register();
-    public static final ItemEntry<Item> GRAHAM_CRACKER_PIE_CRUST = REGISTRATE.item("graham_cracker_pie_crust", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(6).saturationMod(0.7F).build())).register();
-    public static final ItemEntry<Item> GRAY_GELATIN_DESSERT_SLICE = REGISTRATE.item("gray_gelatin_dessert_slice", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(5).saturationMod(0.3F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).fast().build())).register();
-    public static final ItemEntry<Item> GREEN_GELATIN_DESSERT_SLICE = REGISTRATE.item("green_gelatin_dessert_slice", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(5).saturationMod(0.3F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).fast().build())).register();
-    public static final ItemEntry<Item> GRILLED_CHEESE_SANDWICH = REGISTRATE.item("grilled_cheese_sandwich", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(9).saturationMod(0.5F).build())).register();
-    public static final ItemEntry<Item> GROUND_BEEF = REGISTRATE.item("ground_beef", Item::new).register();
-    public static final ItemEntry<Item> GROUND_MUTTON = REGISTRATE.item("ground_mutton", Item::new).register();
-    public static final ItemEntry<Item> GROUND_PORK = REGISTRATE.item("ground_pork", Item::new).register();
-    public static final ItemEntry<Item> GROUND_RABBIT = REGISTRATE.item("ground_rabbit", Item::new).register();
-    public static final ItemEntry<Item> GROUND_ENDERMITE = REGISTRATE.item("ground_endermite", Item::new).register();
-    public static final ItemEntry<Item> GYRO_MEAT_SLICE = REGISTRATE.item("gyro_meat_slice", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(4).saturationMod(1.1F).build())).register();
-    public static final ItemEntry<Item> HAMBURGER = REGISTRATE.item("hamburger", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(8).saturationMod(0.6F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> HAMBURGER_BACON = REGISTRATE.item("hamburger_bacon", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(10).saturationMod(0.6F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> HAMBURGER_BACON_LETTUCE = REGISTRATE.item("hamburger_bacon_lettuce", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(11).saturationMod(0.7F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> HAMBURGER_BACON_LETTUCE_TOMATO = REGISTRATE.item("hamburger_bacon_lettuce_tomato", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(11).saturationMod(0.8F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> HAMBURGER_LETTUCE = REGISTRATE.item("hamburger_lettuce", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(9).saturationMod(0.7F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> HAMBURGER_LETTUCE_TOMATO = REGISTRATE.item("hamburger_lettuce_tomato", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(9).saturationMod(0.8F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> HAMBURGER_ONION = REGISTRATE.item("hamburger_onion", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(8).saturationMod(0.8F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> HAMBURGER_ONION_BACON = REGISTRATE.item("hamburger_onion_bacon", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(11).saturationMod(0.7F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> HAMBURGER_ONION_BACON_LETTUCE = REGISTRATE.item("hamburger_onion_bacon_lettuce", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(12).saturationMod(0.8F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> HAMBURGER_ONION_LETTUCE = REGISTRATE.item("hamburger_onion_lettuce", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(10).saturationMod(0.7F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> HAMBURGER_PEANUT_BUTTER = REGISTRATE.item("hamburger_peanut_butter", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(8).saturationMod(0.8F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> HAMBURGER_PEANUT_BUTTER_BACON = REGISTRATE.item("hamburger_peanut_butter_bacon", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(10).saturationMod(0.8F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> HAMBURGER_TOMATO = REGISTRATE.item("hamburger_tomato", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(9).saturationMod(0.7F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> HASH_BROWNS = REGISTRATE.item("hash_browns", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(4).saturationMod(0.6F).build())).register();
-    public static final ItemEntry<Item> HOLLOW_CHOCOLATE = REGISTRATE.item("hollow_chocolate", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(2).saturationMod(0.2F).fast().build())).register();
-    public static final ItemEntry<Item> HOLLOW_DARK_CHOCOLATE = REGISTRATE.item("hollow_dark_chocolate", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(5).saturationMod(0.2F).fast().build())).register();
-    public static final ItemEntry<Item> HOLLOW_WHITE_CHOCOLATE = REGISTRATE.item("hollow_white_chocolate", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(3).saturationMod(0.4F).fast().build())).register();
-    public static final ItemEntry<Item> HONEYED_BERRIES = REGISTRATE.item("honeyed_berries", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(7).saturationMod(0.9F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> HONEYED_BISCUIT = REGISTRATE.item("honeyed_biscuit", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(4).saturationMod(0.7F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> HONEYED_CHOCOLATE_DONUT = REGISTRATE.item("honeyed_chocolate_donut", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(4).saturationMod(0.7F).effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 3600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> HONEYED_CHOCOLATE_SWEET_ROLL = REGISTRATE.item("honeyed_chocolate_sweet_roll", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(6).saturationMod(0.8F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> HONEYED_CHOCOLATE_CUPCAKE = REGISTRATE.item("honeyed_chocolate_cupcake", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(5).saturationMod(1.1F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).fast().build())).register();
-    public static final ItemEntry<Item> HONEYED_CUPCAKE = REGISTRATE.item("honeyed_cupcake", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(4).saturationMod(1.0F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).fast().build())).register();
-    public static final ItemEntry<Item> HONEYED_MINI_WAFFLE = REGISTRATE.item("honeyed_mini_waffle", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(3).saturationMod(1.8F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.LUCK, 600, 0), 1.0f).fast().build())).register();
-    public static final ItemEntry<Item> HONEYED_DONUT = REGISTRATE.item("honeyed_donut", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(3).saturationMod(0.7F).effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 1200, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> HONEYED_MUFFIN = REGISTRATE.item("honeyed_muffin", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(4).saturationMod(0.7F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).fast().build())).register();
-    public static final ItemEntry<Item> HONEYED_SWEET_ROLL = REGISTRATE.item("honeyed_sweet_roll", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(5).saturationMod(0.7F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> HONEYED_TOAST = REGISTRATE.item("honeyed_toast", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(4).saturationMod(0.8F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> HOT_CHEESE_AND_SAUSAGE_BISCUIT_SANDWICH = REGISTRATE.item("hot_cheese_and_sausage_biscuit_sandwich", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(21).saturationMod(0.6f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> HOT_CHEESE_BISCUIT_SANDWICH = REGISTRATE.item("hot_cheese_biscuit_sandwich", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(12).saturationMod(0.5f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> HOT_SAUSAGE_BISCUIT_SANDWICH = REGISTRATE.item("hot_sausage_biscuit_sandwich", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(19).saturationMod(0.5f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> ICE_CREAM_CONE = REGISTRATE.item("ice_cream_cone", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(2).saturationMod(0.8F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.LUCK, 600, 0), 1.0f).fast().build())).register();
-    public static final ItemEntry<Item> ICE_CREAM_SANDWICH = REGISTRATE.item("ice_cream_sandwich", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(6).saturationMod(0.7f).build())).register();
-    public static final ItemEntry<Item> ICE_CREAM_SANDWICH_NEAPOLITAN = REGISTRATE.item("ice_cream_sandwich_neapolitan", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(7).saturationMod(0.8f).build())).register();
-    public static final ItemEntry<Item> LIGHT_BLUE_GELATIN_DESSERT_SLICE = REGISTRATE.item("light_blue_gelatin_dessert_slice", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(5).saturationMod(0.3F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).fast().build())).register();
-    public static final ItemEntry<Item> LIGHT_GRAY_GELATIN_DESSERT_SLICE = REGISTRATE.item("light_gray_gelatin_dessert_slice", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(5).saturationMod(0.3F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).fast().build())).register();
-    public static final ItemEntry<Item> LIME_GELATIN_DESSERT_SLICE = REGISTRATE.item("lime_gelatin_dessert_slice", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(5).saturationMod(0.3F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).fast().build())).register();
-    public static final ItemEntry<Item> MACARONI = REGISTRATE.item("macaroni", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(2).saturationMod(0.5F).build())).register();
-    public static final ItemEntry<Item> MAGENTA_GELATIN_DESSERT_SLICE = REGISTRATE.item("magenta_gelatin_dessert_slice", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(5).saturationMod(0.3F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).fast().build())).register();
-    public static final ItemEntry<Item> MAGMA_CREAM_MARSHMALLOW = REGISTRATE.item("magma_cream_marshmallow", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(2).saturationMod(0.2f).effect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 600, 0), 1.0f).fast().build())).register();
-    public static final ItemEntry<Item> MARSHMALLOW = REGISTRATE.item("marshmallow", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(2).saturationMod(0.2f).fast().build())).register();
-    public static final ItemEntry<Item> MARSHMALLOW_BUTTERSCOTCH_FUDGE = REGISTRATE.item("marshmallow_butterscotch_fudge", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(3).saturationMod(0.9f).effect(new MobEffectInstance(MobEffects.DIG_SPEED, 6000, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> MARSHMALLOW_CARAMEL_FUDGE = REGISTRATE.item("marshmallow_caramel_fudge", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(5).saturationMod(0.5f).effect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 6000, 0), 1.0f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> MARSHMALLOW_CHOCOLATE = REGISTRATE.item("marshmallow_chocolate", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(6).saturationMod(0.5f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1.0f).fast().build())).register();
-    public static final ItemEntry<Item> MARSHMALLOW_CHOCOLATE_FUDGE = REGISTRATE.item("marshmallow_chocolate_fudge", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(3).saturationMod(0.7f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 6000, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> MARSHMALLOW_COFFEE_TOFFEE_FUDGE = REGISTRATE.item("marshmallow_coffee_toffee_fudge", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(4).saturationMod(0.8f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.DIG_SPEED, 600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> MARSHMALLOW_DARK_CHOCOLATE = REGISTRATE.item("marshmallow_dark_chocolate", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(7).saturationMod(0.4f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1.0f).fast().build())).register();
-    public static final ItemEntry<Item> MARSHMALLOW_DARK_CHOCOLATE_FUDGE = REGISTRATE.item("marshmallow_dark_chocolate_fudge", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(4).saturationMod(0.6f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 6000, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> MARSHMALLOW_TOFFEE_FUDGE = REGISTRATE.item("marshmallow_toffee_fudge", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(4).saturationMod(0.6f).effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 6000, 0), 1.0f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> MARSHMALLOW_WHITE_CHOCOLATE = REGISTRATE.item("marshmallow_white_chocolate", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(5).saturationMod(0.6f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1.0f).fast().build())).register();
-    public static final ItemEntry<Item> MARSHMALLOW_WHITE_CHOCOLATE_FUDGE = REGISTRATE.item("marshmallow_white_chocolate_fudge", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(2).saturationMod(0.8f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 6000, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> MEATBALL = REGISTRATE.item("meatball", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(4).saturationMod(0.6f).build())).register();
-    public static final ItemEntry<Item> MEATBALL_SANDWICH = REGISTRATE.item("meatball_sandwich", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(10).saturationMod(0.4f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> MELON_CREAM_CHOCOLATE = REGISTRATE.item("melon_cream_chocolate", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(7).saturationMod(0.6f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).fast().build())).register();
-    public static final ItemEntry<Item> MELON_CREAM_CHOCOLATE_PASTRY_BAR = REGISTRATE.item("melon_cream_chocolate_pastry_bar", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(4).saturationMod(1.1f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> MELON_CREAM_DARK_CHOCOLATE = REGISTRATE.item("melon_cream_dark_chocolate", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(8).saturationMod(0.5f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).fast().build())).register();
-    public static final ItemEntry<Item> MELON_CREAM_FROSTED_CHOCOLATE_SWEET_ROLL = REGISTRATE.item("melon_cream_frosted_chocolate_sweet_roll", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(6).saturationMod(0.9f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> MELON_CREAM_FROSTED_CHOCOLATE_CUPCAKE = REGISTRATE.item("melon_cream_frosted_chocolate_cupcake", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(4).saturationMod(1.2F).effect(new MobEffectInstance(MobEffects.REGENERATION, 1200, 0), 1.0f).fast().build())).register();
-    public static final ItemEntry<Item> MELON_CREAM_FROSTED_CUPCAKE = REGISTRATE.item("melon_cream_frosted_cupcake", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(3).saturationMod(1.1F).effect(new MobEffectInstance(MobEffects.REGENERATION, 600, 0), 1.0f).fast().build())).register();
-    public static final ItemEntry<Item> MELON_CREAM_FROSTED_MINI_WAFFLE = REGISTRATE.item("melon_cream_frosted_mini_waffle", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(3).saturationMod(1.6F).effect(new MobEffectInstance(MobEffects.REGENERATION, 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.LUCK, 600, 0), 1.0f).fast().build())).register();
-    public static final ItemEntry<Item> MELON_CREAM_FROSTED_SWEET_ROLL = REGISTRATE.item("melon_cream_frosted_sweet_roll", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(5).saturationMod(0.8f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> MELON_CREAM_GLAZED_CHOCOLATE_DONUT = REGISTRATE.item("melon_cream_glazed_chocolate_donut", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(5).saturationMod(0.9f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.REGENERATION, 3600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> MELON_CREAM_GLAZED_DONUT = REGISTRATE.item("melon_cream_glazed_donut", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(4).saturationMod(0.9f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).effect(new MobEffectInstance(MobEffects.REGENERATION, 1200, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> MELON_CREAM_PASTRY_BAR = REGISTRATE.item("melon_cream_pastry_bar", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(3).saturationMod(1.1f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).effect(new MobEffectInstance(MobEffects.REGENERATION, 1200, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> MELON_CREAM_WHITE_CHOCOLATE = REGISTRATE.item("melon_cream_white_chocolate", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(6).saturationMod(0.7f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> MELON_ICE_CREAM_CONE = REGISTRATE.item("melon_ice_cream_cone", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(2).saturationMod(1.1F).effect(new MobEffectInstance(MobEffects.REGENERATION, 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.LUCK, 600, 0), 1.0f).fast().build())).register();
-    public static final ItemEntry<Item> MELON_ICE_CREAM_SANDWICH = REGISTRATE.item("melon_ice_cream_sandwich", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(6).saturationMod(0.7F).build())).register();
-    public static final ItemEntry<Item> MELON_JAM_SANDWICH = REGISTRATE.item("melon_jam_sandwich", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(8).saturationMod(0.8f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).fast().build())).register();
-    public static final ItemEntry<Item> MILK_POWDER = REGISTRATE.item("milk_powder", Item::new).register();
-    public static final ItemEntry<Item> MINCED_DRAGON = REGISTRATE.item("minced_dragon", Item::new).register();
-    public static final ItemEntry<Item> MINI_CHOCOLATE_GRAHAM_CRACKER_PIE_CRUST = REGISTRATE.item("mini_chocolate_graham_cracker_pie_crust", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(4).saturationMod(0.9F).build())).register();
-    public static final ItemEntry<Item> MINI_CHOCOLATE_PIE_GRAHAM_CRACKER = REGISTRATE.item("mini_chocolate_pie_graham_cracker", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(7).saturationMod(0.8F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0F).build())).register();
-    public static final ItemEntry<Item> MINI_COOKIE_CREAM_PIE = REGISTRATE.item("mini_cookie_cream_pie", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(8).saturationMod(0.8F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1.0F).build())).register();
-    public static final ItemEntry<Item> MINI_CREAM_PIE_CHOCOLATE_GRAHAM_CRACKER = REGISTRATE.item("mini_cream_pie_chocolate_graham_cracker", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(6).saturationMod(1.0F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0F).build())).register();
-    public static final ItemEntry<Item> MINI_CREAM_PIE_GRAHAM_CRACKER = REGISTRATE.item("mini_cream_pie_graham_cracker", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(6).saturationMod(0.9F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0F).build())).register();
-    public static final ItemEntry<Item> MINI_GRAHAM_CRACKER_PIE_CRUST = REGISTRATE.item("mini_graham_cracker_pie_crust", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(3).saturationMod(0.9F).build())).register();
-    public static final ItemEntry<Item> MINI_SMORES_PIE = REGISTRATE.item("mini_smores_pie", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(9).saturationMod(0.7F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 6000, 0), 1.0f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 6000, 0), 1.0F).build())).register();
-    public static final ItemEntry<Item> MINI_WAFFLE = REGISTRATE.item("mini_waffle", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(2).saturationMod(0.6F).fast().build())).register();
-    public static final ItemEntry<Item> MIXED_SALAD_BEETROOT_CARROT = REGISTRATE.item("mixed_salad_beetroot_carrot", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(6).saturationMod(0.7F).effect(new MobEffectInstance(MobEffects.REGENERATION, 300, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> MOLASSES_BOTTLE = REGISTRATE.item("molasses_bottle", Item::new).register();
-    public static final ItemEntry<Item> MUFFIN_BASE = REGISTRATE.item("muffin_base", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(3).saturationMod(0.7F).fast().build())).register();
-    public static final ItemEntry<Item> MUSHROOM_BACON_PIZZA_SLICE = REGISTRATE.item("mushroom_bacon_pizza_slice", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(5).saturationMod(0.9F).build())).register();
-    public static final ItemEntry<Item> MUSHROOM_CALZONE = REGISTRATE.item("mushroom_calzone", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(6).saturationMod(0.6F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).fast().build())).register();
-    public static final ItemEntry<Item> MUSHROOM_FISH_PIZZA_SLICE = REGISTRATE.item("mushroom_fish_pizza_slice", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(6).saturationMod(0.9F).build())).register();
-    public static final ItemEntry<Item> MUSHROOM_ONION_PIZZA_SLICE = REGISTRATE.item("mushroom_onion_pizza_slice", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(7).saturationMod(0.7F).build())).register();
-    public static final ItemEntry<Item> MUSHROOM_PIZZA_SLICE = REGISTRATE.item("mushroom_pizza_slice", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(5).saturationMod(0.6F).build())).register();
-    public static final ItemEntry<Item> MUTTON_SANDWICH = REGISTRATE.item("mutton_sandwich", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(7).saturationMod(0.6F).build())).register();
-    public static final ItemEntry<Item> MUTTON_SANDWICH_BEETROOT = REGISTRATE.item("mutton_sandwich_beetroot", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(7).saturationMod(0.8F).build())).register();
-    public static final ItemEntry<Item> MUTTON_WRAP_LETTUCE_TOMATO = REGISTRATE.item("mutton_wrap_lettuce_tomato", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(10).saturationMod(0.7F).build())).register();
-    public static final ItemEntry<Item> MUTTON_WRAP_ONION_LETTUCE_TOMATO = REGISTRATE.item("mutton_wrap_onion_lettuce_tomato", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(10).saturationMod(0.9F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> MUTTON_WRAP_ONION_TOMATO = REGISTRATE.item("mutton_wrap_onion_tomato", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(10).saturationMod(0.7F).build())).register();
-    public static final ItemEntry<Item> ONION_BACON_PIZZA_SLICE = REGISTRATE.item("onion_bacon_pizza_slice", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(7).saturationMod(0.7F).build())).register();
-    public static final ItemEntry<Item> ONION_CALZONE = REGISTRATE.item("onion_calzone", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(6).saturationMod(0.5F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).fast().build())).register();
-    public static final ItemEntry<Item> ONION_PIZZA_SLICE = REGISTRATE.item("onion_pizza_slice", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(6).saturationMod(0.5F).build())).register();
-    public static final ItemEntry<Item> ORANGE_GELATIN_DESSERT_SLICE = REGISTRATE.item("orange_gelatin_dessert_slice", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(5).saturationMod(0.3F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).fast().build())).register();
-    public static final ItemEntry<Item> PAPRIKA = REGISTRATE.item("paprika", Item::new).register();
-    public static final ItemEntry<Item> PASTA = REGISTRATE.item("pasta", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(2).saturationMod(0.8F).build())).register();
-    public static final ItemEntry<Item> PASTRY_BAR_BASE = REGISTRATE.item("pastry_bar_base", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(2).saturationMod(0.8F).build())).register();
-    public static final ItemEntry<Item> PASTRY_BASE = REGISTRATE.item("pastry_base", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(2).saturationMod(0.8F).build())).register();
-    public static final ItemEntry<Item> PEANUT_BUTTER_APPLE_JAM_SANDWICH = REGISTRATE.item("peanut_butter_apple_jam_sandwich", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(8).saturationMod(0.8F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> PEANUT_BUTTER_CHORUS_FRUIT_JAM_SANDWICH = REGISTRATE.item("peanut_butter_chorus_fruit_jam_sandwich", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(11).saturationMod(0.6F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> PEANUT_BUTTER_MELON_JAM_SANDWICH = REGISTRATE.item("peanut_butter_melon_jam_sandwich", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(9).saturationMod(0.9F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> PINK_GELATIN_DESSERT_SLICE = REGISTRATE.item("pink_gelatin_dessert_slice", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(5).saturationMod(0.3F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> PITA_DOUGH = REGISTRATE.item("pita_dough", Item::new).register();
-    public static final ItemEntry<Item> PITA_BREAD = REGISTRATE.item("pita_bread", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(3).saturationMod(1.8f).build())).register();
-    public static final ItemEntry<Item> PORK_MEATBALL = REGISTRATE.item("pork_meatball", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(3).saturationMod(0.8f).build())).register();
-    public static final ItemEntry<Item> PORK_MEATBALL_SANDWICH = REGISTRATE.item("pork_meatball_sandwich", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(9).saturationMod(0.6f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> POTATO_CHIPS = REGISTRATE.item("potato_chips", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(2).saturationMod(0.2F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.LUCK, 600, 0), 1.0f).fast().build())).register();
-    public static final ItemEntry<Item> POWDERED_SUGAR = REGISTRATE.item("powdered_sugar", Item::new).register();
-    public static final ItemEntry<Item> PRESSED_COCOA = REGISTRATE.item("pressed_cocoa", Item::new).register();
-    public static final ItemEntry<Item> PUMPERNICKEL_BREAD = REGISTRATE.item("pumpernickel_bread", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(5).saturationMod(1.1F).build())).register();
-    public static final ItemEntry<Item> PUMPERNICKEL_BREAD_SLICE = REGISTRATE.item("pumpernickel_bread_slice", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(3).saturationMod(0.5F).fast().build())).register();
-    public static final ItemEntry<Item> PUMPERNICKEL_DOUGH = REGISTRATE.item("pumpernickel_dough", Item::new).register();
-    public static final ItemEntry<Item> PUMPERNICKEL_TOAST_SLICE = REGISTRATE.item("pumpernickel_toast_slice", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(6).saturationMod(1.3F).fast().build())).register();
-    public static final ItemEntry<Item> PURPLE_GELATIN_DESSERT_SLICE = REGISTRATE.item("purple_gelatin_dessert_slice", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(5).saturationMod(0.3F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).fast().build())).register();
-    public static final ItemEntry<Item> RABBIT_CUTS = REGISTRATE.item("rabbit_cuts", Item::new).register();
-    public static final ItemEntry<Item> RABBIT_JERKY = REGISTRATE.item("rabbit_jerky", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(2).saturationMod(1.6F).effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 1200, 0), 1.0f).effect(new MobEffectInstance(MobEffects.DIG_SPEED, 1200, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> RABBIT_MEATBALL = REGISTRATE.item("rabbit_meatball", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(3).saturationMod(0.6f).build())).register();
-    public static final ItemEntry<Item> RABBIT_MEATBALL_SANDWICH = REGISTRATE.item("rabbit_meatball_sandwich", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(9).saturationMod(0.4f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f).effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 1200, 0), 1.0f).effect(new MobEffectInstance(MobEffects.DIG_SPEED, 1200, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> RAW_BACON_CALZONE = REGISTRATE.item("raw_bacon_calzone", Item::new).register();
-    public static final ItemEntry<Item> RAW_BUTTERSCOTCH_CHIPS_CHOCOLATE_COOKIE = REGISTRATE.item("raw_butterscotch_chips_chocolate_cookie", Item::new).register();
-    public static final ItemEntry<Item> RAW_BUTTERSCOTCH_CHIPS_COOKIE = REGISTRATE.item("raw_butterscotch_chips_cookie", Item::new).register();
-    public static final ItemEntry<Item> RAW_BUTTERSCOTCH_CHIP_MUFFIN = REGISTRATE.item("raw_butterscotch_chip_muffin", Item::new).register();
-    public static final ItemEntry<Item> RAW_CAKE_BASE = REGISTRATE.item("raw_cake_base", Item::new).register();
-    public static final ItemEntry<Item> RAW_CALZONE = REGISTRATE.item("raw_calzone", Item::new).register();
-    public static final ItemEntry<Item> RAW_CARAMEL_CHIPS_CHOCOLATE_COOKIE = REGISTRATE.item("raw_caramel_chips_chocolate_cookie", Item::new).register();
-    public static final ItemEntry<Item> RAW_CARAMEL_CHIPS_COOKIE = REGISTRATE.item("raw_caramel_chips_cookie", Item::new).register();
-    public static final ItemEntry<Item> RAW_CARAMEL_CHIP_MUFFIN = REGISTRATE.item("raw_caramel_chip_muffin", Item::new).register();
-    public static final ItemEntry<Item> RAW_CHEESE_CALZONE = REGISTRATE.item("raw_cheese_calzone", Item::new).register();
-    public static final ItemEntry<Item> RAW_CHOCOLATE_CHIP_MUFFIN = REGISTRATE.item("raw_chocolate_chip_muffin", Item::new).register();
-    public static final ItemEntry<Item> RAW_CHOCOLATE_COOKIE = REGISTRATE.item("raw_chocolate_cookie", Item::new).register();
-    public static final ItemEntry<Item> RAW_CHOCOLATE_CUPCAKE_BASE = REGISTRATE.item("raw_chocolate_cupcake_base", Item::new).register();
-    public static final ItemEntry<Item> RAW_CHOCOLATE_PASTRY_BAR_BASE = REGISTRATE.item("raw_chocolate_pastry_bar_base", Item::new).register();
-    public static final ItemEntry<Item> RAW_CHOCOLATE_PASTRY_BASE = REGISTRATE.item("raw_chocolate_pastry_base", Item::new).register();
-    public static final ItemEntry<Item> RAW_CHOCOLATE_SWEET_ROLL_BASE = REGISTRATE.item("raw_chocolate_sweet_roll_base", Item::new).register();
-    public static final ItemEntry<Item> RAW_CHORUS_COOKIE = REGISTRATE.item("raw_chorus_cookie", Item::new).register();
-    public static final ItemEntry<Item> RAW_CINNAMON_SWEET_ROLL_BASE = REGISTRATE.item("raw_cinnamon_sweet_roll_base", Item::new).register();
-    public static final ItemEntry<Item> RAW_COOKIE = REGISTRATE.item("raw_cookie", Item::new).register();
-    public static final ItemEntry<Item> RAW_CUPCAKE = REGISTRATE.item("raw_cupcake", Item::new).register();
-    public static final ItemEntry<Item> RAW_DARK_CHIPS_CHOCOLATE_COOKIE = REGISTRATE.item("raw_dark_chips_chocolate_cookie", Item::new).register();
-    public static final ItemEntry<Item> RAW_DARK_CHIPS_COOKIE = REGISTRATE.item("raw_dark_chips_cookie", Item::new).register();
-    public static final ItemEntry<Item> RAW_DARK_CHOCOLATE_CHIP_MUFFIN = REGISTRATE.item("raw_dark_chocolate_chip_muffin", Item::new).register();
-    public static final ItemEntry<Item> RAW_ENDERMITE_MEATBALL = REGISTRATE.item("raw_endermite_meatball", Item::new).register();
-    public static final ItemEntry<Item> RAW_FISHCAKE = REGISTRATE.item("raw_fishcake", Item::new).register();
-    public static final ItemEntry<Item> RAW_FISH_CALZONE = REGISTRATE.item("raw_fish_calzone", Item::new).register();
-    public static final ItemEntry<Item> RAW_FLESH_COOKIE = REGISTRATE.item("raw_flesh_cookie", Item::new).register();
-    public static final ItemEntry<Item> RAW_GINGER_COOKIE = REGISTRATE.item("raw_ginger_cookie", Item::new).register();
-    public static final ItemEntry<Item> RAW_GREEN_TEA_COOKIE = REGISTRATE.item("raw_green_tea_cookie", Item::new).register();
-    public static final ItemEntry<Item> RAW_GYRO_MEAT_BLOCK = REGISTRATE.item("raw_gyro_meat_block", Item::new).register();
-    public static final ItemEntry<Item> RAW_HONEY_COOKIE = REGISTRATE.item("raw_honey_cookie", Item::new).register();
-    public static final ItemEntry<Item> RAW_MACARONI = REGISTRATE.item("raw_macaroni", Item::new).register();
-    public static final ItemEntry<Item> RAW_MEATBALL = REGISTRATE.item("raw_meatball", Item::new).register();
-    public static final ItemEntry<Item> RAW_MINI_CHOCOLATE_GRAHAM_CRACKER_PIE_CRUST = REGISTRATE.item("raw_mini_chocolate_graham_cracker_pie_crust", Item::new).register();
-    public static final ItemEntry<Item> RAW_MINI_CHOCOLATE_PIE_GRAHAM_CRACKER = REGISTRATE.item("raw_mini_chocolate_pie_graham_cracker", Item::new).register();
-    public static final ItemEntry<Item> RAW_MINI_CREAM_PIE_CHOCOLATE_GRAHAM_CRACKER = REGISTRATE.item("raw_mini_cream_pie_chocolate_graham_cracker", Item::new).register();
-    public static final ItemEntry<Item> RAW_MINI_CREAM_PIE_GRAHAM_CRACKER = REGISTRATE.item("raw_mini_cream_pie_graham_cracker", Item::new).register();
-    public static final ItemEntry<Item> RAW_MINI_GRAHAM_CRACKER_PIE_CRUST = REGISTRATE.item("raw_mini_graham_cracker_pie_crust", Item::new).register();
-    public static final ItemEntry<Item> RAW_MUFFIN = REGISTRATE.item("raw_muffin", Item::new).register();
-    public static final ItemEntry<Item> RAW_MUSHROOM_CALZONE = REGISTRATE.item("raw_mushroom_calzone", Item::new).register();
-    public static final ItemEntry<Item> RAW_ONION_CALZONE = REGISTRATE.item("raw_onion_calzone", Item::new).register();
-    public static final ItemEntry<Item> RAW_PASTRY_BAR_BASE = REGISTRATE.item("raw_pastry_bar_base", Item::new).register();
-    public static final ItemEntry<Item> RAW_PASTRY_BASE = REGISTRATE.item("raw_pastry_base", Item::new).register();
-    public static final ItemEntry<Item> RAW_PORK_MEATBALL = REGISTRATE.item("raw_pork_meatball", Item::new).register();
-    public static final ItemEntry<Item> RAW_RABBIT_MEATBALL = REGISTRATE.item("raw_rabbit_meatball", Item::new).register();
-    public static final ItemEntry<Item> RAW_SAUSAGE_CALZONE = REGISTRATE.item("raw_sausage_calzone", Item::new).register();
-    public static final ItemEntry<Item> RAW_SAUSAGE_PATTY = REGISTRATE.item("raw_sausage_patty", Item::new).register();
-    public static final ItemEntry<Item> RAW_SNICKERDOODLE = REGISTRATE.item("raw_snickerdoodle", Item::new).register();
-    public static final ItemEntry<Item> RAW_SOUL_BERRY_COOKIE = REGISTRATE.item("raw_soul_berry_cookie", Item::new).register();
-    public static final ItemEntry<Item> RAW_SPIDER_EYE_COOKIE = REGISTRATE.item("raw_spider_eye_cookie", Item::new).register();
-    public static final ItemEntry<Item> RAW_STRIDER_MEATBALL = REGISTRATE.item("raw_strider_meatball", Item::new).register();
-    public static final ItemEntry<Item> RAW_SUGAR_COOKIE = REGISTRATE.item("raw_sugar_cookie", Item::new).register();
-    public static final ItemEntry<Item> RAW_SWEET_BERRY_COOKIE = REGISTRATE.item("raw_sweet_berry_cookie", Item::new).register();
-    public static final ItemEntry<Item> RAW_SWEET_ROLL_BASE = REGISTRATE.item("raw_sweet_roll_base", Item::new).register();
-    public static final ItemEntry<Item> RAW_TOFFEE_CHIPS_CHOCOLATE_COOKIE = REGISTRATE.item("raw_toffee_chips_chocolate_cookie", Item::new).register();
-    public static final ItemEntry<Item> RAW_TOFFEE_CHIPS_COOKIE = REGISTRATE.item("raw_toffee_chips_cookie", Item::new).register();
-    public static final ItemEntry<Item> RAW_TOFFEE_CHIP_MUFFIN = REGISTRATE.item("raw_toffee_chip_muffin", Item::new).register();
-    public static final ItemEntry<Item> RAW_UBE_CAKE_BASE = REGISTRATE.item("raw_ube_cake_base", Item::new).register();
-    public static final ItemEntry<Item> RAW_UBE_COOKIE = REGISTRATE.item("raw_ube_cookie", Item::new).register();
-    public static final ItemEntry<Item> RAW_WHITE_CHIPS_CHOCOLATE_COOKIE = REGISTRATE.item("raw_white_chips_chocolate_cookie", Item::new).register();
-    public static final ItemEntry<Item> RAW_WHITE_CHIPS_COOKIE = REGISTRATE.item("raw_white_chips_cookie", Item::new).register();
-    public static final ItemEntry<Item> RAW_WHITE_CHOCOLATE_CHIP_MUFFIN = REGISTRATE.item("raw_white_chocolate_chip_muffin", Item::new).register();
-    public static final ItemEntry<Item> RED_GELATIN_DESSERT_SLICE = REGISTRATE.item("red_gelatin_dessert_slice", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(5).saturationMod(0.3F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).fast().build())).register();
-    public static final ItemEntry<Item> SALT = REGISTRATE.item("salt", Item::new).register();
-    public static final ItemEntry<Item> SALT_DOUGH = REGISTRATE.item("salt_dough", Item::new).register();
-    public static final ItemEntry<Item> SALT_DOUGH_SMALL = REGISTRATE.item("salt_dough_small", Item::new).register();
-    public static final ItemEntry<Item> SAUSAGE_BACON_PIZZA_SLICE = REGISTRATE.item("sausage_bacon_pizza_slice", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(6).saturationMod(0.8F).build())).register();
-    public static final ItemEntry<Item> SAUSAGE_BISCUIT = REGISTRATE.item("sausage_biscuit", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(14).saturationMod(0.4F).build())).register();
-    public static final ItemEntry<Item> SAUSAGE_BISCUIT_BACON = REGISTRATE.item("sausage_biscuit_bacon", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(15).saturationMod(0.6F).build())).register();
-    public static final ItemEntry<Item> SAUSAGE_BISCUIT_CHEESE_BACON = REGISTRATE.item("sausage_biscuit_cheese_bacon", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(17).saturationMod(0.4F).build())).register();
-    public static final ItemEntry<Item> SAUSAGE_BISCUIT_CHEESE_FRIED_EGG = REGISTRATE.item("sausage_biscuit_cheese_fried_egg", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(16).saturationMod(0.6F).build())).register();
-    public static final ItemEntry<Item> SAUSAGE_BISCUIT_CHEESE_FRIED_EGG_BACON = REGISTRATE.item("sausage_biscuit_cheese_fried_egg_bacon", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(18).saturationMod(0.6F).build())).register();
-    public static final ItemEntry<Item> SAUSAGE_BISCUIT_FRIED_EGG = REGISTRATE.item("sausage_biscuit_fried_egg", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(14).saturationMod(0.8F).build())).register();
-    public static final ItemEntry<Item> SAUSAGE_BISCUIT_FRIED_EGG_BACON = REGISTRATE.item("sausage_biscuit_fried_egg_bacon", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(16).saturationMod(0.8F).build())).register();
-    public static final ItemEntry<Item> SAUSAGE_BISCUIT_SANDWICH = REGISTRATE.item("sausage_biscuit_sandwich", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(19).saturationMod(0.4F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> SAUSAGE_BISCUIT_SANDWICH_BACON = REGISTRATE.item("sausage_biscuit_sandwich_bacon", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(20).saturationMod(0.6F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> SAUSAGE_BISCUIT_SANDWICH_CHEESE_BACON = REGISTRATE.item("sausage_biscuit_sandwich_cheese_bacon", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(22).saturationMod(0.4F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> SAUSAGE_BISCUIT_SANDWICH_CHEESE_FRIED_EGG = REGISTRATE.item("sausage_biscuit_sandwich_cheese_fried_egg", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(21).saturationMod(0.6F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> SAUSAGE_BISCUIT_SANDWICH_CHEESE_FRIED_EGG_BACON = REGISTRATE.item("sausage_biscuit_sandwich_cheese_fried_egg_bacon", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(23).saturationMod(0.6F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> SAUSAGE_BISCUIT_SANDWICH_FRIED_EGG = REGISTRATE.item("sausage_biscuit_sandwich_fried_egg", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(19).saturationMod(0.8F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> SAUSAGE_BISCUIT_SANDWICH_FRIED_EGG_BACON = REGISTRATE.item("sausage_biscuit_sandwich_fried_egg_bacon", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(21).saturationMod(0.8F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> SAUSAGE_BITS = REGISTRATE.item("sausage_bits", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(2).saturationMod(0.2F).build())).register();
-    public static final ItemEntry<Item> SAUSAGE_CALZONE = REGISTRATE.item("sausage_calzone", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(7).saturationMod(0.5F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).fast().build())).register();
-    public static final ItemEntry<Item> SAUSAGE_FISH_PIZZA_SLICE = REGISTRATE.item("sausage_fish_pizza_slice", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(7).saturationMod(0.8F).build())).register();
-    public static final ItemEntry<Item> SAUSAGE_MEAT = REGISTRATE.item("sausage_meat", Item::new).register();
-    public static final ItemEntry<Item> SAUSAGE_MUSHROOM_PIZZA_SLICE = REGISTRATE.item("sausage_mushroom_pizza_slice", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(6).saturationMod(0.8F).build())).register();
-    public static final ItemEntry<Item> SAUSAGE_ONION_PIZZA_SLICE = REGISTRATE.item("sausage_onion_pizza_slice", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(8).saturationMod(0.6F).build())).register();
-    public static final ItemEntry<Item> SAUSAGE_PATTY = REGISTRATE.item("sausage_patty", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(6).saturationMod(0.3F).build())).register();
-    public static final ItemEntry<Item> SAUSAGE_PIZZA_SLICE = REGISTRATE.item("sausage_pizza_slice", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(6).saturationMod(0.5F).build())).register();
-    public static final ItemEntry<Item> SHREDDED_BEETROOT = REGISTRATE.item("shredded_beetroot", Item::new).register();
-    public static final ItemEntry<Item> SHREDDED_CARROT = REGISTRATE.item("shredded_carrot", Item::new).register();
-    public static final ItemEntry<Item> SHREDDED_CHICKEN = REGISTRATE.item("shredded_chicken", Item::new).register();
-    public static final ItemEntry<Item> SHREDDED_POTATO = REGISTRATE.item("shredded_potato", Item::new).register();
-    public static final ItemEntry<Item> SLICED_BEETROOT = REGISTRATE.item("sliced_beetroot", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(2).saturationMod(0.3F).fast().build())).register();
-    public static final ItemEntry<Item> SLICED_BROWN_MUSHROOM = REGISTRATE.item("sliced_brown_mushroom", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(1).saturationMod(1.1F).fast().build())).register();
-    public static final ItemEntry<Item> SLICED_CARROT = REGISTRATE.item("sliced_carrot", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(1).saturationMod(0.4F).fast().build())).register();
-    public static final ItemEntry<Item> SLICED_POTATO = REGISTRATE.item("sliced_potato", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(1).saturationMod(0.6F).fast().build())).register();
-    public static final ItemEntry<Item> SLICED_ONION = REGISTRATE.item("sliced_onion", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(2).saturationMod(0.4F).build())).register();
-    public static final ItemEntry<Item> SLICED_RED_MUSHROOM = REGISTRATE.item("sliced_red_mushroom", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(1).saturationMod(1.1F).fast().build())).register();
-    public static final ItemEntry<Item> SLICED_TOMATO = REGISTRATE.item("sliced_tomato", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(1).saturationMod(0.6F).fast().build())).register();
-    public static final ItemEntry<Item> SMALL_ENDERMITE_MEATBALLS = REGISTRATE.item("small_endermite_meatballs", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(3).saturationMod(0.7F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.REGENERATION, 600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> SMALL_MEATBALLS = REGISTRATE.item("small_meatballs", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(3).saturationMod(0.7F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> SMALL_RABBIT_MEATBALLS = REGISTRATE.item("small_rabbit_meatballs", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(2).saturationMod(0.7F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.DIG_SPEED, 600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> SMALL_PORK_MEATBALLS = REGISTRATE.item("small_pork_meatballs", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(2).saturationMod(0.9F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> SMALL_SLIMEBALLS = REGISTRATE.item("small_slimeballs", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(3).saturationMod(0.7F).effect(new MobEffectInstance(MobEffects.CONFUSION, 300, 0), 1.0F).build())).register();
-    public static final ItemEntry<Item> SMALL_STRIDER_MEATBALLS = REGISTRATE.item("small_strider_meatballs", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(3).saturationMod(0.7F).effect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 600, 0), 1.0f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> SMORE = REGISTRATE.item("smore", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(7).saturationMod(0.5F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 6000, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> SMORES_PIE_SLICE = REGISTRATE.item("smores_pie_slice", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(4).saturationMod(0.8F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1800, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> SPICY_BREAKFAST_SAUSAGES = REGISTRATE.item("spicy_breakfast_sausages", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(6).saturationMod(0.8F).effect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 600, 0), 1.0f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> SPICY_CHICKEN_NUGGETS = REGISTRATE.item("spicy_chicken_nuggets", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(4).saturationMod(1.1F).effect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 600, 0), 1.0f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> STRIDER_MEATBALL = REGISTRATE.item("strider_meatball", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(4).saturationMod(0.6F).build())).register();
-    public static final ItemEntry<Item> STRIDER_MEATBALL_SANDWICH = REGISTRATE.item("strider_meatball_sandwich", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(10).saturationMod(0.4F).effect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 1200, 0), 1.0f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> SUGAR_DOUGH = REGISTRATE.item("sugar_dough", Item::new).register();
-    public static final ItemEntry<Item> SUGAR_DOUGH_SMALL = REGISTRATE.item("sugar_dough_small", Item::new).register();
-    public static final ItemEntry<Item> SWEET_ROLL_BASE = REGISTRATE.item("sweet_roll_base", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(4).saturationMod(0.6F).build())).register();
-    public static final ItemEntry<Item> TOAST_SLICE = REGISTRATE.item("toast_slice", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(3).saturationMod(0.3F).fast().build())).register();
-    public static final ItemEntry<Item> TOFFEE = REGISTRATE.item("toffee", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(1).saturationMod(1.8F).fast().build())).register();
-    public static final ItemEntry<Item> TOFFEE_CHIPS = REGISTRATE.item("toffee_chips", Item::new).register();
-    public static final ItemEntry<Item> TOFFEE_CHIPS_CHOCOLATE_COOKIE = REGISTRATE.item("toffee_chips_chocolate_cookie", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(3).saturationMod(0.6F).build())).register();
-    public static final ItemEntry<Item> TOFFEE_CHIPS_COOKIE = REGISTRATE.item("toffee_chips_cookie", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(2).saturationMod(0.7F).build())).register();
-    public static final ItemEntry<Item> TOFFEE_CHIP_ICE_CREAM_CONE = REGISTRATE.item("toffee_chip_ice_cream_cone", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(2).saturationMod(1.2F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.LUCK, 600, 0), 1.0f).fast().build())).register();
-    public static final ItemEntry<Item> TOFFEE_CHIP_MUFFIN = REGISTRATE.item("toffee_chip_muffin", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(3).saturationMod(0.9F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 600, 0), 1.0f).fast().build())).register();
-    public static final ItemEntry<Item> TOFFEE_CHIP_MINI_WAFFLE = REGISTRATE.item("toffee_chip_mini_waffle", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(3).saturationMod(1.7F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.LUCK, 600, 0), 1.0f).fast().build())).register();
-    public static final ItemEntry<Item> TOFFEE_FUDGE = REGISTRATE.item("toffee_fudge", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(4).saturationMod(0.5F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 3600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> UBE_SUGAR_DOUGH = REGISTRATE.item("ube_sugar_dough", Item::new).register();
-    public static final ItemEntry<Item> UNBREADED_CHICKEN_PATTY = REGISTRATE.item("unbreaded_chicken_patty", Item::new).register();
-    public static final ItemEntry<Item> VEGETABLE_SANDWICH_BEETROOT_LETTUCE = REGISTRATE.item("vegetable_sandwich_beetroot_lettuce", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(9).saturationMod(0.5F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> VEGETABLE_SANDWICH_LETTUCE_TOMATO = REGISTRATE.item("vegetable_sandwich_lettuce_tomato", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(9).saturationMod(0.7F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> WAFFLE_CONE = REGISTRATE.item("waffle_cone", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(2).saturationMod(1.0F).fast().build())).register();
-    public static final ItemEntry<Item> WHEAT_DOUGH_SMALL = REGISTRATE.item("wheat_dough_small", Item::new).register();
-    public static final ItemEntry<Item> WHITE_CHIPS_CHOCOLATE_COOKIE = REGISTRATE.item("white_chips_chocolate_cookie", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(3).saturationMod(0.5F).build())).register();
-    public static final ItemEntry<Item> WHITE_CHIPS_COOKIE = REGISTRATE.item("white_chips_cookie", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(2).saturationMod(0.6F).build())).register();
-    public static final ItemEntry<Item> WHITE_CHOCOLATE_CHIPS = REGISTRATE.item("white_chocolate_chips", Item::new).register();
-    public static final ItemEntry<Item> WHITE_CHOCOLATE_CHIP_ICE_CREAM_CONE = REGISTRATE.item("white_chocolate_chip_ice_cream_cone", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(2).saturationMod(1.2F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.LUCK, 600, 0), 1.0f).fast().build())).register();
-    public static final ItemEntry<Item> WHITE_CHOCOLATE_CHIP_MUFFIN = REGISTRATE.item("white_chocolate_chip_muffin", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(4).saturationMod(0.9F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).fast().build())).register();
-    public static final ItemEntry<Item> WHITE_CHOCOLATE_CHIP_MINI_WAFFLE = REGISTRATE.item("white_chocolate_chip_mini_waffle", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(3).saturationMod(1.7F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f).effect(new MobEffectInstance(MobEffects.LUCK, 600, 0), 1.0f).fast().build())).register();
-    public static final ItemEntry<Item> WHITE_CHOCOLATE_CHOCOLATE_PASTRY = REGISTRATE.item("white_chocolate_chocolate_pastry", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(2).saturationMod(1.2F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> WHITE_CHOCOLATE_FUDGE = REGISTRATE.item("white_chocolate_fudge", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(2).saturationMod(0.7F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> WHITE_CHOCOLATE_GLAZED_APPLE = REGISTRATE.item("white_chocolate_glazed_apple", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(7).saturationMod(0.9F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> WHITE_CHOCOLATE_GLAZED_BERRIES = REGISTRATE.item("white_chocolate_glazed_berries", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(6).saturationMod(0.8F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> WHITE_CHOCOLATE_PASTRY = REGISTRATE.item("white_chocolate_pastry", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(1).saturationMod(1.2F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> WHITE_CHOCOLATE_TOAST = REGISTRATE.item("white_chocolate_toast", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(3).saturationMod(0.7F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).build())).register();
-    public static final ItemEntry<Item> YELLOW_GELATIN_DESSERT_SLICE = REGISTRATE.item("yellow_gelatin_dessert_slice", Item::new).properties(prop -> prop.food(new FoodProperties.Builder().nutrition(5).saturationMod(0.3F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).fast().build())).register();
-
-    public static final ItemEntry<BottleFoodItem> APPLE_CREAM_FROSTING_BOTTLE = REGISTRATE.item("apple_cream_frosting_bottle", BottleFoodItem::new)
-            .properties(prop -> {
-                prop.craftRemainder(Items.GLASS_BOTTLE);
-                prop.stacksTo(16);
-                prop.food(new FoodProperties.Builder().nutrition(3).saturationMod(0.7F).build());
-                return prop;
-            })
-            .register();
-
-    public static final ItemEntry<BottleFoodItem> APPLE_JAM_BOTTLE = REGISTRATE.item("apple_jam_bottle", BottleFoodItem::new)
-            .properties(prop -> {
-                prop.craftRemainder(Items.GLASS_BOTTLE);
-                prop.stacksTo(16);
-                prop.food(new FoodProperties.Builder().nutrition(3).saturationMod(1.6F).build());
-                return prop;
-            }).register();
-
-    public static final ItemEntry<BottleFoodItem> APPLE_JUICE_BOTTLE = REGISTRATE.item("apple_juice_bottle", BottleFoodItem::new)
-            .properties(prop -> {
-                prop.craftRemainder(Items.GLASS_BOTTLE);
-                prop.stacksTo(16);
-                prop.food(new FoodProperties.Builder().nutrition(2).saturationMod(1.5F).build());
-                return prop;
-            }).register();
-
-    public static final ItemEntry<BottleFoodItem> APPLE_MILKSHAKE_BOTTLE = REGISTRATE.item("apple_milkshake_bottle", BottleFoodItem::new)
-            .properties(prop -> {
-                prop.craftRemainder(Items.GLASS_BOTTLE);
-                prop.stacksTo(16);
-                prop.food(new FoodProperties.Builder().nutrition(5).saturationMod(0.9F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).build());
-                return prop;
-            }).register();
-
-    public static final ItemEntry<BottleFoodItem> BERRY_CREAM_FROSTING_BOTTLE = REGISTRATE.item("berry_cream_frosting_bottle", BottleFoodItem::new)
-            .properties(prop -> {
-                prop.craftRemainder(Items.GLASS_BOTTLE);
-                prop.stacksTo(16);
-                prop.food(new FoodProperties.Builder().nutrition(4).saturationMod(0.4F).build());
-                return prop;
-            }).register();
-
-    public static final ItemEntry<BottleFoodItem> BERRY_JAM_BOTTLE = REGISTRATE.item("berry_jam_bottle", BottleFoodItem::new)
-            .properties(prop -> {
-                prop.craftRemainder(Items.GLASS_BOTTLE);
-                prop.stacksTo(16);
-                prop.food(new FoodProperties.Builder().nutrition(4).saturationMod(1.2F).build());
-                return prop;
-            }).register();
-
-    public static final ItemEntry<BottleFoodItem> BERRY_JUICE_BOTTLE = REGISTRATE.item("berry_juice_bottle", BottleFoodItem::new)
-            .properties(prop -> {
-                prop.craftRemainder(Items.GLASS_BOTTLE);
-                prop.stacksTo(16);
-                prop.food(new FoodProperties.Builder().nutrition(2).saturationMod(1.6F).build());
-                return prop;
-            }).register();
-
-    public static final ItemEntry<BottleFoodItem> BERRY_MILKSHAKE_BOTTLE = REGISTRATE.item("berry_milkshake_bottle", BottleFoodItem::new)
-            .properties(prop -> {
-                prop.craftRemainder(Items.GLASS_BOTTLE);
-                prop.stacksTo(16);
-                prop.food(new FoodProperties.Builder().nutrition(5).saturationMod(1.0F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.DIG_SPEED, 600, 0), 1.0f).build());
-                return prop;
-            }).register();
-
-    public static final ItemEntry<BottleFoodItem> BLACKSTRAP_MOLASSES_BOTTLE = REGISTRATE.item("blackstrap_molasses_bottle", BottleFoodItem::new)
-            .properties(prop -> {
-                prop.craftRemainder(Items.GLASS_BOTTLE);
-                prop.stacksTo(16);
-                prop.food(new FoodProperties.Builder().nutrition(1).saturationMod(3.0F).build());
-                return prop;
-            }).register();
-
-    public static final ItemEntry<BottleFoodItem> BUTTERSCOTCH_CHIP_CHOCOLATE_MILKSHAKE_BOTTLE = REGISTRATE.item("butterscotch_chip_chocolate_milkshake_bottle", BottleFoodItem::new)
-            .properties(prop -> {
-                prop.craftRemainder(Items.GLASS_BOTTLE);
-                prop.stacksTo(16);
-                prop.food(new FoodProperties.Builder().nutrition(6).saturationMod(1.5F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.DIG_SPEED, 600, 0), 1.0f).build());
-                return prop;
-            }).register();
-
-    public static final ItemEntry<BottleFoodItem> BUTTERSCOTCH_CHIP_MILKSHAKE_BOTTLE = REGISTRATE.item("butterscotch_chip_milkshake_bottle", BottleFoodItem::new)
-            .properties(prop -> {
-                prop.craftRemainder(Items.GLASS_BOTTLE);
-                prop.stacksTo(16);
-                prop.food(new FoodProperties.Builder().nutrition(5).saturationMod(1.2F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.DIG_SPEED, 600, 0), 1.0f).build());
-                return prop;
-            }).register();
-
-    public static final ItemEntry<BottleFoodItem> CARAMEL_CHIP_CHOCOLATE_MILKSHAKE_BOTTLE = REGISTRATE.item("caramel_chip_chocolate_milkshake_bottle", BottleFoodItem::new)
-            .properties(prop -> {
-                prop.craftRemainder(Items.GLASS_BOTTLE);
-                prop.stacksTo(16);
-                prop.food(new FoodProperties.Builder().nutrition(6).saturationMod(1.5F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 600, 0), 1.0f).build());
-                return prop;
-            }).register();
-
-    public static final ItemEntry<BottleFoodItem> CARAMEL_CHIP_MILKSHAKE_BOTTLE = REGISTRATE.item("caramel_chip_milkshake_bottle", BottleFoodItem::new)
-            .properties(prop -> {
-                prop.craftRemainder(Items.GLASS_BOTTLE);
-                prop.stacksTo(16);
-                prop.food(new FoodProperties.Builder().nutrition(5).saturationMod(1.2F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 600, 0), 1.0f).build());
-                return prop;
-            }).register();
-
-    public static final ItemEntry<BottleFoodItem> CHOCOLATE_BOTTLE = REGISTRATE.item("chocolate_bottle", BottleFoodItem::new)
-            .properties(prop -> {
-                prop.craftRemainder(Items.GLASS_BOTTLE);
-                prop.stacksTo(16);
-                prop.food(new FoodProperties.Builder().nutrition(7).saturationMod(0.4F).build());
-                return prop;
-            }).register();
-
-    public static final ItemEntry<BottleFoodItem> CHOCOLATE_CHIP_CHOCOLATE_MILKSHAKE_BOTTLE = REGISTRATE.item("chocolate_chip_chocolate_milkshake_bottle", BottleFoodItem::new)
-            .properties(prop -> {
-                prop.craftRemainder(Items.GLASS_BOTTLE);
-                prop.stacksTo(16);
-                prop.food(new FoodProperties.Builder().nutrition(6).saturationMod(1.3F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build());
-                return prop;
-            }).register();
-
-    public static final ItemEntry<BottleFoodItem> CHOCOLATE_CHIP_MILKSHAKE_BOTTLE = REGISTRATE.item("chocolate_chip_milkshake_bottle", BottleFoodItem::new)
-            .properties(prop -> {
-                prop.craftRemainder(Items.GLASS_BOTTLE);
-                prop.stacksTo(16);
-                prop.food(new FoodProperties.Builder().nutrition(5).saturationMod(1.2F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build());
-                return prop;
-            }).register();
-
-    public static final ItemEntry<BottleFoodItem> CHOCOLATE_CREAM_FROSTING_BOTTLE = REGISTRATE.item("chocolate_cream_frosting_bottle", BottleFoodItem::new)
-            .properties(prop -> {
-                prop.craftRemainder(Items.GLASS_BOTTLE);
-                prop.stacksTo(16);
-                prop.food(new FoodProperties.Builder().nutrition(4).saturationMod(0.3F).build());
-                return prop;
-            }).register();
-
-    public static final ItemEntry<BottleFoodItem> CHOCOLATE_MILKSHAKE_BOTTLE = REGISTRATE.item("chocolate_milkshake_bottle", BottleFoodItem::new)
-            .properties(prop -> {
-                prop.craftRemainder(Items.GLASS_BOTTLE);
-                prop.stacksTo(16);
-                prop.food(new FoodProperties.Builder().nutrition(5).saturationMod(1.2F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).build());
-                return prop;
-            }).register();
-
-    public static final ItemEntry<BottleFoodItem> CHOCOLATE_MILK_BOTTLE = REGISTRATE.item("chocolate_milk_bottle", BottleFoodItem::new)
-            .properties(prop -> {
-                prop.craftRemainder(Items.GLASS_BOTTLE);
-                prop.stacksTo(16);
-                prop.food(new FoodProperties.Builder().nutrition(2).saturationMod(0.3F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).build());
-                return prop;
-            }).register();
-
-    public static final ItemEntry<BottleFoodItem> CHORUS_FRUIT_CREAM_FROSTING_BOTTLE = REGISTRATE.item("chorus_fruit_cream_frosting_bottle", BottleFoodItem::new)
-            .properties(prop -> {
-                prop.craftRemainder(Items.GLASS_BOTTLE);
-                prop.stacksTo(16);
-                prop.food(new FoodProperties.Builder().nutrition(6).saturationMod(0.5F).build());
-                return prop;
-            }).register();
-
-    public static final ItemEntry<BottleFoodItem> CHORUS_FRUIT_JAM_BOTTLE = REGISTRATE.item("chorus_fruit_jam_bottle", BottleFoodItem::new)
-            .properties(prop -> {
-                prop.craftRemainder(Items.GLASS_BOTTLE);
-                prop.stacksTo(16);
-                prop.food(new FoodProperties.Builder().nutrition(5).saturationMod(1.1F).build());
-                return prop;
-            }).register();
-
-    public static final ItemEntry<BottleFoodItem> CHORUS_FRUIT_JUICE_BOTTLE = REGISTRATE.item("chorus_fruit_juice_bottle", BottleFoodItem::new)
-            .properties(prop -> {
-                prop.craftRemainder(Items.GLASS_BOTTLE);
-                prop.stacksTo(16);
-                prop.food(new FoodProperties.Builder().nutrition(3).saturationMod(1.6F).build());
-                return prop;
-            }).register();
-
-    public static final ItemEntry<BottleFoodItem> CHORUS_FRUIT_MILKSHAKE_BOTTLE = REGISTRATE.item("chorus_fruit_milkshake_bottle", BottleFoodItem::new)
-            .properties(prop -> {
-                prop.craftRemainder(Items.GLASS_BOTTLE);
-                prop.stacksTo(16);
-                prop.food(new FoodProperties.Builder().nutrition(6).saturationMod(1.1F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.JUMP, 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.SLOW_FALLING, 600, 0), 1.0f).build());
-                return prop;
-            }).register();
-
-    public static final ItemEntry<BottleFoodItem> CREAM_FROSTING_BOTTLE = REGISTRATE.item("cream_frosting_bottle", BottleFoodItem::new)
-            .properties(prop -> {
-                prop.craftRemainder(Items.GLASS_BOTTLE);
-                prop.stacksTo(16);
-                prop.food(new FoodProperties.Builder().nutrition(3).saturationMod(0.2F).build());
-                return prop;
-            }).register();
-
-    public static final ItemEntry<BottleFoodItem> DARK_CHOCOLATE_BOTTLE = REGISTRATE.item("dark_chocolate_bottle", BottleFoodItem::new)
-            .properties(prop -> {
-                prop.craftRemainder(Items.GLASS_BOTTLE);
-                prop.stacksTo(16);
-                prop.food(new FoodProperties.Builder().nutrition(8).saturationMod(0.3F).build());
-                return prop;
-            }).register();
-
-    public static final ItemEntry<BottleFoodItem> DARK_CHOCOLATE_CHIP_CHOCOLATE_MILKSHAKE_BOTTLE = REGISTRATE.item("dark_chocolate_chip_chocolate_milkshake_bottle", BottleFoodItem::new)
-            .properties(prop -> {
-                prop.craftRemainder(Items.GLASS_BOTTLE);
-                prop.stacksTo(16);
-                prop.food(new FoodProperties.Builder().nutrition(7).saturationMod(1.2F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1800, 0), 1.0f).build());
-                return prop;
-            }).register();
-
-    public static final ItemEntry<BottleFoodItem> DARK_CHOCOLATE_CHIP_MILKSHAKE_BOTTLE = REGISTRATE.item("dark_chocolate_chip_milkshake_bottle", BottleFoodItem::new)
-            .properties(prop -> {
-                prop.craftRemainder(Items.GLASS_BOTTLE);
-                prop.stacksTo(16);
-                prop.food(new FoodProperties.Builder().nutrition(6).saturationMod(1.1F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1800, 0), 1.0f).build());
-                return prop;
-            }).register();
-
-    public static final ItemEntry<BottleFoodItem> FRUIT_SMOOTHIE_BOTTLE = REGISTRATE.item("fruit_smoothie_bottle", BottleFoodItem::new)
-            .properties(prop -> {
-                prop.craftRemainder(Items.GLASS_BOTTLE);
-                prop.stacksTo(16);
-                prop.food(new FoodProperties.Builder().nutrition(4).saturationMod(1.8F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 6000, 0), 1.0f).effect(new MobEffectInstance(MobEffects.DIG_SPEED, 1200, 0), 1.0f).effect(new MobEffectInstance(MobEffects.LUCK, 1200, 0), 1.0f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f).effect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 1200, 0), 1.0f).build());
-                return prop;
-            }).register();
-
-    public static final ItemEntry<BottleFoodItem> GLOW_BERRY_CREAM_FROSTING_BOTTLE = REGISTRATE.item("glow_berry_cream_frosting_bottle", BottleFoodItem::new)
-            .properties(prop -> {
-                prop.craftRemainder(Items.GLASS_BOTTLE);
-                prop.stacksTo(16);
-                prop.food(new FoodProperties.Builder().nutrition(4).saturationMod(0.4F).build());
-                return prop;
-            }).register();
-
-    public static final ItemEntry<BottleFoodItem> GLOW_BERRY_JAM_BOTTLE = REGISTRATE.item("glow_berry_jam_bottle", BottleFoodItem::new)
-            .properties(prop -> {
-                prop.craftRemainder(Items.GLASS_BOTTLE);
-                prop.stacksTo(16);
-                prop.food(new FoodProperties.Builder().nutrition(4).saturationMod(1.2F).build());
-                return prop;
-            }).register();
-
-    public static final ItemEntry<BottleFoodItem> GLOW_BERRY_JUICE_BOTTLE = REGISTRATE.item("glow_berry_juice_bottle", BottleFoodItem::new)
-            .properties(prop -> {
-                prop.craftRemainder(Items.GLASS_BOTTLE);
-                prop.stacksTo(16);
-                prop.food(new FoodProperties.Builder().nutrition(2).saturationMod(1.6F).build());
-                return prop;
-            }).register();
-
-    public static final ItemEntry<BottleFoodItem> GLOW_BERRY_MILKSHAKE_BOTTLE = REGISTRATE.item("glow_berry_milkshake_bottle", BottleFoodItem::new)
-            .properties(prop -> {
-                prop.craftRemainder(Items.GLASS_BOTTLE);
-                prop.stacksTo(16);
-                prop.food(new FoodProperties.Builder().nutrition(5).saturationMod(1.0F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.DIG_SPEED, 600, 0), 1.0f).build());
-                return prop;
-            }).register();
-
-    public static final ItemEntry<BottleFoodItem> HOT_CHOCOLATE_BOTTLE = REGISTRATE.item("hot_chocolate_bottle", BottleFoodItem::new)
-            .properties(prop -> {
-                prop.craftRemainder(Items.GLASS_BOTTLE);
-                prop.stacksTo(16);
-                prop.food(new FoodProperties.Builder().nutrition(9).saturationMod(0.9f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 6000, 0), 1.0f).build());
-                return prop;
-            }).register();
-
-    public static final ItemEntry<BottleFoodItem> HOT_DARK_CHOCOLATE_BOTTLE = REGISTRATE.item("hot_dark_chocolate_bottle", BottleFoodItem::new)
-            .properties(prop -> {
-                prop.craftRemainder(Items.GLASS_BOTTLE);
-                prop.stacksTo(16);
-                prop.food(new FoodProperties.Builder().nutrition(10).saturationMod(0.8f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 6000, 0), 1.0f).build());
-                return prop;
-            }).register();
-
-    public static final ItemEntry<BottleFoodItem> HOT_WHITE_CHOCOLATE_BOTTLE = REGISTRATE.item("hot_white_chocolate_bottle", BottleFoodItem::new)
-            .properties(prop -> {
-                prop.craftRemainder(Items.GLASS_BOTTLE);
-                prop.stacksTo(16);
-                prop.food(new FoodProperties.Builder().nutrition(8).saturationMod(1.0f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 6000, 0), 1.0f).build());
-                return prop;
-            }).register();
-
-    public static final ItemEntry<BottleFoodItem> MELON_CREAM_FROSTING_BOTTLE = REGISTRATE.item("melon_cream_frosting_bottle", BottleFoodItem::new)
-            .properties(prop -> {
-                prop.craftRemainder(Items.GLASS_BOTTLE);
-                prop.stacksTo(16);
-                prop.food(new FoodProperties.Builder().nutrition(4).saturationMod(0.8f).build());
-                return prop;
-            }).register();
-
-    public static final ItemEntry<BottleFoodItem> MELON_JAM_BOTTLE = REGISTRATE.item("melon_jam_bottle", BottleFoodItem::new)
-            .properties(prop -> {
-                prop.craftRemainder(Items.GLASS_BOTTLE);
-                prop.stacksTo(16);
-                prop.food(new FoodProperties.Builder().nutrition(4).saturationMod(1.7f).build());
-                return prop;
-            }).register();
-
-    public static final ItemEntry<BottleFoodItem> MELON_MILKSHAKE_BOTTLE = REGISTRATE.item("melon_milkshake_bottle", BottleFoodItem::new)
-            .properties(prop -> {
-                prop.craftRemainder(Items.GLASS_BOTTLE);
-                prop.stacksTo(16);
-                prop.food(new FoodProperties.Builder().nutrition(6).saturationMod(1.0f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.REGENERATION, 600, 0), 1.0f).build());
-                return prop;
-            }).register();
-
-    public static final ItemEntry<BottleFoodItem> MILKSHAKE_BOTTLE = REGISTRATE.item("milkshake_bottle", BottleFoodItem::new)
-            .properties(prop -> {
-                prop.craftRemainder(Items.GLASS_BOTTLE);
-                prop.stacksTo(16);
-                prop.food(new FoodProperties.Builder().nutrition(4).saturationMod(0.8f).build());
-                return prop;
-            }).register();
-
-    public static final ItemEntry<BottleFoodItem> SOUR_CREAM_BOTTLE = REGISTRATE.item("sour_cream_bottle", BottleFoodItem::new)
-            .properties(prop -> {
-                prop.craftRemainder(Items.GLASS_BOTTLE);
-                prop.stacksTo(16);
-                return prop;
-            }).register();
-
-    public static final ItemEntry<BottleFoodItem> TOFFEE_CHIP_CHOCOLATE_MILKSHAKE_BOTTLE = REGISTRATE.item("toffee_chip_chocolate_milkshake_bottle", BottleFoodItem::new)
-            .properties(prop -> {
-                prop.craftRemainder(Items.GLASS_BOTTLE);
-                prop.stacksTo(16);
-                prop.food(new FoodProperties.Builder().nutrition(6).saturationMod(1.3F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 600, 0), 1.0f).build());
-                return prop;
-            }).register();
-
-    public static final ItemEntry<BottleFoodItem> TOFFEE_CHIP_MILKSHAKE_BOTTLE = REGISTRATE.item("toffee_chip_milkshake_bottle", BottleFoodItem::new)
-            .properties(prop -> {
-                prop.craftRemainder(Items.GLASS_BOTTLE);
-                prop.stacksTo(16);
-                prop.food(new FoodProperties.Builder().nutrition(5).saturationMod(1.2F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 600, 0), 1.0f).build());
-                return prop;
-            }).register();
-
-    public static final ItemEntry<BottleFoodItem> UBE_CREAM_FROSTING_BOTTLE = REGISTRATE.item("ube_cream_frosting_bottle", BottleFoodItem::new)
-            .properties(prop -> {
-                prop.craftRemainder(Items.GLASS_BOTTLE);
-                prop.stacksTo(16);
-                prop.food(new FoodProperties.Builder().nutrition(5).saturationMod(0.7F).build());
-                return prop;
-            }).register();
-
-    public static final ItemEntry<BottleFoodItem> VINEGAR_BOTTLE = REGISTRATE.item("vinegar_bottle", BottleFoodItem::new)
-            .properties(prop -> {
-                prop.craftRemainder(Items.GLASS_BOTTLE);
-                prop.stacksTo(16);
-                return prop;
-            }).register();
-
-    public static final ItemEntry<BottleFoodItem> WHITE_CHOCOLATE_BOTTLE = REGISTRATE.item("white_chocolate_bottle", BottleFoodItem::new)
-            .properties(prop -> {
-                prop.craftRemainder(Items.GLASS_BOTTLE);
-                prop.stacksTo(64);
-                prop.food(new FoodProperties.Builder().nutrition(6).saturationMod(0.5F).build());
-                return prop;
-            }).register();
-
-    public static final ItemEntry<BottleFoodItem> WHITE_CHOCOLATE_CHIP_CHOCOLATE_MILKSHAKE_BOTTLE = REGISTRATE.item("white_chocolate_chip_chocolate_milkshake_bottle", BottleFoodItem::new)
-            .properties(prop -> {
-                prop.craftRemainder(Items.GLASS_BOTTLE);
-                prop.stacksTo(16);
-                prop.food(new FoodProperties.Builder().nutrition(6).saturationMod(1.2F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1800, 0), 1.0f).build());
-                return prop;
-            }).register();
-
-    public static final ItemEntry<BottleFoodItem> WHITE_CHOCOLATE_CHIP_MILKSHAKE_BOTTLE = REGISTRATE.item("white_chocolate_chip_milkshake_bottle", BottleFoodItem::new)
-            .properties(prop -> {
-                prop.craftRemainder(Items.GLASS_BOTTLE);
-                prop.stacksTo(16);
-                prop.food(new FoodProperties.Builder().nutrition(5).saturationMod(1.4F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1800, 0), 1.0f).build());
-                return prop;
-            }).register();
-
-    public static final ItemEntry<BottleFoodItem> YOGURT_BOTTLE = REGISTRATE.item("yogurt_bottle", BottleFoodItem::new)
-            .properties(prop -> {
-                prop.craftRemainder(Items.GLASS_BOTTLE);
-                prop.stacksTo(16);
-                prop.food(new FoodProperties.Builder().nutrition(2).saturationMod(0.9F).build());
-                return prop;
-            }).register();
-
-    public static final ItemEntry<BowlFoodItem> APPLE_ICE_CREAM_BOWL = REGISTRATE.item("apple_ice_cream_bowl", BowlFoodItem::new)
-            .properties(prop -> {
-                prop.craftRemainder(Items.BOWL);
-                prop.stacksTo(16);
-                prop.food(new FoodProperties.Builder().nutrition(2).saturationMod(1.1F).build());
-                return prop;
-            }).register();
-
-    public static final ItemEntry<BowlFoodItem> BERRY_ICE_CREAM_BOWL = REGISTRATE.item("berry_ice_cream_bowl", BowlFoodItem::new)
-            .properties(prop -> {
-                prop.craftRemainder(Items.BOWL);
-                prop.stacksTo(16);
-                prop.food(new FoodProperties.Builder().nutrition(3).saturationMod(1.0F).build());
-                return prop;
-            }).register();
-
-    public static final ItemEntry<BowlFoodItem> BREAKFAST_PLATE = REGISTRATE.item("breakfast_plate", BowlFoodItem::new)
-            .properties(prop -> {
-                prop.stacksTo(16);
-                prop.food(new FoodProperties.Builder().nutrition(8).saturationMod(1.6F).effect(new MobEffectInstance(MobEffects.DIG_SPEED, 6000, 0), 1.0f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 6000, 0), 1.0f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1.0f).build());
-                return prop;
-            }).register();
-
-    public static final ItemEntry<BowlFoodItem> CHOCOLATE_ICE_CREAM_BOWL = REGISTRATE.item("chocolate_ice_cream_bowl", BowlFoodItem::new)
-            .properties(prop -> {
-                prop.craftRemainder(Items.BOWL);
-                prop.stacksTo(16);
-                prop.food(new FoodProperties.Builder().nutrition(3).saturationMod(1.2F).build());
-                return prop;
-            }).register();
-
-    public static final ItemEntry<BowlFoodItem> CHORUS_FRUIT_ICE_CREAM_BOWL = REGISTRATE.item("chorus_fruit_ice_cream_bowl", BowlFoodItem::new)
-            .properties(prop -> {
-                prop.craftRemainder(Items.BOWL);
-                prop.stacksTo(16);
-                prop.food(new FoodProperties.Builder().nutrition(4).saturationMod(1.2F).build());
-                return prop;
-            }).register();
-
-    public static final ItemEntry<BowlFoodItem> FRIED_EGG_PLATE = REGISTRATE.item("fried_egg_plate", BowlFoodItem::new)
-            .properties(prop -> {
-                prop.stacksTo(16);
-                prop.food(new FoodProperties.Builder().nutrition(4).saturationMod(0.4F).build());
-                return prop;
-            }).register();
-
-    public static final ItemEntry<BowlFoodItem> GLOW_BERRY_ICE_CREAM_BOWL = REGISTRATE.item("glow_berry_ice_cream_bowl", BowlFoodItem::new)
-            .properties(prop -> {
-                prop.craftRemainder(Items.BOWL);
-                prop.stacksTo(16);
-                prop.food(new FoodProperties.Builder().nutrition(3).saturationMod(1.0F).build());
-                return prop;
-            }).register();
-
-    public static final ItemEntry<BowlFoodItem> HASH_BROWN_FRIED_EGG_PLATE = REGISTRATE.item("hash_brown_fried_egg_plate", BowlFoodItem::new)
-            .properties(prop -> {
-                prop.stacksTo(16);
-                prop.food(new FoodProperties.Builder().nutrition(8).saturationMod(0.7F).build());
-                return prop;
-            }).register();
-
-    public static final ItemEntry<BowlFoodItem> HASH_BROWN_PLATE = REGISTRATE.item("hash_brown_plate", BowlFoodItem::new)
-            .properties(prop -> {
-                prop.stacksTo(16);
-                prop.food(new FoodProperties.Builder().nutrition(4).saturationMod(0.6F).build());
-                return prop;
-            }).register();
-
-    public static final ItemEntry<BowlFoodItem> HASH_BROWN_TOAST_PLATE = REGISTRATE.item("hash_brown_toast_plate", BowlFoodItem::new)
-            .properties(prop -> {
-                prop.stacksTo(16);
-                prop.food(new FoodProperties.Builder().nutrition(8).saturationMod(0.7F).build());
-                return prop;
-            }).register();
-
-    public static final ItemEntry<BowlFoodItem> ICE_CREAM_BOWL = REGISTRATE.item("ice_cream_bowl", BowlFoodItem::new)
-            .properties(prop -> {
-                prop.craftRemainder(Items.BOWL);
-                prop.stacksTo(16);
-                prop.food(new FoodProperties.Builder().nutrition(2).saturationMod(1.3f).build());
-                return prop;
-            }).register();
-
-    public static final ItemEntry<BowlFoodItem> MACARONI_BOWL = REGISTRATE.item("macaroni_bowl", BowlFoodItem::new)
-            .properties(prop -> {
-                prop.stacksTo(16);
-                prop.food(new FoodProperties.Builder().nutrition(3).saturationMod(0.5f).build());
-                return prop;
-            }).register();
-
-    public static final ItemEntry<BowlFoodItem> MACARONI_BOWL_BACON = REGISTRATE.item("macaroni_bowl_bacon", BowlFoodItem::new)
-            .properties(prop -> {
-                prop.stacksTo(16);
-                prop.food(new FoodProperties.Builder().nutrition(4).saturationMod(0.6f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1800, 0), 1.0f).build());
-                return prop;
-            }).register();
-
-    public static final ItemEntry<BowlFoodItem> MACARONI_BOWL_CHEESE = REGISTRATE.item("macaroni_bowl_cheese", BowlFoodItem::new)
-            .properties(prop -> {
-                prop.stacksTo(16);
-                prop.food(new FoodProperties.Builder().nutrition(3).saturationMod(0.6f).build());
-                return prop;
-            }).register();
-
-    public static final ItemEntry<BowlFoodItem> MACARONI_BOWL_CHEESE_BACON = REGISTRATE.item("macaroni_bowl_cheese_bacon", BowlFoodItem::new)
-            .properties(prop -> {
-                prop.stacksTo(16);
-                prop.food(new FoodProperties.Builder().nutrition(4).saturationMod(0.6f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1.0f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 2400, 0), 1.0f).build());
-                return prop;
-            }).register();
-
-    public static final ItemEntry<BowlFoodItem> MACARONI_BOWL_CHEESE_SAUSAGE = REGISTRATE.item("macaroni_bowl_cheese_sausage", BowlFoodItem::new)
-            .properties(prop -> {
-                prop.stacksTo(16);
-                prop.food(new FoodProperties.Builder().nutrition(5).saturationMod(0.5f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 2400, 0), 1.0f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1.0f).build());
-                return prop;
-            }).register();
-
-    public static final ItemEntry<BowlFoodItem> MACARONI_BOWL_SAUSAGE = REGISTRATE.item("macaroni_bowl_sausage", BowlFoodItem::new)
-            .properties(prop -> {
-                prop.stacksTo(16);
-                prop.food(new FoodProperties.Builder().nutrition(5).saturationMod(0.5f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 3000, 0), 1.0f).build());
-                return prop;
-            }).register();
-
-    public static final ItemEntry<BowlFoodItem> MELON_ICE_CREAM_BOWL = REGISTRATE.item("melon_ice_cream_bowl", BowlFoodItem::new)
-            .properties(prop -> {
-                prop.craftRemainder(Items.BOWL);
-                prop.stacksTo(16);
-                prop.food(new FoodProperties.Builder().nutrition(3).saturationMod(1.2f).build());
-                return prop;
-            }).register();
-
-    public static final ItemEntry<BowlFoodItem> NACHO_BOWL = REGISTRATE.item("nacho_bowl", BowlFoodItem::new)
-            .properties(prop -> {
-                prop.stacksTo(16);
-                prop.food(new FoodProperties.Builder().nutrition(6).saturationMod(0.9F).effect(new MobEffectInstance(MobEffects.LUCK, 1200, 0), 1.0f).build());
-                return prop;
-            }).register();
-
-    public static final ItemEntry<BowlFoodItem> PASTA_PLATE = REGISTRATE.item("pasta_plate", BowlFoodItem::new)
-            .properties(prop -> {
-                prop.stacksTo(16);
-                prop.food(new FoodProperties.Builder().nutrition(5).saturationMod(0.7F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f).build());
-                return prop;
-            }).register();
-
-    public static final ItemEntry<BowlFoodItem> PASTA_PLATE_BUTTER = REGISTRATE.item("pasta_plate_butter", BowlFoodItem::new)
-            .properties(prop -> {
-                prop.stacksTo(16);
-                prop.food(new FoodProperties.Builder().nutrition(6).saturationMod(0.8F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).build());
-                return prop;
-            }).register();
-
-    public static final ItemEntry<BowlFoodItem> PASTA_PLATE_CHEESE = REGISTRATE.item("pasta_plate_cheese", BowlFoodItem::new)
-            .properties(prop -> {
-                prop.stacksTo(16);
-                prop.food(new FoodProperties.Builder().nutrition(5).saturationMod(0.9F).build());
-                return prop;
-            }).register();
-
-    public static final ItemEntry<BowlFoodItem> PASTA_PLATE_CHEESE_TOMATO_SAUCE = REGISTRATE.item("pasta_plate_cheese_tomato_sauce", BowlFoodItem::new)
-            .properties(prop -> {
-                prop.stacksTo(16);
-                prop.food(new FoodProperties.Builder().nutrition(9).saturationMod(1.1F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f).build());
-                return prop;
-            }).register();
-
-    public static final ItemEntry<BowlFoodItem> PASTA_PLATE_CHICKEN_CUT = REGISTRATE.item("pasta_plate_chicken_cut", BowlFoodItem::new)
-            .properties(prop -> {
-                prop.stacksTo(16);
-                prop.food(new FoodProperties.Builder().nutrition(7).saturationMod(0.7F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f).build());
-                return prop;
-            }).register();
-
-    public static final ItemEntry<BowlFoodItem> PASTA_PLATE_CHICKEN_CUT_TOMATO_SAUCE = REGISTRATE.item("pasta_plate_chicken_cut_tomato_sauce", BowlFoodItem::new)
-            .properties(prop -> {
-                prop.stacksTo(16);
-                prop.food(new FoodProperties.Builder().nutrition(11).saturationMod(0.9F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1.0f).build());
-                return prop;
-            }).register();
-
-    public static final ItemEntry<BowlFoodItem> PASTA_PLATE_EGGPLANT = REGISTRATE.item("pasta_plate_eggplant", BowlFoodItem::new)
-            .properties(prop -> {
-                prop.stacksTo(16);
-                prop.food(new FoodProperties.Builder().nutrition(7).saturationMod(0.8F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f).build());
-                return prop;
-            }).register();
-
-    public static final ItemEntry<BowlFoodItem> PASTA_PLATE_ENDERMITE_MEATBALLS = REGISTRATE.item("pasta_plate_endermite_meatballs", BowlFoodItem::new)
-            .properties(prop -> {
-                prop.stacksTo(16);
-                prop.food(new FoodProperties.Builder().nutrition(8).saturationMod(0.6F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f).build());
-                return prop;
-            }).register();
-
-    public static final ItemEntry<BowlFoodItem> PASTA_PLATE_ENDERMITE_MEATBALLS_TOMATO_SAUCE = REGISTRATE.item("pasta_plate_endermite_meatballs_tomato_sauce", BowlFoodItem::new)
-            .properties(prop -> {
-                prop.stacksTo(16);
-                prop.food(new FoodProperties.Builder().nutrition(12).saturationMod(0.8F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1.0f).build());
-                return prop;
-            }).register();
-
-    public static final ItemEntry<BowlFoodItem> PASTA_PLATE_FISH = REGISTRATE.item("pasta_plate_fish", BowlFoodItem::new)
-            .properties(prop -> {
-                prop.stacksTo(16);
-                prop.food(new FoodProperties.Builder().nutrition(7).saturationMod(0.8F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f).build());
-                return prop;
-            }).register();
-
-    public static final ItemEntry<BowlFoodItem> PASTA_PLATE_FISH_TOMATO_SAUCE = REGISTRATE.item("pasta_plate_fish_tomato_sauce", BowlFoodItem::new)
-            .properties(prop -> {
-                prop.stacksTo(16);
-                prop.food(new FoodProperties.Builder().nutrition(11).saturationMod(0.8F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1.0f).build());
-                return prop;
-            }).register();
-
-    public static final ItemEntry<BowlFoodItem> PASTA_PLATE_MEATBALLS = REGISTRATE.item("pasta_plate_meatballs", BowlFoodItem::new)
-            .properties(prop -> {
-                prop.stacksTo(16);
-                prop.food(new FoodProperties.Builder().nutrition(8).saturationMod(0.6F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f).build());
-                return prop;
-            }).register();
-
-    public static final ItemEntry<BowlFoodItem> PASTA_PLATE_MUTTON_CHOP = REGISTRATE.item("pasta_plate_mutton_chop", BowlFoodItem::new)
-            .properties(prop -> {
-                prop.stacksTo(16);
-                prop.food(new FoodProperties.Builder().nutrition(8).saturationMod(0.6F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f).build());
-                return prop;
-            }).register();
-
-    public static final ItemEntry<BowlFoodItem> PASTA_PLATE_PORK_MEATBALLS = REGISTRATE.item("pasta_plate_pork_meatballs", BowlFoodItem::new)
-            .properties(prop -> {
-                prop.stacksTo(16);
-                prop.food(new FoodProperties.Builder().nutrition(7).saturationMod(0.8F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f).build());
-                return prop;
-            }).register();
-
-    public static final ItemEntry<BowlFoodItem> PASTA_PLATE_PORK_MEATBALLS_TOMATO_SAUCE = REGISTRATE.item("pasta_plate_pork_meatballs_tomato_sauce", BowlFoodItem::new)
-            .properties(prop -> {
-                prop.stacksTo(16);
-                prop.food(new FoodProperties.Builder().nutrition(11).saturationMod(1.0F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1.0f).build());
-                return prop;
-            }).register();
-
-    public static final ItemEntry<BowlFoodItem> PASTA_PLATE_RABBIT_MEATBALLS = REGISTRATE.item("pasta_plate_rabbit_meatballs", BowlFoodItem::new)
-            .properties(prop -> {
-                prop.stacksTo(16);
-                prop.food(new FoodProperties.Builder().nutrition(6).saturationMod(0.9F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f).build());
-                return prop;
-            }).register();
-
-    public static final ItemEntry<BowlFoodItem> PASTA_PLATE_RABBIT_MEATBALLS_TOMATO_SAUCE = REGISTRATE.item("pasta_plate_rabbit_meatballs_tomato_sauce", BowlFoodItem::new)
-            .properties(prop -> {
-                prop.stacksTo(16);
-                prop.food(new FoodProperties.Builder().nutrition(10).saturationMod(1.1F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1.0f).build());
-                return prop;
-            }).register();
-
-    public static final ItemEntry<BowlFoodItem> PASTA_PLATE_SLIME = REGISTRATE.item("pasta_plate_slime", BowlFoodItem::new)
-            .properties(prop -> {
-                prop.stacksTo(16);
-                prop.food(new FoodProperties.Builder().nutrition(6).saturationMod(0.8F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f).effect(new MobEffectInstance(MobEffects.CONFUSION, 300, 0), 1.0F).build());
-                return prop;
-            }).register();
-
-    public static final ItemEntry<BowlFoodItem> PASTA_PLATE_SLIMEBALLS = REGISTRATE.item("pasta_plate_slimeballs", BowlFoodItem::new)
-            .properties(prop -> {
-                prop.stacksTo(16);
-                prop.food(new FoodProperties.Builder().nutrition(8).saturationMod(0.6F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f).effect(new MobEffectInstance(MobEffects.CONFUSION, 300, 0), 1.0F).build());
-                return prop;
-            }).register();
-
-    public static final ItemEntry<BowlFoodItem> PASTA_PLATE_SQUID_INK = REGISTRATE.item("pasta_plate_squid_ink", BowlFoodItem::new)
-            .properties(prop -> {
-                prop.stacksTo(16);
-                prop.food(new FoodProperties.Builder().nutrition(6).saturationMod(0.8F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f).build());
-                return prop;
-            }).register();
-
-    public static final ItemEntry<BowlFoodItem> PASTA_PLATE_STRIDER_MEATBALLS = REGISTRATE.item("pasta_plate_strider_meatballs", BowlFoodItem::new)
-            .properties(prop -> {
-                prop.stacksTo(16);
-                prop.food(new FoodProperties.Builder().nutrition(8).saturationMod(0.6F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f).build());
-                return prop;
-            }).register();
-
-    public static final ItemEntry<BowlFoodItem> PASTA_PLATE_STRIDER_MEATBALLS_TOMATO_SAUCE = REGISTRATE.item("pasta_plate_strider_meatballs_tomato_sauce", BowlFoodItem::new)
-            .properties(prop -> {
-                prop.stacksTo(16);
-                prop.food(new FoodProperties.Builder().nutrition(12).saturationMod(0.8F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1.0f).build());
-                return prop;
-            }).register();
-
-    public static final ItemEntry<BowlFoodItem> PASTA_PLATE_TOMATO_SAUCE = REGISTRATE.item("pasta_plate_tomato_sauce", BowlFoodItem::new)
-            .properties(prop -> {
-                prop.stacksTo(16);
-                prop.food(new FoodProperties.Builder().nutrition(7).saturationMod(0.9F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f).build());
-                return prop;
-            }).register();
-
-    public static final ItemEntry<BowlFoodItem> POTATO_CHIP_BOWL = REGISTRATE.item("potato_chip_bowl", BowlFoodItem::new)
-            .properties(prop -> {
-                prop.stacksTo(16);
-                prop.food(new FoodProperties.Builder().nutrition(4).saturationMod(0.5F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).effect(new MobEffectInstance(MobEffects.LUCK, 1200, 0), 1.0f).build());
-                return prop;
-            }).register();
-
-    public static final ItemEntry<BowlFoodItem> TOAST_FRIED_EGG_PLATE = REGISTRATE.item("toast_fried_egg_plate", BowlFoodItem::new)
-            .properties(prop -> {
-                prop.stacksTo(16);
-                prop.food(new FoodProperties.Builder().nutrition(8).saturationMod(0.7F).build());
-                return prop;
-            }).register();
-
-    public static final ItemEntry<BowlFoodItem> TOAST_PLATE = REGISTRATE.item("toast_plate", BowlFoodItem::new)
-            .properties(prop -> {
-                prop.stacksTo(16);
-                prop.food(new FoodProperties.Builder().nutrition(3).saturationMod(0.3F).build());
-                return prop;
-            }).register();
-
-    public static final ItemEntry<BowlFoodItem> TORTILLA_CHIP_BOWL = REGISTRATE.item("tortilla_chip_bowl", BowlFoodItem::new)
-            .properties(prop -> {
-                prop.stacksTo(16);
-                prop.food(new FoodProperties.Builder().nutrition(4).saturationMod(0.7F).build());
-                return prop;
-            }).register();
-
-    public static final ItemEntry<StickFoodItem> APPLE_ICE_CREAM_STICK = REGISTRATE.item("apple_ice_cream_stick", StickFoodItem::new)
-            .properties(prop -> {
-                prop.craftRemainder(Items.STICK);
-                prop.food(new FoodProperties.Builder().nutrition(1).saturationMod(0.6F).fast().build());
-                return prop;
-            })
-            .register();
-
-    public static final ItemEntry<StickFoodItem> APPLE_POPSICLE = REGISTRATE.item("apple_popsicle", StickFoodItem::new)
-            .properties(prop -> {
-                prop.food(new FoodProperties.Builder().nutrition(3).saturationMod(0.7F).fast().build());
-                return prop;
-            })
-            .register();
-
-    public static final ItemEntry<StickFoodItem> BERRY_ICE_CREAM_STICK = REGISTRATE.item("berry_ice_cream_stick", StickFoodItem::new)
-            .properties(prop -> {
-                prop.craftRemainder(Items.STICK);
-                prop.food(new FoodProperties.Builder().nutrition(1).saturationMod(0.9F).fast().build());
-                return prop;
-            })
-            .register();
-
-    public static final ItemEntry<StickFoodItem> BERRY_POPSICLE = REGISTRATE.item("berry_popsicle", StickFoodItem::new)
-            .properties(prop -> {
-                prop.food(new FoodProperties.Builder().nutrition(4).saturationMod(0.5F).fast().build());
-                return prop;
-            })
-            .register();
-
-    public static final ItemEntry<StickFoodItem> CHOCOLATE_COVERED_MARSHMALLOW_STICK = REGISTRATE.item("chocolate_covered_marshmallow_stick", StickFoodItem::new)
-            .properties(prop -> {
-                prop.food(new FoodProperties.Builder().nutrition(4).saturationMod(0.3F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).fast().build());
-                return prop;
-            })
-            .register();
-
-    public static final ItemEntry<StickFoodItem> CHOCOLATE_ICE_CREAM_STICK = REGISTRATE.item("chocolate_ice_cream_stick", StickFoodItem::new)
-            .properties(prop -> {
-                prop.food(new FoodProperties.Builder().nutrition(1).saturationMod(1.2F).fast().build());
-                return prop;
-            })
-            .register();
-
-    public static final ItemEntry<StickFoodItem> CHORUS_FRUIT_ICE_CREAM_STICK = REGISTRATE.item("chorus_fruit_ice_cream_stick", StickFoodItem::new)
-            .properties(prop -> {
-                prop.food(new FoodProperties.Builder().nutrition(2).saturationMod(0.9F).fast().build());
-                return prop;
-            })
-            .register();
-
-    public static final ItemEntry<StickFoodItem> CHORUS_FRUIT_POPSICLE = REGISTRATE.item("chorus_fruit_popsicle", StickFoodItem::new)
-            .properties(prop -> {
-                prop.food(new FoodProperties.Builder().nutrition(4).saturationMod(0.6F).fast().build());
-                return prop;
-            })
-            .register();
-
-    public static final ItemEntry<StickFoodItem> COTTON_CANDY_STICK = REGISTRATE.item("cotton_candy_stick", StickFoodItem::new)
-            .properties(prop -> {
-                prop.food(new FoodProperties.Builder().nutrition(1).saturationMod(5.0F).fast().build());
-                return prop;
-            })
-            .register();
-
-    public static final ItemEntry<StickFoodItem> DARK_CHOCOLATE_COVERED_MARSHMALLOW_STICK = REGISTRATE.item("dark_chocolate_covered_marshmallow_stick", StickFoodItem::new)
-            .properties(prop -> {
-                prop.food(new FoodProperties.Builder().nutrition(5).saturationMod(0.3F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).fast().build());
-                return prop;
-            })
-            .register();
-
-    public static final ItemEntry<StickFoodItem> ENDERMITE_MEATBALL_STICK_1 = REGISTRATE.item("endermite_meatball_stick_1", StickFoodItem::new)
-            .properties(prop -> {
-                prop.food(new FoodProperties.Builder().nutrition(5).saturationMod(0.6F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.REGENERATION, 1200, 0), 1.0f).fast().build());
-                return prop;
-            })
-            .register();
-
-    public static final ItemEntry<StickFoodItem> ENDERMITE_MEATBALL_STICK_2 = REGISTRATE.item("endermite_meatball_stick_2", StickFoodItem::new)
-            .properties(prop -> {
-                prop.food(new FoodProperties.Builder().nutrition(6).saturationMod(0.6F).effect(new MobEffectInstance(MobEffects.REGENERATION, 3600, 0), 1.0f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f).fast().build());
-                return prop;
-            })
-            .register();
-
-    public static final ItemEntry<StickFoodItem> ENDERMITE_MEATBALL_STICK_3 = REGISTRATE.item("endermite_meatball_stick_3", StickFoodItem::new)
-            .properties(prop -> {
-                prop.food(new FoodProperties.Builder().nutrition(8).saturationMod(0.7F).effect(new MobEffectInstance(MobEffects.REGENERATION, 6000, 0), 1.0f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1.0f).fast().build());
-                return prop;
-            })
-            .register();
-
-    public static final ItemEntry<StickFoodItem> GLOW_BERRY_ICE_CREAM_STICK = REGISTRATE.item("glow_berry_ice_cream_stick", StickFoodItem::new)
-            .properties(prop -> {
-                prop.craftRemainder(Items.STICK);
-                prop.food(new FoodProperties.Builder().nutrition(1).saturationMod(0.9F).fast().build());
-                return prop;
-            })
-            .register();
-
-    public static final ItemEntry<StickFoodItem> GLOW_BERRY_POPSICLE = REGISTRATE.item("glow_berry_popsicle", StickFoodItem::new)
-            .properties(prop -> {
-                prop.food(new FoodProperties.Builder().nutrition(3).saturationMod(0.5F).fast().build());
-                return prop;
-            })
-            .register();
-
-    public static final ItemEntry<StickFoodItem> ICE_CREAM_STICK = REGISTRATE.item("ice_cream_stick", StickFoodItem::new)
-            .properties(prop -> {
-                prop.craftRemainder(Items.STICK);
-                prop.food(new FoodProperties.Builder().nutrition(1).saturationMod(0.8f).fast().build());
-                return prop;
-            })
-            .register();
-
-    public static final ItemEntry<StickFoodItem> MAGMA_CREAM_MARSHMALLOW_STICK = REGISTRATE.item("magma_cream_marshmallow_stick", StickFoodItem::new)
-            .properties(prop -> {
-                prop.food(new FoodProperties.Builder().nutrition(3).saturationMod(0.2f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 1200, 0), 1.0f).fast().build());
-                return prop;
-            })
-            .register();
-
-    public static final ItemEntry<StickFoodItem> MARSHMALLOW_STICK = REGISTRATE.item("marshmallow_stick", StickFoodItem::new)
-            .properties(prop -> {
-                prop.food(new FoodProperties.Builder().nutrition(3).saturationMod(0.2f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).fast().build());
-                return prop;
-            })
-            .register();
-
-    public static final ItemEntry<StickFoodItem> MEATBALL_STICK_1 = REGISTRATE.item("meatball_stick_1", StickFoodItem::new)
-            .properties(prop -> {
-                prop.food(new FoodProperties.Builder().nutrition(5).saturationMod(0.6f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).fast().build());
-                return prop;
-            })
-            .register();
-
-    public static final ItemEntry<StickFoodItem> MEATBALL_STICK_2 = REGISTRATE.item("meatball_stick_2", StickFoodItem::new)
-            .properties(prop -> {
-                prop.craftRemainder(Items.STICK);
-                prop.food(new FoodProperties.Builder().nutrition(6).saturationMod(0.6f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f).fast().build());
-                return prop;
-            })
-            .register();
-
-    public static final ItemEntry<StickFoodItem> MEATBALL_STICK_3 = REGISTRATE.item("meatball_stick_3", StickFoodItem::new)
-            .properties(prop -> {
-                prop.food(new FoodProperties.Builder().nutrition(7).saturationMod(0.7f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1.0f).fast().build());
-                return prop;
-            })
-            .register();
-
-    public static final ItemEntry<StickFoodItem> MELON_ICE_CREAM_STICK = REGISTRATE.item("melon_ice_cream_stick", StickFoodItem::new)
-            .properties(prop -> {
-                prop.craftRemainder(Items.STICK);
-                prop.food(new FoodProperties.Builder().nutrition(1).saturationMod(1.1f).fast().build());
-                return prop;
-            })
-            .register();
-
-    public static final ItemEntry<StickFoodItem> PORK_MEATBALL_STICK_1 = REGISTRATE.item("pork_meatball_stick_1", StickFoodItem::new)
-            .properties(prop -> {
-                prop.food(new FoodProperties.Builder().nutrition(4).saturationMod(0.8f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).fast().build());
-                return prop;
-            })
-            .register();
-
-    public static final ItemEntry<StickFoodItem> PORK_MEATBALL_STICK_2 = REGISTRATE.item("pork_meatball_stick_2", StickFoodItem::new)
-            .properties(prop -> {
-                prop.food(new FoodProperties.Builder().nutrition(5).saturationMod(0.8f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f).fast().build());
-                return prop;
-            })
-            .register();
-
-    public static final ItemEntry<StickFoodItem> PORK_MEATBALL_STICK_3 = REGISTRATE.item("pork_meatball_stick_3", StickFoodItem::new)
-            .properties(prop -> {
-                prop.food(new FoodProperties.Builder().nutrition(6).saturationMod(0.9f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1.0f).fast().build());
-                return prop;
-            })
-            .register();
-
-    public static final ItemEntry<StickFoodItem> RABBIT_MEATBALL_STICK_1 = REGISTRATE.item("rabbit_meatball_stick_1", StickFoodItem::new)
-            .properties(prop -> {
-                prop.food(new FoodProperties.Builder().nutrition(4).saturationMod(0.6f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).fast().build());
-                return prop;
-            })
-            .register();
-
-    public static final ItemEntry<StickFoodItem> RABBIT_MEATBALL_STICK_2 = REGISTRATE.item("rabbit_meatball_stick_2", StickFoodItem::new)
-            .properties(prop -> {
-                prop.food(new FoodProperties.Builder().nutrition(5).saturationMod(0.6f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f).fast().build());
-                return prop;
-            })
-            .register();
-
-    public static final ItemEntry<StickFoodItem> RABBIT_MEATBALL_STICK_3 = REGISTRATE.item("rabbit_meatball_stick_3", StickFoodItem::new)
-            .properties(prop -> {
-                prop.food(new FoodProperties.Builder().nutrition(6).saturationMod(0.7f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1.0f).fast().build());
-                return prop;
-            })
-            .register();
-
-    public static final ItemEntry<StickFoodItem> SMOKED_CORN_STICK = REGISTRATE.item("smoked_corn_stick", StickFoodItem::new)
-            .properties(prop -> {
-                prop.food(new FoodProperties.Builder().nutrition(4).saturationMod(0.7F).fast().build());
-                return prop;
-            })
-            .register();
-
-    public static final ItemEntry<StickFoodItem> STRIDER_MEATBALL_STICK_1 = REGISTRATE.item("strider_meatball_stick_1", StickFoodItem::new)
-            .properties(prop -> {
-                prop.food(new FoodProperties.Builder().nutrition(5).saturationMod(0.6F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 1200, 0), 1.0f).fast().build());
-                return prop;
-            })
-            .register();
-
-    public static final ItemEntry<StickFoodItem> STRIDER_MEATBALL_STICK_2 = REGISTRATE.item("strider_meatball_stick_2", StickFoodItem::new)
-            .properties(prop -> {
-                prop.food(new FoodProperties.Builder().nutrition(6).saturationMod(0.6F).effect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 3600, 0), 1.0f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f).fast().build());
-                return prop;
-            })
-            .register();
-
-    public static final ItemEntry<StickFoodItem> STRIDER_MEATBALL_STICK_3 = REGISTRATE.item("strider_meatball_stick_3", StickFoodItem::new)
-            .properties(prop -> {
-                prop.food(new FoodProperties.Builder().nutrition(8).saturationMod(0.7F).effect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 6000, 0), 1.0f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1.0f).fast().build());
-                return prop;
-            })
-            .register();
-
-    public static final ItemEntry<StickFoodItem> WHITE_CHOCOLATE_COVERED_MARSHMALLOW_STICK = REGISTRATE.item("white_chocolate_covered_marshmallow_stick", StickFoodItem::new)
-            .properties(prop -> {
-                prop.food(new FoodProperties.Builder().nutrition(3).saturationMod(0.4F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).fast().build());
-                return prop;
-            })
-            .register();
-
-
-    public static void register() {}
+    public static final RegistryObject<Item> APPLE_CHEESECAKE_SLICE = ITEMS.register("apple_cheesecake_slice", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(0.1F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build())));
+    public static final RegistryObject<Item> APPLE_CREAM_CHOCOLATE = ITEMS.register("apple_cream_chocolate", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(6).saturationMod(0.5F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> APPLE_CREAM_CHOCOLATE_PASTRY = ITEMS.register("apple_cream_chocolate_pastry", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(1.0F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> APPLE_CREAM_DARK_CHOCOLATE = ITEMS.register("apple_cream_dark_chocolate", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(5).saturationMod(0.6F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> APPLE_CREAM_CHOCOLATE_SWEET_ROLL = ITEMS.register("apple_cream_chocolate_sweet_roll", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(5).saturationMod(0.6F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build())));
+    public static final RegistryObject<Item> APPLE_CREAM_CHOCOLATE_CUPCAKE = ITEMS.register("apple_cream_chocolate_cupcake", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationMod(1.1F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> APPLE_CREAM_CUPCAKE = ITEMS.register("apple_cream_cupcake", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(1.0F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> APPLE_CREAM_MINI_WAFFLE = ITEMS.register("apple_cream_mini_waffle", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(1.6F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.LUCK, 600, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> APPLE_CREAM_SWEET_ROLL = ITEMS.register("apple_cream_sweet_roll", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationMod(0.7F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> APPLE_CREAM_CHOCOLATE_DONUT = ITEMS.register("apple_cream_chocolate_donut", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationMod(0.8F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> APPLE_CREAM_DONUT = ITEMS.register("apple_cream_donut", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(0.8F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build())));
+    public static final RegistryObject<Item> APPLE_CREAM_PASTRY = ITEMS.register("apple_cream_pastry", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(2).saturationMod(1.0F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build())));
+    public static final RegistryObject<Item> APPLE_CREAM_WHITE_CHOCOLATE = ITEMS.register("apple_cream_white_chocolate", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(7).saturationMod(0.4F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> APPLE_ICE_CREAM_CONE = ITEMS.register("apple_ice_cream_cone", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(2).saturationMod(0.6F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.LUCK, 600, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> APPLE_ICE_CREAM_SANDWICH = ITEMS.register("apple_ice_cream_sandwich", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(6).saturationMod(0.6F).build())));
+    public static final RegistryObject<Item> APPLE_JAM_SANDWICH = ITEMS.register("apple_jam_sandwich", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(7).saturationMod(0.7F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> APPLE_SLICE = ITEMS.register("apple_slice", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(2).saturationMod(0.4F).fast().build())));
+    public static final RegistryObject<Item> BACON_BITS = ITEMS.register("bacon_bits", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(1).saturationMod(0.4F).build())));
+    public static final RegistryObject<Item> BACON_CALZONE = ITEMS.register("bacon_calzone", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(6).saturationMod(0.4F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> BACON_PIZZA_SLICE = ITEMS.register("bacon_pizza_slice", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(5).saturationMod(0.6F).build())));
+    public static final RegistryObject<Item> BACON_SANDWICH = ITEMS.register("bacon_sandwich", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(7).saturationMod(0.6F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> BACON_SANDWICH_LETTUCE = ITEMS.register("bacon_sandwich_lettuce", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(9).saturationMod(0.5F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> BAKED_POTATO_BUTTER = ITEMS.register("baked_potato_butter", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(5).saturationMod(0.8F).build())));
+    public static final RegistryObject<Item> BAKED_POTATO_BUTTER_CHEESE = ITEMS.register("baked_potato_butter_cheese", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(5).saturationMod(0.9F).build())));
+    public static final RegistryObject<Item> BAKED_POTATO_BUTTER_FISH = ITEMS.register("baked_potato_butter_fish", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(5).saturationMod(0.9F).build())));
+    public static final RegistryObject<Item> BAKED_POTATO_BUTTER_FRIED_EGG = ITEMS.register("baked_potato_butter_fried_egg", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(5).saturationMod(0.7F).build())));
+    public static final RegistryObject<Item> BAKED_POTATO_BUTTER_MUSHROOM = ITEMS.register("baked_potato_butter_mushroom", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(5).saturationMod(1.1F).build())));
+    public static final RegistryObject<Item> BAR_OF_DARK_CHOCOLATE = ITEMS.register("bar_of_dark_chocolate", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(7).saturationMod(0.2F).build())));
+    public static final RegistryObject<Item> BAR_OF_WHITE_CHOCOLATE = ITEMS.register("bar_of_white_chocolate", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(5).saturationMod(0.4F).build())));
+    public static final RegistryObject<Item> BEEF_BUN = ITEMS.register("beef_bun", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(6).saturationMod(0.6F).build())));
+    public static final RegistryObject<Item> BEEF_BUN_BACON = ITEMS.register("beef_bun_bacon", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(8).saturationMod(0.6F).build())));
+    public static final RegistryObject<Item> BEEF_BUN_BACON_LETTUCE = ITEMS.register("beef_bun_bacon_lettuce", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(9).saturationMod(0.7F).build())));
+    public static final RegistryObject<Item> BEEF_BUN_BACON_LETTUCE_TOMATO = ITEMS.register("beef_bun_bacon_lettuce_tomato", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(9).saturationMod(0.8F).build())));
+    public static final RegistryObject<Item> BEEF_BUN_LETTUCE = ITEMS.register("beef_bun_lettuce", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(7).saturationMod(0.7F).build())));
+    public static final RegistryObject<Item> BEEF_BUN_LETTUCE_TOMATO = ITEMS.register("beef_bun_lettuce_tomato", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(7).saturationMod(0.8F).build())));
+    public static final RegistryObject<Item> BEEF_BUN_ONION = ITEMS.register("beef_bun_onion", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(6).saturationMod(0.8F).build())));
+    public static final RegistryObject<Item> BEEF_BUN_ONION_BACON = ITEMS.register("beef_bun_onion_bacon", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(9).saturationMod(0.8F).build())));
+    public static final RegistryObject<Item> BEEF_BUN_ONION_BACON_LETTUCE = ITEMS.register("beef_bun_onion_bacon_lettuce", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(10).saturationMod(0.9F).build())));
+    public static final RegistryObject<Item> BEEF_BUN_ONION_LETTUCE = ITEMS.register("beef_bun_onion_lettuce", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(8).saturationMod(0.9F).build())));
+    public static final RegistryObject<Item> BEEF_BUN_ONION_LETTUCE_TOMATO = ITEMS.register("beef_bun_onion_lettuce_tomato", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(8).saturationMod(1.0F).build())));
+    public static final RegistryObject<Item> BEEF_BUN_PEANUT_BUTTER = ITEMS.register("beef_bun_peanut_butter", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(6).saturationMod(0.9F).build())));
+    public static final RegistryObject<Item> BEEF_BUN_PEANUT_BUTTER_BACON = ITEMS.register("beef_bun_peanut_butter_bacon", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(8).saturationMod(0.9F).build())));
+    public static final RegistryObject<Item> BEEF_BUN_CHEESE_TOMATO = ITEMS.register("beef_bun_cheese_tomato", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(9).saturationMod(0.8F).build())));
+    public static final RegistryObject<Item> BEEF_BUN_TOMATO = ITEMS.register("beef_bun_tomato", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(7).saturationMod(0.7F).build())));
+    public static final RegistryObject<Item> BERRY_CREAM_CAKE_SLICE_CHORUS_FRUIT = ITEMS.register("berry_cream_cake_slice_chorus_fruit", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(2).saturationMod(0.3F).build())));
+    public static final RegistryObject<Item> BERRY_CREAM_CAKE_SLICE_GLOW_BERRY = ITEMS.register("berry_cream_cake_slice_glow_berry", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(2).saturationMod(0.2F).build())));
+    public static final RegistryObject<Item> BERRY_CREAM_CAKE_SLICE_SWEET_BERRY = ITEMS.register("berry_cream_cake_slice_sweet_berry", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(2).saturationMod(0.2F).build())));
+    public static final RegistryObject<Item> BERRY_CREAM_CHOCOLATE = ITEMS.register("berry_cream_chocolate", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(7).saturationMod(0.4F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> BERRY_CREAM_CHOCOLATE_PASTRY = ITEMS.register("berry_cream_chocolate_pastry", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(1.0F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> BERRY_CREAM_DARK_CHOCOLATE = ITEMS.register("berry_cream_dark_chocolate", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(8).saturationMod(0.3F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> BERRY_CREAM_CHOCOLATE_SWEET_ROLL = ITEMS.register("berry_cream_chocolate_sweet_roll", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(6).saturationMod(0.7F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build())));
+    public static final RegistryObject<Item> BERRY_CREAM_CHOCOLATE_SWEET_ROLL_SWEET_BERRY = ITEMS.register("berry_cream_chocolate_sweet_roll_sweet_berry", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(6).saturationMod(0.7F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).effect(new MobEffectInstance(MobEffects.DIG_SPEED, 1200, 0), 1.0f).build())));
+    public static final RegistryObject<Item> BERRY_CREAM_CHOCOLATE_CUPCAKE = ITEMS.register("berry_cream_chocolate_cupcake", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationMod(1.1F).effect(new MobEffectInstance(MobEffects.DIG_SPEED, 1200, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> BERRY_CREAM_CUPCAKE = ITEMS.register("berry_cream_cupcake", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(1.0F).effect(new MobEffectInstance(MobEffects.DIG_SPEED, 600, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> BERRY_CREAM_MINI_WAFFLE = ITEMS.register("berry_cream_mini_waffle", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(1.9F).effect(new MobEffectInstance(MobEffects.DIG_SPEED, 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.LUCK, 600, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> BERRY_CREAM_MINI_WAFFLE_SWEET_BERRY = ITEMS.register("berry_cream_mini_waffle_sweet_berry", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(1.9F).effect(new MobEffectInstance(MobEffects.DIG_SPEED, 1200, 0), 1.0f).effect(new MobEffectInstance(MobEffects.LUCK, 600, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> BERRY_CREAM_SWEET_ROLL = ITEMS.register("berry_cream_sweet_roll", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(5).saturationMod(0.6F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> BERRY_CREAM_SWEET_ROLL_SWEET_BERRY = ITEMS.register("berry_cream_sweet_roll_sweet_berry", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(5).saturationMod(0.6F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.DIG_SPEED, 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> BERRY_CREAM_CHOCOLATE_DONUT = ITEMS.register("berry_cream_chocolate_donut", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationMod(0.7F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> BERRY_CREAM_DONUT = ITEMS.register("berry_cream_donut", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(0.7F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build())));
+    public static final RegistryObject<Item> BERRY_CREAM_PASTRY = ITEMS.register("berry_cream_pastry", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(2).saturationMod(1.0F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build())));
+    public static final RegistryObject<Item> BERRY_CREAM_WHITE_CHOCOLATE = ITEMS.register("berry_cream_white_chocolate", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(6).saturationMod(0.5F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> BERRY_ICE_CREAM_CONE = ITEMS.register("berry_ice_cream_cone", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(2).saturationMod(0.9F).effect(new MobEffectInstance(MobEffects.DIG_SPEED, 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.LUCK, 600, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> BERRY_ICE_CREAM_SANDWICH = ITEMS.register("berry_ice_cream_sandwich", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(6).saturationMod(0.6F).build())));
+    public static final RegistryObject<Item> BERRY_JAM_SANDWICH = ITEMS.register("berry_jam_sandwich", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(9).saturationMod(0.4F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> BERRY_PIE_SLICE = ITEMS.register("berry_pie_slice", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(0.1F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build())));
+    public static final RegistryObject<Item> BISCUIT = ITEMS.register("biscuit", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(9).saturationMod(0.7F).fast().build())));
+    public static final RegistryObject<Item> BLACK_GELATIN_DESSERT_SLICE = ITEMS.register("black_gelatin_dessert_slice", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(5).saturationMod(0.3F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build())));
+    public static final RegistryObject<Item> BLUE_GELATIN_DESSERT_SLICE = ITEMS.register("blue_gelatin_dessert_slice", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(5).saturationMod(0.3F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build())));
+    public static final RegistryObject<Item> EGGSHELL = ITEMS.register("eggshell", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> BOILED_EGG = ITEMS.register("boiled_egg", () -> new Item(new Item.Properties()
+                .craftRemainder(EGGSHELL.get())
+                .stacksTo(16)));
+    public static final RegistryObject<Item> BOILED_EGG_PEELED = ITEMS.register("boiled_egg_peeled", () -> new Item(new Item.Properties()
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(6).saturationMod(0.1F).fast().build())));
+    public static final RegistryObject<Item> BREAD_CRUMBS = ITEMS.register("bread_crumbs", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> BREAD_CARROT = ITEMS.register("bread_carrot", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(7).saturationMod(0.4F).build())));
+    public static final RegistryObject<Item> BREAD_FRIED_EGG = ITEMS.register("bread_fried_egg", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(6).saturationMod(0.6F).build())));
+    public static final RegistryObject<Item> BREAD_LETTUCE = ITEMS.register("bread_lettuce", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(7).saturationMod(0.3F).build())));
+    public static final RegistryObject<Item> BREAD_LETTUCE_CARROT = ITEMS.register("bread_lettuce_carrot", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(8).saturationMod(0.5F).build())));
+    public static final RegistryObject<Item> BREAD_SLICE = ITEMS.register("bread_slice", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(2).saturationMod(0.2F).fast().build())));
+    public static final RegistryObject<Item> BREAD_SLICE_APPLE_JAM = ITEMS.register("bread_slice_apple_jam", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(5).saturationMod(0.6F).build())));
+    public static final RegistryObject<Item> BREAD_SLICE_BACON = ITEMS.register("bread_slice_bacon", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(5).saturationMod(0.6F).build())));
+    public static final RegistryObject<Item> BREAD_SLICE_BACON_LETTUCE = ITEMS.register("bread_slice_bacon_lettuce", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(6).saturationMod(0.8F).build())));
+    public static final RegistryObject<Item> BREAD_SLICE_BACON_LETTUCE_TOMATO = ITEMS.register("bread_slice_bacon_lettuce_tomato", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(9).saturationMod(0.5F).build())));
+    public static final RegistryObject<Item> BREAD_SLICE_BEETROOT = ITEMS.register("bread_slice_beetroot", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(7).saturationMod(0.3F).build())));
+    public static final RegistryObject<Item> BREAD_SLICE_BEETROOT_LETTUCE = ITEMS.register("bread_slice_beetroot_lettuce", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(7).saturationMod(0.5F).build())));
+    public static final RegistryObject<Item> BREAD_SLICE_BERRY_JAM = ITEMS.register("bread_slice_berry_jam", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(7).saturationMod(0.4F).build())));
+    public static final RegistryObject<Item> BREAD_SLICE_CHEESE = ITEMS.register("bread_slice_cheese", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(5).saturationMod(0.3F).build())));
+    public static final RegistryObject<Item> BREAD_SLICE_CHORUS_FRUIT_JAM = ITEMS.register("bread_slice_chorus_fruit_jam", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(8).saturationMod(0.5F).build())));
+    public static final RegistryObject<Item> BREAD_SLICE_GLOW_BERRY_JAM = ITEMS.register("bread_slice_glow_berry_jam", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(7).saturationMod(0.4F).build())));
+    public static final RegistryObject<Item> BREAD_SLICE_HONEY = ITEMS.register("bread_slice_honey", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(7).saturationMod(0.4F).build())));
+    public static final RegistryObject<Item> BREAD_SLICE_LETTUCE = ITEMS.register("bread_slice_lettuce", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(7).saturationMod(0.3F).build())));
+    public static final RegistryObject<Item> BREAD_SLICE_LETTUCE_TOMATO = ITEMS.register("bread_slice_lettuce_tomato", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(7).saturationMod(0.4F).build())));
+    public static final RegistryObject<Item> BREAD_SLICE_MELON_JAM = ITEMS.register("bread_slice_melon_jam", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(8).saturationMod(0.5F).build())));
+    public static final RegistryObject<Item> BREAD_SLICE_MUTTON = ITEMS.register("bread_slice_mutton", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(5).saturationMod(0.6F).build())));
+    public static final RegistryObject<Item> BREAD_SLICE_MUTTON_BEETROOT = ITEMS.register("bread_slice_mutton_beetroot", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(5).saturationMod(0.8F).build())));
+    public static final RegistryObject<Item> BREAD_SLICE_PEANUT_BUTTER = ITEMS.register("bread_slice_peanut_butter", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(7).saturationMod(0.4F).build())));
+    public static final RegistryObject<Item> BREAD_SLICE_TOMATO = ITEMS.register("bread_slice_tomato", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(7).saturationMod(0.3F).build())));
+    public static final RegistryObject<Item> BREAKFAST_BAR = ITEMS.register("breakfast_bar", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(2).saturationMod(4.1F).effect(new MobEffectInstance(MobEffects.DIG_SPEED, 600, 0), 1.0f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1.0f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build())));
+    public static final RegistryObject<Item> BREAKFAST_SAUSAGES = ITEMS.register("breakfast_sausages", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(6).saturationMod(0.4F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f).build())));
+    public static final RegistryObject<Item> BROWN_GELATIN_DESSERT_SLICE = ITEMS.register("brown_gelatin_dessert_slice", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(5).saturationMod(0.3F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build())));
+    public static final RegistryObject<Item> BROWN_SUGAR = ITEMS.register("brown_sugar", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> BUN = ITEMS.register("bun", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(2).saturationMod(0.5F).fast().build())));
+    public static final RegistryObject<Item> BUTTER = ITEMS.register("butter", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> BUTTERED_TOAST = ITEMS.register("buttered_toast", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(2).saturationMod(1.2F).build())));
+    public static final RegistryObject<Item> BUTTERSCOTCH = ITEMS.register("butterscotch", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(1).saturationMod(1.0F).fast().build())));
+    public static final RegistryObject<Item> BUTTERSCOTCH_CHIPS = ITEMS.register("butterscotch_chips", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> BUTTERSCOTCH_CHIP_CHOCOLATE_COOKIE = ITEMS.register("butterscotch_chip_chocolate_cookie", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(2).saturationMod(1.3F).build())));
+    public static final RegistryObject<Item> BUTTERSCOTCH_CHIP_COOKIE = ITEMS.register("butterscotch_chip_cookie", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(1).saturationMod(1.2F).build())));
+    public static final RegistryObject<Item> BUTTERSCOTCH_CHIP_ICE_CREAM_CONE = ITEMS.register("butterscotch_chip_ice_cream_cone", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(2).saturationMod(1.2F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.DIG_SPEED, 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.LUCK, 600, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> BUTTERSCOTCH_CHIP_MUFFIN = ITEMS.register("butterscotch_chip_muffin", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(0.8F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.DIG_SPEED, 600, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> BUTTERSCOTCH_CHIP_MINI_WAFFLE = ITEMS.register("butterscotch_chip_mini_waffle", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(1.7F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.DIG_SPEED, 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.LUCK, 600, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> BUTTERSCOTCH_FUDGE = ITEMS.register("butterscotch_fudge", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(0.8F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.DIG_SPEED, 3600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> BUTTER_DOUGH = ITEMS.register("butter_dough", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> BUTTER_DOUGH_SMALL = ITEMS.register("butter_dough_small", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().fast().build())));
+    public static final RegistryObject<Item> CACAO_BUTTER = ITEMS.register("cacao_butter", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> CACAO_NIBS = ITEMS.register("cacao_nibs", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> CAKE_SLICE_CHORUS_FRUIT = ITEMS.register("cake_slice_chorus_fruit", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationMod(0.4F).build())));
+    public static final RegistryObject<Item> CAKE_SLICE_GLOW_BERRY = ITEMS.register("cake_slice_glow_berry", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(0.3F).build())));
+    public static final RegistryObject<Item> CARAMEL = ITEMS.register("caramel", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(1).saturationMod(0.8F).fast().build())));
+    public static final RegistryObject<Item> CARAMEL_APPLE_SLICE = ITEMS.register("caramel_apple_slice", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(0.6F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 600, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> CARAMEL_CHIPS = ITEMS.register("caramel_chips", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> CARAMEL_CHIP_CHOCOLATE_COOKIE = ITEMS.register("caramel_chip_chocolate_cookie", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(2).saturationMod(1.1F).build())));
+    public static final RegistryObject<Item> CARAMEL_CHIP_COOKIE = ITEMS.register("caramel_chip_cookie", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(2).saturationMod(0.8F).build())));
+    public static final RegistryObject<Item> CARAMEL_CHIP_ICE_CREAM_CONE = ITEMS.register("caramel_chip_ice_cream_cone", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(2).saturationMod(1.2F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.LUCK, 600, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> CARAMEL_CHIP_MUFFIN = ITEMS.register("caramel_chip_muffin", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(0.9F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 600, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> CARAMEL_CHIP_MINI_WAFFLE = ITEMS.register("caramel_chip_mini_waffle", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(1.7F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.LUCK, 600, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> CARAMEL_CHOCOLATE = ITEMS.register("caramel_chocolate", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(7).saturationMod(0.7F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> CARAMEL_CHOCOLATE_PASTRY = ITEMS.register("caramel_chocolate_pastry", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(1.0F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> CARAMEL_DARK_CHOCOLATE = ITEMS.register("caramel_dark_chocolate", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(8).saturationMod(0.6F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> CARAMEL_FUDGE = ITEMS.register("caramel_fudge", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(5).saturationMod(0.4F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 3600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> CARAMEL_APPLE = ITEMS.register("caramel_apple", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(6).saturationMod(1.0F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> CARAMEL_BERRIES = ITEMS.register("caramel_berries", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(6).saturationMod(0.9F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build())));
+    public static final RegistryObject<Item> CARAMEL_CHOCOLATE_SWEET_ROLL = ITEMS.register("caramel_chocolate_sweet_roll", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(7).saturationMod(0.7F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build())));
+    public static final RegistryObject<Item> CARAMEL_SWEET_ROLL = ITEMS.register("caramel_sweet_roll", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(6).saturationMod(0.6F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> CARAMEL_PASTRY = ITEMS.register("caramel_pastry", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(2).saturationMod(1.0F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> CARAMEL_POPCORN = ITEMS.register("caramel_popcorn", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(0.8F).effect(new MobEffectInstance(MobEffects.LUCK, 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> CARAMEL_TOAST = ITEMS.register("caramel_toast", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(0.8F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> CARAMEL_WHITE_CHOCOLATE = ITEMS.register("caramel_white_chocolate", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(6).saturationMod(0.8F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> CHEESEBURGER = ITEMS.register("cheeseburger", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(10).saturationMod(0.7F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f).build())));
+    public static final RegistryObject<Item> CHEESEBURGER_BACON = ITEMS.register("cheeseburger_bacon", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(12).saturationMod(0.7F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f).build())));
+    public static final RegistryObject<Item> CHEESEBURGER_BACON_LETTUCE = ITEMS.register("cheeseburger_bacon_lettuce", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(12).saturationMod(0.8F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> CHEESEBURGER_BACON_LETTUCE_TOMATO = ITEMS.register("cheeseburger_bacon_lettuce_tomato", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(13).saturationMod(0.9F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 6000, 0), 1.0f).build())));
+    public static final RegistryObject<Item> CHEESEBURGER_LETTUCE = ITEMS.register("cheeseburger_lettuce", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(11).saturationMod(0.8F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f).build())));
+    public static final RegistryObject<Item> CHEESEBURGER_LETTUCE_TOMATO = ITEMS.register("cheeseburger_lettuce_tomato", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(11).saturationMod(0.9F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> CHEESEBURGER_ONION = ITEMS.register("cheeseburger_onion", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(11).saturationMod(0.8F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f).build())));
+    public static final RegistryObject<Item> CHEESEBURGER_ONION_BACON = ITEMS.register("cheeseburger_onion_bacon", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(13).saturationMod(0.8F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> CHEESEBURGER_ONION_BACON_LETTUCE = ITEMS.register("cheeseburger_onion_bacon_lettuce", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(13).saturationMod(0.9F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 6000, 0), 1.0f).build())));
+    public static final RegistryObject<Item> CHEESEBURGER_ONION_LETTUCE = ITEMS.register("cheeseburger_onion_lettuce", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(11).saturationMod(0.9F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> CHEESEBURGER_ONION_LETTUCE_TOMATO = ITEMS.register("cheeseburger_onion_lettuce_tomato", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(12).saturationMod(1.0F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 6000, 0), 1.0f).build())));
+    public static final RegistryObject<Item> CHEESEBURGER_TOMATO = ITEMS.register("cheeseburger_tomato", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(11).saturationMod(0.8F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f).build())));
+    public static final RegistryObject<Item> CHEESECAKE_SLICE = ITEMS.register("cheesecake_slice", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(2).saturationMod(0.3F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> BEEF_BUN_CHEESE = ITEMS.register("beef_bun_cheese", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(8).saturationMod(0.7F).build())));
+    public static final RegistryObject<Item> BEEF_BUN_CHEESE_BACON = ITEMS.register("beef_bun_cheese_bacon", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(9).saturationMod(0.7F).build())));
+    public static final RegistryObject<Item> BEEF_BUN_CHEESE_BACON_LETTUCE = ITEMS.register("beef_bun_cheese_bacon_lettuce", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(10).saturationMod(0.8F).build())));
+    public static final RegistryObject<Item> BEEF_BUN_CHEESE_BACON_LETTUCE_TOMATO = ITEMS.register("beef_bun_cheese_bacon_lettuce_tomato", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(10).saturationMod(0.9F).build())));
+    public static final RegistryObject<Item> BEEF_BUN_CHEESE_LETTUCE = ITEMS.register("beef_bun_cheese_lettuce", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(9).saturationMod(0.8F).build())));
+    public static final RegistryObject<Item> BEEF_BUN_CHEESE_LETTUCE_TOMATO = ITEMS.register("beef_bun_cheese_lettuce_tomato", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(9).saturationMod(0.9F).build())));
+    public static final RegistryObject<Item> BEEF_BUN_CHEESE_ONION = ITEMS.register("beef_bun_cheese_onion", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(9).saturationMod(0.9F).build())));
+    public static final RegistryObject<Item> BEEF_BUN_CHEESE_ONION_BACON = ITEMS.register("beef_bun_cheese_onion_bacon", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(10).saturationMod(0.9F).build())));
+    public static final RegistryObject<Item> BEEF_BUN_CHEESE_ONION_BACON_LETTUCE = ITEMS.register("beef_bun_cheese_onion_bacon_lettuce", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(12).saturationMod(1.0F).build())));
+    public static final RegistryObject<Item> BEEF_BUN_CHEESE_ONION_LETTUCE = ITEMS.register("beef_bun_cheese_onion_lettuce", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(10).saturationMod(1.0F).build())));
+    public static final RegistryObject<Item> BEEF_BUN_CHEESE_ONION_LETTUCE_TOMATO = ITEMS.register("beef_bun_cheese_onion_lettuce_tomato", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(10).saturationMod(1.1F).build())));
+    public static final RegistryObject<Item> CHICKEN_BUN_CHEESE = ITEMS.register("chicken_bun_cheese", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(11).saturationMod(0.7F).build())));
+    public static final RegistryObject<Item> CHICKEN_BUN_CHEESE_BACON_LETTUCE = ITEMS.register("chicken_bun_cheese_bacon_lettuce", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(13).saturationMod(0.8F).build())));
+    public static final RegistryObject<Item> CHICKEN_BUN_CHEESE_LETTUCE = ITEMS.register("chicken_bun_cheese_lettuce", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(11).saturationMod(0.8F).build())));
+    public static final RegistryObject<Item> CHICKEN_BUN_CHEESE_LETTUCE_TOMATO = ITEMS.register("chicken_bun_cheese_lettuce_tomato", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(11).saturationMod(0.9F).build())));
+    public static final RegistryObject<Item> EGGPLANT_BUN_CHEESE = ITEMS.register("eggplant_bun_cheese", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(8).saturationMod(0.9F).build())));
+    public static final RegistryObject<Item> EGGPLANT_BUN_CHEESE_LETTUCE = ITEMS.register("eggplant_bun_cheese_lettuce", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(10).saturationMod(0.9F).build())));
+    public static final RegistryObject<Item> EGGPLANT_BUN_CHEESE_LETTUCE_TOMATO = ITEMS.register("eggplant_bun_cheese_lettuce_tomato", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(10).saturationMod(1.0F).build())));
+    public static final RegistryObject<Item> SAUSAGE_BISCUIT_CHEESE = ITEMS.register("sausage_biscuit_cheese", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(16).saturationMod(0.4F).build())));
+    public static final RegistryObject<Item> SAUSAGE_BISCUIT_SANDWICH_CHEESE = ITEMS.register("sausage_biscuit_sandwich_cheese", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(21).saturationMod(0.5F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> CHEESE_BISCUIT = ITEMS.register("cheese_biscuit", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(7).saturationMod(0.5F).build())));
+    public static final RegistryObject<Item> CHEESE_BISCUIT_SANDWICH = ITEMS.register("cheese_biscuit_sandwich", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(12).saturationMod(0.4F).build())));
+    public static final RegistryObject<Item> CHEESE_BLOCK = ITEMS.register("cheese_block", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> CHEESE_CALZONE = ITEMS.register("cheese_calzone", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(5).saturationMod(0.4F).fast().build())));
+    public static final RegistryObject<Item> CHEESE_PIZZA_SLICE = ITEMS.register("cheese_pizza_slice", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(5).saturationMod(0.4F).build())));
+    public static final RegistryObject<Item> CHEESE_SANDWICH = ITEMS.register("cheese_sandwich", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(8).saturationMod(0.4F).build())));
+    public static final RegistryObject<Item> CHEESE_SLICE = ITEMS.register("cheese_slice", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(2).saturationMod(0.1F).fast().build())));
+    public static final RegistryObject<Item> CHICKEN_BUN = ITEMS.register("chicken_bun", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(9).saturationMod(0.6F).build())));
+    public static final RegistryObject<Item> CHICKEN_BUN_BACON = ITEMS.register("chicken_bun_bacon", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(11).saturationMod(0.6F).build())));
+    public static final RegistryObject<Item> CHICKEN_BUN_BACON_LETTUCE = ITEMS.register("chicken_bun_bacon_lettuce", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(12).saturationMod(0.7F).build())));
+    public static final RegistryObject<Item> CHICKEN_BUN_CHEESE_BACON = ITEMS.register("chicken_bun_cheese_bacon", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(12).saturationMod(0.7F).build())));
+    public static final RegistryObject<Item> CHICKEN_BUN_CHEESE_TOMATO = ITEMS.register("chicken_bun_cheese_tomato", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(11).saturationMod(0.8F).build())));
+    public static final RegistryObject<Item> CHICKEN_BUN_LETTUCE = ITEMS.register("chicken_bun_lettuce", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(10).saturationMod(0.7F).build())));
+    public static final RegistryObject<Item> CHICKEN_BUN_LETTUCE_TOMATO = ITEMS.register("chicken_bun_lettuce_tomato", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(10).saturationMod(0.8F).build())));
+    public static final RegistryObject<Item> CHICKEN_BUN_TOMATO = ITEMS.register("chicken_bun_tomato", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(10).saturationMod(0.7F).build())));
+    public static final RegistryObject<Item> CHICKEN_BURGER = ITEMS.register("chicken_burger", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(9).saturationMod(0.7F).build())));
+    public static final RegistryObject<Item> CHICKEN_BURGER_BACON = ITEMS.register("chicken_burger_bacon", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(13).saturationMod(0.5F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> CHICKEN_BURGER_BACON_LETTUCE = ITEMS.register("chicken_burger_bacon_lettuce", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(14).saturationMod(0.7F).build())));
+    public static final RegistryObject<Item> CHICKEN_BURGER_LETTUCE = ITEMS.register("chicken_burger_lettuce", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(12).saturationMod(0.6F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> CHICKEN_BURGER_LETTUCE_TOMATO = ITEMS.register("chicken_burger_lettuce_tomato", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(12).saturationMod(0.7F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> CHICKEN_BURGER_TOMATO = ITEMS.register("chicken_burger_tomato", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(12).saturationMod(0.6F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> CHICKEN_CHEESEBURGER = ITEMS.register("chicken_cheeseburger", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(9).saturationMod(0.8F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> CHICKEN_CHEESEBURGER_BACON = ITEMS.register("chicken_cheeseburger_bacon", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(13).saturationMod(0.6F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> CHICKEN_CHEESEBURGER_BACON_LETTUCE = ITEMS.register("chicken_cheeseburger_bacon_lettuce", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(15).saturationMod(0.8F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 6000, 0), 1.0f).build())));
+    public static final RegistryObject<Item> CHICKEN_CHEESEBURGER_LETTUCE = ITEMS.register("chicken_cheeseburger_lettuce", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(12).saturationMod(0.7F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> CHICKEN_CHEESEBURGER_LETTUCE_TOMATO = ITEMS.register("chicken_cheeseburger_lettuce_tomato", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(12).saturationMod(0.8F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 6000, 0), 1.0f).build())));
+    public static final RegistryObject<Item> CHICKEN_CHEESEBURGER_TOMATO = ITEMS.register("chicken_cheeseburger_tomato", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(12).saturationMod(0.7F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> CHICKEN_NUGGETS = ITEMS.register("chicken_nuggets", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationMod(0.9F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> CHICKEN_PATTY = ITEMS.register("chicken_patty", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(6).saturationMod(0.8F).build())));
+    public static final RegistryObject<Item> CHOCOLATE_CHIPS = ITEMS.register("chocolate_chips", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> CHOCOLATE_CHIP_ICE_CREAM_CONE = ITEMS.register("chocolate_chip_ice_cream_cone", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(2).saturationMod(1.2F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.LUCK, 600, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> CHOCOLATE_CHIP_MUFFIN = ITEMS.register("chocolate_chip_muffin", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(0.8F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> CHOCOLATE_CHIP_MINI_WAFFLE = ITEMS.register("chocolate_chip_mini_waffle", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(1.7F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.LUCK, 600, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> CHOCOLATE_CHOCOLATE_PASTRY = ITEMS.register("chocolate_chocolate_pastry", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(1.0F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> CHOCOLATE_COOKIE = ITEMS.register("chocolate_cookie", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(0.5F).build())));
+    public static final RegistryObject<Item> CHOCOLATE_CREAM_CAKE_SLICE_BUTTERSCOTCH = ITEMS.register("chocolate_cream_cake_slice_butterscotch", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationMod(0.4F).effect(new MobEffectInstance(MobEffects.DIG_SPEED, 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> CHOCOLATE_CREAM_CAKE_SLICE_CARAMEL = ITEMS.register("chocolate_cream_cake_slice_caramel", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(2).saturationMod(0.4F).effect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> CHOCOLATE_CREAM_CAKE_SLICE_CHOCOLATE = ITEMS.register("chocolate_cream_cake_slice_chocolate", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationMod(0.3F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> CHOCOLATE_CREAM_CAKE_SLICE_DARK_CHOCOLATE = ITEMS.register("chocolate_cream_cake_slice_dark_chocolate", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(5).saturationMod(0.2F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build())));
+    public static final RegistryObject<Item> CHOCOLATE_CREAM_CAKE_SLICE_TOFFEE = ITEMS.register("chocolate_cream_cake_slice_toffee", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(0.4F).effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> CHOCOLATE_CREAM_CAKE_SLICE_WHITE_CHOCOLATE = ITEMS.register("chocolate_cream_cake_slice_white_chocolate", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(0.5F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build())));
+    public static final RegistryObject<Item> CHOCOLATE_CREAM_CHOCOLATE_CUPCAKE = ITEMS.register("chocolate_cream_chocolate_cupcake", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationMod(1.3F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 2400, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> CHOCOLATE_CREAM_CUPCAKE = ITEMS.register("chocolate_cream_cupcake", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(1.2F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> CHOCOLATE_CREAM_MINI_WAFFLE = ITEMS.register("chocolate_cream_mini_waffle", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(1.7F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f).effect(new MobEffectInstance(MobEffects.LUCK, 600, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> CHOCOLATE_CUPCAKE_BASE = ITEMS.register("chocolate_cupcake_base", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(0.9F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build())));
+    public static final RegistryObject<Item> CHOCOLATE_DONUT_BASE = ITEMS.register("chocolate_donut_base", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(2).saturationMod(1.2F).build())));
+    public static final RegistryObject<Item> CHOCOLATE_DONUT_HOLE = ITEMS.register("chocolate_donut_hole", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(1).saturationMod(0.8F).build())));
+    public static final RegistryObject<Item> CHOCOLATE_DONUT_HOLE_SUGAR = ITEMS.register("chocolate_donut_hole_sugar", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(1).saturationMod(0.8F).effect(new MobEffectInstance(MobEffects.LUCK, 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> CHOCOLATE_DONUT_SUGAR = ITEMS.register("chocolate_donut_sugar", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationMod(0.6F).effect(new MobEffectInstance(MobEffects.LUCK, 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> CHOCOLATE_FROSTED_CHOCOLATE_SWEET_ROLL = ITEMS.register("chocolate_frosted_chocolate_sweet_roll", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(6).saturationMod(0.6F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build())));
+    public static final RegistryObject<Item> CHOCOLATE_FROSTED_SWEET_ROLL = ITEMS.register("chocolate_frosted_sweet_roll", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(5).saturationMod(0.5F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> CHOCOLATE_FUDGE = ITEMS.register("chocolate_fudge", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(0.6F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> CHOCOLATE_APPLE = ITEMS.register("chocolate_apple", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(8).saturationMod(0.7F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> CHOCOLATE_GLAZED_CHOCOLATE_DONUT = ITEMS.register("chocolate_glazed_chocolate_donut", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationMod(0.7F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> CHOCOLATE_GLAZED_DONUT = ITEMS.register("chocolate_glazed_donut", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(0.7F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build())));
+    public static final RegistryObject<Item> CHOCOLATE_GRAHAM_CRACKER = ITEMS.register("chocolate_graham_cracker", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(0.8F).build())));
+    public static final RegistryObject<Item> CHOCOLATE_GRAHAM_CRACKER_CRUMBS = ITEMS.register("chocolate_graham_cracker_crumbs", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> CHOCOLATE_GRAHAM_CRACKER_APPLE_ICE_CREAM = ITEMS.register("chocolate_graham_cracker_apple_ice_cream", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(5).saturationMod(0.8F).build())));
+    public static final RegistryObject<Item> CHOCOLATE_GRAHAM_CRACKER_BERRY_ICE_CREAM = ITEMS.register("chocolate_graham_cracker_berry_ice_cream", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(5).saturationMod(0.8F).build())));
+    public static final RegistryObject<Item> CHOCOLATE_GRAHAM_CRACKER_CHOCOLATE_ICE_CREAM = ITEMS.register("chocolate_graham_cracker_chocolate_ice_cream", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(5).saturationMod(1.0F).build())));
+    public static final RegistryObject<Item> CHOCOLATE_GRAHAM_CRACKER_CHORUS_FRUIT_ICE_CREAM = ITEMS.register("chocolate_graham_cracker_chorus_fruit_ice_cream", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(6).saturationMod(1.0F).build())));
+    public static final RegistryObject<Item> CHOCOLATE_GRAHAM_CRACKER_GLOW_BERRY_ICE_CREAM = ITEMS.register("chocolate_graham_cracker_glow_berry_ice_cream", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(5).saturationMod(0.8F).build())));
+    public static final RegistryObject<Item> CHOCOLATE_GRAHAM_CRACKER_ICE_CREAM = ITEMS.register("chocolate_graham_cracker_ice_cream", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(5).saturationMod(0.9F).build())));
+    public static final RegistryObject<Item> CHOCOLATE_GRAHAM_CRACKER_MELON_ICE_CREAM = ITEMS.register("chocolate_graham_cracker_melon_ice_cream", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(5).saturationMod(0.9F).build())));
+    public static final RegistryObject<Item> CHOCOLATE_GRAHAM_CRACKER_NEAPOLITAN_SCOOP_1 = ITEMS.register("chocolate_graham_cracker_neapolitan_scoop_1", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationMod(0.7F).build())));
+    public static final RegistryObject<Item> CHOCOLATE_GRAHAM_CRACKER_NEAPOLITAN_SCOOP_2 = ITEMS.register("chocolate_graham_cracker_neapolitan_scoop_2", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(5).saturationMod(0.6F).build())));
+    public static final RegistryObject<Item> CHOCOLATE_GRAHAM_CRACKER_NEAPOLITAN_SCOOP_3 = ITEMS.register("chocolate_graham_cracker_neapolitan_scoop_3", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(6).saturationMod(0.7F).build())));
+    public static final RegistryObject<Item> CHOCOLATE_GRAHAM_CRACKER_PIE_CRUST = ITEMS.register("chocolate_graham_cracker_pie_crust", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(7).saturationMod(0.6F).build())));
+    public static final RegistryObject<Item> CHOCOLATE_ICE_CREAM_CONE = ITEMS.register("chocolate_ice_cream_cone", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(2).saturationMod(1.2F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).effect(new MobEffectInstance(MobEffects.LUCK, 600, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> CHOCOLATE_ICE_CREAM_SANDWICH = ITEMS.register("chocolate_ice_cream_sandwich", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(6).saturationMod(0.8F).build())));
+    public static final RegistryObject<Item> CHOCOLATE_PASTRY = ITEMS.register("chocolate_pastry", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(2).saturationMod(1.0F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build())));
+    public static final RegistryObject<Item> CHOCOLATE_PASTRY_BASE = ITEMS.register("chocolate_pastry_base", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationMod(0.8F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build())));
+    public static final RegistryObject<Item> CHOCOLATE_PIE_GRAHAM_CRACKER_SLICE = ITEMS.register("chocolate_pie_graham_cracker_slice", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationMod(0.3F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> CHOCOLATE_SUGAR_DOUGH = ITEMS.register("chocolate_sugar_dough", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> CHOCOLATE_SUGAR_DOUGH_SMALL = ITEMS.register("chocolate_sugar_dough_small", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> CHOCOLATE_SWEET_ROLL = ITEMS.register("chocolate_sweet_roll", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(6).saturationMod(0.8F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build())));
+    public static final RegistryObject<Item> CHOCOLATE_SWEET_ROLL_BASE = ITEMS.register("chocolate_sweet_roll_base", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(5).saturationMod(0.7F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build())));
+    public static final RegistryObject<Item> CHOCOLATE_TOAST = ITEMS.register("chocolate_toast", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationMod(0.6F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> CHORUS_FRUIT_CHEESECAKE_SLICE = ITEMS.register("chorus_fruit_cheesecake_slice", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationMod(0.3F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build())));
+    public static final RegistryObject<Item> CHORUS_FRUIT_CREAM_CAKE_SLICE_CHORUS_FRUIT = ITEMS.register("chorus_fruit_cream_cake_slice_chorus_fruit", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationMod(0.5F).build())));
+    public static final RegistryObject<Item> CHORUS_FRUIT_CREAM_CAKE_SLICE_GLOW_BERRY = ITEMS.register("chorus_fruit_cream_cake_slice_glow_berry", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationMod(0.4F).build())));
+    public static final RegistryObject<Item> CHORUS_FRUIT_CREAM_CAKE_SLICE_SWEET_BERRY = ITEMS.register("chorus_fruit_cream_cake_slice_sweet_berry", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationMod(0.4F).build())));
+    public static final RegistryObject<Item> CHORUS_FRUIT_CREAM_CHOCOLATE = ITEMS.register("chorus_fruit_cream_chocolate", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(9).saturationMod(0.5F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> CHORUS_FRUIT_CREAM_CHOCOLATE_PASTRY = ITEMS.register("chorus_fruit_cream_chocolate_pastry", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationMod(1.0F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> CHORUS_FRUIT_CREAM_DARK_CHOCOLATE = ITEMS.register("chorus_fruit_cream_dark_chocolate", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(10).saturationMod(0.4F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> CHORUS_FRUIT_CREAM_CHOCOLATE_SWEET_ROLL = ITEMS.register("chorus_fruit_cream_chocolate_sweet_roll", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(8).saturationMod(0.8F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> CHORUS_FRUIT_CREAM_CHOCOLATE_SWEET_ROLL_CHORUS_FRUIT = ITEMS.register("chorus_fruit_cream_chocolate_sweet_roll_chorus_fruit", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(8).saturationMod(0.8F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.JUMP, 1200, 0), 1.0f).effect(new MobEffectInstance(MobEffects.SLOW_FALLING, 1200, 0), 1.0f).build())));
+    public static final RegistryObject<Item> CHORUS_FRUIT_CREAM_CHOCOLATE_CUPCAKE = ITEMS.register("chorus_fruit_cream_chocolate_cupcake", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(5).saturationMod(1.2F).effect(new MobEffectInstance(MobEffects.JUMP, 1200, 0), 1.0f).effect(new MobEffectInstance(MobEffects.SLOW_FALLING, 1200, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> CHORUS_FRUIT_CREAM_CUPCAKE = ITEMS.register("chorus_fruit_cream_cupcake", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationMod(1.1F).effect(new MobEffectInstance(MobEffects.JUMP, 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.SLOW_FALLING, 600, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> CHORUS_FRUIT_CREAM_MINI_WAFFLE = ITEMS.register("chorus_fruit_cream_mini_waffle", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationMod(1.9F).effect(new MobEffectInstance(MobEffects.JUMP, 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.SLOW_FALLING, 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.LUCK, 600, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> CHORUS_FRUIT_CREAM_MINI_WAFFLE_CHORUS_FRUIT = ITEMS.register("chorus_fruit_cream_mini_waffle_chorus_fruit", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationMod(1.9F).effect(new MobEffectInstance(MobEffects.JUMP, 1200, 0), 1.0f).effect(new MobEffectInstance(MobEffects.SLOW_FALLING, 1200, 0), 1.0f).effect(new MobEffectInstance(MobEffects.LUCK, 600, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> CHORUS_FRUIT_CREAM_SWEET_ROLL = ITEMS.register("chorus_fruit_cream_sweet_roll", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(7).saturationMod(0.7F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build())));
+    public static final RegistryObject<Item> CHORUS_FRUIT_CREAM_SWEET_ROLL_CHORUS_FRUIT = ITEMS.register("chorus_fruit_cream_sweet_roll_chorus_fruit", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(7).saturationMod(0.7F).effect(new MobEffectInstance(MobEffects.JUMP, 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.SLOW_FALLING, 600, 0), 1.0f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build())));
+    public static final RegistryObject<Item> CHORUS_FRUIT_CREAM_CHOCOLATE_DONUT = ITEMS.register("chorus_fruit_cream_chocolate_donut", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationMod(0.7F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> CHORUS_FRUIT_CREAM_DONUT = ITEMS.register("chorus_fruit_cream_donut", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(0.7F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build())));
+    public static final RegistryObject<Item> CHORUS_FRUIT_CREAM_PASTRY = ITEMS.register("chorus_fruit_cream_pastry", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(1.0F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build())));
+    public static final RegistryObject<Item> CHORUS_FRUIT_CREAM_WHITE_CHOCOLATE = ITEMS.register("chorus_fruit_cream_white_chocolate", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(8).saturationMod(0.6F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> CHORUS_FRUIT_ICE_CREAM_CONE = ITEMS.register("chorus_fruit_ice_cream_cone", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(0.9F).effect(new MobEffectInstance(MobEffects.JUMP, 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.SLOW_FALLING, 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.LUCK, 600, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> CHORUS_FRUIT_ICE_CREAM_SANDWICH = ITEMS.register("chorus_fruit_ice_cream_sandwich", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(7).saturationMod(0.8F).build())));
+    public static final RegistryObject<Item> CHORUS_FRUIT_JAM_SANDWICH = ITEMS.register("chorus_fruit_jam_sandwich", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(10).saturationMod(0.5F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> CHORUS_FRUIT_PIE_SLICE = ITEMS.register("chorus_fruit_pie_slice", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationMod(0.3F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build())));
+    public static final RegistryObject<Item> CHORUS_FRUIT_SLICE = ITEMS.register("chorus_fruit_slice", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationMod(0.9F).fast().build())));
+    public static final RegistryObject<Item> CINNAMON_SWEET_ROLL_BASE = ITEMS.register("cinnamon_sweet_roll_base", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationMod(0.6F).build())));
+    public static final RegistryObject<Item> CLOTH_FILTER = ITEMS.register("cloth_filter", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> CLOTH_FILTER_CACAO_MASS = ITEMS.register("cloth_filter_cacao_mass", () -> new Item(new Item.Properties().craftRemainder(CLOTH_FILTER.get())));
+    public static final RegistryObject<Item> COCOA_POWDER = ITEMS.register("cocoa_powder", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> COFFEE_TOFFEE = ITEMS.register("coffee_toffee", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(1).saturationMod(2.0F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.DIG_SPEED, 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> COFFEE_TOFFEE_FUDGE = ITEMS.register("coffee_toffee_fudge", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationMod(0.7F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.DIG_SPEED, 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> CONDENSED_MILK_BOTTLE = ITEMS.register("condensed_milk_bottle", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> COOKED_RABBIT_CUTS = ITEMS.register("cooked_rabbit_cuts", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(0.6F).build())));
+    public static final RegistryObject<Item> COOKIE_CREAM_PIE_SLICE = ITEMS.register("cookie_cream_pie_slice", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(5).saturationMod(0.7F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> COOKIE_CRUMBS = ITEMS.register("cookie_crumbs", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> CORN_FLOUR = ITEMS.register("corn_flour", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> CREAM_CHEESE = ITEMS.register("cream_cheese", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> CREAM_CHOCOLATE = ITEMS.register("cream_chocolate", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(6).saturationMod(0.4F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> CREAM_CHOCOLATE_PASTRY = ITEMS.register("cream_chocolate_pastry", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(0.9F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> CREAM_DARK_CHOCOLATE = ITEMS.register("cream_dark_chocolate", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(7).saturationMod(0.3F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> CREAM_CHOCOLATE_DONUT = ITEMS.register("cream_chocolate_donut", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationMod(0.6F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> CREAM_DONUT = ITEMS.register("cream_donut", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(0.7F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build())));
+    public static final RegistryObject<Item> CREAM_PASTRY = ITEMS.register("cream_pastry", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(2).saturationMod(0.9F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build())));
+    public static final RegistryObject<Item> CREAM_PIE_CHOCOLATE_GRAHAM_CRACKER_SLICE = ITEMS.register("cream_pie_chocolate_graham_cracker_slice", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationMod(0.5F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> CREAM_PIE_GRAHAM_CRACKER_SLICE = ITEMS.register("cream_pie_graham_cracker_slice", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(0.6F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> CREAM_WHITE_CHOCOLATE = ITEMS.register("cream_white_chocolate", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(5).saturationMod(0.5F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> CUPCAKE_BASE = ITEMS.register("cupcake_base", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(2).saturationMod(0.9F).fast().build())));
+    public static final RegistryObject<Item> CYAN_GELATIN_DESSERT_SLICE = ITEMS.register("cyan_gelatin_dessert_slice", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(5).saturationMod(0.3F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> DARK_CHOCOLATE_CHIP_CHOCOLATE_COOKIE = ITEMS.register("dark_chocolate_chip_chocolate_cookie", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationMod(0.4F).build())));
+    public static final RegistryObject<Item> DARK_CHOCOLATE_CHIP_COOKIE = ITEMS.register("dark_chocolate_chip_cookie", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(2).saturationMod(0.5F).build())));
+    public static final RegistryObject<Item> DARK_CHOCOLATE_CHIPS = ITEMS.register("dark_chocolate_chips", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> DARK_CHOCOLATE_CHIP_ICE_CREAM_CONE = ITEMS.register("dark_chocolate_chip_ice_cream_cone", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(2).saturationMod(1.2F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.LUCK, 600, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> DARK_CHOCOLATE_CHIP_MUFFIN = ITEMS.register("dark_chocolate_chip_muffin", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationMod(0.9F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> DARK_CHOCOLATE_CHIP_MINI_WAFFLE = ITEMS.register("dark_chocolate_chip_mini_waffle", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(1.7F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f).effect(new MobEffectInstance(MobEffects.LUCK, 600, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> DARK_CHOCOLATE_CHOCOLATE_PASTRY = ITEMS.register("dark_chocolate_chocolate_pastry", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationMod(0.9F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> DARK_CHOCOLATE_FUDGE = ITEMS.register("dark_chocolate_fudge", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationMod(0.5F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> DARK_CHOCOLATE_APPLE = ITEMS.register("dark_chocolate_apple", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(9).saturationMod(0.8F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> DARK_CHOCOLATE_BERRIES = ITEMS.register("dark_chocolate_berries", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(8).saturationMod(0.7F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build())));
+    public static final RegistryObject<Item> DARK_CHOCOLATE_PASTRY = ITEMS.register("dark_chocolate_pastry", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(0.9F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build())));
+    public static final RegistryObject<Item> DARK_CHOCOLATE_TOAST = ITEMS.register("dark_chocolate_toast", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(5).saturationMod(0.5F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> DICED_ONION = ITEMS.register("diced_onion", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> DICED_TOMATO = ITEMS.register("diced_tomato", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> DONUT_BASE = ITEMS.register("donut_base", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(1).saturationMod(1.1F).build())));
+    public static final RegistryObject<Item> DONUT_HOLE = ITEMS.register("donut_hole", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(1).saturationMod(0.4F).build())));
+    public static final RegistryObject<Item> DONUT_HOLE_SUGAR = ITEMS.register("donut_hole_sugar", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(1).saturationMod(0.4F).effect(new MobEffectInstance(MobEffects.LUCK, 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> DONUT_SUGAR = ITEMS.register("donut_sugar", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(0.6F).effect(new MobEffectInstance(MobEffects.LUCK, 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> DRAGON_BUN = ITEMS.register("dragon_bun", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(9).saturationMod(0.4F).build())));
+    public static final RegistryObject<Item> DRAGON_BUN_CRIMSON_FUNGUS = ITEMS.register("dragon_bun_crimson_fungus", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(9).saturationMod(0.5F).build())));
+    public static final RegistryObject<Item> DRAGON_BUN_WARPED_FUNGUS = ITEMS.register("dragon_bun_warped_fungus", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(9).saturationMod(0.6F).build())));
+    public static final RegistryObject<Item> DRAGON_BURGER = ITEMS.register("dragon_burger", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(11).saturationMod(0.4F).effect(new MobEffectInstance(MobEffects.ABSORPTION, 1200, 0), 1.0f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f).build())));
+    public static final RegistryObject<Item> DRAGON_BURGER_CRIMSON_FUNGUS = ITEMS.register("dragon_burger_crimson_fungus", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(11).saturationMod(0.5F).effect(new MobEffectInstance(MobEffects.ABSORPTION, 6000, 0), 1.0f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 1200, 0), 1.0f).build())));
+    public static final RegistryObject<Item> DRAGON_BURGER_WARPED_FUNGUS = ITEMS.register("dragon_burger_warped_fungus", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(11).saturationMod(0.6F).effect(new MobEffectInstance(MobEffects.ABSORPTION, 6000, 0), 1.0f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.JUMP, 1200, 0), 1.0f).effect(new MobEffectInstance(MobEffects.SLOW_FALLING, 1200, 0), 1.0f).build())));
+    public static final RegistryObject<Item> DRAGON_PATTY = ITEMS.register("dragon_patty", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(7).saturationMod(0.6F).build())));
+    public static final RegistryObject<Item> DRIED_COFFEE_BEANS = ITEMS.register("dried_coffee_beans", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> DUMPLING_WRAPPERS = ITEMS.register("dumpling_wrappers", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> EGGPLANT_BUN = ITEMS.register("eggplant_bun", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(5).saturationMod(0.9F).build())));
+    public static final RegistryObject<Item> EGGPLANT_BUN_CHEESE_TOMATO = ITEMS.register("eggplant_bun_cheese_tomato", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(10).saturationMod(0.9F).build())));
+    public static final RegistryObject<Item> EGGPLANT_BUN_LETTUCE = ITEMS.register("eggplant_bun_lettuce", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(7).saturationMod(1.0F).build())));
+    public static final RegistryObject<Item> EGGPLANT_BUN_LETTUCE_TOMATO = ITEMS.register("eggplant_bun_lettuce_tomato", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(7).saturationMod(1.1F).build())));
+    public static final RegistryObject<Item> EGGPLANT_BUN_TOMATO = ITEMS.register("eggplant_bun_tomato", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(7).saturationMod(1.0F).build())));
+    public static final RegistryObject<Item> EGGPLANT_BURGER = ITEMS.register("eggplant_burger", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(7).saturationMod(0.9F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f).build())));
+    public static final RegistryObject<Item> EGGPLANT_BURGER_LETTUCE = ITEMS.register("eggplant_burger_lettuce", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(9).saturationMod(1.0F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> EGGPLANT_BURGER_TOMATO = ITEMS.register("eggplant_burger_tomato", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(9).saturationMod(1.0F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> EGGPLANT_CHEESEBURGER = ITEMS.register("eggplant_cheeseburger", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(10).saturationMod(0.9F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> EGGPLANT_CHEESEBURGER_LETTUCE = ITEMS.register("eggplant_cheeseburger_lettuce", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(12).saturationMod(0.9F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 6000, 0), 1.0f).build())));
+    public static final RegistryObject<Item> EGGPLANT_CHEESEBURGER_LETTUCE_TOMATO = ITEMS.register("eggplant_cheeseburger_lettuce_tomato", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(12).saturationMod(1.0F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 6000, 0), 1.0f).build())));
+    public static final RegistryObject<Item> EGGPLANT_CHEESEBURGER_TOMATO = ITEMS.register("eggplant_cheeseburger_tomato", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(12).saturationMod(0.9F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 6000, 0), 1.0f).build())));
+    public static final RegistryObject<Item> EGG_POWDER = ITEMS.register("egg_powder", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> ENDERMITE_MEATBALL = ITEMS.register("endermite_meatball", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationMod(0.6F).build())));
+    public static final RegistryObject<Item> ENDERMITE_MEATBALL_SANDWICH = ITEMS.register("endermite_meatball_sandwich", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(10).saturationMod(0.4F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f).effect(new MobEffectInstance(MobEffects.REGENERATION, 1200, 0), 1.0f).build())));
+    public static final RegistryObject<Item> ESPRESSO_POWDER = ITEMS.register("espresso_powder", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> FISH_BACON_PIZZA_SLICE = ITEMS.register("fish_bacon_pizza_slice", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(6).saturationMod(0.9F).build())));
+    public static final RegistryObject<Item> FISHCAKE = ITEMS.register("fishcake", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationMod(0.9F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.WATER_BREATHING, 3600, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> FISH_CALZONE = ITEMS.register("fish_calzone", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(7).saturationMod(0.4F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> FISH_ONION_PIZZA_SLICE = ITEMS.register("fish_onion_pizza_slice", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(8).saturationMod(0.7F).build())));
+    public static final RegistryObject<Item> FISH_PIZZA_SLICE = ITEMS.register("fish_pizza_slice", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(6).saturationMod(0.6F).build())));
+    public static final RegistryObject<Item> FRIED_EGG_HASH_BROWN_SANDWICH = ITEMS.register("fried_egg_hash_brown_sandwich", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(9).saturationMod(1.2F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f).build())));
+    public static final RegistryObject<Item> CREAM_CHOCOLATE_CUPCAKE = ITEMS.register("cream_chocolate_cupcake", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationMod(1.2F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> CREAM_CHOCOLATE_SWEET_ROLL_SWEET_BERRY = ITEMS.register("cream_chocolate_sweet_roll_sweet_berry", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(6).saturationMod(0.5F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.DIG_SPEED, 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> CREAM_CHOCOLATE_SWEET_ROLL_CHORUS_FRUIT = ITEMS.register("cream_chocolate_sweet_roll_chorus_fruit", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(9).saturationMod(0.7F).effect(new MobEffectInstance(MobEffects.JUMP, 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.SLOW_FALLING, 600, 0), 1.0f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build())));
+    public static final RegistryObject<Item> CREAM_CHOCOLATE_SWEET_ROLL_GLOW_BERRY = ITEMS.register("cream_chocolate_sweet_roll_glow_berry", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(7).saturationMod(0.6F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.GLOWING, 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.NIGHT_VISION, 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> CREAM_CUPCAKE = ITEMS.register("cream_cupcake", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(1.1F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> CREAM_MINI_WAFFLE = ITEMS.register("cream_mini_waffle", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(1.8F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.LUCK, 600, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> CREAM_MINI_WAFFLE_SWEET_BERRY = ITEMS.register("cream_mini_waffle_sweet_berry", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(1.8F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.DIG_SPEED, 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.LUCK, 600, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> CREAM_MINI_WAFFLE_CHORUS_FRUIT = ITEMS.register("cream_mini_waffle_chorus_fruit", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(1.9F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.JUMP, 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.SLOW_FALLING, 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.LUCK, 600, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> CREAM_MINI_WAFFLE_GLOW_BERRY = ITEMS.register("cream_mini_waffle_glow_berry", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(1.8F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.GLOWING, 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.NIGHT_VISION, 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.LUCK, 600, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> CREAM_SWEET_ROLL_SWEET_BERRY = ITEMS.register("cream_sweet_roll_sweet_berry", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(5).saturationMod(0.6F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 300, 0), 1.0f).effect(new MobEffectInstance(MobEffects.DIG_SPEED, 300, 0), 1.0f).build())));
+    public static final RegistryObject<Item> CREAM_SWEET_ROLL_CHORUS_FRUIT = ITEMS.register("cream_sweet_roll_chorus_fruit", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(8).saturationMod(0.8F).effect(new MobEffectInstance(MobEffects.JUMP, 300, 0), 1.0f).effect(new MobEffectInstance(MobEffects.SLOW_FALLING, 300, 0), 1.0f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> CREAM_SWEET_ROLL_GLOW_BERRY = ITEMS.register("cream_sweet_roll_glow_berry", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(6).saturationMod(0.7F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 300, 0), 1.0f).effect(new MobEffectInstance(MobEffects.GLOWING, 300, 0), 1.0f).effect(new MobEffectInstance(MobEffects.NIGHT_VISION, 300, 0), 1.0f).build())));
+    public static final RegistryObject<Item> GELATIN = ITEMS.register("gelatin", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> GELATIN_DESSERT_SLICE = ITEMS.register("gelatin_dessert_slice", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(5).saturationMod(0.3F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> GLOW_BERRY_CHEESECAKE_SLICE = ITEMS.register("glow_berry_cheesecake_slice", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(0.3F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build())));
+    public static final RegistryObject<Item> GLOW_BERRY_CREAM_CAKE_SLICE_CHORUS_FRUIT = ITEMS.register("glow_berry_cream_cake_slice_chorus_fruit", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(0.4F).build())));
+    public static final RegistryObject<Item> GLOW_BERRY_CREAM_CAKE_SLICE_GLOW_BERRY = ITEMS.register("glow_berry_cream_cake_slice_glow_berry", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(0.3F).build())));
+    public static final RegistryObject<Item> GLOW_BERRY_CREAM_CAKE_SLICE_SWEET_BERRY = ITEMS.register("glow_berry_cream_cake_slice_sweet_berry", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(0.3F).build())));
+    public static final RegistryObject<Item> GLOW_BERRY_CREAM_CHOCOLATE = ITEMS.register("glow_berry_cream_chocolate", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(7).saturationMod(0.4F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> GLOW_BERRY_CREAM_CHOCOLATE_PASTRY = ITEMS.register("glow_berry_cream_chocolate_pastry", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(1.0F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> GLOW_BERRY_CREAM_DARK_CHOCOLATE = ITEMS.register("glow_berry_cream_dark_chocolate", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(8).saturationMod(0.3F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> GLOW_BERRY_CREAM_CHOCOLATE_SWEET_ROLL = ITEMS.register("glow_berry_cream_chocolate_sweet_roll", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(6).saturationMod(0.7F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build())));
+    public static final RegistryObject<Item> GLOW_BERRY_CREAM_CHOCOLATE_SWEET_ROLL_GLOW_BERRY = ITEMS.register("glow_berry_cream_chocolate_sweet_roll_glow_berry", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(6).saturationMod(0.7F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).effect(new MobEffectInstance(MobEffects.GLOWING, 1200, 0), 1.0f).effect(new MobEffectInstance(MobEffects.NIGHT_VISION, 1200, 0), 1.0f).build())));
+    public static final RegistryObject<Item> GLOW_BERRY_CREAM_CHOCOLATE_CUPCAKE = ITEMS.register("glow_berry_cream_chocolate_cupcake", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationMod(1.1F).effect(new MobEffectInstance(MobEffects.GLOWING, 1200, 0), 1.0f).effect(new MobEffectInstance(MobEffects.NIGHT_VISION, 1200, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> GLOW_BERRY_CREAM_CUPCAKE = ITEMS.register("glow_berry_cream_cupcake", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(1.0F).effect(new MobEffectInstance(MobEffects.GLOWING, 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.NIGHT_VISION, 600, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> GLOW_BERRY_CREAM_MINI_WAFFLE = ITEMS.register("glow_berry_cream_mini_waffle", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(1.9F).effect(new MobEffectInstance(MobEffects.GLOWING, 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.NIGHT_VISION, 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.LUCK, 600, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> GLOW_BERRY_CREAM_MINI_WAFFLE_GLOW_BERRY = ITEMS.register("glow_berry_cream_mini_waffle_glow_berry", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(1.9F).effect(new MobEffectInstance(MobEffects.GLOWING, 1200, 0), 1.0f).effect(new MobEffectInstance(MobEffects.NIGHT_VISION, 1200, 0), 1.0f).effect(new MobEffectInstance(MobEffects.LUCK, 600, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> GLOW_BERRY_CREAM_SWEET_ROLL = ITEMS.register("glow_berry_cream_sweet_roll", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(5).saturationMod(0.6F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> GLOW_BERRY_CREAM_SWEET_ROLL_GLOW_BERRY = ITEMS.register("glow_berry_cream_sweet_roll_glow_berry", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(5).saturationMod(0.6F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.GLOWING, 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.NIGHT_VISION, 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> GLOW_BERRY_CREAM_CHOCOLATE_DONUT = ITEMS.register("glow_berry_cream_chocolate_donut", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationMod(0.7F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> GLOW_BERRY_CREAM_DONUT = ITEMS.register("glow_berry_cream_donut", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(0.7F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build())));
+    public static final RegistryObject<Item> GLOW_BERRY_CREAM_PASTRY = ITEMS.register("glow_berry_cream_pastry", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(2).saturationMod(1.0F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).effect(new MobEffectInstance(MobEffects.GLOWING, 1200, 0), 1.0f).effect(new MobEffectInstance(MobEffects.NIGHT_VISION, 1200, 0), 1.0f).build())));
+    public static final RegistryObject<Item> GLOW_BERRY_CREAM_WHITE_CHOCOLATE = ITEMS.register("glow_berry_cream_white_chocolate", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(6).saturationMod(0.5F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> GLOW_BERRY_ICE_CREAM_CONE = ITEMS.register("glow_berry_ice_cream_cone", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(2).saturationMod(0.9F).effect(new MobEffectInstance(MobEffects.GLOWING, 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.NIGHT_VISION, 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.LUCK, 600, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> GLOW_BERRY_ICE_CREAM_SANDWICH = ITEMS.register("glow_berry_ice_cream_sandwich", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(6).saturationMod(0.6F).build())));
+    public static final RegistryObject<Item> GLOW_BERRY_JAM_SANDWICH = ITEMS.register("glow_berry_jam_sandwich", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(9).saturationMod(0.4F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> GLOW_BERRY_PIE_SLICE = ITEMS.register("glow_berry_pie_slice", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(0.3F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build())));
+    public static final RegistryObject<Item> GRAHAM_CRACKER = ITEMS.register("graham_cracker", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(2).saturationMod(0.8F).build())));
+    public static final RegistryObject<Item> GRAHAM_CRACKER_CHOCOLATE = ITEMS.register("graham_cracker_chocolate", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationMod(0.8F).build())));
+    public static final RegistryObject<Item> GRAHAM_CRACKER_CHOCOLATE_MARSHMALLOW = ITEMS.register("graham_cracker_chocolate_marshmallow", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(6).saturationMod(0.7F).build())));
+    public static final RegistryObject<Item> GRAHAM_CRACKER_CRUMBS = ITEMS.register("graham_cracker_crumbs", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> GRAHAM_CRACKER_MARSHMALLOW = ITEMS.register("graham_cracker_marshmallow", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(0.7F).build())));
+    public static final RegistryObject<Item> GRAHAM_CRACKER_PIE_CRUST = ITEMS.register("graham_cracker_pie_crust", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(6).saturationMod(0.7F).build())));
+    public static final RegistryObject<Item> GRAY_GELATIN_DESSERT_SLICE = ITEMS.register("gray_gelatin_dessert_slice", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(5).saturationMod(0.3F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> GREEN_GELATIN_DESSERT_SLICE = ITEMS.register("green_gelatin_dessert_slice", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(5).saturationMod(0.3F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> GRILLED_CHEESE_SANDWICH = ITEMS.register("grilled_cheese_sandwich", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(9).saturationMod(0.5F).build())));
+    public static final RegistryObject<Item> GROUND_BEEF = ITEMS.register("ground_beef", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> GROUND_MUTTON = ITEMS.register("ground_mutton", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> GROUND_PORK = ITEMS.register("ground_pork", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> GROUND_RABBIT = ITEMS.register("ground_rabbit", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> GROUND_ENDERMITE = ITEMS.register("ground_endermite", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> GYRO_MEAT_SLICE = ITEMS.register("gyro_meat_slice", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationMod(1.1F).build())));
+    public static final RegistryObject<Item> HAMBURGER = ITEMS.register("hamburger", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(8).saturationMod(0.6F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> HAMBURGER_BACON = ITEMS.register("hamburger_bacon", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(10).saturationMod(0.6F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> HAMBURGER_BACON_LETTUCE = ITEMS.register("hamburger_bacon_lettuce", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(11).saturationMod(0.7F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> HAMBURGER_BACON_LETTUCE_TOMATO = ITEMS.register("hamburger_bacon_lettuce_tomato", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(11).saturationMod(0.8F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> HAMBURGER_LETTUCE = ITEMS.register("hamburger_lettuce", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(9).saturationMod(0.7F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> HAMBURGER_LETTUCE_TOMATO = ITEMS.register("hamburger_lettuce_tomato", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(9).saturationMod(0.8F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> HAMBURGER_ONION = ITEMS.register("hamburger_onion", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(8).saturationMod(0.8F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> HAMBURGER_ONION_BACON = ITEMS.register("hamburger_onion_bacon", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(11).saturationMod(0.7F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> HAMBURGER_ONION_BACON_LETTUCE = ITEMS.register("hamburger_onion_bacon_lettuce", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(12).saturationMod(0.8F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> HAMBURGER_ONION_LETTUCE = ITEMS.register("hamburger_onion_lettuce", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(10).saturationMod(0.7F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> HAMBURGER_PEANUT_BUTTER = ITEMS.register("hamburger_peanut_butter", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(8).saturationMod(0.8F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> HAMBURGER_PEANUT_BUTTER_BACON = ITEMS.register("hamburger_peanut_butter_bacon", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(10).saturationMod(0.8F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> HAMBURGER_TOMATO = ITEMS.register("hamburger_tomato", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(9).saturationMod(0.7F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> HASH_BROWNS = ITEMS.register("hash_browns", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationMod(0.6F).build())));
+    public static final RegistryObject<Item> HOLLOW_CHOCOLATE = ITEMS.register("hollow_chocolate", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(2).saturationMod(0.2F).fast().build())));
+    public static final RegistryObject<Item> HOLLOW_DARK_CHOCOLATE = ITEMS.register("hollow_dark_chocolate", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(5).saturationMod(0.2F).fast().build())));
+    public static final RegistryObject<Item> HOLLOW_WHITE_CHOCOLATE = ITEMS.register("hollow_white_chocolate", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(0.4F).fast().build())));
+    public static final RegistryObject<Item> HONEYED_BERRIES = ITEMS.register("honeyed_berries", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(7).saturationMod(0.9F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build())));
+    public static final RegistryObject<Item> HONEYED_BISCUIT = ITEMS.register("honeyed_biscuit", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationMod(0.7F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build())));
+    public static final RegistryObject<Item> HONEYED_CHOCOLATE_DONUT = ITEMS.register("honeyed_chocolate_donut", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationMod(0.7F).effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 3600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> HONEYED_CHOCOLATE_SWEET_ROLL = ITEMS.register("honeyed_chocolate_sweet_roll", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(6).saturationMod(0.8F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build())));
+    public static final RegistryObject<Item> HONEYED_CHOCOLATE_CUPCAKE = ITEMS.register("honeyed_chocolate_cupcake", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(5).saturationMod(1.1F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> HONEYED_CUPCAKE = ITEMS.register("honeyed_cupcake", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationMod(1.0F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> HONEYED_MINI_WAFFLE = ITEMS.register("honeyed_mini_waffle", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(1.8F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.LUCK, 600, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> HONEYED_DONUT = ITEMS.register("honeyed_donut", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(0.7F).effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 1200, 0), 1.0f).build())));
+    public static final RegistryObject<Item> HONEYED_MUFFIN = ITEMS.register("honeyed_muffin", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationMod(0.7F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> HONEYED_SWEET_ROLL = ITEMS.register("honeyed_sweet_roll", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(5).saturationMod(0.7F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> HONEYED_TOAST = ITEMS.register("honeyed_toast", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationMod(0.8F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> ICE_CREAM_CONE = ITEMS.register("ice_cream_cone", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(2).saturationMod(0.8F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.LUCK, 600, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> ICE_CREAM_SANDWICH = ITEMS.register("ice_cream_sandwich", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(6).saturationMod(0.7f).build())));
+    public static final RegistryObject<Item> ICE_CREAM_SANDWICH_NEAPOLITAN = ITEMS.register("ice_cream_sandwich_neapolitan", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(7).saturationMod(0.8f).build())));
+    public static final RegistryObject<Item> LIGHT_BLUE_GELATIN_DESSERT_SLICE = ITEMS.register("light_blue_gelatin_dessert_slice", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(5).saturationMod(0.3F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> LIGHT_GRAY_GELATIN_DESSERT_SLICE = ITEMS.register("light_gray_gelatin_dessert_slice", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(5).saturationMod(0.3F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> LIME_GELATIN_DESSERT_SLICE = ITEMS.register("lime_gelatin_dessert_slice", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(5).saturationMod(0.3F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> MACARONI = ITEMS.register("macaroni", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(2).saturationMod(0.5F).build())));
+    public static final RegistryObject<Item> MAGENTA_GELATIN_DESSERT_SLICE = ITEMS.register("magenta_gelatin_dessert_slice", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(5).saturationMod(0.3F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> MAGMA_CREAM_MARSHMALLOW = ITEMS.register("magma_cream_marshmallow", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(2).saturationMod(0.2f).effect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 600, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> MARSHMALLOW = ITEMS.register("marshmallow", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(2).saturationMod(0.2f).fast().build())));
+    public static final RegistryObject<Item> MARSHMALLOW_BUTTERSCOTCH_FUDGE = ITEMS.register("marshmallow_butterscotch_fudge", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(0.9f).effect(new MobEffectInstance(MobEffects.DIG_SPEED, 6000, 0), 1.0f).build())));
+    public static final RegistryObject<Item> MARSHMALLOW_CARAMEL_FUDGE = ITEMS.register("marshmallow_caramel_fudge", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(5).saturationMod(0.5f).effect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 6000, 0), 1.0f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> MARSHMALLOW_CHOCOLATE = ITEMS.register("marshmallow_chocolate", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(6).saturationMod(0.5f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> MARSHMALLOW_CHOCOLATE_FUDGE = ITEMS.register("marshmallow_chocolate_fudge", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(0.7f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 6000, 0), 1.0f).build())));
+    public static final RegistryObject<Item> MARSHMALLOW_COFFEE_TOFFEE_FUDGE = ITEMS.register("marshmallow_coffee_toffee_fudge", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationMod(0.8f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.DIG_SPEED, 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> MARSHMALLOW_DARK_CHOCOLATE = ITEMS.register("marshmallow_dark_chocolate", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(7).saturationMod(0.4f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> MARSHMALLOW_DARK_CHOCOLATE_FUDGE = ITEMS.register("marshmallow_dark_chocolate_fudge", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationMod(0.6f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 6000, 0), 1.0f).build())));
+    public static final RegistryObject<Item> MARSHMALLOW_TOFFEE_FUDGE = ITEMS.register("marshmallow_toffee_fudge", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationMod(0.6f).effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 6000, 0), 1.0f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> MARSHMALLOW_WHITE_CHOCOLATE = ITEMS.register("marshmallow_white_chocolate", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(5).saturationMod(0.6f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> MARSHMALLOW_WHITE_CHOCOLATE_FUDGE = ITEMS.register("marshmallow_white_chocolate_fudge", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(2).saturationMod(0.8f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 6000, 0), 1.0f).build())));
+    public static final RegistryObject<Item> BEEF_MEATBALL = ITEMS.register("beef_meatball", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationMod(0.6f).build())));
+    public static final RegistryObject<Item> BEEF_MEATBALL_SANDWICH = ITEMS.register("beef_meatball_sandwich", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(10).saturationMod(0.4f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f).build())));
+    public static final RegistryObject<Item> MELON_CREAM_CHOCOLATE = ITEMS.register("melon_cream_chocolate", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(7).saturationMod(0.6f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> MELON_CREAM_CHOCOLATE_PASTRY = ITEMS.register("melon_cream_chocolate_pastry", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationMod(1.1f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> MELON_CREAM_DARK_CHOCOLATE = ITEMS.register("melon_cream_dark_chocolate", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(8).saturationMod(0.5f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> MELON_CREAM_CHOCOLATE_SWEET_ROLL = ITEMS.register("melon_cream_chocolate_sweet_roll", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(6).saturationMod(0.9f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build())));
+    public static final RegistryObject<Item> MELON_CREAM_CHOCOLATE_CUPCAKE = ITEMS.register("melon_cream_chocolate_cupcake", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationMod(1.2F).effect(new MobEffectInstance(MobEffects.REGENERATION, 1200, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> MELON_CREAM_CUPCAKE = ITEMS.register("melon_cream_cupcake", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(1.1F).effect(new MobEffectInstance(MobEffects.REGENERATION, 600, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> MELON_CREAM_MINI_WAFFLE = ITEMS.register("melon_cream_mini_waffle", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(1.6F).effect(new MobEffectInstance(MobEffects.REGENERATION, 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.LUCK, 600, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> MELON_CREAM_SWEET_ROLL = ITEMS.register("melon_cream_sweet_roll", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(5).saturationMod(0.8f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> MELON_CREAM_CHOCOLATE_DONUT = ITEMS.register("melon_cream_chocolate_donut", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(5).saturationMod(0.9f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.REGENERATION, 3600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> MELON_CREAM_DONUT = ITEMS.register("melon_cream_donut", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationMod(0.9f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).effect(new MobEffectInstance(MobEffects.REGENERATION, 1200, 0), 1.0f).build())));
+    public static final RegistryObject<Item> MELON_CREAM_PASTRY = ITEMS.register("melon_cream_pastry", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(1.1f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).effect(new MobEffectInstance(MobEffects.REGENERATION, 1200, 0), 1.0f).build())));
+    public static final RegistryObject<Item> MELON_CREAM_WHITE_CHOCOLATE = ITEMS.register("melon_cream_white_chocolate", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(6).saturationMod(0.7f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> MELON_ICE_CREAM_CONE = ITEMS.register("melon_ice_cream_cone", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(2).saturationMod(1.1F).effect(new MobEffectInstance(MobEffects.REGENERATION, 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.LUCK, 600, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> MELON_ICE_CREAM_SANDWICH = ITEMS.register("melon_ice_cream_sandwich", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(6).saturationMod(0.7F).build())));
+    public static final RegistryObject<Item> MELON_JAM_SANDWICH = ITEMS.register("melon_jam_sandwich", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(8).saturationMod(0.8f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> MILK_POWDER = ITEMS.register("milk_powder", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> MINCED_DRAGON = ITEMS.register("minced_dragon", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> MINI_CHOCOLATE_GRAHAM_CRACKER_PIE_CRUST = ITEMS.register("mini_chocolate_graham_cracker_pie_crust", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationMod(0.9F).build())));
+    public static final RegistryObject<Item> MINI_CHOCOLATE_PIE_GRAHAM_CRACKER = ITEMS.register("mini_chocolate_pie_graham_cracker", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(7).saturationMod(0.8F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0F).build())));
+    public static final RegistryObject<Item> MINI_COOKIE_CREAM_PIE = ITEMS.register("mini_cookie_cream_pie", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(8).saturationMod(0.8F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1.0F).build())));
+    public static final RegistryObject<Item> MINI_CREAM_PIE_CHOCOLATE_GRAHAM_CRACKER = ITEMS.register("mini_cream_pie_chocolate_graham_cracker", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(6).saturationMod(1.0F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0F).build())));
+    public static final RegistryObject<Item> MINI_CREAM_PIE_GRAHAM_CRACKER = ITEMS.register("mini_cream_pie_graham_cracker", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(6).saturationMod(0.9F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0F).build())));
+    public static final RegistryObject<Item> MINI_GRAHAM_CRACKER_PIE_CRUST = ITEMS.register("mini_graham_cracker_pie_crust", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(0.9F).build())));
+    public static final RegistryObject<Item> MINI_SMORES_PIE = ITEMS.register("mini_smores_pie", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(9).saturationMod(0.7F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 6000, 0), 1.0f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 6000, 0), 1.0F).build())));
+    public static final RegistryObject<Item> MINI_WAFFLE = ITEMS.register("mini_waffle", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(2).saturationMod(0.6F).fast().build())));
+    public static final RegistryObject<Item> MIXED_SALAD_BEETROOT_CARROT = ITEMS.register("mixed_salad_beetroot_carrot", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(6).saturationMod(0.7F).effect(new MobEffectInstance(MobEffects.REGENERATION, 300, 0), 1.0f).build())));
+    public static final RegistryObject<Item> BLACKSTRAP_MOLASSES_BOTTLE = ITEMS.register("blackstrap_molasses_bottle", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> MUFFIN_BASE = ITEMS.register("muffin_base", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(0.7F).fast().build())));
+    public static final RegistryObject<Item> MUSHROOM_BACON_PIZZA_SLICE = ITEMS.register("mushroom_bacon_pizza_slice", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(5).saturationMod(0.9F).build())));
+    public static final RegistryObject<Item> MUSHROOM_CALZONE = ITEMS.register("mushroom_calzone", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(6).saturationMod(0.6F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> MUSHROOM_FISH_PIZZA_SLICE = ITEMS.register("mushroom_fish_pizza_slice", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(6).saturationMod(0.9F).build())));
+    public static final RegistryObject<Item> MUSHROOM_ONION_PIZZA_SLICE = ITEMS.register("mushroom_onion_pizza_slice", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(7).saturationMod(0.7F).build())));
+    public static final RegistryObject<Item> MUSHROOM_PIZZA_SLICE = ITEMS.register("mushroom_pizza_slice", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(5).saturationMod(0.6F).build())));
+    public static final RegistryObject<Item> MUTTON_SANDWICH = ITEMS.register("mutton_sandwich", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(7).saturationMod(0.6F).build())));
+    public static final RegistryObject<Item> MUTTON_SANDWICH_BEETROOT = ITEMS.register("mutton_sandwich_beetroot", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(7).saturationMod(0.8F).build())));
+    public static final RegistryObject<Item> MUTTON_WRAP_LETTUCE_TOMATO = ITEMS.register("mutton_wrap_lettuce_tomato", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(10).saturationMod(0.7F).build())));
+    public static final RegistryObject<Item> ONION_BACON_PIZZA_SLICE = ITEMS.register("onion_bacon_pizza_slice", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(7).saturationMod(0.7F).build())));
+    public static final RegistryObject<Item> ONION_CALZONE = ITEMS.register("onion_calzone", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(6).saturationMod(0.5F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> ONION_PIZZA_SLICE = ITEMS.register("onion_pizza_slice", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(6).saturationMod(0.5F).build())));
+    public static final RegistryObject<Item> ORANGE_GELATIN_DESSERT_SLICE = ITEMS.register("orange_gelatin_dessert_slice", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(5).saturationMod(0.3F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> PAPRIKA = ITEMS.register("paprika", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> PASTA = ITEMS.register("pasta", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(2).saturationMod(0.8F).build())));
+    public static final RegistryObject<Item> PASTRY_BASE = ITEMS.register("pastry_base", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(2).saturationMod(0.8F).build())));
+    public static final RegistryObject<Item> PEANUT_BUTTER_APPLE_JAM_SANDWICH = ITEMS.register("peanut_butter_apple_jam_sandwich", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(8).saturationMod(0.8F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f).build())));
+    public static final RegistryObject<Item> PEANUT_BUTTER_CHORUS_FRUIT_JAM_SANDWICH = ITEMS.register("peanut_butter_chorus_fruit_jam_sandwich", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(11).saturationMod(0.6F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f).build())));
+    public static final RegistryObject<Item> PEANUT_BUTTER_MELON_JAM_SANDWICH = ITEMS.register("peanut_butter_melon_jam_sandwich", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(9).saturationMod(0.9F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f).build())));
+    public static final RegistryObject<Item> PINK_GELATIN_DESSERT_SLICE = ITEMS.register("pink_gelatin_dessert_slice", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(5).saturationMod(0.3F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build())));
+    public static final RegistryObject<Item> PITA_DOUGH = ITEMS.register("pita_dough", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> PITA_BREAD = ITEMS.register("pita_bread", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(1.8f).build())));
+    public static final RegistryObject<Item> PORK_MEATBALL = ITEMS.register("pork_meatball", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(0.8f).build())));
+    public static final RegistryObject<Item> PORK_MEATBALL_SANDWICH = ITEMS.register("pork_meatball_sandwich", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(9).saturationMod(0.6f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f).build())));
+    public static final RegistryObject<Item> POTATO_CHIPS = ITEMS.register("potato_chips", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(2).saturationMod(0.2F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.LUCK, 600, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> POWDERED_SUGAR = ITEMS.register("powdered_sugar", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> PRESSED_COCOA = ITEMS.register("pressed_cocoa", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> PUMPERNICKEL_BREAD = ITEMS.register("pumpernickel_bread", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(5).saturationMod(1.1F).build())));
+    public static final RegistryObject<Item> PUMPERNICKEL_BREAD_SLICE = ITEMS.register("pumpernickel_bread_slice", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(0.5F).fast().build())));
+    public static final RegistryObject<Item> PUMPERNICKEL_DOUGH = ITEMS.register("pumpernickel_dough", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> PUMPERNICKEL_TOAST_SLICE = ITEMS.register("pumpernickel_toast_slice", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(6).saturationMod(1.3F).fast().build())));
+    public static final RegistryObject<Item> PURPLE_GELATIN_DESSERT_SLICE = ITEMS.register("purple_gelatin_dessert_slice", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(5).saturationMod(0.3F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> RABBIT_CUTS = ITEMS.register("rabbit_cuts", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RABBIT_JERKY = ITEMS.register("rabbit_jerky", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(2).saturationMod(1.6F).effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 1200, 0), 1.0f).effect(new MobEffectInstance(MobEffects.DIG_SPEED, 1200, 0), 1.0f).build())));
+    public static final RegistryObject<Item> RABBIT_MEATBALL = ITEMS.register("rabbit_meatball", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(0.6f).build())));
+    public static final RegistryObject<Item> RABBIT_MEATBALL_SANDWICH = ITEMS.register("rabbit_meatball_sandwich", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(9).saturationMod(0.4f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f).effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 1200, 0), 1.0f).effect(new MobEffectInstance(MobEffects.DIG_SPEED, 1200, 0), 1.0f).build())));
+    public static final RegistryObject<Item> RAW_BACON_CALZONE = ITEMS.register("raw_bacon_calzone", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RAW_BUTTERSCOTCH_CHIP_CHOCOLATE_COOKIE = ITEMS.register("raw_butterscotch_chip_chocolate_cookie", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RAW_BUTTERSCOTCH_CHIP_COOKIE = ITEMS.register("raw_butterscotch_chip_cookie", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RAW_CALZONE = ITEMS.register("raw_calzone", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RAW_CARAMEL_CHIP_CHOCOLATE_COOKIE = ITEMS.register("raw_caramel_chip_chocolate_cookie", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RAW_CARAMEL_CHIP_COOKIE = ITEMS.register("raw_caramel_chip_cookie", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RAW_CHEESE_CALZONE = ITEMS.register("raw_cheese_calzone", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RAW_CHOCOLATE_CHIP_COOKIE = ITEMS.register("raw_chocolate_chip_cookie", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RAW_CHOCOLATE_PASTRY_BASE = ITEMS.register("raw_chocolate_pastry_base", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RAW_CHOCOLATE_SWEET_ROLL_BASE = ITEMS.register("raw_chocolate_sweet_roll_base", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RAW_CHORUS_FRUIT_COOKIE = ITEMS.register("raw_chorus_fruit_cookie", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RAW_CINNAMON_SWEET_ROLL_BASE = ITEMS.register("raw_cinnamon_sweet_roll_base", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RAW_COOKIE = ITEMS.register("raw_cookie", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RAW_DARK_CHOCOLATE_CHIP_CHOCOLATE_COOKIE = ITEMS.register("raw_dark_chocolate_chip_chocolate_cookie", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RAW_DARK_CHOCOLATE_CHIP_COOKIE = ITEMS.register("raw_dark_chocolate_chip_cookie", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RAW_ENDERMITE_MEATBALL = ITEMS.register("raw_endermite_meatball", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RAW_FISHCAKE = ITEMS.register("raw_fishcake", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RAW_FISH_CALZONE = ITEMS.register("raw_fish_calzone", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RAW_FLESH_COOKIE = ITEMS.register("raw_flesh_cookie", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RAW_GINGER_COOKIE = ITEMS.register("raw_ginger_cookie", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RAW_GREEN_TEA_COOKIE = ITEMS.register("raw_green_tea_cookie", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RAW_GYRO_MEAT_BLOCK = ITEMS.register("raw_gyro_meat_block", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RAW_HONEY_COOKIE = ITEMS.register("raw_honey_cookie", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RAW_MACARONI = ITEMS.register("raw_macaroni", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RAW_BEEF_MEATBALL = ITEMS.register("raw_beef_meatball", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RAW_MINI_CHOCOLATE_GRAHAM_CRACKER_PIE_CRUST = ITEMS.register("raw_mini_chocolate_graham_cracker_pie_crust", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RAW_MINI_CHOCOLATE_PIE_GRAHAM_CRACKER = ITEMS.register("raw_mini_chocolate_pie_graham_cracker", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RAW_MINI_CREAM_PIE_CHOCOLATE_GRAHAM_CRACKER = ITEMS.register("raw_mini_cream_pie_chocolate_graham_cracker", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RAW_MINI_CREAM_PIE_GRAHAM_CRACKER = ITEMS.register("raw_mini_cream_pie_graham_cracker", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RAW_MINI_GRAHAM_CRACKER_PIE_CRUST = ITEMS.register("raw_mini_graham_cracker_pie_crust", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RAW_MUSHROOM_CALZONE = ITEMS.register("raw_mushroom_calzone", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RAW_ONION_CALZONE = ITEMS.register("raw_onion_calzone", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RAW_PASTRY_BASE = ITEMS.register("raw_pastry_base", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RAW_PORK_MEATBALL = ITEMS.register("raw_pork_meatball", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RAW_RABBIT_MEATBALL = ITEMS.register("raw_rabbit_meatball", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RAW_SAUSAGE_CALZONE = ITEMS.register("raw_sausage_calzone", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RAW_SAUSAGE_PATTY = ITEMS.register("raw_sausage_patty", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RAW_SNICKERDOODLE = ITEMS.register("raw_snickerdoodle", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RAW_SOUL_BERRY_COOKIE = ITEMS.register("raw_soul_berry_cookie", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RAW_SPIDER_EYE_COOKIE = ITEMS.register("raw_spider_eye_cookie", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RAW_STRIDER_MEATBALL = ITEMS.register("raw_strider_meatball", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RAW_SUGAR_COOKIE = ITEMS.register("raw_sugar_cookie", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RAW_BERRY_COOKIE = ITEMS.register("raw_berry_cookie", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RAW_SWEET_ROLL_BASE = ITEMS.register("raw_sweet_roll_base", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RAW_TOFFEE_CHIP_CHOCOLATE_COOKIE = ITEMS.register("raw_toffee_chip_chocolate_cookie", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RAW_TOFFEE_CHIP_COOKIE = ITEMS.register("raw_toffee_chip_cookie", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RAW_UBE_COOKIE = ITEMS.register("raw_ube_cookie", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RAW_WHITE_CHOCOLATE_CHIP_CHOCOLATE_COOKIE = ITEMS.register("raw_white_chocolate_chip_chocolate_cookie", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RAW_WHITE_CHOCOLATE_CHIP_COOKIE = ITEMS.register("raw_white_chocolate_chip_cookie", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RED_GELATIN_DESSERT_SLICE = ITEMS.register("red_gelatin_dessert_slice", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(5).saturationMod(0.3F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> SALT = ITEMS.register("salt", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> SALT_DOUGH = ITEMS.register("salt_dough", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> SALT_DOUGH_SMALL = ITEMS.register("salt_dough_small", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> SAUSAGE_BACON_PIZZA_SLICE = ITEMS.register("sausage_bacon_pizza_slice", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(6).saturationMod(0.8F).build())));
+    public static final RegistryObject<Item> SAUSAGE_BISCUIT = ITEMS.register("sausage_biscuit", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(14).saturationMod(0.4F).build())));
+    public static final RegistryObject<Item> SAUSAGE_BISCUIT_BACON = ITEMS.register("sausage_biscuit_bacon", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(15).saturationMod(0.6F).build())));
+    public static final RegistryObject<Item> SAUSAGE_BISCUIT_CHEESE_BACON = ITEMS.register("sausage_biscuit_cheese_bacon", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(17).saturationMod(0.4F).build())));
+    public static final RegistryObject<Item> SAUSAGE_BISCUIT_CHEESE_FRIED_EGG = ITEMS.register("sausage_biscuit_cheese_fried_egg", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(16).saturationMod(0.6F).build())));
+    public static final RegistryObject<Item> SAUSAGE_BISCUIT_CHEESE_FRIED_EGG_BACON = ITEMS.register("sausage_biscuit_cheese_fried_egg_bacon", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(18).saturationMod(0.6F).build())));
+    public static final RegistryObject<Item> SAUSAGE_BISCUIT_FRIED_EGG = ITEMS.register("sausage_biscuit_fried_egg", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(14).saturationMod(0.8F).build())));
+    public static final RegistryObject<Item> SAUSAGE_BISCUIT_FRIED_EGG_BACON = ITEMS.register("sausage_biscuit_fried_egg_bacon", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(16).saturationMod(0.8F).build())));
+    public static final RegistryObject<Item> SAUSAGE_BISCUIT_SANDWICH = ITEMS.register("sausage_biscuit_sandwich", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(19).saturationMod(0.4F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> SAUSAGE_BISCUIT_SANDWICH_BACON = ITEMS.register("sausage_biscuit_sandwich_bacon", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(20).saturationMod(0.6F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> SAUSAGE_BISCUIT_SANDWICH_CHEESE_BACON = ITEMS.register("sausage_biscuit_sandwich_cheese_bacon", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(22).saturationMod(0.4F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> SAUSAGE_BISCUIT_SANDWICH_CHEESE_FRIED_EGG = ITEMS.register("sausage_biscuit_sandwich_cheese_fried_egg", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(21).saturationMod(0.6F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> SAUSAGE_BISCUIT_SANDWICH_CHEESE_FRIED_EGG_BACON = ITEMS.register("sausage_biscuit_sandwich_cheese_fried_egg_bacon", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(23).saturationMod(0.6F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> SAUSAGE_BISCUIT_SANDWICH_FRIED_EGG = ITEMS.register("sausage_biscuit_sandwich_fried_egg", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(19).saturationMod(0.8F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> SAUSAGE_BISCUIT_SANDWICH_FRIED_EGG_BACON = ITEMS.register("sausage_biscuit_sandwich_fried_egg_bacon", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(21).saturationMod(0.8F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> SAUSAGE_BITS = ITEMS.register("sausage_bits", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(2).saturationMod(0.2F).build())));
+    public static final RegistryObject<Item> SAUSAGE_CALZONE = ITEMS.register("sausage_calzone", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(7).saturationMod(0.5F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> SAUSAGE_FISH_PIZZA_SLICE = ITEMS.register("sausage_fish_pizza_slice", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(7).saturationMod(0.8F).build())));
+    public static final RegistryObject<Item> SAUSAGE_MEAT = ITEMS.register("sausage_meat", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> SAUSAGE_MUSHROOM_PIZZA_SLICE = ITEMS.register("sausage_mushroom_pizza_slice", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(6).saturationMod(0.8F).build())));
+    public static final RegistryObject<Item> SAUSAGE_ONION_PIZZA_SLICE = ITEMS.register("sausage_onion_pizza_slice", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(8).saturationMod(0.6F).build())));
+    public static final RegistryObject<Item> SAUSAGE_PATTY = ITEMS.register("sausage_patty", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(6).saturationMod(0.3F).build())));
+    public static final RegistryObject<Item> SAUSAGE_PIZZA_SLICE = ITEMS.register("sausage_pizza_slice", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(6).saturationMod(0.5F).build())));
+    public static final RegistryObject<Item> SHREDDED_BEETROOT = ITEMS.register("shredded_beetroot", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> SHREDDED_CARROT = ITEMS.register("shredded_carrot", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> SHREDDED_CHICKEN = ITEMS.register("shredded_chicken", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> SHREDDED_POTATO = ITEMS.register("shredded_potato", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> SLICED_BEETROOT = ITEMS.register("sliced_beetroot", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(2).saturationMod(0.3F).fast().build())));
+    public static final RegistryObject<Item> SLICED_BROWN_MUSHROOM = ITEMS.register("sliced_brown_mushroom", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(1).saturationMod(1.1F).fast().build())));
+    public static final RegistryObject<Item> SLICED_CARROT = ITEMS.register("sliced_carrot", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(1).saturationMod(0.4F).fast().build())));
+    public static final RegistryObject<Item> SLICED_POTATO = ITEMS.register("sliced_potato", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(1).saturationMod(0.6F).fast().build())));
+    public static final RegistryObject<Item> SLICED_ONION = ITEMS.register("sliced_onion", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(2).saturationMod(0.4F).build())));
+    public static final RegistryObject<Item> SLICED_RED_MUSHROOM = ITEMS.register("sliced_red_mushroom", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(1).saturationMod(1.1F).fast().build())));
+    public static final RegistryObject<Item> SLICED_TOMATO = ITEMS.register("sliced_tomato", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(1).saturationMod(0.6F).fast().build())));
+    public static final RegistryObject<Item> SMALL_ENDERMITE_MEATBALLS = ITEMS.register("small_endermite_meatballs", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(0.7F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.REGENERATION, 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> SMALL_BEEF_MEATBALLS = ITEMS.register("small_beef_meatballs", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(0.7F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> SMALL_RABBIT_MEATBALLS = ITEMS.register("small_rabbit_meatballs", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(2).saturationMod(0.7F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.DIG_SPEED, 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> SMALL_PORK_MEATBALLS = ITEMS.register("small_pork_meatballs", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(2).saturationMod(0.9F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> SMALL_SLIMEBALLS = ITEMS.register("small_slimeballs", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(0.7F).effect(new MobEffectInstance(MobEffects.CONFUSION, 300, 0), 1.0F).build())));
+    public static final RegistryObject<Item> SMALL_STRIDER_MEATBALLS = ITEMS.register("small_strider_meatballs", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(0.7F).effect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 600, 0), 1.0f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> SMORE = ITEMS.register("smore", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(7).saturationMod(0.5F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 6000, 0), 1.0f).build())));
+    public static final RegistryObject<Item> SMORES_PIE_SLICE = ITEMS.register("smores_pie_slice", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationMod(0.8F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1800, 0), 1.0f).build())));
+    public static final RegistryObject<Item> SPICY_BREAKFAST_SAUSAGES = ITEMS.register("spicy_breakfast_sausages", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(6).saturationMod(0.8F).effect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 600, 0), 1.0f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> SPICY_CHICKEN_NUGGETS = ITEMS.register("spicy_chicken_nuggets", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationMod(1.1F).effect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 600, 0), 1.0f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f).build())));
+    public static final RegistryObject<Item> STRIDER_MEATBALL = ITEMS.register("strider_meatball", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationMod(0.6F).build())));
+    public static final RegistryObject<Item> STRIDER_MEATBALL_SANDWICH = ITEMS.register("strider_meatball_sandwich", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(10).saturationMod(0.4F).effect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 1200, 0), 1.0f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f).build())));
+    public static final RegistryObject<Item> SUGAR_DOUGH = ITEMS.register("sugar_dough", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> SUGAR_DOUGH_SMALL = ITEMS.register("sugar_dough_small", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> SWEET_ROLL_BASE = ITEMS.register("sweet_roll_base", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationMod(0.6F).build())));
+    public static final RegistryObject<Item> TOAST_SLICE = ITEMS.register("toast_slice", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(0.3F).fast().build())));
+    public static final RegistryObject<Item> TOFFEE = ITEMS.register("toffee", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(1).saturationMod(1.8F).fast().build())));
+    public static final RegistryObject<Item> TOFFEE_CHIPS = ITEMS.register("toffee_chips", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> TOFFEE_CHIP_CHOCOLATE_COOKIE = ITEMS.register("toffee_chip_chocolate_cookie", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(0.6F).build())));
+    public static final RegistryObject<Item> TOFFEE_CHIP_COOKIE = ITEMS.register("toffee_chip_cookie", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(2).saturationMod(0.7F).build())));
+    public static final RegistryObject<Item> TOFFEE_CHIP_ICE_CREAM_CONE = ITEMS.register("toffee_chip_ice_cream_cone", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(2).saturationMod(1.2F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.LUCK, 600, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> TOFFEE_CHIP_MUFFIN = ITEMS.register("toffee_chip_muffin", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(0.9F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 600, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> TOFFEE_CHIP_MINI_WAFFLE = ITEMS.register("toffee_chip_mini_waffle", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(1.7F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.LUCK, 600, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> TOFFEE_FUDGE = ITEMS.register("toffee_fudge", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationMod(0.5F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 3600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> UBE_SUGAR_DOUGH = ITEMS.register("ube_sugar_dough", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> UNBREADED_CHICKEN_PATTY = ITEMS.register("unbreaded_chicken_patty", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> VEGETABLE_SANDWICH_BEETROOT_LETTUCE = ITEMS.register("vegetable_sandwich_beetroot_lettuce", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(9).saturationMod(0.5F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> VEGETABLE_SANDWICH_LETTUCE_TOMATO = ITEMS.register("vegetable_sandwich_lettuce_tomato", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(9).saturationMod(0.7F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> WAFFLE_CONE = ITEMS.register("waffle_cone", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(2).saturationMod(1.0F).fast().build())));
+    public static final RegistryObject<Item> WHEAT_DOUGH_SMALL = ITEMS.register("wheat_dough_small", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> WHITE_CHOCOLATE_CHIP_CHOCOLATE_COOKIE = ITEMS.register("white_chocolate_chip_chocolate_cookie", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(0.5F).build())));
+    public static final RegistryObject<Item> WHITE_CHOCOLATE_CHIP_COOKIE = ITEMS.register("white_chocolate_chip_cookie", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(2).saturationMod(0.6F).build())));
+    public static final RegistryObject<Item> WHITE_CHOCOLATE_CHIPS = ITEMS.register("white_chocolate_chips", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> WHITE_CHOCOLATE_CHIP_ICE_CREAM_CONE = ITEMS.register("white_chocolate_chip_ice_cream_cone", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(2).saturationMod(1.2F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.LUCK, 600, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> WHITE_CHOCOLATE_CHIP_MUFFIN = ITEMS.register("white_chocolate_chip_muffin", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationMod(0.9F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> WHITE_CHOCOLATE_CHIP_MINI_WAFFLE = ITEMS.register("white_chocolate_chip_mini_waffle", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(1.7F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f).effect(new MobEffectInstance(MobEffects.LUCK, 600, 0), 1.0f).fast().build())));
+    public static final RegistryObject<Item> WHITE_CHOCOLATE_CHOCOLATE_PASTRY = ITEMS.register("white_chocolate_chocolate_pastry", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(2).saturationMod(1.2F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> WHITE_CHOCOLATE_FUDGE = ITEMS.register("white_chocolate_fudge", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(2).saturationMod(0.7F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> WHITE_CHOCOLATE_APPLE = ITEMS.register("white_chocolate_apple", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(7).saturationMod(0.9F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> WHITE_CHOCOLATE_BERRIES = ITEMS.register("white_chocolate_berries", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(6).saturationMod(0.8F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build())));
+    public static final RegistryObject<Item> WHITE_CHOCOLATE_PASTRY = ITEMS.register("white_chocolate_pastry", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(1).saturationMod(1.2F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build())));
+    public static final RegistryObject<Item> WHITE_CHOCOLATE_TOAST = ITEMS.register("white_chocolate_toast", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(0.7F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).build())));
+    public static final RegistryObject<Item> YELLOW_GELATIN_DESSERT_SLICE = ITEMS.register("yellow_gelatin_dessert_slice", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(5).saturationMod(0.3F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).fast().build())));
+
+    public static final RegistryObject<BottleFoodItem> APPLE_CREAM_FROSTING_BOTTLE = ITEMS.register("apple_cream_frosting_bottle", () -> new BottleFoodItem(new Item.Properties()
+                .craftRemainder(Items.GLASS_BOTTLE)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(3).saturationMod(0.7F).build())));
+
+    public static final RegistryObject<BottleFoodItem> APPLE_JAM_BOTTLE = ITEMS.register("apple_jam_bottle", () -> new BottleFoodItem(new Item.Properties()
+                .craftRemainder(Items.GLASS_BOTTLE)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(3).saturationMod(1.6F).build())));
+
+    public static final RegistryObject<BottleFoodItem> APPLE_JUICE_BOTTLE = ITEMS.register("apple_juice_bottle", () -> new BottleFoodItem(new Item.Properties()
+                .craftRemainder(Items.GLASS_BOTTLE)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(2).saturationMod(1.5F).build())));
+
+    public static final RegistryObject<BottleFoodItem> APPLE_MILKSHAKE_BOTTLE = ITEMS.register("apple_milkshake_bottle", () -> new BottleFoodItem(new Item.Properties()
+                .craftRemainder(Items.GLASS_BOTTLE)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(5).saturationMod(0.9F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).build())));
+
+    public static final RegistryObject<BottleFoodItem> BERRY_CREAM_FROSTING_BOTTLE = ITEMS.register("berry_cream_frosting_bottle", () -> new BottleFoodItem(new Item.Properties()
+                .craftRemainder(Items.GLASS_BOTTLE)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(4).saturationMod(0.4F).build())));
+
+    public static final RegistryObject<BottleFoodItem> BERRY_JAM_BOTTLE = ITEMS.register("berry_jam_bottle", () -> new BottleFoodItem(new Item.Properties()
+                .craftRemainder(Items.GLASS_BOTTLE)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(4).saturationMod(1.2F).build())));
+
+    public static final RegistryObject<BottleFoodItem> BERRY_JUICE_BOTTLE = ITEMS.register("berry_juice_bottle", () -> new BottleFoodItem(new Item.Properties()
+                .craftRemainder(Items.GLASS_BOTTLE)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(2).saturationMod(1.6F).build())));
+
+    public static final RegistryObject<BottleFoodItem> BERRY_MILKSHAKE_BOTTLE = ITEMS.register("berry_milkshake_bottle", () -> new BottleFoodItem(new Item.Properties()
+                .craftRemainder(Items.GLASS_BOTTLE)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(5).saturationMod(1.0F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.DIG_SPEED, 600, 0), 1.0f).build())));
+
+    public static final RegistryObject<BottleFoodItem> MOLASSES_BOTTLE = ITEMS.register("molasses_bottle", () -> new BottleFoodItem(new Item.Properties()
+                .craftRemainder(Items.GLASS_BOTTLE)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(1).saturationMod(3.0F).build())));
+
+    public static final RegistryObject<BottleFoodItem> BUTTERSCOTCH_CHIP_CHOCOLATE_MILKSHAKE_BOTTLE = ITEMS.register("butterscotch_chip_chocolate_milkshake_bottle", () -> new BottleFoodItem(new Item.Properties()
+                .craftRemainder(Items.GLASS_BOTTLE)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(6).saturationMod(1.5F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.DIG_SPEED, 600, 0), 1.0f).build())));
+
+    public static final RegistryObject<BottleFoodItem> BUTTERSCOTCH_CHIP_MILKSHAKE_BOTTLE = ITEMS.register("butterscotch_chip_milkshake_bottle", () -> new BottleFoodItem(new Item.Properties()
+                .craftRemainder(Items.GLASS_BOTTLE)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(5).saturationMod(1.2F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.DIG_SPEED, 600, 0), 1.0f).build())));
+
+    public static final RegistryObject<BottleFoodItem> CARAMEL_CHIP_CHOCOLATE_MILKSHAKE_BOTTLE = ITEMS.register("caramel_chip_chocolate_milkshake_bottle", () -> new BottleFoodItem(new Item.Properties()
+                .craftRemainder(Items.GLASS_BOTTLE)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(6).saturationMod(1.5F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 600, 0), 1.0f).build())));
+
+    public static final RegistryObject<BottleFoodItem> CARAMEL_CHIP_MILKSHAKE_BOTTLE = ITEMS.register("caramel_chip_milkshake_bottle", () -> new BottleFoodItem(new Item.Properties()
+                .craftRemainder(Items.GLASS_BOTTLE)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(5).saturationMod(1.2F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 600, 0), 1.0f).build())));
+
+    public static final RegistryObject<BottleFoodItem> CHOCOLATE_BOTTLE = ITEMS.register("chocolate_bottle", () -> new BottleFoodItem(new Item.Properties()
+                .craftRemainder(Items.GLASS_BOTTLE)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(7).saturationMod(0.4F).build())));
+
+    public static final RegistryObject<BottleFoodItem> CHOCOLATE_CHIP_CHOCOLATE_MILKSHAKE_BOTTLE = ITEMS.register("chocolate_chip_chocolate_milkshake_bottle", () -> new BottleFoodItem(new Item.Properties()
+                .craftRemainder(Items.GLASS_BOTTLE)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(6).saturationMod(1.3F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build())));
+
+    public static final RegistryObject<BottleFoodItem> CHOCOLATE_CHIP_MILKSHAKE_BOTTLE = ITEMS.register("chocolate_chip_milkshake_bottle", () -> new BottleFoodItem(new Item.Properties()
+                .craftRemainder(Items.GLASS_BOTTLE)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(5).saturationMod(1.2F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).build())));
+
+    public static final RegistryObject<BottleFoodItem> CHOCOLATE_CREAM_FROSTING_BOTTLE = ITEMS.register("chocolate_cream_frosting_bottle", () -> new BottleFoodItem(new Item.Properties()
+                .craftRemainder(Items.GLASS_BOTTLE)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(4).saturationMod(0.3F).build())));
+
+    public static final RegistryObject<BottleFoodItem> CHOCOLATE_MILKSHAKE_BOTTLE = ITEMS.register("chocolate_milkshake_bottle", () -> new BottleFoodItem(new Item.Properties()
+                .craftRemainder(Items.GLASS_BOTTLE)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(5).saturationMod(1.2F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).build())));
+
+    public static final RegistryObject<BottleFoodItem> CHOCOLATE_MILK_BOTTLE = ITEMS.register("chocolate_milk_bottle", () -> new BottleFoodItem(new Item.Properties()
+                .craftRemainder(Items.GLASS_BOTTLE)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(2).saturationMod(0.3F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).build())));
+
+    public static final RegistryObject<BottleFoodItem> CHORUS_FRUIT_CREAM_FROSTING_BOTTLE = ITEMS.register("chorus_fruit_cream_frosting_bottle", () -> new BottleFoodItem(new Item.Properties()
+                .craftRemainder(Items.GLASS_BOTTLE)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(6).saturationMod(0.5F).build())));
+
+    public static final RegistryObject<BottleFoodItem> CHORUS_FRUIT_JAM_BOTTLE = ITEMS.register("chorus_fruit_jam_bottle", () -> new BottleFoodItem(new Item.Properties()
+                .craftRemainder(Items.GLASS_BOTTLE)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(5).saturationMod(1.1F).build())));
+
+    public static final RegistryObject<BottleFoodItem> CHORUS_FRUIT_JUICE_BOTTLE = ITEMS.register("chorus_fruit_juice_bottle", () -> new BottleFoodItem(new Item.Properties()
+                .craftRemainder(Items.GLASS_BOTTLE)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(3).saturationMod(1.6F).build())));
+
+    public static final RegistryObject<BottleFoodItem> CHORUS_FRUIT_MILKSHAKE_BOTTLE = ITEMS.register("chorus_fruit_milkshake_bottle", () -> new BottleFoodItem(new Item.Properties()
+                .craftRemainder(Items.GLASS_BOTTLE)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(6).saturationMod(1.1F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.JUMP, 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.SLOW_FALLING, 600, 0), 1.0f).build())));
+
+    public static final RegistryObject<BottleFoodItem> CREAM_FROSTING_BOTTLE = ITEMS.register("cream_frosting_bottle", () -> new BottleFoodItem(new Item.Properties()
+                .craftRemainder(Items.GLASS_BOTTLE)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(3).saturationMod(0.2F).build())));
+
+    public static final RegistryObject<BottleFoodItem> DARK_CHOCOLATE_BOTTLE = ITEMS.register("dark_chocolate_bottle", () -> new BottleFoodItem(new Item.Properties()
+                .craftRemainder(Items.GLASS_BOTTLE)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(8).saturationMod(0.3F).build())));
+
+    public static final RegistryObject<BottleFoodItem> DARK_CHOCOLATE_CHIP_CHOCOLATE_MILKSHAKE_BOTTLE = ITEMS.register("dark_chocolate_chip_chocolate_milkshake_bottle", () -> new BottleFoodItem(new Item.Properties()
+                .craftRemainder(Items.GLASS_BOTTLE)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(7).saturationMod(1.2F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1800, 0), 1.0f).build())));
+
+    public static final RegistryObject<BottleFoodItem> DARK_CHOCOLATE_CHIP_MILKSHAKE_BOTTLE = ITEMS.register("dark_chocolate_chip_milkshake_bottle", () -> new BottleFoodItem(new Item.Properties()
+                .craftRemainder(Items.GLASS_BOTTLE)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(6).saturationMod(1.1F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1800, 0), 1.0f).build())));
+
+    public static final RegistryObject<BottleFoodItem> FRUIT_SMOOTHIE_BOTTLE = ITEMS.register("fruit_smoothie_bottle", () -> new BottleFoodItem(new Item.Properties()
+                .craftRemainder(Items.GLASS_BOTTLE)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(4).saturationMod(1.8F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 6000, 0), 1.0f).effect(new MobEffectInstance(MobEffects.DIG_SPEED, 1200, 0), 1.0f).effect(new MobEffectInstance(MobEffects.LUCK, 1200, 0), 1.0f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f).effect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 1200, 0), 1.0f).build())));
+
+    public static final RegistryObject<BottleFoodItem> GLOW_BERRY_CREAM_FROSTING_BOTTLE = ITEMS.register("glow_berry_cream_frosting_bottle", () -> new BottleFoodItem(new Item.Properties()
+                .craftRemainder(Items.GLASS_BOTTLE)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(4).saturationMod(0.4F).build())));
+
+    public static final RegistryObject<BottleFoodItem> GLOW_BERRY_JAM_BOTTLE = ITEMS.register("glow_berry_jam_bottle", () -> new BottleFoodItem(new Item.Properties()
+                .craftRemainder(Items.GLASS_BOTTLE)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(4).saturationMod(1.2F).build())));
+
+    public static final RegistryObject<BottleFoodItem> GLOW_BERRY_JUICE_BOTTLE = ITEMS.register("glow_berry_juice_bottle", () -> new BottleFoodItem(new Item.Properties()
+                .craftRemainder(Items.GLASS_BOTTLE)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(2).saturationMod(1.6F).build())));
+
+    public static final RegistryObject<BottleFoodItem> GLOW_BERRY_MILKSHAKE_BOTTLE = ITEMS.register("glow_berry_milkshake_bottle", () -> new BottleFoodItem(new Item.Properties()
+                .craftRemainder(Items.GLASS_BOTTLE)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(5).saturationMod(1.0F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.DIG_SPEED, 600, 0), 1.0f).build())));
+
+    public static final RegistryObject<BottleFoodItem> HOT_CHOCOLATE_BOTTLE = ITEMS.register("hot_chocolate_bottle", () -> new BottleFoodItem(new Item.Properties()
+                .craftRemainder(Items.GLASS_BOTTLE)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(9).saturationMod(0.9f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 6000, 0), 1.0f).build())));
+
+    public static final RegistryObject<BottleFoodItem> HOT_DARK_CHOCOLATE_BOTTLE = ITEMS.register("hot_dark_chocolate_bottle", () -> new BottleFoodItem(new Item.Properties()
+                .craftRemainder(Items.GLASS_BOTTLE)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(10).saturationMod(0.8f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 6000, 0), 1.0f).build())));
+
+    public static final RegistryObject<BottleFoodItem> HOT_WHITE_CHOCOLATE_BOTTLE = ITEMS.register("hot_white_chocolate_bottle", () -> new BottleFoodItem(new Item.Properties()
+                .craftRemainder(Items.GLASS_BOTTLE)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(8).saturationMod(1.0f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 6000, 0), 1.0f).build())));
+
+    public static final RegistryObject<BottleFoodItem> MELON_CREAM_FROSTING_BOTTLE = ITEMS.register("melon_cream_frosting_bottle", () -> new BottleFoodItem(new Item.Properties()
+                .craftRemainder(Items.GLASS_BOTTLE)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(4).saturationMod(0.8f).build())));
+
+    public static final RegistryObject<BottleFoodItem> MELON_JAM_BOTTLE = ITEMS.register("melon_jam_bottle", () -> new BottleFoodItem(new Item.Properties()
+                .craftRemainder(Items.GLASS_BOTTLE)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(4).saturationMod(1.7f).build())));
+
+    public static final RegistryObject<BottleFoodItem> MELON_MILKSHAKE_BOTTLE = ITEMS.register("melon_milkshake_bottle", () -> new BottleFoodItem(new Item.Properties()
+                .craftRemainder(Items.GLASS_BOTTLE)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(6).saturationMod(1.0f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.REGENERATION, 600, 0), 1.0f).build())));
+
+    public static final RegistryObject<BottleFoodItem> MILKSHAKE_BOTTLE = ITEMS.register("milkshake_bottle", () -> new BottleFoodItem(new Item.Properties()
+                .craftRemainder(Items.GLASS_BOTTLE)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(4).saturationMod(0.8f).build())));
+
+    public static final RegistryObject<BottleFoodItem> SOUR_CREAM_BOTTLE = ITEMS.register("sour_cream_bottle", () -> new BottleFoodItem(new Item.Properties()
+                .craftRemainder(Items.GLASS_BOTTLE)
+                .stacksTo(16)));
+
+    public static final RegistryObject<BottleFoodItem> TOFFEE_CHIP_CHOCOLATE_MILKSHAKE_BOTTLE = ITEMS.register("toffee_chip_chocolate_milkshake_bottle", () -> new BottleFoodItem(new Item.Properties()
+                .craftRemainder(Items.GLASS_BOTTLE)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(6).saturationMod(1.3F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 600, 0), 1.0f).build())));
+
+    public static final RegistryObject<BottleFoodItem> TOFFEE_CHIP_MILKSHAKE_BOTTLE = ITEMS.register("toffee_chip_milkshake_bottle", () -> new BottleFoodItem(new Item.Properties()
+                .craftRemainder(Items.GLASS_BOTTLE)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(5).saturationMod(1.2F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 600, 0), 1.0f).build())));
+
+    public static final RegistryObject<BottleFoodItem> UBE_CREAM_FROSTING_BOTTLE = ITEMS.register("ube_cream_frosting_bottle", () -> new BottleFoodItem(new Item.Properties()
+                .craftRemainder(Items.GLASS_BOTTLE)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(5).saturationMod(0.7F).build())));
+
+    public static final RegistryObject<BottleFoodItem> VINEGAR_BOTTLE = ITEMS.register("vinegar_bottle", () -> new BottleFoodItem(new Item.Properties()
+                .craftRemainder(Items.GLASS_BOTTLE)
+                .stacksTo(16)));
+
+    public static final RegistryObject<BottleFoodItem> WHITE_CHOCOLATE_BOTTLE = ITEMS.register("white_chocolate_bottle", () -> new BottleFoodItem(new Item.Properties()
+                .craftRemainder(Items.GLASS_BOTTLE)
+                .stacksTo(64)
+                .food(new FoodProperties.Builder().nutrition(6).saturationMod(0.5F).build())));
+
+    public static final RegistryObject<BottleFoodItem> WHITE_CHOCOLATE_CHIP_CHOCOLATE_MILKSHAKE_BOTTLE = ITEMS.register("white_chocolate_chip_chocolate_milkshake_bottle", () -> new BottleFoodItem(new Item.Properties()
+                .craftRemainder(Items.GLASS_BOTTLE)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(6).saturationMod(1.2F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1800, 0), 1.0f).build())));
+
+    public static final RegistryObject<BottleFoodItem> WHITE_CHOCOLATE_CHIP_MILKSHAKE_BOTTLE = ITEMS.register("white_chocolate_chip_milkshake_bottle", () -> new BottleFoodItem(new Item.Properties()
+                .craftRemainder(Items.GLASS_BOTTLE)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(5).saturationMod(1.4F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1800, 0), 1.0f).build())));
+
+    public static final RegistryObject<BottleFoodItem> YOGURT_BOTTLE = ITEMS.register("yogurt_bottle", () -> new BottleFoodItem(new Item.Properties()
+                .craftRemainder(Items.GLASS_BOTTLE)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(2).saturationMod(0.9F).build())));
+
+    public static final RegistryObject<BowlFoodItem> APPLE_ICE_CREAM_BOWL = ITEMS.register("apple_ice_cream_bowl", () -> new BowlFoodItem(new Item.Properties()
+                .craftRemainder(Items.BOWL)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(2).saturationMod(1.1F).build())));
+
+    public static final RegistryObject<BowlFoodItem> BERRY_ICE_CREAM_BOWL = ITEMS.register("berry_ice_cream_bowl", () -> new BowlFoodItem(new Item.Properties()
+                .craftRemainder(Items.BOWL)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(3).saturationMod(1.0F).build())));
+
+    public static final RegistryObject<BowlFoodItem> BREAKFAST_PLATE = ITEMS.register("breakfast_plate", () -> new BowlFoodItem(new Item.Properties()
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(8).saturationMod(1.6F).effect(new MobEffectInstance(MobEffects.DIG_SPEED, 6000, 0), 1.0f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 6000, 0), 1.0f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1.0f).build())));
+
+    public static final RegistryObject<BowlFoodItem> CHOCOLATE_ICE_CREAM_BOWL = ITEMS.register("chocolate_ice_cream_bowl", () -> new BowlFoodItem(new Item.Properties()
+                .craftRemainder(Items.BOWL)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(3).saturationMod(1.2F).build())));
+
+    public static final RegistryObject<BowlFoodItem> CHORUS_FRUIT_ICE_CREAM_BOWL = ITEMS.register("chorus_fruit_ice_cream_bowl", () -> new BowlFoodItem(new Item.Properties()
+                .craftRemainder(Items.BOWL)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(4).saturationMod(1.2F).build())));
+
+    public static final RegistryObject<BowlFoodItem> FRIED_EGG_PLATE = ITEMS.register("fried_egg_plate", () -> new BowlFoodItem(new Item.Properties()
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(4).saturationMod(0.4F).build())));
+
+    public static final RegistryObject<BowlFoodItem> GLOW_BERRY_ICE_CREAM_BOWL = ITEMS.register("glow_berry_ice_cream_bowl", () -> new BowlFoodItem(new Item.Properties()
+                .craftRemainder(Items.BOWL)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(3).saturationMod(1.0F).build())));
+
+    public static final RegistryObject<BowlFoodItem> HASH_BROWN_FRIED_EGG_PLATE = ITEMS.register("hash_brown_fried_egg_plate", () -> new BowlFoodItem(new Item.Properties()
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(8).saturationMod(0.7F).build())));
+
+    public static final RegistryObject<BowlFoodItem> HASH_BROWN_PLATE = ITEMS.register("hash_brown_plate", () -> new BowlFoodItem(new Item.Properties()
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(4).saturationMod(0.6F).build())));
+
+    public static final RegistryObject<BowlFoodItem> HASH_BROWN_TOAST_PLATE = ITEMS.register("hash_brown_toast_plate", () -> new BowlFoodItem(new Item.Properties()
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(8).saturationMod(0.7F).build())));
+
+    public static final RegistryObject<BowlFoodItem> ICE_CREAM_BOWL = ITEMS.register("ice_cream_bowl", () -> new BowlFoodItem(new Item.Properties()
+                .craftRemainder(Items.BOWL)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(2).saturationMod(1.3f).build())));
+
+    public static final RegistryObject<BowlFoodItem> MACARONI_BOWL = ITEMS.register("macaroni_bowl", () -> new BowlFoodItem(new Item.Properties()
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(3).saturationMod(0.5f).build())));
+
+    public static final RegistryObject<BowlFoodItem> MACARONI_BOWL_BACON = ITEMS.register("macaroni_bowl_bacon", () -> new BowlFoodItem(new Item.Properties()
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(4).saturationMod(0.6f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1800, 0), 1.0f).build())));
+
+    public static final RegistryObject<BowlFoodItem> MACARONI_BOWL_CHEESE = ITEMS.register("macaroni_bowl_cheese", () -> new BowlFoodItem(new Item.Properties()
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(3).saturationMod(0.6f).build())));
+
+    public static final RegistryObject<BowlFoodItem> MACARONI_BOWL_CHEESE_BACON = ITEMS.register("macaroni_bowl_cheese_bacon", () -> new BowlFoodItem(new Item.Properties()
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(4).saturationMod(0.6f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1.0f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 2400, 0), 1.0f).build())));
+
+    public static final RegistryObject<BowlFoodItem> MACARONI_BOWL_CHEESE_SAUSAGE = ITEMS.register("macaroni_bowl_cheese_sausage", () -> new BowlFoodItem(new Item.Properties()
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(5).saturationMod(0.5f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 2400, 0), 1.0f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1.0f).build())));
+
+    public static final RegistryObject<BowlFoodItem> MACARONI_BOWL_SAUSAGE = ITEMS.register("macaroni_bowl_sausage", () -> new BowlFoodItem(new Item.Properties()
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(5).saturationMod(0.5f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 3000, 0), 1.0f).build())));
+
+    public static final RegistryObject<BowlFoodItem> MELON_ICE_CREAM_BOWL = ITEMS.register("melon_ice_cream_bowl", () -> new BowlFoodItem(new Item.Properties()
+                .craftRemainder(Items.BOWL)
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(3).saturationMod(1.2f).build())));
+
+    public static final RegistryObject<BowlFoodItem> NACHO_BOWL = ITEMS.register("nacho_bowl", () -> new BowlFoodItem(new Item.Properties()
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(6).saturationMod(0.9F).effect(new MobEffectInstance(MobEffects.LUCK, 1200, 0), 1.0f).build())));
+
+    public static final RegistryObject<BowlFoodItem> PASTA_PLATE = ITEMS.register("pasta_plate", () -> new BowlFoodItem(new Item.Properties()
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(5).saturationMod(0.7F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f).build())));
+
+    public static final RegistryObject<BowlFoodItem> PASTA_PLATE_BUTTER = ITEMS.register("pasta_plate_butter", () -> new BowlFoodItem(new Item.Properties()
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(6).saturationMod(0.8F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).build())));
+
+    public static final RegistryObject<BowlFoodItem> PASTA_PLATE_CHEESE = ITEMS.register("pasta_plate_cheese", () -> new BowlFoodItem(new Item.Properties()
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(5).saturationMod(0.9F).build())));
+
+    public static final RegistryObject<BowlFoodItem> PASTA_PLATE_CHEESE_TOMATO_SAUCE = ITEMS.register("pasta_plate_cheese_tomato_sauce", () -> new BowlFoodItem(new Item.Properties()
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(9).saturationMod(1.1F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f).build())));
+
+    public static final RegistryObject<BowlFoodItem> PASTA_PLATE_CHICKEN_CUT = ITEMS.register("pasta_plate_chicken_cut", () -> new BowlFoodItem(new Item.Properties()
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(7).saturationMod(0.7F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f).build())));
+
+    public static final RegistryObject<BowlFoodItem> PASTA_PLATE_CHICKEN_CUT_TOMATO_SAUCE = ITEMS.register("pasta_plate_chicken_cut_tomato_sauce", () -> new BowlFoodItem(new Item.Properties()
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(11).saturationMod(0.9F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1.0f).build())));
+
+    public static final RegistryObject<BowlFoodItem> PASTA_PLATE_EGGPLANT = ITEMS.register("pasta_plate_eggplant", () -> new BowlFoodItem(new Item.Properties()
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(7).saturationMod(0.8F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f).build())));
+
+    public static final RegistryObject<BowlFoodItem> PASTA_PLATE_ENDERMITE_MEATBALLS = ITEMS.register("pasta_plate_endermite_meatballs", () -> new BowlFoodItem(new Item.Properties()
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(8).saturationMod(0.6F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f).build())));
+
+    public static final RegistryObject<BowlFoodItem> PASTA_PLATE_ENDERMITE_MEATBALLS_TOMATO_SAUCE = ITEMS.register("pasta_plate_endermite_meatballs_tomato_sauce", () -> new BowlFoodItem(new Item.Properties()
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(12).saturationMod(0.8F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1.0f).build())));
+
+    public static final RegistryObject<BowlFoodItem> PASTA_PLATE_FISH = ITEMS.register("pasta_plate_fish", () -> new BowlFoodItem(new Item.Properties()
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(7).saturationMod(0.8F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f).build())));
+
+    public static final RegistryObject<BowlFoodItem> PASTA_PLATE_FISH_TOMATO_SAUCE = ITEMS.register("pasta_plate_fish_tomato_sauce", () -> new BowlFoodItem(new Item.Properties()
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(11).saturationMod(0.8F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1.0f).build())));
+
+    public static final RegistryObject<BowlFoodItem> PASTA_PLATE_BEEF_MEATBALLS = ITEMS.register("pasta_plate_beef_meatballs", () -> new BowlFoodItem(new Item.Properties()
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(8).saturationMod(0.6F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f).build())));
+
+    public static final RegistryObject<BowlFoodItem> PASTA_PLATE_MUTTON_CHOP = ITEMS.register("pasta_plate_mutton_chop", () -> new BowlFoodItem(new Item.Properties()
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(8).saturationMod(0.6F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f).build())));
+
+    public static final RegistryObject<BowlFoodItem> PASTA_PLATE_PORK_MEATBALLS = ITEMS.register("pasta_plate_pork_meatballs", () -> new BowlFoodItem(new Item.Properties()
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(7).saturationMod(0.8F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f).build())));
+
+    public static final RegistryObject<BowlFoodItem> PASTA_PLATE_PORK_MEATBALLS_TOMATO_SAUCE = ITEMS.register("pasta_plate_pork_meatballs_tomato_sauce", () -> new BowlFoodItem(new Item.Properties()
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(11).saturationMod(1.0F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1.0f).build())));
+
+    public static final RegistryObject<BowlFoodItem> PASTA_PLATE_RABBIT_MEATBALLS = ITEMS.register("pasta_plate_rabbit_meatballs", () -> new BowlFoodItem(new Item.Properties()
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(6).saturationMod(0.9F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f).build())));
+
+    public static final RegistryObject<BowlFoodItem> PASTA_PLATE_RABBIT_MEATBALLS_TOMATO_SAUCE = ITEMS.register("pasta_plate_rabbit_meatballs_tomato_sauce", () -> new BowlFoodItem(new Item.Properties()
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(10).saturationMod(1.1F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1.0f).build())));
+
+    public static final RegistryObject<BowlFoodItem> PASTA_PLATE_SLIME = ITEMS.register("pasta_plate_slime", () -> new BowlFoodItem(new Item.Properties()
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(6).saturationMod(0.8F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f).effect(new MobEffectInstance(MobEffects.CONFUSION, 300, 0), 1.0F).build())));
+
+    public static final RegistryObject<BowlFoodItem> PASTA_PLATE_SLIMEBALLS = ITEMS.register("pasta_plate_slimeballs", () -> new BowlFoodItem(new Item.Properties()
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(8).saturationMod(0.6F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f).effect(new MobEffectInstance(MobEffects.CONFUSION, 300, 0), 1.0F).build())));
+
+    public static final RegistryObject<BowlFoodItem> PASTA_PLATE_SQUID_INK = ITEMS.register("pasta_plate_squid_ink", () -> new BowlFoodItem(new Item.Properties()
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(6).saturationMod(0.8F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f).build())));
+
+    public static final RegistryObject<BowlFoodItem> PASTA_PLATE_STRIDER_MEATBALLS = ITEMS.register("pasta_plate_strider_meatballs", () -> new BowlFoodItem(new Item.Properties()
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(8).saturationMod(0.6F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f).build())));
+
+    public static final RegistryObject<BowlFoodItem> PASTA_PLATE_STRIDER_MEATBALLS_TOMATO_SAUCE = ITEMS.register("pasta_plate_strider_meatballs_tomato_sauce", () -> new BowlFoodItem(new Item.Properties()
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(12).saturationMod(0.8F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1.0f).build())));
+
+    public static final RegistryObject<BowlFoodItem> PASTA_PLATE_TOMATO_SAUCE = ITEMS.register("pasta_plate_tomato_sauce", () -> new BowlFoodItem(new Item.Properties()
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(7).saturationMod(0.9F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f).build())));
+
+    public static final RegistryObject<BowlFoodItem> POTATO_CHIP_BOWL = ITEMS.register("potato_chip_bowl", () -> new BowlFoodItem(new Item.Properties()
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(4).saturationMod(0.5F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1.0f).effect(new MobEffectInstance(MobEffects.LUCK, 1200, 0), 1.0f).build())));
+
+    public static final RegistryObject<BowlFoodItem> TOAST_FRIED_EGG_PLATE = ITEMS.register("toast_fried_egg_plate", () -> new BowlFoodItem(new Item.Properties()
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(8).saturationMod(0.7F).build())));
+
+    public static final RegistryObject<BowlFoodItem> TOAST_PLATE = ITEMS.register("toast_plate", () -> new BowlFoodItem(new Item.Properties()
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(3).saturationMod(0.3F).build())));
+
+    public static final RegistryObject<BowlFoodItem> TORTILLA_CHIP_BOWL = ITEMS.register("tortilla_chip_bowl", () -> new BowlFoodItem(new Item.Properties()
+                .stacksTo(16)
+                .food(new FoodProperties.Builder().nutrition(4).saturationMod(0.7F).build())));
+
+    public static final RegistryObject<StickFoodItem> APPLE_ICE_CREAM_STICK = ITEMS.register("apple_ice_cream_stick", () -> new StickFoodItem(new Item.Properties()
+                .craftRemainder(Items.STICK)
+                .food(new FoodProperties.Builder().nutrition(1).saturationMod(0.6F).fast().build())));
+
+    public static final RegistryObject<StickFoodItem> APPLE_POPSICLE = ITEMS.register("apple_popsicle", () -> new StickFoodItem(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(3).saturationMod(0.7F).fast().build())));
+
+    public static final RegistryObject<StickFoodItem> BERRY_ICE_CREAM_STICK = ITEMS.register("berry_ice_cream_stick", () -> new StickFoodItem(new Item.Properties()
+                .craftRemainder(Items.STICK)
+                .food(new FoodProperties.Builder().nutrition(1).saturationMod(0.9F).fast().build())));
+
+    public static final RegistryObject<StickFoodItem> BERRY_POPSICLE = ITEMS.register("berry_popsicle", () -> new StickFoodItem(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(4).saturationMod(0.5F).fast().build())));
+
+    public static final RegistryObject<StickFoodItem> CHOCOLATE_MARSHMALLOW_STICK = ITEMS.register("chocolate_marshmallow_stick", () -> new StickFoodItem(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(4).saturationMod(0.3F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).fast().build())));
+
+    public static final RegistryObject<StickFoodItem> CHOCOLATE_ICE_CREAM_STICK = ITEMS.register("chocolate_ice_cream_stick", () -> new StickFoodItem(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(1).saturationMod(1.2F).fast().build())));
+
+    public static final RegistryObject<StickFoodItem> CHORUS_FRUIT_ICE_CREAM_STICK = ITEMS.register("chorus_fruit_ice_cream_stick", () -> new StickFoodItem(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(2).saturationMod(0.9F).fast().build())));
+
+    public static final RegistryObject<StickFoodItem> CHORUS_FRUIT_POPSICLE = ITEMS.register("chorus_fruit_popsicle", () -> new StickFoodItem(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(4).saturationMod(0.6F).fast().build())));
+
+    public static final RegistryObject<StickFoodItem> COTTON_CANDY_STICK = ITEMS.register("cotton_candy_stick", () -> new StickFoodItem(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(1).saturationMod(5.0F).fast().build())));
+
+    public static final RegistryObject<StickFoodItem> DARK_CHOCOLATE_MARSHMALLOW_STICK = ITEMS.register("dark_chocolate_marshmallow_stick", () -> new StickFoodItem(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(5).saturationMod(0.3F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).fast().build())));
+
+    public static final RegistryObject<StickFoodItem> ENDERMITE_MEATBALL_STICK_1 = ITEMS.register("endermite_meatball_stick_1", () -> new StickFoodItem(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(5).saturationMod(0.6F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.REGENERATION, 1200, 0), 1.0f).fast().build())));
+
+    public static final RegistryObject<StickFoodItem> ENDERMITE_MEATBALL_STICK_2 = ITEMS.register("endermite_meatball_stick_2", () -> new StickFoodItem(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(6).saturationMod(0.6F).effect(new MobEffectInstance(MobEffects.REGENERATION, 3600, 0), 1.0f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f).fast().build())));
+
+    public static final RegistryObject<StickFoodItem> ENDERMITE_MEATBALL_STICK_3 = ITEMS.register("endermite_meatball_stick_3", () -> new StickFoodItem(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(8).saturationMod(0.7F).effect(new MobEffectInstance(MobEffects.REGENERATION, 6000, 0), 1.0f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1.0f).fast().build())));
+
+    public static final RegistryObject<StickFoodItem> GLOW_BERRY_ICE_CREAM_STICK = ITEMS.register("glow_berry_ice_cream_stick", () -> new StickFoodItem(new Item.Properties()
+                .craftRemainder(Items.STICK)
+                .food(new FoodProperties.Builder().nutrition(1).saturationMod(0.9F).fast().build())));
+
+    public static final RegistryObject<StickFoodItem> GLOW_BERRY_POPSICLE = ITEMS.register("glow_berry_popsicle", () -> new StickFoodItem(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(3).saturationMod(0.5F).fast().build())));
+
+    public static final RegistryObject<StickFoodItem> ICE_CREAM_STICK = ITEMS.register("ice_cream_stick", () -> new StickFoodItem(new Item.Properties()
+                .craftRemainder(Items.STICK)
+                .food(new FoodProperties.Builder().nutrition(1).saturationMod(0.8f).fast().build())));
+
+    public static final RegistryObject<StickFoodItem> MAGMA_CREAM_MARSHMALLOW_STICK = ITEMS.register("magma_cream_marshmallow_stick", () -> new StickFoodItem(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(3).saturationMod(0.2f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 1200, 0), 1.0f).fast().build())));
+
+    public static final RegistryObject<StickFoodItem> MARSHMALLOW_STICK = ITEMS.register("marshmallow_stick", () -> new StickFoodItem(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(3).saturationMod(0.2f).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).fast().build())));
+
+    public static final RegistryObject<StickFoodItem> BEEF_MEATBALL_STICK_1 = ITEMS.register("beef_meatball_stick_1", () -> new StickFoodItem(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(5).saturationMod(0.6f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).fast().build())));
+
+    public static final RegistryObject<StickFoodItem> BEEF_MEATBALL_STICK_2 = ITEMS.register("beef_meatball_stick_2", () -> new StickFoodItem(new Item.Properties()
+                .craftRemainder(Items.STICK)
+                .food(new FoodProperties.Builder().nutrition(6).saturationMod(0.6f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f).fast().build())));
+
+    public static final RegistryObject<StickFoodItem> BEEF_MEATBALL_STICK_3 = ITEMS.register("beef_meatball_stick_3", () -> new StickFoodItem(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(7).saturationMod(0.7f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1.0f).fast().build())));
+
+    public static final RegistryObject<StickFoodItem> MELON_ICE_CREAM_STICK = ITEMS.register("melon_ice_cream_stick", () -> new StickFoodItem(new Item.Properties()
+                .craftRemainder(Items.STICK)
+                .food(new FoodProperties.Builder().nutrition(1).saturationMod(1.1f).fast().build())));
+
+    public static final RegistryObject<StickFoodItem> PORK_MEATBALL_STICK_1 = ITEMS.register("pork_meatball_stick_1", () -> new StickFoodItem(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(4).saturationMod(0.8f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).fast().build())));
+
+    public static final RegistryObject<StickFoodItem> PORK_MEATBALL_STICK_2 = ITEMS.register("pork_meatball_stick_2", () -> new StickFoodItem(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(5).saturationMod(0.8f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f).fast().build())));
+
+    public static final RegistryObject<StickFoodItem> PORK_MEATBALL_STICK_3 = ITEMS.register("pork_meatball_stick_3", () -> new StickFoodItem(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(6).saturationMod(0.9f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1.0f).fast().build())));
+
+    public static final RegistryObject<StickFoodItem> RABBIT_MEATBALL_STICK_1 = ITEMS.register("rabbit_meatball_stick_1", () -> new StickFoodItem(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(4).saturationMod(0.6f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).fast().build())));
+
+    public static final RegistryObject<StickFoodItem> RABBIT_MEATBALL_STICK_2 = ITEMS.register("rabbit_meatball_stick_2", () -> new StickFoodItem(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(5).saturationMod(0.6f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f).fast().build())));
+
+    public static final RegistryObject<StickFoodItem> RABBIT_MEATBALL_STICK_3 = ITEMS.register("rabbit_meatball_stick_3", () -> new StickFoodItem(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(6).saturationMod(0.7f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1.0f).fast().build())));
+
+    public static final RegistryObject<StickFoodItem> SMOKED_CORN_STICK = ITEMS.register("smoked_corn_stick", () -> new StickFoodItem(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(4).saturationMod(0.7F).fast().build())));
+
+    public static final RegistryObject<StickFoodItem> STRIDER_MEATBALL_STICK_1 = ITEMS.register("strider_meatball_stick_1", () -> new StickFoodItem(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(5).saturationMod(0.6F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).effect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 1200, 0), 1.0f).fast().build())));
+
+    public static final RegistryObject<StickFoodItem> STRIDER_MEATBALL_STICK_2 = ITEMS.register("strider_meatball_stick_2", () -> new StickFoodItem(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(6).saturationMod(0.6F).effect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 3600, 0), 1.0f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f).fast().build())));
+
+    public static final RegistryObject<StickFoodItem> STRIDER_MEATBALL_STICK_3 = ITEMS.register("strider_meatball_stick_3", () -> new StickFoodItem(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(8).saturationMod(0.7F).effect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 6000, 0), 1.0f).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1.0f).fast().build())));
+
+    public static final RegistryObject<StickFoodItem> WHITE_CHOCOLATE_MARSHMALLOW_STICK = ITEMS.register("white_chocolate_marshmallow_stick", () -> new StickFoodItem(new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(3).saturationMod(0.4F).effect(new MobEffectInstance(ModEffects.COMFORT.get(), 600, 0), 1.0f).fast().build())));
+
+
 }
