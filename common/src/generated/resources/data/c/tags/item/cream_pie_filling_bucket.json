@@ -3,10 +3,6 @@
     {
       "id": "createfood:cream_pie_filling_bucket",
       "required": false
-    },
-    {
-      "id": "createfood:cream_pie_filling_bucket",
-      "required": false
     }
   ]
 }

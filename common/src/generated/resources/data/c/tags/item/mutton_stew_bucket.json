@@ -3,10 +3,6 @@
     {
       "id": "createfood:mutton_stew_bucket",
       "required": false
-    },
-    {
-      "id": "createfood:mutton_stew_bucket",
-      "required": false
     }
   ]
 }

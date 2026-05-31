@@ -3,10 +3,6 @@
     {
       "id": "createfood:kelp_soup_bucket",
       "required": false
-    },
-    {
-      "id": "createfood:kelp_soup_bucket",
-      "required": false
     }
   ]
 }

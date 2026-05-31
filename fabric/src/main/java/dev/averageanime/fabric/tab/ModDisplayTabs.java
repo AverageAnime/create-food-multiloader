@@ -24,12 +24,13 @@ public class ModDisplayTabs {
         Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, DISPLAY_GROUP_ID,
                 FabricItemGroup.builder()
                         .title(Component.translatable("tab.createfood.display"))
-                        .icon(() -> new ItemStack(ModDisplayBlocks.CREAM_SWEET_ROLL_PLATE))
+                        .icon(() -> new ItemStack(BuiltInRegistries.BLOCK.get(
+                                ResourceLocation.fromNamespaceAndPath(CreateFood.MOD_ID, "breakfast_plate_block"))))
                         .displayItems((params, output) ->
                                 ModDisplayBlocks.getRegisteredDisplayBlocks().stream()
                                         .filter(b -> {
                                             ResourceLocation key = BuiltInRegistries.BLOCK.getKey(b);
-                                            return !key.getPath().equals("plate_block") && !key.getPath().equals("small_plate_block");
+                                            return !key.getPath().equals("plate_block") && !key.getPath().equals("small_plate_block") && !key.getPath().equals("generic_display_plate_block");
                                         })
                                         .sorted(Comparator.comparing(b -> BuiltInRegistries.BLOCK.getKey(b).getPath()))
                                         .filter(b -> ModConfig.isDisplayBlockEnabled(BuiltInRegistries.BLOCK.getKey(b).getPath()))

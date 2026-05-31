@@ -1,69 +1,36 @@
 package dev.averageanime.neoforge.block.type.blockentity;
 
+import dev.averageanime.neoforge.block.ModBlockEntities;
+import dev.averageanime.neoforge.config.ModConfig;
+import dev.averageanime.neoforge.item.storage.StorageInventory;
+import dev.averageanime.neoforge.menu.type.RationBoxMenu;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.HolderLookup;
-import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.chat.Component;
-import net.minecraft.world.MenuProvider;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
-import net.neoforged.neoforge.items.ItemStackHandler;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import dev.averageanime.neoforge.config.ModConfig;
-import dev.averageanime.neoforge.menu.RationBoxMenu;
-
-public class RationBoxBlockEntity extends BlockEntity implements MenuProvider {
-
-    public final ItemStackHandler inventory = new ItemStackHandler(5) {
-        @Override
-        public int getSlotLimit(int slot) {
-            return ModConfig.isRationBoxStacking() ? 64 : 1;
-        }
-
-        @Override
-        public boolean isItemValid(int slot, @NotNull ItemStack stack) {
-            return ModConfig.isRationBoxItemAllowed(stack);
-        }
-
-        @Override
-        protected void onContentsChanged(int slot) {
-            setChanged();
-        }
-    };
+public class RationBoxBlockEntity
+        extends dev.averageanime.block.type.blockentity.RationBoxBlockEntity {
 
     public RationBoxBlockEntity(BlockPos pos, BlockState state) {
-        super(ModBlockEntities.RATION_BOX.get(), pos, state);
+        super(ModBlockEntities.RATION_BOX.get(), pos, state,
+                new StorageInventory(5,
+                        slot -> ModConfig.isRationBoxStacking() ? 64 : 1,
+                        (slot, stack) -> ModConfig.isRationBoxItemAllowed(stack)));
+        storageInventory().setOnChanged(this::setChanged);
     }
 
-    @Override
-    protected void saveAdditional(@NotNull CompoundTag tag, HolderLookup.@NotNull Provider registries) {
-        super.saveAdditional(tag, registries);
-        tag.put("inventory", inventory.serializeNBT(registries));
-    }
-
-    @Override
-    public void loadAdditional(@NotNull CompoundTag tag, HolderLookup.@NotNull Provider registries) {
-        super.loadAdditional(tag, registries);
-        if (tag.contains("inventory")) {
-            inventory.deserializeNBT(registries, tag.getCompound("inventory"));
-        }
-    }
-
-    @Override
-    public @NotNull Component getDisplayName() {
-        return Component.translatable("container.createfood.ration_box");
+    /** Typed accessor for platform menus that need a {@link StorageInventory}. */
+    public StorageInventory storageInventory() {
+        return (StorageInventory) inventory;
     }
 
     @Nullable
     @Override
-    public AbstractContainerMenu createMenu(int containerId, @NotNull Inventory playerInventory,
-            @NotNull Player player) {
-        return new RationBoxMenu(containerId, playerInventory, this);
+    public AbstractContainerMenu createMenu(int id, @NotNull Inventory inv, @NotNull Player player) {
+        return new RationBoxMenu(id, inv, this);
     }
 }

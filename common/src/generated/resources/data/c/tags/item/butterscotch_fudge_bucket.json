@@ -3,10 +3,6 @@
     {
       "id": "createfood:butterscotch_fudge_bucket",
       "required": false
-    },
-    {
-      "id": "createfood:butterscotch_fudge_bucket",
-      "required": false
     }
   ]
 }

@@ -3,10 +3,6 @@
     {
       "id": "createfood:egg_bucket",
       "required": false
-    },
-    {
-      "id": "createfood:egg_bucket",
-      "required": false
     }
   ]
 }

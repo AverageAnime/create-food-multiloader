@@ -1,0 +1,16 @@
+{
+  "values": [
+    {
+      "id": "farm_and_charm:flour",
+      "required": false
+    },
+    {
+      "id": "hearthandharvest:flour",
+      "required": false
+    },
+    {
+      "id": "kaleidoscope_cookery:flour",
+      "required": false
+    }
+  ]
+}

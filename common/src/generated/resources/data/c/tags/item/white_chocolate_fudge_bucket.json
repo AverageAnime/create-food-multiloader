@@ -3,10 +3,6 @@
     {
       "id": "createfood:white_chocolate_fudge_bucket",
       "required": false
-    },
-    {
-      "id": "createfood:white_chocolate_fudge_bucket",
-      "required": false
     }
   ]
 }

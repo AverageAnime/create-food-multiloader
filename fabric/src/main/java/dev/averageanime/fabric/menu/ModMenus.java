@@ -2,6 +2,10 @@ package dev.averageanime.fabric.menu;
 
 import dev.averageanime.fabric.block.type.blockentity.ClothSackBlockEntity;
 import dev.averageanime.fabric.block.type.blockentity.RationBoxBlockEntity;
+import dev.averageanime.fabric.menu.type.ClothSackItemMenu;
+import dev.averageanime.fabric.menu.type.ClothSackMenu;
+import dev.averageanime.fabric.menu.type.RationBoxItemMenu;
+import dev.averageanime.fabric.menu.type.RationBoxMenu;
 import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerType;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Registry;

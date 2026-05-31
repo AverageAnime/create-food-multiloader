@@ -3,10 +3,6 @@
     {
       "id": "createfood:vinegar_bucket",
       "required": false
-    },
-    {
-      "id": "createfood:vinegar_bucket",
-      "required": false
     }
   ]
 }

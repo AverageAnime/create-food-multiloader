@@ -36,6 +36,7 @@
         }
     ],
     "type": "create:mixing",
+    "requiredSpeed": 64,
     "ingredients": [
         {
             "type": "fluid_tag",

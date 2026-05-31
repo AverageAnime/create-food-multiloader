@@ -5,10 +5,6 @@
       "required": false
     },
     {
-      "id": "createfood:condensed_milk_bucket",
-      "required": false
-    },
-    {
       "id": "create_dd:condense_milk_bucket",
       "required": false
     }

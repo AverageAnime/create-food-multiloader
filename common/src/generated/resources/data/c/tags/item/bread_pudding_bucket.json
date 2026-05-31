@@ -3,10 +3,6 @@
     {
       "id": "createfood:bread_pudding_bucket",
       "required": false
-    },
-    {
-      "id": "createfood:bread_pudding_bucket",
-      "required": false
     }
   ]
 }

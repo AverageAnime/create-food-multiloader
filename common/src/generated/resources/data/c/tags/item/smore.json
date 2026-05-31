@@ -3,6 +3,10 @@
     {
       "id": "createfood:smore",
       "required": false
+    },
+    {
+      "id": "hearthandharvest:smore",
+      "required": false
     }
   ]
 }

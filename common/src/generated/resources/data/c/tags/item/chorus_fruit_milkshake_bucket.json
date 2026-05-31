@@ -3,10 +3,6 @@
     {
       "id": "createfood:chorus_fruit_milkshake_bucket",
       "required": false
-    },
-    {
-      "id": "createfood:chorus_fruit_milkshake_bucket",
-      "required": false
     }
   ]
 }

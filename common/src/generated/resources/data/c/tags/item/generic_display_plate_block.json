@@ -1,0 +1,8 @@
+{
+  "values": [
+    {
+      "id": "createfood:generic_display_plate_block",
+      "required": false
+    }
+  ]
+}

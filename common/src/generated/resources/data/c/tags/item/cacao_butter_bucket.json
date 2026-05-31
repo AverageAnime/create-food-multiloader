@@ -3,10 +3,6 @@
     {
       "id": "createfood:cacao_butter_bucket",
       "required": false
-    },
-    {
-      "id": "createfood:cacao_butter_bucket",
-      "required": false
     }
   ]
 }

@@ -17,12 +17,10 @@
     "entrypoints": {
         "main": [
             "dev.averageanime.fabric.CreateFood"
-        ],
-        "client": [
-          "dev.averageanime.fabric.CreateFoodClient"
         ]
     },
     "mixins": [
+        "${mod_id}.mixins.json",
         "${mod_id}.fabric.mixins.json"
     ],
     "depends": {

@@ -3,6 +3,10 @@
     {
       "id": "createfood:cotton_candy_stick",
       "required": false
+    },
+    {
+      "id": "hearthandharvest:cotton_candy",
+      "required": false
     }
   ]
 }

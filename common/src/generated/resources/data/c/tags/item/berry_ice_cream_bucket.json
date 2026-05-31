@@ -3,10 +3,6 @@
     {
       "id": "createfood:berry_ice_cream_bucket",
       "required": false
-    },
-    {
-      "id": "createfood:berry_ice_cream_bucket",
-      "required": false
     }
   ]
 }

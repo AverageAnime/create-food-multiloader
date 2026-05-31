@@ -1,11 +1,13 @@
 package dev.averageanime.block.type.display;
 
+import dev.averageanime.block.handler.PlateSliceHandler;
 import dev.averageanime.block.type.plate.EmptyPlateBlock;
 import dev.averageanime.block.type.plate.PlateBlock;
 import dev.averageanime.block.type.plate.SmallPlateBlock;
 import dev.averageanime.util.ItemSpawn;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
@@ -15,6 +17,7 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
@@ -65,6 +68,17 @@ public abstract class FoodBlock extends Block {
 
     @Override
     protected @NotNull InteractionResult useWithoutItem(@NotNull BlockState state, Level level, @NotNull BlockPos pos, @NotNull Player player, @NotNull BlockHitResult hit) {
+        if (!player.isShiftKeyDown()) {
+            if (PlateSliceHandler.couldSlice(player, level, InteractionHand.OFF_HAND, pos, state)) {
+                return InteractionResult.PASS;
+            }
+            ItemStack offhand = player.getItemInHand(InteractionHand.OFF_HAND);
+            if (!offhand.isEmpty()
+                    && offhand.is(this.displayItem.get())
+                    && state.getValue(STACK_SIZE) < maxStackSize) {
+                return InteractionResult.PASS;
+            }
+        }
         if (!level.isClientSide) {
             if (player.isShiftKeyDown()) {
                 removeAllItems(state, level, pos, player);
@@ -91,6 +105,9 @@ public abstract class FoodBlock extends Block {
     protected @NotNull ItemInteractionResult useItemOn(ItemStack heldStack, @NotNull BlockState state, @NotNull Level level, @NotNull BlockPos pos,
                                                        @NotNull Player player, @NotNull InteractionHand hand, @NotNull BlockHitResult hit) {
         if (heldStack.is(this.displayItem.get())) {
+            if (PlateSliceHandler.couldSlice(player, level, InteractionHand.OFF_HAND, pos, state)) {
+                return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
+            }
             return addItem(state, level, pos, player, heldStack);
         }
         return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
@@ -120,6 +137,50 @@ public abstract class FoodBlock extends Block {
                 direction.getStepX() * 0.15, 0.05, direction.getStepZ() * 0.15);
         handleLastItemRemoved(state, level, pos);
         level.playSound(null, pos, getRemoveSound(), SoundSource.BLOCKS, 1.0F, 0.8F);
+    }
+
+    /**
+     * Shift+LMB: instantly eat one item from this food plate.
+     * Returns true if the eat was handled (caller should cancel the attack).
+     */
+    public boolean tryEat(Player player, Level level, BlockPos pos, BlockState state) {
+        if (!player.isShiftKeyDown()) return false;
+        Item food = this.displayItem.get();
+        if (food == null) return false;
+        ItemStack foodStack = new ItemStack(food);
+        FoodProperties props = foodStack.get(DataComponents.FOOD);
+        if (props == null) return false;
+        if (!player.canEat(props.canAlwaysEat()) && !player.getAbilities().instabuild) return false;
+        if (!level.isClientSide) {
+            ItemStack copy = foodStack.copyWithCount(1);
+            applyEatEffects(copy, props, player, level, pos);
+            dropContainerOnEat(player, level, pos);
+            int currentStack = state.getValue(STACK_SIZE);
+            if (currentStack > 1) {
+                level.setBlock(pos, state.setValue(STACK_SIZE, currentStack - 1), 3);
+            } else {
+                handleLastItemEaten(state, level, pos);
+            }
+            level.playSound(null, pos, getEatSound(), SoundSource.PLAYERS, 0.5f, 1.0f);
+        }
+        return true;
+    }
+
+    protected void applyEatEffects(ItemStack copy, FoodProperties props, Player player, Level level, BlockPos pos) {
+        ItemStack container = copy.finishUsingItem(level, player);
+        if (!handlesOwnContainer() && !container.isEmpty() && !ItemStack.isSameItem(container, copy)) {
+            if (!player.getInventory().add(container)) player.drop(container, false);
+        }
+    }
+
+    protected boolean handlesOwnContainer() { return false; }
+
+    protected void dropContainerOnEat(Player player, Level level, BlockPos pos) {}
+
+    protected SoundEvent getEatSound() { return SoundEvents.PLAYER_BURP; }
+
+    protected void handleLastItemEaten(BlockState state, Level level, BlockPos pos) {
+        handleLastItemRemoved(state, level, pos);
     }
 
     @Override

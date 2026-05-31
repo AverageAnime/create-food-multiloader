@@ -4,7 +4,7 @@ import dev.averageanime.fabric.CreateFood;
 import dev.averageanime.fabric.block.ModDisplayBlocks;
 import dev.averageanime.fabric.block.ModFluids;
 import dev.averageanime.fabric.config.ModConfig;
-import dev.averageanime.fabric.item.ModItems;
+import dev.averageanime.registry.ItemRegistry;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -30,7 +30,7 @@ public class ModTabs {
         Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, ITEM_GROUP_ID,
                 FabricItemGroup.builder()
                         .title(Component.translatable("tab.createfood"))
-                        .icon(() -> new ItemStack(ModItems.BREAKFAST_PLATE))
+                        .icon(() -> new ItemStack(ItemRegistry.BREAKFAST_PLATE.get()))
                         .displayItems((params, output) -> {
                             Set<String> displayBlockPaths = collectDisplayBlockPaths();
                             BuiltInRegistries.ITEM.entrySet().stream()
@@ -49,7 +49,7 @@ public class ModTabs {
         Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, FLUID_GROUP_ID,
                 FabricItemGroup.builder()
                         .title(Component.translatable("tab.createfood.fluid"))
-                        .icon(() -> new ItemStack(ModFluids.CREAM_PIE_FILLING_FLUID.BUCKET))
+                        .icon(() -> new ItemStack(ModFluids.BY_ID.get("cream_pie_filling").BUCKET))
                         .displayItems((params, output) ->
                                 BuiltInRegistries.ITEM.entrySet().stream()
                                         .filter(e -> e.getKey().location().getNamespace().equals(CreateFood.MOD_ID))

@@ -3,6 +3,10 @@
     {
       "id": "culturaldelights:corn_kernels",
       "required": false
+    },
+    {
+      "id": "hearthandharvest:corn_kernels",
+      "required": false
     }
   ]
 }

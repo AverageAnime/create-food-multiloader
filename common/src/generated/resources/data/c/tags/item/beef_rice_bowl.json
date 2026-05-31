@@ -1,0 +1,8 @@
+{
+  "values": [
+    {
+      "id": "createfood:beef_rice_bowl",
+      "required": false
+    }
+  ]
+}

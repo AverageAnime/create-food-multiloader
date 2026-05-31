@@ -3,10 +3,6 @@
     {
       "id": "createfood:cacao_mass_bucket",
       "required": false
-    },
-    {
-      "id": "createfood:cacao_mass_bucket",
-      "required": false
     }
   ]
 }

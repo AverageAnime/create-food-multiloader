@@ -5,7 +5,7 @@
         {
             "type": "fluid_tag",
             "amount": 1000,
-            "fluid_tag": "c:milk"
+            "fluid_tag": "c:heavy_cream"
         },
         {
             "tag": "c:flours/wheat"

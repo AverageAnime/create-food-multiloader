@@ -3,10 +3,6 @@
     {
       "id": "createfood:dark_chocolate_bucket",
       "required": false
-    },
-    {
-      "id": "createfood:dark_chocolate_bucket",
-      "required": false
     }
   ]
 }

@@ -31,6 +31,14 @@
     {
       "id": "create_bic_bit:aged_cheese_wedge",
       "required": false
+    },
+    {
+      "id": "hearthandharvest:cheddar_cheese_slice",
+      "required": false
+    },
+    {
+      "id": "hearthandharvest:goat_cheese_slice",
+      "required": false
     }
   ]
 }

@@ -3,10 +3,6 @@
     {
       "id": "createfood:blackstrap_molasses_bucket",
       "required": false
-    },
-    {
-      "id": "createfood:blackstrap_molasses_bucket",
-      "required": false
     }
   ]
 }

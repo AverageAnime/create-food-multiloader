@@ -3,10 +3,6 @@
     {
       "id": "createfood:rice_pudding_bucket",
       "required": false
-    },
-    {
-      "id": "createfood:rice_pudding_bucket",
-      "required": false
     }
   ]
 }

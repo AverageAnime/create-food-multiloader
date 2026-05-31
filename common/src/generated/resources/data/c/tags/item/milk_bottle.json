@@ -3,6 +3,10 @@
     {
       "id": "farmersdelight:milk_bottle",
       "required": false
+    },
+    {
+      "id": "hearthandharvest:goat_milk_bottle",
+      "required": false
     }
   ]
 }

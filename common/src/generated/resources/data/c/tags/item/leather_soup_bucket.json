@@ -3,10 +3,6 @@
     {
       "id": "createfood:leather_soup_bucket",
       "required": false
-    },
-    {
-      "id": "createfood:leather_soup_bucket",
-      "required": false
     }
   ]
 }

@@ -3,10 +3,6 @@
     {
       "id": "createfood:apple_custard_bucket",
       "required": false
-    },
-    {
-      "id": "createfood:apple_custard_bucket",
-      "required": false
     }
   ]
 }

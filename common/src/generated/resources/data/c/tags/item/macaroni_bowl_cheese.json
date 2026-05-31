@@ -3,6 +3,10 @@
     {
       "id": "createfood:macaroni_bowl_cheese",
       "required": false
+    },
+    {
+      "id": "hearthandharvest:macaroni_and_cheese",
+      "required": false
     }
   ]
 }

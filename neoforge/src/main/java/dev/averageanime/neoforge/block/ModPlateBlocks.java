@@ -28,28 +28,23 @@ public class ModPlateBlocks {
         int smallPlatesFound = 0;
 
         for (PlateEntry entry : COMPATIBLE_PLATES) {
-            if (registerPlateEntry(entry, ModDisplayBlocks.PLATE_BLOCK.get(), "normal")) {
-                normalPlatesFound++;
-            }
+            if (registerPlateEntry(entry, ModDisplayBlocks.PLATE_BLOCK.get())) normalPlatesFound++;
         }
 
         for (PlateEntry entry : COMPATIBLE_SMALL_PLATES) {
-            if (registerPlateEntry(entry, ModDisplayBlocks.SMALL_PLATE_BLOCK.get(), "small")) {
-                smallPlatesFound++;
-            }
+            if (registerPlateEntry(entry, ModDisplayBlocks.SMALL_PLATE_BLOCK.get())) smallPlatesFound++;
         }
 
-        if (normalPlatesFound > 0 || smallPlatesFound > 0) {
-        } else {
+        if (normalPlatesFound == 0 && smallPlatesFound == 0) {
             LOGGER.debug("No compatible plate items from other mods found");
         }
     }
 
-    private static boolean registerPlateEntry(PlateEntry entry, Block targetBlock, String plateType) {
+    private static boolean registerPlateEntry(PlateEntry entry, Block targetBlock) {
         boolean registered = false;
         Item plateItem = getItemIfExists(entry.modId, entry.itemName);
         if (plateItem != null && plateItem != Items.AIR) {
-            FoodBlock.Registry.registerEmptyPlateItem(() -> plateItem);  // NEW LINE
+            FoodBlock.Registry.registerEmptyPlateItem(() -> plateItem);
             FoodBlock.Registry.register(() -> plateItem, () -> targetBlock);
             registered = true;
         }
@@ -87,9 +82,7 @@ public class ModPlateBlocks {
         Block targetBlock = isSmallPlate ?
                 ModDisplayBlocks.SMALL_PLATE_BLOCK.get() :
                 ModDisplayBlocks.PLATE_BLOCK.get();
-
-        PlateEntry entry = new PlateEntry(modId, itemName, blockName);
-        return registerPlateEntry(entry, targetBlock, isSmallPlate ? "small" : "normal");
+        return registerPlateEntry(new PlateEntry(modId, itemName, blockName), targetBlock);
     }
 
     private record PlateEntry(String modId, String itemName, String blockName) {

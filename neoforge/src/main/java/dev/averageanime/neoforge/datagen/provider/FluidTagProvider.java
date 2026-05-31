@@ -3,8 +3,6 @@ package dev.averageanime.neoforge.datagen.provider;
 import dev.averageanime.CommonClass;
 import dev.averageanime.neoforge.block.ModFluids;
 import dev.averageanime.neoforge.block.type.fluid.FluidEntry;
-import java.lang.reflect.Field;
-import java.lang.reflect.Modifier;
 import java.util.concurrent.CompletableFuture;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
@@ -26,22 +24,34 @@ public class FluidTagProvider extends TagsProvider<Fluid> {
 
     @Override
     protected void addTags(HolderLookup.@NotNull Provider provider) {
-        for (Field field : ModFluids.class.getDeclaredFields()) {
-            if (!Modifier.isStatic(field.getModifiers())) continue;
-            try {
-                Object value = field.get(null);
-                if (value instanceof FluidEntry.FluidType fluidType) {
-                    String fluidId = fluidType.SOURCE.getId().getPath();
-                    String flowingId = fluidType.FLOWING.getId().getPath();
+        for (FluidEntry.FluidType fluidType : ModFluids.BY_ID.values()) {
+            String fluidId = fluidType.SOURCE.getId().getPath();
+            String flowingId = fluidType.FLOWING.getId().getPath();
 
-                    TagKey<Fluid> tag = TagKey.create(Registries.FLUID,
-                            ResourceLocation.fromNamespaceAndPath("c", fluidId));
+            TagKey<Fluid> tag = TagKey.create(Registries.FLUID,
+                    ResourceLocation.fromNamespaceAndPath("c", fluidId));
 
-                    tag(tag)
-                            .addOptional(ResourceLocation.fromNamespaceAndPath(CommonClass.MOD_ID, flowingId))
-                            .addOptional(ResourceLocation.fromNamespaceAndPath(CommonClass.MOD_ID, fluidId));
-                }
-            } catch (IllegalAccessException ignored) {}
+            tag(tag)
+                    .addOptional(ResourceLocation.fromNamespaceAndPath(CommonClass.MOD_ID, flowingId))
+                    .addOptional(ResourceLocation.fromNamespaceAndPath(CommonClass.MOD_ID, fluidId));
         }
+
+        // Create Confectionery fluid compat
+        tag(fluidTag("caramel"))
+                .addOptional(ResourceLocation.parse("create_confectionery:caramel"))
+                .addOptional(ResourceLocation.parse("create_confectionery:flowing_caramel"));
+        tag(fluidTag("dark_chocolate"))
+                .addOptional(ResourceLocation.parse("create_confectionery:black_chocolate"))
+                .addOptional(ResourceLocation.parse("create_confectionery:flowing_black_chocolate"));
+        tag(fluidTag("hot_chocolate"))
+                .addOptional(ResourceLocation.parse("create_confectionery:hot_chocolate"))
+                .addOptional(ResourceLocation.parse("create_confectionery:flowing_hot_chocolate"));
+        tag(fluidTag("white_chocolate"))
+                .addOptional(ResourceLocation.parse("create_confectionery:white_chocolate"))
+                .addOptional(ResourceLocation.parse("create_confectionery:flowing_white_chocolate"));
+    }
+
+    private static TagKey<Fluid> fluidTag(String id) {
+        return TagKey.create(Registries.FLUID, ResourceLocation.fromNamespaceAndPath("c", id));
     }
 }

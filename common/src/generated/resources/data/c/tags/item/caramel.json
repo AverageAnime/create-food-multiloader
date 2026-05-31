@@ -3,6 +3,10 @@
     {
       "id": "createfood:caramel",
       "required": false
+    },
+    {
+      "id": "hearthandharvest:caramel",
+      "required": false
     }
   ]
 }

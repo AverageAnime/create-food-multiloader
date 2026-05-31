@@ -2,24 +2,29 @@
     "type": "create:mixing",
     "ingredients": [
         {
+            "type": "fluid_tag",
+            "amount": 250,
+            "fluid_tag": "c:water"
+        },
+        {
             "tag": "c:sugar"
         },
         {
-            "tag": "c:apple_slice"
+            "tag": "c:apple"
         },
         {
-            "tag": "c:apple_slice"
+            "tag": "c:apple"
         },
         {
-            "tag": "c:apple_slice"
+            "tag": "c:apple"
         },
         {
-            "tag": "c:apple_slice"
+            "tag": "c:apple"
         }
     ],
     "results": [
         {
-            "amount": 333,
+            "amount": 250,
             "id": "createfood:apple_juice"
         }
     ],

@@ -1,4 +1,4 @@
-### ***2.4.0***
+### ***2.5.0***
 
 # `createfood-client.toml`
 
@@ -23,6 +23,13 @@ display_block = [
   "kaleidoscope_cookery:samsa|plate|2",
   "farmersrespite:tea_bottle|bottle|1"
 ]
+```
+
+### Display Settings
+- **always_display_upright**: Items on display plates always render upright regardless of `create:upright_on_belt` tag (default: `false`)
+```toml
+[display]
+always_display_upright = false
 ```
 
 ---
@@ -97,6 +104,18 @@ custom_tooltips = [
 
 ---
 
+## Handcrafting
+
+- **enable_handcraft_particles**: Show particle effects when handcrafting (default: `true`)
+- **enable_single_handcraft**: Allow single-ingredient recipes to be handcrafted (default: `false`)
+```toml
+[handcraft]
+enable_handcraft_particles = true
+enable_single_handcraft = false
+```
+
+---
+
 ## Blocks
 
 ### Custom Blocks
@@ -146,7 +165,7 @@ show_sack_block_icons = true
 Format: `name|slopeFindDistance|levelDecreasePerBlock`
 > **Note: Custom fluids will require new texture files.**
 * Register brand-new fluids under the `createfood:` namespace using the `fluid` list.
-* `name` becomes the fluid's registry ID: `createfood:<name>`. A bucket items are registered automatically.
+* `name` becomes the fluid's registry ID: `createfood:<name>`. Bucket items are registered automatically.
 * Control how the fluid flows with `slopeFindDistance` and `levelDecreasePerBlock`.
 > **Note: Changes require a game restart.**
 ```toml
@@ -240,7 +259,20 @@ Format: `mod:mod_id`,  `item:mod_id:item_id`,  `tag:mod_id:tag_name`
 ```
 [interactions.handcraft]
 filter = ["mod:createfood", "item:farmersdelight:hamburger", "tag:c:foods"]
-exclude = ["item:createfood:raw_strider_meatball"]
+exclude = ["item:createfood:raw_strider_meatball", "item:createfood:egg_yolk", "tag:c:tools"]
+```
+
+### Generic Display Plates
+- **enable_generic_plates**: Enable generic display plate blocks that can hold any single item (default: `true`)
+- **enable_cutting_board**: Enable Farmer's Delight cutting board recipes to work on display plates (default: `true`)
+#### Exclude
+Format: `mod:mod_id`,  `item:mod_id:item_id`,  `tag:mod_id:tag_name`
+* Block specific items from being placed on generic display plates using `exclude`.
+```toml
+[display]
+enable_generic_plates = true
+enable_cutting_board = true
+exclude = ["tag:c:tools"]
 ```
 
 ---

@@ -9,11 +9,11 @@
       "required": false
     },
     {
-      "id": "createfood:hot_chocolate_bucket",
+      "id": "create_dd:hot_chocolate_bucket",
       "required": false
     },
     {
-      "id": "create_dd:hot_chocolate_bucket",
+      "id": "create_confectionery:hot_chocolate_bucket",
       "required": false
     }
   ]

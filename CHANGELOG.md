@@ -1,3 +1,39 @@
+### *** 2.5.0 ***
+![newprev240](https://github.com/user-attachments/assets/c0ef7c6c-5f4a-40ae-840d-091340765f42)
+
+#### Changes:
+* Added `createfood:egg_yolk` and `c:tools` to the default handcrafting exclude list. [(#35)](https://github.com/AverageAnime/create-food-multiloader/issues/35)
+* Pumpkin pie slice is now hidden by default. Pumpkin pie slice display plate moved to config. [(#40)](https://github.com/AverageAnime/create-food-multiloader/issues/40)
+* You can now eat from display blocks with `Shift + LMB`.
+* Added new settings. Read more [here](https://github.com/AverageAnime/create-food-multiloader/wiki/Config-Options).
+  * `enable_generic_plates` allows plates to generically display any item. (Default: true)
+    * `always_display_upright` places the display item vertically. When false, items will be placed horizontally on the plate with only those tagged `create:upright_on_belt` displaying vertically. (Default: true)
+    * `generic_display_exclude` exclude items/tags from being displayed. (Default: `c:tools`)
+  * `enable_cutting_board` allows plates to act as a Farmer's Delight cutting board. (Default: true)
+    * Unlike the cutting board, it does not support stacks and does not automate well, but does allow for off-hand processing.
+  * `enable_single_handcraft` to allow handcrafting to work for single items. (Default: false)
+  * `enable_handcraft_particles` to add particle effect to handcrafting. (Default: true)
+* Vanilla and Create display plates are now made via config.
+  * Added vanilla cake display plate.
+* Added support for various effects from Brewin' and Chewin', Candlelight, Create: Confectionary, and RunicLib: `raging`, `sweet_heart`, `refreshed`, `well_served`, `rest`, `stimulation`, `adrenaline`, `berserk`, `blood_clot`, `brimstone_vision`, `caffeinated`, `lava_walking`, `perception`, `pyromaniac`, `water_walking`.
+  * Most are not used by default.
+* Added `minecraft:cat_food` tag for `createfood:raw_tropical_fish_slice`.
+* Changed Display Block creative tab to use the breakfast plate block.
+* Minor rebalancing of some food effects.
+* Candles can now be added to cakes.
+* Added tag support for Create: Confectionery, Hearth & Harvest, and Rustic Delight.
+* Crafting recipes for ice creams and milkshakes now use bottles.
+
+#### Fixes:
+* Fix crash related to `c:tomato_sauce` tag. [(#36)](https://github.com/AverageAnime/create-food-multiloader/issues/36)
+* Fix model issues with `farmersdelight:sweet_berry_cheesecake`. [(#38)](https://github.com/AverageAnime/create-food-multiloader/issues/38)
+* Fix duplication with storage blocks. [(#39)](https://github.com/AverageAnime/create-food-multiloader/issues/39)
+* Fix load conditions for various compat cookie recipes. [(#41)](https://github.com/AverageAnime/create-food-multiloader/issues/41)
+* Fix `createfood:chocolate_cream_chocolate_cake` model.
+* Fix recipes for `cream_pie_filling`. Now uses `c:heavy_cream` to avoid overlap with `cake_batter`.
+* Fix recipes for `tater_tots` to use proper `c:flours/wheat` tag. 
+* Fix various inconsistent juice recipe input/output amounts.
+
 ### *** 2.4.0 ***
 ![newprev240](https://github.com/user-attachments/assets/730ab5d3-46b5-4521-8ccf-81a8e88b4d41)
 

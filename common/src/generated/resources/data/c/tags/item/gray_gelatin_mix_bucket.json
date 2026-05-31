@@ -3,10 +3,6 @@
     {
       "id": "createfood:gray_gelatin_mix_bucket",
       "required": false
-    },
-    {
-      "id": "createfood:gray_gelatin_mix_bucket",
-      "required": false
     }
   ]
 }

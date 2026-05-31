@@ -3,6 +3,14 @@
     {
       "id": "expandeddelight:peanut",
       "required": false
+    },
+    {
+      "id": "hearthandharvest:peanut",
+      "required": false
+    },
+    {
+      "id": "hearthandharvest:roasted_peanuts",
+      "required": false
     }
   ]
 }

@@ -3,8 +3,6 @@ package dev.averageanime.neoforge.datagen.provider;
 import dev.averageanime.CommonClass;
 import dev.averageanime.neoforge.block.ModFluids;
 import dev.averageanime.neoforge.block.type.fluid.FluidEntry;
-import java.lang.reflect.Field;
-import java.lang.reflect.Modifier;
 import java.util.Map;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
@@ -23,15 +21,9 @@ public class BlockModelProvider extends net.neoforged.neoforge.client.model.gene
     }
 
     private void registerFluidBlockModels() {
-        for (Field field : ModFluids.class.getDeclaredFields()) {
-            if (!Modifier.isStatic(field.getModifiers())) continue;
-            try {
-                Object value = field.get(null);
-                if (value instanceof FluidEntry.FluidType fluidType) {
-                    String fluidId = fluidType.SOURCE.getId().getPath();
-                    fluidBlockModel(fluidId);
-                }
-            } catch (IllegalAccessException ignored) {}
+        for (FluidEntry.FluidType fluidType : ModFluids.BY_ID.values()) {
+            String fluidId = fluidType.SOURCE.getId().getPath();
+            fluidBlockModel(fluidId);
         }
     }
 
@@ -52,13 +44,13 @@ public class BlockModelProvider extends net.neoforged.neoforge.client.model.gene
                 .face(net.minecraft.core.Direction.EAST).uvs(1, 1, 15, 15).texture("#side").end()
                 .end()
                 .element()
-                    .from(0, 0, 0).to(16, 16, 16)
-                    .face(net.minecraft.core.Direction.DOWN).texture("#down").cullface(net.minecraft.core.Direction.DOWN).end()
-                    .face(net.minecraft.core.Direction.UP).texture("#down").cullface(net.minecraft.core.Direction.UP).end()
-                    .face(net.minecraft.core.Direction.NORTH).texture("#down").cullface(net.minecraft.core.Direction.NORTH).end()
-                    .face(net.minecraft.core.Direction.SOUTH).texture("#down").cullface(net.minecraft.core.Direction.SOUTH).end()
-                    .face(net.minecraft.core.Direction.WEST).texture("#down").cullface(net.minecraft.core.Direction.WEST).end()
-                    .face(net.minecraft.core.Direction.EAST).texture("#down").cullface(net.minecraft.core.Direction.EAST).end()
+                .from(0, 0, 0).to(16, 16, 16)
+                .face(net.minecraft.core.Direction.DOWN).texture("#down").cullface(net.minecraft.core.Direction.DOWN).end()
+                .face(net.minecraft.core.Direction.UP).texture("#down").cullface(net.minecraft.core.Direction.UP).end()
+                .face(net.minecraft.core.Direction.NORTH).texture("#down").cullface(net.minecraft.core.Direction.NORTH).end()
+                .face(net.minecraft.core.Direction.SOUTH).texture("#down").cullface(net.minecraft.core.Direction.SOUTH).end()
+                .face(net.minecraft.core.Direction.WEST).texture("#down").cullface(net.minecraft.core.Direction.WEST).end()
+                .face(net.minecraft.core.Direction.EAST).texture("#down").cullface(net.minecraft.core.Direction.EAST).end()
                 .end();
     }
 

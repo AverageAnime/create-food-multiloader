@@ -1,7 +1,7 @@
 {
   "values": [
     {
-      "id": "bakery:bread_knife",
+      "id": "#farmersdelight:tools/knives",
       "required": false
     }
   ]

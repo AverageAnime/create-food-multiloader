@@ -19,9 +19,11 @@ public class ModDisplayTabs {
             DeferredRegister.create(Registries.CREATIVE_MODE_TAB, CommonClass.MOD_ID);
 
     public static final Supplier<CreativeModeTab> CREATEFOOD_TAB_BLOCK = CREATIVE_MODE_TAB.register("createfood_display",
-            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModDisplayBlocks.CREAM_SWEET_ROLL_PLATE.get()))
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(net.minecraft.core.registries.BuiltInRegistries.BLOCK.get(
+                    net.minecraft.resources.ResourceLocation.fromNamespaceAndPath(CommonClass.MOD_ID, "breakfast_plate_block"))))
                     .title(Component.translatable("tab.createfood.display"))
                     .displayItems((params, output) -> ModDisplayBlocks.BLOCKS.getEntries().stream()
+                            .filter(holder -> !holder.getId().getPath().equals("generic_display_plate_block"))
                             .filter(holder -> !holder.getId().getPath().equals("small_plate_block"))
                             .filter(holder -> !holder.getId().getPath().equals("plate_block"))
                             .sorted(Comparator.comparing(a -> a.getId().getPath()))

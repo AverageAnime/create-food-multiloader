@@ -2,24 +2,29 @@
     "type": "create:mixing",
     "ingredients": [
         {
+            "type": "fluid_tag",
+            "amount": 250,
+            "fluid_tag": "c:water"
+        },
+        {
             "tag": "c:sugar"
         },
         {
-            "tag": "c:chorus_fruit_slice"
+            "tag": "c:chorus_fruit"
         },
         {
-            "tag": "c:chorus_fruit_slice"
+            "tag": "c:chorus_fruit"
         },
         {
-            "tag": "c:chorus_fruit_slice"
+            "tag": "c:chorus_fruit"
         },
         {
-            "tag": "c:chorus_fruit_slice"
+            "tag": "c:chorus_fruit"
         }
     ],
     "results": [
         {
-            "amount": 333,
+            "amount": 250,
             "id": "createfood:chorus_fruit_juice"
         }
     ],

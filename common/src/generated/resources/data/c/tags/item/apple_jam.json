@@ -3,6 +3,10 @@
     {
       "id": "createfood:apple_jam_bottle",
       "required": false
+    },
+    {
+      "id": "hearthandharvest:apple_jam",
+      "required": false
     }
   ]
 }

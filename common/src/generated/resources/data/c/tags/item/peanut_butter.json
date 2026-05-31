@@ -7,6 +7,10 @@
     {
       "id": "croptopia:peanut_butter",
       "required": false
+    },
+    {
+      "id": "hearthandharvest:peanut_butter",
+      "required": false
     }
   ]
 }

@@ -3,10 +3,6 @@
     {
       "id": "createfood:meringue_bucket",
       "required": false
-    },
-    {
-      "id": "createfood:meringue_bucket",
-      "required": false
     }
   ]
 }

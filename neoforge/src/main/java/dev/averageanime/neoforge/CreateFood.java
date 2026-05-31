@@ -1,5 +1,27 @@
 package dev.averageanime.neoforge;
 
+import dev.averageanime.CommonClass;
+import dev.averageanime.client.renderer.ClothSackRenderer;
+import dev.averageanime.client.renderer.GenericDisplayPlateRenderer;
+import dev.averageanime.client.renderer.StorageContentsTooltipRenderer;
+import dev.averageanime.client.screen.type.ClothSackItemScreen;
+import dev.averageanime.client.screen.type.ClothSackScreen;
+import dev.averageanime.client.screen.type.RationBoxItemScreen;
+import dev.averageanime.client.screen.type.RationBoxScreen;
+import dev.averageanime.client.tooltip.StorageContentsTooltip;
+import dev.averageanime.neoforge.block.ModBlockEntities;
+import dev.averageanime.neoforge.block.ModBlocks;
+import dev.averageanime.neoforge.block.ModDisplayBlocks;
+import dev.averageanime.neoforge.block.ModFluids;
+import dev.averageanime.neoforge.block.type.fluid.FluidEntry;
+import dev.averageanime.neoforge.config.ModConditions;
+import dev.averageanime.neoforge.config.ModConfig;
+import dev.averageanime.neoforge.item.ModItems;
+import dev.averageanime.neoforge.menu.ModMenus;
+import dev.averageanime.neoforge.tab.ModDisplayTabs;
+import dev.averageanime.neoforge.tab.ModTabs;
+
+import com.mojang.logging.LogUtils;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.neoforged.api.distmarker.Dist;
@@ -16,26 +38,6 @@ import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
-import dev.averageanime.CommonClass;
-import dev.averageanime.neoforge.block.ModBlocks;
-import dev.averageanime.neoforge.block.ModDisplayBlocks;
-import dev.averageanime.neoforge.block.ModFluids;
-import dev.averageanime.neoforge.block.type.fluid.FluidEntry;
-import dev.averageanime.neoforge.block.type.blockentity.ModBlockEntities;
-import dev.averageanime.neoforge.client.renderer.ClothSackRenderer;
-import dev.averageanime.neoforge.client.screen.ClothSackItemScreen;
-import dev.averageanime.neoforge.client.screen.ClothSackScreen;
-import dev.averageanime.neoforge.client.screen.RationBoxItemScreen;
-import dev.averageanime.neoforge.client.screen.RationBoxScreen;
-import dev.averageanime.neoforge.client.tooltip.ClientStorageContentsTooltip;
-import dev.averageanime.neoforge.client.tooltip.StorageContentsTooltip;
-import dev.averageanime.neoforge.config.ModConditions;
-import dev.averageanime.neoforge.config.ModConfig;
-import dev.averageanime.neoforge.item.ModItems;
-import dev.averageanime.neoforge.menu.ModMenus;
-import dev.averageanime.neoforge.tab.ModDisplayTabs;
-import dev.averageanime.neoforge.tab.ModTabs;
-import com.mojang.logging.LogUtils;
 import org.slf4j.Logger;
 
 @Mod(CommonClass.MOD_ID)
@@ -88,6 +90,7 @@ public class CreateFood {
 
     private void commonSetup(final FMLCommonSetupEvent event) {
         LOGGER.info("Create: Food - Startup");
+        event.enqueueWork(ModBlocks::wireUpCandleMap);
     }
 
     @SubscribeEvent
@@ -100,29 +103,10 @@ public class CreateFood {
 
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
-            setFluidRenderLayers(ModFluids.APPLE_JUICE_FLUID);
-            setFluidRenderLayers(ModFluids.BERRY_JUICE_FLUID);
-            setFluidRenderLayers(ModFluids.BLACK_GELATIN_MIX_FLUID);
-            setFluidRenderLayers(ModFluids.BLUE_GELATIN_MIX_FLUID);
-            setFluidRenderLayers(ModFluids.BROWN_GELATIN_MIX_FLUID);
-            setFluidRenderLayers(ModFluids.CHORUS_FRUIT_JUICE_FLUID);
-            setFluidRenderLayers(ModFluids.CYAN_GELATIN_MIX_FLUID);
-            setFluidRenderLayers(ModFluids.GELATIN_MIX_FLUID);
-            setFluidRenderLayers(ModFluids.GLOW_BERRY_JUICE_FLUID);
-            setFluidRenderLayers(ModFluids.GRAY_GELATIN_MIX_FLUID);
-            setFluidRenderLayers(ModFluids.GREEN_GELATIN_MIX_FLUID);
-            setFluidRenderLayers(ModFluids.LIGHT_BLUE_GELATIN_MIX_FLUID);
-            setFluidRenderLayers(ModFluids.LIGHT_GRAY_GELATIN_MIX_FLUID);
-            setFluidRenderLayers(ModFluids.LIME_GELATIN_MIX_FLUID);
-            setFluidRenderLayers(ModFluids.MAGENTA_GELATIN_MIX_FLUID);
-            setFluidRenderLayers(ModFluids.ORANGE_GELATIN_MIX_FLUID);
-            setFluidRenderLayers(ModFluids.PINK_GELATIN_MIX_FLUID);
-            setFluidRenderLayers(ModFluids.PURPLE_GELATIN_MIX_FLUID);
-            setFluidRenderLayers(ModFluids.RED_GELATIN_MIX_FLUID);
-            setFluidRenderLayers(ModFluids.SQUID_INK_FLUID);
-            setFluidRenderLayers(ModFluids.VEGETABLE_OIL_FLUID);
-            setFluidRenderLayers(ModFluids.VINEGAR_FLUID);
-            setFluidRenderLayers(ModFluids.YELLOW_GELATIN_MIX_FLUID);
+            for (String id : CommonClass.TRANSLUCENT_FLUIDS) {
+                FluidEntry.FluidType fluid = ModFluids.BY_ID.get(id);
+                if (fluid != null) setFluidRenderLayers(fluid);
+            }
         }
 
         @SubscribeEvent
@@ -130,6 +114,9 @@ public class CreateFood {
             event.registerBlockEntityRenderer(
                     ModBlockEntities.CLOTH_SACK.get(),
                     ClothSackRenderer::new);
+            event.registerBlockEntityRenderer(
+                    ModBlockEntities.GENERIC_DISPLAY_PLATE.get(),
+                    GenericDisplayPlateRenderer::new);
         }
 
         @SubscribeEvent
@@ -142,7 +129,7 @@ public class CreateFood {
 
         @SubscribeEvent
         public static void onRegisterTooltipComponents(RegisterClientTooltipComponentFactoriesEvent event) {
-            event.register(StorageContentsTooltip.class, ClientStorageContentsTooltip::new);
+            event.register(StorageContentsTooltip.class, StorageContentsTooltipRenderer::new);
         }
 
         private static void setFluidRenderLayers(FluidEntry.FluidType fluid) {

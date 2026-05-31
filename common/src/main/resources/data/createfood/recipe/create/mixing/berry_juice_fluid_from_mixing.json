@@ -2,7 +2,18 @@
     "type": "create:mixing",
     "ingredients": [
         {
+            "type": "fluid_tag",
+            "amount": 250,
+            "fluid_tag": "c:water"
+        },
+        {
             "tag": "c:sugar"
+        },
+        {
+            "item": "minecraft:sweet_berries"
+        },
+        {
+            "item": "minecraft:sweet_berries"
         },
         {
             "item": "minecraft:sweet_berries"
@@ -13,7 +24,7 @@
     ],
     "results": [
         {
-            "amount": 333,
+            "amount": 250,
             "id": "createfood:berry_juice"
         }
     ],

@@ -3,10 +3,6 @@
     {
       "id": "createfood:vegetable_oil_bucket",
       "required": false
-    },
-    {
-      "id": "createfood:vegetable_oil_bucket",
-      "required": false
     }
   ]
 }

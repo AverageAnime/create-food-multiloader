@@ -3,6 +3,10 @@
     {
       "id": "createfood:corn_stick",
       "required": false
+    },
+    {
+      "id": "hearthandharvest:uncooked_corn_on_the_cob",
+      "required": false
     }
   ]
 }

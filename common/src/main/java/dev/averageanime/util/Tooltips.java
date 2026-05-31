@@ -14,4 +14,6 @@ public final class Tooltips {
         }
         return new Tip(compat != null ? COMPAT_PREFIX + compat : null, full);
     }
+
+    public static record Tip(String compat, String[] keys) {}
 }

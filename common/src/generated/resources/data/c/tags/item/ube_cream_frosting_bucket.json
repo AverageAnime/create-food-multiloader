@@ -3,10 +3,6 @@
     {
       "id": "createfood:ube_cream_frosting_bucket",
       "required": false
-    },
-    {
-      "id": "createfood:ube_cream_frosting_bucket",
-      "required": false
     }
   ]
 }

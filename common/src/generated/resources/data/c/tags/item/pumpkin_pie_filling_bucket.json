@@ -3,10 +3,6 @@
     {
       "id": "createfood:pumpkin_pie_filling_bucket",
       "required": false
-    },
-    {
-      "id": "createfood:pumpkin_pie_filling_bucket",
-      "required": false
     }
   ]
 }
