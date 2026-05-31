@@ -37,18 +37,33 @@ const EFFECTS=[
   {id:"ModEffectCategories.SATIATED_SHIELD",label:"Satiated Shield",durations:FULL_DURATIONS},
   {id:"ModEffectCategories.SATIATION",label:"Satiation",durations:FULL_DURATIONS},
   {id:"ModEffectCategories.SUGAR_RUSH",label:"Sugar Rush",durations:FULL_DURATIONS},
-  {id:"ModEffectCategories.SULFUR",label:"Sulfur",durations:FULL_DURATIONS},
+  {id:"ModEffectCategories.REST",label:"Rest",durations:FULL_DURATIONS},
   {id:"ModEffectCategories.SUSTENANCE",label:"Sustenance",durations:FULL_DURATIONS},
+  {id:"ModEffectCategories.TOUCH_ABSORB",label:"Touch Absorb",durations:FULL_DURATIONS},
   {id:"ModEffectCategories.TOUCH_HEAL",label:"Touch Heal",durations:FULL_DURATIONS},
   {id:"ModEffectCategories.TOUCH_POISON",label:"Touch Poison",durations:FULL_DURATIONS},
-  {id:"ModEffectCategories.TOUCH_REGEN",label:"Touch Absorb",durations:FULL_DURATIONS},
+  {id:"ModEffectCategories.TOUCH_REGEN",label:"Touch Regen",durations:FULL_DURATIONS},
   {id:"ModEffectCategories.TOUGH",label:"Tough",durations:FULL_DURATIONS},
   {id:"ModEffectCategories.TUNDRA_STRIDER",label:"Tundra Strider",durations:FULL_DURATIONS},
   {id:"ModEffectCategories.VIGOR",label:"Vigor",durations:FULL_DURATIONS},
   {id:"ModEffectCategories.VITALITY",label:"Vitality",durations:FULL_DURATIONS},
   {id:"ModEffectCategories.WARMTH",label:"Warmth",durations:FULL_DURATIONS},
+  {id:"ModEffectCategories.STOUT_HEART",label:"Stout Heart",durations:FULL_DURATIONS},
+  {id:"ModEffectCategories.RAGING",label:"Raging",durations:FULL_DURATIONS},
+  {id:"ModEffectCategories.SWEET_HEART",label:"Sweet Heart",durations:FULL_DURATIONS},
+  {id:"ModEffectCategories.REFRESHED",label:"Refreshed",durations:FULL_DURATIONS},
+  {id:"ModEffectCategories.WELL_SERVED",label:"Well Served",durations:FULL_DURATIONS},
+  {id:"ModEffectCategories.STIMULATION",label:"Stimulation",durations:FULL_DURATIONS},
+  {id:"ModEffectCategories.ADRENALINE",label:"Adrenaline",durations:FULL_DURATIONS},
+  {id:"ModEffectCategories.BERSERK",label:"Berserk",durations:FULL_DURATIONS},
+  {id:"ModEffectCategories.BLOOD_CLOT",label:"Blood Clot",durations:FULL_DURATIONS},
+  {id:"ModEffectCategories.BRIMSTONE_VISION",label:"Brimstone Vision",durations:FULL_DURATIONS},
+  {id:"ModEffectCategories.CAFFEINATED",label:"Caffeinated",durations:FULL_DURATIONS},
+  {id:"ModEffectCategories.LAVA_WALKING",label:"Lava Walking",durations:FULL_DURATIONS},
+  {id:"ModEffectCategories.PERCEPTION",label:"Perception",durations:FULL_DURATIONS},
+  {id:"ModEffectCategories.WATER_WALKING",label:"Water Walking",durations:FULL_DURATIONS},
 ];
-const BASE_TOOLTIP_KEYS=[
+export const BASE_TOOLTIP_KEYS=[
   "apple","apple_cream_frosting","apple_ice_cream","apple_jam","avocado",
   "bacon","beef","beef_meatballs","beetroot","berry","berry_cream_frosting","berry_ice_cream","berry_jam",
   "brown_mushroom","butter","butterscotch","butterscotch_chips","cacao_mass","caramel","caramel_chips",
@@ -65,9 +80,7 @@ const BASE_TOOLTIP_KEYS=[
   "taco_sauce","toast","toffee","toffee_chips","tomato","tomato_sauce",
   "ube_cream_frosting","warped_fungus","white_chocolate","white_chocolate_chips",
 ];
-const ADVISOR_EFFECTS={fish:"Water Breathing (600-1200t)",kelp:"Water Breathing (600-1200t)",honey:"Regeneration (300-600t)",glow_berry:"Night Vision (600t) + Glowing (600t)",crimson_fungus:"Fire Resistance (1200t)",warped_fungus:"Slow Falling (1200t)"};
-const ADVISOR_CATS={beef:"protein",pork:"protein",bacon:"protein",chicken:"protein",fish:"protein",rabbit:"protein",mutton:"protein",sausage:"protein",beef_meatballs:"protein",pork_meatballs:"protein",rabbit_meatballs:"protein",cheese:"dairy",butter:"dairy",egg:"dairy",egg_yolk:"dairy",scrambled_egg:"dairy",fried_egg:"dairy",lettuce:"veg",tomato:"veg",onion:"veg",beetroot:"veg",carrot:"veg",potato:"starch",hash_browns:"starch",rice:"starch",apple:"sweet",berry:"sweet",glow_berry:"sweet",honey:"sweet",chocolate:"sweet",dark_chocolate:"sweet",white_chocolate:"sweet",butterscotch:"sweet",caramel:"sweet",toffee:"sweet",kelp:"other",crimson_fungus:"other",warped_fungus:"other",mushroom:"other",brown_mushroom:"other",red_mushroom:"other",taco_sauce:"condiment",tomato_sauce:"condiment",salt:"condiment",sugar:"condiment"};
-const CAT_NUT={protein:2,dairy:1,veg:1,starch:2,sweet:1,other:1,condiment:0};
+
 
 const CREATE_REC_IDS=new Set(["create:compacting_heated","create:compacting","create:deploying","create:emptying","create:filling","create:milling","create:mixing_heated","create:mixing","create:pressing"]);
 const RECIPE_TYPES=[
@@ -93,6 +106,7 @@ const ITEM_TYPE_OPTIONS=[
   {v:"bowlFood",          l:"bowlFood",             hasFood:true,  noDisplay:true,  desc:"Food item that returns a bowl on use. Stack 16. Shows effects in tooltip. Use for soups and stews. Enable 'Craft remainder returns bowl' if the bowl should also be returned when used as a crafting ingredient."},
   {v:"bottle",            l:"bottle",               hasFood:true,  noDisplay:true,  desc:"DrinkableItem that returns a glass bottle. Stack 16. Use for drinkable fluids."},
   {v:"stickFood",         l:"stickFood",            hasFood:true,  noDisplay:false, desc:"Food item held on a stick. Shows effects in tooltip."},
+  {v:"stickFoodCr",       l:"stickFoodCr",          hasFood:true,  noDisplay:false, desc:"Food item held on a stick that also returns the stick as a crafting remainder."},
   {v:"plain",             l:"plain",                hasFood:false, noDisplay:false, desc:"Non-food item with no special properties. Use for ingredients and crafting components."},
   {v:"plainCr",           l:"plainCr",              hasFood:false, noDisplay:false, desc:"Non-food item with a crafting remainder. Choose the remainder below."},
   {v:"ingredientBowl",    l:"ingredientBowl",       hasFood:false, noDisplay:true,  desc:"Non-food ingredient item. Stack 16, returns a bowl. Use for bowl-contained ingredients."},
@@ -102,13 +116,18 @@ const ITEM_TYPE_OPTIONS=[
 function itemTypeInfo(t){return ITEM_TYPE_OPTIONS.find(o=>o.v===t)||ITEM_TYPE_OPTIONS[0];}
 function itemTypeHasFood(t){return itemTypeInfo(t).hasFood;}
 function itemTypeNoDisplay(t){return itemTypeInfo(t).noDisplay;}
-const CRAFT_REMAIN=[{v:"none",l:"— none —"},{v:"ModItems.CLOTH_FILTER.get()",l:"Cloth Filter"},{v:"Items.GLASS_BOTTLE",l:"Glass Bottle"},{v:"PIPING_BAG.get()",l:"Piping Bag"},{v:"Items.STICK",l:"Stick"}];
+const CRAFT_REMAIN=[{v:"none",l:"— none —"},{v:"cloth_filter",l:"Cloth Filter"},{v:"minecraft:glass_bottle",l:"Glass Bottle"},{v:"piping_bag",l:"Piping Bag"},{v:"minecraft:stick",l:"Stick"}];
+const ITEM_REG="common/src/main/java/dev/averageanime/registry/ItemRegistry.java";
+const BLOCK_REG="common/src/main/java/dev/averageanime/registry/BlockRegistry.java";
+const FLUID_REG="common/src/main/java/dev/averageanime/registry/FluidRegistry.java";
+const DISP_REG="common/src/main/java/dev/averageanime/registry/DisplayBlockRegistry.java";
+const MOD_CFG="neoforge/src/main/java/dev/averageanime/neoforge/config/ModConfig.java";
 const BUILTIN_COMPAT_KEYS=["tooltip.compat.peanut_butter","tooltip.compat.cinnamon","tooltip.compat.coffee","tooltip.compat.corn","tooltip.compat.eggplant","tooltip.compat.dragon_meat","tooltip.compat.endermite_meat","tooltip.compat.strider_meat","tooltip.compat.raw_flesh_cookie","tooltip.compat.ube","tooltip.compat.raw_ginger_cookie"];
 const DISPLAY_TYPES=["PLATE","SMALL_PLATE","BOTTLE","BOWL","SALAD_BOWL","PLATE_FOOD"];
 const DISPLAY_AUTO_PATTERNS=["pizza","slice","pie","sandwich","burger","taco","burrito","wrap","cookie","cake","waffle","donut","muffin","pastry","_bowl","_bottle","salad","toast"];
 function isAutoDisplayBlock(id){if(!id)return false;return DISPLAY_AUTO_PATTERNS.some(p=>id.includes(p));}
 
-function getNutritionTier(n){if(n<=3)return{tier:1,label:"Minimal",satLo:0.1,satHi:1.9};if(n<=6)return{tier:2,label:"Light",satLo:0.2,satHi:1.6};if(n<=9)return{tier:3,label:"Moderate",satLo:0.2,satHi:1.6};if(n<=12)return{tier:4,label:"Substantial",satLo:0.4,satHi:1.1};return{tier:5,label:"Premium",satLo:0.4,satHi:1.1};}
+export function getNutritionTier(n){if(n<=3)return{tier:1,label:"Minimal",satLo:0.1,satHi:1.9};if(n<=6)return{tier:2,label:"Light",satLo:0.2,satHi:1.6};if(n<=9)return{tier:3,label:"Moderate",satLo:0.2,satHi:1.6};if(n<=12)return{tier:4,label:"Substantial",satLo:0.4,satHi:1.1};return{tier:5,label:"Premium",satLo:0.4,satHi:1.1};}
 function parseNs(rawId){const c=rawId&&rawId.includes(":")?rawId.split(":")[0]:"createfood";const localId=rawId&&rawId.includes(":")?rawId.split(":")[1]:rawId;return{ns:c,localId:localId||rawId||"",isCF:c==="createfood"||!rawId};}
 
 function genSimpleBS(id,ns="createfood"){return{variants:{"":{"model":ns+":block/"+id}}};}
@@ -118,20 +137,15 @@ function genSlicesCombineRecipe(id,sliceId,sliceCount,ns="createfood"){return{ty
 
 function buildDisplayBlockRegistration(id,displayConfigs){
   if(!id||!displayConfigs||!displayConfigs.length)return"";
-  function configStr(c){
-    if(c.maxStack===1&&c.height===12&&!c.hasParticles)return"registerConfig(\""+id+"\", DisplayType."+c.type+");";
-    if(Number.isInteger(c.maxStack)&&c.maxStack!==1&&!c.hasParticles&&c.height===12)return"registerConfig(\""+id+"\", DisplayType."+c.type+", "+c.maxStack+");";
-    if(c.hasParticles)return"registerConfig(\""+id+"\", DisplayType."+c.type+", "+c.height+", true, () -> ParticleTypes.WHITE_SMOKE);";
-    return"registerConfig(\""+id+"\", DisplayType."+c.type+", "+c.height+", false, null);";
-  }
-  if(displayConfigs.length===1)return configStr(displayConfigs[0]);
-  const args=displayConfigs.map(c=>{
+  function configArg(c){
     if(c.maxStack===1&&c.height===12&&!c.hasParticles)return"new DisplayBlockConfig(DisplayType."+c.type+")";
-    if(Number.isInteger(c.maxStack)&&c.maxStack!==1)return"new DisplayBlockConfig(DisplayType."+c.type+", "+c.maxStack+")";
+    if(Number.isInteger(c.maxStack)&&c.maxStack!==1&&!c.hasParticles&&c.height===12)return"new DisplayBlockConfig(DisplayType."+c.type+", "+c.maxStack+")";
     if(c.hasParticles)return"new DisplayBlockConfig(DisplayType."+c.type+", "+c.height+", true, () -> ParticleTypes.WHITE_SMOKE)";
     return"new DisplayBlockConfig(DisplayType."+c.type+", "+c.height+")";
-  }).join(",\n        ");
-  return"registerMultiConfig(\""+id+"\",\n        "+args+"\n);";
+  }
+  if(displayConfigs.length===1)return"put(m, \""+id+"\", "+configArg(displayConfigs[0])+");";
+  const args=displayConfigs.map(configArg).join(",\n        ");
+  return"putMulti(m, \""+id+"\",\n        "+args+"\n);";
 }
 function buildDisplayBlockNote(ids){const list=(Array.isArray(ids)?ids:[ids]).map(i=>"    \""+i+"\"").join(",\n");return "private static final Set<String> EXCLUDED_ITEMS = Set.of(\n"+list+"\n);";}
 function mergeDisplayBlockNote(existing,newId){
@@ -147,34 +161,41 @@ function buildItemJava(item){
   const{id,itemType,nutrition,saturation,fast,crBowl,craftRemainder,effects,tooltipKeys,isCompat,compatKey}=item;
   if(!id)return"";
   const tipArg=(()=>{const keys=(tooltipKeys||[]).map(k=>'"'+k+'_ingredient"').join(", ");const compatSuffix=isCompat&&compatKey?compatKey.replace("tooltip.compat.",""):null;const compat=compatSuffix?'"'+compatSuffix+'"':"null";if((tooltipKeys||[]).length>0||isCompat)return"tips("+compat+(keys?", "+keys:"")+")";return null;})();
-  const fxArgs=(effects||[]).map(e=>"fx("+e.effectId+", "+e.duration+(e.amplifier>0?", "+e.amplifier:"")+")");
+  const fxArgs=(effects||[]).map(e=>{const eid=e.effectId.startsWith("ModEffectCategories.")?e.effectId.slice(20):e.effectId;return"fx("+eid+", "+e.duration+(e.amplifier>0?", "+e.amplifier:"")+")";});
   const t=(tipArg||fxArgs.length)?", "+[tipArg,...fxArgs].filter(Boolean).join(", "):"";
   const nut=nutrition,sat=saturation+"f";
   const idU=id.toUpperCase();
   const itype=itemType||"food";
-  if(itype==="plain")           return"public static final DeferredItem<Item> "+idU+" = plain(\""+id+"\""+(tipArg?", "+tipArg:"")+");";
-  if(itype==="plainCr")         return"public static final DeferredItem<Item> "+idU+" = plainCr(\""+id+"\", () -> "+( craftRemainder&&craftRemainder!=="none"?craftRemainder:"Items.STICK")+(tipArg?", "+tipArg:"")+");";
-  if(itype==="ingredientBowl")  return"public static final DeferredItem<Item> "+idU+" = ingredientBowl(\""+id+"\");";
-  if(itype==="ingredientBottle")return"public static final DeferredItem<Item> "+idU+" = ingredientBottle(\""+id+"\");";
-  if(itype==="pipingBag")       return"public static final DeferredItem<Item> "+idU+" = pipingBag(\""+id+"\""+(tipArg?", "+tipArg:"")+");";
-  if(itype==="bottle")          return"public static final DeferredItem<Item> "+idU+" = bottle(\""+id+"\", "+nut+", "+sat+t+");";
-  if(itype==="bowlConsumable"||itype==="bowlFood") return"public static final DeferredItem<Item> "+idU+" = bowlFood(\""+id+"\", "+nut+", "+sat+", "+(crBowl?"true":"false")+t+");";
-  if(itype==="stickConsumable"||itype==="stickFood") return"public static final DeferredItem<Item> "+idU+" = stickFood(\""+id+"\", "+nut+", "+sat+", false"+t+");";
-  return"public static final DeferredItem<Item> "+idU+" = "+(fast?"fastFood":"food")+"(\""+id+"\", "+nut+", "+sat+t+");";
+  if(itype==="plain")           return"public static final Item "+idU+" = plain(\""+id+"\""+(tipArg?", "+tipArg:"")+");";
+  if(itype==="plainCr")         return"public static final Item "+idU+" = plainCr(\""+id+"\", \""+(craftRemainder&&craftRemainder!=="none"?craftRemainder:"minecraft:stick")+"\""+(tipArg?", "+tipArg:"")+");";
+  if(itype==="ingredientBowl")  return"public static final Item "+idU+" = ingredientBowl(\""+id+"\");";
+  if(itype==="ingredientBottle")return"public static final Item "+idU+" = ingredientBottle(\""+id+"\");";
+  if(itype==="pipingBag")       return"public static final Item "+idU+" = pipingBag(\""+id+"\""+(tipArg?", "+tipArg:"")+");";
+  if(itype==="bottle")          return"public static final Item "+idU+" = bottle(\""+id+"\", "+nut+", "+sat+t+");";
+  if(itype==="bowlConsumable"||itype==="bowlFood") return"public static final Item "+idU+" = "+(crBowl?"bowlFoodCr":"bowlFood")+"(\""+id+"\", "+nut+", "+sat+t+");";
+  if(itype==="stickConsumable"||itype==="stickFood") return"public static final Item "+idU+" = stickFood(\""+id+"\", "+nut+", "+sat+t+");";
+  if(itype==="stickFoodCr")     return"public static final Item "+idU+" = stickFoodCr(\""+id+"\", "+nut+", "+sat+t+");";
+  return"public static final Item "+idU+" = "+(fast?"fastFood":"food")+"(\""+id+"\", "+nut+", "+sat+t+");";
 }
 function buildBlockJava(item){
-  const{id,blockType,sliceId,tooltipKeys,isCompat,compatKey}=item;if(!id)return"";
-  const sId=sliceId||(id+"_slice"),sU=sId.toUpperCase(),idU=id.toUpperCase();
+  const{id,blockType,sliceId,miniId,tooltipKeys,isCompat,compatKey}=item;if(!id)return"";
+  const sId=sliceId||(id+"_slice"),idU=id.toUpperCase();
   const compatSuffix=isCompat&&compatKey?compatKey.replace("tooltip.compat.",""):null;
   const compatArg=compatSuffix?'"'+compatSuffix+'"':"null";
   const keyArgs=(tooltipKeys||[]).map(k=>'"'+k+'_ingredient"').join(", ");
-  const tipArg=(tooltipKeys||[]).length>0||isCompat?"tips("+compatArg+(keyArgs?", "+keyArgs:"")+")":"null";
-  const tipArgs=", "+tipArg;
-  if(blockType==="block_cake")     return "public static final DeferredBlock<Block> "+idU+" =\n    registerCake(\""+id+"\", ModItems."+sU+", 1"+tipArgs+");";
-  if(blockType==="block_pie")      return "public static final DeferredBlock<Block> "+idU+" =\n    registerCookedPie(\""+id+"\", ModItems."+sU+tipArgs+");\n\npublic static final DeferredBlock<Block> RAW_"+idU+" =\n    registerRawPie(\"raw_"+id+"\", null);";
-  if(blockType==="block_pizza")    return "public static final DeferredBlock<Block> "+idU+" =\n    registerCookedPizza(\""+id+"\", ModItems."+sU+tipArgs+");\n\npublic static final DeferredBlock<Block> RAW_"+idU+" =\n    registerRawPizza(\"raw_"+id+"\", null);";
-  if(blockType==="block_raw_pie")  return "public static final DeferredBlock<Block> "+idU+" =\n    registerRawPie(\""+id+"\""+tipArgs+");";
-  if(blockType==="block_raw_pizza")return "public static final DeferredBlock<Block> "+idU+" =\n    registerRawPizza(\""+id+"\""+tipArgs+");";
+  const hasTips=(tooltipKeys||[]).length>0||isCompat;
+  const tipArg=hasTips?"tips("+compatArg+(keyArgs?", "+keyArgs:"")+")":(null);
+  const tipSuffix=tipArg?", "+tipArg:"";
+  if(blockType==="block_cake")     return "public static final Block "+idU+" = Block.cake(\""+id+"\", \""+sId+"\""+tipSuffix+");";
+  if(blockType==="block_pie")      return "public static final Block "+idU+" = Block.cookedPie(\""+id+"\", \""+sId+"\""+tipSuffix+");\n\npublic static final Block RAW_"+idU+" = Block.rawPie(\"raw_"+id+"\");";
+  if(blockType==="block_pizza")    return "public static final Block "+idU+" = Block.cookedPizza(\""+id+"\", \""+sId+"\""+tipSuffix+");\n\npublic static final Block RAW_"+idU+" = Block.rawPizza(\"raw_"+id+"\");";
+  if(blockType==="block_raw_pie")  return "public static final Block "+idU+" = Block.rawPie(\""+id+"\""+tipSuffix+");";
+  if(blockType==="block_raw_pizza")return "public static final Block "+idU+" = Block.rawPizza(\""+id+"\""+tipSuffix+");";
+  if(blockType==="block_waffle"){const mId=miniId||(id.replace(/^waffle/,"mini_waffle")||"mini_"+id);return "public static final Block "+idU+" = Block.waffle(\""+id+"\", \""+mId+"\""+tipSuffix+");";}
+  if(blockType==="block_gelatin")  return "public static final Block "+idU+" = Block.gelatin(\""+id+"\");";
+  if(blockType==="block_cheese")   return "public static final Block "+idU+" = Block.cheese(\""+id+"\", \""+sId+"\");";
+  if(blockType==="block_gyro_meat")return "public static final Block "+idU+" = Block.gyroMeat(\""+id+"\", \""+sId+"\");";
+  if(blockType==="block_cake_base")return "public static final Block "+idU+" = Block.cakeBase(\""+id+"\""+tipSuffix+");";
   return "";
 }
 function buildSliceJava(item){
@@ -183,14 +204,14 @@ function buildSliceJava(item){
   const itype="food";
   return buildItemJava({id:sid,itemType:itype,hasFood:sliceHasFood!==false,nutrition:sliceNutrition||2,saturation:sliceSaturation||0.3,fast:sliceFast!==false,effects:sliceEffects||[],showEffectTooltip:sliceShowEffectTooltip!==false,tooltipKeys:tooltipKeys||[],isCompat:isCompat||false,compatKey:compatKey||""});
 }
-function buildFluidJava(item){const{id,fluidFlowSlope,fluidFlowDecrease}=item;if(!id)return"";const flowCall=(fluidFlowSlope>0&&fluidFlowDecrease>0)?".flow("+fluidFlowSlope+", "+fluidFlowDecrease+")":"";return "public static final FluidEntry.FluidType "+id.toUpperCase()+"_FLUID = new FluidEntry(\""+id+"\")"+flowCall+".build();";}
+function buildFluidJava(item){const{id,fluidFlowSlope,fluidFlowDecrease}=item;if(!id)return"";const flowArgs=(fluidFlowSlope>0&&fluidFlowDecrease>0)?", "+fluidFlowSlope+", "+fluidFlowDecrease:"";return "public static final Fluid "+id.toUpperCase()+"_FLUID = fluid(\""+id+"\""+flowArgs+");";}
 function buildBottleJava(item){const{id,bottleHasFood,bottleNutrition,bottleSaturation,bottleFast,bottleEffects,bottleTooltipKeys,tooltipKeys,isCompat,compatKey}=item;return buildItemJava({id:id+"_bottle",itemType:"bottle",hasFood:bottleHasFood!==false,nutrition:bottleNutrition||4,saturation:bottleSaturation||1.0,fast:bottleFast||false,effects:bottleEffects||[],tooltipKeys:bottleTooltipKeys||tooltipKeys||[],isCompat:isCompat||false,compatKey:compatKey||""});}
-function buildBowlJava(item){const{id,bowlHasFood,bowlNutrition,bowlSaturation,bowlFast,bowlEffects,bowlTooltipKeys,tooltipKeys,isCompat,compatKey}=item;return buildItemJava({id:id+"_bowl",itemType:"bowlFood",crBowl:false,hasFood:bowlHasFood!==false,nutrition:bowlNutrition||4,saturation:bowlSaturation||0.6,fast:bowlFast||false,effects:bowlEffects||[],tooltipKeys:bowlTooltipKeys||tooltipKeys||[],isCompat:isCompat||false,compatKey:compatKey||""});}
+function buildBowlJava(item){const{id,bowlHasFood,bowlNutrition,bowlSaturation,bowlFast,bowlEffects,bowlTooltipKeys,tooltipKeys,isCompat,compatKey}=item;return buildItemJava({id:id+"_bowl",itemType:"bowlFood",crBowl:true,hasFood:bowlHasFood!==false,nutrition:bowlNutrition||4,saturation:bowlSaturation||0.6,fast:bowlFast||false,effects:bowlEffects||[],tooltipKeys:bowlTooltipKeys||tooltipKeys||[],isCompat:isCompat||false,compatKey:compatKey||""});}
 function buildModConfigNote(ids){const list=(Array.isArray(ids)?ids:[ids]).map(i=>"            \""+i+"\"").join(",\n");return "DISABLE_ITEMS = BUILDER\n    .defineListAllowEmpty(\"disable_items\",\n        List.of(\n"+list+"\n        ),\n        () -> \"item_id\",\n        obj -> obj instanceof String\n    );";}
 function mergeJava(existing,next,key){
   if(!existing)return next;
   if(!next)return existing;
-  if(key&&key.endsWith("ModDisplayBlocks.java")){
+  if(key&&key.endsWith("DisplayBlockRegistry.java")){
     const isExcluded=s=>s&&s.trimStart().startsWith("private static final Set<String> EXCLUDED_ITEMS");
     if(isExcluded(existing)&&isExcluded(next)){
       const extractIds=s=>{const m=s.match(/Set\.of\(([\s\S]*?)\)/);if(!m)return[];return m[1].split(",").map(x=>x.trim().replace(/^"|"$/g,"")).filter(Boolean);};
@@ -200,6 +221,7 @@ function mergeJava(existing,next,key){
     if(isExcluded(existing)&&!isExcluded(next))return mergeDisplayBlockNote(existing,"")+"\n\n"+next;
     if(!isExcluded(existing)&&isExcluded(next))return existing+"\n\n"+next;
   }
+  if(key&&(key.endsWith("ItemRegistry.java")||key.endsWith("BlockRegistry.java")||key.endsWith("FluidRegistry.java")))return existing+"\n"+next;
   return existing+"\n\n"+next;
 }
 function cond(id,modid){
@@ -273,22 +295,22 @@ function buildItemFiles(item){
     files._autoSet=autoSet;files._variantSet=variantSet;return files;
   }
   const addJava=(k,v)=>{files[k]=files[k]?mergeJava(files[k],v,k):v;};
-  if(isItem){const java=buildItemJava({...item,id});if(java)addJava("neoforge/src/main/java/ModItems.java",java);if(isCompat)addFile("neoforge/src/main/java/ModConfig.java",buildModConfigNote(id));if(!hasDisplayBlock&&!isAutoDisplayBlock(id)){const cur=files["neoforge/src/main/java/ModDisplayBlocks.java"];files["neoforge/src/main/java/ModDisplayBlocks.java"]=cur?mergeDisplayBlockNote(cur,id):buildDisplayBlockNote([id]);}if(hasDisplayBlock&&!isAutoDisplayBlock(id)&&displayConfigs&&displayConfigs.length)addFile("neoforge/src/main/java/ModDisplayBlocks.java",buildDisplayBlockRegistration(id,displayConfigs));}
+  if(isItem){const java=buildItemJava({...item,id});if(java)addJava(ITEM_REG,java);if(isCompat)addFile(MOD_CFG,buildModConfigNote(id));if(!hasDisplayBlock&&!isAutoDisplayBlock(id)){const cur=files[DISP_REG];files[DISP_REG]=cur?mergeDisplayBlockNote(cur,id):buildDisplayBlockNote([id]);}if(hasDisplayBlock&&!isAutoDisplayBlock(id)&&displayConfigs&&displayConfigs.length)addFile(DISP_REG,buildDisplayBlockRegistration(id,displayConfigs));}
   if(isBlock){
     if(!isRaw){
-      const sj=buildSliceJava({...item,id,sliceId:effSlice});if(sj)addJava("neoforge/src/main/java/ModItems.java",sj);
+      const sj=buildSliceJava({...item,id,sliceId:effSlice});if(sj)addJava(ITEM_REG,sj);
     }
 
-    const bj=buildBlockJava({...item,id,sliceId:effSlice});if(bj)addJava("neoforge/src/main/java/ModBlocks.java",bj);
-    if(isCompat)addFile("neoforge/src/main/java/ModConfig.java",buildModConfigNote(id));
+    const bj=buildBlockJava({...item,id,sliceId:effSlice});if(bj)addJava(BLOCK_REG,bj);
+    if(isCompat)addFile(MOD_CFG,buildModConfigNote(id));
   }
   if(isFluid){
-    const fj=buildFluidJava({...item,id});if(fj)addFile("neoforge/src/main/java/ModFluids.java",fj);
+    const fj=buildFluidJava({...item,id});if(fj)addFile(FLUID_REG,fj);
     if(createBottle){
-      const bj2=buildBottleJava({...item,id});if(bj2)addJava("neoforge/src/main/java/ModItems.java",bj2);
+      const bj2=buildBottleJava({...item,id});if(bj2)addJava(ITEM_REG,bj2);
     }
     if(item.createBowl){
-      const bwj=buildBowlJava({...item,id});if(bwj)addJava("neoforge/src/main/java/ModItems.java",bwj);
+      const bwj=buildBowlJava({...item,id});if(bwj)addJava(ITEM_REG,bwj);
     }
   }
   if(hasVariants&&varVariants&&varVariants.length)_addVariantFiles(files,autoSet,variantSet,item,id,ns,isItem,isBlock,isFluid,isCF,isRaw,isCake,sliceCount,isPieOrPizza,createBottle);
@@ -326,18 +348,18 @@ function _addVariantFiles(files,autoSet,variantSet,item,baseId,ns,isItem,isBlock
     if(isCF){
       const vTipKeys=v.tooltipKeys!=null?v.tooltipKeys:item.tooltipKeys||[];
       if(isBlock&&!isRaw){const bj=buildBlockJava({...item,id:vid,sliceId:vid+"_slice"});if(bj)vBlockLines.push(bj);const sj=buildSliceJava({...item,id:vid,sliceId:vid+"_slice",sliceEffects:v.effects||item.sliceEffects||[],tooltipKeys:vTipKeys});if(sj)vItemLines.push(sj);}
-      else if(isFluid){const fj=buildFluidJava({...item,id:vid});if(fj)addJava("neoforge/src/main/java/ModFluids.java",fj);if(createBottle){const baseNut=item.bottleNutrition||4;const baseSat=item.bottleSaturation||1.0;const bj2=buildBottleJava({...item,id:vid,bottleNutrition:v.nutrition!=null?v.nutrition:baseNut,bottleSaturation:v.saturation!=null?v.saturation:baseSat,bottleEffects:v.effects||item.bottleEffects||[],bottleTooltipKeys:v.bottleTooltipKeys||vTipKeys});if(bj2)vItemLines.push(bj2);}if(item.createBowl){const baseBwNut=item.bowlNutrition||4;const baseBwSat=item.bowlSaturation||0.6;const bwj=buildBowlJava({...item,id:vid,bowlNutrition:v.bowlNutrition!=null?v.bowlNutrition:baseBwNut,bowlSaturation:v.bowlSaturation!=null?v.bowlSaturation:baseBwSat,bowlEffects:v.bowlEffects||item.bowlEffects||[],bowlTooltipKeys:v.bowlTooltipKeys||vTipKeys});if(bwj)vItemLines.push(bwj);}}
+      else if(isFluid){const fj=buildFluidJava({...item,id:vid});if(fj)addJava(FLUID_REG,fj);if(createBottle){const baseNut=item.bottleNutrition||4;const baseSat=item.bottleSaturation||1.0;const bj2=buildBottleJava({...item,id:vid,bottleNutrition:v.nutrition!=null?v.nutrition:baseNut,bottleSaturation:v.saturation!=null?v.saturation:baseSat,bottleEffects:v.effects||item.bottleEffects||[],bottleTooltipKeys:v.bottleTooltipKeys||vTipKeys});if(bj2)vItemLines.push(bj2);}if(item.createBowl){const baseBwNut=item.bowlNutrition||4;const baseBwSat=item.bowlSaturation||0.6;const bwj=buildBowlJava({...item,id:vid,bowlNutrition:v.bowlNutrition!=null?v.bowlNutrition:baseBwNut,bowlSaturation:v.bowlSaturation!=null?v.bowlSaturation:baseBwSat,bowlEffects:v.bowlEffects||item.bowlEffects||[],bowlTooltipKeys:v.bowlTooltipKeys||vTipKeys});if(bwj)vItemLines.push(bwj);}}
       else{const vj=buildItemJava({...item,id:vid,displayName:v.displayName,nutrition:v.nutrition,saturation:v.saturation,effects:v.effects||[],tooltipKeys:vTipKeys,isCompat:false,compatKey:""});if(vj)vItemLines.push(vj);
-        if(item.hasDisplayBlock&&!isAutoDisplayBlock(vid)&&item.displayConfigs&&item.displayConfigs.length){addJava("neoforge/src/main/java/ModDisplayBlocks.java",buildDisplayBlockRegistration(vid,item.displayConfigs));}
-        else if(!item.hasDisplayBlock&&!isAutoDisplayBlock(vid)){const cur=files["neoforge/src/main/java/ModDisplayBlocks.java"];files["neoforge/src/main/java/ModDisplayBlocks.java"]=cur?mergeDisplayBlockNote(cur,vid):buildDisplayBlockNote([vid]);variantSet.add("neoforge/src/main/java/ModDisplayBlocks.java");}}    }
+        if(item.hasDisplayBlock&&!isAutoDisplayBlock(vid)&&item.displayConfigs&&item.displayConfigs.length){addJava(DISP_REG,buildDisplayBlockRegistration(vid,item.displayConfigs));}
+        else if(!item.hasDisplayBlock&&!isAutoDisplayBlock(vid)){const cur=files[DISP_REG];files[DISP_REG]=cur?mergeDisplayBlockNote(cur,vid):buildDisplayBlockNote([vid]);variantSet.add(DISP_REG);}}    }
   });
   files[langKey]=lang;
   if(isCF){
-    vBlockLines.forEach(j=>addJava("neoforge/src/main/java/ModBlocks.java",j));
-    vItemLines.forEach(j=>addJava("neoforge/src/main/java/ModItems.java",j));
+    vBlockLines.forEach(j=>addJava(BLOCK_REG,j));
+    vItemLines.forEach(j=>addJava(ITEM_REG,j));
     if(isCompat&&item.compatKey){
       const varIds=(varVariants||[]).map(v=>parseNs(v.id).localId).filter(Boolean);
-      files["neoforge/src/main/java/ModConfig.java"]=buildModConfigNote([baseId,...varIds]);
+      files[MOD_CFG]=buildModConfigNote([baseId,...varIds]);
     }
   }
 }
@@ -420,11 +442,11 @@ async function importFromFiles(fileList,{onImportRecipe,onImportItem,setLog,onBa
       const o=JSON.parse(text);
       // ── Spec batch format ──────────────────────────────────────────────
       if(Array.isArray(o.items)&&o.items.length>0&&o.items[0]?.id){
-        const EFFECT_SHORT={"Comfort":"ModEffectCategories.COMFORT","Nourishment":"ModEffectCategories.NOURISHMENT","Vitality":"ModEffectCategories.VITALITY", "Satiation":"ModEffectCategories.SATIATION", "Sustenance":"ModEffectCategories.SUSTENANCE", "Feast":"ModEffectCategories.FEAST", "Sugar Rush":"ModEffectCategories.SUGAR_RUSH", "Rested":"ModEffectCategories.RESTED", "Farmer's Blessing":"ModEffectCategories.FARMERS_BLESSING", "Grandma's Blessing":"ModEffectCategories.GRANDMAS_BLESSING", "Touch Poison":"ModEffectCategories.TOUCH_POISON", "Touch Absorb":"ModEffectCategories.TOUCH_REGEN", "Touch Heal":"ModEffectCategories.TOUCH_HEAL", "Combustion":"ModEffectCategories.COMBUSTION", "Explosion":"ModEffectCategories.EXPLOSION", "Repulsion":"ModEffectCategories.REPULSION", "Lightning":"ModEffectCategories.LIGHTNING", "Party Starter":"ModEffectCategories.PARTY_STARTER", "Flight":"ModEffectCategories.FLIGHT", "Mining":"ModEffectCategories.MINING", "Pacify":"ModEffectCategories.PACIFY", "Charisma":"ModEffectCategories.CHARISMA", "Animal Charm":"ModEffectCategories.ANIMAL_CHARM", "Balanced":"ModEffectCategories.BALANCED", "Bonding":"ModEffectCategories.BONDING", "Fortune":"ModEffectCategories.FORTUNE", "Tough":"ModEffectCategories.TOUGH", "Life Leech":"ModEffectCategories.LIFE_LEECH", "Tundra Strider":"ModEffectCategories.TUNDRA_STRIDER", "Warmth":"ModEffectCategories.WARMTH", "Satiated Shield":"ModEffectCategories.SATIATED_SHIELD", "Vigor":"ModEffectCategories.VIGOR", "Sulfur":"ModEffectCategories.SULFUR", "Mustard":"ModEffectCategories.MUSTARD", "Preservation":"ModEffectCategories.PRESERVATION","Night Vision":"MobEffects.NIGHT_VISION","Regeneration":"MobEffects.REGENERATION","Water Breathing":"MobEffects.WATER_BREATHING","Fire Resistance":"MobEffects.FIRE_RESISTANCE","Slow Falling":"MobEffects.SLOW_FALLING","Speed":"MobEffects.MOVEMENT_SPEED","Haste":"MobEffects.DIG_SPEED","Glowing":"MobEffects.GLOWING","Luck":"MobEffects.LUCK","Strength":"MobEffects.DAMAGE_BOOST"};
+        const EFFECT_SHORT={"Comfort":"ModEffectCategories.COMFORT","Nourishment":"ModEffectCategories.NOURISHMENT","Vitality":"ModEffectCategories.VITALITY","Satiation":"ModEffectCategories.SATIATION","Sustenance":"ModEffectCategories.SUSTENANCE","Feast":"ModEffectCategories.FEAST","Sugar Rush":"ModEffectCategories.SUGAR_RUSH","Rested":"ModEffectCategories.RESTED","Farmer's Blessing":"ModEffectCategories.FARMERS_BLESSING","Grandma's Blessing":"ModEffectCategories.GRANDMAS_BLESSING","Touch Absorb":"ModEffectCategories.TOUCH_ABSORB","Touch Regen":"ModEffectCategories.TOUCH_REGEN","Touch Poison":"ModEffectCategories.TOUCH_POISON","Touch Heal":"ModEffectCategories.TOUCH_HEAL","Combustion":"ModEffectCategories.COMBUSTION","Explosion":"ModEffectCategories.EXPLOSION","Repulsion":"ModEffectCategories.REPULSION","Lightning":"ModEffectCategories.LIGHTNING","Party Starter":"ModEffectCategories.PARTY_STARTER","Flight":"ModEffectCategories.FLIGHT","Mining":"ModEffectCategories.MINING","Pacify":"ModEffectCategories.PACIFY","Charisma":"ModEffectCategories.CHARISMA","Animal Charm":"ModEffectCategories.ANIMAL_CHARM","Balanced":"ModEffectCategories.BALANCED","Bonding":"ModEffectCategories.BONDING","Fortune":"ModEffectCategories.FORTUNE","Tough":"ModEffectCategories.TOUGH","Life Leech":"ModEffectCategories.LIFE_LEECH","Tundra Strider":"ModEffectCategories.TUNDRA_STRIDER","Warmth":"ModEffectCategories.WARMTH","Satiated Shield":"ModEffectCategories.SATIATED_SHIELD","Vigor":"ModEffectCategories.VIGOR","Rest":"ModEffectCategories.REST","Sulfur":"ModEffectCategories.REST","Mustard":"ModEffectCategories.MUSTARD","Preservation":"ModEffectCategories.PRESERVATION","Stout Heart":"ModEffectCategories.STOUT_HEART","Raging":"ModEffectCategories.RAGING","Sweet Heart":"ModEffectCategories.SWEET_HEART","Refreshed":"ModEffectCategories.REFRESHED","Well Served":"ModEffectCategories.WELL_SERVED","Stimulation":"ModEffectCategories.STIMULATION","Adrenaline":"ModEffectCategories.ADRENALINE","Berserk":"ModEffectCategories.BERSERK","Blood Clot":"ModEffectCategories.BLOOD_CLOT","Brimstone Vision":"ModEffectCategories.BRIMSTONE_VISION","Caffeinated":"ModEffectCategories.CAFFEINATED","Lava Walking":"ModEffectCategories.LAVA_WALKING","Perception":"ModEffectCategories.PERCEPTION","Water Walking":"ModEffectCategories.WATER_WALKING","Night Vision":"MobEffects.NIGHT_VISION","Regeneration":"MobEffects.REGENERATION","Water Breathing":"MobEffects.WATER_BREATHING","Fire Resistance":"MobEffects.FIRE_RESISTANCE","Slow Falling":"MobEffects.SLOW_FALLING","Speed":"MobEffects.MOVEMENT_SPEED","Haste":"MobEffects.DIG_SPEED","Glowing":"MobEffects.GLOWING","Luck":"MobEffects.LUCK","Strength":"MobEffects.DAMAGE_BOOST"};
         const mapFx=arr=>(arr||[]).map(e=>({effectId:EFFECT_SHORT[e.effect]||e.effect,duration:e.duration||300,amplifier:e.amplifier||0}));
-        const BLOCK_TYPES=["block","block_cake","block_pie","block_pizza","block_raw_pie","block_raw_pizza"];
+        const BLOCK_TYPES=["block","block_cake","block_pie","block_pizza","block_raw_pie","block_raw_pizza","block_waffle","block_gelatin","block_cheese","block_gyro_meat","block_cake_base"];
         const bItemFiles={};const bRecipeFiles={};const bSnapshots=[];
-        const mergeInto=(target,src)=>{for(const[k,v]of Object.entries(src)){if(k==="lang/en_us.json"||k.endsWith("/lang/en_us.json")){target[k]=typeof v==="object"?{...(target[k]||{}),...v}:v;}else if(k.endsWith("ModDisplayBlocks.java")&&typeof v==="string"&&typeof target[k]==="string"){const isExcluded=s=>s&&s.trimStart().startsWith("private static final Set<String> EXCLUDED_ITEMS");if(isExcluded(target[k])&&isExcluded(v)){const extractIds=s=>{const m=s.match(/Set\.of\(([\s\S]*?)\)/);if(!m)return[];return m[1].split(",").map(x=>x.trim().replace(/^"|"$/g,"")).filter(Boolean);};const ids=[...new Set([...extractIds(target[k]),...extractIds(v)])];target[k]=buildDisplayBlockNote(ids);}else{target[k]=target[k].includes(v)?target[k]:target[k]+"\n\n"+v;}}else if(typeof v==="string"&&typeof target[k]==="string"){target[k]=target[k].includes(v)?target[k]:target[k]+"\n\n"+v;}else{target[k]=v;}}};
+        const mergeInto=(target,src)=>{for(const[k,v]of Object.entries(src)){if(k==="lang/en_us.json"||k.endsWith("/lang/en_us.json")){target[k]=typeof v==="object"?{...(target[k]||{}),...v}:v;}else if(k.endsWith("DisplayBlockRegistry.java")&&typeof v==="string"&&typeof target[k]==="string"){const isExcluded=s=>s&&s.trimStart().startsWith("private static final Set<String> EXCLUDED_ITEMS");if(isExcluded(target[k])&&isExcluded(v)){const extractIds=s=>{const m=s.match(/Set\.of\(([\s\S]*?)\)/);if(!m)return[];return m[1].split(",").map(x=>x.trim().replace(/^"|"$/g,"")).filter(Boolean);};const ids=[...new Set([...extractIds(target[k]),...extractIds(v)])];target[k]=buildDisplayBlockNote(ids);}else{target[k]=target[k].includes(v)?target[k]:target[k]+"\n\n"+v;}}else if(typeof v==="string"&&typeof target[k]==="string"){const sep=(k.endsWith("ItemRegistry.java")||k.endsWith("BlockRegistry.java")||k.endsWith("FluidRegistry.java"))?"\n":"\n\n";target[k]=target[k].includes(v)?target[k]:target[k]+sep+v;}else{target[k]=v;}}};
         for(const spec of o.items){
           const isFluid=spec.registrationType==="fluid"||spec.type==="fluid";
           const isBlock=spec.registrationType==="block"||BLOCK_TYPES.includes(spec.type);
@@ -444,7 +466,7 @@ async function importFromFiles(fileList,{onImportRecipe,onImportItem,setLog,onBa
           bSnapshots.push({...itemState});
         }
         if(onBatchImport)onBatchImport(bItemFiles,bRecipeFiles,bSnapshots);
-        results.push("✓ spec: loaded "+o.items.length+" item(s) from "+name);continue;
+        results.push("✓ Imported "+o.items.length+" item(s) from "+name);continue;
       }
       // ──────────────────────────────────────────────────────────────────
       if(name.includes("lang/en_us.json")){
@@ -490,20 +512,20 @@ async function importFromFiles(fileList,{onImportRecipe,onImportItem,setLog,onBa
   setLog(results);
 }
 
-const S={bg:"#0c1220",panel:"#111827",border:"#1e2d42",accent:"#2563eb",text:"#e2e8f0",muted:"#64748b",faint:"#1e293b",code:"#0a1628",green:"#16a34a",yellow:"#ca8a04",red:"#dc2626",darkred:"#7f1d1d",setBlue:"#1e3a5f"};
+export const S={bg:"#0c1220",panel:"#111827",border:"#1e2d42",accent:"#2563eb",text:"#e2e8f0",muted:"#64748b",faint:"#1e293b",code:"#0a1628",green:"#16a34a",yellow:"#ca8a04",red:"#dc2626",darkred:"#7f1d1d",setBlue:"#1e3a5f"};
 
 function Inp({label,value,onChange,placeholder,note,mono,warn}){return (<div style={{marginBottom:10}}>{label&&<div style={{fontSize:11,color:S.muted,marginBottom:3}}>{label}</div>}<input value={value} onChange={e=>onChange(e.target.value)} placeholder={placeholder} style={{width:"100%",boxSizing:"border-box",background:S.faint,border:"1px solid "+(warn?S.yellow:S.border),color:S.text,borderRadius:5,padding:"6px 9px",fontSize:12,fontFamily:mono?"monospace":"inherit",outline:"none"}}/>{note&&<div style={{fontSize:10,color:warn?S.yellow:S.muted,marginTop:2}}>{note}</div>}</div>);}
-function Sel({label,value,onChange,options,note}){return (<div style={{marginBottom:10}}>{label&&<div style={{fontSize:11,color:S.muted,marginBottom:3}}>{label}</div>}<select value={value} onChange={e=>onChange(e.target.value)} style={{width:"100%",background:S.faint,border:"1px solid "+S.border,color:S.text,borderRadius:5,padding:"6px 9px",fontSize:12,fontFamily:"inherit",outline:"none"}}>{options.map(o=><option key={o.v||o.value||o} value={o.v||o.value||o}>{o.l||o.label||o}</option>)}</select>{note&&<div style={{fontSize:10,color:S.muted,marginTop:2}}>{note}</div>}</div>);}
+export function Sel({label,value,onChange,options,note}){return (<div style={{marginBottom:10}}>{label&&<div style={{fontSize:11,color:S.muted,marginBottom:3}}>{label}</div>}<select value={value} onChange={e=>onChange(e.target.value)} style={{width:"100%",background:S.faint,border:"1px solid "+S.border,color:S.text,borderRadius:5,padding:"6px 9px",fontSize:12,fontFamily:"inherit",outline:"none"}}>{options.map(o=><option key={o.v||o.value||o} value={o.v||o.value||o}>{o.l||o.label||o}</option>)}</select>{note&&<div style={{fontSize:10,color:S.muted,marginTop:2}}>{note}</div>}</div>);}
 function Num({label,value,onChange,min,max,step,note}){return (<div style={{marginBottom:10}}>{label&&<div style={{fontSize:11,color:S.muted,marginBottom:3}}>{label}</div>}<input type="number" value={value} onChange={e=>onChange(Number(e.target.value))} min={min} max={max} step={step||1} style={{width:"100%",boxSizing:"border-box",background:S.faint,border:"1px solid "+S.border,color:S.text,borderRadius:5,padding:"6px 9px",fontSize:12,fontFamily:"inherit",outline:"none"}}/>{note&&<div style={{fontSize:10,color:S.muted,marginTop:2}}>{note}</div>}</div>);}
 function Tog({label,value,onChange}){return (<div style={{display:"flex",alignItems:"center",gap:8,marginBottom:8}}><button onClick={()=>onChange(!value)} style={{width:32,height:18,borderRadius:9,border:"none",cursor:"pointer",flexShrink:0,background:value?S.accent:S.border,position:"relative",transition:"background .15s"}}><span style={{position:"absolute",top:2,left:value?15:2,width:14,height:14,borderRadius:7,background:"#e2e8f0",transition:"left .15s"}}/></button><span style={{fontSize:12,color:S.text}}>{label}</span></div>);}
-function Btn({children,onClick,color,small,disabled,title}){return (<button onClick={onClick} disabled={disabled} title={title} style={{background:disabled?S.border:(color||S.accent),color:disabled?S.muted:S.text,border:"none",borderRadius:5,padding:small?"4px 10px":"6px 14px",fontSize:small?11:12,cursor:disabled?"default":"pointer",fontFamily:"inherit",opacity:disabled?0.6:1,whiteSpace:"nowrap"}}>{children}</button>);}
+export function Btn({children,onClick,color,small,disabled,title}){return (<button onClick={onClick} disabled={disabled} title={title} style={{background:disabled?S.border:(color||S.accent),color:disabled?S.muted:S.text,border:"none",borderRadius:5,padding:small?"4px 10px":"6px 14px",fontSize:small?11:12,cursor:disabled?"default":"pointer",fontFamily:"inherit",opacity:disabled?0.6:1,whiteSpace:"nowrap"}}>{children}</button>);}
 function CopyBtn({text}){const[ok,setOk]=useState(false);return (<button onClick={()=>{navigator.clipboard.writeText(text).catch(()=>{});setOk(true);setTimeout(()=>setOk(false),1600);}} style={{position:"absolute",top:6,right:6,background:ok?S.green:S.border,color:S.text,border:"none",borderRadius:4,padding:"2px 8px",fontSize:10,cursor:"pointer"}}>{ok?"✓":"copy"}</button>);}
 function Warn({children}){return (<div style={{background:"#1c1400",border:"1px solid "+S.yellow,borderRadius:5,padding:"5px 9px",fontSize:11,color:"#fbbf24",marginBottom:6}}>{children}</div>);}
 function Info({children}){return (<div style={{background:"#0f1e35",border:"1px solid "+S.accent,borderRadius:5,padding:"5px 9px",fontSize:11,color:"#93c5fd",marginBottom:6}}>{children}</div>);}
-function Chip({label,onDeselect,onDelete}){return (<span style={{display:"inline-flex",alignItems:"center",gap:3,background:"#172554",border:"1px solid "+S.accent,color:"#93c5fd",borderRadius:4,padding:"1px 4px 1px 7px",fontSize:10,marginRight:3,marginBottom:3}}><span onClick={onDeselect} style={{cursor:"pointer"}}>{label}</span>{onDelete&&<span onClick={onDelete} style={{color:"#f87171",fontWeight:700,padding:"0 2px",cursor:"pointer",lineHeight:1}}>✕</span>}</span>);}
-function Section({title,open,onToggle,children}){return (<div style={{marginBottom:4}}><div onClick={onToggle} style={{fontSize:10,fontWeight:700,color:S.accent,letterSpacing:"0.1em",textTransform:"uppercase",marginBottom:open?8:4,marginTop:2,paddingBottom:4,borderBottom:"1px solid "+S.border,cursor:"pointer",display:"flex",alignItems:"center",gap:6,userSelect:"none"}}><span style={{fontSize:9,opacity:0.7,display:"inline-block",transform:open?"rotate(90deg)":"rotate(0deg)",transition:"transform .15s"}}>▶</span>{title}</div>{open&&<div style={{marginBottom:8}}>{children}</div>}</div>);}
+export function Chip({label,onDeselect,onDelete}){return (<span style={{display:"inline-flex",alignItems:"center",gap:3,background:"#172554",border:"1px solid "+S.accent,color:"#93c5fd",borderRadius:4,padding:"1px 4px 1px 7px",fontSize:10,marginRight:3,marginBottom:3}}><span onClick={onDeselect} style={{cursor:"pointer"}}>{label}</span>{onDelete&&<span onClick={onDelete} style={{color:"#f87171",fontWeight:700,padding:"0 2px",cursor:"pointer",lineHeight:1}}>✕</span>}</span>);}
+export function Section({title,open,onToggle,children}){return (<div style={{marginBottom:4}}><div onClick={onToggle} style={{fontSize:10,fontWeight:700,color:S.accent,letterSpacing:"0.1em",textTransform:"uppercase",marginBottom:open?8:4,marginTop:2,paddingBottom:4,borderBottom:"1px solid "+S.border,cursor:"pointer",display:"flex",alignItems:"center",gap:6,userSelect:"none"}}><span style={{fontSize:9,opacity:0.7,display:"inline-block",transform:open?"rotate(90deg)":"rotate(0deg)",transition:"transform .15s"}}>▶</span>{title}</div>{open&&<div style={{marginBottom:8}}>{children}</div>}</div>);}
 function CodeFile({label,content,downloadName,auto,variant}){const[open,setOpen]=useState(false);const str=typeof content==="string"?content:JSON.stringify(content,null,2);return (<div style={{marginBottom:8}}><div style={{display:"flex",alignItems:"center",gap:6,marginBottom:open?3:0}}><span onClick={()=>setOpen(!open)} style={{fontSize:9,opacity:0.6,cursor:"pointer",userSelect:"none",display:"inline-block",transform:open?"rotate(90deg)":"rotate(0deg)",transition:"transform .15s"}}>▶</span><div style={{fontSize:10,color:S.muted,fontFamily:"monospace",flex:1,wordBreak:"break-all",cursor:"pointer"}} title={label} onClick={()=>setOpen(!open)}>{label.length>100?label.slice(0,99)+"…":label}{auto&&<span style={{marginLeft:4,fontSize:9,color:"#a78bfa",border:"1px solid #a78bfa",borderRadius:3,padding:"0 3px"}}>auto</span>}{variant&&<span style={{marginLeft:4,fontSize:9,color:"#34d399",border:"1px solid #34d399",borderRadius:3,padding:"0 3px"}}>variant</span>}</div>{downloadName&&<Btn small onClick={e=>{e.stopPropagation();dlFile(downloadName,content);}}>⬇ Download</Btn>}</div>{open&&<div style={{position:"relative",background:S.code,borderRadius:5,padding:"10px 12px",fontSize:11,fontFamily:"monospace",color:"#7dd3fc",whiteSpace:"pre-wrap",wordBreak:"break-all"}}>{str}<CopyBtn text={str}/></div>}</div>);}
-function usePersistedSections(panelKey,defaults,globalSections,setGlobalSections){const stored=globalSections[panelKey]||{};const merged={...defaults,...stored};const toggle=name=>setGlobalSections(s=>({...s,[panelKey]:{...merged,[name]:!merged[name]}}));const openNext=name=>{const names=Object.keys(defaults);const idx=names.indexOf(name);if(idx>=0&&idx<names.length-1)setGlobalSections(s=>({...s,[panelKey]:{...merged,[names[idx+1]]:true}}));};return{openMap:merged,toggle,openNext};}
+export function usePersistedSections(panelKey,defaults,globalSections,setGlobalSections){const stored=globalSections[panelKey]||{};const merged={...defaults,...stored};const toggle=name=>setGlobalSections(s=>({...s,[panelKey]:{...merged,[name]:!merged[name]}}));const openNext=name=>{const names=Object.keys(defaults);const idx=names.indexOf(name);if(idx>=0&&idx<names.length-1)setGlobalSections(s=>({...s,[panelKey]:{...merged,[names[idx+1]]:true}}));};return{openMap:merged,toggle,openNext};}
 
 function EffectsSection({effects,hasFood,javaClass,showEffectTooltip,onShowEffect,onAdd,onRemove,onUpdate}){
   const canShow=(javaClass==="ConsumableItem"||javaClass==="DrinkableItem");
@@ -877,47 +899,6 @@ function RecipesPanel({recipeState,setRecipeState,item,sections,setSections,auto
   </div>);
 }
 
-const ADVISOR_DEFAULTS={advisor:true,form:true,ingredients:true,rec:true};
-const FORM_BASES={sandwich:6,bowl:5,bottle:4,snack:2,wrap:7};
-const BLANK_ADVISOR={form:"sandwich",chosen:[],search:""};
-function AdvisorSection({advisorState,setAdvisorState,customTooltipKeys,sections,setSections}){
-  const{form,chosen,search}=advisorState;const set=(k,v)=>setAdvisorState(s=>({...s,[k]:v}));
-  const{openMap,toggle}=usePersistedSections("advisor",ADVISOR_DEFAULTS,sections,setSections);
-  const allKeys=[...BASE_TOOLTIP_KEYS,...(customTooltipKeys||[]).map(c=>c.key)];
-  const available=allKeys.filter(k=>!chosen.includes(k)&&k.includes(search));
-  const base=FORM_BASES[form]||5;let running=0;
-  for(const k of chosen){const cat=ADVISOR_CATS[k]||"other";const nut=CAT_NUT[cat]??1;if(base+running>=10)running+=Math.min(nut,1);else running+=nut;}
-  const estNut=base+running;const protC=chosen.filter(k=>(ADVISOR_CATS[k]||"")==="protein").length;
-  const estSat=parseFloat(Math.min(1.1,0.3+protC*0.15+(form==="bottle"?0.3:0)).toFixed(2));
-  const tier=getNutritionTier(estNut);const fast=form==="snack"||estNut<=3;
-  const sugEffects=[...new Set(chosen.map(k=>ADVISOR_EFFECTS[k]).filter(Boolean))];
-  if(estNut>=8&&protC>0)sugEffects.push("Nourishment (1200-3600t)");
-  return (
-      <Section title="Advisor" open={openMap.advisor} onToggle={()=>toggle("advisor")}>
-        <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:16}}>
-          <div>
-            <Section title="Form" open={openMap.form} onToggle={()=>toggle("form")}><Sel value={form} onChange={v=>set("form",v)} options={[{v:"sandwich",l:"Sandwich / Bun (base 6)"},{v:"bowl",l:"Bowl — ConsumableItem (base 5)"},{v:"bottle",l:"Bottle — DrinkableItem (base 4)"},{v:"snack",l:"Snack / Slice (base 2)"},{v:"wrap",l:"Burrito / Taco (base 7)"}]}/></Section>
-            <Section title="Ingredients" open={openMap.ingredients} onToggle={()=>toggle("ingredients")}>
-              {chosen.length>0&&<div style={{display:"flex",flexWrap:"wrap",marginBottom:6}}>{chosen.map(k=><Chip key={k} label={k} onDeselect={()=>set("chosen",chosen.filter(x=>x!==k))}/>)}</div>}
-              <div style={{display:"flex",flexWrap:"wrap",gap:3,marginBottom:6}}>{available.map(k=><button key={k} onClick={()=>set("chosen",[...chosen,k])} style={{background:S.faint,border:"1px solid "+S.border,color:S.muted,borderRadius:3,padding:"2px 7px",fontSize:10,cursor:"pointer"}}>{k}</button>)}</div>
-              <input placeholder="Search…" value={search} onChange={e=>set("search",e.target.value)} style={{width:"100%",boxSizing:"border-box",background:S.faint,border:"1px solid "+S.border,color:S.text,borderRadius:5,padding:"5px 8px",fontSize:11,marginBottom:6,fontFamily:"inherit",outline:"none"}}/>
-            </Section>
-            <div style={{marginTop:4}}><Btn color={S.darkred} small onClick={()=>setAdvisorState(BLANK_ADVISOR)}>Reset</Btn></div>
-          </div>
-          <div>
-            <Section title="Recommendation" open={openMap.rec} onToggle={()=>toggle("rec")}>
-              <div style={{background:S.faint,border:"1px solid "+S.border,borderRadius:6,padding:12,marginBottom:10}}><div style={{display:"flex",gap:16,marginBottom:8}}><div><div style={{fontSize:10,color:S.muted}}>Est. Nutrition</div><div style={{fontSize:24,fontWeight:700,color:"#7dd3fc"}}>{estNut}</div></div><div><div style={{fontSize:10,color:S.muted}}>Est. Saturation</div><div style={{fontSize:24,fontWeight:700,color:"#7dd3fc"}}>{estSat}</div></div></div><div style={{fontSize:12,color:"#7dd3fc",fontWeight:600}}>Tier {tier.tier} — {tier.label}</div><div style={{fontSize:11,color:S.muted,marginTop:2}}>Sat range: {tier.satLo}–{tier.satHi}</div></div>
-              <div style={{background:S.faint,border:"1px solid "+S.border,borderRadius:5,padding:"8px 10px",marginBottom:8,fontSize:12}}><b style={{color:"#7dd3fc"}}>Type:</b> <span style={{color:S.text}}>{form==="bottle"?"DrinkableItem":form==="bowl"?"ConsumableItem":"Item"}</span></div>
-              <div style={{background:S.faint,border:"1px solid "+S.border,borderRadius:5,padding:"8px 10px",marginBottom:8,fontSize:12}}><b style={{color:"#7dd3fc"}}>.fast():</b> <span style={{color:fast?"#4ade80":S.muted}}>{fast?"Yes":"No"}</span></div>
-              {sugEffects.length>0&&<div style={{background:S.faint,border:"1px solid "+S.border,borderRadius:5,padding:"8px 10px",marginBottom:8}}><div style={{fontSize:11,color:"#7dd3fc",fontWeight:600,marginBottom:4}}>Suggested Effects</div>{sugEffects.map((e,i)=><div key={i} style={{fontSize:11,color:S.text,marginBottom:2}}>• {e}</div>)}</div>}
-              <div style={{background:S.faint,border:"1px solid "+S.border,borderRadius:5,padding:"8px 10px",fontSize:11,color:S.muted}}><b style={{color:"#7dd3fc"}}>Compare against:</b><br/>{form==="bottle"&&"Custard bottles, milkshakes"}{form==="bowl"&&"Scrambled eggs plate, stew bowls"}{form==="sandwich"&&"Burger/taco family at same tier"}{form==="snack"&&"Butterscotch/toffee/caramel variants"}{form==="wrap"&&"Burritos and tacos"}</div>
-            </Section>
-          </div>
-        </div>
-      </Section>
-  );
-}
-
 function GroupedFiles({grp,items,checked,toggleCheck,keyPrefix}){
   const pfx=keyPrefix||"gen_";
   const[open,setOpen]=useState(true);
@@ -952,7 +933,7 @@ function RegistrationGroup({grp,items,checked,toggleCheck}){
 }
 
 const IE_DEFAULTS={exp:true,checklist:true};
-function ImportExportPanel({itemFiles,recipeFiles,autoRecipeFiles,sections,setSections,item,recipeState,advisorState,setAdvisorState,savedItemSnapshots,savedItemFiles,savedRecipeFiles2,onBatchImport}){
+function ImportExportPanel({itemFiles,recipeFiles,autoRecipeFiles,sections,setSections,item,recipeState,savedItemSnapshots,savedItemFiles,savedRecipeFiles2,onBatchImport}){
   const[checked,setChecked]=useState({});
   const toggleCheck=k=>setChecked(s=>({...s,[k]:!s[k]}));
 
@@ -1128,9 +1109,6 @@ function ImportExportPanel({itemFiles,recipeFiles,autoRecipeFiles,sections,setSe
         </Section>
       </div>
     </div>
-    <div style={{marginTop:8}}>
-      <AdvisorSection advisorState={advisorState} setAdvisorState={setAdvisorState} customTooltipKeys={item.customTooltipKeys} sections={sections} setSections={setSections}/>
-    </div>
   </div>);
 }
 
@@ -1207,7 +1185,6 @@ export default function App(){
   const[panel,setPanel]=useState("Item");
   const[item,setItem]=useState(BLANK_ITEM);
   const[recipeState,setRecipeState]=useState(BLANK_RECIPES_STATE);
-  const[advisorState,setAdvisorState]=useState(BLANK_ADVISOR);
   const[sections,setSections]=useState({});
   const[savedItemFiles,setSavedItemFiles]=useState({});
   const[savedRecipeFiles2,setSavedRecipeFiles2]=useState({});
@@ -1275,7 +1252,7 @@ export default function App(){
     <div style={{flex:1,minHeight:0,padding:"12px 16px",display:"flex",flexDirection:"column"}}>
       {panel==="Item"&&<ItemPanel item={item} onChange={setItem} sections={sections} setSections={setSections} onSave={handleSave} onReset={handleReset} hasSaved={Object.keys(savedItemFiles).length>0} allItemFiles={itemFiles}/>}
       {panel==="Recipes"&&<RecipesPanel recipeState={recipeState} setRecipeState={setRecipeState} item={item} sections={sections} setSections={setSections} autoRecipeFiles={autoRecipeFiles} onSave={handleSave} onReset={handleReset} hasSaved={Object.keys(savedItemFiles).length>0} allRecipeFiles={recipeFiles}/>}
-      {panel==="Import / Export"&&<ImportExportPanel itemFiles={itemFiles} recipeFiles={recipeFiles} autoRecipeFiles={autoRecipeFiles} sections={sections} setSections={setSections} item={item} recipeState={recipeState} advisorState={advisorState} setAdvisorState={setAdvisorState} savedItemSnapshots={savedItemSnapshots} savedItemFiles={savedItemFiles} savedRecipeFiles2={savedRecipeFiles2} onBatchImport={handleBatchImport}/>}
+      {panel==="Import / Export"&&<ImportExportPanel itemFiles={itemFiles} recipeFiles={recipeFiles} autoRecipeFiles={autoRecipeFiles} sections={sections} setSections={setSections} item={item} recipeState={recipeState} savedItemSnapshots={savedItemSnapshots} savedItemFiles={savedItemFiles} savedRecipeFiles2={savedRecipeFiles2} onBatchImport={handleBatchImport}/>}
     </div>
   </div>);
 }

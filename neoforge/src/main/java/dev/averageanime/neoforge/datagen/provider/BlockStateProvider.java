@@ -1,20 +1,26 @@
 package dev.averageanime.neoforge.datagen.provider;
 
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 import dev.averageanime.CommonClass;
 import dev.averageanime.neoforge.block.ModBlocks;
 import dev.averageanime.neoforge.block.ModDisplayBlocks;
 import dev.averageanime.neoforge.block.ModFluids;
 import dev.averageanime.block.ModCakeBlock;
+import dev.averageanime.block.ModCandleCakeBlock;
 import dev.averageanime.block.type.display.*;
 import dev.averageanime.block.type.plate.PlateBlock;
 import dev.averageanime.neoforge.block.type.fluid.FluidEntry;
 import dev.averageanime.block.type.pie.PieBlock;
 import dev.averageanime.block.type.pie.PizzaBlock;
 import dev.averageanime.block.type.pie.RawPieBlock;
-import dev.averageanime.neoforge.block.type.storage.ClothSackBlock;
-import dev.averageanime.neoforge.block.type.storage.RationBoxBlock;
+import dev.averageanime.block.type.storage.ClothSackBlock;
+import dev.averageanime.block.type.storage.RationBoxBlock;
+import java.io.IOException;
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.Set;
 import net.minecraft.core.Direction;
 import net.minecraft.data.PackOutput;
@@ -29,8 +35,12 @@ import net.neoforged.neoforge.registries.DeferredBlock;
 
 public class BlockStateProvider extends net.neoforged.neoforge.client.model.generators.BlockStateProvider {
 
+    private final Path resourceRoot;
+
     public BlockStateProvider(PackOutput output, ExistingFileHelper exFileHelper) {
         super(output, CommonClass.MOD_ID, exFileHelper);
+        // output is neoforge/src/generated/resources — go up 4 levels to project root
+        this.resourceRoot = output.getOutputFolder().resolve("../../../../common/src/main/resources").normalize();
     }
 
     @Override
@@ -158,6 +168,7 @@ public class BlockStateProvider extends net.neoforged.neoforge.client.model.gene
             String id = entry.getId().getPath();
 
             switch (block) {
+                case ModCandleCakeBlock ccb -> candleCakeBlockState(block, ccb);
                 case ModCakeBlock modCakeBlock -> cakeBlockState(block, id);
                 case PieBlock modPieBlock -> pieBlockState(block, id);
                 case PizzaBlock pizzaBlock -> waffleOrPizzaBlockState(block, id);
@@ -182,11 +193,79 @@ public class BlockStateProvider extends net.neoforged.neoforge.client.model.gene
         }
     }
 
+    private void candleCakeBlockState(Block block, ModCandleCakeBlock ccb) {
+        VariantBlockStateBuilder builder = getVariantBuilder(block);
+        String cakeName = ccb.getParentCakeName();
+        String candleSuffix = ccb.getCandleSuffix();
+
+        JsonObject cakeTextures = readCakeTextures(cakeName);
+        String topTex    = cakeTextures.get("top").getAsString();
+        String sideTex   = cakeTextures.get("side").getAsString();
+        String bottomTex = cakeTextures.has("bottom") ? cakeTextures.get("bottom").getAsString()
+                                                       : CommonClass.MOD_ID + ":block/cake_bottom";
+
+        int[] yRots   = {180, 270,   0,  90};
+        String[] dirs = {"south", "west", "north", "east"};
+
+        for (boolean lit : new boolean[]{false, true}) {
+            String litSuffix = lit ? "_lit" : "";
+            String modelName = "block/" + cakeName + "_" + candleSuffix + litSuffix;
+            String candleTex = lit ? "minecraft:block/" + candleSuffix + "_lit"
+                                   : "minecraft:block/" + candleSuffix;
+            ModelFile model = models().getBuilder(modelName)
+                    .parent(new ModelFile.UncheckedModelFile(
+                            ResourceLocation.fromNamespaceAndPath("minecraft", "block/template_cake_with_candle")))
+                    .texture("bottom",     bottomTex)
+                    .texture("top",        topTex)
+                    .texture("side",       sideTex)
+                    .texture("particle",   sideTex)
+                    .texture("candle",     candleTex)
+                    .texture("lit_candle", lit ? candleTex : "minecraft:block/" + candleSuffix + "_lit");
+
+            for (int f = 0; f < 4; f++) {
+                builder.partialState()
+                        .with(ModCandleCakeBlock.FACING, net.minecraft.core.Direction.byName(dirs[f]))
+                        .with(ModCandleCakeBlock.LIT, lit)
+                        .setModels(ConfiguredModel.builder()
+                                .modelFile(model)
+                                .rotationY(yRots[f])
+                                .build());
+            }
+        }
+    }
+
+    private JsonObject readCakeTextures(String cakeName) {
+        Path modelFile = resourceRoot.resolve(
+                "assets/" + CommonClass.MOD_ID + "/models/block/" + cakeName + ".json");
+        try {
+            String json = Files.readString(modelFile);
+            return JsonParser.parseString(json).getAsJsonObject().getAsJsonObject("textures");
+        } catch (IOException e) {
+            throw new RuntimeException("Failed to read cake model for " + cakeName + ": " + modelFile, e);
+        }
+    }
+
     private void cakeBlockState(Block block, String id) {
         VariantBlockStateBuilder builder = getVariantBuilder(block);
         for (int bite = 0; bite <= 6; bite++) {
             ModelFile model = unchecked(bite == 0 ? "block/" + id : "block/" + id + "_slice" + bite);
-            forEachFacing(builder, block, bite, model);
+            cakeForEachFacing(builder, block, bite, model);
+        }
+    }
+
+    /** Like forEachFacing but with Y-rotations corrected for cake models whose inside face is on model-WEST. */
+    private void cakeForEachFacing(VariantBlockStateBuilder builder, Block block, int bite, ModelFile model) {
+        net.minecraft.world.level.block.state.properties.IntegerProperty bitesProperty =
+                (net.minecraft.world.level.block.state.properties.IntegerProperty)
+                        block.getStateDefinition().getProperty("bites");
+
+        int[] yRots   = {  0,  90, 180, 270};
+        String[] dirs = {"south", "west", "north", "east"};
+        for (int f = 0; f < 4; f++) {
+            var state = builder.partialState()
+                    .with(BlockStateProperties.HORIZONTAL_FACING, Direction.byName(dirs[f]));
+            if (bitesProperty != null) state = state.with(bitesProperty, bite);
+            state.setModels(ConfiguredModel.builder().modelFile(model).rotationY(yRots[f]).build());
         }
     }
 

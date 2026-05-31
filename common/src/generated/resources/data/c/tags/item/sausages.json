@@ -11,6 +11,10 @@
     {
       "id": "createfood:sausage_bits",
       "required": false
+    },
+    {
+      "id": "hearthandharvest:cooked_sausage",
+      "required": false
     }
   ]
 }

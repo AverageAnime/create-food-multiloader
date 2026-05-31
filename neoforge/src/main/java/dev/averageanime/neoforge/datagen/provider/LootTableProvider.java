@@ -1,16 +1,18 @@
 package dev.averageanime.neoforge.datagen.provider;
 
+import dev.averageanime.block.type.plate.GenericDisplayPlateBlock;
 import dev.averageanime.neoforge.block.ModBlocks;
 import dev.averageanime.neoforge.block.ModDisplayBlocks;
 import dev.averageanime.neoforge.block.ModFluids;
 import dev.averageanime.block.ModCakeBlock;
+import dev.averageanime.block.ModCandleCakeBlock;
 import dev.averageanime.block.type.display.*;
 import dev.averageanime.block.type.plate.EmptyPlateBlock;
 import dev.averageanime.block.type.plate.PlateBlock;
 import dev.averageanime.block.type.plate.SmallPlateBlock;
 import dev.averageanime.neoforge.block.type.fluid.FluidEntry;
-import dev.averageanime.neoforge.block.type.storage.ClothSackBlock;
-import dev.averageanime.neoforge.block.type.storage.RationBoxBlock;
+import dev.averageanime.block.type.storage.ClothSackBlock;
+import dev.averageanime.block.type.storage.RationBoxBlock;
 import dev.averageanime.block.type.ConsumableBlock;
 import dev.averageanime.block.type.pie.PieBlock;
 import dev.averageanime.block.type.pie.PizzaBlock;
@@ -133,10 +135,11 @@ public class LootTableProvider extends net.minecraft.data.loot.BlockLootSubProvi
             Block block = entry.get();
 
             if (fluidBlocks.contains(block)) return;
+            if (block instanceof ModCandleCakeBlock) return;
+            if (block instanceof RationBoxBlock || block instanceof ClothSackBlock) return; // skip entirely
+            if (block.getLootTable().equals(net.minecraft.world.level.storage.loot.BuiltInLootTables.EMPTY)) return; // <-- add this
 
-            if (block instanceof RationBoxBlock || block instanceof ClothSackBlock) {
-                add(block, LootTable.lootTable());
-            } else if (block instanceof ModCakeBlock cakeBlock) {
+            if (block instanceof ModCakeBlock cakeBlock) {
                 add(block, slicedLootTable(block, cakeBlock.pieSlice.get(), 7));
             } else if (block instanceof PieBlock || block instanceof PizzaBlock) {
                 Item sliceItem = getSliceItem(block);
@@ -214,10 +217,15 @@ public class LootTableProvider extends net.minecraft.data.loot.BlockLootSubProvi
 
         return Stream.concat(
                 ModDisplayBlocks.BLOCKS.getEntries().stream()
-                        .map(e -> (Block) e.get()),
+                        .map(e -> (Block) e.get())
+                        .filter(b -> !(b instanceof GenericDisplayPlateBlock)), // <-- add this
                 ModBlocks.BLOCKS.getEntries().stream()
                         .map(e -> (Block) e.get())
                         .filter(b -> !fluidBlocks.contains(b))
+                        .filter(b -> !(b instanceof ModCandleCakeBlock))
+                        .filter(b -> !(b instanceof GenericDisplayPlateBlock))
+                        .filter(b -> !(b instanceof RationBoxBlock))      // <-- add
+                        .filter(b -> !(b instanceof ClothSackBlock))
         ).toList();
     }
 }

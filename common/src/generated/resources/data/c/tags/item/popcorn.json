@@ -3,6 +3,10 @@
     {
       "id": "culturaldelights:popcorn",
       "required": false
+    },
+    {
+      "id": "hearthandharvest:popcorn",
+      "required": false
     }
   ]
 }

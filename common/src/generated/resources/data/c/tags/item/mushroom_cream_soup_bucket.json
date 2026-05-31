@@ -3,10 +3,6 @@
     {
       "id": "createfood:mushroom_cream_soup_bucket",
       "required": false
-    },
-    {
-      "id": "createfood:mushroom_cream_soup_bucket",
-      "required": false
     }
   ]
 }

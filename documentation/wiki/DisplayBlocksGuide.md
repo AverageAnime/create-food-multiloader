@@ -1,5 +1,4 @@
-### ***2.3.0***
-_Note: Display blocks are not currently obtainable via recipes._
+### ***2.5.0***
 > Custom display blocks can be added via config.
 
 **Plates:**
@@ -10,9 +9,11 @@ _Note: Display blocks are not currently obtainable via recipes._
 * Add servings by using `RMB` with a compatible food item or `Shift + RMB` to add all.
 * Remove servings with `RMB` to remove one item or `Shift + RMB` to remove all.
 * Some items can be served on both plate sizes.
-    * Currently only applies to baked potatoes.
+* Plates can display any item generically, similar to item frames.
+* Use `Shift + LMB` on a filled plate to eat directly from it.
 * When broken with `LMB`:
     * Full plate drops the block version. If partially filled, you receive the individual food items and a bowl.
+* Plates support Farmer's Delight cutting board recipes. Hold a knife and use `RMB` on the plate to cut.
 
 **Bottles & Bowls:**
 

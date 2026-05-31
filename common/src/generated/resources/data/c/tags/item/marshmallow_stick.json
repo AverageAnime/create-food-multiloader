@@ -3,6 +3,10 @@
     {
       "id": "createfood:marshmallow_stick",
       "required": false
+    },
+    {
+      "id": "hearthandharvest:marshmallow_stick",
+      "required": false
     }
   ]
 }

@@ -5,7 +5,11 @@ import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
@@ -46,6 +50,27 @@ public class BottleFoodBlock extends DisplayFoodBlock {
     public @NotNull VoxelShape getShape(@NotNull BlockState state, @NotNull BlockGetter level, @NotNull BlockPos pos, @NotNull CollisionContext context) {
         return shape;
     }
+
+    @Override
+    protected boolean handlesOwnContainer() { return true; }
+
+    @Override
+    protected void applyEatEffects(ItemStack copy, FoodProperties props, Player player, Level level, BlockPos pos) {
+        player.getFoodData().eat(props.nutrition(), props.saturation());
+        for (FoodProperties.PossibleEffect entry : props.effects()) {
+            if (level.random.nextFloat() < entry.probability()) {
+                player.addEffect(entry.effect());
+            }
+        }
+    }
+
+    @Override
+    protected void dropContainerOnEat(Player player, Level level, BlockPos pos) {
+        Block.popResource(level, pos, new ItemStack(Items.GLASS_BOTTLE));
+    }
+
+    @Override
+    protected SoundEvent getEatSound() { return SoundEvents.HONEY_DRINK; }
 
     @Override
     public SoundEvent getAddSound() {

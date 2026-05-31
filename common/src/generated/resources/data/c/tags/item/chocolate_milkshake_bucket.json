@@ -5,10 +5,6 @@
       "required": false
     },
     {
-      "id": "createfood:chocolate_milkshake_bucket",
-      "required": false
-    },
-    {
       "id": "create_dd:chocolate_milkshake_bucket",
       "required": false
     }

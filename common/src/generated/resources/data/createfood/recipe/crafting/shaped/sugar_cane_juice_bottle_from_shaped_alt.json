@@ -1,0 +1,30 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "sugar_cane_juice_bottle"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "sugar_cane_juice_bottle"
+    }
+  ],
+  "key": {
+    "1": {
+      "tag": "c:sugar_cane"
+    },
+    "2": {
+      "item": "minecraft:glass_bottle"
+    }
+  },
+  "pattern": [
+    "1",
+    "2"
+  ],
+  "result": {
+    "id": "createfood:sugar_cane_juice_bottle"
+  }
+}

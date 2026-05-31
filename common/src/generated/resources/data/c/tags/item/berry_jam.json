@@ -3,6 +3,10 @@
     {
       "id": "createfood:berry_jam_bottle",
       "required": false
+    },
+    {
+      "id": "hearthandharvest:sweet_berry_jam",
+      "required": false
     }
   ]
 }

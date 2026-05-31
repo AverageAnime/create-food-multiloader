@@ -1,5 +1,5 @@
 {
-  "parent": "farmersdelight:block/pie",
+  "parent": "farmersdelight:block/template_pie",
   "textures": {
     "particle": "farmersdelight:block/sweet_berry_cheesecake_top",
     "bottom": "createfood:block/smores_pie_bottom",

@@ -3,10 +3,6 @@
     {
       "id": "createfood:sugar_cane_juice_bucket",
       "required": false
-    },
-    {
-      "id": "createfood:sugar_cane_juice_bucket",
-      "required": false
     }
   ]
 }

@@ -3,10 +3,6 @@
     {
       "id": "createfood:yogurt_bucket",
       "required": false
-    },
-    {
-      "id": "createfood:yogurt_bucket",
-      "required": false
     }
   ]
 }

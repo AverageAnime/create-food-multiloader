@@ -119,6 +119,18 @@ processResources {
                 def before = f.length()
                 try {
                     def parsed = slurper.parse(f, 'UTF-8')
+                    // Strip editor-only fields
+                    if (parsed instanceof Map) {
+                        parsed.remove('credit')
+                        parsed.remove('format_version')
+                        parsed.remove('groups')
+                        // Remove zero-angle rotations from elements
+                        parsed.get('elements')?.each { el ->
+                            if (el?.rotation?.angle == 0) {
+                                el.remove('rotation')
+                            }
+                        }
+                    }
                     def compact = JsonOutput.toJson(parsed)
                     f.setText(compact, 'UTF-8')
                     jsonTotal += before

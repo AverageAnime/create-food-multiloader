@@ -1,8 +1,12 @@
 package dev.averageanime.block.type.display;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
@@ -22,5 +26,13 @@ public class SaladBowlFoodBlock extends DisplayFoodBlock {
     @Override
     public @NotNull VoxelShape getShape(@NotNull BlockState state, @NotNull BlockGetter level, @NotNull BlockPos pos, @NotNull CollisionContext context) {
         return SHAPE;
+    }
+
+    @Override
+    protected boolean handlesOwnContainer() { return true; }
+
+    @Override
+    protected void dropContainerOnEat(Player player, Level level, BlockPos pos) {
+        Block.popResource(level, pos, new ItemStack(Items.BOWL));
     }
 }

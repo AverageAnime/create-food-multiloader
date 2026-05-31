@@ -1,0 +1,53 @@
+{
+    "type": "create:compacting",
+    "ingredients": [
+        {
+            "type": "fluid_tag",
+            "amount": 250,
+            "fluid_tag": "c:water"
+        },
+        {
+            "item": "minecraft:glow_berries"
+        },
+        {
+            "item": "minecraft:glow_berries"
+        },
+        {
+            "item": "minecraft:glow_berries"
+        },
+        {
+            "item": "minecraft:glow_berries"
+        },
+        {
+            "tag": "c:sugar"
+        }
+    ],
+    "results": [
+        {
+            "amount": 250,
+            "id": "createfood:glow_berry_juice"
+        }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "create"
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "glow_berry_juice"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "create"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
+            "id": "glow_berry_juice"
+        }
+    ]
+}

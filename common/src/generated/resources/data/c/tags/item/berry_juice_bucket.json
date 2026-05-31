@@ -3,10 +3,6 @@
     {
       "id": "createfood:berry_juice_bucket",
       "required": false
-    },
-    {
-      "id": "createfood:berry_juice_bucket",
-      "required": false
     }
   ]
 }

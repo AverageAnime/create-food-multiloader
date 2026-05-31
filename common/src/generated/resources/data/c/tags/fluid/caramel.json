@@ -7,6 +7,14 @@
     {
       "id": "createfood:caramel",
       "required": false
+    },
+    {
+      "id": "create_confectionery:caramel",
+      "required": false
+    },
+    {
+      "id": "create_confectionery:flowing_caramel",
+      "required": false
     }
   ]
 }

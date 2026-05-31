@@ -3,10 +3,6 @@
     {
       "id": "createfood:berry_jam_bucket",
       "required": false
-    },
-    {
-      "id": "createfood:berry_jam_bucket",
-      "required": false
     }
   ]
 }

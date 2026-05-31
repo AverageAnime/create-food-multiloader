@@ -3,10 +3,6 @@
     {
       "id": "createfood:ube_cake_batter_bucket",
       "required": false
-    },
-    {
-      "id": "createfood:ube_cake_batter_bucket",
-      "required": false
     }
   ]
 }

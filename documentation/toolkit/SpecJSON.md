@@ -29,7 +29,7 @@ The file must be a `.json` file with a top-level `"items"` array. Each element i
   "nutrition": 6,
   "saturation": 0.6,
   "fast": false,
-  "tooltips": ["beef_ingredient", "cheese_ingredient"],
+  "tooltips": ["beef", "cheese"],
   "effects": [
     { "effect": "Comfort", "duration": 1200 }
   ],
@@ -63,6 +63,7 @@ Controls registration type and item class. All valid values:
 | `bowlFood` | Food that returns a bowl on use, stack 16. Shows effects in tooltip. Set `crBowl: true` to also return the bowl as a crafting remainder.    |
 | `bottle` | DrinkableItem that returns a glass bottle, stack 16                                     |
 | `stickFood` | Held on a stick                                                                         |
+| `stickFoodCr` | Held on a stick; also returns the stick as a crafting remainder                        |
 | `plain` | Non-food ingredient, no special properties                                              |
 | `plainCr` | Non-food with a crafting remainder (not yet spec-settable)                              |
 | `ingredientBowl` | Non-food, stack 16, returns bowl                                                        |
@@ -74,6 +75,11 @@ Controls registration type and item class. All valid values:
 | `block_pizza` | 4-slice pizza/waffle block pair (raw + cooked)                                          |
 | `block_raw_pie` | Standalone raw pie block only, no cooked form                                           |
 | `block_raw_pizza` | Standalone raw pizza block only, no cooked form                                         |
+| `block_waffle` | 4-slice waffle block. Set `miniId` to override the mini item ID (defaults to `mini_<id>`) |
+| `block_gelatin` | Gelatin dessert block (no slice, no raw variant)                                        |
+| `block_cheese` | Cheese block with a slice item                                                          |
+| `block_gyro_meat` | Gyro meat block with a slice item                                                      |
+| `block_cake_base` | Unfrosted cake base block (no slice)                                                   |
 
 ### `nutrition` and `saturation`
 Integers/floats. Only applies to food types. Ignored for `plain`, `fluid`, and block types (block types use `sliceNutrition`/`sliceSaturation` instead).
@@ -101,7 +107,7 @@ Boolean. Only applies to `bowlFood` type. When `true`, the item also returns a b
 Array of tooltip ingredient key strings. These map to `tooltip.createfood.<key>` lang entries.
 
 ```json
-"tooltips": ["fish_ingredient", "kelp_ingredient", "salt_ingredient"]
+"tooltips": ["fish", "kelp", "salt"]
 ```
 
 Available keys are everything in the toolkit's ingredient list — if you've used a key in the toolkit UI before, it works here.
@@ -134,9 +140,14 @@ Array of effect objects. Each has:
 
 | Effect              | Description |
 |---------------------|---|
+| `adrenaline`        | Movement speed increases the lower your health |
 | `animal_charm`      | Attracts and calms nearby animals |
 | `balanced`          | Grants nearby players Absorption |
+| `berserk`           | Attack damage increases the lower your health |
+| `blood_clot`        | Prevents natural regeneration |
 | `bonding`           | Grants nearby players Absorption and Regeneration |
+| `brimstone_vision`  | See clearly while submerged in lava |
+| `caffeinated`       | Slightly increases all major stats |
 | `charisma`          | Reduces villager trading prices |
 | `combustion`        | Ignites nearby enemies |
 | `comfort`           | General comfort/wellbeing |
@@ -146,6 +157,7 @@ Array of effect objects. Each has:
 | `flight`            | Temporary creative-like flight |
 | `fortune`           | Increases Luck |
 | `grandmas_blessing` | Cleanses negatives + Luck +2 |
+| `lava_walking`      | Walk on lava |
 | `life_leech`        | Drains health from nearby hostiles and heals the user |
 | `lightning`         | Chance to strike target with lightning |
 | `mining`            | Mining speed bonus based on depth |
@@ -153,14 +165,20 @@ Array of effect objects. Each has:
 | `nourishment`       | Nourishment/saturation |
 | `pacify`            | Reduces enemy aggression; Endermen safe |
 | `party_starter`     | Fireworks on hit + bonus damage |
+| `perception`        | Nearby entities glow |
 | `preservation`      | Eating rotten flesh, raw chicken, poisonous potatoes, pufferfish, or spider eyes will not cause debuffs |
+| `raging`            | Gain 5% attack speed per melee hit, stacks up to 4× |
+| `refreshed`         | Next harvests don't consume durability; may yield extra drops |
 | `repulsion`         | Periodically pushes enemies away |
+| `rest`              | Phantoms will flee from you |
 | `rested`            | Bonus experience gain |
 | `satiated_shield`   | Hunger value acts as extra health; damage is absorbed by hunger first |
 | `satiation`         | Hunger management |
+| `stimulation`       | Removes mining fatigue and slowness |
+| `stout_heart`       | Knockback resistance |
 | `sugar_rush`        | Stacking speed buff |
-| `sulfur`            | Phantoms will flee from you |
 | `sustenance`        | Periodic hunger or health restoration |
+| `sweet_heart`       | Extra saturation-based healing at any hunger level |
 | `touch_absorb`      | Melee attacks grant Absorption |
 | `touch_heal`        | Melee attacks heal the target |
 | `touch_poison`      | Melee attacks apply Poison |
@@ -170,6 +188,8 @@ Array of effect objects. Each has:
 | `vigor`             | Running does not consume hunger |
 | `vitality`          | Exhaustion reduction |
 | `warmth`            | Slowly regenerates health when near heat sources (stoves, campfires, lava) |
+| `water_walking`     | Walk on water |
+| `well_served`       | Cannot become truly hungry while active |
 
 ```json
 "effects": [
@@ -190,11 +210,12 @@ Set `"isCompat": true` when the item requires a compat mod to be present (e.g. p
 
 ## Block item fields
 
-For `block_cake`, `block_pie`, `block_pizza`, `block_raw_pie`, `block_raw_pizza` types, the slice is auto-generated. Configure the slice with:
+For `block_cake`, `block_pie`, `block_pizza`, `block_raw_pie`, `block_raw_pizza`, `block_waffle`, `block_cheese`, and `block_gyro_meat` types, slice items are auto-generated. Configure the slice with:
 
 | Field | Description | Default |
 |---|---|---|
 | `sliceId` | Override slice ID if it doesn't follow `<id>_slice` | auto |
+| `miniId` | Override mini item ID for `block_waffle` if it doesn't follow `mini_<id>` | auto |
 | `sliceNutrition` | Slice nutrition | 2 |
 | `sliceSaturation` | Slice saturation | 0.3 |
 | `sliceFast` | Slice `.fast()` | true |
@@ -273,7 +294,7 @@ Variants are additional items that share the same base registration (same type, 
       "displayName": "Yogurt",
       "nutrition": 5,
       "saturation": 0.8,
-      "tooltips": ["berry_ingredient"],
+      "tooltips": ["berry"],
       "effects": []
     },
     {
@@ -281,7 +302,7 @@ Variants are additional items that share the same base registration (same type, 
       "displayName": "Yogurt",
       "nutrition": 4,
       "saturation": 0.8,
-      "tooltips": ["honey_ingredient"],
+      "tooltips": ["honey"],
       "effects": [{ "effect": "Regeneration", "duration": 300 }]
     }
   ],
@@ -476,7 +497,7 @@ You do not need to write recipes for these — the toolkit generates them when i
   "nutrition": 2,
   "saturation": 0.3,
   "fast": true,
-  "tooltips": ["honey_ingredient", "sugar_ingredient"],
+  "tooltips": ["honey", "sugar"],
   "effects": [
     { "effect": "Comfort",      "duration": 300 },
     { "effect": "Regeneration", "duration": 300 }
@@ -512,7 +533,7 @@ You do not need to write recipes for these — the toolkit generates them when i
       "displayName": "Yogurt",
       "nutrition": 5,
       "saturation": 0.8,
-      "tooltips": ["berry_ingredient"],
+      "tooltips": ["berry"],
       "effects": []
     },
     {
@@ -520,7 +541,7 @@ You do not need to write recipes for these — the toolkit generates them when i
       "displayName": "Yogurt",
       "nutrition": 4,
       "saturation": 0.8,
-      "tooltips": ["honey_ingredient"],
+      "tooltips": ["honey"],
       "effects": [{ "effect": "Regeneration", "duration": 300 }]
     }
   ],
@@ -560,7 +581,7 @@ You do not need to write recipes for these — the toolkit generates them when i
   "id": "dark_chocolate_berry_pie",
   "displayName": "Dark Chocolate Berry Pie",
   "type": "block_pie",
-  "tooltips": ["dark_chocolate_ingredient", "berry_ingredient"],
+  "tooltips": ["dark_chocolate", "berry"],
   "sliceNutrition": 5,
   "sliceSaturation": 0.8,
   "sliceEffects": [{ "effect": "Comfort", "duration": 1200 }],
@@ -617,3 +638,13 @@ You do not need to write recipes for these — the toolkit generates them when i
 **Double suffix** — don't put the recipe type name in `suffix`. `"suffix": "from_crafting"` on a `minecraft:crafting_shapeless` recipe produces `item_from_crafting_from_crafting.json`. Use a short descriptive string like `"alt"` or `"sauce"` only when you actually need to disambiguate two identical recipes.
 
 **Variant tooltips inherited unintentionally** — if you want a variant to have no tooltips, set `"tooltips": []`. Omitting the field entirely inherits the base item's tooltips.
+
+**Wrong effect name `sulfur`** — the effect is called `rest`. `"sulfur"` was an old compatibility ID and will silently fail to resolve. Use `"rest"` instead.
+
+**Wrong block type for waffle** — use `block_waffle`, not `block_pizza`. Waffles use a different block class and do not have a raw/cooked pair in the same sense as pies.
+
+**`createBottle`/`createBowl` on a fluid** — bottle and bowl items are auto-generated into `ItemRegistry.java`. You do not need to add them as separate spec items. The bowl variant is automatically registered with `crBowl: true` so the bowl returns as a crafting remainder from filling recipes.
+
+**Incorrectly specifying `_ingredient`** — Toolkit automatically adds `_ingredient`, so it should not be included as part of the spec file.
+
+**Creating unnecessary shaped recipes** — Shaped recipes are datagen created if only two ingredients, so only recipes with 2+ actually need created.

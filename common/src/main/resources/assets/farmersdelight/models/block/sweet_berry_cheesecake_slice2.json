@@ -1,7 +1,7 @@
 {
-  "parent": "farmersdelight:block/pie_slice2",
+  "parent": "farmersdelight:block/template_pie_slice2",
   "textures": {
-    "top": "createfood:block/berry_cheesecake_top",
+    "particle": "createfood:block/berry_cheesecake_top",
     "inner": "farmersdelight:block/sweet_berry_cheesecake_inner",
     "bottom": "createfood:block/smores_pie_bottom",
     "side": "createfood:block/smores_pie_side",

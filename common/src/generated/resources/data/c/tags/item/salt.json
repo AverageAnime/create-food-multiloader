@@ -5,11 +5,11 @@
       "required": false
     },
     {
-      "id": "createfood:salt",
+      "id": "expandeddelight:ground_salt",
       "required": false
     },
     {
-      "id": "expandeddelight:ground_salt",
+      "id": "hearthandharvest:salt",
       "required": false
     },
     {

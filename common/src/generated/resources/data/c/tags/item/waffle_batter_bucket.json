@@ -3,10 +3,6 @@
     {
       "id": "createfood:waffle_batter_bucket",
       "required": false
-    },
-    {
-      "id": "createfood:waffle_batter_bucket",
-      "required": false
     }
   ]
 }

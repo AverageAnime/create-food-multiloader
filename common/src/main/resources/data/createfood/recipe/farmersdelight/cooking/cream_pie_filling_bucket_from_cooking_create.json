@@ -3,7 +3,7 @@
     "experience": 0.25,
     "ingredients": [
         {
-            "tag": "c:buckets/milk"
+            "tag": "c:heavy_cream_bucket"
         },
         {
             "tag": "c:flours/wheat"

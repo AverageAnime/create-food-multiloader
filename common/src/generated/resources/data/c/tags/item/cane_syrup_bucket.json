@@ -3,10 +3,6 @@
     {
       "id": "createfood:cane_syrup_bucket",
       "required": false
-    },
-    {
-      "id": "createfood:cane_syrup_bucket",
-      "required": false
     }
   ]
 }

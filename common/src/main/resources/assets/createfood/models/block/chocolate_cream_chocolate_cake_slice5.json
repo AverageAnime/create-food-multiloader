@@ -3,7 +3,7 @@
 	"credit": "Made with Blockbench",
 	"textures": {
 		"bottom": "createfood:block/chocolate_cake_bottom",
-		"top": "createfood:block/cream_cake_top",
+		"top": "createfood:block/chocolate_cream_cake_top",
 		"particle": "createfood:block/chocolate_cream_chocolate_cake_side",
 		"side": "createfood:block/chocolate_cream_chocolate_cake_side",
 		"inside": "createfood:block/chocolate_cream_chocolate_cake_inner"

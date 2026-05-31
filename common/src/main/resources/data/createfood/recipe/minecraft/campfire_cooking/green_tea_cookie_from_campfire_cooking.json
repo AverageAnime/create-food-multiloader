@@ -16,10 +16,6 @@
             "modid": "farmersrespite"
         },
         {
-            "type": "neoforge:mod_loaded",
-            "modid": "farmersrespite:green_tea_cookie"
-        },
-        {
             "type": "createfood:enabled",
             "id": "farmersrespite:green_tea_cookie"
         }
@@ -29,12 +25,6 @@
             "condition": "fabric:all_mods_loaded",
             "values": [
                 "farmersrespite"
-            ]
-        },
-        {
-            "condition": "fabric:all_mods_loaded",
-            "values": [
-                "farmersrespite:green_tea_cookie"
             ]
         },
         {

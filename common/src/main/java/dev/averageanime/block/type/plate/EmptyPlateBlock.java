@@ -1,6 +1,8 @@
 package dev.averageanime.block.type.plate;
 
+import dev.averageanime.block.type.blockentity.GenericDisplayPlateBlockEntity;
 import dev.averageanime.block.type.display.FoodBlock;
+import dev.averageanime.platform.Services;
 import dev.averageanime.util.ItemSpawn;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -10,6 +12,7 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.context.BlockPlaceContext;
@@ -71,7 +74,10 @@ public class EmptyPlateBlock extends Block {
         }
 
         if (level.isClientSide) {
-            if (FoodBlock.Registry.canPlaceOnPlate(heldStack.getItem(), false)) {
+            if (FoodBlock.Registry.canPlaceOnPlate(heldStack.getItem(), false)
+                    || (isGenericDisplayEligible(heldStack.getItem())
+                        && Services.PLATFORM.isGenericPlatesEnabled()
+                        && Services.PLATFORM.isGenericDisplayAllowed(heldStack))) {
                 return ItemInteractionResult.SUCCESS;
             }
             return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
@@ -111,12 +117,41 @@ public class EmptyPlateBlock extends Block {
             return ItemInteractionResult.SUCCESS;
         }
 
+        if (isGenericDisplayEligible(heldStack.getItem())) {
+            if (!Services.PLATFORM.isGenericPlatesEnabled()
+                    || !Services.PLATFORM.isGenericDisplayAllowed(heldStack)) {
+                return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
+            }
+            Block genericPlate = Services.PLATFORM.getGenericDisplayPlateBlock();
+            BlockState newState = genericPlate.defaultBlockState()
+                    .setValue(FACING, state.getValue(FACING));
+            level.setBlock(pos, newState, 3);
+            if (level.getBlockEntity(pos) instanceof GenericDisplayPlateBlockEntity be) {
+                be.setDisplayedItem(heldStack.copyWithCount(1));
+            }
+            if (!player.isCreative()) heldStack.shrink(1);
+            level.playSound(null, pos, SoundEvents.ITEM_FRAME_ADD_ITEM, SoundSource.BLOCKS, 1.0F, 1.0F);
+            return ItemInteractionResult.SUCCESS;
+        }
+
         return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
+    }
+
+    public static boolean isGenericDisplayEligible(Item item) {
+        return item != Items.AIR
+                && !FoodBlock.Registry.isEmptyPlateItem(item)
+                && !FoodBlock.Registry.isRegistered(item);
     }
 
     @Override
     protected @NotNull InteractionResult useWithoutItem(@NotNull BlockState state, @NotNull Level level, @NotNull BlockPos pos, Player player, @NotNull BlockHitResult hit) {
         if (player.isShiftKeyDown()) return InteractionResult.PASS;
+        ItemStack offhand = player.getItemInHand(InteractionHand.OFF_HAND);
+        if (!offhand.isEmpty()
+                && (FoodBlock.Registry.canPlaceOnPlate(offhand.getItem(), false)
+                    || isGenericDisplayEligible(offhand.getItem()))) {
+            return InteractionResult.PASS;
+        }
         if (!level.isClientSide) {
             Direction direction = player.getDirection().getOpposite();
             ItemSpawn.spawnItemEntity(level, new ItemStack(Items.BOWL),

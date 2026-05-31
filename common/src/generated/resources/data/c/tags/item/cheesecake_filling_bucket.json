@@ -3,10 +3,6 @@
     {
       "id": "createfood:cheesecake_filling_bucket",
       "required": false
-    },
-    {
-      "id": "createfood:cheesecake_filling_bucket",
-      "required": false
     }
   ]
 }
