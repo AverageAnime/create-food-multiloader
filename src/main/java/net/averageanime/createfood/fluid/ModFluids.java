@@ -1099,6 +1099,320 @@ public class ModFluids {
                             .explosionResistance(100f))
                     .register();
 
+    // ===== Phase 8: New fluids from 1.21.1 =====
+
+    public static final FluidEntry<ForgeFlowingFluid.Flowing> CUSTARD =
+            REGISTRATE.standardFluid("custard",
+                            SolidRenderedPlaceableFluidType.create(0xf2c94c,
+                                    () -> 1f / 32f * 1))
+                    .properties(b -> b.viscosity(1500)
+                            .density(1400))
+                    .fluidProperties(p -> p.levelDecreasePerBlock(3)
+                            .tickRate(25)
+                            .slopeFindDistance(4)
+                            .explosionResistance(100f))
+                    .register();
+
+    public static final FluidEntry<ForgeFlowingFluid.Flowing> APPLE_CUSTARD =
+            REGISTRATE.standardFluid("apple_custard",
+                            SolidRenderedPlaceableFluidType.create(0xf2d06e,
+                                    () -> 1f / 32f * 1))
+                    .properties(b -> b.viscosity(1500)
+                            .density(1400))
+                    .fluidProperties(p -> p.levelDecreasePerBlock(3)
+                            .tickRate(25)
+                            .slopeFindDistance(4)
+                            .explosionResistance(100f))
+                    .register();
+
+    public static final FluidEntry<ForgeFlowingFluid.Flowing> BERRY_CUSTARD =
+            REGISTRATE.standardFluid("berry_custard",
+                            SolidRenderedPlaceableFluidType.create(0xd47ca8,
+                                    () -> 1f / 32f * 1))
+                    .properties(b -> b.viscosity(1500)
+                            .density(1400))
+                    .fluidProperties(p -> p.levelDecreasePerBlock(3)
+                            .tickRate(25)
+                            .slopeFindDistance(4)
+                            .explosionResistance(100f))
+                    .register();
+
+    public static final FluidEntry<ForgeFlowingFluid.Flowing> CHOCOLATE_CUSTARD =
+            REGISTRATE.standardFluid("chocolate_custard",
+                            SolidRenderedPlaceableFluidType.create(0x5c271f,
+                                    () -> 1f / 32f * 1))
+                    .properties(b -> b.viscosity(1500)
+                            .density(1400))
+                    .fluidProperties(p -> p.levelDecreasePerBlock(3)
+                            .tickRate(25)
+                            .slopeFindDistance(4)
+                            .explosionResistance(100f))
+                    .register();
+
+    public static final FluidEntry<ForgeFlowingFluid.Flowing> CHORUS_FRUIT_CUSTARD =
+            REGISTRATE.standardFluid("chorus_fruit_custard",
+                            SolidRenderedPlaceableFluidType.create(0x9060a0,
+                                    () -> 1f / 32f * 1))
+                    .properties(b -> b.viscosity(1500)
+                            .density(1400))
+                    .fluidProperties(p -> p.levelDecreasePerBlock(3)
+                            .tickRate(25)
+                            .slopeFindDistance(4)
+                            .explosionResistance(100f))
+                    .register();
+
+    public static final FluidEntry<ForgeFlowingFluid.Flowing> MELON_CUSTARD =
+            REGISTRATE.standardFluid("melon_custard",
+                            SolidRenderedPlaceableFluidType.create(0xa8c840,
+                                    () -> 1f / 32f * 1))
+                    .properties(b -> b.viscosity(1500)
+                            .density(1400))
+                    .fluidProperties(p -> p.levelDecreasePerBlock(3)
+                            .tickRate(25)
+                            .slopeFindDistance(4)
+                            .explosionResistance(100f))
+                    .register();
+
+    public static final FluidEntry<ForgeFlowingFluid.Flowing> PUMPKIN_CUSTARD =
+            REGISTRATE.standardFluid("pumpkin_custard",
+                            SolidRenderedPlaceableFluidType.create(0xe08030,
+                                    () -> 1f / 32f * 1))
+                    .properties(b -> b.viscosity(1500)
+                            .density(1400))
+                    .fluidProperties(p -> p.levelDecreasePerBlock(3)
+                            .tickRate(25)
+                            .slopeFindDistance(4)
+                            .explosionResistance(100f))
+                    .register();
+
+    public static final FluidEntry<ForgeFlowingFluid.Flowing> MERINGUE =
+            REGISTRATE.standardFluid("meringue",
+                            SolidRenderedPlaceableFluidType.create(0xf5f0e0,
+                                    () -> 1f / 32f * 1))
+                    .properties(b -> b.viscosity(1500)
+                            .density(1400))
+                    .fluidProperties(p -> p.levelDecreasePerBlock(3)
+                            .tickRate(25)
+                            .slopeFindDistance(4)
+                            .explosionResistance(100f))
+                    .register();
+
+    public static final FluidEntry<ForgeFlowingFluid.Flowing> EGG =
+            REGISTRATE.standardFluid("egg",
+                            SolidRenderedPlaceableFluidType.create(0xf5c842,
+                                    () -> 1f / 32f * 1))
+                    .properties(b -> b.viscosity(800)
+                            .density(1100))
+                    .fluidProperties(p -> p.levelDecreasePerBlock(3)
+                            .tickRate(25)
+                            .slopeFindDistance(4)
+                            .explosionResistance(100f))
+                    .register();
+
+    public static final FluidEntry<ForgeFlowingFluid.Flowing> EGG_WHITES =
+            REGISTRATE.standardFluid("egg_whites",
+                            SolidRenderedPlaceableFluidType.create(0xf0f0e8,
+                                    () -> 1f / 32f * 1))
+                    .properties(b -> b.viscosity(800)
+                            .density(1100))
+                    .fluidProperties(p -> p.levelDecreasePerBlock(3)
+                            .tickRate(25)
+                            .slopeFindDistance(4)
+                            .explosionResistance(100f))
+                    .register();
+
+    public static final FluidEntry<ForgeFlowingFluid.Flowing> CAKE_BATTER =
+            REGISTRATE.standardFluid("cake_batter",
+                            SolidRenderedPlaceableFluidType.create(0xe8d098,
+                                    () -> 1f / 32f * 1))
+                    .properties(b -> b.viscosity(1500)
+                            .density(1300))
+                    .fluidProperties(p -> p.levelDecreasePerBlock(3)
+                            .tickRate(25)
+                            .slopeFindDistance(4)
+                            .explosionResistance(100f))
+                    .register();
+
+    public static final FluidEntry<ForgeFlowingFluid.Flowing> CHOCOLATE_CAKE_BATTER =
+            REGISTRATE.standardFluid("chocolate_cake_batter",
+                            SolidRenderedPlaceableFluidType.create(0x5c2d1e,
+                                    () -> 1f / 32f * 1))
+                    .properties(b -> b.viscosity(1500)
+                            .density(1300))
+                    .fluidProperties(p -> p.levelDecreasePerBlock(3)
+                            .tickRate(25)
+                            .slopeFindDistance(4)
+                            .explosionResistance(100f))
+                    .register();
+
+    public static final FluidEntry<ForgeFlowingFluid.Flowing> UBE_CAKE_BATTER =
+            REGISTRATE.standardFluid("ube_cake_batter",
+                            SolidRenderedPlaceableFluidType.create(0x6f45c7,
+                                    () -> 1f / 32f * 1))
+                    .properties(b -> b.viscosity(1500)
+                            .density(1300))
+                    .fluidProperties(p -> p.levelDecreasePerBlock(3)
+                            .tickRate(25)
+                            .slopeFindDistance(4)
+                            .explosionResistance(100f))
+                    .register();
+
+    public static final FluidEntry<ForgeFlowingFluid.Flowing> MUFFIN_BATTER =
+            REGISTRATE.standardFluid("muffin_batter",
+                            SolidRenderedPlaceableFluidType.create(0xd4a060,
+                                    () -> 1f / 32f * 1))
+                    .properties(b -> b.viscosity(1500)
+                            .density(1300))
+                    .fluidProperties(p -> p.levelDecreasePerBlock(3)
+                            .tickRate(25)
+                            .slopeFindDistance(4)
+                            .explosionResistance(100f))
+                    .register();
+
+    public static final FluidEntry<ForgeFlowingFluid.Flowing> BREAD_PUDDING =
+            REGISTRATE.standardFluid("bread_pudding",
+                            SolidRenderedPlaceableFluidType.create(0xc89060,
+                                    () -> 1f / 32f * 1))
+                    .properties(b -> b.viscosity(1500)
+                            .density(1400))
+                    .fluidProperties(p -> p.levelDecreasePerBlock(3)
+                            .tickRate(25)
+                            .slopeFindDistance(4)
+                            .explosionResistance(100f))
+                    .register();
+
+    public static final FluidEntry<ForgeFlowingFluid.Flowing> RICE_PUDDING =
+            REGISTRATE.standardFluid("rice_pudding",
+                            SolidRenderedPlaceableFluidType.create(0xf0e8d4,
+                                    () -> 1f / 32f * 1))
+                    .properties(b -> b.viscosity(1500)
+                            .density(1400))
+                    .fluidProperties(p -> p.levelDecreasePerBlock(3)
+                            .tickRate(25)
+                            .slopeFindDistance(4)
+                            .explosionResistance(100f))
+                    .register();
+
+    public static final FluidEntry<ForgeFlowingFluid.Flowing> LIQUID_CHEESE =
+            REGISTRATE.standardFluid("liquid_cheese",
+                            SolidRenderedPlaceableFluidType.create(0xe07820,
+                                    () -> 1f / 32f * 1))
+                    .properties(b -> b.viscosity(1500)
+                            .density(1400))
+                    .fluidProperties(p -> p.levelDecreasePerBlock(3)
+                            .tickRate(25)
+                            .slopeFindDistance(4)
+                            .explosionResistance(100f))
+                    .register();
+
+    public static final FluidEntry<ForgeFlowingFluid.Flowing> FISH_CHOWDER =
+            REGISTRATE.standardFluid("fish_chowder",
+                            SolidRenderedPlaceableFluidType.create(0xd4b882,
+                                    () -> 1f / 32f * 1))
+                    .properties(b -> b.viscosity(1200)
+                            .density(1200))
+                    .fluidProperties(p -> p.levelDecreasePerBlock(3)
+                            .tickRate(25)
+                            .slopeFindDistance(4)
+                            .explosionResistance(100f))
+                    .register();
+
+    public static final FluidEntry<ForgeFlowingFluid.Flowing> KELP_SOUP =
+            REGISTRATE.standardFluid("kelp_soup",
+                            SolidRenderedPlaceableFluidType.create(0x68a668,
+                                    () -> 1f / 32f * 1))
+                    .properties(b -> b.viscosity(1200)
+                            .density(1200))
+                    .fluidProperties(p -> p.levelDecreasePerBlock(3)
+                            .tickRate(25)
+                            .slopeFindDistance(4)
+                            .explosionResistance(100f))
+                    .register();
+
+    public static final FluidEntry<ForgeFlowingFluid.Flowing> LEATHER_SOUP =
+            REGISTRATE.standardFluid("leather_soup",
+                            SolidRenderedPlaceableFluidType.create(0x7d6040,
+                                    () -> 1f / 32f * 1))
+                    .properties(b -> b.viscosity(1200)
+                            .density(1200))
+                    .fluidProperties(p -> p.levelDecreasePerBlock(3)
+                            .tickRate(25)
+                            .slopeFindDistance(4)
+                            .explosionResistance(100f))
+                    .register();
+
+    public static final FluidEntry<ForgeFlowingFluid.Flowing> MUSHROOM_CREAM_SOUP =
+            REGISTRATE.standardFluid("mushroom_cream_soup",
+                            SolidRenderedPlaceableFluidType.create(0xc4a070,
+                                    () -> 1f / 32f * 1))
+                    .properties(b -> b.viscosity(1200)
+                            .density(1200))
+                    .fluidProperties(p -> p.levelDecreasePerBlock(3)
+                            .tickRate(25)
+                            .slopeFindDistance(4)
+                            .explosionResistance(100f))
+                    .register();
+
+    public static final FluidEntry<ForgeFlowingFluid.Flowing> POTATO_CREAM_SOUP =
+            REGISTRATE.standardFluid("potato_cream_soup",
+                            SolidRenderedPlaceableFluidType.create(0xe0d4a8,
+                                    () -> 1f / 32f * 1))
+                    .properties(b -> b.viscosity(1200)
+                            .density(1200))
+                    .fluidProperties(p -> p.levelDecreasePerBlock(3)
+                            .tickRate(25)
+                            .slopeFindDistance(4)
+                            .explosionResistance(100f))
+                    .register();
+
+    public static final FluidEntry<ForgeFlowingFluid.Flowing> TOMATO_CREAM_SOUP =
+            REGISTRATE.standardFluid("tomato_cream_soup",
+                            SolidRenderedPlaceableFluidType.create(0xd06040,
+                                    () -> 1f / 32f * 1))
+                    .properties(b -> b.viscosity(1200)
+                            .density(1200))
+                    .fluidProperties(p -> p.levelDecreasePerBlock(3)
+                            .tickRate(25)
+                            .slopeFindDistance(4)
+                            .explosionResistance(100f))
+                    .register();
+
+    public static final FluidEntry<ForgeFlowingFluid.Flowing> MUTTON_STEW =
+            REGISTRATE.standardFluid("mutton_stew",
+                            SolidRenderedPlaceableFluidType.create(0x9a5030,
+                                    () -> 1f / 32f * 1))
+                    .properties(b -> b.viscosity(1200)
+                            .density(1200))
+                    .fluidProperties(p -> p.levelDecreasePerBlock(3)
+                            .tickRate(25)
+                            .slopeFindDistance(4)
+                            .explosionResistance(100f))
+                    .register();
+
+    public static final FluidEntry<ForgeFlowingFluid.Flowing> PORK_STEW =
+            REGISTRATE.standardFluid("pork_stew",
+                            SolidRenderedPlaceableFluidType.create(0x9a3828,
+                                    () -> 1f / 32f * 1))
+                    .properties(b -> b.viscosity(1200)
+                            .density(1200))
+                    .fluidProperties(p -> p.levelDecreasePerBlock(3)
+                            .tickRate(25)
+                            .slopeFindDistance(4)
+                            .explosionResistance(100f))
+                    .register();
+
+    public static final FluidEntry<ForgeFlowingFluid.Flowing> TACO_SAUCE =
+            REGISTRATE.standardFluid("taco_sauce",
+                            SolidRenderedPlaceableFluidType.create(0xc04020,
+                                    () -> 1f / 32f * 1))
+                    .properties(b -> b.viscosity(1000)
+                            .density(1100))
+                    .fluidProperties(p -> p.levelDecreasePerBlock(3)
+                            .tickRate(25)
+                            .slopeFindDistance(4)
+                            .explosionResistance(100f))
+                    .register();
+
     public static void register() {}
 
     public static abstract class TintedFluidType extends FluidType {
