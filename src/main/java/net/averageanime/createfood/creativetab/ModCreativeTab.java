@@ -4,6 +4,7 @@ import com.simibubi.create.AllCreativeModeTabs;
 import com.tterrag.registrate.util.entry.RegistryEntry;
 import it.unimi.dsi.fastutil.objects.ReferenceArrayList;
 import it.unimi.dsi.fastutil.objects.ReferenceLinkedOpenHashSet;
+import net.averageanime.createfood.block.ModDisplayBlocks;
 import net.averageanime.createfood.fluid.ModFluids;
 import net.averageanime.createfood.item.ModItems;
 import net.minecraft.core.registries.Registries;
@@ -27,6 +28,7 @@ public class ModCreativeTab {
     private static final DeferredRegister<CreativeModeTab> REGISTER;
     public static final RegistryObject<CreativeModeTab> CREATIVE_TAB;
     public static final RegistryObject<CreativeModeTab> FLUID_TAB;
+    public static final RegistryObject<CreativeModeTab> DISPLAY_TAB;
 
     public ModCreativeTab() {}
 
@@ -57,6 +59,23 @@ public class ModCreativeTab {
                     .displayItems((params, output) -> filterAndOutput(output, collectFluids()))
                     .build()
         );
+        DISPLAY_TAB = REGISTER.register("display", () ->
+            CreativeModeTab.builder()
+                    .title(Component.literal("Create: Food Display"))
+                    .withTabsBefore(FLUID_TAB.getKey())
+                    .icon(() -> new ItemStack(ModDisplayBlocks.PLATE_BLOCK.get().asItem()))
+                    .displayItems((params, output) -> filterAndOutput(output, collectDisplayBlocks()))
+                    .build()
+        );
+    }
+
+    private static List<Item> collectDisplayBlocks() {
+        List<Item> items = new ReferenceArrayList<>();
+        for (RegistryObject<Item> entry : ModDisplayBlocks.ITEMS.getEntries()) {
+            Item item = entry.get();
+            if (item != Items.AIR) items.add(item);
+        }
+        return items;
     }
 
     private static List<Item> collectBlocks() {

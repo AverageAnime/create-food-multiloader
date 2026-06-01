@@ -110,12 +110,30 @@ dependencies {
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
 
     implementation(fg.deobf("com.simibubi.create:create-${minecraft_version}:${create_version}:slim") { transitive = false })
-    implementation(fg.deobf("net.createmod.ponder:Ponder-Forge-${minecraft_version}:${ponder_version}"))
-    implementation(fg.deobf("dev.engine-room.flywheel:flywheel-forge-api-${minecraft_version}:${flywheel_version}"))
-    runtimeOnly(fg.deobf("dev.engine-room.flywheel:flywheel-forge-${minecraft_version}:${flywheel_version}"))
+
+    implementation(fg.deobf("net.createmod.ponder:Ponder-Forge-${minecraft_version}:${ponder_version}")) {
+        exclude group: 'com.tterrag.registrate', module: 'Registrate'
+    }
+
+    implementation(fg.deobf("dev.engine-room.flywheel:flywheel-forge-api-${minecraft_version}:${flywheel_version}")) {
+        exclude group: 'com.tterrag.registrate', module: 'Registrate'
+    }
+    runtimeOnly(fg.deobf("dev.engine-room.flywheel:flywheel-forge-${minecraft_version}:${flywheel_version}")) {
+        exclude group: 'com.tterrag.registrate', module: 'Registrate'
+    }
+
+    // Single authoritative Registrate — all other sources excluded above
     implementation(fg.deobf("com.tterrag.registrate:Registrate:${registrate_version}"))
 
-    implementation fg.deobf("curse.maven:farmers-delight-398521:5051242")
+    implementation(fg.deobf("curse.maven:farmers-delight-398521:5051242")) {
+        exclude group: 'com.tterrag.registrate', module: 'Registrate'
+    }
+    compileOnly(annotationProcessor("io.github.llamalad7:mixinextras-common:0.4.1"))
+
+    // 2. Provide the Forge implementation at runtime and bundle it via JarJar
+    implementation(jarJar("io.github.llamalad7:mixinextras-forge:0.4.1")) {
+        jarJar.ranged(it, "[0.4.1,)")
+    }
 }
 
 sourceSets.main.resources { srcDir 'src/generated/resources' }

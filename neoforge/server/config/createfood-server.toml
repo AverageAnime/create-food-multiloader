@@ -1,0 +1,11 @@
+[hand_craft]
+	enable_hand_crafting = true
+	hand_craft_filter = []
+
+[interactions]
+	enable_filter_interactions = true
+	filter_interactions = ["createfood:cloth_filter_egg|minecraft:glass_bottle|createfood:cloth_filter_egg_yolk|createfood:egg_whites_bottle", "createfood:cloth_filter_egg_yolk|none|createfood:cloth_filter|createfood:egg_yolk", "createfood:cloth_filter_cacao_mass|minecraft:bucket|createfood:cloth_filter_pressed_cocoa|createfood:cacao_butter_bucket", "createfood:cloth_filter_pressed_cocoa|none|createfood:cloth_filter|createfood:pressed_cocoa"]
+
+[remainders]
+	enable_egg_impact_remainder = true
+	crafting_remainders = ["minecraft:egg|createfood:eggshell"]

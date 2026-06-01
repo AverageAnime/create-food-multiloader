@@ -1,0 +1,142 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "block": "createfood:toffee_dark_chocolate_plate_block",
+          "condition": "minecraft:block_state_property",
+          "properties": {
+            "stack_size": "6"
+          }
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "createfood:toffee_dark_chocolate_plate_block"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "block": "createfood:toffee_dark_chocolate_plate_block",
+          "condition": "minecraft:block_state_property",
+          "properties": {
+            "stack_size": "1"
+          }
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "createfood:toffee_dark_chocolate"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "block": "createfood:toffee_dark_chocolate_plate_block",
+          "condition": "minecraft:block_state_property",
+          "properties": {
+            "stack_size": "2"
+          }
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "createfood:toffee_dark_chocolate"
+        }
+      ],
+      "rolls": 2.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "block": "createfood:toffee_dark_chocolate_plate_block",
+          "condition": "minecraft:block_state_property",
+          "properties": {
+            "stack_size": "3"
+          }
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "createfood:toffee_dark_chocolate"
+        }
+      ],
+      "rolls": 3.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "block": "createfood:toffee_dark_chocolate_plate_block",
+          "condition": "minecraft:block_state_property",
+          "properties": {
+            "stack_size": "4"
+          }
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "createfood:toffee_dark_chocolate"
+        }
+      ],
+      "rolls": 4.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "block": "createfood:toffee_dark_chocolate_plate_block",
+          "condition": "minecraft:block_state_property",
+          "properties": {
+            "stack_size": "5"
+          }
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "createfood:toffee_dark_chocolate"
+        }
+      ],
+      "rolls": 5.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:inverted",
+          "term": {
+            "block": "createfood:toffee_dark_chocolate_plate_block",
+            "condition": "minecraft:block_state_property",
+            "properties": {
+              "stack_size": "6"
+            }
+          }
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:bowl"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "createfood:blocks/toffee_dark_chocolate_plate_block"
+}

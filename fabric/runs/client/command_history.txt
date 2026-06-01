@@ -1,0 +1,12 @@
+/gamemode survival
+/effect give @a minecraft:hunger infinite 100
+/effect give @a minecraft:hunger infinite 1000
+/effect give @a minecraft:hunger infinite 255
+/difficulty easy
+/gamemode creative
+/gamemode survival
+/gamemode creative
+/reload
+/effect clear @a
+/effect give @a minecraft:hunger infinite 255
+/reload

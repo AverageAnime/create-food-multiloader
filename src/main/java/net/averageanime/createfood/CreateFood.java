@@ -25,15 +25,14 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.fml.loading.FMLEnvironment;
 import org.slf4j.Logger;
 import net.averageanime.createfood.block.ModBlockEntities;
+import net.averageanime.createfood.block.ModDisplayBlocks;
 import net.averageanime.createfood.config.CreateFoodConfig;
 import net.averageanime.createfood.creativetab.ModCreativeTab;
 import net.averageanime.createfood.fluid.ModFluids;
 import net.averageanime.createfood.item.ModItems;
-import net.averageanime.createfood.block.ModBlockEntities;
 import net.averageanime.createfood.client.renderer.GenericDisplayPlateRenderer;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
-import net.minecraftforge.client.event.RegisterClientReloadListenersEvent;
 
 
 @Mod(CreateFood.ID)
@@ -48,6 +47,7 @@ public class CreateFood {
 
         CreateFoodConfig.register();
         ModBlocks.register();
+        ModDisplayBlocks.register(modEventBus);
         ModBlockEntities.register(modEventBus);
         ModFluids.register();
         ModItems.ITEMS.register(modEventBus);

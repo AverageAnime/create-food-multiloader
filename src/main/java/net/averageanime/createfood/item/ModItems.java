@@ -191,7 +191,6 @@ public class ModItems {
     public static final RegistryObject<Item> SAUSAGE_BISCUIT_SANDWICH_CHEESE = ITEMS.register("sausage_biscuit_sandwich_cheese", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(21).saturationMod(0.5F).effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1.0f).build())));
     public static final RegistryObject<Item> CHEESE_BISCUIT = ITEMS.register("cheese_biscuit", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(7).saturationMod(0.5F).build())));
     public static final RegistryObject<Item> CHEESE_BISCUIT_SANDWICH = ITEMS.register("cheese_biscuit_sandwich", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(12).saturationMod(0.4F).build())));
-    public static final RegistryObject<Item> CHEESE_BLOCK = ITEMS.register("cheese_block", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> CHEESE_CALZONE = ITEMS.register("cheese_calzone", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(5).saturationMod(0.4F).fast().build())));
     public static final RegistryObject<Item> CHEESE_PIZZA_SLICE = ITEMS.register("cheese_pizza_slice", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(5).saturationMod(0.4F).build())));
     public static final RegistryObject<Item> CHEESE_SANDWICH = ITEMS.register("cheese_sandwich", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(8).saturationMod(0.4F).build())));

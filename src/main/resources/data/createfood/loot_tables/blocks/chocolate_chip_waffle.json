@@ -1,130 +1,131 @@
 {
-    "type": "minecraft:block",
-    "pools": [
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
         {
-            "name": "chocolate_chip_waffle",
-            "rolls": 1,
-            "entries": [
-                {
-                    "type": "minecraft:item",
-                    "name": "createfood:chocolate_chip_waffle"
-                }
-            ],
-            "conditions": [
-                {
-                    "condition": "minecraft:inverted",
-                    "term": {
-                        "condition": "minecraft:match_tool",
-                        "predicate": {
-                            "tag": "forge:tools/knives"
-                        }
-                    }
-                },
-                {
-                    "condition": "minecraft:block_state_property",
-                    "block": "createfood:chocolate_chip_waffle",
-                    "properties": {
-                        "bites": "0"
-                    }
-                }
-            ]
+          "condition": "minecraft:inverted",
+          "term": {
+            "condition": "minecraft:match_tool",
+            "predicate": {
+              "items": "#c:tools/knife"
+            }
+          }
         },
         {
-            "name": "waffle_knife",
-            "rolls": 4,
-            "entries": [
-                {
-                    "type": "minecraft:item",
-                    "name": "createfood:chocolate_chip_mini_waffle"
-                }
-            ],
-            "conditions": [
-                {
-                    "condition": "minecraft:match_tool",
-                    "predicate": {
-                        "tag": "forge:tools/knives"
-                    }
-                },
-                {
-                    "condition": "minecraft:block_state_property",
-                    "block": "createfood:chocolate_chip_waffle",
-                    "properties": {
-                        "bites": "0"
-                    }
-                }
-            ]
-        },
-        {
-            "name": "chocolate_chip_mini_waffle1",
-            "rolls": 3,
-            "entries": [
-                {
-                    "type": "minecraft:item",
-                    "name": "createfood:chocolate_chip_mini_waffle"
-                }
-            ],
-            "conditions": [
-                {
-                    "condition": "minecraft:match_tool",
-                    "predicate": {
-                        "tag": "forge:tools/knives"
-                    }
-                },
-                {
-                    "condition": "minecraft:block_state_property",
-                    "block": "createfood:chocolate_chip_waffle",
-                    "properties": {
-                        "bites": "1"
-                    }
-                }
-            ]
-        },
-        {
-            "name": "chocolate_chip_mini_waffle2",
-            "rolls": 2,
-            "entries": [
-                {
-                    "type": "minecraft:item",
-                    "name": "createfood:chocolate_chip_mini_waffle"
-                }
-            ],
-            "conditions": [
-                {
-                    "condition": "minecraft:match_tool",
-                    "predicate": {
-                        "tag": "forge:tools/knives"
-                    }
-                },
-                {
-                    "condition": "minecraft:block_state_property",
-                    "block": "createfood:chocolate_chip_waffle",
-                    "properties": {
-                        "bites": "2"
-                    }
-                }
-            ]
-        },
-        {
-            "name": "chocolate_chip_mini_waffle3",
-            "rolls": 1,
-            "entries": [
-                {
-                    "type": "minecraft:item",
-                    "name": "createfood:chocolate_chip_mini_waffle"
-                }
-            ],
-            "conditions": [
-                {
-                    "condition": "minecraft:survives_explosion"
-                },
-                {
-                    "condition": "minecraft:block_state_property",
-                    "block": "createfood:chocolate_chip_waffle",
-                    "properties": {
-                        "bites": "3"
-                    }
-                }
-            ]
+          "block": "createfood:chocolate_chip_waffle",
+          "condition": "minecraft:block_state_property",
+          "properties": {
+            "bites": "0"
+          }
         }
-    ]
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "createfood:chocolate_chip_waffle"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:match_tool",
+          "predicate": {
+            "items": "#c:tools/knife"
+          }
+        },
+        {
+          "block": "createfood:chocolate_chip_waffle",
+          "condition": "minecraft:block_state_property",
+          "properties": {
+            "bites": "0"
+          }
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "createfood:chocolate_chip_mini_waffle"
+        }
+      ],
+      "rolls": 4.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:match_tool",
+          "predicate": {
+            "items": "#c:tools/knife"
+          }
+        },
+        {
+          "block": "createfood:chocolate_chip_waffle",
+          "condition": "minecraft:block_state_property",
+          "properties": {
+            "bites": "1"
+          }
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "createfood:chocolate_chip_mini_waffle"
+        }
+      ],
+      "rolls": 3.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:match_tool",
+          "predicate": {
+            "items": "#c:tools/knife"
+          }
+        },
+        {
+          "block": "createfood:chocolate_chip_waffle",
+          "condition": "minecraft:block_state_property",
+          "properties": {
+            "bites": "2"
+          }
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "createfood:chocolate_chip_mini_waffle"
+        }
+      ],
+      "rolls": 2.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        },
+        {
+          "block": "createfood:chocolate_chip_waffle",
+          "condition": "minecraft:block_state_property",
+          "properties": {
+            "bites": "3"
+          }
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "createfood:chocolate_chip_mini_waffle"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "createfood:blocks/chocolate_chip_waffle"
 }

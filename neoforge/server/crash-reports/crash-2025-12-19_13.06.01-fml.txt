@@ -1,0 +1,133 @@
+---- Minecraft Crash Report ----
+// Why did you do that?
+
+Time: 2025-12-19 13:06:01
+Description: Mod loading failures have occurred; consult the issue messages for more details
+
+net.neoforged.neoforge.logging.CrashReportExtender$ModLoadingCrashException: Mod loading has failed
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: main
+Stacktrace:
+	at MC-BOOTSTRAP/net.neoforged.bus/net.neoforged.bus.EventBus.register(EventBus.java:135) ~[bus-8.0.5.jar%23106!/:?] {}
+-- Mod loading issue for: createfood --
+Details:
+	Caused by 0: java.lang.RuntimeException: java.lang.IllegalArgumentException: class dev.averageanime.neoforge.event.PumpkinPieBlockHandler has no @SubscribeEvent methods, but register was called anyway.
+The event bus only recognizes listener methods that have the @SubscribeEvent annotation.
+
+		at MC-BOOTSTRAP/fml_loader@4.0.42/net.neoforged.fml.javafmlmod.AutomaticEventSubscriber.lambda$inject$4(AutomaticEventSubscriber.java:112) ~[loader-4.0.42.jar%23102!/:4.0] {}
+		at java.base/java.util.ArrayList.forEach(ArrayList.java:1596) ~[?:?] {re:mixin}
+		at MC-BOOTSTRAP/fml_loader@4.0.42/net.neoforged.fml.javafmlmod.AutomaticEventSubscriber.inject(AutomaticEventSubscriber.java:49) ~[loader-4.0.42.jar%23102!/:4.0] {}
+		at MC-BOOTSTRAP/fml_loader@4.0.42/net.neoforged.fml.javafmlmod.FMLModContainer.constructMod(FMLModContainer.java:126) ~[loader-4.0.42.jar%23102!/:4.0] {}
+		at MC-BOOTSTRAP/fml_loader@4.0.42/net.neoforged.fml.ModLoader.lambda$constructMods$3(ModLoader.java:153) ~[loader-4.0.42.jar%23102!/:4.0] {}
+		at MC-BOOTSTRAP/fml_loader@4.0.42/net.neoforged.fml.ModLoader.lambda$dispatchParallelTask$7(ModLoader.java:231) ~[loader-4.0.42.jar%23102!/:4.0] {}
+		at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934) ~[?:?] {re:mixin}
+		at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911) ~[?:?] {}
+		at java.base/java.util.concurrent.CompletableFuture$Completion.exec(CompletableFuture.java:483) ~[?:?] {}
+		at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:387) ~[?:?] {}
+		at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1312) ~[?:?] {}
+		at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1843) ~[?:?] {}
+		at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1808) ~[?:?] {}
+		at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:188) ~[?:?] {}
+
+	Mod file: /C:/Users/nkarm/Documents/modding/create-food-multiloader-1.21.1/neoforge/build/classes/java/main/
+	Failure message: Create: Food (createfood) has failed to load correctly
+		java.lang.RuntimeException: java.lang.IllegalArgumentException: class dev.averageanime.neoforge.event.PumpkinPieBlockHandler has no @SubscribeEvent methods, but register was called anyway.
+		The event bus only recognizes listener methods that have the @SubscribeEvent annotation.
+
+	Mod version: 2.0.0
+	Mod issues URL: <No issues URL found>
+	Exception message: java.lang.IllegalArgumentException: class dev.averageanime.neoforge.event.PumpkinPieBlockHandler has no @SubscribeEvent methods, but register was called anyway.
+The event bus only recognizes listener methods that have the @SubscribeEvent annotation.
+
+Stacktrace:
+	at MC-BOOTSTRAP/net.neoforged.bus/net.neoforged.bus.EventBus.register(EventBus.java:135) ~[bus-8.0.5.jar%23106!/:?] {}
+	at MC-BOOTSTRAP/fml_loader@4.0.42/net.neoforged.fml.javafmlmod.AutomaticEventSubscriber.lambda$inject$4(AutomaticEventSubscriber.java:86) ~[loader-4.0.42.jar%23102!/:4.0] {}
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596) ~[?:?] {re:mixin}
+	at MC-BOOTSTRAP/fml_loader@4.0.42/net.neoforged.fml.javafmlmod.AutomaticEventSubscriber.inject(AutomaticEventSubscriber.java:49) ~[loader-4.0.42.jar%23102!/:4.0] {}
+	at MC-BOOTSTRAP/fml_loader@4.0.42/net.neoforged.fml.javafmlmod.FMLModContainer.constructMod(FMLModContainer.java:126) ~[loader-4.0.42.jar%23102!/:4.0] {}
+	at MC-BOOTSTRAP/fml_loader@4.0.42/net.neoforged.fml.ModLoader.lambda$constructMods$3(ModLoader.java:153) ~[loader-4.0.42.jar%23102!/:4.0] {}
+	at MC-BOOTSTRAP/fml_loader@4.0.42/net.neoforged.fml.ModLoader.lambda$dispatchParallelTask$7(ModLoader.java:231) ~[loader-4.0.42.jar%23102!/:4.0] {}
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934) ~[?:?] {re:mixin}
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911) ~[?:?] {}
+	at java.base/java.util.concurrent.CompletableFuture$Completion.exec(CompletableFuture.java:483) ~[?:?] {}
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:387) ~[?:?] {}
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1312) ~[?:?] {}
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1843) ~[?:?] {}
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1808) ~[?:?] {}
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:188) ~[?:?] {}
+
+
+-- System Details --
+Details:
+	Minecraft Version: 1.21.1
+	Minecraft Version ID: 1.21.1
+	Operating System: Windows 11 (amd64) version 10.0
+	Java Version: 21.0.3, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode, sharing), Oracle Corporation
+	Memory: 259800160 bytes (247 MiB) / 566231040 bytes (540 MiB) up to 8568963072 bytes (8172 MiB)
+	CPUs: 12
+	Processor Vendor: AuthenticAMD
+	Processor Name: AMD Ryzen 5 5600X 6-Core Processor
+	Identifier: AuthenticAMD Family 25 Model 33 Stepping 0
+	Microarchitecture: Zen 3
+	Frequency (GHz): 4.20
+	Number of physical packages: 1
+	Number of physical CPUs: 6
+	Number of logical CPUs: 12
+	Graphics card #0 name: NVIDIA GeForce RTX 3070 Ti
+	Graphics card #0 vendor: NVIDIA
+	Graphics card #0 VRAM (MiB): 8192.00
+	Graphics card #0 deviceId: VideoController1
+	Graphics card #0 versionInfo: 32.0.15.8157
+	Memory slot #0 capacity (MiB): 16384.00
+	Memory slot #0 clockSpeed (GHz): 3.20
+	Memory slot #0 type: DDR4
+	Memory slot #1 capacity (MiB): 16384.00
+	Memory slot #1 clockSpeed (GHz): 3.20
+	Memory slot #1 type: DDR4
+	Virtual memory max (MiB): 40491.85
+	Virtual memory used (MiB): 23374.31
+	Swap memory total (MiB): 7808.00
+	Swap memory used (MiB): 26.42
+	Space in storage for jna.tmpdir (MiB): <path not set>
+	Space in storage for org.lwjgl.system.SharedLibraryExtractPath (MiB): <path not set>
+	Space in storage for io.netty.native.workdir (MiB): <path not set>
+	Space in storage for java.io.tmpdir (MiB): available: 155032.03, total: 930163.69
+	Space in storage for workdir (MiB): available: 155032.03, total: 930163.69
+	JVM Flags: 0 total;
+	ModLauncher: 11.0.5+main.901c6ea8
+	ModLauncher launch target: forgeserverdev
+	ModLauncher services:
+		sponge-mixin-0.15.2+mixin.0.8.7.jar mixin PLUGINSERVICE
+		loader-4.0.42.jar slf4jfixer PLUGINSERVICE
+		loader-4.0.42.jar runtime_enum_extender PLUGINSERVICE
+		at-modlauncher-10.0.1.jar accesstransformer PLUGINSERVICE
+		loader-4.0.42.jar runtimedistcleaner PLUGINSERVICE
+		modlauncher-11.0.5.jar mixin TRANSFORMATIONSERVICE
+		modlauncher-11.0.5.jar fml TRANSFORMATIONSERVICE
+	FML Language Providers:
+		javafml@4.0
+		lowcodefml@4.0
+		minecraft@4.0
+	Mod List:
+		appleskin-neoforge-mc1.21-3.0.5.jar               |AppleSkin                     |appleskin                     |3.0.5+mc1.21        |Manifest: NOSIGNATURE
+		create-1.21.1-6.0.6-100-slim.jar                  |Create                        |create                        |6.0.6               |Manifest: NOSIGNATURE
+		main                                              |Create: Food                  |createfood                    |2.0.0               |Manifest: NOSIGNATURE
+		culturaldelights-0.17.7.jar                       |Cultural Delights             |culturaldelights              |0.17.7              |Manifest: NOSIGNATURE
+		displaydelight-1.4.0.jar                          |Display Delight               |displaydelight                |1.4.0               |Manifest: NOSIGNATURE
+		FarmersDelight-1.21.1-1.2.9.jar                   |Farmer's Delight              |farmersdelight                |1.2.9               |Manifest: NOSIGNATURE
+		flywheel-neoforge-1.21.1-1.0.4.jar                |Flywheel                      |flywheel                      |1.0.4               |Manifest: NOSIGNATURE
+		jei-1.21.1-neoforge-19.21.0.247.jar               |Just Enough Items             |jei                           |19.21.0.247         |Manifest: NOSIGNATURE
+		lithium-neoforge-0.15.0+mc1.21.1.jar              |Lithium                       |lithium                       |0.15.0+mc1.21.1     |Manifest: NOSIGNATURE
+		neoforge-21.1.215-minecraft.jar                   |Minecraft                     |minecraft                     |1.21.1              |Manifest: NOSIGNATURE
+		neoforge-21.1.215-minecraft.jar                   |NeoForge                      |neoforge                      |21.1.215            |Manifest: NOSIGNATURE
+		Ponder-NeoForge-1.21.1-1.0.69.jar                 |Ponder                        |ponder                        |1.0.69              |Manifest: NOSIGNATURE
+		tagsviewer-1.21.1-NeoForge-1.0.2.jar              |Tags Viewer                   |tagsviewer                    |1.0.2               |Manifest: NOSIGNATURE
+	Crash Report UUID: 738c7b1b-f9dd-4a54-9b0a-a4f46a3ef3cd
+	FML: 4.0.42
+	NeoForge: 21.1.215

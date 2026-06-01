@@ -1,9 +1,9 @@
 {
     "textures": {
-        "particle": "createfood:block/frosted_cake_side",
+        "particle": "createfood:block/cake_side",
         "bottom": "createfood:block/cake_bottom",
         "top": "createfood:block/cake_top_chorus_fruit",
-        "side": "createfood:block/frosted_cake_side",
+        "side": "createfood:block/cake_side",
         "inside": "createfood:block/cake_inner"
     },
     "elements": [

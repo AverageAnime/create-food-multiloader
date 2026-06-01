@@ -1,0 +1,237 @@
+{
+  "minecraft:recipes/decorations/crafting_table": {
+    "criteria": {
+      "unlock_right_away": "2025-08-01 15:52:58 -0700"
+    },
+    "done": true
+  },
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "minecraft:snowy_plains": "2025-08-01 15:52:59 -0700"
+    },
+    "done": false
+  },
+  "create:root": {
+    "criteria": {
+      "0": "2025-08-01 15:53:25 -0700"
+    },
+    "done": true
+  },
+  "farmersdelight:main/root": {
+    "criteria": {
+      "seeds": "2025-08-01 15:53:25 -0700"
+    },
+    "done": true
+  },
+  "farmersdelight:main/place_feast": {
+    "criteria": {
+      "stuffed_pumpkin": "2025-08-01 15:53:53 -0700"
+    },
+    "done": true
+  },
+  "farmersdelight:main/obtain_netherite_knife": {
+    "criteria": {
+      "obtain_netherite_knife": "2025-08-01 15:54:03 -0700"
+    },
+    "done": true
+  },
+  "farmersdelight:main/craft_knife": {
+    "criteria": {
+      "netherite_knife": "2025-08-01 15:54:03 -0700"
+    },
+    "done": true
+  },
+  "farmersdelight:recipes/food/sweet_berry_cheesecake_from_slices": {
+    "criteria": {
+      "has_sweet_berry_cheesecake_slice": "2025-08-01 15:54:05 -0700"
+    },
+    "done": true
+  },
+  "farmersdelight:recipes/food/apple_pie_from_slices": {
+    "criteria": {
+      "has_apple_pie_slice": "2025-08-01 15:54:08 -0700"
+    },
+    "done": true
+  },
+  "farmersdelight:main/eat_nourishing_food": {
+    "criteria": {
+      "nourishment": "2025-08-01 15:56:02 -0700"
+    },
+    "done": true
+  },
+  "farmersdelight:main/eat_comfort_food": {
+    "criteria": {
+      "comfort": "2025-08-01 15:56:06 -0700"
+    },
+    "done": true
+  },
+  "farmersdelight:main/use_cutting_board": {
+    "criteria": {
+      "cutting_board": "2025-12-19 13:19:52 -0800"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/popped_chorus_fruit": {
+    "criteria": {
+      "has_chorus_fruit": "2025-12-19 13:20:24 -0800"
+    },
+    "done": true
+  },
+  "farmersdelight:recipes/food/egg_sandwich": {
+    "criteria": {
+      "has_fried_egg": "2025-12-19 13:21:02 -0800"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/chest": {
+    "criteria": {
+      "has_lots_of_items": "2025-12-19 13:21:12 -0800"
+    },
+    "done": true
+  },
+  "create:recipes/misc/crafting/appliances/crafting_blueprint": {
+    "criteria": {
+      "has_item": "2025-12-19 13:21:22 -0800"
+    },
+    "done": true
+  },
+  "minecraft:story/root": {
+    "criteria": {
+      "crafting_table": "2025-12-19 13:21:22 -0800"
+    },
+    "done": true
+  },
+  "farmersdelight:recipes/food/nether_salad": {
+    "criteria": {
+      "has_bowl": "2025-12-28 21:28:36 -0800"
+    },
+    "done": true
+  },
+  "farmersdelight:recipes/food/mixed_salad": {
+    "criteria": {
+      "has_bowl": "2025-12-28 21:28:36 -0800"
+    },
+    "done": true
+  },
+  "minecraft:recipes/food/mushroom_stew": {
+    "criteria": {
+      "has_bowl": "2025-12-28 21:28:36 -0800"
+    },
+    "done": true
+  },
+  "ubesdelight:farmersdelight/recipes/cooking/bangsilog": {
+    "criteria": {
+      "has_foods_cooked_egg": "2026-03-16 10:27:20 -0700"
+    },
+    "done": true
+  },
+  "ubesdelight:recipes/food/minecraft/crafting/kinilaw_extra": {
+    "criteria": {
+      "has_any_ingredient": "2026-03-16 10:27:20 -0700"
+    },
+    "done": true
+  },
+  "ubesdelight:main/root": {
+    "criteria": {
+      "has_wheat_seeds": "2026-03-16 10:27:20 -0700"
+    },
+    "done": true
+  },
+  "ubesdelight:farmersdelight/recipes/cooking/bangsilog_extra": {
+    "criteria": {
+      "has_foods_cooked_egg": "2026-03-16 10:27:20 -0700"
+    },
+    "done": true
+  },
+  "ubesdelight:farmersdelight/recipes/cooking/tosilog": {
+    "criteria": {
+      "has_foods_cooked_egg": "2026-03-16 10:27:20 -0700"
+    },
+    "done": true
+  },
+  "ubesdelight:recipes/food/minecraft/crafting/kinilaw": {
+    "criteria": {
+      "has_any_ingredient": "2026-03-16 10:27:20 -0700"
+    },
+    "done": true
+  },
+  "farmersdelight:recipes/food/fried_egg_from_smoking": {
+    "criteria": {
+      "fried_egg": "2026-03-16 10:29:05 -0700"
+    },
+    "done": true
+  },
+  "minecraft:recipes/food/cake": {
+    "criteria": {
+      "has_egg": "2026-03-16 10:29:05 -0700"
+    },
+    "done": true
+  },
+  "farmersdelight:recipes/food/fried_egg_from_campfire_cooking": {
+    "criteria": {
+      "fried_egg": "2026-03-16 10:29:05 -0700"
+    },
+    "done": true
+  },
+  "ubesdelight:farmersdelight/recipes/cooking/lumpia": {
+    "criteria": {
+      "has_cabbage_roll_ingredients": "2026-03-16 10:29:05 -0700"
+    },
+    "done": true
+  },
+  "ubesdelight:farmersdelight/recipes/cooking/leche_flan": {
+    "criteria": {
+      "has_eggs": "2026-03-16 10:29:05 -0700"
+    },
+    "done": true
+  },
+  "farmersdelight:recipes/cooking/baked_cod_stew": {
+    "criteria": {
+      "has_any_ingredient": "2026-03-16 10:29:05 -0700"
+    },
+    "done": true
+  },
+  "farmersdelight:recipes/cooking/fried_rice": {
+    "criteria": {
+      "has_any_ingredient": "2026-03-16 10:29:05 -0700"
+    },
+    "done": true
+  },
+  "ubesdelight:recipes/food/minecraft/crafting/ube_cake": {
+    "criteria": {
+      "has_egg": "2026-03-16 10:29:05 -0700"
+    },
+    "done": true
+  },
+  "ubesdelight:recipes/food/minecraft/crafting/lumpia_wrapper_from_water_bucket": {
+    "criteria": {
+      "has_any_ingredient": "2026-03-16 10:29:05 -0700"
+    },
+    "done": true
+  },
+  "farmersdelight:recipes/food/fried_egg": {
+    "criteria": {
+      "fried_egg": "2026-03-16 10:29:05 -0700"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/snow": {
+    "criteria": {
+      "has_snowball": "2026-03-16 10:45:45 -0700"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/snow_block": {
+    "criteria": {
+      "has_snowball": "2026-03-16 10:45:45 -0700"
+    },
+    "done": true
+  },
+  "minecraft:adventure/root": {
+    "criteria": {
+      "killed_by_something": "2026-03-16 10:45:47 -0700"
+    },
+    "done": true
+  },
+  "DataVersion": 3955
+}

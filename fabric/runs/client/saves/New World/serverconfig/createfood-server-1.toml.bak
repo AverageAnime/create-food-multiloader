@@ -1,0 +1,36 @@
+[interactions]
+	enable_filter_interactions = true
+	filter_interactions = ["createfood:cloth_filter_egg|minecraft:glass_bottle|createfood:cloth_filter_egg_yolk|createfood:egg_whites_bottle", "createfood:cloth_filter_egg_yolk|none|createfood:cloth_filter|createfood:egg_yolk", "createfood:cloth_filter_cacao_mass|minecraft:bucket|createfood:cloth_filter_pressed_cocoa|createfood:cacao_butter_bucket", "createfood:cloth_filter_pressed_cocoa|none|createfood:cloth_filter|createfood:pressed_cocoa"]
+	enable_pumpkin_pie_placement = false
+
+	[interactions.handcraft]
+		enable_handcrafting = true
+		filter = []
+		exclude = []
+
+	[storage.cloth_sack]
+		cloth_sack_inventory = true
+		cloth_sack_eat_from_item = false
+		cloth_sack_allow_food = false
+		cloth_sack_stack = true
+		cloth_sack_filter = []
+		cloth_sack_exclude = ["item:createfood:cloth_sack"]
+
+	[storage.ration_box]
+		ration_box_inventory = true
+		ration_box_eat_from_item = true
+		ration_box_allow_food = true
+		ration_box_stack = false
+		ration_box_filter = []
+		ration_box_exclude = []
+
+[items]
+	nutrition_saturation = []
+
+	[items.effects]
+		category_overrides = []
+		item_overrides = []
+
+	[items.remainders]
+		enable_egg_impact_remainder = true
+		crafting_remainders = ["minecraft:egg|createfood:eggshell"]

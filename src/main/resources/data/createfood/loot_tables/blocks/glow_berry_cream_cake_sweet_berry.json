@@ -1,205 +1,206 @@
 {
-    "type": "minecraft:block",
-    "pools": [
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
         {
-            "name": "glow_berry_cream_cake_sweet_berry",
-            "rolls": 1,
-            "entries": [
-                {
-                    "type": "minecraft:item",
-                    "name": "createfood:glow_berry_cream_cake_sweet_berry"
-                }
-            ],
-            "conditions": [
-                {
-                    "condition": "minecraft:inverted",
-                    "term": {
-                        "condition": "minecraft:match_tool",
-                        "predicate": {
-                            "tag": "forge:tools/knives"
-                        }
-                    }
-                },
-                {
-                    "condition": "minecraft:block_state_property",
-                    "block": "createfood:glow_berry_cream_cake_sweet_berry",
-                    "properties": {
-                        "bites": "0"
-                    }
-                }
-            ]
+          "condition": "minecraft:inverted",
+          "term": {
+            "condition": "minecraft:match_tool",
+            "predicate": {
+              "items": "#c:tools/knife"
+            }
+          }
         },
         {
-            "name": "glow_berry_cream_cake_sweet_berry_knife",
-            "rolls": 7,
-            "entries": [
-                {
-                    "type": "minecraft:item",
-                    "name": "createfood:glow_berry_cream_cake_slice_sweet_berry"
-                }
-            ],
-            "conditions": [
-                {
-                    "condition": "minecraft:match_tool",
-                    "predicate": {
-                        "tag": "forge:tools/knives"
-                    }
-                },
-                {
-                    "condition": "minecraft:block_state_property",
-                    "block": "createfood:glow_berry_cream_cake_sweet_berry",
-                    "properties": {
-                        "bites": "0"
-                    }
-                }
-            ]
-        },
-        {
-            "name": "glow_berry_cream_cake_slice_sweet_berry1",
-            "rolls": 6,
-            "entries": [
-                {
-                    "type": "minecraft:item",
-                    "name": "createfood:glow_berry_cream_cake_slice_sweet_berry"
-                }
-            ],
-            "conditions": [
-                {
-                    "condition": "minecraft:match_tool",
-                    "predicate": {
-                        "tag": "forge:tools/knives"
-                    }
-                },
-                {
-                    "condition": "minecraft:block_state_property",
-                    "block": "createfood:glow_berry_cream_cake_sweet_berry",
-                    "properties": {
-                        "bites": "1"
-                    }
-                }
-            ]
-        },
-        {
-            "name": "glow_berry_cream_cake_slice_sweet_berry2",
-            "rolls": 5,
-            "entries": [
-                {
-                    "type": "minecraft:item",
-                    "name": "createfood:glow_berry_cream_cake_slice_sweet_berry"
-                }
-            ],
-            "conditions": [
-                {
-                    "condition": "minecraft:match_tool",
-                    "predicate": {
-                        "tag": "forge:tools/knives"
-                    }
-                },
-                {
-                    "condition": "minecraft:block_state_property",
-                    "block": "createfood:glow_berry_cream_cake_sweet_berry",
-                    "properties": {
-                        "bites": "2"
-                    }
-                }
-            ]
-        },
-        {
-            "name": "glow_berry_cream_cake_slice_sweet_berry3",
-            "rolls": 4,
-            "entries": [
-                {
-                    "type": "minecraft:item",
-                    "name": "createfood:glow_berry_cream_cake_slice_sweet_berry"
-                }
-            ],
-            "conditions": [
-                {
-                    "condition": "minecraft:match_tool",
-                    "predicate": {
-                        "tag": "forge:tools/knives"
-                    }
-                },
-                {
-                    "condition": "minecraft:block_state_property",
-                    "block": "createfood:glow_berry_cream_cake_sweet_berry",
-                    "properties": {
-                        "bites": "3"
-                    }
-                }
-            ]
-        },
-        {
-            "name": "glow_berry_cream_cake_slice_sweet_berry4",
-            "rolls": 3,
-            "entries": [
-                {
-                    "type": "minecraft:item",
-                    "name": "createfood:glow_berry_cream_cake_slice_sweet_berry"
-                }
-            ],
-            "conditions": [
-                {
-                    "condition": "minecraft:match_tool",
-                    "predicate": {
-                        "tag": "forge:tools/knives"
-                    }
-                },
-                {
-                    "condition": "minecraft:block_state_property",
-                    "block": "createfood:glow_berry_cream_cake_sweet_berry",
-                    "properties": {
-                        "bites": "4"
-                    }
-                }
-            ]
-        },
-        {
-            "name": "glow_berry_cream_cake_slice_sweet_berry5",
-            "rolls": 2,
-            "entries": [
-                {
-                    "type": "minecraft:item",
-                    "name": "createfood:glow_berry_cream_cake_slice_sweet_berry"
-                }
-            ],
-            "conditions": [
-                {
-                    "condition": "minecraft:match_tool",
-                    "predicate": {
-                        "tag": "forge:tools/knives"
-                    }
-                },
-                {
-                    "condition": "minecraft:block_state_property",
-                    "block": "createfood:glow_berry_cream_cake_sweet_berry",
-                    "properties": {
-                        "bites": "5"
-                    }
-                }
-            ]
-        },
-        {
-            "name": "glow_berry_cream_cake_slice_sweet_berry6",
-            "rolls": 1,
-            "entries": [
-                {
-                    "type": "minecraft:item",
-                    "name": "createfood:glow_berry_cream_cake_slice_sweet_berry"
-                }
-            ],
-            "conditions": [
-                {
-                    "condition": "minecraft:survives_explosion"
-                },
-                {
-                    "condition": "minecraft:block_state_property",
-                    "block": "createfood:glow_berry_cream_cake_sweet_berry",
-                    "properties": {
-                        "bites": "6"
-                    }
-                }
-            ]
+          "block": "createfood:glow_berry_cream_cake_sweet_berry",
+          "condition": "minecraft:block_state_property",
+          "properties": {
+            "bites": "0"
+          }
         }
-    ]
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "createfood:glow_berry_cream_cake_sweet_berry"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:match_tool",
+          "predicate": {
+            "items": "#c:tools/knife"
+          }
+        },
+        {
+          "block": "createfood:glow_berry_cream_cake_sweet_berry",
+          "condition": "minecraft:block_state_property",
+          "properties": {
+            "bites": "0"
+          }
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "createfood:glow_berry_cream_cake_slice_sweet_berry"
+        }
+      ],
+      "rolls": 7.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:match_tool",
+          "predicate": {
+            "items": "#c:tools/knife"
+          }
+        },
+        {
+          "block": "createfood:glow_berry_cream_cake_sweet_berry",
+          "condition": "minecraft:block_state_property",
+          "properties": {
+            "bites": "1"
+          }
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "createfood:glow_berry_cream_cake_slice_sweet_berry"
+        }
+      ],
+      "rolls": 6.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:match_tool",
+          "predicate": {
+            "items": "#c:tools/knife"
+          }
+        },
+        {
+          "block": "createfood:glow_berry_cream_cake_sweet_berry",
+          "condition": "minecraft:block_state_property",
+          "properties": {
+            "bites": "2"
+          }
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "createfood:glow_berry_cream_cake_slice_sweet_berry"
+        }
+      ],
+      "rolls": 5.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:match_tool",
+          "predicate": {
+            "items": "#c:tools/knife"
+          }
+        },
+        {
+          "block": "createfood:glow_berry_cream_cake_sweet_berry",
+          "condition": "minecraft:block_state_property",
+          "properties": {
+            "bites": "3"
+          }
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "createfood:glow_berry_cream_cake_slice_sweet_berry"
+        }
+      ],
+      "rolls": 4.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:match_tool",
+          "predicate": {
+            "items": "#c:tools/knife"
+          }
+        },
+        {
+          "block": "createfood:glow_berry_cream_cake_sweet_berry",
+          "condition": "minecraft:block_state_property",
+          "properties": {
+            "bites": "4"
+          }
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "createfood:glow_berry_cream_cake_slice_sweet_berry"
+        }
+      ],
+      "rolls": 3.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:match_tool",
+          "predicate": {
+            "items": "#c:tools/knife"
+          }
+        },
+        {
+          "block": "createfood:glow_berry_cream_cake_sweet_berry",
+          "condition": "minecraft:block_state_property",
+          "properties": {
+            "bites": "5"
+          }
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "createfood:glow_berry_cream_cake_slice_sweet_berry"
+        }
+      ],
+      "rolls": 2.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        },
+        {
+          "block": "createfood:glow_berry_cream_cake_sweet_berry",
+          "condition": "minecraft:block_state_property",
+          "properties": {
+            "bites": "6"
+          }
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "createfood:glow_berry_cream_cake_slice_sweet_berry"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "createfood:blocks/glow_berry_cream_cake_sweet_berry"
 }

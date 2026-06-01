@@ -1,0 +1,972 @@
+[16Mar2026 11:48:22.617] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forgeserverdev, --gameDir, ., --fml.fmlVersion, 4.0.42, --fml.mcVersion, 1.21.1, --fml.neoForgeVersion, 21.1.215, --fml.neoFormVersion, 20240808.144430]
+[16Mar2026 11:48:22.621] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: JVM identified as Oracle Corporation Java HotSpot(TM) 64-Bit Server VM 21.0.3+7-LTS-152
+[16Mar2026 11:48:22.622] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 11.0.5+main.901c6ea8 starting: java version 21.0.3 by Oracle Corporation; OS Windows 11 arch amd64 version 10.0
+[16Mar2026 11:48:22.742] [main/INFO] [net.neoforged.fml.loading.ImmediateWindowHandler/]: ImmediateWindowProvider not loading because launch target is forgeserverdev
+[16Mar2026 11:48:22.775] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.7 Source=union:/C:/Users/nkarm/.gradle/caches/modules-2/files-2.1/net.fabricmc/sponge-mixin/0.15.2+mixin.0.8.7/2af2f021d8e02a0220dc27a7a72b4666d66d44ca/sponge-mixin-0.15.2+mixin.0.8.7.jar%2394!/ Service=ModLauncher Env=SERVER
+[16Mar2026 11:48:23.186] [main/INFO] [net.neoforged.fml.loading.moddiscovery.locators.JarInJarDependencyLocator/]: Found 7 dependencies adding them to mods collection
+[16Mar2026 11:48:23.187] [main/INFO] [net.neoforged.fml.loading.moddiscovery.ModDiscoverer/]: 
+     Mod List:
+		Name Version (Mod Id)
+
+		AppleSkin 3.0.5+mc1.21 (appleskin)
+		conditional mixin 0.6.4 (conditional_mixin)
+		Create 6.0.8 (create)
+		Create: Central Kitchen 2.2.6 (create_central_kitchen)
+		Create: Dragons Plus 1.8.5 (create_dragons_plus)
+		Create: Food 2.2.0a (createfood)
+		Cultural Delights 0.17.7 (culturaldelights)
+		Delightful Creators 1.2 (delightfulcreators)
+		Display Delight 1.4.0 (displaydelight)
+		Farmer's Delight 1.2.9 (farmersdelight)
+		Flywheel 1.0.5 (flywheel)
+		Jade 15.10.3+neoforge (jade)
+		Jade Addons 6.1.0+neoforge (jadeaddons)
+		Just Enough Items 19.21.0.247 (jei)
+		Lithium 0.15.0+mc1.21.1 (lithium)
+		MidnightLib 1.6.9 (midnightlib)
+		Minecraft 1.21.1 (minecraft)
+		NeoForge 21.1.215 (neoforge)
+		Ponder 1.0.64 (ponder)
+		Tags Viewer 1.0.2 (tagsviewer)
+		Ube's Delight 0.4.7 (ubesdelight)
+[16Mar2026 11:48:24.046] [main/INFO] [mixin/]: Compatibility level set to JAVA_21
+[16Mar2026 11:48:24.068] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forgeserverdev' with arguments [--gameDir, .]
+[16Mar2026 11:48:24.145] [main/WARN] [mixin/]: Reference map 'display.refmap.json' for displaydelight.mixins.json could not be read. If this is a development environment you can ignore this message
+[16Mar2026 11:48:24.167] [main/INFO] [LithiumConfig/]: Option 'mixin.experimental.entity.block_caching.suffocation' requires 'mixin.util.block_tracking=true' but found 'false'. Setting 'mixin.experimental.entity.block_caching.suffocation=false'.
+[16Mar2026 11:48:24.167] [main/INFO] [LithiumConfig/]: Option 'mixin.experimental.entity.block_caching.block_support' requires 'mixin.util.block_tracking=true' but found 'false'. Setting 'mixin.experimental.entity.block_caching.block_support=false'.
+[16Mar2026 11:48:24.168] [main/INFO] [LithiumConfig/]: Option 'mixin.experimental.entity.block_caching.block_touching' requires 'mixin.util.block_tracking=true' but found 'false'. Setting 'mixin.experimental.entity.block_caching.block_touching=false'.
+[16Mar2026 11:48:24.168] [main/INFO] [LithiumConfig/]: Option 'mixin.experimental.entity.block_caching' requires 'mixin.util.block_tracking=true' but found 'false'. Setting 'mixin.experimental.entity.block_caching=false'.
+[16Mar2026 11:48:24.168] [main/INFO] [Lithium/]: Loaded configuration file for Lithium: 146 options available, 0 override(s) found
+[16Mar2026 11:48:24.170] [main/WARN] [mixin/]: Reference map 'jadeaddons.refmap.json' for jadeaddons.mixins.json could not be read. If this is a development environment you can ignore this message
+[16Mar2026 11:48:24.187] [main/WARN] [mixin/]: Reference map 'createfood.refmap.json' for createfood.mixins.json could not be read. If this is a development environment you can ignore this message
+[16Mar2026 11:48:24.743] [main/WARN] [mixin/]: Error loading class: org/jetbrains/annotations/ApiStatus$ScheduledForRemoval (java.lang.ClassNotFoundException: org.jetbrains.annotations.ApiStatus$ScheduledForRemoval)
+[16Mar2026 11:48:24.858] [main/INFO] [MixinExtras|Service/]: Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.5.0).
+[16Mar2026 11:48:30.222] [main/WARN] [net.minecraft.commands.Commands/]: Ambiguity between arguments [teleport, location] and [teleport, destination] with inputs: [0.1 -0.5 .9, 0 0 0]
+[16Mar2026 11:48:30.223] [main/WARN] [net.minecraft.commands.Commands/]: Ambiguity between arguments [teleport, location] and [teleport, targets] with inputs: [0.1 -0.5 .9, 0 0 0]
+[16Mar2026 11:48:30.225] [main/WARN] [net.minecraft.commands.Commands/]: Ambiguity between arguments [teleport, destination] and [teleport, targets] with inputs: [Player, 0123, @e, dd12be42-52a9-4a91-a8a1-11c01849e498]
+[16Mar2026 11:48:30.226] [main/WARN] [net.minecraft.commands.Commands/]: Ambiguity between arguments [teleport, targets] and [teleport, destination] with inputs: [Player, 0123, dd12be42-52a9-4a91-a8a1-11c01849e498]
+[16Mar2026 11:48:30.227] [main/WARN] [net.minecraft.commands.Commands/]: Ambiguity between arguments [teleport, targets, location] and [teleport, targets, destination] with inputs: [0.1 -0.5 .9, 0 0 0]
+[16Mar2026 11:48:30.271] [modloading-worker-0/INFO] [com.leclowndu93150.tagsviewer.TagViewer/]: Hello from TagViewer!
+[16Mar2026 11:48:30.301] [modloading-worker-0/INFO] [net.neoforged.neoforge.common.NeoForgeMod/NEOFORGE-MOD]: NeoForge mod loading, version 21.1.215, for MC 1.21.1
+[16Mar2026 11:48:30.304] [modloading-worker-0/INFO] [com.simibubi.create.Create/]: Create 6.0.8 initializing! Commit hash: 5f1b407a97467157e7a0da0c560c7d1d5f378929
+[16Mar2026 11:48:30.691] [modloading-worker-0/INFO] [dev.averageanime.neoforge.CreateFood/]: Create: Food - Registering Items
+[16Mar2026 11:48:30.701] [modloading-worker-0/INFO] [dev.averageanime.neoforge.CreateFood/]: Create: Food - Registering Blocks
+[16Mar2026 11:48:30.712] [modloading-worker-0/INFO] [dev.averageanime.neoforge.CreateFood/]: Create: Food - Registering Display Blocks
+[16Mar2026 11:48:31.101] [modloading-worker-0/INFO] [dev.averageanime.neoforge.CreateFood/]: Create: Food - Registering Fluids
+[16Mar2026 11:48:31.103] [modloading-worker-0/INFO] [dev.averageanime.neoforge.CreateFood/]: Create: Food - Registering Creative Tabs
+[16Mar2026 11:48:31.104] [modloading-worker-0/INFO] [dev.averageanime.neoforge.CreateFood/]: Create: Food - Registering Creative Tabs (Display Block)
+[16Mar2026 11:48:33.601] [modloading-worker-0/INFO] [com.jkvin114.displaydelight.DisplayDelight/]: HELLO FROM COMMON SETUP
+[16Mar2026 11:48:33.601] [modloading-worker-0/INFO] [dev.averageanime.neoforge.CreateFood/]: Create: Food - Startup
+[16Mar2026 11:48:33.861] [modloading-worker-0/INFO] [snownee.jade.Jade/]: Start loading plugin from snownee.jade.addon.vanilla.VanillaPlugin
+[16Mar2026 11:48:33.876] [modloading-worker-0/INFO] [snownee.jade.Jade/]: Loaded plugin from snownee.jade.addon.vanilla.VanillaPlugin in 11.31 ms
+[16Mar2026 11:48:33.876] [modloading-worker-0/INFO] [snownee.jade.Jade/]: Start loading plugin from snownee.jade.addon.universal.UniversalPlugin
+[16Mar2026 11:48:33.879] [modloading-worker-0/INFO] [snownee.jade.Jade/]: Loaded plugin from snownee.jade.addon.universal.UniversalPlugin in 2.658 ms
+[16Mar2026 11:48:33.880] [modloading-worker-0/INFO] [snownee.jade.Jade/]: Start loading plugin from snownee.jade.addon.debug.DebugPlugin
+[16Mar2026 11:48:33.880] [modloading-worker-0/INFO] [snownee.jade.Jade/]: Loaded plugin from snownee.jade.addon.debug.DebugPlugin in 4.000 μs
+[16Mar2026 11:48:33.881] [modloading-worker-0/INFO] [snownee.jade.Jade/]: Start loading plugin from snownee.jade.addon.core.CorePlugin
+[16Mar2026 11:48:33.881] [modloading-worker-0/INFO] [snownee.jade.Jade/]: Loaded plugin from snownee.jade.addon.core.CorePlugin in 25.60 μs
+[16Mar2026 11:48:33.882] [modloading-worker-0/INFO] [snownee.jade.Jade/]: Start loading plugin from snownee.jade.addon.access.AccessibilityPlugin
+[16Mar2026 11:48:33.882] [modloading-worker-0/INFO] [snownee.jade.Jade/]: Loaded plugin from snownee.jade.addon.access.AccessibilityPlugin in 3.400 μs
+[16Mar2026 11:48:33.882] [modloading-worker-0/INFO] [snownee.jade.Jade/]: Start loading plugin from snownee.jade.addon.JadeAddonsBase
+[16Mar2026 11:48:33.886] [modloading-worker-0/INFO] [snownee.jade.Jade/]: Loaded plugin from snownee.jade.addon.JadeAddonsBase in 1.760 ms
+[16Mar2026 11:48:33.943] [main/INFO] [com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService/]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
+[16Mar2026 11:48:33.988] [main/WARN] [net.neoforged.neoforge.common.CommonHooks/WP]: The following mods have version differences that were not resolved:
+createfood (version 2.2.0 -> 2.2.0a)
+neoforge (version 21.1.219 -> 21.1.215)
+Things may not work well.
+[16Mar2026 11:48:33.995] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/nkarm/Documents/modding/create-food-multiloader-1.21.1/neoforge/build/moddev/artifacts/neoforge-21.1.215-minecraft.jar%23139!/assets/.mcassetsroot' uses unexpected schema
+[16Mar2026 11:48:33.995] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/nkarm/Documents/modding/create-food-multiloader-1.21.1/neoforge/build/moddev/artifacts/neoforge-21.1.215-minecraft.jar%23139!/data/.mcassetsroot' uses unexpected schema
+[16Mar2026 11:48:34.100] [main/INFO] [com.simibubi.create.Create/]: Created 157 recipes which will be injected into the game
+[16Mar2026 11:48:34.105] [main/INFO] [com.simibubi.create.Create/]: Created 0 tags which will be injected into the game
+[16Mar2026 11:48:34.111] [main/INFO] [plus.dragons.createdragonsplus.data.runtime.RuntimePackResources/]: Starting provider [plus.dragons.createdragonsplus.data.internal.CDPRuntimeRecipeProvider@47f3b828] for runtime resource [create_dragons_plus:runtime]
+[16Mar2026 11:48:34.126] [main/INFO] [plus.dragons.createdragonsplus.data.runtime.RuntimePackResources/]: plus.dragons.createdragonsplus.data.internal.CDPRuntimeRecipeProvider@47f3b828 finished after 14 ms
+[16Mar2026 11:48:34.136] [main/INFO] [plus.dragons.createdragonsplus.data.runtime.RuntimePackResources/]: Starting provider [plus.dragons.createcentralkitchen.data.CCKBlockTags@131e04f8] for runtime resource [create_central_kitchen:runtime]
+[16Mar2026 11:48:34.142] [main/INFO] [plus.dragons.createdragonsplus.data.runtime.RuntimePackResources/]: plus.dragons.createcentralkitchen.data.CCKBlockTags@131e04f8 finished after 5 ms
+[16Mar2026 11:48:34.143] [main/INFO] [plus.dragons.createdragonsplus.data.runtime.RuntimePackResources/]: Starting provider [plus.dragons.createcentralkitchen.data.CCKItemTags@753157c3] for runtime resource [create_central_kitchen:runtime]
+[16Mar2026 11:48:34.143] [main/INFO] [plus.dragons.createdragonsplus.data.runtime.RuntimePackResources/]: plus.dragons.createcentralkitchen.data.CCKItemTags@753157c3 finished after 0 ms
+[16Mar2026 11:48:34.839] [Worker-Main-6/ERROR] [net.minecraft.world.level.storage.loot.LootDataType/]: Couldn't parse element ResourceKey[minecraft:root / minecraft:loot_table]:culturaldelights:blocks/exotic_roll_medley_block - Failed to parse either. First: Failed to parse either. First: Unknown registry key in ResourceKey[minecraft:root / minecraft:block]: culturaldelights:exotic_roll_medley_block; Second: Not a json array: {"condition":"minecraft:block_state_property","block":"culturaldelights:exotic_roll_medley_block","properties":{"servings":"8"}}; Second: Not a json array: {"condition":"minecraft:inverted","term":{"condition":"minecraft:block_state_property","block":"culturaldelights:exotic_roll_medley_block","properties":{"servings":"8"}}}; Failed to parse either. First: Unknown registry key in ResourceKey[minecraft:root / minecraft:block]: culturaldelights:exotic_roll_medley_block; Second: Not a json array: {"condition":"minecraft:block_state_property","block":"culturaldelights:exotic_roll_medley_block","properties":{"servings":"8"}}; Unknown registry key in ResourceKey[minecraft:root / minecraft:item]: culturaldelights:exotic_roll_medley_block
+[16Mar2026 11:48:34.859] [Worker-Main-6/ERROR] [net.minecraft.world.level.storage.loot.LootDataType/]: Couldn't parse element ResourceKey[minecraft:root / minecraft:loot_table]:culturaldelights:blocks/avocado_leaves - Failed to parse either. First: Failed to parse either. First: Unknown registry key in ResourceKey[minecraft:root / minecraft:loot_condition_type]: minecraft:alternative; Second: Not a json array: {"condition":"minecraft:alternative","terms":[{"condition":"minecraft:match_tool","predicate":{"items":["minecraft:shears"]}},{"condition":"minecraft:match_tool","predicate":{"enchantments":[{"enchantment":"minecraft:silk_touch","levels":{"min":1}}]}}]}; Second: Not a json array: {"condition":"minecraft:inverted","term":{"condition":"minecraft:alternative","terms":[{"condition":"minecraft:match_tool","predicate":{"items":["minecraft:shears"]}},{"condition":"minecraft:match_tool","predicate":{"enchantments":[{"enchantment":"minecraft:silk_touch","levels":{"min":1}}]}}]}}; Failed to parse either. First: Failed to parse either. First: Unknown registry key in ResourceKey[minecraft:root / minecraft:loot_condition_type]: minecraft:alternative; Second: Not a json array: {"condition":"minecraft:alternative","terms":[{"condition":"minecraft:match_tool","predicate":{"items":["minecraft:shears"]}},{"condition":"minecraft:match_tool","predicate":{"enchantments":[{"enchantment":"minecraft:silk_touch","levels":{"min":1}}]}}]}; Second: Not a json array: {"condition":"minecraft:inverted","term":{"condition":"minecraft:alternative","terms":[{"condition":"minecraft:match_tool","predicate":{"items":["minecraft:shears"]}},{"condition":"minecraft:match_tool","predicate":{"enchantments":[{"enchantment":"minecraft:silk_touch","levels":{"min":1}}]}}]}}; Failed to parse either. First: Unknown registry key in ResourceKey[minecraft:root / minecraft:loot_condition_type]: minecraft:alternative; Second: Not a json array: {"condition":"minecraft:alternative","terms":[{"condition":"minecraft:match_tool","predicate":{"items":["minecraft:shears"]}},{"condition":"minecraft:match_tool","predicate":{"enchantments":[{"enchantment":"minecraft:silk_touch","levels":{"min":1}}]}}]}
+[16Mar2026 11:48:34.905] [Worker-Main-6/ERROR] [net.minecraft.world.level.storage.loot.LootDataType/]: Couldn't parse element ResourceKey[minecraft:root / minecraft:loot_table]:culturaldelights:blocks/avocado_leaf_carpet - Unknown registry key in ResourceKey[minecraft:root / minecraft:item]: culturaldelights:avocado_leaf_carpet
+[16Mar2026 11:48:34.916] [Worker-Main-6/ERROR] [net.minecraft.world.level.storage.loot.LootDataType/]: Couldn't parse element ResourceKey[minecraft:root / minecraft:loot_table]:culturaldelights:blocks/avocado_bundle - Unknown registry key in ResourceKey[minecraft:root / minecraft:item]: culturaldelights:avocado_bundle
+[16Mar2026 11:48:34.935] [Worker-Main-6/ERROR] [net.minecraft.world.level.storage.loot.LootDataType/]: Couldn't parse element ResourceKey[minecraft:root / minecraft:loot_table]:culturaldelights:blocks/fruiting_avocado_leaves - Failed to parse either. First: Failed to parse either. First: Unknown registry key in ResourceKey[minecraft:root / minecraft:loot_condition_type]: minecraft:alternative; Second: Not a json array: {"condition":"minecraft:alternative","terms":[{"condition":"minecraft:match_tool","predicate":{"items":["minecraft:shears"]}},{"condition":"minecraft:match_tool","predicate":{"enchantments":[{"enchantment":"minecraft:silk_touch","levels":{"min":1}}]}}]}; Second: Not a json array: {"condition":"minecraft:inverted","term":{"condition":"minecraft:alternative","terms":[{"condition":"minecraft:match_tool","predicate":{"items":["minecraft:shears"]}},{"condition":"minecraft:match_tool","predicate":{"enchantments":[{"enchantment":"minecraft:silk_touch","levels":{"min":1}}]}}]}}; Failed to parse either. First: Failed to parse either. First: Unknown registry key in ResourceKey[minecraft:root / minecraft:loot_condition_type]: minecraft:alternative; Second: Not a json array: {"condition":"minecraft:alternative","terms":[{"condition":"minecraft:match_tool","predicate":{"items":["minecraft:shears"]}},{"condition":"minecraft:match_tool","predicate":{"enchantments":[{"enchantment":"minecraft:silk_touch","levels":{"min":1}}]}}]}; Second: Not a json array: {"condition":"minecraft:inverted","term":{"condition":"minecraft:alternative","terms":[{"condition":"minecraft:match_tool","predicate":{"items":["minecraft:shears"]}},{"condition":"minecraft:match_tool","predicate":{"enchantments":[{"enchantment":"minecraft:silk_touch","levels":{"min":1}}]}}]}}; Failed to parse either. First: Unknown registry key in ResourceKey[minecraft:root / minecraft:loot_condition_type]: minecraft:alternative; Second: Not a json array: {"condition":"minecraft:alternative","terms":[{"condition":"minecraft:match_tool","predicate":{"items":["minecraft:shears"]}},{"condition":"minecraft:match_tool","predicate":{"enchantments":[{"enchantment":"minecraft:silk_touch","levels":{"min":1}}]}}]}
+[16Mar2026 11:48:35.337] [Worker-Main-4/ERROR] [net.minecraft.server.packs.resources.SimpleJsonResourceReloadListener/]: Couldn't parse data file minecraft:beetroot_soup from minecraft:recipe/beetroot_soup.json
+com.google.gson.JsonParseException: java.io.EOFException: End of input at line 1 column 1 path $
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.util.GsonHelper.fromNullableJson(GsonHelper.java:509) ~[neoforge-21.1.215-minecraft.jar%23139!/:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.util.GsonHelper.fromJson(GsonHelper.java:514) ~[neoforge-21.1.215-minecraft.jar%23139!/:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.util.GsonHelper.fromJson(GsonHelper.java:566) ~[neoforge-21.1.215-minecraft.jar%23139!/:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.server.packs.resources.SimpleJsonResourceReloadListener.scanDirectory(SimpleJsonResourceReloadListener.java:45) ~[neoforge-21.1.215-minecraft.jar%23139!/:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.server.packs.resources.SimpleJsonResourceReloadListener.prepare(SimpleJsonResourceReloadListener.java:33) ~[neoforge-21.1.215-minecraft.jar%23139!/:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.server.packs.resources.SimpleJsonResourceReloadListener.prepare(SimpleJsonResourceReloadListener.java:18) ~[neoforge-21.1.215-minecraft.jar%23139!/:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.server.packs.resources.SimplePreparableReloadListener.lambda$reload$0(SimplePreparableReloadListener.java:17) ~[neoforge-21.1.215-minecraft.jar%23139!/:?]
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1768) [?:?]
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1760) [?:?]
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:387) [?:?]
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1312) [?:?]
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1843) [?:?]
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1808) [?:?]
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:188) [?:?]
+Caused by: java.io.EOFException: End of input at line 1 column 1 path $
+	at MC-BOOTSTRAP/com.google.gson@2.10.1/com.google.gson.stream.JsonReader.nextNonWhitespace(JsonReader.java:1457) ~[gson-2.10.1.jar%2370!/:?]
+	at MC-BOOTSTRAP/com.google.gson@2.10.1/com.google.gson.stream.JsonReader.doPeek(JsonReader.java:558) ~[gson-2.10.1.jar%2370!/:?]
+	at MC-BOOTSTRAP/com.google.gson@2.10.1/com.google.gson.stream.JsonReader.peek(JsonReader.java:433) ~[gson-2.10.1.jar%2370!/:?]
+	at MC-BOOTSTRAP/com.google.gson@2.10.1/com.google.gson.internal.bind.TypeAdapters$28.read(TypeAdapters.java:769) ~[gson-2.10.1.jar%2370!/:?]
+	at MC-BOOTSTRAP/com.google.gson@2.10.1/com.google.gson.internal.bind.TypeAdapters$28.read(TypeAdapters.java:725) ~[gson-2.10.1.jar%2370!/:?]
+	at MC-BOOTSTRAP/com.google.gson@2.10.1/com.google.gson.internal.bind.TypeAdapters$34$1.read(TypeAdapters.java:1007) ~[gson-2.10.1.jar%2370!/:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.util.GsonHelper.fromNullableJson(GsonHelper.java:507) ~[neoforge-21.1.215-minecraft.jar%23139!/:?]
+	... 13 more
+[16Mar2026 11:48:36.127] [Worker-Main-4/ERROR] [net.minecraft.server.packs.resources.SimpleJsonResourceReloadListener/]: Couldn't parse data file minecraft:mushroom_stew from minecraft:recipe/mushroom_stew.json
+com.google.gson.JsonParseException: java.io.EOFException: End of input at line 1 column 1 path $
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.util.GsonHelper.fromNullableJson(GsonHelper.java:509) ~[neoforge-21.1.215-minecraft.jar%23139!/:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.util.GsonHelper.fromJson(GsonHelper.java:514) ~[neoforge-21.1.215-minecraft.jar%23139!/:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.util.GsonHelper.fromJson(GsonHelper.java:566) ~[neoforge-21.1.215-minecraft.jar%23139!/:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.server.packs.resources.SimpleJsonResourceReloadListener.scanDirectory(SimpleJsonResourceReloadListener.java:45) ~[neoforge-21.1.215-minecraft.jar%23139!/:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.server.packs.resources.SimpleJsonResourceReloadListener.prepare(SimpleJsonResourceReloadListener.java:33) ~[neoforge-21.1.215-minecraft.jar%23139!/:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.server.packs.resources.SimpleJsonResourceReloadListener.prepare(SimpleJsonResourceReloadListener.java:18) ~[neoforge-21.1.215-minecraft.jar%23139!/:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.server.packs.resources.SimplePreparableReloadListener.lambda$reload$0(SimplePreparableReloadListener.java:17) ~[neoforge-21.1.215-minecraft.jar%23139!/:?]
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1768) [?:?]
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1760) [?:?]
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:387) [?:?]
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1312) [?:?]
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1843) [?:?]
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1808) [?:?]
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:188) [?:?]
+Caused by: java.io.EOFException: End of input at line 1 column 1 path $
+	at MC-BOOTSTRAP/com.google.gson@2.10.1/com.google.gson.stream.JsonReader.nextNonWhitespace(JsonReader.java:1457) ~[gson-2.10.1.jar%2370!/:?]
+	at MC-BOOTSTRAP/com.google.gson@2.10.1/com.google.gson.stream.JsonReader.doPeek(JsonReader.java:558) ~[gson-2.10.1.jar%2370!/:?]
+	at MC-BOOTSTRAP/com.google.gson@2.10.1/com.google.gson.stream.JsonReader.peek(JsonReader.java:433) ~[gson-2.10.1.jar%2370!/:?]
+	at MC-BOOTSTRAP/com.google.gson@2.10.1/com.google.gson.internal.bind.TypeAdapters$28.read(TypeAdapters.java:769) ~[gson-2.10.1.jar%2370!/:?]
+	at MC-BOOTSTRAP/com.google.gson@2.10.1/com.google.gson.internal.bind.TypeAdapters$28.read(TypeAdapters.java:725) ~[gson-2.10.1.jar%2370!/:?]
+	at MC-BOOTSTRAP/com.google.gson@2.10.1/com.google.gson.internal.bind.TypeAdapters$34$1.read(TypeAdapters.java:1007) ~[gson-2.10.1.jar%2370!/:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.util.GsonHelper.fromNullableJson(GsonHelper.java:507) ~[neoforge-21.1.215-minecraft.jar%23139!/:?]
+	... 13 more
+[16Mar2026 11:48:36.135] [Worker-Main-4/ERROR] [net.minecraft.server.packs.resources.SimpleJsonResourceReloadListener/]: Couldn't parse data file minecraft:rabbit_stew_from_brown_mushroom from minecraft:recipe/rabbit_stew_from_brown_mushroom.json
+com.google.gson.JsonParseException: java.io.EOFException: End of input at line 1 column 1 path $
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.util.GsonHelper.fromNullableJson(GsonHelper.java:509) ~[neoforge-21.1.215-minecraft.jar%23139!/:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.util.GsonHelper.fromJson(GsonHelper.java:514) ~[neoforge-21.1.215-minecraft.jar%23139!/:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.util.GsonHelper.fromJson(GsonHelper.java:566) ~[neoforge-21.1.215-minecraft.jar%23139!/:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.server.packs.resources.SimpleJsonResourceReloadListener.scanDirectory(SimpleJsonResourceReloadListener.java:45) ~[neoforge-21.1.215-minecraft.jar%23139!/:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.server.packs.resources.SimpleJsonResourceReloadListener.prepare(SimpleJsonResourceReloadListener.java:33) ~[neoforge-21.1.215-minecraft.jar%23139!/:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.server.packs.resources.SimpleJsonResourceReloadListener.prepare(SimpleJsonResourceReloadListener.java:18) ~[neoforge-21.1.215-minecraft.jar%23139!/:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.server.packs.resources.SimplePreparableReloadListener.lambda$reload$0(SimplePreparableReloadListener.java:17) ~[neoforge-21.1.215-minecraft.jar%23139!/:?]
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1768) [?:?]
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1760) [?:?]
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:387) [?:?]
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1312) [?:?]
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1843) [?:?]
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1808) [?:?]
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:188) [?:?]
+Caused by: java.io.EOFException: End of input at line 1 column 1 path $
+	at MC-BOOTSTRAP/com.google.gson@2.10.1/com.google.gson.stream.JsonReader.nextNonWhitespace(JsonReader.java:1457) ~[gson-2.10.1.jar%2370!/:?]
+	at MC-BOOTSTRAP/com.google.gson@2.10.1/com.google.gson.stream.JsonReader.doPeek(JsonReader.java:558) ~[gson-2.10.1.jar%2370!/:?]
+	at MC-BOOTSTRAP/com.google.gson@2.10.1/com.google.gson.stream.JsonReader.peek(JsonReader.java:433) ~[gson-2.10.1.jar%2370!/:?]
+	at MC-BOOTSTRAP/com.google.gson@2.10.1/com.google.gson.internal.bind.TypeAdapters$28.read(TypeAdapters.java:769) ~[gson-2.10.1.jar%2370!/:?]
+	at MC-BOOTSTRAP/com.google.gson@2.10.1/com.google.gson.internal.bind.TypeAdapters$28.read(TypeAdapters.java:725) ~[gson-2.10.1.jar%2370!/:?]
+	at MC-BOOTSTRAP/com.google.gson@2.10.1/com.google.gson.internal.bind.TypeAdapters$34$1.read(TypeAdapters.java:1007) ~[gson-2.10.1.jar%2370!/:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.util.GsonHelper.fromNullableJson(GsonHelper.java:507) ~[neoforge-21.1.215-minecraft.jar%23139!/:?]
+	... 13 more
+[16Mar2026 11:48:36.136] [Worker-Main-4/ERROR] [net.minecraft.server.packs.resources.SimpleJsonResourceReloadListener/]: Couldn't parse data file minecraft:rabbit_stew_from_red_mushroom from minecraft:recipe/rabbit_stew_from_red_mushroom.json
+com.google.gson.JsonParseException: java.io.EOFException: End of input at line 1 column 1 path $
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.util.GsonHelper.fromNullableJson(GsonHelper.java:509) ~[neoforge-21.1.215-minecraft.jar%23139!/:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.util.GsonHelper.fromJson(GsonHelper.java:514) ~[neoforge-21.1.215-minecraft.jar%23139!/:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.util.GsonHelper.fromJson(GsonHelper.java:566) ~[neoforge-21.1.215-minecraft.jar%23139!/:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.server.packs.resources.SimpleJsonResourceReloadListener.scanDirectory(SimpleJsonResourceReloadListener.java:45) ~[neoforge-21.1.215-minecraft.jar%23139!/:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.server.packs.resources.SimpleJsonResourceReloadListener.prepare(SimpleJsonResourceReloadListener.java:33) ~[neoforge-21.1.215-minecraft.jar%23139!/:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.server.packs.resources.SimpleJsonResourceReloadListener.prepare(SimpleJsonResourceReloadListener.java:18) ~[neoforge-21.1.215-minecraft.jar%23139!/:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.server.packs.resources.SimplePreparableReloadListener.lambda$reload$0(SimplePreparableReloadListener.java:17) ~[neoforge-21.1.215-minecraft.jar%23139!/:?]
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1768) [?:?]
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1760) [?:?]
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:387) [?:?]
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1312) [?:?]
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1843) [?:?]
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1808) [?:?]
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:188) [?:?]
+Caused by: java.io.EOFException: End of input at line 1 column 1 path $
+	at MC-BOOTSTRAP/com.google.gson@2.10.1/com.google.gson.stream.JsonReader.nextNonWhitespace(JsonReader.java:1457) ~[gson-2.10.1.jar%2370!/:?]
+	at MC-BOOTSTRAP/com.google.gson@2.10.1/com.google.gson.stream.JsonReader.doPeek(JsonReader.java:558) ~[gson-2.10.1.jar%2370!/:?]
+	at MC-BOOTSTRAP/com.google.gson@2.10.1/com.google.gson.stream.JsonReader.peek(JsonReader.java:433) ~[gson-2.10.1.jar%2370!/:?]
+	at MC-BOOTSTRAP/com.google.gson@2.10.1/com.google.gson.internal.bind.TypeAdapters$28.read(TypeAdapters.java:769) ~[gson-2.10.1.jar%2370!/:?]
+	at MC-BOOTSTRAP/com.google.gson@2.10.1/com.google.gson.internal.bind.TypeAdapters$28.read(TypeAdapters.java:725) ~[gson-2.10.1.jar%2370!/:?]
+	at MC-BOOTSTRAP/com.google.gson@2.10.1/com.google.gson.internal.bind.TypeAdapters$34$1.read(TypeAdapters.java:1007) ~[gson-2.10.1.jar%2370!/:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.util.GsonHelper.fromNullableJson(GsonHelper.java:507) ~[neoforge-21.1.215-minecraft.jar%23139!/:?]
+	... 13 more
+[16Mar2026 11:48:36.172] [main/ERROR] [net.minecraft.world.item.crafting.RecipeManager/]: Parsing error loading recipe delightfulcreators:crafting/pumpkin_pie_from_cutting
+com.google.gson.JsonParseException: No key id in MapLike[{"item":"minecraft:pumpkin_pie"}]
+	at MC-BOOTSTRAP/datafixerupper@8.0.16/com.mojang.serialization.DataResult$Error.getOrThrow(DataResult.java:287) ~[datafixerupper-8.0.16.jar%2379!/:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.world.item.crafting.RecipeManager.apply(RecipeManager.java:60) ~[neoforge-21.1.215-minecraft.jar%23139!/:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.world.item.crafting.RecipeManager.apply(RecipeManager.java:36) ~[neoforge-21.1.215-minecraft.jar%23139!/:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.server.packs.resources.SimplePreparableReloadListener.lambda$reload$1(SimplePreparableReloadListener.java:19) ~[neoforge-21.1.215-minecraft.jar%23139!/:?]
+	at java.base/java.util.concurrent.CompletableFuture$UniAccept.tryFire(CompletableFuture.java:718) ~[?:?]
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:482) ~[?:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.server.packs.resources.SimpleReloadInstance.lambda$new$3(SimpleReloadInstance.java:86) ~[neoforge-21.1.215-minecraft.jar%23139!/:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.Util.blockUntilDone(Util.java:875) ~[neoforge-21.1.215-minecraft.jar%23139!/:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.Util.blockUntilDone(Util.java:864) ~[neoforge-21.1.215-minecraft.jar%23139!/:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.server.Main.main(Main.java:204) ~[neoforge-21.1.215-minecraft.jar%23139!/:?]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
+	at MC-BOOTSTRAP/fml_loader@4.0.42/net.neoforged.fml.loading.targets.CommonLaunchHandler.runTarget(CommonLaunchHandler.java:136) ~[loader-4.0.42.jar%23102!/:4.0]
+	at MC-BOOTSTRAP/fml_loader@4.0.42/net.neoforged.fml.loading.targets.CommonLaunchHandler.serverService(CommonLaunchHandler.java:128) ~[loader-4.0.42.jar%23102!/:4.0]
+	at MC-BOOTSTRAP/fml_loader@4.0.42/net.neoforged.fml.loading.targets.NeoForgeServerDevLaunchHandler.runService(NeoForgeServerDevLaunchHandler.java:23) ~[loader-4.0.42.jar%23102!/:4.0]
+	at MC-BOOTSTRAP/fml_loader@4.0.42/net.neoforged.fml.loading.targets.CommonLaunchHandler.lambda$launchService$4(CommonLaunchHandler.java:118) ~[loader-4.0.42.jar%23102!/:4.0]
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.LaunchServiceHandlerDecorator.launch(LaunchServiceHandlerDecorator.java:30) [modlauncher-11.0.5.jar%2382!/:?]
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:53) [modlauncher-11.0.5.jar%2382!/:?]
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:71) [modlauncher-11.0.5.jar%2382!/:?]
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.Launcher.run(Launcher.java:103) [modlauncher-11.0.5.jar%2382!/:?]
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.Launcher.main(Launcher.java:74) [modlauncher-11.0.5.jar%2382!/:?]
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:26) [modlauncher-11.0.5.jar%2382!/:?]
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:23) [modlauncher-11.0.5.jar%2382!/:?]
+	at cpw.mods.bootstraplauncher@2.0.2/cpw.mods.bootstraplauncher.BootstrapLauncher.run(BootstrapLauncher.java:210) [bootstraplauncher-2.0.2.jar:?]
+	at cpw.mods.bootstraplauncher@2.0.2/cpw.mods.bootstraplauncher.BootstrapLauncher.main(BootstrapLauncher.java:69) [bootstraplauncher-2.0.2.jar:?]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
+	at net.neoforged.devlaunch.Main.main(Main.java:55) [DevLaunch-1.0.1.jar:?]
+[16Mar2026 11:48:36.217] [main/ERROR] [net.minecraft.world.item.crafting.RecipeManager/]: Parsing error loading recipe culturalrecipes:fermenting/pickle
+com.google.gson.JsonParseException: Unknown registry key in ResourceKey[minecraft:root / minecraft:recipe_serializer]: brewinandchewin:fermenting
+	at MC-BOOTSTRAP/datafixerupper@8.0.16/com.mojang.serialization.DataResult$Error.getOrThrow(DataResult.java:287) ~[datafixerupper-8.0.16.jar%2379!/:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.world.item.crafting.RecipeManager.apply(RecipeManager.java:60) ~[neoforge-21.1.215-minecraft.jar%23139!/:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.world.item.crafting.RecipeManager.apply(RecipeManager.java:36) ~[neoforge-21.1.215-minecraft.jar%23139!/:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.server.packs.resources.SimplePreparableReloadListener.lambda$reload$1(SimplePreparableReloadListener.java:19) ~[neoforge-21.1.215-minecraft.jar%23139!/:?]
+	at java.base/java.util.concurrent.CompletableFuture$UniAccept.tryFire(CompletableFuture.java:718) ~[?:?]
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:482) ~[?:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.server.packs.resources.SimpleReloadInstance.lambda$new$3(SimpleReloadInstance.java:86) ~[neoforge-21.1.215-minecraft.jar%23139!/:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.Util.blockUntilDone(Util.java:875) ~[neoforge-21.1.215-minecraft.jar%23139!/:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.Util.blockUntilDone(Util.java:864) ~[neoforge-21.1.215-minecraft.jar%23139!/:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.server.Main.main(Main.java:204) ~[neoforge-21.1.215-minecraft.jar%23139!/:?]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
+	at MC-BOOTSTRAP/fml_loader@4.0.42/net.neoforged.fml.loading.targets.CommonLaunchHandler.runTarget(CommonLaunchHandler.java:136) ~[loader-4.0.42.jar%23102!/:4.0]
+	at MC-BOOTSTRAP/fml_loader@4.0.42/net.neoforged.fml.loading.targets.CommonLaunchHandler.serverService(CommonLaunchHandler.java:128) ~[loader-4.0.42.jar%23102!/:4.0]
+	at MC-BOOTSTRAP/fml_loader@4.0.42/net.neoforged.fml.loading.targets.NeoForgeServerDevLaunchHandler.runService(NeoForgeServerDevLaunchHandler.java:23) ~[loader-4.0.42.jar%23102!/:4.0]
+	at MC-BOOTSTRAP/fml_loader@4.0.42/net.neoforged.fml.loading.targets.CommonLaunchHandler.lambda$launchService$4(CommonLaunchHandler.java:118) ~[loader-4.0.42.jar%23102!/:4.0]
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.LaunchServiceHandlerDecorator.launch(LaunchServiceHandlerDecorator.java:30) [modlauncher-11.0.5.jar%2382!/:?]
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:53) [modlauncher-11.0.5.jar%2382!/:?]
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:71) [modlauncher-11.0.5.jar%2382!/:?]
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.Launcher.run(Launcher.java:103) [modlauncher-11.0.5.jar%2382!/:?]
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.Launcher.main(Launcher.java:74) [modlauncher-11.0.5.jar%2382!/:?]
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:26) [modlauncher-11.0.5.jar%2382!/:?]
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:23) [modlauncher-11.0.5.jar%2382!/:?]
+	at cpw.mods.bootstraplauncher@2.0.2/cpw.mods.bootstraplauncher.BootstrapLauncher.run(BootstrapLauncher.java:210) [bootstraplauncher-2.0.2.jar:?]
+	at cpw.mods.bootstraplauncher@2.0.2/cpw.mods.bootstraplauncher.BootstrapLauncher.main(BootstrapLauncher.java:69) [bootstraplauncher-2.0.2.jar:?]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
+	at net.neoforged.devlaunch.Main.main(Main.java:55) [DevLaunch-1.0.1.jar:?]
+[16Mar2026 11:48:36.353] [main/INFO] [net.minecraft.world.item.crafting.RecipeManager/]: Loaded 7327 recipes
+[16Mar2026 11:48:36.504] [main/INFO] [net.minecraft.advancements.AdvancementTree/]: Loaded 2820 advancements
+[16Mar2026 11:48:38.421] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer/]: Starting minecraft server version 1.21.1
+[16Mar2026 11:48:38.421] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer/]: Loading properties
+[16Mar2026 11:48:38.422] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer/]: Default game type: SURVIVAL
+[16Mar2026 11:48:38.422] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Generating keypair
+[16Mar2026 11:48:38.506] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer/]: Starting Minecraft server on *:25565
+[16Mar2026 11:48:38.567] [Server thread/INFO] [net.minecraft.server.network.ServerConnectionListener/]: Using default channel type
+[16Mar2026 11:48:38.609] [Server thread/WARN] [net.minecraft.server.dedicated.DedicatedServer/]: **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!
+[16Mar2026 11:48:38.609] [Server thread/WARN] [net.minecraft.server.dedicated.DedicatedServer/]: The server will make no attempt to authenticate usernames. Beware.
+[16Mar2026 11:48:38.609] [Server thread/WARN] [net.minecraft.server.dedicated.DedicatedServer/]: While this makes the game possible to play without internet access, it also opens up the ability for hackers to connect with any username they choose.
+[16Mar2026 11:48:38.609] [Server thread/WARN] [net.minecraft.server.dedicated.DedicatedServer/]: To change this, set "online-mode" to "true" in the server.properties file.
+[16Mar2026 11:48:38.667] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer/]: Preparing level "world"
+[16Mar2026 11:48:38.980] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: corn_delight:creamy_corn_drink is not found from registry
+[16Mar2026 11:48:38.981] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: corn_delight:cornbread_stuffing is not found from registry
+[16Mar2026 11:48:38.981] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: corn_delight:corn_soup is not found from registry
+[16Mar2026 11:48:38.981] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: corn_delight:creamed_corn is not found from registry
+[16Mar2026 11:48:38.981] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: corn_delight:nachos_bowl is not found from registry
+[16Mar2026 11:48:38.981] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: corn_delight:grilled_corn is not found from registry
+[16Mar2026 11:48:38.981] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: corn_delight:classic_corn_dog is not found from registry
+[16Mar2026 11:48:38.982] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: corn_delight:taco is not found from registry
+[16Mar2026 11:48:38.982] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:apple_juice is not found from registry
+[16Mar2026 11:48:38.982] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:sweet_berry_juice is not found from registry
+[16Mar2026 11:48:38.982] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:glow_berry_juice is not found from registry
+[16Mar2026 11:48:38.982] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:cranberry_juice is not found from registry
+[16Mar2026 11:48:38.982] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:asparagus_soup is not found from registry
+[16Mar2026 11:48:38.983] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:asparagus_soup_creamy is not found from registry
+[16Mar2026 11:48:38.983] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:peanut_honey_soup is not found from registry
+[16Mar2026 11:48:38.983] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:mac_and_cheese is not found from registry
+[16Mar2026 11:48:38.983] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:peanut_salad is not found from registry
+[16Mar2026 11:48:38.983] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:sweet_potato_salad is not found from registry
+[16Mar2026 11:48:38.983] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:cinnamon_rice is not found from registry
+[16Mar2026 11:48:38.983] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:cinnamon_apples is not found from registry
+[16Mar2026 11:48:38.983] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:asparagus_and_bacon_cheesy is not found from registry
+[16Mar2026 11:48:38.984] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:peperonata is not found from registry
+[16Mar2026 11:48:38.984] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:cranberry_chicken is not found from registry
+[16Mar2026 11:48:38.984] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:asparagus_mushroom_pasta is not found from registry
+[16Mar2026 11:48:38.984] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:sweet_potato_casserole is not found from registry
+[16Mar2026 11:48:38.984] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:peanut_butter_sandwich is not found from registry
+[16Mar2026 11:48:38.984] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:peanut_butter_honey_sandwich is not found from registry
+[16Mar2026 11:48:38.984] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:glow_berry_jelly_sandwich is not found from registry
+[16Mar2026 11:48:38.985] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:sweet_berry_jelly_sandwich is not found from registry
+[16Mar2026 11:48:38.985] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:cheese_sandwich is not found from registry
+[16Mar2026 11:48:38.985] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:grilled_cheese is not found from registry
+[16Mar2026 11:48:38.985] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:cranberry_goat_cheese_toast is not found from registry
+[16Mar2026 11:48:38.985] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:chocolate_cookie is not found from registry
+[16Mar2026 11:48:38.985] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:sugar_cookie is not found from registry
+[16Mar2026 11:48:38.985] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:snickerdoodle is not found from registry
+[16Mar2026 11:48:38.986] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:sweet_roll is not found from registry
+[16Mar2026 11:48:38.986] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:berry_sweet_roll is not found from registry
+[16Mar2026 11:48:38.986] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:glow_berry_sweet_roll is not found from registry
+[16Mar2026 11:48:38.986] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:cranberry_cobbler_slice is not found from registry
+[16Mar2026 11:48:38.986] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:honeyed_goat_cheese_tart_slice is not found from registry
+[16Mar2026 11:48:38.986] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:cheese_slice is not found from registry
+[16Mar2026 11:48:38.986] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:sweet_roll is not found from registry
+[16Mar2026 11:48:38.986] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:berry_sweet_roll is not found from registry
+[16Mar2026 11:48:38.987] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:glow_berry_sweet_roll is not found from registry
+[16Mar2026 11:48:38.987] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: delightful:matcha_milkshake is not found from registry
+[16Mar2026 11:48:38.987] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: delightful:salmonberry_milkshake is not found from registry
+[16Mar2026 11:48:38.987] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: delightful:matcha_latte is not found from registry
+[16Mar2026 11:48:38.987] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: delightful:ender_nectar is not found from registry
+[16Mar2026 11:48:38.987] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: delightful:berry_matcha_latte is not found from registry
+[16Mar2026 11:48:38.987] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: delightful:matcha_ice_cream is not found from registry
+[16Mar2026 11:48:38.989] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: delightful:salmonberry_ice_cream is not found from registry
+[16Mar2026 11:48:38.989] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: delightful:cactus_chili is not found from registry
+[16Mar2026 11:48:38.989] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: delightful:sinigang is not found from registry
+[16Mar2026 11:48:38.989] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: delightful:cactus_soup is not found from registry
+[16Mar2026 11:48:38.989] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: delightful:field_salad is not found from registry
+[16Mar2026 11:48:38.989] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: delightful:stuffed_cantaloupe is not found from registry
+[16Mar2026 11:48:38.989] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: delightful:smore is not found from registry
+[16Mar2026 11:48:38.989] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: delightful:cheeseburger is not found from registry
+[16Mar2026 11:48:38.990] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: delightful:deluxe_cheeseburger is not found from registry
+[16Mar2026 11:48:38.990] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: delightful:nut_butter_and_jelly_sandwich is not found from registry
+[16Mar2026 11:48:38.990] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: delightful:cooked_marshmallow_stick is not found from registry
+[16Mar2026 11:48:38.990] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: delightful:cantaloupe_popsicle is not found from registry
+[16Mar2026 11:48:38.990] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: delightful:cantaloupe_bread is not found from registry
+[16Mar2026 11:48:38.990] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: delightful:wrapped_cantaloupe is not found from registry
+[16Mar2026 11:48:38.990] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: delightful:salmonberry_pie_slice is not found from registry
+[16Mar2026 11:48:38.990] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: delightful:pumpkin_pie_slice is not found from registry
+[16Mar2026 11:48:38.990] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: pineapple_delight:pineapple_ice_cream is not found from registry
+[16Mar2026 11:48:38.991] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: pineapple_delight:pineapple_milk_shake is not found from registry
+[16Mar2026 11:48:38.991] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: pineapple_delight:pineapple_juice is not found from registry
+[16Mar2026 11:48:38.991] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: pineapple_delight:pineapple_fried_rice is not found from registry
+[16Mar2026 11:48:38.991] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: pineapple_delight:pineapple_pie_side is not found from registry
+[16Mar2026 11:48:38.991] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: oceansdelight:braised_sea_pickle is not found from registry
+[16Mar2026 11:48:38.991] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: oceansdelight:seagrass_salad is not found from registry
+[16Mar2026 11:48:38.991] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: oceansdelight:squid_rings is not found from registry
+[16Mar2026 11:48:38.991] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: oceansdelight:bowl_of_guardian_soup is not found from registry
+[16Mar2026 11:48:38.991] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: oceansdelight:baked_tentacle_on_a_stick is not found from registry
+[16Mar2026 11:48:38.992] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: oceansdelight:elder_guardian_roll is not found from registry
+[16Mar2026 11:48:38.992] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: oceansdelight:fugu_roll is not found from registry
+[16Mar2026 11:48:38.992] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: oceansdelight:honey_fried_kelp is not found from registry
+[16Mar2026 11:48:38.992] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: oceansdelight:cooked_stuffed_cod is not found from registry
+[16Mar2026 11:48:38.992] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: oceansdelight:elder_guardian_roll is not found from registry
+[16Mar2026 11:48:38.992] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: oceansdelight:fugu_roll is not found from registry
+[16Mar2026 11:48:38.992] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: alexsdelight:kangaroo_stew is not found from registry
+[16Mar2026 11:48:38.992] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: alexsdelight:acacia_blossom_soup is not found from registry
+[16Mar2026 11:48:38.993] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: alexsdelight:maggot_salad is not found from registry
+[16Mar2026 11:48:38.993] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: alexsdelight:lobster_pasta is not found from registry
+[16Mar2026 11:48:38.993] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: alexsdelight:kangaroo_pasta is not found from registry
+[16Mar2026 11:48:38.993] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: alexsdelight:bunfungus_sandwich is not found from registry
+[16Mar2026 11:48:38.993] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: alexsdelight:bison_burger is not found from registry
+[16Mar2026 11:48:38.993] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: alexsdelight:gongylidia_bruschetta is not found from registry
+[16Mar2026 11:48:38.993] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: culturaldelights:fried_eggplant_pasta is not found from registry
+[16Mar2026 11:48:38.994] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: largemeals:sweet_berry_custard is not found from registry
+[16Mar2026 11:48:38.994] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: largemeals:pufferfish_broth is not found from registry
+[16Mar2026 11:48:38.994] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: largemeals:rice_pudding is not found from registry
+[16Mar2026 11:48:38.995] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: largemeals:potato_soup is not found from registry
+[16Mar2026 11:48:38.996] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: largemeals:red_soup is not found from registry
+[16Mar2026 11:48:38.996] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: largemeals:tomato_egg_soup is not found from registry
+[16Mar2026 11:48:38.996] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: largemeals:cod_deluxe is not found from registry
+[16Mar2026 11:48:38.996] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: largemeals:hearty_lunch is not found from registry
+[16Mar2026 11:48:38.996] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: largemeals:chicken_curry is not found from registry
+[16Mar2026 11:48:38.996] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: largemeals:pasta_with_mushroom_sauce is not found from registry
+[16Mar2026 11:48:38.996] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: largemeals:omurice is not found from registry
+[16Mar2026 11:48:38.996] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: largemeals:mushroom_pot_pie is not found from registry
+[16Mar2026 11:48:38.997] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: largemeals:roasted_mutton_rack is not found from registry
+[16Mar2026 11:48:38.997] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: festive_delight:christmas_tea is not found from registry
+[16Mar2026 11:48:38.997] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: festive_delight:salmon_verrines is not found from registry
+[16Mar2026 11:48:38.997] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: festive_delight:festive_chicken is not found from registry
+[16Mar2026 11:48:38.997] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: brewinandchewin:creamy_onion_soup is not found from registry
+[16Mar2026 11:48:38.997] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: brewinandchewin:scarlet_pierogi is not found from registry
+[16Mar2026 11:48:38.997] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: brewinandchewin:horror_lasagna is not found from registry
+[16Mar2026 11:48:38.997] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: brewinandchewin:cheesy_pasta is not found from registry
+[16Mar2026 11:48:38.998] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: brewinandchewin:vegetable_omelet is not found from registry
+[16Mar2026 11:48:38.998] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: brewinandchewin:fiery_fondue is not found from registry
+[16Mar2026 11:48:38.998] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: brewinandchewin:ham_and_cheese_sandwich is not found from registry
+[16Mar2026 11:48:38.998] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: brewinandchewin:quiche_slice is not found from registry
+[16Mar2026 11:48:38.998] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: aquaculturedelight:poor_fisher_chowder is not found from registry
+[16Mar2026 11:48:38.998] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: aquaculturedelight:jellyfish_jelly is not found from registry
+[16Mar2026 11:48:38.998] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: aquaculturedelight:unusual_fish_soup is not found from registry
+[16Mar2026 11:48:38.998] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: aquaculturedelight:bass_stew is not found from registry
+[16Mar2026 11:48:38.998] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: aquaculturedelight:fish_chorba is not found from registry
+[16Mar2026 11:48:38.999] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: aquaculturedelight:fish_and_chips is not found from registry
+[16Mar2026 11:48:38.999] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: aquaculturedelight:halaszle is not found from registry
+[16Mar2026 11:48:38.999] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: aquaculturedelight:crispy_nori_kelp is not found from registry
+[16Mar2026 11:48:38.999] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: aquaculturedelight:baked_pollock_with_carrots is not found from registry
+[16Mar2026 11:48:38.999] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: aquaculturedelight:large_fish_with_vegetables is not found from registry
+[16Mar2026 11:48:38.999] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: aquaculturedelight:rollmops is not found from registry
+[16Mar2026 11:48:38.999] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: aquaculturedelight:tuna_spaghetti is not found from registry
+[16Mar2026 11:48:38.999] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: aquaculturedelight:halibut_with_tartar_sauce is not found from registry
+[16Mar2026 11:48:39.000] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: aquaculturedelight:buckling is not found from registry
+[16Mar2026 11:48:39.000] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: aquaculturedelight:turtle_meat_dish is not found from registry
+[16Mar2026 11:48:39.000] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: aquaculturedelight:catfish_barbecue is not found from registry
+[16Mar2026 11:48:39.000] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: aquaculturedelight:raw_fish_fillet_roll is not found from registry
+[16Mar2026 11:48:39.000] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: aquaculturedelight:fried_perch_roll is not found from registry
+[16Mar2026 11:48:39.000] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: endersdelight:chorus_juice is not found from registry
+[16Mar2026 11:48:39.000] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: endersdelight:amberveil_stew is not found from registry
+[16Mar2026 11:48:39.000] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: endersdelight:amberveiled_curry is not found from registry
+[16Mar2026 11:48:39.001] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: endersdelight:chorus_stew is not found from registry
+[16Mar2026 11:48:39.001] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: endersdelight:twisted_cereal is not found from registry
+[16Mar2026 11:48:39.001] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: endersdelight:endermite_stew is not found from registry
+[16Mar2026 11:48:39.001] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: endersdelight:ender_paella is not found from registry
+[16Mar2026 11:48:39.001] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: endersdelight:chicken_curry is not found from registry
+[16Mar2026 11:48:39.001] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: endersdelight:steak_fries is not found from registry
+[16Mar2026 11:48:39.001] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: endersdelight:veil_of_flames_risotto is not found from registry
+[16Mar2026 11:48:39.001] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: endersdelight:pearl_pasta is not found from registry
+[16Mar2026 11:48:39.001] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: endersdelight:stuffed_shulker_bowl is not found from registry
+[16Mar2026 11:48:39.002] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: endersdelight:uncanny_cookies is not found from registry
+[16Mar2026 11:48:39.002] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: endersdelight:crispy_skewer is not found from registry
+[16Mar2026 11:48:39.002] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: endersdelight:strange_eclair is not found from registry
+[16Mar2026 11:48:39.002] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: endersdelight:crawling_sandwich is not found from registry
+[16Mar2026 11:48:39.002] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: endersdelight:chorus_pie_slice is not found from registry
+[16Mar2026 11:48:39.002] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: ends_delight:chorus_fruit_milk_tea is not found from registry
+[16Mar2026 11:48:39.002] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: ends_delight:chorus_fruit_wine is not found from registry
+[16Mar2026 11:48:39.002] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: ends_delight:bubble_tea is not found from registry
+[16Mar2026 11:48:39.002] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: ends_delight:dragon_breath_soda is not found from registry
+[16Mar2026 11:48:39.003] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: ends_delight:chorus_flower_tea is not found from registry
+[16Mar2026 11:48:39.003] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: ends_delight:dragon_breath_and_chorus_soup is not found from registry
+[16Mar2026 11:48:39.003] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: ends_delight:shulker_soup is not found from registry
+[16Mar2026 11:48:39.003] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: ends_delight:ender_noodle is not found from registry
+[16Mar2026 11:48:39.003] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: ends_delight:enderman_gristle_stew is not found from registry
+[16Mar2026 11:48:39.003] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: ends_delight:ender_congee is not found from registry
+[16Mar2026 11:48:39.003] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: ends_delight:end_mixed_salad is not found from registry
+[16Mar2026 11:48:39.003] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: ends_delight:assorted_salad is not found from registry
+[16Mar2026 11:48:39.003] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: ends_delight:stir_fried_shulker_meat is not found from registry
+[16Mar2026 11:48:39.004] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: ends_delight:roasted_dragon_steak is not found from registry
+[16Mar2026 11:48:39.004] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: ends_delight:grilled_shulker is not found from registry
+[16Mar2026 11:48:39.004] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: ends_delight:dragon_meat_stew is not found from registry
+[16Mar2026 11:48:39.004] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: ends_delight:steamed_dragon_egg is not found from registry
+[16Mar2026 11:48:39.004] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: ends_delight:dragon_leg_with_sauce is not found from registry
+[16Mar2026 11:48:39.004] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: ends_delight:stuffed_rice_cake is not found from registry
+[16Mar2026 11:48:39.004] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: ends_delight:chorus_flower_pie is not found from registry
+[16Mar2026 11:48:39.004] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: ends_delight:ender_bamboo_rice is not found from registry
+[16Mar2026 11:48:39.004] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: ends_delight:chorus_fruit_popsicle is not found from registry
+[16Mar2026 11:48:39.004] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: ends_delight:end_barbecue_stick is not found from registry
+[16Mar2026 11:48:39.024] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: ends_delight:chorus_fruit_pie_slice is not found from registry
+[16Mar2026 11:48:39.024] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: crabbersdelight:kelp_shake is not found from registry
+[16Mar2026 11:48:39.024] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: crabbersdelight:coconut_pudding is not found from registry
+[16Mar2026 11:48:39.024] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: crabbersdelight:coconut_milk is not found from registry
+[16Mar2026 11:48:39.024] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: crabbersdelight:seafood_gumbo is not found from registry
+[16Mar2026 11:48:39.024] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: crabbersdelight:shrimp_fried_rice is not found from registry
+[16Mar2026 11:48:39.024] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: crabbersdelight:coral_crunch is not found from registry
+[16Mar2026 11:48:39.024] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: crabbersdelight:clam_chowder is not found from registry
+[16Mar2026 11:48:39.025] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: crabbersdelight:bisque is not found from registry
+[16Mar2026 11:48:39.025] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: crabbersdelight:clam_bake is not found from registry
+[16Mar2026 11:48:39.025] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: crabbersdelight:surf_and_turf is not found from registry
+[16Mar2026 11:48:39.025] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: crabbersdelight:frog_leg_kebab is not found from registry
+[16Mar2026 11:48:39.025] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: crabbersdelight:squid_kebab is not found from registry
+[16Mar2026 11:48:39.025] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: crabbersdelight:shrimp_skewer is not found from registry
+[16Mar2026 11:48:39.025] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: crabbersdelight:fish_stick is not found from registry
+[16Mar2026 11:48:39.025] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: crabbersdelight:stuffed_nautilus_shell is not found from registry
+[16Mar2026 11:48:39.025] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:sizzling_pudding is not found from registry
+[16Mar2026 11:48:39.025] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:rock_soup is not found from registry
+[16Mar2026 11:48:39.026] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:spicy_noodle_soup is not found from registry
+[16Mar2026 11:48:39.026] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:strider_stew is not found from registry
+[16Mar2026 11:48:39.026] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:ghast_salad is not found from registry
+[16Mar2026 11:48:39.026] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:dried_ghast_with_milk is not found from registry
+[16Mar2026 11:48:39.026] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:sausage_and_potatoes is not found from registry
+[16Mar2026 11:48:39.026] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:spicy_hoglin_stew is not found from registry
+[16Mar2026 11:48:39.026] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:egg_soup is not found from registry
+[16Mar2026 11:48:39.026] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:breakfast_sampler is not found from registry
+[16Mar2026 11:48:39.026] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:fried_hoglin_chop is not found from registry
+[16Mar2026 11:48:39.026] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:twisted_ghasta is not found from registry
+[16Mar2026 11:48:39.026] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:strider_with_grilled_fungus is not found from registry
+[16Mar2026 11:48:39.027] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:scotch_eggs is not found from registry
+[16Mar2026 11:48:39.027] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:giant_takoyaki is not found from registry
+[16Mar2026 11:48:39.027] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:blue_tenderloin_steak is not found from registry
+[16Mar2026 11:48:39.027] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:crimson_stroganoff is not found from registry
+[16Mar2026 11:48:39.027] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:spicy_curry is not found from registry
+[16Mar2026 11:48:39.027] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:bleeding_tartar is not found from registry
+[16Mar2026 11:48:39.027] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:hot_wings is not found from registry
+[16Mar2026 11:48:39.027] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:plate_of_ghasta_with_cream is not found from registry
+[16Mar2026 11:48:39.027] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:plate_of_stuffed_hoglin_snout is not found from registry
+[16Mar2026 11:48:39.027] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:plate_of_stuffed_hoglin_ham is not found from registry
+[16Mar2026 11:48:39.028] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:plate_of_stuffed_hoglin is not found from registry
+[16Mar2026 11:48:39.028] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:plate_of_cold_striderloaf is not found from registry
+[16Mar2026 11:48:39.028] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:plate_of_striderloaf is not found from registry
+[16Mar2026 11:48:39.028] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:stuffed_pepper is not found from registry
+[16Mar2026 11:48:39.028] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:hotdog_with_mixed_salad is not found from registry
+[16Mar2026 11:48:39.028] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:hotdog_with_nether_salad is not found from registry
+[16Mar2026 11:48:39.028] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:chilidog is not found from registry
+[16Mar2026 11:48:39.028] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:spicy_cotton is not found from registry
+[16Mar2026 11:48:39.028] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:fries_ghasta is not found from registry
+[16Mar2026 11:48:39.028] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:bacon-wrapped_sausage_on_a_stick is not found from registry
+[16Mar2026 11:48:39.029] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:spicy_skewer is not found from registry
+[16Mar2026 11:48:39.029] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:red_loin_on_a_stick is not found from registry
+[16Mar2026 11:48:39.029] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:nether_burger is not found from registry
+[16Mar2026 11:48:39.029] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:magma_cake_slice is not found from registry
+[16Mar2026 11:48:39.581] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: corn_delight:creamy_corn_drink is not found from registry
+[16Mar2026 11:48:39.582] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: corn_delight:cornbread_stuffing is not found from registry
+[16Mar2026 11:48:39.582] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: corn_delight:corn_soup is not found from registry
+[16Mar2026 11:48:39.582] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: corn_delight:creamed_corn is not found from registry
+[16Mar2026 11:48:39.582] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: corn_delight:nachos_bowl is not found from registry
+[16Mar2026 11:48:39.582] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: corn_delight:grilled_corn is not found from registry
+[16Mar2026 11:48:39.582] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: corn_delight:classic_corn_dog is not found from registry
+[16Mar2026 11:48:39.582] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: corn_delight:taco is not found from registry
+[16Mar2026 11:48:39.582] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:apple_juice is not found from registry
+[16Mar2026 11:48:39.582] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:sweet_berry_juice is not found from registry
+[16Mar2026 11:48:39.582] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:glow_berry_juice is not found from registry
+[16Mar2026 11:48:39.582] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:cranberry_juice is not found from registry
+[16Mar2026 11:48:39.582] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:asparagus_soup is not found from registry
+[16Mar2026 11:48:39.582] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:asparagus_soup_creamy is not found from registry
+[16Mar2026 11:48:39.583] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:peanut_honey_soup is not found from registry
+[16Mar2026 11:48:39.583] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:mac_and_cheese is not found from registry
+[16Mar2026 11:48:39.583] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:peanut_salad is not found from registry
+[16Mar2026 11:48:39.583] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:sweet_potato_salad is not found from registry
+[16Mar2026 11:48:39.583] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:cinnamon_rice is not found from registry
+[16Mar2026 11:48:39.583] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:cinnamon_apples is not found from registry
+[16Mar2026 11:48:39.583] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:asparagus_and_bacon_cheesy is not found from registry
+[16Mar2026 11:48:39.583] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:peperonata is not found from registry
+[16Mar2026 11:48:39.584] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:cranberry_chicken is not found from registry
+[16Mar2026 11:48:39.584] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:asparagus_mushroom_pasta is not found from registry
+[16Mar2026 11:48:39.584] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:sweet_potato_casserole is not found from registry
+[16Mar2026 11:48:39.584] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:peanut_butter_sandwich is not found from registry
+[16Mar2026 11:48:39.584] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:peanut_butter_honey_sandwich is not found from registry
+[16Mar2026 11:48:39.584] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:glow_berry_jelly_sandwich is not found from registry
+[16Mar2026 11:48:39.584] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:sweet_berry_jelly_sandwich is not found from registry
+[16Mar2026 11:48:39.584] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:cheese_sandwich is not found from registry
+[16Mar2026 11:48:39.584] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:grilled_cheese is not found from registry
+[16Mar2026 11:48:39.584] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:cranberry_goat_cheese_toast is not found from registry
+[16Mar2026 11:48:39.585] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:chocolate_cookie is not found from registry
+[16Mar2026 11:48:39.585] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:sugar_cookie is not found from registry
+[16Mar2026 11:48:39.585] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:snickerdoodle is not found from registry
+[16Mar2026 11:48:39.585] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:sweet_roll is not found from registry
+[16Mar2026 11:48:39.591] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:berry_sweet_roll is not found from registry
+[16Mar2026 11:48:39.591] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:glow_berry_sweet_roll is not found from registry
+[16Mar2026 11:48:39.591] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:cranberry_cobbler_slice is not found from registry
+[16Mar2026 11:48:39.591] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:honeyed_goat_cheese_tart_slice is not found from registry
+[16Mar2026 11:48:39.591] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:cheese_slice is not found from registry
+[16Mar2026 11:48:39.592] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:sweet_roll is not found from registry
+[16Mar2026 11:48:39.592] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:berry_sweet_roll is not found from registry
+[16Mar2026 11:48:39.592] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:glow_berry_sweet_roll is not found from registry
+[16Mar2026 11:48:39.592] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: delightful:matcha_milkshake is not found from registry
+[16Mar2026 11:48:39.592] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: delightful:salmonberry_milkshake is not found from registry
+[16Mar2026 11:48:39.592] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: delightful:matcha_latte is not found from registry
+[16Mar2026 11:48:39.592] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: delightful:ender_nectar is not found from registry
+[16Mar2026 11:48:39.592] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: delightful:berry_matcha_latte is not found from registry
+[16Mar2026 11:48:39.592] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: delightful:matcha_ice_cream is not found from registry
+[16Mar2026 11:48:39.592] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: delightful:salmonberry_ice_cream is not found from registry
+[16Mar2026 11:48:39.592] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: delightful:cactus_chili is not found from registry
+[16Mar2026 11:48:39.593] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: delightful:sinigang is not found from registry
+[16Mar2026 11:48:39.593] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: delightful:cactus_soup is not found from registry
+[16Mar2026 11:48:39.593] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: delightful:field_salad is not found from registry
+[16Mar2026 11:48:39.593] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: delightful:stuffed_cantaloupe is not found from registry
+[16Mar2026 11:48:39.593] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: delightful:smore is not found from registry
+[16Mar2026 11:48:39.593] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: delightful:cheeseburger is not found from registry
+[16Mar2026 11:48:39.593] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: delightful:deluxe_cheeseburger is not found from registry
+[16Mar2026 11:48:39.593] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: delightful:nut_butter_and_jelly_sandwich is not found from registry
+[16Mar2026 11:48:39.593] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: delightful:cooked_marshmallow_stick is not found from registry
+[16Mar2026 11:48:39.593] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: delightful:cantaloupe_popsicle is not found from registry
+[16Mar2026 11:48:39.593] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: delightful:cantaloupe_bread is not found from registry
+[16Mar2026 11:48:39.593] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: delightful:wrapped_cantaloupe is not found from registry
+[16Mar2026 11:48:39.593] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: delightful:salmonberry_pie_slice is not found from registry
+[16Mar2026 11:48:39.594] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: delightful:pumpkin_pie_slice is not found from registry
+[16Mar2026 11:48:39.594] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: pineapple_delight:pineapple_ice_cream is not found from registry
+[16Mar2026 11:48:39.594] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: pineapple_delight:pineapple_milk_shake is not found from registry
+[16Mar2026 11:48:39.594] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: pineapple_delight:pineapple_juice is not found from registry
+[16Mar2026 11:48:39.594] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: pineapple_delight:pineapple_fried_rice is not found from registry
+[16Mar2026 11:48:39.594] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: pineapple_delight:pineapple_pie_side is not found from registry
+[16Mar2026 11:48:39.594] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: oceansdelight:braised_sea_pickle is not found from registry
+[16Mar2026 11:48:39.594] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: oceansdelight:seagrass_salad is not found from registry
+[16Mar2026 11:48:39.594] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: oceansdelight:squid_rings is not found from registry
+[16Mar2026 11:48:39.594] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: oceansdelight:bowl_of_guardian_soup is not found from registry
+[16Mar2026 11:48:39.594] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: oceansdelight:baked_tentacle_on_a_stick is not found from registry
+[16Mar2026 11:48:39.594] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: oceansdelight:elder_guardian_roll is not found from registry
+[16Mar2026 11:48:39.594] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: oceansdelight:fugu_roll is not found from registry
+[16Mar2026 11:48:39.595] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: oceansdelight:honey_fried_kelp is not found from registry
+[16Mar2026 11:48:39.595] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: oceansdelight:cooked_stuffed_cod is not found from registry
+[16Mar2026 11:48:39.595] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: oceansdelight:elder_guardian_roll is not found from registry
+[16Mar2026 11:48:39.595] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: oceansdelight:fugu_roll is not found from registry
+[16Mar2026 11:48:39.595] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: alexsdelight:kangaroo_stew is not found from registry
+[16Mar2026 11:48:39.595] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: alexsdelight:acacia_blossom_soup is not found from registry
+[16Mar2026 11:48:39.595] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: alexsdelight:maggot_salad is not found from registry
+[16Mar2026 11:48:39.595] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: alexsdelight:lobster_pasta is not found from registry
+[16Mar2026 11:48:39.595] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: alexsdelight:kangaroo_pasta is not found from registry
+[16Mar2026 11:48:39.595] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: alexsdelight:bunfungus_sandwich is not found from registry
+[16Mar2026 11:48:39.595] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: alexsdelight:bison_burger is not found from registry
+[16Mar2026 11:48:39.595] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: alexsdelight:gongylidia_bruschetta is not found from registry
+[16Mar2026 11:48:39.596] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: culturaldelights:fried_eggplant_pasta is not found from registry
+[16Mar2026 11:48:39.596] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: largemeals:sweet_berry_custard is not found from registry
+[16Mar2026 11:48:39.596] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: largemeals:pufferfish_broth is not found from registry
+[16Mar2026 11:48:39.596] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: largemeals:rice_pudding is not found from registry
+[16Mar2026 11:48:39.596] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: largemeals:potato_soup is not found from registry
+[16Mar2026 11:48:39.596] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: largemeals:red_soup is not found from registry
+[16Mar2026 11:48:39.596] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: largemeals:tomato_egg_soup is not found from registry
+[16Mar2026 11:48:39.596] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: largemeals:cod_deluxe is not found from registry
+[16Mar2026 11:48:39.596] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: largemeals:hearty_lunch is not found from registry
+[16Mar2026 11:48:39.596] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: largemeals:chicken_curry is not found from registry
+[16Mar2026 11:48:39.597] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: largemeals:pasta_with_mushroom_sauce is not found from registry
+[16Mar2026 11:48:39.597] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: largemeals:omurice is not found from registry
+[16Mar2026 11:48:39.597] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: largemeals:mushroom_pot_pie is not found from registry
+[16Mar2026 11:48:39.597] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: largemeals:roasted_mutton_rack is not found from registry
+[16Mar2026 11:48:39.597] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: festive_delight:christmas_tea is not found from registry
+[16Mar2026 11:48:39.597] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: festive_delight:salmon_verrines is not found from registry
+[16Mar2026 11:48:39.597] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: festive_delight:festive_chicken is not found from registry
+[16Mar2026 11:48:39.597] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: brewinandchewin:creamy_onion_soup is not found from registry
+[16Mar2026 11:48:39.597] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: brewinandchewin:scarlet_pierogi is not found from registry
+[16Mar2026 11:48:39.597] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: brewinandchewin:horror_lasagna is not found from registry
+[16Mar2026 11:48:39.597] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: brewinandchewin:cheesy_pasta is not found from registry
+[16Mar2026 11:48:39.597] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: brewinandchewin:vegetable_omelet is not found from registry
+[16Mar2026 11:48:39.597] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: brewinandchewin:fiery_fondue is not found from registry
+[16Mar2026 11:48:39.598] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: brewinandchewin:ham_and_cheese_sandwich is not found from registry
+[16Mar2026 11:48:39.598] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: brewinandchewin:quiche_slice is not found from registry
+[16Mar2026 11:48:39.598] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: aquaculturedelight:poor_fisher_chowder is not found from registry
+[16Mar2026 11:48:39.598] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: aquaculturedelight:jellyfish_jelly is not found from registry
+[16Mar2026 11:48:39.598] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: aquaculturedelight:unusual_fish_soup is not found from registry
+[16Mar2026 11:48:39.598] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: aquaculturedelight:bass_stew is not found from registry
+[16Mar2026 11:48:39.598] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: aquaculturedelight:fish_chorba is not found from registry
+[16Mar2026 11:48:39.598] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: aquaculturedelight:fish_and_chips is not found from registry
+[16Mar2026 11:48:39.598] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: aquaculturedelight:halaszle is not found from registry
+[16Mar2026 11:48:39.598] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: aquaculturedelight:crispy_nori_kelp is not found from registry
+[16Mar2026 11:48:39.598] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: aquaculturedelight:baked_pollock_with_carrots is not found from registry
+[16Mar2026 11:48:39.598] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: aquaculturedelight:large_fish_with_vegetables is not found from registry
+[16Mar2026 11:48:39.598] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: aquaculturedelight:rollmops is not found from registry
+[16Mar2026 11:48:39.598] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: aquaculturedelight:tuna_spaghetti is not found from registry
+[16Mar2026 11:48:39.599] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: aquaculturedelight:halibut_with_tartar_sauce is not found from registry
+[16Mar2026 11:48:39.599] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: aquaculturedelight:buckling is not found from registry
+[16Mar2026 11:48:39.599] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: aquaculturedelight:turtle_meat_dish is not found from registry
+[16Mar2026 11:48:39.599] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: aquaculturedelight:catfish_barbecue is not found from registry
+[16Mar2026 11:48:39.599] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: aquaculturedelight:raw_fish_fillet_roll is not found from registry
+[16Mar2026 11:48:39.599] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: aquaculturedelight:fried_perch_roll is not found from registry
+[16Mar2026 11:48:39.599] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: endersdelight:chorus_juice is not found from registry
+[16Mar2026 11:48:39.599] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: endersdelight:amberveil_stew is not found from registry
+[16Mar2026 11:48:39.599] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: endersdelight:amberveiled_curry is not found from registry
+[16Mar2026 11:48:39.599] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: endersdelight:chorus_stew is not found from registry
+[16Mar2026 11:48:39.599] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: endersdelight:twisted_cereal is not found from registry
+[16Mar2026 11:48:39.599] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: endersdelight:endermite_stew is not found from registry
+[16Mar2026 11:48:39.600] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: endersdelight:ender_paella is not found from registry
+[16Mar2026 11:48:39.600] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: endersdelight:chicken_curry is not found from registry
+[16Mar2026 11:48:39.600] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: endersdelight:steak_fries is not found from registry
+[16Mar2026 11:48:39.600] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: endersdelight:veil_of_flames_risotto is not found from registry
+[16Mar2026 11:48:39.601] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: endersdelight:pearl_pasta is not found from registry
+[16Mar2026 11:48:39.601] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: endersdelight:stuffed_shulker_bowl is not found from registry
+[16Mar2026 11:48:39.601] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: endersdelight:uncanny_cookies is not found from registry
+[16Mar2026 11:48:39.601] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: endersdelight:crispy_skewer is not found from registry
+[16Mar2026 11:48:39.601] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: endersdelight:strange_eclair is not found from registry
+[16Mar2026 11:48:39.601] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: endersdelight:crawling_sandwich is not found from registry
+[16Mar2026 11:48:39.601] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: endersdelight:chorus_pie_slice is not found from registry
+[16Mar2026 11:48:39.601] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: ends_delight:chorus_fruit_milk_tea is not found from registry
+[16Mar2026 11:48:39.601] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: ends_delight:chorus_fruit_wine is not found from registry
+[16Mar2026 11:48:39.602] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: ends_delight:bubble_tea is not found from registry
+[16Mar2026 11:48:39.602] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: ends_delight:dragon_breath_soda is not found from registry
+[16Mar2026 11:48:39.602] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: ends_delight:chorus_flower_tea is not found from registry
+[16Mar2026 11:48:39.602] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: ends_delight:dragon_breath_and_chorus_soup is not found from registry
+[16Mar2026 11:48:39.602] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: ends_delight:shulker_soup is not found from registry
+[16Mar2026 11:48:39.602] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: ends_delight:ender_noodle is not found from registry
+[16Mar2026 11:48:39.602] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: ends_delight:enderman_gristle_stew is not found from registry
+[16Mar2026 11:48:39.602] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: ends_delight:ender_congee is not found from registry
+[16Mar2026 11:48:39.602] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: ends_delight:end_mixed_salad is not found from registry
+[16Mar2026 11:48:39.602] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: ends_delight:assorted_salad is not found from registry
+[16Mar2026 11:48:39.602] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: ends_delight:stir_fried_shulker_meat is not found from registry
+[16Mar2026 11:48:39.602] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: ends_delight:roasted_dragon_steak is not found from registry
+[16Mar2026 11:48:39.603] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: ends_delight:grilled_shulker is not found from registry
+[16Mar2026 11:48:39.603] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: ends_delight:dragon_meat_stew is not found from registry
+[16Mar2026 11:48:39.603] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: ends_delight:steamed_dragon_egg is not found from registry
+[16Mar2026 11:48:39.603] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: ends_delight:dragon_leg_with_sauce is not found from registry
+[16Mar2026 11:48:39.603] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: ends_delight:stuffed_rice_cake is not found from registry
+[16Mar2026 11:48:39.603] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: ends_delight:chorus_flower_pie is not found from registry
+[16Mar2026 11:48:39.603] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: ends_delight:ender_bamboo_rice is not found from registry
+[16Mar2026 11:48:39.603] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: ends_delight:chorus_fruit_popsicle is not found from registry
+[16Mar2026 11:48:39.603] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: ends_delight:end_barbecue_stick is not found from registry
+[16Mar2026 11:48:39.603] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: ends_delight:chorus_fruit_pie_slice is not found from registry
+[16Mar2026 11:48:39.603] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: crabbersdelight:kelp_shake is not found from registry
+[16Mar2026 11:48:39.603] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: crabbersdelight:coconut_pudding is not found from registry
+[16Mar2026 11:48:39.604] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: crabbersdelight:coconut_milk is not found from registry
+[16Mar2026 11:48:39.604] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: crabbersdelight:seafood_gumbo is not found from registry
+[16Mar2026 11:48:39.604] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: crabbersdelight:shrimp_fried_rice is not found from registry
+[16Mar2026 11:48:39.604] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: crabbersdelight:coral_crunch is not found from registry
+[16Mar2026 11:48:39.604] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: crabbersdelight:clam_chowder is not found from registry
+[16Mar2026 11:48:39.604] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: crabbersdelight:bisque is not found from registry
+[16Mar2026 11:48:39.604] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: crabbersdelight:clam_bake is not found from registry
+[16Mar2026 11:48:39.604] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: crabbersdelight:surf_and_turf is not found from registry
+[16Mar2026 11:48:39.604] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: crabbersdelight:frog_leg_kebab is not found from registry
+[16Mar2026 11:48:39.604] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: crabbersdelight:squid_kebab is not found from registry
+[16Mar2026 11:48:39.604] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: crabbersdelight:shrimp_skewer is not found from registry
+[16Mar2026 11:48:39.604] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: crabbersdelight:fish_stick is not found from registry
+[16Mar2026 11:48:39.605] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: crabbersdelight:stuffed_nautilus_shell is not found from registry
+[16Mar2026 11:48:39.605] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:sizzling_pudding is not found from registry
+[16Mar2026 11:48:39.605] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:rock_soup is not found from registry
+[16Mar2026 11:48:39.605] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:spicy_noodle_soup is not found from registry
+[16Mar2026 11:48:39.605] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:strider_stew is not found from registry
+[16Mar2026 11:48:39.605] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:ghast_salad is not found from registry
+[16Mar2026 11:48:39.605] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:dried_ghast_with_milk is not found from registry
+[16Mar2026 11:48:39.605] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:sausage_and_potatoes is not found from registry
+[16Mar2026 11:48:39.605] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:spicy_hoglin_stew is not found from registry
+[16Mar2026 11:48:39.605] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:egg_soup is not found from registry
+[16Mar2026 11:48:39.605] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:breakfast_sampler is not found from registry
+[16Mar2026 11:48:39.606] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:fried_hoglin_chop is not found from registry
+[16Mar2026 11:48:39.606] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:twisted_ghasta is not found from registry
+[16Mar2026 11:48:39.606] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:strider_with_grilled_fungus is not found from registry
+[16Mar2026 11:48:39.606] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:scotch_eggs is not found from registry
+[16Mar2026 11:48:39.606] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:giant_takoyaki is not found from registry
+[16Mar2026 11:48:39.606] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:blue_tenderloin_steak is not found from registry
+[16Mar2026 11:48:39.606] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:crimson_stroganoff is not found from registry
+[16Mar2026 11:48:39.606] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:spicy_curry is not found from registry
+[16Mar2026 11:48:39.606] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:bleeding_tartar is not found from registry
+[16Mar2026 11:48:39.606] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:hot_wings is not found from registry
+[16Mar2026 11:48:39.607] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:plate_of_ghasta_with_cream is not found from registry
+[16Mar2026 11:48:39.607] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:plate_of_stuffed_hoglin_snout is not found from registry
+[16Mar2026 11:48:39.607] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:plate_of_stuffed_hoglin_ham is not found from registry
+[16Mar2026 11:48:39.607] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:plate_of_stuffed_hoglin is not found from registry
+[16Mar2026 11:48:39.607] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:plate_of_cold_striderloaf is not found from registry
+[16Mar2026 11:48:39.607] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:plate_of_striderloaf is not found from registry
+[16Mar2026 11:48:39.607] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:stuffed_pepper is not found from registry
+[16Mar2026 11:48:39.607] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:hotdog_with_mixed_salad is not found from registry
+[16Mar2026 11:48:39.607] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:hotdog_with_nether_salad is not found from registry
+[16Mar2026 11:48:39.607] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:chilidog is not found from registry
+[16Mar2026 11:48:39.607] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:spicy_cotton is not found from registry
+[16Mar2026 11:48:39.607] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:fries_ghasta is not found from registry
+[16Mar2026 11:48:39.607] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:bacon-wrapped_sausage_on_a_stick is not found from registry
+[16Mar2026 11:48:39.607] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:spicy_skewer is not found from registry
+[16Mar2026 11:48:39.607] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:red_loin_on_a_stick is not found from registry
+[16Mar2026 11:48:39.607] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:nether_burger is not found from registry
+[16Mar2026 11:48:39.608] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:magma_cake_slice is not found from registry
+[16Mar2026 11:48:39.612] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: corn_delight:creamy_corn_drink is not found from registry
+[16Mar2026 11:48:39.613] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: corn_delight:cornbread_stuffing is not found from registry
+[16Mar2026 11:48:39.613] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: corn_delight:corn_soup is not found from registry
+[16Mar2026 11:48:39.613] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: corn_delight:creamed_corn is not found from registry
+[16Mar2026 11:48:39.613] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: corn_delight:nachos_bowl is not found from registry
+[16Mar2026 11:48:39.613] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: corn_delight:grilled_corn is not found from registry
+[16Mar2026 11:48:39.613] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: corn_delight:classic_corn_dog is not found from registry
+[16Mar2026 11:48:39.613] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: corn_delight:taco is not found from registry
+[16Mar2026 11:48:39.613] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:apple_juice is not found from registry
+[16Mar2026 11:48:39.613] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:sweet_berry_juice is not found from registry
+[16Mar2026 11:48:39.613] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:glow_berry_juice is not found from registry
+[16Mar2026 11:48:39.613] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:cranberry_juice is not found from registry
+[16Mar2026 11:48:39.613] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:asparagus_soup is not found from registry
+[16Mar2026 11:48:39.613] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:asparagus_soup_creamy is not found from registry
+[16Mar2026 11:48:39.614] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:peanut_honey_soup is not found from registry
+[16Mar2026 11:48:39.614] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:mac_and_cheese is not found from registry
+[16Mar2026 11:48:39.614] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:peanut_salad is not found from registry
+[16Mar2026 11:48:39.614] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:sweet_potato_salad is not found from registry
+[16Mar2026 11:48:39.614] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:cinnamon_rice is not found from registry
+[16Mar2026 11:48:39.614] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:cinnamon_apples is not found from registry
+[16Mar2026 11:48:39.614] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:asparagus_and_bacon_cheesy is not found from registry
+[16Mar2026 11:48:39.614] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:peperonata is not found from registry
+[16Mar2026 11:48:39.614] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:cranberry_chicken is not found from registry
+[16Mar2026 11:48:39.614] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:asparagus_mushroom_pasta is not found from registry
+[16Mar2026 11:48:39.614] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:sweet_potato_casserole is not found from registry
+[16Mar2026 11:48:39.614] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:peanut_butter_sandwich is not found from registry
+[16Mar2026 11:48:39.614] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:peanut_butter_honey_sandwich is not found from registry
+[16Mar2026 11:48:39.614] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:glow_berry_jelly_sandwich is not found from registry
+[16Mar2026 11:48:39.614] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:sweet_berry_jelly_sandwich is not found from registry
+[16Mar2026 11:48:39.615] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:cheese_sandwich is not found from registry
+[16Mar2026 11:48:39.615] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:grilled_cheese is not found from registry
+[16Mar2026 11:48:39.615] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:cranberry_goat_cheese_toast is not found from registry
+[16Mar2026 11:48:39.615] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:chocolate_cookie is not found from registry
+[16Mar2026 11:48:39.615] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:sugar_cookie is not found from registry
+[16Mar2026 11:48:39.615] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:snickerdoodle is not found from registry
+[16Mar2026 11:48:39.615] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:sweet_roll is not found from registry
+[16Mar2026 11:48:39.615] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:berry_sweet_roll is not found from registry
+[16Mar2026 11:48:39.615] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:glow_berry_sweet_roll is not found from registry
+[16Mar2026 11:48:39.615] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:cranberry_cobbler_slice is not found from registry
+[16Mar2026 11:48:39.615] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:honeyed_goat_cheese_tart_slice is not found from registry
+[16Mar2026 11:48:39.615] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:cheese_slice is not found from registry
+[16Mar2026 11:48:39.615] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:sweet_roll is not found from registry
+[16Mar2026 11:48:39.615] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:berry_sweet_roll is not found from registry
+[16Mar2026 11:48:39.615] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: expandeddelight:glow_berry_sweet_roll is not found from registry
+[16Mar2026 11:48:39.616] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: delightful:matcha_milkshake is not found from registry
+[16Mar2026 11:48:39.616] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: delightful:salmonberry_milkshake is not found from registry
+[16Mar2026 11:48:39.616] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: delightful:matcha_latte is not found from registry
+[16Mar2026 11:48:39.616] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: delightful:ender_nectar is not found from registry
+[16Mar2026 11:48:39.616] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: delightful:berry_matcha_latte is not found from registry
+[16Mar2026 11:48:39.616] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: delightful:matcha_ice_cream is not found from registry
+[16Mar2026 11:48:39.616] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: delightful:salmonberry_ice_cream is not found from registry
+[16Mar2026 11:48:39.616] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: delightful:cactus_chili is not found from registry
+[16Mar2026 11:48:39.616] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: delightful:sinigang is not found from registry
+[16Mar2026 11:48:39.616] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: delightful:cactus_soup is not found from registry
+[16Mar2026 11:48:39.616] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: delightful:field_salad is not found from registry
+[16Mar2026 11:48:39.616] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: delightful:stuffed_cantaloupe is not found from registry
+[16Mar2026 11:48:39.616] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: delightful:smore is not found from registry
+[16Mar2026 11:48:39.616] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: delightful:cheeseburger is not found from registry
+[16Mar2026 11:48:39.617] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: delightful:deluxe_cheeseburger is not found from registry
+[16Mar2026 11:48:39.617] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: delightful:nut_butter_and_jelly_sandwich is not found from registry
+[16Mar2026 11:48:39.617] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: delightful:cooked_marshmallow_stick is not found from registry
+[16Mar2026 11:48:39.617] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: delightful:cantaloupe_popsicle is not found from registry
+[16Mar2026 11:48:39.617] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: delightful:cantaloupe_bread is not found from registry
+[16Mar2026 11:48:39.617] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: delightful:wrapped_cantaloupe is not found from registry
+[16Mar2026 11:48:39.617] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: delightful:salmonberry_pie_slice is not found from registry
+[16Mar2026 11:48:39.617] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: delightful:pumpkin_pie_slice is not found from registry
+[16Mar2026 11:48:39.617] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: pineapple_delight:pineapple_ice_cream is not found from registry
+[16Mar2026 11:48:39.617] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: pineapple_delight:pineapple_milk_shake is not found from registry
+[16Mar2026 11:48:39.617] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: pineapple_delight:pineapple_juice is not found from registry
+[16Mar2026 11:48:39.618] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: pineapple_delight:pineapple_fried_rice is not found from registry
+[16Mar2026 11:48:39.618] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: pineapple_delight:pineapple_pie_side is not found from registry
+[16Mar2026 11:48:39.618] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: oceansdelight:braised_sea_pickle is not found from registry
+[16Mar2026 11:48:39.618] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: oceansdelight:seagrass_salad is not found from registry
+[16Mar2026 11:48:39.618] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: oceansdelight:squid_rings is not found from registry
+[16Mar2026 11:48:39.618] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: oceansdelight:bowl_of_guardian_soup is not found from registry
+[16Mar2026 11:48:39.618] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: oceansdelight:baked_tentacle_on_a_stick is not found from registry
+[16Mar2026 11:48:39.618] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: oceansdelight:elder_guardian_roll is not found from registry
+[16Mar2026 11:48:39.618] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: oceansdelight:fugu_roll is not found from registry
+[16Mar2026 11:48:39.618] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: oceansdelight:honey_fried_kelp is not found from registry
+[16Mar2026 11:48:39.618] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: oceansdelight:cooked_stuffed_cod is not found from registry
+[16Mar2026 11:48:39.618] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: oceansdelight:elder_guardian_roll is not found from registry
+[16Mar2026 11:48:39.619] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: oceansdelight:fugu_roll is not found from registry
+[16Mar2026 11:48:39.619] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: alexsdelight:kangaroo_stew is not found from registry
+[16Mar2026 11:48:39.619] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: alexsdelight:acacia_blossom_soup is not found from registry
+[16Mar2026 11:48:39.619] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: alexsdelight:maggot_salad is not found from registry
+[16Mar2026 11:48:39.619] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: alexsdelight:lobster_pasta is not found from registry
+[16Mar2026 11:48:39.619] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: alexsdelight:kangaroo_pasta is not found from registry
+[16Mar2026 11:48:39.619] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: alexsdelight:bunfungus_sandwich is not found from registry
+[16Mar2026 11:48:39.619] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: alexsdelight:bison_burger is not found from registry
+[16Mar2026 11:48:39.619] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: alexsdelight:gongylidia_bruschetta is not found from registry
+[16Mar2026 11:48:39.619] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: culturaldelights:fried_eggplant_pasta is not found from registry
+[16Mar2026 11:48:39.620] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: largemeals:sweet_berry_custard is not found from registry
+[16Mar2026 11:48:39.620] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: largemeals:pufferfish_broth is not found from registry
+[16Mar2026 11:48:39.620] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: largemeals:rice_pudding is not found from registry
+[16Mar2026 11:48:39.620] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: largemeals:potato_soup is not found from registry
+[16Mar2026 11:48:39.620] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: largemeals:red_soup is not found from registry
+[16Mar2026 11:48:39.620] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: largemeals:tomato_egg_soup is not found from registry
+[16Mar2026 11:48:39.620] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: largemeals:cod_deluxe is not found from registry
+[16Mar2026 11:48:39.620] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: largemeals:hearty_lunch is not found from registry
+[16Mar2026 11:48:39.620] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: largemeals:chicken_curry is not found from registry
+[16Mar2026 11:48:39.621] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: largemeals:pasta_with_mushroom_sauce is not found from registry
+[16Mar2026 11:48:39.621] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: largemeals:omurice is not found from registry
+[16Mar2026 11:48:39.621] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: largemeals:mushroom_pot_pie is not found from registry
+[16Mar2026 11:48:39.621] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: largemeals:roasted_mutton_rack is not found from registry
+[16Mar2026 11:48:39.621] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: festive_delight:christmas_tea is not found from registry
+[16Mar2026 11:48:39.621] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: festive_delight:salmon_verrines is not found from registry
+[16Mar2026 11:48:39.621] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: festive_delight:festive_chicken is not found from registry
+[16Mar2026 11:48:39.621] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: brewinandchewin:creamy_onion_soup is not found from registry
+[16Mar2026 11:48:39.621] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: brewinandchewin:scarlet_pierogi is not found from registry
+[16Mar2026 11:48:39.621] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: brewinandchewin:horror_lasagna is not found from registry
+[16Mar2026 11:48:39.621] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: brewinandchewin:cheesy_pasta is not found from registry
+[16Mar2026 11:48:39.621] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: brewinandchewin:vegetable_omelet is not found from registry
+[16Mar2026 11:48:39.621] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: brewinandchewin:fiery_fondue is not found from registry
+[16Mar2026 11:48:39.622] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: brewinandchewin:ham_and_cheese_sandwich is not found from registry
+[16Mar2026 11:48:39.622] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: brewinandchewin:quiche_slice is not found from registry
+[16Mar2026 11:48:39.622] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: aquaculturedelight:poor_fisher_chowder is not found from registry
+[16Mar2026 11:48:39.622] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: aquaculturedelight:jellyfish_jelly is not found from registry
+[16Mar2026 11:48:39.622] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: aquaculturedelight:unusual_fish_soup is not found from registry
+[16Mar2026 11:48:39.622] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: aquaculturedelight:bass_stew is not found from registry
+[16Mar2026 11:48:39.622] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: aquaculturedelight:fish_chorba is not found from registry
+[16Mar2026 11:48:39.622] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: aquaculturedelight:fish_and_chips is not found from registry
+[16Mar2026 11:48:39.622] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: aquaculturedelight:halaszle is not found from registry
+[16Mar2026 11:48:39.622] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: aquaculturedelight:crispy_nori_kelp is not found from registry
+[16Mar2026 11:48:39.622] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: aquaculturedelight:baked_pollock_with_carrots is not found from registry
+[16Mar2026 11:48:39.622] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: aquaculturedelight:large_fish_with_vegetables is not found from registry
+[16Mar2026 11:48:39.623] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: aquaculturedelight:rollmops is not found from registry
+[16Mar2026 11:48:39.623] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: aquaculturedelight:tuna_spaghetti is not found from registry
+[16Mar2026 11:48:39.623] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: aquaculturedelight:halibut_with_tartar_sauce is not found from registry
+[16Mar2026 11:48:39.623] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: aquaculturedelight:buckling is not found from registry
+[16Mar2026 11:48:39.623] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: aquaculturedelight:turtle_meat_dish is not found from registry
+[16Mar2026 11:48:39.623] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: aquaculturedelight:catfish_barbecue is not found from registry
+[16Mar2026 11:48:39.623] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: aquaculturedelight:raw_fish_fillet_roll is not found from registry
+[16Mar2026 11:48:39.623] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: aquaculturedelight:fried_perch_roll is not found from registry
+[16Mar2026 11:48:39.623] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: endersdelight:chorus_juice is not found from registry
+[16Mar2026 11:48:39.624] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: endersdelight:amberveil_stew is not found from registry
+[16Mar2026 11:48:39.624] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: endersdelight:amberveiled_curry is not found from registry
+[16Mar2026 11:48:39.624] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: endersdelight:chorus_stew is not found from registry
+[16Mar2026 11:48:39.624] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: endersdelight:twisted_cereal is not found from registry
+[16Mar2026 11:48:39.624] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: endersdelight:endermite_stew is not found from registry
+[16Mar2026 11:48:39.624] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: endersdelight:ender_paella is not found from registry
+[16Mar2026 11:48:39.624] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: endersdelight:chicken_curry is not found from registry
+[16Mar2026 11:48:39.624] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: endersdelight:steak_fries is not found from registry
+[16Mar2026 11:48:39.624] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: endersdelight:veil_of_flames_risotto is not found from registry
+[16Mar2026 11:48:39.624] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: endersdelight:pearl_pasta is not found from registry
+[16Mar2026 11:48:39.624] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: endersdelight:stuffed_shulker_bowl is not found from registry
+[16Mar2026 11:48:39.625] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: endersdelight:uncanny_cookies is not found from registry
+[16Mar2026 11:48:39.625] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: endersdelight:crispy_skewer is not found from registry
+[16Mar2026 11:48:39.625] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: endersdelight:strange_eclair is not found from registry
+[16Mar2026 11:48:39.625] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: endersdelight:crawling_sandwich is not found from registry
+[16Mar2026 11:48:39.625] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: endersdelight:chorus_pie_slice is not found from registry
+[16Mar2026 11:48:39.625] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: ends_delight:chorus_fruit_milk_tea is not found from registry
+[16Mar2026 11:48:39.625] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: ends_delight:chorus_fruit_wine is not found from registry
+[16Mar2026 11:48:39.625] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: ends_delight:bubble_tea is not found from registry
+[16Mar2026 11:48:39.625] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: ends_delight:dragon_breath_soda is not found from registry
+[16Mar2026 11:48:39.625] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: ends_delight:chorus_flower_tea is not found from registry
+[16Mar2026 11:48:39.625] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: ends_delight:dragon_breath_and_chorus_soup is not found from registry
+[16Mar2026 11:48:39.625] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: ends_delight:shulker_soup is not found from registry
+[16Mar2026 11:48:39.625] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: ends_delight:ender_noodle is not found from registry
+[16Mar2026 11:48:39.626] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: ends_delight:enderman_gristle_stew is not found from registry
+[16Mar2026 11:48:39.626] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: ends_delight:ender_congee is not found from registry
+[16Mar2026 11:48:39.626] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: ends_delight:end_mixed_salad is not found from registry
+[16Mar2026 11:48:39.626] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: ends_delight:assorted_salad is not found from registry
+[16Mar2026 11:48:39.626] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: ends_delight:stir_fried_shulker_meat is not found from registry
+[16Mar2026 11:48:39.626] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: ends_delight:roasted_dragon_steak is not found from registry
+[16Mar2026 11:48:39.626] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: ends_delight:grilled_shulker is not found from registry
+[16Mar2026 11:48:39.626] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: ends_delight:dragon_meat_stew is not found from registry
+[16Mar2026 11:48:39.626] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: ends_delight:steamed_dragon_egg is not found from registry
+[16Mar2026 11:48:39.626] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: ends_delight:dragon_leg_with_sauce is not found from registry
+[16Mar2026 11:48:39.627] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: ends_delight:stuffed_rice_cake is not found from registry
+[16Mar2026 11:48:39.627] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: ends_delight:chorus_flower_pie is not found from registry
+[16Mar2026 11:48:39.627] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: ends_delight:ender_bamboo_rice is not found from registry
+[16Mar2026 11:48:39.627] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: ends_delight:chorus_fruit_popsicle is not found from registry
+[16Mar2026 11:48:39.627] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: ends_delight:end_barbecue_stick is not found from registry
+[16Mar2026 11:48:39.627] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: ends_delight:chorus_fruit_pie_slice is not found from registry
+[16Mar2026 11:48:39.627] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: crabbersdelight:kelp_shake is not found from registry
+[16Mar2026 11:48:39.627] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: crabbersdelight:coconut_pudding is not found from registry
+[16Mar2026 11:48:39.627] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: crabbersdelight:coconut_milk is not found from registry
+[16Mar2026 11:48:39.627] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: crabbersdelight:seafood_gumbo is not found from registry
+[16Mar2026 11:48:39.627] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: crabbersdelight:shrimp_fried_rice is not found from registry
+[16Mar2026 11:48:39.627] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: crabbersdelight:coral_crunch is not found from registry
+[16Mar2026 11:48:39.627] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: crabbersdelight:clam_chowder is not found from registry
+[16Mar2026 11:48:39.627] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: crabbersdelight:bisque is not found from registry
+[16Mar2026 11:48:39.628] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: crabbersdelight:clam_bake is not found from registry
+[16Mar2026 11:48:39.628] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: crabbersdelight:surf_and_turf is not found from registry
+[16Mar2026 11:48:39.628] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: crabbersdelight:frog_leg_kebab is not found from registry
+[16Mar2026 11:48:39.628] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: crabbersdelight:squid_kebab is not found from registry
+[16Mar2026 11:48:39.628] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: crabbersdelight:shrimp_skewer is not found from registry
+[16Mar2026 11:48:39.628] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: crabbersdelight:fish_stick is not found from registry
+[16Mar2026 11:48:39.628] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: crabbersdelight:stuffed_nautilus_shell is not found from registry
+[16Mar2026 11:48:39.628] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:sizzling_pudding is not found from registry
+[16Mar2026 11:48:39.628] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:rock_soup is not found from registry
+[16Mar2026 11:48:39.628] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:spicy_noodle_soup is not found from registry
+[16Mar2026 11:48:39.628] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:strider_stew is not found from registry
+[16Mar2026 11:48:39.628] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:ghast_salad is not found from registry
+[16Mar2026 11:48:39.628] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:dried_ghast_with_milk is not found from registry
+[16Mar2026 11:48:39.629] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:sausage_and_potatoes is not found from registry
+[16Mar2026 11:48:39.629] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:spicy_hoglin_stew is not found from registry
+[16Mar2026 11:48:39.629] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:egg_soup is not found from registry
+[16Mar2026 11:48:39.629] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:breakfast_sampler is not found from registry
+[16Mar2026 11:48:39.629] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:fried_hoglin_chop is not found from registry
+[16Mar2026 11:48:39.629] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:twisted_ghasta is not found from registry
+[16Mar2026 11:48:39.629] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:strider_with_grilled_fungus is not found from registry
+[16Mar2026 11:48:39.629] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:scotch_eggs is not found from registry
+[16Mar2026 11:48:39.629] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:giant_takoyaki is not found from registry
+[16Mar2026 11:48:39.629] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:blue_tenderloin_steak is not found from registry
+[16Mar2026 11:48:39.629] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:crimson_stroganoff is not found from registry
+[16Mar2026 11:48:39.629] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:spicy_curry is not found from registry
+[16Mar2026 11:48:39.629] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:bleeding_tartar is not found from registry
+[16Mar2026 11:48:39.629] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:hot_wings is not found from registry
+[16Mar2026 11:48:39.630] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:plate_of_ghasta_with_cream is not found from registry
+[16Mar2026 11:48:39.630] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:plate_of_stuffed_hoglin_snout is not found from registry
+[16Mar2026 11:48:39.630] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:plate_of_stuffed_hoglin_ham is not found from registry
+[16Mar2026 11:48:39.630] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:plate_of_stuffed_hoglin is not found from registry
+[16Mar2026 11:48:39.630] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:plate_of_cold_striderloaf is not found from registry
+[16Mar2026 11:48:39.630] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:plate_of_striderloaf is not found from registry
+[16Mar2026 11:48:39.630] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:stuffed_pepper is not found from registry
+[16Mar2026 11:48:39.630] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:hotdog_with_mixed_salad is not found from registry
+[16Mar2026 11:48:39.630] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:hotdog_with_nether_salad is not found from registry
+[16Mar2026 11:48:39.630] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:chilidog is not found from registry
+[16Mar2026 11:48:39.630] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:spicy_cotton is not found from registry
+[16Mar2026 11:48:39.630] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:fries_ghasta is not found from registry
+[16Mar2026 11:48:39.631] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:bacon-wrapped_sausage_on_a_stick is not found from registry
+[16Mar2026 11:48:39.631] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:spicy_skewer is not found from registry
+[16Mar2026 11:48:39.631] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:red_loin_on_a_stick is not found from registry
+[16Mar2026 11:48:39.631] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:nether_burger is not found from registry
+[16Mar2026 11:48:39.631] [Server thread/WARN] [com.jkvin114.displaydelight.DisplayDelight/]: mynethersdelight:magma_cake_slice is not found from registry
+[16Mar2026 11:48:39.636] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Preparing start region for dimension minecraft:overworld
+[16Mar2026 11:48:39.928] [worldgen/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
+[16Mar2026 11:48:40.100] [Server thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Time elapsed: 463 ms
+[16Mar2026 11:48:40.101] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer/]: Done (1.477s)! For help, type "help"
+[16Mar2026 11:48:40.157] [Server thread/INFO] [net.neoforged.neoforge.gametest.GameTestHooks/]: Enabled Gametest Namespaces: [createfood]
+[16Mar2026 11:48:40.183] [Server thread/INFO] [net.neoforged.neoforge.server.permission.PermissionAPI/]: Successfully initialized permission handler neoforge:default_handler
+[16Mar2026 11:48:40.183] [Server thread/INFO] [com.jkvin114.displaydelight.DisplayDelight/]: HELLO from server starting
+[16Mar2026 11:48:40.185] [Server thread/WARN] [net.neoforged.neoforge.common.TagConventionLogWarning/]: 
+   Dev warning - Legacy Tags detected. Please migrate your 'forge' namespace tags to the 'c' namespace! See net.neoforged.neoforge.common.Tags.java for all tags.
+   NOTE: Many tags have been moved around or renamed. Some new ones were added so please review the new tags.
+    And make sure you follow tag conventions for new tags! The convention is `c` with nouns generally being plural and adjectives being singular.
+   You can disable this message in NeoForge's common config by setting `logLegacyTagWarnings` to "SILENCED" or see individual tags with "DEV_VERBOSE".
+
+[16Mar2026 11:48:40.186] [Server thread/INFO] [dev.averageanime.neoforge.CreateFood/]: Create: Food - Server Startup
+[16Mar2026 11:49:19.066] [Server thread/INFO] [net.minecraft.server.players.PlayerList/]: Dev[/[::1]:49386] logged in with entity id 97 at (-264.34683537959086, 71.0, 86.35173130639487)
+[16Mar2026 11:49:19.105] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Dev joined the game
+[16Mar2026 11:49:44.899] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: [Dev: Gave 16 [Egg] to Dev]
+[16Mar2026 11:50:21.975] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: [Dev: Set own game mode to Creative Mode]
+[16Mar2026 11:50:23.349] [Server thread/INFO] [net.minecraft.server.network.ServerGamePacketListenerImpl/]: Dev lost connection: Disconnected
+[16Mar2026 11:50:23.349] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Dev left the game
+[16Mar2026 11:54:46.794] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Stopping server
+[16Mar2026 11:54:46.795] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving players
+[16Mar2026 11:54:46.796] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving worlds
+[16Mar2026 11:54:46.938] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[world]'/minecraft:overworld
+[16Mar2026 11:54:46.959] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_end
+[16Mar2026 11:54:46.970] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_nether
+[16Mar2026 11:54:46.981] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (world): All chunks are saved
+[16Mar2026 11:54:46.981] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[16Mar2026 11:54:46.981] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[16Mar2026 11:54:46.981] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage: All dimensions are saved

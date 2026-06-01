@@ -1,0 +1,21 @@
+{
+	"parent": "minecraft:block/block",
+	"textures": {
+		"particle": "createfood:block/small_plate_block",
+		"plate": "createfood:block/small_plate_block"
+	},
+	"elements": [
+		{
+			"from": [4, 0, 4],
+			"to": [12, 1, 12],
+			"faces": {
+				"north": {"uv": [4, 4, 12, 5], "texture": "#plate"},
+				"east": {"uv": [11, 4, 12, 12], "rotation": 90, "texture": "#plate"},
+				"south": {"uv": [4, 11, 12, 12], "texture": "#plate"},
+				"west": {"uv": [4, 4, 5, 12], "rotation": 90, "texture": "#plate"},
+				"up": {"uv": [4, 4, 12, 12], "rotation": 180, "texture": "#plate"},
+				"down": {"uv": [4, 4, 12, 12], "texture": "#plate"}
+			}
+		}
+	]
+}

@@ -17,7 +17,7 @@ public class ModBlockEntities {
             BLOCK_ENTITIES.register("generic_display_plate", () ->
                     BlockEntityType.Builder.of(
                             (pos, state) -> new GenericDisplayPlateBlockEntity(pos, state),
-                            ModBlocks.GENERIC_DISPLAY_PLATE.get())
+                            ModDisplayBlocks.GENERIC_DISPLAY_PLATE_BLOCK.get())
                             .build(null));
 
     public static void register(IEventBus modEventBus) {

@@ -1,130 +1,131 @@
 {
-    "type": "minecraft:block",
-    "pools": [
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
         {
-            "name": "onion_pizza",
-            "rolls": 1,
-            "entries": [
-                {
-                    "type": "minecraft:item",
-                    "name": "createfood:onion_pizza"
-                }
-            ],
-            "conditions": [
-                {
-                    "condition": "minecraft:inverted",
-                    "term": {
-                        "condition": "minecraft:match_tool",
-                        "predicate": {
-                            "tag": "forge:tools/knives"
-                        }
-                    }
-                },
-                {
-                    "condition": "minecraft:block_state_property",
-                    "block": "createfood:onion_pizza",
-                    "properties": {
-                        "bites": "0"
-                    }
-                }
-            ]
+          "condition": "minecraft:inverted",
+          "term": {
+            "condition": "minecraft:match_tool",
+            "predicate": {
+              "items": "#c:tools/knife"
+            }
+          }
         },
         {
-            "name": "onion_pizza_knife",
-            "rolls": 4,
-            "entries": [
-                {
-                    "type": "minecraft:item",
-                    "name": "createfood:onion_pizza_slice"
-                }
-            ],
-            "conditions": [
-                {
-                    "condition": "minecraft:match_tool",
-                    "predicate": {
-                        "tag": "forge:tools/knives"
-                    }
-                },
-                {
-                    "condition": "minecraft:block_state_property",
-                    "block": "createfood:onion_pizza",
-                    "properties": {
-                        "bites": "0"
-                    }
-                }
-            ]
-        },
-        {
-            "name": "onion_pizza_slice1",
-            "rolls": 3,
-            "entries": [
-                {
-                    "type": "minecraft:item",
-                    "name": "createfood:onion_pizza_slice"
-                }
-            ],
-            "conditions": [
-                {
-                    "condition": "minecraft:match_tool",
-                    "predicate": {
-                        "tag": "forge:tools/knives"
-                    }
-                },
-                {
-                    "condition": "minecraft:block_state_property",
-                    "block": "createfood:onion_pizza",
-                    "properties": {
-                        "bites": "1"
-                    }
-                }
-            ]
-        },
-        {
-            "name": "onion_pizza_slice2",
-            "rolls": 2,
-            "entries": [
-                {
-                    "type": "minecraft:item",
-                    "name": "createfood:onion_pizza_slice"
-                }
-            ],
-            "conditions": [
-                {
-                    "condition": "minecraft:match_tool",
-                    "predicate": {
-                        "tag": "forge:tools/knives"
-                    }
-                },
-                {
-                    "condition": "minecraft:block_state_property",
-                    "block": "createfood:onion_pizza",
-                    "properties": {
-                        "bites": "2"
-                    }
-                }
-            ]
-        },
-        {
-            "name": "onion_pizza_slice2",
-            "rolls": 1,
-            "entries": [
-                {
-                    "type": "minecraft:item",
-                    "name": "createfood:onion_pizza_slice"
-                }
-            ],
-            "conditions": [
-                {
-                    "condition": "minecraft:survives_explosion"
-                },
-                {
-                    "condition": "minecraft:block_state_property",
-                    "block": "createfood:onion_pizza",
-                    "properties": {
-                        "bites": "3"
-                    }
-                }
-            ]
+          "block": "createfood:onion_pizza",
+          "condition": "minecraft:block_state_property",
+          "properties": {
+            "bites": "0"
+          }
         }
-    ]
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "createfood:onion_pizza"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:match_tool",
+          "predicate": {
+            "items": "#c:tools/knife"
+          }
+        },
+        {
+          "block": "createfood:onion_pizza",
+          "condition": "minecraft:block_state_property",
+          "properties": {
+            "bites": "0"
+          }
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "createfood:onion_pizza_slice"
+        }
+      ],
+      "rolls": 4.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:match_tool",
+          "predicate": {
+            "items": "#c:tools/knife"
+          }
+        },
+        {
+          "block": "createfood:onion_pizza",
+          "condition": "minecraft:block_state_property",
+          "properties": {
+            "bites": "1"
+          }
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "createfood:onion_pizza_slice"
+        }
+      ],
+      "rolls": 3.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:match_tool",
+          "predicate": {
+            "items": "#c:tools/knife"
+          }
+        },
+        {
+          "block": "createfood:onion_pizza",
+          "condition": "minecraft:block_state_property",
+          "properties": {
+            "bites": "2"
+          }
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "createfood:onion_pizza_slice"
+        }
+      ],
+      "rolls": 2.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        },
+        {
+          "block": "createfood:onion_pizza",
+          "condition": "minecraft:block_state_property",
+          "properties": {
+            "bites": "3"
+          }
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "createfood:onion_pizza_slice"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "createfood:blocks/onion_pizza"
 }

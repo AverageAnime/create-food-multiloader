@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=east": { "model": "createfood:block/small_plate_block", "y": 270 },
+    "facing=north": { "model": "createfood:block/small_plate_block", "y": 180 },
+    "facing=south": { "model": "createfood:block/small_plate_block" },
+    "facing=west": { "model": "createfood:block/small_plate_block", "y": 90 }
+  }
+}
