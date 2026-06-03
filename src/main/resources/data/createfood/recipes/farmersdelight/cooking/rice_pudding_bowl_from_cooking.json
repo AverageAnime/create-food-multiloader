@@ -1,4 +1,4 @@
-{
+﻿{
     "type": "farmersdelight:cooking",
     "experience": 0.35,
     "ingredients": [
@@ -14,8 +14,7 @@
     ],
     "recipe_book_tab": "meals",
     "container": {
-        "count": 1,
-        "id": "minecraft:bowl"
+        "item": "minecraft:bowl"
     },
     "result": {
         "count": 1,

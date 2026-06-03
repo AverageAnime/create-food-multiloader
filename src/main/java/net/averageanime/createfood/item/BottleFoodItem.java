@@ -7,16 +7,22 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
-import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
 
-public class BottleFoodItem extends Item {
+import java.util.List;
+import java.util.Set;
+
+public class BottleFoodItem extends EffectFood {
 
     public BottleFoodItem(Item.Properties pProperties) {
         super(pProperties);
+    }
+
+    public BottleFoodItem(Item.Properties pProperties, Set<String> existingEffectIds, List<DeferredFx> deferredEffects) {
+        super(pProperties, existingEffectIds, deferredEffects);
     }
 
     public ItemStack finishUsingItem(ItemStack pStack, Level pLevel, LivingEntity pEntityLiving) {
@@ -42,7 +48,7 @@ public class BottleFoodItem extends Item {
     }
 
     public int getUseDuration(ItemStack pStack) {
-        return 40;
+        return 32;
     }
 
     public UseAnim getUseAnimation(ItemStack pStack) {

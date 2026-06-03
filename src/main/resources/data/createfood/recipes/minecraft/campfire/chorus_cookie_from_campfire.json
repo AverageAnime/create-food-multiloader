@@ -1,13 +1,13 @@
-{
+﻿{
     "conditions": [
         {
             "type": "forge:mod_loaded",
-            "modid": "ends_delight:chorus_cookie"
+            "modid": "ends_delight"
         }
     ],
     "type": "minecraft:campfire_cooking",
     "ingredient": {
-        "tag": "forge:raw_chorus_cookie"
+        "tag": "forge:raw_chorus_fruit_cookie"
     },
     "result": "ends_delight:chorus_cookie",
     "experience": 0.1,

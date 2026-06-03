@@ -1,4 +1,4 @@
-{
+﻿{
   "type": "minecraft:block",
   "pools": [
     {
@@ -9,7 +9,7 @@
           "term": {
             "condition": "minecraft:match_tool",
             "predicate": {
-              "items": "#c:tools/knife"
+              "tag": "forge:tools/knives"
             }
           }
         },
@@ -35,7 +35,7 @@
         {
           "condition": "minecraft:match_tool",
           "predicate": {
-            "items": "#c:tools/knife"
+            "tag": "forge:tools/knives"
           }
         },
         {
@@ -60,7 +60,7 @@
         {
           "condition": "minecraft:match_tool",
           "predicate": {
-            "items": "#c:tools/knife"
+            "tag": "forge:tools/knives"
           }
         },
         {
@@ -85,7 +85,7 @@
         {
           "condition": "minecraft:match_tool",
           "predicate": {
-            "items": "#c:tools/knife"
+            "tag": "forge:tools/knives"
           }
         },
         {

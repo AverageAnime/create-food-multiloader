@@ -12,10 +12,17 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
 
-public class StickFoodItem extends Item{
+import java.util.List;
+import java.util.Set;
+
+public class StickFoodItem extends EffectFood {
 
     public StickFoodItem(Item.Properties pProperties) {
         super(pProperties);
+    }
+
+    public StickFoodItem(Item.Properties pProperties, Set<String> existingEffectIds, List<DeferredFx> deferredEffects) {
+        super(pProperties, existingEffectIds, deferredEffects);
     }
 
     public ItemStack finishUsingItem(ItemStack pStack, Level pLevel, LivingEntity pEntityLiving) {

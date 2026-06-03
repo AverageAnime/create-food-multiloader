@@ -1,4 +1,4 @@
-{
+﻿{
     "type": "farmersdelight:cutting",
     "ingredients": [
         {
@@ -6,14 +6,11 @@
         }
     ],
     "tool": {
-        "tag": "forge:tools/knife"
+        "tag": "forge:tools/knives"
     },
     "result": [
         {
-            "item": {
-                "count": 3,
-                "id": "createfood:kelp_roll_slice_crimson_fungus"
-            }
+            "count": 3, "item": "createfood:kelp_roll_slice_crimson_fungus"
         }
     ]
 }

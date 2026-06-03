@@ -1,6 +1,6 @@
 {
-  "parent": "item/generated",
+  "parent": "minecraft:item/generated",
   "textures": {
-  "layer0": "createfood:item/berry_cream_sweet_roll"
+    "layer0": "createfood:item/berry_cream_sweet_roll"
   }
 }

@@ -1,6 +1,6 @@
 {
-  "parent": "item/generated",
+  "parent": "minecraft:item/generated",
   "textures": {
-  "layer0": "createfood:item/ground_endermite"
+    "layer0": "createfood:item/ground_endermite"
   }
 }

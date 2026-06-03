@@ -9,6 +9,8 @@ import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.food.FoodProperties;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.context.BlockPlaceContext;
@@ -16,6 +18,9 @@ import net.minecraft.world.level.*;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.CakeBlock;
+
+import java.util.HashMap;
+import java.util.Map;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -32,6 +37,13 @@ import vectorwing.farmersdelight.common.tag.ModTags;
 import vectorwing.farmersdelight.common.utility.ItemUtils;
 
 public class ModCakeBlock extends CakeBlock {
+
+    private static final Map<Block, Map<Item, Block>> CANDLE_CAKE_MAP = new HashMap<>();
+
+    public static void registerCandleVariant(Block cake, Item candle, Block candleCake) {
+        CANDLE_CAKE_MAP.computeIfAbsent(cake, k -> new HashMap<>()).put(candle, candleCake);
+    }
+
     public static final int MAX_BITES = 7;
     public static final IntegerProperty BITES;
     public static final int FULL_CAKE_SIGNAL;
@@ -52,18 +64,7 @@ public class ModCakeBlock extends CakeBlock {
 
     @Override
     public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
-        VoxelShape baseShape = SHAPE_BY_BITE[pState.getValue(BITES)];
-        Direction facing = pState.getValue(FACING);
-
-        if (facing == Direction.EAST) {
-            return rotateShape(baseShape, Direction.EAST);
-        } else if (facing == Direction.SOUTH) {
-            return rotateShape(baseShape, Direction.SOUTH);
-        } else if (facing == Direction.WEST) {
-            return rotateShape(baseShape, Direction.WEST);
-        } else {
-            return baseShape;
-        }
+        return rotateShape(SHAPE_BY_BITE[pState.getValue(BITES)], pState.getValue(FACING).getOpposite());
     }
 
     private VoxelShape rotateShape(VoxelShape shape, Direction direction) {
@@ -81,6 +82,24 @@ public class ModCakeBlock extends CakeBlock {
 
     public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
         ItemStack heldStack = player.getItemInHand(hand);
+
+        // Candle placement (only allowed on uncut cakes)
+        Map<Item, Block> candleVariants = state.getValue(BITES) == 0 ? CANDLE_CAKE_MAP.get(this) : null;
+        if (candleVariants != null && !heldStack.isEmpty()) {
+            Block candleCake = candleVariants.get(heldStack.getItem());
+            if (candleCake != null) {
+                if (!level.isClientSide) {
+                    BlockState newState = candleCake.defaultBlockState();
+                    if (newState.hasProperty(ModCandleCakeBlock.FACING))
+                        newState = newState.setValue(ModCandleCakeBlock.FACING, state.getValue(FACING));
+                    level.setBlock(pos, newState, 3);
+                    level.playSound(null, pos, SoundEvents.CAKE_ADD_CANDLE, SoundSource.BLOCKS, 1f, 1f);
+                    if (!player.getAbilities().instabuild) heldStack.shrink(1);
+                }
+                return InteractionResult.sidedSuccess(level.isClientSide);
+            }
+        }
+
         if (level.isClientSide) {
             if (heldStack.is(ModTags.KNIVES)) {
                 return this.cutSlice(level, pos, state, player);
@@ -95,7 +114,7 @@ public class ModCakeBlock extends CakeBlock {
             }
         }
 
-        return heldStack.is(ModTags.KNIVES) ? this.cutSlice(level, pos, state, player) : consumeBite(level, pos, state, player);
+        return heldStack.is(ModTags.KNIVES) ? this.cutSlice(level, pos, state, player) : this.consumeBite(level, pos, state, player);
     }
 
     protected InteractionResult cutSlice(Level level, BlockPos pos, BlockState state, Player player) {
@@ -116,23 +135,31 @@ public class ModCakeBlock extends CakeBlock {
         return new ItemStack((ItemLike) Items.STICK);
     }
 
-    protected static InteractionResult consumeBite(LevelAccessor pLevel, BlockPos pPos, BlockState pState, Player pPlayer) {
+    protected InteractionResult consumeBite(LevelAccessor pLevel, BlockPos pPos, BlockState pState, Player pPlayer) {
         if (!pPlayer.canEat(false)) {
             return InteractionResult.PASS;
-        } else {
-            pPlayer.awardStat(Stats.EAT_CAKE_SLICE);
-            pPlayer.getFoodData().eat(3, 0.3F);
-            int $$4 = (Integer)pState.getValue(BITES);
-            pLevel.gameEvent(pPlayer, GameEvent.EAT, pPos);
-            if ($$4 < 6) {
-                pLevel.setBlock(pPos, (BlockState)pState.setValue(BITES, $$4 + 1), 3);
-            } else {
-                pLevel.removeBlock(pPos, false);
-                pLevel.gameEvent(pPlayer, GameEvent.BLOCK_DESTROY, pPos);
-            }
-
-            return InteractionResult.SUCCESS;
         }
+        FoodProperties food = getPieSliceItem().getItem().getFoodProperties();
+        if (food != null) {
+            pPlayer.getFoodData().eat(food.getNutrition(), food.getSaturationModifier());
+            if (pLevel instanceof Level level && !level.isClientSide) {
+                for (var pair : food.getEffects()) {
+                    if (level.random.nextFloat() < pair.getSecond()) {
+                        pPlayer.addEffect(new net.minecraft.world.effect.MobEffectInstance(pair.getFirst()));
+                    }
+                }
+            }
+        }
+        pPlayer.awardStat(Stats.EAT_CAKE_SLICE);
+        int bites = pState.getValue(BITES);
+        pLevel.gameEvent(pPlayer, GameEvent.EAT, pPos);
+        if (bites < 6) {
+            pLevel.setBlock(pPos, pState.setValue(BITES, bites + 1), 3);
+        } else {
+            pLevel.removeBlock(pPos, false);
+            pLevel.gameEvent(pPlayer, GameEvent.BLOCK_DESTROY, pPos);
+        }
+        return InteractionResult.SUCCESS;
     }
 
     public BlockState updateShape(BlockState pState, Direction pFacing, BlockState pFacingState, LevelAccessor pLevel, BlockPos pCurrentPos, BlockPos pFacingPos) {

@@ -1,4 +1,4 @@
-{
+﻿{
     "type": "farmersdelight:cutting",
     "ingredients": [
         {
@@ -6,14 +6,11 @@
         }
     ],
     "tool": {
-        "tag": "forge:tools/knife"
+        "tag": "forge:tools/knives"
     },
     "result": [
         {
-            "item": {
-                "count": 1,
-                "id": "createfood:pita_chips"
-            }
+            "count": 1, "item": "createfood:pita_chips"
         }
     ]
 }

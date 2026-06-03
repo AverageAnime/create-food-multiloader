@@ -1,6 +1,10 @@
 package net.averageanime.createfood.block.plate;
 
 import net.averageanime.createfood.block.blockentity.GenericDisplayPlateBlockEntity;
+import net.averageanime.createfood.block.display.FoodBlock;
+import net.averageanime.createfood.block.handler.PlateSliceHandler;
+import net.averageanime.createfood.config.ConfigLogic;
+import net.averageanime.createfood.config.CreateFoodConfig;
 import net.averageanime.createfood.util.ItemSpawn;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -84,6 +88,11 @@ public class GenericDisplayPlateBlock extends BaseEntityBlock {
         if (!heldStack.isEmpty()) {
             // Item held: if plate is empty, place item; if plate has item, remove it
             if (be.isEmpty()) {
+                if (!CreateFoodConfig.SERVER.enableGenericPlates.get()) return InteractionResult.PASS;
+                if (ConfigLogic.matchesFilterList(heldStack, CreateFoodConfig.SERVER.genericDisplayExclude.get()))
+                    return InteractionResult.PASS;
+                if (FoodBlock.Registry.isRegistered(heldStack.getItem())) return InteractionResult.PASS;
+                if (PlateSliceHandler.couldSlice(player, level, hand, pos, state)) return InteractionResult.PASS;
                 if (level.isClientSide) return InteractionResult.SUCCESS;
                 be.setDisplayedItem(heldStack.copyWithCount(1));
                 if (!player.isCreative()) heldStack.shrink(1);

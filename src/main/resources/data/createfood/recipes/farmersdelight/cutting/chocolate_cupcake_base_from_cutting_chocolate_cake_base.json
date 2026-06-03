@@ -1,4 +1,4 @@
-{
+﻿{
     "type": "farmersdelight:cutting",
     "ingredients": [
         {
@@ -6,14 +6,11 @@
         }
     ],
     "tool": {
-        "tag": "forge:tools/knife"
+        "tag": "forge:tools/knives"
     },
     "result": [
         {
-            "item": {
-                "count": 4,
-                "id": "createfood:chocolate_cupcake_base"
-            }
+            "count": 4, "item": "createfood:chocolate_cupcake_base"
         }
     ]
 }

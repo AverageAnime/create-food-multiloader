@@ -10,10 +10,17 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.stats.Stats;
 
-public class BowlFoodItem extends Item {
+import java.util.List;
+import java.util.Set;
+
+public class BowlFoodItem extends EffectFood {
 
     public BowlFoodItem(Item.Properties pProperties) {
         super(pProperties);
+    }
+
+    public BowlFoodItem(Item.Properties pProperties, Set<String> existingEffectIds, List<DeferredFx> deferredEffects) {
+        super(pProperties, existingEffectIds, deferredEffects);
     }
 
     @Override

@@ -1,0 +1,7 @@
+﻿{
+	"parent":  "createfood:block/bottle_base_jam",
+	"textures":  {
+					"2":  "createfood:fluid/berry_jam_flow",
+					"3":  "createfood:item/berry_jam_bottle"
+				}
+}

@@ -5,6 +5,7 @@ import com.tterrag.registrate.util.entry.RegistryEntry;
 import it.unimi.dsi.fastutil.objects.ReferenceArrayList;
 import it.unimi.dsi.fastutil.objects.ReferenceLinkedOpenHashSet;
 import net.averageanime.createfood.block.ModDisplayBlocks;
+import net.averageanime.createfood.config.ConfigLogic;
 import net.averageanime.createfood.fluid.ModFluids;
 import net.averageanime.createfood.item.ModItems;
 import net.minecraft.core.registries.Registries;
@@ -63,7 +64,12 @@ public class ModCreativeTab {
             CreativeModeTab.builder()
                     .title(Component.literal("Create: Food Display"))
                     .withTabsBefore(FLUID_TAB.getKey())
-                    .icon(() -> new ItemStack(ModDisplayBlocks.PLATE_BLOCK.get().asItem()))
+                    .icon(() -> {
+                        net.minecraft.world.level.block.Block b = net.minecraftforge.registries.ForgeRegistries.BLOCKS
+                                .getValue(new net.minecraft.resources.ResourceLocation(CreateFood.ID, "breakfast_plate_block"));
+                        return new ItemStack(b != null && b.asItem() != Items.AIR
+                                ? b.asItem() : ModDisplayBlocks.PLATE_BLOCK.get().asItem());
+                    })
                     .displayItems((params, output) -> filterAndOutput(output, collectDisplayBlocks()))
                     .build()
         );
@@ -72,6 +78,9 @@ public class ModCreativeTab {
     private static List<Item> collectDisplayBlocks() {
         List<Item> items = new ReferenceArrayList<>();
         for (RegistryObject<Item> entry : ModDisplayBlocks.ITEMS.getEntries()) {
+            String path = entry.getId().getPath();
+            if (path.equals("plate_block") || path.equals("small_plate_block")
+                    || path.equals("generic_display_plate_block")) continue;
             Item item = entry.get();
             if (item != Items.AIR) items.add(item);
         }
@@ -122,6 +131,7 @@ public class ModCreativeTab {
             if (item.toString().contains("guide")) continue;
             if (item.toString().contains("blaze_burner")) continue;
             if (item.toString().contains("creative_tab_icon")) continue;
+            if (!ConfigLogic.isItemEnabled(new ItemStack(item))) continue;
             output.accept(item);
         }
     }

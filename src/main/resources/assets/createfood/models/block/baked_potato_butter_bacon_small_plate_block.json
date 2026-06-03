@@ -1,0 +1,149 @@
+{
+	"format_version": "1.9.0",
+	"credit": "Made with Blockbench",
+	"parent": "minecraft:block/block",
+	"texture_size": [32, 32],
+	"textures": {
+		"1": "createfood:item/baked_potato_butter_bacon",
+		"plate": "createfood:block/small_plate_block"
+	},
+	"elements": [
+		{
+			"from": [4, 0, 4],
+			"to": [12, 1, 12],
+			"rotation": {
+				"angle": 0,
+				"axis": "y",
+				"origin": [8, 1.25, 8]
+			},
+			"faces": {
+				"north": {
+					"uv": [4, 4, 12, 5],
+					"texture": "#plate"
+				},
+				"east": {
+					"uv": [12, 12, 11, 4],
+					"rotation": 90,
+					"texture": "#plate"
+				},
+				"south": {
+					"uv": [12, 11, 4, 12],
+					"texture": "#plate"
+				},
+				"west": {
+					"uv": [5, 4, 4, 12],
+					"rotation": 90,
+					"texture": "#plate"
+				},
+				"up": {
+					"uv": [4, 4, 12, 12],
+					"rotation": 180,
+					"texture": "#plate"
+				},
+				"down": {
+					"uv": [12, 4, 4, 12],
+					"texture": "#plate"
+				}
+			}
+		},
+		{
+			"from": [6.5, 2, 6.5],
+			"to": [9.5, 4.3, 10.5],
+			"rotation": {
+				"angle": 0,
+				"axis": "y",
+				"origin": [8, 2.825, 8.5]
+			},
+			"faces": {
+				"north": {
+					"uv": [6, 10, 9, 9],
+					"texture": "#1"
+				},
+				"east": {
+					"uv": [6, 7, 7, 10],
+					"rotation": 270,
+					"texture": "#1"
+				},
+				"south": {
+					"uv": [6, 7, 9, 8],
+					"rotation": 180,
+					"texture": "#1"
+				},
+				"west": {
+					"uv": [8, 7, 9, 10],
+					"rotation": 90,
+					"texture": "#1"
+				},
+				"up": {
+					"uv": [9, 10, 6, 7],
+					"texture": "#1"
+				}
+			}
+		},
+		{
+			"from": [6, 1, 6],
+			"to": [10, 4, 11],
+			"rotation": {
+				"angle": 0,
+				"axis": "y",
+				"origin": [8, 2.825, 8.5]
+			},
+			"faces": {
+				"north": {
+					"uv": [7, 10, 11, 13],
+					"texture": "#1"
+				},
+				"east": {
+					"uv": [11, 10, 7, 13],
+					"texture": "#1"
+				},
+				"south": {
+					"uv": [7, 10, 11, 13],
+					"texture": "#1"
+				},
+				"west": {
+					"uv": [7, 10, 11, 13],
+					"texture": "#1"
+				},
+				"up": {
+					"uv": [11, 10, 7, 13],
+					"texture": "#1"
+				},
+				"down": {
+					"uv": [4, 0, 2, 2.5],
+					"texture": "#1"
+				}
+			}
+		}
+	],
+	"groups": [
+		{
+			"name": "plate",
+			"origin": [0, 1, 0],
+			"scope": 0,
+			"color": 0,
+			"children": [0]
+		},
+		{
+			"name": "content",
+			"origin": [8, 8, 8],
+			"scope": 0,
+			"color": 0,
+			"children": []
+		},
+		{
+			"name": "plate",
+			"origin": [0, 1, 0],
+			"scope": 0,
+			"color": 0,
+			"children": []
+		},
+		{
+			"name": "potato_1",
+			"origin": [8, 8, 8],
+			"scope": 0,
+			"color": 0,
+			"children": [1, 2]
+		}
+	]
+}

@@ -28,9 +28,8 @@ public class MeatPieBlock extends ModPieBlock {
         if (!pPlayer.canEat(false)) {
             return InteractionResult.PASS;
         }
-        if (ModEffects.NOURISHMENT.get() != null) {
-            pPlayer.addEffect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0));
-        }
+        ModEffects.NOURISHMENT.get().ifPresent(effect ->
+                pPlayer.addEffect(new MobEffectInstance(effect, 1200, 0)));
         pPlayer.getFoodData().eat(5, 0.8F);
         int bites = pState.getValue(BITES);
         pLevel.gameEvent(pPlayer, GameEvent.EAT, pPos);

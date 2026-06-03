@@ -1,9 +1,0 @@
-{
-  "replace": false,
-  "values": [
-    {
-      "id": "createfood:chocolate_sweet_roll",
-      "required": false
-    }
-  ]
-}

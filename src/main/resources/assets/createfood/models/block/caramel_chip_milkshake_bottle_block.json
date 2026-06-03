@@ -1,0 +1,6 @@
+﻿{
+	"parent":  "createfood:block/bottle_base_chip_milkshake",
+	"textures":  {
+					"5":  "createfood:item/caramel_chip_milkshake_bottle"
+				}
+}

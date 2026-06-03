@@ -1,6 +1,6 @@
 {
-  "parent": "item/generated",
+  "parent": "minecraft:item/generated",
   "textures": {
-  "layer0": "createfood:item/sausage_onion_pizza"
+    "layer0": "createfood:item/sausage_onion_pizza"
   }
 }

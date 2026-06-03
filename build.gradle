@@ -104,6 +104,10 @@ repositories {
         name = "squiddev"
         url = "https://squiddev.cc/maven/"
     }
+    maven {
+        name = "JEI"
+        url = "https://maven.blamejared.com"
+    }
 }
 
 dependencies {
@@ -128,6 +132,9 @@ dependencies {
     implementation(fg.deobf("curse.maven:farmers-delight-398521:5051242")) {
         exclude group: 'com.tterrag.registrate', module: 'Registrate'
     }
+    compileOnly(fg.deobf("mezz.jei:jei-${minecraft_version}-forge:${jei_version}"))
+    runtimeOnly(fg.deobf("mezz.jei:jei-${minecraft_version}-forge:${jei_version}"))
+
     compileOnly(annotationProcessor("io.github.llamalad7:mixinextras-common:0.4.1"))
 
     // 2. Provide the Forge implementation at runtime and bundle it via JarJar

@@ -1,4 +1,4 @@
-{
+﻿{
   "conditions": [
     {
       "type": "forge:mod_loaded",
@@ -8,13 +8,13 @@
   "type": "farm_and_charm:stove",
   "ingredients": [
     {
-      "tag": "forge:raw_sweet_berry_cookie"
+      "tag": "forge:raw_berry_cookie"
     },
     {
-      "tag": "forge:raw_sweet_berry_cookie"
+      "tag": "forge:raw_berry_cookie"
     },
     {
-      "tag": "forge:raw_sweet_berry_cookie"
+      "tag": "forge:raw_berry_cookie"
     }
   ],
   "experience": 0.45,

@@ -68,15 +68,7 @@ public class EmptyPlateBlock extends Block {
         ItemStack heldStack = player.getItemInHand(hand);
 
         if (!heldStack.isEmpty()) {
-            // Shift+use → shrink to small plate
-            if (player.isShiftKeyDown() && smallPlateBlock != null) {
-                if (level.isClientSide) return InteractionResult.SUCCESS;
-                BlockState smallPlate = smallPlateBlock.get().defaultBlockState();
-                if (smallPlate.hasProperty(FACING)) smallPlate = smallPlate.setValue(FACING, state.getValue(FACING));
-                level.setBlock(pos, smallPlate, 3);
-                level.playSound(null, pos, SoundEvents.WOOD_PLACE, SoundSource.BLOCKS, 0.8F, 1.2F);
-                return InteractionResult.SUCCESS;
-            }
+            if (player.isShiftKeyDown()) return InteractionResult.PASS;
 
             if (level.isClientSide) {
                 if (FoodBlock.Registry.canPlaceOnPlate(heldStack.getItem(), false)
@@ -137,6 +129,16 @@ public class EmptyPlateBlock extends Block {
             }
 
             return InteractionResult.PASS;
+        }
+
+        // Empty hand + shift → shrink to small plate
+        if (player.isShiftKeyDown() && smallPlateBlock != null) {
+            if (level.isClientSide) return InteractionResult.SUCCESS;
+            BlockState smallPlate = smallPlateBlock.get().defaultBlockState();
+            if (smallPlate.hasProperty(FACING)) smallPlate = smallPlate.setValue(FACING, state.getValue(FACING));
+            level.setBlock(pos, smallPlate, 3);
+            level.playSound(null, pos, SoundEvents.WOOD_PLACE, SoundSource.BLOCKS, 0.8F, 1.2F);
+            return InteractionResult.SUCCESS;
         }
 
         // Empty hand — check if offhand has a food/plate item before picking up

@@ -1,6 +1,6 @@
 {
-  "parent": "item/generated",
+  "parent": "minecraft:item/generated",
   "textures": {
-  "layer0": "createfood:item/chorus_fruit_popsicle"
+    "layer0": "createfood:item/chorus_fruit_popsicle"
   }
 }

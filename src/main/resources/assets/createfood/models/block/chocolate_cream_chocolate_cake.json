@@ -1,0 +1,9 @@
+﻿{
+	"parent":  "createfood:block/cream_cake_base",
+	"textures":  {
+					"bottom":  "createfood:block/chocolate_cake_bottom",
+					"top":  "createfood:block/chocolate_cream_cake_top",
+					"side":  "createfood:block/chocolate_cream_chocolate_cake_side",
+					"particle":  "createfood:block/chocolate_cream_chocolate_cake_side"
+				}
+}

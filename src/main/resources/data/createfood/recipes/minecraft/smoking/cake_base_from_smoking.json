@@ -1,9 +1,0 @@
-{
-    "type": "minecraft:smoking",
-    "cookingtime": 100,
-    "experience": 0.35,
-    "ingredient": {
-        "tag": "forge:raw_cake_base"
-    },
-    "result": "createfood:cake_base"
-}

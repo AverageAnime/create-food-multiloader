@@ -1,5 +1,6 @@
-{
+﻿{
     "type": "create:mixing",
+    "requiredSpeed": 32,
     "heatRequirement": "heated",
     "ingredients": [
         {

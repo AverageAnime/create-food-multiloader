@@ -1,5 +1,6 @@
-{
+﻿{
     "type": "create:mixing",
+    "requiredSpeed": 64,
     "ingredients": [
         {
             "amount": 1000,

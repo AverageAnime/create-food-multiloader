@@ -4,6 +4,7 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
 import net.averageanime.createfood.block.plate.GenericDisplayPlateBlock;
 import net.averageanime.createfood.block.blockentity.GenericDisplayPlateBlockEntity;
+import net.averageanime.createfood.config.CreateFoodConfig;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.LightTexture;
 import net.minecraft.client.renderer.MultiBufferSource;
@@ -60,7 +61,8 @@ public class GenericDisplayPlateRenderer implements BlockEntityRenderer<GenericD
         };
 
         boolean isBlock = displayedItem.getItem() instanceof BlockItem;
-        boolean upright = displayedItem.is(UPRIGHT_TAG) || isBlock;
+        boolean upright = (CreateFoodConfig.CLIENT != null && CreateFoodConfig.CLIENT.alwaysDisplayUpright.get())
+                || displayedItem.is(UPRIGHT_TAG) || isBlock;
 
         poseStack.pushPose();
         poseStack.translate(0.5, 0.0, 0.5);

@@ -35,6 +35,8 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.NotNull;
 
+import net.averageanime.createfood.block.handler.PlateSliceHandler;
+
 import java.util.*;
 import java.util.function.Supplier;
 
@@ -72,6 +74,14 @@ public abstract class FoodBlock extends Block {
                                           @NotNull BlockPos pos, @NotNull Player player,
                                           @NotNull InteractionHand hand, @NotNull BlockHitResult hit) {
         ItemStack heldStack = player.getItemInHand(hand);
+
+        // Check off-hand cutting before main use logic
+        ItemStack offHand = player.getItemInHand(InteractionHand.OFF_HAND);
+        if (!player.isShiftKeyDown() && !offHand.isEmpty()
+                && PlateSliceHandler.couldSlice(player, level, InteractionHand.OFF_HAND, pos, state)) {
+            if (!level.isClientSide) PlateSliceHandler.trySlice(player, level, InteractionHand.OFF_HAND, pos, state);
+            return level.isClientSide ? InteractionResult.SUCCESS : InteractionResult.CONSUME;
+        }
 
         // useItemOn logic: held item is the same as this display item
         if (!heldStack.isEmpty() && heldStack.is(this.displayItem.get())) {

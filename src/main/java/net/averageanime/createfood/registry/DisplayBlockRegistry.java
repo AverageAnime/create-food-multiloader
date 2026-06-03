@@ -66,7 +66,7 @@ public final class DisplayBlockRegistry {
             "raw_", "stick_1", "stick_2", "dough", "chips",
             "chocolate_berries", "chocolate_apple", "bread_slice", "toast_slice",
             "apple_slice", "tropical_fish_slice", "pretzel_stick",
-            "taco_shell", "donut_hole", "pie_crust", "sliced"
+            "taco_shell", "donut_hole", "pie_crust", "sliced", "_candle"
     );
 
     // ── Pattern → config map ──────────────────────────────────────────────────
@@ -203,6 +203,14 @@ public final class DisplayBlockRegistry {
         List<String> names = new ArrayList<>();
         for (var entry : ModItems.ITEMS.getEntries()) {
             names.add(entry.getId().getPath());
+        }
+        // Include REGISTRATE-registered block items (cheese_block, gyro_meat_block, etc.)
+        for (var entry : net.averageanime.createfood.CreateFood.REGISTRATE.getAll(
+                net.minecraft.core.registries.Registries.BLOCK)) {
+            String id = entry.getId().getPath();
+            if (!id.contains("_dessert_block")) {
+                names.add(id);
+            }
         }
         return names;
     }

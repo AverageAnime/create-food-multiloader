@@ -2,14 +2,14 @@ package net.averageanime.createfood.block;
 
 import net.averageanime.createfood.CreateFood;
 import net.averageanime.createfood.block.display.*;
-import net.averageanime.createfood.block.plate.EmptyPlateBlock;
-import net.averageanime.createfood.block.plate.GenericDisplayPlateBlock;
-import net.averageanime.createfood.block.plate.PlateBlock;
-import net.averageanime.createfood.block.plate.SmallPlateBlock;
+import net.averageanime.createfood.block.plate.*;
+import net.averageanime.createfood.config.CreateFoodConfig;
 import net.averageanime.createfood.registry.DisplayBlockRegistry;
 import net.averageanime.createfood.registry.DisplayBlockRegistry.DisplayBlockConfig;
 import net.averageanime.createfood.registry.DisplayBlockRegistry.DisplayType;
 import net.minecraft.core.particles.ParticleOptions;
+import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -22,6 +22,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.util.List;
+import java.util.Locale;
 import java.util.function.Supplier;
 
 @SuppressWarnings("unused")
@@ -78,9 +79,41 @@ public class ModDisplayBlocks {
             return (item != null && item != Items.AIR) ? item : Items.BARRIER;
         };
 
+        String suffixKey = switch (config.type()) {
+            case PLATE, SMALL_PLATE, PLATE_FOOD -> "display.createfood.suffix.plate";
+            case BOWL, SALAD_BOWL               -> "display.createfood.suffix.bowl";
+            case BOTTLE                         -> "display.createfood.suffix.bottle";
+        };
+
         RegistryObject<Block> block = BLOCKS.register(blockName, () -> createBlock(itemSupplier, config));
 
-        ITEMS.register(blockName, () -> new BlockItem(block.get(), new net.minecraft.world.item.Item.Properties()));
+        ITEMS.register(blockName, () -> new BlockItem(block.get(), new net.minecraft.world.item.Item.Properties()) {
+            @Override
+            public net.minecraft.network.chat.@org.jetbrains.annotations.NotNull Component getName(
+                    net.minecraft.world.item.@org.jetbrains.annotations.NotNull ItemStack stack) {
+                net.minecraft.world.item.Item original = itemSupplier.get();
+                if (original != null && original != Items.BARRIER) {
+                    return net.minecraft.network.chat.Component.translatable(
+                            "display.createfood.format",
+                            original.getDescription(),
+                            net.minecraft.network.chat.Component.translatable(suffixKey));
+                }
+                return super.getName(stack);
+            }
+
+            @Override
+            public void appendHoverText(
+                    net.minecraft.world.item.@org.jetbrains.annotations.NotNull ItemStack stack,
+                    @org.jetbrains.annotations.Nullable net.minecraft.world.level.Level level,
+                    java.util.@org.jetbrains.annotations.NotNull List<net.minecraft.network.chat.Component> components,
+                    net.minecraft.world.item.@org.jetbrains.annotations.NotNull TooltipFlag flag) {
+                net.minecraft.world.item.Item original = itemSupplier.get();
+                if (original != null && original != Items.BARRIER) {
+                    original.appendHoverText(new net.minecraft.world.item.ItemStack(original), level, components, flag);
+                }
+                super.appendHoverText(stack, level, components, flag);
+            }
+        });
     }
 
     private static Block createBlock(Supplier<net.minecraft.world.item.Item> itemSupplier,
@@ -106,14 +139,61 @@ public class ModDisplayBlocks {
             }
         });
 
-        // Register the plate block items as "empty plate" items so they can't be placed on plates
-        FoodBlock.Registry.registerEmptyPlateItem(() -> PLATE_BLOCK.get().asItem());
-        FoodBlock.Registry.registerEmptyPlateItem(() -> SMALL_PLATE_BLOCK.get().asItem());
+    }
+
+    private static void registerCustomDisplayBlocks() {
+        // Read config file directly (config values not loaded yet during registration phase)
+        java.nio.file.Path configFile = net.minecraftforge.fml.loading.FMLPaths.CONFIGDIR.get()
+                .resolve("createfood-client.toml");
+        if (!java.nio.file.Files.exists(configFile)) return;
+        try {
+            com.electronwill.nightconfig.core.file.FileConfig raw =
+                    com.electronwill.nightconfig.core.file.FileConfig.of(configFile.toFile());
+            raw.load();
+            java.util.List<String> entries = raw.getOrElse("display.display_block",
+                    java.util.List.of());
+            raw.close();
+            for (String entry : entries) {
+                try {
+                    String[] p = entry.split("\\|");
+                    if (p.length < 3) continue;
+                    String[] id = p[0].split(":", 2);
+                    String ns = id.length > 1 ? id[0] : "minecraft";
+                    String path = id.length > 1 ? id[1] : id[0];
+                    DisplayType type;
+                    try {
+                        type = DisplayType.valueOf(p[1].toUpperCase(Locale.ROOT));
+                    } catch (IllegalArgumentException e) {
+                        LOGGER.warn("Create: Food - Unknown display type '{}' in custom_display_block entry: {}", p[1], entry);
+                        continue;
+                    }
+                    int maxStack = Integer.parseInt(p[2]);
+                    double height = p.length > 3 ? Double.parseDouble(p[3]) : 12.0;
+                    boolean particles = p.length > 4 && Boolean.parseBoolean(p[4]);
+                    DisplayBlockConfig config = particles
+                            ? new DisplayBlockConfig(type, maxStack, height, true, () -> ParticleTypes.WHITE_ASH)
+                            : new DisplayBlockConfig(type, maxStack);
+                    String blockName = DisplayBlockRegistry.getBlockName(path, type);
+                    final String fns = ns, fpath = path;
+                    Supplier<Item> itemSup = () -> {
+                        Item i = ForgeRegistries.ITEMS.getValue(new ResourceLocation(fns, fpath));
+                        return (i != null && i != Items.AIR) ? i : Items.BARRIER;
+                    };
+                    RegistryObject<Block> block = BLOCKS.register(blockName, () -> createBlock(itemSup, config));
+                    ITEMS.register(blockName, () -> new BlockItem(block.get(), new Item.Properties()));
+                } catch (Exception e) {
+                    LOGGER.warn("Create: Food - Invalid custom_display_block entry: {}", entry);
+                }
+            }
+        } catch (Exception e) {
+            LOGGER.warn("Create: Food - Failed to read custom_display_block from config file", e);
+        }
     }
 
     public static void register(IEventBus eventBus) {
         LOGGER.info("Create: Food - Registering Display Blocks");
         autoRegisterDisplayBlocks();
+        registerCustomDisplayBlocks();
 
         // Register core block items
         ITEMS.register("plate_block",
@@ -127,6 +207,9 @@ public class ModDisplayBlocks {
         ITEMS.register(eventBus);
 
         eventBus.addListener((net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent event) ->
-                event.enqueueWork(ModDisplayBlocks::registerBlockItems));
+                event.enqueueWork(() -> {
+                    ModDisplayBlocks.registerBlockItems();
+                    ModPlateBlocks.registerCompatiblePlates();
+                }));
     }
 }

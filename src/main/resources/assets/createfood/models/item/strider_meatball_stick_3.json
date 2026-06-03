@@ -1,6 +1,6 @@
 {
-  "parent": "item/generated",
+  "parent": "minecraft:item/generated",
   "textures": {
-  "layer0": "createfood:item/strider_meatball_stick_3"
+    "layer0": "createfood:item/strider_meatball_stick_3"
   }
 }

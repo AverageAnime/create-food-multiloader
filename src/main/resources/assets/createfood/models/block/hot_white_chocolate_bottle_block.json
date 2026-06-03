@@ -1,0 +1,6 @@
+﻿{
+	"parent":  "createfood:block/bottle_base_hot_choc",
+	"textures":  {
+					"3":  "createfood:fluid/hot_white_chocolate_still"
+				}
+}

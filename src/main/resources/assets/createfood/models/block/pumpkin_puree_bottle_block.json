@@ -1,0 +1,7 @@
+﻿{
+	"parent":  "createfood:block/bottle_base_sauce",
+	"textures":  {
+					"2":  "createfood:fluid/pumpkin_puree_flow",
+					"3":  "createfood:item/pumpkin_puree_bottle"
+				}
+}

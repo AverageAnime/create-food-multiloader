@@ -1,8 +1,8 @@
-{
+﻿{
     "type": "farmersdelight:cooking",
     "experience": 0.55,
     "container": {
-        "id": "minecraft:glass_bottle"
+        "item": "minecraft:glass_bottle"
     },
     "ingredients": [
         {

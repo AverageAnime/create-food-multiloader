@@ -1,0 +1,7 @@
+﻿{
+	"parent":  "createfood:block/bottle_base_sauce",
+	"textures":  {
+					"2":  "createfood:fluid/taco_sauce_flow",
+					"3":  "createfood:item/taco_sauce_bottle"
+				}
+}
