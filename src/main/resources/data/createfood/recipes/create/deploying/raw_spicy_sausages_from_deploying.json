@@ -1,4 +1,14 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "raw_spicy_sausages"
+        },
+        {
+            "type": "forge:mod_loaded",
+            "modid": "create"
+        }
+    ],
     "type": "create:deploying",
     "ingredients": [
         {

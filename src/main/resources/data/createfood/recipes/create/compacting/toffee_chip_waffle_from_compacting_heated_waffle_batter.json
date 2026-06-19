@@ -1,5 +1,14 @@
 {
-    "conditions": [],
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "toffee_chip_waffle"
+        },
+        {
+            "type": "forge:mod_loaded",
+            "modid": "create"
+        }
+    ],
     "type": "create:compacting",
     "heatRequirement": "heated",
     "ingredients": [

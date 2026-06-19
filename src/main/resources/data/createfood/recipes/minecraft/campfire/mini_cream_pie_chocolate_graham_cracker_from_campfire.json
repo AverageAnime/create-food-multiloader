@@ -1,4 +1,10 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "mini_cream_pie_chocolate_graham_cracker"
+        }
+    ],
     "type": "minecraft:campfire_cooking",
     "ingredient": {
         "tag": "forge:raw_mini_cream_pie_chocolate_graham_cracker"

@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "createfood:block/kelp_soup_block"
+    }
+  }
+}

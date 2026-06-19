@@ -1,4 +1,10 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "caramel_chip_chocolate_cookie"
+        }
+    ],
     "type": "minecraft:campfire_cooking",
     "cookingtime": 200,
     "experience": 0.1,

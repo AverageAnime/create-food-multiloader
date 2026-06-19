@@ -1,4 +1,18 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "pasta_plate_mushroom_tomato_sauce"
+        },
+        {
+            "type": "forge:mod_loaded",
+            "modid": "create"
+        },
+        {
+            "type": "forge:mod_loaded",
+            "modid": "create_central_kitchen"
+        }
+    ],
     "type": "create:filling",
     "ingredients": [
         {

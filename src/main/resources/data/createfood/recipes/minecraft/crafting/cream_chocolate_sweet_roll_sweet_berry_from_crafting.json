@@ -1,4 +1,10 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "cream_chocolate_sweet_roll_sweet_berry"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {

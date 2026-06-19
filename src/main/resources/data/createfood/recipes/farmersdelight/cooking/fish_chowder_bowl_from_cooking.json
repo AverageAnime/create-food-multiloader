@@ -1,4 +1,14 @@
-﻿{
+{
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "fish_chowder_bowl"
+        },
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farmersdelight"
+        }
+    ],
     "type": "farmersdelight:cooking",
     "experience": 0.5,
     "ingredients": [
@@ -6,7 +16,7 @@
             "tag": "forge:heavy_cream_bottle"
         },
         {
-            "tag": "forge:foods/raw_fish"
+            "tag": "forge:raw_fishes"
         },
         {
             "tag": "forge:potato"

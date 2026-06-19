@@ -1,4 +1,10 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "mushroom_cream_soup_bucket"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {

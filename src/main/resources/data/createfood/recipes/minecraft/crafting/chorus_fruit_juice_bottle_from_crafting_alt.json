@@ -1,4 +1,10 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "chorus_fruit_juice_bottle"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {
@@ -6,6 +12,15 @@
         },
         {
             "tag": "forge:sugar"
+        },
+        {
+            "tag": "forge:chorus_fruit"
+        },
+        {
+            "tag": "forge:chorus_fruit"
+        },
+        {
+            "tag": "forge:chorus_fruit"
         },
         {
             "tag": "forge:chorus_fruit"

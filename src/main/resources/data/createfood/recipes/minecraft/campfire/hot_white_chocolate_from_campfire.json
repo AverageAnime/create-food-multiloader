@@ -1,4 +1,10 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "hot_white_chocolate_bottle"
+        }
+    ],
     "type": "minecraft:campfire_cooking",
     "ingredient": {
         "tag": "forge:white_chocolate_bottle"

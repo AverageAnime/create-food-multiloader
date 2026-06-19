@@ -1,4 +1,10 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "mushroom_pizza"
+        }
+    ],
     "type": "minecraft:smoking",
     "ingredient": {
         "tag": "forge:raw_mushroom_pizza"

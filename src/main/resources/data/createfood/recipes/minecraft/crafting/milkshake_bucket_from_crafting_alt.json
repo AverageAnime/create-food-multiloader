@@ -1,8 +1,14 @@
-{
+﻿{
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "milkshake_bucket"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {
-            "tag": "forge:milk_buckets"
+            "tag": "forge:milk_bottle"
         },
         {
             "tag": "forge:ice_cream_bucket"

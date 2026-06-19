@@ -26,11 +26,16 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import vectorwing.farmersdelight.common.tag.ModTags;
-import vectorwing.farmersdelight.common.utility.ItemUtils;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.entity.item.ItemEntity;
+import net.minecraft.world.item.Item;
 
 public class GyroMeatBlock extends CakeBlock {
 
+    private static final TagKey<Item> KNIVES =
+            TagKey.create(Registries.ITEM, new ResourceLocation("forge", "tools/knives"));
     public static final int MAX_BITES = 7;
     public static final IntegerProperty BITES = BlockStateProperties.BITES;
     public static final int FULL_CAKE_SIGNAL = getOutputSignal(0);
@@ -90,7 +95,7 @@ public class GyroMeatBlock extends CakeBlock {
     public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
         ItemStack heldStack = player.getItemInHand(hand);
         if (level.isClientSide) {
-            if (heldStack.is(ModTags.KNIVES)) {
+            if (heldStack.is(KNIVES)) {
                 return this.cutSlice(level, pos, state, player);
             }
             if (this.consumeBite(level, pos, state, player) == InteractionResult.SUCCESS) {
@@ -100,7 +105,7 @@ public class GyroMeatBlock extends CakeBlock {
                 return InteractionResult.CONSUME;
             }
         }
-        return heldStack.is(ModTags.KNIVES) ? this.cutSlice(level, pos, state, player) : consumeBite(level, pos, state, player);
+        return heldStack.is(KNIVES) ? this.cutSlice(level, pos, state, player) : consumeBite(level, pos, state, player);
     }
 
     protected InteractionResult cutSlice(Level level, BlockPos pos, BlockState state, Player player) {
@@ -111,7 +116,9 @@ public class GyroMeatBlock extends CakeBlock {
             level.removeBlock(pos, false);
         }
         Direction direction = player.getDirection().getOpposite();
-        ItemUtils.spawnItemEntity(level, this.getPieSliceItem(), pos.getX() + 0.5, pos.getY() + 0.3, pos.getZ() + 0.5, direction.getStepX() * 0.15, 0.05, direction.getStepZ() * 0.15);
+        ItemEntity sliceEntity = new ItemEntity(level, pos.getX() + 0.5, pos.getY() + 0.3, pos.getZ() + 0.5, this.getPieSliceItem(), direction.getStepX() * 0.15, 0.05, direction.getStepZ() * 0.15);
+        sliceEntity.setDefaultPickUpDelay();
+        level.addFreshEntity(sliceEntity);
         level.playSound(null, pos, SoundEvents.WOOL_BREAK, SoundSource.PLAYERS, 0.8F, 0.8F);
         return InteractionResult.SUCCESS;
     }

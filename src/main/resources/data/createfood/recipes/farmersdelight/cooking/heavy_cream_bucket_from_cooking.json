@@ -1,9 +1,19 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "heavy_cream_bucket"
+        },
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farmersdelight"
+        }
+    ],
     "type": "farmersdelight:cooking",
     "experience": 0.5,
     "ingredients": [
         {
-            "tag": "forge:buckets/milk"
+            "tag": "forge:milk_buckets"
         }
     ],
     "recipe_book_tab": "drinks",

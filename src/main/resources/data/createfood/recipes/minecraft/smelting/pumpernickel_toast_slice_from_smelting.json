@@ -1,4 +1,10 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "pumpernickel_toast_slice"
+        }
+    ],
     "type": "minecraft:smelting",
     "cookingtime": 200,
     "experience": 0.35,

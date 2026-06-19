@@ -1,4 +1,10 @@
-﻿{
+{
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farmersdelight"
+        }
+    ],
     "type": "farmersdelight:cutting",
     "ingredients": [
         {
@@ -10,7 +16,8 @@
     },
     "result": [
         {
-            "count": 1, "item": "createfood:pita_chips"
+            "count": 1,
+            "item": "createfood:pita_chips"
         }
     ]
 }

@@ -1,4 +1,10 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "beef_bun_crimson_fungus"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {

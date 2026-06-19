@@ -1,33 +1,37 @@
 {
-  "conditions": [
-    {
-      "type": "forge:mod_loaded",
-      "modid": "farm_and_charm"
-    }
-  ],
-  "type": "farm_and_charm:pot_cooking",
-  "ingredients": [
-    {
-      "tag": "forge:grains"
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "slime_bucket"
+        },
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farm_and_charm"
+        }
+    ],
+    "type": "farm_and_charm:pot_cooking",
+    "ingredients": [
+        {
+            "tag": "forge:grains"
+        },
+        {
+            "tag": "forge:gelatin"
+        },
+        {
+            "tag": "forge:lime_dyes"
+        },
+        {
+            "tag": "forge:buckets/water"
+        }
+    ],
+    "container": {
+        "required": true,
+        "item": {
+            "item": "minecraft:bucket"
+        }
     },
-    {
-      "tag": "forge:gelatin"
+    "result": {
+        "item": "createfood:slime_bucket"
     },
-    {
-      "tag": "forge:lime_dyes"
-    },
-    {
-      "tag": "forge:buckets/water"
-    }
-  ],
-  "container": {
-    "required": true,
-    "item": {
-      "item": "minecraft:bucket"
-    }
-  },
-  "result": {
-    "item": "createfood:slime_bucket"
-  },
-  "requiresLearning": false
+    "requiresLearning": false
 }

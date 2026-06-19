@@ -1,26 +1,30 @@
 {
-  "conditions": [
-    {
-      "type": "forge:mod_loaded",
-      "modid": "farm_and_charm"
-    }
-  ],
-  "type": "farm_and_charm:stove",
-  "ingredients": [
-    {
-      "tag": "forge:raw_apple_pie"
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farmersdelight"
+        },
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farm_and_charm"
+        }
+    ],
+    "type": "farm_and_charm:stove",
+    "ingredients": [
+        {
+            "tag": "forge:raw_apple_pie"
+        },
+        {
+            "tag": "forge:raw_apple_pie"
+        },
+        {
+            "tag": "forge:raw_apple_pie"
+        }
+    ],
+    "experience": 1.5,
+    "result": {
+        "item": "farmersdelight:apple_pie",
+        "count": 3
     },
-    {
-      "tag": "forge:raw_apple_pie"
-    },
-    {
-      "tag": "forge:raw_apple_pie"
-    }
-  ],
-  "experience": 1.5,
-  "result": {
-    "item": "farmersdelight:apple_pie",
-    "count": 3
-  },
-  "requiresLearning": false
+    "requiresLearning": false
 }

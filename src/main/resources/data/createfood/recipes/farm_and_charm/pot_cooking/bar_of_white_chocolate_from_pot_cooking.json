@@ -1,29 +1,33 @@
 {
-  "conditions": [
-    {
-      "type": "forge:mod_loaded",
-      "modid": "farm_and_charm"
-    }
-  ],
-  "type": "farm_and_charm:pot_cooking",
-  "ingredients": [
-    {
-      "tag": "forge:cacao_butter"
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "bar_of_white_chocolate"
+        },
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farm_and_charm"
+        }
+    ],
+    "type": "farm_and_charm:pot_cooking",
+    "ingredients": [
+        {
+            "tag": "forge:cacao_butter"
+        },
+        {
+            "item": "minecraft:milk_bucket"
+        }
+    ],
+    "container": {
+        "required": true,
+        "item": {
+            "item": "minecraft:bowl"
+        }
     },
-    {
-      "item": "minecraft:milk_bucket"
-    }
-  ],
-  "container": {
-    "required": true,
-    "item": {
-      "item": "minecraft:bowl"
-    }
-  },
-  "result": {
-    "item": "createfood:bar_of_white_chocolate",
-    "count": 1,
-    "experience": 0.75
-  },
-  "requiresLearning": false
+    "result": {
+        "item": "createfood:bar_of_white_chocolate",
+        "count": 1,
+        "experience": 0.75
+    },
+    "requiresLearning": false
 }

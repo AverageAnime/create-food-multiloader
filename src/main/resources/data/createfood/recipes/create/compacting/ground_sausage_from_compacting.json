@@ -1,14 +1,24 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "ground_sausage"
+        },
+        {
+            "type": "forge:mod_loaded",
+            "modid": "create"
+        }
+    ],
     "type": "create:compacting",
     "ingredients": [
         {
-            "tag": "forge:foods/raw_beef"
+            "tag": "forge:raw_beef"
         },
         {
-            "tag": "forge:foods/raw_pork"
+            "tag": "forge:raw_pork"
         },
         {
-            "tag": "forge:foods/raw_chicken"
+            "tag": "forge:raw_chicken"
         }
     ],
     "results": [

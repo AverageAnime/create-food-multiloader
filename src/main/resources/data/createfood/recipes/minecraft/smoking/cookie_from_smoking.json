@@ -3,7 +3,7 @@
     "cookingtime": 100,
     "experience": 0.35,
     "ingredient": {
-        "tag": "forge:raw_cookie"
+        "tag": "forge:raw_chocolate_chip_cookie"
     },
     "result": "minecraft:cookie"
 }

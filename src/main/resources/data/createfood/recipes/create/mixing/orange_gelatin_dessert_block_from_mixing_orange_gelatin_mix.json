@@ -1,4 +1,14 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "orange_gelatin_dessert_block"
+        },
+        {
+            "type": "forge:mod_loaded",
+            "modid": "create"
+        }
+    ],
     "type": "create:mixing",
     "ingredients": [
         {

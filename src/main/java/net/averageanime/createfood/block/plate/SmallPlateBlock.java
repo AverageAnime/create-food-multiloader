@@ -62,19 +62,20 @@ public class SmallPlateBlock extends Block {
                                           @NotNull InteractionHand hand, @NotNull BlockHitResult hit) {
         ItemStack heldStack = player.getItemInHand(hand);
 
-        if (!heldStack.isEmpty()) {
-            // Shift+use with any item → convert to normal plate
-            if (player.isShiftKeyDown()) {
-                if (level.isClientSide) return InteractionResult.SUCCESS;
-                BlockState normalPlate = normalPlateBlock.get().defaultBlockState();
-                if (normalPlate.hasProperty(FACING)) {
-                    normalPlate = normalPlate.setValue(FACING, state.getValue(FACING));
-                }
-                level.setBlock(pos, normalPlate, 3);
-                level.playSound(null, pos, SoundEvents.WOOD_PLACE, SoundSource.BLOCKS, 0.8F, 0.8F);
-                return InteractionResult.SUCCESS;
+        // Shift → convert to normal plate (mirrors 1.21.1 useItemOn: shift check fires first,
+        // before any isEmpty guard, so it works regardless of what is in hand)
+        if (player.isShiftKeyDown()) {
+            if (level.isClientSide) return InteractionResult.SUCCESS;
+            BlockState normalPlate = normalPlateBlock.get().defaultBlockState();
+            if (normalPlate.hasProperty(FACING)) {
+                normalPlate = normalPlate.setValue(FACING, state.getValue(FACING));
             }
+            level.setBlock(pos, normalPlate, 3);
+            level.playSound(null, pos, SoundEvents.WOOD_PLACE, SoundSource.BLOCKS, 0.8F, 0.8F);
+            return InteractionResult.SUCCESS;
+        }
 
+        if (!heldStack.isEmpty()) {
             if (level.isClientSide) {
                 if (FoodBlock.Registry.canPlaceOnPlate(heldStack.getItem(), true)) {
                     return InteractionResult.SUCCESS;

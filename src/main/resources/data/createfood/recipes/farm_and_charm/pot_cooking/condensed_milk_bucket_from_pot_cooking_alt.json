@@ -1,33 +1,37 @@
 {
-  "conditions": [
-    {
-      "type": "forge:mod_loaded",
-      "modid": "farm_and_charm"
-    }
-  ],
-  "type": "farm_and_charm:pot_cooking",
-  "ingredients": [
-    {
-      "item": "minecraft:milk_bucket"
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "condensed_milk_bucket"
+        },
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farm_and_charm"
+        }
+    ],
+    "type": "farm_and_charm:pot_cooking",
+    "ingredients": [
+        {
+            "item": "minecraft:milk_bucket"
+        },
+        {
+            "tag": "forge:milk_powder"
+        },
+        {
+            "tag": "forge:sugar"
+        },
+        {
+            "tag": "forge:sugar"
+        }
+    ],
+    "container": {
+        "required": true,
+        "item": {
+            "item": "minecraft:bucket"
+        }
     },
-    {
-      "tag": "forge:milk_powder"
+    "result": {
+        "item": "createfood:condensed_milk_bucket"
     },
-    {
-      "tag": "forge:sugar"
-    },
-    {
-      "tag": "forge:sugar"
-    }
-  ],
-  "container": {
-    "required": true,
-    "item": {
-      "item": "minecraft:bucket"
-    }
-  },
-  "result": {
-    "item": "createfood:condensed_milk_bucket"
-  },
-  "requiresLearning": false
+    "requiresLearning": false
 }

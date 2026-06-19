@@ -1,27 +1,31 @@
 {
-  "conditions": [
-    {
-      "type": "forge:mod_loaded",
-      "modid": "farm_and_charm"
-    }
-  ],
-  "type": "farm_and_charm:pot_cooking",
-  "ingredients": [
-    {
-      "tag": "forge:raw_pasta"
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "pasta"
+        },
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farm_and_charm"
+        }
+    ],
+    "type": "farm_and_charm:pot_cooking",
+    "ingredients": [
+        {
+            "tag": "forge:raw_pasta"
+        },
+        {
+            "tag": "forge:buckets/water"
+        }
+    ],
+    "container": {
+        "required": true,
+        "item": {
+            "item": "minecraft:bowl"
+        }
     },
-    {
-      "tag": "forge:buckets/water"
-    }
-  ],
-  "container": {
-    "required": true,
-    "item": {
-      "item": "minecraft:bowl"
-    }
-  },
-  "result": {
-    "item": "createfood:pasta"
-  },
-  "requiresLearning": false
+    "result": {
+        "item": "createfood:pasta"
+    },
+    "requiresLearning": false
 }

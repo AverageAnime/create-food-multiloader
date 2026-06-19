@@ -1,9 +1,19 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "cake_batter_bucket"
+        },
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farmersdelight"
+        }
+    ],
     "type": "farmersdelight:cooking",
     "experience": 0.35,
     "ingredients": [
         {
-            "tag": "forge:flours/wheat"
+            "tag": "forge:flour"
         },
         {
             "tag": "forge:sugar"

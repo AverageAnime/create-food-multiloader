@@ -1,6 +1,10 @@
 {
     "conditions": [
         {
+            "type": "createfood:enabled",
+            "id": "eggplant_cheeseburger_lettuce_tomato"
+        },
+        {
             "type": "forge:not",
             "value": {
                 "type": "forge:tag_empty",

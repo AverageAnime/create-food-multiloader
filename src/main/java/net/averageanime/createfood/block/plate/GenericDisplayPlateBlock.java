@@ -88,9 +88,13 @@ public class GenericDisplayPlateBlock extends BaseEntityBlock {
         if (!heldStack.isEmpty()) {
             // Item held: if plate is empty, place item; if plate has item, remove it
             if (be.isEmpty()) {
-                if (!CreateFoodConfig.SERVER.enableGenericPlates.get()) return InteractionResult.PASS;
-                if (ConfigLogic.matchesFilterList(heldStack, CreateFoodConfig.SERVER.genericDisplayExclude.get()))
-                    return InteractionResult.PASS;
+                try {
+                    if (!CreateFoodConfig.SERVER.enableGenericPlates.get()) return InteractionResult.PASS;
+                    if (ConfigLogic.matchesFilterList(heldStack, CreateFoodConfig.SERVER.genericDisplayExclude.get()))
+                        return InteractionResult.PASS;
+                } catch (IllegalStateException ignored) {
+                    // Config not yet loaded (e.g., dedicated server client); allow placement
+                }
                 if (FoodBlock.Registry.isRegistered(heldStack.getItem())) return InteractionResult.PASS;
                 if (PlateSliceHandler.couldSlice(player, level, hand, pos, state)) return InteractionResult.PASS;
                 if (level.isClientSide) return InteractionResult.SUCCESS;
@@ -99,7 +103,9 @@ public class GenericDisplayPlateBlock extends BaseEntityBlock {
                 level.playSound(null, pos, SoundEvents.ITEM_FRAME_ADD_ITEM, SoundSource.BLOCKS, 1.0F, 1.0F);
                 return InteractionResult.SUCCESS;
             } else {
-                // Remove displayed item
+                // Remove displayed item — only on MAIN_HAND to prevent the late OFF_HAND packet
+                // (fired after MAIN_HAND placed food via fallthrough) from immediately un-placing it
+                if (hand != InteractionHand.MAIN_HAND) return InteractionResult.PASS;
                 if (level.isClientSide) return InteractionResult.SUCCESS;
                 ItemStack stored = be.takeDisplayedItem();
                 Direction direction = player.getDirection().getOpposite();

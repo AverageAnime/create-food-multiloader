@@ -1,4 +1,10 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "chocolate_graham_cracker_neapolitan_scoop_3"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {

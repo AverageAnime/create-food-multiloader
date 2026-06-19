@@ -1,6 +1,14 @@
 {
     "conditions": [
         {
+            "type": "createfood:enabled",
+            "id": "ground_endermite"
+        },
+        {
+            "type": "forge:mod_loaded",
+            "modid": "create"
+        },
+        {
             "type": "forge:mod_loaded",
             "modid": "ends_delight"
         }

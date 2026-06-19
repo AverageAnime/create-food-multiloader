@@ -1,4 +1,10 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "caramel_berries"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {

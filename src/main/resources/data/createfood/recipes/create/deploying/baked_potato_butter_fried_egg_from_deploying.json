@@ -1,5 +1,14 @@
 {
-    "conditions": [],
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "baked_potato_butter_fried_egg"
+        },
+        {
+            "type": "forge:mod_loaded",
+            "modid": "create"
+        }
+    ],
     "type": "create:deploying",
     "ingredients": [
         {

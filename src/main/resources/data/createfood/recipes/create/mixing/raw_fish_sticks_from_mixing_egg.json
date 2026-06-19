@@ -1,4 +1,14 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "raw_fish_sticks"
+        },
+        {
+            "type": "forge:mod_loaded",
+            "modid": "create"
+        }
+    ],
     "type": "create:mixing",
     "ingredients": [
         {
@@ -6,7 +16,7 @@
             "fluidTag": "forge:egg"
         },
         {
-            "tag": "forge:foods/raw_fish"
+            "tag": "forge:raw_fishes"
         },
         {
             "tag": "forge:bread_crumbs"

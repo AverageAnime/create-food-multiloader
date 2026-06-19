@@ -1,4 +1,10 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "sausage_patty"
+        }
+    ],
     "type": "minecraft:campfire_cooking",
     "ingredient": {
         "tag": "forge:raw_sausage_patty"

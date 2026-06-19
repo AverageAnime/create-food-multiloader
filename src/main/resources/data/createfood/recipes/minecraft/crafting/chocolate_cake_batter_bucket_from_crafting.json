@@ -1,4 +1,10 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "chocolate_cake_batter_bucket"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {
@@ -8,7 +14,7 @@
             "tag": "forge:sugar"
         },
         {
-            "tag": "forge:flours/wheat"
+            "tag": "forge:flour"
         },
         {
             "tag": "forge:eggs"

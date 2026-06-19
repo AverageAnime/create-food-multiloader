@@ -1,4 +1,10 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "cookie_cream_pie"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {

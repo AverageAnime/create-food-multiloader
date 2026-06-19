@@ -1,4 +1,10 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "chicken_cheeseburger"
+        }
+    ],
     "type": "minecraft:crafting_shaped",
     "pattern": [
         "1 ",
@@ -9,7 +15,7 @@
             "tag": "forge:bun"
         },
         "2": {
-            "tag": "forge:cheese_and_chicken_bun"
+            "tag": "forge:chicken_bun_cheese"
         }
     },
     "result": {

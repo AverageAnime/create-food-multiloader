@@ -1,4 +1,10 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "rabbit_taco_lettuce_taco_sauce"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {
@@ -8,7 +14,7 @@
             "tag": "forge:cooked_rabbit"
         },
         {
-            "tag": "forge:foods/leafy_green"
+            "tag": "forge:salad_ingredients"
         },
         {
             "tag": "forge:taco_sauce_bottle"

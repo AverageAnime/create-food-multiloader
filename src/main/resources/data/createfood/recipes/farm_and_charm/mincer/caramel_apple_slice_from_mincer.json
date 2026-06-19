@@ -1,13 +1,17 @@
 {
     "conditions": [
         {
+            "type": "createfood:enabled",
+            "id": "caramel_apple_slice"
+        },
+        {
             "type": "forge:mod_loaded",
             "modid": "farm_and_charm"
         }
     ],
     "type": "farm_and_charm:mincer",
     "ingredient": {
-        "tag": "forge:caramel_glazed_apple"
+        "tag": "forge:caramel_apple"
     },
     "recipe_type": "MEAT",
     "result": {

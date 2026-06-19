@@ -1,4 +1,14 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "endermite_meatball"
+        },
+        {
+            "type": "forge:mod_loaded",
+            "modid": "create"
+        }
+    ],
     "type": "create:compacting",
     "heatRequirement": "heated",
     "ingredients": [

@@ -1,26 +1,30 @@
 {
-  "conditions": [
-    {
-      "type": "forge:mod_loaded",
-      "modid": "farm_and_charm"
-    }
-  ],
-  "type": "farm_and_charm:stove",
-  "ingredients": [
-    {
-      "tag": "forge:bread_slice"
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "toast_slice"
+        },
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farm_and_charm"
+        }
+    ],
+    "type": "farm_and_charm:stove",
+    "ingredients": [
+        {
+            "tag": "forge:bread_slice"
+        },
+        {
+            "tag": "forge:bread_slice"
+        },
+        {
+            "tag": "forge:bread_slice"
+        }
+    ],
+    "experience": 0.15,
+    "result": {
+        "item": "createfood:toast_slice",
+        "count": 3
     },
-    {
-      "tag": "forge:bread_slice"
-    },
-    {
-      "tag": "forge:bread_slice"
-    }
-  ],
-  "experience": 0.15,
-  "result": {
-    "item": "createfood:toast_slice",
-    "count": 3
-  },
-  "requiresLearning": false
+    "requiresLearning": false
 }

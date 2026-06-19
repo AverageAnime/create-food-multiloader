@@ -1,4 +1,10 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "chocolate_ice_cream_bowl"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {

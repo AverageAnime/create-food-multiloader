@@ -1,39 +1,43 @@
 {
-  "conditions": [
-    {
-      "type": "forge:mod_loaded",
-      "modid": "farm_and_charm"
-    }
-  ],
-  "type": "farm_and_charm:pot_cooking",
-  "container": {
-    "required": true,
-    "item": {
-      "item": "minecraft:bucket"
-    }
-  },
-  "ingredients": [
-    {
-      "tag": "forge:butter"
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "berry_pie_filling_bucket"
+        },
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farm_and_charm"
+        }
+    ],
+    "type": "farm_and_charm:pot_cooking",
+    "container": {
+        "required": true,
+        "item": {
+            "item": "minecraft:bucket"
+        }
     },
-    {
-      "tag": "forge:sugar"
+    "ingredients": [
+        {
+            "tag": "forge:butter"
+        },
+        {
+            "tag": "forge:sugar"
+        },
+        {
+            "tag": "forge:sugar"
+        },
+        {
+            "item": "minecraft:sweet_berries"
+        },
+        {
+            "item": "minecraft:sweet_berries"
+        },
+        {
+            "item": "minecraft:sweet_berries"
+        }
+    ],
+    "result": {
+        "item": "createfood:berry_pie_filling_bucket"
     },
-    {
-      "tag": "forge:sugar"
-    },
-    {
-      "item": "minecraft:sweet_berries"
-    },
-    {
-      "item": "minecraft:sweet_berries"
-    },
-    {
-      "item": "minecraft:sweet_berries"
-    }
-  ],
-  "result": {
-    "item": "createfood:berry_pie_filling_bucket"
-  },
-  "requiresLearning": false
+    "requiresLearning": false
 }

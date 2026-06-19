@@ -1,4 +1,10 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "ration_box"
+        }
+    ],
     "type": "minecraft:crafting_shaped",
     "pattern": [
         "XX ",

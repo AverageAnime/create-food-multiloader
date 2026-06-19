@@ -1,4 +1,17 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "ids": [
+                "chocolate_cream_chocolate_cake",
+                "piping_bag"
+            ]
+        },
+        {
+            "type": "forge:mod_loaded",
+            "modid": "create"
+        }
+    ],
     "type": "create:item_application",
     "ingredients": [
         {

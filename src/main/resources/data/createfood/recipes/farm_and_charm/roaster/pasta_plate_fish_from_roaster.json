@@ -1,6 +1,10 @@
 {
     "conditions": [
         {
+            "type": "createfood:enabled",
+            "id": "pasta_plate_fish"
+        },
+        {
             "type": "forge:mod_loaded",
             "modid": "farm_and_charm"
         }

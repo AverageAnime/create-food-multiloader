@@ -1,26 +1,30 @@
 {
-  "conditions": [
-    {
-      "type": "forge:mod_loaded",
-      "modid": "farm_and_charm"
-    }
-  ],
-  "type": "farm_and_charm:stove",
-  "ingredients": [
-    {
-      "tag": "forge:raw_caramel_chip_chocolate_cookie"
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "caramel_chip_chocolate_cookie"
+        },
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farm_and_charm"
+        }
+    ],
+    "type": "farm_and_charm:stove",
+    "ingredients": [
+        {
+            "tag": "forge:raw_caramel_chip_chocolate_cookie"
+        },
+        {
+            "tag": "forge:raw_caramel_chip_chocolate_cookie"
+        },
+        {
+            "tag": "forge:raw_caramel_chip_chocolate_cookie"
+        }
+    ],
+    "experience": 0.45,
+    "result": {
+        "item": "createfood:caramel_chip_chocolate_cookie",
+        "count": 3
     },
-    {
-      "tag": "forge:raw_caramel_chip_chocolate_cookie"
-    },
-    {
-      "tag": "forge:raw_caramel_chip_chocolate_cookie"
-    }
-  ],
-  "experience": 0.45,
-  "result": {
-    "item": "createfood:caramel_chip_chocolate_cookie",
-    "count": 3
-  },
-  "requiresLearning": false
+    "requiresLearning": false
 }

@@ -1,5 +1,14 @@
-﻿{
-    "conditions": [],
+{
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "waffle_batter"
+        },
+        {
+            "type": "forge:mod_loaded",
+            "modid": "create"
+        }
+    ],
     "type": "create:mixing",
     "requiredSpeed": 32,
     "ingredients": [

@@ -1,4 +1,10 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "hot_dark_chocolate_bottle"
+        }
+    ],
     "type": "minecraft:campfire_cooking",
     "ingredient": {
         "tag": "forge:dark_chocolate_bottle"

@@ -1,4 +1,10 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "chocolate_apple"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {

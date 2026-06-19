@@ -98,7 +98,7 @@ public class HandcraftInteraction {
         }
 
         level.playSound(null, player.blockPosition(),
-                SoundEvents.ANVIL_USE, SoundSource.PLAYERS, 0.5F, 1.5F);
+                SoundEvents.UI_TOAST_IN, SoundSource.PLAYERS, 0.5F, 1.5F);
         return true;
     }
 

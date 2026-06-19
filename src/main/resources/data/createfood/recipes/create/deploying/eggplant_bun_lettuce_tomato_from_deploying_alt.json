@@ -1,6 +1,14 @@
 {
     "conditions": [
         {
+            "type": "createfood:enabled",
+            "id": "eggplant_bun_lettuce_tomato"
+        },
+        {
+            "type": "forge:mod_loaded",
+            "modid": "create"
+        },
+        {
             "type": "forge:not",
             "value": {
                 "type": "forge:tag_empty",

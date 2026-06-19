@@ -1,6 +1,14 @@
 {
     "conditions": [
         {
+            "type": "createfood:enabled",
+            "id": "raw_strider_meatball"
+        },
+        {
+            "type": "forge:mod_loaded",
+            "modid": "create"
+        },
+        {
             "type": "forge:not",
             "value": {
                 "type": "forge:tag_empty",

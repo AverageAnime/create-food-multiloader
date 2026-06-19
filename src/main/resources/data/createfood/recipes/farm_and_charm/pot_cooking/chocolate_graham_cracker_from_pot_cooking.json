@@ -1,34 +1,38 @@
 {
-  "conditions": [
-    {
-      "type": "forge:mod_loaded",
-      "modid": "farm_and_charm"
-    }
-  ],
-  "type": "farm_and_charm:pot_cooking",
-  "ingredients": [
-    {
-      "tag": "forge:milk_bottle"
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "chocolate_graham_cracker"
+        },
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farm_and_charm"
+        }
+    ],
+    "type": "farm_and_charm:pot_cooking",
+    "ingredients": [
+        {
+            "tag": "forge:milk_bottle"
+        },
+        {
+            "item": "minecraft:honey_bottle"
+        },
+        {
+            "tag": "forge:butter"
+        },
+        {
+            "tag": "forge:chocolate_sweet_dough"
+        }
+    ],
+    "container": {
+        "required": true,
+        "item": {
+            "item": "minecraft:bowl"
+        }
     },
-    {
-      "item": "minecraft:honey_bottle"
+    "result": {
+        "count": 8,
+        "item": "createfood:chocolate_graham_cracker"
     },
-    {
-      "tag": "forge:butter"
-    },
-    {
-      "tag": "forge:chocolate_sweet_dough"
-    }
-  ],
-  "container": {
-    "required": true,
-    "item": {
-      "item": "minecraft:bowl"
-    }
-  },
-  "result": {
-    "count": 8,
-    "item": "createfood:chocolate_graham_cracker"
-  },
-  "requiresLearning": false
+    "requiresLearning": false
 }

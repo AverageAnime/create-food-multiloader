@@ -1,4 +1,14 @@
-﻿{
+{
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "glow_berry_jam_bucket"
+        },
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farmersdelight"
+        }
+    ],
     "type": "farmersdelight:cooking",
     "container": {
         "item": "minecraft:bucket"

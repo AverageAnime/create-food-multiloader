@@ -1,4 +1,10 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "glow_berry_cream_cake_chorus_fruit"
+        }
+    ],
     "type": "minecraft:crafting_shaped",
     "pattern": [
         "1 ",
@@ -9,7 +15,7 @@
             "tag": "forge:chorus_fruit"
         },
         "2": {
-            "tag": "forge:glow_berry_cream_frosted_cake"
+            "tag": "forge:glow_berry_cream_cake"
         }
     },
     "result": {

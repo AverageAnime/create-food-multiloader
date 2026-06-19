@@ -1,6 +1,14 @@
 {
     "conditions": [
         {
+            "type": "createfood:enabled",
+            "id": "raw_green_tea_cookie"
+        },
+        {
+            "type": "forge:mod_loaded",
+            "modid": "create"
+        },
+        {
             "type": "forge:not",
             "value": {
                 "type": "forge:tag_empty",

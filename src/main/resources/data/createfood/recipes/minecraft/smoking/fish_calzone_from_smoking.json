@@ -1,4 +1,10 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "fish_calzone"
+        }
+    ],
     "type": "minecraft:smoking",
     "ingredient": {
         "tag": "forge:raw_fish_calzone"

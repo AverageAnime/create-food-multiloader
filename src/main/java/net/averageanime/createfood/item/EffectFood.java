@@ -125,6 +125,22 @@ public class EffectFood extends Item {
         return null;
     }
 
+    @Override
+    @Nullable
+    public FoodProperties getFoodProperties() {
+        FoodProperties base = super.getFoodProperties();
+        if (base == null) return null;
+        return applyNutritionOverride(base);
+    }
+
+    @Override
+    @Nullable
+    public FoodProperties getFoodProperties(ItemStack stack, @Nullable LivingEntity entity) {
+        FoodProperties base = super.getFoodProperties(stack, entity);
+        if (base == null) return null;
+        return applyNutritionOverride(base);
+    }
+
     protected FoodProperties applyNutritionOverride(FoodProperties base) {
         String itemId = ForgeRegistries.ITEMS.getKey(this) != null
                 ? ForgeRegistries.ITEMS.getKey(this).getPath() : "";
@@ -202,19 +218,20 @@ public class EffectFood extends Item {
                                 List<Component> tooltip, TooltipFlag flag) {
         super.appendHoverText(stack, level, tooltip, flag);
 
-        FoodProperties food = stack.getItem().getFoodProperties();
+        FoodProperties food = stack.getItem().getFoodProperties(stack, null);
         if (food == null) return;
 
         String itemId = ForgeRegistries.ITEMS.getKey(this) != null
                 ? ForgeRegistries.ITEMS.getKey(this).getPath() : "";
 
-        List<ConfigLogic.ItemEffectOverride> existingOverrides;
+        List<ConfigLogic.ItemEffectOverride> allOverrides;
         try {
-            existingOverrides = ConfigLogic.getItemOverrideEntries(itemId, CreateFoodConfig.SERVER.itemOverrides.get())
-                    .stream().filter(o -> isExistingEffect(o.effectId())).toList();
+            allOverrides = ConfigLogic.getItemOverrideEntries(itemId, CreateFoodConfig.SERVER.itemOverrides.get());
         } catch (Exception e) {
-            existingOverrides = List.of();
+            allOverrides = List.of();
         }
+        List<ConfigLogic.ItemEffectOverride> existingOverrides = allOverrides.stream()
+                .filter(o -> isExistingEffect(o.effectId())).toList();
 
         for (var pair : food.getEffects()) {
             ConfigLogic.ItemEffectOverride override = findOverrideForEffect(existingOverrides, pair.getFirst());
@@ -227,7 +244,7 @@ public class EffectFood extends Item {
             }
         }
 
-        for (ConfigLogic.ItemEffectOverride addition : existingOverrides) {
+        for (ConfigLogic.ItemEffectOverride addition : allOverrides) {
             if (addition.remove()) continue;
             if (isExistingEffect(addition.effectId())) continue;
             resolveEffect(addition.effectId()).ifPresent(effect ->

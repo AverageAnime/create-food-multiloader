@@ -1,8 +1,18 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "unbreaded_chicken_patty"
+        },
+        {
+            "type": "forge:mod_loaded",
+            "modid": "create"
+        }
+    ],
     "type": "create:compacting",
     "ingredients": [
         {
-            "tag": "forge:shredded_chicken"
+            "tag": "forge:ground_chicken"
         }
     ],
     "results": [

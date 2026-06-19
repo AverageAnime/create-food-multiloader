@@ -1,4 +1,17 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "ube_cake_batter_bucket"
+        },
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:vegetables/ube"
+            }
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {
@@ -8,7 +21,7 @@
             "tag": "forge:sugar"
         },
         {
-            "tag": "forge:flours/wheat"
+            "tag": "forge:flour"
         },
         {
             "tag": "forge:eggs"

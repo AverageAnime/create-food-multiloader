@@ -1,6 +1,14 @@
 {
     "conditions": [
         {
+            "type": "createfood:enabled",
+            "id": "hamburger_peanut_butter_bacon"
+        },
+        {
+            "type": "forge:mod_loaded",
+            "modid": "create"
+        },
+        {
             "type": "forge:not",
             "value": {
                 "type": "forge:tag_empty",

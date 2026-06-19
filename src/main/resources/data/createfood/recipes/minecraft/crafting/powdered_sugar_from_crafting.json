@@ -1,4 +1,10 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "powdered_sugar"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {

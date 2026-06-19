@@ -1,4 +1,10 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "scone"
+        }
+    ],
     "type": "minecraft:smelting",
     "cookingtime": 200,
     "experience": 0.1,

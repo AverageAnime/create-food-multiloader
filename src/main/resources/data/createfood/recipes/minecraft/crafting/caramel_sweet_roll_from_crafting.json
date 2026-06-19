@@ -1,4 +1,10 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "caramel_sweet_roll"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {

@@ -1,26 +1,30 @@
 {
-  "conditions": [
-    {
-      "type": "forge:mod_loaded",
-      "modid": "farm_and_charm"
-    }
-  ],
-  "type": "farm_and_charm:stove",
-  "ingredients": [
-    {
-      "tag": "forge:sliced_potato"
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "potato_chips"
+        },
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farm_and_charm"
+        }
+    ],
+    "type": "farm_and_charm:stove",
+    "ingredients": [
+        {
+            "tag": "forge:sliced_potato"
+        },
+        {
+            "tag": "forge:sliced_potato"
+        },
+        {
+            "tag": "forge:sliced_potato"
+        }
+    ],
+    "experience": 0.15,
+    "result": {
+        "item": "createfood:potato_chips",
+        "count": 3
     },
-    {
-      "tag": "forge:sliced_potato"
-    },
-    {
-      "tag": "forge:sliced_potato"
-    }
-  ],
-  "experience": 0.15,
-  "result": {
-    "item": "createfood:potato_chips",
-    "count": 3
-  },
-  "requiresLearning": false
+    "requiresLearning": false
 }

@@ -1,5 +1,14 @@
 {
-    "conditions": [],
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "sausage_biscuit_sandwich_cheese_fried_egg_bacon"
+        },
+        {
+            "type": "forge:mod_loaded",
+            "modid": "create"
+        }
+    ],
     "type": "create:deploying",
     "ingredients": [
         {

@@ -1,4 +1,10 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "magma_cream_marshmallow_stick"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {

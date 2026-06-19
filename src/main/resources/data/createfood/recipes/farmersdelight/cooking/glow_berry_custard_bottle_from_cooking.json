@@ -1,4 +1,10 @@
 {
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farmersdelight"
+        }
+    ],
     "type": "farmersdelight:cooking",
     "experience": 1.0,
     "ingredients": [
@@ -6,7 +12,7 @@
             "tag": "forge:egg_yolk"
         },
         {
-            "tag": "forge:drinks/milk"
+            "tag": "forge:milk"
         },
         {
             "tag": "forge:sugar"

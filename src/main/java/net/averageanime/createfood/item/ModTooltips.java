@@ -77,21 +77,14 @@ public class ModTooltips {
             if (tooltipKeys != null && tooltipKeys.length > 0) {
                 addTooltip(lines, null, tooltipKeys);
             }
-        } else if ("createfood".equals(key.getNamespace())) {
-            // Built-in ingredient tooltips for CreateFood items
-            String[] entry = BuiltinTooltips.TIPS.get(path);
-            if (entry != null && entry.length >= 1) {
-                String compatKey = entry[0]; // may be null
-                String[] ingredientKeys = entry.length > 1 ? Arrays.copyOfRange(entry, 1, entry.length) : new String[0];
-                addTooltip(lines, compatKey, ingredientKeys);
-            }
         } else if (stack.getItem() instanceof BlockItem bi && bi.getBlock() instanceof FoodBlock fb) {
-            // Display plate blocks inherit tooltips from the item they display
+            // Display plate blocks inherit tooltips from the item they display.
+            // Must come before the createfood namespace check — display blocks are also
+            // createfood namespace, so they would short-circuit there and never reach here.
             net.minecraft.world.item.Item original = fb.displayItem.get();
             if (original != null && original != Items.AIR) {
                 ResourceLocation originalKey = ForgeRegistries.ITEMS.getKey(original);
                 if (originalKey != null) {
-                    // First check config overrides, then built-in tips
                     String[] tooltipKeys = customTooltipMap.get(originalKey.toString());
                     if (tooltipKeys != null && tooltipKeys.length > 0) {
                         addTooltip(lines, null, tooltipKeys);
@@ -104,6 +97,14 @@ public class ModTooltips {
                         }
                     }
                 }
+            }
+        } else if ("createfood".equals(key.getNamespace())) {
+            // Built-in ingredient tooltips for CreateFood items
+            String[] entry = BuiltinTooltips.TIPS.get(path);
+            if (entry != null && entry.length >= 1) {
+                String compatKey = entry[0]; // may be null
+                String[] ingredientKeys = entry.length > 1 ? Arrays.copyOfRange(entry, 1, entry.length) : new String[0];
+                addTooltip(lines, compatKey, ingredientKeys);
             }
         }
     }

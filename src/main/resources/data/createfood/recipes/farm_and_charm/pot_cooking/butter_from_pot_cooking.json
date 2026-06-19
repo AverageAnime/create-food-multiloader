@@ -1,27 +1,31 @@
 {
-  "conditions": [
-    {
-      "type": "forge:mod_loaded",
-      "modid": "farm_and_charm"
-    }
-  ],
-  "type": "farm_and_charm:pot_cooking",
-  "ingredients": [
-    {
-      "tag": "forge:milk_bottle"
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "butter"
+        },
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farm_and_charm"
+        }
+    ],
+    "type": "farm_and_charm:pot_cooking",
+    "ingredients": [
+        {
+            "tag": "forge:milk_bottle"
+        },
+        {
+            "tag": "forge:salt"
+        }
+    ],
+    "container": {
+        "required": true,
+        "item": {
+            "item": "minecraft:bowl"
+        }
     },
-    {
-      "tag": "forge:salt"
-    }
-  ],
-  "container": {
-    "required": true,
-    "item": {
-      "item": "minecraft:bowl"
-    }
-  },
-  "result": {
-    "item": "createfood:butter"
-  },
-  "requiresLearning": false
+    "result": {
+        "item": "createfood:butter"
+    },
+    "requiresLearning": false
 }

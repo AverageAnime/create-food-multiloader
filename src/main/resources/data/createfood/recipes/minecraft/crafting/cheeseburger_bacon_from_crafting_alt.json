@@ -1,4 +1,10 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "cheeseburger_bacon"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {

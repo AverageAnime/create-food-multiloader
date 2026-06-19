@@ -1,4 +1,14 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "cream_cake"
+        },
+        {
+            "type": "forge:mod_loaded",
+            "modid": "create"
+        }
+    ],
     "type": "create:filling",
     "ingredients": [
         {

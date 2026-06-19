@@ -1,13 +1,17 @@
 {
     "conditions": [
         {
+            "type": "createfood:enabled",
+            "id": "raw_sausage_patty"
+        },
+        {
             "type": "forge:mod_loaded",
             "modid": "farm_and_charm"
         }
     ],
     "type": "farm_and_charm:mincer",
     "ingredient": {
-        "tag": "forge:sausage_meat"
+        "tag": "forge:ground_sausage"
     },
     "recipe_type": "MEAT",
     "result": {

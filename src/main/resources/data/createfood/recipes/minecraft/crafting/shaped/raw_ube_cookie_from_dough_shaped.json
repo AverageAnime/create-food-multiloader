@@ -1,6 +1,10 @@
 {
     "conditions": [
         {
+            "type": "createfood:enabled",
+            "id": "raw_ube_cookie"
+        },
+        {
             "type": "forge:mod_loaded",
             "modid": "ubesdelight"
         }

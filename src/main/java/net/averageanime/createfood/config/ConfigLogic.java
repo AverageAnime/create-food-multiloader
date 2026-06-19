@@ -98,8 +98,17 @@ public final class ConfigLogic {
             if (entry.startsWith("item:") && entry.substring(5).equals(itemId)) return true;
             if (entry.startsWith("tag:")) {
                 ResourceLocation tagLoc = ResourceLocation.tryParse(entry.substring(4));
-                if (tagLoc != null && stack.is(TagKey.create(net.minecraft.core.registries.Registries.ITEM, tagLoc)))
-                    return true;
+                if (tagLoc != null) {
+                    // Primary: vanilla holder tag check
+                    if (stack.is(TagKey.create(net.minecraft.core.registries.Registries.ITEM, tagLoc))) return true;
+                    // Fallback: Forge tag manager (more reliable for forge: conventional tags in 1.20.1)
+                    try {
+                        var tagMgr = ForgeRegistries.ITEMS.tags();
+                        if (tagMgr != null) {
+                            if (tagMgr.getTag(tagMgr.createTagKey(tagLoc)).contains(stack.getItem())) return true;
+                        }
+                    } catch (Exception ignored) {}
+                }
             }
         }
         return false;
@@ -142,6 +151,37 @@ public final class ConfigLogic {
         ResourceLocation loc = ForgeRegistries.ITEMS.getKey(stack.getItem());
         if (loc == null) return true;
         return !CreateFoodConfig.CLIENT.hideItems.get().contains(loc.getPath());
+    }
+
+    public static boolean isFluidBucketEnabled(ItemStack stack) {
+        if (CreateFoodConfig.CLIENT == null) return true;
+        ResourceLocation loc = ForgeRegistries.ITEMS.getKey(stack.getItem());
+        if (loc == null) return true;
+        String bucketPath = loc.getPath();
+        List<? extends String> hideItems = CreateFoodConfig.CLIENT.hideItems.get();
+        if (hideItems.contains(bucketPath)) return false;
+        String base = bucketPath.replace("_bucket", "");
+        return !hideItems.contains(base);
+    }
+
+    public static boolean isDisplayBlockEnabled(ItemStack stack) {
+        if (CreateFoodConfig.CLIENT == null) return true;
+        ResourceLocation loc = ForgeRegistries.ITEMS.getKey(stack.getItem());
+        if (loc == null) return true;
+        String blockPath = loc.getPath();
+        List<? extends String> hideItems = CreateFoodConfig.CLIENT.hideItems.get();
+        if (hideItems.contains(blockPath)) return false;
+        // Check each suffix independently — a block can match multiple suffixes
+        // (e.g. ube_cream_frosting_bottle_block ends with both _bottle_block and _block),
+        // so we try all and hide if any derived base name is in the list.
+        String[] suffixes = {"_small_plate_block", "_plate_block", "_bowl_block", "_bottle_block", "_block"};
+        for (String suffix : suffixes) {
+            if (blockPath.endsWith(suffix)) {
+                String base = blockPath.substring(0, blockPath.length() - suffix.length());
+                if (hideItems.contains(base)) return false;
+            }
+        }
+        return true;
     }
 
     // ── Simple value records ──────────────────────────────────────────────────

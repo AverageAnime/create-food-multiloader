@@ -1,5 +1,10 @@
 {
-    "conditions": [],
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "pita_bread"
+        }
+    ],
     "type": "minecraft:smelting",
     "ingredient": {
         "tag": "forge:pita_dough"

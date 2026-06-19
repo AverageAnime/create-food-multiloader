@@ -1,5 +1,10 @@
 {
-    "conditions": [],
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "beef_bun_cheese_tomato"
+        }
+    ],
     "type": "minecraft:crafting_shaped",
     "pattern": [
         "1 ",
@@ -10,7 +15,7 @@
             "tag": "forge:tomato"
         },
         "2": {
-            "tag": "forge:cheese_and_beef_bun"
+            "tag": "forge:beef_bun_cheese"
         }
     },
     "result": {

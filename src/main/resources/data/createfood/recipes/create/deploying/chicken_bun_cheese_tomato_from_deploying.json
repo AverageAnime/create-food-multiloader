@@ -1,9 +1,18 @@
 {
-    "conditions": [],
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "chicken_bun_cheese_tomato"
+        },
+        {
+            "type": "forge:mod_loaded",
+            "modid": "create"
+        }
+    ],
     "type": "create:deploying",
     "ingredients": [
         {
-            "tag": "forge:cheese_and_chicken_bun"
+            "tag": "forge:chicken_bun_cheese"
         },
         {
             "tag": "forge:tomato"

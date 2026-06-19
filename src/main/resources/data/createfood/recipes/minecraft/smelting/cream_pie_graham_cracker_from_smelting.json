@@ -1,4 +1,10 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "cream_pie_graham_cracker"
+        }
+    ],
     "type": "minecraft:smelting",
     "ingredient": {
         "tag": "forge:raw_cream_pie_graham_cracker"

@@ -1,6 +1,10 @@
 {
     "conditions": [
         {
+            "type": "createfood:enabled",
+            "id": "salt_dough"
+        },
+        {
             "type": "forge:mod_loaded",
             "modid": "farm_and_charm"
         }

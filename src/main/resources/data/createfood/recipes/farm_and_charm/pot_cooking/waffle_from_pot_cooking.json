@@ -1,25 +1,29 @@
 {
-  "conditions": [
-    {
-      "type": "forge:mod_loaded",
-      "modid": "farm_and_charm"
-    }
-  ],
-  "type": "farm_and_charm:pot_cooking",
-  "ingredients": [
-    {
-      "tag": "forge:waffle_batter_bucket"
-    }
-  ],
-  "result": {
-    "count": 2,
-    "item": "createfood:waffle"
-  },
-  "container": {
-    "required": false,
-    "item": {
-      "item": "minecraft:bowl"
-    }
-  },
-  "requiresLearning": false
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "waffle"
+        },
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farm_and_charm"
+        }
+    ],
+    "type": "farm_and_charm:pot_cooking",
+    "ingredients": [
+        {
+            "tag": "forge:waffle_batter_bucket"
+        }
+    ],
+    "result": {
+        "count": 2,
+        "item": "createfood:waffle"
+    },
+    "container": {
+        "required": false,
+        "item": {
+            "item": "minecraft:bowl"
+        }
+    },
+    "requiresLearning": false
 }

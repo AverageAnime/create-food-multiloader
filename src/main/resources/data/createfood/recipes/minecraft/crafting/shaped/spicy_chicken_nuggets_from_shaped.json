@@ -1,6 +1,10 @@
 {
     "conditions": [
         {
+            "type": "createfood:enabled",
+            "id": "spicy_chicken_nuggets"
+        },
+        {
             "type": "forge:not",
             "value": {
                 "type": "forge:tag_empty",

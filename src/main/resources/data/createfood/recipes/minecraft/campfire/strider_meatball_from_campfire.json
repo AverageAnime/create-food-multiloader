@@ -1,4 +1,10 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "strider_meatball"
+        }
+    ],
     "type": "minecraft:campfire_cooking",
     "ingredient": {
         "tag": "forge:raw_strider_meatball"

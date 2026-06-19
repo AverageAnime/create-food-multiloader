@@ -1,4 +1,10 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "fish_bacon_pizza"
+        }
+    ],
     "type": "minecraft:smelting",
     "ingredient": {
         "tag": "forge:raw_fish_bacon_pizza"

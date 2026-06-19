@@ -1,4 +1,14 @@
-﻿{
+{
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "cotton_candy_stick"
+        },
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farmersdelight"
+        }
+    ],
     "type": "farmersdelight:cooking",
     "container": {
         "item": "minecraft:stick"

@@ -1,4 +1,10 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "breakfast_plate"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {

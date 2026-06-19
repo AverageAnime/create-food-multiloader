@@ -1,4 +1,10 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "white_chocolate_chip_chocolate_cookie"
+        }
+    ],
     "type": "minecraft:smelting",
     "cookingtime": 200,
     "experience": 0.35,

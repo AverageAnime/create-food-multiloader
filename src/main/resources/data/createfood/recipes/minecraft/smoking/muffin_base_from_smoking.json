@@ -1,9 +1,0 @@
-{
-    "type": "minecraft:smoking",
-    "ingredient": {
-        "tag": "forge:raw_muffin"
-    },
-    "result": "createfood:muffin_base",
-    "experience": 0.15,
-    "cookingtime": 150
-}

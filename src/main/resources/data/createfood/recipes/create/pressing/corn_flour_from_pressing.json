@@ -1,8 +1,25 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "corn_flour"
+        },
+        {
+            "type": "forge:mod_loaded",
+            "modid": "create"
+        },
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:corn_kernel"
+            }
+        }
+    ],
     "type": "create:pressing",
     "ingredients": [
         {
-            "tag": "forge:corn_kernels"
+            "tag": "forge:corn_kernel"
         }
     ],
     "results": [

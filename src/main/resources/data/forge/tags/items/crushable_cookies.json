@@ -6,23 +6,23 @@
       "required": false
     },
     {
-      "id": "createfood:butterscotch_chips_cookie",
+      "id": "createfood:butterscotch_chip_cookie",
       "required": false
     },
     {
-      "id": "createfood:caramel_chips_cookie",
+      "id": "createfood:caramel_chip_cookie",
       "required": false
     },
     {
-      "id": "createfood:dark_chips_cookie",
+      "id": "createfood:dark_chocolate_chip_cookie",
       "required": false
     },
     {
-      "id": "createfood:toffee_chips_cookie",
+      "id": "createfood:toffee_chip_cookie",
       "required": false
     },
     {
-      "id": "createfood:white_chips_cookie",
+      "id": "createfood:white_chocolate_chip_cookie",
       "required": false
     },
     {

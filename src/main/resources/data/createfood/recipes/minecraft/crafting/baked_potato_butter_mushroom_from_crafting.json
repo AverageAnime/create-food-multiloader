@@ -1,5 +1,10 @@
 {
-    "conditions": [],
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "baked_potato_butter_mushroom"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {

@@ -1,5 +1,14 @@
-﻿{
-    "conditions": [],
+{
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "pumpkin_puree_bucket"
+        },
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farmersdelight"
+        }
+    ],
     "type": "farmersdelight:cooking",
     "container": {
         "item": "minecraft:bucket"

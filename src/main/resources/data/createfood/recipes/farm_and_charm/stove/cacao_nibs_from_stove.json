@@ -1,26 +1,30 @@
 {
-  "conditions": [
-    {
-      "type": "forge:mod_loaded",
-      "modid": "farm_and_charm"
-    }
-  ],
-  "type": "farm_and_charm:stove",
-  "ingredients": [
-    {
-      "item": "minecraft:cocoa_beans"
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "cacao_nibs"
+        },
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farm_and_charm"
+        }
+    ],
+    "type": "farm_and_charm:stove",
+    "ingredients": [
+        {
+            "item": "minecraft:cocoa_beans"
+        },
+        {
+            "item": "minecraft:cocoa_beans"
+        },
+        {
+            "item": "minecraft:cocoa_beans"
+        }
+    ],
+    "experience": 0.35,
+    "result": {
+        "item": "createfood:cacao_nibs",
+        "count": 3
     },
-    {
-      "item": "minecraft:cocoa_beans"
-    },
-    {
-      "item": "minecraft:cocoa_beans"
-    }
-  ],
-  "experience": 0.35,
-  "result": {
-    "item": "createfood:cacao_nibs",
-    "count": 3
-  },
-  "requiresLearning": false
+    "requiresLearning": false
 }

@@ -1,6 +1,14 @@
 {
     "conditions": [
         {
+            "type": "createfood:enabled",
+            "id": "pasta_plate_endermite_meatballs_tomato_sauce"
+        },
+        {
+            "type": "forge:mod_loaded",
+            "modid": "create"
+        },
+        {
             "type": "forge:mod_loaded",
             "modid": "create_central_kitchen"
         }

@@ -1,9 +1,19 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "fish_rice_bowl"
+        },
+        {
+            "type": "forge:mod_loaded",
+            "modid": "create"
+        }
+    ],
     "type": "create:mixing",
     "heat_requirement": "heated",
     "ingredients": [
         {
-            "tag": "forge:foods/raw_fish"
+            "tag": "forge:raw_fishes"
         },
         {
             "tag": "forge:crops/rice"

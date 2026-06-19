@@ -1,27 +1,31 @@
 {
-  "conditions": [
-    {
-      "type": "forge:mod_loaded",
-      "modid": "farm_and_charm"
-    }
-  ],
-  "type": "farm_and_charm:pot_cooking",
-  "ingredients": [
-    {
-      "tag": "forge:milk"
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "chocolate_milk_bottle"
+        },
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farm_and_charm"
+        }
+    ],
+    "type": "farm_and_charm:pot_cooking",
+    "ingredients": [
+        {
+            "tag": "forge:milk"
+        },
+        {
+            "tag": "forge:cocoa_powder"
+        }
+    ],
+    "container": {
+        "required": true,
+        "item": {
+            "item": "minecraft:glass_bottle"
+        }
     },
-    {
-      "tag": "forge:cocoa_powder"
-    }
-  ],
-  "container": {
-    "required": true,
-    "item": {
-      "item": "minecraft:glass_bottle"
-    }
-  },
-  "result": {
-    "item": "createfood:chocolate_milk_bottle"
-  },
-  "requiresLearning": false
+    "result": {
+        "item": "createfood:chocolate_milk_bottle"
+    },
+    "requiresLearning": false
 }

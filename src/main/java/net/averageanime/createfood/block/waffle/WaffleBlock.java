@@ -25,8 +25,11 @@ import net.minecraft.world.level.pathfinder.PathComputationType;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import vectorwing.farmersdelight.common.tag.ModTags;
-import vectorwing.farmersdelight.common.utility.ItemUtils;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.entity.item.ItemEntity;
+import net.minecraft.world.item.Item;
 
 public class WaffleBlock extends CakeBlock {
     public static final int MAX_BITES = 4;
@@ -36,6 +39,8 @@ public class WaffleBlock extends CakeBlock {
     protected static final float AABB_SIZE_PER_BITE = 2.0F;
     protected static final VoxelShape[] SHAPE_BY_BITE;
     public static final DirectionProperty FACING;
+    private static final TagKey<Item> KNIVES =
+            TagKey.create(Registries.ITEM, new ResourceLocation("forge", "tools/knives"));
 
     public BlockState getStateForPlacement(BlockPlaceContext context) {
         return (BlockState)this.defaultBlockState().setValue(FACING, context.getHorizontalDirection());
@@ -52,7 +57,7 @@ public class WaffleBlock extends CakeBlock {
     public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
         ItemStack heldStack = player.getItemInHand(hand);
         if (level.isClientSide) {
-            if (heldStack.is(ModTags.KNIVES)) {
+            if (heldStack.is(KNIVES)) {
                 return this.cutSlice(level, pos, state, player);
             }
 
@@ -65,7 +70,7 @@ public class WaffleBlock extends CakeBlock {
             }
         }
 
-        return heldStack.is(ModTags.KNIVES) ? this.cutSlice(level, pos, state, player) : consumeBite(level, pos, state, player);
+        return heldStack.is(KNIVES) ? this.cutSlice(level, pos, state, player) : consumeBite(level, pos, state, player);
     }
 
     protected InteractionResult cutSlice(Level level, BlockPos pos, BlockState state, Player player) {
@@ -77,7 +82,9 @@ public class WaffleBlock extends CakeBlock {
         }
 
         Direction direction = player.getDirection().getOpposite();
-        ItemUtils.spawnItemEntity(level, this.getPieSliceItem(), (double)pos.getX() + 0.5, (double)pos.getY() + 0.3, (double)pos.getZ() + 0.5, (double)direction.getStepX() * 0.15, 0.05, (double)direction.getStepZ() * 0.15);
+        ItemEntity sliceEntity = new ItemEntity(level, (double) pos.getX() + 0.5, (double) pos.getY() + 0.3, (double) pos.getZ() + 0.5, this.getPieSliceItem(), (double) direction.getStepX() * 0.15, 0.05, (double) direction.getStepZ() * 0.15);
+        sliceEntity.setDefaultPickUpDelay();
+        level.addFreshEntity(sliceEntity);
         level.playSound((Player)null, pos, SoundEvents.WOOL_BREAK, SoundSource.PLAYERS, 0.8F, 0.8F);
         return InteractionResult.SUCCESS;
     }

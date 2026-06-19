@@ -1,8 +1,18 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "cream_cake_chorus_fruit"
+        },
+        {
+            "type": "forge:mod_loaded",
+            "modid": "create"
+        }
+    ],
     "type": "create:item_application",
     "ingredients": [
         {
-            "tag": "forge:frosted_cake"
+            "tag": "forge:cream_cake"
         },
         {
             "tag": "forge:chorus_fruit"
@@ -10,7 +20,7 @@
     ],
     "results": [
         {
-            "item": "createfood:cake_chorus_fruit"
+            "item": "createfood:cream_cake_chorus_fruit"
         }
     ]
 }

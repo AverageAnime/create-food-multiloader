@@ -1,4 +1,17 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "ids": [
+                "egg",
+                "eggshell"
+            ]
+        },
+        {
+            "type": "forge:mod_loaded",
+            "modid": "create"
+        }
+    ],
     "type": "create:mixing",
     "ingredients": [
         {

@@ -2,13 +2,17 @@
     "conditions": [
         {
             "type": "forge:mod_loaded",
+            "modid": "create"
+        },
+        {
+            "type": "forge:mod_loaded",
             "modid": "jmc"
         }
     ],
     "type": "create:item_application",
     "ingredients": [
         {
-            "tag": "forge:frosted_cake"
+            "tag": "forge:cream_cake"
         },
         {
             "item": "minecraft:redstone"

@@ -1,33 +1,37 @@
 {
-  "conditions": [
-    {
-      "type": "forge:mod_loaded",
-      "modid": "farm_and_charm"
-    }
-  ],
-  "type": "farm_and_charm:pot_cooking",
-  "ingredients": [
-    {
-      "tag": "forge:sugar"
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "toffee_bucket"
+        },
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farm_and_charm"
+        }
+    ],
+    "type": "farm_and_charm:pot_cooking",
+    "ingredients": [
+        {
+            "tag": "forge:sugar"
+        },
+        {
+            "tag": "forge:sugar"
+        },
+        {
+            "tag": "forge:butter"
+        },
+        {
+            "tag": "forge:butter"
+        }
+    ],
+    "container": {
+        "required": true,
+        "item": {
+            "item": "minecraft:bucket"
+        }
     },
-    {
-      "tag": "forge:sugar"
+    "result": {
+        "item": "createfood:toffee_bucket"
     },
-    {
-      "tag": "forge:butter"
-    },
-    {
-      "tag": "forge:butter"
-    }
-  ],
-  "container": {
-    "required": true,
-    "item": {
-      "item": "minecraft:bucket"
-    }
-  },
-  "result": {
-    "item": "createfood:toffee_bucket"
-  },
-  "requiresLearning": false
+    "requiresLearning": false
 }

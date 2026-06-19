@@ -1,8 +1,14 @@
 {
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farmersdelight"
+        }
+    ],
     "type": "farmersdelight:cutting",
     "ingredients": [
         {
-            "tag": "forge:caramel_glazed_apple"
+            "tag": "forge:caramel_apple"
         }
     ],
     "tool": {

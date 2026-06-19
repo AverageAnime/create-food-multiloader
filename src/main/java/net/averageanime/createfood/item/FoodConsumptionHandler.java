@@ -23,10 +23,11 @@ public class FoodConsumptionHandler {
         if (event.getEntity().level().isClientSide()) return;
         ItemStack stack = event.getItem();
         if (!stack.isEdible()) return;
+        if (stack.getItem() instanceof EffectFood) return;
 
         ResourceLocation itemLoc = ForgeRegistries.ITEMS.getKey(stack.getItem());
         if (itemLoc == null) return;
-        String itemId = itemLoc.toString();
+        String itemId = itemLoc.getPath();
 
         List<ConfigLogic.ItemEffectOverride> overrides = ConfigLogic.getItemOverrideEntries(
                 itemId, CreateFoodConfig.SERVER.itemOverrides.get());

@@ -4,6 +4,10 @@
     {
       "id": "bakery:bread_knife",
       "required": false
+    },
+    {
+      "id": "#farmersdelight:tools/knives",
+      "required": false
     }
   ]
 }

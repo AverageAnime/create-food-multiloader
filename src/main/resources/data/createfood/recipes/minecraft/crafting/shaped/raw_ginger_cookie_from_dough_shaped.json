@@ -1,10 +1,14 @@
-{    
-	"conditions": [
+{
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "raw_ginger_cookie"
+        },
         {
             "type": "forge:not",
             "value": {
                 "type": "forge:tag_empty",
-                "tag": "forge:foods/vegetables/ginger"
+                "tag": "forge:vegetabless/ginger"
             }
         }
     ],
@@ -15,7 +19,7 @@
     ],
     "key": {
         "1": {
-            "tag": "forge:foods/vegetables/ginger"
+            "tag": "forge:vegetabless/ginger"
         },
         "2": {
             "tag": "forge:sweet_dough"

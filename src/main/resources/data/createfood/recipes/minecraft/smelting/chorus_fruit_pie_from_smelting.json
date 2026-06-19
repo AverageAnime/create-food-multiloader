@@ -1,4 +1,10 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "chorus_fruit_pie"
+        }
+    ],
     "type": "minecraft:smelting",
     "ingredient": {
         "tag": "forge:raw_chorus_fruit_pie"

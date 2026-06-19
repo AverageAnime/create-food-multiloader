@@ -1,4 +1,10 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "taco_shell"
+        }
+    ],
     "type": "minecraft:smoking",
     "cookingtime": 50,
     "experience": 0.1,

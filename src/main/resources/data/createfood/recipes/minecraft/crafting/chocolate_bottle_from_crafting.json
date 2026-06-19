@@ -1,8 +1,14 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "chocolate_bottle"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {
-            "tag": "forge:buckets/chocolate"
+            "tag": "forge:chocolate_bucket"
         },
         {
             "item": "minecraft:glass_bottle"

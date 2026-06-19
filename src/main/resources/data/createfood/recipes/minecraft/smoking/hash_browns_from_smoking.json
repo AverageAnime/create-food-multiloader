@@ -1,4 +1,10 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "hash_browns"
+        }
+    ],
     "type": "minecraft:smoking",
     "cookingtime": 55,
     "experience": 0.55,

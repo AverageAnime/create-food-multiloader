@@ -1,6 +1,10 @@
 {
     "conditions": [
         {
+            "type": "createfood:enabled",
+            "id": "raw_soul_berry_cookie"
+        },
+        {
             "type": "forge:mod_loaded",
             "modid": "frightsdelight"
         }

@@ -1,5 +1,10 @@
 {
-    "conditions": [],
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "ground_pork"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {

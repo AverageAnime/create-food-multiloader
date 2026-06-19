@@ -1,4 +1,10 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "raw_fish_calzone"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {

@@ -1,39 +1,43 @@
 {
-  "conditions": [
-    {
-      "type": "forge:mod_loaded",
-      "modid": "farm_and_charm"
-    }
-  ],
-  "type": "farm_and_charm:pot_cooking",
-  "container": {
-    "required": true,
-    "item": {
-      "item": "minecraft:bucket"
-    }
-  },
-  "ingredients": [
-    {
-      "tag": "forge:butter"
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "chorus_fruit_pie_filling_bucket"
+        },
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farm_and_charm"
+        }
+    ],
+    "type": "farm_and_charm:pot_cooking",
+    "container": {
+        "required": true,
+        "item": {
+            "item": "minecraft:bucket"
+        }
     },
-    {
-      "tag": "forge:sugar"
+    "ingredients": [
+        {
+            "tag": "forge:butter"
+        },
+        {
+            "tag": "forge:sugar"
+        },
+        {
+            "tag": "forge:sugar"
+        },
+        {
+            "tag": "forge:chorus_fruit"
+        },
+        {
+            "tag": "forge:chorus_fruit"
+        },
+        {
+            "tag": "forge:chorus_fruit"
+        }
+    ],
+    "result": {
+        "item": "createfood:chorus_fruit_pie_filling_bucket"
     },
-    {
-      "tag": "forge:sugar"
-    },
-    {
-      "tag": "forge:chorus_fruit"
-    },
-    {
-      "tag": "forge:chorus_fruit"
-    },
-    {
-      "tag": "forge:chorus_fruit"
-    }
-  ],
-  "result": {
-    "item": "createfood:chorus_fruit_pie_filling_bucket"
-  },
-  "requiresLearning": false
+    "requiresLearning": false
 }

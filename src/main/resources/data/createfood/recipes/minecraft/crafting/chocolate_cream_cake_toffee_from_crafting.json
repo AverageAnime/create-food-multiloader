@@ -1,8 +1,14 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "chocolate_cream_cake_toffee"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {
-            "tag": "forge:chocolate_cream_frosted_cake"
+            "tag": "forge:chocolate_cream_cake"
         },
         {
             "tag": "forge:toffee_chips"

@@ -1,4 +1,10 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "sausage_calzone"
+        }
+    ],
     "type": "minecraft:smelting",
     "ingredient": {
         "tag": "forge:raw_sausage_calzone"

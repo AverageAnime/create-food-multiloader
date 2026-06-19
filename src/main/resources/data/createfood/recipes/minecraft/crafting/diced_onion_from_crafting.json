@@ -1,5 +1,10 @@
 {
-    "conditions": [],
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "diced_onion"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {

@@ -1,4 +1,10 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "leather_soup_bowl"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {

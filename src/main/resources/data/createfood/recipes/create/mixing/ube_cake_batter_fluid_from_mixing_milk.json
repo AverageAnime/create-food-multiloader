@@ -1,4 +1,21 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "ube_cake_batter"
+        },
+        {
+            "type": "forge:mod_loaded",
+            "modid": "create"
+        },
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:vegetables/ube"
+            }
+        }
+    ],
     "type": "create:mixing",
     "requiredSpeed": 32,
     "ingredients": [
@@ -10,7 +27,7 @@
             "tag": "forge:sugar"
         },
         {
-            "tag": "forge:flours/wheat"
+            "tag": "forge:flour"
         },
         {
             "tag": "forge:eggs"

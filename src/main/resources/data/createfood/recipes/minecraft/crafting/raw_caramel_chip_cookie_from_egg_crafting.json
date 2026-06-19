@@ -1,4 +1,10 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "raw_caramel_chip_cookie"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {

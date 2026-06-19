@@ -1,26 +1,30 @@
 {
-  "conditions": [
-    {
-      "type": "forge:mod_loaded",
-      "modid": "farm_and_charm"
-    }
-  ],
-  "type": "farm_and_charm:stove",
-  "ingredients": [
-    {
-      "tag": "forge:shredded_potato"
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "hash_browns"
+        },
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farm_and_charm"
+        }
+    ],
+    "type": "farm_and_charm:stove",
+    "ingredients": [
+        {
+            "tag": "forge:shredded_potato"
+        },
+        {
+            "tag": "forge:shredded_potato"
+        },
+        {
+            "tag": "forge:shredded_potato"
+        }
+    ],
+    "experience": 0.4,
+    "result": {
+        "item": "createfood:hash_browns",
+        "count": 3
     },
-    {
-      "tag": "forge:shredded_potato"
-    },
-    {
-      "tag": "forge:shredded_potato"
-    }
-  ],
-  "experience": 0.4,
-  "result": {
-    "item": "createfood:hash_browns",
-    "count": 3
-  },
-  "requiresLearning": false
+    "requiresLearning": false
 }

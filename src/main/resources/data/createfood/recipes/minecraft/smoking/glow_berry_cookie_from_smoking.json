@@ -1,4 +1,10 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "glow_berry_cookie"
+        }
+    ],
     "type": "minecraft:smoking",
     "cookingtime": 100,
     "experience": 0.35,

@@ -1,26 +1,30 @@
 {
-  "conditions": [
-    {
-      "type": "forge:mod_loaded",
-      "modid": "farm_and_charm"
-    }
-  ],
-  "type": "farm_and_charm:stove",
-  "ingredients": [
-    {
-      "tag": "forge:raw_fish_onion_pizza"
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "fish_onion_pizza"
+        },
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farm_and_charm"
+        }
+    ],
+    "type": "farm_and_charm:stove",
+    "ingredients": [
+        {
+            "tag": "forge:raw_fish_onion_pizza"
+        },
+        {
+            "tag": "forge:raw_fish_onion_pizza"
+        },
+        {
+            "tag": "forge:raw_fish_onion_pizza"
+        }
+    ],
+    "experience": 0.4,
+    "result": {
+        "item": "createfood:fish_onion_pizza",
+        "count": 3
     },
-    {
-      "tag": "forge:raw_fish_onion_pizza"
-    },
-    {
-      "tag": "forge:raw_fish_onion_pizza"
-    }
-  ],
-  "experience": 0.4,
-  "result": {
-    "item": "createfood:fish_onion_pizza",
-    "count": 3
-  },
-  "requiresLearning": false
+    "requiresLearning": false
 }

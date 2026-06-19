@@ -1,6 +1,10 @@
 {
     "conditions": [
         {
+            "type": "createfood:enabled",
+            "id": "espresso_powder"
+        },
+        {
             "type": "forge:mod_loaded",
             "modid": "farm_and_charm"
         }

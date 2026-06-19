@@ -1,30 +1,34 @@
 {
-  "conditions": [
-    {
-      "type": "forge:mod_loaded",
-      "modid": "farm_and_charm"
-    }
-  ],
-  "type": "farm_and_charm:pot_cooking",
-  "ingredients": [
-    {
-      "tag": "forge:condensed_milk"
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "white_chocolate_fudge"
+        },
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farm_and_charm"
+        }
+    ],
+    "type": "farm_and_charm:pot_cooking",
+    "ingredients": [
+        {
+            "tag": "forge:condensed_milk"
+        },
+        {
+            "tag": "forge:white_chocolate_chips"
+        },
+        {
+            "tag": "forge:butter"
+        }
+    ],
+    "container": {
+        "required": true,
+        "item": {
+            "item": "minecraft:bowl"
+        }
     },
-    {
-      "tag": "forge:white_chocolate_chips"
+    "result": {
+        "item": "createfood:white_chocolate_fudge"
     },
-    {
-      "tag": "forge:butter"
-    }
-  ],
-  "container": {
-    "required": true,
-    "item": {
-      "item": "minecraft:bowl"
-    }
-  },
-  "result": {
-    "item": "createfood:white_chocolate_fudge"
-  },
-  "requiresLearning": false
+    "requiresLearning": false
 }

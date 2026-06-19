@@ -1,31 +1,35 @@
 {
-  "conditions": [
-    {
-      "type": "forge:mod_loaded",
-      "modid": "farm_and_charm"
-    }
-  ],
-  "type": "farm_and_charm:pot_cooking",
-  "container": {
-    "required": true,
-    "item": {
-      "item": "minecraft:stick"
-    }
-  },
-  "ingredients": [
-    {
-      "tag": "forge:cane_syrup_bucket"
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "cotton_candy_stick"
+        },
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farm_and_charm"
+        }
+    ],
+    "type": "farm_and_charm:pot_cooking",
+    "container": {
+        "required": true,
+        "item": {
+            "item": "minecraft:stick"
+        }
     },
-    {
-      "tag": "forge:powdered_sugar"
+    "ingredients": [
+        {
+            "tag": "forge:cane_syrup_bucket"
+        },
+        {
+            "tag": "forge:powdered_sugar"
+        },
+        {
+            "tag": "forge:salt"
+        }
+    ],
+    "result": {
+        "count": 8,
+        "item": "createfood:cotton_candy_stick"
     },
-    {
-      "tag": "forge:salt"
-    }
-  ],
-  "result": {
-    "count": 8,
-    "item": "createfood:cotton_candy_stick"
-  },
-  "requiresLearning": false
+    "requiresLearning": false
 }

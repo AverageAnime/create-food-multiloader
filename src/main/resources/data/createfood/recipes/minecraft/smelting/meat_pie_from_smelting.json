@@ -1,4 +1,10 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "meat_pie"
+        }
+    ],
     "type": "minecraft:smelting",
     "cookingtime": 550,
     "experience": 0.95,

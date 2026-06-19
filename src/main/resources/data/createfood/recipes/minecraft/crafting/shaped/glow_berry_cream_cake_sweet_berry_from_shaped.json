@@ -1,4 +1,10 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "glow_berry_cream_cake_sweet_berry"
+        }
+    ],
     "type": "minecraft:crafting_shaped",
     "pattern": [
         "1 ",
@@ -9,7 +15,7 @@
             "item": "minecraft:sweet_berries"
         },
         "2": {
-            "tag": "forge:glow_berry_cream_frosted_cake"
+            "tag": "forge:glow_berry_cream_cake"
         }
     },
     "result": {

@@ -1,11 +1,17 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "beef_bun_cheese_lettuce"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {
             "tag": "forge:beef_bun_cheese"
         },
         {
-            "tag": "forge:foods/leafy_green"
+            "tag": "forge:salad_ingredients"
         }
     ],
     "result": {

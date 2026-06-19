@@ -1,4 +1,10 @@
 {
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farmersdelight"
+        }
+    ],
     "type": "farmersdelight:cutting",
     "ingredients": [
         {
@@ -16,7 +22,7 @@
             "item": "createfood:eggshell"
         },
         {
-            "chance" : 0.25,
+            "chance": 0.25,
             "item": "createfood:eggshell"
         }
     ]

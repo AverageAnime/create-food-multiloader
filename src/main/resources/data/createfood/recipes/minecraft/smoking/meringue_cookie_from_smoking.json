@@ -1,4 +1,10 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "meringue_cookie"
+        }
+    ],
     "type": "minecraft:smoking",
     "cookingtime": 150,
     "experience": 0.3,

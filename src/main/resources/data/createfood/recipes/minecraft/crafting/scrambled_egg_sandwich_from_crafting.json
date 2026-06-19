@@ -1,4 +1,10 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "scrambled_egg_sandwich"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {

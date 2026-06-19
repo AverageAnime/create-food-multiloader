@@ -1,26 +1,30 @@
 {
-  "conditions": [
-    {
-      "type": "forge:mod_loaded",
-      "modid": "farm_and_charm"
-    }
-  ],
-  "type": "farm_and_charm:stove",
-  "ingredients": [
-    {
-      "tag": "forge:raw_chocolate_sweet_roll_base"
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "chocolate_sweet_roll_base"
+        },
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farm_and_charm"
+        }
+    ],
+    "type": "farm_and_charm:stove",
+    "ingredients": [
+        {
+            "tag": "forge:raw_chocolate_sweet_roll_base"
+        },
+        {
+            "tag": "forge:raw_chocolate_sweet_roll_base"
+        },
+        {
+            "tag": "forge:raw_chocolate_sweet_roll_base"
+        }
+    ],
+    "experience": 0.3,
+    "result": {
+        "item": "createfood:chocolate_sweet_roll_base",
+        "count": 3
     },
-    {
-      "tag": "forge:raw_chocolate_sweet_roll_base"
-    },
-    {
-      "tag": "forge:raw_chocolate_sweet_roll_base"
-    }
-  ],
-  "experience": 0.3,
-  "result": {
-    "item": "createfood:chocolate_sweet_roll_base",
-    "count": 3
-  },
-  "requiresLearning": false
+    "requiresLearning": false
 }

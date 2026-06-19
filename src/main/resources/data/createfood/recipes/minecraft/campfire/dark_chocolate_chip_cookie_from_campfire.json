@@ -1,4 +1,10 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "dark_chocolate_chip_cookie"
+        }
+    ],
     "type": "minecraft:campfire_cooking",
     "cookingtime": 200,
     "experience": 0.1,

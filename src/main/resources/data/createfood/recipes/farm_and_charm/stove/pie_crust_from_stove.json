@@ -1,26 +1,30 @@
 {
-  "conditions": [
-    {
-      "type": "forge:mod_loaded",
-      "modid": "farm_and_charm"
-    }
-  ],
-  "type": "farm_and_charm:stove",
-  "ingredients": [
-    {
-      "tag": "forge:raw_pie_crust"
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farmersdelight"
+        },
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farm_and_charm"
+        }
+    ],
+    "type": "farm_and_charm:stove",
+    "ingredients": [
+        {
+            "tag": "forge:raw_pie_crust"
+        },
+        {
+            "tag": "forge:raw_pie_crust"
+        },
+        {
+            "tag": "forge:raw_pie_crust"
+        }
+    ],
+    "experience": 0.4,
+    "result": {
+        "item": "farmersdelight:pie_crust",
+        "count": 3
     },
-    {
-      "tag": "forge:raw_pie_crust"
-    },
-    {
-      "tag": "forge:raw_pie_crust"
-    }
-  ],
-  "experience": 0.4,
-  "result": {
-    "item": "farmersdelight:pie_crust",
-    "count": 3
-  },
-  "requiresLearning": false
+    "requiresLearning": false
 }

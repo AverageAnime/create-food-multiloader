@@ -42,16 +42,19 @@ public class ChocolateChipWaffleBlock extends ModPieBlock {
         }
     }
 
-    static {
-        SHAPE_BY_BITE = new VoxelShape[]{
-                Block.box(2.0D, 0.0D, 2.0D, 14.0D, 2.0D, 14.0D),
-                Shapes.or(
-                        Block.box(2.0D, 0.0D, 8.0D, 8.0D, 2.0D, 14.0D),
-                        Block.box(2.0D, 0.0D, 2.0D, 14.0D, 2.0D, 8.0D)
-                ),
-                Block.box(2.0D, 0.0D, 2.0D, 14.0D, 2.0D, 8.0D),
-                Block.box(8.0D, 0.0D, 2.0D, 14.0D, 2.0D, 8.0D)
-        };
+    private static final VoxelShape[] FLAT_SHAPES = new VoxelShape[]{
+            Block.box(2.0D, 0.0D, 2.0D, 14.0D, 2.0D, 14.0D),
+            Shapes.or(
+                    Block.box(2.0D, 0.0D, 8.0D, 8.0D, 2.0D, 14.0D),
+                    Block.box(2.0D, 0.0D, 2.0D, 14.0D, 2.0D, 8.0D)
+            ),
+            Block.box(2.0D, 0.0D, 2.0D, 14.0D, 2.0D, 8.0D),
+            Block.box(8.0D, 0.0D, 2.0D, 14.0D, 2.0D, 8.0D)
+    };
+
+    @Override
+    protected VoxelShape[] getShapesByBite() {
+        return FLAT_SHAPES;
     }
 
 }

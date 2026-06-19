@@ -1,4 +1,21 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "ube_cake_base"
+        },
+        {
+            "type": "forge:mod_loaded",
+            "modid": "create"
+        },
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:vegetables/ube"
+            }
+        }
+    ],
     "type": "create:compacting",
     "heat_requirement": "heated",
     "ingredients": [

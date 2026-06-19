@@ -1,9 +1,19 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "fish_sticks"
+        },
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farmersdelight"
+        }
+    ],
     "type": "farmersdelight:cooking",
     "experience": 0.2,
     "ingredients": [
         {
-            "tag": "forge:foods/raw_fish"
+            "tag": "forge:raw_fishes"
         },
         {
             "item": "minecraft:egg"

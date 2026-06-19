@@ -1,4 +1,10 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "raw_rabbit_calzone"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {

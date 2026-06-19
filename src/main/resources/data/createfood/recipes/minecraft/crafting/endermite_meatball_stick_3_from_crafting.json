@@ -1,4 +1,10 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "endermite_meatball_stick_3"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {

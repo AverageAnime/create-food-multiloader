@@ -1,4 +1,10 @@
-﻿{
+{
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farmersdelight"
+        }
+    ],
     "type": "farmersdelight:cutting",
     "ingredients": [
         {
@@ -10,7 +16,8 @@
     },
     "result": [
         {
-            "count": 3, "item": "createfood:kelp_roll_slice_brown_mushroom"
+            "count": 3,
+            "item": "createfood:kelp_roll_slice_brown_mushroom"
         }
     ]
 }

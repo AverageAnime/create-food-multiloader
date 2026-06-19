@@ -1,26 +1,30 @@
 {
-  "conditions": [
-    {
-      "type": "forge:mod_loaded",
-      "modid": "farm_and_charm"
-    }
-  ],
-  "type": "farm_and_charm:stove",
-  "ingredients": [
-    {
-      "tag": "forge:dark_chocolate_bottle"
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "hot_dark_chocolate_bottle"
+        },
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farm_and_charm"
+        }
+    ],
+    "type": "farm_and_charm:stove",
+    "ingredients": [
+        {
+            "tag": "forge:dark_chocolate_bottle"
+        },
+        {
+            "tag": "forge:dark_chocolate_bottle"
+        },
+        {
+            "tag": "forge:dark_chocolate_bottle"
+        }
+    ],
+    "experience": 0.15,
+    "result": {
+        "item": "createfood:hot_dark_chocolate_bottle",
+        "count": 3
     },
-    {
-      "tag": "forge:dark_chocolate_bottle"
-    },
-    {
-      "tag": "forge:dark_chocolate_bottle"
-    }
-  ],
-  "experience": 0.15,
-  "result": {
-    "item": "createfood:hot_dark_chocolate_bottle",
-    "count": 3
-  },
-  "requiresLearning": false
+    "requiresLearning": false
 }

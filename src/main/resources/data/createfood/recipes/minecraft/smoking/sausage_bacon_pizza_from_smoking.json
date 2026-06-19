@@ -1,4 +1,10 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "sausage_bacon_pizza"
+        }
+    ],
     "type": "minecraft:smoking",
     "ingredient": {
         "tag": "forge:raw_sausage_bacon_pizza"

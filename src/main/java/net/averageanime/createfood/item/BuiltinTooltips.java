@@ -719,5 +719,90 @@ public final class BuiltinTooltips {
         TIPS.put("yogurt_bowl_chorus_fruit", new String[]{null, "tooltip.createfood.chorus_fruit_ingredient"});
         TIPS.put("yogurt_bowl_glow_berry", new String[]{null, "tooltip.createfood.glow_berry_ingredient"});
         TIPS.put("yogurt_bowl_honey", new String[]{null, "tooltip.createfood.honey_ingredient"});
+
+        // ── block items ───────────────────────────────────────────────────────
+
+        // cakes
+        TIPS.put("apple_cream_cake",                          new String[]{null, "tooltip.createfood.apple_cream_frosting_ingredient"});
+        TIPS.put("berry_cream_cake",                          new String[]{null, "tooltip.createfood.berry_cream_frosting_ingredient"});
+        TIPS.put("berry_cream_cake_chorus_fruit",             new String[]{null, "tooltip.createfood.berry_cream_frosting_ingredient", "tooltip.createfood.chorus_fruit_ingredient"});
+        TIPS.put("berry_cream_cake_glow_berry",               new String[]{null, "tooltip.createfood.berry_cream_frosting_ingredient", "tooltip.createfood.glow_berry_ingredient"});
+        TIPS.put("berry_cream_cake_sweet_berry",              new String[]{null, "tooltip.createfood.berry_cream_frosting_ingredient", "tooltip.createfood.berry_ingredient"});
+        TIPS.put("chocolate_cream_cake",                      new String[]{null, "tooltip.createfood.chocolate_cream_frosting_ingredient"});
+        TIPS.put("chocolate_cream_cake_butterscotch",         new String[]{null, "tooltip.createfood.chocolate_cream_frosting_ingredient", "tooltip.createfood.butterscotch_chips_ingredient"});
+        TIPS.put("chocolate_cream_cake_caramel",              new String[]{null, "tooltip.createfood.chocolate_cream_frosting_ingredient", "tooltip.createfood.caramel_chips_ingredient"});
+        TIPS.put("chocolate_cream_cake_chocolate",            new String[]{null, "tooltip.createfood.chocolate_cream_frosting_ingredient", "tooltip.createfood.chocolate_chips_ingredient"});
+        TIPS.put("chocolate_cream_cake_dark_chocolate",       new String[]{null, "tooltip.createfood.chocolate_cream_frosting_ingredient", "tooltip.createfood.dark_chocolate_chips_ingredient"});
+        TIPS.put("chocolate_cream_cake_toffee",               new String[]{null, "tooltip.createfood.chocolate_cream_frosting_ingredient", "tooltip.createfood.toffee_chips_ingredient"});
+        TIPS.put("chocolate_cream_cake_white_chocolate",      new String[]{null, "tooltip.createfood.chocolate_cream_frosting_ingredient", "tooltip.createfood.white_chocolate_chips_ingredient"});
+        TIPS.put("chocolate_cream_chocolate_cake",            new String[]{null, "tooltip.createfood.chocolate_cream_frosting_ingredient"});
+        TIPS.put("chorus_fruit_cream_cake",                   new String[]{null, "tooltip.createfood.chorus_fruit_cream_frosting_ingredient"});
+        TIPS.put("chorus_fruit_cream_cake_chorus_fruit",      new String[]{null, "tooltip.createfood.chorus_fruit_cream_frosting_ingredient", "tooltip.createfood.chorus_fruit_ingredient"});
+        TIPS.put("chorus_fruit_cream_cake_glow_berry",        new String[]{null, "tooltip.createfood.chorus_fruit_cream_frosting_ingredient", "tooltip.createfood.glow_berry_ingredient"});
+        TIPS.put("chorus_fruit_cream_cake_sweet_berry",       new String[]{null, "tooltip.createfood.chorus_fruit_cream_frosting_ingredient", "tooltip.createfood.berry_ingredient"});
+        TIPS.put("cream_cake",                                new String[]{null, "tooltip.createfood.cream_frosting_ingredient"});
+        TIPS.put("cream_cake_chorus_fruit",                   new String[]{null, "tooltip.createfood.cream_frosting_ingredient", "tooltip.createfood.chorus_fruit_ingredient"});
+        TIPS.put("cream_cake_glow_berry",                     new String[]{null, "tooltip.createfood.cream_frosting_ingredient", "tooltip.createfood.glow_berry_ingredient"});
+        TIPS.put("cream_chocolate_cake",                      new String[]{null, "tooltip.createfood.cream_frosting_ingredient"});
+        TIPS.put("glow_berry_cream_cake",                     new String[]{null, "tooltip.createfood.glow_berry_cream_frosting_ingredient"});
+        TIPS.put("glow_berry_cream_cake_chorus_fruit",        new String[]{null, "tooltip.createfood.glow_berry_cream_frosting_ingredient", "tooltip.createfood.chorus_fruit_ingredient"});
+        TIPS.put("glow_berry_cream_cake_glow_berry",          new String[]{null, "tooltip.createfood.glow_berry_cream_frosting_ingredient", "tooltip.createfood.glow_berry_ingredient"});
+        TIPS.put("glow_berry_cream_cake_sweet_berry",         new String[]{null, "tooltip.createfood.glow_berry_cream_frosting_ingredient", "tooltip.createfood.berry_ingredient"});
+        TIPS.put("melon_cream_cake",                          new String[]{null, "tooltip.createfood.melon_cream_frosting_ingredient"});
+        TIPS.put("ube_cake_base",                             new String[]{"ube"});
+        TIPS.put("ube_cream_ube_cake",                        new String[]{"ube", "tooltip.createfood.ube_cream_frosting_ingredient"});
+
+        // waffles
+        TIPS.put("butterscotch_chip_waffle",    new String[]{null, "tooltip.createfood.butterscotch_chips_ingredient"});
+        TIPS.put("caramel_chip_waffle",         new String[]{null, "tooltip.createfood.caramel_chips_ingredient"});
+        TIPS.put("chocolate_chip_waffle",       new String[]{null, "tooltip.createfood.chocolate_chips_ingredient"});
+        TIPS.put("dark_chocolate_chip_waffle",  new String[]{null, "tooltip.createfood.dark_chocolate_chips_ingredient"});
+        TIPS.put("toffee_chip_waffle",          new String[]{null, "tooltip.createfood.toffee_chips_ingredient"});
+        TIPS.put("white_chocolate_chip_waffle", new String[]{null, "tooltip.createfood.white_chocolate_chips_ingredient"});
+
+        // cooked pizzas
+        TIPS.put("bacon_pizza",           new String[]{null, "tooltip.createfood.bacon_ingredient"});
+        TIPS.put("cheese_pizza",          new String[]{null, "tooltip.createfood.cheese_ingredient"});
+        TIPS.put("fish_pizza",            new String[]{null, "tooltip.createfood.fish_ingredient"});
+        TIPS.put("fish_bacon_pizza",      new String[]{null, "tooltip.createfood.fish_ingredient", "tooltip.createfood.bacon_ingredient"});
+        TIPS.put("fish_onion_pizza",      new String[]{null, "tooltip.createfood.fish_ingredient", "tooltip.createfood.onion_ingredient"});
+        TIPS.put("mushroom_pizza",        new String[]{null, "tooltip.createfood.mushroom_ingredient"});
+        TIPS.put("mushroom_bacon_pizza",  new String[]{null, "tooltip.createfood.mushroom_ingredient", "tooltip.createfood.bacon_ingredient"});
+        TIPS.put("mushroom_fish_pizza",   new String[]{null, "tooltip.createfood.mushroom_ingredient", "tooltip.createfood.fish_ingredient"});
+        TIPS.put("mushroom_onion_pizza",  new String[]{null, "tooltip.createfood.mushroom_ingredient", "tooltip.createfood.onion_ingredient"});
+        TIPS.put("onion_pizza",           new String[]{null, "tooltip.createfood.onion_ingredient"});
+        TIPS.put("onion_bacon_pizza",     new String[]{null, "tooltip.createfood.onion_ingredient", "tooltip.createfood.bacon_ingredient"});
+        TIPS.put("sausage_pizza",         new String[]{null, "tooltip.createfood.sausage_ingredient"});
+        TIPS.put("sausage_bacon_pizza",   new String[]{null, "tooltip.createfood.sausage_ingredient", "tooltip.createfood.bacon_ingredient"});
+        TIPS.put("sausage_fish_pizza",    new String[]{null, "tooltip.createfood.sausage_ingredient", "tooltip.createfood.fish_ingredient"});
+        TIPS.put("sausage_mushroom_pizza",new String[]{null, "tooltip.createfood.sausage_ingredient", "tooltip.createfood.mushroom_ingredient"});
+        TIPS.put("sausage_onion_pizza",   new String[]{null, "tooltip.createfood.sausage_ingredient", "tooltip.createfood.onion_ingredient"});
+
+        // raw pizzas (with ingredients)
+        TIPS.put("pizza_dough_tomato_sauce",        new String[]{null, "tooltip.createfood.tomato_sauce_ingredient"});
+        TIPS.put("raw_bacon_pizza",                 new String[]{null, "tooltip.createfood.bacon_ingredient"});
+        TIPS.put("raw_cheese_pizza",                new String[]{null, "tooltip.createfood.cheese_ingredient"});
+        TIPS.put("raw_fish_pizza",                  new String[]{null, "tooltip.createfood.fish_ingredient"});
+        TIPS.put("raw_fish_bacon_pizza",            new String[]{null, "tooltip.createfood.fish_ingredient", "tooltip.createfood.bacon_ingredient"});
+        TIPS.put("raw_fish_onion_pizza",            new String[]{null, "tooltip.createfood.fish_ingredient", "tooltip.createfood.onion_ingredient"});
+        TIPS.put("raw_mushroom_pizza",              new String[]{null, "tooltip.createfood.mushroom_ingredient"});
+        TIPS.put("raw_mushroom_bacon_pizza",        new String[]{null, "tooltip.createfood.mushroom_ingredient", "tooltip.createfood.bacon_ingredient"});
+        TIPS.put("raw_mushroom_fish_pizza",         new String[]{null, "tooltip.createfood.mushroom_ingredient", "tooltip.createfood.fish_ingredient"});
+        TIPS.put("raw_mushroom_onion_pizza",        new String[]{null, "tooltip.createfood.mushroom_ingredient", "tooltip.createfood.onion_ingredient"});
+        TIPS.put("raw_onion_pizza",                 new String[]{null, "tooltip.createfood.onion_ingredient"});
+        TIPS.put("raw_onion_bacon_pizza",           new String[]{null, "tooltip.createfood.onion_ingredient", "tooltip.createfood.bacon_ingredient"});
+        TIPS.put("raw_sausage_pizza",               new String[]{null, "tooltip.createfood.sausage_ingredient"});
+        TIPS.put("raw_sausage_bacon_pizza",         new String[]{null, "tooltip.createfood.sausage_ingredient", "tooltip.createfood.bacon_ingredient"});
+        TIPS.put("raw_sausage_fish_pizza",          new String[]{null, "tooltip.createfood.sausage_ingredient", "tooltip.createfood.fish_ingredient"});
+        TIPS.put("raw_sausage_mushroom_pizza",      new String[]{null, "tooltip.createfood.sausage_ingredient", "tooltip.createfood.mushroom_ingredient"});
+        TIPS.put("raw_sausage_onion_pizza",         new String[]{null, "tooltip.createfood.sausage_ingredient", "tooltip.createfood.onion_ingredient"});
+
+        // pies with crust ingredients
+        TIPS.put("chocolate_pie_graham_cracker",              new String[]{null, "tooltip.createfood.graham_cracker_pie_crust_ingredient"});
+        TIPS.put("cream_pie_graham_cracker",                  new String[]{null, "tooltip.createfood.graham_cracker_pie_crust_ingredient"});
+        TIPS.put("cream_pie_chocolate_graham_cracker",        new String[]{null, "tooltip.createfood.chocolate_graham_cracker_pie_crust_ingredient"});
+        TIPS.put("raw_chocolate_pie_graham_cracker",          new String[]{null, "tooltip.createfood.graham_cracker_pie_crust_ingredient"});
+        TIPS.put("raw_cream_pie_graham_cracker",              new String[]{null, "tooltip.createfood.graham_cracker_pie_crust_ingredient"});
+        TIPS.put("raw_cream_pie_chocolate_graham_cracker",    new String[]{null, "tooltip.createfood.chocolate_graham_cracker_pie_crust_ingredient"});
     }
 }

@@ -1,4 +1,10 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "berry_cream_cupcake"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {

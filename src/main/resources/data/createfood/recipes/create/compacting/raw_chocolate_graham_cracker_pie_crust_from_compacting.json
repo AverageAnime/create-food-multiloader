@@ -1,9 +1,18 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "raw_chocolate_graham_cracker_pie_crust"
+        },
+        {
+            "type": "forge:mod_loaded",
+            "modid": "create"
+        }
+    ],
     "type": "create:compacting",
     "ingredients": [
         {
-            "amount": 250,
-            "fluidTag": "forge:milk"
+            "tag": "forge:sugar"
         },
         {
             "tag": "forge:chocolate_graham_cracker_crumbs"

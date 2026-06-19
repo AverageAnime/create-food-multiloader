@@ -1,8 +1,14 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "raw_fish_sticks"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {
-            "tag": "forge:foods/raw_fish"
+            "tag": "forge:raw_fishes"
         },
         {
             "item": "minecraft:egg"

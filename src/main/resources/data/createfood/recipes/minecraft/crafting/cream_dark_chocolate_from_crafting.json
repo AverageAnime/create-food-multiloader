@@ -1,4 +1,10 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "cream_dark_chocolate"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {

@@ -1,4 +1,14 @@
-﻿{
+{
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "mutton_stew_bowl"
+        },
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farmersdelight"
+        }
+    ],
     "type": "farmersdelight:cooking",
     "experience": 0.1,
     "container": {
@@ -6,7 +16,7 @@
     },
     "ingredients": [
         {
-            "tag": "forge:foods/raw_mutton"
+            "tag": "forge:foods/raw_meats/raw_mutton"
         },
         {
             "tag": "forge:onion"

@@ -112,6 +112,7 @@ public final class DisplayBlockRegistry {
         put(m, "hot_dark_chocolate_bottle",     DisplayType.BOTTLE, 8, true,  () -> ParticleTypes.WHITE_ASH);
         put(m, "hot_white_chocolate_bottle",    DisplayType.BOTTLE, 8, true,  () -> ParticleTypes.WHITE_ASH);
         put(m, "_jam_bottle",                   DisplayType.BOTTLE, 9, false, null);
+        put(m, "cane_syrup_bottle",             DisplayType.BOTTLE, 9, false, null);
         put(m, "taco_sauce_bottle",             DisplayType.BOTTLE, 9, false, null);
         put(m, "sugar_cane_juice_bottle",       DisplayType.BOTTLE, 9, false, null);
         put(m, "egg_whites_bottle",             DisplayType.BOTTLE, 9, false, null);
@@ -204,9 +205,8 @@ public final class DisplayBlockRegistry {
         for (var entry : ModItems.ITEMS.getEntries()) {
             names.add(entry.getId().getPath());
         }
-        // Include REGISTRATE-registered block items (cheese_block, gyro_meat_block, etc.)
-        for (var entry : net.averageanime.createfood.CreateFood.REGISTRATE.getAll(
-                net.minecraft.core.registries.Registries.BLOCK)) {
+        // Include block items (cheese_block, gyro_meat_block, etc.)
+        for (var entry : net.averageanime.createfood.block.ModBlocks.BLOCKS.getEntries()) {
             String id = entry.getId().getPath();
             if (!id.contains("_dessert_block")) {
                 names.add(id);

@@ -10,7 +10,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.*;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEvent;
-import vectorwing.farmersdelight.common.registry.ModEffects;
+
 
 public class SmoresPieBlock extends ModPieBlock {
 
@@ -26,7 +26,7 @@ public class SmoresPieBlock extends ModPieBlock {
         if (!pPlayer.canEat(false)) {
             return InteractionResult.PASS;
         } else {
-            pPlayer.addEffect(new MobEffectInstance(ModEffects.COMFORT.get(), 1800, 0));
+            applyComfort(pPlayer, 1800);
             pPlayer.getFoodData().eat(4, 0.8F);
             int $$4 = (Integer)pState.getValue(BITES);
             pLevel.gameEvent(pPlayer, GameEvent.EAT, pPos);

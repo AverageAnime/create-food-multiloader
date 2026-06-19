@@ -1,4 +1,10 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "blue_gelatin_dessert_block"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {

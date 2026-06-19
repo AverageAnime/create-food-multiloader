@@ -1,4 +1,10 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "sliced_brown_mushroom_salt"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {

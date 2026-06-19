@@ -1,4 +1,10 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "graham_cracker_marshmallow"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {

@@ -1,4 +1,10 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "honey_sandwich"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {

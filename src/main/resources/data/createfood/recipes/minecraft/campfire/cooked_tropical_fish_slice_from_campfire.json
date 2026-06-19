@@ -1,4 +1,10 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "cooked_tropical_fish_slice"
+        }
+    ],
     "type": "minecraft:campfire_cooking",
     "cookingtime": 200,
     "experience": 0.35,

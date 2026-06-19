@@ -1,33 +1,37 @@
 {
-  "conditions": [
-    {
-      "type": "forge:mod_loaded",
-      "modid": "farm_and_charm"
-    }
-  ],
-  "type": "farm_and_charm:pot_cooking",
-  "ingredients": [
-    {
-      "tag": "forge:brown_sugar"
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "butterscotch_bucket"
+        },
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farm_and_charm"
+        }
+    ],
+    "type": "farm_and_charm:pot_cooking",
+    "ingredients": [
+        {
+            "tag": "forge:brown_sugar"
+        },
+        {
+            "tag": "forge:brown_sugar"
+        },
+        {
+            "tag": "forge:brown_sugar"
+        },
+        {
+            "tag": "forge:brown_sugar"
+        }
+    ],
+    "container": {
+        "required": true,
+        "item": {
+            "item": "minecraft:bucket"
+        }
     },
-    {
-      "tag": "forge:brown_sugar"
+    "result": {
+        "item": "createfood:butterscotch_bucket"
     },
-    {
-      "tag": "forge:brown_sugar"
-    },
-    {
-      "tag": "forge:brown_sugar"
-    }
-  ],
-  "container": {
-    "required": true,
-    "item": {
-      "item": "minecraft:bucket"
-    }
-  },
-  "result": {
-    "item": "createfood:butterscotch_bucket"
-  },
-  "requiresLearning": false
+    "requiresLearning": false
 }

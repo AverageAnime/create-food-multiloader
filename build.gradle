@@ -1,3 +1,7 @@
+import groovy.json.JsonOutput
+import groovy.json.JsonSlurper
+import javax.imageio.ImageIO
+
 buildscript {
     repositories {
         maven { url = 'https://maven.minecraftforge.net' }
@@ -39,8 +43,8 @@ minecraft {
         client {
             workingDirectory project.file('run')
             arg '-mixin.config=createfood.mixins.json'
-            property 'forge.logging.markers', 'REGISTRIES'
-            property 'forge.logging.console.level', 'debug'
+            property 'forge.logging.markers', ''
+            property 'forge.logging.console.level', 'info'
             property 'forge.enabledGameTestNamespaces', 'createfood'
             mods {
                 createfood {
@@ -52,8 +56,8 @@ minecraft {
         server {
             workingDirectory project.file('run')
             arg '-mixin.config=createfood.mixins.json'
-            property 'forge.logging.markers', 'REGISTRIES'
-            property 'forge.logging.console.level', 'debug'
+            property 'forge.logging.markers', ''
+            property 'forge.logging.console.level', 'info'
             property 'forge.enabledGameTestNamespaces', 'createfood'
             mods {
                 createfood {
@@ -64,8 +68,8 @@ minecraft {
 
         data {
             workingDirectory project.file('run')
-            property 'forge.logging.markers', 'REGISTRIES'
-            property 'forge.logging.console.level', 'debug'
+            property 'forge.logging.markers', ''
+            property 'forge.logging.console.level', 'info'
             args '--mod', 'createfood',
                     '--all', '--output', file('src/generated/resources/'),
                     '--existing', file('src/main/resources/'),
@@ -83,7 +87,6 @@ minecraft {
 repositories {
     mavenLocal()
     maven { url = "https://maven.createmod.net" } // Create, Ponder, Flywheel
-    maven { url = "https://maven.tterrag.com" } // Registrate
     maven { url = "https://raw.githubusercontent.com/Fuzss/modresources/main/maven/" } // ForgeConfigAPIPort
     maven {
         name "Tterrag maven"
@@ -108,32 +111,37 @@ repositories {
         name = "JEI"
         url = "https://maven.blamejared.com"
     }
+    maven {
+        name = "Shedaniel"
+        url = "https://maven.shedaniel.me/"
+    }
 }
 
 dependencies {
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
 
-    implementation(fg.deobf("com.simibubi.create:create-${minecraft_version}:${create_version}:slim") { transitive = false })
-
-    implementation(fg.deobf("net.createmod.ponder:Ponder-Forge-${minecraft_version}:${ponder_version}")) {
+    compileOnly(fg.deobf("com.simibubi.create:create-${minecraft_version}:${create_version}:slim")) {
         exclude group: 'com.tterrag.registrate', module: 'Registrate'
     }
 
-    implementation(fg.deobf("dev.engine-room.flywheel:flywheel-forge-api-${minecraft_version}:${flywheel_version}")) {
-        exclude group: 'com.tterrag.registrate', module: 'Registrate'
-    }
-    runtimeOnly(fg.deobf("dev.engine-room.flywheel:flywheel-forge-${minecraft_version}:${flywheel_version}")) {
+    compileOnly(fg.deobf("net.createmod.ponder:Ponder-Forge-${minecraft_version}:${ponder_version}")) {
         exclude group: 'com.tterrag.registrate', module: 'Registrate'
     }
 
-    // Single authoritative Registrate — all other sources excluded above
-    implementation(fg.deobf("com.tterrag.registrate:Registrate:${registrate_version}"))
+    compileOnly(fg.deobf("dev.engine-room.flywheel:flywheel-forge-api-${minecraft_version}:${flywheel_version}")) {
+        exclude group: 'com.tterrag.registrate', module: 'Registrate'
+    }
 
-    implementation(fg.deobf("curse.maven:farmers-delight-398521:5051242")) {
+    // Registrate — compileOnly; we no longer reference it at runtime
+    compileOnly(fg.deobf("com.tterrag.registrate:Registrate:${registrate_version}"))
+
+    compileOnly(fg.deobf("curse.maven:farmers-delight-398521:5051242")) {
         exclude group: 'com.tterrag.registrate', module: 'Registrate'
     }
     compileOnly(fg.deobf("mezz.jei:jei-${minecraft_version}-forge:${jei_version}"))
     runtimeOnly(fg.deobf("mezz.jei:jei-${minecraft_version}-forge:${jei_version}"))
+
+    compileOnly(fg.deobf("me.shedaniel.cloth:cloth-config-forge:11.1.136"))
 
     compileOnly(annotationProcessor("io.github.llamalad7:mixinextras-common:0.4.1"))
 
@@ -144,6 +152,51 @@ dependencies {
 }
 
 sourceSets.main.resources { srcDir 'src/generated/resources' }
+
+processResources {
+    doLast {
+        def slurper = new JsonSlurper()
+        def jsonTotal = 0L, jsonSaved = 0L
+        def pngTotal = 0L, pngSaved = 0L
+        destinationDir.eachFileRecurse(groovy.io.FileType.FILES) { f ->
+            def name = f.name
+            if (name.endsWith('.json') || name.endsWith('.mcmeta')) {
+                def before = f.length()
+                try {
+                    def parsed = slurper.parse(f, 'UTF-8')
+                    if (parsed instanceof Map) {
+                        parsed.remove('credit')
+                        parsed.remove('format_version')
+                        parsed.remove('groups')
+                        parsed.get('elements')?.each { el ->
+                            if (el?.rotation?.angle == 0) {
+                                el.remove('rotation')
+                            }
+                        }
+                    }
+                    f.setText(JsonOutput.toJson(parsed), 'UTF-8')
+                    jsonTotal += before
+                    jsonSaved += before - f.length()
+                } catch (Exception ignored) { }
+            } else if (name.endsWith('.png')) {
+                def before = f.length()
+                pngTotal += before
+                try {
+                    def img = ImageIO.read(f)
+                    if (img == null) return
+                    def tmp = new File(f.parentFile, f.name + '.tmp')
+                    if (!ImageIO.write(img, 'png', tmp)) { tmp.delete(); return }
+                    if (tmp.length() > 0 && tmp.length() < before) {
+                        pngSaved += before - tmp.length()
+                        f.delete(); tmp.renameTo(f)
+                    } else { tmp.delete() }
+                } catch (Exception ignored) { }
+            }
+        }
+        if (jsonTotal > 0) logger.lifecycle("JSON minify: ${jsonSaved}/${jsonTotal} bytes saved (${(int)(jsonSaved * 100 / jsonTotal)}%)")
+        if (pngTotal > 0) logger.lifecycle("PNG re-encode: ${pngSaved}/${pngTotal} bytes saved (${(int)(pngSaved * 100 / pngTotal)}%)")
+    }
+}
 
 mixin {
     add sourceSets.main, 'createfood.refmap.json'

@@ -1,9 +1,14 @@
 {
-    "conditions": [],
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "beef_bun_cheese_tomato"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {
-            "tag": "forge:cheese_and_beef_bun"
+            "tag": "forge:beef_bun_cheese"
         },
         {
             "tag": "forge:tomato"

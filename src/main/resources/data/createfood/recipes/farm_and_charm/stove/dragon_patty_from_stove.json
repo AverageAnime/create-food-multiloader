@@ -1,26 +1,30 @@
 {
-  "conditions": [
-    {
-      "type": "forge:mod_loaded",
-      "modid": "farm_and_charm"
-    }
-  ],
-  "type": "farm_and_charm:stove",
-  "ingredients": [
-    {
-      "tag": "forge:minced_dragon"
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "dragon_patty"
+        },
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farm_and_charm"
+        }
+    ],
+    "type": "farm_and_charm:stove",
+    "ingredients": [
+        {
+            "tag": "forge:minced_dragon"
+        },
+        {
+            "tag": "forge:minced_dragon"
+        },
+        {
+            "tag": "forge:minced_dragon"
+        }
+    ],
+    "experience": 0.15,
+    "result": {
+        "item": "createfood:dragon_patty",
+        "count": 3
     },
-    {
-      "tag": "forge:minced_dragon"
-    },
-    {
-      "tag": "forge:minced_dragon"
-    }
-  ],
-  "experience": 0.15,
-  "result": {
-    "item": "createfood:dragon_patty",
-    "count": 3
-  },
-  "requiresLearning": false
+    "requiresLearning": false
 }

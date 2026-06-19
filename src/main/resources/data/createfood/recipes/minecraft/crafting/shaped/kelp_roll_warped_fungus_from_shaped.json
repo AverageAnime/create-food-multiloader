@@ -1,4 +1,10 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "kelp_roll_warped_fungus"
+        }
+    ],
     "type": "minecraft:crafting_shaped",
     "pattern": [
         "232",

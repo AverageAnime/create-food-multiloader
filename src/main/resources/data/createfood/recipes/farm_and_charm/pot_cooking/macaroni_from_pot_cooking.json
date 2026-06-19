@@ -1,30 +1,34 @@
 {
-  "conditions": [
-    {
-      "type": "forge:mod_loaded",
-      "modid": "farm_and_charm"
-    }
-  ],
-  "type": "farm_and_charm:pot_cooking",
-  "ingredients": [
-    {
-      "tag": "forge:water_buckets"
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "macaroni"
+        },
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farm_and_charm"
+        }
+    ],
+    "type": "farm_and_charm:pot_cooking",
+    "ingredients": [
+        {
+            "tag": "forge:water_buckets"
+        },
+        {
+            "tag": "forge:raw_macaroni"
+        },
+        {
+            "tag": "forge:butter"
+        }
+    ],
+    "container": {
+        "required": true,
+        "item": {
+            "item": "minecraft:bowl"
+        }
     },
-    {
-      "tag": "forge:raw_macaroni"
+    "result": {
+        "item": "createfood:macaroni"
     },
-    {
-      "tag": "forge:butter"
-    }
-  ],
-  "container": {
-    "required": true,
-    "item": {
-      "item": "minecraft:bowl"
-    }
-  },
-  "result": {
-    "item": "createfood:macaroni"
-  },
-  "requiresLearning": false
+    "requiresLearning": false
 }

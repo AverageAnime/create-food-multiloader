@@ -1,4 +1,14 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "leather_soup"
+        },
+        {
+            "type": "forge:mod_loaded",
+            "modid": "create"
+        }
+    ],
     "type": "create:mixing",
     "heat_requirement": "heated",
     "ingredients": [
@@ -7,7 +17,7 @@
             "fluidTag": "minecraft:water"
         },
         {
-            "tag": "forge:foods/vegetable"
+            "tag": "forge:vegetables"
         },
         {
             "item": "minecraft:leather"

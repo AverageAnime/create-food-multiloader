@@ -1,4 +1,10 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "eggplant_burger"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {

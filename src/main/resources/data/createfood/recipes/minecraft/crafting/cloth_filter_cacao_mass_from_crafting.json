@@ -1,4 +1,10 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "cloth_filter_cacao_mass"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {

@@ -1,8 +1,14 @@
 {
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farmersdelight"
+        }
+    ],
     "type": "farmersdelight:cutting",
     "ingredients": [
         {
-            "tag": "forge:shredded_chicken"
+            "tag": "forge:ground_chicken"
         }
     ],
     "tool": {

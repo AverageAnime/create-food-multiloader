@@ -1,5 +1,10 @@
 {
-    "conditions": [],
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "pork_meatball_stick_1"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {

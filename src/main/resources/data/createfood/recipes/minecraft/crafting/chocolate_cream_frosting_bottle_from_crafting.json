@@ -1,4 +1,10 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "chocolate_cream_frosting_bottle"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {

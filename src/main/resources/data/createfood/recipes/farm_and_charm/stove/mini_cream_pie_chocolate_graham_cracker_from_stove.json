@@ -1,26 +1,30 @@
 {
-  "conditions": [
-    {
-      "type": "forge:mod_loaded",
-      "modid": "farm_and_charm"
-    }
-  ],
-  "type": "farm_and_charm:stove",
-  "ingredients": [
-    {
-      "tag": "forge:raw_mini_cream_pie_chocolate_graham_cracker"
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "mini_cream_pie_chocolate_graham_cracker"
+        },
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farm_and_charm"
+        }
+    ],
+    "type": "farm_and_charm:stove",
+    "ingredients": [
+        {
+            "tag": "forge:raw_mini_cream_pie_chocolate_graham_cracker"
+        },
+        {
+            "tag": "forge:raw_mini_cream_pie_chocolate_graham_cracker"
+        },
+        {
+            "tag": "forge:raw_mini_cream_pie_chocolate_graham_cracker"
+        }
+    ],
+    "experience": 0.2,
+    "result": {
+        "item": "createfood:mini_cream_pie_chocolate_graham_cracker",
+        "count": 3
     },
-    {
-      "tag": "forge:raw_mini_cream_pie_chocolate_graham_cracker"
-    },
-    {
-      "tag": "forge:raw_mini_cream_pie_chocolate_graham_cracker"
-    }
-  ],
-  "experience": 0.2,
-  "result": {
-    "item": "createfood:mini_cream_pie_chocolate_graham_cracker",
-    "count": 3
-  },
-  "requiresLearning": false
+    "requiresLearning": false
 }

@@ -1,4 +1,10 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "ground_chicken"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {

@@ -1,4 +1,10 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "fish_sticks"
+        }
+    ],
     "type": "minecraft:campfire_cooking",
     "cookingtime": 250,
     "experience": 0.15,

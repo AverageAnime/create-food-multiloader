@@ -1,5 +1,13 @@
-﻿{
+{
     "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "ube_cream_frosting_bucket"
+        },
+        {
+            "type": "forge:mod_loaded",
+            "modid": "create"
+        },
         {
             "type": "forge:not",
             "value": {

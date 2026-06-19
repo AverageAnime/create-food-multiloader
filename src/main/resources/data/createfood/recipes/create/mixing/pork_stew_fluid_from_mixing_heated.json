@@ -1,9 +1,19 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "pork_stew"
+        },
+        {
+            "type": "forge:mod_loaded",
+            "modid": "create"
+        }
+    ],
     "type": "create:mixing",
     "heat_requirement": "heated",
     "ingredients": [
         {
-            "tag": "forge:foods/raw_pork"
+            "tag": "forge:raw_pork"
         },
         {
             "tag": "forge:onion"

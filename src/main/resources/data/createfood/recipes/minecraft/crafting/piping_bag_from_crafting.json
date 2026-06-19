@@ -1,4 +1,10 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "piping_bag"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {
@@ -8,7 +14,7 @@
             "item": "minecraft:paper"
         },
         {
-            "tag": "forge:strings"
+            "tag": "forge:string"
         }
     ],
     "result": {

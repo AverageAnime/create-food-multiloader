@@ -1,4 +1,10 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "butter_dough"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {

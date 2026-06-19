@@ -1,26 +1,30 @@
 {
-  "conditions": [
-    {
-      "type": "forge:mod_loaded",
-      "modid": "farm_and_charm"
-    }
-  ],
-  "type": "farm_and_charm:stove",
-  "ingredients": [
-    {
-      "tag": "forge:raw_cheese_pizza"
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "cheese_pizza"
+        },
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farm_and_charm"
+        }
+    ],
+    "type": "farm_and_charm:stove",
+    "ingredients": [
+        {
+            "tag": "forge:raw_cheese_pizza"
+        },
+        {
+            "tag": "forge:raw_cheese_pizza"
+        },
+        {
+            "tag": "forge:raw_cheese_pizza"
+        }
+    ],
+    "experience": 0.3,
+    "result": {
+        "item": "createfood:cheese_pizza",
+        "count": 3
     },
-    {
-      "tag": "forge:raw_cheese_pizza"
-    },
-    {
-      "tag": "forge:raw_cheese_pizza"
-    }
-  ],
-  "experience": 0.3,
-  "result": {
-    "item": "createfood:cheese_pizza",
-    "count": 3
-  },
-  "requiresLearning": false
+    "requiresLearning": false
 }

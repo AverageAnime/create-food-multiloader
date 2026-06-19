@@ -1,5 +1,10 @@
 {
-    "conditions": [],
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "pasta_plate_chicken_cut"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {

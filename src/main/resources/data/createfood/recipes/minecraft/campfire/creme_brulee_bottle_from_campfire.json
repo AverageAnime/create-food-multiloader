@@ -1,4 +1,10 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "creme_brulee_bottle"
+        }
+    ],
     "type": "minecraft:campfire_cooking",
     "cookingtime": 100,
     "experience": 0.1,

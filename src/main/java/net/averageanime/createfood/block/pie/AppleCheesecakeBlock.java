@@ -10,7 +10,6 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.*;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEvent;
-import vectorwing.farmersdelight.common.registry.ModEffects;
 
 public class AppleCheesecakeBlock extends ModPieBlock {
 
@@ -26,7 +25,7 @@ public class AppleCheesecakeBlock extends ModPieBlock {
         if (!pPlayer.canEat(false)) {
             return InteractionResult.PASS;
         } else {
-            pPlayer.addEffect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0));
+            applyComfort(pPlayer, 1200);
             pPlayer.getFoodData().eat(3, 0.1F);
             int $$4 = (Integer)pState.getValue(BITES);
             pLevel.gameEvent(pPlayer, GameEvent.EAT, pPos);

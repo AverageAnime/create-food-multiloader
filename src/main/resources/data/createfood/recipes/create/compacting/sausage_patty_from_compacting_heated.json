@@ -1,9 +1,19 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "sausage_patty"
+        },
+        {
+            "type": "forge:mod_loaded",
+            "modid": "create"
+        }
+    ],
     "type": "create:compacting",
     "heatRequirement": "heated",
     "ingredients": [
         {
-            "tag": "forge:sausage_meat"
+            "tag": "forge:ground_sausage"
         }
     ],
     "results": [

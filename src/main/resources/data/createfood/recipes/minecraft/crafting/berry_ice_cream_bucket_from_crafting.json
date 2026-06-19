@@ -1,8 +1,14 @@
-{
+﻿{
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "berry_ice_cream_bucket"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {
-            "tag": "forge:empty_buckets"
+            "item": "minecraft:bucket"
         },
         {
             "tag": "forge:berry_ice_cream_bowl"

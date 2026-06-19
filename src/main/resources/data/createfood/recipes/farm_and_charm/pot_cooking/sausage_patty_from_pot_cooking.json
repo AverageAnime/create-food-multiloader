@@ -1,26 +1,30 @@
 {
-  "conditions": [
-    {
-      "type": "forge:mod_loaded",
-      "modid": "farm_and_charm"
-    }
-  ],
-  "type": "farm_and_charm:pot_cooking",
-  "ingredients": [
-    {
-      "tag": "forge:raw_sausage_patty"
-    }
-  ],
-  "container": {
-    "required": true,
-    "item": {
-      "item": "minecraft:bowl"
-    }
-  },
-  "result": {
-    "item": "createfood:sausage_patty",
-    "count": 1,
-    "experience": 0.45
-  },
-  "requiresLearning": false
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "sausage_patty"
+        },
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farm_and_charm"
+        }
+    ],
+    "type": "farm_and_charm:pot_cooking",
+    "ingredients": [
+        {
+            "tag": "forge:raw_sausage_patty"
+        }
+    ],
+    "container": {
+        "required": true,
+        "item": {
+            "item": "minecraft:bowl"
+        }
+    },
+    "result": {
+        "item": "createfood:sausage_patty",
+        "count": 1,
+        "experience": 0.45
+    },
+    "requiresLearning": false
 }

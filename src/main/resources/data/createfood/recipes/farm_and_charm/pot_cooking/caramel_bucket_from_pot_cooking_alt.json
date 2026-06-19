@@ -1,27 +1,31 @@
 {
-  "conditions": [
-    {
-      "type": "forge:mod_loaded",
-      "modid": "farm_and_charm"
-    }
-  ],
-  "type": "farm_and_charm:pot_cooking",
-  "ingredients": [
-    {
-      "tag": "forge:caramel"
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "caramel_bucket"
+        },
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farm_and_charm"
+        }
+    ],
+    "type": "farm_and_charm:pot_cooking",
+    "ingredients": [
+        {
+            "tag": "forge:caramel"
+        },
+        {
+            "tag": "forge:caramel"
+        }
+    ],
+    "container": {
+        "required": true,
+        "item": {
+            "item": "minecraft:bucket"
+        }
     },
-    {
-      "tag": "forge:caramel"
-    }
-  ],
-  "container": {
-    "required": true,
-    "item": {
-      "item": "minecraft:bucket"
-    }
-  },
-  "result": {
-    "item": "createfood:caramel_bucket"
-  },
-  "requiresLearning": false
+    "result": {
+        "item": "createfood:caramel_bucket"
+    },
+    "requiresLearning": false
 }

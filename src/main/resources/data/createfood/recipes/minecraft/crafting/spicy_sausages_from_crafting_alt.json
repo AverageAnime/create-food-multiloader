@@ -1,4 +1,17 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "spicy_sausages"
+        },
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:chili_pepper"
+            }
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {

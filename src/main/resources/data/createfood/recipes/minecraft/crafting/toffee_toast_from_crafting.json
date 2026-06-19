@@ -1,4 +1,10 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "toffee_toast"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {

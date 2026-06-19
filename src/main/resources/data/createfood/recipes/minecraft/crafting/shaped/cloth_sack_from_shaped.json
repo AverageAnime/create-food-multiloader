@@ -1,4 +1,10 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "cloth_sack"
+        }
+    ],
     "type": "minecraft:crafting_shaped",
     "pattern": [
         "XXX",
@@ -7,7 +13,7 @@
     ],
     "key": {
         "X": {
-            "tag": "forge:strings"
+            "tag": "forge:string"
         },
         "Y": {
             "tag": "minecraft:wool"

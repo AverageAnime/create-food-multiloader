@@ -1,7 +1,7 @@
 {
     "type": "minecraft:campfire_cooking",
     "ingredient": {
-        "tag": "forge:raw_cookie"
+        "tag": "forge:raw_chocolate_chip_cookie"
     },
     "result": "minecraft:cookie",
     "experience": 0.1,

@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "#forge:cooked_mutton",
+      "required": false
+    },
+    {
+      "id": "createfood:gyro_meat_slice",
+      "required": false
+    }
+  ]
+}

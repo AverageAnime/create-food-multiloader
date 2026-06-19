@@ -1,4 +1,18 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "ids": [
+                "cloth_filter",
+                "pressed_cocoa",
+                "cacao_butter"
+            ]
+        },
+        {
+            "type": "forge:mod_loaded",
+            "modid": "create"
+        }
+    ],
     "type": "create:mixing",
     "ingredients": [
         {

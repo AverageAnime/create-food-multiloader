@@ -1,29 +1,33 @@
 {
-  "conditions": [
-    {
-      "type": "forge:mod_loaded",
-      "modid": "farm_and_charm"
-    }
-  ],
-  "type": "farm_and_charm:pot_cooking",
-  "ingredients": [
-    {
-      "tag": "forge:pressed_cocoa"
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "bar_of_dark_chocolate"
+        },
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farm_and_charm"
+        }
+    ],
+    "type": "farm_and_charm:pot_cooking",
+    "ingredients": [
+        {
+            "tag": "forge:pressed_cocoa"
+        },
+        {
+            "tag": "forge:cacao_mass_bucket"
+        }
+    ],
+    "container": {
+        "required": true,
+        "item": {
+            "item": "minecraft:bowl"
+        }
     },
-    {
-      "tag": "forge:cacao_mass_bucket"
-    }
-  ],
-  "container": {
-    "required": true,
-    "item": {
-      "item": "minecraft:bowl"
-    }
-  },
-  "result": {
-    "item": "createfood:bar_of_dark_chocolate",
-    "count": 1,
-    "experience": 0.75
-  },
-  "requiresLearning": false
+    "result": {
+        "item": "createfood:bar_of_dark_chocolate",
+        "count": 1,
+        "experience": 0.75
+    },
+    "requiresLearning": false
 }

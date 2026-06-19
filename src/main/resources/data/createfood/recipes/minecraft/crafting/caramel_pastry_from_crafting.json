@@ -1,4 +1,10 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "caramel_pastry"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {

@@ -1,4 +1,10 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "chicken_calzone"
+        }
+    ],
     "type": "minecraft:smelting",
     "cookingtime": 250,
     "experience": 0.15,

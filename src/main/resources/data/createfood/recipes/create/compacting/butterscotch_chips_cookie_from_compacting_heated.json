@@ -1,4 +1,14 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "butterscotch_chip_cookie"
+        },
+        {
+            "type": "forge:mod_loaded",
+            "modid": "create"
+        }
+    ],
     "type": "create:compacting",
     "heatRequirement": "heated",
     "ingredients": [
@@ -12,7 +22,7 @@
     "results": [
         {
             "count": 8,
-            "item": "createfood:butterscotch_chips_cookie"
+            "item": "createfood:butterscotch_chip_cookie"
         }
     ]
 }

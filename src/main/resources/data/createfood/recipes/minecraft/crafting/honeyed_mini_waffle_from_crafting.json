@@ -1,5 +1,10 @@
 {
-    "conditions": [],
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "honeyed_mini_waffle"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {

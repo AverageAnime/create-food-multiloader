@@ -1,8 +1,18 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "chicken_cheeseburger_lettuce"
+        },
+        {
+            "type": "forge:mod_loaded",
+            "modid": "create"
+        }
+    ],
     "type": "create:deploying",
     "ingredients": [
         {
-            "tag": "forge:cheese_and_chicken_bun_lettuce"
+            "tag": "forge:chicken_bun_cheese_lettuce"
         },
         {
             "tag": "forge:bun"

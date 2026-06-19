@@ -1,4 +1,10 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "chocolate_sweet_roll_base"
+        }
+    ],
     "type": "minecraft:smelting",
     "cookingtime": 200,
     "experience": 0.35,

@@ -1,4 +1,10 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "bread_slice_chorus_fruit_jam"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {

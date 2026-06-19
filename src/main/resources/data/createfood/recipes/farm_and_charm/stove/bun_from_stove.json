@@ -1,26 +1,30 @@
 {
-  "conditions": [
-    {
-      "type": "forge:mod_loaded",
-      "modid": "farm_and_charm"
-    }
-  ],
-  "type": "farm_and_charm:stove",
-  "ingredients": [
-    {
-      "tag": "forge:salt_dough"
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "bun"
+        },
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farm_and_charm"
+        }
+    ],
+    "type": "farm_and_charm:stove",
+    "ingredients": [
+        {
+            "tag": "forge:salt_dough"
+        },
+        {
+            "tag": "forge:salt_dough"
+        },
+        {
+            "tag": "forge:salt_dough"
+        }
+    ],
+    "experience": 0.1,
+    "result": {
+        "item": "createfood:bun",
+        "count": 3
     },
-    {
-      "tag": "forge:salt_dough"
-    },
-    {
-      "tag": "forge:salt_dough"
-    }
-  ],
-  "experience": 0.1,
-  "result": {
-    "item": "createfood:bun",
-    "count": 3
-  },
-  "requiresLearning": false
+    "requiresLearning": false
 }

@@ -1,4 +1,10 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "sausage_roll_cheese"
+        }
+    ],
     "type": "minecraft:smelting",
     "cookingtime": 50,
     "experience": 0.15,

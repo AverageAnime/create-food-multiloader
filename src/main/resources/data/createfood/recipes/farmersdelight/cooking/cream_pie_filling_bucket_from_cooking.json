@@ -1,4 +1,14 @@
-﻿{
+{
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "cream_pie_filling_bucket"
+        },
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farmersdelight"
+        }
+    ],
     "type": "farmersdelight:cooking",
     "container": {
         "item": "minecraft:bucket"
@@ -7,7 +17,7 @@
     "experience": 0.25,
     "ingredients": [
         {
-            "tag": "forge:milk_buckets"
+            "tag": "forge:heavy_cream_bucket"
         },
         {
             "item": "minecraft:wheat"

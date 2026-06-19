@@ -1,6 +1,10 @@
 {
     "conditions": [
         {
+            "type": "createfood:enabled",
+            "id": "pasta_plate_eggplant"
+        },
+        {
             "type": "forge:not",
             "value": {
                 "type": "forge:tag_empty",

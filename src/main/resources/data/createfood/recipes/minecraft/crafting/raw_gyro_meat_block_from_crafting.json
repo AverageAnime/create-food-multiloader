@@ -1,5 +1,10 @@
 {
-    "conditions": [],
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "raw_gyro_meat_block"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {
@@ -21,8 +26,7 @@
             "tag": "forge:gyro_meat_ingredients"
         }
     ],
-    "result":
-        {
-            "item": "createfood:raw_gyro_meat_block"
-        }
+    "result": {
+        "item": "createfood:raw_gyro_meat_block"
+    }
 }

@@ -27,9 +27,13 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import vectorwing.farmersdelight.common.registry.ModEffects;
-import vectorwing.farmersdelight.common.tag.ModTags;
-import vectorwing.farmersdelight.common.utility.ItemUtils;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.effect.MobEffect;
+import net.minecraft.world.entity.item.ItemEntity;
+import net.minecraft.world.item.Item;
+import net.minecraftforge.registries.ForgeRegistries;
 
 public class ModPieBlock extends Block {
     public static final int MAX_PIE_BITES = 4;
@@ -40,6 +44,8 @@ public class ModPieBlock extends Block {
     protected static final float AABB_SIZE_PER_BITE = 2.0F;
     protected static VoxelShape[] SHAPE_BY_BITE;
     public static final DirectionProperty FACING;
+    private static final TagKey<Item> KNIVES =
+            TagKey.create(Registries.ITEM, new ResourceLocation("forge", "tools/knives"));
 
     public BlockState getStateForPlacement(BlockPlaceContext context) {
         return this.defaultBlockState().setValue(FACING, context.getHorizontalDirection()).setValue(BITES, 0);
@@ -58,7 +64,7 @@ public class ModPieBlock extends Block {
         // Defensive check: Clamp bites to valid range
         bites = Math.max(0, Math.min(bites, SHAPE_BY_BITE.length - 1));
 
-        VoxelShape baseShape = SHAPE_BY_BITE[bites];
+        VoxelShape baseShape = this.getShapesByBite()[bites];
         Direction facing = pState.getValue(FACING);
 
         if (facing == Direction.EAST) {
@@ -70,6 +76,10 @@ public class ModPieBlock extends Block {
         } else {
             return baseShape;
         }
+    }
+
+    protected VoxelShape[] getShapesByBite() {
+        return SHAPE_BY_BITE;
     }
 
     private VoxelShape rotateShape(VoxelShape shape, Direction direction) {
@@ -88,7 +98,7 @@ public class ModPieBlock extends Block {
     public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
         ItemStack heldStack = player.getItemInHand(hand);
         if (level.isClientSide) {
-            if (heldStack.is(ModTags.KNIVES)) {
+            if (heldStack.is(KNIVES)) {
                 return this.cutSlice(level, pos, state, player);
             }
 
@@ -101,7 +111,7 @@ public class ModPieBlock extends Block {
             }
         }
 
-        return heldStack.is(ModTags.KNIVES) ? this.cutSlice(level, pos, state, player) : consumeBite(level, pos, state, player);
+        return heldStack.is(KNIVES) ? this.cutSlice(level, pos, state, player) : consumeBite(level, pos, state, player);
     }
 
     protected InteractionResult cutSlice(Level level, BlockPos pos, BlockState state, Player player) {
@@ -113,7 +123,9 @@ public class ModPieBlock extends Block {
         }
 
         Direction direction = player.getDirection().getOpposite();
-        ItemUtils.spawnItemEntity(level, this.getPieSliceItem(), (double) pos.getX() + 0.5, (double) pos.getY() + 0.3, (double) pos.getZ() + 0.5, (double) direction.getStepX() * 0.15, 0.05, (double) direction.getStepZ() * 0.15);
+        ItemEntity sliceEntity = new ItemEntity(level, (double) pos.getX() + 0.5, (double) pos.getY() + 0.3, (double) pos.getZ() + 0.5, this.getPieSliceItem(), (double) direction.getStepX() * 0.15, 0.05, (double) direction.getStepZ() * 0.15);
+        sliceEntity.setDefaultPickUpDelay();
+        level.addFreshEntity(sliceEntity);
         level.playSound((Player) null, pos, SoundEvents.WOOL_BREAK, SoundSource.PLAYERS, 0.8F, 0.8F);
         return InteractionResult.SUCCESS;
     }
@@ -122,11 +134,21 @@ public class ModPieBlock extends Block {
         return new ItemStack(ModItems.APPLE_CHEESECAKE_SLICE.get());
     }
 
+    protected static void applyComfort(Player pPlayer, int duration) {
+        MobEffect effect = ForgeRegistries.MOB_EFFECTS.getValue(new ResourceLocation("farmersdelight", "comfort"));
+        if (effect != null) pPlayer.addEffect(new MobEffectInstance(effect, duration, 0));
+    }
+
+    protected static void applyNourishment(Player pPlayer, int duration) {
+        MobEffect effect = ForgeRegistries.MOB_EFFECTS.getValue(new ResourceLocation("farmersdelight", "nourishment"));
+        if (effect != null) pPlayer.addEffect(new MobEffectInstance(effect, duration, 0));
+    }
+
     protected InteractionResult consumeBite(LevelAccessor pLevel, BlockPos pPos, BlockState pState, Player pPlayer) {
         if (!pPlayer.canEat(false)) {
             return InteractionResult.PASS;
         } else {
-            pPlayer.addEffect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0));
+            applyComfort(pPlayer, 1200);
             pPlayer.getFoodData().eat(3, 0.1F);
             int currentBites = pState.getValue(BITES);
             pLevel.gameEvent(pPlayer, GameEvent.EAT, pPos);

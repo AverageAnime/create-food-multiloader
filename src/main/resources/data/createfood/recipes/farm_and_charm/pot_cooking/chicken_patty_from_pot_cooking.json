@@ -1,37 +1,41 @@
 {
-  "conditions": [
-    {
-      "type": "forge:mod_loaded",
-      "modid": "farm_and_charm"
-    }
-  ],
-  "type": "farm_and_charm:pot_cooking",
-  "ingredients": [
-    {
-      "tag": "forge:milk"
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "chicken_patty"
+        },
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farm_and_charm"
+        }
+    ],
+    "type": "farm_and_charm:pot_cooking",
+    "ingredients": [
+        {
+            "tag": "forge:milk"
+        },
+        {
+            "tag": "forge:eggs"
+        },
+        {
+            "tag": "forge:bread_crumbs"
+        },
+        {
+            "tag": "forge:unbreaded_chicken_patty"
+        },
+        {
+            "tag": "forge:unbreaded_chicken_patty"
+        }
+    ],
+    "container": {
+        "required": true,
+        "item": {
+            "item": "minecraft:bowl"
+        }
     },
-    {
-      "tag": "forge:eggs"
+    "result": {
+        "item": "createfood:chicken_patty",
+        "count": 2
     },
-    {
-      "tag": "forge:bread_crumbs"
-    },
-    {
-      "tag": "forge:unbreaded_chicken_patty"
-    },
-    {
-      "tag": "forge:unbreaded_chicken_patty"
-    }
-  ],
-  "container": {
-    "required": true,
-    "item": {
-      "item": "minecraft:bowl"
-    }
-  },
-  "result": {
-    "item": "createfood:chicken_patty",
-    "count": 2
-  },
-  "requiresLearning": false
+    "requiresLearning": false
 }

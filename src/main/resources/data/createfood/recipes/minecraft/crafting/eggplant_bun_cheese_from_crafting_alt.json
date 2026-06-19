@@ -1,4 +1,17 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "eggplant_bun_cheese"
+        },
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:cooked_eggplant"
+            }
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {

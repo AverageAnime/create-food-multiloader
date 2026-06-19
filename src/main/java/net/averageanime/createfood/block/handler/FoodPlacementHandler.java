@@ -5,6 +5,7 @@ import net.averageanime.createfood.block.display.FoodBlock;
 import net.averageanime.createfood.block.plate.GenericDisplayPlateBlock;
 import net.averageanime.createfood.block.blockentity.GenericDisplayPlateBlockEntity;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -22,6 +23,14 @@ public class FoodPlacementHandler {
         var face = event.getFace();
 
         if (player == null || face == null) return;
+
+        // Pumpkin pie block placement — must run before FoodBlock.Registry.tryPlace
+        ItemStack heldItem = player.getItemInHand(hand);
+        if (PumpkinPieHandler.tryPlace(player, level, hand, pos, face, heldItem)) {
+            event.setCanceled(true);
+            event.setCancellationResult(InteractionResult.SUCCESS);
+            return;
+        }
 
         BlockState clickedState = level.getBlockState(pos);
         InteractionResult result = FoodBlock.Registry.tryPlace(player, level, hand, pos, clickedState, face);

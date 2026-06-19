@@ -1,8 +1,14 @@
-{
+﻿{
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "cream_cheese_bucket"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {
-            "tag": "forge:empty_buckets"
+            "item": "minecraft:bucket"
         },
         {
             "tag": "forge:cream_cheese"

@@ -1,29 +1,35 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "cream_cake_chorus_fruit"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {
-            "tag": "forge:cake_slice_chorus_fruit"
+            "tag": "forge:cream_cake_slice_chorus_fruit"
         },
         {
-            "tag": "forge:cake_slice_chorus_fruit"
+            "tag": "forge:cream_cake_slice_chorus_fruit"
         },
         {
-            "tag": "forge:cake_slice_chorus_fruit"
+            "tag": "forge:cream_cake_slice_chorus_fruit"
         },
         {
-            "tag": "forge:cake_slice_chorus_fruit"
+            "tag": "forge:cream_cake_slice_chorus_fruit"
         },
         {
-            "tag": "forge:cake_slice_chorus_fruit"
+            "tag": "forge:cream_cake_slice_chorus_fruit"
         },
         {
-            "tag": "forge:cake_slice_chorus_fruit"
+            "tag": "forge:cream_cake_slice_chorus_fruit"
         },
         {
-            "tag": "forge:cake_slice_chorus_fruit"
+            "tag": "forge:cream_cake_slice_chorus_fruit"
         }
     ],
     "result": {
-        "item": "createfood:cake_chorus_fruit"
+        "item": "createfood:cream_cake_chorus_fruit"
     }
 }

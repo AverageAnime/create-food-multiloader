@@ -1,27 +1,31 @@
 {
-  "conditions": [
-    {
-      "type": "forge:mod_loaded",
-      "modid": "farm_and_charm"
-    }
-  ],
-  "type": "farm_and_charm:pot_cooking",
-  "ingredients": [
-    {
-      "tag": "forge:cooked_rabbit_cuts"
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "rabbit_jerky"
+        },
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farm_and_charm"
+        }
+    ],
+    "type": "farm_and_charm:pot_cooking",
+    "ingredients": [
+        {
+            "tag": "forge:cooked_rabbit_cuts"
+        },
+        {
+            "tag": "forge:salt"
+        }
+    ],
+    "container": {
+        "required": true,
+        "item": {
+            "item": "minecraft:bowl"
+        }
     },
-    {
-      "tag": "forge:salt"
-    }
-  ],
-  "container": {
-    "required": true,
-    "item": {
-      "item": "minecraft:bowl"
-    }
-  },
-  "result": {
-    "item": "createfood:rabbit_jerky"
-  },
-  "requiresLearning": false
+    "result": {
+        "item": "createfood:rabbit_jerky"
+    },
+    "requiresLearning": false
 }

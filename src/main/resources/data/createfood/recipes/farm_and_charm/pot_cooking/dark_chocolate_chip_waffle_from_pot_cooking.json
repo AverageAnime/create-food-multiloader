@@ -1,29 +1,33 @@
 {
-  "conditions": [
-    {
-      "type": "forge:mod_loaded",
-      "modid": "farm_and_charm"
-    }
-  ],
-  "type": "farm_and_charm:pot_cooking",
-  "ingredients": [
-    {
-      "tag": "forge:waffle_batter_bucket"
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "dark_chocolate_chip_waffle"
+        },
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farm_and_charm"
+        }
+    ],
+    "type": "farm_and_charm:pot_cooking",
+    "ingredients": [
+        {
+            "tag": "forge:waffle_batter_bucket"
+        },
+        {
+            "count": 8,
+            "tag": "forge:dark_chocolate_chips"
+        }
+    ],
+    "result": {
+        "count": 2,
+        "item": "createfood:dark_chocolate_chip_waffle"
     },
-    {
-      "count": 8,
-      "tag": "forge:dark_chocolate_chips"
-    }
-  ],
-  "result": {
-    "count": 2,
-    "item": "createfood:dark_chocolate_chip_waffle"
-  },
-  "container": {
-    "required": false,
-    "item": {
-      "item": "minecraft:bowl"
-    }
-  },
-  "requiresLearning": false
+    "container": {
+        "required": false,
+        "item": {
+            "item": "minecraft:bowl"
+        }
+    },
+    "requiresLearning": false
 }

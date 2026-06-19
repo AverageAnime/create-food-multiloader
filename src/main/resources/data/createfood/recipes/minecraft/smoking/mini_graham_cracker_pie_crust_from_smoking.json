@@ -1,4 +1,10 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "mini_graham_cracker_pie_crust"
+        }
+    ],
     "type": "minecraft:smoking",
     "ingredient": {
         "tag": "forge:raw_mini_graham_cracker_pie_crust"

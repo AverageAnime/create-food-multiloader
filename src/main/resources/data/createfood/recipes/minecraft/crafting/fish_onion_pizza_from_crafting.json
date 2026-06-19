@@ -1,4 +1,10 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "fish_onion_pizza"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {

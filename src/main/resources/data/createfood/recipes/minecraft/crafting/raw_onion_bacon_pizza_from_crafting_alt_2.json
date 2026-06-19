@@ -1,5 +1,10 @@
 {
-    "conditions": [],
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "raw_onion_bacon_pizza"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {

@@ -1,4 +1,10 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "grilled_cheese_sandwich"
+        }
+    ],
     "type": "minecraft:smelting",
     "cookingtime": 200,
     "experience": 0.35,

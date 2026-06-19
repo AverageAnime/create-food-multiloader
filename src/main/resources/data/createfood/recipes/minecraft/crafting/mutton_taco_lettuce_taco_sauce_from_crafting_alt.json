@@ -1,4 +1,10 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "mutton_taco_lettuce_taco_sauce"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {

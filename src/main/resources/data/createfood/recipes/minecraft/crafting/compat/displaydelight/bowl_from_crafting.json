@@ -1,0 +1,20 @@
+{
+    "conditions": [
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:food_plates"
+            }
+        }
+    ],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:food_plates"
+        }
+    ],
+    "result": {
+        "item": "minecraft:bowl"
+    }
+}

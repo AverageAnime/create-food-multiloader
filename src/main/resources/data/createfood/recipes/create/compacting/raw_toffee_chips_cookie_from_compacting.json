@@ -1,4 +1,14 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "raw_toffee_chip_cookie"
+        },
+        {
+            "type": "forge:mod_loaded",
+            "modid": "create"
+        }
+    ],
     "type": "create:compacting",
     "ingredients": [
         {
@@ -11,7 +21,7 @@
     "results": [
         {
             "count": 8,
-            "item": "createfood:raw_toffee_chips_cookie"
+            "item": "createfood:raw_toffee_chip_cookie"
         }
     ]
 }

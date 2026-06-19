@@ -10,7 +10,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.*;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEvent;
-import vectorwing.farmersdelight.common.registry.ModEffects;
+
 
 public class CookieCreamPieBlock extends ModPieBlock {
 
@@ -26,7 +26,7 @@ public class CookieCreamPieBlock extends ModPieBlock {
         if (!pPlayer.canEat(false)) {
             return InteractionResult.PASS;
         } else {
-            pPlayer.addEffect(new MobEffectInstance(ModEffects.COMFORT.get(), 3600, 0));
+            applyComfort(pPlayer, 3600);
             pPlayer.getFoodData().eat(5, 0.7F);
             int $$4 = (Integer)pState.getValue(BITES);
             pLevel.gameEvent(pPlayer, GameEvent.EAT, pPos);

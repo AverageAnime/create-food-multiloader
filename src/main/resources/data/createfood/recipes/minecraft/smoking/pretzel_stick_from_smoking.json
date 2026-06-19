@@ -1,4 +1,10 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "pretzel_stick"
+        }
+    ],
     "type": "minecraft:smoking",
     "cookingtime": 200,
     "experience": 0.1,

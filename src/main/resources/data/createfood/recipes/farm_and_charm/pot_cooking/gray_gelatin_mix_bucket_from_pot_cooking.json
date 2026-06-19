@@ -1,36 +1,40 @@
 {
-  "conditions": [
-    {
-      "type": "forge:mod_loaded",
-      "modid": "farm_and_charm"
-    }
-  ],
-  "type": "farm_and_charm:pot_cooking",
-  "ingredients": [
-    {
-      "tag": "forge:gelatin"
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "gray_gelatin_mix_bucket"
+        },
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farm_and_charm"
+        }
+    ],
+    "type": "farm_and_charm:pot_cooking",
+    "ingredients": [
+        {
+            "tag": "forge:gelatin"
+        },
+        {
+            "tag": "forge:gelatin"
+        },
+        {
+            "tag": "forge:gelatin"
+        },
+        {
+            "item": "minecraft:water_bucket"
+        },
+        {
+            "tag": "forge:gray_dyes"
+        }
+    ],
+    "container": {
+        "required": true,
+        "item": {
+            "item": "minecraft:bucket"
+        }
     },
-    {
-      "tag": "forge:gelatin"
+    "result": {
+        "item": "createfood:gray_gelatin_mix_bucket"
     },
-    {
-      "tag": "forge:gelatin"
-    },
-    {
-      "item": "minecraft:water_bucket"
-    },
-    {
-      "tag": "forge:gray_dyes"
-    }
-  ],
-  "container": {
-    "required": true,
-    "item": {
-      "item": "minecraft:bucket"
-    }
-  },
-  "result": {
-    "item": "createfood:gray_gelatin_mix_bucket"
-  },
-  "requiresLearning": false
+    "requiresLearning": false
 }

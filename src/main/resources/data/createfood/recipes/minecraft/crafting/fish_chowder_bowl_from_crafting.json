@@ -1,4 +1,10 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "fish_chowder_bowl"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {

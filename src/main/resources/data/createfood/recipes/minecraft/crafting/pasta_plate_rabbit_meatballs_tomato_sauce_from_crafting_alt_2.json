@@ -1,5 +1,10 @@
 {
-    "conditions": [],
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "pasta_plate_rabbit_meatballs_tomato_sauce"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {

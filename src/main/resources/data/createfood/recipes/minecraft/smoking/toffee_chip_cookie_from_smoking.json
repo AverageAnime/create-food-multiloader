@@ -1,4 +1,10 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "toffee_chip_cookie"
+        }
+    ],
     "type": "minecraft:smoking",
     "cookingtime": 100,
     "experience": 0.35,

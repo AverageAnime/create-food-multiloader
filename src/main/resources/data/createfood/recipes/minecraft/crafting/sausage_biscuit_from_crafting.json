@@ -1,4 +1,10 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "sausage_biscuit"
+        }
+    ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {

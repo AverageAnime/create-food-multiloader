@@ -1,4 +1,10 @@
 {
+    "conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "mozzarella_sticks"
+        }
+    ],
     "type": "minecraft:smoking",
     "cookingtime": 250,
     "experience": 0.15,
