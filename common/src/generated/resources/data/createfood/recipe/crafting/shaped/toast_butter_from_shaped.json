@@ -2,14 +2,14 @@
   "neoforge:conditions": [
     {
       "type": "createfood:enabled",
-      "id": "buttered_toast"
+      "id": "toast_butter"
     }
   ],
   "type": "minecraft:crafting_shaped",
   "fabric:load_conditions": [
     {
       "condition": "createfood:enabled",
-      "id": "buttered_toast"
+      "id": "toast_butter"
     }
   ],
   "key": {
@@ -25,6 +25,6 @@
     "2"
   ],
   "result": {
-    "id": "createfood:buttered_toast"
+    "id": "createfood:toast_butter"
   }
 }

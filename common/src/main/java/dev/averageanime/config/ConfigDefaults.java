@@ -13,8 +13,6 @@ import java.util.function.Predicate;
 public final class ConfigDefaults {
     private ConfigDefaults() {}
 
-    // ── Default lists ─────────────────────────────────────────────────────────
-
     public static final List<String> HIDE_ITEMS_DEFAULT = List.of(
             "beef_bun_peanut_butter",
             "beef_bun_peanut_butter_bacon",
@@ -88,6 +86,8 @@ public final class ConfigDefaults {
             "strider_meatball_stick_3",
             "tortilla_chip_bowl",
             "ube_cake_base",
+            "ube_cake_batter",
+            "ube_cream_frosting",
             "ube_cream_frosting_bottle",
             "ube_cream_frosting_piping_bag",
             "ube_cream_ube_cake",
@@ -186,8 +186,6 @@ public final class ConfigDefaults {
             "minecraft:pumpkin_pie|plate|1"
     );
 
-    // ── Validators ────────────────────────────────────────────────────────────
-
     public static final Predicate<Object> CUSTOM_ITEM_VALIDATOR = obj -> {
         if (!(obj instanceof String s)) return false;
         String[] p = s.split("\\|");
@@ -262,8 +260,16 @@ public final class ConfigDefaults {
         if (!(obj instanceof String s)) return false;
         String[] p = s.split("\\|");
         if (p.length == 3) return p[2].equals("remove");
-        if (p.length == 4) {
-            try { Integer.parseInt(p[2]); Integer.parseInt(p[3]); return true; }
+        if (p.length == 4 || p.length == 5) {
+            try {
+                Integer.parseInt(p[2]);
+                Integer.parseInt(p[3]);
+                if (p.length == 5) {
+                    float c = Float.parseFloat(p[4]);
+                    if (c < 0.0f || c > 1.0f) return false;
+                }
+                return true;
+            }
             catch (NumberFormatException e) { return false; }
         }
         return false;

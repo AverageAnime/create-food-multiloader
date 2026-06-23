@@ -15,13 +15,15 @@ public final class Effect {
     private final @Nullable Holder<MobEffect> rawEffect;
     public final int duration;
     public final int amplifier;
+    public final float chance;
 
     private Effect(@Nullable FoodEffect foodEffect, @Nullable Holder<MobEffect> rawEffect,
-                   int duration, int amplifier) {
+                   int duration, int amplifier, float chance) {
         this.foodEffect = foodEffect;
         this.rawEffect  = rawEffect;
         this.duration   = duration;
         this.amplifier  = amplifier;
+        this.chance     = chance;
     }
 
     /** True when this spec wraps a mod-category {@link FoodEffect}. */
@@ -44,21 +46,27 @@ public final class Effect {
         throw new IllegalStateException("EffectSpec has neither FoodEffect nor rawEffect");
     }
 
-    // ── Factory methods ──────────────────────────────────────────────────────
-
     public static Effect of(FoodEffect e, int dur) {
-        return new Effect(e, null, dur, 0);
+        return new Effect(e, null, dur, 0, 1.0f);
     }
 
     public static Effect of(FoodEffect e, int dur, int amp) {
-        return new Effect(e, null, dur, amp);
+        return new Effect(e, null, dur, amp, 1.0f);
+    }
+
+    public static Effect of(FoodEffect e, int dur, int amp, float chance) {
+        return new Effect(e, null, dur, amp, chance);
     }
 
     public static Effect ofRaw(Holder<MobEffect> e, int dur) {
-        return new Effect(null, e, dur, 0);
+        return new Effect(null, e, dur, 0, 1.0f);
     }
 
     public static Effect ofRaw(Holder<MobEffect> e, int dur, int amp) {
-        return new Effect(null, e, dur, amp);
+        return new Effect(null, e, dur, amp, 1.0f);
+    }
+
+    public static Effect ofRaw(Holder<MobEffect> e, int dur, int amp, float chance) {
+        return new Effect(null, e, dur, amp, chance);
     }
 }

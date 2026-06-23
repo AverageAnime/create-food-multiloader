@@ -19,12 +19,9 @@ import java.util.function.Supplier;
  */
 public final class Item {
 
-    // Self-registering list — populated in field-declaration order as ModItemDefs class loads
     private static final List<Item> REGISTRY = new ArrayList<>();
     public  static final List<Item> ALL       = Collections.unmodifiableList(REGISTRY);
     private static final Map<String, Item> BY_ID = new LinkedHashMap<>();
-
-    // ── Definition data ──────────────────────────────────────────────────────
 
     public final String       id;
     public final ItemCategory category;
@@ -37,8 +34,6 @@ public final class Item {
      * {@code craftRemainder}. Resolved at registration time via {@link #getById}.
      */
     public final @Nullable String remainderId;
-
-    // ── Registered accessor ──────────────────────────────────────────────────
 
     private Supplier<net.minecraft.world.item.Item> registered;
 
@@ -77,9 +72,6 @@ public final class Item {
         BY_ID.put(def.id, def);
         return def;
     }
-
-    // ── Factory methods ──────────────────────────────────────────────────────
-    // Each pair: (id, nut, sat, effects...) and (id, nut, sat, tip, effects...)
 
     public static Item food(String id, int nut, float sat, Effect... effects) {
         return register(new Item(id, ItemCategory.FOOD, nut, sat, null, null, Arrays.asList(effects)));

@@ -139,10 +139,6 @@ public abstract class FoodBlock extends Block {
         level.playSound(null, pos, getRemoveSound(), SoundSource.BLOCKS, 1.0F, 0.8F);
     }
 
-    /**
-     * Shift+LMB: instantly eat one item from this food plate.
-     * Returns true if the eat was handled (caller should cancel the attack).
-     */
     public boolean tryEat(Player player, Level level, BlockPos pos, BlockState state) {
         if (!player.isShiftKeyDown()) return false;
         Item food = this.displayItem.get();

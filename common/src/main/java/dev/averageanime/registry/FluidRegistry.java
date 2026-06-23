@@ -8,7 +8,6 @@ import static dev.averageanime.registry.type.Fluid.fluid;
 public final class FluidRegistry {
     private FluidRegistry() {}
 
-    /** Triggers class initialization (JLS §12.4.1). */
     public static void init() {}
 
     public static final Fluid APPLE_CREAM_FROSTING_FLUID       = fluid("apple_cream_frosting");

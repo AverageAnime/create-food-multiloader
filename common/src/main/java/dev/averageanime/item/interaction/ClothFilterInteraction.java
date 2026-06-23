@@ -17,11 +17,6 @@ import java.util.List;
 
 public class ClothFilterInteraction {
 
-    /**
-     * Attempts a cloth-filter interaction using the player's main-hand and off-hand items.
-     *
-     * @return {@code true} if the interaction was handled (platform caller should consume/cancel the event)
-     */
     public static boolean tryFilterInteraction(Player player, Level level) {
         if (!Services.PLATFORM.isFilterInteractionsEnabled()) return false;
 

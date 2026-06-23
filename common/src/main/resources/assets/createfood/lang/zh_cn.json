@@ -1108,7 +1108,7 @@
   "item.createfood.butter": "黄油",
   "item.createfood.butter_dough": "黄油面团",
   "item.createfood.butter_dough_small": "黄油面团（小）",
-  "item.createfood.buttered_toast": "黄油吐司",
+  "item.createfood.toast_butter": "黄油吐司",
   "item.createfood.butterscotch": "奶油硬糖",
   "item.createfood.butterscotch_apple": "奶油硬糖苹果",
   "item.createfood.butterscotch_apple_slice": "奶油硬糖苹果片",
@@ -2220,5 +2220,18 @@
   "tooltip.createfood.ube_cream_frosting_ingredient": " + 香芋奶油糖霜",
   "tooltip.createfood.warped_fungus_ingredient": " + 诡异菌",
   "tooltip.createfood.white_chocolate_chips_ingredient": " + 白巧克力碎片",
-  "tooltip.createfood.white_chocolate_ingredient": " + 白巧克力"
+  "tooltip.createfood.white_chocolate_ingredient": " + 白巧克力",
+  "createfood.configuration.campfire_cooking": "篝火烹饪",
+  "createfood.configuration.campfire_cooking.tooltip": "调整篝火烹饪设置。",
+  "createfood.configuration.campfire_cooking_exclude": "排除列表",
+  "createfood.configuration.campfire_cooking_exclude.tooltip": "阻止特定物品通过篝火烹饪被烹制。优先于过滤列表和仅限串类设置。立即生效。",
+  "createfood.configuration.campfire_cooking_filter": "过滤列表",
+  "createfood.configuration.campfire_cooking_filter.tooltip": "篝火烹饪的允许列表。若非空，则只有匹配的物品才能被烹制。当两者均设置时，与仅限串类设置共同生效。立即生效。",
+  "createfood.configuration.enable_campfire_cooking": "启用篝火烹饪",
+  "createfood.configuration.enable_campfire_cooking.tooltip": "启用后，玩家可以将食材拿到 farmersdelight:heat_sources 方块附近来烹制篝火配方。立即生效。",
+  "createfood.configuration.sticks_only": "仅限串类",
+  "createfood.configuration.sticks_only.tooltip": "启用后，只有结果ID以 '_stick' 结尾的篝火配方才符合条件。排除列表和过滤列表仍然适用。立即生效。",
+  "createfood.effect.chance": ", %s%% 概率",
+  "createfood.configuration.campfire_cooking.require_shift": "需要按住Shift",
+  "createfood.configuration.campfire_cooking.require_shift.tooltip": "需要按住 [Shift] 才能使篝火烹饪继续进行。立即生效。"
 }

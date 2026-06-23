@@ -29,7 +29,6 @@ public abstract class ClothSackMenu extends AbstractContainerMenu {
         addPlayerSlots(playerInventory);
     }
 
-    /** Platform subclass adds the 4 food inventory slots. */
     protected abstract void addInventorySlots();
 
     protected void addPlayerSlots(Inventory playerInventory) {

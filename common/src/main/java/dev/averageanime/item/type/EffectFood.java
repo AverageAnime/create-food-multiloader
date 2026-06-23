@@ -1,7 +1,7 @@
 package dev.averageanime.item.type;
 
-import dev.averageanime.config.ItemEffectOverride;
-import dev.averageanime.config.ItemNutritionOverride;
+import dev.averageanime.config.override.ItemEffectOverride;
+import dev.averageanime.config.override.ItemNutritionOverride;
 import dev.averageanime.item.effect.EffectCategories;
 import dev.averageanime.item.effect.FoodEffect;
 import dev.averageanime.platform.Services;
@@ -33,7 +33,7 @@ import java.util.function.Supplier;
 
 public class EffectFood extends Item {
 
-    public record DeferredFx(String categoryOrEffectId, Supplier<Optional<Holder<MobEffect>>> effect, int duration, int amplifier) {}
+    public record DeferredFx(String categoryOrEffectId, Supplier<Optional<Holder<MobEffect>>> effect, int duration, int amplifier, float chance) {}
 
     private final Set<String> existingEffectIds;
     private final List<DeferredFx> deferredEffects;
@@ -159,6 +159,8 @@ public class EffectFood extends Item {
         for (DeferredFx deferred : deferredEffects) {
             ItemEffectOverride override = Services.PLATFORM.getItemEffectOverride(itemId, deferred.categoryOrEffectId());
             if (override != null && override.remove()) continue;
+            float chance = override != null ? override.chance() : deferred.chance();
+            if (consumer.getRandom().nextFloat() >= chance) continue;
             deferred.effect().get().ifPresent(holder -> {
                 int dur = override != null ? override.duration() : deferred.duration();
                 int amp = override != null ? override.amplifier() : deferred.amplifier();
@@ -173,6 +175,7 @@ public class EffectFood extends Item {
         for (ItemEffectOverride addition : Services.PLATFORM.getItemOverrideEntries(itemId)) {
             if (addition.remove()) continue;
             if (isExistingEffect(addition.categoryOrEffectId())) continue;
+            if (consumer.getRandom().nextFloat() >= addition.chance()) continue;
             resolveEffect(addition.categoryOrEffectId()).ifPresent(holder ->
                     consumer.addEffect(new MobEffectInstance(
                             holder, addition.duration(), addition.amplifier()))
@@ -221,7 +224,7 @@ public class EffectFood extends Item {
             resolveEffect(addition.categoryOrEffectId()).ifPresent(holder ->
                     addEffectLine(tooltip,
                             new MobEffectInstance(holder, addition.duration(), addition.amplifier()),
-                            context)
+                            context, addition.chance())
             );
         }
 
@@ -231,13 +234,19 @@ public class EffectFood extends Item {
             deferred.effect().get().ifPresent(holder -> {
                 int dur = override != null ? override.duration() : deferred.duration();
                 int amp = override != null ? override.amplifier() : deferred.amplifier();
-                addEffectLine(tooltip, new MobEffectInstance(holder, dur, amp), context);
+                float chance = override != null ? override.chance() : deferred.chance();
+                addEffectLine(tooltip, new MobEffectInstance(holder, dur, amp), context, chance);
             });
         }
     }
 
     static void addEffectLine(List<Component> tooltip, MobEffectInstance instance,
                               TooltipContext context) {
+        addEffectLine(tooltip, instance, context, 1.0f);
+    }
+
+    static void addEffectLine(List<Component> tooltip, MobEffectInstance instance,
+                              TooltipContext context, float chance) {
         if (instance == null || instance.getDuration() <= 0) return;
         MutableComponent line = Component.translatable(instance.getDescriptionId());
         if (instance.getAmplifier() > 0) {
@@ -247,6 +256,10 @@ public class EffectFood extends Item {
         if (instance.getDuration() > 20) {
             line = Component.translatable("potion.withDuration", line,
                     MobEffectUtil.formatDuration(instance, 1.0f, context.tickRate()));
+        }
+        if (chance < 1.0f) {
+            int pct = Math.round(chance * 100);
+            line = line.append(Component.translatable("createfood.effect.chance", pct));
         }
         tooltip.add(line.withStyle(
                 instance.getEffect().value().getCategory().getTooltipFormatting()
@@ -275,5 +288,4 @@ public class EffectFood extends Item {
 
         return Optional.empty();
     }
-
 }

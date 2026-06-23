@@ -108,31 +108,30 @@ plain("my_ingredient")
 plain("my_ingredient", "tooltip.compat.mymod", "beef_ingredient")
 plainCr("my_item", () -> Items.BOWL)
 ingredientBottle("my_bottle")   // DrinkableItem, stack 16, glass bottle remainder
-ingredientBowlItem("my_bowl")   // Item, stack 16, bowl remainder
+ingredientBowl("my_bowl")       // Item, stack 16, bowl remainder
 pipingBag("my_bag")
 
 // Food — trailing args accept tips(...) and fx(...) in any order
 food("my_item", nut, sat)
 fastFood("my_item", nut, sat)
-consumable("my_item", nut, sat)
-consumableFast("my_item", nut, sat)
 bottle("my_bottle", nut, sat)           // DrinkableItem, stack 16, glass bottle
-bowlFood("my_bowl", nut, sat)           // stack 16, bowl return
-bowlConsumable("my_bowl", nut, sat)     // ConsumableItem, stack 16, bowl return
+bowlFood("my_bowl", nut, sat)           // stack 16, no remainder
+bowlFoodCr("my_bowl", nut, sat)         // stack 16, bowl craftRemainder
 stickFood("my_item", nut, sat, crStick) // always fast, stick return
-stickConsumable("my_item", nut, sat, crStick)
+stickFoodCr("my_item", nut, sat, crStick) // always fast, stick craftRemainder
 
 // Trailing arg examples
 tips(null, "beef_ingredient", "lettuce_ingredient")
 tips("tooltip.compat.mymod", "beef_ingredient")
 fx(ModEffects.COMFORT, 1200)
-fx(MobEffects.WATER_BREATHING, 600, 1)  // amplifier 1
+fx(MobEffects.WATER_BREATHING, 600, 1)       // amplifier 1
+fx(ModEffects.COMFORT, 1200, 0, 0.5f)        // 50% chance
 ```
 
-### ConsumableItem (bowl/plate/complex foods)
+### Bowl foods
 
-- Stacks to **16** when serving-sized (bowls, plates)
-- Returns `Items.BOWL` via `usingConvertsTo` for bowl-based items
+- `bowlFood()` — stacks to **16**, no remainder
+- `bowlFoodCr()` — stacks to **16**, returns `Items.BOWL` via `craftRemainder`
 
 ### DrinkableItem (bottles)
 
@@ -149,8 +148,9 @@ fx(MobEffects.WATER_BREATHING, 600, 1)  // amplifier 1
 | Form | Helper | Stack | Returns |
 |------|--------|-------|---------|
 | Bottle | `bottle()` | 16 | Glass Bottle |
-| Bowl / plate | `bowlConsumable()` | 16 | Bowl |
-| Sandwich / bun / wrap | `food()` or `consumable()` | 64 | — |
+| Bowl (no return) | `bowlFood()` | 16 | — |
+| Bowl (with return) | `bowlFoodCr()` | 16 | Bowl |
+| Sandwich / bun / wrap | `food()` | 64 | — |
 | Piping bag | `pipingBag()` | 2 | Piping Bag |
 
 ### Block-Form Foods
@@ -221,6 +221,8 @@ Saturation at Tier 4–5 converges toward **0.6–0.9** regardless of ingredient
 
 Effect duration does **not** scale with nutrition values — it reflects the thematic weight of the food.
 
+Effects can carry an optional **chance** (0.0–1.0 float, 4th argument to `fx()`). A chance < 1.0 is shown as a percentage in the item tooltip. Omit the argument for a guaranteed effect.
+
 ### Comfort
 
 | Duration | Ticks | Foods |
@@ -250,6 +252,8 @@ Effect duration does **not** scale with nutrition values — it reflects the the
 | Meringue bowl | Regeneration (300t) | Egg-white confection |
 
 > Secondary effects only on items with 5+ ingredients or clear thematic purpose. Do not stack 3+ effects without precedent.
+
+> Effect categories from compat mods are also supported: Brewin' & Chewin', Candlelight, Create: Confectionary, RunicLib.
 
 ---
 

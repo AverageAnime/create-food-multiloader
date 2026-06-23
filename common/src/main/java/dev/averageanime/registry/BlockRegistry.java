@@ -13,11 +13,7 @@ public final class BlockRegistry {
 
     private BlockRegistry() {}
 
-    /**
-     * Calling this static method guarantees class initialization (JLS §12.4.1).
-     * Use instead of {@code Class<?> t = ModBlockDefs.class} which only loads, not initializes.
-     */
-    public static void init() { /* triggers static field initialization */ }
+    public static void init() {}
 
     public static final Block APPLE_CHEESECAKE = Block.cookedPie("apple_cheesecake", "apple_cheesecake_slice");
     public static final Block APPLE_CREAM_CAKE = Block.cake("apple_cream_cake", "apple_cream_cake_slice", tips(null, "apple_cream_frosting_ingredient"));

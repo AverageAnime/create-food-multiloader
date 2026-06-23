@@ -64,13 +64,13 @@ public class PlateSliceHandler {
         if (block instanceof GenericDisplayPlateBlock) {
             GenericDisplayPlateBlockEntity be = (GenericDisplayPlateBlockEntity) level.getBlockEntity(pos);
             if (be == null || be.isEmpty()) return false;
-            ItemStack displayedItem = be.getDisplayedItem();        // peek — does not clear BE
+            ItemStack displayedItem = be.getDisplayedItem();
 
             ItemStack heldItem = player.getItemInHand(hand);
             List<ItemStack> results = heldItem.isEmpty() ? List.of() : findCuttingResults(level, displayedItem, heldItem);
             if (results.isEmpty()) return false;
 
-            be.takeDisplayedItem();                                  // confirmed recipe — now clear BE
+            be.takeDisplayedItem();
             double cx = pos.getX() + 0.5, cy = pos.getY() + 0.75, cz = pos.getZ() + 0.5;
             for (ItemStack result : results) {
                 if (!result.isEmpty()) {
@@ -163,9 +163,9 @@ public class PlateSliceHandler {
             }
             return testIngredient(toolResult, tool);
         } catch (NoSuchMethodException e) {
-            return true;   // recipe has no tool restriction — allow any tool
+            return true;
         } catch (Exception e) {
-            return true;   // permissive fallback
+            return true;
         }
     }
 
@@ -180,7 +180,6 @@ public class PlateSliceHandler {
     }
 
     private static List<ItemStack> getRollableResults(Recipe<?> recipe, net.minecraft.util.RandomSource random) {
-        // ChanceResult is a record in FD 1.21.x — accessors are stack()/chance(), not getStack()/getChance()
         try {
             java.lang.reflect.Method getRollable = recipe.getClass().getMethod("getRollableResults");
             List<?> rollable = (List<?>) getRollable.invoke(recipe);

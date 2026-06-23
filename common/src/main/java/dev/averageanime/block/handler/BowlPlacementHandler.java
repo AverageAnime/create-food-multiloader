@@ -26,16 +26,6 @@ import java.util.function.Supplier;
 
 public class BowlPlacementHandler {
 
-    /**
-     * Handles shift+right-click bowl/plate placement logic shared between platforms.
-     *
-     * @param player      the interacting player
-     * @param level       the world
-     * @param clickedPos  the position of the clicked block
-     * @param clickedFace the face of the clicked block that was hit
-     * @param heldStack   the item stack being held
-     * @return {@code true} if the interaction was consumed (platform caller should cancel/consume the event)
-     */
     public static boolean tryBowlPlacement(Player player, Level level,
                                            BlockPos clickedPos, Direction clickedFace,
                                            ItemStack heldStack) {
@@ -54,7 +44,6 @@ public class BowlPlacementHandler {
         BlockState clickedState = level.getBlockState(clickedPos);
         Block clickedBlock = clickedState.getBlock();
 
-        // ── Case 1: food held + existing FoodBlock clicked → top-off the stack ──
         if ((isFoodItem || isCompatFoodItem) && clickedBlock instanceof FoodBlock foodBlock) {
             if (!heldStack.is(foodBlock.displayItem.get())) return false;
             if (!level.isClientSide()) {
@@ -71,7 +60,6 @@ public class BowlPlacementHandler {
             return true;
         }
 
-        // Resolve compat block → plate block mapping (NeoForge compat support)
         boolean isEmptyPlate = clickedBlock instanceof EmptyPlateBlock;
         boolean isSmallPlate = clickedBlock instanceof SmallPlateBlock;
         if (!isEmptyPlate && !isSmallPlate && FoodBlock.Registry.isCompatBlock(clickedBlock)) {
@@ -80,7 +68,6 @@ public class BowlPlacementHandler {
             else if (targetBlock instanceof SmallPlateBlock) isSmallPlate = true;
         }
 
-        // ── Case 2: food held + empty plate clicked → place food display block ──
         if ((isFoodItem || isCompatFoodItem) && (isEmptyPlate || isSmallPlate)) {
             Block targetFoodBlock = null;
             if (isFoodItem) {
@@ -128,7 +115,6 @@ public class BowlPlacementHandler {
             return true;
         }
 
-        // ── Case 3: bowl or registered plate item → place empty plate on ground ──
         if (!isBowl && !isRegisteredPlate) return false;
 
         Block plateBlock      = Services.PLATFORM.getPlateBlock();

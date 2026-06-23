@@ -1108,7 +1108,7 @@
   "item.createfood.butter": "Butter",
   "item.createfood.butter_dough": "Butterteig",
   "item.createfood.butter_dough_small": "Butterteig (Small)",
-  "item.createfood.buttered_toast": "Toast",
+  "item.createfood.toast_butter": "Toast",
   "item.createfood.butterscotch": "Karamellbonbon",
   "item.createfood.butterscotch_apple": "Apfel",
   "item.createfood.butterscotch_apple_slice": "Apfelscheibe",
@@ -2220,5 +2220,18 @@
   "tooltip.createfood.ube_cream_frosting_ingredient": " + Ube Sahneguss",
   "tooltip.createfood.warped_fungus_ingredient": " + Verzerrter Pilz",
   "tooltip.createfood.white_chocolate_chips_ingredient": " + White Schokoladenstückchens",
-  "tooltip.createfood.white_chocolate_ingredient": " + White Schokolade"
+  "tooltip.createfood.white_chocolate_ingredient": " + White Schokolade",
+  "createfood.configuration.campfire_cooking": "Lagerfeuer-Kochen",
+  "createfood.configuration.campfire_cooking.tooltip": "Einstellungen für das Lagerfeuer-Kochen anpassen.",
+  "createfood.configuration.campfire_cooking_exclude": "Ausschließen",
+  "createfood.configuration.campfire_cooking_exclude.tooltip": "Bestimmte Gegenstände vom Kochen über das Lagerfeuer blockieren. Hat Vorrang vor dem Filter und sticks_only. Sofortige Wirkung.",
+  "createfood.configuration.campfire_cooking_filter": "Filter",
+  "createfood.configuration.campfire_cooking_filter.tooltip": "Zulässigkeitsliste für das Lagerfeuer-Kochen. Wenn nicht leer, dürfen nur übereinstimmende Gegenstände gekocht werden. Funktioniert zusammen mit sticks_only, wenn beide festgelegt sind. Sofortige Wirkung.",
+  "createfood.configuration.enable_campfire_cooking": "Lagerfeuer-Kochen aktivieren",
+  "createfood.configuration.enable_campfire_cooking.tooltip": "Wenn aktiviert, können Spieler Lagerfeuer-Rezepte kochen, indem sie die Zutat in die Nähe eines farmersdelight:heat_sources-Blocks halten. Sofortige Wirkung.",
+  "createfood.configuration.sticks_only": "Nur Spieße",
+  "createfood.configuration.sticks_only.tooltip": "Wenn aktiviert, sind nur Lagerfeuer-Rezepte zulässig, deren Ergebnis-ID auf '_stick' endet. Ausschluss- und Filterlisten gelten weiterhin. Sofortige Wirkung.",
+  "createfood.effect.chance": ", %s%% Chance",
+  "createfood.configuration.campfire_cooking.require_shift": "Shift erfordern",
+  "createfood.configuration.campfire_cooking.require_shift.tooltip": "Erfordert das Halten von [Shift], damit das Lagerfeuer-Kochen fortschreitet. Sofortige Wirkung."
 }

@@ -1108,7 +1108,7 @@
   "item.createfood.butter": "Сливочное масло",
   "item.createfood.butter_dough": "Масляное тесто",
   "item.createfood.butter_dough_small": "Масляное тесто (маленькое)",
-  "item.createfood.buttered_toast": "Тост",
+  "item.createfood.toast_butter": "Тост",
   "item.createfood.butterscotch": "Крем-карамель",
   "item.createfood.butterscotch_apple": "Яблоко",
   "item.createfood.butterscotch_apple_slice": "Ломтик яблока",
@@ -2220,5 +2220,18 @@
   "tooltip.createfood.ube_cream_frosting_ingredient": " с сливочной глазурью из убе",
   "tooltip.createfood.warped_fungus_ingredient": " с искажённым грибом",
   "tooltip.createfood.white_chocolate_chips_ingredient": " с крошкой белого шоколада",
-  "tooltip.createfood.white_chocolate_ingredient": " с белым шоколадом"
+  "tooltip.createfood.white_chocolate_ingredient": " с белым шоколадом",
+  "createfood.configuration.campfire_cooking": "Приготовление на костре",
+  "createfood.configuration.campfire_cooking.tooltip": "Настроить параметры приготовления на костре.",
+  "createfood.configuration.campfire_cooking_exclude": "Исключить",
+  "createfood.configuration.campfire_cooking_exclude.tooltip": "Блокировать приготовление определённых предметов на костре. Имеет приоритет над фильтром и sticks_only. Применяется немедленно.",
+  "createfood.configuration.campfire_cooking_filter": "Фильтр",
+  "createfood.configuration.campfire_cooking_filter.tooltip": "Список разрешённых предметов для приготовления на костре. Если не пуст, готовить можно только совпадающие предметы. Работает совместно со sticks_only, если оба параметра установлены. Применяется немедленно.",
+  "createfood.configuration.enable_campfire_cooking": "Включить приготовление на костре",
+  "createfood.configuration.enable_campfire_cooking.tooltip": "Если включено, игроки могут готовить рецепты у костра, держа ингредиент рядом с блоком farmersdelight:heat_sources. Применяется немедленно.",
+  "createfood.configuration.sticks_only": "Только шпажки",
+  "createfood.configuration.sticks_only.tooltip": "Если включено, доступны только рецепты у костра, ID результата которых заканчивается на '_stick'. Списки исключений и фильтров по-прежнему применяются. Применяется немедленно.",
+  "createfood.effect.chance": ", %s%% шанс",
+  "createfood.configuration.campfire_cooking.require_shift": "Требуется Shift",
+  "createfood.configuration.campfire_cooking.require_shift.tooltip": "Требуется удержание [Shift] для продолжения приготовления на костре. Применяется немедленно."
 }
