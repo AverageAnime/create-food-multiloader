@@ -2,8 +2,8 @@ package dev.averageanime.fabric.config;
 
 import dev.averageanime.config.ConfigDefaults;
 import dev.averageanime.config.ConfigLogic;
-import dev.averageanime.config.ItemEffectOverride;
-import dev.averageanime.config.ItemNutritionOverride;
+import dev.averageanime.config.override.ItemEffectOverride;
+import dev.averageanime.config.override.ItemNutritionOverride;
 import io.github.fabricators_of_create.porting_lib.config.ModConfigSpec;
 import net.minecraft.world.item.ItemStack;
 import org.jetbrains.annotations.Nullable;
@@ -30,6 +30,9 @@ public class ModConfig {
     public static final ModConfigSpec.ConfigValue<List<? extends String>> CUSTOM_TOOLTIPS;
     public static final ModConfigSpec.ConfigValue<List<? extends String>> GENERIC_DISPLAY_EXCLUDE;
 
+    public static final ModConfigSpec.BooleanValue CAMPFIRE_COOKING_ENABLED;
+    public static final ModConfigSpec.BooleanValue CAMPFIRE_COOKING_REQUIRE_SHIFT;
+    public static final ModConfigSpec.BooleanValue CAMPFIRE_COOKING_STICKS_ONLY;
     public static final ModConfigSpec.BooleanValue CLOTH_SACK_ALLOW_FOOD;
     public static final ModConfigSpec.BooleanValue CLOTH_SACK_EAT_FROM_ITEM;
     public static final ModConfigSpec.BooleanValue CLOTH_SACK_INVENTORY_ENABLED;
@@ -45,6 +48,8 @@ public class ModConfig {
     public static final ModConfigSpec.BooleanValue RATION_BOX_INVENTORY_ENABLED;
     public static final ModConfigSpec.BooleanValue RATION_BOX_STACK;
 
+    public static final ModConfigSpec.ConfigValue<List<? extends String>> CAMPFIRE_COOKING_EXCLUDE;
+    public static final ModConfigSpec.ConfigValue<List<? extends String>> CAMPFIRE_COOKING_FILTER;
     public static final ModConfigSpec.ConfigValue<List<? extends String>> CATEGORY_EFFECT_OVERRIDES;
     public static final ModConfigSpec.ConfigValue<List<? extends String>> CLOTH_SACK_EXCLUDE;
     public static final ModConfigSpec.ConfigValue<List<? extends String>> CLOTH_SACK_FILTER;
@@ -62,6 +67,27 @@ public class ModConfig {
     public static final ModConfigSpec SERVER_SPEC;
 
     static {
+        // ── CLIENT ────────────────────────────────────────────────────────────
+
+        BUILDER.push("blocks");
+
+        CUSTOM_BLOCK = BUILDER
+                .defineListAllowEmpty("block",
+                        List.of(),
+                        ConfigDefaults.CUSTOM_BLOCK_VALIDATOR
+                );
+
+        BUILDER.push("storage");
+
+        SHOW_SACK_BLOCK_ICONS = BUILDER
+                .define("show_sack_block_icons", true);
+
+        SHOW_STORAGE_TOOLTIP_ICONS = BUILDER
+                .define("show_tooltip_icons", true);
+
+        BUILDER.pop(); // blocks.storage
+        BUILDER.pop(); // blocks
+
         BUILDER.push("display");
 
         ALWAYS_DISPLAY_UPRIGHT = BUILDER.define("always_display_upright", false);
@@ -72,20 +98,30 @@ public class ModConfig {
                         ConfigDefaults.CUSTOM_DISPLAY_BLOCK_VALIDATOR
                 );
 
-        BUILDER.pop();
+        BUILDER.pop(); // display
+
+        BUILDER.push("fluids");
+
+        CUSTOM_FLUID = BUILDER
+                .defineListAllowEmpty("fluid",
+                        List.of(),
+                        ConfigDefaults.CUSTOM_FLUID_VALIDATOR
+                );
+
+        BUILDER.pop(); // fluids
 
         BUILDER.push("items");
-
-        CUSTOM_ITEM = BUILDER
-                .defineListAllowEmpty("item",
-                        List.of(),
-                        ConfigDefaults.CUSTOM_ITEM_VALIDATOR
-                );
 
         HIDE_ITEMS = BUILDER
                 .defineListAllowEmpty("hide_items",
                         ConfigDefaults.HIDE_ITEMS_DEFAULT,
                         obj -> obj instanceof String
+                );
+
+        CUSTOM_ITEM = BUILDER
+                .defineListAllowEmpty("item",
+                        List.of(),
+                        ConfigDefaults.CUSTOM_ITEM_VALIDATOR
                 );
 
         BUILDER.push("tooltips");
@@ -108,36 +144,91 @@ public class ModConfig {
         BUILDER.pop(); // items.tooltips
         BUILDER.pop(); // items
 
-        BUILDER.push("blocks");
-
-        CUSTOM_BLOCK = BUILDER
-                .defineListAllowEmpty("block",
-                        List.of(),
-                        ConfigDefaults.CUSTOM_BLOCK_VALIDATOR
-                );
-
-        BUILDER.push("storage");
-
-        SHOW_SACK_BLOCK_ICONS = BUILDER
-                .define("show_sack_block_icons", true);
-
-        SHOW_STORAGE_TOOLTIP_ICONS = BUILDER
-                .define("show_tooltip_icons", true);
-
-        BUILDER.pop(); // blocks.storage
-        BUILDER.pop(); // blocks
-
-        BUILDER.push("fluids");
-
-        CUSTOM_FLUID = BUILDER
-                .defineListAllowEmpty("fluid",
-                        List.of(),
-                        ConfigDefaults.CUSTOM_FLUID_VALIDATOR
-                );
-
-        BUILDER.pop(); // fluids
-
         CLIENT_SPEC = BUILDER.build();
+
+        // ── SERVER ────────────────────────────────────────────────────────────
+
+        SERVER_BUILDER.push("display");
+
+        ENABLE_CUTTING_BOARD = SERVER_BUILDER
+                .define("enable_cutting_board", true);
+
+        ENABLE_GENERIC_PLATES = SERVER_BUILDER
+                .define("enable_generic_plates", true);
+
+        GENERIC_DISPLAY_EXCLUDE = SERVER_BUILDER
+                .defineListAllowEmpty("exclude",
+                        ConfigDefaults.GENERIC_DISPLAY_EXCLUDE_DEFAULT,
+                        obj -> obj instanceof String
+                );
+
+        SERVER_BUILDER.pop(); // display
+
+        SERVER_BUILDER.push("interactions");
+
+        ENABLE_FILTER_INTERACTIONS = SERVER_BUILDER
+                .define("enable_filter_interactions", true);
+
+        ENABLE_PUMPKIN_PIE_PLACEMENT = SERVER_BUILDER
+                .define("enable_pumpkin_pie_placement", false);
+
+        FILTER_INTERACTIONS = SERVER_BUILDER
+                .defineListAllowEmpty("filter_interactions",
+                        ConfigDefaults.FILTER_INTERACTIONS_DEFAULT,
+                        ConfigDefaults.FILTER_INTERACTIONS_VALIDATOR
+                );
+
+        SERVER_BUILDER.push("campfire_cooking");
+
+        CAMPFIRE_COOKING_ENABLED = SERVER_BUILDER
+                .define("enable_campfire_cooking", false);
+
+        CAMPFIRE_COOKING_REQUIRE_SHIFT = SERVER_BUILDER
+                .define("require_shift", true);
+
+        CAMPFIRE_COOKING_STICKS_ONLY = SERVER_BUILDER
+                .define("sticks_only", false);
+
+        CAMPFIRE_COOKING_EXCLUDE = SERVER_BUILDER
+                .defineListAllowEmpty("campfire_cooking_exclude",
+                        List.of(),
+                        obj -> obj instanceof String
+                );
+
+        CAMPFIRE_COOKING_FILTER = SERVER_BUILDER
+                .defineListAllowEmpty("campfire_cooking_filter",
+                        List.of(),
+                        obj -> obj instanceof String
+                );
+
+        SERVER_BUILDER.pop(); // interactions.campfire_cooking
+
+        SERVER_BUILDER.push("handcraft");
+
+        HANDCRAFTING_ALLOW_SINGLE = SERVER_BUILDER
+                .define("allow_single_item", false);
+
+        ENABLE_HANDCRAFTING = SERVER_BUILDER
+                .define("enable_handcrafting", true);
+
+        HANDCRAFTING_PARTICLES = SERVER_BUILDER
+                .define("enable_particles", true);
+
+        HANDCRAFTING_EXCLUDE = SERVER_BUILDER
+                .defineListAllowEmpty("exclude",
+                        ConfigDefaults.HANDCRAFTING_EXCLUDE_DEFAULT,
+                        obj -> obj instanceof String
+                );
+
+        HANDCRAFTING_FILTER = SERVER_BUILDER
+                .defineListAllowEmpty("filter",
+                        List.of(),
+                        obj -> obj instanceof String
+                );
+
+        SERVER_BUILDER.pop(); // interactions.handcraft
+
+        SERVER_BUILDER.pop(); // interactions
 
         SERVER_BUILDER.push("items");
 
@@ -176,62 +267,6 @@ public class ModConfig {
 
         SERVER_BUILDER.pop(); // items.remainders
         SERVER_BUILDER.pop(); // items
-
-        SERVER_BUILDER.push("interactions");
-
-        ENABLE_FILTER_INTERACTIONS = SERVER_BUILDER
-                .define("enable_filter_interactions", true);
-
-        ENABLE_PUMPKIN_PIE_PLACEMENT = SERVER_BUILDER
-                .define("enable_pumpkin_pie_placement", false);
-
-        FILTER_INTERACTIONS = SERVER_BUILDER
-                .defineListAllowEmpty("filter_interactions",
-                        ConfigDefaults.FILTER_INTERACTIONS_DEFAULT,
-                        ConfigDefaults.FILTER_INTERACTIONS_VALIDATOR
-                );
-
-        SERVER_BUILDER.push("handcraft");
-
-        HANDCRAFTING_ALLOW_SINGLE = SERVER_BUILDER
-                .define("allow_single_item", false);
-
-        ENABLE_HANDCRAFTING = SERVER_BUILDER
-                .define("enable_handcrafting", true);
-
-        HANDCRAFTING_PARTICLES = SERVER_BUILDER
-                .define("enable_particles", true);
-
-        HANDCRAFTING_EXCLUDE = SERVER_BUILDER
-                .defineListAllowEmpty("exclude",
-                        ConfigDefaults.HANDCRAFTING_EXCLUDE_DEFAULT,
-                        obj -> obj instanceof String
-                );
-
-        HANDCRAFTING_FILTER = SERVER_BUILDER
-                .defineListAllowEmpty("filter",
-                        List.of(),
-                        obj -> obj instanceof String
-                );
-
-        SERVER_BUILDER.pop(); // interactions.handcraft
-        SERVER_BUILDER.pop(); // interactions
-
-        SERVER_BUILDER.push("display");
-
-        ENABLE_CUTTING_BOARD = SERVER_BUILDER
-                .define("enable_cutting_board", true);
-
-        ENABLE_GENERIC_PLATES = SERVER_BUILDER
-                .define("enable_generic_plates", true);
-
-        GENERIC_DISPLAY_EXCLUDE = SERVER_BUILDER
-                .defineListAllowEmpty("exclude",
-                        ConfigDefaults.GENERIC_DISPLAY_EXCLUDE_DEFAULT,
-                        obj -> obj instanceof String
-                );
-
-        SERVER_BUILDER.pop(); // display
 
         SERVER_BUILDER.push("storage");
         SERVER_BUILDER.push("cloth_sack");
@@ -328,6 +363,11 @@ public class ModConfig {
         catch (IllegalStateException ignored) { return true; }
     }
 
+    public static boolean isFluidBucketEnabled(String bucketId) {
+        try { return ConfigLogic.isFluidBucketEnabled(bucketId, HIDE_ITEMS.get()); }
+        catch (IllegalStateException ignored) { return true; }
+    }
+
     public static boolean matchesFilterList(ItemStack stack, List<? extends String> list) {
         return ConfigLogic.matchesFilterList(stack, list);
     }
@@ -361,4 +401,5 @@ public class ModConfig {
     public static boolean isCompatibilityEnabled()        { try { return SHOW_COMPATIBILITY.get();            } catch (IllegalStateException e) { return true;  } }
     public static boolean isIngredientsEnabled()          { try { return SHOW_INGREDIENTS.get();              } catch (IllegalStateException e) { return true;  } }
     public static boolean isShiftRequiredForTooltips()    { try { return REQUIRE_SHIFT_FOR_TOOLTIPS.get();    } catch (IllegalStateException e) { return false; } }
+    public static boolean isCampfireCookingRequireShift() { try { return CAMPFIRE_COOKING_REQUIRE_SHIFT.get(); } catch (IllegalStateException e) { return true;  } }
 }

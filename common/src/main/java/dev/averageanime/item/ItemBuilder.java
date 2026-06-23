@@ -28,7 +28,7 @@ public final class ItemBuilder {
     public static List<EffectFood.DeferredFx> deferredFx(List<Effect> specs) {
         return specs.stream()
                 .filter(s -> s.isFoodEffect() && s.foodEffect().hasAnyLoadedCandidate())
-                .map(s -> new EffectFood.DeferredFx(s.categoryOrEffectId(), s.foodEffect()::get, s.duration, s.amplifier))
+                .map(s -> new EffectFood.DeferredFx(s.categoryOrEffectId(), s.foodEffect()::get, s.duration, s.amplifier, s.chance))
                 .toList();
     }
 

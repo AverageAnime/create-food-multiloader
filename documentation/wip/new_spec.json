@@ -1,0 +1,3133 @@
+{
+  "items": [
+    {
+      "id": "honeycomb_candy",
+      "displayName": "Honeycomb Candy",
+      "type": "fastFood",
+      "nutrition": 2,
+      "saturation": 0.3,
+      "tooltips": [],
+      "effects": [
+        {
+          "effect": "comfort",
+          "duration": 300
+        },
+        {
+          "effect": "Regeneration",
+          "duration": 300
+        }
+      ],
+      "recipes": [
+        {
+          "type": "create:compacting",
+          "inputs": [
+            {
+              "type": "item",
+              "value": "minecraft:honeycomb"
+            },
+            {
+              "type": "tag",
+              "value": "c:sugar"
+            }
+          ],
+          "output": "honeycomb_candy",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "id": "pumpernickel_bread_slice_bacon",
+      "displayName": "Pumpernickel Bread Slice",
+      "type": "food",
+      "nutrition": 6,
+      "saturation": 0.6,
+      "tooltips": [
+        "bacon"
+      ],
+      "effects": [],
+      "recipes": [
+        {
+          "type": "create:deploying",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:pumpernickel_bread_slice"
+            },
+            {
+              "type": "tag",
+              "value": "c:cooked_pork"
+            }
+          ],
+          "output": "pumpernickel_bread_slice_bacon"
+        },
+        {
+          "type": "minecraft:crafting_shapeless",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:pumpernickel_bread_slice"
+            },
+            {
+              "type": "tag",
+              "value": "c:cooked_pork"
+            }
+          ],
+          "output": "pumpernickel_bread_slice_bacon"
+        },
+        {
+          "type": "minecraft:crafting_shaped",
+          "pattern": [
+            "X  ",
+            "Y  ",
+            "   "
+          ],
+          "keys": {
+            "X": {
+              "type": "tag",
+              "value": "c:cooked_pork"
+            },
+            "Y": {
+              "type": "tag",
+              "value": "c:pumpernickel_bread_slice"
+            }
+          },
+          "output": "pumpernickel_bread_slice_bacon"
+        }
+      ]
+    },
+    {
+      "id": "pumpernickel_bread_slice_cheese",
+      "displayName": "Pumpernickel Bread Slice",
+      "type": "food",
+      "nutrition": 6,
+      "saturation": 0.3,
+      "tooltips": [
+        "cheese"
+      ],
+      "effects": [],
+      "recipes": [
+        {
+          "type": "create:deploying",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:pumpernickel_bread_slice"
+            },
+            {
+              "type": "tag",
+              "value": "c:cheeses"
+            }
+          ],
+          "output": "pumpernickel_bread_slice_cheese"
+        },
+        {
+          "type": "minecraft:crafting_shapeless",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:pumpernickel_bread_slice"
+            },
+            {
+              "type": "tag",
+              "value": "c:cheeses"
+            }
+          ],
+          "output": "pumpernickel_bread_slice_cheese"
+        },
+        {
+          "type": "minecraft:crafting_shaped",
+          "pattern": [
+            "X  ",
+            "Y  ",
+            "   "
+          ],
+          "keys": {
+            "X": {
+              "type": "tag",
+              "value": "c:cheeses"
+            },
+            "Y": {
+              "type": "tag",
+              "value": "c:pumpernickel_bread_slice"
+            }
+          },
+          "output": "pumpernickel_bread_slice_cheese"
+        }
+      ]
+    },
+    {
+      "id": "pumpernickel_bread_slice_lettuce",
+      "displayName": "Pumpernickel Bread Slice",
+      "type": "food",
+      "nutrition": 8,
+      "saturation": 0.3,
+      "tooltips": [
+        "lettuce"
+      ],
+      "effects": [],
+      "recipes": [
+        {
+          "type": "create:deploying",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:pumpernickel_bread_slice"
+            },
+            {
+              "type": "tag",
+              "value": "c:foods/leafy_green"
+            }
+          ],
+          "output": "pumpernickel_bread_slice_lettuce"
+        },
+        {
+          "type": "minecraft:crafting_shapeless",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:pumpernickel_bread_slice"
+            },
+            {
+              "type": "tag",
+              "value": "c:foods/leafy_green"
+            }
+          ],
+          "output": "pumpernickel_bread_slice_lettuce"
+        },
+        {
+          "type": "minecraft:crafting_shaped",
+          "pattern": [
+            "X  ",
+            "Y  ",
+            "   "
+          ],
+          "keys": {
+            "X": {
+              "type": "tag",
+              "value": "c:foods/leafy_green"
+            },
+            "Y": {
+              "type": "tag",
+              "value": "c:pumpernickel_bread_slice"
+            }
+          },
+          "output": "pumpernickel_bread_slice_lettuce"
+        }
+      ]
+    },
+    {
+      "id": "pumpernickel_bread_slice_tomato",
+      "displayName": "Pumpernickel Bread Slice",
+      "type": "food",
+      "nutrition": 8,
+      "saturation": 0.3,
+      "tooltips": [
+        "tomato"
+      ],
+      "effects": [],
+      "recipes": [
+        {
+          "type": "create:deploying",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:pumpernickel_bread_slice"
+            },
+            {
+              "type": "tag",
+              "value": "c:tomato"
+            }
+          ],
+          "output": "pumpernickel_bread_slice_tomato"
+        },
+        {
+          "type": "minecraft:crafting_shapeless",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:pumpernickel_bread_slice"
+            },
+            {
+              "type": "tag",
+              "value": "c:tomato"
+            }
+          ],
+          "output": "pumpernickel_bread_slice_tomato"
+        },
+        {
+          "type": "minecraft:crafting_shaped",
+          "pattern": [
+            "X  ",
+            "Y  ",
+            "   "
+          ],
+          "keys": {
+            "X": {
+              "type": "tag",
+              "value": "c:tomato"
+            },
+            "Y": {
+              "type": "tag",
+              "value": "c:pumpernickel_bread_slice"
+            }
+          },
+          "output": "pumpernickel_bread_slice_tomato"
+        }
+      ]
+    },
+    {
+      "id": "pumpernickel_bread_slice_scrambled_egg",
+      "displayName": "Pumpernickel Bread Slice",
+      "type": "food",
+      "nutrition": 8,
+      "saturation": 0.8,
+      "tooltips": [
+        "scrambled_egg"
+      ],
+      "effects": [],
+      "recipes": [
+        {
+          "type": "create:deploying",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:pumpernickel_bread_slice"
+            },
+            {
+              "type": "tag",
+              "value": "c:cooked_eggs"
+            }
+          ],
+          "output": "pumpernickel_bread_slice_scrambled_egg"
+        },
+        {
+          "type": "minecraft:crafting_shapeless",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:pumpernickel_bread_slice"
+            },
+            {
+              "type": "tag",
+              "value": "c:cooked_eggs"
+            }
+          ],
+          "output": "pumpernickel_bread_slice_scrambled_egg"
+        },
+        {
+          "type": "minecraft:crafting_shaped",
+          "pattern": [
+            "X  ",
+            "Y  ",
+            "   "
+          ],
+          "keys": {
+            "X": {
+              "type": "tag",
+              "value": "c:cooked_eggs"
+            },
+            "Y": {
+              "type": "tag",
+              "value": "c:pumpernickel_bread_slice"
+            }
+          },
+          "output": "pumpernickel_bread_slice_scrambled_egg"
+        }
+      ]
+    },
+    {
+      "id": "pumpernickel_bread_slice_honey",
+      "displayName": "Pumpernickel Bread Slice",
+      "type": "food",
+      "nutrition": 8,
+      "saturation": 0.4,
+      "tooltips": [
+        "honey"
+      ],
+      "effects": [],
+      "recipes": [
+        {
+          "type": "create:deploying",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:pumpernickel_bread_slice"
+            },
+            {
+              "type": "item",
+              "value": "minecraft:honey_bottle"
+            }
+          ],
+          "output": "pumpernickel_bread_slice_honey"
+        },
+        {
+          "type": "create:filling",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:pumpernickel_bread_slice"
+            },
+            {
+              "type": "fluid_tag",
+              "value": "honey|125"
+            }
+          ],
+          "output": "pumpernickel_bread_slice_honey"
+        },
+        {
+          "type": "minecraft:crafting_shaped",
+          "pattern": [
+            "X  ",
+            "Y  ",
+            "   "
+          ],
+          "keys": {
+            "X": {
+              "type": "item",
+              "value": "minecraft:honey_bottle"
+            },
+            "Y": {
+              "type": "tag",
+              "value": "c:pumpernickel_bread_slice"
+            }
+          },
+          "output": "pumpernickel_bread_slice_honey"
+        }
+      ]
+    },
+    {
+      "id": "fish_sandwich",
+      "displayName": "Sandwich",
+      "type": "food",
+      "nutrition": 7,
+      "saturation": 0.6,
+      "tooltips": [
+        "fish"
+      ],
+      "effects": [],
+      "recipes": [
+        {
+          "type": "create:deploying",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:bread_slice_fish"
+            },
+            {
+              "type": "tag",
+              "value": "c:bread_slice"
+            }
+          ],
+          "output": "fish_sandwich"
+        }
+      ]
+    },
+    {
+      "id": "fish_sandwich_lettuce",
+      "displayName": "Sandwich",
+      "type": "food",
+      "nutrition": 8,
+      "saturation": 0.65,
+      "tooltips": [
+        "fish",
+        "lettuce"
+      ],
+      "effects": [],
+      "recipes": [
+        {
+          "type": "minecraft:crafting_shapeless",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:bread_slice_fish"
+            },
+            {
+              "type": "tag",
+              "value": "c:bread_slice_lettuce"
+            }
+          ],
+          "output": "fish_sandwich_lettuce"
+        }
+      ]
+    },
+    {
+      "id": "fish_sandwich_lettuce_tomato",
+      "displayName": "Sandwich",
+      "type": "food",
+      "nutrition": 9,
+      "saturation": 0.7,
+      "tooltips": [
+        "fish",
+        "lettuce",
+        "tomato"
+      ],
+      "effects": [],
+      "recipes": [
+        {
+          "type": "create:deploying",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:fish_sandwich_lettuce"
+            },
+            {
+              "type": "tag",
+              "value": "c:tomato"
+            }
+          ],
+          "output": "fish_sandwich_lettuce_tomato"
+        }
+      ]
+    },
+    {
+      "id": "raw_mutton_meatball",
+      "displayName": "Raw Mutton Meatball",
+      "type": "plain",
+      "recipes": [
+        {
+          "type": "create:compacting",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:ground_mutton"
+            }
+          ],
+          "output": "raw_mutton_meatball",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "id": "mutton_meatball",
+      "displayName": "Mutton Meatball",
+      "type": "food",
+      "nutrition": 4,
+      "saturation": 0.6,
+      "tooltips": [],
+      "effects": [],
+      "recipes": [
+        {
+          "type": "minecraft:smelting",
+          "inputs": [
+            {
+              "type": "item",
+              "value": "createfood:raw_mutton_meatball"
+            }
+          ],
+          "output": "mutton_meatball",
+          "experience": 0.35,
+          "cookingtime": 200
+        },
+        {
+          "type": "minecraft:smoking",
+          "inputs": [
+            {
+              "type": "item",
+              "value": "createfood:raw_mutton_meatball"
+            }
+          ],
+          "output": "mutton_meatball",
+          "experience": 0.35,
+          "cookingtime": 100
+        },
+        {
+          "type": "minecraft:campfire_cooking",
+          "inputs": [
+            {
+              "type": "item",
+              "value": "createfood:raw_mutton_meatball"
+            }
+          ],
+          "output": "mutton_meatball",
+          "experience": 0.35,
+          "cookingtime": 600
+        }
+      ]
+    },
+    {
+      "id": "small_mutton_meatballs",
+      "displayName": "Small Mutton Meatballs",
+      "type": "fastFood",
+      "nutrition": 3,
+      "saturation": 0.7,
+      "tooltips": [],
+      "effects": [],
+      "recipes": [
+        {
+          "type": "farmersdelight:cutting",
+          "inputs": [
+            {
+              "type": "item",
+              "value": "createfood:mutton_meatball"
+            }
+          ],
+          "output": "small_mutton_meatballs",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "id": "mutton_meatball_stick_1",
+      "displayName": "Mutton Meatball Stick",
+      "type": "stickFood",
+      "nutrition": 5,
+      "saturation": 0.7,
+      "tooltips": [],
+      "effects": [],
+      "recipes": [
+        {
+          "type": "minecraft:crafting_shaped",
+          "pattern": [
+            "X  ",
+            "Y  ",
+            "   "
+          ],
+          "keys": {
+            "X": {
+              "type": "item",
+              "value": "createfood:mutton_meatball"
+            },
+            "Y": {
+              "type": "item",
+              "value": "minecraft:stick"
+            }
+          },
+          "output": "mutton_meatball_stick_1"
+        }
+      ]
+    },
+    {
+      "id": "mutton_meatball_stick_2",
+      "displayName": "Mutton Meatball Stick",
+      "type": "stickFood",
+      "nutrition": 6,
+      "saturation": 0.7,
+      "tooltips": [],
+      "effects": [],
+      "recipes": [
+        {
+          "type": "minecraft:crafting_shaped",
+          "pattern": [
+            "X  ",
+            "X  ",
+            "Y  "
+          ],
+          "keys": {
+            "X": {
+              "type": "item",
+              "value": "createfood:mutton_meatball"
+            },
+            "Y": {
+              "type": "item",
+              "value": "minecraft:stick"
+            }
+          },
+          "output": "mutton_meatball_stick_2"
+        }
+      ]
+    },
+    {
+      "id": "mutton_meatball_stick_3",
+      "displayName": "Mutton Meatball Stick",
+      "type": "stickFood",
+      "nutrition": 7,
+      "saturation": 0.8,
+      "tooltips": [],
+      "effects": [],
+      "recipes": [
+        {
+          "type": "minecraft:crafting_shaped",
+          "pattern": [
+            "X  ",
+            "X  ",
+            "XY "
+          ],
+          "keys": {
+            "X": {
+              "type": "item",
+              "value": "createfood:mutton_meatball"
+            },
+            "Y": {
+              "type": "item",
+              "value": "minecraft:stick"
+            }
+          },
+          "output": "mutton_meatball_stick_3"
+        }
+      ]
+    },
+    {
+      "id": "mutton_meatball_sandwich",
+      "displayName": "Meatball Sandwich",
+      "type": "food",
+      "nutrition": 10,
+      "saturation": 0.6,
+      "tooltips": [
+        "mutton"
+      ],
+      "effects": [],
+      "recipes": [
+        {
+          "type": "create:deploying",
+          "inputs": [
+            {
+              "type": "item",
+              "value": "minecraft:bread"
+            },
+            {
+              "type": "tag",
+              "value": "c:small_mutton_meatballs"
+            }
+          ],
+          "output": "mutton_meatball_sandwich"
+        },
+        {
+          "type": "minecraft:crafting_shapeless",
+          "inputs": [
+            {
+              "type": "item",
+              "value": "minecraft:bread"
+            },
+            {
+              "type": "tag",
+              "value": "c:small_mutton_meatballs"
+            }
+          ],
+          "output": "mutton_meatball_sandwich"
+        }
+      ]
+    },
+    {
+      "id": "pasta_plate_mutton_meatballs",
+      "displayName": "Pasta",
+      "type": "bowlFood",
+      "nutrition": 8,
+      "saturation": 0.7,
+      "tooltips": [
+        "mutton"
+      ],
+      "effects": [],
+      "recipes": [
+        {
+          "type": "create:deploying",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:pasta_plate"
+            },
+            {
+              "type": "item",
+              "value": "createfood:mutton_meatball"
+            }
+          ],
+          "output": "pasta_plate_mutton_meatballs"
+        },
+        {
+          "type": "minecraft:crafting_shapeless",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:pasta_plate"
+            },
+            {
+              "type": "item",
+              "value": "createfood:mutton_meatball"
+            }
+          ],
+          "output": "pasta_plate_mutton_meatballs"
+        }
+      ]
+    },
+    {
+      "id": "pasta_plate_mutton_meatballs_tomato_sauce",
+      "displayName": "Pasta",
+      "type": "bowlFood",
+      "nutrition": 11,
+      "saturation": 0.9,
+      "tooltips": [
+        "mutton",
+        "tomato_sauce"
+      ],
+      "effects": [],
+      "recipes": [
+        {
+          "type": "create:deploying",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:pasta_plate_tomato_sauce"
+            },
+            {
+              "type": "item",
+              "value": "createfood:mutton_meatball"
+            }
+          ],
+          "output": "pasta_plate_mutton_meatballs_tomato_sauce"
+        },
+        {
+          "type": "create:deploying",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:pasta_plate_mutton_meatballs"
+            },
+            {
+              "type": "item",
+              "value": "farmersdelight:tomato_sauce"
+            }
+          ],
+          "output": "pasta_plate_mutton_meatballs_tomato_sauce",
+          "suffix": "alt"
+        },
+        {
+          "type": "minecraft:crafting_shapeless",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:pasta_plate_mutton_meatballs"
+            },
+            {
+              "type": "item",
+              "value": "farmersdelight:tomato_sauce"
+            }
+          ],
+          "output": "pasta_plate_mutton_meatballs_tomato_sauce"
+        },
+        {
+          "type": "create:filling",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:pasta_plate_mutton_meatballs"
+            },
+            {
+              "type": "fluid_tag",
+              "value": "tomato_sauce|333"
+            }
+          ],
+          "output": "pasta_plate_mutton_meatballs_tomato_sauce"
+        }
+      ]
+    },
+    {
+      "id": "bread_slice_pork",
+      "displayName": "Bread Slice",
+      "type": "food",
+      "nutrition": 4,
+      "saturation": 0.5,
+      "tooltips": [
+        "pork"
+      ],
+      "effects": [],
+      "recipes": [
+        {
+          "type": "create:deploying",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:bread_slice"
+            },
+            {
+              "type": "tag",
+              "value": "c:cooked_pork"
+            }
+          ],
+          "output": "bread_slice_pork"
+        },
+        {
+          "type": "minecraft:crafting_shapeless",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:bread_slice"
+            },
+            {
+              "type": "tag",
+              "value": "c:cooked_pork"
+            }
+          ],
+          "output": "bread_slice_pork"
+        }
+      ]
+    },
+    {
+      "id": "pork_sandwich",
+      "displayName": "Sandwich",
+      "type": "food",
+      "nutrition": 7,
+      "saturation": 0.6,
+      "tooltips": [
+        "pork"
+      ],
+      "effects": [],
+      "recipes": [
+        {
+          "type": "create:deploying",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:bread_slice_pork"
+            },
+            {
+              "type": "tag",
+              "value": "c:bread_slice"
+            }
+          ],
+          "output": "pork_sandwich"
+        },
+        {
+          "type": "minecraft:crafting_shapeless",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:bread_slice_pork"
+            },
+            {
+              "type": "tag",
+              "value": "c:bread_slice"
+            }
+          ],
+          "output": "pork_sandwich"
+        },
+        {
+          "type": "minecraft:crafting_shapeless",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:bread_slice"
+            },
+            {
+              "type": "tag",
+              "value": "c:cooked_pork"
+            },
+            {
+              "type": "tag",
+              "value": "c:bread_slice"
+            }
+          ],
+          "output": "pork_sandwich",
+          "suffix": "alt"
+        }
+      ]
+    },
+    {
+      "id": "pork_sandwich_onion",
+      "displayName": "Sandwich",
+      "type": "food",
+      "nutrition": 8,
+      "saturation": 0.7,
+      "tooltips": [
+        "pork",
+        "onion"
+      ],
+      "effects": [],
+      "recipes": [
+        {
+          "type": "minecraft:crafting_shapeless",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:bread_slice_pork"
+            },
+            {
+              "type": "tag",
+              "value": "c:bread_slice_onion"
+            }
+          ],
+          "output": "pork_sandwich_onion"
+        },
+        {
+          "type": "minecraft:crafting_shapeless",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:bread_slice"
+            },
+            {
+              "type": "tag",
+              "value": "c:cooked_pork"
+            },
+            {
+              "type": "tag",
+              "value": "c:onion"
+            },
+            {
+              "type": "tag",
+              "value": "c:bread_slice"
+            }
+          ],
+          "output": "pork_sandwich_onion",
+          "suffix": "alt"
+        }
+      ]
+    },
+    {
+      "id": "bread_slice_rabbit",
+      "displayName": "Bread Slice",
+      "type": "food",
+      "nutrition": 5,
+      "saturation": 0.5,
+      "tooltips": [
+        "rabbit"
+      ],
+      "effects": [],
+      "recipes": [
+        {
+          "type": "create:deploying",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:bread_slice"
+            },
+            {
+              "type": "tag",
+              "value": "c:cooked_rabbit"
+            }
+          ],
+          "output": "bread_slice_rabbit"
+        },
+        {
+          "type": "minecraft:crafting_shapeless",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:bread_slice"
+            },
+            {
+              "type": "tag",
+              "value": "c:cooked_rabbit"
+            }
+          ],
+          "output": "bread_slice_rabbit"
+        }
+      ]
+    },
+    {
+      "id": "rabbit_sandwich",
+      "displayName": "Sandwich",
+      "type": "food",
+      "nutrition": 7,
+      "saturation": 0.6,
+      "tooltips": [
+        "rabbit"
+      ],
+      "effects": [],
+      "recipes": [
+        {
+          "type": "create:deploying",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:bread_slice_rabbit"
+            },
+            {
+              "type": "tag",
+              "value": "c:bread_slice"
+            }
+          ],
+          "output": "rabbit_sandwich"
+        },
+        {
+          "type": "minecraft:crafting_shapeless",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:bread_slice_rabbit"
+            },
+            {
+              "type": "tag",
+              "value": "c:bread_slice"
+            }
+          ],
+          "output": "rabbit_sandwich"
+        },
+        {
+          "type": "minecraft:crafting_shapeless",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:bread_slice"
+            },
+            {
+              "type": "tag",
+              "value": "c:cooked_rabbit"
+            },
+            {
+              "type": "tag",
+              "value": "c:bread_slice"
+            }
+          ],
+          "output": "rabbit_sandwich",
+          "suffix": "alt"
+        }
+      ]
+    },
+    {
+      "id": "rabbit_sandwich_carrot",
+      "displayName": "Sandwich",
+      "type": "food",
+      "nutrition": 7,
+      "saturation": 0.7,
+      "tooltips": [
+        "rabbit",
+        "carrot"
+      ],
+      "effects": [],
+      "recipes": [
+        {
+          "type": "minecraft:crafting_shapeless",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:bread_slice_rabbit"
+            },
+            {
+              "type": "tag",
+              "value": "c:bread_slice_carrot"
+            }
+          ],
+          "output": "rabbit_sandwich_carrot"
+        },
+        {
+          "type": "minecraft:crafting_shapeless",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:bread_slice"
+            },
+            {
+              "type": "tag",
+              "value": "c:cooked_rabbit"
+            },
+            {
+              "type": "tag",
+              "value": "c:carrot"
+            },
+            {
+              "type": "tag",
+              "value": "c:bread_slice"
+            }
+          ],
+          "output": "rabbit_sandwich_carrot",
+          "suffix": "alt"
+        }
+      ]
+    },
+    {
+      "id": "chocolate_berry_pie_filling",
+      "displayName": "Chocolate Berry Pie Filling",
+      "type": "fluid",
+      "fluidFlowSlope": 3,
+      "fluidFlowDecrease": 2,
+      "recipes": [
+        {
+          "type": "create:mixing_heated",
+          "inputs": [
+            {
+              "type": "fluid_tag",
+              "value": "chocolate|250"
+            },
+            {
+              "type": "fluid_tag",
+              "value": "berry_jam|250"
+            },
+            {
+              "type": "tag",
+              "value": "c:sugar"
+            },
+            {
+              "type": "tag",
+              "value": "c:butter"
+            }
+          ],
+          "output": "chocolate_berry_pie_filling",
+          "fluidOutput": true,
+          "fluidAmount": 1000
+        },
+        {
+          "type": "farmersdelight:cooking",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:butter"
+            },
+            {
+              "type": "tag",
+              "value": "c:sugar"
+            },
+            {
+              "type": "tag",
+              "value": "c:sugar"
+            },
+            {
+              "type": "item",
+              "value": "minecraft:sweet_berries"
+            },
+            {
+              "type": "item",
+              "value": "minecraft:sweet_berries"
+            },
+            {
+              "type": "item",
+              "value": "minecraft:sweet_berries"
+            },
+            {
+              "type": "tag",
+              "value": "c:chocolate"
+            }
+          ],
+          "output": "chocolate_berry_pie_filling_bucket",
+          "experience": 0.35
+        }
+      ]
+    },
+    {
+      "id": "chocolate_berry_pie",
+      "displayName": "Chocolate Berry Pie",
+      "type": "block_pie",
+      "tooltips": [],
+      "sliceNutrition": 5,
+      "sliceSaturation": 0.8,
+      "sliceEffects": [
+        {
+          "effect": "comfort",
+          "duration": 1200
+        }
+      ],
+      "recipes": [
+        {
+          "type": "create:filling",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:raw_pie_crust"
+            },
+            {
+              "type": "fluid_tag",
+              "value": "chocolate_berry_pie_filling|1000"
+            }
+          ],
+          "output": "raw_chocolate_berry_pie"
+        },
+        {
+          "type": "create:item_application",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:raw_pie_crust"
+            },
+            {
+              "type": "tag",
+              "value": "c:chocolate_berry_pie_filling_bucket"
+            }
+          ],
+          "output": "raw_chocolate_berry_pie"
+        },
+        {
+          "type": "minecraft:smelting",
+          "inputs": [
+            {
+              "type": "item",
+              "value": "createfood:raw_chocolate_berry_pie"
+            }
+          ],
+          "output": "chocolate_berry_pie",
+          "experience": 0.35,
+          "cookingtime": 200
+        },
+        {
+          "type": "minecraft:smoking",
+          "inputs": [
+            {
+              "type": "item",
+              "value": "createfood:raw_chocolate_berry_pie"
+            }
+          ],
+          "output": "chocolate_berry_pie",
+          "experience": 0.35,
+          "cookingtime": 100
+        },
+        {
+          "type": "minecraft:campfire_cooking",
+          "inputs": [
+            {
+              "type": "item",
+              "value": "createfood:raw_chocolate_berry_pie"
+            }
+          ],
+          "output": "chocolate_berry_pie",
+          "experience": 0.35,
+          "cookingtime": 600
+        }
+      ]
+    },
+    {
+      "id": "dark_chocolate_berry_pie_filling",
+      "displayName": "Dark Chocolate Berry Pie Filling",
+      "type": "fluid",
+      "fluidFlowSlope": 3,
+      "fluidFlowDecrease": 2,
+      "recipes": [
+        {
+          "type": "create:mixing_heated",
+          "inputs": [
+            {
+              "type": "fluid_tag",
+              "value": "dark_chocolate|250"
+            },
+            {
+              "type": "fluid_tag",
+              "value": "berry_jam|250"
+            },
+            {
+              "type": "tag",
+              "value": "c:sugar"
+            },
+            {
+              "type": "tag",
+              "value": "c:butter"
+            }
+          ],
+          "output": "dark_chocolate_berry_pie_filling",
+          "fluidOutput": true,
+          "fluidAmount": 1000
+        },
+        {
+          "type": "farmersdelight:cooking",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:butter"
+            },
+            {
+              "type": "tag",
+              "value": "c:sugar"
+            },
+            {
+              "type": "tag",
+              "value": "c:sugar"
+            },
+            {
+              "type": "item",
+              "value": "minecraft:sweet_berries"
+            },
+            {
+              "type": "item",
+              "value": "minecraft:sweet_berries"
+            },
+            {
+              "type": "item",
+              "value": "minecraft:sweet_berries"
+            },
+            {
+              "type": "tag",
+              "value": "c:dark_chocolate"
+            }
+          ],
+          "output": "dark_chocolate_berry_pie_filling_bucket",
+          "experience": 0.35
+        }
+      ]
+    },
+    {
+      "id": "dark_chocolate_berry_pie",
+      "displayName": "Dark Chocolate Berry Pie",
+      "type": "block_pie",
+      "tooltips": [],
+      "sliceNutrition": 5,
+      "sliceSaturation": 0.8,
+      "sliceEffects": [
+        {
+          "effect": "comfort",
+          "duration": 1200
+        }
+      ],
+      "recipes": [
+        {
+          "type": "create:filling",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:raw_pie_crust"
+            },
+            {
+              "type": "fluid_tag",
+              "value": "dark_chocolate_berry_pie_filling|1000"
+            }
+          ],
+          "output": "raw_dark_chocolate_berry_pie"
+        },
+        {
+          "type": "create:item_application",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:raw_pie_crust"
+            },
+            {
+              "type": "tag",
+              "value": "c:dark_chocolate_berry_pie_filling_bucket"
+            }
+          ],
+          "output": "raw_dark_chocolate_berry_pie"
+        },
+        {
+          "type": "minecraft:smelting",
+          "inputs": [
+            {
+              "type": "item",
+              "value": "createfood:raw_dark_chocolate_berry_pie"
+            }
+          ],
+          "output": "dark_chocolate_berry_pie",
+          "experience": 0.35,
+          "cookingtime": 200
+        },
+        {
+          "type": "minecraft:smoking",
+          "inputs": [
+            {
+              "type": "item",
+              "value": "createfood:raw_dark_chocolate_berry_pie"
+            }
+          ],
+          "output": "dark_chocolate_berry_pie",
+          "experience": 0.35,
+          "cookingtime": 100
+        },
+        {
+          "type": "minecraft:campfire_cooking",
+          "inputs": [
+            {
+              "type": "item",
+              "value": "createfood:raw_dark_chocolate_berry_pie"
+            }
+          ],
+          "output": "dark_chocolate_berry_pie",
+          "experience": 0.35,
+          "cookingtime": 600
+        }
+      ]
+    },
+    {
+      "id": "white_chocolate_berry_pie_filling",
+      "displayName": "White Chocolate Berry Pie Filling",
+      "type": "fluid",
+      "fluidFlowSlope": 3,
+      "fluidFlowDecrease": 2,
+      "recipes": [
+        {
+          "type": "create:mixing_heated",
+          "inputs": [
+            {
+              "type": "fluid_tag",
+              "value": "white_chocolate|250"
+            },
+            {
+              "type": "fluid_tag",
+              "value": "berry_jam|250"
+            },
+            {
+              "type": "tag",
+              "value": "c:sugar"
+            },
+            {
+              "type": "tag",
+              "value": "c:butter"
+            }
+          ],
+          "output": "white_chocolate_berry_pie_filling",
+          "fluidOutput": true,
+          "fluidAmount": 1000
+        },
+        {
+          "type": "farmersdelight:cooking",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:butter"
+            },
+            {
+              "type": "tag",
+              "value": "c:sugar"
+            },
+            {
+              "type": "tag",
+              "value": "c:sugar"
+            },
+            {
+              "type": "item",
+              "value": "minecraft:sweet_berries"
+            },
+            {
+              "type": "item",
+              "value": "minecraft:sweet_berries"
+            },
+            {
+              "type": "item",
+              "value": "minecraft:sweet_berries"
+            },
+            {
+              "type": "tag",
+              "value": "c:white_chocolate"
+            }
+          ],
+          "output": "white_chocolate_berry_pie_filling_bucket",
+          "experience": 0.35
+        }
+      ]
+    },
+    {
+      "id": "white_chocolate_berry_pie",
+      "displayName": "White Chocolate Berry Pie",
+      "type": "block_pie",
+      "tooltips": [],
+      "sliceNutrition": 5,
+      "sliceSaturation": 0.8,
+      "sliceEffects": [
+        {
+          "effect": "comfort",
+          "duration": 1200
+        }
+      ],
+      "recipes": [
+        {
+          "type": "create:filling",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:raw_pie_crust"
+            },
+            {
+              "type": "fluid_tag",
+              "value": "white_chocolate_berry_pie_filling|1000"
+            }
+          ],
+          "output": "raw_white_chocolate_berry_pie"
+        },
+        {
+          "type": "create:item_application",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:raw_pie_crust"
+            },
+            {
+              "type": "tag",
+              "value": "c:white_chocolate_berry_pie_filling_bucket"
+            }
+          ],
+          "output": "raw_white_chocolate_berry_pie"
+        },
+        {
+          "type": "minecraft:smelting",
+          "inputs": [
+            {
+              "type": "item",
+              "value": "createfood:raw_white_chocolate_berry_pie"
+            }
+          ],
+          "output": "white_chocolate_berry_pie",
+          "experience": 0.35,
+          "cookingtime": 200
+        },
+        {
+          "type": "minecraft:smoking",
+          "inputs": [
+            {
+              "type": "item",
+              "value": "createfood:raw_white_chocolate_berry_pie"
+            }
+          ],
+          "output": "white_chocolate_berry_pie",
+          "experience": 0.35,
+          "cookingtime": 100
+        },
+        {
+          "type": "minecraft:campfire_cooking",
+          "inputs": [
+            {
+              "type": "item",
+              "value": "createfood:raw_white_chocolate_berry_pie"
+            }
+          ],
+          "output": "white_chocolate_berry_pie",
+          "experience": 0.35,
+          "cookingtime": 600
+        }
+      ]
+    },
+    {
+      "id": "melon_cheesecake",
+      "displayName": "Melon Cheesecake",
+      "type": "block_pie",
+      "tooltips": [],
+      "sliceNutrition": 4,
+      "sliceSaturation": 0.5,
+      "sliceEffects": [
+        {
+          "effect": "comfort",
+          "duration": 1200
+        }
+      ],
+      "recipes": [
+        {
+          "type": "minecraft:crafting_shapeless",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:raw_cheesecake"
+            },
+            {
+              "type": "item",
+              "value": "minecraft:melon_slice"
+            }
+          ],
+          "output": "raw_melon_cheesecake"
+        },
+        {
+          "type": "create:item_application",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:raw_cheesecake"
+            },
+            {
+              "type": "item",
+              "value": "minecraft:melon_slice"
+            }
+          ],
+          "output": "raw_melon_cheesecake"
+        },
+        {
+          "type": "minecraft:smelting",
+          "inputs": [
+            {
+              "type": "item",
+              "value": "createfood:raw_melon_cheesecake"
+            }
+          ],
+          "output": "melon_cheesecake",
+          "experience": 0.35,
+          "cookingtime": 200
+        },
+        {
+          "type": "minecraft:smoking",
+          "inputs": [
+            {
+              "type": "item",
+              "value": "createfood:raw_melon_cheesecake"
+            }
+          ],
+          "output": "melon_cheesecake",
+          "experience": 0.35,
+          "cookingtime": 100
+        },
+        {
+          "type": "minecraft:campfire_cooking",
+          "inputs": [
+            {
+              "type": "item",
+              "value": "createfood:raw_melon_cheesecake"
+            }
+          ],
+          "output": "melon_cheesecake",
+          "experience": 0.35,
+          "cookingtime": 600
+        }
+      ]
+    },
+    {
+      "id": "apple_cream_cake_apple",
+      "displayName": "Apple Cream Cake",
+      "type": "block_cake",
+      "tooltips": [
+        "apple"
+      ],
+      "sliceId": "apple_cream_cake_slice_apple",
+      "sliceNutrition": 4,
+      "sliceSaturation": 0.7,
+      "sliceEffects": [
+        {
+          "effect": "comfort",
+          "duration": 1200
+        }
+      ],
+      "recipes": [
+        {
+          "type": "create:item_application",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:apple_cream_cake"
+            },
+            {
+              "type": "item",
+              "value": "minecraft:apple"
+            }
+          ],
+          "output": "apple_cream_cake_apple"
+        },
+        {
+          "type": "minecraft:crafting_shapeless",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:apple_cream_cake"
+            },
+            {
+              "type": "item",
+              "value": "minecraft:apple"
+            }
+          ],
+          "output": "apple_cream_cake_apple"
+        }
+      ]
+    },
+    {
+      "id": "melon_cream_cake_melon",
+      "displayName": "Melon Cream Cake",
+      "type": "block_cake",
+      "tooltips": [
+        "melon"
+      ],
+      "sliceId": "melon_cream_cake_slice_melon",
+      "sliceNutrition": 4,
+      "sliceSaturation": 0.7,
+      "sliceEffects": [
+        {
+          "effect": "comfort",
+          "duration": 1200
+        }
+      ],
+      "recipes": [
+        {
+          "type": "create:item_application",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:melon_cream_cake"
+            },
+            {
+              "type": "item",
+              "value": "minecraft:melon_slice"
+            }
+          ],
+          "output": "melon_cream_cake_melon"
+        },
+        {
+          "type": "minecraft:crafting_shapeless",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:melon_cream_cake"
+            },
+            {
+              "type": "item",
+              "value": "minecraft:melon_slice"
+            }
+          ],
+          "output": "melon_cream_cake_melon"
+        }
+      ]
+    },
+    {
+      "id": "buttered_pumpernickel_toast",
+      "displayName": "Toast",
+      "type": "fastFood",
+      "nutrition": 4,
+      "saturation": 0.6,
+      "tooltips": [
+        "butter"
+      ],
+      "effects": [],
+      "recipes": [
+        {
+          "type": "create:deploying",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:pumpernickel_bread_slice"
+            },
+            {
+              "type": "tag",
+              "value": "c:butter"
+            }
+          ],
+          "output": "buttered_pumpernickel_toast"
+        },
+        {
+          "type": "minecraft:crafting_shapeless",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:pumpernickel_bread_slice"
+            },
+            {
+              "type": "tag",
+              "value": "c:butter"
+            }
+          ],
+          "output": "buttered_pumpernickel_toast"
+        }
+      ]
+    },
+    {
+      "id": "butterscotch_pumpernickel_toast",
+      "displayName": "Toast",
+      "type": "fastFood",
+      "nutrition": 4,
+      "saturation": 0.9,
+      "tooltips": [
+        "butterscotch"
+      ],
+      "effects": [
+        {
+          "effect": "comfort",
+          "duration": 300
+        }
+      ],
+      "recipes": [
+        {
+          "type": "create:filling",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:buttered_pumpernickel_toast"
+            },
+            {
+              "type": "fluid_tag",
+              "value": "butterscotch|125"
+            }
+          ],
+          "output": "butterscotch_pumpernickel_toast"
+        },
+        {
+          "type": "create:deploying",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:buttered_pumpernickel_toast"
+            },
+            {
+              "type": "tag",
+              "value": "c:butterscotch"
+            }
+          ],
+          "output": "butterscotch_pumpernickel_toast"
+        },
+        {
+          "type": "minecraft:crafting_shapeless",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:buttered_pumpernickel_toast"
+            },
+            {
+              "type": "tag",
+              "value": "c:butterscotch"
+            }
+          ],
+          "output": "butterscotch_pumpernickel_toast"
+        }
+      ]
+    },
+    {
+      "id": "caramel_pumpernickel_toast",
+      "displayName": "Toast",
+      "type": "fastFood",
+      "nutrition": 4,
+      "saturation": 0.8,
+      "tooltips": [
+        "caramel"
+      ],
+      "effects": [
+        {
+          "effect": "comfort",
+          "duration": 300
+        }
+      ],
+      "recipes": [
+        {
+          "type": "create:filling",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:buttered_pumpernickel_toast"
+            },
+            {
+              "type": "fluid_tag",
+              "value": "caramel|125"
+            }
+          ],
+          "output": "caramel_pumpernickel_toast"
+        },
+        {
+          "type": "create:deploying",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:buttered_pumpernickel_toast"
+            },
+            {
+              "type": "tag",
+              "value": "c:caramel"
+            }
+          ],
+          "output": "caramel_pumpernickel_toast"
+        },
+        {
+          "type": "minecraft:crafting_shapeless",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:buttered_pumpernickel_toast"
+            },
+            {
+              "type": "tag",
+              "value": "c:caramel"
+            }
+          ],
+          "output": "caramel_pumpernickel_toast"
+        }
+      ]
+    },
+    {
+      "id": "toffee_pumpernickel_toast",
+      "displayName": "Toast",
+      "type": "fastFood",
+      "nutrition": 4,
+      "saturation": 0.9,
+      "tooltips": [
+        "toffee"
+      ],
+      "effects": [
+        {
+          "effect": "comfort",
+          "duration": 300
+        }
+      ],
+      "recipes": [
+        {
+          "type": "create:filling",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:buttered_pumpernickel_toast"
+            },
+            {
+              "type": "fluid_tag",
+              "value": "toffee|125"
+            }
+          ],
+          "output": "toffee_pumpernickel_toast"
+        },
+        {
+          "type": "create:deploying",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:buttered_pumpernickel_toast"
+            },
+            {
+              "type": "tag",
+              "value": "c:toffee"
+            }
+          ],
+          "output": "toffee_pumpernickel_toast"
+        },
+        {
+          "type": "minecraft:crafting_shapeless",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:buttered_pumpernickel_toast"
+            },
+            {
+              "type": "tag",
+              "value": "c:toffee"
+            }
+          ],
+          "output": "toffee_pumpernickel_toast"
+        }
+      ]
+    },
+    {
+      "id": "honeyed_pumpernickel_toast",
+      "displayName": "Toast",
+      "type": "fastFood",
+      "nutrition": 5,
+      "saturation": 0.8,
+      "tooltips": [
+        "honey"
+      ],
+      "effects": [
+        {
+          "effect": "Regeneration",
+          "duration": 300
+        }
+      ],
+      "recipes": [
+        {
+          "type": "create:filling",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:buttered_pumpernickel_toast"
+            },
+            {
+              "type": "fluid_tag",
+              "value": "honey|125"
+            }
+          ],
+          "output": "honeyed_pumpernickel_toast"
+        },
+        {
+          "type": "create:deploying",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:buttered_pumpernickel_toast"
+            },
+            {
+              "type": "item",
+              "value": "minecraft:honey_bottle"
+            }
+          ],
+          "output": "honeyed_pumpernickel_toast"
+        },
+        {
+          "type": "minecraft:crafting_shapeless",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:buttered_pumpernickel_toast"
+            },
+            {
+              "type": "item",
+              "value": "minecraft:honey_bottle"
+            }
+          ],
+          "output": "honeyed_pumpernickel_toast"
+        }
+      ]
+    },
+    {
+      "id": "chocolate_pumpernickel_toast",
+      "displayName": "Toast",
+      "type": "fastFood",
+      "nutrition": 5,
+      "saturation": 0.6,
+      "tooltips": [
+        "chocolate"
+      ],
+      "effects": [
+        {
+          "effect": "comfort",
+          "duration": 300
+        }
+      ],
+      "recipes": [
+        {
+          "type": "create:filling",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:buttered_pumpernickel_toast"
+            },
+            {
+              "type": "fluid_tag",
+              "value": "chocolate|125"
+            }
+          ],
+          "output": "chocolate_pumpernickel_toast"
+        },
+        {
+          "type": "create:deploying",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:buttered_pumpernickel_toast"
+            },
+            {
+              "type": "tag",
+              "value": "c:chocolate"
+            }
+          ],
+          "output": "chocolate_pumpernickel_toast"
+        },
+        {
+          "type": "minecraft:crafting_shapeless",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:buttered_pumpernickel_toast"
+            },
+            {
+              "type": "tag",
+              "value": "c:chocolate"
+            }
+          ],
+          "output": "chocolate_pumpernickel_toast"
+        }
+      ]
+    },
+    {
+      "id": "dark_chocolate_pumpernickel_toast",
+      "displayName": "Toast",
+      "type": "fastFood",
+      "nutrition": 6,
+      "saturation": 0.5,
+      "tooltips": [
+        "dark_chocolate"
+      ],
+      "effects": [
+        {
+          "effect": "comfort",
+          "duration": 300
+        }
+      ],
+      "recipes": [
+        {
+          "type": "create:filling",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:buttered_pumpernickel_toast"
+            },
+            {
+              "type": "fluid_tag",
+              "value": "dark_chocolate|125"
+            }
+          ],
+          "output": "dark_chocolate_pumpernickel_toast"
+        },
+        {
+          "type": "create:deploying",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:buttered_pumpernickel_toast"
+            },
+            {
+              "type": "tag",
+              "value": "c:dark_chocolate"
+            }
+          ],
+          "output": "dark_chocolate_pumpernickel_toast"
+        },
+        {
+          "type": "minecraft:crafting_shapeless",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:buttered_pumpernickel_toast"
+            },
+            {
+              "type": "tag",
+              "value": "c:dark_chocolate"
+            }
+          ],
+          "output": "dark_chocolate_pumpernickel_toast"
+        }
+      ]
+    },
+    {
+      "id": "white_chocolate_pumpernickel_toast",
+      "displayName": "Toast",
+      "type": "fastFood",
+      "nutrition": 4,
+      "saturation": 0.7,
+      "tooltips": [
+        "white_chocolate"
+      ],
+      "effects": [
+        {
+          "effect": "comfort",
+          "duration": 300
+        }
+      ],
+      "recipes": [
+        {
+          "type": "create:filling",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:buttered_pumpernickel_toast"
+            },
+            {
+              "type": "fluid_tag",
+              "value": "white_chocolate|125"
+            }
+          ],
+          "output": "white_chocolate_pumpernickel_toast"
+        },
+        {
+          "type": "create:deploying",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:buttered_pumpernickel_toast"
+            },
+            {
+              "type": "tag",
+              "value": "c:white_chocolate"
+            }
+          ],
+          "output": "white_chocolate_pumpernickel_toast"
+        },
+        {
+          "type": "minecraft:crafting_shapeless",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:buttered_pumpernickel_toast"
+            },
+            {
+              "type": "tag",
+              "value": "c:white_chocolate"
+            }
+          ],
+          "output": "white_chocolate_pumpernickel_toast"
+        }
+      ]
+    },
+    {
+      "id": "french_toast_slice",
+      "displayName": "French Toast",
+      "type": "fastFood",
+      "nutrition": 5,
+      "saturation": 0.9,
+      "tooltips": [],
+      "effects": [],
+      "recipes": [
+        {
+          "type": "farmersdelight:cooking",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:bread_slice"
+            },
+            {
+              "type": "item",
+              "value": "minecraft:egg"
+            },
+            {
+              "type": "tag",
+              "value": "c:milk_bottle"
+            }
+          ],
+          "output": "french_toast_slice",
+          "experience": 0.2
+        }
+      ]
+    },
+    {
+      "id": "french_toast_slice_sugar",
+      "displayName": "French Toast",
+      "type": "fastFood",
+      "nutrition": 5,
+      "saturation": 1.0,
+      "tooltips": [
+        "sugar"
+      ],
+      "effects": [
+        {
+          "effect": "comfort",
+          "duration": 300
+        }
+      ],
+      "recipes": [
+        {
+          "type": "create:deploying",
+          "inputs": [
+            {
+              "type": "item",
+              "value": "createfood:french_toast_slice"
+            },
+            {
+              "type": "tag",
+              "value": "c:powdered_sugar"
+            }
+          ],
+          "output": "french_toast_slice_sugar"
+        },
+        {
+          "type": "minecraft:crafting_shapeless",
+          "inputs": [
+            {
+              "type": "item",
+              "value": "createfood:french_toast_slice"
+            },
+            {
+              "type": "tag",
+              "value": "c:powdered_sugar"
+            }
+          ],
+          "output": "french_toast_slice_sugar"
+        },
+        {
+          "type": "minecraft:crafting_shaped",
+          "pattern": [
+            "X  ",
+            "Y  ",
+            "   "
+          ],
+          "keys": {
+            "X": {
+              "type": "tag",
+              "value": "c:powdered_sugar"
+            },
+            "Y": {
+              "type": "item",
+              "value": "createfood:french_toast_slice"
+            }
+          },
+          "output": "french_toast_slice_sugar"
+        }
+      ]
+    },
+    {
+      "id": "french_toast_slice_apple_jam",
+      "displayName": "French Toast",
+      "type": "fastFood",
+      "nutrition": 6,
+      "saturation": 1.0,
+      "tooltips": [
+        "apple_jam"
+      ],
+      "effects": [
+        {
+          "effect": "comfort",
+          "duration": 300
+        }
+      ],
+      "recipes": [
+        {
+          "type": "create:filling",
+          "inputs": [
+            {
+              "type": "item",
+              "value": "createfood:french_toast_slice"
+            },
+            {
+              "type": "fluid_tag",
+              "value": "apple_jam|125"
+            }
+          ],
+          "output": "french_toast_slice_apple_jam"
+        },
+        {
+          "type": "minecraft:crafting_shapeless",
+          "inputs": [
+            {
+              "type": "item",
+              "value": "createfood:french_toast_slice"
+            },
+            {
+              "type": "tag",
+              "value": "c:apple_jam_bottle"
+            }
+          ],
+          "output": "french_toast_slice_apple_jam"
+        },
+        {
+          "type": "minecraft:crafting_shaped",
+          "pattern": [
+            "X  ",
+            "Y  ",
+            "   "
+          ],
+          "keys": {
+            "X": {
+              "type": "tag",
+              "value": "c:apple_jam_bottle"
+            },
+            "Y": {
+              "type": "item",
+              "value": "createfood:french_toast_slice"
+            }
+          },
+          "output": "french_toast_slice_apple_jam"
+        }
+      ]
+    },
+    {
+      "id": "french_toast_slice_berry_jam",
+      "displayName": "French Toast",
+      "type": "fastFood",
+      "nutrition": 6,
+      "saturation": 1.0,
+      "tooltips": [
+        "berry_jam"
+      ],
+      "effects": [
+        {
+          "effect": "comfort",
+          "duration": 300
+        }
+      ],
+      "recipes": [
+        {
+          "type": "create:filling",
+          "inputs": [
+            {
+              "type": "item",
+              "value": "createfood:french_toast_slice"
+            },
+            {
+              "type": "fluid_tag",
+              "value": "berry_jam|125"
+            }
+          ],
+          "output": "french_toast_slice_berry_jam"
+        },
+        {
+          "type": "minecraft:crafting_shapeless",
+          "inputs": [
+            {
+              "type": "item",
+              "value": "createfood:french_toast_slice"
+            },
+            {
+              "type": "tag",
+              "value": "c:berry_jam_bottle"
+            }
+          ],
+          "output": "french_toast_slice_berry_jam"
+        },
+        {
+          "type": "minecraft:crafting_shaped",
+          "pattern": [
+            "X  ",
+            "Y  ",
+            "   "
+          ],
+          "keys": {
+            "X": {
+              "type": "tag",
+              "value": "c:berry_jam_bottle"
+            },
+            "Y": {
+              "type": "item",
+              "value": "createfood:french_toast_slice"
+            }
+          },
+          "output": "french_toast_slice_berry_jam"
+        }
+      ]
+    },
+    {
+      "id": "french_toast_slice_glow_berry_jam",
+      "displayName": "French Toast",
+      "type": "fastFood",
+      "nutrition": 6,
+      "saturation": 1.1,
+      "tooltips": [
+        "glow_berry_jam"
+      ],
+      "effects": [
+        {
+          "effect": "comfort",
+          "duration": 300
+        },
+        {
+          "effect": "Night Vision",
+          "duration": 100
+        }
+      ],
+      "recipes": [
+        {
+          "type": "create:filling",
+          "inputs": [
+            {
+              "type": "item",
+              "value": "createfood:french_toast_slice"
+            },
+            {
+              "type": "fluid_tag",
+              "value": "glow_berry_jam|125"
+            }
+          ],
+          "output": "french_toast_slice_glow_berry_jam"
+        },
+        {
+          "type": "minecraft:crafting_shapeless",
+          "inputs": [
+            {
+              "type": "item",
+              "value": "createfood:french_toast_slice"
+            },
+            {
+              "type": "tag",
+              "value": "c:glow_berry_jam_bottle"
+            }
+          ],
+          "output": "french_toast_slice_glow_berry_jam"
+        },
+        {
+          "type": "minecraft:crafting_shaped",
+          "pattern": [
+            "X  ",
+            "Y  ",
+            "   "
+          ],
+          "keys": {
+            "X": {
+              "type": "tag",
+              "value": "c:glow_berry_jam_bottle"
+            },
+            "Y": {
+              "type": "item",
+              "value": "createfood:french_toast_slice"
+            }
+          },
+          "output": "french_toast_slice_glow_berry_jam"
+        }
+      ]
+    },
+    {
+      "id": "french_toast_slice_chorus_fruit_jam",
+      "displayName": "French Toast",
+      "type": "fastFood",
+      "nutrition": 7,
+      "saturation": 1.0,
+      "tooltips": [
+        "chorus_fruit_jam"
+      ],
+      "effects": [
+        {
+          "effect": "comfort",
+          "duration": 300
+        }
+      ],
+      "recipes": [
+        {
+          "type": "create:filling",
+          "inputs": [
+            {
+              "type": "item",
+              "value": "createfood:french_toast_slice"
+            },
+            {
+              "type": "fluid_tag",
+              "value": "chorus_fruit_jam|125"
+            }
+          ],
+          "output": "french_toast_slice_chorus_fruit_jam"
+        },
+        {
+          "type": "minecraft:crafting_shapeless",
+          "inputs": [
+            {
+              "type": "item",
+              "value": "createfood:french_toast_slice"
+            },
+            {
+              "type": "tag",
+              "value": "c:chorus_fruit_jam_bottle"
+            }
+          ],
+          "output": "french_toast_slice_chorus_fruit_jam"
+        },
+        {
+          "type": "minecraft:crafting_shaped",
+          "pattern": [
+            "X  ",
+            "Y  ",
+            "   "
+          ],
+          "keys": {
+            "X": {
+              "type": "tag",
+              "value": "c:chorus_fruit_jam_bottle"
+            },
+            "Y": {
+              "type": "item",
+              "value": "createfood:french_toast_slice"
+            }
+          },
+          "output": "french_toast_slice_chorus_fruit_jam"
+        }
+      ]
+    },
+    {
+      "id": "french_toast_slice_melon_jam",
+      "displayName": "French Toast",
+      "type": "fastFood",
+      "nutrition": 6,
+      "saturation": 0.9,
+      "tooltips": [
+        "melon_jam"
+      ],
+      "effects": [
+        {
+          "effect": "comfort",
+          "duration": 300
+        }
+      ],
+      "recipes": [
+        {
+          "type": "create:filling",
+          "inputs": [
+            {
+              "type": "item",
+              "value": "createfood:french_toast_slice"
+            },
+            {
+              "type": "fluid_tag",
+              "value": "melon_jam|125"
+            }
+          ],
+          "output": "french_toast_slice_melon_jam"
+        },
+        {
+          "type": "minecraft:crafting_shapeless",
+          "inputs": [
+            {
+              "type": "item",
+              "value": "createfood:french_toast_slice"
+            },
+            {
+              "type": "tag",
+              "value": "c:melon_jam_bottle"
+            }
+          ],
+          "output": "french_toast_slice_melon_jam"
+        },
+        {
+          "type": "minecraft:crafting_shaped",
+          "pattern": [
+            "X  ",
+            "Y  ",
+            "   "
+          ],
+          "keys": {
+            "X": {
+              "type": "tag",
+              "value": "c:melon_jam_bottle"
+            },
+            "Y": {
+              "type": "item",
+              "value": "createfood:french_toast_slice"
+            }
+          },
+          "output": "french_toast_slice_melon_jam"
+        }
+      ]
+    },
+    {
+      "id": "french_toast_slice_syrup",
+      "displayName": "French Toast",
+      "type": "fastFood",
+      "nutrition": 6,
+      "saturation": 1.2,
+      "tooltips": [
+        "cane_syrup"
+      ],
+      "effects": [
+        {
+          "effect": "comfort",
+          "duration": 300
+        }
+      ],
+      "recipes": [
+        {
+          "type": "create:filling",
+          "inputs": [
+            {
+              "type": "item",
+              "value": "createfood:french_toast_slice"
+            },
+            {
+              "type": "fluid_tag",
+              "value": "cane_syrup|125"
+            }
+          ],
+          "output": "french_toast_slice_syrup"
+        },
+        {
+          "type": "minecraft:crafting_shapeless",
+          "inputs": [
+            {
+              "type": "item",
+              "value": "createfood:french_toast_slice"
+            },
+            {
+              "type": "tag",
+              "value": "c:cane_syrup_bucket"
+            }
+          ],
+          "output": "french_toast_slice_syrup"
+        },
+        {
+          "type": "minecraft:crafting_shaped",
+          "pattern": [
+            "X  ",
+            "Y  ",
+            "   "
+          ],
+          "keys": {
+            "X": {
+              "type": "tag",
+              "value": "c:cane_syrup_bucket"
+            },
+            "Y": {
+              "type": "item",
+              "value": "createfood:french_toast_slice"
+            }
+          },
+          "output": "french_toast_slice_syrup"
+        }
+      ]
+    },
+    {
+      "id": "apple_cream_sweet_roll_apple",
+      "displayName": "Sweet Roll",
+      "type": "fastFood",
+      "nutrition": 5,
+      "saturation": 0.8,
+      "tooltips": [
+        "apple"
+      ],
+      "effects": [
+        {
+          "effect": "comfort",
+          "duration": 1200
+        }
+      ],
+      "recipes": [
+        {
+          "type": "create:deploying",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:apple_cream_sweet_roll"
+            },
+            {
+              "type": "item",
+              "value": "minecraft:apple"
+            }
+          ],
+          "output": "apple_cream_sweet_roll_apple"
+        },
+        {
+          "type": "minecraft:crafting_shapeless",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:apple_cream_sweet_roll"
+            },
+            {
+              "type": "item",
+              "value": "minecraft:apple"
+            }
+          ],
+          "output": "apple_cream_sweet_roll_apple"
+        }
+      ]
+    },
+    {
+      "id": "apple_cream_chocolate_sweet_roll_apple",
+      "displayName": "Chocolate Sweet Roll",
+      "type": "fastFood",
+      "nutrition": 5,
+      "saturation": 0.8,
+      "tooltips": [
+        "apple"
+      ],
+      "effects": [
+        {
+          "effect": "comfort",
+          "duration": 1200
+        }
+      ],
+      "recipes": [
+        {
+          "type": "create:deploying",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:apple_cream_chocolate_sweet_roll"
+            },
+            {
+              "type": "item",
+              "value": "minecraft:apple"
+            }
+          ],
+          "output": "apple_cream_chocolate_sweet_roll_apple"
+        },
+        {
+          "type": "minecraft:crafting_shapeless",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:apple_cream_chocolate_sweet_roll"
+            },
+            {
+              "type": "item",
+              "value": "minecraft:apple"
+            }
+          ],
+          "output": "apple_cream_chocolate_sweet_roll_apple"
+        }
+      ]
+    },
+    {
+      "id": "melon_cream_sweet_roll_melon",
+      "displayName": "Sweet Roll",
+      "type": "fastFood",
+      "nutrition": 5,
+      "saturation": 0.8,
+      "tooltips": [
+        "melon"
+      ],
+      "effects": [
+        {
+          "effect": "comfort",
+          "duration": 1200
+        }
+      ],
+      "recipes": [
+        {
+          "type": "create:deploying",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:melon_cream_sweet_roll"
+            },
+            {
+              "type": "item",
+              "value": "minecraft:melon_slice"
+            }
+          ],
+          "output": "melon_cream_sweet_roll_melon"
+        },
+        {
+          "type": "minecraft:crafting_shapeless",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:melon_cream_sweet_roll"
+            },
+            {
+              "type": "item",
+              "value": "minecraft:melon_slice"
+            }
+          ],
+          "output": "melon_cream_sweet_roll_melon"
+        }
+      ]
+    },
+    {
+      "id": "melon_cream_chocolate_sweet_roll_melon",
+      "displayName": "Chocolate Sweet Roll",
+      "type": "fastFood",
+      "nutrition": 5,
+      "saturation": 0.8,
+      "tooltips": [
+        "melon"
+      ],
+      "effects": [
+        {
+          "effect": "comfort",
+          "duration": 1200
+        }
+      ],
+      "recipes": [
+        {
+          "type": "create:deploying",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:melon_cream_chocolate_sweet_roll"
+            },
+            {
+              "type": "item",
+              "value": "minecraft:melon_slice"
+            }
+          ],
+          "output": "melon_cream_chocolate_sweet_roll_melon"
+        },
+        {
+          "type": "minecraft:crafting_shapeless",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:melon_cream_chocolate_sweet_roll"
+            },
+            {
+              "type": "item",
+              "value": "minecraft:melon_slice"
+            }
+          ],
+          "output": "melon_cream_chocolate_sweet_roll_melon"
+        }
+      ]
+    },
+    {
+      "id": "apple_cream_mini_waffle_apple",
+      "displayName": "Mini Waffle",
+      "type": "fastFood",
+      "nutrition": 4,
+      "saturation": 0.7,
+      "tooltips": [
+        "apple"
+      ],
+      "effects": [
+        {
+          "effect": "comfort",
+          "duration": 1200
+        }
+      ],
+      "recipes": [
+        {
+          "type": "create:deploying",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:apple_cream_mini_waffle"
+            },
+            {
+              "type": "item",
+              "value": "minecraft:apple"
+            }
+          ],
+          "output": "apple_cream_mini_waffle_apple"
+        },
+        {
+          "type": "minecraft:crafting_shapeless",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:apple_cream_mini_waffle"
+            },
+            {
+              "type": "item",
+              "value": "minecraft:apple"
+            }
+          ],
+          "output": "apple_cream_mini_waffle_apple"
+        },
+        {
+          "type": "minecraft:crafting_shaped",
+          "pattern": [
+            "X  ",
+            "Y  ",
+            "   "
+          ],
+          "keys": {
+            "X": {
+              "type": "item",
+              "value": "minecraft:apple"
+            },
+            "Y": {
+              "type": "tag",
+              "value": "c:apple_cream_mini_waffle"
+            }
+          },
+          "output": "apple_cream_mini_waffle_apple"
+        }
+      ]
+    },
+    {
+      "id": "melon_cream_mini_waffle_melon",
+      "displayName": "Mini Waffle",
+      "type": "fastFood",
+      "nutrition": 4,
+      "saturation": 0.7,
+      "tooltips": [
+        "melon"
+      ],
+      "effects": [
+        {
+          "effect": "comfort",
+          "duration": 1200
+        }
+      ],
+      "recipes": [
+        {
+          "type": "create:deploying",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:melon_cream_mini_waffle"
+            },
+            {
+              "type": "item",
+              "value": "minecraft:melon_slice"
+            }
+          ],
+          "output": "melon_cream_mini_waffle_melon"
+        },
+        {
+          "type": "minecraft:crafting_shapeless",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:melon_cream_mini_waffle"
+            },
+            {
+              "type": "item",
+              "value": "minecraft:melon_slice"
+            }
+          ],
+          "output": "melon_cream_mini_waffle_melon"
+        },
+        {
+          "type": "minecraft:crafting_shaped",
+          "pattern": [
+            "X  ",
+            "Y  ",
+            "   "
+          ],
+          "keys": {
+            "X": {
+              "type": "item",
+              "value": "minecraft:melon_slice"
+            },
+            "Y": {
+              "type": "tag",
+              "value": "c:melon_cream_mini_waffle"
+            }
+          },
+          "output": "melon_cream_mini_waffle_melon"
+        }
+      ]
+    },
+    {
+      "id": "butterscotch_popcorn",
+      "displayName": "Popcorn",
+      "type": "fastFood",
+      "nutrition": 3,
+      "saturation": 0.8,
+      "tooltips": [
+        "butterscotch"
+      ],
+      "effects": [
+        {
+          "effect": "comfort",
+          "duration": 300
+        }
+      ],
+      "isCompat": true,
+      "compatKey": "popcorn",
+      "recipes": [
+        {
+          "type": "create:filling",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:popcorn"
+            },
+            {
+              "type": "fluid_tag",
+              "value": "butterscotch|125"
+            }
+          ],
+          "output": "butterscotch_popcorn"
+        },
+        {
+          "type": "minecraft:crafting_shapeless",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:popcorn"
+            },
+            {
+              "type": "tag",
+              "value": "c:butterscotch"
+            }
+          ],
+          "output": "butterscotch_popcorn"
+        },
+        {
+          "type": "minecraft:crafting_shaped",
+          "pattern": [
+            "X  ",
+            "Y  ",
+            "   "
+          ],
+          "keys": {
+            "X": {
+              "type": "tag",
+              "value": "c:butterscotch"
+            },
+            "Y": {
+              "type": "tag",
+              "value": "c:popcorn"
+            }
+          },
+          "output": "butterscotch_popcorn"
+        }
+      ]
+    },
+    {
+      "id": "toffee_popcorn",
+      "displayName": "Popcorn",
+      "type": "fastFood",
+      "nutrition": 3,
+      "saturation": 0.7,
+      "tooltips": [
+        "toffee"
+      ],
+      "effects": [
+        {
+          "effect": "comfort",
+          "duration": 300
+        }
+      ],
+      "isCompat": true,
+      "compatKey": "popcorn",
+      "recipes": [
+        {
+          "type": "create:filling",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:popcorn"
+            },
+            {
+              "type": "fluid_tag",
+              "value": "toffee|125"
+            }
+          ],
+          "output": "toffee_popcorn"
+        },
+        {
+          "type": "minecraft:crafting_shapeless",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:popcorn"
+            },
+            {
+              "type": "tag",
+              "value": "c:toffee"
+            }
+          ],
+          "output": "toffee_popcorn"
+        },
+        {
+          "type": "minecraft:crafting_shaped",
+          "pattern": [
+            "X  ",
+            "Y  ",
+            "   "
+          ],
+          "keys": {
+            "X": {
+              "type": "tag",
+              "value": "c:toffee"
+            },
+            "Y": {
+              "type": "tag",
+              "value": "c:popcorn"
+            }
+          },
+          "output": "toffee_popcorn"
+        }
+      ]
+    }
+  ]
+}

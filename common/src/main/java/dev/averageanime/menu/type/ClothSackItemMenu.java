@@ -22,9 +22,6 @@ public abstract class ClothSackItemMenu extends AbstractContainerMenu {
     protected final int slotIndex;
     protected final IStorageItemHandler handler;
 
-    /**
-     * @param handler  Platform-specific inventory created by the subclass constructor and passed up.
-     */
     protected ClothSackItemMenu(MenuType<?> type, int id,
                                 Inventory playerInventory, int slotIndex,
                                 IStorageItemHandler handler) {
@@ -37,20 +34,10 @@ public abstract class ClothSackItemMenu extends AbstractContainerMenu {
         addPlayerSlots(playerInventory);
     }
 
-    /** Platform subclass adds the 4 food inventory slots. */
     protected abstract void addInventorySlots();
 
-    /**
-     * Returns the block entity type used to persist the sack's NBT on the item stack.
-     * Fabric returns {@code ModBlockEntities.CLOTH_SACK};
-     * NeoForge returns {@code ModBlockEntities.CLOTH_SACK.get()}.
-     */
     protected abstract BlockEntityType<?> getBlockEntityType();
 
-    /**
-     * Returns true if the item in the player's hand-slot is still a valid cloth sack.
-     * Platform subclass checks against its own {@code ClothSackItem} class.
-     */
     protected abstract boolean isValidStorageItem(ItemStack stack);
 
     private void loadFromNBT(ItemStack sackItem, Player player) {

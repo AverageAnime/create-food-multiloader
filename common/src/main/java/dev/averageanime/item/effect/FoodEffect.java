@@ -29,7 +29,7 @@ public final class FoodEffect {
                     BuiltInRegistries.MOB_EFFECT.getHolder(ResourceLocation.parse(c.effectId()));
             if (holder.isPresent()) {
                 this.resolved = holder.get();
-                resolveAttempted = true;  // only cache on success; failed attempts can retry
+                resolveAttempted = true;
                 return;
             }
         }

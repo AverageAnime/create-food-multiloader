@@ -43,7 +43,7 @@ public class ModTabs {
                     .title(Component.translatable("tab.createfood.fluid"))
                     .displayItems((params, output) -> ModItems.ITEMS.getEntries().stream()
                             .filter(holder -> holder.getId().getPath().endsWith("_bucket"))
-                            .filter(holder -> ModConfig.isItemEnabled(holder.getId().getPath()))
+                            .filter(holder -> ModConfig.isFluidBucketEnabled(holder.getId().getPath()))
                             .sorted(Comparator.comparing(a -> a.getId().getPath()))
                             .forEach(holder -> output.accept(holder.get())))
                     .build());

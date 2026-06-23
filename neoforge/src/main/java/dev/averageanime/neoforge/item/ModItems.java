@@ -1,7 +1,7 @@
 package dev.averageanime.neoforge.item;
 
 import dev.averageanime.CommonClass;
-import dev.averageanime.config.ItemEffectOverride;
+import dev.averageanime.config.override.ItemEffectOverride;
 import dev.averageanime.item.ItemBuilder;
 import dev.averageanime.item.type.EffectDrink;
 import dev.averageanime.neoforge.config.ModConfig;

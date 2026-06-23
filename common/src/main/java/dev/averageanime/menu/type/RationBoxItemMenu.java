@@ -22,9 +22,6 @@ public abstract class RationBoxItemMenu extends AbstractContainerMenu {
     protected final int slotIndex;
     protected final IStorageItemHandler handler;
 
-    /**
-     * @param handler  Platform-specific inventory created by the subclass constructor and passed up.
-     */
     protected RationBoxItemMenu(MenuType<?> type, int id,
                                 Inventory playerInventory, int slotIndex,
                                 IStorageItemHandler handler) {
@@ -37,20 +34,10 @@ public abstract class RationBoxItemMenu extends AbstractContainerMenu {
         addPlayerSlots(playerInventory);
     }
 
-    /** Platform subclass adds the 5 food inventory slots. */
     protected abstract void addInventorySlots();
 
-    /**
-     * Returns the block entity type used to persist the box's NBT on the item stack.
-     * Fabric returns {@code ModBlockEntities.RATION_BOX};
-     * NeoForge returns {@code ModBlockEntities.RATION_BOX.get()}.
-     */
     protected abstract BlockEntityType<?> getBlockEntityType();
 
-    /**
-     * Returns true if the item in the player's hand-slot is still a valid ration box.
-     * Platform subclass checks against its own {@code RationBoxItem} class.
-     */
     protected abstract boolean isValidStorageItem(ItemStack stack);
 
     private void loadFromNBT(ItemStack boxItem, Player player) {

@@ -18,8 +18,6 @@ import java.util.function.Supplier;
 public final class DisplayBlockRegistry {
     private DisplayBlockRegistry() {}
 
-    // ── Enum / records ────────────────────────────────────────────────────────
-
     public enum DisplayType {
         PLATE, SMALL_PLATE, BOTTLE, BOWL, SALAD_BOWL, PLATE_FOOD
     }
@@ -47,8 +45,6 @@ public final class DisplayBlockRegistry {
         }
     }
 
-    // ── Exclusion lists ───────────────────────────────────────────────────────
-
     public static final Set<String> EXCLUDED_ITEMS = Set.of(
             "apple_slice",
             "fish_sticks",
@@ -72,8 +68,6 @@ public final class DisplayBlockRegistry {
             "apple_slice", "tropical_fish_slice", "pretzel_stick",
             "taco_shell", "donut_hole", "pie_crust", "sliced"
     );
-
-    // ── Pattern → config map ──────────────────────────────────────────────────
 
     public static final Map<String, Object> DISPLAY_CONFIGS;
 
@@ -116,6 +110,7 @@ public final class DisplayBlockRegistry {
         put(m, "hot_dark_chocolate_bottle",     DisplayType.BOTTLE, 8, true,  () -> ParticleTypes.WHITE_SMOKE);
         put(m, "hot_white_chocolate_bottle",    DisplayType.BOTTLE, 8, true,  () -> ParticleTypes.WHITE_SMOKE);
         put(m, "_jam_bottle",                   DisplayType.BOTTLE, 9, false, null);
+        put(m, "cane_syrup_bottle",             DisplayType.BOTTLE, 9, false, null);
         put(m, "taco_sauce_bottle",             DisplayType.BOTTLE, 9, false, null);
         put(m, "sugar_cane_juice_bottle",       DisplayType.BOTTLE, 9, false, null);
         put(m, "egg_whites_bottle",             DisplayType.BOTTLE, 9, false, null);
@@ -166,8 +161,6 @@ public final class DisplayBlockRegistry {
         DISPLAY_CONFIGS = Collections.unmodifiableMap(m);
     }
 
-    // ── Helpers ───────────────────────────────────────────────────────────────
-
     private static void put(Map<String, Object> m, String pattern, DisplayType type) {
         m.put(pattern, new DisplayBlockConfig(type));
     }
@@ -184,8 +177,6 @@ public final class DisplayBlockRegistry {
     private static void putMulti(Map<String, Object> m, String pattern, DisplayBlockConfig... configs) {
         m.put(pattern, new MultiDisplayConfig(configs));
     }
-
-    // ── Lookup helpers used by both platform ModDisplayBlocks ─────────────────
 
     public static List<DisplayBlockConfig> findMatchingConfigs(String itemName) {
         for (Map.Entry<String, Object> entry : DISPLAY_CONFIGS.entrySet()) {

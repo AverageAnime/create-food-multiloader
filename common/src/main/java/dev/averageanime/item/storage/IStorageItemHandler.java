@@ -5,10 +5,7 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.item.ItemStack;
 
 /**
- * Platform-agnostic view of the food storage inventory used by
- * {@link dev.averageanime.fabric.item.storage.StorageInventory} (Fabric) and
- * {@link dev.averageanime.neoforge.item.storage.StorageInventory} (NeoForge).
- *
+ * Platform-agnostic view of the food storage inventory used by Fabric and NeoForge.
  * <p>Fabric's {@code StorageInventory} satisfies most methods via its {@code SimpleContainer}
  * supertype; NeoForge's handler satisfies them via {@code ItemStackHandler} / {@code IItemHandler}.
  */

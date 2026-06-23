@@ -163,10 +163,6 @@ public class GenericDisplayPlateBlock extends BaseEntityBlock {
         return InteractionResult.PASS;
     }
 
-    /**
-     * Shift+LMB: instantly eat the displayed food item.
-     * Returns true if the eat was handled (caller should cancel the attack).
-     */
     public boolean tryEat(Player player, Level level, BlockPos pos) {
         if (!player.isShiftKeyDown()) return false;
         if (!(level.getBlockEntity(pos) instanceof GenericDisplayPlateBlockEntity be)) return false;

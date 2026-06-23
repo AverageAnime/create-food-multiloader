@@ -1108,7 +1108,7 @@
   "item.createfood.butter": "Beurre",
   "item.createfood.butter_dough": "Pâte au beurre",
   "item.createfood.butter_dough_small": "Pâte au beurre (Small)",
-  "item.createfood.buttered_toast": "Toast",
+  "item.createfood.toast_butter": "Toast",
   "item.createfood.butterscotch": "Caramel au beurre",
   "item.createfood.butterscotch_apple": "Pomme",
   "item.createfood.butterscotch_apple_slice": "Tranche de pomme",
@@ -2220,5 +2220,18 @@
   "tooltip.createfood.ube_cream_frosting_ingredient": " + Glaçage crème ube",
   "tooltip.createfood.warped_fungus_ingredient": " + Champignon déformé",
   "tooltip.createfood.white_chocolate_chips_ingredient": " + Pépites de chocolat blanc",
-  "tooltip.createfood.white_chocolate_ingredient": " + Chocolat blanc"
+  "tooltip.createfood.white_chocolate_ingredient": " + Chocolat blanc",
+  "createfood.configuration.campfire_cooking": "Cuisson au feu de camp",
+  "createfood.configuration.campfire_cooking.tooltip": "Ajuster les paramètres de cuisson au feu de camp.",
+  "createfood.configuration.campfire_cooking_exclude": "Exclure",
+  "createfood.configuration.campfire_cooking_exclude.tooltip": "Bloquer certains objets de la cuisson au feu de camp. Prioritaire sur le filtre et sticks_only. Effet immédiat.",
+  "createfood.configuration.campfire_cooking_filter": "Filtre",
+  "createfood.configuration.campfire_cooking_filter.tooltip": "Liste d'autorisation pour la cuisson au feu de camp. Si non vide, seuls les objets correspondants peuvent être cuisinés. Fonctionne avec sticks_only lorsque les deux sont définis. Effet immédiat.",
+  "createfood.configuration.enable_campfire_cooking": "Activer la cuisson au feu de camp",
+  "createfood.configuration.enable_campfire_cooking.tooltip": "Si activé, les joueurs peuvent cuire des recettes de feu de camp en tenant l'ingrédient près d'un bloc farmersdelight:heat_sources. Effet immédiat.",
+  "createfood.configuration.sticks_only": "Bâtonnets uniquement",
+  "createfood.configuration.sticks_only.tooltip": "Si activé, seules les recettes de feu de camp dont l'ID de résultat se termine par '_stick' sont éligibles. Les listes d'exclusion et de filtre s'appliquent toujours. Effet immédiat.",
+  "createfood.effect.chance": ", %s%% de chance",
+  "createfood.configuration.campfire_cooking.require_shift": "Nécessiter Shift",
+  "createfood.configuration.campfire_cooking.require_shift.tooltip": "Nécessite de maintenir [Shift] pour que la cuisson au feu de camp progresse. Effet immédiat."
 }

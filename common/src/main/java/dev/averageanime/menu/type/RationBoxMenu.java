@@ -26,7 +26,6 @@ public abstract class RationBoxMenu extends AbstractContainerMenu {
         addPlayerSlots(playerInventory);
     }
 
-    /** Platform subclass adds the 5 food inventory slots. */
     protected abstract void addInventorySlots();
 
     protected void addPlayerSlots(Inventory playerInventory) {

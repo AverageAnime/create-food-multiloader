@@ -13,8 +13,6 @@ public final class Block {
     private static final Map<String, Block> BY_ID    = new HashMap<>();
     public  static final List<Block>        ALL      = Collections.unmodifiableList(REGISTRY);
 
-    // ── Definition data ──────────────────────────────────────────────────────
-
     public final String        id;
     public final BlockCategory category;
     /**
@@ -29,8 +27,6 @@ public final class Block {
      * Applied by NeoForge registration only; Fabric block-item registration does not support this field.
      */
     public final @Nullable Tooltips.Tip tip;
-
-    // ── Registered accessor ──────────────────────────────────────────────────
 
     private Supplier<net.minecraft.world.level.block.Block> registered;
 
@@ -61,8 +57,6 @@ public final class Block {
         BY_ID.put(def.id, def);
         return def;
     }
-
-    // ── Factory methods ──────────────────────────────────────────────────────
 
     public static Block cake(String id, String sliceItemId) {
         return register(new Block(id, BlockCategory.CAKE, sliceItemId, null));

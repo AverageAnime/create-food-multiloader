@@ -120,6 +120,7 @@ Array of effect objects. Each has:
 | `effect` | See effect names below |
 | `duration` | `300`, `600`, `1200`, `3600`, or `6000` (ticks) |
 | `amplifier` | `0`, `1`, `2` — omit for level I (default 0) |
+| `chance` | `0.0`–`1.0` — probability the effect applies on eat. Default `1.0` (always applies). |
 
 **Valid effect names:**
 
@@ -199,7 +200,7 @@ Array of effect objects. Each has:
 ```
 
 ### `isCompat` and `compatKey`
-Set `"isCompat": true` when the item requires a compat mod to be present (e.g. popcorn items). `compatKey` is the config key used. This generates a `ModConfig.java` entry.
+Set `"isCompat": true` when the item requires a compat mod to be present (e.g. popcorn items). `compatKey` is the config key used. This generates a `ConfigDefaults.java` entry to add the item to `HIDE_ITEMS_DEFAULT`.
 
 ```json
 "isCompat": true,
@@ -341,6 +342,7 @@ All valid recipe types:
 | `create:compacting_heated` | Mechanical press with heat |
 | `create:compacting` | Mechanical press, no heat |
 | `create:deploying` | Deployer applies item to item |
+| `create:item_application` | Deployer applies item onto stationary target, returns result + optional applicator |
 | `create:emptying` | Extracts fluid from container |
 | `create:filling` | Fills container with fluid |
 | `create:milling` | Millstone grinds to powder |
@@ -385,6 +387,13 @@ Output stack size. Defaults to `1`.
 
 ```json
 "count": 4
+```
+
+### `byproductId`
+Optional. Only used by `create:item_application`. The item ID of a second result returned alongside the primary output (e.g. the applicator being given back to the player). No namespace defaults to `createfood:`.
+
+```json
+"byproductId": "piping_bag"
 ```
 
 ### `suffix`
@@ -481,7 +490,7 @@ You do not need to write recipes for these — the toolkit generates them when i
 | All `item` registrations | `ModItems.java` line, `ModDisplayBlocks.java` exclusion if needed |
 | All `block` registrations | `ModBlocks.java` line, `ModItems.java` slice line |
 | All `fluid` registrations | `ModFluids.java` line |
-| `isCompat: true` | `ModConfig.java` entry |
+| `isCompat: true` | `ConfigDefaults.java` entry (adds to `HIDE_ITEMS_DEFAULT`) |
 
 ---
 

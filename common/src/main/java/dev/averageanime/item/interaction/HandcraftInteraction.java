@@ -19,11 +19,6 @@ import java.util.Optional;
 
 public class HandcraftInteraction {
 
-    /**
-     * Attempts to handcraft using the player's main-hand + off-hand items.
-     *
-     * @return {@code true} if a craft was performed (platform caller should consume/cancel the event)
-     */
     public static boolean tryHandcraft(ServerPlayer player, Level level) {
         if (!Services.PLATFORM.isHandcraftingEnabled()) return false;
 
@@ -31,7 +26,6 @@ public class HandcraftInteraction {
         ItemStack offHand  = player.getOffhandItem();
         if (mainHand.isEmpty()) return false;
 
-        // Default to single-ingredient input; upgrade to two-slot if both hands are full.
         CraftingInput input = CraftingInput.of(1, 1, List.of(mainHand));
         Optional<RecipeHolder<CraftingRecipe>> match = Optional.empty();
 

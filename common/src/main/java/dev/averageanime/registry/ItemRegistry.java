@@ -15,16 +15,14 @@ import static dev.averageanime.util.Tooltips.tips;
 public final class ItemRegistry {
     private ItemRegistry() {}
 
-    /**
-     * Calling this static method guarantees class initialization (JLS §12.4.1).
-     * Use instead of {@code Class<?> t = ModItemDefs.class} which only loads, not initializes.
-     */
-    public static void init() { /* triggers static field initialization */ }
+    public static void init() {}
 
-    private static Effect fx(FoodEffect e, int dur)              { return Effect.of(e, dur); }
-    private static Effect fx(FoodEffect e, int dur, int amp)     { return Effect.of(e, dur, amp); }
-    private static Effect fx(Holder<MobEffect> e, int dur)       { return Effect.ofRaw(e, dur); }
-    private static Effect fx(Holder<MobEffect> e, int dur, int amp) { return Effect.ofRaw(e, dur, amp); }
+    private static Effect fx(FoodEffect e, int dur)                           { return Effect.of(e, dur); }
+    private static Effect fx(FoodEffect e, int dur, int amp)                  { return Effect.of(e, dur, amp); }
+    private static Effect fx(FoodEffect e, int dur, int amp, float chance)    { return Effect.of(e, dur, amp, chance); }
+    private static Effect fx(Holder<MobEffect> e, int dur)                    { return Effect.ofRaw(e, dur); }
+    private static Effect fx(Holder<MobEffect> e, int dur, int amp)           { return Effect.ofRaw(e, dur, amp); }
+    private static Effect fx(Holder<MobEffect> e, int dur, int amp, float chance) { return Effect.ofRaw(e, dur, amp, chance); }
 
     public static final Item PIPING_BAG                    = plain("piping_bag");
     public static final Item CLOTH_FILTER                  = plain("cloth_filter");
@@ -191,7 +189,7 @@ public final class ItemRegistry {
     public static final Item BROWN_SUGAR                         = plain("brown_sugar");
     public static final Item BUN                                 = fastFood("bun", 2, 0.5f);
     public static final Item BUTTER                              = plain("butter");
-    public static final Item BUTTERED_TOAST                      = food("buttered_toast", 2, 1.2f, tips(null, "butter_ingredient"));
+    public static final Item TOAST_BUTTER                        = food("toast_butter", 2, 1.2f, tips(null, "butter_ingredient"));
     public static final Item BUTTERSCOTCH                        = fastFood("butterscotch", 1, 1.0f);
     public static final Item BUTTERSCOTCH_APPLE                  = food("butterscotch_apple", 8, 0.8f, tips(null, "butterscotch_ingredient"), fx(COMFORT, 3600));
     public static final Item BUTTERSCOTCH_APPLE_SLICE            = fastFood("butterscotch_apple_slice", 4, 0.5f, tips(null, "butterscotch_ingredient"), fx(COMFORT, 1200), fx(MobEffects.DAMAGE_BOOST, 600), fx(ANIMAL_CHARM, 1200));
