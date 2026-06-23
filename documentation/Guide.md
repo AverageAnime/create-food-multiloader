@@ -47,6 +47,7 @@ Consult Design §4.
 - Complete protein-rich meal? → Nourishment (pick duration tier)
 - Contains kelp, glow berry, crimson/warped fungus, or honey? → Add ingredient-specific effect
 - Secondary vanilla effect only if 5+ ingredients or strong thematic reason
+- Effect not guaranteed? → Pass a chance float (0.0–1.0) as the 4th argument to `fx()`. It is displayed as a percentage in the item tooltip.
 
 > **Toolkit:** Effects section in the Item tab. Add any number of effects (confirmation warning appears for 3+). For blocks, effects are on the slice item (Properties/Effects sections). The toolkit generates `fx(Effect, duration)` calls in the helper output.
 
@@ -127,21 +128,18 @@ Consult Design §8.
 *  plainCr(id, remainder)
 *  plainCr(id, remainder, compatKey, fullTipKeys...)
 *  ingredientBottle(id)     DrinkableItem, stack 16, glass bottle remainder
-*  ingredientBottleItem(id) Item, glass bottle remainder
-*  ingredientBowlItem(id)   Item, stack 16, bowl remainder
+*  ingredientBowl(id)       Item, stack 16, bowl remainder
 *  pipingBag(id)            Item, stack 2, PIPING_BAG remainder
 *  pipingBag(id, compatKey, fullTipKeys...)
 *
 *  ── Food (trailing args = any mix of Tip and Fx in any order) ────────────
 *  food(id, nut, sat, args...)          Item, stack 64
 *  fastFood(id, nut, sat, args...)      Item, stack 64, fast eat
-*  consumable(id, nut, sat, args...)    ConsumableItem, stack 64
-*  consumableFast(id, nut, sat, args...)
 *  bottle(id, nut, sat, args...)        DrinkableItem, stack 16, glass bottle
-*  bowlFood(id, nut, sat, args...)      Item, stack 16, bowl return
-*  bowlConsumable(id, nut, sat, args...)
-*  stickFood(id, nut, sat, crStick, args...)        crStick: also set craftRemainder
-*  stickConsumable(id, nut, sat, crStick, args...)
+*  bowlFood(id, nut, sat, args...)      Item, stack 16, no remainder
+*  bowlFoodCr(id, nut, sat, args...)    Item, stack 16, bowl craftRemainder
+*  stickFood(id, nut, sat, crStick, args...)    crStick: usingConvertsTo only
+*  stickFoodCr(id, nut, sat, crStick, args...)  crStick: usingConvertsTo + craftRemainder
 * </pre>
 *
 * <p>Trailing {@code args} accept {@link Tip} and {@link Fx} in any order:
@@ -149,8 +147,9 @@ Consult Design §8.
 *   <li>{@code tips("tooltip.compat.mymod", "bacon_ingredient", "cheese_ingredient")}
 *       — compat key is the full translation key; ingredient keys are SHORT
 *         (the {@code tooltip.createfood.} prefix is added automatically).
-*   <li>{@code fx(ModEffects.COMFORT, 1200)} — effect with amplifier 0.
-*   <li>{@code fx(MobEffects.WATER_BREATHING, 600, 1)} — effect with amplifier.
+*   <li>{@code fx(ModEffects.COMFORT, 1200)} — effect with amplifier 0, guaranteed.
+*   <li>{@code fx(MobEffects.WATER_BREATHING, 600, 1)} — effect with amplifier 1.
+*   <li>{@code fx(ModEffects.COMFORT, 1200, 0, 0.5f)} — 50% chance; shown in tooltip as a percentage.
 * </ul>
 *
 * <h3>Examples</h3>

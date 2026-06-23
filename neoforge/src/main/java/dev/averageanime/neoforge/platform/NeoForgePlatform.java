@@ -3,8 +3,8 @@ package dev.averageanime.neoforge.platform;
 import dev.averageanime.block.type.blockentity.ClothSackBlockEntity;
 import dev.averageanime.block.type.blockentity.GenericDisplayPlateBlockEntity;
 import dev.averageanime.block.type.blockentity.RationBoxBlockEntity;
-import dev.averageanime.config.ItemEffectOverride;
-import dev.averageanime.config.ItemNutritionOverride;
+import dev.averageanime.config.override.ItemEffectOverride;
+import dev.averageanime.config.override.ItemNutritionOverride;
 import dev.averageanime.neoforge.block.ModDisplayBlocks;
 import dev.averageanime.neoforge.config.ModConfig;
 import dev.averageanime.platform.IPlatform;
@@ -86,6 +86,12 @@ public class NeoForgePlatform implements IPlatform {
     @Override public boolean isAlwaysDisplayUpright()                        { return ModConfig.isAlwaysDisplayUpright(); }
     @Override public boolean isCuttingBoardEnabled()                         { return ModConfig.isEnableCuttingBoard(); }
     @Override public boolean isGenericDisplayAllowed(ItemStack stack)        { return ModConfig.isGenericDisplayAllowed(stack); }
+
+    @Override public boolean isCampfireCookingEnabled()                      { return ModConfig.CAMPFIRE_COOKING_ENABLED.get(); }
+    @Override public boolean isCampfireCookingRequireShift()                 { return ModConfig.CAMPFIRE_COOKING_REQUIRE_SHIFT.get(); }
+    @Override public boolean isCampfireCookingSticksOnly()                   { return ModConfig.CAMPFIRE_COOKING_STICKS_ONLY.get(); }
+    @Override public List<? extends String> getCampfireCookingExclude()      { return ModConfig.CAMPFIRE_COOKING_EXCLUDE.get(); }
+    @Override public List<? extends String> getCampfireCookingFilter()       { return ModConfig.CAMPFIRE_COOKING_FILTER.get(); }
 
     @Override
     public boolean isHandcraftingEnabled() {

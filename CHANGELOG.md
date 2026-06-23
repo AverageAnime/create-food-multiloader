@@ -1,3 +1,17 @@
+### *** 2.6.0 ***
+
+#### Changes:
+* Update compat ru_ru.json. [(#43)](https://github.com/AverageAnime/create-food-multiloader/pull/43)
+* Campfire recipes can now be crafted by holding items near blocks tagged `farmersdelight:heat_sources` while holding `Shift`. Read more here.
+* Food effects can now have a % chance to occur, which is displayed via tooltip. By default, everything has a 100% chance.
+* `RMB` with an excluded item will no longer convert an empty display plate back to a bowl.
+* You can now hide fluid buckets via fluid id (_bucket not needed).
+* `ube_cake_batter` and `ube_cream_frosting` added to default hide list.
+* Changed ID: `buttered_toast` -> `toast_butter`
+
+#### Fixes:
+* Fix cane_syrup_bottle_block outline.
+
 ### *** 2.5.0 ***
 ![newprev240](https://github.com/user-attachments/assets/c0ef7c6c-5f4a-40ae-840d-091340765f42)
 

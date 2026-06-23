@@ -8,9 +8,11 @@
 2. [Tooltips](#2-tooltips)
 3. [Cloth Filter Interactions](#3-cloth-filter-interactions)
 4. [Handcrafting](#4-handcrafting)
-5. [Crafting Remainders](#5-crafting-remainders)
-6. [Display Blocks](#6-display-blocks)
-7. [Config Files Reference](#7-config-files-reference)
+5. [Campfire Cooking](#5-campfire-cooking)
+6. [Crafting Remainders](#6-crafting-remainders)
+7. [Storage Items](#7-storage-items)
+8. [Display Blocks](#8-display-blocks)
+9. [Config Files Reference](#9-config-files-reference)
 
 ---
 
@@ -22,7 +24,7 @@
 | `Create: Food - Display` | `tab.createfood.display` | Display block items |
 | `Create: Food - Fluids` | `tab.createfood.fluid` | Fluid bucket items |
 
-Items disabled via `disable_items` are filtered out of all tabs automatically.
+Items listed in `hide_items` are filtered out of all tabs automatically.
 
 ---
 
@@ -93,7 +95,7 @@ Holding an item in main hand and a compatible item in offhand, then pressing RMB
 
 ### Filtering
 
-The `handcraft_filter` config list restricts outputs:
+The `filter` config list restricts outputs to a whitelist:
 
 | Format | Example | Matches |
 |--------|---------|---------|
@@ -101,11 +103,30 @@ The `handcraft_filter` config list restricts outputs:
 | `item:mod_id:item_id` | `item:farmersdelight:hamburger` | One specific item |
 | `tag:mod_id:tag_name` | `tag:c:foods` | Any item matching the tag |
 
+The `exclude` list uses the same format but blocks specific outputs regardless of the whitelist.
+
+Additional options: `allow_single_item` (default: `false`) enables crafting from one item alone in main hand; `enable_particles` (default: `true`) toggles particle feedback on craft.
+
 To disable: set `enable_handcrafting = false`.
 
 ---
 
-## 5. Crafting Remainders
+## 5. Campfire Cooking
+
+Holding a raw or cookable item and standing near any block tagged `farmersdelight:heat_sources` (5×4×5 radius around the player) will slowly cook it using vanilla campfire cooking recipes. Smoke particles appear during cooking; flame particles and a campfire crackle sound play on completion.
+
+By default (`sticks_only = true`) only items that produce a `*_stick` result are eligible — intended for marshmallow sticks and hot dog sticks. Set `sticks_only = false` to allow any campfire recipe.
+
+| Config | Default | Effect |
+|--------|---------|--------|
+| `enable_campfire_cooking` | `true` | Toggle manual campfire cooking |
+| `sticks_only` | `true` | Restrict to results whose ID ends in `_stick` |
+| `campfire_cooking_exclude` | *(empty)* | Blacklist specific result item IDs |
+| `campfire_cooking_filter` | *(empty)* | Whitelist of allowed result item IDs (if non-empty, only these cook) |
+
+---
+
+## 6. Crafting Remainders
 
 ### Egg Impact Remainder
 
@@ -119,7 +140,39 @@ Format: `"input_item|remainder_item"`. Default: `"minecraft:egg|createfood:eggsh
 
 ---
 
-## 6. Display Blocks
+## 7. Storage Items
+
+Two storage container items with configurable food-handling behavior.
+
+### Cloth Sack
+
+A bag item. Food storage is off by default.
+
+| Config | Default | Effect |
+|--------|---------|--------|
+| `cloth_sack_allow_food` | `false` | Allow food items to be stored in the sack |
+| `cloth_sack_eat_from_item` | `false` | Allow eating food directly from the sack |
+| `cloth_sack_inventory` | `true` | Allow the sack to be used in inventory slots |
+| `cloth_sack_stack` | `true` | Allow stacking contents |
+| `cloth_sack_exclude` | *(empty)* | Item IDs blocked from entering the sack |
+| `cloth_sack_filter` | *(empty)* | Item IDs allowed in the sack (whitelist; if non-empty, only these) |
+
+### Ration Box
+
+A box item. Food storage is on by default and direct eating is enabled.
+
+| Config | Default | Effect |
+|--------|---------|--------|
+| `ration_box_allow_food` | `true` | Allow food items to be stored in the box |
+| `ration_box_eat_from_item` | `true` | Allow eating food directly from the box |
+| `ration_box_inventory` | `true` | Allow the box to be used in inventory slots |
+| `ration_box_stack` | `false` | Allow stacking contents |
+| `ration_box_exclude` | *(empty)* | Item IDs blocked from entering the box |
+| `ration_box_filter` | *(empty)* | Item IDs allowed in the box (whitelist; if non-empty, only these) |
+
+---
+
+## 8. Display Blocks
 
 Decorative blocks. Not obtainable via recipes — placed and interacted with in world.
 
@@ -129,7 +182,11 @@ Decorative blocks. Not obtainable via recipes — placed and interacted with in 
 - **Toggle plate size:** Empty-handed, `Shift + RMB` on empty plate
 - **Add serving:** `RMB` with compatible food; `Shift + RMB` for all at once
 - **Remove serving:** `RMB` (one); `Shift + RMB` (all)
+- **Eat from plate:** `Shift + LMB` — consumes one serving directly
+- **Cutting board (offhand):** Holding a Farmer's Delight cutting board in offhand and pressing `RMB` on a plate processes the top item with cutting board recipes
 - **Break:** `LMB` — drops food block (full) or individual items + bowl (partial)
+
+When `enable_generic_plates` is `true` (the default), any item not explicitly registered can still be placed on a plate and rendered generically.
 
 ### Bottles & Bowls
 
@@ -141,45 +198,86 @@ Decorative blocks. Not obtainable via recipes — placed and interacted with in 
 
 > **Toolkit:** Most items are automatically caught by existing pattern-matching in `ModDisplayBlocks`. The toolkit checks the item ID against these patterns and informs you if new code is needed. The Display Block section in the Item tab only shows for regular items (not blocks or fluids, which are always auto-caught).
 
-Pattern-matched automatically: pizza, slice, pie, sandwich, burger, taco, burrito, wrap, cookie, cake, waffle, donut, muffin, pastry, _bowl, _bottle, salad, toast.
+Pattern-matched automatically (by display type):
+
+| Type | Patterns |
+|------|----------|
+| Plate | `pizza`, `cake`, `pie`, `burger`, `sandwich`, `toast`, `calzone`, `smore`, `waffle`, `cupcake`, `cookie`, `muffin`, `pastry`, `donut`, `bar_of`, `breakfast_bar`, `taco`, `burrito`, `wrap`, `gyro`, `cheese_block` |
+| Small Plate | `slice` (suffix); also: `kelp_roll_slice`, `meringue_cookie`, `baked_potato`, `scone` |
+| Bottle | `_juice_bottle`, `_jam_bottle`, `cane_syrup_bottle`, `chocolate_bottle`, `dark_chocolate_bottle`, `white_chocolate_bottle`, `chocolate_milk_bottle`, `fruit_smoothie_bottle`, `hot_chocolate_bottle`, `hot_dark_chocolate_bottle`, `hot_white_chocolate_bottle`, `taco_sauce_bottle`, `sugar_cane_juice_bottle`, `egg_whites_bottle`, `_bottle` (catch-all) |
+| Bowl | `ice_cream_bowl`, `soup_bowl`, `stew_bowl`, `_bowl` (catch-all) |
+| Salad Bowl | `salad` |
+
+**Skip patterns** — items containing any of these substrings are never auto-registered: `raw_`, `stick_1`, `stick_2`, `dough`, `chips`, `chocolate_berries`, `chocolate_apple`, `bread_slice`, `toast_slice`, `apple_slice`, `tropical_fish_slice`, `pretzel_stick`, `taco_shell`, `donut_hole`, `pie_crust`, `sliced`
 
 ### Excluded Items
 
-`apple_slice`, `fish_sticks`, `mozzarella_sticks`, `cookie_crumbs`, `chorus_fruit_slice`, `caramel_apple_slice`, `waffle_cone`, `meat_pie_filling`, `dumpling_wrappers`, `pumpkin_pie_block`, `graham_cracker_chocolate_marshmallow`, `graham_cracker_chocolate`, `chocolate_graham_cracker_chocolate_ice_cream`
+`apple_slice`, `fish_sticks`, `mozzarella_sticks`, `cookie_crumbs`, `chorus_fruit_slice`, `waffle_cone`, `meat_pie_filling`, `dumpling_wrappers`, `pumpkin_pie_block`, `pumpkin_pie_slice`, `graham_cracker_chocolate_marshmallow`, `graham_cracker_chocolate`, `chocolate_graham_cracker_chocolate_ice_cream`
 
 > **Toolkit:** If your item doesn't match an auto-pattern, the toolkit generates the EXCLUDED_ITEMS entry or the registerConfig call as appropriate.
 
 ---
 
-## 7. Config Files Reference
+## 9. Config Files Reference
 
 ### `createfood-client.toml`
 
 | Setting | Default | Effect |
 |---------|---------|--------|
-| `disable_items` | *(compat items)* | Hide items and disable recipes. Requires `/reload`. |
+| `hide_items` | *(compat items)* | Hide items and disable recipes. Requires `/reload`. |
 | `show_compatibility` | `true` | Show compat mod name in tooltips |
 | `show_ingredients` | `true` | Show ingredient list in tooltips |
 | `require_shift` | `false` | Only show tooltip details when Shift is held |
 | `custom_tooltips` | *(see §2)* | Add ingredient tooltips to any item. Requires game restart. |
+| `always_display_upright` | `false` | Force all display blocks to render upright regardless of placement |
+| `show_sack_block_icons` | `true` | Show content icons on placed cloth sack blocks |
+| `show_tooltip_icons` | `true` | Show icons in storage item tooltips |
 
 ### `createfood-server.toml`
+
+**Effects**
+
+| Setting | Default | Effect |
+|---------|---------|--------|
+| `category_overrides` | *(empty)* | Override which effect fires for a named category. Format: `"category_name\|mod_id:effect_id"` |
+| `item_overrides` | *(empty)* | Override or suppress effects on specific items. Format: `"item_id\|category_or_effect_id\|duration\|amplifier[\|chance]"` or `"item_id\|category_or_effect_id\|remove"` — chance is a float 0.0–1.0 |
+| `nutrition_saturation` | *(empty)* | Override nutrition and/or saturation for any item. Format: `"item_id\|nutrition\|saturation"` — use `-` to keep the built-in value |
+
+**Interactions**
 
 | Setting | Default | Effect |
 |---------|---------|--------|
 | `enable_handcrafting` | `true` | Toggle two-ingredient RMB hand crafting |
-| `handcraft_filter` | *(empty)* | Restrict hand crafting outputs |
-| `crafting_remainders` | `minecraft:egg\|createfood:eggshell` | Add remainder items to vanilla crafting recipes |
-| `enable_egg_impact_remainder` | `true` | Drop eggshell when thrown egg hits surface |
+| `allow_single_item` | `false` | Allow handcrafting with only a main-hand item |
+| `enable_particles` | `true` | Show particle effects on handcraft |
+| `filter` | *(empty)* | Whitelist hand crafting outputs (see §4 for format) |
+| `exclude` | *(empty)* | Blacklist specific hand crafting outputs |
 | `enable_filter_interactions` | `true` | Toggle cloth filter RMB interactions |
 | `filter_interactions` | *(4 default entries)* | Define filter item → result interactions |
-| `category_overrides` | *(empty)* | Override which effect fires for a named category. Format: `"category_name\|mod_id:effect_id"` |
-| `item_overrides` | *(empty)* | Override or suppress effects on specific items. Format: `"item_id\|category_or_effect_id\|duration\|amplifier"` or `"item_id\|category_or_effect_id\|remove"` |
-| `nutrition_saturation` | *(empty)* | Override nutrition and/or saturation for any item. Format: `"item_id\|nutrition\|saturation"` — use `-` to keep the built-in value |
+| `enable_campfire_cooking` | `true` | Toggle manual campfire cooking (see §5) |
+| `sticks_only` | `true` | Restrict campfire cooking to `*_stick` results |
+| `campfire_cooking_exclude` | *(empty)* | Blacklist specific campfire cooking results |
+| `campfire_cooking_filter` | *(empty)* | Whitelist campfire cooking results |
+| `enable_pumpkin_pie_placement` | `false` | Allow placing vanilla pumpkin pie as a block |
+
+**Crafting Remainders**
+
+| Setting | Default | Effect |
+|---------|---------|--------|
+| `crafting_remainders` | `minecraft:egg\|createfood:eggshell` | Add remainder items to vanilla crafting recipes |
+| `enable_egg_impact_remainder` | `true` | Drop eggshell when thrown egg hits surface |
+
+**Display**
+
+| Setting | Default | Effect |
+|---------|---------|--------|
+| `enable_cutting_board` | `true` | Allow cutting board offhand interaction on plates |
+| `enable_generic_plates` | `true` | Allow any item to display generically on plates |
+| `exclude` | *(empty)* | Item IDs blocked from generic plate placement |
 
 ---
 
-## 8. Datagen
+## 10. Datagen
 
 Item tag files (`data/c/tags/item/<id>.json`) are generated automatically by `ItemTagProvider` and item model files (`assets/createfood/models/item/<id>.json`) by `ItemModelProvider` on each datagen run. Coverage is automatic — every item in `ModItems`, every block in `ModBlocks`, and every fluid bucket in `ModFluids` is included.
 

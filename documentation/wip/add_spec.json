@@ -1,0 +1,1012 @@
+{
+  "items": [
+    {
+      "id": "rice_pudding_bowl_caramel",
+      "displayName": "Rice Pudding",
+      "type": "bowlFood",
+      "nutrition": 7,
+      "saturation": 0.8,
+      "tooltips": [
+        "caramel"
+      ],
+      "effects": [],
+      "recipes": [
+        {
+          "type": "create:deploying",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:rice_pudding_bowl"
+            },
+            {
+              "type": "tag",
+              "value": "c:caramel_bottle"
+            }
+          ],
+          "output": "rice_pudding_bowl_caramel"
+        },
+        {
+          "type": "minecraft:crafting_shapeless",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:rice_pudding_bowl"
+            },
+            {
+              "type": "tag",
+              "value": "c:caramel_bottle"
+            }
+          ],
+          "output": "rice_pudding_bowl_caramel"
+        },
+        {
+          "type": "create:filling",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:rice_pudding_bowl"
+            },
+            {
+              "type": "fluid_tag",
+              "value": "caramel|250"
+            }
+          ],
+          "output": "rice_pudding_bowl_caramel"
+        }
+      ]
+    },
+    {
+      "id": "bread_pudding_bowl_butterscotch",
+      "displayName": "Bread Pudding",
+      "type": "bowlFood",
+      "nutrition": 8,
+      "saturation": 0.85,
+      "tooltips": [
+        "butterscotch"
+      ],
+      "effects": [],
+      "recipes": [
+        {
+          "type": "create:deploying",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:bread_pudding_bowl"
+            },
+            {
+              "type": "tag",
+              "value": "c:butterscotch_bottle"
+            }
+          ],
+          "output": "bread_pudding_bowl_butterscotch"
+        },
+        {
+          "type": "minecraft:crafting_shapeless",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:bread_pudding_bowl"
+            },
+            {
+              "type": "tag",
+              "value": "c:butterscotch_bottle"
+            }
+          ],
+          "output": "bread_pudding_bowl_butterscotch"
+        },
+        {
+          "type": "create:filling",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:bread_pudding_bowl"
+            },
+            {
+              "type": "fluid_tag",
+              "value": "butterscotch|250"
+            }
+          ],
+          "output": "bread_pudding_bowl_butterscotch"
+        }
+      ]
+    },
+    {
+      "id": "mushroom_cream_soup_bowl_cheese",
+      "displayName": "Mushroom Cream Soup",
+      "type": "bowlFood",
+      "nutrition": 8,
+      "saturation": 0.7,
+      "tooltips": [
+        "cheese"
+      ],
+      "effects": [],
+      "recipes": [
+        {
+          "type": "create:deploying",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:mushroom_cream_soup_bowl"
+            },
+            {
+              "type": "tag",
+              "value": "c:cheeses"
+            }
+          ],
+          "output": "mushroom_cream_soup_bowl_cheese"
+        },
+        {
+          "type": "minecraft:crafting_shapeless",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:mushroom_cream_soup_bowl"
+            },
+            {
+              "type": "tag",
+              "value": "c:cheeses"
+            }
+          ],
+          "output": "mushroom_cream_soup_bowl_cheese"
+        },
+        {
+          "type": "create:filling",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:mushroom_cream_soup_bowl"
+            },
+            {
+              "type": "fluid_tag",
+              "value": "cheese|125"
+            }
+          ],
+          "output": "mushroom_cream_soup_bowl_cheese"
+        },
+        {
+          "type": "farmersdelight:cooking",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:mushrooms"
+            },
+            {
+              "type": "tag",
+              "value": "c:mushrooms"
+            },
+            {
+              "type": "tag",
+              "value": "c:heavy_cream_bottle"
+            },
+            {
+              "type": "tag",
+              "value": "c:butter"
+            },
+            {
+              "type": "tag",
+              "value": "c:salt"
+            },
+            {
+              "type": "tag",
+              "value": "c:cheeses"
+            }
+          ],
+          "output": "mushroom_cream_soup_bowl_cheese",
+          "experience": 0.35
+        }
+      ]
+    },
+    {
+      "id": "tomato_cream_soup_bowl_cheese",
+      "displayName": "Tomato Cream Soup",
+      "type": "bowlFood",
+      "nutrition": 8,
+      "saturation": 0.65,
+      "tooltips": [
+        "cheese"
+      ],
+      "effects": [],
+      "recipes": [
+        {
+          "type": "create:deploying",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:tomato_cream_soup_bowl"
+            },
+            {
+              "type": "tag",
+              "value": "c:cheeses"
+            }
+          ],
+          "output": "tomato_cream_soup_bowl_cheese"
+        },
+        {
+          "type": "minecraft:crafting_shapeless",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:tomato_cream_soup_bowl"
+            },
+            {
+              "type": "tag",
+              "value": "c:cheeses"
+            }
+          ],
+          "output": "tomato_cream_soup_bowl_cheese"
+        },
+        {
+          "type": "create:filling",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:tomato_cream_soup_bowl"
+            },
+            {
+              "type": "fluid_tag",
+              "value": "cheese|125"
+            }
+          ],
+          "output": "tomato_cream_soup_bowl_cheese"
+        },
+        {
+          "type": "farmersdelight:cooking",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:tomato"
+            },
+            {
+              "type": "tag",
+              "value": "c:tomato"
+            },
+            {
+              "type": "tag",
+              "value": "c:tomato"
+            },
+            {
+              "type": "tag",
+              "value": "c:heavy_cream_bottle"
+            },
+            {
+              "type": "tag",
+              "value": "c:salt"
+            },
+            {
+              "type": "tag",
+              "value": "c:cheeses"
+            }
+          ],
+          "output": "tomato_cream_soup_bowl_cheese",
+          "experience": 0.35
+        }
+      ]
+    },
+    {
+      "id": "melon_pie_filling",
+      "displayName": "Melon Pie Filling",
+      "type": "fluid",
+      "fluidFlowSlope": 3,
+      "fluidFlowDecrease": 2,
+      "recipes": [
+        {
+          "type": "create:mixing_heated",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:butter"
+            },
+            {
+              "type": "tag",
+              "value": "c:sugar"
+            },
+            {
+              "type": "tag",
+              "value": "c:sugar"
+            },
+            {
+              "type": "tag",
+              "value": "c:melon"
+            },
+            {
+              "type": "tag",
+              "value": "c:melon"
+            },
+            {
+              "type": "tag",
+              "value": "c:melon"
+            }
+          ],
+          "output": "melon_pie_filling",
+          "fluidOutput": true,
+          "fluidAmount": 1000
+        },
+        {
+          "type": "farmersdelight:cooking",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:butter"
+            },
+            {
+              "type": "tag",
+              "value": "c:sugar"
+            },
+            {
+              "type": "tag",
+              "value": "c:sugar"
+            },
+            {
+              "type": "tag",
+              "value": "c:melon"
+            },
+            {
+              "type": "tag",
+              "value": "c:melon"
+            },
+            {
+              "type": "tag",
+              "value": "c:melon"
+            }
+          ],
+          "output": "melon_pie_filling_bucket",
+          "experience": 0.25
+        }
+      ]
+    },
+    {
+      "id": "melon_pie",
+      "displayName": "Melon Pie",
+      "type": "block_pie",
+      "tooltips": [],
+      "sliceNutrition": 4,
+      "sliceSaturation": 0.5,
+      "sliceEffects": [],
+      "recipes": [
+        {
+          "type": "minecraft:crafting_shapeless",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:raw_pie_crust"
+            },
+            {
+              "type": "tag",
+              "value": "c:melon_pie_filling_bucket"
+            }
+          ],
+          "output": "raw_melon_pie"
+        },
+        {
+          "type": "create:filling",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:raw_pie_crust"
+            },
+            {
+              "type": "fluid_tag",
+              "value": "melon_pie_filling|1000"
+            }
+          ],
+          "output": "raw_melon_pie"
+        },
+        {
+          "type": "create:item_application",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:raw_pie_crust"
+            },
+            {
+              "type": "tag",
+              "value": "c:melon_pie_filling_bucket"
+            }
+          ],
+          "output": "raw_melon_pie"
+        },
+        {
+          "type": "minecraft:smelting",
+          "inputs": [
+            {
+              "type": "item",
+              "value": "createfood:raw_melon_pie"
+            }
+          ],
+          "output": "melon_pie",
+          "experience": 0.95,
+          "cookingtime": 550
+        },
+        {
+          "type": "minecraft:smoking",
+          "inputs": [
+            {
+              "type": "item",
+              "value": "createfood:raw_melon_pie"
+            }
+          ],
+          "output": "melon_pie",
+          "experience": 0.95,
+          "cookingtime": 550
+        },
+        {
+          "type": "minecraft:campfire_cooking",
+          "inputs": [
+            {
+              "type": "item",
+              "value": "createfood:raw_melon_pie"
+            }
+          ],
+          "output": "melon_pie",
+          "experience": 0.95,
+          "cookingtime": 550
+        }
+      ]
+    },
+    {
+      "id": "chocolate_custard_sugar_bottle",
+      "displayName": "Chocolate Custard",
+      "type": "bottle",
+      "nutrition": 4,
+      "saturation": 0.7,
+      "tooltips": [
+        "sugar"
+      ],
+      "effects": [],
+      "recipes": [
+        {
+          "type": "minecraft:crafting_shapeless",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:chocolate_custard_bottle"
+            },
+            {
+              "type": "tag",
+              "value": "c:sugar"
+            }
+          ],
+          "output": "chocolate_custard_sugar_bottle"
+        },
+        {
+          "type": "create:deploying",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:chocolate_custard_bottle"
+            },
+            {
+              "type": "tag",
+              "value": "c:sugar"
+            }
+          ],
+          "output": "chocolate_custard_sugar_bottle"
+        }
+      ]
+    },
+    {
+      "id": "chocolate_creme_brulee_bottle",
+      "displayName": "Chocolate Cr\u00e8me Br\u00fbl\u00e9e",
+      "type": "bottle",
+      "nutrition": 5,
+      "saturation": 0.9,
+      "tooltips": [],
+      "effects": [],
+      "recipes": [
+        {
+          "type": "minecraft:smelting",
+          "inputs": [
+            {
+              "type": "item",
+              "value": "createfood:chocolate_custard_sugar_bottle"
+            }
+          ],
+          "output": "chocolate_creme_brulee_bottle",
+          "experience": 0.1,
+          "cookingtime": 100
+        },
+        {
+          "type": "minecraft:smoking",
+          "inputs": [
+            {
+              "type": "item",
+              "value": "createfood:chocolate_custard_sugar_bottle"
+            }
+          ],
+          "output": "chocolate_creme_brulee_bottle",
+          "experience": 0.1,
+          "cookingtime": 100
+        },
+        {
+          "type": "minecraft:campfire_cooking",
+          "inputs": [
+            {
+              "type": "item",
+              "value": "createfood:chocolate_custard_sugar_bottle"
+            }
+          ],
+          "output": "chocolate_creme_brulee_bottle",
+          "experience": 0.1,
+          "cookingtime": 100
+        }
+      ]
+    },
+    {
+      "id": "honeyed_pastry",
+      "displayName": "Pastry",
+      "type": "fastFood",
+      "nutrition": 4,
+      "saturation": 0.9,
+      "tooltips": [
+        "honey"
+      ],
+      "effects": [],
+      "recipes": [
+        {
+          "type": "minecraft:crafting_shapeless",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:pastry_base"
+            },
+            {
+              "type": "item",
+              "value": "minecraft:honey_bottle"
+            }
+          ],
+          "output": "honeyed_pastry"
+        },
+        {
+          "type": "create:filling",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:pastry_base"
+            },
+            {
+              "type": "fluid_tag",
+              "value": "honey|250"
+            }
+          ],
+          "output": "honeyed_pastry"
+        }
+      ]
+    },
+    {
+      "id": "honeyed_chocolate_pastry",
+      "displayName": "Chocolate Pastry",
+      "type": "fastFood",
+      "nutrition": 4,
+      "saturation": 0.9,
+      "tooltips": [
+        "honey"
+      ],
+      "effects": [],
+      "recipes": [
+        {
+          "type": "minecraft:crafting_shapeless",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:chocolate_pastry_base"
+            },
+            {
+              "type": "item",
+              "value": "minecraft:honey_bottle"
+            }
+          ],
+          "output": "honeyed_chocolate_pastry"
+        },
+        {
+          "type": "create:filling",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:chocolate_pastry_base"
+            },
+            {
+              "type": "fluid_tag",
+              "value": "honey|250"
+            }
+          ],
+          "output": "honeyed_chocolate_pastry"
+        }
+      ]
+    },
+    {
+      "id": "shakshuka",
+      "displayName": "Shakshuka",
+      "type": "fluid",
+      "fluidFlowSlope": 3,
+      "fluidFlowDecrease": 2,
+      "createBowl": true,
+      "bowlNutrition": 9,
+      "bowlSaturation": 0.75,
+      "bowlTooltips": [],
+      "bowlEffects": [],
+      "recipes": [
+        {
+          "type": "create:mixing_heated",
+          "inputs": [
+            {
+              "type": "fluid_tag",
+              "value": "c:tomato_sauce|250"
+            },
+            {
+              "type": "fluid_tag",
+              "value": "c:egg|500"
+            },
+            {
+              "type": "tag",
+              "value": "c:onion"
+            },
+            {
+              "type": "tag",
+              "value": "c:paprika"
+            }
+          ],
+          "output": "shakshuka",
+          "fluidOutput": true,
+          "fluidAmount": 333
+        },
+        {
+          "type": "create:mixing_heated",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:tomato"
+            },
+            {
+              "type": "tag",
+              "value": "c:tomato"
+            },
+            {
+              "type": "fluid_tag",
+              "value": "c:egg|500"
+            },
+            {
+              "type": "tag",
+              "value": "c:onion"
+            },
+            {
+              "type": "tag",
+              "value": "c:paprika"
+            }
+          ],
+          "output": "shakshuka",
+          "fluidOutput": true,
+          "fluidAmount": 333,
+          "suffix": "alt"
+        },
+        {
+          "type": "farmersdelight:cooking",
+          "inputs": [
+            {
+              "type": "item",
+              "value": "farmersdelight:tomato_sauce"
+            },
+            {
+              "type": "tag",
+              "value": "c:eggs"
+            },
+            {
+              "type": "tag",
+              "value": "c:eggs"
+            },
+            {
+              "type": "tag",
+              "value": "c:onion"
+            },
+            {
+              "type": "tag",
+              "value": "c:paprika"
+            }
+          ],
+          "output": "shakshuka_bowl",
+          "experience": 0.3
+        },
+        {
+          "type": "create:mixing",
+          "inputs": [
+            {
+              "type": "fluid_tag",
+              "value": "shakshuka|1000"
+            },
+            {
+              "type": "item",
+              "value": "minecraft:bowl"
+            },
+            {
+              "type": "item",
+              "value": "minecraft:bowl"
+            },
+            {
+              "type": "item",
+              "value": "minecraft:bowl"
+            }
+          ],
+          "output": "shakshuka_bowl",
+          "count": 3
+        },
+        {
+          "type": "farmersdelight:cooking",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:tomato"
+            },
+            {
+              "type": "tag",
+              "value": "c:tomato"
+            },
+            {
+              "type": "tag",
+              "value": "c:eggs"
+            },
+            {
+              "type": "tag",
+              "value": "c:eggs"
+            },
+            {
+              "type": "tag",
+              "value": "c:onion"
+            },
+            {
+              "type": "tag",
+              "value": "c:paprika"
+            }
+          ],
+          "output": "shakshuka_bowl",
+          "experience": 0.3,
+          "suffix": "alt"
+        }
+      ]
+    },
+    {
+      "id": "pasta_plate_sausage",
+      "displayName": "Pasta",
+      "type": "food",
+      "nutrition": 8,
+      "saturation": 0.7,
+      "tooltips": [
+        "sausage"
+      ],
+      "effects": [],
+      "recipes": [
+        {
+          "type": "create:deploying",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:pasta_plate"
+            },
+            {
+              "type": "tag",
+              "value": "c:sausages"
+            }
+          ],
+          "output": "pasta_plate_sausage"
+        },
+        {
+          "type": "minecraft:crafting_shapeless",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:pasta_plate"
+            },
+            {
+              "type": "tag",
+              "value": "c:sausages"
+            }
+          ],
+          "output": "pasta_plate_sausage"
+        },
+        {
+          "type": "create:deploying",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:pasta_plate_tomato_sauce"
+            },
+            {
+              "type": "tag",
+              "value": "c:sausages"
+            }
+          ],
+          "output": "pasta_plate_sausage_tomato_sauce"
+        },
+        {
+          "type": "create:deploying",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:pasta_plate_sausage"
+            },
+            {
+              "type": "item",
+              "value": "farmersdelight:tomato_sauce"
+            }
+          ],
+          "output": "pasta_plate_sausage_tomato_sauce",
+          "suffix": "alt"
+        },
+        {
+          "type": "minecraft:crafting_shapeless",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:pasta_plate_sausage"
+            },
+            {
+              "type": "item",
+              "value": "farmersdelight:tomato_sauce"
+            }
+          ],
+          "output": "pasta_plate_sausage_tomato_sauce"
+        },
+        {
+          "type": "minecraft:crafting_shapeless",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:pasta_plate_tomato_sauce"
+            },
+            {
+              "type": "tag",
+              "value": "c:sausages"
+            }
+          ],
+          "output": "pasta_plate_sausage_tomato_sauce",
+          "suffix": "alt"
+        },
+        {
+          "type": "create:filling",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:pasta_plate_sausage"
+            },
+            {
+              "type": "fluid_tag",
+              "value": "tomato_sauce|250"
+            }
+          ],
+          "output": "pasta_plate_sausage_tomato_sauce"
+        }
+      ]
+    },
+    {
+      "id": "pasta_plate_sausage_tomato_sauce",
+      "displayName": "Pasta",
+      "type": "food",
+      "nutrition": 11,
+      "saturation": 0.9,
+      "tooltips": [
+        "sausage",
+        "tomato_sauce"
+      ],
+      "effects": [],
+      "recipes": []
+    },
+    {
+      "id": "raw_scotch_egg",
+      "displayName": "Raw Scotch Egg",
+      "type": "plain",
+      "recipes": [
+        {
+          "type": "minecraft:crafting_shapeless",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:boiled_egg_peeled"
+            },
+            {
+              "type": "tag",
+              "value": "c:ground_sausage"
+            },
+            {
+              "type": "tag",
+              "value": "c:bread_crumbs"
+            },
+            {
+              "type": "tag",
+              "value": "c:paprika"
+            }
+          ],
+          "output": "raw_scotch_egg"
+        },
+        {
+          "type": "create:compacting",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:boiled_egg_peeled"
+            },
+            {
+              "type": "tag",
+              "value": "c:ground_sausage"
+            },
+            {
+              "type": "tag",
+              "value": "c:bread_crumbs"
+            },
+            {
+              "type": "tag",
+              "value": "c:paprika"
+            }
+          ],
+          "output": "raw_scotch_egg"
+        }
+      ]
+    },
+    {
+      "id": "scotch_egg",
+      "displayName": "Scotch Egg",
+      "type": "food",
+      "nutrition": 9,
+      "saturation": 0.8,
+      "tooltips": [],
+      "effects": [],
+      "recipes": [
+        {
+          "type": "minecraft:smelting",
+          "inputs": [
+            {
+              "type": "item",
+              "value": "createfood:raw_scotch_egg"
+            }
+          ],
+          "output": "scotch_egg",
+          "experience": 0.35,
+          "cookingtime": 200
+        },
+        {
+          "type": "minecraft:smoking",
+          "inputs": [
+            {
+              "type": "item",
+              "value": "createfood:raw_scotch_egg"
+            }
+          ],
+          "output": "scotch_egg",
+          "experience": 0.35,
+          "cookingtime": 100
+        },
+        {
+          "type": "minecraft:campfire_cooking",
+          "inputs": [
+            {
+              "type": "item",
+              "value": "createfood:raw_scotch_egg"
+            }
+          ],
+          "output": "scotch_egg",
+          "experience": 0.35,
+          "cookingtime": 600
+        },
+        {
+          "type": "create:compacting_heated",
+          "inputs": [
+            {
+              "type": "tag",
+              "value": "c:boiled_egg_peeled"
+            },
+            {
+              "type": "tag",
+              "value": "c:ground_sausage"
+            },
+            {
+              "type": "tag",
+              "value": "c:bread_crumbs"
+            },
+            {
+              "type": "tag",
+              "value": "c:paprika"
+            }
+          ],
+          "output": "scotch_egg"
+        }
+      ]
+    }
+  ]
+}

@@ -146,6 +146,7 @@ public class EmptyPlateBlock extends Block {
     @Override
     protected @NotNull InteractionResult useWithoutItem(@NotNull BlockState state, @NotNull Level level, @NotNull BlockPos pos, Player player, @NotNull BlockHitResult hit) {
         if (player.isShiftKeyDown()) return InteractionResult.PASS;
+        if (!player.getItemInHand(InteractionHand.MAIN_HAND).isEmpty()) return InteractionResult.PASS;
         ItemStack offhand = player.getItemInHand(InteractionHand.OFF_HAND);
         if (!offhand.isEmpty()
                 && (FoodBlock.Registry.canPlaceOnPlate(offhand.getItem(), false)
