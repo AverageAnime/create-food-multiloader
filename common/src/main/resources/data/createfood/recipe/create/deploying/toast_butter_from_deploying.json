@@ -11,7 +11,7 @@
     "results": [
         {
             "item": {
-                "id": "createfood:buttered_toast"
+                "id": "createfood:toast_butter"
             }
         }
     ],
@@ -22,7 +22,7 @@
         },
         {
             "type": "createfood:enabled",
-            "id": "buttered_toast"
+            "id": "toast_butter"
         }
     ],
     "fabric:load_conditions": [
@@ -34,7 +34,7 @@
         },
         {
             "condition": "createfood:enabled",
-            "id": "buttered_toast"
+            "id": "toast_butter"
         }
     ]
 }

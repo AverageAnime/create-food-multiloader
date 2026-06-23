@@ -3,8 +3,8 @@ package dev.averageanime.platform;
 import dev.averageanime.block.type.blockentity.ClothSackBlockEntity;
 import dev.averageanime.block.type.blockentity.RationBoxBlockEntity;
 import dev.averageanime.block.type.blockentity.GenericDisplayPlateBlockEntity;
-import dev.averageanime.config.ItemEffectOverride;
-import dev.averageanime.config.ItemNutritionOverride;
+import dev.averageanime.config.override.ItemEffectOverride;
+import dev.averageanime.config.override.ItemNutritionOverride;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.entity.player.Player;
@@ -46,8 +46,6 @@ public interface IPlatform {
     @Nullable
     ItemNutritionOverride getItemNutritionOverride(String itemId);
 
-    // ── Generic display plate config ──────────────────────────────────────────
-
     boolean isGenericPlatesEnabled();
 
     boolean isAlwaysDisplayUpright();
@@ -58,7 +56,15 @@ public interface IPlatform {
 
     boolean isPumpkinPiePlacementEnabled();
 
-    // ── Handcrafting config ───────────────────────────────────────────────────
+    boolean isCampfireCookingEnabled();
+
+    boolean isCampfireCookingRequireShift();
+
+    boolean isCampfireCookingSticksOnly();
+
+    List<? extends String> getCampfireCookingExclude();
+
+    List<? extends String> getCampfireCookingFilter();
 
     boolean isHandcraftingEnabled();
 
@@ -68,19 +74,13 @@ public interface IPlatform {
 
     boolean isHandcraftingParticlesEnabled();
 
-    // ── Cloth-filter interaction config ───────────────────────────────────────
-
     boolean isFilterInteractionsEnabled();
 
     List<String> getFilterInteractions();
 
-    // ── Display block references (for BowlPlacementHandler) ──────────────────
-
     Block getPlateBlock();
 
     Block getSmallPlateBlock();
-
-    // ── Storage block config ──────────────────────────────────────────────────
 
     boolean isClothSackInventoryEnabled();
 
@@ -90,8 +90,6 @@ public interface IPlatform {
 
     boolean isStorageTooltipIconsEnabled();
 
-    // ── Tooltip config ────────────────────────────────────────────────────────
-
     boolean isShiftRequiredForTooltips();
 
     boolean isCompatibilityEnabled();
@@ -100,8 +98,6 @@ public interface IPlatform {
 
     List<? extends String> getCustomTooltips();
 
-    // ── Cloth-sack item config ────────────────────────────────────────────────
-
     boolean isClothSackEatFromItem();
 
     boolean isClothSackStacking();
@@ -109,8 +105,6 @@ public interface IPlatform {
     boolean isClothSackItemAllowed(ItemStack stack);
 
     BlockEntityType<?> getClothSackBlockEntityType();
-
-    // ── Ration-box item config ────────────────────────────────────────────────
 
     boolean isRationBoxEatFromItemEnabled();
 
@@ -128,8 +122,6 @@ public interface IPlatform {
     void openBlockInventoryMenu(Player player, MenuProvider provider, BlockPos pos);
 
     Block getGenericDisplayPlateBlock();
-
-    // ── Block entity factories (needed by the common blocks) ──────────────────
 
     ClothSackBlockEntity createClothSackBlockEntity(BlockPos pos, BlockState state);
 

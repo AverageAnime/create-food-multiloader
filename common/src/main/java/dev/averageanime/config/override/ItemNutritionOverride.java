@@ -1,4 +1,4 @@
-package dev.averageanime.config;
+package dev.averageanime.config.override;
 
 public record ItemNutritionOverride(int nutrition, float saturation) {
     public static final int   KEEP_INT   = -1;

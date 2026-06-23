@@ -19,6 +19,7 @@ import dev.averageanime.fabric.config.ModConfig;
 import dev.averageanime.fabric.block.ModFluids;
 import dev.averageanime.fabric.item.ModItems;
 import dev.averageanime.fabric.item.ModTooltips;
+import dev.averageanime.fabric.item.interaction.CampfireCookingInteraction;
 import dev.averageanime.fabric.item.interaction.ClothFilterInteraction;
 import dev.averageanime.fabric.block.handler.BowlPlacementHandler;
 import dev.averageanime.fabric.block.handler.PlateSliceHandler;
@@ -61,6 +62,7 @@ public class CreateFood implements ModInitializer {
 		ModDisplayBlocks.init();
 
 		HandcraftInteraction.register();
+		CampfireCookingInteraction.register();
 		ClothFilterInteraction.register();
 		BowlPlacementHandler.register();
 		PlateSliceHandler.register();

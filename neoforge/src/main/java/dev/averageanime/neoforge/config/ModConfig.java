@@ -2,8 +2,8 @@ package dev.averageanime.neoforge.config;
 
 import dev.averageanime.config.ConfigDefaults;
 import dev.averageanime.config.ConfigLogic;
-import dev.averageanime.config.ItemEffectOverride;
-import dev.averageanime.config.ItemNutritionOverride;
+import dev.averageanime.config.override.ItemEffectOverride;
+import dev.averageanime.config.override.ItemNutritionOverride;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.world.item.ItemStack;
 import net.neoforged.fml.ModContainer;
@@ -20,6 +20,9 @@ public class ModConfig {
     public static final ModConfigSpec.Builder SERVER_BUILDER = new ModConfigSpec.Builder();
 
     public static final ModConfigSpec.BooleanValue ALWAYS_DISPLAY_UPRIGHT;
+    public static final ModConfigSpec.BooleanValue CAMPFIRE_COOKING_ENABLED;
+    public static final ModConfigSpec.BooleanValue CAMPFIRE_COOKING_REQUIRE_SHIFT;
+    public static final ModConfigSpec.BooleanValue CAMPFIRE_COOKING_STICKS_ONLY;
     public static final ModConfigSpec.BooleanValue CLOTH_SACK_ALLOW_FOOD;
     public static final ModConfigSpec.BooleanValue CLOTH_SACK_EAT_FROM_ITEM;
     public static final ModConfigSpec.BooleanValue CLOTH_SACK_INVENTORY_ENABLED;
@@ -42,6 +45,8 @@ public class ModConfig {
     public static final ModConfigSpec.BooleanValue SHOW_SACK_BLOCK_ICONS;
     public static final ModConfigSpec.BooleanValue SHOW_STORAGE_TOOLTIP_ICONS;
 
+    public static final ModConfigSpec.ConfigValue<List<? extends String>> CAMPFIRE_COOKING_EXCLUDE;
+    public static final ModConfigSpec.ConfigValue<List<? extends String>> CAMPFIRE_COOKING_FILTER;
     public static final ModConfigSpec.ConfigValue<List<? extends String>> CATEGORY_EFFECT_OVERRIDES;
     public static final ModConfigSpec.ConfigValue<List<? extends String>> CLOTH_SACK_EXCLUDE;
     public static final ModConfigSpec.ConfigValue<List<? extends String>> CLOTH_SACK_FILTER;
@@ -62,6 +67,29 @@ public class ModConfig {
     public static final ModConfigSpec.ConfigValue<List<? extends String>> RATION_BOX_FILTER;
 
     static {
+        // ── CLIENT ────────────────────────────────────────────────────────────
+
+        BUILDER.push("blocks");
+
+        CUSTOM_BLOCK = BUILDER
+                .gameRestart()
+                .defineListAllowEmpty("block",
+                        List.of(),
+                        () -> "name|type|slice_item_id  OR  name|type",
+                        ConfigDefaults.CUSTOM_BLOCK_VALIDATOR
+                );
+
+        BUILDER.push("storage");
+
+        SHOW_SACK_BLOCK_ICONS = BUILDER
+                .define("show_sack_block_icons", true);
+
+        SHOW_STORAGE_TOOLTIP_ICONS = BUILDER
+                .define("show_tooltip_icons", true);
+
+        BUILDER.pop(); // blocks.storage
+        BUILDER.pop(); // blocks
+
         BUILDER.push("display");
 
         ALWAYS_DISPLAY_UPRIGHT = BUILDER.define("always_display_upright", false);
@@ -74,9 +102,28 @@ public class ModConfig {
                         ConfigDefaults.CUSTOM_DISPLAY_BLOCK_VALIDATOR
                 );
 
-        BUILDER.pop();
+        BUILDER.pop(); // display
+
+        BUILDER.push("fluids");
+
+        CUSTOM_FLUID = BUILDER
+                .gameRestart()
+                .defineListAllowEmpty("fluid",
+                        List.of(),
+                        () -> "name|slopeFindDistance|levelDecreasePerBlock",
+                        ConfigDefaults.CUSTOM_FLUID_VALIDATOR
+                );
+
+        BUILDER.pop(); // fluids
 
         BUILDER.push("items");
+
+        HIDE_ITEMS = BUILDER
+                .defineListAllowEmpty("hide_items",
+                        ConfigDefaults.HIDE_ITEMS_DEFAULT,
+                        () -> "item_id",
+                        obj -> obj instanceof String
+                );
 
         CUSTOM_ITEM = BUILDER
                 .gameRestart()
@@ -84,13 +131,6 @@ public class ModConfig {
                         List.of(),
                         () -> "name|type|nutrition|saturation  OR  name|type",
                         ConfigDefaults.CUSTOM_ITEM_VALIDATOR
-                );
-
-        HIDE_ITEMS = BUILDER
-                .defineListAllowEmpty("hide_items",
-                        ConfigDefaults.HIDE_ITEMS_DEFAULT,
-                        () -> "item_id",
-                        obj -> obj instanceof String
                 );
 
         BUILDER.push("tooltips");
@@ -115,80 +155,24 @@ public class ModConfig {
         BUILDER.pop(); // items.tooltips
         BUILDER.pop(); // items
 
-        BUILDER.push("blocks");
+        // ── SERVER ────────────────────────────────────────────────────────────
 
-        CUSTOM_BLOCK = BUILDER
-                .gameRestart()
-                .defineListAllowEmpty("block",
-                        List.of(),
-                        () -> "name|type|slice_item_id  OR  name|type",
-                        ConfigDefaults.CUSTOM_BLOCK_VALIDATOR
-                );
+        SERVER_BUILDER.push("display");
 
-        BUILDER.push("storage");
+        ENABLE_CUTTING_BOARD = SERVER_BUILDER
+                .define("enable_cutting_board", true);
 
-        SHOW_SACK_BLOCK_ICONS = BUILDER
-                .define("show_sack_block_icons", true);
+        ENABLE_GENERIC_PLATES = SERVER_BUILDER
+                .define("enable_generic_plates", true);
 
-        SHOW_STORAGE_TOOLTIP_ICONS = BUILDER
-                .define("show_tooltip_icons", true);
-
-        BUILDER.pop(); // blocks.storage
-        BUILDER.pop(); // blocks
-
-        BUILDER.push("fluids");
-
-        CUSTOM_FLUID = BUILDER
-                .gameRestart()
-                .defineListAllowEmpty("fluid",
-                        List.of(),
-                        () -> "name|slopeFindDistance|levelDecreasePerBlock",
-                        ConfigDefaults.CUSTOM_FLUID_VALIDATOR
-                );
-
-        BUILDER.pop(); // fluids
-
-        SERVER_BUILDER.push("items");
-
-        ITEM_NUTRITION_OVERRIDES = SERVER_BUILDER
-                .defineListAllowEmpty("nutrition_saturation",
-                        List.of(),
-                        () -> "item_id|nutrition|saturation",
-                        ConfigDefaults.ITEM_NUTRITION_OVERRIDE_VALIDATOR
-                );
-
-        SERVER_BUILDER.push("effects");
-
-        CATEGORY_EFFECT_OVERRIDES = SERVER_BUILDER
-                .defineListAllowEmpty("category_overrides",
-                        List.of(),
-                        () -> "category_name|mod_id:effect_id",
-                        ConfigDefaults.CATEGORY_EFFECT_OVERRIDE_VALIDATOR
-                );
-
-        ITEM_EFFECT_OVERRIDES = SERVER_BUILDER
-                .defineListAllowEmpty("item_overrides",
-                        List.of(),
-                        () -> "item_id|category_or_effect_id|duration|amplifier  OR  item_id|category_or_effect_id|remove",
-                        ConfigDefaults.ITEM_EFFECT_OVERRIDE_VALIDATOR
-                );
-
-        SERVER_BUILDER.pop(); // items.effects
-
-        SERVER_BUILDER.push("remainders");
-
-        ENABLE_EGG_IMPACT_REMAINDER = SERVER_BUILDER
-                .define("enable_egg_impact_remainder", true);
-
-        CRAFTING_REMAINDERS = SERVER_BUILDER
-                .defineListAllowEmpty("crafting_remainders",
-                        ConfigDefaults.CRAFTING_REMAINDERS_DEFAULT,
-                        () -> "input_item|remainder_item",
+        GENERIC_DISPLAY_EXCLUDE = SERVER_BUILDER
+                .defineListAllowEmpty("exclude",
+                        ConfigDefaults.GENERIC_DISPLAY_EXCLUDE_DEFAULT,
+                        () -> "mod:mod_id,  item:mod_id:item_id,  tag:mod_id:tag_name",
                         obj -> obj instanceof String
                 );
 
-        SERVER_BUILDER.pop(); // items.remainders
-        SERVER_BUILDER.pop(); // items
+        SERVER_BUILDER.pop(); // display
 
         SERVER_BUILDER.push("interactions");
 
@@ -204,6 +188,33 @@ public class ModConfig {
                         () -> "filter_item|offhand_item|filter_result|container_result",
                         ConfigDefaults.FILTER_INTERACTIONS_VALIDATOR
                 );
+
+        SERVER_BUILDER.push("campfire_cooking");
+
+        CAMPFIRE_COOKING_ENABLED = SERVER_BUILDER
+                .define("enable_campfire_cooking", false);
+
+        CAMPFIRE_COOKING_REQUIRE_SHIFT = SERVER_BUILDER
+                .define("require_shift", true);
+
+        CAMPFIRE_COOKING_STICKS_ONLY = SERVER_BUILDER
+                .define("sticks_only", false);
+
+        CAMPFIRE_COOKING_EXCLUDE = SERVER_BUILDER
+                .defineListAllowEmpty("campfire_cooking_exclude",
+                        List.of(),
+                        () -> "mod:mod_id,  item:mod_id:item_id,  tag:mod_id:tag_name",
+                        obj -> obj instanceof String
+                );
+
+        CAMPFIRE_COOKING_FILTER = SERVER_BUILDER
+                .defineListAllowEmpty("campfire_cooking_filter",
+                        List.of(),
+                        () -> "mod:mod_id,  item:mod_id:item_id,  tag:mod_id:tag_name",
+                        obj -> obj instanceof String
+                );
+
+        SERVER_BUILDER.pop(); // interactions.campfire_cooking
 
         SERVER_BUILDER.push("handcraft");
 
@@ -231,24 +242,50 @@ public class ModConfig {
                 );
 
         SERVER_BUILDER.pop(); // interactions.handcraft
+
         SERVER_BUILDER.pop(); // interactions
 
-        SERVER_BUILDER.push("display");
+        SERVER_BUILDER.push("items");
 
-        ENABLE_CUTTING_BOARD = SERVER_BUILDER
-                .define("enable_cutting_board", true);
+        ITEM_NUTRITION_OVERRIDES = SERVER_BUILDER
+                .defineListAllowEmpty("nutrition_saturation",
+                        List.of(),
+                        () -> "item_id|nutrition|saturation",
+                        ConfigDefaults.ITEM_NUTRITION_OVERRIDE_VALIDATOR
+                );
 
-        ENABLE_GENERIC_PLATES = SERVER_BUILDER
-                .define("enable_generic_plates", true);
+        SERVER_BUILDER.push("effects");
 
-        GENERIC_DISPLAY_EXCLUDE = SERVER_BUILDER
-                .defineListAllowEmpty("exclude",
-                        ConfigDefaults.GENERIC_DISPLAY_EXCLUDE_DEFAULT,
-                        () -> "mod:mod_id,  item:mod_id:item_id,  tag:mod_id:tag_name",
+        CATEGORY_EFFECT_OVERRIDES = SERVER_BUILDER
+                .defineListAllowEmpty("category_overrides",
+                        List.of(),
+                        () -> "category_name|mod_id:effect_id",
+                        ConfigDefaults.CATEGORY_EFFECT_OVERRIDE_VALIDATOR
+                );
+
+        ITEM_EFFECT_OVERRIDES = SERVER_BUILDER
+                .defineListAllowEmpty("item_overrides",
+                        List.of(),
+                        () -> "item_id|category_or_effect_id|duration|amplifier[|chance]  OR  item_id|category_or_effect_id|remove",
+                        ConfigDefaults.ITEM_EFFECT_OVERRIDE_VALIDATOR
+                );
+
+        SERVER_BUILDER.pop(); // items.effects
+
+        SERVER_BUILDER.push("remainders");
+
+        ENABLE_EGG_IMPACT_REMAINDER = SERVER_BUILDER
+                .define("enable_egg_impact_remainder", true);
+
+        CRAFTING_REMAINDERS = SERVER_BUILDER
+                .defineListAllowEmpty("crafting_remainders",
+                        ConfigDefaults.CRAFTING_REMAINDERS_DEFAULT,
+                        () -> "input_item|remainder_item",
                         obj -> obj instanceof String
                 );
 
-        SERVER_BUILDER.pop(); // display
+        SERVER_BUILDER.pop(); // items.remainders
+        SERVER_BUILDER.pop(); // items
 
         SERVER_BUILDER.push("storage");
 
@@ -347,6 +384,11 @@ public class ModConfig {
 
     public static boolean isDisplayBlockEnabled(String blockId) {
         try { return ConfigLogic.isDisplayBlockEnabled(blockId, HIDE_ITEMS.get()); }
+        catch (IllegalStateException ignored) { return true; }
+    }
+
+    public static boolean isFluidBucketEnabled(String bucketId) {
+        try { return ConfigLogic.isFluidBucketEnabled(bucketId, HIDE_ITEMS.get()); }
         catch (IllegalStateException ignored) { return true; }
     }
 

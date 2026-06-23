@@ -54,7 +54,7 @@ public class ModTabs {
                                 BuiltInRegistries.ITEM.entrySet().stream()
                                         .filter(e -> e.getKey().location().getNamespace().equals(CreateFood.MOD_ID))
                                         .filter(e -> e.getKey().location().getPath().endsWith("_bucket"))
-                                        .filter(e -> ModConfig.isItemEnabled(e.getKey().location().getPath()))
+                                        .filter(e -> ModConfig.isFluidBucketEnabled(e.getKey().location().getPath()))
                                         .sorted(Comparator.comparing(e -> e.getKey().location().getPath()))
                                         .forEach(e -> output.accept(e.getValue())))
                         .build());

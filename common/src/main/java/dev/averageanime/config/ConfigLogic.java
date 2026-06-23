@@ -1,5 +1,7 @@
 package dev.averageanime.config;
 
+import dev.averageanime.config.override.ItemEffectOverride;
+import dev.averageanime.config.override.ItemNutritionOverride;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
@@ -12,8 +14,6 @@ import java.util.List;
 
 public final class ConfigLogic {
     private ConfigLogic() {}
-
-    // ── Effect override parsing ───────────────────────────────────────────────
 
     static boolean effectIdsMatch(String configId, String itemId) {
         if (configId.equals(itemId)) return true;
@@ -29,11 +29,12 @@ public final class ConfigLogic {
             if (p.length < 3 || !p[0].equals(itemId)) continue;
             if (!effectIdsMatch(p[1], categoryOrEffectId)) continue;
             if (p.length == 3 && p[2].equals("remove"))
-                return new ItemEffectOverride(categoryOrEffectId, 0, 0, true);
-            if (p.length == 4) {
+                return new ItemEffectOverride(categoryOrEffectId, 0, 0, true, 1.0f);
+            if (p.length >= 4) {
                 try {
+                    float chance = p.length >= 5 ? Float.parseFloat(p[4]) : 1.0f;
                     return new ItemEffectOverride(categoryOrEffectId,
-                            Integer.parseInt(p[2]), Integer.parseInt(p[3]), false);
+                            Integer.parseInt(p[2]), Integer.parseInt(p[3]), false, chance);
                 } catch (NumberFormatException ignored) {}
             }
         }
@@ -47,22 +48,21 @@ public final class ConfigLogic {
             String[] p = entry.split("\\|");
             if (p.length < 3 || !p[0].equals(itemId)) continue;
             if (p.length == 3 && p[2].equals("remove")) {
-                result.add(new ItemEffectOverride(p[1], 0, 0, true));
-            } else if (p.length == 4) {
+                result.add(new ItemEffectOverride(p[1], 0, 0, true, 1.0f));
+            } else if (p.length >= 4) {
                 try {
+                    float chance = p.length >= 5 ? Float.parseFloat(p[4]) : 1.0f;
                     result.add(new ItemEffectOverride(p[1],
-                            Integer.parseInt(p[2]), Integer.parseInt(p[3]), false));
+                            Integer.parseInt(p[2]), Integer.parseInt(p[3]), false, chance));
                 } catch (NumberFormatException ignored) {}
             }
         }
         return result;
     }
 
-    // ── Nutrition override parsing ────────────────────────────────────────────
-
     @Nullable
     public static ItemNutritionOverride getItemNutritionOverride(String itemId,
-                                                                  List<? extends String> nutritionOverrides) {
+                                                                 List<? extends String> nutritionOverrides) {
         for (String entry : nutritionOverrides) {
             String[] p = entry.split("\\|");
             if (p.length != 3 || !p[0].equals(itemId)) continue;
@@ -73,8 +73,6 @@ public final class ConfigLogic {
         return null;
     }
 
-    // ── Category effect override parsing ─────────────────────────────────────
-
     @Nullable
     public static String getCategoryEffectOverride(String categoryName,
                                                     List<? extends String> categoryOverrides) {
@@ -84,8 +82,6 @@ public final class ConfigLogic {
         }
         return null;
     }
-
-    // ── Item visibility ───────────────────────────────────────────────────────
 
     public static boolean isItemEnabled(String itemId, List<? extends String> hideItems) {
         return !hideItems.contains(itemId);
@@ -100,7 +96,11 @@ public final class ConfigLogic {
         return isItemEnabled(base, hideItems);
     }
 
-    // ── Filter list matching ──────────────────────────────────────────────────
+    public static boolean isFluidBucketEnabled(String bucketId, List<? extends String> hideItems) {
+        if (!isItemEnabled(bucketId, hideItems)) return false;
+        String base = bucketId.replace("_bucket", "");
+        return isItemEnabled(base, hideItems);
+    }
 
     public static boolean matchesFilterList(ItemStack stack, List<? extends String> list) {
         if (list.isEmpty()) return false;
@@ -116,8 +116,6 @@ public final class ConfigLogic {
         }
         return false;
     }
-
-    // ── Storage item filtering ────────────────────────────────────────────────
 
     public static boolean isClothSackItemAllowed(ItemStack stack, List<? extends String> exclude,
                                                   List<? extends String> filter, boolean allowFood) {
