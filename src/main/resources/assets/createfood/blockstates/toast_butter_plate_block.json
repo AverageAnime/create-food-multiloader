@@ -1,7 +1,7 @@
-{
+﻿{
   "variants": {
     "facing=east,stack_size=1": {
-      "model": "createfood:block/buttered_toast_plate_block_1",
+      "model": "createfood:block/toast_butter_plate_block_1",
       "y": 270
     },
     "facing=east,stack_size=2": {
@@ -37,7 +37,7 @@
       "y": 270
     },
     "facing=north,stack_size=1": {
-      "model": "createfood:block/buttered_toast_plate_block_1",
+      "model": "createfood:block/toast_butter_plate_block_1",
       "y": 180
     },
     "facing=north,stack_size=2": {
@@ -73,7 +73,7 @@
       "y": 180
     },
     "facing=south,stack_size=1": {
-      "model": "createfood:block/buttered_toast_plate_block_1"
+      "model": "createfood:block/toast_butter_plate_block_1"
     },
     "facing=south,stack_size=2": {
       "model": "createfood:block/empty_plate_2"
@@ -100,7 +100,7 @@
       "model": "createfood:block/empty_plate_9"
     },
     "facing=west,stack_size=1": {
-      "model": "createfood:block/buttered_toast_plate_block_1",
+      "model": "createfood:block/toast_butter_plate_block_1",
       "y": 90
     },
     "facing=west,stack_size=2": {

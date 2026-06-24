@@ -1062,7 +1062,7 @@
   "item.createfood.butter": "Butter",
   "item.createfood.butter_dough": "Butter Dough",
   "item.createfood.butter_dough_small": "Butter Dough (Small)",
-  "item.createfood.buttered_toast": "Toast",
+  "item.createfood.toast_butter": "Toast",
   "item.createfood.butterscotch": "Butterscotch",
   "item.createfood.butterscotch_apple": "Apple",
   "item.createfood.butterscotch_apple_slice": "Apple Slice",
@@ -2174,5 +2174,6 @@
   "tooltip.createfood.ube_cream_frosting_ingredient": " + Ube Cream Frosting",
   "tooltip.createfood.warped_fungus_ingredient": " + Warped Fungus",
   "tooltip.createfood.white_chocolate_chips_ingredient": " + White Chocolate Chips",
-  "tooltip.createfood.white_chocolate_ingredient": " + White Chocolate"
+  "tooltip.createfood.white_chocolate_ingredient": " + White Chocolate",
+  "createfood.effect.chance": ", %s%% Chance"
 }

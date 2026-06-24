@@ -29,11 +29,12 @@ public final class ConfigLogic {
             if (p.length < 3 || !p[0].equals(itemId)) continue;
             if (!effectIdsMatch(p[1], categoryOrEffectId)) continue;
             if (p.length == 3 && p[2].equals("remove"))
-                return new ItemEffectOverride(categoryOrEffectId, 0, 0, true);
-            if (p.length == 4) {
+                return new ItemEffectOverride(categoryOrEffectId, 0, 0, true, 1.0f);
+            if (p.length >= 4) {
                 try {
+                    float chance = p.length >= 5 ? Float.parseFloat(p[4]) : 1.0f;
                     return new ItemEffectOverride(categoryOrEffectId,
-                            Integer.parseInt(p[2]), Integer.parseInt(p[3]), false);
+                            Integer.parseInt(p[2]), Integer.parseInt(p[3]), false, chance);
                 } catch (NumberFormatException ignored) {}
             }
         }
@@ -47,11 +48,12 @@ public final class ConfigLogic {
             String[] p = entry.split("\\|");
             if (p.length < 3 || !p[0].equals(itemId)) continue;
             if (p.length == 3 && p[2].equals("remove")) {
-                result.add(new ItemEffectOverride(p[1], 0, 0, true));
-            } else if (p.length == 4) {
+                result.add(new ItemEffectOverride(p[1], 0, 0, true, 1.0f));
+            } else if (p.length >= 4) {
                 try {
+                    float chance = p.length >= 5 ? Float.parseFloat(p[4]) : 1.0f;
                     result.add(new ItemEffectOverride(p[1],
-                            Integer.parseInt(p[2]), Integer.parseInt(p[3]), false));
+                            Integer.parseInt(p[2]), Integer.parseInt(p[3]), false, chance));
                 } catch (NumberFormatException ignored) {}
             }
         }
@@ -186,7 +188,7 @@ public final class ConfigLogic {
 
     // ── Simple value records ──────────────────────────────────────────────────
 
-    public record ItemEffectOverride(String effectId, int duration, int amplifier, boolean remove) {}
+    public record ItemEffectOverride(String effectId, int duration, int amplifier, boolean remove, float chance) {}
 
     public record ItemNutritionOverride(int nutrition, float saturation) {
         public static final int KEEP_INT = Integer.MIN_VALUE;

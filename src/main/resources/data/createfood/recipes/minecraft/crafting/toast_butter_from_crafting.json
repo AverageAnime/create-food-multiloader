@@ -1,8 +1,8 @@
-{
+﻿{
     "conditions": [
         {
             "type": "createfood:enabled",
-            "id": "buttered_toast"
+            "id": "toast_butter"
         }
     ],
     "type": "minecraft:crafting_shapeless",
@@ -15,6 +15,6 @@
         }
     ],
     "result": {
-        "item": "createfood:buttered_toast"
+        "item": "createfood:toast_butter"
     }
 }

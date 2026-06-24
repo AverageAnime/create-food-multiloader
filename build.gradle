@@ -28,7 +28,7 @@ apply plugin: 'org.spongepowered.mixin'
 
 version = mod_version
 group = 'net.averageanime.createfood'
-archivesBaseName = "create-food-${minecraft_version}"
+archivesBaseName = "createfood-forge-${minecraft_version}"
 
 jarJar.enable()
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)

@@ -136,7 +136,7 @@ public final class BuiltinTooltips {
         TIPS.put("bread_slice_scrambled_egg", new String[]{null, "tooltip.createfood.scrambled_egg_ingredient"});
         TIPS.put("bread_slice_tomato", new String[]{null, "tooltip.createfood.tomato_ingredient"});
         TIPS.put("breakfast_plate", new String[]{null, "tooltip.createfood.fried_egg_ingredient", "tooltip.createfood.hash_browns_ingredient", "tooltip.createfood.toast_ingredient"});
-        TIPS.put("buttered_toast", new String[]{null, "tooltip.createfood.butter_ingredient"});
+        TIPS.put("toast_butter", new String[]{null, "tooltip.createfood.butter_ingredient"});
         TIPS.put("butterscotch_apple", new String[]{null, "tooltip.createfood.butterscotch_ingredient"});
         TIPS.put("butterscotch_apple_slice", new String[]{null, "tooltip.createfood.butterscotch_ingredient"});
         TIPS.put("butterscotch_berries", new String[]{null, "tooltip.createfood.butterscotch_ingredient"});

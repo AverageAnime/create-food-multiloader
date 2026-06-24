@@ -1,6 +1,10 @@
 {
     "conditions": [
         {
+            "type": "forge:mod_loaded",
+            "modid": "farmersdelight"
+        },
+        {
             "type": "createfood:enabled",
             "id": "pasta_plate_chicken_cut_tomato_sauce"
         }

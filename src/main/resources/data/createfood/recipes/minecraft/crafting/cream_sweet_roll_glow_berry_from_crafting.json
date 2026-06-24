@@ -1,6 +1,10 @@
 {
     "conditions": [
         {
+            "type": "forge:mod_loaded",
+            "modid": "create"
+        },
+        {
             "type": "createfood:enabled",
             "id": "cream_sweet_roll_glow_berry"
         }

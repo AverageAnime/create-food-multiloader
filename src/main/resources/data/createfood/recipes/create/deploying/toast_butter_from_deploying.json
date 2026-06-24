@@ -1,8 +1,8 @@
-{
+﻿{
     "conditions": [
         {
             "type": "createfood:enabled",
-            "id": "buttered_toast"
+            "id": "toast_butter"
         },
         {
             "type": "forge:mod_loaded",
@@ -20,7 +20,7 @@
     ],
     "results": [
         {
-            "item": "createfood:buttered_toast"
+            "item": "createfood:toast_butter"
         }
     ]
 }

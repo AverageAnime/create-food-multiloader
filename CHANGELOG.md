@@ -1,3 +1,12 @@
+### *** 2.6.0 ***
+> Note: Due to the massive amount of changes, be careful when updating. If you notice anything inconsistent with 1.21.1 or incorrectly backported, please report [here](https://github.com/AverageAnime/create-food-multiloader/issues).
+
+#### Forge:
+* Full backport of 1.21.1. View full list of changes [here](https://github.com/AverageAnime/create-food-multiloader/blob/1.21.1/CHANGELOG.md). 
+  * Farmer's Delight & Create dependencies removed.
+  * All new items/blocks/fluids.
+  * Every feature & config option found on the wiki.
+
 ### *** 1.1.13a ***
 
 #### Forge:

@@ -1,6 +1,6 @@
-{
+﻿{
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "createfood:item/buttered_toast"
+    "layer0": "createfood:item/toast_butter"
   }
 }

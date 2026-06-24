@@ -1,11 +1,11 @@
-{
+﻿{
   "type": "minecraft:block",
   "pools": [
     {
       "bonus_rolls": 0.0,
       "conditions": [
         {
-          "block": "createfood:buttered_toast_plate_block",
+          "block": "createfood:toast_butter_plate_block",
           "condition": "minecraft:block_state_property",
           "properties": {
             "stack_size": "1"
@@ -15,7 +15,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "createfood:buttered_toast_plate_block"
+          "name": "createfood:toast_butter_plate_block"
         }
       ],
       "rolls": 1.0
@@ -26,7 +26,7 @@
         {
           "condition": "minecraft:inverted",
           "term": {
-            "block": "createfood:buttered_toast_plate_block",
+            "block": "createfood:toast_butter_plate_block",
             "condition": "minecraft:block_state_property",
             "properties": {
               "stack_size": "1"
@@ -43,5 +43,5 @@
       "rolls": 1.0
     }
   ],
-  "random_sequence": "createfood:blocks/buttered_toast_plate_block"
+  "random_sequence": "createfood:blocks/toast_butter_plate_block"
 }

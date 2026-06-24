@@ -28,7 +28,7 @@ import java.util.function.Supplier;
 public class EffectFood extends Item {
 
     public record DeferredFx(String categoryOrEffectId, Supplier<Optional<MobEffect>> effect,
-                              int duration, int amplifier) {}
+                              int duration, int amplifier, float chance) {}
 
     private final Set<String> existingEffectIds;
     private final List<DeferredFx> deferredEffects;
@@ -175,6 +175,8 @@ public class EffectFood extends Item {
                         CreateFoodConfig.SERVER.itemOverrides.get());
             } catch (Exception ignored) {}
             if (override != null && override.remove()) continue;
+            float chance = override != null ? override.chance() : deferred.chance();
+            if (consumer.getRandom().nextFloat() >= chance) continue;
             final ConfigLogic.ItemEffectOverride finalOverride = override;
             deferred.effect().get().ifPresent(effect -> {
                 int dur = finalOverride != null ? finalOverride.duration() : deferred.duration();
@@ -197,6 +199,7 @@ public class EffectFood extends Item {
         for (ConfigLogic.ItemEffectOverride addition : additions) {
             if (addition.remove()) continue;
             if (isExistingEffect(addition.effectId())) continue;
+            if (consumer.getRandom().nextFloat() >= addition.chance()) continue;
             resolveEffect(addition.effectId()).ifPresent(effect ->
                     consumer.addEffect(new MobEffectInstance(effect, addition.duration(), addition.amplifier()))
             );
@@ -248,7 +251,8 @@ public class EffectFood extends Item {
             if (addition.remove()) continue;
             if (isExistingEffect(addition.effectId())) continue;
             resolveEffect(addition.effectId()).ifPresent(effect ->
-                    addEffectLine(tooltip, new MobEffectInstance(effect, addition.duration(), addition.amplifier()))
+                    addEffectLine(tooltip, new MobEffectInstance(effect, addition.duration(), addition.amplifier()),
+                            addition.chance())
             );
         }
 
@@ -263,12 +267,17 @@ public class EffectFood extends Item {
             deferred.effect().get().ifPresent(effect -> {
                 int dur = finalOverride != null ? finalOverride.duration() : deferred.duration();
                 int amp = finalOverride != null ? finalOverride.amplifier() : deferred.amplifier();
-                addEffectLine(tooltip, new MobEffectInstance(effect, dur, amp));
+                float chance = finalOverride != null ? finalOverride.chance() : deferred.chance();
+                addEffectLine(tooltip, new MobEffectInstance(effect, dur, amp), chance);
             });
         }
     }
 
     static void addEffectLine(List<Component> tooltip, MobEffectInstance instance) {
+        addEffectLine(tooltip, instance, 1.0f);
+    }
+
+    static void addEffectLine(List<Component> tooltip, MobEffectInstance instance, float chance) {
         if (instance == null || instance.getDuration() <= 0) return;
         MutableComponent line = Component.translatable(instance.getDescriptionId());
         if (instance.getAmplifier() > 0) {
@@ -278,6 +287,10 @@ public class EffectFood extends Item {
         if (instance.getDuration() > 20) {
             line = Component.translatable("potion.withDuration", line,
                     MobEffectUtil.formatDuration(instance, 1.0f));
+        }
+        if (chance < 1.0f) {
+            int pct = Math.round(chance * 100);
+            line = line.append(Component.translatable("createfood.effect.chance", pct));
         }
         tooltip.add(line.withStyle(instance.getEffect().getCategory().getTooltipFormatting()));
     }

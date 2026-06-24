@@ -67,6 +67,13 @@ public class CreateFoodConfig {
         public final ForgeConfigSpec.ConfigValue<List<? extends String>> rationBoxExclude;
         public final ForgeConfigSpec.ConfigValue<List<? extends String>> rationBoxFilter;
 
+        // ── Campfire Cooking ──────────────────────────────────────────────────
+        public final ForgeConfigSpec.BooleanValue enableCampfireCooking;
+        public final ForgeConfigSpec.BooleanValue campfireCookingRequireShift;
+        public final ForgeConfigSpec.BooleanValue campfireCookingSticksOnly;
+        public final ForgeConfigSpec.ConfigValue<List<? extends String>> campfireCookingExclude;
+        public final ForgeConfigSpec.ConfigValue<List<? extends String>> campfireCookingFilter;
+
         // ── Handcrafting ──────────────────────────────────────────────────────
         public final ForgeConfigSpec.BooleanValue enableHandcrafting;
         public final ForgeConfigSpec.BooleanValue handcraftingAllowSingle;
@@ -114,7 +121,7 @@ public class CreateFoodConfig {
                     .defineList("category_overrides", Collections.emptyList(), e -> e instanceof String);
 
             itemOverrides = builder
-                    .comment("Override effects per item. Format: 'item_id|effect_id|duration|amplifier' or 'item_id|effect_id|remove'")
+                    .comment("Override effects per item. Format: 'item_id|effect_id|duration|amplifier[|chance]' or 'item_id|effect_id|remove'")
                     .defineList("item_overrides", Collections.emptyList(), e -> e instanceof String);
 
             builder.pop();
@@ -172,6 +179,30 @@ public class CreateFoodConfig {
             rationBoxFilter = builder
                     .comment("Whitelist of items allowed in the Ration Box. Empty = allow all (respecting exclude). Format: 'item:modid:item_id', 'mod:modid', or 'tag:tag_id'")
                     .defineList("filter", Collections.emptyList(), e -> e instanceof String);
+
+            builder.pop();
+
+            builder.push("campfire_cooking");
+
+            enableCampfireCooking = builder
+                    .comment("Allow campfire cooking by holding an ingredient near a farmersdelight:heat_sources block while sneaking")
+                    .define("enable_campfire_cooking", false);
+
+            campfireCookingRequireShift = builder
+                    .comment("Require the player to hold Shift/sneak while near a heat source to cook")
+                    .define("require_shift", true);
+
+            campfireCookingSticksOnly = builder
+                    .comment("Only allow campfire cooking for recipes whose result ends with '_stick'")
+                    .define("sticks_only", false);
+
+            campfireCookingExclude = builder
+                    .comment("Items excluded from campfire cooking. Format: 'item:modid:item_id', 'mod:modid', or 'tag:tag_id'")
+                    .defineList("campfire_cooking_exclude", Collections.emptyList(), e -> e instanceof String);
+
+            campfireCookingFilter = builder
+                    .comment("Whitelist of items that can be campfire-cooked. Empty = allow all. Format: 'item:modid:item_id', 'mod:modid', or 'tag:tag_id'")
+                    .defineList("campfire_cooking_filter", Collections.emptyList(), e -> e instanceof String);
 
             builder.pop();
 

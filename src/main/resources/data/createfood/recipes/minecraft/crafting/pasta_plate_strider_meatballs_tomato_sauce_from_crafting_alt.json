@@ -1,6 +1,10 @@
 {
     "conditions": [
         {
+            "type": "forge:mod_loaded",
+            "modid": "farmersdelight"
+        },
+        {
             "type": "createfood:enabled",
             "id": "pasta_plate_strider_meatballs_tomato_sauce"
         }
