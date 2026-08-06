@@ -58,18 +58,27 @@ Controls registration type and item class. All valid values:
 
 | Value | Description                                                                             |
 |---|-----------------------------------------------------------------------------------------|
+| `alienating` | Applies Weakness and Disgusted to surrounding mobs; Disgusted prevents animals from breeding |
+| `appetizing` | Eat and drink even while your food bar is full |
+| `astringent` | Walk on ice and other slippery blocks as if they were normal |
+| `clarity` | Prevents Blindness and Darkness |
+| `cycling` | Drops a level of experience as orbs each second, repairing Mending gear without an external source |
+| `digesting` | Overflowing nutrition becomes saturation |
 | `food` | Standard food, stack 64. Shows effects in tooltip.                                      |
 | `fastFood` | food with `.fast()` — skips eat animation. Equivalent to `"type": "food", "fast": true` |
 | `bowlFood` | Food that returns a bowl on use, stack 16. Shows effects in tooltip. Set `crBowl: true` to also return the bowl as a crafting remainder.    |
 | `bottle` | DrinkableItem that returns a glass bottle, stack 16                                     |
 | `stickFood` | Held on a stick                                                                         |
 | `stickFoodCr` | Held on a stick; also returns the stick as a crafting remainder                        |
+| `heal_aura` | Applies instant health to entities around you |
+| `leaf_piercing` | Projectiles you shoot pass through leaves |
+| `lozenge` | Eat and drink faster |
 | `plain` | Non-food ingredient, no special properties                                              |
 | `plainCr` | Non-food with a crafting remainder (not yet spec-settable)                              |
 | `ingredientBowl` | Non-food, stack 16, returns bowl                                                        |
 | `ingredientBottle` | Non-drinkable, stack 16, returns glass bottle                                           |
 | `pipingBag` | Stack 2, returns a piping bag                                                           |
-| `fluid` | Registers as a fluid — see Fluid items below                                            |
+| `fluidBlock` | Registers as a fluidBlock — see Fluid items below                                            |
 | `block_cake` | Placed cake block (7 bites). Generates slice item automatically                         |
 | `block_pie` | 4-slice pie/cheesecake block pair (raw + cooked)                                        |
 | `block_pizza` | 4-slice pizza/waffle block pair (raw + cooked)                                          |
@@ -82,7 +91,7 @@ Controls registration type and item class. All valid values:
 | `block_cake_base` | Unfrosted cake base block (no slice)                                                   |
 
 ### `nutrition` and `saturation`
-Integers/floats. Only applies to food types. Ignored for `plain`, `fluid`, and block types (block types use `sliceNutrition`/`sliceSaturation` instead).
+Integers/floats. Only applies to food types. Ignored for `plain`, `fluidBlock`, and block types (block types use `sliceNutrition`/`sliceSaturation` instead).
 
 ```json
 "nutrition": 9,
@@ -112,6 +121,25 @@ Array of tooltip ingredient key strings. These map to `tooltip.createfood.<key>`
 
 Available keys are everything in the toolkit's ingredient list — if you've used a key in the toolkit UI before, it works here.
 
+### `customTooltips` and `customCompatKeys`
+
+A key that doesn't exist yet needs its lang entry generated too. Listing it in `tooltips` alone produces the correct Java but **no `tooltip.createfood.<key>_ingredient` line**, so it renders as the raw key in game. Declare new keys here as well:
+
+```json
+"tooltips": ["bell_pepper", "tomato"],
+"customTooltips": [
+  { "key": "bell_pepper", "display": "Bell Pepper" }
+],
+"customCompatKeys": [
+  { "key": "bell_pepper", "display": "Rustic Delight+" }
+]
+```
+
+- `customTooltips` → `tooltip.createfood.<key>_ingredient` = `" + <display>"`. The key must **also** appear in `tooltips`, otherwise no line is written.
+- `customCompatKeys` → `tooltip.compat.<key>` = `"<display>"`. Use the providing mod's name with a trailing `+`, matching the existing entries. Pair it with `"isCompat": true` and `"compatKey": "<key>"` on the items that need the mod.
+- A bare string is accepted as shorthand for `{ "key": x, "display": x }`.
+- Keys already built into the toolkit (`BASE_TOOLTIP_KEYS` / `BUILTIN_COMPAT_KEYS`) do not need declaring.
+
 ### `effects`
 Array of effect objects. Each has:
 
@@ -136,6 +164,7 @@ Array of effect objects. Each has:
 | `Speed` | Speed |
 | `Strength` | Strength |
 | `Luck` | Luck |
+| `Health Boost` | Health Boost |
 
 **Food Effects:**
 
@@ -168,18 +197,26 @@ Array of effect objects. Each has:
 | `party_starter`     | Fireworks on hit + bonus damage |
 | `perception`        | Nearby entities glow |
 | `preservation`      | Eating rotten flesh, raw chicken, poisonous potatoes, pufferfish, or spider eyes will not cause debuffs |
+| `prickly` | Damages entities that collide with you |
+| `rage_aura` | Mobs around you become hostile |
 | `raging`            | Gain 5% attack speed per melee hit, stacks up to 4× |
+| `recovering` | Prevents Poison and Wither |
 | `refreshed`         | Next harvests don't consume durability; may yield extra drops |
+| `refreshing` | Prevents Mining Fatigue |
 | `repulsion`         | Periodically pushes enemies away |
 | `rest`              | Phantoms will flee from you |
 | `rested`            | Bonus experience gain |
 | `satiated_shield`   | Hunger value acts as extra health; damage is absorbed by hunger first |
 | `satiation`         | Hunger management |
+| `shrinking` | Crawl into 1-block gaps while sneaking |
+| `sliding` | Boats you ride slide on any block as if on ice |
 | `stimulation`       | Removes mining fatigue and slowness |
 | `stout_heart`       | Knockback resistance |
 | `sugar_rush`        | Stacking speed buff |
+| `suspicious_smell` | Makes suspicious sand and gravel easier to find, and reveals suspicious stew effects |
 | `sustenance`        | Periodic hunger or health restoration |
 | `sweet_heart`       | Extra saturation-based healing at any hunger level |
+| `sweetening` | Prevents Slowness |
 | `touch_absorb`      | Melee attacks grant Absorption |
 | `touch_heal`        | Melee attacks heal the target |
 | `touch_poison`      | Melee attacks apply Poison |
@@ -242,7 +279,7 @@ For `block_cake`, `block_pie`, `block_pizza`, `block_raw_pie`, `block_raw_pizza`
 
 ## Fluid item fields
 
-Set `"type": "fluid"` or `"registrationType": "fluid"`. Additional fields:
+Set `"type": "fluidBlock"` or `"registrationType": "fluidBlock"`. Additional fields:
 
 | Field | Description |
 |---|---|
@@ -263,7 +300,7 @@ Set `"type": "fluid"` or `"registrationType": "fluid"`. Additional fields:
 {
   "id": "apple_custard",
   "displayName": "Apple Custard",
-  "type": "fluid",
+  "type": "fluidBlock",
   "fluidFlowSlope": 3,
   "fluidFlowDecrease": 2,
   "createBottle": true,
@@ -343,8 +380,8 @@ All valid recipe types:
 | `create:compacting` | Mechanical press, no heat |
 | `create:deploying` | Deployer applies item to item |
 | `create:item_application` | Deployer applies item onto stationary target, returns result + optional applicator |
-| `create:emptying` | Extracts fluid from container |
-| `create:filling` | Fills container with fluid |
+| `create:emptying` | Extracts fluidBlock from container |
+| `create:filling` | Fills container with fluidBlock |
 | `create:milling` | Millstone grinds to powder |
 | `create:mixing_heated` | Mixer with heat |
 | `create:mixing` | Mixer, no heat |
@@ -356,6 +393,15 @@ All valid recipe types:
 | `minecraft:crafting_shapeless` | Shapeless crafting table |
 | `minecraft:smelting` | Furnace |
 | `minecraft:smoking` | Smoker |
+| `expandeddelight:juicing` | Juicer. Container is a glass bottle, or a bucket when the output id ends in `_bucket` |
+| `hearthandharvest:aging` | Cask aging — one ingredient matures into the result. Uses `cookingtime` (default 1200) |
+| `hearthandharvest:stomping` | Stomping basin — several solids produce a fluid. Set `fluidOutput: true` and `fluidAmount` (default 500) |
+| `ratatouille:squeezing` | Squeeze basin. Uses `cookingtime` as the processing time (default 200) |
+| `ratatouille:threshing` | Thresher. Uses `cookingtime` as the processing time (default 200) |
+| `ratatouille_fried_delights:coating` | Drum processor — coats one item in another. Uses `cookingtime` as the processing time |
+| `ratatouille_fried_delights:frying` | Continuous fryer. Give it the item plus a `fluid_tag` input for the oil; the toolkit emits that as a `neoforge:tag` ingredient |
+
+The seven types above are owned by other mods, so the toolkit adds their `mod_loaded` load condition automatically — the same way `create:*` and `farmersdelight:*` recipes already get theirs.
 
 ### `inputs`
 
@@ -363,9 +409,9 @@ Array of ingredient objects. Each has a `type` and `value`:
 
 | Input type | Value format | Example |
 |---|---|---|
-| `tag` | Tag path — `c:` prefix is added automatically if missing | `"cooked_beef"` or `"c:cooked_beef"` |
+| `tag` | Tag path — `c:` is added only when the value has no namespace of its own | `"cooked_beef"`, `"c:cooked_beef"`, `"farmersdelight:tools/knives"` |
 | `item` | Full item ID with namespace | `"minecraft:glass_bottle"` |
-| `fluid_tag` | Tag path + mB amount separated by `\|` | `"honey\|125"` or `"c:honey\|125"` |
+| `fluid_tag` | Tag path + mB amount separated by `\|`, same namespace rule as `tag` | `"honey\|125"`, `"c:honey\|125"`, `"ratatouille_fried_delights:oil\|100"` |
 
 ```json
 "inputs": [
@@ -411,7 +457,7 @@ The recipe type suffix (`_from_deploying`, `_from_crafting`, etc.) is **always a
 
 Don't repeat the recipe type name in the suffix — `"suffix": "from_deploying"` would produce `my_item_from_deploying_from_deploying.json`.
 
-If you have two `create:filling` recipes pointing at the same output (one with honey fluid, one with caramel fluid), the toolkit already auto-disambiguates by fluid tag name — no suffix needed.
+If you have two `create:filling` recipes pointing at the same output (one with honey fluidBlock, one with caramel fluidBlock), the toolkit already auto-disambiguates by fluidBlock tag name — no suffix needed.
 
 ### `experience` and `cookingtime`
 Used by `farmersdelight:cooking`, `minecraft:smelting`, `minecraft:smoking`, and `minecraft:campfire_cooking`.
@@ -422,7 +468,7 @@ Used by `farmersdelight:cooking`, `minecraft:smelting`, `minecraft:smoking`, and
 ```
 
 ### `fluidOutput` and `fluidAmount`
-For `create:mixing` and `create:mixing_heated` when the output is a fluid rather than an item.
+For `create:mixing` and `create:mixing_heated` when the output is a fluidBlock rather than an item.
 
 ```json
 {
@@ -470,10 +516,10 @@ data/createfood/recipe/<dir>/<output><type_suffix><fluid_suffix><suffix>.json
 Where:
 - `<dir>` comes from the recipe type (e.g. `create/deploying`)
 - `<type_suffix>` is the type's default suffix (e.g. `_from_deploying`)
-- `<fluid_suffix>` is auto-appended for `create:filling` and `create:mixing` based on the fluid tag name
+- `<fluid_suffix>` is auto-appended for `create:filling` and `create:mixing` based on the fluidBlock tag name
 - `<suffix>` is the manual `suffix` field
 
-Collisions only happen when two recipes of the same type target the same output with no distinguishing fluid input. In that case add a short descriptive string to the second recipe's `suffix` — `"alt"`, `"sauce"`, `"bucket"` etc. Never use the recipe type name itself as the suffix.
+Collisions only happen when two recipes of the same type target the same output with no distinguishing fluidBlock input. In that case add a short descriptive string to the second recipe's `suffix` — `"alt"`, `"sauce"`, `"bucket"` etc. Never use the recipe type name itself as the suffix.
 
 ---
 
@@ -483,13 +529,13 @@ You do not need to write recipes for these — the toolkit generates them when i
 
 | Condition | Auto-generated files |
 |---|---|
-| `type: "fluid"` + `createBottle: true` | `_bottle_from_filling.json`, `_fluid_from_emptying_bottle.json`, `_bottle_from_bucket.json`, `_bucket_from_bottles.json` |
-| `type: "fluid"` + `createBowl: true` | Same four files for bowl |
+| `type: "fluidBlock"` + `createBottle: true` | `_bottle_from_filling.json`, `_fluid_from_emptying_bottle.json`, `_bottle_from_bucket.json`, `_bucket_from_bottles.json` |
+| `type: "fluidBlock"` + `createBowl: true` | Same four files for bowl |
 | `type: "block_pie"` or `"block_pizza"` | `<slice>_from_cutting.json`, `<id>_from_crafting.json` (slice recombine) |
 | `type: "block_cake"` | Same two files (7-slice cut + recombine) |
 | All `item` registrations | `ModItems.java` line, `ModDisplayBlocks.java` exclusion if needed |
 | All `block` registrations | `ModBlocks.java` line, `ModItems.java` slice line |
-| All `fluid` registrations | `ModFluids.java` line |
+| All `fluidBlock` registrations | `ModFluids.java` line |
 | `isCompat: true` | `ConfigDefaults.java` entry (adds to `HIDE_ITEMS_DEFAULT`) |
 
 ---
@@ -619,7 +665,7 @@ You do not need to write recipes for these — the toolkit generates them when i
 {
   "id": "apple_custard",
   "displayName": "Apple Custard",
-  "type": "fluid",
+  "type": "fluidBlock",
   "fluidFlowSlope": 3,
   "fluidFlowDecrease": 2,
   "createBottle": true,
@@ -636,7 +682,7 @@ You do not need to write recipes for these — the toolkit generates them when i
 
 **Wrong effect name** — effect names are case-sensitive and must match exactly. `"night vision"` won't work; it must be `"Night Vision"`.
 
-**Missing fluid `|mB`** — fluid inputs must include the amount: `"honey|125"`, not `"honey"`.
+**Missing fluidBlock `|mB`** — fluidBlock inputs must include the amount: `"honey|125"`, not `"honey"`.
 
 **Shaped pattern wrong length** — `pattern` must be exactly 3 strings of exactly 3 characters. Pad with spaces: `"X  "` not `"X"`.
 
@@ -652,7 +698,7 @@ You do not need to write recipes for these — the toolkit generates them when i
 
 **Wrong block type for waffle** — use `block_waffle`, not `block_pizza`. Waffles use a different block class and do not have a raw/cooked pair in the same sense as pies.
 
-**`createBottle`/`createBowl` on a fluid** — bottle and bowl items are auto-generated into `ItemRegistry.java`. You do not need to add them as separate spec items. The bowl variant is automatically registered with `crBowl: true` so the bowl returns as a crafting remainder from filling recipes.
+**`createBottle`/`createBowl` on a fluidBlock** — bottle and bowl items are auto-generated into `ItemRegistry.java`. You do not need to add them as separate spec items. The bowl variant is automatically registered with `crBowl: true` so the bowl returns as a crafting remainder from filling recipes.
 
 **Incorrectly specifying `_ingredient`** — Toolkit automatically adds `_ingredient`, so it should not be included as part of the spec file.
 

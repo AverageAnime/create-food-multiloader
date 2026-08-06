@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "c:scone"
+    },
+    {
+      "tag": "c:butter"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "createfood:scone_butter"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "scone_butter"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "scone_butter"
+    }
+  ]
+}

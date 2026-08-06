@@ -1,0 +1,31 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "baked_potato_butter_sausage"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "baked_potato_butter_sausage"
+    }
+  ],
+  "key": {
+    "1": {
+      "tag": "c:sausages"
+    },
+    "2": {
+      "tag": "c:baked_potato_butter"
+    }
+  },
+  "pattern": [
+    "1",
+    "2"
+  ],
+  "result": {
+    "count": 1,
+    "id": "createfood:baked_potato_butter_sausage"
+  }
+}

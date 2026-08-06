@@ -3,6 +3,10 @@
     {
       "id": "createfood:melon_jam_bottle",
       "required": false
+    },
+    {
+      "id": "fruitsdelight:melon_jam",
+      "required": false
     }
   ]
 }

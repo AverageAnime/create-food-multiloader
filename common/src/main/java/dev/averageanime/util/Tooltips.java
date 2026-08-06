@@ -7,13 +7,13 @@ public final class Tooltips {
 
     private Tooltips() {}
 
-    public static Tip tips(String compat, String... shortKeys) {
+    public static TooltipSpec tips(String compat, String... shortKeys) {
         String[] full = new String[shortKeys.length];
         for (int i = 0; i < shortKeys.length; i++) {
             full[i] = TIP_PREFIX + shortKeys[i];
         }
-        return new Tip(compat != null ? COMPAT_PREFIX + compat : null, full);
+        return new TooltipSpec(compat != null ? COMPAT_PREFIX + compat : null, full);
     }
 
-    public static record Tip(String compat, String[] keys) {}
+    public record TooltipSpec(String compat, String[] keys) {}
 }

@@ -4,6 +4,18 @@
       "model": "createfood:block/berry_jam_donut_plate_block_1",
       "y": 270
     },
+    "facing=east,stack_size=10": {
+      "model": "createfood:block/empty_plate_10",
+      "y": 270
+    },
+    "facing=east,stack_size=11": {
+      "model": "createfood:block/empty_plate_11",
+      "y": 270
+    },
+    "facing=east,stack_size=12": {
+      "model": "createfood:block/empty_plate_12",
+      "y": 270
+    },
     "facing=east,stack_size=2": {
       "model": "createfood:block/berry_jam_donut_plate_block_2",
       "y": 270
@@ -38,6 +50,18 @@
     },
     "facing=north,stack_size=1": {
       "model": "createfood:block/berry_jam_donut_plate_block_1",
+      "y": 180
+    },
+    "facing=north,stack_size=10": {
+      "model": "createfood:block/empty_plate_10",
+      "y": 180
+    },
+    "facing=north,stack_size=11": {
+      "model": "createfood:block/empty_plate_11",
+      "y": 180
+    },
+    "facing=north,stack_size=12": {
+      "model": "createfood:block/empty_plate_12",
       "y": 180
     },
     "facing=north,stack_size=2": {
@@ -75,6 +99,15 @@
     "facing=south,stack_size=1": {
       "model": "createfood:block/berry_jam_donut_plate_block_1"
     },
+    "facing=south,stack_size=10": {
+      "model": "createfood:block/empty_plate_10"
+    },
+    "facing=south,stack_size=11": {
+      "model": "createfood:block/empty_plate_11"
+    },
+    "facing=south,stack_size=12": {
+      "model": "createfood:block/empty_plate_12"
+    },
     "facing=south,stack_size=2": {
       "model": "createfood:block/berry_jam_donut_plate_block_2"
     },
@@ -101,6 +134,18 @@
     },
     "facing=west,stack_size=1": {
       "model": "createfood:block/berry_jam_donut_plate_block_1",
+      "y": 90
+    },
+    "facing=west,stack_size=10": {
+      "model": "createfood:block/empty_plate_10",
+      "y": 90
+    },
+    "facing=west,stack_size=11": {
+      "model": "createfood:block/empty_plate_11",
+      "y": 90
+    },
+    "facing=west,stack_size=12": {
+      "model": "createfood:block/empty_plate_12",
       "y": 90
     },
     "facing=west,stack_size=2": {

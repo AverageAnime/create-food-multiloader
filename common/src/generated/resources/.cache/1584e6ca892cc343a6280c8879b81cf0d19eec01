@@ -1,4 +1,4 @@
-// 1.21.1	2026-05-01T15:36:34.0479526	Tags for minecraft:fluid mod id createfood
+// 1.21.1	2026-08-05T16:56:57.197246	Tags for minecraft:fluid mod id createfood
 f056cd23c8d63376dba02a2935e32b56e1bed2c5 data/c/tags/fluid/apple_cream_frosting.json
 eae0e1bd65fdcc607d52d2937fa8160f815d51d2 data/c/tags/fluid/apple_custard.json
 1ecded27e95697475dbe2e600b84f334eed90688 data/c/tags/fluid/apple_ice_cream.json
@@ -10,7 +10,7 @@ a313c2c17cd699b6fa2c96a67a694b3271805d42 data/c/tags/fluid/apple_pie_filling.jso
 e45efaadb7b9135147d4001adb044ccf506af42c data/c/tags/fluid/berry_custard.json
 7f9f6c1413bc84b8f293100578d5a1aabe7b048b data/c/tags/fluid/berry_ice_cream.json
 52ff3ac24148386ed42fae7171322c49ee6c94a2 data/c/tags/fluid/berry_jam.json
-76f491e26493c82f1ebec910eaffb38b9cb2895e data/c/tags/fluid/berry_juice.json
+309df3bf809d90dc170043721af2160efacb6d92 data/c/tags/fluid/berry_juice.json
 8ac10b7838d1f12a9430c6d7dfddc0afbd579e91 data/c/tags/fluid/berry_milkshake.json
 b00102212d59dbbad12d9fdc3b41413684e13ee2 data/c/tags/fluid/berry_pie_filling.json
 6f6f3802da7bf12d5a38bb20e93be477fc2b36f9 data/c/tags/fluid/blackstrap_molasses.json
@@ -22,9 +22,9 @@ ae91c621fbd760e2436fdeb8b5f7c0d4e92fe414 data/c/tags/fluid/black_gelatin_mix.jso
 9a797358d49587d17c000954f7c449283b5c8844 data/c/tags/fluid/butterscotch_fudge.json
 d7a5ab5d965237c91f7321976be886d6593c13d1 data/c/tags/fluid/cacao_butter.json
 430f8299791401e857b9a998450f3bb1cbf21602 data/c/tags/fluid/cacao_mass.json
-740474fa82ceffc6c41a8f51b825d844ac57bca8 data/c/tags/fluid/cake_batter.json
+fb9c1d91c7a441e5e4c41b686b16e47063171a00 data/c/tags/fluid/cake_batter.json
 ef31027e543deb37e1bd9f626ae9a98555eeb9f8 data/c/tags/fluid/cane_syrup.json
-068b7730fa498b91b9765367a0663ebc22753451 data/c/tags/fluid/caramel.json
+373e850d393ecca202fa9544d1247e0264d89edf data/c/tags/fluid/caramel.json
 80842ec153b83d1eb9803630bd8edb42a7eb056a data/c/tags/fluid/caramel_fudge.json
 b7493f62fb58c226e49bc5141006acbbd66293d5 data/c/tags/fluid/cheesecake_filling.json
 44e37a3c603a713b14201f66763a4818d4dd92b6 data/c/tags/fluid/chocolate_cake_batter.json
@@ -49,7 +49,7 @@ f1d25fb20d0fa323e540c39879a388b54a8b98a2 data/c/tags/fluid/cream_frosting.json
 3e58e5e796ece63fd34b1fee856a9be5bfab01d2 data/c/tags/fluid/cream_pie_filling.json
 beef7bf8c18bc82d61505a128dc804760737f048 data/c/tags/fluid/custard.json
 63a600ad1039432d473dbcfd0a6bd38c84a5e2c2 data/c/tags/fluid/cyan_gelatin_mix.json
-784749f565a36328c704a39d9c6269e693de0ae4 data/c/tags/fluid/dark_chocolate.json
+5a710e9efd9c1bde9f96f48179178d4ffd652976 data/c/tags/fluid/dark_chocolate.json
 1eb607c2870eab9c34e67137063f3ac2e6aa1189 data/c/tags/fluid/dark_chocolate_fudge.json
 5135c3104cf7f3c857dd95ae55a7a9f9707a4289 data/c/tags/fluid/egg.json
 3fa06e849e13088c788eeaf4a3ad9805137d2006 data/c/tags/fluid/egg_whites.json
@@ -59,13 +59,13 @@ f93fab8074881256c0fa75217c9c0192d5e6e2e3 data/c/tags/fluid/fruit_smoothie.json
 9a7986c84ac50738c82b36d4570fe91db69c13fe data/c/tags/fluid/glow_berry_cream_frosting.json
 20ebfdc0374af04119e99b6f4197ede496317b12 data/c/tags/fluid/glow_berry_ice_cream.json
 212b954aed9b76bef08283b7714caec49137898d data/c/tags/fluid/glow_berry_jam.json
-d6294011754e813ffea2cc957d8db7e99905d0bd data/c/tags/fluid/glow_berry_juice.json
+1fe34e5c0019f918a6ccd074115a4e6a678e2122 data/c/tags/fluid/glow_berry_juice.json
 550c888c62ca512bcc706e51c0ccc1d5103e02f5 data/c/tags/fluid/glow_berry_milkshake.json
 e71dffe731205ff42a0df2658509c5ed437ab9e1 data/c/tags/fluid/glow_berry_pie_filling.json
 a965023feaf70f6b978486d0fdfdb644d35e7221 data/c/tags/fluid/gray_gelatin_mix.json
 f57e89547df5222dc6f925855b198f32864f1ac6 data/c/tags/fluid/green_gelatin_mix.json
 305951578765afa2b7fd19b930dc5c71edd20de1 data/c/tags/fluid/heavy_cream.json
-b33a56719b11e40ada9103adf2a5c6e8143d5a12 data/c/tags/fluid/hot_chocolate.json
+9273c407069e06a2992d6b2373b65517f7fad7d3 data/c/tags/fluid/hot_chocolate.json
 c547ea39f6f9fd10486cf8c481fcf0a9d363d674 data/c/tags/fluid/hot_dark_chocolate.json
 859c58538fd3bf1cf3506609b9e469ad26f829cc data/c/tags/fluid/hot_white_chocolate.json
 17ddba221e218abd987470d7ecad66380c1f0fc8 data/c/tags/fluid/ice_cream.json
@@ -97,6 +97,7 @@ d1458173cf4bd5e717dbdca32ca68428093cf981 data/c/tags/fluid/pumpkin_puree.json
 c8648bdda3171ab8ef0332bc860f8c2e46a7447e data/c/tags/fluid/purple_gelatin_mix.json
 27d1c44dde828f8aaad4c6c4e35c6e9c29cb3984 data/c/tags/fluid/red_gelatin_mix.json
 029dc0adf5d0cf0c034ca9bce672de9594dfd3e2 data/c/tags/fluid/rice_pudding.json
+1c52cdad4e7f1f90eed4d1e94bed7998f3e956ef data/c/tags/fluid/shakshuka.json
 8dd6dba0bd8b8f842c8d8ff73a54231dc4c59185 data/c/tags/fluid/slime.json
 d44769068b002c0b091d51c6fc592a92aada69e2 data/c/tags/fluid/sour_cream.json
 2544ec71928e329b728ace6bf6a8991fccce5e2e data/c/tags/fluid/squid_ink.json
@@ -110,7 +111,8 @@ a4c5b5971cfced042828a1b745df5de71ede1ad3 data/c/tags/fluid/tomato_cream_soup.jso
 ee4e47d39676e2ea4582201a26b49b3d66714866 data/c/tags/fluid/vegetable_oil.json
 833d0cc27b9d8569e021f78f05b917c231a6de59 data/c/tags/fluid/vinegar.json
 6f9bb63c127761483a38997e33651c57845ef6ef data/c/tags/fluid/waffle_batter.json
-0b32e603abda51cf458070017be116cbe268d158 data/c/tags/fluid/white_chocolate.json
+67e6008aa6f3f49032e2771c5d2934092f9c7f9f data/c/tags/fluid/white_chocolate.json
 2efc53ba47438020ef3c825f6a04d85bed199790 data/c/tags/fluid/white_chocolate_fudge.json
 9314de4cbc49ca4d20625a7272ed5ea6558b3838 data/c/tags/fluid/yellow_gelatin_mix.json
 21700d14d3703e2393ed43723085f64c0cf6c763 data/c/tags/fluid/yogurt.json
+b3b818397ec239e295fdd41f2a74f1b2ab3275c9 data/ratatouille_fried_delights/tags/fluid/oil.json

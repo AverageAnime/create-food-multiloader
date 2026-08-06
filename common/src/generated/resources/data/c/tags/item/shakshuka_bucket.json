@@ -1,0 +1,8 @@
+{
+  "values": [
+    {
+      "id": "createfood:shakshuka_bucket",
+      "required": false
+    }
+  ]
+}

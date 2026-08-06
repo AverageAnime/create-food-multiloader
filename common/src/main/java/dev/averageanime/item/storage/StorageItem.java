@@ -22,10 +22,16 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
+import java.util.WeakHashMap;
 
 public abstract class StorageItem extends BlockItem {
+
+    private static final Map<CustomData, StorageAccess> READ_CACHE =
+            Collections.synchronizedMap(new WeakHashMap<>());
 
     protected StorageItem(Block block, Properties properties) {
         super(block, properties);
@@ -38,7 +44,7 @@ public abstract class StorageItem extends BlockItem {
     protected abstract MenuConstructor menuConstructor(int slotIndex);
     protected abstract Component menuTitle();
     protected abstract BlockEntityType<?> getBlockEntityType();
-    protected abstract IStorageItemHandler createHandler();
+    protected abstract StorageAccess createHandler();
 
     @Override
     public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level level,
@@ -57,9 +63,9 @@ public abstract class StorageItem extends BlockItem {
             return InteractionResultHolder.sidedSuccess(heldStack, level.isClientSide);
         }
 
-        int slot = findFirstFoodSlot(heldStack, level);
+        StorageAccess handler = loadInventoryFresh(heldStack, level.registryAccess());
+        int slot = findFirstFoodSlot(handler);
         if (slot >= 0 && player.canEat(false)) {
-            IStorageItemHandler handler = loadInventory(heldStack, level.registryAccess());
             boolean isDrink = handler.getInventoryItem(slot).getUseAnimation() == UseAnim.DRINK;
             ItemStack modified = heldStack.copy();
             CustomData beData = modified.get(DataComponents.BLOCK_ENTITY_DATA);
@@ -76,9 +82,9 @@ public abstract class StorageItem extends BlockItem {
     public @NotNull ItemStack finishUsingItem(@NotNull ItemStack stack,
             @NotNull Level level, @NotNull LivingEntity entity) {
         if (!level.isClientSide && entity instanceof Player player) {
-            int slot = findFirstFoodSlot(stack, level);
+            StorageAccess handler = loadInventoryFresh(stack, level.registryAccess());
+            int slot = findFirstFoodSlot(handler);
             if (slot >= 0) {
-                IStorageItemHandler handler = loadInventory(stack, level.registryAccess());
                 ItemStack food = handler.getInventoryItem(slot).copyWithCount(1);
 
                 FoodProperties foodProps = food.get(DataComponents.FOOD);
@@ -113,23 +119,37 @@ public abstract class StorageItem extends BlockItem {
     @Override
     public @NotNull UseAnim getUseAnimation(@NotNull ItemStack stack) {
         CustomData beData = stack.get(DataComponents.BLOCK_ENTITY_DATA);
-        if (beData != null && beData.copyTag().getBoolean("is_drink")) return UseAnim.DRINK;
+        // getUnsafe() skips the full tag copy — read-only access, never mutate
+        if (beData != null && beData.getUnsafe().getBoolean("is_drink")) return UseAnim.DRINK;
         return UseAnim.EAT;
     }
 
-    public IStorageItemHandler loadInventory(ItemStack stack, HolderLookup.Provider registries) {
-        IStorageItemHandler handler = createHandler();
+    public StorageAccess loadInventory(ItemStack stack, HolderLookup.Provider registries) {
         CustomData beData = stack.get(DataComponents.BLOCK_ENTITY_DATA);
-        if (beData != null) {
-            CompoundTag tag = beData.copyTag();
-            if (tag.contains("inventory")) {
-                handler.deserializeInventory(registries, tag.getCompound("inventory"));
-            }
+        if (beData == null) return createHandler();
+        StorageAccess cached = READ_CACHE.get(beData);
+        if (cached != null) return cached;
+        StorageAccess handler = deserialize(beData, registries);
+        READ_CACHE.put(beData, handler);
+        return handler;
+    }
+
+    private StorageAccess loadInventoryFresh(ItemStack stack, HolderLookup.Provider registries) {
+        CustomData beData = stack.get(DataComponents.BLOCK_ENTITY_DATA);
+        if (beData == null) return createHandler();
+        return deserialize(beData, registries);
+    }
+
+    private StorageAccess deserialize(CustomData beData, HolderLookup.Provider registries) {
+        StorageAccess handler = createHandler();
+        CompoundTag tag = beData.copyTag();
+        if (tag.contains("inventory")) {
+            handler.deserializeInventory(registries, tag.getCompound("inventory"));
         }
         return handler;
     }
 
-    public void saveInventory(ItemStack stack, IStorageItemHandler handler, HolderLookup.Provider registries) {
+    public void saveInventory(ItemStack stack, StorageAccess handler, HolderLookup.Provider registries) {
         CompoundTag tag = new CompoundTag();
         tag.put("inventory", handler.serializeInventory(registries));
         BlockItem.setBlockEntityData(stack, getBlockEntityType(), tag);
@@ -140,7 +160,7 @@ public abstract class StorageItem extends BlockItem {
         if (!Services.PLATFORM.isStorageTooltipIconsEnabled()) return Optional.empty();
         var mc = net.minecraft.client.Minecraft.getInstance();
         if (mc.level == null) return Optional.empty();
-        IStorageItemHandler handler = loadInventory(stack, mc.level.registryAccess());
+        StorageAccess handler = loadInventory(stack, mc.level.registryAccess());
         List<ItemStack> contents = new ArrayList<>();
         for (int i = 0; i < handler.getInventorySize(); i++) {
             ItemStack stored = handler.getInventoryItem(i);
@@ -150,8 +170,7 @@ public abstract class StorageItem extends BlockItem {
         return Optional.of(new dev.averageanime.client.tooltip.StorageContentsTooltip(contents));
     }
 
-    private int findFirstFoodSlot(ItemStack stack, Level level) {
-        IStorageItemHandler handler = loadInventory(stack, level.registryAccess());
+    private static int findFirstFoodSlot(StorageAccess handler) {
         for (int i = 0; i < handler.getInventorySize(); i++) {
             ItemStack stored = handler.getInventoryItem(i);
             if (!stored.isEmpty() && stored.has(DataComponents.FOOD)) return i;

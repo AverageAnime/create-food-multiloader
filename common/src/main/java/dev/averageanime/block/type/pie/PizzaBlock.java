@@ -1,6 +1,6 @@
 package dev.averageanime.block.type.pie;
 
-import dev.averageanime.block.type.ConsumableBlock;
+import dev.averageanime.block.type.misc.ConsumableBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.Item;

@@ -7,6 +7,10 @@
     {
       "id": "create_snt:donut",
       "required": false
+    },
+    {
+      "id": "ratatouille_fried_delights:fried_donut",
+      "required": false
     }
   ]
 }

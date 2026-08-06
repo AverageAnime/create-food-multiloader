@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "c:mushroom_cream_soup_bowl"
+    },
+    {
+      "tag": "c:cheeses"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "createfood:mushroom_cream_soup_bowl_cheese"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "mushroom_cream_soup_bowl_cheese"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "mushroom_cream_soup_bowl_cheese"
+    }
+  ]
+}

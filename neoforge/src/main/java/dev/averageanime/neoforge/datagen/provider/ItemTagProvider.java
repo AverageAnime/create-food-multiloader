@@ -1,10 +1,10 @@
 package dev.averageanime.neoforge.datagen.provider;
 
-import dev.averageanime.CommonClass;
-import dev.averageanime.neoforge.block.ModBlocks;
-import dev.averageanime.neoforge.block.ModFluids;
-import dev.averageanime.neoforge.block.type.fluid.FluidEntry;
-import dev.averageanime.neoforge.item.ModItems;
+import dev.averageanime.CreateFoodCommon;
+import dev.averageanime.neoforge.block.BlockRegistration;
+import dev.averageanime.neoforge.block.FluidRegistration;
+import dev.averageanime.neoforge.block.type.fluid.FluidBlock;
+import dev.averageanime.neoforge.item.ItemRegistration;
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 import java.util.concurrent.CompletableFuture;
@@ -24,43 +24,44 @@ public class ItemTagProvider extends TagsProvider<Item> {
     public ItemTagProvider(PackOutput output,
                            CompletableFuture<HolderLookup.Provider> lookupProvider,
                            ExistingFileHelper existingFileHelper) {
-        super(output, Registries.ITEM, lookupProvider, CommonClass.MOD_ID, existingFileHelper);
+        super(output, Registries.ITEM, lookupProvider, CreateFoodCommon.MOD_ID, existingFileHelper);
     }
 
     @Override
     protected void addTags(HolderLookup.@NotNull Provider provider) {
-        ModItems.ITEMS.getEntries().forEach(holder -> {
+        ItemRegistration.ITEMS.getEntries().forEach(holder -> {
             String id = holder.getId().getPath();
-            tag(cTag(id)).addOptional(ResourceLocation.fromNamespaceAndPath(CommonClass.MOD_ID, id));
+            tag(cTag(id)).addOptional(ResourceLocation.fromNamespaceAndPath(CreateFoodCommon.MOD_ID, id));
             if (id.endsWith("_bottle")) {
                 String baseId = id.substring(0, id.length() - "_bottle".length());
-                tag(cTag(baseId)).addOptional(ResourceLocation.fromNamespaceAndPath(CommonClass.MOD_ID, id));
+                tag(cTag(baseId)).addOptional(ResourceLocation.fromNamespaceAndPath(CreateFoodCommon.MOD_ID, id));
             }
         });
 
-        ModBlocks.BLOCKS.getEntries().forEach(holder -> {
+        BlockRegistration.BLOCKS.getEntries().forEach(holder -> {
             String id = holder.getId().getPath();
-            tag(cTag(id)).addOptional(ResourceLocation.fromNamespaceAndPath(CommonClass.MOD_ID, id));
+            tag(cTag(id)).addOptional(ResourceLocation.fromNamespaceAndPath(CreateFoodCommon.MOD_ID, id));
         });
 
-        for (Field field : ModFluids.class.getDeclaredFields()) {
+        for (Field field : FluidRegistration.class.getDeclaredFields()) {
             if (!Modifier.isStatic(field.getModifiers())) continue;
             try {
                 Object value = field.get(null);
-                if (value instanceof FluidEntry.FluidType fluidType) {
+                if (value instanceof FluidBlock.FluidType fluidType) {
                     DeferredItem<?> bucket = fluidType.BUCKET;
                     String id = bucket.getId().getPath();
-                    tag(cTag(id)).addOptional(ResourceLocation.fromNamespaceAndPath(CommonClass.MOD_ID, id));
+                    tag(cTag(id)).addOptional(ResourceLocation.fromNamespaceAndPath(CreateFoodCommon.MOD_ID, id));
                 }
             } catch (IllegalAccessException ignored) {}
         }
 
         tag(cTag("apple")).addOptional(ResourceLocation.parse("minecraft:apple")).addOptional(ResourceLocation.parse("createfood:apple_slice"));
         tag(cTag("apple_jam")).addOptional(ResourceLocation.parse("hearthandharvest:apple_jam"));
-        tag(cTag("apple_jam_bottle")).addOptional(ResourceLocation.parse("bakery:apple_jam"));
+        tag(cTag("apple_jam_bottle")).addOptional(ResourceLocation.parse("bakery:apple_jam")).addOptional(ResourceLocation.parse("fruitsdelight:apple_jam"));
         tag(cTag("apple_juice_bottle")).addOptional(ResourceLocation.parse("expandeddelight:apple_juice"));
         tag(cTag("apple_juice_bottle_compat")).addOptional(ResourceLocation.parse("createfood:apple_juice_bottle"));
-        tag(cTag("apple_slice")).addOptional(ResourceLocation.parse("create_deepfried:apple_slices"));
+        tag(cTag("apple_slice")).addOptional(ResourceLocation.parse("create_deepfried:apple_slices")).addOptional(ResourceLocation.parse("ratatouille_fried_delights:apple_slices"));
+        tag(cTag("asparagus")).addOptional(ResourceLocation.parse("expandeddelight:asparagus"));
         tag(cTag("bacon_sandwich")).addOptional(ResourceLocation.parse("delightfulcreators:incomplete_bacon_sandwich"));
         tag(cTag("bar_of_chocolate")).addOptional(ResourceLocation.parse("create:bar_of_chocolate")).addOptional(ResourceLocation.parse("candlelight:chocolate")).addOptional(ResourceLocation.parse("hearthandharvest:chocolate_bar"));
         tag(cTag("bar_of_dark_chocolate")).addOptional(ResourceLocation.parse("create_confectionery:bar_of_black_chocolate"));
@@ -68,34 +69,52 @@ public class ItemTagProvider extends TagsProvider<Item> {
         tag(cTag("batter_bowl")).addOptional(ResourceLocation.parse("hearthandharvest:batter")).addOptional(ResourceLocation.parse("rusticdelight:batter"));
         tag(cTag("beef_meatball_stick")).addOptional(ResourceLocation.parse("createfood:beef_meatball_stick_1")).addOptional(ResourceLocation.parse("createfood:beef_meatball_stick_2")).addOptional(ResourceLocation.parse("createfood:beef_meatball_stick_3"));
         tag(cTag("beetroot")).addOptional(ResourceLocation.parse("minecraft:beetroot")).addOptional(ResourceLocation.parse("createfood:sliced_beetroot")).addOptional(ResourceLocation.parse("createfood:shredded_beetroot"));
+        tag(cTag("bell_pepper")).addOptionalTag(cTag("crops/bell_pepper")).addOptionalTag(cTag("crops/bellpepper")).addOptional(ResourceLocation.parse("rusticdelight:bell_pepper_slice_black")).addOptional(ResourceLocation.parse("rusticdelight:bell_pepper_slice_blue")).addOptional(ResourceLocation.parse("rusticdelight:bell_pepper_slice_green")).addOptional(ResourceLocation.parse("rusticdelight:bell_pepper_slice_orange")).addOptional(ResourceLocation.parse("rusticdelight:bell_pepper_slice_pink")).addOptional(ResourceLocation.parse("rusticdelight:bell_pepper_slice_purple")).addOptional(ResourceLocation.parse("rusticdelight:bell_pepper_slice_red")).addOptional(ResourceLocation.parse("rusticdelight:bell_pepper_slice_white")).addOptional(ResourceLocation.parse("rusticdelight:bell_pepper_slice_yellow")).addOptional(ResourceLocation.parse("rusticdelight:roasted_bell_pepper_black")).addOptional(ResourceLocation.parse("rusticdelight:roasted_bell_pepper_blue")).addOptional(ResourceLocation.parse("rusticdelight:roasted_bell_pepper_green")).addOptional(ResourceLocation.parse("rusticdelight:roasted_bell_pepper_orange")).addOptional(ResourceLocation.parse("rusticdelight:roasted_bell_pepper_pink")).addOptional(ResourceLocation.parse("rusticdelight:roasted_bell_pepper_purple")).addOptional(ResourceLocation.parse("rusticdelight:roasted_bell_pepper_red")).addOptional(ResourceLocation.parse("rusticdelight:roasted_bell_pepper_white")).addOptional(ResourceLocation.parse("rusticdelight:roasted_bell_pepper_yellow")).addOptional(ResourceLocation.parse("rusticdelight:roasted_bell_pepper_slice_black")).addOptional(ResourceLocation.parse("rusticdelight:roasted_bell_pepper_slice_blue")).addOptional(ResourceLocation.parse("rusticdelight:roasted_bell_pepper_slice_green")).addOptional(ResourceLocation.parse("rusticdelight:roasted_bell_pepper_slice_orange")).addOptional(ResourceLocation.parse("rusticdelight:roasted_bell_pepper_slice_pink")).addOptional(ResourceLocation.parse("rusticdelight:roasted_bell_pepper_slice_purple")).addOptional(ResourceLocation.parse("rusticdelight:roasted_bell_pepper_slice_red")).addOptional(ResourceLocation.parse("rusticdelight:roasted_bell_pepper_slice_white")).addOptional(ResourceLocation.parse("rusticdelight:roasted_bell_pepper_slice_yellow")).addOptional(ResourceLocation.parse("veggiesdelight:bellpepper")).addOptional(ResourceLocation.parse("veggiesdelight:smoked_bellpepper"));
         tag(cTag("berry_jam")).addOptional(ResourceLocation.parse("hearthandharvest:sweet_berry_jam"));
-        tag(cTag("berry_jam_bottle")).addOptional(ResourceLocation.parse("bakery:sweetberry_jam")).addOptional(ResourceLocation.parse("expandeddelight:sweet_berry_jelly"));
+        tag(cTag("berry_jam_bottle")).addOptional(ResourceLocation.parse("bakery:sweetberry_jam")).addOptional(ResourceLocation.parse("expandeddelight:sweet_berry_jelly")).addOptional(ResourceLocation.parse("fruitsdelight:sweetberry_jam"));
         tag(cTag("berry_jam_bottle_compat")).addOptional(ResourceLocation.parse("createfood:berry_jam_bottle"));
-        tag(cTag("berry_juice_bottle")).addOptional(ResourceLocation.parse("expandeddelight:sweet_berry_juice"));
+        tag(cTag("berry_juice_bottle")).addOptional(ResourceLocation.parse("expandeddelight:sweet_berry_juice")).addOptional(ResourceLocation.parse("hearthandharvest:sweet_berry_juice"));
         tag(cTag("berry_juice_bottle_compat")).addOptional(ResourceLocation.parse("createfood:berry_juice_bottle"));
         tag(cTag("berry_milkshake_bottle")).addOptional(ResourceLocation.parse("beachparty:sweetberry_milkshake")).addOptional(ResourceLocation.parse("create_dd:strawberry_milkshake"));
         tag(cTag("berry_milkshake_bucket")).addOptional(ResourceLocation.parse("create_dd:strawberry_milkshake_bucket"));
         tag(cTag("bowl")).addOptional(ResourceLocation.parse("minecraft:bowl"));
+        tag(cTag("bread")).addOptional(ResourceLocation.parse("minecraft:bread")).addOptionalTag(cTag("foods/bread"));
+        tag(cTag("bread_crumbs")).addOptional(ResourceLocation.parse("ratatouille_fried_delights:breadcrumb"));
         tag(cTag("bread_fried_egg")).addOptional(ResourceLocation.parse("delightfulcreators:incomplete_egg_sandwich"));
         tag(cTag("bread_slice")).addOptional(ResourceLocation.parse("moredelight:bread_slice"));
+        tag(cTag("broccoli")).addOptional(ResourceLocation.parse("veggiesdelight:broccoli"));
         tag(cTag("brown_mushroom")).addOptional(ResourceLocation.parse("minecraft:brown_mushroom")).addOptional(ResourceLocation.parse("createfood:sliced_brown_mushroom"));
         tag(cTag("brown_sugar")).addOptional(ResourceLocation.parse("ubesdelight:brown_sugar"));
-        tag(cTag("bun")).addOptional(ResourceLocation.parse("bakery:bun"));
-        tag(cTag("butter")).addOptional(ResourceLocation.parse("croptopia:butter"));
+        tag(cTag("bun")).addOptional(ResourceLocation.parse("bakery:bun")).addOptional(ResourceLocation.parse("ratatouille_fried_delights:burger_bun")).addOptional(ResourceLocation.parse("ratatouille_fried_delights:top_burger_bun")).addOptional(ResourceLocation.parse("ratatouille_fried_delights:bottom_burger_bun"));
+        tag(cTag("butter")).addOptional(ResourceLocation.parse("croptopia:butter")).addOptional(ResourceLocation.parse("ratatouille_fried_delights:butter")).addOptional(ResourceLocation.parse("hearthandharvest:butter"));
         tag(cTag("butter_compat")).addOptional(ResourceLocation.parse("createfood:butter"));
-        tag(cTag("cacao_butter")).addOptional(ResourceLocation.parse("create_confectionery:cocoa_butter"));
-        tag(cTag("cake_base")).addOptional(ResourceLocation.parse("createadditions:cake_base_baked")).addOptional(ResourceLocation.parse("bakery:blank_cake"));
+        tag(cTag("cacao_butter")).addOptional(ResourceLocation.parse("create_confectionery:cocoa_butter")).addOptional(ResourceLocation.parse("ratatouille:cocoa_butter"));
+        tag(cTag("cacao_mass_bucket")).addOptional(ResourceLocation.parse("ratatouille:cocoa_liquor_bucket"));
+        tag(cTag("cacao_nibs")).addOptional(ResourceLocation.parse("ratatouille:dried_cocoa_nibs"));
+        tag(cTag("cake_base")).addOptional(ResourceLocation.parse("createadditions:cake_base_baked")).addOptional(ResourceLocation.parse("bakery:blank_cake")).addOptional(ResourceLocation.parse("ratatouille:cake_base"));
+        tag(cTag("cake_batter_bucket")).addOptional(ResourceLocation.parse("ratatouille:cake_batter_bucket"));
+        tag(cTag("calamari")).addOptionalTag(cTag("foods/raw_calamari")).addOptionalTag(cTag("foods/cooked_calamari")).addOptional(ResourceLocation.parse("rusticdelight:calamari")).addOptional(ResourceLocation.parse("rusticdelight:calamari_slice")).addOptional(ResourceLocation.parse("rusticdelight:cooked_calamari")).addOptional(ResourceLocation.parse("rusticdelight:cooked_calamari_slice")).addOptional(ResourceLocation.parse("culturaldelights:raw_calamari")).addOptional(ResourceLocation.parse("culturaldelights:cooked_calamari"));
         tag(cTag("cane_syrup")).addOptional(ResourceLocation.parse("rusticdelight:syrup"));
+        tag(cTag("cane_syrup_bottle")).addOptional(ResourceLocation.parse("rusticdelight:syrup"));
         tag(cTag("caramel")).addOptional(ResourceLocation.parse("hearthandharvest:caramel"));
+        tag(cTag("caramel_berries")).addOptional(ResourceLocation.parse("create_confectionery:caramel_glazed_berries"));
         tag(cTag("caramel_bucket")).addOptional(ResourceLocation.parse("create_dd:caramel_bucket")).addOptional(ResourceLocation.parse("create_confectionery:caramel_bucket"));
         tag(cTag("carrot")).addOptional(ResourceLocation.parse("createfood:sliced_carrot")).addOptional(ResourceLocation.parse("minecraft:carrot")).addOptional(ResourceLocation.parse("createfood:shredded_carrot"));
-        tag(cTag("cheese_block")).addOptional(ResourceLocation.parse("meadow:cheese_block")).addOptional(ResourceLocation.parse("casualnessdelight:cheese_wheel"));
-        tag(cTag("cheese_slice")).addOptional(ResourceLocation.parse("meadow:piece_of_cheese")).addOptional(ResourceLocation.parse("casualnessdelight:cheese_wheel_slice")).addOptional(ResourceLocation.parse("hearthandharvest:cheddar_cheese_slice")).addOptional(ResourceLocation.parse("hearthandharvest:goat_cheese_slice"));
-        tag(cTag("cheeses")).addOptional(ResourceLocation.parse("createfood:cheese_slice")).addOptional(ResourceLocation.parse("brewinandchewin:flaxen_cheese_wedge")).addOptional(ResourceLocation.parse("expandeddelight:cheese_slice")).addOptional(ResourceLocation.parse("meadow:piece_of_cheese")).addOptional(ResourceLocation.parse("casualness_delight:cheese_wheel_slice")).addOptional(ResourceLocation.parse("create_bic_bit:unripe_cheese_wedge")).addOptional(ResourceLocation.parse("create_bic_bit:young_cheese_wedge")).addOptional(ResourceLocation.parse("create_bic_bit:aged_cheese_wedge")).addOptional(ResourceLocation.parse("hearthandharvest:cheddar_cheese_slice")).addOptional(ResourceLocation.parse("hearthandharvest:goat_cheese_slice"));
-        tag(cTag("chicken_nuggets")).addOptional(ResourceLocation.parse("create_deepfried:chicken_nuggets"));
-        tag(cTag("chili_pepper")).addOptional(ResourceLocation.parse("expandeddelight:chili_pepper")).addOptional(ResourceLocation.parse("croptopia:chile_pepper")).addOptional(ResourceLocation.parse("rusticdelight:bell_pepper_red")).addOptional(ResourceLocation.parse("rusticdelight:roasted_bell_pepper_red"));
+        tag(cTag("cauliflower")).addOptional(ResourceLocation.parse("veggiesdelight:cauliflower")).addOptional(ResourceLocation.parse("veggiesdelight:cauliflower_floret")).addOptional(ResourceLocation.parse("veggiesdelight:roasted_cauliflower_floret"));
+        tag(cTag("cheese_block")).addOptional(ResourceLocation.parse("meadow:cheese_block")).addOptional(ResourceLocation.parse("casualnessdelight:cheese_wheel")).addOptional(ResourceLocation.parse("hearthandharvest:cheddar_cheese_wheel")).addOptional(ResourceLocation.parse("hearthandharvest:goat_cheese_wheel")).addOptional(ResourceLocation.parse("ratatouille_fried_delights:cheese")).addOptional(ResourceLocation.parse("expandeddelight:cheese_wheel")).addOptional(ResourceLocation.parse("expandeddelight:goat_cheese_wheel"));
+        tag(cTag("cheese_sandwich")).addOptional(ResourceLocation.parse("expandeddelight:cheese_sandwich"));
+        tag(cTag("cheese_slice")).addOptional(ResourceLocation.parse("meadow:piece_of_cheese")).addOptional(ResourceLocation.parse("casualnessdelight:cheese_wheel_slice")).addOptional(ResourceLocation.parse("hearthandharvest:cheddar_cheese_slice")).addOptional(ResourceLocation.parse("hearthandharvest:goat_cheese_slice")).addOptional(ResourceLocation.parse("ratatouille_fried_delights:cheese_slice")).addOptional(ResourceLocation.parse("expandeddelight:goat_cheese_slice"));
+        tag(cTag("cheeses")).addOptional(ResourceLocation.parse("createfood:cheese_slice")).addOptional(ResourceLocation.parse("brewinandchewin:flaxen_cheese_wedge")).addOptional(ResourceLocation.parse("expandeddelight:cheese_slice")).addOptional(ResourceLocation.parse("meadow:piece_of_cheese")).addOptional(ResourceLocation.parse("casualnessdelight:cheese_wheel_slice")).addOptional(ResourceLocation.parse("create_bic_bit:unripe_cheese_wedge")).addOptional(ResourceLocation.parse("create_bic_bit:young_cheese_wedge")).addOptional(ResourceLocation.parse("create_bic_bit:aged_cheese_wedge")).addOptional(ResourceLocation.parse("hearthandharvest:cheddar_cheese_slice")).addOptional(ResourceLocation.parse("hearthandharvest:goat_cheese_slice")).addOptional(ResourceLocation.parse("ratatouille_fried_delights:cheese")).addOptional(ResourceLocation.parse("expandeddelight:goat_cheese_slice"));
+        tag(cTag("chicken_nuggets")).addOptional(ResourceLocation.parse("create_deepfried:chicken_nuggets")).addOptional(ResourceLocation.parse("ratatouille_fried_delights:chicken_nuggets"));
+        tag(cTag("chorus_fruit_jam_bottle")).addOptional(ResourceLocation.parse("fruitsdelight:chorus_jam"));
+        tag(cTag("garlic")).addOptional(ResourceLocation.parse("veggiesdelight:garlic")).addOptional(ResourceLocation.parse("veggiesdelight:garlic_clove")).addOptional(ResourceLocation.parse("veggiesdelight:roasted_garlic_clove"));
+        tag(cTag("grilled_cheese_sandwich")).addOptional(ResourceLocation.parse("expandeddelight:grilled_cheese"));
+        tag(cTag("ice_cream_bucket")).addOptional(ResourceLocation.parse("ratatouille_fried_delights:ice_cream_base_bucket"));
+        tag(cTag("melon_jam_bottle")).addOptional(ResourceLocation.parse("fruitsdelight:melon_jam"));
+        tag(cTag("pepper")).addOptionalTag(cTag("bell_pepper")).addOptional(ResourceLocation.parse("expandeddelight:chili_pepper")).addOptional(ResourceLocation.parse("croptopia:chile_pepper"));
         tag(cTag("chocolate_cake_base"));
         tag(cTag("chocolate_chip_chocolate_cookie")).addOptional(ResourceLocation.parse("expandeddelight:chocolate_chip_chocolate_cookie"));
+        tag(cTag("chocolate_milk_bottle")).addOptional(ResourceLocation.parse("hearthandharvest:chocolate_milk_bottle"));
         tag(cTag("chocolate_milkshake_bottle")).addOptional(ResourceLocation.parse("beachparty:chocolate_milkshake")).addOptional(ResourceLocation.parse("create_dd:chocolate_milkshake"));
         tag(cTag("chocolate_milkshake_bucket")).addOptional(ResourceLocation.parse("create_dd:chocolate_milkshake_bucket"));
         tag(cTag("chocolate_sweet_dough")).addOptional(ResourceLocation.parse("createfood:chocolate_sugar_dough"));
@@ -106,15 +125,15 @@ public class ItemTagProvider extends TagsProvider<Item> {
         tag(cTag("cinnamon_sweet_roll")).addOptional(ResourceLocation.parse("expandeddelight:sweet_roll"));
         tag(cTag("cinnamon_sweet_roll_berry")).addOptional(ResourceLocation.parse("expandeddelight:berry_sweet_roll"));
         tag(cTag("cinnamon_sweet_roll_glow_berry")).addOptional(ResourceLocation.parse("expandeddelight:glow_berry_sweet_roll"));
-        tag(cTag("cocoa_powder")).addOptional(ResourceLocation.parse("create_confectionery:cocoa_powder"));
+        tag(cTag("cocoa_powder")).addOptional(ResourceLocation.parse("create_confectionery:cocoa_powder")).addOptional(ResourceLocation.parse("ratatouille:cocoa_powder"));
         tag(cTag("coffee_beans")).addOptional(ResourceLocation.parse("rusticdelight:coffee_beans"));
         tag(cTag("condensed_milk_bottle")).addOptional(ResourceLocation.parse("ubesdelight:condensed_milk_bottle"));
         tag(cTag("condensed_milk_bucket")).addOptional(ResourceLocation.parse("create_dd:condense_milk_bucket"));
         tag(cTag("container")).addOptional(ResourceLocation.parse("minecraft:bucket")).addOptional(ResourceLocation.parse("minecraft:stick"));
         tag(cTag("cooked_bacon")).addOptional(ResourceLocation.parse("farmersdelight:cooked_bacon"));
-        tag(cTag("cooked_beef")).addOptional(ResourceLocation.parse("minecraft:cooked_beef")).addOptional(ResourceLocation.parse("farmersdelight:beef_patty")).addOptional(ResourceLocation.parse("vegandelight:tofu_patty"));
+        tag(cTag("cooked_beef")).addOptional(ResourceLocation.parse("minecraft:cooked_beef")).addOptional(ResourceLocation.parse("farmersdelight:beef_patty")).addOptional(ResourceLocation.parse("vegandelight:tofu_patty")).addOptional(ResourceLocation.parse("ratatouille_fried_delights:hamburger_patty"));
         tag(cTag("cooked_chicken")).addOptional(ResourceLocation.parse("farmersdelight:cooked_chicken_cuts")).addOptional(ResourceLocation.parse("minecraft:cooked_chicken"));
-        tag(cTag("cooked_eggplant")).addOptional(ResourceLocation.parse("culturaldelights:smoked_eggplant")).addOptional(ResourceLocation.parse("culturaldelights:smoked_cut_eggplant"));
+        tag(cTag("cooked_eggplant")).addOptionalTag(modTag("culturaldelights", "smoked_regular_eggplants")).addOptional(ResourceLocation.parse("culturaldelights:smoked_white_eggplant"));
         tag(cTag("cooked_eggs")).addOptional(ResourceLocation.parse("farmersdelight:fried_egg"));
         tag(cTag("cooked_fishes")).addOptional(ResourceLocation.parse("minecraft:cooked_salmon")).addOptional(ResourceLocation.parse("farmersdelight:cooked_salmon_slice")).addOptional(ResourceLocation.parse("minecraft:cooked_cod")).addOptional(ResourceLocation.parse("farmersdelight:cooked_cod_slice")).addOptional(ResourceLocation.parse("createfood:cooked_tropical_fish")).addOptional(ResourceLocation.parse("createfood:cooked_tropical_fish_slice"));
         tag(cTag("cooked_mutton")).addOptional(ResourceLocation.parse("minecraft:cooked_mutton")).addOptional(ResourceLocation.parse("farmersdelight:cooked_mutton_chops"));
@@ -124,21 +143,24 @@ public class ItemTagProvider extends TagsProvider<Item> {
         tag(cTag("cooked_rice")).addOptional(ResourceLocation.parse("farmersdelight:cooked_rice"));
         tag(cTag("corn")).addOptional(ResourceLocation.parse("culturaldelights:corn_cob")).addOptional(ResourceLocation.parse("hearthandharvest:corn"));
         tag(cTag("corn_dough")).addOptional(ResourceLocation.parse("culturaldelights:corn_dough"));
+        tag(cTag("corn_flour")).addOptional(ResourceLocation.parse("hearthandharvest:corn_meal"));
         tag(cTag("corn_kernel")).addOptional(ResourceLocation.parse("culturaldelights:corn_kernels")).addOptional(ResourceLocation.parse("hearthandharvest:corn_kernels"));
-        tag(cTag("corn_stick")).addOptional(ResourceLocation.parse("hearthandharvest:uncooked_corn_on_the_cob"));
+        tag(cTag("corn_kernels")).addOptionalTag(cTag("corn_kernel"));
         tag(cTag("cotton_candy_stick")).addOptional(ResourceLocation.parse("hearthandharvest:cotton_candy"));
-        tag(cTag("cream_donut")).addOptional(ResourceLocation.parse("create_snt:sweet_donut"));
+        tag(cTag("cream_donut")).addOptional(ResourceLocation.parse("create_snt:sweet_donut")).addOptional(ResourceLocation.parse("ratatouille_fried_delights:creamy_donut"));
         tag(cTag("crimson_fungus")).addOptional(ResourceLocation.parse("minecraft:crimson_fungus")).addOptional(ResourceLocation.parse("createfood:sliced_crimson_fungus"));
         tag(cTag("crushable_cookies")).addOptional(ResourceLocation.parse("minecraft:cookie")).addOptional(ResourceLocation.parse("createfood:butterscotch_chip_cookie")).addOptional(ResourceLocation.parse("createfood:caramel_chip_cookie")).addOptional(ResourceLocation.parse("createfood:dark_chocolate_chip_cookie")).addOptional(ResourceLocation.parse("createfood:toffee_chip_cookie")).addOptional(ResourceLocation.parse("createfood:white_chocolate_chip_cookie")).addOptional(ResourceLocation.parse("farmersdelight:honey_cookie"));
-        tag(cTag("donut_base")).addOptional(ResourceLocation.parse("create_snt:donut"));
+        tag(cTag("donut_base")).addOptional(ResourceLocation.parse("create_snt:donut")).addOptional(ResourceLocation.parse("ratatouille_fried_delights:fried_donut"));
         tag(cTag("dough")).addOptional(ResourceLocation.parse("farmersdelight:wheat_dough"));
         tag(cTag("dried_coffee_beans")).addOptional(ResourceLocation.parse("rusticdelight:roasted_coffee_beans"));
         tag(cTag("dried_coffee_beans_compat")).addOptional(ResourceLocation.parse("createfood:dried_coffee_beans"));
         tag(cTag("dumpling_ingredients")).addOptionalTag(cTag("foods/raw_pork")).addOptionalTag(cTag("foods/raw_chicken")).addOptionalTag(cTag("foods/raw_beef")).addOptionalTag(cTag("foods/raw_mutton")).addOptionalTag(cTag("mushrooms"));
         tag(cTag("dumplings")).addOptional(ResourceLocation.parse("brewery:dumplings")).addOptional(ResourceLocation.parse("farmersdelight:dumplings"));
         tag(cTag("egg_burrito_ingredients")).addOptional(ResourceLocation.parse("createfood:boiled_egg_peeled")).addOptional(ResourceLocation.parse("farmersdelight:fried_egg"));
+        tag(cTag("egg_yolk")).addOptional(ResourceLocation.parse("ratatouille:egg_yolk"));
         tag(cTag("eggplant_burger")).addOptional(ResourceLocation.parse("culturalcreators:incomplete_eggplant_burger"));
         tag(cTag("eggs")).addOptional(ResourceLocation.parse("createfood:egg_powder"));
+        tag(cTag("eggshell")).addOptional(ResourceLocation.parse("ratatouille:egg_shell"));
         tag(cTag("endermite_meatball_stick")).addOptional(ResourceLocation.parse("createfood:endermite_meatball_stick_1")).addOptional(ResourceLocation.parse("createfood:endermite_meatball_stick_2")).addOptional(ResourceLocation.parse("createfood:endermite_meatball_stick_3"));
         tag(cTag("flesh_cookie")).addOptional(ResourceLocation.parse("frightsdelight:cookie_flesh"));
         tag(cTag("flours/wheat")).addOptional(ResourceLocation.parse("farm_and_charm:flour")).addOptional(ResourceLocation.parse("hearthandharvest:flour")).addOptional(ResourceLocation.parse("kaleidoscope_cookery:flour"));
@@ -151,7 +173,7 @@ public class ItemTagProvider extends TagsProvider<Item> {
         tag(cTag("foods/raw_beef")).addOptional(ResourceLocation.parse("createfood:ground_beef"));
         tag(cTag("foods/raw_chicken")).addOptional(ResourceLocation.parse("createfood:ground_chicken"));
         tag(cTag("foods/raw_fish")).addOptional(ResourceLocation.parse("createfood:tropical_fish_slice"));
-        tag(cTag("foods/raw_meats/ground")).addOptional(ResourceLocation.parse("createfood:ground_beef")).addOptional(ResourceLocation.parse("createfood:ground_chicken")).addOptional(ResourceLocation.parse("createfood:ground_mutton")).addOptional(ResourceLocation.parse("createfood:ground_pork")).addOptional(ResourceLocation.parse("createfood:ground_rabbit"));
+        tag(cTag("foods/raw_meats/ground")).addOptional(ResourceLocation.parse("createfood:ground_beef")).addOptional(ResourceLocation.parse("createfood:ground_chicken")).addOptional(ResourceLocation.parse("createfood:ground_mutton")).addOptional(ResourceLocation.parse("createfood:ground_pork")).addOptional(ResourceLocation.parse("createfood:ground_rabbit")).addOptional(ResourceLocation.parse("ratatouille:mince_meat"));
         tag(cTag("foods/raw_meats/raw_bacon")).addOptional(ResourceLocation.parse("farmersdelight:bacon"));
         tag(cTag("foods/raw_meats/raw_beef")).addOptional(ResourceLocation.parse("createfood:ground_beef"));
         tag(cTag("foods/raw_meats/raw_chicken")).addOptional(ResourceLocation.parse("createfood:ground_chicken"));
@@ -164,15 +186,15 @@ public class ItemTagProvider extends TagsProvider<Item> {
         tag(cTag("foods/raw_tropical_fish")).addOptional(ResourceLocation.parse("minecraft:tropical_fish")).addOptional(ResourceLocation.parse("createfood:tropical_fish_slice"));
         tag(cTag("foods/safe_raw_fish")).addOptional(ResourceLocation.parse("createfood:tropical_fish_slice"));
         tag(cTag("frosting_ingredients")).addOptionalTag(cTag("cream_cheese")).addOptionalTag(cTag("butter"));
-        tag(cTag("fruits")).addOptionalTag(cTag("apple")).addOptionalTag(cTag("melon")).addOptionalTag(cTag("chorus_fruit")).addOptionalTag(cTag("foods/berries"));
+        tag(cTag("fruits")).addOptionalTag(cTag("apple")).addOptionalTag(cTag("melon")).addOptionalTag(cTag("chorus_fruit")).addOptionalTag(cTag("foods/berries")).addOptional(ResourceLocation.parse("hearthandharvest:blueberries")).addOptional(ResourceLocation.parse("hearthandharvest:raspberry")).addOptional(ResourceLocation.parse("hearthandharvest:red_grapes")).addOptional(ResourceLocation.parse("hearthandharvest:green_grapes")).addOptional(ResourceLocation.parse("hearthandharvest:cherry")).addOptional(ResourceLocation.parse("fruitsdelight:bayberry")).addOptional(ResourceLocation.parse("fruitsdelight:blueberry")).addOptional(ResourceLocation.parse("fruitsdelight:cranberry")).addOptional(ResourceLocation.parse("fruitsdelight:durian_flesh")).addOptional(ResourceLocation.parse("fruitsdelight:fig")).addOptional(ResourceLocation.parse("fruitsdelight:hamimelon")).addOptional(ResourceLocation.parse("fruitsdelight:hamimelon_slice")).addOptional(ResourceLocation.parse("fruitsdelight:hawberry")).addOptional(ResourceLocation.parse("fruitsdelight:kiwi")).addOptional(ResourceLocation.parse("fruitsdelight:lemon")).addOptional(ResourceLocation.parse("fruitsdelight:lemon_slice")).addOptional(ResourceLocation.parse("fruitsdelight:lychee")).addOptional(ResourceLocation.parse("fruitsdelight:mango")).addOptional(ResourceLocation.parse("fruitsdelight:mangosteen")).addOptional(ResourceLocation.parse("fruitsdelight:orange")).addOptional(ResourceLocation.parse("fruitsdelight:orange_slice")).addOptional(ResourceLocation.parse("fruitsdelight:peach")).addOptional(ResourceLocation.parse("fruitsdelight:pear")).addOptional(ResourceLocation.parse("fruitsdelight:persimmon")).addOptional(ResourceLocation.parse("fruitsdelight:pineapple")).addOptional(ResourceLocation.parse("fruitsdelight:pineapple_slice"));
         tag(cTag("gelatin_dessert_block")).addOptional(ResourceLocation.parse("createfood:gelatin_dessert_block")).addOptional(ResourceLocation.parse("createfood:black_gelatin_dessert_block")).addOptional(ResourceLocation.parse("createfood:blue_gelatin_dessert_block")).addOptional(ResourceLocation.parse("createfood:brown_gelatin_dessert_block")).addOptional(ResourceLocation.parse("createfood:cyan_gelatin_dessert_block")).addOptional(ResourceLocation.parse("createfood:gray_gelatin_dessert_block")).addOptional(ResourceLocation.parse("createfood:green_gelatin_dessert_block")).addOptional(ResourceLocation.parse("createfood:light_gray_gelatin_dessert_block")).addOptional(ResourceLocation.parse("createfood:lime_gelatin_dessert_block")).addOptional(ResourceLocation.parse("createfood:magenta_gelatin_dessert_block")).addOptional(ResourceLocation.parse("createfood:orange_gelatin_dessert_block")).addOptional(ResourceLocation.parse("createfood:pink_gelatin_dessert_block")).addOptional(ResourceLocation.parse("createfood:purple_gelatin_dessert_block")).addOptional(ResourceLocation.parse("createfood:red_gelatin_dessert_block")).addOptional(ResourceLocation.parse("createfood:yellow_gelatin_dessert_block"));
         tag(cTag("gelatin_dessert_slice")).addOptional(ResourceLocation.parse("createfood:gelatin_dessert_slice")).addOptional(ResourceLocation.parse("createfood:black_gelatin_dessert_slice")).addOptional(ResourceLocation.parse("createfood:blue_gelatin_dessert_slice")).addOptional(ResourceLocation.parse("createfood:brown_gelatin_dessert_slice")).addOptional(ResourceLocation.parse("createfood:cyan_gelatin_dessert_slice")).addOptional(ResourceLocation.parse("createfood:gray_gelatin_dessert_slice")).addOptional(ResourceLocation.parse("createfood:green_gelatin_dessert_slice")).addOptional(ResourceLocation.parse("createfood:light_gray_gelatin_dessert_slice")).addOptional(ResourceLocation.parse("createfood:lime_gelatin_dessert_slice")).addOptional(ResourceLocation.parse("createfood:magenta_gelatin_dessert_slice")).addOptional(ResourceLocation.parse("createfood:orange_gelatin_dessert_slice")).addOptional(ResourceLocation.parse("createfood:pink_gelatin_dessert_slice")).addOptional(ResourceLocation.parse("createfood:purple_gelatin_dessert_slice")).addOptional(ResourceLocation.parse("createfood:red_gelatin_dessert_slice")).addOptional(ResourceLocation.parse("createfood:yellow_gelatin_dessert_slice"));
         tag(cTag("gelatin_mix_bucket")).addOptional(ResourceLocation.parse("createfood:gelatin_mix_bucket")).addOptional(ResourceLocation.parse("createfood:black_gelatin_mix_bucket")).addOptional(ResourceLocation.parse("createfood:blue_gelatin_mix_bucket")).addOptional(ResourceLocation.parse("createfood:brown_gelatin_mix_bucket")).addOptional(ResourceLocation.parse("createfood:cyan_gelatin_mix_bucket")).addOptional(ResourceLocation.parse("createfood:gray_gelatin_mix_bucket")).addOptional(ResourceLocation.parse("createfood:green_gelatin_mix_bucket")).addOptional(ResourceLocation.parse("createfood:light_gray_gelatin_mix_bucket")).addOptional(ResourceLocation.parse("createfood:lime_gelatin_mix_bucket")).addOptional(ResourceLocation.parse("createfood:magenta_gelatin_mix_bucket")).addOptional(ResourceLocation.parse("createfood:orange_gelatin_mix_bucket")).addOptional(ResourceLocation.parse("createfood:pink_gelatin_mix_bucket")).addOptional(ResourceLocation.parse("createfood:purple_gelatin_mix_bucket")).addOptional(ResourceLocation.parse("createfood:red_gelatin_mix_bucket")).addOptional(ResourceLocation.parse("createfood:yellow_gelatin_mix_bucket"));
         tag(cTag("ginger_cookie")).addOptional(ResourceLocation.parse("ubesdelight:cookie_ginger"));
         tag(cTag("glow_berry_jam")).addOptional(ResourceLocation.parse("hearthandharvest:glow_berry_jam"));
-        tag(cTag("glow_berry_jam_bottle")).addOptional(ResourceLocation.parse("bakery:glowberry_jam")).addOptional(ResourceLocation.parse("expandeddelight:glow_berry_jelly"));
+        tag(cTag("glow_berry_jam_bottle")).addOptional(ResourceLocation.parse("bakery:glowberry_jam")).addOptional(ResourceLocation.parse("expandeddelight:glow_berry_jelly")).addOptional(ResourceLocation.parse("fruitsdelight:glowberry_jam"));
         tag(cTag("glow_berry_jam_bottle_compat")).addOptional(ResourceLocation.parse("createfood:glow_berry_jam_bottle"));
-        tag(cTag("glow_berry_juice_bottle")).addOptional(ResourceLocation.parse("expandeddelight:glow_berry_juice"));
+        tag(cTag("glow_berry_juice_bottle")).addOptional(ResourceLocation.parse("expandeddelight:glow_berry_juice")).addOptional(ResourceLocation.parse("hearthandharvest:glow_berry_juice"));
         tag(cTag("glow_berry_juice_bottle_compat")).addOptional(ResourceLocation.parse("createfood:glow_berry_juice_bottle"));
         tag(cTag("glow_berry_milkshake_bottle")).addOptional(ResourceLocation.parse("createfood:glow_berry_milkshake_bottle")).addOptional(ResourceLocation.parse("create_dd:glow_berry_milkshake"));
         tag(cTag("glow_berry_milkshake_bucket")).addOptional(ResourceLocation.parse("createfood:glow_berry_milkshake_bucket")).addOptional(ResourceLocation.parse("create_dd:glow_berry_milkshake_bucket"));
@@ -192,6 +214,7 @@ public class ItemTagProvider extends TagsProvider<Item> {
         tag(cTag("hot_dark_chocolate")).addOptional(ResourceLocation.parse("createfood:hot_dark_chocolate_bottle"));
         tag(cTag("hot_white_chocolate")).addOptional(ResourceLocation.parse("createfood:hot_white_chocolate_bottle"));
         tag(cTag("ice_blocks")).addOptional(ResourceLocation.parse("minecraft:ice")).addOptional(ResourceLocation.parse("minecraft:packed_ice")).addOptional(ResourceLocation.parse("minecraft:blue_ice"));
+        tag(cTag("ice_cream_cone")).addOptional(ResourceLocation.parse("ratatouille_fried_delights:vanilla_cone"));
         tag(cTag("macaroni_bowl_cheese")).addOptional(ResourceLocation.parse("hearthandharvest:macaroni_and_cheese"));
         tag(cTag("magma_gelatin")).addOptional(ResourceLocation.parse("nethersdelight:magma_gelatin")).addOptional(ResourceLocation.parse("mynethersdelight:hot_cream"));
         tag(cTag("marshmallow_dark_chocolate_fudge")).addOptional(ResourceLocation.parse("createfood:marshmallow_chocolate_fudge"));
@@ -202,7 +225,7 @@ public class ItemTagProvider extends TagsProvider<Item> {
         tag(cTag("melon_cream_frosting")).addOptional(ResourceLocation.parse("createfood:melon_cream_frosting_bottle"));
         tag(cTag("melon_jam")).addOptional(ResourceLocation.parse("hearthandharvest:melon_jam"));
         tag(cTag("milk")).addOptional(ResourceLocation.parse("minecraft:milk_bucket"));
-        tag(cTag("milk_bottle")).addOptional(ResourceLocation.parse("farmersdelight:milk_bottle")).addOptional(ResourceLocation.parse("hearthandharvest:goat_milk_bottle"));
+        tag(cTag("milk_bottle")).addOptional(ResourceLocation.parse("farmersdelight:milk_bottle")).addOptional(ResourceLocation.parse("hearthandharvest:goat_milk_bottle")).addOptional(ResourceLocation.parse("expandeddelight:goat_milk_bottle"));
         tag(cTag("milk_buckets")).addOptional(ResourceLocation.parse("meadow:wooden_milk_bucket")).addOptional(ResourceLocation.parse("createfood:milk_powder")).addOptional(ResourceLocation.parse("ubesdelight:milk_powder"));
         tag(cTag("milk_powder")).addOptional(ResourceLocation.parse("createfood:milk_powder")).addOptional(ResourceLocation.parse("ubesdelight:milk_powder"));
         tag(cTag("milk_powder_compat")).addOptional(ResourceLocation.parse("createfood:milk_powder"));
@@ -215,9 +238,63 @@ public class ItemTagProvider extends TagsProvider<Item> {
         tag(cTag("mushrooms")).addOptional(ResourceLocation.parse("createfood:sliced_brown_mushroom")).addOptional(ResourceLocation.parse("createfood:sliced_red_mushroom"));
         tag(cTag("mutton_sandwich")).addOptional(ResourceLocation.parse("createfood:mutton_sandwich")).addOptional(ResourceLocation.parse("culturalcreators:incomplete_mutton_sandwich"));
         tag(cTag("onion")).addOptional(ResourceLocation.parse("createfood:sliced_onion")).addOptional(ResourceLocation.parse("createfood:diced_onion")).addOptional(ResourceLocation.parse("farmersdelight:onion"));
+        tag(cTag("onion_rings")).addOptional(ResourceLocation.parse("ratatouille_fried_delights:onion_rings"));
+        tag(cTag("bayberry")).addOptional(ResourceLocation.parse("fruitsdelight:bayberry"));
+        tag(cTag("bayberry_jam_bottle")).addOptional(ResourceLocation.parse("fruitsdelight:bayberry_jam"));
+        tag(cTag("blueberry")).addOptional(ResourceLocation.parse("fruitsdelight:blueberry"));
+        tag(cTag("blueberry_custard_bottle")).addOptional(ResourceLocation.parse("fruitsdelight:blueberry_custard"));
+        tag(cTag("blueberry_jam_bottle")).addOptional(ResourceLocation.parse("fruitsdelight:blueberry_jam"));
+        tag(cTag("blueberry_juice_bottle")).addOptional(ResourceLocation.parse("hearthandharvest:blueberry_juice"));
+        tag(cTag("blueberry_pie")).addOptional(ResourceLocation.parse("hearthandharvest:blueberry_pie"));
+        tag(cTag("cranberry")).addOptional(ResourceLocation.parse("fruitsdelight:cranberry"));
+        tag(cTag("cranberry_jam_bottle")).addOptional(ResourceLocation.parse("fruitsdelight:cranberry_jam"));
+        tag(cTag("cranberry_juice_bottle")).addOptional(ResourceLocation.parse("expandeddelight:cranberry_juice"));
+        tag(cTag("durian")).addOptional(ResourceLocation.parse("fruitsdelight:durian_flesh"));
+        tag(cTag("durian_jam_bottle")).addOptional(ResourceLocation.parse("fruitsdelight:durian_jam"));
+        tag(cTag("durian_pie")).addOptional(ResourceLocation.parse("fruitsdelight:durian_pie"));
+        tag(cTag("fig")).addOptional(ResourceLocation.parse("fruitsdelight:fig"));
+        tag(cTag("fig_jam_bottle")).addOptional(ResourceLocation.parse("fruitsdelight:fig_jam"));
+        tag(cTag("hamimelon")).addOptional(ResourceLocation.parse("fruitsdelight:hamimelon")).addOptionalTag(cTag("hamimelon_slice"));
+        tag(cTag("hamimelon_jam_bottle")).addOptional(ResourceLocation.parse("fruitsdelight:hamimelon_jam"));
+        tag(cTag("hamimelon_juice_bottle")).addOptional(ResourceLocation.parse("fruitsdelight:hamimelon_juice"));
+        tag(cTag("hamimelon_popsicle")).addOptional(ResourceLocation.parse("fruitsdelight:hamimelon_popsicle"));
+        tag(cTag("hamimelon_slice")).addOptional(ResourceLocation.parse("fruitsdelight:hamimelon_slice"));
+        tag(cTag("hawberry")).addOptional(ResourceLocation.parse("fruitsdelight:hawberry"));
+        tag(cTag("hawberry_jam_bottle")).addOptional(ResourceLocation.parse("fruitsdelight:hawberry_jam"));
+        tag(cTag("kiwi")).addOptional(ResourceLocation.parse("fruitsdelight:kiwi"));
+        tag(cTag("kiwi_jam_bottle")).addOptional(ResourceLocation.parse("fruitsdelight:kiwi_jam"));
+        tag(cTag("kiwi_juice_bottle")).addOptional(ResourceLocation.parse("fruitsdelight:kiwi_juice"));
+        tag(cTag("kiwi_popsicle")).addOptional(ResourceLocation.parse("fruitsdelight:kiwi_popsicle"));
+        tag(cTag("lemon")).addOptional(ResourceLocation.parse("fruitsdelight:lemon")).addOptionalTag(cTag("lemon_slice"));
+        tag(cTag("lemon_jam_bottle")).addOptional(ResourceLocation.parse("fruitsdelight:lemon_jam"));
+        tag(cTag("lemon_juice_bottle")).addOptional(ResourceLocation.parse("fruitsdelight:lemon_juice"));
+        tag(cTag("lemon_slice")).addOptional(ResourceLocation.parse("fruitsdelight:lemon_slice"));
+        tag(cTag("lychee")).addOptional(ResourceLocation.parse("fruitsdelight:lychee"));
+        tag(cTag("lychee_jam_bottle")).addOptional(ResourceLocation.parse("fruitsdelight:lychee_jam"));
+        tag(cTag("mango")).addOptional(ResourceLocation.parse("fruitsdelight:mango"));
+        tag(cTag("mango_jam_bottle")).addOptional(ResourceLocation.parse("fruitsdelight:mango_jam"));
+        tag(cTag("mango_milkshake_bottle")).addOptional(ResourceLocation.parse("fruitsdelight:mango_milkshake"));
+        tag(cTag("mangosteen")).addOptional(ResourceLocation.parse("fruitsdelight:mangosteen"));
+        tag(cTag("mangosteen_cream_cake")).addOptional(ResourceLocation.parse("fruitsdelight:mangosteen_cake"));
+        tag(cTag("mangosteen_jam_bottle")).addOptional(ResourceLocation.parse("fruitsdelight:mangosteen_jam"));
+        tag(cTag("peach")).addOptional(ResourceLocation.parse("fruitsdelight:peach"));
+        tag(cTag("peach_jam_bottle")).addOptional(ResourceLocation.parse("fruitsdelight:peach_jam"));
+        tag(cTag("pear")).addOptional(ResourceLocation.parse("fruitsdelight:pear"));
+        tag(cTag("pear_jam_bottle")).addOptional(ResourceLocation.parse("fruitsdelight:pear_jam"));
+        tag(cTag("pear_juice_bottle")).addOptional(ResourceLocation.parse("fruitsdelight:pear_juice"));
+        tag(cTag("persimmon")).addOptional(ResourceLocation.parse("fruitsdelight:persimmon"));
+        tag(cTag("persimmon_jam_bottle")).addOptional(ResourceLocation.parse("fruitsdelight:persimmon_jam"));
+        tag(cTag("pineapple")).addOptional(ResourceLocation.parse("fruitsdelight:pineapple")).addOptionalTag(cTag("pineapple_slice"));
+        tag(cTag("pineapple_jam_bottle")).addOptional(ResourceLocation.parse("fruitsdelight:pineapple_jam"));
+        tag(cTag("pineapple_pie")).addOptional(ResourceLocation.parse("fruitsdelight:pineapple_pie"));
+        tag(cTag("pineapple_slice")).addOptional(ResourceLocation.parse("fruitsdelight:pineapple_slice"));
+        tag(cTag("orange")).addOptional(ResourceLocation.parse("fruitsdelight:orange")).addOptionalTag(cTag("orange_slice"));
+        tag(cTag("orange_jam_bottle")).addOptional(ResourceLocation.parse("fruitsdelight:orange_jam"));
+        tag(cTag("orange_juice_bottle")).addOptional(ResourceLocation.parse("fruitsdelight:orange_juice"));
+        tag(cTag("orange_slice")).addOptional(ResourceLocation.parse("fruitsdelight:orange_slice"));
         tag(cTag("paprika")).addOptional(ResourceLocation.parse("createfood:paprika")).addOptional(ResourceLocation.parse("create:cinder_flour"));
         tag(cTag("paprika_compat")).addOptional(ResourceLocation.parse("createfood:paprika"));
-        tag(cTag("paprika_ingredient")).addOptionalTag(cTag("chili_pepper")).addOptional(ResourceLocation.parse("minecraft:nether_wart"));
+        tag(cTag("paprika_ingredient")).addOptionalTag(cTag("pepper")).addOptional(ResourceLocation.parse("minecraft:nether_wart"));
         tag(cTag("pasta_plate")).addOptional(ResourceLocation.parse("createfood:pasta_plate")).addOptional(ResourceLocation.parse("delightfulcreators:incomplete_pasta_dish"));
         tag(cTag("pasta_plate_beef_meatballs")).addOptional(ResourceLocation.parse("createfood:pasta_plate_beef_meatballs")).addOptional(ResourceLocation.parse("delightfulcreators:incomplete_pasta_with_meatballs"));
         tag(cTag("pasta_plate_eggplant")).addOptional(ResourceLocation.parse("createfood:pasta_plate_eggplant")).addOptional(ResourceLocation.parse("culturalcreators:incomplete_fried_eggplant_pasta"));
@@ -231,54 +308,72 @@ public class ItemTagProvider extends TagsProvider<Item> {
         tag(cTag("plain_gelatin_dessert_block")).addOptional(ResourceLocation.parse("createfood:gelatin_dessert_block"));
         tag(cTag("popcorn")).addOptional(ResourceLocation.parse("culturaldelights:popcorn")).addOptional(ResourceLocation.parse("hearthandharvest:popcorn"));
         tag(cTag("pork_meatball_stick")).addOptional(ResourceLocation.parse("createfood:pork_meatball_stick_1")).addOptional(ResourceLocation.parse("createfood:pork_meatball_stick_2")).addOptional(ResourceLocation.parse("createfood:pork_meatball_stick_3"));
-        tag(cTag("potato")).addOptional(ResourceLocation.parse("createfood:shredded_potato")).addOptional(ResourceLocation.parse("createfood:sliced_potato")).addOptional(ResourceLocation.parse("minecraft:potato"));
+        tag(cTag("potato")).addOptional(ResourceLocation.parse("createfood:shredded_potato")).addOptional(ResourceLocation.parse("createfood:sliced_potato")).addOptional(ResourceLocation.parse("minecraft:potato")).addOptional(ResourceLocation.parse("ratatouille_fried_delights:peeled_potato"));
         tag(cTag("potato_chips")).addOptional(ResourceLocation.parse("createfood:potato_chips")).addOptional(ResourceLocation.parse("casualnessdelight:potato_chip"));
         tag(cTag("powderable_eggs")).addOptional(ResourceLocation.parse("createfood:boiled_egg_peeled")).addOptional(ResourceLocation.parse("farmersdelight:fried_egg"));
+        tag(cTag("pressed_cocoa")).addOptional(ResourceLocation.parse("ratatouille:cocoa_solids"));
         tag(cTag("pumpkin")).addOptional(ResourceLocation.parse("minecraft:pumpkin")).addOptional(ResourceLocation.parse("farmersdelight:pumpkin_slice"));
         tag(cTag("pumpkin_pie")).addOptional(ResourceLocation.parse("minecraft:pumpkin_pie"));
         tag(cTag("rabbit_meatball_stick")).addOptional(ResourceLocation.parse("createfood:rabbit_meatball_stick_1")).addOptional(ResourceLocation.parse("createfood:rabbit_meatball_stick_2")).addOptional(ResourceLocation.parse("createfood:rabbit_meatball_stick_3"));
         tag(cTag("raw_dragon_meat_cuts")).addOptional(ResourceLocation.parse("ends_delight:raw_dragon_meat_cuts"));
+        tag(cTag("raw_onion_rings")).addOptional(ResourceLocation.parse("ratatouille_fried_delights:breaded_onion_rings"));
         tag(cTag("raw_pasta")).addOptional(ResourceLocation.parse("farmersdelight:raw_pasta")).addOptional(ResourceLocation.parse("farm_and_charm:raw_pasta"));
+        tag(cTag("raw_sausages")).addOptional(ResourceLocation.parse("ratatouille:raw_sausage")).addOptional(ResourceLocation.parse("hearthandharvest:raw_sausage"));
         tag(cTag("red_mushroom")).addOptional(ResourceLocation.parse("minecraft:red_mushroom")).addOptional(ResourceLocation.parse("createfood:sliced_red_mushroom"));
-        tag(cTag("salad_ingredients")).addOptional(ResourceLocation.parse("croptopia:lettuce")).addOptional(ResourceLocation.parse("candlelight:lettuce"));
-        tag(cTag("salt")).addOptional(ResourceLocation.parse("expandeddelight:ground_salt")).addOptional(ResourceLocation.parse("hearthandharvest:salt")).addOptional(ResourceLocation.parse("meadow:alpine_salt")).addOptional(ResourceLocation.parse("vegandelight:salt"));
+        tag(cTag("salad_ingredients")).addOptionalTag(cTag("foods/leafy_green")).addOptional(ResourceLocation.parse("croptopia:lettuce")).addOptional(ResourceLocation.parse("candlelight:lettuce"));
+        tag(cTag("salt")).addOptionalTag(cTag("dusts/salt")).addOptional(ResourceLocation.parse("hearthandharvest:salt")).addOptional(ResourceLocation.parse("meadow:alpine_salt")).addOptional(ResourceLocation.parse("vegandelight:salt")).addOptional(ResourceLocation.parse("ratatouille:salt"));
         tag(cTag("salt_compat")).addOptional(ResourceLocation.parse("createfood:salt"));
+        tag(cTag("salt_dough")).addOptional(ResourceLocation.parse("ratatouille:salty_dough"));
         tag(cTag("sausage")).addOptional(ResourceLocation.parse("createfood:sausages"));
-        tag(cTag("sausages")).addOptional(ResourceLocation.parse("createfood:sausages")).addOptional(ResourceLocation.parse("createfood:sausage_bits")).addOptional(ResourceLocation.parse("hearthandharvest:cooked_sausage"));
+        tag(cTag("sausages")).addOptional(ResourceLocation.parse("createfood:sausages")).addOptional(ResourceLocation.parse("createfood:sausage_bits")).addOptional(ResourceLocation.parse("hearthandharvest:cooked_sausage")).addOptional(ResourceLocation.parse("ratatouille:sausage"));
+        tag(cTag("shakshuka_bowl")).addOptional(ResourceLocation.parse("veggiesdelight:shakshouka"));
         tag(cTag("shredded_potato")).addOptional(ResourceLocation.parse("createfood:shredded_potato")).addOptional(ResourceLocation.parse("moredelight:diced_potatoes"));
         tag(cTag("sliced_potato")).addOptional(ResourceLocation.parse("createfood:sliced_potato")).addOptional(ResourceLocation.parse("casualnessdelight:potato_slice")).addOptional(ResourceLocation.parse("rusticdelight:potato_slices"));
+        tag(cTag("sliced_tomato")).addOptional(ResourceLocation.parse("ratatouille_fried_delights:tomato_slices"));
         tag(cTag("smore")).addOptional(ResourceLocation.parse("hearthandharvest:smore"));
         tag(cTag("snickerdoodle")).addOptional(ResourceLocation.parse("expandeddelight:snickerdoodle"));
         tag(cTag("soul_berry_cookie")).addOptional(ResourceLocation.parse("frightsdelight:cookie_soul_berry"));
         tag(cTag("spider_eye_cookie")).addOptional(ResourceLocation.parse("frightsdelight:cookie_spidereye"));
-        tag(cTag("sugar")).addOptional(ResourceLocation.parse("minecraft:sugar")).addOptional(ResourceLocation.parse("createfood:powdered_sugar"));
+        tag(cTag("sugar")).addOptional(ResourceLocation.parse("minecraft:sugar")).addOptional(ResourceLocation.parse("createfood:powdered_sugar")).addOptional(ResourceLocation.parse("hearthandharvest:sugar_cubes"));
         tag(cTag("sugar_cane")).addOptional(ResourceLocation.parse("minecraft:sugar_cane"));
         tag(cTag("sugar_cookie")).addOptional(ResourceLocation.parse("expandeddelight:sugar_cookie"));
         tag(cTag("sweet_berry_cookie")).addOptional(ResourceLocation.parse("farmersdelight:sweet_berry_cookie"));
         tag(cTag("sweet_dough")).addOptional(ResourceLocation.parse("createfood:sugar_dough")).addOptional(ResourceLocation.parse("bakery:sweet_dough"));
+        tag(cTag("sweet_potato")).addOptional(ResourceLocation.parse("veggiesdelight:sweet_potato")).addOptional(ResourceLocation.parse("expandeddelight:sweet_potato"));
         tag(cTag("sweet_roll")).addOptional(ResourceLocation.parse("create:sweet_roll"));
+        tag(cTag("syrup_cookie")).addOptional(ResourceLocation.parse("rusticdelight:syrup_cookie")).addOptional(ResourceLocation.parse("hearthandharvest:maple_cookie"));
         tag(cTag("taco_shell_ingredient")).addOptionalTag(cTag("pita_bread")).addOptionalTag(cTag("tortilla"));
         tag(cTag("toast")).addOptional(ResourceLocation.parse("createfood:toast_slice")).addOptional(ResourceLocation.parse("moredelight:toast"));
         tag(cTag("toast_slice")).addOptional(ResourceLocation.parse("createfood:toast_slice")).addOptional(ResourceLocation.parse("moredelight:toast"));
-        tag(cTag("tomato")).addOptional(ResourceLocation.parse("createfood:diced_tomato")).addOptional(ResourceLocation.parse("createfood:sliced_tomato")).addOptional(ResourceLocation.parse("farmersdelight:tomato")).addOptional(ResourceLocation.parse("candlelight:tomato"));
+        tag(cTag("tomato")).addOptional(ResourceLocation.parse("createfood:diced_tomato")).addOptional(ResourceLocation.parse("createfood:sliced_tomato")).addOptional(ResourceLocation.parse("farmersdelight:tomato")).addOptional(ResourceLocation.parse("candlelight:tomato")).addOptional(ResourceLocation.parse("ratatouille_fried_delights:tomato_ingredient"));
         tag(cTag("tomato_sauce")).addOptional(ResourceLocation.parse("farmersdelight:tomato_sauce"));
         tag(cTag("tools/knife")).addOptionalTag(modTag("farmersdelight", "tools/knives"));
-        tag(cTag("tortilla")).addOptional(ResourceLocation.parse("culturaldelights:tortilla"));
+        tag(cTag("tortilla")).addOptional(ResourceLocation.parse("culturaldelights:tortilla")).addOptional(ResourceLocation.parse("hearthandharvest:tortilla"));
         tag(cTag("tortilla_chip_bowl")).addOptional(ResourceLocation.parse("createfood:pita_chip_bowl"));
         tag(cTag("tortilla_chips")).addOptional(ResourceLocation.parse("culturaldelights:tortilla_chips"));
+        tag(cTag("turnip")).addOptional(ResourceLocation.parse("veggiesdelight:turnip"));
         tag(cTag("ube_cookie")).addOptional(ResourceLocation.parse("ubesdelight:cookie_ube"));
         tag(cTag("ube_cream_frosting")).addOptional(ResourceLocation.parse("createfood:ube_cream_frosting_bottle"));
-        tag(cTag("vegetable_oil")).addOptional(ResourceLocation.parse("createfood:vegetable_oil_bucket"));
-        tag(cTag("vegetables")).addOptional(ResourceLocation.parse("minecraft:carrot")).addOptional(ResourceLocation.parse("minecraft:potato")).addOptional(ResourceLocation.parse("farmersdelight:tomato")).addOptional(ResourceLocation.parse("farmersdelight:onion"));
+        tag(cTag("vegetable_oil")).addOptional(ResourceLocation.parse("createfood:vegetable_oil_bucket")).addOptional(ResourceLocation.parse("ratatouille_fried_delights:sunflower_oil")).addOptional(ResourceLocation.parse("hearthandharvest:cooking_oil")).addOptional(ResourceLocation.parse("rusticdelight:cooking_oil")).addOptional(ResourceLocation.parse("ratatouille_fried_delights:sunflower_seed_oil_bottle")).addOptional(ResourceLocation.parse("ratatouille_fried_delights:sunflower_oil_bucket"));
+        tag(cTag("vegetables")).addOptional(ResourceLocation.parse("minecraft:carrot")).addOptional(ResourceLocation.parse("minecraft:potato")).addOptional(ResourceLocation.parse("farmersdelight:tomato")).addOptional(ResourceLocation.parse("farmersdelight:onion")).addOptional(ResourceLocation.parse("veggiesdelight:turnip")).addOptional(ResourceLocation.parse("veggiesdelight:zucchini")).addOptional(ResourceLocation.parse("veggiesdelight:zucchini_slice")).addOptional(ResourceLocation.parse("veggiesdelight:broccoli")).addOptional(ResourceLocation.parse("veggiesdelight:cauliflower")).addOptional(ResourceLocation.parse("veggiesdelight:cauliflower_floret")).addOptional(ResourceLocation.parse("veggiesdelight:garlic")).addOptional(ResourceLocation.parse("veggiesdelight:garlic_clove")).addOptional(ResourceLocation.parse("veggiesdelight:bellpepper")).addOptional(ResourceLocation.parse("veggiesdelight:sweet_potato")).addOptional(ResourceLocation.parse("expandeddelight:sweet_potato")).addOptional(ResourceLocation.parse("expandeddelight:asparagus"));
         tag(cTag("vegetables/carrot")).addOptional(ResourceLocation.parse("createfood:sliced_carrot"));
-        tag(cTag("vegetables/ginger")).addOptional(ResourceLocation.parse("ubesdelight:ginger"));
+        tag(cTag("vegetables/ginger")).addOptional(ResourceLocation.parse("ubesdelight:ginger")).addOptional(ResourceLocation.parse("culturaldelights:ginger"));
+        tag(cTag("crops/ginger")).addOptionalTag(cTag("vegetables/ginger"));
         tag(cTag("vegetables/potato")).addOptional(ResourceLocation.parse("createfood:sliced_potato"));
         tag(cTag("vegetables/ube")).addOptional(ResourceLocation.parse("ubesdelight:ube"));
         tag(cTag("vinegar_bottle")).addOptional(ResourceLocation.parse("createfood:vinegar_bottle")).addOptional(ResourceLocation.parse("dumplings_delight:vinegar"));
+        tag(cTag("waffle")).addOptional(ResourceLocation.parse("hearthandharvest:waffle"));
+        tag(cTag("waffle_cone")).addOptional(ResourceLocation.parse("ratatouille_fried_delights:cone"));
         tag(cTag("warped_fungus")).addOptional(ResourceLocation.parse("minecraft:warped_fungus")).addOptional(ResourceLocation.parse("createfood:sliced_warped_fungus"));
         tag(cTag("wheat_dough")).addOptional(ResourceLocation.parse("create:dough")).addOptional(ResourceLocation.parse("farmersdelight:wheat_dough"));
+        tag(cTag("zucchini")).addOptional(ResourceLocation.parse("veggiesdelight:zucchini")).addOptional(ResourceLocation.parse("veggiesdelight:zucchini_slice")).addOptional(ResourceLocation.parse("veggiesdelight:roasted_zucchini"));
         tag(modTag("farmersdelight", "cabbage_roll_ingredients")).addOptional(ResourceLocation.parse("createfood:tropical_fish_slice"));
+        tag(modTag("fruitsdelight", "jam")).addOptional(ResourceLocation.parse("createfood:apple_jam_bottle")).addOptional(ResourceLocation.parse("createfood:berry_jam_bottle")).addOptional(ResourceLocation.parse("createfood:chorus_fruit_jam_bottle")).addOptional(ResourceLocation.parse("createfood:glow_berry_jam_bottle")).addOptional(ResourceLocation.parse("createfood:melon_jam_bottle"));
+        tag(modTag("hearthandharvest", "jelly")).addOptional(ResourceLocation.parse("createfood:apple_jam_bottle")).addOptional(ResourceLocation.parse("createfood:berry_jam_bottle")).addOptional(ResourceLocation.parse("createfood:chorus_fruit_jam_bottle")).addOptional(ResourceLocation.parse("createfood:glow_berry_jam_bottle")).addOptional(ResourceLocation.parse("createfood:melon_jam_bottle"));
+        tag(modTag("ratatouille_fried_delights", "ratatouille_burger_ingredients")).addOptional(ResourceLocation.parse("createfood:bun")).addOptional(ResourceLocation.parse("createfood:cheese_slice")).addOptional(ResourceLocation.parse("createfood:chicken_patty")).addOptional(ResourceLocation.parse("createfood:sausage_patty")).addOptional(ResourceLocation.parse("createfood:sliced_tomato"));
         tag(modTag("rusticdelight", "batter")).addOptionalTag(cTag("batter_bowl"));
+        tag(modTag("rusticdelight", "cooking_oil")).addOptional(ResourceLocation.parse("createfood:vegetable_oil_bucket"));
+        tag(modTag("rusticdelight", "syrup")).addOptional(ResourceLocation.parse("createfood:cane_syrup_bottle"));
         tag(modTag("minecraft", "fishes")).addOptional(ResourceLocation.parse("createfood:cooked_tropical_fish"));
         tag(modTag("minecraft", "cat_food")).addOptional(ResourceLocation.parse("createfood:tropical_fish_slice"));
     }

@@ -3,6 +3,10 @@
     {
       "id": "createfood:cacao_nibs",
       "required": false
+    },
+    {
+      "id": "ratatouille:dried_cocoa_nibs",
+      "required": false
     }
   ]
 }

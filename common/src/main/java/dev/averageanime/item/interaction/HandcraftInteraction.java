@@ -7,6 +7,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.InteractionHand;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.CraftingInput;
 import net.minecraft.world.item.crafting.CraftingRecipe;
@@ -16,8 +17,21 @@ import net.minecraft.world.level.Level;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Map;
+import java.util.WeakHashMap;
 
 public class HandcraftInteraction {
+
+    private static final Map<ServerPlayer, Long> recentTwoHandCraftTick = new WeakHashMap<>();
+
+    public static boolean consumeRecentTwoHandCraft(ServerPlayer player, Level level) {
+        Long tick = recentTwoHandCraftTick.get(player);
+        if (tick != null && tick == level.getGameTime()) {
+            recentTwoHandCraftTick.remove(player);
+            return true;
+        }
+        return false;
+    }
 
     public static boolean tryHandcraft(ServerPlayer player, Level level) {
         if (!Services.PLATFORM.isHandcraftingEnabled()) return false;
@@ -47,16 +61,38 @@ public class HandcraftInteraction {
         if (!isAllowedByFilter(result)) return false;
 
         NonNullList<ItemStack> remainingItems = recipe.getRemainingItems(input);
+        ItemStack mainRemainder = remainingItems.get(0);
+        ItemStack offRemainder = input.size() > 1 ? remainingItems.get(1) : ItemStack.EMPTY;
 
         if (!player.isCreative()) {
             mainHand.shrink(1);
             if (input.size() > 1) offHand.shrink(1);
         }
 
+        if (!player.isCreative() && !mainRemainder.isEmpty() && player.getMainHandItem().isEmpty()) {
+            player.setItemInHand(InteractionHand.MAIN_HAND, mainRemainder);
+            mainRemainder = ItemStack.EMPTY;
+        }
+        if (!player.isCreative() && !offRemainder.isEmpty() && player.getOffhandItem().isEmpty()) {
+            player.setItemInHand(InteractionHand.OFF_HAND, offRemainder);
+            offRemainder = ItemStack.EMPTY;
+        }
+
         if (player.getMainHandItem().isEmpty()) {
             player.getInventory().setItem(player.getInventory().selected, result);
         } else if (!player.getInventory().add(result)) {
             player.drop(result, false);
+        }
+
+        if (!player.isCreative()) {
+            giveRemainder(player, mainRemainder, false);
+            if (input.size() > 1) {
+                giveRemainder(player, offRemainder, true);
+            }
+        }
+
+        if (input.size() > 1) {
+            recentTwoHandCraftTick.put(player, level.getGameTime());
         }
 
         double handX = player.getX() + player.getLookAngle().x * 0.5;
@@ -76,6 +112,17 @@ public class HandcraftInteraction {
         level.playSound(null, player.blockPosition(),
                 SoundEvents.CRAFTER_CRAFT, SoundSource.PLAYERS, 1.0F, 1.0F);
         return true;
+    }
+
+    private static void giveRemainder(ServerPlayer player, ItemStack remainder, boolean offHand) {
+        if (remainder.isEmpty()) return;
+        if (offHand && player.getOffhandItem().isEmpty()) {
+            player.setItemInHand(InteractionHand.OFF_HAND, remainder);
+            return;
+        }
+        if (!player.getInventory().add(remainder)) {
+            player.drop(remainder, false);
+        }
     }
 
     public static boolean isAllowedByFilter(ItemStack result) {

@@ -1,6 +1,6 @@
 package dev.averageanime.neoforge.item.storage;
 
-import dev.averageanime.item.storage.IStorageItemHandler;
+import dev.averageanime.item.storage.StorageAccess;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.item.ItemStack;
@@ -10,7 +10,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.function.BiPredicate;
 import java.util.function.IntUnaryOperator;
 
-public class StorageInventory extends ItemStackHandler implements IStorageItemHandler {
+public class StorageInventory extends ItemStackHandler implements StorageAccess {
 
     private final IntUnaryOperator slotLimitFn;
     private final BiPredicate<Integer, ItemStack> validatorFn;
@@ -29,8 +29,6 @@ public class StorageInventory extends ItemStackHandler implements IStorageItemHa
     public void setOnChanged(Runnable onChanged) {
         this.onChanged = onChanged;
     }
-
-    // ── IStorageItemHandler bridges ──────────────────────────────────────────
 
     @Override
     public ItemStack getInventoryItem(int slot) {
@@ -67,8 +65,6 @@ public class StorageInventory extends ItemStackHandler implements IStorageItemHa
         deserializeNBT(registries, tag);
     }
 
-    // ── ItemStackHandler overrides ────────────────────────────────────────────
-
     @Override
     public int getSlotLimit(int slot) {
         return slotLimitFn.applyAsInt(slot);
@@ -79,7 +75,6 @@ public class StorageInventory extends ItemStackHandler implements IStorageItemHa
         return validatorFn.test(slot, stack);
     }
 
-    /** canPlaceItem delegates to isItemValid so common code can call either. */
     @Override
     public boolean canPlaceItem(int slot, @NotNull ItemStack stack) {
         return isItemValid(slot, stack);

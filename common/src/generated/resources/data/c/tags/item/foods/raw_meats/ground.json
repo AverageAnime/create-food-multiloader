@@ -19,6 +19,10 @@
     {
       "id": "createfood:ground_rabbit",
       "required": false
+    },
+    {
+      "id": "ratatouille:mince_meat",
+      "required": false
     }
   ]
 }

@@ -1,3 +1,40 @@
+### *** 2.7.0 ***
+![newprev270](https://github.com/user-attachments/assets/a9de6be1-75ac-4d64-99c4-ac9fce31a0ea)
+
+#### Changes:
+* Update translations including ru_ru.json. [(#46)](https://github.com/AverageAnime/create-food-multiloader/pull/46)
+* Config options `nutrition_saturation` and `item_overrides` (food effects) now allow overrides of any food.
+* Added display bowls. Mechanics are the same as display plates, but generically displayed items are always upright and bowls cannot be used as cutting boards.
+* Added small display bowls that can hold fluid. `RMB` with a fluid container to pour it in, then `RMB` with a food item to dip it. Read more [here](https://github.com/AverageAnime/create-food-multiloader/wiki/Fluid-Dipping-Guide).
+  * New config options `enable_dipping` and `dipping_exclude`.
+  * Holds 4000mb. Breaking at maximum capacity leaves a fluid source block behind; below that the fluid is lost.
+* Empty plates & bowls now stack. 
+  * `plate` → 6, `bowl` → 4, `small_plate` → 12, `small_bowl` → 8.
+* Rename config option `enable_generic_plates` → `enable_generic_display`.
+* Update config option `crafting_remainders` to work the same as native remainders, with some additional modifications. 
+  * Default config now includes cake batter buckets → empty bucket.
+  * Smelting & smoking recipes now returns the config remainder to the output slot.
+    * Create's bulk smoking/blasting now returns the config remainder alongside the result as a dropped item.
+  * Campfire cooking recipes returns the config remainder alongside the result as a dropped item. 
+    * Hand-held campfire cooking recipes will return the config remainder to the inventory.
+* Added/improved compatibility with Fruits Delight, Veggies Delight, Rustic Delight, Hearth and Harvest, Cultural Delights, Expanded Delight, Create: Ratatouille, Create: Ratatouille Fried Delights and Create Confectionery.
+  * Support for the food effects from Fruits Delight & Hearth and Harvest. Read more [here](https://github.com/AverageAnime/create-food-multiloader/wiki/Compatibility).
+  * New recipes using recipe types from other mods.
+  * Display name renames & tooltips.
+  * Renamed `c:chili_pepper` to `c:pepper` and other various tag updates.
+* Full tooltip compatibility with Jade. 
+* You can now `RMB` with tools tagged `c:tools/wrench` to pick up display blocks directly.
+* New config options `horizontal_range` and `vertical_range` for campfire cooking. (Default: 3/1).
+* Reorganized config options.
+* Removed `corn_stick` item.
+
+#### Fixes:
+* Fixes to handcrafting to prevent tool loss & erroneous offhand block placement. [(#44)](https://github.com/AverageAnime/create-food-multiloader/pull/44)
+* Fix `chorus_fruit_cookie` recipes using incorrect inputs. [(#47)](https://github.com/AverageAnime/create-food-multiloader/issues/47)
+* Fix client/server issue. Options have been moved from `createfood-client.toml` to `createfood-common.toml`. [(#50)](https://github.com/AverageAnime/create-food-multiloader/issues/50)
+* Fix certain items from being deleted when dual wielded + `RMB`. Added `minecraft:enchantable/vanishing` and `minecraft:enchantable/durability` to `handcrafting_exclude` list.
+* Fix missing recipes for 2.5.0 items & other minor recipe issues.
+
 ### *** 2.6.0 ***
 
 #### Changes:

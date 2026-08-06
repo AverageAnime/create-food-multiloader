@@ -3,6 +3,10 @@
     {
       "id": "createfood:ice_cream_bucket",
       "required": false
+    },
+    {
+      "id": "ratatouille_fried_delights:ice_cream_base_bucket",
+      "required": false
     }
   ]
 }

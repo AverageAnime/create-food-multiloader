@@ -1,4 +1,4 @@
-### ***2.5.0***
+### ***2.7.0***
 
 #### Items:
 * createfood:apple_cheesecake
@@ -50,6 +50,7 @@
 * createfood:baked_potato_butter_fish
 * createfood:baked_potato_butter_fried_egg
 * createfood:baked_potato_butter_mushroom
+* createfood:baked_potato_butter_sausage
 * createfood:baked_potato_butter_sour_cream
 * createfood:bar_of_dark_chocolate
 * createfood:bar_of_white_chocolate
@@ -352,6 +353,7 @@
 * createfood:chocolate_donut_hole
 * createfood:chocolate_donut_hole_sugar
 * createfood:chocolate_donut_sugar
+* createfood:chocolate_dried_coffee_beans
 * createfood:chocolate_fudge
 * createfood:chocolate_fudge_bucket
 * createfood:chocolate_fudge_ice_cream_bowl
@@ -520,6 +522,7 @@
 * createfood:dark_chocolate_chip_waffle
 * createfood:dark_chocolate_chips
 * createfood:dark_chocolate_chocolate_pastry
+* createfood:dark_chocolate_dried_coffee_beans
 * createfood:dark_chocolate_fudge
 * createfood:dark_chocolate_fudge_bucket
 * createfood:dark_chocolate_marshmallow_stick
@@ -591,6 +594,14 @@
 * createfood:fish_taco_kelp_taco_sauce
 * createfood:fish_wrap_kelp_onion
 * createfood:fishcake
+* createfood:french_toast_slice
+* createfood:french_toast_slice_apple_jam
+* createfood:french_toast_slice_berry_jam
+* createfood:french_toast_slice_butter
+* createfood:french_toast_slice_chorus_fruit_jam
+* createfood:french_toast_slice_glow_berry_jam
+* createfood:french_toast_slice_melon_jam
+* createfood:french_toast_slice_sugar
 * createfood:fried_egg_hash_brown_sandwich
 * createfood:fried_egg_plate
 * createfood:fried_pita_bread
@@ -693,16 +704,19 @@
 * createfood:hollow_dark_chocolate
 * createfood:hollow_white_chocolate
 * createfood:honey_sandwich
+* createfood:honeycomb_candy_stick
 * createfood:honeyed_apple_slice
 * createfood:honeyed_berries
 * createfood:honeyed_biscuit
 * createfood:honeyed_chocolate_cupcake
 * createfood:honeyed_chocolate_donut
+* createfood:honeyed_chocolate_pastry
 * createfood:honeyed_chocolate_sweet_roll
 * createfood:honeyed_cupcake
 * createfood:honeyed_donut
 * createfood:honeyed_mini_waffle
 * createfood:honeyed_muffin
+* createfood:honeyed_pastry
 * createfood:honeyed_pretzel_stick
 * createfood:honeyed_sweet_roll
 * createfood:honeyed_toast
@@ -840,6 +854,7 @@
 * createfood:mushroom_bacon_pizza_slice
 * createfood:mushroom_burrito_rice
 * createfood:mushroom_cream_soup_bowl
+* createfood:mushroom_cream_soup_bowl_cheese
 * createfood:mushroom_cream_soup_bucket
 * createfood:mushroom_fish_pizza
 * createfood:mushroom_fish_pizza_slice
@@ -1041,6 +1056,7 @@
 * createfood:raw_sausage_roll_cheese
 * createfood:raw_sausages
 * createfood:raw_scone
+* createfood:raw_scotch_egg
 * createfood:raw_snickerdoodle
 * createfood:raw_soul_berry_cookie
 * createfood:raw_spicy_sausage_roll
@@ -1101,6 +1117,8 @@
 * createfood:scone_chorus_fruit_jam
 * createfood:scone_glow_berry_jam
 * createfood:scone_melon_jam
+* createfood:scotch_egg
+* createfood:scotch_egg_slice
 * createfood:scrambled_egg_sandwich
 * createfood:scrambled_eggs_plate
 * createfood:scrambled_eggs_plate_bacon
@@ -1109,6 +1127,8 @@
 * createfood:scrambled_eggs_plate_onion
 * createfood:scrambled_eggs_plate_sausage
 * createfood:scrambled_eggs_plate_tomato
+* createfood:shakshuka_bowl
+* createfood:shakshuka_bucket
 * createfood:shredded_beetroot
 * createfood:shredded_carrot
 * createfood:shredded_potato
@@ -1132,7 +1152,6 @@
 * createfood:small_rabbit_meatballs
 * createfood:small_slimeballs
 * createfood:small_strider_meatballs
-* createfood:smoked_corn_stick
 * createfood:smore
 * createfood:smores_pie
 * createfood:smores_pie_slice
@@ -1188,6 +1207,7 @@
 * createfood:toffee_toast
 * createfood:toffee_white_chocolate
 * createfood:tomato_cream_soup_bowl
+* createfood:tomato_cream_soup_bowl_cheese
 * createfood:tomato_cream_soup_bucket
 * createfood:tortilla_chip_bowl
 * createfood:tropical_fish_slice
@@ -1227,6 +1247,7 @@
 * createfood:white_chocolate_chip_waffle
 * createfood:white_chocolate_chips
 * createfood:white_chocolate_chocolate_pastry
+* createfood:white_chocolate_dried_coffee_beans
 * createfood:white_chocolate_fudge
 * createfood:white_chocolate_fudge_bucket
 * createfood:white_chocolate_marshmallow_stick

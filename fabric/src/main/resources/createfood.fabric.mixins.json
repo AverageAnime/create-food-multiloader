@@ -5,10 +5,11 @@
   "refmap": "${mod_id}.refmap.json",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
-    "ResultSlotMixin"
+    "ThrownEggMixin"
   ],
   "client": [
-    "FogRendererMixin"
+    "FogRendererMixin",
+    "ScreenEffectRendererMixin"
   ],
   "server": [],
   "injectors": {

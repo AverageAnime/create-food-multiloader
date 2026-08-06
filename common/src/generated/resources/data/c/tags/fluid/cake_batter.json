@@ -7,6 +7,10 @@
     {
       "id": "createfood:cake_batter",
       "required": false
+    },
+    {
+      "id": "ratatouille:cake_batter",
+      "required": false
     }
   ]
 }

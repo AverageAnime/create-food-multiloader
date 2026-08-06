@@ -1,9 +1,9 @@
 package dev.averageanime.block.type.plate;
 
-import dev.averageanime.block.type.blockentity.GenericDisplayPlateBlockEntity;
+import dev.averageanime.block.type.blockentity.GenericDisplayBlockEntity;
 import dev.averageanime.block.type.display.FoodBlock;
 import dev.averageanime.platform.Services;
-import dev.averageanime.util.ItemSpawn;
+import dev.averageanime.util.ItemSpawns;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.sounds.SoundEvents;
@@ -36,19 +36,30 @@ import java.util.function.Supplier;
 public class EmptyPlateBlock extends Block {
 
     public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
-    protected static final VoxelShape SHAPE = Block.box(1.0, 0.0, 1.0, 15.0, 2.0, 15.0);
+    public static final int MAX_STACK = 6;
+    protected static final VoxelShape[] SHAPE_BY_STACK = {
+            Block.box(1.0, 0.0, 1.0, 15.0, 2, 15.0),
+            Block.box(1.0, 0.0, 1.0, 15.0, 4, 15.0),
+            Block.box(1.0, 0.0, 1.0, 15.0, 6, 15.0),
+            Block.box(1.0, 0.0, 1.0, 15.0, 8, 15.0),
+            Block.box(1.0, 0.0, 1.0, 15.0, 10, 15.0),
+            Block.box(1.0, 0.0, 1.0, 15.0, 12, 15.0),
+    };
 
     private final Supplier<Block> smallPlateBlock;
 
     public EmptyPlateBlock(Properties properties, Supplier<Block> smallPlateBlock) {
         super(properties);
         this.smallPlateBlock = smallPlateBlock;
-        this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH));
+        this.registerDefaultState(this.stateDefinition.any()
+                .setValue(FACING, Direction.NORTH)
+                .setValue(FoodBlock.STACK_SIZE, 1));
     }
 
     @Override
     public @NotNull VoxelShape getShape(@NotNull BlockState state, @NotNull BlockGetter level, @NotNull BlockPos pos, @NotNull CollisionContext context) {
-        return SHAPE;
+        int stack = Math.min(state.getValue(FoodBlock.STACK_SIZE), MAX_STACK);
+        return SHAPE_BY_STACK[stack - 1];
     }
 
     @Override
@@ -58,13 +69,13 @@ public class EmptyPlateBlock extends Block {
 
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-        builder.add(FACING);
+        builder.add(FACING, FoodBlock.STACK_SIZE);
     }
 
     @Override
     protected @NotNull ItemInteractionResult useItemOn(@NotNull ItemStack heldStack, @NotNull BlockState state, @NotNull Level level, @NotNull BlockPos pos,
                                                        Player player, @NotNull InteractionHand hand, @NotNull BlockHitResult hit) {
-        if (player.isShiftKeyDown() && smallPlateBlock != null) {
+        if (player.isShiftKeyDown() && smallPlateBlock != null && state.getValue(FoodBlock.STACK_SIZE) == 1) {
             if (level.isClientSide) return ItemInteractionResult.SUCCESS;
             BlockState smallPlate = smallPlateBlock.get().defaultBlockState();
             if (smallPlate.hasProperty(FACING)) smallPlate = smallPlate.setValue(FACING, state.getValue(FACING));
@@ -73,15 +84,20 @@ public class EmptyPlateBlock extends Block {
             return ItemInteractionResult.SUCCESS;
         }
 
+        boolean canAcceptFood = state.getValue(FoodBlock.STACK_SIZE) == 1;
+
         if (level.isClientSide) {
-            if (FoodBlock.Registry.canPlaceOnPlate(heldStack.getItem(), false)
-                    || (isGenericDisplayEligible(heldStack.getItem())
-                        && Services.PLATFORM.isGenericPlatesEnabled()
-                        && Services.PLATFORM.isGenericDisplayAllowed(heldStack))) {
+            if (canAcceptFood
+                    && (FoodBlock.Registry.canPlaceOnPlate(heldStack.getItem(), false)
+                        || (isGenericDisplayEligible(heldStack.getItem())
+                            && Services.PLATFORM.isGenericDisplayEnabled()
+                            && Services.PLATFORM.isGenericDisplayAllowed(heldStack)))) {
                 return ItemInteractionResult.SUCCESS;
             }
             return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
         }
+
+        if (!canAcceptFood) return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
 
         List<Supplier<Block>> stackBlockSuppliers = FoodBlock.Registry.getAllBlocks(heldStack.getItem());
         if (stackBlockSuppliers != null && !stackBlockSuppliers.isEmpty()) {
@@ -118,7 +134,7 @@ public class EmptyPlateBlock extends Block {
         }
 
         if (isGenericDisplayEligible(heldStack.getItem())) {
-            if (!Services.PLATFORM.isGenericPlatesEnabled()
+            if (!Services.PLATFORM.isGenericDisplayEnabled()
                     || !Services.PLATFORM.isGenericDisplayAllowed(heldStack)) {
                 return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
             }
@@ -126,7 +142,7 @@ public class EmptyPlateBlock extends Block {
             BlockState newState = genericPlate.defaultBlockState()
                     .setValue(FACING, state.getValue(FACING));
             level.setBlock(pos, newState, 3);
-            if (level.getBlockEntity(pos) instanceof GenericDisplayPlateBlockEntity be) {
+            if (level.getBlockEntity(pos) instanceof GenericDisplayBlockEntity be) {
                 be.setDisplayedItem(heldStack.copyWithCount(1));
             }
             if (!player.isCreative()) heldStack.shrink(1);
@@ -145,7 +161,6 @@ public class EmptyPlateBlock extends Block {
 
     @Override
     protected @NotNull InteractionResult useWithoutItem(@NotNull BlockState state, @NotNull Level level, @NotNull BlockPos pos, Player player, @NotNull BlockHitResult hit) {
-        if (player.isShiftKeyDown()) return InteractionResult.PASS;
         if (!player.getItemInHand(InteractionHand.MAIN_HAND).isEmpty()) return InteractionResult.PASS;
         ItemStack offhand = player.getItemInHand(InteractionHand.OFF_HAND);
         if (!offhand.isEmpty()
@@ -154,11 +169,17 @@ public class EmptyPlateBlock extends Block {
             return InteractionResult.PASS;
         }
         if (!level.isClientSide) {
+            int current = state.getValue(FoodBlock.STACK_SIZE);
+            int toRemove = player.isShiftKeyDown() ? current : 1;
             Direction direction = player.getDirection().getOpposite();
-            ItemSpawn.spawnItemEntity(level, new ItemStack(Items.BOWL),
+            ItemSpawns.spawnItemEntity(level, new ItemStack(Items.BOWL, toRemove),
                     pos.getX() + 0.5, pos.getY() + 0.3, pos.getZ() + 0.5,
                     direction.getStepX() * 0.15, 0.05, direction.getStepZ() * 0.15);
-            level.removeBlock(pos, false);
+            if (toRemove >= current) {
+                level.removeBlock(pos, false);
+            } else {
+                level.setBlock(pos, state.setValue(FoodBlock.STACK_SIZE, current - toRemove), 3);
+            }
             level.playSound(null, pos, SoundEvents.ITEM_FRAME_REMOVE_ITEM, SoundSource.BLOCKS, 0.8F, 0.8F);
         }
         return InteractionResult.SUCCESS;

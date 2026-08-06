@@ -1,10 +1,10 @@
 package dev.averageanime.fabric.block.type.blockentity;
 
-import dev.averageanime.fabric.block.ModBlockEntities;
-import dev.averageanime.fabric.config.ModConfig;
+import dev.averageanime.fabric.block.BlockEntityRegistration;
+import dev.averageanime.config.ConfigValues;
 import dev.averageanime.fabric.item.storage.ClothSackItem;
 import dev.averageanime.fabric.item.storage.StorageInventory;
-import dev.averageanime.fabric.menu.type.ClothSackMenu;
+import dev.averageanime.fabric.menu.type.block.ClothSackBlockMenu;
 import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
@@ -22,11 +22,11 @@ public class ClothSackBlockEntity
         implements ExtendedScreenHandlerFactory<BlockPos> {
 
     public ClothSackBlockEntity(BlockPos pos, BlockState state) {
-        super(ModBlockEntities.CLOTH_SACK, pos, state,
+        super(BlockEntityRegistration.CLOTH_SACK, pos, state,
                 new StorageInventory(4,
-                        () -> ModConfig.isClothSackStacking() ? 64 : 1,
+                        () -> ConfigValues.isClothSackStacking() ? 64 : 1,
                         (slot, stack) -> !(stack.getItem() instanceof ClothSackItem)
-                                && ModConfig.isClothSackItemAllowed(stack)));
+                                && ConfigValues.isClothSackItemAllowed(stack)));
         inventory.setOnChanged(() -> {
             setChanged();
             if (level != null && !level.isClientSide) {
@@ -47,7 +47,7 @@ public class ClothSackBlockEntity
 
     @Override
     public AbstractContainerMenu createMenu(int id, @NotNull Inventory inv, @NotNull Player player) {
-        return new ClothSackMenu(id, inv, this);
+        return new ClothSackBlockMenu(id, inv, this);
     }
 
     @Override

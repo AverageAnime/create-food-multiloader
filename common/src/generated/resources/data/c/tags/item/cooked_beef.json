@@ -11,6 +11,10 @@
     {
       "id": "vegandelight:tofu_patty",
       "required": false
+    },
+    {
+      "id": "ratatouille_fried_delights:hamburger_patty",
+      "required": false
     }
   ]
 }

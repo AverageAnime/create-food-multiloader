@@ -12,7 +12,8 @@
 6. [Crafting Remainders](#6-crafting-remainders)
 7. [Storage Items](#7-storage-items)
 8. [Display Blocks](#8-display-blocks)
-9. [Config Files Reference](#9-config-files-reference)
+9. [Fluid Dipping](#9-fluid-dipping)
+10. [Config Files Reference](#10-config-files-reference)
 
 ---
 
@@ -22,7 +23,7 @@
 |-----|-----|----------|
 | `Create: Food` | `tab.createfood` | All food items (excluding buckets and display blocks) |
 | `Create: Food - Display` | `tab.createfood.display` | Display block items |
-| `Create: Food - Fluids` | `tab.createfood.fluid` | Fluid bucket items |
+| `Create: Food - Fluids` | `tab.createfood.fluidEntry` | Fluid bucket items |
 
 Items listed in `hide_items` are filtered out of all tabs automatically.
 
@@ -54,7 +55,7 @@ bottle("my_bottle", 5, 0.8f, tips("tooltip.compat.peanut_butter", "peanut_butter
 
 > **Toolkit:** Ingredient key selection is in the Tooltips section of the Item tab. Existing keys are shown as clickable buttons. Custom keys can be added (they generate a lang entry automatically). The compat key toggle is also in the Tooltips section.
 
-**Existing ingredient keys:** apple, apple_cream_frosting, apple_ice_cream, apple_jam, avocado, bacon, beef, beef_meatballs, beetroot, berry, berry_cream_frosting, berry_ice_cream, berry_jam, brown_mushroom, butter, butterscotch, butterscotch_chips, cacao_mass, caramel, caramel_chips, carrot, cheese, chicken, chocolate, chocolate_chips, chocolate_cream_frosting, chocolate_ice_cream, chocolate_graham_cracker_pie_crust, chorus_fruit, chorus_fruit_cream_frosting, chorus_fruit_ice_cream, chorus_fruit_jam, corn, cream_frosting, crimson_fungus, cucumber, dark_chocolate, dark_chocolate_chips, egg, egg_yolk, eggplant, endermite_meatballs, fish, flesh, fried_egg, ginger, glow_berry, glow_berry_cream_frosting, glow_berry_ice_cream, glow_berry_jam, graham_cracker_pie_crust, green_tea, hash_browns, honey, ice_cream, kelp, lettuce, marshmallow, melon_cream_frosting, melon_ice_cream, melon_jam, mushroom, mutton, onion, peanut_butter, pork, pork_meatballs, potato, pressed_cocoa, rabbit, rabbit_meatballs, red_mushroom, rice, salt, sausage, scrambled_egg, slime, slimeballs, soul_berry, spider_eye, squid_ink, strider_meatballs, sugar, taco_sauce, toast, toffee, toffee_chips, tomato, tomato_sauce, ube_cream_frosting, warped_fungus, white_chocolate, white_chocolate_chips
+**Existing ingredient keys:** apple, apple_cream_frosting, apple_ice_cream, apple_jam, avocado, bacon, bayberry, beef, beef_meatballs, beetroot, bell_pepper, berry, berry_cream_frosting, berry_ice_cream, berry_jam, blueberry, brown_mushroom, butter, butterscotch, butterscotch_chips, butterscotch_fudge, cabbage, cacao_mass, caramel, caramel_chips, caramel_fudge, carrot, cheese, chicken, chocolate, chocolate_chips, chocolate_cream_frosting, chocolate_fudge, chocolate_graham_cracker_pie_crust, chocolate_ice_cream, chorus_fruit, chorus_fruit_cream_frosting, chorus_fruit_ice_cream, chorus_fruit_jam, corn, cranberry, cream_cheese, cream_frosting, crimson_fungus, cucumber, dark_chocolate, dark_chocolate_chips, egg, egg_yolk, eggplant, endermite_meatballs, fish, flesh, fried_egg, ginger, glow_berry, glow_berry_cream_frosting, glow_berry_ice_cream, glow_berry_jam, goat_cheese, graham_cracker_pie_crust, green_tea, hash_browns, honey, ice_cream, jam, kelp, lemon, lettuce, marshmallow, melon_cream_frosting, melon_ice_cream, melon_jam, mushroom, mutton, onion, peanut_butter, persimmon, pork, pork_meatballs, potato, pressed_cocoa, protein, rabbit, rabbit_meatballs, red_mushroom, rice, salmon, salt, sausage, scrambled_egg, slime, slimeballs, soul_berry, sour_cream, spider_eye, squid_ink, strider_meatballs, sugar, syrup, taco_sauce, toast, toffee, toffee_chips, toffee_fudge, tomato, tomato_sauce, ube_cream_frosting, vegetable, warped_fungus, white_chocolate, white_chocolate_chips, zucchini
 
 ### Custom Tooltips (Config)
 
@@ -186,7 +187,9 @@ Decorative blocks. Not obtainable via recipes — placed and interacted with in 
 - **Cutting board (offhand):** Holding a Farmer's Delight cutting board in offhand and pressing `RMB` on a plate processes the top item with cutting board recipes
 - **Break:** `LMB` — drops food block (full) or individual items + bowl (partial)
 
-When `enable_generic_plates` is `true` (the default), any item not explicitly registered can still be placed on a plate and rendered generically.
+When `enable_generic_display` is `true` (the default), any item not explicitly registered can still be placed on an empty plate or bowl and rendered generically.
+
+Empty display surfaces cycle between three forms with `Shift + RMB`: plate → small plate → bowl. Placing a food configured for a bowl display fills the bowl up as servings are added (instead of arranging them on a plate).
 
 ### Bottles & Bowls
 
@@ -218,7 +221,46 @@ Pattern-matched automatically (by display type):
 
 ---
 
-## 9. Config Files Reference
+## 9. Fluid Dipping
+
+A single small bowl (`createfood:small_bowl_block`) doubles as a fluid container. Fill it, then right-click it with a food item to transform that item using Create's `create:filling` recipes.
+
+This is the mod's first *functional* Create integration — the ~450 `create:filling` and `create:emptying` recipe JSONs under `data/createfood/recipe/create/` previously only existed for Create's own machines. Create is not a build dependency; the recipes are read at runtime via registry lookup plus reflection, the same approach `PlateSliceInteraction` uses for Farmer's Delight cutting recipes. **Without Create the bowl still fills from buckets, but dipping is inert.**
+
+### Holding fluid
+
+Only a lone bowl holds fluid; a stack of 2–8 behaves exactly as it always has. Capacity is 1000mb (one bucket).
+
+Fluid is stored as raw millibuckets and recipes are charged their exact declared amount, so no rounding error accumulates across fill/dip cycles. "Servings" (`amount / 125`) is a display convention only.
+
+| Source | Amount | Returns |
+|--------|--------|---------|
+| Any bucket | 1000mb | Empty bucket |
+| Bottle (`create:emptying`) | 500mb | Glass bottle |
+| Filled bowl (`create:emptying`) | 333mb | Bowl |
+| Ice cream stick (`create:emptying`) | 111mb | Stick |
+
+A pour is refused outright if it does not fit in full or if the bowl holds a different fluid — nothing is ever partially consumed.
+
+### Taking fluid back out
+
+Dipping an empty container fills it, which is the normal way to empty a bowl: a glass bottle takes 500mb, a bowl 333mb, a stick or waffle cone 111mb. These come from the 93 container-input filling recipes and are allowed by default; add them to `dipping_exclude` to restrict dipping to food only.
+
+Buckets are the exception and are handled natively in both directions, because Create's data never covers them — no filling recipe takes `minecraft:bucket` and no emptying recipe produces one. A bucket is all-or-nothing, so only a completely full bowl can fill one.
+
+### Dipping
+
+One item converts per click; the result goes to the player's inventory, or drops at their feet if it does not fit.
+
+Exclusion is by exact item id (`dipping_exclude`), never by name — `createfood:ice_cream_bowl` and `createfood:pretzel_stick` are genuine food dips despite reading like containers, while bare `minecraft:bowl` and `minecraft:stick` are containers.
+
+### Losing the fluid
+
+A filled bowl refuses the plate toggle, refuses pickup, and refuses to be stacked on, so fluid cannot be discarded by accident. Broken at exactly 1000mb it leaves a fluid source block behind; at any lesser amount the fluid is lost.
+
+---
+
+## 10. Config Files Reference
 
 ### `createfood-client.toml`
 
@@ -264,7 +306,7 @@ Pattern-matched automatically (by display type):
 
 | Setting | Default | Effect |
 |---------|---------|--------|
-| `crafting_remainders` | `minecraft:egg\|createfood:eggshell` | Add remainder items to vanilla crafting recipes |
+| `crafting_remainders` | `minecraft:egg\|createfood:eggshell`, cake batter buckets\|`minecraft:bucket` | Add remainder items to vanilla crafting recipes and furnace/smoker smelting |
 | `enable_egg_impact_remainder` | `true` | Drop eggshell when thrown egg hits surface |
 
 **Display**
@@ -272,14 +314,16 @@ Pattern-matched automatically (by display type):
 | Setting | Default | Effect |
 |---------|---------|--------|
 | `enable_cutting_board` | `true` | Allow cutting board offhand interaction on plates |
-| `enable_generic_plates` | `true` | Allow any item to display generically on plates |
-| `exclude` | *(empty)* | Item IDs blocked from generic plate placement |
+| `enable_generic_display` | `true` | Allow any item to display generically on plates and bowls |
+| `exclude` | *(empty)* | Item IDs blocked from generic plate/bowl placement |
+| `enable_dipping` | `true` | Allow a single small bowl to hold fluid and transform dipped food (see §9) |
+| `dipping_exclude` | *(empty)* | Item IDs blocked as dipping inputs |
 
 ---
 
-## 10. Datagen
+## 11. Datagen
 
-Item tag files (`data/c/tags/item/<id>.json`) are generated automatically by `ItemTagProvider` and item model files (`assets/createfood/models/item/<id>.json`) by `ItemModelProvider` on each datagen run. Coverage is automatic — every item in `ModItems`, every block in `ModBlocks`, and every fluid bucket in `ModFluids` is included.
+Item tag files (`data/c/tags/item/<id>.json`) are generated automatically by `ItemTagProvider` and item model files (`assets/createfood/models/item/<id>.json`) by `ItemModelProvider` on each datagen run. Coverage is automatic — every item in `ModItems`, every block in `ModBlocks`, and every fluidEntry bucket in `ModFluids` is included.
 
 **Files you still write manually (or via toolkit):**
 - Lang entries (`en_us.json`)
@@ -290,4 +334,4 @@ Item tag files (`data/c/tags/item/<id>.json`) are generated automatically by `It
 **Textures you still need to create** (datagen references them but does not generate them):
 - `textures/item/<id>.png` for every item
 - `textures/block/<id>_top.png`, `_side.png`, `_inner.png` for cake/pie/pizza blocks
-- `textures/fluid/<id>_still.png` and `<id>_flow.png` for fluids
+- `textures/fluidEntry/<id>_still.png` and `<id>_flow.png` for fluids

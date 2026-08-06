@@ -2,8 +2,17 @@
   "required": true,
   "minVersion": "0.8",
   "package": "dev.averageanime.mixin",
+  "refmap": "${mod_id}.refmap.json",
   "compatibilityLevel": "JAVA_21",
-  "mixins": [],
+  "mixins": [
+    "AbstractFurnaceBlockEntityMixin",
+    "CampfireBlockEntityMixin",
+    "ItemAccessorMixin",
+    "ItemStackFinishUsingItemMixin",
+    "ItemStackTooltipMixin",
+    "LivingEntityAddEffectMixin",
+    "PotionContentsTooltipMixin"
+  ],
   "client": [],
   "server": [],
   "injectors": {

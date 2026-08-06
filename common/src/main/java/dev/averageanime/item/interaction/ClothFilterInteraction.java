@@ -1,6 +1,6 @@
 package dev.averageanime.item.interaction;
 
-import dev.averageanime.CommonClass;
+import dev.averageanime.CreateFoodCommon;
 import dev.averageanime.platform.Services;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
@@ -68,13 +68,23 @@ public class ClothFilterInteraction {
         return false;
     }
 
+    private record ParsedInteractions(List<? extends String> source, List<Interaction> interactions) {}
+
+    private static volatile ParsedInteractions parsed;
+
     private static List<Interaction> loadInteractions() {
-        return Services.PLATFORM.getFilterInteractions().stream()
-                .map(entry -> {
-                    String[] parts = entry.split("\\|");
-                    return new Interaction(parts[0].trim(), parts[1].trim(), parts[2].trim(), parts[3].trim());
-                })
-                .toList();
+        List<? extends String> entries = Services.PLATFORM.getFilterInteractionEntries();
+        ParsedInteractions p = parsed;
+        if (p == null || p.source() != entries) {
+            p = new ParsedInteractions(entries, entries.stream()
+                    .map(entry -> {
+                        String[] parts = entry.split("\\|");
+                        return new Interaction(parts[0].trim(), parts[1].trim(), parts[2].trim(), parts[3].trim());
+                    })
+                    .toList());
+            parsed = p;
+        }
+        return p.interactions();
     }
 
     private record Interaction(
@@ -92,7 +102,7 @@ public class ClothFilterInteraction {
         try {
             return BuiltInRegistries.ITEM.get(ResourceLocation.parse(id));
         } catch (Exception e) {
-            CommonClass.LOGGER.error("Could not resolve item '{}'", id, e);
+            CreateFoodCommon.LOGGER.error("Could not resolve item '{}'", id, e);
             return Items.AIR;
         }
     }

@@ -1,6 +1,5 @@
 package dev.averageanime.neoforge.item.type;
 
-import dev.averageanime.platform.Services;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.food.FoodProperties;
@@ -25,16 +24,16 @@ public class EffectFood extends dev.averageanime.item.type.EffectFood {
         super(properties, existingEffectIds, deferredEffects);
     }
 
+    public EffectFood(Properties properties, Set<String> existingEffectIds, List<DeferredFx> deferredEffects,
+                      dev.averageanime.util.Tooltips.TooltipSpec tip) {
+        super(properties, existingEffectIds, deferredEffects, tip);
+    }
+
     @Nullable
     @Override
     public FoodProperties getFoodProperties(@NotNull ItemStack stack, @Nullable LivingEntity entity) {
         FoodProperties base = super.getFoodProperties(stack, entity);
         if (base == null) return null;
-        String itemId = BuiltInRegistries.ITEM.getKey(this).getPath();
-        var override = Services.PLATFORM.getItemNutritionOverride(itemId);
-        if (override == null) return base;
-        int n = override.hasNutritionOverride() ? override.nutrition() : base.nutrition();
-        float s = override.hasSaturationOverride() ? override.saturation() : base.saturation();
-        return rebuildFoodProperties(base, n, s);
+        return applyNutritionOverride(base, BuiltInRegistries.ITEM.getKey(this).getPath());
     }
 }

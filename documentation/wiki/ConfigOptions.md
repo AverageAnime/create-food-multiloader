@@ -1,38 +1,11 @@
-### ***2.6.0***
+### ***2.7.0***
+> **Note: If you are updating to a version with new config defaults, you will need to regenerate the list, or add the new entries manually.**
 
 # `createfood-client.toml`
 
+---
+
 ## Blocks
-
-### Custom Blocks
-Format: `name|type|slice_item_id` for sliced types, `name|type` for unsliced types
-> **Note: Custom blocks will require new model/blockstate/texture files.**
-* Register brand-new blocks under the `createfood:` namespace using the `block` list.
-* `name` becomes the block's registry ID: `createfood:<name>`.
-> **Note: Changes require a game restart.**
-
-| Type        | Block behaviour              | `slice_item_id` |
-|-------------|------------------------------|-----------------|
-| `cake`      | Cake (sliceable, stacksTo 1) | Required        |
-| `pie`       | Pie (sliceable)              | Required        |
-| `pizza`     | Pizza (sliceable)            | Required        |
-| `waffle`    | Waffle (sliceable)           | Required        |
-| `raw_pie`   | Raw pie (unsliceable)        | —               |
-| `raw_pizza` | Raw pizza (unsliceable)      | —               |
-| `gelatin`   | Gelatin dessert block        | —               |
-
-`slice_item_id` accepts any registered item ID (`createfood:`, vanilla, or another mod).
-```toml
-[blocks]
-block = [
-  "my_cheesecake|cake|createfood:my_cheesecake_slice",
-  "my_berry_pie|pie|createfood:my_berry_pie_slice",
-  "my_margherita|pizza|createfood:my_margherita_slice",
-  "my_waffles|waffle|createfood:my_waffle_slice",
-  "my_raw_pie|raw_pie",
-  "my_panna_cotta|gelatin"
-]
-```
 
 ### Storage Display
 - **show_sack_block_icons**: Render floating item icons on the front face of placed cloth sack blocks (default: `true`)
@@ -54,26 +27,84 @@ show_tooltip_icons = true
 always_display_upright = false
 ```
 
-### Custom Display Blocks
-Format: `mod:item_id|display_type|max_stack`
-> **Note: Custom display blocks will require new model/blockstate/loot_table files.**
-* Register items from other mods to be placeable as display blocks using the `display_block` list.
-* `display_type` must be one of: `plate`, `small_plate`, `bottle`, `bowl`, `salad_bowl`
-* `max_stack` controls the maximum number of items that can be placed on the display block.
+---
+
+## Items
+
+### Tooltips
+- **require_shift**: Require holding Shift to view tooltips (default: `false`)
+- **show_compatibility**: View mod compatibility info in tooltips (default: `true`)
+- **show_ingredients**: View ingredients in tooltips (default: `true`)
+#### Adding Custom Tooltips
+Format: `item_key|ingredients`
+* Add ingredient or mod compatibility info tooltips to any item using the `custom_tooltips` list.
+> **Note: Changes require a game restart.**
+```toml
+[items.tooltips]
+require_shift = false
+show_compatibility = true
+show_ingredients = true
+custom_tooltips = [
+  "farmersdelight:hamburger|onion,lettuce,tomato"
+]
+```
+
+---
+
+# `createfood-common.toml`
+
+---
+
+## Blocks
+
+### Custom Blocks
+Format: `name|type|slice_item_id` for sliced types, `name|type` for unsliced types
+> **Note: Custom blocks will require new model/blockstate/texture files.**
+* Register brand-new blocks under the `createfood:` namespace using the `block` list.
+* `name` becomes the block's registry ID: `createfood:<name>`.
 > **Note: Changes require a game restart.**
 
-| Type          | Max stack |
-|---------------|-----------|
-| `plate`       | 9         |
-| `small_plate` | 1         |
-| `bottle`      | 1         |
-| `bowl`        | 1         |
-| `salad_bowl`  | 1         |
+| Type        | Block behaviour              | `slice_item_id` |
+|-------------|------------------------------|-----------------|
+| `cake`      | Cake (sliceable, stacksTo 1) | Required        |
+| `pie`       | Pie (sliceable)              | Required        |
+| `pizza`     | Pizza (sliceable)            | Required        |
+| `waffle`    | Waffle (sliceable)           | Required        |
+| `raw_pie`   | Raw pie (unsliceable)        | —               |
+| `raw_pizza` | Raw pizza (unsliceable)      | —               |
+| `gelatin`   | Bouncy block, same as slime  | —               |
+
+`slice_item_id` accepts any registered item ID (`createfood:`, vanilla, or another mod).
+```toml
+[blocks]
+block = [
+  "my_cheesecake|cake|createfood:my_cheesecake_slice",
+  "my_berry_pie|pie|createfood:my_berry_pie_slice",
+  "my_margherita|pizza|createfood:my_margherita_slice",
+  "my_waffles|waffle|createfood:my_waffle_slice",
+  "my_raw_pie|raw_pie",
+  "my_panna_cotta|gelatin"
+]
 ```
+
+---
+
+## Display
+
+### Custom Display Blocks
+Format: `mod:item_id|display_type|max_stack`, `mod:item_id|display_type|max_stack|height`, `mod:item_id|display_type|max_stack|height|particles`
+> **Note: Custom display blocks will require new model/blockstate/loot_table files.**
+* Register items from other mods to be placeable as display blocks using the `display_block` list.
+* `display_type` must be one of: `plate`, `small_plate`, `bottle`, `bowl`, `display_bowl`, `salad_bowl`, `small_bowl`
+* `max_stack` controls the maximum number of items that can be placed on the display block.
+* `height` is optional and sets the model height in pixels (default: `12`).
+* `particles` is optional and only applies to `bottle`, adding a rising steam effect (default: `false`).
+> **Note: Changes require a game restart.**
+```toml
 [display]
 display_block = [
   "kaleidoscope_cookery:samsa|plate|2",
-  "farmersrespite:tea_bottle|bottle|1"
+  "farmersrespite:tea_bottle|bottle|1|10|true"
 ]
 ```
 
@@ -98,24 +129,13 @@ fluid = [
 
 ---
 
-## Handcrafting
-
-- **enable_handcraft_particles**: Show particle effects when handcrafting (default: `true`)
-- **enable_single_handcraft**: Allow single-ingredient recipes to be handcrafted (default: `false`)
-```toml
-[handcraft]
-enable_handcraft_particles = true
-enable_single_handcraft = false
-```
-
----
-
 ## Items
 
 ### Hiding Items
 Format: `item_id`
 * Create: Food items can be hidden in game by adding entries to the `hide_items` list. Recipes are also disabled. In 2.1.0+ display blocks are also hidden.
-```
+* Adding a fluid ID also hides that fluid's bucket, so `_bucket` is not needed.
+```toml
 [items]
 hide_items = ["strider_meatball"]
 ```
@@ -132,14 +152,14 @@ Format: `name|type|nutrition|saturation` for food types, `name|type` for ingredi
 **Food types**:
 
 | Type        | Eat speed | Stack                              |
-|-------------|-----------|------------------------------------|
-| `food`      | normal    | 64                                 |
-| `fast_food` | fast      | 64                                 |
-| `bowl`      | normal    | 16                                 |
-| `bowl_cr`   | normal    | 16 (craft remainder: bowl)         |
-| `bottle`    | normal    | 16 (craft remainder: glass bottle) |
-| `stick`     | fast      | 64                                 |
-| `stick_cr`  | fast      | 64 (craft remainder: stick)        |
+|-------------|-----------|-------------------------------------|
+| `food`      | normal    | 64                                  |
+| `fast_food` | fast      | 64                                  |
+| `bowl`      | normal    | 16                                  |
+| `bowl_cr`   | normal    | 16 (craft remainder: bowl)          |
+| `bottle`    | normal    | 16 (craft remainder: glass bottle)  |
+| `stick`     | fast      | 64                                  |
+| `stick_cr`  | fast      | 64 (craft remainder: stick)         |
 
 **Ingredient types**:
 
@@ -160,24 +180,6 @@ item = [
 ]
 ```
 
-### Tooltips
-- **require_shift**: Require holding Shift to view tooltips (default: `false`)
-- **show_compatibility**: View mod compatibility info in tooltips (default: `true`)
-- **show_ingredients**: View ingredients in tooltips (default: `true`)
-#### Adding Custom Tooltips
-Format: `item_key|ingredients`
-* Add ingredient or mod compatibility info tooltips to any item using the `custom_tooltips` list.
-> **Note: Changes require a game restart.**
-```
-[items.tooltips]
-require_shift = false
-show_compatibility = true
-show_ingredients = true
-custom_tooltips = [
-  "farmersdelight:hamburger|onion,lettuce,tomato"
-]
-```
-
 ---
 
 # `createfood-server.toml`
@@ -186,17 +188,31 @@ custom_tooltips = [
 
 ## Display
 
-### Generic Display Plates
-- **enable_generic_plates**: Enable generic display plate blocks that can hold any single item (default: `true`)
+### Generic Display Plates & Bowls
+- **enable_generic_display**: Enable generic display plate and bowl blocks that can hold any single item (default: `true`)
 - **enable_cutting_board**: Enable Farmer's Delight cutting board recipes to work on display plates (default: `true`)
 #### Exclude
 Format: `mod:mod_id`,  `item:mod_id:item_id`,  `tag:mod_id:tag_name`
-* Block specific items from being placed on generic display plates using `exclude`.
+* Block specific items from being placed on generic display plates and bowls using `exclude`.
 ```toml
 [display]
 enable_cutting_board = true
-enable_generic_plates = true
+enable_generic_display = true
 exclude = ["tag:c:tools"]
+```
+
+### Fluid Dipping
+- **enable_dipping**: Allow a single small bowl to hold fluid, and food dipped into it to be transformed using Create's filling recipes (default: `true`)
+- **small_bowl_capacity_mb**: Maximum fluid, in mB, a small bowl can hold (default: `4000`)
+> **Note: Lowering this value after bowls have been filled beyond the new capacity silently discards the excess fluid the next time the bowl is loaded.**
+#### Dipping Exclude
+Format: `mod:mod_id`,  `item:mod_id:item_id`,  `tag:mod_id:tag_name`
+* Block specific items from being dipped using `dipping_exclude`. Empty by default.
+```toml
+[display]
+enable_dipping = true
+small_bowl_capacity_mb = 4000
+dipping_exclude = []
 ```
 
 ---
@@ -209,6 +225,8 @@ exclude = ["tag:c:tools"]
 - **enable_campfire_cooking**: Toggle campfire cooking (default: `false`)
 - **require_shift**: Require holding Shift for campfire cooking to progress (default: `true`)
 - **sticks_only**: Only cook recipes whose result ID ends with `_stick`, e.g. popsicles and skewers (default: `false`)
+- **horizontal_range**: Horizontal search radius, in blocks, for detecting heat sources (default: `3`)
+- **vertical_range**: Vertical search radius, in blocks, for detecting heat sources (default: `1`)
 #### Filter & Exclude
 Format: `mod:mod_id`,  `item:mod_id:item_id`,  `tag:mod_id:tag_name`
 * Block specific items from being cooked using `campfire_cooking_exclude`. Takes priority over the filter and `sticks_only`.
@@ -218,6 +236,8 @@ Format: `mod:mod_id`,  `item:mod_id:item_id`,  `tag:mod_id:tag_name`
 enable_campfire_cooking = false
 require_shift = true
 sticks_only = false
+horizontal_range = 3
+vertical_range = 1
 campfire_cooking_exclude = []
 campfire_cooking_filter = []
 ```
@@ -225,23 +245,28 @@ campfire_cooking_filter = []
 ### Filter Interactions
 Format: `filter_item|offhand_item|filter_result|container_result`
 * Add cloth filter interactions using the `filter_interactions` list. Use `none` for an empty offhand requirement or to consume the filter with no remainder.
-```
+```toml
 [interactions]
 filter_interactions = [
-  "createfood:cloth_filter_egg|minecraft:glass_bottle|createfood:cloth_filter_egg_yolk|createfood:egg_whites_bottle"
+  "createfood:cloth_filter_egg|minecraft:glass_bottle|createfood:cloth_filter_egg_yolk|createfood:egg_whites_bottle",
   "createfood:cloth_filter_egg_yolk|none|createfood:cloth_filter|createfood:egg_yolk"
 ]
 ```
 
 ### Handcrafting
+- **allow_single_item**: Allow single-ingredient recipes to be handcrafted (default: `false`)
 - **enable_handcrafting**: Toggle crafting two-ingredient recipes via `RMB` (default: `true`)
+- **enable_particles**: Show particle effects when handcrafting (default: `true`)
 #### Filter & Exclude
 Format: `mod:mod_id`,  `item:mod_id:item_id`,  `tag:mod_id:tag_name`
 * Block specific outputs from being handcrafted using `exclude`. Takes priority over the filter.
 * Restrict handcrafting to only allow outputs matching the `filter` list. If empty, all recipes are allowed.
-```
+```toml
 [interactions.handcraft]
-exclude = ["item:createfood:raw_strider_meatball", "item:createfood:egg_yolk", "tag:c:tools"]
+allow_single_item = false
+enable_handcrafting = true
+enable_particles = true
+exclude = ["item:createfood:egg_yolk", "tag:minecraft:enchantable/durability", "tag:minecraft:enchantable/vanishing", "tag:c:tools"]
 filter = ["mod:createfood", "item:farmersdelight:hamburger", "tag:c:foods"]
 ```
 
@@ -253,12 +278,15 @@ filter = ["mod:createfood", "item:farmersdelight:hamburger", "tag:c:foods"]
 Format: `item_id|nutrition|saturation`
 * Overwrite nutrition and saturation using the `nutrition_saturation` list.
 * Use `-` to keep the default value.
-> **Note: Only works with Create: Food items.**
-```
+* `item_id` may be a **bare id** for a Create: Food item (e.g. `sugar_cane_juice_bottle`) or a **namespaced id** for any other mod's food (e.g. `minecraft:apple`, `farmersdelight:apple_pie_slice`). 
+    * Foreign items must already have a food component.
+> **Note: Foreign-item overrides only affects item stacks created or loaded after reload — relog to refresh an existing inventory.**
+```toml
 [items]
 nutrition_saturation = [
   "sugar_cane_juice_bottle|1|1",
-  "caramel_pretzel_stick|-|5"
+  "caramel_pretzel_stick|-|5",
+  "minecraft:apple|1|0.1"
 ]
 ```
 
@@ -266,7 +294,7 @@ nutrition_saturation = [
 Format: `category_name|mod_id:effect_id`
 * Pin a named effect category to a specific effect ID, bypassing the default mod-priority order.
 * If the effect ID isn't found in the registry the default priority order is used as a fallback.
-```
+```toml
 [items.effects]
 category_overrides = ["comfort|farmersdelight:comfort"]
 ```
@@ -277,13 +305,14 @@ Format: `item_id|category_or_effect_id|duration|amplifier`, `item_id|category_or
 * `category_or_effect_id` accepts either a category name (e.g. `comfort`) or a full effect ID (e.g. `minecraft:fire_resistance`).
 * Duration is in ticks (20 ticks = 1 second). Amplifier `0` = level I, `1` = level II, etc.
 * `chance` is optional (0.0–1.0, default `1.0`). When below 1.0, the effect has a percentage chance to apply and the tooltip always shows the chance (e.g. `Strength (07:30), 50% Chance`).
-> **Note: Only works with Create: Food items.**
-```
+* `item_id` may be a bare Create: Food id or a namespaced id for any other mod's food (same rules as `nutrition_saturation` above).
+```toml
 [items.effects]
 item_overrides = [
   "smore|comfort|9000|0",
   "spicy_chicken_nuggets|minecraft:fire_resistance|remove",
-  "apple_cream_donut|strength|9000|0|0.5"
+  "apple_cream_donut|strength|9000|0|0.5",
+  "minecraft:golden_apple|minecraft:regeneration|remove"
 ]
 ```
 
@@ -292,12 +321,20 @@ item_overrides = [
 #### Custom Crafting Remainders
 Format: `input_item|remainder_item`
 * Add custom crafting remainders to any item using the `crafting_remainders` list.
-> **Note: Custom remainders only apply to vanilla crafting recipes.**
-```
+  * **Crafting table** — the remainder is returned to the grid slot (vanilla put-back), not dropped into your inventory.
+  * **Crafter block** and **modded crafting benches** (Create's mechanical crafter, etc.) — the remainder is produced automatically.
+  * **Smelting/smoking/blasting** — the remainder is delivered through the furnace's output slot, so it comes out with the result whether a player or a hopper takes it. (While a remainder is waiting in the output slot, the next result waits until it's collected, like any full output.)
+  * **Create's bulk smoking/blasting** — the remainder drops alongside the result. NeoForge only.
+  * **Campfire cooking** — both hand-held cooking and placed campfires drop the remainder alongside the cooked result.
+  * **Eating** — eating an item configured as a remainder input returns its remainder, matching vanilla food containers (e.g. bowls).
+```toml
 [items.remainders]
 enable_egg_impact_remainder = true
 crafting_remainders = [
-  "minecraft:egg|createfood:eggshell"
+  "minecraft:egg|createfood:eggshell",
+  "createfood:cake_batter_bucket|minecraft:bucket",
+  "createfood:chocolate_cake_batter_bucket|minecraft:bucket",
+  "createfood:ube_cake_batter_bucket|minecraft:bucket"
 ]
 ```
 
@@ -314,9 +351,13 @@ crafting_remainders = [
 Format: `mod:mod_id`,  `item:mod_id:item_id`,  `tag:mod_id:tag_name`
 * Block specific items from being inserted using `cloth_sack_exclude`. Takes priority over everything.
 * Restrict what items can be inserted using `cloth_sack_filter`. If empty, all items are allowed (or only food when `allow_food` is on).
-```
+```toml
 [storage.cloth_sack]
-cloth_sack_exclude = ["item:createfood:raw_strider_meatball"]
+cloth_sack_allow_food = false
+cloth_sack_eat_from_item = false
+cloth_sack_inventory = true
+cloth_sack_stack = true
+cloth_sack_exclude = ["item:createfood:cloth_sack"]
 cloth_sack_filter = ["tag:c:foods"]
 ```
 
@@ -329,8 +370,12 @@ cloth_sack_filter = ["tag:c:foods"]
 Format: `mod:mod_id`,  `item:mod_id:item_id`,  `tag:mod_id:tag_name`
 * Block specific items from being inserted using `ration_box_exclude`. Takes priority over everything.
 * Restrict what items can be inserted using `ration_box_filter`. If empty, all items are allowed (or only food when `allow_food` is on). Entries are allowed in addition to food when `allow_food` is on.
-```
+```toml
 [storage.ration_box]
+ration_box_allow_food = true
+ration_box_eat_from_item = true
+ration_box_inventory = true
+ration_box_stack = false
 ration_box_exclude = ["item:minecraft:rotten_flesh"]
 ration_box_filter = ["mod:createfood", "tag:c:foods/meat"]
 ```

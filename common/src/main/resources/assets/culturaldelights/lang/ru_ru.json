@@ -1,5 +1,13 @@
 {
   "item.culturaldelights.avocado_toast": "Тост",
+  "item.culturaldelights.beef_burrito": "Буррито",
+  "item.culturaldelights.chicken_roll": "Ролл с ламинарией",
+  "item.culturaldelights.chicken_roll_slice": "Ломтик ролла с ламинарией",
+  "item.culturaldelights.chicken_taco": "Тако",
   "item.culturaldelights.eggplant_burger": "Баклажанбургер",
-  "item.culturaldelights.mutton_sandwich": "Сэндвич"
+  "item.culturaldelights.fish_taco": "Тако",
+  "item.culturaldelights.midori_roll": "Ролл с ламинарией",
+  "item.culturaldelights.midori_roll_slice": "Ломтик ролла с ламинарией",
+  "item.culturaldelights.mutton_sandwich": "Сэндвич",
+  "item.culturaldelights.pork_wrap": "Рулет"
 }

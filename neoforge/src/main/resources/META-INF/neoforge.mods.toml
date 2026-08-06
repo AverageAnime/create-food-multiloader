@@ -12,6 +12,8 @@ description = '''${description}''' #mandatory (Supports multiline text)
 [[mixins]]
 config = "${mod_id}.mixins.json"
 [[mixins]]
+config = "${mod_id}.create.mixins.json"
+[[mixins]]
 config = "${mod_id}.neoforge.mixins.json"
 [[dependencies.${mod_id}]] #optional
 modId = "neoforge" #mandatory
@@ -35,6 +37,12 @@ side="BOTH"
 modId="farmersdelight"
 type="optional"
 versionRange="[1.2.4,)"
+ordering="AFTER"
+side="BOTH"
+[[dependencies.${mod_id}]]
+modId="jade"
+type="optional"
+versionRange="[15.0.0,)"
 ordering="AFTER"
 side="BOTH"
 # Features are specific properties of the game environment, that you may want to declare you require. This example declares

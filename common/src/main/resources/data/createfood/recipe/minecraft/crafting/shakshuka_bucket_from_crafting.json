@@ -1,0 +1,32 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:bucket"
+    },
+    {
+      "tag": "c:shakshuka_bowl"
+    },
+    {
+      "tag": "c:shakshuka_bowl"
+    },
+    {
+      "tag": "c:shakshuka_bowl"
+    }
+  ],
+  "result": {
+    "id": "createfood:shakshuka_bucket"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "shakshuka_bowl"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "shakshuka_bowl"
+    }
+  ]
+}

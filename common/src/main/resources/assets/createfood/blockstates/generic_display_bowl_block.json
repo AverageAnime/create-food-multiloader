@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "createfood:block/bowl_block",
+      "y": 270
+    },
+    "facing=north": {
+      "model": "createfood:block/bowl_block",
+      "y": 180
+    },
+    "facing=south": {
+      "model": "createfood:block/bowl_block"
+    },
+    "facing=west": {
+      "model": "createfood:block/bowl_block",
+      "y": 90
+    }
+  }
+}

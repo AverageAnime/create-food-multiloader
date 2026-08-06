@@ -1,16 +1,16 @@
 {
-  "item.farmersdelight.mutton_wrap": "Wrap",
-  "item.farmersdelight.sweet_berry_cookie": "Cookie",
-  "item.farmersdelight.bacon_sandwich": "Sandwich",
-  "item.farmersdelight.chicken_sandwich": "Sandwich",
-  "item.farmersdelight.egg_sandwich": "Sandwich",
-  "item.farmersdelight.pasta_with_meatballs": "Pasta",
-  "item.farmersdelight.pasta_with_mutton_chop": "Pasta",
-  "item.farmersdelight.squid_ink_pasta": "Pasta",
   "item.delightfulcreators.incomplete_chicken_sandwich": "Bread",
   "item.delightfulcreators.incomplete_hamburger": "Hamburger",
   "item.delightfulcreators.incomplete_pasta_dish": "Pasta",
-  "item.delightfulcreators.incomplete_squid_ink_pasta": "Pasta",
   "item.delightfulcreators.incomplete_pasta_with_meatballs": "Pasta",
-  "item.delightfulcreators.incomplete_pasta_with_mutton_chop": "Pasta"
+  "item.delightfulcreators.incomplete_pasta_with_mutton_chop": "Pasta",
+  "item.delightfulcreators.incomplete_squid_ink_pasta": "Pasta",
+  "item.farmersdelight.bacon_sandwich": "Sandwich",
+  "item.farmersdelight.chicken_sandwich": "Sandwich",
+  "item.farmersdelight.egg_sandwich": "Sandwich",
+  "item.farmersdelight.mutton_wrap": "Wrap",
+  "item.farmersdelight.pasta_with_meatballs": "Pasta",
+  "item.farmersdelight.pasta_with_mutton_chop": "Pasta",
+  "item.farmersdelight.squid_ink_pasta": "Pasta",
+  "item.farmersdelight.sweet_berry_cookie": "Cookie"
 }

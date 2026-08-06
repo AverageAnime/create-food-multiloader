@@ -3,6 +3,10 @@
     {
       "id": "createfood:cane_syrup_bottle",
       "required": false
+    },
+    {
+      "id": "rusticdelight:syrup",
+      "required": false
     }
   ]
 }

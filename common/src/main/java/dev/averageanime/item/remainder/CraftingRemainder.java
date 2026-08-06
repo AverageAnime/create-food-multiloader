@@ -1,52 +1,54 @@
 package dev.averageanime.item.remainder;
 
-import dev.averageanime.CommonClass;
+import dev.averageanime.CreateFoodCommon;
 import dev.averageanime.platform.Services;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.ThrownEgg;
-import net.minecraft.world.inventory.CraftingContainer;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 public final class CraftingRemainder {
 
     private CraftingRemainder() {}
 
-    public static void handleItemCrafted(Player player, CraftingContainer craftingMatrix) {
-        if (player.level().isClientSide()) return;
+    private record RemainderCache(List<? extends String> source, Map<Item, Optional<Item>> map) {}
 
-        Map<Item, Integer> remainderCounts = new HashMap<>();
+    private static volatile RemainderCache cache;
 
-        for (String entry : Services.PLATFORM.getCraftingRemainders()) {
+    @Nullable
+    public static Item getRemainderFor(Item input) {
+        List<? extends String> entries = Services.PLATFORM.getCraftingRemainders();
+        RemainderCache c = cache;
+        if (c == null || c.source() != entries) {
+            c = new RemainderCache(entries, buildRemainderMap(entries));
+            cache = c;
+        }
+        Optional<Item> remainder = c.map().get(input);
+        return remainder == null ? null : remainder.orElse(null);
+    }
+
+    private static Map<Item, Optional<Item>> buildRemainderMap(List<? extends String> entries) {
+        Map<Item, Optional<Item>> map = new HashMap<>();
+        for (String entry : entries) {
             String[] parts = entry.split("\\|");
             if (parts.length != 2) continue;
 
             Item inputItem = resolveItem(parts[0].trim());
-            Item remainderItem = resolveItem(parts[1].trim());
-
             if (inputItem == Items.AIR) continue;
-            if (remainderItem == Items.AIR) continue;
 
-            int count = 0;
-            for (int i = 0; i < craftingMatrix.getContainerSize(); i++) {
-                if (craftingMatrix.getItem(i).is(inputItem)) count++;
-            }
-
-            if (count > 0) remainderCounts.merge(remainderItem, count, Integer::sum);
+            Item remainderItem = resolveItem(parts[1].trim());
+            map.putIfAbsent(inputItem,
+                    remainderItem == Items.AIR ? Optional.empty() : Optional.of(remainderItem));
         }
-
-        for (Map.Entry<Item, Integer> entry : remainderCounts.entrySet()) {
-            ItemStack remainder = new ItemStack(entry.getKey(), entry.getValue());
-            if (!player.getInventory().add(remainder)) {
-                player.drop(remainder, false);
-            }
-        }
+        return map;
     }
 
     public static void handleEggImpact(ThrownEgg egg) {
@@ -65,11 +67,11 @@ public final class CraftingRemainder {
         );
     }
 
-    private static Item resolveItem(String id) {
+    public static Item resolveItem(String id) {
         try {
             return BuiltInRegistries.ITEM.get(ResourceLocation.parse(id));
         } catch (Exception e) {
-            CommonClass.LOGGER.error("Could not resolve item '{}'", id, e);
+            CreateFoodCommon.LOGGER.error("Could not resolve item '{}'", id, e);
             return Items.AIR;
         }
     }

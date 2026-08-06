@@ -7,6 +7,10 @@
     {
       "id": "create_confectionery:cocoa_powder",
       "required": false
+    },
+    {
+      "id": "ratatouille:cocoa_powder",
+      "required": false
     }
   ]
 }

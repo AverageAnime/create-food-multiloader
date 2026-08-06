@@ -3,6 +3,14 @@
     {
       "id": "createfood:raw_sausages",
       "required": false
+    },
+    {
+      "id": "ratatouille:raw_sausage",
+      "required": false
+    },
+    {
+      "id": "hearthandharvest:raw_sausage",
+      "required": false
     }
   ]
 }

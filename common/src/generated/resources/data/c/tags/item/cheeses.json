@@ -17,7 +17,7 @@
       "required": false
     },
     {
-      "id": "casualness_delight:cheese_wheel_slice",
+      "id": "casualnessdelight:cheese_wheel_slice",
       "required": false
     },
     {
@@ -38,6 +38,14 @@
     },
     {
       "id": "hearthandharvest:goat_cheese_slice",
+      "required": false
+    },
+    {
+      "id": "ratatouille_fried_delights:cheese",
+      "required": false
+    },
+    {
+      "id": "expandeddelight:goat_cheese_slice",
       "required": false
     }
   ]

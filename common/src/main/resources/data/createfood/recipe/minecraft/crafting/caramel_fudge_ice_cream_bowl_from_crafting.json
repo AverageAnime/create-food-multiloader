@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "c:ice_cream_bowl"
+    },
+    {
+      "tag": "c:caramel_fudge"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "createfood:caramel_fudge_ice_cream_bowl"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "caramel_fudge_ice_cream_bowl"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "caramel_fudge_ice_cream_bowl"
+    }
+  ]
+}

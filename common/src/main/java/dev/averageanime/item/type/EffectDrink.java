@@ -33,6 +33,11 @@ public class EffectDrink extends EffectFood {
         super(properties, existingEffectIds, deferredEffects);
     }
 
+    public EffectDrink(Properties properties, Set<String> existingEffectIds, List<DeferredFx> deferredEffects,
+                       dev.averageanime.util.Tooltips.TooltipSpec tip) {
+        super(properties, existingEffectIds, deferredEffects, tip);
+    }
+
     @Override
     public @NotNull UseAnim getUseAnimation(@NotNull ItemStack stack) {
         return UseAnim.DRINK;

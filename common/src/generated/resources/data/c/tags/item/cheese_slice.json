@@ -19,6 +19,14 @@
     {
       "id": "hearthandharvest:goat_cheese_slice",
       "required": false
+    },
+    {
+      "id": "ratatouille_fried_delights:cheese_slice",
+      "required": false
+    },
+    {
+      "id": "expandeddelight:goat_cheese_slice",
+      "required": false
     }
   ]
 }

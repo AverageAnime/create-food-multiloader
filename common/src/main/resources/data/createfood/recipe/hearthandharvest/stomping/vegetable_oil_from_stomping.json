@@ -1,0 +1,40 @@
+{
+  "type": "hearthandharvest:stomping",
+  "ingredients": [
+    {
+      "tag": "c:vegetables"
+    },
+    {
+      "tag": "c:vegetables"
+    },
+    {
+      "tag": "c:vegetables"
+    }
+  ],
+  "result_fluid": {
+    "amount": 500,
+    "id": "createfood:vegetable_oil"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "hearthandharvest"
+    },
+    {
+      "type": "createfood:enabled",
+      "id": "vegetable_oil"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "hearthandharvest"
+      ]
+    },
+    {
+      "condition": "createfood:enabled",
+      "id": "vegetable_oil"
+    }
+  ]
+}

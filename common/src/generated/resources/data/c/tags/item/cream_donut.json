@@ -7,6 +7,10 @@
     {
       "id": "create_snt:sweet_donut",
       "required": false
+    },
+    {
+      "id": "ratatouille_fried_delights:creamy_donut",
+      "required": false
     }
   ]
 }

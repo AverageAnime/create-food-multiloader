@@ -3,6 +3,10 @@
     {
       "id": "ubesdelight:ginger",
       "required": false
+    },
+    {
+      "id": "culturaldelights:ginger",
+      "required": false
     }
   ]
 }

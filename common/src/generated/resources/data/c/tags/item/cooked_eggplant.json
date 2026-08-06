@@ -1,11 +1,11 @@
 {
   "values": [
     {
-      "id": "culturaldelights:smoked_eggplant",
+      "id": "#culturaldelights:smoked_regular_eggplants",
       "required": false
     },
     {
-      "id": "culturaldelights:smoked_cut_eggplant",
+      "id": "culturaldelights:smoked_white_eggplant",
       "required": false
     }
   ]

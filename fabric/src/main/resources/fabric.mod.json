@@ -17,6 +17,12 @@
     "entrypoints": {
         "main": [
             "dev.averageanime.fabric.CreateFood"
+        ],
+        "client": [
+            "dev.averageanime.fabric.CreateFood\$CreateFoodClient"
+        ],
+        "jade": [
+            "dev.averageanime.compat.jade.CreateFoodJadePlugin"
         ]
     },
     "mixins": [
@@ -30,6 +36,6 @@
         "java": ">=${java_version}"
     },
     "suggests": {
-        "another-mod": "*"
+        "jade": "*"
     }
 }

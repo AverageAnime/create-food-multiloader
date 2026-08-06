@@ -1,8 +1,8 @@
 package dev.averageanime.neoforge.datagen.provider;
 
-import dev.averageanime.CommonClass;
-import dev.averageanime.neoforge.block.ModFluids;
-import dev.averageanime.neoforge.block.type.fluid.FluidEntry;
+import dev.averageanime.CreateFoodCommon;
+import dev.averageanime.neoforge.block.FluidRegistration;
+import dev.averageanime.neoforge.block.type.fluid.FluidBlock;
 import java.util.Map;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
@@ -11,7 +11,7 @@ import net.neoforged.neoforge.common.data.ExistingFileHelper;
 public class BlockModelProvider extends net.neoforged.neoforge.client.model.generators.BlockModelProvider {
 
     public BlockModelProvider(PackOutput output, ExistingFileHelper existingFileHelper) {
-        super(output, CommonClass.MOD_ID, existingFileHelper);
+        super(output, CreateFoodCommon.MOD_ID, existingFileHelper);
     }
 
     @Override
@@ -21,7 +21,7 @@ public class BlockModelProvider extends net.neoforged.neoforge.client.model.gene
     }
 
     private void registerFluidBlockModels() {
-        for (FluidEntry.FluidType fluidType : ModFluids.BY_ID.values()) {
+        for (FluidBlock.FluidType fluidType : FluidRegistration.BY_ID.values()) {
             String fluidId = fluidType.SOURCE.getId().getPath();
             fluidBlockModel(fluidId);
         }
@@ -82,7 +82,7 @@ public class BlockModelProvider extends net.neoforged.neoforge.client.model.gene
     }
 
     private ResourceLocation cf(String path) {
-        return ResourceLocation.fromNamespaceAndPath(CommonClass.MOD_ID, path);
+        return ResourceLocation.fromNamespaceAndPath(CreateFoodCommon.MOD_ID, path);
     }
 
 }

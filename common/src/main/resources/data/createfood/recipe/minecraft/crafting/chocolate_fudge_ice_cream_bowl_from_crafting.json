@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "c:ice_cream_bowl"
+    },
+    {
+      "tag": "c:chocolate_fudge"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "createfood:chocolate_fudge_ice_cream_bowl"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "chocolate_fudge_ice_cream_bowl"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "chocolate_fudge_ice_cream_bowl"
+    }
+  ]
+}

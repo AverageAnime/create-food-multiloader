@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "rusticdelight:syrup_cookie",
+      "required": false
+    },
+    {
+      "id": "hearthandharvest:maple_cookie",
+      "required": false
+    }
+  ]
+}

@@ -1,10 +1,9 @@
 package dev.averageanime.block.type.plate;
 
 import com.mojang.serialization.MapCodec;
-import dev.averageanime.block.handler.PlateSliceHandler;
-import dev.averageanime.block.type.blockentity.GenericDisplayPlateBlockEntity;
+import dev.averageanime.block.type.blockentity.GenericDisplayBlockEntity;
 import dev.averageanime.platform.Services;
-import dev.averageanime.util.ItemSpawn;
+import dev.averageanime.util.ItemSpawns;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.component.DataComponents;
@@ -93,30 +92,30 @@ public class GenericDisplayPlateBlock extends BaseEntityBlock {
                                                        @NotNull InteractionHand hand,
                                                        @NotNull BlockHitResult hit) {
         if (heldStack.isEmpty()) return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
-        if (!Services.PLATFORM.isGenericPlatesEnabled()) return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
+        if (!Services.PLATFORM.isGenericDisplayEnabled()) return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
         if (!Services.PLATFORM.isGenericDisplayAllowed(heldStack)) return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
 
         if (level.isClientSide) {
-            if (level.getBlockEntity(pos) instanceof GenericDisplayPlateBlockEntity be && !be.isEmpty()
-                    && PlateSliceHandler.couldSlice(player, level, InteractionHand.OFF_HAND, pos, state)) {
+            if (level.getBlockEntity(pos) instanceof GenericDisplayBlockEntity be && !be.isEmpty()
+                    && PlateSliceInteraction.couldSlice(player, level, InteractionHand.OFF_HAND, pos, state)) {
                 return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
             }
             return ItemInteractionResult.SUCCESS;
         }
 
-        if (level.getBlockEntity(pos) instanceof GenericDisplayPlateBlockEntity be) {
+        if (level.getBlockEntity(pos) instanceof GenericDisplayBlockEntity be) {
             if (be.isEmpty()) {
                 be.setDisplayedItem(heldStack.copyWithCount(1));
                 if (!player.isCreative()) heldStack.shrink(1);
                 level.playSound(null, pos, SoundEvents.ITEM_FRAME_ADD_ITEM, SoundSource.BLOCKS, 1.0F, 1.0F);
                 return ItemInteractionResult.SUCCESS;
             } else {
-                if (PlateSliceHandler.couldSlice(player, level, InteractionHand.OFF_HAND, pos, state)) {
+                if (PlateSliceInteraction.couldSlice(player, level, InteractionHand.OFF_HAND, pos, state)) {
                     return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
                 }
                 ItemStack stored = be.takeDisplayedItem();
                 Direction direction = player.getDirection().getOpposite();
-                ItemSpawn.spawnItemEntity(level, stored,
+                ItemSpawns.spawnItemEntity(level, stored,
                         pos.getX() + 0.5, pos.getY() + 0.3, pos.getZ() + 0.5,
                         direction.getStepX() * 0.15, 0.05, direction.getStepZ() * 0.15);
                 Block target = (emptyPlateBlock != null && emptyPlateBlock.get() != null)
@@ -138,14 +137,14 @@ public class GenericDisplayPlateBlock extends BaseEntityBlock {
     protected @NotNull InteractionResult useWithoutItem(@NotNull BlockState state, @NotNull Level level,
                                                         @NotNull BlockPos pos, @NotNull Player player,
                                                         @NotNull BlockHitResult hit) {
-        if (level.getBlockEntity(pos) instanceof GenericDisplayPlateBlockEntity be && !be.isEmpty()) {
-            if (PlateSliceHandler.couldSlice(player, level, InteractionHand.OFF_HAND, pos, state)) {
+        if (level.getBlockEntity(pos) instanceof GenericDisplayBlockEntity be && !be.isEmpty()) {
+            if (PlateSliceInteraction.couldSlice(player, level, InteractionHand.OFF_HAND, pos, state)) {
                 return InteractionResult.PASS;
             }
             if (level.isClientSide) return InteractionResult.SUCCESS;
             ItemStack stored = be.takeDisplayedItem();
             Direction direction = player.getDirection().getOpposite();
-            ItemSpawn.spawnItemEntity(level, stored,
+            ItemSpawns.spawnItemEntity(level, stored,
                     pos.getX() + 0.5, pos.getY() + 0.3, pos.getZ() + 0.5,
                     direction.getStepX() * 0.15, 0.05, direction.getStepZ() * 0.15);
 
@@ -165,7 +164,7 @@ public class GenericDisplayPlateBlock extends BaseEntityBlock {
 
     public boolean tryEat(Player player, Level level, BlockPos pos) {
         if (!player.isShiftKeyDown()) return false;
-        if (!(level.getBlockEntity(pos) instanceof GenericDisplayPlateBlockEntity be)) return false;
+        if (!(level.getBlockEntity(pos) instanceof GenericDisplayBlockEntity be)) return false;
         if (be.isEmpty()) return false;
         ItemStack displayed = be.getDisplayedItem();
         FoodProperties food = displayed.get(DataComponents.FOOD);
@@ -197,17 +196,17 @@ public class GenericDisplayPlateBlock extends BaseEntityBlock {
     public void onRemove(@NotNull BlockState state, @NotNull Level level, @NotNull BlockPos pos,
                          @NotNull BlockState newState, boolean moved) {
         if (!state.is(newState.getBlock()) && !level.isClientSide) {
-            if (level.getBlockEntity(pos) instanceof GenericDisplayPlateBlockEntity be) {
+            if (level.getBlockEntity(pos) instanceof GenericDisplayBlockEntity be) {
                 ItemStack stored = be.getDisplayedItem();
                 double cx = pos.getX() + 0.5, cy = pos.getY() + 0.2, cz = pos.getZ() + 0.5;
                 if (!stored.isEmpty()) {
-                    ItemSpawn.spawnItemEntity(level, stored, cx, cy, cz, 0.0, 0.05, 0.0);
+                    ItemSpawns.spawnItemEntity(level, stored, cx, cy, cz, 0.0, 0.05, 0.0);
                 }
                 boolean revertingToEmptyPlate = emptyPlateBlock != null
                         && emptyPlateBlock.get() != null
                         && newState.is(emptyPlateBlock.get());
                 if (!revertingToEmptyPlate) {
-                    ItemSpawn.spawnItemEntity(level, new ItemStack(Items.BOWL), cx, cy, cz, 0.0, 0.05, 0.0);
+                    ItemSpawns.spawnItemEntity(level, new ItemStack(Items.BOWL), cx, cy, cz, 0.0, 0.05, 0.0);
                 }
             }
         }

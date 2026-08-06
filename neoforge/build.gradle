@@ -56,6 +56,14 @@ neoForge {
         maven { url = "https://maven.createmod.net" } // Create, Ponder, Flywheel
         maven { url = "https://maven.ithundxr.dev/snapshots" } // Registrate
         maven { url = "https://raw.githubusercontent.com/Fuzss/modresources/main/maven/" } // ForgeConfigAPIPort
+        exclusiveContent {
+            forRepository {
+                maven { url = "https://api.modrinth.com/maven" }
+            }
+            filter {
+                includeGroup "maven.modrinth"
+            }
+        }
     }
 
     dependencies {
@@ -66,6 +74,10 @@ neoForge {
         //implementation("com.tterrag.registrate:Registrate:${registrate_version}")
 
         compileOnly "curse.maven:farmers-delight-398521:5566383"
+
+        // Jade soft dependency: build-time only, discovered via @WailaPlugin annotation scan at runtime.
+        // No mods.toml dependency entry needed. Bump the version string as Jade updates.
+        compileOnly "maven.modrinth:jade:15.10.5+neoforge"
 
     }
 }
@@ -78,8 +90,8 @@ tasks.register('liteJar', Jar) {
     from sourceSets.main.output
 
     exclude '**/block/type/display/**'
-    exclude '**/block/ModDisplayBlocks.class'
-    exclude '**/tab/ModDisplayTabs.class'
+    exclude '**/block/DisplayBlockRegistration.class'
+    exclude '**/tab/DisplayTabRegistration.class'
 
     exclude '**/blockstates/*_plate_block.json'
     exclude '**/blockstates/plate_block.json'

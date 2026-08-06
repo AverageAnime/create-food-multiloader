@@ -3,6 +3,10 @@
     {
       "id": "createfood:bread_crumbs",
       "required": false
+    },
+    {
+      "id": "ratatouille_fried_delights:breadcrumb",
+      "required": false
     }
   ]
 }

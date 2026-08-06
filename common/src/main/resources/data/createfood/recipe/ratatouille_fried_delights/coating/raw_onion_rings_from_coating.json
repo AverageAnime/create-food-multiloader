@@ -1,0 +1,39 @@
+{
+  "type": "ratatouille_fried_delights:coating",
+  "ingredients": [
+    {
+      "tag": "c:onion"
+    },
+    {
+      "tag": "c:bread_crumbs"
+    }
+  ],
+  "processing_time": 200,
+  "results": [
+    {
+      "id": "createfood:raw_onion_rings"
+    }
+  ],
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "ratatouille_fried_delights"
+    },
+    {
+      "type": "createfood:enabled",
+      "id": "raw_onion_rings"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "ratatouille_fried_delights"
+      ]
+    },
+    {
+      "condition": "createfood:enabled",
+      "id": "raw_onion_rings"
+    }
+  ]
+}

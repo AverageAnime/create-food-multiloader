@@ -1,5 +1,13 @@
 {
   "item.culturaldelights.avocado_toast": "Toast",
+  "item.culturaldelights.beef_burrito": "Burrito",
+  "item.culturaldelights.chicken_roll": "Kelp Roll",
+  "item.culturaldelights.chicken_roll_slice": "Kelp Roll Slice",
+  "item.culturaldelights.chicken_taco": "Taco",
   "item.culturaldelights.eggplant_burger": "Eggplant Burger",
-  "item.culturaldelights.mutton_sandwich": "Sandwich"
+  "item.culturaldelights.fish_taco": "Taco",
+  "item.culturaldelights.midori_roll": "Kelp Roll",
+  "item.culturaldelights.midori_roll_slice": "Kelp Roll Slice",
+  "item.culturaldelights.mutton_sandwich": "Sandwich",
+  "item.culturaldelights.pork_wrap": "Wrap"
 }

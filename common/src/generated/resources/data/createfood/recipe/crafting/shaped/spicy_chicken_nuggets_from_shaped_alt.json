@@ -4,7 +4,7 @@
       "type": "neoforge:not",
       "value": {
         "type": "neoforge:tag_empty",
-        "tag": "c:chili_pepper"
+        "tag": "c:pepper"
       }
     },
     {
@@ -18,7 +18,7 @@
       "condition": "fabric:tags_populated",
       "registry": "minecraft:item",
       "values": [
-        "c:chili_pepper"
+        "c:pepper"
       ]
     },
     {
@@ -28,7 +28,7 @@
   ],
   "key": {
     "1": {
-      "tag": "c:chili_pepper"
+      "tag": "c:pepper"
     },
     "2": {
       "tag": "c:chicken_nuggets"

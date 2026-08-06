@@ -3,7 +3,7 @@ package dev.averageanime.fabric.config.condition;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
-import dev.averageanime.fabric.config.ModConfig;
+import dev.averageanime.config.ConfigValues;
 import net.fabricmc.fabric.api.resource.conditions.v1.ResourceCondition;
 import net.fabricmc.fabric.api.resource.conditions.v1.ResourceConditionType;
 import net.minecraft.core.HolderLookup;
@@ -34,7 +34,7 @@ public record EnabledCondition(List<String> itemIds) implements ResourceConditio
     public boolean test(HolderLookup.Provider registries) {
         if (itemIds.isEmpty()) return true;
         for (String itemId : itemIds) {
-            if (!ModConfig.isItemEnabled(itemId)) return false;
+            if (!ConfigValues.isItemEnabled(itemId)) return false;
         }
         return true;
     }

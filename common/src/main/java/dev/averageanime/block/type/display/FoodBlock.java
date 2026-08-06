@@ -1,18 +1,19 @@
 package dev.averageanime.block.type.display;
 
-import dev.averageanime.block.handler.PlateSliceHandler;
-import dev.averageanime.block.type.plate.EmptyPlateBlock;
-import dev.averageanime.block.type.plate.PlateBlock;
-import dev.averageanime.block.type.plate.SmallPlateBlock;
-import dev.averageanime.util.ItemSpawn;
+import dev.averageanime.block.type.bowl.BowlFoodBlock;
+import dev.averageanime.block.type.bowl.SmallBowlFoodBlock;
+import dev.averageanime.block.type.plate.*;
+import dev.averageanime.util.ItemSpawns;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.ItemInteractionResult;
@@ -41,7 +42,12 @@ import java.util.function.Supplier;
 public abstract class FoodBlock extends Block {
 
     public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
-    public static final IntegerProperty STACK_SIZE = IntegerProperty.create("stack_size", 1, 9);
+    public static final IntegerProperty STACK_SIZE = IntegerProperty.create("stack_size", 1, 12);
+
+    public static final TagKey<Item> WRENCH = TagKey.create(
+            Registries.ITEM,
+            ResourceLocation.fromNamespaceAndPath("c", "tools/wrench")
+    );
 
     public final int maxStackSize;
     public final Supplier<Item> displayItem;
@@ -50,7 +56,7 @@ public abstract class FoodBlock extends Block {
     public FoodBlock(Properties properties, Supplier<Item> displayItem, int maxStackSize) {
         super(properties);
         this.displayItem = displayItem;
-        this.maxStackSize = Math.clamp(maxStackSize, 1, 9);
+        this.maxStackSize = Math.clamp(maxStackSize, 1, 12);
         this.registerDefaultState(this.stateDefinition.any()
                 .setValue(FACING, Direction.NORTH)
                 .setValue(STACK_SIZE, this.maxStackSize));
@@ -69,7 +75,7 @@ public abstract class FoodBlock extends Block {
     @Override
     protected @NotNull InteractionResult useWithoutItem(@NotNull BlockState state, Level level, @NotNull BlockPos pos, @NotNull Player player, @NotNull BlockHitResult hit) {
         if (!player.isShiftKeyDown()) {
-            if (PlateSliceHandler.couldSlice(player, level, InteractionHand.OFF_HAND, pos, state)) {
+            if (PlateSliceInteraction.couldSlice(player, level, InteractionHand.OFF_HAND, pos, state)) {
                 return InteractionResult.PASS;
             }
             ItemStack offhand = player.getItemInHand(InteractionHand.OFF_HAND);
@@ -104,8 +110,14 @@ public abstract class FoodBlock extends Block {
     @Override
     protected @NotNull ItemInteractionResult useItemOn(ItemStack heldStack, @NotNull BlockState state, @NotNull Level level, @NotNull BlockPos pos,
                                                        @NotNull Player player, @NotNull InteractionHand hand, @NotNull BlockHitResult hit) {
+        if (heldStack.is(WRENCH)) {
+            if (state.getValue(STACK_SIZE) == maxStackSize) {
+                return wrenchPickup(state, level, pos, player);
+            }
+            return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
+        }
         if (heldStack.is(this.displayItem.get())) {
-            if (PlateSliceHandler.couldSlice(player, level, InteractionHand.OFF_HAND, pos, state)) {
+            if (PlateSliceInteraction.couldSlice(player, level, InteractionHand.OFF_HAND, pos, state)) {
                 return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
             }
             return addItem(state, level, pos, player, heldStack);
@@ -113,11 +125,23 @@ public abstract class FoodBlock extends Block {
         return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
     }
 
+    protected ItemInteractionResult wrenchPickup(BlockState state, Level level, BlockPos pos, Player player) {
+        if (level.isClientSide) return ItemInteractionResult.SUCCESS;
+
+        Direction direction = player.getDirection().getOpposite();
+        ItemSpawns.spawnItemEntity(level, new ItemStack(this.asItem()),
+                pos.getX() + 0.5, pos.getY() + 0.3, pos.getZ() + 0.5,
+                direction.getStepX() * 0.15, 0.05, direction.getStepZ() * 0.15);
+        level.removeBlock(pos, false);
+        level.playSound(null, pos, getRemoveSound(), SoundSource.BLOCKS, 1.0F, 0.8F);
+        return ItemInteractionResult.SUCCESS;
+    }
+
     protected void removeItem(BlockState state, Level level, BlockPos pos, Player player) {
         int currentStack = state.getValue(STACK_SIZE);
         Direction direction = player.getDirection().getOpposite();
         ItemStack dropStack = new ItemStack(this.displayItem.get());
-        ItemSpawn.spawnItemEntity(level, dropStack,
+        ItemSpawns.spawnItemEntity(level, dropStack,
                 pos.getX() + 0.5, pos.getY() + 0.3, pos.getZ() + 0.5,
                 direction.getStepX() * 0.15, 0.05, direction.getStepZ() * 0.15);
         if (currentStack > 1) {
@@ -132,7 +156,7 @@ public abstract class FoodBlock extends Block {
         int currentStack = state.getValue(STACK_SIZE);
         Direction direction = player.getDirection().getOpposite();
         ItemStack dropStack = new ItemStack(this.displayItem.get(), currentStack);
-        ItemSpawn.spawnItemEntity(level, dropStack,
+        ItemSpawns.spawnItemEntity(level, dropStack,
                 pos.getX() + 0.5, pos.getY() + 0.3, pos.getZ() + 0.5,
                 direction.getStepX() * 0.15, 0.05, direction.getStepZ() * 0.15);
         handleLastItemRemoved(state, level, pos);
@@ -327,14 +351,14 @@ public abstract class FoodBlock extends Block {
                     targetBlock = block;
                     break;
                 }
-                if (block instanceof SmallPlateFoodBlock &&
-                        (clickedBlock instanceof SmallPlateBlock ||
-                                (isCompatPlate && compatTargetBlock instanceof SmallPlateBlock))) {
+                if (block instanceof SmallPlateBlock &&
+                        (clickedBlock instanceof EmptySmallPlateBlock ||
+                                (isCompatPlate && compatTargetBlock instanceof EmptySmallPlateBlock))) {
                     targetBlock = block;
                     break;
                 }
                 if (block instanceof BottleFoodBlock || block instanceof BowlFoodBlock ||
-                        block instanceof SaladBowlFoodBlock || block instanceof PlateFoodBlock) {
+                        block instanceof SmallBowlFoodBlock || block instanceof PlateFoodBlock) {
                     targetBlock = block;
                     break;
                 }
@@ -346,12 +370,12 @@ public abstract class FoodBlock extends Block {
                 if (!isCompatPlate) return null;
             }
 
-            if (targetBlock instanceof SmallPlateFoodBlock) {
+            if (targetBlock instanceof SmallPlateBlock) {
                 if (!isCompatPlate) return null;
             }
 
             if (targetBlock instanceof BottleFoodBlock || targetBlock instanceof BowlFoodBlock ||
-                    targetBlock instanceof SaladBowlFoodBlock || targetBlock instanceof PlateFoodBlock) {
+                    targetBlock instanceof SmallBowlFoodBlock || targetBlock instanceof PlateFoodBlock) {
                 if (!player.isShiftKeyDown()) return null;
             }
 

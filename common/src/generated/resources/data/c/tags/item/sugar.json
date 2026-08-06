@@ -7,6 +7,10 @@
     {
       "id": "createfood:powdered_sugar",
       "required": false
+    },
+    {
+      "id": "hearthandharvest:sugar_cubes",
+      "required": false
     }
   ]
 }

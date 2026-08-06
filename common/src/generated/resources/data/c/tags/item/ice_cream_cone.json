@@ -3,6 +3,10 @@
     {
       "id": "createfood:ice_cream_cone",
       "required": false
+    },
+    {
+      "id": "ratatouille_fried_delights:vanilla_cone",
+      "required": false
     }
   ]
 }

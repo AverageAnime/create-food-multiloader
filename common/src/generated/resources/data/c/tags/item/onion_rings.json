@@ -3,6 +3,10 @@
     {
       "id": "createfood:onion_rings",
       "required": false
+    },
+    {
+      "id": "ratatouille_fried_delights:onion_rings",
+      "required": false
     }
   ]
 }

@@ -3,6 +3,10 @@
     {
       "id": "createfood:grilled_cheese_sandwich",
       "required": false
+    },
+    {
+      "id": "expandeddelight:grilled_cheese",
+      "required": false
     }
   ]
 }

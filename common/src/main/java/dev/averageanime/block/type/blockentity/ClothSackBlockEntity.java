@@ -1,6 +1,6 @@
 package dev.averageanime.block.type.blockentity;
 
-import dev.averageanime.item.storage.IStorageItemHandler;
+import dev.averageanime.item.storage.StorageAccess;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
@@ -18,10 +18,10 @@ import org.jetbrains.annotations.Nullable;
 
 public abstract class ClothSackBlockEntity extends BlockEntity implements MenuProvider {
 
-    public final IStorageItemHandler inventory;
+    public final StorageAccess inventory;
 
     protected ClothSackBlockEntity(BlockEntityType<?> type, BlockPos pos, BlockState state,
-                                    IStorageItemHandler inventory) {
+                                    StorageAccess inventory) {
         super(type, pos, state);
         this.inventory = inventory;
     }

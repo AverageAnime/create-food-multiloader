@@ -11,6 +11,10 @@
     {
       "id": "expandeddelight:glow_berry_jelly",
       "required": false
+    },
+    {
+      "id": "fruitsdelight:glowberry_jam",
+      "required": false
     }
   ]
 }

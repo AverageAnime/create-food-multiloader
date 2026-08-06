@@ -15,6 +15,10 @@
     {
       "id": "bakery:blank_cake",
       "required": false
+    },
+    {
+      "id": "ratatouille:cake_base",
+      "required": false
     }
   ]
 }

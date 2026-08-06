@@ -3,6 +3,10 @@
     {
       "id": "createfood:pressed_cocoa",
       "required": false
+    },
+    {
+      "id": "ratatouille:cocoa_solids",
+      "required": false
     }
   ]
 }

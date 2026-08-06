@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "createfood:shakshuka_bowl",
+      "required": false
+    },
+    {
+      "id": "veggiesdelight:shakshouka",
+      "required": false
+    }
+  ]
+}

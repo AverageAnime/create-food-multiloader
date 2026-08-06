@@ -1,5 +1,6 @@
 package dev.averageanime.item.storage;
 
+import dev.averageanime.config.ConfigValues;
 import dev.averageanime.platform.Services;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
@@ -38,5 +39,12 @@ public abstract class RationBoxItem extends StorageItem {
     @Override
     protected BlockEntityType<?> getBlockEntityType() {
         return Services.PLATFORM.getRationBoxBlockEntityType();
+    }
+
+    @Override
+    protected StorageAccess createHandler() {
+        return Services.PLATFORM.createStorageInventory(5,
+                slot -> ConfigValues.isRationBoxStacking() ? 64 : 1,
+                (slot, stack) -> ConfigValues.isRationBoxItemAllowed(stack));
     }
 }

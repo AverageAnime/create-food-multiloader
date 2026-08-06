@@ -3,6 +3,10 @@
     {
       "id": "createfood:cake_batter_bucket",
       "required": false
+    },
+    {
+      "id": "ratatouille:cake_batter_bucket",
+      "required": false
     }
   ]
 }

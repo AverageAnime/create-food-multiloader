@@ -15,6 +15,10 @@
     {
       "id": "candlelight:tomato",
       "required": false
+    },
+    {
+      "id": "ratatouille_fried_delights:tomato_ingredient",
+      "required": false
     }
   ]
 }

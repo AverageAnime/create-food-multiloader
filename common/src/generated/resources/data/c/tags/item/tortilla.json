@@ -3,6 +3,10 @@
     {
       "id": "culturaldelights:tortilla",
       "required": false
+    },
+    {
+      "id": "hearthandharvest:tortilla",
+      "required": false
     }
   ]
 }

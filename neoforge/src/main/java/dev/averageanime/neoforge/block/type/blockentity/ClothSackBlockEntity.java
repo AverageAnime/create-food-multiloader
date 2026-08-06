@@ -1,10 +1,10 @@
 package dev.averageanime.neoforge.block.type.blockentity;
 
-import dev.averageanime.neoforge.block.ModBlockEntities;
-import dev.averageanime.neoforge.config.ModConfig;
+import dev.averageanime.neoforge.block.BlockEntityRegistration;
+import dev.averageanime.config.ConfigValues;
 import dev.averageanime.neoforge.item.storage.ClothSackItem;
 import dev.averageanime.neoforge.item.storage.StorageInventory;
-import dev.averageanime.neoforge.menu.type.ClothSackMenu;
+import dev.averageanime.neoforge.menu.type.block.ClothSackBlockMenu;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
@@ -18,11 +18,11 @@ public class ClothSackBlockEntity
         extends dev.averageanime.block.type.blockentity.ClothSackBlockEntity {
 
     public ClothSackBlockEntity(BlockPos pos, BlockState state) {
-        super(ModBlockEntities.CLOTH_SACK.get(), pos, state,
+        super(BlockEntityRegistration.CLOTH_SACK.get(), pos, state,
                 new StorageInventory(4,
-                        slot -> ModConfig.isClothSackStacking() ? 64 : 1,
+                        slot -> ConfigValues.isClothSackStacking() ? 64 : 1,
                         (slot, stack) -> !(stack.getItem() instanceof ClothSackItem)
-                                && ModConfig.isClothSackItemAllowed(stack)));
+                                && ConfigValues.isClothSackItemAllowed(stack)));
         storageInventory().setOnChanged(() -> {
             setChanged();
             if (level != null && !level.isClientSide) {
@@ -31,7 +31,6 @@ public class ClothSackBlockEntity
         });
     }
 
-    /** Typed accessor for platform menus that need a {@link StorageInventory}. */
     public StorageInventory storageInventory() {
         return (StorageInventory) inventory;
     }
@@ -39,6 +38,6 @@ public class ClothSackBlockEntity
     @Nullable
     @Override
     public AbstractContainerMenu createMenu(int id, @NotNull Inventory inv, @NotNull Player player) {
-        return new ClothSackMenu(id, inv, this);
+        return new ClothSackBlockMenu(id, inv, this);
     }
 }

@@ -1,4 +1,4 @@
-// 1.21.1	2026-05-01T15:36:34.0489531	Block Models: createfood
+// 1.21.1	2026-07-15T20:29:31.5400402	Block Models: createfood
 19dd695d861aefefdbcc2ac201a225aff4c789a8 assets/createfood/models/block/apple_cream_frosting_block.json
 cf5d2fe71e9f8d8726b0f91af6ac08c4fd201d66 assets/createfood/models/block/apple_custard_block.json
 0be7a62b220221f1742a3a9730a7c1b3449e370f assets/createfood/models/block/apple_ice_cream_block.json
@@ -115,6 +115,7 @@ fb1cc4005b9963e2d232a89f93bee435c07c45d6 assets/createfood/models/block/rabbit_c
 d3703f4c484f07fe74ec325c5d52d95a14e2bb22 assets/createfood/models/block/rice_pudding_block.json
 2e9003eca74f3dc0eb8d46eb49d7783640dc90c5 assets/createfood/models/block/sausage_calzone_plate_block_1.json
 fb1cc4005b9963e2d232a89f93bee435c07c45d6 assets/createfood/models/block/sausage_calzone_plate_block_2.json
+e2c530011e018a9c909e04a6002b06e86cc95d9c assets/createfood/models/block/shakshuka_block.json
 e4fe1840f823d3c2289feb02338ba95b474f90c3 assets/createfood/models/block/slime_block.json
 09dc30cd13d85704d9833d550c669954e09e9b8a assets/createfood/models/block/sour_cream_block.json
 636a58bb663a9700c3dcc8012b076e0a08e8cea9 assets/createfood/models/block/squid_ink_block.json

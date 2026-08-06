@@ -1,0 +1,41 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "c:cheese_slice"
+    },
+    {
+      "tag": "c:cheese_slice"
+    },
+    {
+      "tag": "c:cheese_slice"
+    },
+    {
+      "tag": "c:cheese_slice"
+    },
+    {
+      "tag": "c:cheese_slice"
+    },
+    {
+      "tag": "c:cheese_slice"
+    },
+    {
+      "tag": "c:cheese_slice"
+    }
+  ],
+  "result": {
+    "id": "createfood:cheese_block"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "cheese_block"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "cheese_block"
+    }
+  ]
+}

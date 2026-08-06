@@ -3,7 +3,7 @@ package dev.averageanime.neoforge.config.condition;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
-import dev.averageanime.neoforge.config.ModConfig;
+import dev.averageanime.config.ConfigValues;
 import net.neoforged.neoforge.common.conditions.ICondition;
 import org.jetbrains.annotations.NotNull;
 
@@ -29,7 +29,7 @@ public record EnabledCondition(List<String> itemIds) implements ICondition {
         }
 
         for (String itemId : itemIds) {
-            if (!ModConfig.isItemEnabled(itemId)) {
+            if (!ConfigValues.isItemEnabled(itemId)) {
                 return false;
             }
         }

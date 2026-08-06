@@ -1,8 +1,12 @@
 {
   "item.expandeddelight.berry_sweet_roll": "Коричный сладкий рулет",
+  "item.expandeddelight.cheese_sandwich": "Сэндвич",
+  "item.expandeddelight.cranberry_goat_cheese_toast": "Тост",
+  "item.expandeddelight.glow_berry_jelly_sandwich": "Сэндвич с вареньем",
   "item.expandeddelight.glow_berry_sweet_roll": "Коричный сладкий рулет",
-  "item.expandeddelight.sweet_roll": "Коричный сладкий рулет",
+  "item.expandeddelight.mac_and_cheese": "Макароны",
   "item.expandeddelight.peanut_butter_honey_sandwich": "Сэндвич с мёдом",
+  "item.expandeddelight.peanut_butter_sandwich": "Сэндвич",
   "item.expandeddelight.sweet_berry_jelly_sandwich": "Сэндвич с вареньем",
-  "item.expandeddelight.glow_berry_jelly_sandwich": "Сэндвич с вареньем"
+  "item.expandeddelight.sweet_roll": "Коричный сладкий рулет"
 }

@@ -21,7 +21,7 @@
             "type": "c:not",
             "value": {
                 "type": "c:tag_empty",
-                "tag": "c:chili_pepper"
+                "tag": "c:pepper"
             }
         }
     ],

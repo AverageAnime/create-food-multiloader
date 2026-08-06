@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:smelting",
+  "category": "food",
+  "cookingtime": 200,
+  "experience": 0.35,
+  "ingredient": {
+    "item": "createfood:raw_scotch_egg"
+  },
+  "result": {
+    "count": 1,
+    "id": "createfood:scotch_egg"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "scotch_egg"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "scotch_egg"
+    }
+  ]
+}

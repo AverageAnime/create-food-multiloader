@@ -1,0 +1,43 @@
+{
+  "type": "create:filling",
+  "ingredients": [
+    {
+      "tag": "c:dried_coffee_beans"
+    },
+    {
+      "type": "fluid_tag",
+      "amount": 250,
+      "fluid_tag": "c:white_chocolate"
+    }
+  ],
+  "results": [
+    {
+      "count": 1,
+      "item": {
+        "id": "createfood:white_chocolate_dried_coffee_beans"
+      }
+    }
+  ],
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    },
+    {
+      "type": "createfood:enabled",
+      "id": "white_chocolate_dried_coffee_beans"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "create"
+      ]
+    },
+    {
+      "condition": "createfood:enabled",
+      "id": "white_chocolate_dried_coffee_beans"
+    }
+  ]
+}

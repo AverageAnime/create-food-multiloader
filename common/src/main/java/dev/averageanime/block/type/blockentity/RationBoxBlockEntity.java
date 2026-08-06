@@ -1,10 +1,11 @@
 package dev.averageanime.block.type.blockentity;
 
-import dev.averageanime.item.storage.IStorageItemHandler;
+import dev.averageanime.item.storage.StorageAccess;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
@@ -17,10 +18,10 @@ import org.jetbrains.annotations.Nullable;
 
 public abstract class RationBoxBlockEntity extends BlockEntity implements MenuProvider {
 
-    public final IStorageItemHandler inventory;
+    public final StorageAccess inventory;
 
     protected RationBoxBlockEntity(BlockEntityType<?> type, BlockPos pos, BlockState state,
-                                    IStorageItemHandler inventory) {
+                                    StorageAccess inventory) {
         super(type, pos, state);
         this.inventory = inventory;
     }
@@ -37,6 +38,19 @@ public abstract class RationBoxBlockEntity extends BlockEntity implements MenuPr
         if (tag.contains("inventory")) {
             inventory.deserializeInventory(registries, tag.getCompound("inventory"));
         }
+    }
+
+    @Override
+    public @NotNull CompoundTag getUpdateTag(HolderLookup.@NotNull Provider registries) {
+        CompoundTag tag = new CompoundTag();
+        tag.put("inventory", inventory.serializeInventory(registries));
+        return tag;
+    }
+
+    @Nullable
+    @Override
+    public ClientboundBlockEntityDataPacket getUpdatePacket() {
+        return ClientboundBlockEntityDataPacket.create(this);
     }
 
     @Override

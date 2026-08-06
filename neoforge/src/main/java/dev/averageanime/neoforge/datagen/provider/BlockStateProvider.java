@@ -2,15 +2,20 @@ package dev.averageanime.neoforge.datagen.provider;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import dev.averageanime.CommonClass;
-import dev.averageanime.neoforge.block.ModBlocks;
-import dev.averageanime.neoforge.block.ModDisplayBlocks;
-import dev.averageanime.neoforge.block.ModFluids;
-import dev.averageanime.block.ModCakeBlock;
-import dev.averageanime.block.ModCandleCakeBlock;
+import dev.averageanime.CreateFoodCommon;
+import dev.averageanime.block.type.bowl.BowlFoodBlock;
+import dev.averageanime.block.type.bowl.SmallBowlFoodBlock;
+import dev.averageanime.block.type.plate.PlateFoodBlock;
+import dev.averageanime.block.type.plate.SmallPlateBlock;
+import dev.averageanime.neoforge.block.BlockRegistration;
+import dev.averageanime.neoforge.block.DisplayBlockRegistration;
+import dev.averageanime.neoforge.block.FluidRegistration;
+import dev.averageanime.block.type.cake.CakeFoodBlock;
+import dev.averageanime.block.type.cake.CakeCandleBlock;
 import dev.averageanime.block.type.display.*;
+import dev.averageanime.block.type.bowl.BowlBlock;
 import dev.averageanime.block.type.plate.PlateBlock;
-import dev.averageanime.neoforge.block.type.fluid.FluidEntry;
+import dev.averageanime.neoforge.block.type.fluid.FluidBlock;
 import dev.averageanime.block.type.pie.PieBlock;
 import dev.averageanime.block.type.pie.PizzaBlock;
 import dev.averageanime.block.type.pie.RawPieBlock;
@@ -38,8 +43,7 @@ public class BlockStateProvider extends net.neoforged.neoforge.client.model.gene
     private final Path resourceRoot;
 
     public BlockStateProvider(PackOutput output, ExistingFileHelper exFileHelper) {
-        super(output, CommonClass.MOD_ID, exFileHelper);
-        // output is neoforge/src/generated/resources — go up 4 levels to project root
+        super(output, CreateFoodCommon.MOD_ID, exFileHelper);
         this.resourceRoot = output.getOutputFolder().resolve("../../../../common/src/main/resources").normalize();
     }
 
@@ -51,14 +55,15 @@ public class BlockStateProvider extends net.neoforged.neoforge.client.model.gene
     }
 
     private void registerDisplayBlockStates() {
-        ModDisplayBlocks.BLOCKS.getEntries().forEach(blockEntry -> {
+        DisplayBlockRegistration.BLOCKS.getEntries().forEach(blockEntry -> {
             Block block = blockEntry.get();
             switch (block) {
                 case BottleFoodBlock bottleFoodBlock -> bottleBlock((DeferredBlock<Block>) blockEntry);
                 case BowlFoodBlock bowlFoodBlock -> bowlBlock((DeferredBlock<Block>) blockEntry);
-                case SaladBowlFoodBlock saladBowlFoodBlock -> bowlBlock((DeferredBlock<Block>) blockEntry);
+                case SmallBowlFoodBlock smallBowlFoodBlock -> bowlBlock((DeferredBlock<Block>) blockEntry);
                 case PlateFoodBlock plateFoodBlock -> bowlBlock((DeferredBlock<Block>) blockEntry);
-                case SmallPlateFoodBlock smallPlateFoodBlock -> smallPlateBlock((DeferredBlock<Block>) blockEntry);
+                case SmallPlateBlock smallPlateBlock -> smallPlateBlock((DeferredBlock<Block>) blockEntry);
+                case BowlBlock bowlBlock -> displayBowlBlock((DeferredBlock<Block>) blockEntry);
                 case PlateBlock plateBlock -> plateBlock((DeferredBlock<Block>) blockEntry);
                 default -> {
                 }
@@ -70,11 +75,11 @@ public class BlockStateProvider extends net.neoforged.neoforge.client.model.gene
         Block theBlock = block.get();
         String name = block.getId().getPath();
         VariantBlockStateBuilder builder = getVariantBuilder(theBlock);
-        for (int stack = 1; stack <= 9; stack++) {
+        for (int stack = 1; stack <= 12; stack++) {
             for (Direction facing : Direction.Plane.HORIZONTAL) {
                 int yRot = getYRotation(facing);
                 ModelFile model = stack == 1
-                        ? new ModelFile.UncheckedModelFile(ResourceLocation.fromNamespaceAndPath(CommonClass.MOD_ID, "block/" + name))
+                        ? new ModelFile.UncheckedModelFile(ResourceLocation.fromNamespaceAndPath(CreateFoodCommon.MOD_ID, "block/" + name))
                         : models().withExistingParent("empty_" + stack, "minecraft:block/air");
                 builder.partialState()
                         .with(BottleFoodBlock.FACING, facing)
@@ -88,11 +93,11 @@ public class BlockStateProvider extends net.neoforged.neoforge.client.model.gene
         Block theBlock = block.get();
         String name = block.getId().getPath();
         VariantBlockStateBuilder builder = getVariantBuilder(theBlock);
-        for (int stack = 1; stack <= 9; stack++) {
+        for (int stack = 1; stack <= 12; stack++) {
             for (Direction facing : Direction.Plane.HORIZONTAL) {
                 int yRot = getYRotation(facing);
                 ModelFile model = stack == 1
-                        ? new ModelFile.UncheckedModelFile(ResourceLocation.fromNamespaceAndPath(CommonClass.MOD_ID, "block/" + name))
+                        ? new ModelFile.UncheckedModelFile(ResourceLocation.fromNamespaceAndPath(CreateFoodCommon.MOD_ID, "block/" + name))
                         : models().withExistingParent("empty_bowl_" + stack, "minecraft:block/air");
                 builder.partialState()
                         .with(BowlFoodBlock.FACING, facing)
@@ -106,15 +111,15 @@ public class BlockStateProvider extends net.neoforged.neoforge.client.model.gene
         Block theBlock = block.get();
         String name = block.getId().getPath();
         VariantBlockStateBuilder builder = getVariantBuilder(theBlock);
-        for (int stack = 1; stack <= 9; stack++) {
+        for (int stack = 1; stack <= 12; stack++) {
             for (Direction facing : Direction.Plane.HORIZONTAL) {
                 int yRot = getYRotation(facing);
                 ModelFile model = stack == 1
-                        ? new ModelFile.UncheckedModelFile(ResourceLocation.fromNamespaceAndPath(CommonClass.MOD_ID, "block/" + name))
+                        ? new ModelFile.UncheckedModelFile(ResourceLocation.fromNamespaceAndPath(CreateFoodCommon.MOD_ID, "block/" + name))
                         : models().withExistingParent("empty_small_plate_" + stack, "minecraft:block/air");
                 builder.partialState()
-                        .with(SmallPlateFoodBlock.FACING, facing)
-                        .with(SmallPlateFoodBlock.STACK_SIZE, stack)
+                        .with(SmallPlateBlock.FACING, facing)
+                        .with(SmallPlateBlock.STACK_SIZE, stack)
                         .setModels(ConfiguredModel.builder().modelFile(model).rotationY(yRot).build());
             }
         }
@@ -125,15 +130,34 @@ public class BlockStateProvider extends net.neoforged.neoforge.client.model.gene
         String name = block.getId().getPath();
         int maxStack = ((PlateBlock) theBlock).maxStackSize;
         VariantBlockStateBuilder builder = getVariantBuilder(theBlock);
-        for (int stack = 1; stack <= 9; stack++) {
+        for (int stack = 1; stack <= 12; stack++) {
             for (Direction facing : Direction.Plane.HORIZONTAL) {
                 int yRot = getYRotation(facing);
                 ModelFile model = stack <= maxStack
-                        ? new ModelFile.UncheckedModelFile(ResourceLocation.fromNamespaceAndPath(CommonClass.MOD_ID, "block/" + name + "_" + stack))
+                        ? new ModelFile.UncheckedModelFile(ResourceLocation.fromNamespaceAndPath(CreateFoodCommon.MOD_ID, "block/" + name + "_" + stack))
                         : models().withExistingParent("empty_plate_" + stack, "minecraft:block/air");
                 builder.partialState()
                         .with(PlateBlock.FACING, facing)
                         .with(PlateBlock.STACK_SIZE, stack)
+                        .setModels(ConfiguredModel.builder().modelFile(model).rotationY(yRot).build());
+            }
+        }
+    }
+
+    private void displayBowlBlock(DeferredBlock<Block> block) {
+        Block theBlock = block.get();
+        String name = block.getId().getPath();
+        int maxStack = ((BowlBlock) theBlock).maxStackSize;
+        VariantBlockStateBuilder builder = getVariantBuilder(theBlock);
+        for (int stack = 1; stack <= 12; stack++) {
+            for (Direction facing : Direction.Plane.HORIZONTAL) {
+                int yRot = getYRotation(facing);
+                ModelFile model = stack <= maxStack
+                        ? new ModelFile.UncheckedModelFile(ResourceLocation.fromNamespaceAndPath(CreateFoodCommon.MOD_ID, "block/" + name + "_" + stack))
+                        : models().withExistingParent("empty_bowl_" + stack, "minecraft:block/air");
+                builder.partialState()
+                        .with(BowlBlock.FACING, facing)
+                        .with(BowlBlock.STACK_SIZE, stack)
                         .setModels(ConfiguredModel.builder().modelFile(model).rotationY(yRot).build());
             }
         }
@@ -150,17 +174,17 @@ public class BlockStateProvider extends net.neoforged.neoforge.client.model.gene
 
     private void registerFoodBlockStates() {
         Set<Block> fluidBlocks = new java.util.HashSet<>();
-        for (Field field : ModFluids.class.getDeclaredFields()) {
+        for (Field field : FluidRegistration.class.getDeclaredFields()) {
             if (!Modifier.isStatic(field.getModifiers())) continue;
             try {
                 Object value = field.get(null);
-                if (value instanceof FluidEntry.FluidType fluidType) {
+                if (value instanceof FluidBlock.FluidType fluidType) {
                     fluidBlocks.add(fluidType.BLOCK.get());
                 }
             } catch (IllegalAccessException ignored) {}
         }
 
-        ModBlocks.BLOCKS.getEntries().forEach(entry -> {
+        BlockRegistration.BLOCKS.getEntries().forEach(entry -> {
             Block block = entry.get();
 
             if (fluidBlocks.contains(block)) return;
@@ -168,8 +192,8 @@ public class BlockStateProvider extends net.neoforged.neoforge.client.model.gene
             String id = entry.getId().getPath();
 
             switch (block) {
-                case ModCandleCakeBlock ccb -> candleCakeBlockState(block, ccb);
-                case ModCakeBlock modCakeBlock -> cakeBlockState(block, id);
+                case CakeCandleBlock ccb -> candleCakeBlockState(block, ccb);
+                case CakeFoodBlock cakeFoodBlock -> cakeBlockState(block, id);
                 case PieBlock modPieBlock -> pieBlockState(block, id);
                 case PizzaBlock pizzaBlock -> waffleOrPizzaBlockState(block, id);
                 case RawPieBlock rawPieBlock -> rawPieBlockState(block, id);
@@ -181,11 +205,11 @@ public class BlockStateProvider extends net.neoforged.neoforge.client.model.gene
     }
 
     private void registerFluidBlockStates() {
-        for (Field field : ModFluids.class.getDeclaredFields()) {
+        for (Field field : FluidRegistration.class.getDeclaredFields()) {
             if (!Modifier.isStatic(field.getModifiers())) continue;
             try {
                 Object value = field.get(null);
-                if (value instanceof FluidEntry.FluidType fluidType) {
+                if (value instanceof FluidBlock.FluidType fluidType) {
                     String fluidId = fluidType.SOURCE.getId().getPath();
                     simpleBlock(fluidType.BLOCK.get(), unchecked("block/" + fluidId + "_block"));
                 }
@@ -193,7 +217,7 @@ public class BlockStateProvider extends net.neoforged.neoforge.client.model.gene
         }
     }
 
-    private void candleCakeBlockState(Block block, ModCandleCakeBlock ccb) {
+    private void candleCakeBlockState(Block block, CakeCandleBlock ccb) {
         VariantBlockStateBuilder builder = getVariantBuilder(block);
         String cakeName = ccb.getParentCakeName();
         String candleSuffix = ccb.getCandleSuffix();
@@ -202,7 +226,7 @@ public class BlockStateProvider extends net.neoforged.neoforge.client.model.gene
         String topTex    = cakeTextures.get("top").getAsString();
         String sideTex   = cakeTextures.get("side").getAsString();
         String bottomTex = cakeTextures.has("bottom") ? cakeTextures.get("bottom").getAsString()
-                                                       : CommonClass.MOD_ID + ":block/cake_bottom";
+                                                       : CreateFoodCommon.MOD_ID + ":block/cake_bottom";
 
         int[] yRots   = {180, 270,   0,  90};
         String[] dirs = {"south", "west", "north", "east"};
@@ -224,8 +248,8 @@ public class BlockStateProvider extends net.neoforged.neoforge.client.model.gene
 
             for (int f = 0; f < 4; f++) {
                 builder.partialState()
-                        .with(ModCandleCakeBlock.FACING, net.minecraft.core.Direction.byName(dirs[f]))
-                        .with(ModCandleCakeBlock.LIT, lit)
+                        .with(CakeCandleBlock.FACING, net.minecraft.core.Direction.byName(dirs[f]))
+                        .with(CakeCandleBlock.LIT, lit)
                         .setModels(ConfiguredModel.builder()
                                 .modelFile(model)
                                 .rotationY(yRots[f])
@@ -236,7 +260,7 @@ public class BlockStateProvider extends net.neoforged.neoforge.client.model.gene
 
     private JsonObject readCakeTextures(String cakeName) {
         Path modelFile = resourceRoot.resolve(
-                "assets/" + CommonClass.MOD_ID + "/models/block/" + cakeName + ".json");
+                "assets/" + CreateFoodCommon.MOD_ID + "/models/block/" + cakeName + ".json");
         try {
             String json = Files.readString(modelFile);
             return JsonParser.parseString(json).getAsJsonObject().getAsJsonObject("textures");
@@ -253,7 +277,6 @@ public class BlockStateProvider extends net.neoforged.neoforge.client.model.gene
         }
     }
 
-    /** Like forEachFacing but with Y-rotations corrected for cake models whose inside face is on model-WEST. */
     private void cakeForEachFacing(VariantBlockStateBuilder builder, Block block, int bite, ModelFile model) {
         net.minecraft.world.level.block.state.properties.IntegerProperty bitesProperty =
                 (net.minecraft.world.level.block.state.properties.IntegerProperty)
@@ -302,7 +325,6 @@ public class BlockStateProvider extends net.neoforged.neoforge.client.model.gene
         }
     }
 
-    /** Adds all four facing variants for a given bite value. */
     private void forEachFacing(VariantBlockStateBuilder builder, Block block, int bite, ModelFile model) {
         net.minecraft.world.level.block.state.properties.IntegerProperty bitesProperty =
                 (net.minecraft.world.level.block.state.properties.IntegerProperty)
@@ -358,6 +380,6 @@ public class BlockStateProvider extends net.neoforged.neoforge.client.model.gene
 
     private ModelFile unchecked(String path) {
         return new ModelFile.UncheckedModelFile(
-                ResourceLocation.fromNamespaceAndPath(CommonClass.MOD_ID, path));
+                ResourceLocation.fromNamespaceAndPath(CreateFoodCommon.MOD_ID, path));
     }
 }

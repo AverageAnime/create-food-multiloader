@@ -3,6 +3,10 @@
     {
       "id": "createfood:salt_dough",
       "required": false
+    },
+    {
+      "id": "ratatouille:salty_dough",
+      "required": false
     }
   ]
 }

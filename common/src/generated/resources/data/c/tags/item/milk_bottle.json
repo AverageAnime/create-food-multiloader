@@ -7,6 +7,10 @@
     {
       "id": "hearthandharvest:goat_milk_bottle",
       "required": false
+    },
+    {
+      "id": "expandeddelight:goat_milk_bottle",
+      "required": false
     }
   ]
 }

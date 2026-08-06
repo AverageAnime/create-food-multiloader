@@ -1,0 +1,31 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "butterscotch_fudge_ice_cream_bowl"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "butterscotch_fudge_ice_cream_bowl"
+    }
+  ],
+  "key": {
+    "1": {
+      "tag": "c:butterscotch_fudge"
+    },
+    "2": {
+      "tag": "c:ice_cream_bowl"
+    }
+  },
+  "pattern": [
+    "1",
+    "2"
+  ],
+  "result": {
+    "count": 1,
+    "id": "createfood:butterscotch_fudge_ice_cream_bowl"
+  }
+}

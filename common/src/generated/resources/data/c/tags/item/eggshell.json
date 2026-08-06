@@ -3,6 +3,10 @@
     {
       "id": "createfood:eggshell",
       "required": false
+    },
+    {
+      "id": "ratatouille:egg_shell",
+      "required": false
     }
   ]
 }

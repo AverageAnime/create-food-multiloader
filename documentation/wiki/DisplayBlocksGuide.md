@@ -1,5 +1,5 @@
-### ***2.5.0***
-> Custom display blocks can be added via config.
+### ***2.7.0***
+> Custom display blocks can be added via config. `RMB` with tools tagged `c:tools/wrench` to pick up a full display block.
 
 **Plates:**
 
@@ -20,6 +20,13 @@
 * Use `Shift + RMB` to place.
     * Use `RMB` to retrieve the item.
 * Break the block with `LMB` to get the block version.
+* Bowls work like plates, with two differences: generically displayed items always render upright, and bowls do not support cutting board recipes.
+
+**Empty Plates & Bowls:**
+
+* Stack per block: `plate` → 6, `bowl` → 4, `small_plate` → 12, `small_bowl` → 8. Use `RMB` with another bowl to add one, or `Shift + RMB` to add as many as fit.
+* While empty-handed, use `RMB` to take one back or `Shift + RMB` to take the whole stack.
+* An empty small bowl holds fluid, letting you dip food into it with Create's filling recipes.
 
 **Display Delight Compatibility:**
 * Display Delight plates can be placed as Create: Food plates using `Shift + RMB`.

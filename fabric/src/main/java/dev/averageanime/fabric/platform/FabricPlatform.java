@@ -1,13 +1,12 @@
 package dev.averageanime.fabric.platform;
 
 import dev.averageanime.block.type.blockentity.ClothSackBlockEntity;
-import dev.averageanime.block.type.blockentity.GenericDisplayPlateBlockEntity;
+import dev.averageanime.block.type.blockentity.GenericDisplayBlockEntity;
 import dev.averageanime.block.type.blockentity.RationBoxBlockEntity;
-import dev.averageanime.config.override.ItemEffectOverride;
-import dev.averageanime.config.override.ItemNutritionOverride;
-import dev.averageanime.fabric.block.ModDisplayBlocks;
-import dev.averageanime.fabric.config.ModConfig;
-import dev.averageanime.platform.IPlatform;
+import dev.averageanime.fabric.block.BlockEntityRegistration;
+import dev.averageanime.fabric.block.DisplayBlockRegistration;
+import dev.averageanime.item.storage.StorageAccess;
+import dev.averageanime.platform.Platform;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.loader.api.FabricLoader;
 import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory;
@@ -19,15 +18,14 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.MenuConstructor;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
-import java.util.List;
+import java.nio.file.Path;
 
-public class FabricPlatform implements IPlatform {
+public class FabricPlatform implements Platform {
 
     @Override
     public boolean isModLoaded(String modId) {
@@ -59,127 +57,46 @@ public class FabricPlatform implements IPlatform {
         return false;
     }
 
-    @Override public boolean isItemEnabled(String itemId)               { return ModConfig.isItemEnabled(itemId); }
-    @Override public List<? extends String> getCraftingRemainders()     { try { return ModConfig.CRAFTING_REMAINDERS.get(); } catch (IllegalStateException e) { return List.of(); } }
-    @Override public boolean isEggImpactRemainderEnabled()              { try { return ModConfig.ENABLE_EGG_IMPACT_REMAINDER.get(); } catch (IllegalStateException e) { return true; } }
-
     @Override
-    public String getCategoryEffectOverride(String categoryName) {
-        return ModConfig.getCategoryEffectOverride(categoryName);
-    }
-
-    @Override
-    public List<ItemEffectOverride> getItemOverrideEntries(String itemId) {
-        return ModConfig.getItemOverrideEntries(itemId);
-    }
-
-    @Nullable
-    @Override
-    public ItemEffectOverride getItemEffectOverride(String itemId, String categoryOrEffectId) {
-        return ModConfig.getItemEffectOverride(itemId, categoryOrEffectId);
-    }
-
-    @Nullable
-    @Override
-    public ItemNutritionOverride getItemNutritionOverride(String itemId) {
-        return ModConfig.getItemNutritionOverride(itemId);
-    }
-
-    @Override public boolean isPumpkinPiePlacementEnabled()                  { try { return ModConfig.ENABLE_PUMPKIN_PIE_PLACEMENT.get(); } catch (IllegalStateException e) { return false; } }
-    @Override public boolean isGenericPlatesEnabled()                        { return ModConfig.isEnableGenericPlates(); }
-    @Override public boolean isAlwaysDisplayUpright()                        { return ModConfig.isAlwaysDisplayUpright(); }
-    @Override public boolean isCuttingBoardEnabled()                         { return ModConfig.isEnableCuttingBoard(); }
-    @Override public boolean isGenericDisplayAllowed(ItemStack stack)        { return ModConfig.isGenericDisplayAllowed(stack); }
-
-    @Override public boolean isCampfireCookingEnabled()                      { return ModConfig.CAMPFIRE_COOKING_ENABLED.get(); }
-    @Override public boolean isCampfireCookingRequireShift()                 { return ModConfig.isCampfireCookingRequireShift(); }
-    @Override public boolean isCampfireCookingSticksOnly()                   { return ModConfig.CAMPFIRE_COOKING_STICKS_ONLY.get(); }
-    @Override public List<? extends String> getCampfireCookingExclude()      { return ModConfig.CAMPFIRE_COOKING_EXCLUDE.get(); }
-    @Override public List<? extends String> getCampfireCookingFilter()       { return ModConfig.CAMPFIRE_COOKING_FILTER.get(); }
-
-    @Override
-    public boolean isHandcraftingEnabled() {
-        return ModConfig.ENABLE_HANDCRAFTING.get();
-    }
-
-    @Override
-    public boolean isHandcraftingSingleEnabled() {
-        return ModConfig.HANDCRAFTING_ALLOW_SINGLE.get();
-    }
-
-    @Override
-    public boolean isHandcraftingParticlesEnabled() {
-        return ModConfig.HANDCRAFTING_PARTICLES.get();
-    }
-
-    @Override
-    public boolean isHandcraftingAllowed(ItemStack result) {
-        if (ModConfig.matchesFilterList(result, ModConfig.HANDCRAFTING_EXCLUDE.get())) return false;
-        List<? extends String> filter = ModConfig.HANDCRAFTING_FILTER.get();
-        if (filter.isEmpty()) return true;
-        return ModConfig.matchesFilterList(result, filter);
-    }
-
-    @Override
-    public boolean isFilterInteractionsEnabled() {
-        return ModConfig.ENABLE_FILTER_INTERACTIONS.get();
-    }
-
-    @Override
-    public List<String> getFilterInteractions() {
-        return ModConfig.FILTER_INTERACTIONS.get().stream().map(String::valueOf).toList();
+    public Path getConfigDir() {
+        return FabricLoader.getInstance().getConfigDir();
     }
 
     @Override
     public Block getPlateBlock() {
-        return ModDisplayBlocks.PLATE_BLOCK;
+        return DisplayBlockRegistration.PLATE_BLOCK;
     }
 
     @Override
     public Block getSmallPlateBlock() {
-        return ModDisplayBlocks.SMALL_PLATE_BLOCK;
+        return DisplayBlockRegistration.SMALL_PLATE_BLOCK;
     }
 
     @Override
-    public boolean isClothSackInventoryEnabled() {
-        return ModConfig.isClothSackInventoryEnabled();
+    public Block getBowlBlock() {
+        return DisplayBlockRegistration.BOWL_BLOCK;
     }
 
     @Override
-    public boolean isRationBoxInventoryEnabled() {
-        return ModConfig.isRationBoxInventoryEnabled();
+    public Block getSmallBowlBlock() {
+        return DisplayBlockRegistration.SMALL_BOWL_BLOCK;
     }
 
     @Override
-    public boolean isSackBlockIconsEnabled() {
-        return ModConfig.isSackBlockIconsEnabled();
+    public StorageAccess createStorageInventory(int size,
+                                                     java.util.function.IntUnaryOperator slotLimit, java.util.function.BiPredicate<Integer, net.minecraft.world.item.ItemStack> validator) {
+        return new dev.averageanime.fabric.item.storage.StorageInventory(size, () -> slotLimit.applyAsInt(0), validator);
     }
 
     @Override
-    public boolean isStorageTooltipIconsEnabled() {
-        return ModConfig.isStorageTooltipIconsEnabled();
+    public BlockEntityType<?> getClothSackBlockEntityType() {
+        return BlockEntityRegistration.CLOTH_SACK;
     }
 
-    // ── Tooltip config ────────────────────────────────────────────────────────
-
-    @Override public boolean isShiftRequiredForTooltips()              { return ModConfig.isShiftRequiredForTooltips(); }
-    @Override public boolean isCompatibilityEnabled()                  { return ModConfig.isCompatibilityEnabled(); }
-    @Override public boolean isIngredientsEnabled()                    { return ModConfig.isIngredientsEnabled(); }
-    @Override public java.util.List<? extends String> getCustomTooltips() { return ModConfig.CUSTOM_TOOLTIPS.get(); }
-
-    // ── Cloth-sack item config ────────────────────────────────────────────────
-
-    @Override public boolean isClothSackEatFromItem()                  { return ModConfig.isClothSackEatFromItem(); }
-    @Override public boolean isClothSackStacking()                     { return ModConfig.isClothSackStacking(); }
-    @Override public boolean isClothSackItemAllowed(net.minecraft.world.item.ItemStack stack) { return ModConfig.isClothSackItemAllowed(stack); }
-    @Override public net.minecraft.world.level.block.entity.BlockEntityType<?> getClothSackBlockEntityType() { return dev.averageanime.fabric.block.ModBlockEntities.CLOTH_SACK; }
-
-    // ── Ration-box item config ────────────────────────────────────────────────
-
-    @Override public boolean isRationBoxEatFromItemEnabled()           { return ModConfig.isRationBoxEatFromItemEnabled(); }
-    @Override public boolean isRationBoxStacking()                     { return ModConfig.isRationBoxStacking(); }
-    @Override public boolean isRationBoxItemAllowed(net.minecraft.world.item.ItemStack stack) { return ModConfig.isRationBoxItemAllowed(stack); }
-    @Override public net.minecraft.world.level.block.entity.BlockEntityType<?> getRationBoxBlockEntityType() { return dev.averageanime.fabric.block.ModBlockEntities.RATION_BOX; }
+    @Override
+    public BlockEntityType<?> getRationBoxBlockEntityType() {
+        return BlockEntityRegistration.RATION_BOX;
+    }
 
     @Override
     public void openStorageItemMenu(Player player, MenuConstructor constructor,
@@ -203,6 +120,16 @@ public class FabricPlatform implements IPlatform {
     }
 
     @Override
+    public Block getGenericDisplayBowlBlock() {
+        return DisplayBlockRegistration.GENERIC_DISPLAY_BOWL_BLOCK;
+    }
+
+    @Override
+    public Block getGenericDisplayPlateBlock() {
+        return DisplayBlockRegistration.GENERIC_DISPLAY_PLATE_BLOCK;
+    }
+
+    @Override
     public ClothSackBlockEntity createClothSackBlockEntity(BlockPos pos, BlockState state) {
         return new dev.averageanime.fabric.block.type.blockentity.ClothSackBlockEntity(pos, state);
     }
@@ -213,12 +140,12 @@ public class FabricPlatform implements IPlatform {
     }
 
     @Override
-    public GenericDisplayPlateBlockEntity createGenericDisplayPlateBlockEntity(BlockPos pos, BlockState state) {
-        return new dev.averageanime.fabric.block.type.blockentity.GenericDisplayPlateBlockEntity(pos, state);
+    public GenericDisplayBlockEntity createGenericDisplayPlateBlockEntity(BlockPos pos, BlockState state) {
+        return new dev.averageanime.fabric.block.type.blockentity.GenericDisplayBlockEntity(pos, state);
     }
 
     @Override
-    public net.minecraft.world.level.block.Block getGenericDisplayPlateBlock() {
-        return ModDisplayBlocks.GENERIC_DISPLAY_PLATE_BLOCK;
+    public dev.averageanime.block.type.blockentity.SmallBowlBlockEntity createSmallBowlBlockEntity(BlockPos pos, BlockState state) {
+        return new dev.averageanime.fabric.block.type.blockentity.SmallBowlBlockEntity(pos, state);
     }
 }

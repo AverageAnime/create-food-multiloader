@@ -3,6 +3,10 @@
     {
       "id": "createfood:cacao_mass_bucket",
       "required": false
+    },
+    {
+      "id": "ratatouille:cocoa_liquor_bucket",
+      "required": false
     }
   ]
 }

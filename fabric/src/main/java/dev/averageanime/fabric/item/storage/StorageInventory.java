@@ -1,6 +1,6 @@
 package dev.averageanime.fabric.item.storage;
 
-import dev.averageanime.item.storage.IStorageItemHandler;
+import dev.averageanime.item.storage.StorageAccess;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
@@ -11,7 +11,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.function.BiPredicate;
 import java.util.function.Supplier;
 
-public class StorageInventory extends SimpleContainer implements IStorageItemHandler {
+public class StorageInventory extends SimpleContainer implements StorageAccess {
 
     private final Supplier<Integer> slotLimitSupplier;
     private final BiPredicate<Integer, ItemStack> validator;
@@ -34,7 +34,7 @@ public class StorageInventory extends SimpleContainer implements IStorageItemHan
         onChanged.run();
     }
 
-    // ── IStorageItemHandler bridges ──────────────────────────────────────────
+    // ── IStorageAccess bridges ──────────────────────────────────────────
 
     @Override
     public ItemStack getInventoryItem(int slot) {

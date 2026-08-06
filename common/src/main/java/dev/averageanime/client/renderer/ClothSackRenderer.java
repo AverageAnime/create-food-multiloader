@@ -5,11 +5,11 @@ import com.mojang.math.Axis;
 import dev.averageanime.block.type.blockentity.ClothSackBlockEntity;
 import dev.averageanime.block.type.storage.ClothSackBlock;
 import dev.averageanime.platform.Services;
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.LightTexture;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
+import net.minecraft.client.renderer.entity.ItemRenderer;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
@@ -29,7 +29,11 @@ public class ClothSackRenderer<T extends ClothSackBlockEntity> implements BlockE
     private static final float OUTSET     = 0.315f;
     private static final float ICON_SCALE = 0.25f;
 
-    public ClothSackRenderer(BlockEntityRendererProvider.Context context) { }
+    private final ItemRenderer itemRenderer;
+
+    public ClothSackRenderer(BlockEntityRendererProvider.Context context) {
+        this.itemRenderer = context.getItemRenderer();
+    }
 
     @Override
     public void render(@NotNull T be, float partialTick,
@@ -45,10 +49,9 @@ public class ClothSackRenderer<T extends ClothSackBlockEntity> implements BlockE
         var level = be.getLevel();
         if (level == null) return;
 
-        var itemRenderer = Minecraft.getInstance().getItemRenderer();
-
-        int blockLight = level.getBrightness(LightLayer.BLOCK, be.getBlockPos());
-        int skyLight   = level.getBrightness(LightLayer.SKY,   be.getBlockPos());
+        var pos = be.getBlockPos();
+        int blockLight = level.getBrightness(LightLayer.BLOCK, pos);
+        int skyLight   = level.getBrightness(LightLayer.SKY,   pos);
         int light = LightTexture.pack(blockLight, skyLight);
 
         float yRot = switch (facing) {

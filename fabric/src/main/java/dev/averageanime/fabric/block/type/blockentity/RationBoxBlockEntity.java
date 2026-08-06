@@ -1,9 +1,9 @@
 package dev.averageanime.fabric.block.type.blockentity;
 
-import dev.averageanime.fabric.block.ModBlockEntities;
-import dev.averageanime.fabric.config.ModConfig;
+import dev.averageanime.fabric.block.BlockEntityRegistration;
+import dev.averageanime.config.ConfigValues;
 import dev.averageanime.fabric.item.storage.StorageInventory;
-import dev.averageanime.fabric.menu.type.RationBoxMenu;
+import dev.averageanime.fabric.menu.type.block.RationBoxBlockMenu;
 import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
@@ -12,6 +12,7 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.NotNull;
 
@@ -20,11 +21,16 @@ public class RationBoxBlockEntity
         implements ExtendedScreenHandlerFactory<BlockPos> {
 
     public RationBoxBlockEntity(BlockPos pos, BlockState state) {
-        super(ModBlockEntities.RATION_BOX, pos, state,
+        super(BlockEntityRegistration.RATION_BOX, pos, state,
                 new StorageInventory(5,
-                        () -> ModConfig.isRationBoxStacking() ? 64 : 1,
-                        (slot, stack) -> ModConfig.isRationBoxItemAllowed(stack)));
-        inventory.setOnChanged(this::setChanged);
+                        () -> ConfigValues.isRationBoxStacking() ? 64 : 1,
+                        (slot, stack) -> ConfigValues.isRationBoxItemAllowed(stack)));
+        inventory.setOnChanged(() -> {
+            setChanged();
+            if (level != null && !level.isClientSide) {
+                level.sendBlockUpdated(worldPosition, getBlockState(), getBlockState(), Block.UPDATE_ALL);
+            }
+        });
     }
 
     /** Typed accessor for platform menus that need a {@link StorageInventory}. */
@@ -39,7 +45,7 @@ public class RationBoxBlockEntity
 
     @Override
     public AbstractContainerMenu createMenu(int id, @NotNull Inventory inv, @NotNull Player player) {
-        return new RationBoxMenu(id, inv, this);
+        return new RationBoxBlockMenu(id, inv, this);
     }
 
     @Override

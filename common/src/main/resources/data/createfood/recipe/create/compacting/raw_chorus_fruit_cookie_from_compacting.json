@@ -2,7 +2,7 @@
     "type": "create:compacting",
     "ingredients": [
         {
-            "item": "minecraft:sweet_berries"
+            "tag": "c:chorus_fruit"
         },
         {
             "tag": "c:sweet_dough"

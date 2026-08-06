@@ -7,6 +7,10 @@
     {
       "id": "expandeddelight:sweet_berry_juice",
       "required": false
+    },
+    {
+      "id": "hearthandharvest:sweet_berry_juice",
+      "required": false
     }
   ]
 }

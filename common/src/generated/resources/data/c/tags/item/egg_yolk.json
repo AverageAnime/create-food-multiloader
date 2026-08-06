@@ -3,6 +3,10 @@
     {
       "id": "createfood:egg_yolk",
       "required": false
+    },
+    {
+      "id": "ratatouille:egg_yolk",
+      "required": false
     }
   ]
 }

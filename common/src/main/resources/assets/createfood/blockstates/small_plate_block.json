@@ -1,18 +1,183 @@
 {
   "variants": {
-    "facing=east": {
+    "facing=east,stack_size=1": {
       "model": "createfood:block/small_plate_block",
       "y": 270
     },
-    "facing=north": {
+    "facing=east,stack_size=2": {
+      "model": "createfood:block/small_plate_block_2",
+      "y": 270
+    },
+    "facing=east,stack_size=3": {
+      "model": "createfood:block/small_plate_block_3",
+      "y": 270
+    },
+    "facing=east,stack_size=4": {
+      "model": "createfood:block/small_plate_block_4",
+      "y": 270
+    },
+    "facing=east,stack_size=5": {
+      "model": "createfood:block/small_plate_block_5",
+      "y": 270
+    },
+    "facing=east,stack_size=6": {
+      "model": "createfood:block/small_plate_block_6",
+      "y": 270
+    },
+    "facing=east,stack_size=7": {
+      "model": "createfood:block/small_plate_block_7",
+      "y": 270
+    },
+    "facing=east,stack_size=8": {
+      "model": "createfood:block/small_plate_block_8",
+      "y": 270
+    },
+    "facing=east,stack_size=9": {
+      "model": "createfood:block/small_plate_block_9",
+      "y": 270
+    },
+    "facing=east,stack_size=10": {
+      "model": "createfood:block/small_plate_block_10",
+      "y": 270
+    },
+    "facing=east,stack_size=11": {
+      "model": "createfood:block/small_plate_block_11",
+      "y": 270
+    },
+    "facing=east,stack_size=12": {
+      "model": "createfood:block/small_plate_block_12",
+      "y": 270
+    },
+    "facing=north,stack_size=1": {
       "model": "createfood:block/small_plate_block",
       "y": 180
     },
-    "facing=south": {
+    "facing=north,stack_size=2": {
+      "model": "createfood:block/small_plate_block_2",
+      "y": 180
+    },
+    "facing=north,stack_size=3": {
+      "model": "createfood:block/small_plate_block_3",
+      "y": 180
+    },
+    "facing=north,stack_size=4": {
+      "model": "createfood:block/small_plate_block_4",
+      "y": 180
+    },
+    "facing=north,stack_size=5": {
+      "model": "createfood:block/small_plate_block_5",
+      "y": 180
+    },
+    "facing=north,stack_size=6": {
+      "model": "createfood:block/small_plate_block_6",
+      "y": 180
+    },
+    "facing=north,stack_size=7": {
+      "model": "createfood:block/small_plate_block_7",
+      "y": 180
+    },
+    "facing=north,stack_size=8": {
+      "model": "createfood:block/small_plate_block_8",
+      "y": 180
+    },
+    "facing=north,stack_size=9": {
+      "model": "createfood:block/small_plate_block_9",
+      "y": 180
+    },
+    "facing=north,stack_size=10": {
+      "model": "createfood:block/small_plate_block_10",
+      "y": 180
+    },
+    "facing=north,stack_size=11": {
+      "model": "createfood:block/small_plate_block_11",
+      "y": 180
+    },
+    "facing=north,stack_size=12": {
+      "model": "createfood:block/small_plate_block_12",
+      "y": 180
+    },
+    "facing=south,stack_size=1": {
       "model": "createfood:block/small_plate_block"
     },
-    "facing=west": {
+    "facing=south,stack_size=2": {
+      "model": "createfood:block/small_plate_block_2"
+    },
+    "facing=south,stack_size=3": {
+      "model": "createfood:block/small_plate_block_3"
+    },
+    "facing=south,stack_size=4": {
+      "model": "createfood:block/small_plate_block_4"
+    },
+    "facing=south,stack_size=5": {
+      "model": "createfood:block/small_plate_block_5"
+    },
+    "facing=south,stack_size=6": {
+      "model": "createfood:block/small_plate_block_6"
+    },
+    "facing=south,stack_size=7": {
+      "model": "createfood:block/small_plate_block_7"
+    },
+    "facing=south,stack_size=8": {
+      "model": "createfood:block/small_plate_block_8"
+    },
+    "facing=south,stack_size=9": {
+      "model": "createfood:block/small_plate_block_9"
+    },
+    "facing=south,stack_size=10": {
+      "model": "createfood:block/small_plate_block_10"
+    },
+    "facing=south,stack_size=11": {
+      "model": "createfood:block/small_plate_block_11"
+    },
+    "facing=south,stack_size=12": {
+      "model": "createfood:block/small_plate_block_12"
+    },
+    "facing=west,stack_size=1": {
       "model": "createfood:block/small_plate_block",
+      "y": 90
+    },
+    "facing=west,stack_size=2": {
+      "model": "createfood:block/small_plate_block_2",
+      "y": 90
+    },
+    "facing=west,stack_size=3": {
+      "model": "createfood:block/small_plate_block_3",
+      "y": 90
+    },
+    "facing=west,stack_size=4": {
+      "model": "createfood:block/small_plate_block_4",
+      "y": 90
+    },
+    "facing=west,stack_size=5": {
+      "model": "createfood:block/small_plate_block_5",
+      "y": 90
+    },
+    "facing=west,stack_size=6": {
+      "model": "createfood:block/small_plate_block_6",
+      "y": 90
+    },
+    "facing=west,stack_size=7": {
+      "model": "createfood:block/small_plate_block_7",
+      "y": 90
+    },
+    "facing=west,stack_size=8": {
+      "model": "createfood:block/small_plate_block_8",
+      "y": 90
+    },
+    "facing=west,stack_size=9": {
+      "model": "createfood:block/small_plate_block_9",
+      "y": 90
+    },
+    "facing=west,stack_size=10": {
+      "model": "createfood:block/small_plate_block_10",
+      "y": 90
+    },
+    "facing=west,stack_size=11": {
+      "model": "createfood:block/small_plate_block_11",
+      "y": 90
+    },
+    "facing=west,stack_size=12": {
+      "model": "createfood:block/small_plate_block_12",
       "y": 90
     }
   }

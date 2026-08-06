@@ -8,6 +8,14 @@ repositories {
     maven { url = "https://mvn.devos.one/snapshots/" } // Registrate, Porting Lib, Forge Tags, Milk Lib
     maven { url = "https://mvn.devos.one/releases/" }
     maven { url = "https://jitpack.io/" } // for Porting Lib: Fabric ASM
+    exclusiveContent {
+        forRepository {
+            maven { url = "https://api.modrinth.com/maven" }
+        }
+        filter {
+            includeGroup "maven.modrinth"
+        }
+    }
 }
 dependencies {
     minecraft "com.mojang:minecraft:${minecraft_version}"
@@ -21,6 +29,10 @@ dependencies {
     for (String module in port_lib_modules.split(",")) {
         modApi("io.github.fabricators_of_create.Porting-Lib:$module:$port_lib_version")
     }
+
+    // Jade soft dependency: build-time only, invoked via the "jade" entrypoint in fabric.mod.json
+    // only when Jade is actually present. Bump the version string as Jade updates.
+    modCompileOnly "maven.modrinth:jade:15.10.5+fabric"
 
 }
 sourceSets {

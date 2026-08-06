@@ -1,6 +1,6 @@
 # Create Food — New Item Guide
 
-> **Toolkit note:** The toolkit is designed to be used alongside this guide. Steps 1–6 inform the choices you make in the Item tab. Steps 7–8 inform recipe creation in the Recipes tab. The toolkit generates Java registration lines and lang entries. All JSON asset files (item tags, item models, block models, blockstates, loot tables, fluid tags) are now fully covered by datagen — run datagen after adding your registration lines and all JSONs are produced automatically. You only need to provide texture PNGs.
+> **Toolkit note:** The toolkit is designed to be used alongside this guide. Steps 1–6 inform the choices you make in the Item tab. Steps 7–8 inform recipe creation in the Recipes tab. The toolkit generates Java registration lines and lang entries. All JSON asset files (item tags, item models, block models, blockstates, loot tables, fluidBlock tags) are now fully covered by datagen — run datagen after adding your registration lines and all JSONs are produced automatically. You only need to provide texture PNGs.
 
 ---
 
@@ -83,7 +83,7 @@ Consult Design §7. Work backwards from the finished item to raw ingredients and
 |----------|-------------|
 | Solid pressed into chips, crumbs, diced, or ground meat? | Pressing |
 | Solid ground into powder or crumbs? | Milling |
-| Multiple ingredients blended (cold) into batter, dough, or fluid? | Mixing |
+| Multiple ingredients blended (cold) into batter, dough, or fluidBlock? | Mixing |
 | Multiple ingredients blended with heat? | Mixing (heated) |
 | Single raw item cooked with heat alone? | Smelting / Smoking / Campfire |
 | Multiple ingredients cooked together? | Cooking Pot |
@@ -94,7 +94,7 @@ Consult Design §7. Work backwards from the finished item to raw ingredients and
 | Block-form food portioned into slices? | Cutting |
 | Simple dry combination with no processing? | Crafting |
 
-> **Toolkit:** All recipe types are available in the Recipes tab. Select the recipe type and fill in the inputs. For Create recipes, the fluid input/output toggle and fluid|mB input type are available. Block slice cutting recipes and bottle filling/emptying recipes are auto-generated — they appear in the Recipes tab Files panel automatically.
+> **Toolkit:** All recipe types are available in the Recipes tab. Select the recipe type and fill in the inputs. For Create recipes, the fluidBlock input/output toggle and fluidBlock|mB input type are available. Block slice cutting recipes and bottle filling/emptying recipes are auto-generated — they appear in the Recipes tab Files panel automatically.
 
 ### Step 8 — Assign the ID, Display Name, and Tags
 
@@ -217,7 +217,7 @@ Consult Design §8.
  * <ul>
  *   <li>All items in {@link ModItems} (food, ingredients, tools, bottles, etc.)
  *   <li>All block items registered in {@link ModBlocks}
- *   <li>Bucket items for every fluid registered in {@link ModFluids}
+ *   <li>Bucket items for every fluidBlock registered in {@link ModFluids}
  * </ul>
  *
  * <p>Adding a new item to {@link ModItems} automatically generates its tag on
@@ -254,12 +254,12 @@ Consult Design §8.
 
 ```
 /**
- * Generates {@code data/c/tags/fluid/<id>.json} for every fluid registered
+ * Generates {@code data/c/tags/fluidBlock/<id>.json} for every fluidBlock registered
  * in {@link ModFluids}.
  *
- * <p>Each fluid gets one tag containing both the source and flowing variants:
+ * <p>Each fluidBlock gets one tag containing both the source and flowing variants:
  * <pre>
- * data/c/tags/fluid/apple_custard.json
+ * data/c/tags/fluidBlock/apple_custard.json
  * {
  *   "replace": false,
  *   "values": [
@@ -269,7 +269,7 @@ Consult Design §8.
  * }
  * </pre>
  *
- * <p>Adding a new fluid to {@link ModFluids} automatically generates its tag
+ * <p>Adding a new fluidBlock to {@link ModFluids} automatically generates its tag
  * on the next datagen run. No changes to this file are required.
  */
 ```
@@ -283,7 +283,7 @@ Consult Design §8.
  *   <li><b>Display blocks</b> — bottle, bowl, plate, etc. registered in
  *       {@link ModDisplayBlocks}. Logic unchanged from the original.
  *   <li><b>Food blocks</b> — cakes, pies, pizzas, waffles, raw blocks,
- *       and fluid blocks from {@link ModBlocks} / {@link ModFluids}.
+ *       and fluidBlock blocks from {@link ModBlocks} / {@link ModFluids}.
  * </ol>
  *
  * <h3>Food block formats</h3>
@@ -302,7 +302,7 @@ Consult Design §8.
 ```
 /**
  * Generates block model JSON files for all food blocks in {@link ModBlocks}
- * and all fluid blocks in {@link ModFluids}.
+ * and all fluidBlock blocks in {@link ModFluids}.
  *
  * <h3>Model conventions per block type</h3>
  *
@@ -332,7 +332,7 @@ Consult Design §8.
  * shared {@code block/raw_pizza_bottom}, {@code block/raw_pizza_side}.
  *
  * <b>Fluid block</b> — parent {@code block/block}, all faces use
- * {@code createfood:fluid/{id}_flow} texture.
+ * {@code createfood:fluidBlock/{id}_flow} texture.
  *
  * <b>Other blocks</b> (gelatin, gyro, cheese, cake_base) — no model generated
  * here; those are hand-authored Blockbench models with custom geometry.

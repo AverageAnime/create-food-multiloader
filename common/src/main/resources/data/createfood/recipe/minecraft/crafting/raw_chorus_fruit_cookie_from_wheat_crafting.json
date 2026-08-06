@@ -11,7 +11,7 @@
             "item": "minecraft:water_bucket"
         },
         {
-            "item": "minecraft:sweet_berries"
+            "tag": "c:chorus_fruit"
         }
     ],
     "result": {
