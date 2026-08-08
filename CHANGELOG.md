@@ -1,3 +1,23 @@
+### *** 2.7.1 ***
+
+#### Changes:
+* All cross-mod compat content is now entirely config based. In-game behavior should be identical after regenerating the following lists:
+  * `createfood-common.toml` - `block`, `display_block`, `fluid`, and `item`
+  * `createfood-client.toml` - `custom_tooltips`
+  * `createfood-server.toml` - `effects`
+* Config option `block` now accepts the `cake_base`, `cheese` and `gyro_meat` types.
+  * `cake` now gets candle-cake variants.
+* Config option `display_block` now accepts the `plate_food` display type.
+  * `height` field now accepts fractions.
+  * `particles` field now also applies to `bowl` and accepts a particle id (e.g. `minecraft:snowflake`).
+* Config option `fluid` now accepts a bare `name` field to use default fluid behavior.
+* Config option `item` now accepts the `plain_cr` type.
+* Config option `custom_tooltips` takes an optional third field, `compat_key`.
+
+#### Fixes:
+* Fix issue with custom display blocks and fluids not being created in `createfood-common.toml`.
+* Fix custom content not being registered on initial launch.
+
 ### *** 2.7.0 ***
 ![newprev270](https://github.com/user-attachments/assets/a9de6be1-75ac-4d64-99c4-ac9fce31a0ea)
 

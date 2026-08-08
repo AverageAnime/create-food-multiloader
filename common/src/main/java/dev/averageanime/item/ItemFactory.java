@@ -6,6 +6,7 @@ import dev.averageanime.item.effect.EffectSpecs;
 import dev.averageanime.item.type.EffectDrink;
 import dev.averageanime.item.type.EffectFood;
 import dev.averageanime.item.type.EffectFood.DeferredFx;
+import dev.averageanime.registry.ItemLookup;
 import dev.averageanime.registry.ItemRegistry;
 import dev.averageanime.registry.type.EffectEntry;
 import dev.averageanime.registry.type.ItemEntry;
@@ -58,10 +59,10 @@ public final class ItemFactory {
             case STICK_FOOD_CR -> effectFood(foodProps(def, true, Items.STICK, hooks).craftRemainder(Items.STICK), def, hooks);
             case BOTTLE -> effectDrink(foodProps(def, false, Items.GLASS_BOTTLE, hooks).stacksTo(16).craftRemainder(Items.GLASS_BOTTLE), def);
             case PLAIN -> plainItem(def, new Properties());
-            case PLAIN_CR -> plainItem(def, new Properties().craftRemainder(ItemEntry.getById(def.remainderId).get()));
+            case PLAIN_CR -> plainItem(def, new Properties().craftRemainder(ItemLookup.byModId(def.remainderId).get()));
             case INGREDIENT_BOTTLE -> new EffectDrink(new Properties().stacksTo(16).craftRemainder(Items.GLASS_BOTTLE));
             case INGREDIENT_BOWL -> new net.minecraft.world.item.Item(new Properties().stacksTo(16).craftRemainder(Items.BOWL));
-            case PIPING_BAG -> plainItem(def, new Properties().stacksTo(2).craftRemainder(ItemRegistry.PIPING_BAG.get()));
+            case PIPING_BAG -> plainItem(def, new Properties().stacksTo(2).craftRemainder(ItemLookup.byModId("piping_bag").get()));
         };
     }
 
@@ -111,6 +112,15 @@ public final class ItemFactory {
             switch (type) {
                 case "plain", "ingredient_bottle", "ingredient_bowl", "piping_bag" ->
                         hooks.register(name, () -> buildSimpleConfigItem(type));
+                case "plain_cr" -> {
+                    if (p.length < 3 || p[2].isBlank()) {
+                        CreateFoodCommon.LOGGER.warn("Create: Food - Skipping custom_item entry missing remainder item: {}", entry);
+                        continue;
+                    }
+                    Supplier<net.minecraft.world.item.Item> remainder = ItemLookup.byFullId(p[2]);
+                    hooks.register(name, () ->
+                            new net.minecraft.world.item.Item(new Properties().craftRemainder(remainder.get())));
+                }
                 default -> {
                     if (p.length < 4) {
                         CreateFoodCommon.LOGGER.warn("Create: Food - Skipping invalid custom_item entry: {}", entry);
@@ -140,7 +150,7 @@ public final class ItemFactory {
             case "plain" -> new net.minecraft.world.item.Item(new Properties());
             case "ingredient_bottle" -> new EffectDrink(new Properties().stacksTo(16).craftRemainder(Items.GLASS_BOTTLE));
             case "ingredient_bowl" -> new net.minecraft.world.item.Item(new Properties().stacksTo(16).craftRemainder(Items.BOWL));
-            case "piping_bag" -> new net.minecraft.world.item.Item(new Properties().stacksTo(2).craftRemainder(ItemRegistry.PIPING_BAG.get()));
+            case "piping_bag" -> new net.minecraft.world.item.Item(new Properties().stacksTo(2).craftRemainder(ItemLookup.byModId("piping_bag").get()));
             default -> throw new IllegalStateException("Unhandled simple config item type: " + type);
         };
     }

@@ -1,5 +1,7 @@
 package dev.averageanime.config;
 
+import net.minecraft.resources.ResourceLocation;
+
 import java.util.List;
 import java.util.Set;
 import java.util.function.Predicate;
@@ -16,13 +18,141 @@ public final class ConfigDefaults {
             "createfood:ube_cake_batter_bucket|minecraft:bucket"
     );
 
+    public static final List<String> CUSTOM_BLOCK_DEFAULT = List.of(
+            "ube_cake_base|cake_base",
+            "ube_cream_ube_cake|cake|createfood:ube_cream_ube_cake_slice"
+    );
+
+    public static final List<String> CUSTOM_FLUID_DEFAULT = List.of(
+            "coffee_toffee",
+            "coffee_toffee_fudge",
+            "ube_cake_batter|2|4",
+            "ube_cream_frosting"
+    );
+
+    public static final List<String> CUSTOM_ITEM_DEFAULT = List.of(
+            "beef_bun_peanut_butter|food|6|0.9",
+            "beef_bun_peanut_butter_bacon|food|8|0.9",
+            "bread_slice_peanut_butter|food|7|0.4",
+            "caramel_popcorn|food|3|0.8",
+            "cinnamon_sweet_roll_base|food|4|0.6",
+            "coffee_toffee|food|1|2.0",
+            "coffee_toffee_fudge|food|4|0.7",
+            "corn_flour|plain",
+            "dark_chocolate_dried_coffee_beans|food|4|0.5",
+            "dragon_bun|food|9|0.4",
+            "dragon_bun_crimson_fungus|food|9|0.5",
+            "dragon_bun_warped_fungus|food|9|0.6",
+            "dragon_burger|food|11|0.4",
+            "dragon_burger_crimson_fungus|food|11|0.5",
+            "dragon_burger_warped_fungus|food|11|0.6",
+            "dragon_patty|food|7|0.6",
+            "dried_coffee_beans|plain",
+            "chocolate_dried_coffee_beans|food|3|0.6",
+            "eggplant_bun|food|5|0.9",
+            "eggplant_bun_cheese|food|8|0.9",
+            "eggplant_bun_cheese_lettuce|food|10|0.9",
+            "eggplant_bun_cheese_lettuce_tomato|food|10|1.0",
+            "eggplant_bun_cheese_tomato|food|10|0.9",
+            "eggplant_bun_lettuce|food|7|1.0",
+            "eggplant_bun_lettuce_tomato|food|7|1.1",
+            "eggplant_bun_tomato|food|7|1.0",
+            "eggplant_burger|food|7|0.9",
+            "eggplant_burger_lettuce|food|9|1.0",
+            "eggplant_burger_tomato|food|9|1.0",
+            "eggplant_cheeseburger|food|10|0.9",
+            "eggplant_cheeseburger_lettuce|food|12|0.9",
+            "eggplant_cheeseburger_lettuce_tomato|food|12|1.0",
+            "eggplant_cheeseburger_tomato|food|12|0.9",
+            "endermite_meatball|food|4|0.6",
+            "endermite_meatball_sandwich|food|10|0.4",
+            "endermite_meatball_stick_1|stick|5|0.6",
+            "endermite_meatball_stick_2|stick|6|0.6",
+            "endermite_meatball_stick_3|stick|8|0.7",
+            "espresso_powder|plain",
+            "ground_endermite|plain",
+            "hamburger_peanut_butter|food|8|0.8",
+            "hamburger_peanut_butter_bacon|food|10|0.8",
+            "marshmallow_coffee_toffee_fudge|food|4|0.8",
+            "minced_dragon|plain",
+            "pasta_plate_eggplant|bowl|7|0.8",
+            "pasta_plate_endermite_meatballs|bowl|8|0.6",
+            "pasta_plate_endermite_meatballs_tomato_sauce|bowl|12|0.8",
+            "pasta_plate_strider_meatballs|bowl|8|0.6",
+            "pasta_plate_strider_meatballs_tomato_sauce|bowl|12|0.8",
+            "peanut_butter_apple_jam_sandwich|food|8|0.8",
+            "peanut_butter_chorus_fruit_jam_sandwich|food|11|0.6",
+            "peanut_butter_melon_jam_sandwich|food|9|0.9",
+            "pumpkin_pie_slice|food|3|1.0",
+            "raw_cinnamon_sweet_roll_base|plain",
+            "raw_endermite_meatball|plain",
+            "raw_flesh_cookie|plain",
+            "raw_ginger_cookie|plain",
+            "raw_green_tea_cookie|plain",
+            "raw_soul_berry_cookie|plain",
+            "raw_spider_eye_cookie|plain",
+            "raw_strider_meatball|plain",
+            "raw_sugar_cookie|plain",
+            "raw_ube_cookie|plain",
+            "small_endermite_meatballs|food|3|0.7",
+            "small_strider_meatballs|food|3|0.7",
+            "strider_meatball|food|4|0.6",
+            "strider_meatball_sandwich|food|10|0.4",
+            "strider_meatball_stick_1|stick|5|0.6",
+            "strider_meatball_stick_2|stick|6|0.6",
+            "strider_meatball_stick_3|stick|8|0.7",
+            "tortilla_chip_bowl|bowl|4|0.7",
+            "ube_cream_frosting_bottle|bottle|5|0.7",
+            "ube_cream_frosting_piping_bag|piping_bag",
+            "ube_cream_ube_cake_slice|food|3|0.3",
+            "ube_cream_ube_cupcake|fast_food|3|1.0",
+            "ube_cupcake_base|fast_food|2|0.9",
+            "ube_sugar_dough|plain",
+            "white_chocolate_dried_coffee_beans|food|2|0.7"
+    );
+
     public static final List<String> CUSTOM_DISPLAY_BLOCK_DEFAULT = List.of(
             "create:bar_of_chocolate|plate|6",
             "create:builders_tea|bottle|1|10|true",
             "create:sweet_roll|plate|4",
             "farmersdelight:pumpkin_pie_slice|small_plate|1",
             "minecraft:cake|plate|1",
-            "minecraft:pumpkin_pie|plate|1"
+            "minecraft:pumpkin_pie|plate|1",
+            "createfood:cinnamon_sweet_roll_base|plate|4",
+            "createfood:coffee_toffee_fudge|plate|2",
+            "createfood:dragon_burger_crimson_fungus|plate|1",
+            "createfood:dragon_burger_warped_fungus|plate|1",
+            "createfood:dragon_burger|plate|1",
+            "createfood:eggplant_burger_lettuce|plate|1",
+            "createfood:eggplant_burger_tomato|plate|1",
+            "createfood:eggplant_burger|plate|1",
+            "createfood:eggplant_cheeseburger_lettuce_tomato|plate|1",
+            "createfood:eggplant_cheeseburger_lettuce|plate|1",
+            "createfood:eggplant_cheeseburger_tomato|plate|1",
+            "createfood:eggplant_cheeseburger|plate|1",
+            "createfood:endermite_meatball_sandwich|plate|2",
+            "createfood:endermite_meatball_stick_3|plate|3",
+            "createfood:espresso_powder|display_bowl|2",
+            "createfood:hamburger_peanut_butter_bacon|plate|1",
+            "createfood:hamburger_peanut_butter|plate|1",
+            "createfood:marshmallow_coffee_toffee_fudge|plate|2",
+            "createfood:pasta_plate_eggplant|plate_food|1",
+            "createfood:pasta_plate_endermite_meatballs_tomato_sauce|plate_food|1",
+            "createfood:pasta_plate_endermite_meatballs|plate_food|1",
+            "createfood:pasta_plate_strider_meatballs_tomato_sauce|plate_food|1",
+            "createfood:pasta_plate_strider_meatballs|plate_food|1",
+            "createfood:peanut_butter_apple_jam_sandwich|plate|1",
+            "createfood:peanut_butter_chorus_fruit_jam_sandwich|plate|1",
+            "createfood:peanut_butter_melon_jam_sandwich|plate|1",
+            "createfood:strider_meatball_sandwich|plate|2",
+            "createfood:strider_meatball_stick_3|plate|3",
+            "createfood:tortilla_chip_bowl|bowl|1|4",
+            "createfood:ube_cake_base|plate|1",
+            "createfood:ube_cream_frosting_bottle|bottle|1|12",
+            "createfood:ube_cream_ube_cake_slice|small_plate|1",
+            "createfood:ube_cream_ube_cake|plate|1",
+            "createfood:ube_cream_ube_cupcake|plate|4",
+            "createfood:ube_cupcake_base|plate|4"
     );
 
     public static final List<String> CUSTOM_TOOLTIPS_DEFAULT = List.of(
@@ -106,9 +236,7 @@ public final class ConfigDefaults {
             "fruitsdelight:persimmon_cookie|persimmon",
             "hearthandharvest:blueberry_muffin|blueberry",
             "hearthandharvest:macaroni_and_cheese|cheese",
-            "hearthandharvest:maple_cookie|syrup",
             "hearthandharvest:peanut_butter_and_jelly_sandwich|peanut_butter,jam",
-            "hearthandharvest:peanut_butter_cookie|peanut_butter",
             "hearthandharvest:raspberry_scone|raspberry",
             "hearthandharvest:taco|beef,cheese,lettuce,tomato",
             "minecraft:cake|cream_frosting,berry",
@@ -119,7 +247,88 @@ public final class ConfigDefaults {
             "veggiesdelight:chicken_fajitas_wrap|chicken,onion,bell_pepper",
             "veggiesdelight:vegetables_wrap|onion,vegetable,rice",
             "veggiesdelight:vegetarian_burger|cabbage,tomato",
-            "veggiesdelight:zucchini_sandwich|zucchini,lettuce,tomato"
+            "veggiesdelight:zucchini_sandwich|zucchini,lettuce,tomato",
+            "createfood:beef_bun_peanut_butter_bacon|peanut_butter,bacon|peanut_butter",
+            "createfood:beef_bun_peanut_butter|peanut_butter|peanut_butter",
+            "createfood:bread_slice_peanut_butter|peanut_butter|peanut_butter",
+            "createfood:caramel_popcorn|caramel|corn",
+            "createfood:chocolate_dried_coffee_beans|chocolate|coffee",
+            "createfood:cinnamon_sweet_roll_base||cinnamon",
+            "createfood:coffee_toffee_fudge||coffee",
+            "createfood:coffee_toffee||coffee",
+            "createfood:corn_flour||corn",
+            "createfood:dark_chocolate_dried_coffee_beans|dark_chocolate|coffee",
+            "createfood:dragon_bun_crimson_fungus|crimson_fungus|dragon_meat",
+            "createfood:dragon_bun_warped_fungus|warped_fungus|dragon_meat",
+            "createfood:dragon_bun||dragon_meat",
+            "createfood:dragon_burger_crimson_fungus|crimson_fungus|dragon_meat",
+            "createfood:dragon_burger_warped_fungus|warped_fungus|dragon_meat",
+            "createfood:dragon_burger||dragon_meat",
+            "createfood:dragon_patty||dragon_meat",
+            "createfood:dried_coffee_beans||coffee",
+            "createfood:eggplant_bun_cheese_lettuce_tomato|cheese,lettuce,tomato|eggplant",
+            "createfood:eggplant_bun_cheese_lettuce|cheese,lettuce|eggplant",
+            "createfood:eggplant_bun_cheese_tomato|cheese,tomato|eggplant",
+            "createfood:eggplant_bun_cheese|cheese|eggplant",
+            "createfood:eggplant_bun_lettuce_tomato|lettuce|eggplant",
+            "createfood:eggplant_bun_lettuce|lettuce,tomato|eggplant",
+            "createfood:eggplant_bun_tomato|tomato|eggplant",
+            "createfood:eggplant_bun||eggplant",
+            "createfood:eggplant_burger_lettuce|lettuce|eggplant",
+            "createfood:eggplant_burger_tomato|tomato|eggplant",
+            "createfood:eggplant_burger||eggplant",
+            "createfood:eggplant_cheeseburger_lettuce_tomato|lettuce,tomato|eggplant",
+            "createfood:eggplant_cheeseburger_lettuce|lettuce|eggplant",
+            "createfood:eggplant_cheeseburger_tomato|tomato|eggplant",
+            "createfood:eggplant_cheeseburger||eggplant",
+            "createfood:endermite_meatball_sandwich|endermite_meatballs|endermite_meat",
+            "createfood:endermite_meatball_stick_1||endermite_meat",
+            "createfood:endermite_meatball_stick_2||endermite_meat",
+            "createfood:endermite_meatball_stick_3||endermite_meat",
+            "createfood:endermite_meatball||endermite_meat",
+            "createfood:espresso_powder||coffee",
+            "createfood:ground_endermite||endermite_meat",
+            "createfood:hamburger_peanut_butter_bacon|peanut_butter,bacon|peanut_butter",
+            "createfood:hamburger_peanut_butter|peanut_butter|peanut_butter",
+            "createfood:marshmallow_coffee_toffee_fudge|marshmallow|coffee",
+            "createfood:minced_dragon||dragon_meat",
+            "createfood:pasta_plate_eggplant|eggplant|eggplant",
+            "createfood:pasta_plate_endermite_meatballs_tomato_sauce|tomato_sauce,endermite_meatballs|endermite_meat",
+            "createfood:pasta_plate_endermite_meatballs|endermite_meatballs|endermite_meat",
+            "createfood:pasta_plate_strider_meatballs_tomato_sauce|tomato_sauce,strider_meatballs|strider_meat",
+            "createfood:pasta_plate_strider_meatballs|strider_meatballs|strider_meat",
+            "createfood:peanut_butter_apple_jam_sandwich|peanut_butter,apple_jam|peanut_butter",
+            "createfood:peanut_butter_chorus_fruit_jam_sandwich|peanut_butter,chorus_fruit_jam|peanut_butter",
+            "createfood:peanut_butter_melon_jam_sandwich|peanut_butter,melon_jam|peanut_butter",
+            "createfood:raw_cinnamon_sweet_roll_base||cinnamon",
+            "createfood:raw_endermite_meatball||endermite_meat",
+            "createfood:raw_flesh_cookie|flesh|raw_flesh_cookie",
+            "createfood:raw_ginger_cookie|ginger|raw_ginger_cookie",
+            "createfood:raw_green_tea_cookie||raw_green_tea_cookie",
+            "createfood:raw_soul_berry_cookie|soul_berry|raw_flesh_cookie",
+            "createfood:raw_spider_eye_cookie|spider_eye|raw_flesh_cookie",
+            "createfood:raw_strider_meatball||strider_meat",
+            "createfood:raw_sugar_cookie||raw_sugar_cookie",
+            "createfood:raw_ube_cookie||ube",
+            "createfood:small_endermite_meatballs||endermite_meat",
+            "createfood:small_strider_meatballs||strider_meat",
+            "createfood:strider_meatball_sandwich|strider_meatballs|strider_meat",
+            "createfood:strider_meatball_stick_1||strider_meat",
+            "createfood:strider_meatball_stick_2||strider_meat",
+            "createfood:strider_meatball_stick_3||strider_meat",
+            "createfood:strider_meatball||strider_meat",
+            "createfood:tortilla_chip_bowl||corn",
+            "createfood:ube_cake_base||ube",
+            "createfood:ube_cake_batter_bucket||ube",
+            "createfood:ube_cream_frosting_bottle||ube",
+            "createfood:ube_cream_frosting_bucket||ube",
+            "createfood:ube_cream_frosting_piping_bag|ube_cream_frosting|ube",
+            "createfood:ube_cream_ube_cake_slice|ube_cream_frosting|ube",
+            "createfood:ube_cream_ube_cake|ube_cream_frosting|ube",
+            "createfood:ube_cream_ube_cupcake|ube_cream_frosting|ube",
+            "createfood:ube_cupcake_base||ube",
+            "createfood:ube_sugar_dough||ube",
+            "createfood:white_chocolate_dried_coffee_beans|white_chocolate|coffee"
     );
 
     public static final List<String> DIPPING_EXCLUDE_DEFAULT = List.of(
@@ -206,7 +415,6 @@ public final class ConfigDefaults {
             "raw_spider_eye_cookie",
             "raw_strider_meatball",
             "raw_sugar_cookie",
-            "raw_ube_cake_base",
             "raw_ube_cookie",
             "small_endermite_meatballs",
             "small_strider_meatballs",
@@ -229,6 +437,94 @@ public final class ConfigDefaults {
             "white_chocolate_dried_coffee_beans"
     );
 
+    public static final List<String> ITEM_EFFECT_OVERRIDES_DEFAULT = List.of(
+            "caramel_popcorn|minecraft:luck|600|0",
+            "caramel_popcorn|minecraft:strength|600|0",
+            "chocolate_dried_coffee_beans|comfort|1200|0",
+            "chocolate_dried_coffee_beans|minecraft:haste|600|0",
+            "coffee_toffee_fudge|comfort|600|0",
+            "coffee_toffee_fudge|lightning|1200|0",
+            "coffee_toffee_fudge|minecraft:haste|600|0",
+            "coffee_toffee_fudge|sugar_rush|1200|0",
+            "coffee_toffee|comfort|600|0",
+            "coffee_toffee|lightning|600|0",
+            "coffee_toffee|minecraft:haste|600|0",
+            "dark_chocolate_dried_coffee_beans|comfort|1200|0",
+            "dark_chocolate_dried_coffee_beans|minecraft:haste|600|0",
+            "dragon_burger_crimson_fungus|explosion|1200|0",
+            "dragon_burger_crimson_fungus|minecraft:absorption|6000|0",
+            "dragon_burger_crimson_fungus|minecraft:fire_resistance|1200|0",
+            "dragon_burger_crimson_fungus|nourishment|3600|0",
+            "dragon_burger_crimson_fungus|satiated_shield|1200|0",
+            "dragon_burger_warped_fungus|explosion|1200|0",
+            "dragon_burger_warped_fungus|minecraft:absorption|6000|0",
+            "dragon_burger_warped_fungus|minecraft:jump_boost|1200|0",
+            "dragon_burger_warped_fungus|minecraft:slow_falling|1200|0",
+            "dragon_burger_warped_fungus|nourishment|3600|0",
+            "dragon_burger_warped_fungus|satiated_shield|1200|0",
+            "dragon_burger|explosion|1200|0",
+            "dragon_burger|minecraft:absorption|1200|0",
+            "dragon_burger|nourishment|1200|0",
+            "eggplant_burger_lettuce|nourishment|3600|0",
+            "eggplant_burger_tomato|nourishment|3600|0",
+            "eggplant_burger|nourishment|1200|0",
+            "eggplant_cheeseburger_lettuce_tomato|nourishment|6000|0",
+            "eggplant_cheeseburger_lettuce|nourishment|6000|0",
+            "eggplant_cheeseburger_tomato|nourishment|6000|0",
+            "eggplant_cheeseburger|nourishment|3600|0",
+            "endermite_meatball_sandwich|minecraft:regeneration|1200|0",
+            "endermite_meatball_sandwich|nourishment|1200|0",
+            "endermite_meatball_sandwich|rest|1200|0",
+            "endermite_meatball_stick_1|minecraft:regeneration|1200|0",
+            "endermite_meatball_stick_1|nourishment|600|0",
+            "endermite_meatball_stick_1|rest|1200|0",
+            "endermite_meatball_stick_2|minecraft:regeneration|3600|0",
+            "endermite_meatball_stick_2|nourishment|1200|0",
+            "endermite_meatball_stick_2|rest|1200|0",
+            "endermite_meatball_stick_3|minecraft:regeneration|6000|0",
+            "endermite_meatball_stick_3|nourishment|3600|0",
+            "endermite_meatball_stick_3|rest|4800|0",
+            "hamburger_peanut_butter_bacon|nourishment|600|0",
+            "hamburger_peanut_butter|nourishment|600|0",
+            "marshmallow_coffee_toffee_fudge|comfort|600|0",
+            "marshmallow_coffee_toffee_fudge|minecraft:haste|600|0",
+            "marshmallow_coffee_toffee_fudge|sugar_rush|1200|0",
+            "pasta_plate_eggplant|nourishment|1200|0",
+            "pasta_plate_eggplant|satiation|1200|0",
+            "pasta_plate_endermite_meatballs_tomato_sauce|nourishment|3600|0",
+            "pasta_plate_endermite_meatballs_tomato_sauce|rest|6000|0",
+            "pasta_plate_endermite_meatballs_tomato_sauce|satiation|1200|0",
+            "pasta_plate_endermite_meatballs|nourishment|1200|0",
+            "pasta_plate_endermite_meatballs|rest|4800|0",
+            "pasta_plate_endermite_meatballs|satiation|1200|0",
+            "pasta_plate_strider_meatballs_tomato_sauce|nourishment|3600|0",
+            "pasta_plate_strider_meatballs_tomato_sauce|satiation|1200|0",
+            "pasta_plate_strider_meatballs|nourishment|1200|0",
+            "pasta_plate_strider_meatballs|satiation|1200|0",
+            "peanut_butter_apple_jam_sandwich|comfort|600|0",
+            "peanut_butter_apple_jam_sandwich|nourishment|1200|0",
+            "peanut_butter_chorus_fruit_jam_sandwich|comfort|600|0",
+            "peanut_butter_chorus_fruit_jam_sandwich|nourishment|1200|0",
+            "peanut_butter_melon_jam_sandwich|comfort|600|0",
+            "peanut_butter_melon_jam_sandwich|nourishment|1200|0",
+            "small_endermite_meatballs|minecraft:regeneration|600|0",
+            "small_endermite_meatballs|nourishment|600|0",
+            "small_endermite_meatballs|rest|600|0",
+            "small_strider_meatballs|minecraft:fire_resistance|600|0",
+            "small_strider_meatballs|nourishment|600|0",
+            "strider_meatball_sandwich|minecraft:fire_resistance|1200|0",
+            "strider_meatball_sandwich|nourishment|1200|0",
+            "strider_meatball_stick_1|minecraft:fire_resistance|1200|0",
+            "strider_meatball_stick_1|nourishment|600|0",
+            "strider_meatball_stick_2|minecraft:fire_resistance|3600|0",
+            "strider_meatball_stick_2|nourishment|1200|0",
+            "strider_meatball_stick_3|minecraft:fire_resistance|6000|0",
+            "strider_meatball_stick_3|nourishment|3600|0",
+            "ube_cream_ube_cupcake|comfort|600|0",
+            "white_chocolate_dried_coffee_beans|comfort|1200|0",
+            "white_chocolate_dried_coffee_beans|minecraft:haste|600|0"
+    );
+
     public static final Predicate<Object> CATEGORY_EFFECT_OVERRIDE_VALIDATOR =
             obj -> obj instanceof String s && s.split("\\|").length == 2;
 
@@ -236,8 +532,8 @@ public final class ConfigDefaults {
         if (!(obj instanceof String s)) return false;
         String[] p = s.split("\\|");
         if (p.length < 2) return false;
-        Set<String> unsliced = Set.of("raw_pie", "raw_pizza", "gelatin");
-        Set<String> sliced   = Set.of("cake", "pie", "pizza", "waffle");
+        Set<String> unsliced = Set.of("cake_base", "raw_pie", "raw_pizza", "gelatin");
+        Set<String> sliced   = Set.of("cake", "pie", "pizza", "waffle", "cheese", "gyro_meat");
         String type = p[1].toLowerCase();
         if (unsliced.contains(type)) return p.length == 2;
         if (sliced.contains(type)) return p.length == 3 && !p[2].isBlank();
@@ -248,16 +544,19 @@ public final class ConfigDefaults {
         if (!(obj instanceof String s)) return false;
         String[] p = s.split("\\|");
         if (p.length < 3 || p.length > 5) return false;
-        Set<String> validTypes = Set.of("plate", "small_plate", "bottle", "bowl", "display_bowl", "salad_bowl", "small_bowl");
+        Set<String> validTypes = Set.of("plate", "small_plate", "bottle", "bowl", "display_bowl", "salad_bowl", "small_bowl", "plate_food");
         String type = p[1].toLowerCase();
         if (!validTypes.contains(type)) return false;
         try { Integer.parseInt(p[2]); } catch (NumberFormatException e) { return false; }
         if (p.length >= 4) {
-            try { Integer.parseInt(p[3]); } catch (NumberFormatException e) { return false; }
+            try { Double.parseDouble(p[3]); } catch (NumberFormatException e) { return false; }
         }
         if (p.length == 5) {
-            if (!p[4].equalsIgnoreCase("true") && !p[4].equalsIgnoreCase("false")) return false;
-            if (!type.equals("bottle")) return false;
+            // "true"/"false", or a particle id. Only the two types that carry a particle
+            // supplier accept the field at all.
+            if (!type.equals("bottle") && !type.equals("bowl")) return false;
+            boolean bool = p[4].equalsIgnoreCase("true") || p[4].equalsIgnoreCase("false");
+            if (!bool && ResourceLocation.tryParse(p[4]) == null) return false;
         }
         return true;
     };
@@ -265,6 +564,7 @@ public final class ConfigDefaults {
     public static final Predicate<Object> CUSTOM_FLUID_VALIDATOR = obj -> {
         if (!(obj instanceof String s)) return false;
         String[] p = s.split("\\|");
+        if (p.length == 1) return !p[0].isBlank();
         if (p.length != 3) return false;
         try { Integer.parseInt(p[1]); Integer.parseInt(p[2]); return true; }
         catch (NumberFormatException e) { return false; }
@@ -277,6 +577,7 @@ public final class ConfigDefaults {
         Set<String> ingredientTypes = Set.of("plain", "ingredient_bottle", "ingredient_bowl", "piping_bag");
         Set<String> foodTypes = Set.of("food", "fast_food", "bowl", "bowl_cr", "bottle", "stick", "stick_cr");
         String type = p[1].toLowerCase();
+        if (type.equals("plain_cr")) return p.length == 3 && !p[2].isBlank();
         if (ingredientTypes.contains(type)) return p.length == 2;
         if (!foodTypes.contains(type)) return false;
         if (p.length < 4) return false;

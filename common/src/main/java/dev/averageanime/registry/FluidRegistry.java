@@ -52,8 +52,6 @@ public final class FluidRegistry {
     public static final FluidEntry CHORUS_FRUIT_JUICE_FLUID_ENTRY = fluid("chorus_fruit_juice",       3, 2);
     public static final FluidEntry CHORUS_FRUIT_MILKSHAKE_FLUID_ENTRY = fluid("chorus_fruit_milkshake",   2, 4);
     public static final FluidEntry CHORUS_FRUIT_PIE_FILLING_FLUID_ENTRY = fluid("chorus_fruit_pie_filling");
-    public static final FluidEntry COFFEE_TOFFEE_FLUID_ENTRY = fluid("coffee_toffee");
-    public static final FluidEntry COFFEE_TOFFEE_FUDGE_FLUID_ENTRY = fluid("coffee_toffee_fudge");
     public static final FluidEntry CONDENSED_MILK_FLUID_ENTRY = fluid("condensed_milk");
     public static final FluidEntry CREAM_CHEESE_FLUID_ENTRY = fluid("cream_cheese");
     public static final FluidEntry CREAM_FROSTING_FLUID_ENTRY = fluid("cream_frosting");
@@ -117,8 +115,6 @@ public final class FluidRegistry {
     public static final FluidEntry TOFFEE_FLUID_ENTRY = fluid("toffee");
     public static final FluidEntry TOFFEE_FUDGE_FLUID_ENTRY = fluid("toffee_fudge");
     public static final FluidEntry TOMATO_CREAM_SOUP_FLUID_ENTRY = fluid("tomato_cream_soup");
-    public static final FluidEntry UBE_CAKE_BATTER_FLUID_ENTRY = fluid("ube_cake_batter",         2, 4);
-    public static final FluidEntry UBE_CREAM_FROSTING_FLUID_ENTRY = fluid("ube_cream_frosting");
     public static final FluidEntry VEGETABLE_OIL_FLUID_ENTRY = fluid("vegetable_oil");
     public static final FluidEntry VINEGAR_FLUID_ENTRY = fluid("vinegar");
     public static final FluidEntry WAFFLE_BATTER_FLUID_ENTRY = fluid("waffle_batter");

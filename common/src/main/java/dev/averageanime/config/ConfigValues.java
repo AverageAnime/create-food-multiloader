@@ -18,10 +18,6 @@ public final class ConfigValues {
     static Supplier<Boolean> SHOW_SACK_BLOCK_ICONS        = unbound();
     static Supplier<Boolean> SHOW_STORAGE_TOOLTIP_ICONS   = unbound();
 
-    static Supplier<List<? extends String>> CUSTOM_BLOCK          = unbound();
-    static Supplier<List<? extends String>> CUSTOM_DISPLAY_BLOCK  = unbound();
-    static Supplier<List<? extends String>> CUSTOM_FLUID          = unbound();
-    static Supplier<List<? extends String>> CUSTOM_ITEM           = unbound();
     static Supplier<List<? extends String>> CUSTOM_TOOLTIPS       = unbound();
     static Supplier<List<? extends String>> HIDE_ITEMS            = unbound();
 

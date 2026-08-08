@@ -127,8 +127,6 @@ public final class BlockRegistry {
     public static final BlockEntry SAUSAGE_PIZZA = BlockEntry.cookedPizza("sausage_pizza", "sausage_pizza_slice", tips(null, "sausage_ingredient"));
     public static final BlockEntry SMORES_PIE = BlockEntry.cookedPie("smores_pie", "smores_pie_slice");
     public static final BlockEntry TOFFEE_CHIP_WAFFLE = BlockEntry.waffle("toffee_chip_waffle", "toffee_chip_mini_waffle", tips(null, "toffee_chips_ingredient"));
-    public static final BlockEntry UBE_CAKE_BASE = BlockEntry.cakeBase("ube_cake_base", tips("ube"));
-    public static final BlockEntry UBE_CREAM_UBE_CAKE = BlockEntry.cake("ube_cream_ube_cake", "ube_cream_ube_cake_slice", tips("ube", "ube_cream_frosting_ingredient"));
     public static final BlockEntry WAFFLE = BlockEntry.waffle("waffle", "mini_waffle");
     public static final BlockEntry WHITE_CHOCOLATE_CHIP_WAFFLE = BlockEntry.waffle("white_chocolate_chip_waffle", "white_chocolate_chip_mini_waffle", tips(null, "white_chocolate_chips_ingredient"));
     public static final BlockEntry YELLOW_GELATIN_DESSERT_BLOCK_ENTRY = BlockEntry.gelatin("yellow_gelatin_dessert_block");

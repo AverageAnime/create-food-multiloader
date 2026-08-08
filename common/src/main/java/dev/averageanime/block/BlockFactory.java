@@ -10,6 +10,7 @@ import dev.averageanime.block.type.pie.RawPieBlock;
 import dev.averageanime.block.type.pie.RawPizzaBlock;
 import dev.averageanime.registry.BlockRegistry;
 import dev.averageanime.registry.type.BlockEntry;
+import dev.averageanime.registry.ItemLookup;
 import dev.averageanime.registry.type.ItemEntry;
 import dev.averageanime.util.Tooltips;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -72,7 +73,7 @@ public final class BlockFactory {
         BlockRegistry.init();
         for (BlockEntry def : BlockEntry.ALL) {
             Supplier<net.minecraft.world.item.Item> slice = def.sliceItemId != null
-                    ? () -> ItemEntry.getById(def.sliceItemId).get()
+                    ? ItemLookup.byModId(def.sliceItemId)
                     : null;
             Supplier<net.minecraft.world.level.block.Block> holder = switch (def.category) {
                 case CAKE -> registerCake(hooks, def.id, slice, def.tip);
@@ -119,17 +120,20 @@ public final class BlockFactory {
             String name = p[0];
             String type = p[1].toLowerCase();
             switch (type) {
+                case "cake_base" -> hooks.registerBlock(name, () -> new CakeBaseBlock(cakeProps()), 1, null);
                 case "raw_pie" -> hooks.registerBlock(name, () -> new RawPieBlock(cakeProps()), DEFAULT_STACK, null);
                 case "raw_pizza" -> hooks.registerBlock(name, () -> new RawPizzaBlock(cakeProps()), DEFAULT_STACK, null);
                 case "gelatin" -> hooks.registerBlock(name, () -> new SlimeBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.SLIME_BLOCK)), DEFAULT_STACK, null);
-                case "cake", "pie", "pizza", "waffle" -> {
+                case "cake", "pie", "pizza", "waffle", "cheese", "gyro_meat" -> {
                     if (p.length < 3 || p[2].isBlank()) {
                         CreateFoodCommon.LOGGER.warn("Create: Food - Skipping custom_block entry missing slice item: {}", entry);
                         continue;
                     }
-                    Supplier<net.minecraft.world.item.Item> slice = configSlice(p[2]);
+                    Supplier<net.minecraft.world.item.Item> slice = ItemLookup.byFullId(p[2]);
                     switch (type) {
                         case "cake" -> registerCake(hooks, name, slice, null);
+                        case "cheese" -> hooks.registerBlock(name, () -> new CheeseBlock(cakeProps(), slice), DEFAULT_STACK, null);
+                        case "gyro_meat" -> hooks.registerBlock(name, () -> new GyroMeatBlock(cakeProps(), slice), DEFAULT_STACK, null);
                         case "pie" -> hooks.registerBlock(name, () -> new PieBlock(cakeProps(), slice), DEFAULT_STACK, null);
                         default -> hooks.registerBlock(name, () -> new PizzaBlock(cakeProps(), slice), DEFAULT_STACK, null);
                     }
@@ -139,12 +143,4 @@ public final class BlockFactory {
         }
     }
 
-    private static Supplier<net.minecraft.world.item.Item> configSlice(String sliceId) {
-        return () -> {
-            ResourceLocation rl = ResourceLocation.tryParse(sliceId);
-            if (rl == null) return Items.BARRIER;
-            net.minecraft.world.item.Item item = BuiltInRegistries.ITEM.get(rl);
-            return item != Items.AIR ? item : Items.BARRIER;
-        };
-    }
 }

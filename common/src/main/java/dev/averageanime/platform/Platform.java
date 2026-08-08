@@ -28,6 +28,13 @@ public interface Platform {
 
     boolean isDevelopmentEnvironment();
 
+    /**
+     * True while a datagen run is in progress. Config-driven registration falls back to
+     * {@link dev.averageanime.config.ConfigDefaults} in that case, so generated resources depend only on
+     * committed source rather than on whatever the dev run directory's config happens to contain.
+     */
+    default boolean isRunningDataGen() { return false; }
+
     boolean isClient();
 
     boolean isServer();

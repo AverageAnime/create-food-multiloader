@@ -1,5 +1,7 @@
 package dev.averageanime.fabric.block;
 
+import dev.averageanime.config.ConfigBootstrap;
+import dev.averageanime.config.ConfigDefaults;
 import dev.averageanime.fabric.block.type.fluid.FluidBlock;
 import dev.averageanime.registry.FluidRegistry;
 import dev.averageanime.registry.type.FluidEntry;
@@ -32,34 +34,25 @@ public class FluidRegistration {
     }
 
     private static void registerConfigFluids() {
-        var configFile = net.fabricmc.loader.api.FabricLoader.getInstance().getConfigDir().resolve("createfood-common.toml");
-        if (!java.nio.file.Files.exists(configFile)) {
-            LOGGER.warn("Create: Food - createfood-common.toml not found yet; skipping custom_fluid registration for this launch");
-            return;
-        }
-        try (var raw = com.electronwill.nightconfig.core.file.FileConfig.of(configFile.toFile())) {
-            raw.load();
-            List<String> entries = raw.getOrElse("fluids.fluid", List.of());
-            for (String entry : entries) {
-                String[] p = entry.split("\\|");
-                if (p.length != 3) {
-                    LOGGER.warn("Create: Food - Skipping invalid custom_fluid entry (expected name|slope|level): {}", entry);
-                    continue;
-                }
-                String name = p[0];
-                int slope, level;
+        for (String entry : ConfigBootstrap.read(ConfigBootstrap.FLUIDS, ConfigDefaults.CUSTOM_FLUID_DEFAULT)) {
+            String[] p = entry.split("\\|");
+            if (p.length != 1 && p.length != 3) {
+                LOGGER.warn("Create: Food - Skipping invalid custom_fluid entry (expected name or name|slope|level): {}", entry);
+                continue;
+            }
+            String name = p[0];
+            FluidBlock builder = new FluidBlock(name);
+            if (p.length == 3) {
                 try {
-                    slope = Integer.parseInt(p[1]);
-                    level = Integer.parseInt(p[2]);
+                    builder = builder.flow(Integer.parseInt(p[1]), Integer.parseInt(p[2]));
                 } catch (NumberFormatException e) {
                     LOGGER.warn("Create: Food - Skipping custom_fluid entry with non-integer flow values: {}", entry);
                     continue;
                 }
-                FluidBlock fluidBlock = new FluidBlock(name).flow(slope, level).build();
-                CONFIG_FLUID_ENTRIES.add(fluidBlock);
             }
-        } catch (Exception e) {
-            LOGGER.warn("Create: Food - Failed to read custom_fluid from config", e);
+            FluidBlock fluidBlock = builder.build();
+            CONFIG_FLUID_ENTRIES.add(fluidBlock);
+            BY_ID.put(name, fluidBlock);
         }
     }
 

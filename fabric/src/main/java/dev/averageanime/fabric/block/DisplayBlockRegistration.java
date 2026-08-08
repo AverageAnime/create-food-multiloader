@@ -1,5 +1,7 @@
 package dev.averageanime.fabric.block;
 
+import dev.averageanime.config.ConfigBootstrap;
+import dev.averageanime.config.ConfigDefaults;
 import dev.averageanime.CreateFoodCommon;
 import dev.averageanime.fabric.CreateFood;
 import dev.averageanime.block.type.display.DisplayBlocks;
@@ -261,15 +263,9 @@ public class DisplayBlockRegistration {
     }
 
     private static void registerConfigDisplayBlocks() {
-        var configFile = FabricLoader.getInstance().getConfigDir().resolve("createfood-common.toml");
-        if (!Files.exists(configFile)) {
-            CreateFood.LOGGER.warn("Create: Food - createfood-common.toml not found yet; skipping display_block registration for this launch");
-            return;
-        }
-
-        try (var raw = com.electronwill.nightconfig.core.file.FileConfig.of(configFile.toFile())) {
-            raw.load();
-            List<String> entries = raw.getOrElse("display.display_block", List.of());
+        {
+            List<String> entries = ConfigBootstrap.read(
+                    ConfigBootstrap.DISPLAY_BLOCK, ConfigDefaults.CUSTOM_DISPLAY_BLOCK_DEFAULT);
             for (String entry : entries) {
                 String[] p = entry.split("\\|");
                 if (p.length < 3 || p.length > 5) {
@@ -288,13 +284,29 @@ public class DisplayBlockRegistration {
                 double height = 12;
                 if (p.length >= 4) {
                     try {
-                        height = Integer.parseInt(p[3]);
+                        height = Double.parseDouble(p[3]);
                     } catch (NumberFormatException e) {
                         CreateFood.LOGGER.warn("Create: Food - Invalid height in custom_display_block entry: {}", entry);
                         continue;
                     }
                 }
-                boolean hasParticles = p.length == 5 && Boolean.parseBoolean(p[4]);
+                // Fifth field: "true"/"false", or a particle id ("minecraft:snowflake").
+                // "true" stays an alias for white smoke so existing configs keep working.
+                boolean hasParticles = false;
+                ParticleOptions particle = ParticleTypes.WHITE_SMOKE;
+                if (p.length == 5 && !p[4].isBlank() && !p[4].equalsIgnoreCase("false")) {
+                    hasParticles = true;
+                    if (!p[4].equalsIgnoreCase("true")) {
+                        ResourceLocation particleRL = ResourceLocation.tryParse(p[4]);
+                        Object resolved = particleRL == null ? null : BuiltInRegistries.PARTICLE_TYPE.get(particleRL);
+                        if (resolved instanceof ParticleOptions options) {
+                            particle = options;
+                        } else {
+                            CreateFood.LOGGER.warn("Create: Food - Unknown or non-simple particle '{}' in display_block entry: {} (using white smoke)", p[4], entry);
+                        }
+                    }
+                }
+                final ParticleOptions particleType = particle;
                 DisplayType displayType = switch (typeStr) {
                     case "plate"       -> DisplayType.PLATE;
                     case "small_plate" -> DisplayType.SMALL_PLATE;
@@ -303,6 +315,7 @@ public class DisplayBlockRegistration {
                     case "display_bowl" -> DisplayType.BOWL;
                     case "salad_bowl"  -> DisplayType.SMALL_BOWL;
                     case "small_bowl"  -> DisplayType.SMALL_BOWL;
+                    case "plate_food"  -> DisplayType.PLATE_FOOD;
                     default            -> null;
                 };
                 if (displayType == null) {
@@ -324,10 +337,8 @@ public class DisplayBlockRegistration {
                 };
                 registerDisplayBlockFromSupplier(blockName, itemSupplier,
                         new DisplayEntry(displayType, maxStack, height, hasParticles,
-                                hasParticles ? () -> ParticleTypes.WHITE_SMOKE : null));
+                                hasParticles ? () -> particleType : null));
             }
-        } catch (Exception e) {
-            CreateFood.LOGGER.warn("Create: Food - Failed to read custom_display_block from config", e);
         }
     }
 

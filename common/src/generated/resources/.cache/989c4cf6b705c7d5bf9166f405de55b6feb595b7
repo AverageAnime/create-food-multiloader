@@ -1,4 +1,4 @@
-// 1.21.1	2026-08-06T00:58:34.0269424	Tags for minecraft:item mod id createfood
+// 1.21.1	2026-08-07T15:35:46.4901753	Tags for minecraft:item mod id createfood
 4bdfbba0d3aed33e3527ddbbc01a53f19dec59df data/c/tags/item/apple.json
 4d20caa3a0113e8806b6500e3bbb358a698c83c3 data/c/tags/item/apple_cheesecake.json
 aec4e27fdb9dd07c234bc0ef0866d979a7d866a2 data/c/tags/item/apple_cheesecake_plate_block.json
@@ -134,6 +134,7 @@ d8f2e3beffa710cd561aec02303432f6acd114cc data/c/tags/item/baked_potato_butter_so
 d60db05ee663f8e834435e228e63e71e5aa197d9 data/c/tags/item/baked_potato_butter_sour_cream_plate_block.json
 8eb8c8289389d569e38b30954c8131419400f9ea data/c/tags/item/baked_potato_butter_sour_cream_small_plate_block.json
 1aa8494214961818f2a57b6c068fe0a2166d2898 data/c/tags/item/bar_of_chocolate.json
+301fa298cf023885261f011e56edb68812ea77a9 data/c/tags/item/bar_of_chocolate_plate_block.json
 7c426a8310eb3820d73816419cf3ecb88219c699 data/c/tags/item/bar_of_dark_chocolate.json
 6cca434ba6b6c521e0cbab0f7e0cce12939fa9bf data/c/tags/item/bar_of_dark_chocolate_plate_block.json
 d31b9a117438761dcbda65f18947b6a4dc0747de data/c/tags/item/bar_of_white_chocolate.json
@@ -428,6 +429,7 @@ df4a72c4f9a3fb63d6d822e008fd304bcfc4fabd data/c/tags/item/brown_gelatin_dessert_
 396467636b492433b9a467fc45ec7a8b768b35df data/c/tags/item/brown_gelatin_mix_bucket.json
 0b57b41616a1018be696d66fb6109f5d115cc863 data/c/tags/item/brown_mushroom.json
 b877181efdf1efafee1ea4143849cb6836f0962f data/c/tags/item/brown_sugar.json
+519ae84f6cd9221a856d33776f5130f5a6a4498a data/c/tags/item/builders_tea_bottle_block.json
 e80cf8722d2903b717722238b479a79bdb164a01 data/c/tags/item/bun.json
 b7cef6f6ae035eebbb4226d99f1c14ee2b3bbd3e data/c/tags/item/butter.json
 2b81f73b9301b1d2097e6400cf230997f118e908 data/c/tags/item/butterscotch.json
@@ -493,6 +495,7 @@ e2dee553d8fc8ef3380dc26b2e5fb6bc59c5ca13 data/c/tags/item/cacao_nibs.json
 b8b4aa78196f5420afdc4f838823520e5d5c6743 data/c/tags/item/cake_base_plate_block.json
 719e16cdc445961f3cf1c6fdba8e0499a68a8e85 data/c/tags/item/cake_batter_block.json
 2dfe7500b0d37dbd19cd03183cf26ac6ce1f0035 data/c/tags/item/cake_batter_bucket.json
+fb63696447eebf07f5a82ade32838fff48959182 data/c/tags/item/cake_plate_block.json
 35efc589ad011a881fb62bda116cb38a73ec61b1 data/c/tags/item/calamari.json
 efd8319dcf8e9cac70ea9d50d2263030b282d68e data/c/tags/item/cane_syrup.json
 a552f3f998d856d65efa117c428ae158d6bb9d8c data/c/tags/item/cane_syrup_block.json
@@ -2406,7 +2409,9 @@ a3a1874f7c7808a5f7c4dcce04f24e21ad53d57e data/c/tags/item/pumpkin_custard_bottle
 ecb8c23eb891b55c1729c03ed5939b1a853921cc data/c/tags/item/pumpkin_pie_block.json
 e32d2e16e415a40b50d9cef886d7a4c8d39791d5 data/c/tags/item/pumpkin_pie_filling_block.json
 9f1ab2c13db989b750fd1fa60e61caed96d88ce5 data/c/tags/item/pumpkin_pie_filling_bucket.json
+bb46149cc90f5fc07bdda84b79e3c655f6963d8f data/c/tags/item/pumpkin_pie_plate_block.json
 dbe2b061f596075bdab6a1dd33235d91a2cdc08f data/c/tags/item/pumpkin_pie_slice.json
+a7d8de8a8b03f803431e66d5ba061a5c49e98234 data/c/tags/item/pumpkin_pie_slice_small_plate_block.json
 abdf2c7fbf5fa74773828a3b47273ccf8723ee8c data/c/tags/item/pumpkin_puree.json
 9300090cffd40182bc040cd397913112dcd93b3d data/c/tags/item/pumpkin_puree_block.json
 abdf2c7fbf5fa74773828a3b47273ccf8723ee8c data/c/tags/item/pumpkin_puree_bottle.json
@@ -2723,6 +2728,7 @@ dfdb15fb2c30fc9fc35d74dfd0fc968f999b14f0 data/c/tags/item/sweet_potato.json
 e5b33a92a23704390d6726893c29993655e97984 data/c/tags/item/sweet_roll.json
 a86aa9d5d97d188978966ae187321e5c8b68c7f1 data/c/tags/item/sweet_roll_base.json
 a86d9d1f801e140c2852a40254743fa7b84cbb63 data/c/tags/item/sweet_roll_base_plate_block.json
+c0a2f6a100cd941f693946b3b12065aa11e996c9 data/c/tags/item/sweet_roll_plate_block.json
 3b8bfc5cbbb2436bcf67642bb5cb1257f61e520f data/c/tags/item/syrup_cookie.json
 b923b07d1491e4bd1a4ad374a8ad7da8488a389c data/c/tags/item/taco_sauce.json
 64a195e9956009997b19712ab7525b0e731dccaf data/c/tags/item/taco_sauce_block.json

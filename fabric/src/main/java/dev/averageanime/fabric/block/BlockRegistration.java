@@ -1,5 +1,7 @@
 package dev.averageanime.fabric.block;
 
+import dev.averageanime.config.ConfigBootstrap;
+import dev.averageanime.config.ConfigDefaults;
 import dev.averageanime.CreateFoodCommon;
 import dev.averageanime.block.BlockFactory;
 import dev.averageanime.block.type.cake.CakeFoodBlock;
@@ -61,23 +63,15 @@ public class BlockRegistration {
                         .strength(1.0f, 2.0f).sound(SoundType.WOOL).noOcclusion()),
                 block -> new ClothSackItem(block, new net.minecraft.world.item.Item.Properties()));
 
-        BlockFactory.registerCandleCakes(HOOKS);
+        // Config blocks first: a config `cake` only gets its candle variants if it is registered
+        // before registerCandleCakes walks the accumulated cake list.
         registerConfigBlocks();
+        BlockFactory.registerCandleCakes(HOOKS);
     }
 
     private static void registerConfigBlocks() {
-        var configFile = Services.PLATFORM.getConfigDir().resolve("createfood-common.toml");
-        if (!java.nio.file.Files.exists(configFile)) {
-            CreateFoodCommon.LOGGER.warn("Create: Food - createfood-common.toml not found yet; skipping custom_block registration for this launch");
-            return;
-        }
-        try (var raw = com.electronwill.nightconfig.core.file.FileConfig.of(configFile.toFile())) {
-            raw.load();
-            List<String> entries = raw.getOrElse("blocks.block", List.of());
-            BlockFactory.registerConfigBlocks(HOOKS, entries);
-        } catch (Exception e) {
-            CreateFoodCommon.LOGGER.warn("Create: Food - Failed to read custom_block from config", e);
-        }
+        BlockFactory.registerConfigBlocks(HOOKS,
+                ConfigBootstrap.read(ConfigBootstrap.BLOCKS, ConfigDefaults.CUSTOM_BLOCK_DEFAULT));
     }
 
     private static BlockItem blockItem(Block block, int stackLimit, @Nullable Tooltips.TooltipSpec tip) {

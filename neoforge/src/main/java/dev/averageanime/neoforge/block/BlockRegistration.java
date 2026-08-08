@@ -1,5 +1,7 @@
 package dev.averageanime.neoforge.block;
 
+import dev.averageanime.config.ConfigBootstrap;
+import dev.averageanime.config.ConfigDefaults;
 import dev.averageanime.CreateFoodCommon;
 import dev.averageanime.block.BlockFactory;
 import dev.averageanime.block.type.cake.CakeFoodBlock;
@@ -95,18 +97,8 @@ public class BlockRegistration {
     }
 
     private static void registerConfigBlocks() {
-        var configFile = Services.PLATFORM.getConfigDir().resolve("createfood-common.toml");
-        if (!java.nio.file.Files.exists(configFile)) {
-            LOGGER.warn("Create: Food - createfood-common.toml not found yet; skipping custom_block registration for this launch");
-            return;
-        }
-        try (var raw = com.electronwill.nightconfig.core.file.FileConfig.of(configFile.toFile())) {
-            raw.load();
-            List<String> entries = raw.getOrElse("blocks.block", List.of());
-            BlockFactory.registerConfigBlocks(HOOKS, entries);
-        } catch (Exception e) {
-            LOGGER.warn("Create: Food - Failed to read custom_block from config", e);
-        }
+        BlockFactory.registerConfigBlocks(HOOKS,
+                ConfigBootstrap.read(ConfigBootstrap.BLOCKS, ConfigDefaults.CUSTOM_BLOCK_DEFAULT));
     }
 
     public static void register(IEventBus eventBus) {

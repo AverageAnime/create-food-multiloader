@@ -19,6 +19,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.fml.ModList;
 import net.neoforged.fml.loading.FMLLoader;
 import net.neoforged.fml.loading.FMLPaths;
+import net.neoforged.neoforge.data.loading.DatagenModLoader;
 
 import java.nio.file.Path;
 
@@ -32,6 +33,11 @@ public class NeoForgePlatform implements Platform {
     @Override
     public boolean isDevelopmentEnvironment() {
         return !FMLLoader.isProduction();
+    }
+
+    @Override
+    public boolean isRunningDataGen() {
+        return DatagenModLoader.isRunningDataGen();
     }
 
     @Override

@@ -38,25 +38,25 @@ public final class ConfigSchema {
         ConfigValues.SHOW_COMPATIBILITY = b.defineBool("show_compatibility", true);
         ConfigValues.SHOW_INGREDIENTS = b.defineBool("show_ingredients", true);
         ConfigValues.CUSTOM_TOOLTIPS = b.defineList("custom_tooltips", ConfigDefaults.CUSTOM_TOOLTIPS_DEFAULT,
-                () -> "item_key|ingredients", STRING, true);
+                () -> "item_key|ingredients[|compat_key]", STRING, true);
         b.pop();
     }
 
     private static void buildCommon(SpecBuilder b) {
         b.push("blocks");
-        ConfigValues.CUSTOM_BLOCK = b.defineList("block", List.of(),
+        b.defineList("block", ConfigDefaults.CUSTOM_BLOCK_DEFAULT,
                 () -> "name|type|slice_item_id  OR  name|type",
                 ConfigDefaults.CUSTOM_BLOCK_VALIDATOR, true);
-        ConfigValues.CUSTOM_DISPLAY_BLOCK = b.defineList("display_block", ConfigDefaults.CUSTOM_DISPLAY_BLOCK_DEFAULT,
+        b.defineList("display_block", ConfigDefaults.CUSTOM_DISPLAY_BLOCK_DEFAULT,
                 () -> "mod:item_id|display_type|max_stack[|height[|particles]]",
                 ConfigDefaults.CUSTOM_DISPLAY_BLOCK_VALIDATOR, true);
-        ConfigValues.CUSTOM_FLUID = b.defineList("fluid", List.of(),
-                () -> "name|slopeFindDistance|levelDecreasePerBlock",
+        b.defineList("fluid", ConfigDefaults.CUSTOM_FLUID_DEFAULT,
+                () -> "name  OR  name|slopeFindDistance|levelDecreasePerBlock",
                 ConfigDefaults.CUSTOM_FLUID_VALIDATOR, true);
         b.pop();
 
         b.push("items");
-        ConfigValues.CUSTOM_ITEM = b.defineList("item", List.of(),
+        b.defineList("item", ConfigDefaults.CUSTOM_ITEM_DEFAULT,
                 () -> "name|type|nutrition|saturation  OR  name|type",
                 ConfigDefaults.CUSTOM_ITEM_VALIDATOR, true);
         ConfigValues.HIDE_ITEMS = b.defineList("hide_items", ConfigDefaults.HIDE_ITEMS_DEFAULT,
@@ -134,7 +134,7 @@ public final class ConfigSchema {
         ConfigValues.CATEGORY_EFFECT_OVERRIDES = b.defineList("category_overrides", List.of(),
                 () -> "category_name|mod_id:effect_id",
                 ConfigDefaults.CATEGORY_EFFECT_OVERRIDE_VALIDATOR, false);
-        ConfigValues.ITEM_EFFECT_OVERRIDES = b.defineList("item_overrides", List.of(),
+        ConfigValues.ITEM_EFFECT_OVERRIDES = b.defineList("item_overrides", ConfigDefaults.ITEM_EFFECT_OVERRIDES_DEFAULT,
                 () -> "item_id|category_or_effect_id|duration|amplifier[|chance]  OR  item_id|category_or_effect_id|remove",
                 ConfigDefaults.ITEM_EFFECT_OVERRIDE_VALIDATOR, false);
         b.pop();

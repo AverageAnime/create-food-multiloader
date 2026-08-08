@@ -35,6 +35,10 @@ dependencies {
     // Jade soft dependency: build-time only, used by compat/jade/. Same API package
     // is present in both loader-classified artifacts, so either classifier works here.
     compileOnly "maven.modrinth:jade:15.10.5+neoforge"
+    // ConfigBootstrap parses createfood-common.toml during mod construction. Fabric Loader and
+    // NeoForge both bundle night-config, so it is safe to compile against it here.
+    compileOnly group: 'com.electronwill.night-config', name: 'core', version: '3.8.0'
+    compileOnly group: 'com.electronwill.night-config', name: 'toml', version: '3.8.0'
 }
 
 configurations {

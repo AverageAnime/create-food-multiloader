@@ -1,5 +1,7 @@
 package dev.averageanime.neoforge.item;
 
+import dev.averageanime.config.ConfigBootstrap;
+import dev.averageanime.config.ConfigDefaults;
 import dev.averageanime.CreateFoodCommon;
 import dev.averageanime.config.ConfigValues;
 import dev.averageanime.config.ItemEffectOverride;
@@ -58,18 +60,8 @@ public class ItemRegistration {
     }
 
     private static void registerConfigItems() {
-        var configFile = Services.PLATFORM.getConfigDir().resolve("createfood-common.toml");
-        if (!java.nio.file.Files.exists(configFile)) {
-            LOGGER.warn("Create: Food - createfood-common.toml not found yet; skipping custom_item registration for this launch");
-            return;
-        }
-        try (var raw = com.electronwill.nightconfig.core.file.FileConfig.of(configFile.toFile())) {
-            raw.load();
-            List<String> entries = raw.getOrElse("items.item", List.of());
-            ItemFactory.registerConfigItems(HOOKS, entries);
-        } catch (Exception e) {
-            LOGGER.warn("Create: Food - Failed to read custom_item from config", e);
-        }
+        ItemFactory.registerConfigItems(HOOKS,
+                ConfigBootstrap.read(ConfigBootstrap.ITEMS, ConfigDefaults.CUSTOM_ITEM_DEFAULT));
     }
 
     public static void register(IEventBus eventBus) {
