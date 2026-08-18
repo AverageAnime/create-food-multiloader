@@ -72,20 +72,25 @@ public class BlockLootSubProvider extends net.minecraft.data.loot.BlockLootSubPr
             if (block instanceof BottleFoodBlock) {
                 simpleSelfDrop(block);
             } else if (block instanceof BowlFoodBlock
-                    || block instanceof SmallBowlFoodBlock
+                    || block instanceof LargeBowlFoodBlock
                     || block instanceof PlateFoodBlock) {
                 simpleSelfDrop(block);
             } else if (block instanceof SmallPlateBlock) {
                 simpleSelfDrop(block);
             } else if (block instanceof PlateBlock || block instanceof BowlBlock) {
                 plateBlockLoot((DeferredBlock<Block>) blockEntry);
+            } else if (block instanceof EmptyBottleBlock) {
+                add(block, LootTable.lootTable()
+                        .withPool(LootPool.lootPool()
+                                .setRolls(ConstantValue.exactly(1))
+                                .add(LootItem.lootTableItem(Items.GLASS_BOTTLE))));
             } else if (block instanceof EmptySmallPlateBlock
                     || block instanceof EmptyPlateBlock
                     || block instanceof EmptyBowlBlock
-                    || block instanceof EmptySmallBowlBlock) {
+                    || block instanceof EmptyLargeBowlBlock) {
                 int maxStack = block instanceof EmptySmallPlateBlock ? EmptySmallPlateBlock.MAX_STACK
                         : block instanceof EmptyPlateBlock ? EmptyPlateBlock.MAX_STACK
-                        : block instanceof EmptySmallBowlBlock ? EmptySmallBowlBlock.MAX_STACK
+                        : block instanceof EmptyLargeBowlBlock ? EmptyLargeBowlBlock.MAX_STACK
                         : EmptyBowlBlock.MAX_STACK;
                 LootTable.Builder builder = LootTable.lootTable();
                 for (int stack = 1; stack <= maxStack; stack++) {

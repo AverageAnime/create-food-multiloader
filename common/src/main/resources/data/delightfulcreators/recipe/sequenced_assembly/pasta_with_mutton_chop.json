@@ -1,0 +1,93 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "farmersdelight"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "delightfulcreators"
+    },
+    {
+      "type": "createfood:enabled",
+      "id": "farmersdelight:pasta_with_mutton_chop"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "create"
+      ]
+    },
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "farmersdelight"
+      ]
+    },
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "delightfulcreators"
+      ]
+    },
+    {
+      "condition": "createfood:enabled",
+      "id": "farmersdelight:pasta_with_mutton_chop"
+    }
+  ],
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "item": "delightfulcreators:incomplete_pasta_dish"
+  },
+  "loops": 1,
+  "results": [
+    {
+      "id": "farmersdelight:pasta_with_mutton_chop"
+    }
+  ],
+  "sequence": [
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "delightfulcreators:incomplete_pasta_with_mutton_chop"
+        },
+        {
+          "tag": "c:foods/cooked_mutton"
+        }
+      ],
+      "results": [
+        {
+          "id": "delightfulcreators:incomplete_pasta_with_mutton_chop"
+        }
+      ]
+    },
+    {
+      "type": "create:filling",
+      "ingredients": [
+        {
+          "item": "delightfulcreators:incomplete_pasta_with_mutton_chop"
+        },
+        {
+          "type": "fluid_tag",
+          "amount": 250,
+          "fluid_tag": "c:tomato_sauce"
+        }
+      ],
+      "results": [
+        {
+          "id": "delightfulcreators:incomplete_pasta_with_mutton_chop"
+        }
+      ]
+    }
+  ],
+  "transitional_item": {
+    "id": "delightfulcreators:incomplete_pasta_with_mutton_chop"
+  }
+}

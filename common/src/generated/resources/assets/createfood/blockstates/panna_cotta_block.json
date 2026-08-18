@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "createfood:block/panna_cotta_block"
+    }
+  }
+}

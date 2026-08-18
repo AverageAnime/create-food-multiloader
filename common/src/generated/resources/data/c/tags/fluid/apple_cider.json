@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "delightfulcreators:apple_cider",
+      "required": false
+    },
+    {
+      "id": "delightfulcreators:flowing_apple_cider",
+      "required": false
+    }
+  ]
+}

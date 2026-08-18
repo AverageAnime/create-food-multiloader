@@ -32,8 +32,16 @@ public final class EffectCategories {
         if (configOverride != null) {
             SyntheticOverride cached = SYNTHETIC_OVERRIDES.get(name);
             if (cached == null || !cached.overrideId().equals(configOverride)) {
+                // Gate on the namespace the override actually names. Hardcoding
+                // "minecraft" meant an override pointing at an absent mod still
+                // counted as a loaded candidate, so the item registered an
+                // effect that could never resolve -- and the code candidates
+                // were skipped too, leaving it strictly worse than no override.
+                int colon = configOverride.indexOf(':');
+                String modId = colon > 0 ? configOverride.substring(0, colon) : "minecraft";
                 cached = new SyntheticOverride(configOverride, FoodEffect.category(name)
-                        .or("minecraft", configOverride)
+                        .or(modId, configOverride)
+                        .orAll(BY_NAME.get(name))
                         .build());
                 SYNTHETIC_OVERRIDES.put(name, cached);
             }
@@ -61,6 +69,7 @@ public final class EffectCategories {
             FoodEffect.category("animal_charm")
                     .or("brewery", "brewery:snowwhite")
                     .or("hearthandharvest", "hearthandharvest:tempting")
+                    .or("minecraft", "minecraft:luck")   // no vanilla analogue; a harmless stand-in
                     .build()
     );
 
@@ -75,6 +84,7 @@ public final class EffectCategories {
     public static final FoodEffect ASTRINGENT = register(
             FoodEffect.category("astringent")
                     .or("fruitsdelight", "fruitsdelight:astringent")
+                    .or("minecraft", "minecraft:slow_falling")   // extra grip
                     .build()
     );
 
@@ -82,6 +92,7 @@ public final class EffectCategories {
     public static final FoodEffect BALANCED = register(
             FoodEffect.category("balanced")
                     .or("herbalbrews", "herbalbrews:balanced")
+                    .or("minecraft", "minecraft:absorption")   // grants absorption to those nearby
                     .build()
     );
 
@@ -103,6 +114,7 @@ public final class EffectCategories {
     public static final FoodEffect BONDING = register(
             FoodEffect.category("bonding")
                     .or("herbalbrews", "herbalbrews:bonding")
+                    .or("minecraft", "minecraft:absorption")   // absorption and regeneration together
                     .build()
     );
 
@@ -124,6 +136,7 @@ public final class EffectCategories {
     public static final FoodEffect CHARISMA = register(
             FoodEffect.category("charisma")
                     .or("brewery", "brewery:pintcharisma")
+                    .or("minecraft", "minecraft:hero_of_the_village")   // better prices from villagers
                     .build()
     );
 
@@ -139,12 +152,20 @@ public final class EffectCategories {
     public static final FoodEffect COMBUSTION = register(
             FoodEffect.category("combustion")
                     .or("brewery", "brewery:combustion")
+                    .or("minecraft", "minecraft:fire_resistance")   // sets things alight
                     .build()
     );
 
+    /**
+     * @deprecated Farmer's Delight folded Comfort into Nourishment 1:1, so this
+     * resolves to Nourishment and every call site has moved. Kept for one
+     * release so pack configs naming "comfort" in category_overrides or
+     * item_overrides keep resolving; delete it after that.
+     */
+    @Deprecated
     public static final FoodEffect COMFORT = register(
             FoodEffect.category("comfort")
-                    .or("farmersdelight", "farmersdelight:comfort")
+                    .or("farmersdelight", "farmersdelight:nourishment")
                     .build()
     );
 
@@ -166,6 +187,7 @@ public final class EffectCategories {
     public static final FoodEffect EXPLOSION = register(
             FoodEffect.category("explosion")
                     .or("brewery", "brewery:explosion")
+                    .or("minecraft", "minecraft:strength")   // an explosive bite
                     .build()
     );
 
@@ -173,6 +195,7 @@ public final class EffectCategories {
     public static final FoodEffect FARMERS_BLESSING = register(
             FoodEffect.category("farmers_blessing")
                     .or("farm_and_charm", "farm_and_charm:farmers_blessing")
+                    .or("minecraft", "minecraft:luck")   // cannot express clearing debuffs
                     .build()
     );
 
@@ -180,6 +203,7 @@ public final class EffectCategories {
     public static final FoodEffect FEAST = register(
             FoodEffect.category("feast")
                     .or("farm_and_charm", "farm_and_charm:feast")
+                    .or("minecraft", "minecraft:absorption")   // a big meal leaves you fortified
                     .build()
     );
 
@@ -194,6 +218,7 @@ public final class EffectCategories {
     public static final FoodEffect FORTUNE = register(
             FoodEffect.category("fortune")
                     .or("herbalbrews", "herbalbrews:fortune")
+                    .or("minecraft", "minecraft:luck")   // luck, exactly
                     .build()
     );
 
@@ -243,6 +268,7 @@ public final class EffectCategories {
     public static final FoodEffect LOZENGE = register(
             FoodEffect.category("lozenge")
                     .or("fruitsdelight", "fruitsdelight:lozenge")
+                    .or("minecraft", "minecraft:haste")   // brisk and businesslike
                     .build()
     );
 
@@ -251,6 +277,7 @@ public final class EffectCategories {
             FoodEffect.category("mining")
                     .or("brewery",     "brewery:mining")
                     .or("herbalbrews", "herbalbrews:deeprush")
+                    .or("minecraft", "minecraft:haste")   // mining speed, exactly
                     .build()
     );
 
@@ -261,9 +288,21 @@ public final class EffectCategories {
                     .build()
     );
 
+    /**
+     * The base effect on almost every food in the mod. Farmer's Delight is an
+     * optional dependency, so without the vanilla fallback this does nothing
+     * at all for a vanilla-only install.
+     *
+     * <p>minecraft:saturation is instantaneous -- it calls FoodData.eat once
+     * and ends -- so the 600 to 6000 tick durations carried by the call sites
+     * cannot make it strong. Satiation deliberately has no fallback: every
+     * item carrying it is a bowl that already carries Nourishment, and two
+     * categories resolving to the same instant effect would apply it twice.
+     */
     public static final FoodEffect NOURISHMENT = register(
             FoodEffect.category("nourishment")
                     .or("farmersdelight", "farmersdelight:nourishment")
+                    .or("minecraft", "minecraft:saturation")
                     .build()
     );
 
@@ -272,6 +311,7 @@ public final class EffectCategories {
             FoodEffect.category("pacify")
                     .or("brewery", "brewery:pacify")
                     .or("hearthandharvest", "hearthandharvest:pungent")
+                    .or("minecraft", "minecraft:invisibility")   // enemies lose interest
                     .build()
     );
 
@@ -293,6 +333,7 @@ public final class EffectCategories {
     public static final FoodEffect PRESERVATION = register(
             FoodEffect.category("preservation")
                     .or("kaleidoscope_cookery", "kaleidoscope_cookery:preservation")
+                    .or("minecraft", "minecraft:resistance")   // shrugs off bad food
                     .build()
     );
 
@@ -314,6 +355,7 @@ public final class EffectCategories {
     public static final FoodEffect RAGING = register(
             FoodEffect.category("raging")
                     .or("brewinandchewin", "brewinandchewin:raging")
+                    .or("minecraft", "minecraft:strength")   // fights harder
                     .build()
     );
 
@@ -321,6 +363,7 @@ public final class EffectCategories {
     public static final FoodEffect RECOVERING = register(
             FoodEffect.category("recovering")
                     .or("fruitsdelight", "fruitsdelight:recovering")
+                    .or("minecraft", "minecraft:regeneration")   // wards off poison and wither
                     .build()
     );
 
@@ -335,6 +378,7 @@ public final class EffectCategories {
     public static final FoodEffect REFRESHING = register(
             FoodEffect.category("refreshing")
                     .or("fruitsdelight", "fruitsdelight:refreshing")
+                    .or("minecraft", "minecraft:haste")   // wards off mining fatigue
                     .build()
     );
 
@@ -342,6 +386,7 @@ public final class EffectCategories {
     public static final FoodEffect REPULSION = register(
             FoodEffect.category("repulsion")
                     .or("brewery", "brewery:repulsion")
+                    .or("minecraft", "minecraft:invisibility")   // enemies lose interest
                     .build()
     );
 
@@ -350,6 +395,7 @@ public final class EffectCategories {
             FoodEffect.category("rest")
                     .or("create_confectionery", "create_confectionery:rest")
                     .or("kaleidoscope_cookery", "kaleidoscope_cookery:sulfur")
+                    .or("minecraft", "minecraft:regeneration")   // restful sleep
                     .build()
     );
 
@@ -357,6 +403,7 @@ public final class EffectCategories {
     public static final FoodEffect RESTED = register(
             FoodEffect.category("rested")
                     .or("farm_and_charm", "farm_and_charm:rested")
+                    .or("minecraft", "minecraft:luck")   // no vanilla analogue for extra XP; a harmless stand-in
                     .build()
     );
 
@@ -364,6 +411,7 @@ public final class EffectCategories {
     public static final FoodEffect SATIATED_SHIELD = register(
             FoodEffect.category("satiated_shield")
                     .or("kaleidoscope_cookery", "kaleidoscope_cookery:satiated_shield")
+                    .or("minecraft", "minecraft:absorption")   // hunger soaks damage
                     .build()
     );
 
@@ -385,6 +433,7 @@ public final class EffectCategories {
     public static final FoodEffect SLIDING = register(
             FoodEffect.category("sliding")
                     .or("fruitsdelight", "fruitsdelight:sliding")
+                    .or("minecraft", "minecraft:jump_boost")   // slides and skids
                     .build()
     );
 
@@ -392,6 +441,7 @@ public final class EffectCategories {
     public static final FoodEffect STIMULATION = register(
             FoodEffect.category("stimulation")
                     .or("create_confectionery", "create_confectionery:stimulation")
+                    .or("minecraft", "minecraft:haste")   // removes fatigue and slowness
                     .build()
     );
 
@@ -399,6 +449,7 @@ public final class EffectCategories {
     public static final FoodEffect STOUT_HEART = register(
             FoodEffect.category("stout_heart")
                     .or("brewery", "brewery:stoutheart")
+                    .or("minecraft", "minecraft:resistance")   // knockback resistance
                     .build()
     );
 
@@ -406,6 +457,7 @@ public final class EffectCategories {
     public static final FoodEffect SUGAR_RUSH = register(
             FoodEffect.category("sugar_rush")
                     .or("bakery", "bakery:sugar_rush")
+                    .or("minecraft", "minecraft:speed")   // a sugar high
                     .build()
     );
 
@@ -420,6 +472,7 @@ public final class EffectCategories {
     public static final FoodEffect SUSTENANCE = register(
             FoodEffect.category("sustenance")
                     .or("farm_and_charm", "farm_and_charm:sustenance")
+                    .or("minecraft", "minecraft:saturation")   // restores hunger over time
                     .build()
     );
 
@@ -427,6 +480,7 @@ public final class EffectCategories {
     public static final FoodEffect SWEET_HEART = register(
             FoodEffect.category("sweet_heart")
                     .or("brewinandchewin", "brewinandchewin:sweet_heart")
+                    .or("minecraft", "minecraft:regeneration")   // extra healing
                     .build()
     );
 
@@ -434,6 +488,7 @@ public final class EffectCategories {
     public static final FoodEffect SWEETENING = register(
             FoodEffect.category("sweetening")
                     .or("fruitsdelight", "fruitsdelight:sweetening")
+                    .or("minecraft", "minecraft:speed")   // wards off slowness
                     .build()
     );
 
@@ -469,6 +524,7 @@ public final class EffectCategories {
     public static final FoodEffect TOUGH = register(
             FoodEffect.category("tough")
                     .or("herbalbrews", "herbalbrews:tough")
+                    .or("minecraft", "minecraft:resistance")   // absorption, regeneration and resistance together
                     .build()
     );
 
@@ -476,6 +532,7 @@ public final class EffectCategories {
     public static final FoodEffect TUNDRA_STRIDER = register(
             FoodEffect.category("tundra_strider")
                     .or("kaleidoscope_cookery", "kaleidoscope_cookery:tundra_strider")
+                    .or("minecraft", "minecraft:speed")   // sure footing on snow and ice
                     .build()
     );
 
@@ -483,6 +540,7 @@ public final class EffectCategories {
     public static final FoodEffect VIGOR = register(
             FoodEffect.category("vigor")
                     .or("kaleidoscope_cookery", "kaleidoscope_cookery:vigor")
+                    .or("minecraft", "minecraft:speed")   // running without tiring
                     .build()
     );
 
@@ -490,6 +548,7 @@ public final class EffectCategories {
     public static final FoodEffect VITALITY = register(
             FoodEffect.category("vitality")
                     .or("bakery", "bakery:vitality")
+                    .or("minecraft", "minecraft:saturation")   // reduces exhaustion
                     .build()
     );
 
@@ -498,6 +557,7 @@ public final class EffectCategories {
             FoodEffect.category("warmth")
                     .or("kaleidoscope_cookery", "kaleidoscope_cookery:warmth")
                     .or("runiclib", "runiclib:pyromaniac")
+                    .or("minecraft", "minecraft:fire_resistance")   // warmth against the cold reads as fire resistance
                     .build()
     );
 
@@ -512,6 +572,7 @@ public final class EffectCategories {
     public static final FoodEffect WELL_SERVED = register(
             FoodEffect.category("well_served")
                     .or("candlelight", "candlelight:well_served")
+                    .or("minecraft", "minecraft:saturation")   // never truly hungry
                     .build()
     );
 }

@@ -4,7 +4,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import dev.averageanime.CreateFoodCommon;
 import dev.averageanime.block.type.bowl.BowlFoodBlock;
-import dev.averageanime.block.type.bowl.SmallBowlFoodBlock;
+import dev.averageanime.block.type.bowl.LargeBowlFoodBlock;
 import dev.averageanime.block.type.plate.PlateFoodBlock;
 import dev.averageanime.block.type.plate.SmallPlateBlock;
 import dev.averageanime.neoforge.block.BlockRegistration;
@@ -60,7 +60,7 @@ public class BlockStateProvider extends net.neoforged.neoforge.client.model.gene
             switch (block) {
                 case BottleFoodBlock bottleFoodBlock -> bottleBlock((DeferredBlock<Block>) blockEntry);
                 case BowlFoodBlock bowlFoodBlock -> bowlBlock((DeferredBlock<Block>) blockEntry);
-                case SmallBowlFoodBlock smallBowlFoodBlock -> bowlBlock((DeferredBlock<Block>) blockEntry);
+                case LargeBowlFoodBlock largeBowlFoodBlock -> bowlBlock((DeferredBlock<Block>) blockEntry);
                 case PlateFoodBlock plateFoodBlock -> bowlBlock((DeferredBlock<Block>) blockEntry);
                 case SmallPlateBlock smallPlateBlock -> smallPlateBlock((DeferredBlock<Block>) blockEntry);
                 case BowlBlock bowlBlock -> displayBowlBlock((DeferredBlock<Block>) blockEntry);

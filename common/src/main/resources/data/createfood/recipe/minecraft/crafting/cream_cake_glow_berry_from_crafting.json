@@ -13,11 +13,27 @@
     },
     "neoforge:conditions": [
         {
+            "type": "neoforge:not",
+            "value": {
+                "type": "neoforge:mod_loaded",
+                "modid": "jmc"
+            }
+        },
+        {
             "type": "createfood:enabled",
             "id": "cream_cake_glow_berry"
         }
     ],
     "fabric:load_conditions": [
+        {
+            "condition": "fabric:not",
+            "value": {
+                "condition": "fabric:all_mods_loaded",
+                "values": [
+                    "jmc"
+                ]
+            }
+        },
         {
             "condition": "createfood:enabled",
             "id": "cream_cake_glow_berry"

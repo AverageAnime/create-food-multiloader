@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "tag": "c:cooked_pasta"
+    },
+    {
+      "tag": "c:heavy_cream_bottle"
+    },
+    {
+      "tag": "c:salt"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "createfood:pasta_plate_butter"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "pasta_plate_butter"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "pasta_plate_butter"
+    }
+  ]
+}

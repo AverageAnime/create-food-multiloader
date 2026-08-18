@@ -1,6 +1,6 @@
 package dev.averageanime.block.type.bowl;
 
-import dev.averageanime.config.ConfigValues;
+import dev.averageanime.registry.FluidAmounts;
 import dev.averageanime.util.RecipeReflection;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
@@ -33,11 +33,14 @@ public final class DippingRecipes {
     public record Dip(int fluidAmount, ItemStack result) {}
     public record Emptied(Fluid fluid, int amount, ItemStack container) {}
 
+    /**
+     * Pure recipe lookup. Callers apply {@link dev.averageanime.config.ConfigValues#isDisplayInteractionExcluded}
+     * themselves, against whichever stack they treat as the food being transformed.
+     */
     @SuppressWarnings({"unchecked", "rawtypes"})
     @Nullable
     public static Dip findFillingRecipe(Level level, ItemStack held, Fluid stored, int storedMb) {
         if (held.isEmpty() || stored == Fluids.EMPTY || storedMb <= 0) return null;
-        if (ConfigValues.isDippingExcluded(held)) return null;
 
         try {
             RecipeType<?> fillingType = BuiltInRegistries.RECIPE_TYPE.get(FILLING_TYPE);
@@ -78,7 +81,7 @@ public final class DippingRecipes {
         if (container.getItem() instanceof BucketItem bucket) {
             Fluid fluid = bucketFluid(bucket);
             if (fluid == null || fluid == Fluids.EMPTY) return null;
-            return new Emptied(fluid, 1000, new ItemStack(Items.BUCKET));
+            return new Emptied(fluid, FluidAmounts.BUCKET, new ItemStack(Items.BUCKET));
         }
 
         try {

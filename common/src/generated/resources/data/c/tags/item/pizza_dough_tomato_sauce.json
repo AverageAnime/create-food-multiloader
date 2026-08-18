@@ -3,10 +3,6 @@
     {
       "id": "createfood:pizza_dough_tomato_sauce",
       "required": false
-    },
-    {
-      "id": "createfood:pizza_dough_tomato_sauce",
-      "required": false
     }
   ]
 }

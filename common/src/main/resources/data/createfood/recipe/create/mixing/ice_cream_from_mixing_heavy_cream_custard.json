@@ -1,0 +1,55 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "type": "fluid_tag",
+      "amount": 500,
+      "fluid_tag": "c:heavy_cream"
+    },
+    {
+      "type": "fluid_tag",
+      "amount": 250,
+      "fluid_tag": "c:custard"
+    },
+    {
+      "tag": "c:ice_blocks"
+    },
+    {
+      "tag": "c:ice_blocks"
+    },
+    {
+      "tag": "c:ice_blocks"
+    },
+    {
+      "tag": "c:ice_blocks"
+    }
+  ],
+  "results": [
+    {
+      "amount": 1000,
+      "id": "createfood:ice_cream"
+    }
+  ],
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    },
+    {
+      "type": "createfood:enabled",
+      "id": "ice_cream"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "create"
+      ]
+    },
+    {
+      "condition": "createfood:enabled",
+      "id": "ice_cream"
+    }
+  ]
+}

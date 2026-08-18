@@ -3,10 +3,6 @@
     {
       "id": "createfood:raw_apple_pie",
       "required": false
-    },
-    {
-      "id": "createfood:raw_apple_pie",
-      "required": false
     }
   ]
 }

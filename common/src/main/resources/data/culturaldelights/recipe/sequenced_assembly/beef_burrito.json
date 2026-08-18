@@ -1,0 +1,117 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "farmersdelight"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "culturaldelights"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "culturalcreators"
+    },
+    {
+      "type": "createfood:enabled",
+      "id": "culturaldelights:beef_burrito"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "create"
+      ]
+    },
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "farmersdelight"
+      ]
+    },
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "culturaldelights"
+      ]
+    },
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "culturalcreators"
+      ]
+    },
+    {
+      "condition": "createfood:enabled",
+      "id": "culturaldelights:beef_burrito"
+    }
+  ],
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "tag": "c:tortilla"
+  },
+  "loops": 1,
+  "results": [
+    {
+      "id": "culturaldelights:beef_burrito"
+    }
+  ],
+  "sequence": [
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "culturalcreators:incomplete_beef_burrito"
+        },
+        {
+          "tag": "c:foods/cooked_beef"
+        }
+      ],
+      "results": [
+        {
+          "id": "culturalcreators:incomplete_beef_burrito"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "culturalcreators:incomplete_beef_burrito"
+        },
+        {
+          "tag": "c:cooked_rice"
+        }
+      ],
+      "results": [
+        {
+          "id": "culturalcreators:incomplete_beef_burrito"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "culturalcreators:incomplete_beef_burrito"
+        },
+        {
+          "tag": "c:avocado"
+        }
+      ],
+      "results": [
+        {
+          "id": "culturalcreators:incomplete_beef_burrito"
+        }
+      ]
+    }
+  ],
+  "transitional_item": {
+    "id": "culturalcreators:incomplete_beef_burrito"
+  }
+}

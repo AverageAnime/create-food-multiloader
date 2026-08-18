@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "c:dark_chocolate_ganache_bucket"
+    },
+    {
+      "tag": "c:cocoa_powder"
+    },
+    {
+      "tag": "c:cocoa_powder"
+    },
+    {
+      "tag": "c:cocoa_powder"
+    },
+    {
+      "tag": "c:cocoa_powder"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "id": "createfood:dark_chocolate_truffle"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "dark_chocolate_truffle"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "dark_chocolate_truffle"
+    }
+  ]
+}

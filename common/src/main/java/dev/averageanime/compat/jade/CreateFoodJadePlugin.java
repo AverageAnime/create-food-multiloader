@@ -1,10 +1,11 @@
 package dev.averageanime.compat.jade;
 
+import dev.averageanime.block.type.display.EmptyBottleBlock;
 import dev.averageanime.block.type.cake.CakeFoodBlock;
 import dev.averageanime.block.type.cake.CakeCandleBlock;
 import dev.averageanime.block.type.misc.ConsumableBlock;
 import dev.averageanime.block.type.bowl.EmptyBowlBlock;
-import dev.averageanime.block.type.bowl.EmptySmallBowlBlock;
+import dev.averageanime.block.type.bowl.EmptyLargeBowlBlock;
 import dev.averageanime.block.type.bowl.GenericDisplayBowlBlock;
 import dev.averageanime.block.type.cake.CakeBaseBlock;
 import dev.averageanime.block.type.display.FoodBlock;
@@ -32,8 +33,9 @@ public class CreateFoodJadePlugin implements IWailaPlugin {
         registration.registerBlockIcon(EmptyDisplayJadeProvider.INSTANCE, EmptyPlateBlock.class);
         registration.registerBlockIcon(EmptyDisplayJadeProvider.INSTANCE, EmptySmallPlateBlock.class);
         registration.registerBlockIcon(EmptyDisplayJadeProvider.INSTANCE, EmptyBowlBlock.class);
-        registration.registerBlockComponent(SmallBowlJadeProvider.INSTANCE, EmptySmallBowlBlock.class);
-        registration.registerBlockIcon(SmallBowlJadeProvider.INSTANCE, EmptySmallBowlBlock.class);
+        registration.registerBlockIcon(EmptyDisplayJadeProvider.INSTANCE, EmptyBottleBlock.class);
+        registration.registerBlockComponent(LargeBowlJadeProvider.INSTANCE, EmptyLargeBowlBlock.class);
+        registration.registerBlockIcon(LargeBowlJadeProvider.INSTANCE, EmptyLargeBowlBlock.class);
         registration.registerBlockComponent(ClothSackJadeProvider.INSTANCE, ClothSackBlock.class);
         registration.registerBlockComponent(RationBoxJadeProvider.INSTANCE, RationBoxBlock.class);
         registration.registerBlockComponent(FoodBlockJadeProvider.INSTANCE, FoodBlock.class);

@@ -1,0 +1,51 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "type": "fluid_tag",
+      "amount": 250,
+      "fluid_tag": "c:milk"
+    },
+    {
+      "type": "fluid_tag",
+      "amount": 500,
+      "fluid_tag": "c:ice_cream"
+    },
+    {
+      "type": "fluid_tag",
+      "amount": 250,
+      "fluid_tag": "c:melon_jam"
+    },
+    {
+      "tag": "c:ice_blocks"
+    }
+  ],
+  "results": [
+    {
+      "amount": 1000,
+      "id": "createfood:melon_milkshake"
+    }
+  ],
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    },
+    {
+      "type": "createfood:enabled",
+      "id": "melon_milkshake"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "create"
+      ]
+    },
+    {
+      "condition": "createfood:enabled",
+      "id": "melon_milkshake"
+    }
+  ]
+}

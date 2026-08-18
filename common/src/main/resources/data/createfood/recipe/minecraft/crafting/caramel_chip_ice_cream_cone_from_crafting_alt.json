@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "c:waffle_cone"
+    },
+    {
+      "tag": "c:ice_cream_stick"
+    },
+    {
+      "tag": "c:caramel_chips"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "createfood:caramel_chip_ice_cream_cone"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "caramel_chip_ice_cream_cone"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "caramel_chip_ice_cream_cone"
+    }
+  ]
+}

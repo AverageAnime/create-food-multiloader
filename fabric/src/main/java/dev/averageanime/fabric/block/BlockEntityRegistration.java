@@ -2,7 +2,7 @@ package dev.averageanime.fabric.block;
 
 import dev.averageanime.CreateFoodCommon;
 import dev.averageanime.block.type.blockentity.GenericDisplayBlockEntity;
-import dev.averageanime.block.type.blockentity.SmallBowlBlockEntity;
+import dev.averageanime.block.type.blockentity.LargeBowlBlockEntity;
 import dev.averageanime.fabric.block.type.blockentity.ClothSackBlockEntity;
 import dev.averageanime.fabric.block.type.blockentity.RationBoxBlockEntity;
 import net.minecraft.core.Registry;
@@ -16,7 +16,7 @@ public class BlockEntityRegistration {
     public static BlockEntityType<RationBoxBlockEntity> RATION_BOX;
     public static BlockEntityType<ClothSackBlockEntity> CLOTH_SACK;
     public static BlockEntityType<GenericDisplayBlockEntity> GENERIC_DISPLAY_PLATE;
-    public static BlockEntityType<SmallBowlBlockEntity> SMALL_BOWL;
+    public static BlockEntityType<LargeBowlBlockEntity> LARGE_BOWL;
 
     @SuppressWarnings("DataFlowIssue")
     public static void init() {
@@ -35,10 +35,10 @@ public class BlockEntityRegistration {
                         DisplayBlockRegistration.GENERIC_DISPLAY_PLATE_BLOCK,
                         DisplayBlockRegistration.GENERIC_DISPLAY_BOWL_BLOCK).build(null));
 
-        SMALL_BOWL = Registry.register(BuiltInRegistries.BLOCK_ENTITY_TYPE,
-                ResourceLocation.fromNamespaceAndPath(CreateFoodCommon.MOD_ID, "small_bowl"),
-                BlockEntityType.Builder.<SmallBowlBlockEntity>of(
-                        dev.averageanime.fabric.block.type.blockentity.SmallBowlBlockEntity::new,
-                        DisplayBlockRegistration.SMALL_BOWL_BLOCK).build(null));
+        LARGE_BOWL = Registry.register(BuiltInRegistries.BLOCK_ENTITY_TYPE,
+                ResourceLocation.fromNamespaceAndPath(CreateFoodCommon.MOD_ID, "large_bowl"),
+                BlockEntityType.Builder.<LargeBowlBlockEntity>of(
+                        dev.averageanime.fabric.block.type.blockentity.LargeBowlBlockEntity::new,
+                        DisplayBlockRegistration.LARGE_BOWL_BLOCK).build(null));
     }
 }

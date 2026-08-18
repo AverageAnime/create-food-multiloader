@@ -1,5 +1,6 @@
 {
     "type": "create:compacting",
+    "heat_requirement": "heated",
     "ingredients": [
         {
             "tag": "c:chorus_fruit"

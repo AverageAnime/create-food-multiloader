@@ -14,7 +14,7 @@
   ],
   "key": {
     "1": {
-      "tag": "c:cooked_chicken"
+      "tag": "c:foods/raw_chicken"
     },
     "2": {
       "tag": "c:raw_cheese_calzone"

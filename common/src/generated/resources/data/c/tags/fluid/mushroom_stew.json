@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "delightfulcreators:mushroom_stew",
+      "required": false
+    },
+    {
+      "id": "delightfulcreators:flowing_mushroom_stew",
+      "required": false
+    }
+  ]
+}

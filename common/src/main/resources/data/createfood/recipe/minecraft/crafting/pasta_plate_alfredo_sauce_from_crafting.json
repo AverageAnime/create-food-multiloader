@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "c:pasta_plate"
+    },
+    {
+      "tag": "c:alfredo_sauce_bottle"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "createfood:pasta_plate_alfredo_sauce"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "pasta_plate_alfredo_sauce"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "pasta_plate_alfredo_sauce"
+    }
+  ]
+}

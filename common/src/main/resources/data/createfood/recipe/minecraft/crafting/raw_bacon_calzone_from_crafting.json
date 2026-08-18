@@ -5,7 +5,7 @@
             "tag": "c:raw_cheese_calzone"
         },
         {
-            "tag": "c:cooked_pork"
+            "tag": "c:foods/raw_pork"
         }
     ],
     "result": {

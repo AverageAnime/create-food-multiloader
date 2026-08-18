@@ -5,10 +5,6 @@
       "required": false
     },
     {
-      "id": "createfood:sliced_potato",
-      "required": false
-    },
-    {
       "id": "casualnessdelight:potato_slice",
       "required": false
     },

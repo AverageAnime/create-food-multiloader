@@ -19,6 +19,63 @@ The file must be a `.json` file with a top-level `"items"` array. Each element i
 
 ---
 
+## Recipes-only mode
+
+If the item is already registered — you just want to add more recipes for it — you
+don't need to re-supply `displayName`, `type`, `nutrition`, and everything else. Turn
+on recipes-only mode and each entry can be reduced to just `id` and `recipes`:
+
+```json
+{
+  "recipesOnly": true,
+  "items": [
+    {
+      "id": "kelp_soup_bowl",
+      "recipes": [
+        {
+          "type": "create:deploying",
+          "inputs": [
+            { "type": "tag", "value": "c:kelp_soup_bowl" },
+            { "type": "item", "value": "minecraft:egg" }
+          ],
+          "output": "kelp_soup_bowl_egg",
+          "count": 1
+        }
+      ]
+    }
+  ]
+}
+```
+
+In this mode the toolkit skips all item/lang/registry generation for every entry in
+the file — no `ItemRegistry.java` line, no lang entry, no auto-generated recipes. It
+only writes the recipe JSON files listed under each item's `recipes` array, using
+that item's `id` as the default `output` (same as normal mode). Any other fields on
+the entry (`displayName`, `type`, `nutrition`, etc.) are simply ignored if present, so
+you can also point recipes-only mode at trimmed-down copies of existing spec entries
+without having to strip them first.
+
+`"recipesOnly": true` at the top level applies to every item in the file. To mix new
+items and recipes-only items in the same file, omit the top-level flag and set
+`"recipesOnly": true` (or `"existing": true`, an alias) on the individual items that
+already exist:
+
+```json
+{
+  "items": [
+    { "id": "brand_new_item", "displayName": "Brand New Item", "type": "food", "...": "..." },
+    { "id": "kelp_soup_bowl", "recipesOnly": true, "recipes": [ { "...": "..." } ] }
+  ]
+}
+```
+
+Because recipes-only entries skip item generation, filename collisions are only
+checked against other recipes in the same import — there's no auto-generated recipe
+set to collide with. The usual `suffix` rule still applies if two recipes in the batch
+target the same output file.
+
+---
+
 ## Item entry — full reference
 
 ```json
@@ -78,7 +135,7 @@ Controls registration type and item class. All valid values:
 | `ingredientBowl` | Non-food, stack 16, returns bowl                                                        |
 | `ingredientBottle` | Non-drinkable, stack 16, returns glass bottle                                           |
 | `pipingBag` | Stack 2, returns a piping bag                                                           |
-| `fluidBlock` | Registers as a fluidBlock — see Fluid items below                                            |
+| `fluidEntry` | Registers as a fluid — see Fluid items below                                            |
 | `block_cake` | Placed cake block (7 bites). Generates slice item automatically                         |
 | `block_pie` | 4-slice pie/cheesecake block pair (raw + cooked)                                        |
 | `block_pizza` | 4-slice pizza/waffle block pair (raw + cooked)                                          |
@@ -91,7 +148,7 @@ Controls registration type and item class. All valid values:
 | `block_cake_base` | Unfrosted cake base block (no slice)                                                   |
 
 ### `nutrition` and `saturation`
-Integers/floats. Only applies to food types. Ignored for `plain`, `fluidBlock`, and block types (block types use `sliceNutrition`/`sliceSaturation` instead).
+Integers/floats. Only applies to food types. Ignored for `plain`, `fluidEntry`, and block types (block types use `sliceNutrition`/`sliceSaturation` instead).
 
 ```json
 "nutrition": 9,
@@ -128,10 +185,10 @@ A key that doesn't exist yet needs its lang entry generated too. Listing it in `
 ```json
 "tooltips": ["bell_pepper", "tomato"],
 "customTooltips": [
-  { "key": "bell_pepper", "display": "Bell Pepper" }
+{ "key": "bell_pepper", "display": "Bell Pepper" }
 ],
 "customCompatKeys": [
-  { "key": "bell_pepper", "display": "Rustic Delight+" }
+{ "key": "bell_pepper", "display": "Rustic Delight+" }
 ]
 ```
 
@@ -279,13 +336,16 @@ For `block_cake`, `block_pie`, `block_pizza`, `block_raw_pie`, `block_raw_pizza`
 
 ## Fluid item fields
 
-Set `"type": "fluidBlock"` or `"registrationType": "fluidBlock"`. Additional fields:
+Set `"type": "fluidEntry"` or `"registrationType": "fluidEntry"`. Additional fields:
+
+> The string must be exactly `fluidEntry`. `"fluid"` and `"fluidBlock"` are **not** recognised — the importer falls through to registering the entry as a plain item, silently, so you get no `FluidRegistry` line and no `_bucket` / `_bottle` / `_bowl` at all.
 
 | Field | Description |
 |---|---|
 | `fluidFlowSlope` | Flow slope for thin fluids (e.g. `3`) |
 | `fluidFlowDecrease` | Flow decrease (e.g. `2`) |
 | `createBottle` | `true` to auto-generate bottle item + filling/emptying/bucket recipes |
+| `bottleSize` | Bottle volume in mB — `250` (default) or `500` for a concentrate. Sets the filling/emptying amount and derives the bucket crafting ratio (4 per bucket at 250, 2 at 500) |
 | `bottleNutrition` | Bottle nutrition (default `4`) |
 | `bottleSaturation` | Bottle saturation (default `1.0`) |
 | `bottleEffects` | Array of effect objects for the bottle |
@@ -300,7 +360,7 @@ Set `"type": "fluidBlock"` or `"registrationType": "fluidBlock"`. Additional fie
 {
   "id": "apple_custard",
   "displayName": "Apple Custard",
-  "type": "fluidBlock",
+  "type": "fluidEntry",
   "fluidFlowSlope": 3,
   "fluidFlowDecrease": 2,
   "createBottle": true,
@@ -380,8 +440,8 @@ All valid recipe types:
 | `create:compacting` | Mechanical press, no heat |
 | `create:deploying` | Deployer applies item to item |
 | `create:item_application` | Deployer applies item onto stationary target, returns result + optional applicator |
-| `create:emptying` | Extracts fluidBlock from container |
-| `create:filling` | Fills container with fluidBlock |
+| `create:emptying` | Extracts fluid from a container, returning both |
+| `create:filling` | Fills a container with fluid |
 | `create:milling` | Millstone grinds to powder |
 | `create:mixing_heated` | Mixer with heat |
 | `create:mixing` | Mixer, no heat |
@@ -436,11 +496,27 @@ Output stack size. Defaults to `1`.
 ```
 
 ### `byproductId`
-Optional. Only used by `create:item_application`. The item ID of a second result returned alongside the primary output (e.g. the applicator being given back to the player). No namespace defaults to `createfood:`.
+Optional. Used by `create:item_application` and `create:emptying`. No namespace defaults to `createfood:`.
+
+For **item application** it is the item ID of a second result returned alongside the primary output — the applicator being given back to the player.
 
 ```json
 "byproductId": "piping_bag"
 ```
+
+For **emptying** it is the drained container returned alongside the fluid. Set it whenever the container isn't named after the fluid — a stick, a bowl, a piping bag. `output` stays the fluid, and `fluidAmount` is how much comes out.
+
+```json
+{
+  "type": "create:emptying",
+  "inputs": [{ "type": "tag", "value": "c:berry_ice_cream_stick" }],
+  "output": "berry_ice_cream",
+  "fluidAmount": 125,
+  "byproductId": "minecraft:stick"
+}
+```
+
+Omitting it on an emptying recipe falls back to the legacy shape, which emits the output id as *both* an item and a fluid — almost never what you want. The bottle and bowl emptying recipes are auto-generated and need no entry either way.
 
 ### `suffix`
 The recipe type suffix (`_from_deploying`, `_from_crafting`, etc.) is **always added automatically** from the recipe type. The `suffix` field is only for disambiguating two recipes of the **same type** targeting the **same output** that would otherwise produce identical filenames.
@@ -457,7 +533,7 @@ The recipe type suffix (`_from_deploying`, `_from_crafting`, etc.) is **always a
 
 Don't repeat the recipe type name in the suffix — `"suffix": "from_deploying"` would produce `my_item_from_deploying_from_deploying.json`.
 
-If you have two `create:filling` recipes pointing at the same output (one with honey fluidBlock, one with caramel fluidBlock), the toolkit already auto-disambiguates by fluidBlock tag name — no suffix needed.
+If you have two `create:filling` recipes pointing at the same output (one with honey fluid, one with caramel fluid), the toolkit already auto-disambiguates by fluid tag name — no suffix needed.
 
 ### `experience` and `cookingtime`
 Used by `farmersdelight:cooking`, `minecraft:smelting`, `minecraft:smoking`, and `minecraft:campfire_cooking`.
@@ -468,7 +544,7 @@ Used by `farmersdelight:cooking`, `minecraft:smelting`, `minecraft:smoking`, and
 ```
 
 ### `fluidOutput` and `fluidAmount`
-For `create:mixing` and `create:mixing_heated` when the output is a fluidBlock rather than an item.
+For `create:mixing` and `create:mixing_heated` when the output is a fluid rather than an item.
 
 ```json
 {
@@ -476,7 +552,7 @@ For `create:mixing` and `create:mixing_heated` when the output is a fluidBlock r
   "inputs": [ ... ],
   "output": "kelp_soup",
   "fluidOutput": true,
-  "fluidAmount": 333
+  "fluidAmount": 250
 }
 ```
 
@@ -516,10 +592,10 @@ data/createfood/recipe/<dir>/<output><type_suffix><fluid_suffix><suffix>.json
 Where:
 - `<dir>` comes from the recipe type (e.g. `create/deploying`)
 - `<type_suffix>` is the type's default suffix (e.g. `_from_deploying`)
-- `<fluid_suffix>` is auto-appended for `create:filling` and `create:mixing` based on the fluidBlock tag name
+- `<fluid_suffix>` is auto-appended for `create:filling` and `create:mixing` based on the fluid tag name
 - `<suffix>` is the manual `suffix` field
 
-Collisions only happen when two recipes of the same type target the same output with no distinguishing fluidBlock input. In that case add a short descriptive string to the second recipe's `suffix` — `"alt"`, `"sauce"`, `"bucket"` etc. Never use the recipe type name itself as the suffix.
+Collisions only happen when two recipes of the same type target the same output with no distinguishing fluid input. In that case add a short descriptive string to the second recipe's `suffix` — `"alt"`, `"sauce"`, `"bucket"` etc. Never use the recipe type name itself as the suffix.
 
 ---
 
@@ -529,14 +605,36 @@ You do not need to write recipes for these — the toolkit generates them when i
 
 | Condition | Auto-generated files |
 |---|---|
-| `type: "fluidBlock"` + `createBottle: true` | `_bottle_from_filling.json`, `_fluid_from_emptying_bottle.json`, `_bottle_from_bucket.json`, `_bucket_from_bottles.json` |
-| `type: "fluidBlock"` + `createBowl: true` | Same four files for bowl |
+| `type: "fluidEntry"` + `createBottle: true` | `_bottle_from_filling.json`, `_fluid_from_emptying_bottle.json`, `_bottle_from_bucket.json`, `_bucket_from_bottles.json` |
+| `type: "fluidEntry"` + `createBowl: true` | Same four files for bowl |
 | `type: "block_pie"` or `"block_pizza"` | `<slice>_from_cutting.json`, `<id>_from_crafting.json` (slice recombine) |
 | `type: "block_cake"` | Same two files (7-slice cut + recombine) |
-| All `item` registrations | `ModItems.java` line, `ModDisplayBlocks.java` exclusion if needed |
-| All `block` registrations | `ModBlocks.java` line, `ModItems.java` slice line |
-| All `fluidBlock` registrations | `ModFluids.java` line |
+| All `item` registrations | `ItemRegistry.java` line, `DisplayRegistry.java` exclusion if needed |
+| All `block` registrations | `BlockRegistry.java` line, `ItemRegistry.java` slice line |
+| All `fluidEntry` registrations | `FluidRegistry.java` line |
 | `isCompat: true` | `ConfigDefaults.java` entry (adds to `HIDE_ITEMS_DEFAULT`) |
+
+### Registration line shapes
+
+The Java the toolkit prints is meant to be pasted verbatim into the registry files. If a
+registry ever changes shape, these are the lines to re-check:
+
+```java
+// ItemRegistry.java  — constant is the uppercased id
+public static final ItemEntry BACON_PIZZA_SLICE = food("bacon_pizza_slice", 5, 0.6f, tips(null, "bacon_ingredient"));
+
+// BlockRegistry.java — ids ending in _block get an _ENTRY suffix (CHEESE_BLOCK_ENTRY)
+public static final BlockEntry APPLE_CREAM_CAKE = BlockEntry.cake("apple_cream_cake", "apple_cream_cake_slice", tips(null, "apple_cream_frosting_ingredient"));
+
+// FluidRegistry.java — constant is the uppercased id + _FLUID_ENTRY
+public static final FluidEntry APPLE_CUSTARD_FLUID_ENTRY = fluid("apple_custard", 1, 4);
+
+// DisplayRegistry.java — goes inside the static block; defaults (maxStack 1, height 12) are omitted
+register.add("cookie_dough", DisplayEntry.of(PLATE).maxStack(4).build());
+```
+
+`BlockEntry.gelatin`, `.cheese`, and `.gyroMeat` have no tooltip overload, so `tooltips` is
+ignored for those block types. Same for `ingredientBowl` and `ingredientBottle` on items.
 
 ---
 
@@ -605,7 +703,7 @@ You do not need to write recipes for these — the toolkit generates them when i
       "type": "create:filling",
       "inputs": [
         { "type": "item",      "value": "minecraft:bowl" },
-        { "type": "fluid_tag", "value": "yogurt|333" }
+        { "type": "fluid_tag", "value": "yogurt|250" }
       ],
       "output": "yogurt_bowl"
     },
@@ -665,7 +763,7 @@ You do not need to write recipes for these — the toolkit generates them when i
 {
   "id": "apple_custard",
   "displayName": "Apple Custard",
-  "type": "fluidBlock",
+  "type": "fluidEntry",
   "fluidFlowSlope": 3,
   "fluidFlowDecrease": 2,
   "createBottle": true,
@@ -682,7 +780,7 @@ You do not need to write recipes for these — the toolkit generates them when i
 
 **Wrong effect name** — effect names are case-sensitive and must match exactly. `"night vision"` won't work; it must be `"Night Vision"`.
 
-**Missing fluidBlock `|mB`** — fluidBlock inputs must include the amount: `"honey|125"`, not `"honey"`.
+**Missing fluid `|mB`** — fluid inputs must include the amount: `"honey|125"`, not `"honey"`.
 
 **Shaped pattern wrong length** — `pattern` must be exactly 3 strings of exactly 3 characters. Pad with spaces: `"X  "` not `"X"`.
 
@@ -698,7 +796,7 @@ You do not need to write recipes for these — the toolkit generates them when i
 
 **Wrong block type for waffle** — use `block_waffle`, not `block_pizza`. Waffles use a different block class and do not have a raw/cooked pair in the same sense as pies.
 
-**`createBottle`/`createBowl` on a fluidBlock** — bottle and bowl items are auto-generated into `ItemRegistry.java`. You do not need to add them as separate spec items. The bowl variant is automatically registered with `crBowl: true` so the bowl returns as a crafting remainder from filling recipes.
+**`createBottle`/`createBowl` on a fluidEntry** — bottle and bowl items are auto-generated into `ItemRegistry.java`. You do not need to add them as separate spec items. The bowl variant is automatically registered with `crBowl: true` so the bowl returns as a crafting remainder from filling recipes.
 
 **Incorrectly specifying `_ingredient`** — Toolkit automatically adds `_ingredient`, so it should not be included as part of the spec file.
 

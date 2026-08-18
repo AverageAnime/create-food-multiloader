@@ -1,8 +1,10 @@
 package dev.averageanime.block.type.display;
 
 import dev.averageanime.block.type.bowl.BowlFoodBlock;
-import dev.averageanime.block.type.bowl.SmallBowlFoodBlock;
+import dev.averageanime.block.type.bowl.LargeBowlFoodBlock;
 import dev.averageanime.block.type.plate.*;
+import dev.averageanime.config.ConfigValues;
+import dev.averageanime.platform.Services;
 import dev.averageanime.util.ItemSpawns;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -35,6 +37,7 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
 import java.util.function.Supplier;
@@ -122,7 +125,76 @@ public abstract class FoodBlock extends Block {
             }
             return addItem(state, level, pos, player, heldStack);
         }
+        ItemInteractionResult transformed = tryTransform(state, level, pos, player, hand, heldStack);
+        if (transformed != null) return transformed;
         return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
+    }
+
+    /**
+     * Combines the held item with the food on this block via {@link FoodTransforms}, converting as many
+     * servings as the held stack can pay for. When the block can represent the whole result it becomes
+     * that block; otherwise the results go to the player.
+     *
+     * @return null when nothing matched, so the caller falls through to the default interaction
+     */
+    @Nullable
+    protected ItemInteractionResult tryTransform(BlockState state, Level level, BlockPos pos, Player player,
+                                                 InteractionHand hand, ItemStack heldStack) {
+        if (!Services.PLATFORM.isDisplayInteractionsEnabled()) return null;
+        if (heldStack.isEmpty()) return null;
+
+        Item placedItem = this.displayItem.get();
+        if (placedItem == null) return null;
+
+        ItemStack placedStack = new ItemStack(placedItem);
+        if (ConfigValues.isDisplayInteractionExcluded(placedStack)) return null;
+
+        FoodTransforms.Outcome outcome = FoodTransforms.resolve(level, placedStack, heldStack);
+        if (outcome == null) return null;
+        if (level.isClientSide) return ItemInteractionResult.SUCCESS;
+
+        int size = state.getValue(STACK_SIZE);
+        int servings = Math.min(heldStack.getCount(), size);
+        ItemStack heldBefore = heldStack.copy();
+        if (!player.isCreative()) heldStack.shrink(servings);
+
+        // Containers only come back for items actually spent, so creative does not mint them.
+        if (!player.isCreative()) {
+            for (ItemStack container : FoodTransforms.containersFor(outcome, heldBefore)) {
+                FoodTransforms.giveCopies(player, hand, container, servings, true);
+            }
+        }
+
+        Block target = outcome.convertsBlock() ? displayBlockFor(outcome.result().getItem()) : null;
+        if (target instanceof FoodBlock targetFood && servings == size && servings <= targetFood.maxStackSize) {
+            BlockState next = target.defaultBlockState()
+                    .setValue(FACING, state.getValue(FACING))
+                    .setValue(STACK_SIZE, servings);
+            level.setBlock(pos, next, 3);
+        } else {
+            FoodTransforms.giveCopies(player, hand, outcome.result(), servings, false);
+            if (size > servings) {
+                level.setBlock(pos, state.setValue(STACK_SIZE, size - servings), 3);
+            } else {
+                handleLastItemEaten(state, level, pos);
+            }
+        }
+
+        level.playSound(null, pos, FoodTransforms.soundFor(level, heldBefore, outcome, getAddSound()),
+                SoundSource.BLOCKS, 0.9F, 1.0F);
+        return ItemInteractionResult.SUCCESS;
+    }
+
+    /** The block of this same family that displays {@code item}, or null if there is none. */
+    @Nullable
+    private Block displayBlockFor(Item item) {
+        List<Supplier<Block>> suppliers = Registry.getAllBlocks(item);
+        if (suppliers == null) return null;
+        for (Supplier<Block> supplier : suppliers) {
+            Block block = supplier.get();
+            if (block.getClass() == this.getClass()) return block;
+        }
+        return null;
     }
 
     protected ItemInteractionResult wrenchPickup(BlockState state, Level level, BlockPos pos, Player player) {
@@ -358,7 +430,7 @@ public abstract class FoodBlock extends Block {
                     break;
                 }
                 if (block instanceof BottleFoodBlock || block instanceof BowlFoodBlock ||
-                        block instanceof SmallBowlFoodBlock || block instanceof PlateFoodBlock) {
+                        block instanceof LargeBowlFoodBlock || block instanceof PlateFoodBlock) {
                     targetBlock = block;
                     break;
                 }
@@ -375,7 +447,7 @@ public abstract class FoodBlock extends Block {
             }
 
             if (targetBlock instanceof BottleFoodBlock || targetBlock instanceof BowlFoodBlock ||
-                    targetBlock instanceof SmallBowlFoodBlock || targetBlock instanceof PlateFoodBlock) {
+                    targetBlock instanceof LargeBowlFoodBlock || targetBlock instanceof PlateFoodBlock) {
                 if (!player.isShiftKeyDown()) return null;
             }
 

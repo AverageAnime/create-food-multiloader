@@ -1,0 +1,31 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "panna_cotta_bowl_caramel"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "panna_cotta_bowl_caramel"
+    }
+  ],
+  "key": {
+    "1": {
+      "tag": "c:caramel"
+    },
+    "2": {
+      "tag": "c:panna_cotta_bowl"
+    }
+  },
+  "pattern": [
+    "1",
+    "2"
+  ],
+  "result": {
+    "count": 1,
+    "id": "createfood:panna_cotta_bowl_caramel"
+  }
+}

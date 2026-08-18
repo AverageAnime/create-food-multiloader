@@ -3,10 +3,6 @@
     {
       "id": "createfood:ration_box",
       "required": false
-    },
-    {
-      "id": "createfood:ration_box",
-      "required": false
     }
   ]
 }

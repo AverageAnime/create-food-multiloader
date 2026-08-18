@@ -4,7 +4,7 @@ import dev.averageanime.CreateFoodCommon;
 import dev.averageanime.neoforge.block.type.blockentity.ClothSackBlockEntity;
 import dev.averageanime.neoforge.block.type.blockentity.GenericDisplayBlockEntity;
 import dev.averageanime.neoforge.block.type.blockentity.RationBoxBlockEntity;
-import dev.averageanime.neoforge.block.type.blockentity.SmallBowlBlockEntity;
+import dev.averageanime.neoforge.block.type.blockentity.LargeBowlBlockEntity;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.neoforged.bus.api.IEventBus;
@@ -40,10 +40,10 @@ public class BlockEntityRegistration {
                 .build(null));
 
     @SuppressWarnings("DataFlowIssue")
-    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<SmallBowlBlockEntity>>
-        SMALL_BOWL = BLOCK_ENTITIES.register("small_bowl",
+    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<LargeBowlBlockEntity>>
+        LARGE_BOWL = BLOCK_ENTITIES.register("large_bowl",
             () -> BlockEntityType.Builder
-                .of(SmallBowlBlockEntity::new, DisplayBlockRegistration.SMALL_BOWL_BLOCK.get())
+                .of(LargeBowlBlockEntity::new, DisplayBlockRegistration.LARGE_BOWL_BLOCK.get())
                 .build(null));
 
     public static void register(IEventBus eventBus) {

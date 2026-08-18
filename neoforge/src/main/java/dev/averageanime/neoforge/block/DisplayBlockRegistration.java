@@ -8,7 +8,7 @@ import dev.averageanime.block.type.display.DisplayBlocks;
 import dev.averageanime.block.type.plate.CompatPlateBlocks;
 import dev.averageanime.block.type.display.*;
 import dev.averageanime.block.type.bowl.EmptyBowlBlock;
-import dev.averageanime.block.type.bowl.EmptySmallBowlBlock;
+import dev.averageanime.block.type.bowl.EmptyLargeBowlBlock;
 import dev.averageanime.block.type.bowl.GenericDisplayBowlBlock;
 import dev.averageanime.block.type.plate.EmptyPlateBlock;
 import dev.averageanime.block.type.plate.GenericDisplayPlateBlock;
@@ -54,10 +54,13 @@ public class DisplayBlockRegistration {
             () -> new EmptyPlateBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS), DisplayBlockRegistration.SMALL_PLATE_BLOCK));
 
     public static final DeferredBlock<net.minecraft.world.level.block.Block> BOWL_BLOCK = BLOCKS.register("bowl_block",
-            () -> new EmptyBowlBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS), DisplayBlockRegistration.SMALL_BOWL_BLOCK));
+            () -> new EmptyBowlBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS), DisplayBlockRegistration.LARGE_BOWL_BLOCK));
 
-    public static final DeferredBlock<net.minecraft.world.level.block.Block> SMALL_BOWL_BLOCK = BLOCKS.register("small_bowl_block",
-            () -> new EmptySmallBowlBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS), DisplayBlockRegistration.PLATE_BLOCK));
+    public static final DeferredBlock<net.minecraft.world.level.block.Block> LARGE_BOWL_BLOCK = BLOCKS.register("large_bowl_block",
+            () -> new EmptyLargeBowlBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS), DisplayBlockRegistration.PLATE_BLOCK));
+
+    public static final DeferredBlock<net.minecraft.world.level.block.Block> BOTTLE_BLOCK = BLOCKS.register("bottle_block",
+            () -> new EmptyBottleBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS)));
 
     public static final DeferredBlock<net.minecraft.world.level.block.Block> GENERIC_DISPLAY_PLATE_BLOCK = BLOCKS.register("generic_display_plate_block",
             () -> new GenericDisplayPlateBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS), DisplayBlockRegistration.PLATE_BLOCK));
@@ -318,8 +321,8 @@ public class DisplayBlockRegistration {
                     case "bottle"      -> DisplayType.BOTTLE;
                     case "bowl"        -> DisplayType.BOWL_FOOD;
                     case "display_bowl" -> DisplayType.BOWL;
-                    case "salad_bowl"  -> DisplayType.SMALL_BOWL;
-                    case "small_bowl"  -> DisplayType.SMALL_BOWL;
+                    case "salad_bowl"  -> DisplayType.LARGE_BOWL;
+                    case "large_bowl", "small_bowl" -> DisplayType.LARGE_BOWL;
                     case "plate_food"  -> DisplayType.PLATE_FOOD;
                     default            -> null;
                 };

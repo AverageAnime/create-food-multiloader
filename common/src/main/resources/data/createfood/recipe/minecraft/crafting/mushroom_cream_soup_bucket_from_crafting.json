@@ -1,32 +1,35 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "ingredients": [
-    {
-      "item": "minecraft:bucket"
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:bucket"
+        },
+        {
+            "tag": "c:mushroom_cream_soup_bowl"
+        },
+        {
+            "tag": "c:mushroom_cream_soup_bowl"
+        },
+        {
+            "tag": "c:mushroom_cream_soup_bowl"
+        },
+        {
+            "tag": "c:mushroom_cream_soup_bowl"
+        }
+    ],
+    "result": {
+        "id": "createfood:mushroom_cream_soup_bucket"
     },
-    {
-      "tag": "c:mushroom_cream_soup_bowl"
-    },
-    {
-      "tag": "c:mushroom_cream_soup_bowl"
-    },
-    {
-      "tag": "c:mushroom_cream_soup_bowl"
-    }
-  ],
-  "result": {
-    "id": "createfood:mushroom_cream_soup_bucket"
-  },
-  "neoforge:conditions": [
-    {
-      "type": "createfood:enabled",
-      "id": "mushroom_cream_soup_bowl"
-    }
-  ],
-  "fabric:load_conditions": [
-    {
-      "condition": "createfood:enabled",
-      "id": "mushroom_cream_soup_bowl"
-    }
-  ]
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "mushroom_cream_soup_bowl"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "mushroom_cream_soup_bowl"
+        }
+    ]
 }

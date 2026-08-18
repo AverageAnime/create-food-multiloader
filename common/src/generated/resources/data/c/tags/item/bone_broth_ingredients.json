@@ -1,0 +1,20 @@
+{
+  "values": [
+    {
+      "id": "minecraft:glow_berries",
+      "required": false
+    },
+    {
+      "id": "minecraft:glow_lichen",
+      "required": false
+    },
+    {
+      "id": "minecraft:hanging_roots",
+      "required": false
+    },
+    {
+      "id": "#c:mushrooms",
+      "required": false
+    }
+  ]
+}

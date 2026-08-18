@@ -40,6 +40,7 @@ import static dev.averageanime.neoforge.item.ItemRegistration.ITEMS;
 @SuppressWarnings("unused")
 public class FluidBlock {
     private final String name;
+    private String texture;
     private Vector3f fogColor = null;
     private int density = 1400;
     private int viscosity = 1500;
@@ -52,6 +53,13 @@ public class FluidBlock {
 
     public FluidBlock(String name) {
         this.name = name;
+        this.texture = name;
+    }
+
+    /** Reuse another fluid's sprites instead of requiring {@code <name>_still|_flow} textures. */
+    public FluidBlock tex(String texture) {
+        this.texture = texture;
+        return this;
     }
 
     public FluidBlock color(float r, float g, float b) {
@@ -95,7 +103,7 @@ public class FluidBlock {
     public FluidType build() {
         Vector3f finalColor = fogColor;
         if (finalColor == null) {
-            finalColor = extractColorFromTexture(name);
+            finalColor = extractColorFromTexture(texture);
         }
 
         net.neoforged.neoforge.fluids.FluidType.Properties properties = net.neoforged.neoforge.fluids.FluidType.Properties.create()
@@ -104,7 +112,7 @@ public class FluidBlock {
                 .density(density)
                 .viscosity(viscosity);
 
-        return new FluidType(name, finalColor, properties, slopeFindDistance, levelDecreasePerBlock, fogStart, fogEnd);
+        return new FluidType(name, texture, finalColor, properties, slopeFindDistance, levelDecreasePerBlock, fogStart, fogEnd);
     }
 
     private static Vector3f extractColorFromTexture(String fluidName) {
@@ -173,10 +181,10 @@ public class FluidBlock {
         private final int slopeFindDistance;
         private final int levelDecreasePerBlock;
 
-        public FluidType(String name, Vector3f fogColor, net.neoforged.neoforge.fluids.FluidType.Properties fluidTypeProperties,
+        public FluidType(String name, String texture, Vector3f fogColor, net.neoforged.neoforge.fluids.FluidType.Properties fluidTypeProperties,
                          int slopeFindDistance, int levelDecreasePerBlock, float fogStart, float fogEnd) {
-            this.stillTexture = ResourceLocation.fromNamespaceAndPath(CreateFoodCommon.MOD_ID, "fluid/" + name + "_still");
-            this.flowingTexture = ResourceLocation.fromNamespaceAndPath(CreateFoodCommon.MOD_ID, "fluid/" + name + "_flow");
+            this.stillTexture = ResourceLocation.fromNamespaceAndPath(CreateFoodCommon.MOD_ID, "fluid/" + texture + "_still");
+            this.flowingTexture = ResourceLocation.fromNamespaceAndPath(CreateFoodCommon.MOD_ID, "fluid/" + texture + "_flow");
             this.slopeFindDistance = slopeFindDistance;
             this.levelDecreasePerBlock = levelDecreasePerBlock;
 

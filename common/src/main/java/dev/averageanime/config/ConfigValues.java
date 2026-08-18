@@ -1,5 +1,6 @@
 package dev.averageanime.config;
 
+import dev.averageanime.registry.FluidAmounts;
 import net.minecraft.world.item.ItemStack;
 import org.jetbrains.annotations.Nullable;
 
@@ -32,9 +33,11 @@ public final class ConfigValues {
     static Supplier<Boolean> CLOTH_SACK_EAT_FROM_ITEM       = unbound();
     static Supplier<Boolean> CLOTH_SACK_INVENTORY_ENABLED   = unbound();
     static Supplier<Boolean> CLOTH_SACK_STACK               = unbound();
+    static Supplier<Boolean> CREATE_BASIN_FLUID_ITEMS       = unbound();
+    static Supplier<Boolean> CREATE_EXPANDED_BASIN_FLUIDS   = unbound();
     static Supplier<Boolean> ENABLE_CUTTING_BOARD           = unbound();
-    static Supplier<Boolean> ENABLE_DIPPING                 = unbound();
-    static Supplier<Integer> SMALL_BOWL_CAPACITY_MB         = unbound();
+    static Supplier<Boolean> ENABLE_DISPLAY_INTERACTIONS    = unbound();
+    static Supplier<Integer> LARGE_BOWL_CAPACITY_MB         = unbound();
     static Supplier<Boolean> ENABLE_EGG_IMPACT_REMAINDER    = unbound();
     static Supplier<Boolean> ENABLE_FILTER_INTERACTIONS     = unbound();
     static Supplier<Boolean> ENABLE_GENERIC_DISPLAY         = unbound();
@@ -46,6 +49,8 @@ public final class ConfigValues {
     static Supplier<Boolean> RATION_BOX_EAT_FROM_ITEM       = unbound();
     static Supplier<Boolean> RATION_BOX_INVENTORY_ENABLED   = unbound();
     static Supplier<Boolean> RATION_BOX_STACK               = unbound();
+    static Supplier<Boolean> STACK_EFFECT_DURATION          = unbound();
+    static Supplier<Integer> MAX_STACKED_DURATION           = unbound();
 
     static Supplier<List<? extends String>> CAMPFIRE_COOKING_EXCLUDE   = unbound();
     static Supplier<List<? extends String>> CAMPFIRE_COOKING_FILTER    = unbound();
@@ -53,7 +58,7 @@ public final class ConfigValues {
     static Supplier<List<? extends String>> CLOTH_SACK_EXCLUDE         = unbound();
     static Supplier<List<? extends String>> CLOTH_SACK_FILTER          = unbound();
     static Supplier<List<? extends String>> CRAFTING_REMAINDERS        = unbound();
-    static Supplier<List<? extends String>> DIPPING_EXCLUDE            = unbound();
+    static Supplier<List<? extends String>> DISPLAY_INTERACTIONS_EXCLUDE = unbound();
     static Supplier<List<? extends String>> FILTER_INTERACTIONS        = unbound();
     static Supplier<List<? extends String>> GENERIC_DISPLAY_EXCLUDE    = unbound();
     static Supplier<List<? extends String>> HANDCRAFTING_EXCLUDE       = unbound();
@@ -84,6 +89,14 @@ public final class ConfigValues {
     public static ItemNutritionOverride getItemNutritionOverride(String itemId) {
         try { return ConfigParser.getItemNutritionOverride(itemId, ITEM_NUTRITION_OVERRIDES.get()); }
         catch (IllegalStateException ignored) { return null; }
+    }
+
+    public static boolean isEffectDurationStacking() {
+        try { return STACK_EFFECT_DURATION.get(); } catch (IllegalStateException e) { return true; }
+    }
+
+    public static int getMaxStackedEffectDuration() {
+        try { return MAX_STACKED_DURATION.get(); } catch (IllegalStateException e) { return 36000; }
     }
 
     @Nullable
@@ -126,12 +139,12 @@ public final class ConfigValues {
         catch (IllegalStateException e) { return true; }
     }
 
-    public static boolean isDippingEnabled() { try { return ENABLE_DIPPING.get(); } catch (IllegalStateException e) { return true; } }
-    public static int getSmallBowlCapacityMb() { try { return SMALL_BOWL_CAPACITY_MB.get(); } catch (IllegalStateException e) { return 4000; } }
+    public static boolean isDisplayInteractionsEnabled() { try { return ENABLE_DISPLAY_INTERACTIONS.get(); } catch (IllegalStateException e) { return true; } }
+    public static int getLargeBowlCapacityMb() { try { return LARGE_BOWL_CAPACITY_MB.get(); } catch (IllegalStateException e) { return FluidAmounts.BUCKET * 4; } }
 
-    public static boolean isDippingExcluded(ItemStack stack) {
-        try { return ConfigParser.matchesFilterList(stack, DIPPING_EXCLUDE.get()); }
-        catch (IllegalStateException e) { return ConfigParser.matchesFilterList(stack, ConfigDefaults.DIPPING_EXCLUDE_DEFAULT); }
+    public static boolean isDisplayInteractionExcluded(ItemStack stack) {
+        try { return ConfigParser.matchesFilterList(stack, DISPLAY_INTERACTIONS_EXCLUDE.get()); }
+        catch (IllegalStateException e) { return ConfigParser.matchesFilterList(stack, ConfigDefaults.DISPLAY_INTERACTIONS_EXCLUDE_DEFAULT); }
     }
 
     public static boolean isPumpkinPiePlacementEnabled() { try { return ENABLE_PUMPKIN_PIE_PLACEMENT.get(); } catch (IllegalStateException e) { return false; } }
@@ -157,6 +170,10 @@ public final class ConfigValues {
     public static boolean isFilterInteractionsEnabled() { return ENABLE_FILTER_INTERACTIONS.get(); }
     public static List<String> getFilterInteractions()  { return FILTER_INTERACTIONS.get().stream().map(String::valueOf).toList(); }
     public static List<? extends String> getFilterInteractionEntries() { return FILTER_INTERACTIONS.get(); }
+
+    public static boolean isBasinFluidItemsEnabled() { try { return CREATE_BASIN_FLUID_ITEMS.get(); } catch (IllegalStateException e) { return true; } }
+
+    public static boolean isExpandedBasinFluidsEnabled() { try { return CREATE_EXPANDED_BASIN_FLUIDS.get(); } catch (IllegalStateException e) { return true; } }
 
     public static boolean isEggImpactRemainderEnabled() { try { return ENABLE_EGG_IMPACT_REMAINDER.get(); } catch (IllegalStateException e) { return true; } }
     public static List<? extends String> getCraftingRemainders() { try { return CRAFTING_REMAINDERS.get(); } catch (IllegalStateException e) { return List.of(); } }

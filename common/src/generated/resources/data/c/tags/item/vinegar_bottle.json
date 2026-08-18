@@ -5,10 +5,6 @@
       "required": false
     },
     {
-      "id": "createfood:vinegar_bottle",
-      "required": false
-    },
-    {
       "id": "dumplings_delight:vinegar",
       "required": false
     }

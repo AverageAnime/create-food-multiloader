@@ -1,0 +1,117 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "farmersdelight"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "culturaldelights"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "culturalcreators"
+    },
+    {
+      "type": "createfood:enabled",
+      "id": "culturaldelights:fish_taco"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "create"
+      ]
+    },
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "farmersdelight"
+      ]
+    },
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "culturaldelights"
+      ]
+    },
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "culturalcreators"
+      ]
+    },
+    {
+      "condition": "createfood:enabled",
+      "id": "culturaldelights:fish_taco"
+    }
+  ],
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "tag": "c:tortilla"
+  },
+  "loops": 1,
+  "results": [
+    {
+      "id": "culturaldelights:fish_taco"
+    }
+  ],
+  "sequence": [
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "culturalcreators:incomplete_fish_taco"
+        },
+        {
+          "tag": "c:foods/cooked_fish"
+        }
+      ],
+      "results": [
+        {
+          "id": "culturalcreators:incomplete_fish_taco"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "culturalcreators:incomplete_fish_taco"
+        },
+        {
+          "tag": "c:foods/leafy_green"
+        }
+      ],
+      "results": [
+        {
+          "id": "culturalcreators:incomplete_fish_taco"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "culturalcreators:incomplete_fish_taco"
+        },
+        {
+          "tag": "c:tomato"
+        }
+      ],
+      "results": [
+        {
+          "id": "culturalcreators:incomplete_fish_taco"
+        }
+      ]
+    }
+  ],
+  "transitional_item": {
+    "id": "culturalcreators:incomplete_fish_taco"
+  }
+}

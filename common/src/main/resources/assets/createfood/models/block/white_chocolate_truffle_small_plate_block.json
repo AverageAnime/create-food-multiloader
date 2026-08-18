@@ -1,0 +1,55 @@
+{
+	"format_version": "1.9.0",
+	"credit": "Made with Blockbench",
+	"parent": "minecraft:block/block",
+	"texture_size": [32, 32],
+	"textures": {
+		"1": "createfood:item/white_chocolate_truffle",
+		"plate": "createfood:block/small_plate_block",
+		"particle": "createfood:item/white_chocolate_truffle"
+	},
+	"elements": [
+		{
+			"from": [4, 0, 4],
+			"to": [12, 1, 12],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 1.25, 8]},
+			"faces": {
+				"north": {"uv": [4, 4, 12, 5], "texture": "#plate"},
+				"east": {"uv": [12, 12, 11, 4], "rotation": 90, "texture": "#plate"},
+				"south": {"uv": [12, 11, 4, 12], "texture": "#plate"},
+				"west": {"uv": [5, 4, 4, 12], "rotation": 90, "texture": "#plate"},
+				"up": {"uv": [4, 4, 12, 12], "rotation": 180, "texture": "#plate"},
+				"down": {"uv": [12, 4, 4, 12], "texture": "#plate"}
+			}
+		},
+		{
+			"from": [7, 1, 7],
+			"to": [9, 3, 9],
+			"rotation": {"angle": 45, "axis": "y", "origin": [8, 1.75, 8]},
+			"faces": {
+				"north": {"uv": [8, 10, 10, 12], "texture": "#1"},
+				"east": {"uv": [8, 10, 10, 12], "texture": "#1"},
+				"south": {"uv": [8, 10, 10, 12], "texture": "#1"},
+				"west": {"uv": [8, 10, 10, 12], "texture": "#1"},
+				"up": {"uv": [8, 10, 10, 12], "texture": "#1"},
+				"down": {"uv": [8, 10, 10, 12], "texture": "#1"}
+			}
+		}
+	],
+	"groups": [
+		{
+			"name": "plate",
+			"origin": [0, 1, 0],
+			"scope": 0,
+			"color": 0,
+			"children": [0]
+		},
+		{
+			"name": "truffle_1",
+			"origin": [2, 2, 2],
+			"scope": 0,
+			"color": 0,
+			"children": [1]
+		}
+	]
+}

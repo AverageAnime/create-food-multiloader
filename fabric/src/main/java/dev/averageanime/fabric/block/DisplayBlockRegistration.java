@@ -8,7 +8,7 @@ import dev.averageanime.block.type.display.DisplayBlocks;
 import dev.averageanime.block.type.plate.CompatPlateBlocks;
 import dev.averageanime.block.type.display.*;
 import dev.averageanime.block.type.bowl.EmptyBowlBlock;
-import dev.averageanime.block.type.bowl.EmptySmallBowlBlock;
+import dev.averageanime.block.type.bowl.EmptyLargeBowlBlock;
 import dev.averageanime.block.type.bowl.GenericDisplayBowlBlock;
 import dev.averageanime.block.type.plate.EmptyPlateBlock;
 import dev.averageanime.block.type.plate.GenericDisplayPlateBlock;
@@ -50,7 +50,8 @@ public class DisplayBlockRegistration {
     public static Block SMALL_PLATE_BLOCK;
     public static Block PLATE_BLOCK;
     public static Block BOWL_BLOCK;
-    public static Block SMALL_BOWL_BLOCK;
+    public static Block LARGE_BOWL_BLOCK;
+    public static Block BOTTLE_BLOCK;
     public static Block GENERIC_DISPLAY_PLATE_BLOCK;
     public static Block GENERIC_DISPLAY_BOWL_BLOCK;
 
@@ -64,10 +65,13 @@ public class DisplayBlockRegistration {
                         () -> SMALL_PLATE_BLOCK));
         BOWL_BLOCK = regBlock("bowl_block",
                 new EmptyBowlBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS),
-                        () -> SMALL_BOWL_BLOCK));
-        SMALL_BOWL_BLOCK = regBlock("small_bowl_block",
-                new EmptySmallBowlBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS),
+                        () -> LARGE_BOWL_BLOCK));
+        LARGE_BOWL_BLOCK = regBlock("large_bowl_block",
+                new EmptyLargeBowlBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS),
                         () -> PLATE_BLOCK));
+
+        BOTTLE_BLOCK = regBlock("bottle_block",
+                new EmptyBottleBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS)));
 
         GENERIC_DISPLAY_PLATE_BLOCK = regBlock("generic_display_plate_block",
                 new GenericDisplayPlateBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS), () -> PLATE_BLOCK));
@@ -313,8 +317,8 @@ public class DisplayBlockRegistration {
                     case "bottle"      -> DisplayType.BOTTLE;
                     case "bowl"        -> DisplayType.BOWL_FOOD;
                     case "display_bowl" -> DisplayType.BOWL;
-                    case "salad_bowl"  -> DisplayType.SMALL_BOWL;
-                    case "small_bowl"  -> DisplayType.SMALL_BOWL;
+                    case "salad_bowl"  -> DisplayType.LARGE_BOWL;
+                    case "large_bowl", "small_bowl" -> DisplayType.LARGE_BOWL;
                     case "plate_food"  -> DisplayType.PLATE_FOOD;
                     default            -> null;
                 };

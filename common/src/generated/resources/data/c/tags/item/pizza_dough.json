@@ -3,10 +3,6 @@
     {
       "id": "createfood:pizza_dough",
       "required": false
-    },
-    {
-      "id": "createfood:pizza_dough",
-      "required": false
     }
   ]
 }

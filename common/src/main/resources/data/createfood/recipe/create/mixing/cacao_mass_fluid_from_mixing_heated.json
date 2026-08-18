@@ -3,16 +3,16 @@
     "heat_requirement": "heated",
     "ingredients": [
         {
-            "item": "createfood:cacao_nibs"
+            "tag": "c:cacao_nibs"
         },
         {
-            "item": "createfood:cacao_nibs"
+            "tag": "c:cacao_nibs"
         },
         {
-            "item": "createfood:cacao_nibs"
+            "tag": "c:cacao_nibs"
         },
         {
-            "item": "createfood:cacao_nibs"
+            "tag": "c:cacao_nibs"
         }
     ],
     "results": [

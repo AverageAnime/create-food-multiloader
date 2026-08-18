@@ -1,7 +1,9 @@
 package dev.averageanime.block.type.bowl;
 
-import dev.averageanime.block.type.blockentity.SmallBowlBlockEntity;
+import dev.averageanime.block.type.blockentity.LargeBowlBlockEntity;
+import dev.averageanime.config.ConfigValues;
 import dev.averageanime.platform.Services;
+import dev.averageanime.util.PlayerItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
@@ -22,8 +24,8 @@ public final class BowlDippingInteraction {
     private BowlDippingInteraction() {}
 
     public static ItemInteractionResult tryInteract(Player player, Level level, InteractionHand hand,
-                                                    BlockPos pos, SmallBowlBlockEntity bowl) {
-        if (!Services.PLATFORM.isDippingEnabled()) return null;
+                                                    BlockPos pos, LargeBowlBlockEntity bowl) {
+        if (!Services.PLATFORM.isDisplayInteractionsEnabled()) return null;
 
         ItemStack held = player.getItemInHand(hand);
         if (held.isEmpty()) return null;
@@ -41,37 +43,34 @@ public final class BowlDippingInteraction {
             return fillBucket(player, level, hand, pos, bowl);
         }
 
+        if (ConfigValues.isDisplayInteractionExcluded(held)) return null;
+
         DippingRecipes.Dip dip = DippingRecipes.findFillingRecipe(level, held, bowl.getFluid(), bowl.getAmount());
         if (dip == null) return null;
         if (level.isClientSide()) return ItemInteractionResult.SUCCESS;
         return dip(player, level, pos, held, bowl, dip);
     }
 
-    private static boolean canFillBucket(ItemStack held, SmallBowlBlockEntity bowl) {
+    private static boolean canFillBucket(ItemStack held, LargeBowlBlockEntity bowl) {
         return held.getItem() == Items.BUCKET
-                && bowl.getAmount() >= Services.PLATFORM.getSmallBowlCapacityMb()
+                && bowl.getAmount() >= Services.PLATFORM.getLargeBowlCapacityMb()
                 && filledBucketFor(bowl) != null;
     }
 
     @Nullable
-    private static ItemStack filledBucketFor(SmallBowlBlockEntity bowl) {
+    private static ItemStack filledBucketFor(LargeBowlBlockEntity bowl) {
         Item bucket = bowl.getFluid().getBucket();
         return bucket == null || bucket == Items.AIR ? null : new ItemStack(bucket);
     }
 
     private static ItemInteractionResult fillBucket(Player player, Level level, InteractionHand hand,
-                                                    BlockPos pos, SmallBowlBlockEntity bowl) {
+                                                    BlockPos pos, LargeBowlBlockEntity bowl) {
         ItemStack filled = filledBucketFor(bowl);
-        if (filled == null || !bowl.drain(Services.PLATFORM.getSmallBowlCapacityMb())) return null;
+        if (filled == null || !bowl.drain(Services.PLATFORM.getLargeBowlCapacityMb())) return null;
 
         if (!player.isCreative()) {
-            ItemStack held = player.getItemInHand(hand);
-            held.shrink(1);
-            if (held.isEmpty()) {
-                player.setItemInHand(hand, filled);
-            } else if (!player.getInventory().add(filled)) {
-                player.drop(filled, false);
-            }
+            player.getItemInHand(hand).shrink(1);
+            PlayerItems.giveToHandOrInventory(player, hand, filled);
         }
 
         level.playSound(null, pos, SoundEvents.BUCKET_FILL, SoundSource.BLOCKS, 1.0f, 1.0f);
@@ -79,20 +78,12 @@ public final class BowlDippingInteraction {
     }
 
     private static ItemInteractionResult fill(Player player, Level level, InteractionHand hand, BlockPos pos,
-                                              SmallBowlBlockEntity bowl, DippingRecipes.Emptied emptied) {
+                                              LargeBowlBlockEntity bowl, DippingRecipes.Emptied emptied) {
         if (!bowl.fill(emptied.fluid(), emptied.amount())) return null;
 
         if (!player.isCreative()) {
-            ItemStack held = player.getItemInHand(hand);
-            ItemStack leftover = emptied.container().copy();
-            held.shrink(1);
-            if (!leftover.isEmpty()) {
-                if (held.isEmpty()) {
-                    player.setItemInHand(hand, leftover);
-                } else if (!player.getInventory().add(leftover)) {
-                    player.drop(leftover, false);
-                }
-            }
+            player.getItemInHand(hand).shrink(1);
+            PlayerItems.giveToHandOrInventory(player, hand, emptied.container().copy());
         }
 
         level.playSound(null, pos, SoundEvents.BUCKET_EMPTY, SoundSource.BLOCKS, 1.0f, 1.0f);
@@ -100,21 +91,18 @@ public final class BowlDippingInteraction {
     }
 
     private static ItemInteractionResult dip(Player player, Level level, BlockPos pos, ItemStack held,
-                                             SmallBowlBlockEntity bowl, DippingRecipes.Dip dip) {
+                                             LargeBowlBlockEntity bowl, DippingRecipes.Dip dip) {
         if (!bowl.drain(dip.fluidAmount())) return null;
 
-        ItemStack result = dip.result().copy();
         if (!player.isCreative()) held.shrink(1);
-        if (!player.getInventory().add(result)) {
-            player.drop(result, false);
-        }
+        PlayerItems.give(player, dip.result().copy());
 
         level.playSound(null, pos, dipSound(), SoundSource.BLOCKS, 0.9f,
                 0.9f + level.random.nextFloat() * 0.2f);
         return ItemInteractionResult.SUCCESS;
     }
 
-    private static SoundEvent dipSound() {
+    public static SoundEvent dipSound() {
         return BuiltInRegistries.SOUND_EVENT
                 .getOptional(ResourceLocation.fromNamespaceAndPath("create", "spout"))
                 .orElse(SoundEvents.BREWING_STAND_BREW);

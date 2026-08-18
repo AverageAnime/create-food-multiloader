@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "tag": "c:cooked_pasta"
+    },
+    {
+      "tag": "c:small_slimeballs"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "createfood:pasta_plate_slimeballs"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "pasta_plate_slimeballs"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "pasta_plate_slimeballs"
+    }
+  ]
+}

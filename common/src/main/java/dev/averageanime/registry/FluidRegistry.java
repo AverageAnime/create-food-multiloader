@@ -10,6 +10,7 @@ public final class FluidRegistry {
 
     public static void init() {}
 
+    public static final FluidEntry ALFREDO_SAUCE_FLUID_ENTRY = fluid("alfredo_sauce");
     public static final FluidEntry APPLE_CREAM_FROSTING_FLUID_ENTRY = fluid("apple_cream_frosting");
     public static final FluidEntry APPLE_CUSTARD_FLUID_ENTRY = fluid("apple_custard",              1, 4);
     public static final FluidEntry APPLE_ICE_CREAM_FLUID_ENTRY = fluid("apple_ice_cream");
@@ -42,6 +43,7 @@ public final class FluidRegistry {
     public static final FluidEntry CHOCOLATE_CREAM_FROSTING_FLUID_ENTRY = fluid("chocolate_cream_frosting");
     public static final FluidEntry CHOCOLATE_CUSTARD_FLUID_ENTRY = fluid("chocolate_custard",        1, 4);
     public static final FluidEntry CHOCOLATE_FUDGE_FLUID_ENTRY = fluid("chocolate_fudge");
+    public static final FluidEntry CHOCOLATE_GANACHE_FLUID_ENTRY = fluid("chocolate_ganache").tex("chocolate_fudge");
     public static final FluidEntry CHOCOLATE_ICE_CREAM_FLUID_ENTRY = fluid("chocolate_ice_cream");
     public static final FluidEntry CHOCOLATE_MILKSHAKE_FLUID_ENTRY = fluid("chocolate_milkshake",      2, 4);
     public static final FluidEntry CHOCOLATE_MILK_FLUID_ENTRY = fluid("chocolate_milk");
@@ -60,6 +62,7 @@ public final class FluidRegistry {
     public static final FluidEntry CYAN_GELATIN_MIX_FLUID_ENTRY = fluid("cyan_gelatin_mix");
     public static final FluidEntry DARK_CHOCOLATE_FLUID_ENTRY = fluid("dark_chocolate");
     public static final FluidEntry DARK_CHOCOLATE_FUDGE_FLUID_ENTRY = fluid("dark_chocolate_fudge");
+    public static final FluidEntry DARK_CHOCOLATE_GANACHE_FLUID_ENTRY = fluid("dark_chocolate_ganache").tex("dark_chocolate_fudge");
     public static final FluidEntry EGG_FLUID_ENTRY = fluid("egg");
     public static final FluidEntry EGG_WHITES_FLUID_ENTRY = fluid("egg_whites");
     public static final FluidEntry FISH_CHOWDER_FLUID_ENTRY = fluid("fish_chowder");
@@ -97,6 +100,7 @@ public final class FluidRegistry {
     public static final FluidEntry MUSHROOM_CREAM_SOUP_FLUID_ENTRY = fluid("mushroom_cream_soup");
     public static final FluidEntry MUTTON_STEW_FLUID_ENTRY = fluid("mutton_stew");
     public static final FluidEntry ORANGE_GELATIN_MIX_FLUID_ENTRY = fluid("orange_gelatin_mix");
+    public static final FluidEntry PANNA_COTTA_FLUID_ENTRY = fluid("panna_cotta").tex("light_gray_gelatin_mix");
     public static final FluidEntry PINK_GELATIN_MIX_FLUID_ENTRY = fluid("pink_gelatin_mix");
     public static final FluidEntry PORK_STEW_FLUID_ENTRY = fluid("pork_stew");
     public static final FluidEntry POTATO_CREAM_SOUP_FLUID_ENTRY = fluid("potato_cream_soup");
@@ -120,6 +124,7 @@ public final class FluidRegistry {
     public static final FluidEntry WAFFLE_BATTER_FLUID_ENTRY = fluid("waffle_batter");
     public static final FluidEntry WHITE_CHOCOLATE_FLUID_ENTRY = fluid("white_chocolate");
     public static final FluidEntry WHITE_CHOCOLATE_FUDGE_FLUID_ENTRY = fluid("white_chocolate_fudge");
+    public static final FluidEntry WHITE_CHOCOLATE_GANACHE_FLUID_ENTRY = fluid("white_chocolate_ganache").tex("white_chocolate_fudge");
     public static final FluidEntry YELLOW_GELATIN_MIX_FLUID_ENTRY = fluid("yellow_gelatin_mix");
     public static final FluidEntry YOGURT_FLUID_ENTRY = fluid("yogurt");
 }

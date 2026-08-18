@@ -24,7 +24,7 @@ public class FluidRegistration {
     public static void init() {
         FluidRegistry.init();
         for (FluidEntry f : FluidEntry.ALL) {
-            FluidBlock entry = new FluidBlock(f.id).fog(f.fogStart, f.fogEnd);
+            FluidBlock entry = new FluidBlock(f.id).tex(f.texture).fog(f.fogStart, f.fogEnd);
             if (f.slope >= 0) entry = entry.flow(f.slope, f.level);
             FluidBlock built = entry.build();
             ALL_ENTRIES.add(built);

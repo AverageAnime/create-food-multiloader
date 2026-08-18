@@ -5,10 +5,6 @@
       "required": false
     },
     {
-      "id": "createfood:milkshake_bottle",
-      "required": false
-    },
-    {
       "id": "create_dd:vanilla_milkshake",
       "required": false
     }

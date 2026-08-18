@@ -3,10 +3,6 @@
     {
       "id": "createfood:raw_fish_onion_pizza",
       "required": false
-    },
-    {
-      "id": "createfood:raw_fish_onion_pizza",
-      "required": false
     }
   ]
 }

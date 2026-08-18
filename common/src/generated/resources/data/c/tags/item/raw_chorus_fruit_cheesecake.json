@@ -3,10 +3,6 @@
     {
       "id": "createfood:raw_chorus_fruit_cheesecake",
       "required": false
-    },
-    {
-      "id": "createfood:raw_chorus_fruit_cheesecake",
-      "required": false
     }
   ]
 }

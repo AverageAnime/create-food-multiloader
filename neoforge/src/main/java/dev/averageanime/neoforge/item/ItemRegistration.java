@@ -51,7 +51,7 @@ public class ItemRegistration {
                     return new MobEffectInstance(holder, override.duration(), override.amplifier());
                 }
                 return new MobEffectInstance(holder, spec.duration, spec.amplifier);
-            }, 1.0f);
+            }, spec.chance);
         }
     };
 

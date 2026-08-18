@@ -6,6 +6,9 @@
     },
     {
       "tag": "c:cheeses"
+    },
+    {
+      "tag": "c:bowl"
     }
   ],
   "result": {

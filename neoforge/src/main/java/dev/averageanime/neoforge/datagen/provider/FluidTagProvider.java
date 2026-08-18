@@ -16,6 +16,13 @@ import org.jetbrains.annotations.NotNull;
 
 public class FluidTagProvider extends TagsProvider<Fluid> {
 
+    private static final String[] DELIGHTFUL_CREATORS_FLUIDS = {
+            "apple_cider", "baked_cod_stew", "beef_stew", "beetroot_soup", "bone_broth",
+            "chicken_soup", "cooked_rice", "dog_food", "fish_stew", "glow_berry_custard",
+            "hot_cocoa", "melon_juice", "mushroom_stew", "noodle_soup", "pumpkin_soup",
+            "rabbit_stew", "ratatouille", "tomato_sauce", "vegetable_soup"
+    };
+
     public FluidTagProvider(PackOutput output,
                             CompletableFuture<HolderLookup.Provider> lookupProvider,
                             ExistingFileHelper existingFileHelper) {
@@ -58,6 +65,20 @@ public class FluidTagProvider extends TagsProvider<Fluid> {
         tag(fluidTag("white_chocolate"))
                 .addOptional(ResourceLocation.parse("create_confectionery:white_chocolate"))
                 .addOptional(ResourceLocation.parse("create_confectionery:flowing_white_chocolate"));
+
+        // Delightful Creators turns Farmer's Delight dishes into Create fluids. Aliasing them under c:
+        // lets our recipes reference them by tag instead of naming the mod directly. None of these
+        // collide with a Create: Food fluid — our soups and stews are separate dishes by design.
+        for (String id : DELIGHTFUL_CREATORS_FLUIDS) {
+            tag(fluidTag(id))
+                    .addOptional(ResourceLocation.fromNamespaceAndPath("delightfulcreators", id))
+                    .addOptional(ResourceLocation.fromNamespaceAndPath("delightfulcreators", "flowing_" + id));
+        }
+
+        // Cultural Creators' one fluid, aliased for the same reason.
+        tag(fluidTag("creamed_corn"))
+                .addOptional(ResourceLocation.parse("culturalcreators:creamed_corn"))
+                .addOptional(ResourceLocation.parse("culturalcreators:flowing_creamed_corn"));
 
         // Reciprocal: lets Ratatouille Fried Delights' Continuous Fryer run on Create: Food's vegetable oil.
         tag(modTag("ratatouille_fried_delights", "oil"))

@@ -17,7 +17,7 @@
             "tag": "c:raw_bacon_pizza"
         },
         {
-            "tag": "c:cooked_fishes"
+            "tag": "c:foods/raw_fish"
         }
     ],
     "result": {

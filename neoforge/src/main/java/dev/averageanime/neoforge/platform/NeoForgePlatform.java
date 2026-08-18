@@ -81,8 +81,13 @@ public class NeoForgePlatform implements Platform {
     }
 
     @Override
-    public Block getSmallBowlBlock() {
-        return DisplayBlockRegistration.SMALL_BOWL_BLOCK.get();
+    public Block getLargeBowlBlock() {
+        return DisplayBlockRegistration.LARGE_BOWL_BLOCK.get();
+    }
+
+    @Override
+    public Block getBottleBlock() {
+        return DisplayBlockRegistration.BOTTLE_BLOCK.get();
     }
 
     @Override
@@ -138,7 +143,7 @@ public class NeoForgePlatform implements Platform {
     }
 
     @Override
-    public dev.averageanime.block.type.blockentity.SmallBowlBlockEntity createSmallBowlBlockEntity(BlockPos pos, BlockState state) {
-        return new dev.averageanime.neoforge.block.type.blockentity.SmallBowlBlockEntity(pos, state);
+    public dev.averageanime.block.type.blockentity.LargeBowlBlockEntity createLargeBowlBlockEntity(BlockPos pos, BlockState state) {
+        return new dev.averageanime.neoforge.block.type.blockentity.LargeBowlBlockEntity(pos, state);
     }
 }

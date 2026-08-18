@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "c:pumpernickel_toast_cream_cheese"
+    },
+    {
+      "tag": "c:beetroot"
+    },
+    {
+      "item": "minecraft:honey_bottle"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "createfood:pumpernickel_toast_cream_cheese_beetroot_honey"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "pumpernickel_toast_cream_cheese_beetroot_honey"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "pumpernickel_toast_cream_cheese_beetroot_honey"
+    }
+  ]
+}

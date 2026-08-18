@@ -3,10 +3,6 @@
     {
       "id": "createfood:gyro_meat_block",
       "required": false
-    },
-    {
-      "id": "createfood:gyro_meat_block",
-      "required": false
     }
   ]
 }

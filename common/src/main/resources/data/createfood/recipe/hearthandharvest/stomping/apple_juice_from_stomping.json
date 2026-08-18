@@ -1,46 +1,37 @@
 {
-  "type": "hearthandharvest:stomping",
-  "ingredients": [
-    {
-      "tag": "c:apple"
+    "type": "hearthandharvest:stomping",
+    "ingredients": [
+        {
+            "tag": "c:apple"
+        },
+        {
+            "tag": "c:sugar"
+        }
+    ],
+    "result_fluid": {
+        "amount": 250,
+        "id": "createfood:apple_juice"
     },
-    {
-      "tag": "c:apple"
-    },
-    {
-      "tag": "c:apple"
-    },
-    {
-      "tag": "c:apple"
-    },
-    {
-      "tag": "c:sugar"
-    }
-  ],
-  "result_fluid": {
-    "amount": 250,
-    "id": "createfood:apple_juice"
-  },
-  "neoforge:conditions": [
-    {
-      "type": "neoforge:mod_loaded",
-      "modid": "hearthandharvest"
-    },
-    {
-      "type": "createfood:enabled",
-      "id": "apple_juice"
-    }
-  ],
-  "fabric:load_conditions": [
-    {
-      "condition": "fabric:all_mods_loaded",
-      "values": [
-        "hearthandharvest"
-      ]
-    },
-    {
-      "condition": "createfood:enabled",
-      "id": "apple_juice"
-    }
-  ]
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "hearthandharvest"
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "apple_juice"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "hearthandharvest"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
+            "id": "apple_juice"
+        }
+    ]
 }

@@ -5,10 +5,6 @@
       "required": false
     },
     {
-      "id": "createfood:hot_chocolate_bottle",
-      "required": false
-    },
-    {
       "id": "create_dd:hot_chocolate",
       "required": false
     },

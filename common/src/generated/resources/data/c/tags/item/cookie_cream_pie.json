@@ -3,10 +3,6 @@
     {
       "id": "createfood:cookie_cream_pie",
       "required": false
-    },
-    {
-      "id": "createfood:cookie_cream_pie",
-      "required": false
     }
   ]
 }

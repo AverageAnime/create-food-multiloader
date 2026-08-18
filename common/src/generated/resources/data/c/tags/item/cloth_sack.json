@@ -3,10 +3,6 @@
     {
       "id": "createfood:cloth_sack",
       "required": false
-    },
-    {
-      "id": "createfood:cloth_sack",
-      "required": false
     }
   ]
 }

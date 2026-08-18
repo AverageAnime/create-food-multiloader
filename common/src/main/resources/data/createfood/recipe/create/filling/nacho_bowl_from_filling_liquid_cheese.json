@@ -7,7 +7,7 @@
     {
       "type": "fluid_tag",
       "amount": 125,
-      "fluid_tag": "c:liquid_cheese"
+      "fluid_tag": "c:cheese"
     }
   ],
   "results": [

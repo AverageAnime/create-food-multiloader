@@ -3,7 +3,7 @@ package dev.averageanime.fabric;
 import dev.averageanime.CreateFoodCommon;
 import dev.averageanime.client.renderer.ClothSackRenderer;
 import dev.averageanime.client.renderer.GenericDisplayPlateRenderer;
-import dev.averageanime.client.renderer.SmallBowlFluidRenderer;
+import dev.averageanime.client.renderer.LargeBowlFluidRenderer;
 import dev.averageanime.client.tooltip.StorageContentsTooltipRenderer;
 import dev.averageanime.client.screen.type.item.ClothSackItemScreen;
 import dev.averageanime.client.screen.type.block.ClothSackBlockScreen;
@@ -25,6 +25,7 @@ import dev.averageanime.client.tooltip.ItemTooltips;
 import dev.averageanime.fabric.item.interaction.CampfireCookingInteraction;
 import dev.averageanime.fabric.item.interaction.ClothFilterInteraction;
 import dev.averageanime.fabric.block.type.bowl.BowlPlacementEvents;
+import dev.averageanime.fabric.block.type.display.FoodTransformEvents;
 import dev.averageanime.fabric.block.type.plate.PlateSliceEvents;
 import dev.averageanime.fabric.item.interaction.HandcraftInteraction;
 import dev.averageanime.fabric.menu.MenuRegistration;
@@ -74,6 +75,7 @@ public class CreateFood implements ModInitializer {
         CampfireCookingInteraction.register();
         ClothFilterInteraction.register();
         BowlPlacementEvents.register();
+        FoodTransformEvents.register();
         PlateSliceEvents.register();
 
         TabRegistration.init();
@@ -98,7 +100,7 @@ public class CreateFood implements ModInitializer {
 
             BlockEntityRendererRegistry.register(BlockEntityRegistration.CLOTH_SACK, ClothSackRenderer::new);
             BlockEntityRendererRegistry.register(BlockEntityRegistration.GENERIC_DISPLAY_PLATE, GenericDisplayPlateRenderer::new);
-            BlockEntityRendererRegistry.register(BlockEntityRegistration.SMALL_BOWL, SmallBowlFluidRenderer::new);
+            BlockEntityRendererRegistry.register(BlockEntityRegistration.LARGE_BOWL, LargeBowlFluidRenderer::new);
 
             TooltipComponentCallback.EVENT.register(data ->
                     data instanceof StorageContentsTooltip s ? new StorageContentsTooltipRenderer(s) : null);

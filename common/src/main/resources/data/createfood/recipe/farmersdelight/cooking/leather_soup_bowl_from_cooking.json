@@ -21,7 +21,7 @@
     ],
     "recipe_book_tab": "drinks",
     "result": {
-        "count": 3,
+        "count": 4,
         "id": "createfood:leather_soup_bowl"
     },
     "neoforge:conditions": [

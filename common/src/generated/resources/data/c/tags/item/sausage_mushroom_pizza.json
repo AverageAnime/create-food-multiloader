@@ -3,10 +3,6 @@
     {
       "id": "createfood:sausage_mushroom_pizza",
       "required": false
-    },
-    {
-      "id": "createfood:sausage_mushroom_pizza",
-      "required": false
     }
   ]
 }

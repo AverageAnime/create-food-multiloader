@@ -12,10 +12,13 @@
         },
         {
             "tag": "c:bowl"
+        },
+        {
+            "tag": "c:bowl"
         }
     ],
     "result": {
-        "count": 3,
+        "count": 4,
         "id": "createfood:mutton_stew_bowl"
     },
     "neoforge:conditions": [

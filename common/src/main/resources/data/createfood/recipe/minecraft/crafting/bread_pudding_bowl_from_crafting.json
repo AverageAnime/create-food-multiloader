@@ -1,33 +1,36 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "ingredients": [
-    {
-      "tag": "c:bread_pudding_bucket"
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:bread_pudding_bucket"
+        },
+        {
+            "item": "minecraft:bowl"
+        },
+        {
+            "item": "minecraft:bowl"
+        },
+        {
+            "item": "minecraft:bowl"
+        },
+        {
+            "item": "minecraft:bowl"
+        }
+    ],
+    "result": {
+        "id": "createfood:bread_pudding_bowl",
+        "count": 4
     },
-    {
-      "item": "minecraft:bowl"
-    },
-    {
-      "item": "minecraft:bowl"
-    },
-    {
-      "item": "minecraft:bowl"
-    }
-  ],
-  "result": {
-    "id": "createfood:bread_pudding_bowl",
-    "count": 3
-  },
-  "neoforge:conditions": [
-    {
-      "type": "createfood:enabled",
-      "id": "bread_pudding_bowl"
-    }
-  ],
-  "fabric:load_conditions": [
-    {
-      "condition": "createfood:enabled",
-      "id": "bread_pudding_bowl"
-    }
-  ]
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "bread_pudding_bowl"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "bread_pudding_bowl"
+        }
+    ]
 }

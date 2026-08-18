@@ -10,7 +10,7 @@
     },
     {
       "type": "fluid_tag",
-      "amount": 500,
+      "amount": 250,
       "fluid_tag": "c:egg"
     },
     {
@@ -25,7 +25,7 @@
   ],
   "results": [
     {
-      "amount": 333,
+      "amount": 250,
       "id": "createfood:shakshuka"
     }
   ],

@@ -3,10 +3,6 @@
     {
       "id": "createfood:raw_cream_pie_graham_cracker",
       "required": false
-    },
-    {
-      "id": "createfood:raw_cream_pie_graham_cracker",
-      "required": false
     }
   ]
 }

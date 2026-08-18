@@ -3,6 +3,9 @@
     "experience": 1.0,
     "ingredients": [
         {
+            "tag": "c:sugar"
+        },
+        {
             "tag": "c:pressed_cocoa"
         },
         {

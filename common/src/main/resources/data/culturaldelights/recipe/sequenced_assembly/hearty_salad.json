@@ -1,0 +1,133 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "farmersdelight"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "culturaldelights"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "culturalcreators"
+    },
+    {
+      "type": "createfood:enabled",
+      "id": "culturaldelights:hearty_salad"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "create"
+      ]
+    },
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "farmersdelight"
+      ]
+    },
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "culturaldelights"
+      ]
+    },
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "culturalcreators"
+      ]
+    },
+    {
+      "condition": "createfood:enabled",
+      "id": "culturaldelights:hearty_salad"
+    }
+  ],
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "tag": "c:bowl"
+  },
+  "loops": 1,
+  "results": [
+    {
+      "id": "culturaldelights:hearty_salad"
+    }
+  ],
+  "sequence": [
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "culturalcreators:incomplete_hearty_salad"
+        },
+        {
+          "tag": "c:tomato"
+        }
+      ],
+      "results": [
+        {
+          "id": "culturalcreators:incomplete_hearty_salad"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "culturalcreators:incomplete_hearty_salad"
+        },
+        {
+          "item": "culturaldelights:cucumber"
+        }
+      ],
+      "results": [
+        {
+          "id": "culturalcreators:incomplete_hearty_salad"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "culturalcreators:incomplete_hearty_salad"
+        },
+        {
+          "tag": "c:avocado"
+        }
+      ],
+      "results": [
+        {
+          "id": "culturalcreators:incomplete_hearty_salad"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "culturalcreators:incomplete_hearty_salad"
+        },
+        {
+          "tag": "c:corn"
+        }
+      ],
+      "results": [
+        {
+          "id": "culturalcreators:incomplete_hearty_salad"
+        }
+      ]
+    }
+  ],
+  "transitional_item": {
+    "id": "culturalcreators:incomplete_hearty_salad"
+  }
+}

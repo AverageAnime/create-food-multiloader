@@ -35,6 +35,7 @@ public class FluidBlock {
     private static final Map<Fluid, FogParams> FOG_MAP = new HashMap<>();
 
     private final String name;
+    private String texture;
     private int slopeFindDistance = 4;
     private int levelDecreasePerBlock = 3;
     private float fogStart = FluidEntry.DEFAULT_FOG_START;
@@ -59,6 +60,13 @@ public class FluidBlock {
 
     public FluidBlock(String name) {
         this.name = name;
+        this.texture = name;
+    }
+
+    /** Reuse another fluid's sprites instead of requiring {@code <name>_still|_flow} textures. */
+    public FluidBlock tex(String texture) {
+        this.texture = texture;
+        return this;
     }
 
     public FluidBlock flow(int slopeFindDistance, int levelDecreasePerBlock) {
@@ -112,12 +120,12 @@ public class FluidBlock {
 
     @Environment(EnvType.CLIENT)
     public void registerClientRendering() {
-        ResourceLocation stillTexture = ResourceLocation.fromNamespaceAndPath(CreateFoodCommon.MOD_ID, "fluid/" + name + "_still");
-        ResourceLocation flowingTexture = ResourceLocation.fromNamespaceAndPath(CreateFoodCommon.MOD_ID, "fluid/" + name + "_flow");
+        ResourceLocation stillTexture = ResourceLocation.fromNamespaceAndPath(CreateFoodCommon.MOD_ID, "fluid/" + texture + "_still");
+        ResourceLocation flowingTexture = ResourceLocation.fromNamespaceAndPath(CreateFoodCommon.MOD_ID, "fluid/" + texture + "_flow");
         FluidRenderHandlerRegistry.INSTANCE.register(SOURCE, FLOWING,
                 new SimpleFluidRenderHandler(stillTexture, flowingTexture));
 
-        FogParams params = new FogParams(extractColorFromTexture(name), fogStart, fogEnd);
+        FogParams params = new FogParams(extractColorFromTexture(texture), fogStart, fogEnd);
         FOG_MAP.put(SOURCE, params);
         FOG_MAP.put(FLOWING, params);
     }

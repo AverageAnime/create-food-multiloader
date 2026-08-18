@@ -57,3 +57,35 @@ artifacts {
     commonResources sourceSets.main.resources.sourceDirectories.singleFile
 }
 
+
+// Minecraft is put on the main classpath by the modding plugin rather than by
+// a plain `implementation` dependency, so the test source set does not inherit
+// it the usual way and has to be pointed at main's classpath directly.
+sourceSets {
+    test {
+        compileClasspath += sourceSets.main.compileClasspath + sourceSets.main.output
+        runtimeClasspath += sourceSets.main.runtimeClasspath + sourceSets.main.output
+    }
+}
+
+// Dumps every food value as the compiler sees it, so the rebalance tooling's
+// text parse of ItemRegistry.java can be diffed against javac's view.
+// See documentation/toolkit/scripts/foodbalance.py --verify-runtime
+tasks.register('dumpFoodValues', JavaExec) {
+    group = 'verification'
+    description = 'Write build/food-values-runtime.csv from ItemEntry.ALL'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'dev.averageanime.tools.DumpFoodValues'
+}
+
+// Confirms every vanilla fallback id in EffectCategories actually exists.
+// A wrong id fails silently at runtime, so it is worth asserting.
+tasks.register('verifyFallbacks', JavaExec) {
+    group = 'verification'
+    description = 'Check vanilla fallback effect ids resolve'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'dev.averageanime.tools.VerifyFallbacks'
+    // JavaExec defaults to the subproject directory; the task reads a source
+    // file by repo-relative path.
+    workingDir = rootProject.projectDir
+}

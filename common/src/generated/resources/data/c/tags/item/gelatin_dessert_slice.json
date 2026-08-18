@@ -5,10 +5,6 @@
       "required": false
     },
     {
-      "id": "createfood:gelatin_dessert_slice",
-      "required": false
-    },
-    {
       "id": "createfood:black_gelatin_dessert_slice",
       "required": false
     },

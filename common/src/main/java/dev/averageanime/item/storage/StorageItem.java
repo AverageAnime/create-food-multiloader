@@ -30,6 +30,8 @@ import java.util.WeakHashMap;
 
 public abstract class StorageItem extends BlockItem {
 
+    private static final int DEFAULT_USE_TICKS = 32;
+
     private static final Map<CustomData, StorageAccess> READ_CACHE =
             Collections.synchronizedMap(new WeakHashMap<>());
 
@@ -65,15 +67,19 @@ public abstract class StorageItem extends BlockItem {
 
         StorageAccess handler = loadInventoryFresh(heldStack, level.registryAccess());
         int slot = findFirstFoodSlot(handler);
-        if (slot >= 0 && player.canEat(false)) {
-            boolean isDrink = handler.getInventoryItem(slot).getUseAnimation() == UseAnim.DRINK;
-            ItemStack modified = heldStack.copy();
-            CustomData beData = modified.get(DataComponents.BLOCK_ENTITY_DATA);
-            CompoundTag tag = beData != null ? beData.copyTag() : new CompoundTag();
-            tag.putBoolean("is_drink", isDrink);
-            modified.set(DataComponents.BLOCK_ENTITY_DATA, CustomData.of(tag));
-            player.startUsingItem(hand);
-            return InteractionResultHolder.consume(modified);
+        if (slot >= 0) {
+            ItemStack stored = handler.getInventoryItem(slot);
+            FoodProperties props = stored.get(DataComponents.FOOD);
+            if (props != null && (player.canEat(props.canAlwaysEat()) || player.getAbilities().instabuild)) {
+                ItemStack modified = heldStack.copy();
+                CustomData beData = modified.get(DataComponents.BLOCK_ENTITY_DATA);
+                CompoundTag tag = beData != null ? beData.copyTag() : new CompoundTag();
+                tag.putBoolean("is_drink", stored.getUseAnimation() == UseAnim.DRINK);
+                tag.putInt("use_ticks", stored.getUseDuration(player));
+                modified.set(DataComponents.BLOCK_ENTITY_DATA, CustomData.of(tag));
+                player.startUsingItem(hand);
+                return InteractionResultHolder.consume(modified);
+            }
         }
         return InteractionResultHolder.pass(heldStack);
     }
@@ -86,16 +92,14 @@ public abstract class StorageItem extends BlockItem {
             int slot = findFirstFoodSlot(handler);
             if (slot >= 0) {
                 ItemStack food = handler.getInventoryItem(slot).copyWithCount(1);
-
-                FoodProperties foodProps = food.get(DataComponents.FOOD);
-                Optional<ItemStack> containerOpt = foodProps != null
-                        ? foodProps.usingConvertsTo() : Optional.empty();
-
-                player.eat(level, food);
+                // finishUsingItem consumes the copy and hands back the container; it is also the only
+                // path that runs effect overrides and deferred effects on EffectFood / EffectDrink
+                ItemStack original = food.copy();
+                ItemStack container = food.finishUsingItem(level, player);
                 handler.removeItem(slot, 1);
 
-                containerOpt.ifPresent(container -> {
-                    ItemStack leftover = container.copy();
+                if (!container.isEmpty() && !ItemStack.isSameItem(container, original)) {
+                    ItemStack leftover = container;
                     for (int s = 0; s < handler.getInventorySize(); s++) {
                         leftover = handler.insertItem(s, leftover);
                         if (leftover.isEmpty()) break;
@@ -103,7 +107,7 @@ public abstract class StorageItem extends BlockItem {
                     if (!leftover.isEmpty() && !player.getInventory().add(leftover)) {
                         player.drop(leftover, false);
                     }
-                });
+                }
 
                 saveInventory(stack, handler, level.registryAccess());
             }
@@ -113,7 +117,13 @@ public abstract class StorageItem extends BlockItem {
 
     @Override
     public int getUseDuration(@NotNull ItemStack stack, @NotNull LivingEntity entity) {
-        return 32;
+        CustomData beData = stack.get(DataComponents.BLOCK_ENTITY_DATA);
+        // getUnsafe() skips the full tag copy — read-only access, never mutate
+        if (beData != null) {
+            int ticks = beData.getUnsafe().getInt("use_ticks");
+            if (ticks > 0) return ticks;
+        }
+        return DEFAULT_USE_TICKS;
     }
 
     @Override

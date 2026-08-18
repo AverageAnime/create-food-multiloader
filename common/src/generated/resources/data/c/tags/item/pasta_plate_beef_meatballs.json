@@ -5,10 +5,6 @@
       "required": false
     },
     {
-      "id": "createfood:pasta_plate_beef_meatballs",
-      "required": false
-    },
-    {
       "id": "delightfulcreators:incomplete_pasta_with_meatballs",
       "required": false
     }

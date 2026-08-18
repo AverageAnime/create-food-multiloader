@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "delightfulcreators:pumpkin_soup",
+      "required": false
+    },
+    {
+      "id": "delightfulcreators:flowing_pumpkin_soup",
+      "required": false
+    }
+  ]
+}

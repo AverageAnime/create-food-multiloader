@@ -3,10 +3,6 @@
     {
       "id": "createfood:hot_chocolate_bottle",
       "required": false
-    },
-    {
-      "id": "createfood:hot_chocolate_bottle",
-      "required": false
     }
   ]
 }

@@ -3,10 +3,6 @@
     {
       "id": "createfood:chocolate_cream_cake_dark_chocolate",
       "required": false
-    },
-    {
-      "id": "createfood:chocolate_cream_cake_dark_chocolate",
-      "required": false
     }
   ]
 }

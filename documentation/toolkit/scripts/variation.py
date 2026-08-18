@@ -75,8 +75,8 @@ def run_variations(search_string, replacements, dry_run=False, yes=False):
         for variant, count in counts.items():
             print(f"  {search_string!r} → {variant!r}: {count} file(s)")
         if not yes:
-            answer = input("Continue? [y/N]: ").strip().lower()
-            if answer != 'y':
+            answer = input("Continue? [Y/n]: ").strip().lower()
+            if answer == 'n':
                 print("Aborted.")
                 return
 

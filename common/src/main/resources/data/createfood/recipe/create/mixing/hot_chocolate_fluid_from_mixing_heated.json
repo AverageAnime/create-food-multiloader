@@ -3,6 +3,9 @@
     "heat_requirement": "heated",
     "ingredients": [
         {
+            "tag": "c:sugar"
+        },
+        {
             "type": "fluid_tag",
             "amount": 125,
             "fluid_tag": "c:milk"

@@ -7,6 +7,10 @@
     {
       "id": "farmersdelight:dumplings",
       "required": false
+    },
+    {
+      "id": "delightfulcreators:incomplete_dumplings",
+      "required": false
     }
   ]
 }

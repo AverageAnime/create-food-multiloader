@@ -1,33 +1,36 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "ingredients": [
-    {
-      "tag": "c:kelp_soup_bucket"
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:kelp_soup_bucket"
+        },
+        {
+            "item": "minecraft:bowl"
+        },
+        {
+            "item": "minecraft:bowl"
+        },
+        {
+            "item": "minecraft:bowl"
+        },
+        {
+            "item": "minecraft:bowl"
+        }
+    ],
+    "result": {
+        "id": "createfood:kelp_soup_bowl",
+        "count": 4
     },
-    {
-      "item": "minecraft:bowl"
-    },
-    {
-      "item": "minecraft:bowl"
-    },
-    {
-      "item": "minecraft:bowl"
-    }
-  ],
-  "result": {
-    "id": "createfood:kelp_soup_bowl",
-    "count": 3
-  },
-  "neoforge:conditions": [
-    {
-      "type": "createfood:enabled",
-      "id": "kelp_soup_bowl"
-    }
-  ],
-  "fabric:load_conditions": [
-    {
-      "condition": "createfood:enabled",
-      "id": "kelp_soup_bowl"
-    }
-  ]
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "kelp_soup_bowl"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "kelp_soup_bowl"
+        }
+    ]
 }

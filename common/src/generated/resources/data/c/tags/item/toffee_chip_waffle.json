@@ -3,10 +3,6 @@
     {
       "id": "createfood:toffee_chip_waffle",
       "required": false
-    },
-    {
-      "id": "createfood:toffee_chip_waffle",
-      "required": false
     }
   ]
 }

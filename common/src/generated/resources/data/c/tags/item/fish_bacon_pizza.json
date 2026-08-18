@@ -3,10 +3,6 @@
     {
       "id": "createfood:fish_bacon_pizza",
       "required": false
-    },
-    {
-      "id": "createfood:fish_bacon_pizza",
-      "required": false
     }
   ]
 }

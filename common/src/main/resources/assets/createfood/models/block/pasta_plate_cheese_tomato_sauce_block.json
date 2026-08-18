@@ -3,7 +3,7 @@
 	"credit": "Made with Blockbench",
 	"parent": "minecraft:block/block",
 	"textures": {
-		"2": "createfood:block/pasta_cheese_tomato_sauce_plate_block",
+		"2": "createfood:block/pasta_plate_cheese_tomato_sauce_block",
 		"particle": "createfood:block/plate_block",
 		"plate": "createfood:block/plate_block"
 	},

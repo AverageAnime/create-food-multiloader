@@ -2,7 +2,7 @@ package dev.averageanime.block.type.display;
 
 import dev.averageanime.block.type.bowl.BowlBlock;
 import dev.averageanime.block.type.bowl.BowlFoodBlock;
-import dev.averageanime.block.type.bowl.SmallBowlFoodBlock;
+import dev.averageanime.block.type.bowl.LargeBowlFoodBlock;
 import dev.averageanime.block.type.plate.PlateBlock;
 import dev.averageanime.block.type.plate.PlateFoodBlock;
 import dev.averageanime.block.type.plate.SmallPlateBlock;
@@ -23,7 +23,7 @@ public final class DisplayBlocks {
             case BOTTLE -> new BottleFoodBlock(itemSupplier, config.height(), config.hasParticles(), config.particleType());
             case BOWL -> new BowlBlock(itemSupplier, config.maxStack(), Services.PLATFORM::getBowlBlock);
             case BOWL_FOOD -> new BowlFoodBlock(itemSupplier, config.height(), config.hasParticles(), config.particleType());
-            case SMALL_BOWL -> new SmallBowlFoodBlock(itemSupplier);
+            case LARGE_BOWL -> new LargeBowlFoodBlock(itemSupplier);
             case PLATE_FOOD -> new PlateFoodBlock(itemSupplier);
         };
     }
@@ -32,7 +32,7 @@ public final class DisplayBlocks {
         return switch (type) {
             case PLATE, SMALL_PLATE, PLATE_FOOD -> "display.createfood.suffix.plate";
             case BOWL, BOWL_FOOD -> "display.createfood.suffix.bowl";
-            case SMALL_BOWL -> "display.createfood.suffix.small_bowl";
+            case LARGE_BOWL -> "display.createfood.suffix.large_bowl";
             case BOTTLE -> "display.createfood.suffix.bottle";
         };
     }

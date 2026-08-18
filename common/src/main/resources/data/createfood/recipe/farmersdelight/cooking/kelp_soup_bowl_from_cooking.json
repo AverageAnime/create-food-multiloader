@@ -19,7 +19,12 @@
       "tag": "c:salt"
     },
     {
-      "item": "minecraft:water_bucket"
+      "item": "minecraft:potion",
+      "components": {
+        "minecraft:potion_contents": {
+          "potion": "minecraft:water"
+        }
+      }
     }
   ],
   "recipe_book_tab": "meals",

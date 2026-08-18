@@ -31,13 +31,14 @@ public class BowlPlacementInteraction {
                                            ItemStack heldStack) {
         Item heldItem = heldStack.getItem();
         boolean isBowl             = heldItem == Items.BOWL;
+        boolean isGlassBottle      = heldItem == Items.GLASS_BOTTLE;
         boolean isRegisteredPlate  = FoodBlock.Registry.isEmptyPlateItem(heldItem);
         boolean isFoodItem         = FoodBlock.Registry.isRegistered(heldItem);
         boolean isCompatFoodItem   = !isFoodItem
                 && (FoodBlock.Registry.getDisplayDelightPlateBlock(heldItem) != null
                     || FoodBlock.Registry.getDisplayDelightSmallPlateBlock(heldItem) != null);
 
-        if (!isBowl && !isRegisteredPlate && !isFoodItem && !isCompatFoodItem) return false;
+        if (!isBowl && !isGlassBottle && !isRegisteredPlate && !isFoodItem && !isCompatFoodItem) return false;
 
         BlockState clickedState = level.getBlockState(clickedPos);
         Block clickedBlock = clickedState.getBlock();
@@ -45,20 +46,20 @@ public class BowlPlacementInteraction {
         boolean isEmptyPlate = clickedBlock instanceof EmptyPlateBlock;
         boolean isSmallPlate = clickedBlock instanceof EmptySmallPlateBlock;
         boolean isEmptyBowl  = clickedBlock instanceof EmptyBowlBlock;
-        boolean isSmallBowl  = clickedBlock instanceof EmptySmallBowlBlock;
+        boolean isLargeBowl  = clickedBlock instanceof EmptyLargeBowlBlock;
 
-        boolean isCompatEmpty = !isEmptyPlate && !isSmallPlate && !isEmptyBowl && !isSmallBowl
+        boolean isCompatEmpty = !isEmptyPlate && !isSmallPlate && !isEmptyBowl && !isLargeBowl
                 && FoodBlock.Registry.isCompatBlock(clickedBlock);
-        boolean isFilledSmallBowl = isSmallBowl
-                && EmptySmallBowlBlock.holdsFluid(level, clickedPos, clickedState);
-        if ((isBowl || isRegisteredPlate) && !isFilledSmallBowl
-                && (isEmptyPlate || isSmallPlate || isEmptyBowl || isSmallBowl || isCompatEmpty)) {
+        boolean isFilledLargeBowl = isLargeBowl
+                && EmptyLargeBowlBlock.holdsFluid(level, clickedPos, clickedState);
+        if ((isBowl || isRegisteredPlate) && !isFilledLargeBowl
+                && (isEmptyPlate || isSmallPlate || isEmptyBowl || isLargeBowl || isCompatEmpty)) {
             IntegerProperty stackProp = null;
             int maxStack = -1;
             if (isEmptyPlate)      { stackProp = FoodBlock.STACK_SIZE; maxStack = EmptyPlateBlock.MAX_STACK; }
             else if (isSmallPlate) { stackProp = FoodBlock.STACK_SIZE; maxStack = EmptySmallPlateBlock.MAX_STACK; }
             else if (isEmptyBowl)  { stackProp = FoodBlock.STACK_SIZE; maxStack = EmptyBowlBlock.MAX_STACK; }
-            else if (isSmallBowl)  { stackProp = FoodBlock.STACK_SIZE; maxStack = EmptySmallBowlBlock.MAX_STACK; }
+            else if (isLargeBowl)  { stackProp = FoodBlock.STACK_SIZE; maxStack = EmptyLargeBowlBlock.MAX_STACK; }
             else {
                 for (Property<?> property : clickedState.getProperties()) {
                     if (property.getName().equals("stacks") && property instanceof IntegerProperty ip) {
@@ -159,7 +160,7 @@ public class BowlPlacementInteraction {
             return true;
         }
 
-        if (!isBowl && !isRegisteredPlate) return false;
+        if (!isBowl && !isGlassBottle && !isRegisteredPlate) return false;
 
         Block plateBlock      = Services.PLATFORM.getPlateBlock();
         Block smallPlateBlock = Services.PLATFORM.getSmallPlateBlock();
@@ -179,7 +180,9 @@ public class BowlPlacementInteraction {
 
         if (!level.isClientSide()) {
             Block blockToPlace;
-            if (isBowl) {
+            if (isGlassBottle) {
+                blockToPlace = Services.PLATFORM.getBottleBlock();
+            } else if (isBowl) {
                 blockToPlace = plateBlock;
             } else {
                 List<Supplier<Block>> registered = FoodBlock.Registry.getAllBlocks(heldItem);

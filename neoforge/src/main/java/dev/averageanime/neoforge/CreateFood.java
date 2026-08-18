@@ -4,7 +4,7 @@ import dev.averageanime.CreateFoodCommon;
 import dev.averageanime.client.renderer.ClothSackRenderer;
 import dev.averageanime.config.ConfigLifecycle;
 import dev.averageanime.client.renderer.GenericDisplayPlateRenderer;
-import dev.averageanime.client.renderer.SmallBowlFluidRenderer;
+import dev.averageanime.client.renderer.LargeBowlFluidRenderer;
 import dev.averageanime.client.tooltip.StorageContentsTooltipRenderer;
 import dev.averageanime.client.screen.type.item.ClothSackItemScreen;
 import dev.averageanime.client.screen.type.block.ClothSackBlockScreen;
@@ -135,8 +135,8 @@ public class CreateFood {
                     BlockEntityRegistration.GENERIC_DISPLAY_PLATE.get(),
                     GenericDisplayPlateRenderer::new);
             event.registerBlockEntityRenderer(
-                    BlockEntityRegistration.SMALL_BOWL.get(),
-                    SmallBowlFluidRenderer::new);
+                    BlockEntityRegistration.LARGE_BOWL.get(),
+                    LargeBowlFluidRenderer::new);
         }
 
         @SubscribeEvent

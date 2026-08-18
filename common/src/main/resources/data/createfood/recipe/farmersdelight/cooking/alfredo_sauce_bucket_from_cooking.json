@@ -1,0 +1,51 @@
+{
+  "type": "farmersdelight:cooking",
+  "experience": 0.35,
+  "ingredients": [
+    {
+      "tag": "c:heavy_cream_bottle"
+    },
+    {
+      "tag": "c:heavy_cream_bottle"
+    },
+    {
+      "tag": "c:milk_bottle"
+    },
+    {
+      "tag": "c:cheeses"
+    },
+    {
+      "tag": "c:butter"
+    },
+    {
+      "tag": "c:salt"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "count": 1,
+    "id": "createfood:alfredo_sauce_bucket"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "farmersdelight"
+    },
+    {
+      "type": "createfood:enabled",
+      "id": "alfredo_sauce_bucket"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "farmersdelight"
+      ]
+    },
+    {
+      "condition": "createfood:enabled",
+      "id": "alfredo_sauce_bucket"
+    }
+  ]
+}

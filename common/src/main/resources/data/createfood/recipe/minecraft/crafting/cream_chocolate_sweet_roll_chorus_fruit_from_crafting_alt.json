@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "c:chocolate_sweet_roll_base"
+    },
+    {
+      "tag": "c:cream_frosting"
+    },
+    {
+      "tag": "c:chorus_fruit"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "createfood:cream_chocolate_sweet_roll_chorus_fruit"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "cream_chocolate_sweet_roll_chorus_fruit"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "cream_chocolate_sweet_roll_chorus_fruit"
+    }
+  ]
+}

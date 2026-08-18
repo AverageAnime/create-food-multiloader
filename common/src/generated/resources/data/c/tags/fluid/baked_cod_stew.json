@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "delightfulcreators:baked_cod_stew",
+      "required": false
+    },
+    {
+      "id": "delightfulcreators:flowing_baked_cod_stew",
+      "required": false
+    }
+  ]
+}

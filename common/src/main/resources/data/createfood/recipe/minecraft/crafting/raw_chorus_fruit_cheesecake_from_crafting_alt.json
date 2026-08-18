@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "c:raw_graham_cracker_pie_crust"
+    },
+    {
+      "tag": "c:cheesecake_filling_bucket"
+    },
+    {
+      "tag": "c:chorus_fruit"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "createfood:raw_chorus_fruit_cheesecake"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "raw_chorus_fruit_cheesecake"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "raw_chorus_fruit_cheesecake"
+    }
+  ]
+}

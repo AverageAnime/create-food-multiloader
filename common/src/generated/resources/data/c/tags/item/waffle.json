@@ -5,10 +5,6 @@
       "required": false
     },
     {
-      "id": "createfood:waffle",
-      "required": false
-    },
-    {
       "id": "hearthandharvest:waffle",
       "required": false
     }

@@ -1,5 +1,9 @@
 package dev.averageanime.block.type.display;
 
+import dev.averageanime.item.effect.EffectContext;
+import dev.averageanime.platform.Services;
+import dev.averageanime.item.type.EffectFood;
+
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.sounds.SoundEvent;
@@ -9,7 +13,6 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
@@ -54,19 +57,39 @@ public class BottleFoodBlock extends DisplayFoodBlock {
     @Override
     protected boolean handlesOwnContainer() { return true; }
 
+    /**
+     * Only the CONTENTS leave an empty bottle behind. Retrieving the drink whole hands back an item
+     * that already includes its bottle, so {@code handleLastItemRemoved} must still clear the block -
+     * leaving one there too would duplicate the container.
+     */
     @Override
-    protected void applyEatEffects(ItemStack copy, FoodProperties props, Player player, Level level, BlockPos pos) {
-        player.getFoodData().eat(props.nutrition(), props.saturation());
-        for (FoodProperties.PossibleEffect entry : props.effects()) {
-            if (level.random.nextFloat() < entry.probability()) {
-                player.addEffect(entry.effect());
-            }
+    protected void handleLastItemEaten(BlockState state, Level level, BlockPos pos) {
+        Block emptyBottle = Services.PLATFORM.getBottleBlock();
+        BlockState emptyState = emptyBottle.defaultBlockState();
+        if (emptyState.hasProperty(FACING) && state.hasProperty(FACING)) {
+            emptyState = emptyState.setValue(FACING, state.getValue(FACING));
         }
+        level.setBlock(pos, emptyState, 3);
     }
 
     @Override
-    protected void dropContainerOnEat(Player player, Level level, BlockPos pos) {
-        Block.popResource(level, pos, new ItemStack(Items.GLASS_BOTTLE));
+    protected void applyEatEffects(ItemStack copy, FoodProperties props, Player player, Level level, BlockPos pos) {
+        player.getFoodData().eat(props.nutrition(), props.saturation());
+        EffectContext.begin(player, copy);
+        try {
+            for (FoodProperties.PossibleEffect entry : props.effects()) {
+                if (level.random.nextFloat() < entry.probability()) {
+                    player.addEffect(entry.effect());
+                }
+            }
+            // Compat-category effects are deferred rather than baked into FOOD,
+            // so eating the block form would otherwise skip them entirely.
+            if (copy.getItem() instanceof EffectFood effectFood) {
+                effectFood.applyNonBakedEffects(level, player);
+            }
+        } finally {
+            EffectContext.end(player);
+        }
     }
 
     @Override

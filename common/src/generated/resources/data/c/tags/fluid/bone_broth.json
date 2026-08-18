@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "delightfulcreators:bone_broth",
+      "required": false
+    },
+    {
+      "id": "delightfulcreators:flowing_bone_broth",
+      "required": false
+    }
+  ]
+}

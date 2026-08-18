@@ -14,7 +14,7 @@
             "tag": "c:mushrooms"
         },
         {
-            "tag": "c:cooked_pork"
+            "tag": "c:foods/raw_pork"
         }
     ],
     "result": {

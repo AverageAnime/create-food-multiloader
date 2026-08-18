@@ -78,8 +78,13 @@ public class FabricPlatform implements Platform {
     }
 
     @Override
-    public Block getSmallBowlBlock() {
-        return DisplayBlockRegistration.SMALL_BOWL_BLOCK;
+    public Block getLargeBowlBlock() {
+        return DisplayBlockRegistration.LARGE_BOWL_BLOCK;
+    }
+
+    @Override
+    public Block getBottleBlock() {
+        return DisplayBlockRegistration.BOTTLE_BLOCK;
     }
 
     @Override
@@ -145,7 +150,7 @@ public class FabricPlatform implements Platform {
     }
 
     @Override
-    public dev.averageanime.block.type.blockentity.SmallBowlBlockEntity createSmallBowlBlockEntity(BlockPos pos, BlockState state) {
-        return new dev.averageanime.fabric.block.type.blockentity.SmallBowlBlockEntity(pos, state);
+    public dev.averageanime.block.type.blockentity.LargeBowlBlockEntity createLargeBowlBlockEntity(BlockPos pos, BlockState state) {
+        return new dev.averageanime.fabric.block.type.blockentity.LargeBowlBlockEntity(pos, state);
     }
 }

@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "culturalcreators:creamed_corn",
+      "required": false
+    },
+    {
+      "id": "culturalcreators:flowing_creamed_corn",
+      "required": false
+    }
+  ]
+}

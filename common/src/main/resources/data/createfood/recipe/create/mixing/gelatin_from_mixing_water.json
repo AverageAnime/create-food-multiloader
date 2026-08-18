@@ -4,7 +4,7 @@
     "ingredients": [
         {
             "type": "fluid_tag",
-            "amount": 83,
+            "amount": 125,
             "fluid_tag": "c:water"
         },
         {

@@ -5,10 +5,6 @@
       "required": false
     },
     {
-      "id": "createfood:honeyed_donut",
-      "required": false
-    },
-    {
       "id": "create_snt:honey_donut",
       "required": false
     }

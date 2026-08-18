@@ -3,6 +3,7 @@ package dev.averageanime.neoforge.datagen.provider;
 import dev.averageanime.CreateFoodCommon;
 import dev.averageanime.neoforge.block.FluidRegistration;
 import dev.averageanime.neoforge.block.type.fluid.FluidBlock;
+import dev.averageanime.registry.type.FluidEntry;
 import java.util.Map;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
@@ -28,12 +29,13 @@ public class BlockModelProvider extends net.neoforged.neoforge.client.model.gene
     }
 
     private void fluidBlockModel(String fluidId) {
+        ResourceLocation texture = cf("fluid/" + FluidEntry.textureFor(fluidId) + "_flow");
         String blockModelName = fluidId + "_block";
         withExistingParent("block/" + blockModelName, mcLoc("block/block"))
-                .texture("particle", cf("fluid/" + fluidId + "_flow"))
-                .texture("down",     cf("fluid/" + fluidId + "_flow"))
-                .texture("up",       cf("fluid/" + fluidId + "_flow"))
-                .texture("side",     cf("fluid/" + fluidId + "_flow"))
+                .texture("particle", texture)
+                .texture("down",     texture)
+                .texture("up",       texture)
+                .texture("side",     texture)
                 .element()
                 .from(1, 1, 1).to(15, 15, 15)
                 .face(net.minecraft.core.Direction.DOWN).uvs(1, 1, 15, 15).texture("#down").end()

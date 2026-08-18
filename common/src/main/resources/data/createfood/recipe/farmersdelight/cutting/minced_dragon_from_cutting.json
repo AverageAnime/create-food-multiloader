@@ -15,19 +15,17 @@
             }
         }
     ],
-    "neoc:conditions": [
-        {
-            "type": "c:not",
-            "value": {
-                "type": "c:tag_empty",
-                "tag": "c:raw_dragon_meat_cuts"
-            }
-        }
-    ],
     "neoforge:conditions": [
         {
             "type": "neoforge:mod_loaded",
             "modid": "farmersdelight"
+        },
+        {
+            "type": "neoforge:not",
+            "value": {
+                "type": "neoforge:tag_empty",
+                "tag": "c:raw_dragon_meat_cuts"
+            }
         },
         {
             "type": "createfood:enabled",
@@ -39,6 +37,13 @@
             "condition": "fabric:all_mods_loaded",
             "values": [
                 "farmersdelight"
+            ]
+        },
+        {
+            "condition": "fabric:tags_populated",
+            "registry": "minecraft:item",
+            "values": [
+                "c:raw_dragon_meat_cuts"
             ]
         },
         {

@@ -3,10 +3,6 @@
     {
       "id": "createfood:butterscotch_chip_waffle",
       "required": false
-    },
-    {
-      "id": "createfood:butterscotch_chip_waffle",
-      "required": false
     }
   ]
 }

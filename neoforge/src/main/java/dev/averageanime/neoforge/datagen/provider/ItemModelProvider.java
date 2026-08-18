@@ -2,7 +2,7 @@ package dev.averageanime.neoforge.datagen.provider;
 
 import dev.averageanime.CreateFoodCommon;
 import dev.averageanime.block.type.bowl.BowlFoodBlock;
-import dev.averageanime.block.type.bowl.SmallBowlFoodBlock;
+import dev.averageanime.block.type.bowl.LargeBowlFoodBlock;
 import dev.averageanime.block.type.plate.PlateFoodBlock;
 import dev.averageanime.block.type.plate.SmallPlateBlock;
 import dev.averageanime.neoforge.block.DisplayBlockRegistration;
@@ -83,7 +83,7 @@ public class ItemModelProvider extends net.neoforged.neoforge.client.model.gener
                 plateBlockItem((DeferredBlock<Block>) blockEntry, bowlBlock.maxStackSize);
             } else if (block instanceof BottleFoodBlock
                     || block instanceof BowlFoodBlock
-                    || block instanceof SmallBowlFoodBlock
+                    || block instanceof LargeBowlFoodBlock
                     || block instanceof SmallPlateBlock
                     || block instanceof PlateFoodBlock) {
                 simpleBlockItem((DeferredBlock<Block>) blockEntry);

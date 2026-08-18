@@ -4,7 +4,7 @@
   "cookingtime": 250,
   "experience": 0.15,
   "ingredient": {
-    "item": "createfood:raw_chicken_calzone"
+    "tag": "c:raw_chicken_calzone"
   },
   "result": {
     "count": 1,

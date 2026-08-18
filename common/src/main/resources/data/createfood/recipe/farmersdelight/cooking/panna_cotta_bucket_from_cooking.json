@@ -1,0 +1,53 @@
+{
+  "type": "farmersdelight:cooking",
+  "experience": 0.35,
+  "ingredients": [
+    {
+      "tag": "c:heavy_cream_bottle"
+    },
+    {
+      "tag": "c:heavy_cream_bottle"
+    },
+    {
+      "tag": "c:milk_bottle"
+    },
+    {
+      "tag": "c:condensed_milk_bottle"
+    },
+    {
+      "tag": "c:gelatin_dessert_slice"
+    },
+    {
+      "tag": "c:sugar"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "container": {
+    "id": "minecraft:bucket"
+  },
+  "result": {
+    "id": "createfood:panna_cotta_bucket"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "farmersdelight"
+    },
+    {
+      "type": "createfood:enabled",
+      "id": "panna_cotta_bucket"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "farmersdelight"
+      ]
+    },
+    {
+      "condition": "createfood:enabled",
+      "id": "panna_cotta_bucket"
+    }
+  ]
+}

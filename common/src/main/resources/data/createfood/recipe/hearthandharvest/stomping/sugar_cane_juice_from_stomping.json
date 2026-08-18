@@ -6,7 +6,7 @@
     }
   ],
   "result_fluid": {
-    "amount": 333,
+    "amount": 250,
     "id": "createfood:sugar_cane_juice"
   },
   "neoforge:conditions": [

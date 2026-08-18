@@ -3,10 +3,6 @@
     {
       "id": "createfood:berry_pie",
       "required": false
-    },
-    {
-      "id": "createfood:berry_pie",
-      "required": false
     }
   ]
 }

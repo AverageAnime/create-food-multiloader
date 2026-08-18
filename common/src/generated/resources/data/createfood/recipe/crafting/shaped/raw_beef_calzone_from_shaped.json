@@ -14,7 +14,7 @@
   ],
   "key": {
     "1": {
-      "tag": "c:cooked_beef"
+      "tag": "c:foods/raw_beef"
     },
     "2": {
       "tag": "c:raw_cheese_calzone"

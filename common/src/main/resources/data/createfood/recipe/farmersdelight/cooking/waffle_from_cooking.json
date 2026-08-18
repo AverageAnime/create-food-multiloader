@@ -8,7 +8,7 @@
     ],
     "recipe_book_tab": "misc",
     "result": {
-        "count": 1,
+        "count": 2,
         "id": "createfood:waffle"
     },
     "neoforge:conditions": [

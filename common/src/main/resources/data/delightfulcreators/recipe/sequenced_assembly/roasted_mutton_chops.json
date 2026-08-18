@@ -1,0 +1,123 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "farmersdelight"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "delightfulcreators"
+    },
+    {
+      "type": "createfood:enabled",
+      "id": "farmersdelight:roasted_mutton_chops"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "create"
+      ]
+    },
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "farmersdelight"
+      ]
+    },
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "delightfulcreators"
+      ]
+    },
+    {
+      "condition": "createfood:enabled",
+      "id": "farmersdelight:roasted_mutton_chops"
+    }
+  ],
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "tag": "c:bowl"
+  },
+  "loops": 1,
+  "results": [
+    {
+      "id": "farmersdelight:roasted_mutton_chops"
+    }
+  ],
+  "sequence": [
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "delightfulcreators:incomplete_roasted_mutton_chops"
+        },
+        {
+          "item": "farmersdelight:cooked_mutton_chops"
+        }
+      ],
+      "results": [
+        {
+          "id": "delightfulcreators:incomplete_roasted_mutton_chops"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "delightfulcreators:incomplete_roasted_mutton_chops"
+        },
+        {
+          "tag": "c:beetroot"
+        }
+      ],
+      "results": [
+        {
+          "id": "delightfulcreators:incomplete_roasted_mutton_chops"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "delightfulcreators:incomplete_roasted_mutton_chops"
+        },
+        {
+          "tag": "c:cooked_rice"
+        }
+      ],
+      "results": [
+        {
+          "id": "delightfulcreators:incomplete_roasted_mutton_chops"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "delightfulcreators:incomplete_roasted_mutton_chops"
+        },
+        {
+          "tag": "c:tomato"
+        }
+      ],
+      "results": [
+        {
+          "id": "delightfulcreators:incomplete_roasted_mutton_chops"
+        }
+      ]
+    }
+  ],
+  "transitional_item": {
+    "id": "delightfulcreators:incomplete_roasted_mutton_chops"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "createfood:block/bottle_block",
+      "y": 180
+    },
+    "facing=east": {
+      "model": "createfood:block/bottle_block",
+      "y": 270
+    },
+    "facing=south": {
+      "model": "createfood:block/bottle_block"
+    },
+    "facing=west": {
+      "model": "createfood:block/bottle_block",
+      "y": 90
+    }
+  }
+}

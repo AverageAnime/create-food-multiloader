@@ -26,7 +26,7 @@
     "ingredients": [
         {
             "type": "fluid_tag",
-            "amount": 111,
+            "amount": 125,
             "fluid_tag": "c:vegetable_oil"
         },
         {

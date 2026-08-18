@@ -3,7 +3,7 @@ package dev.averageanime.platform;
 import dev.averageanime.block.type.blockentity.ClothSackBlockEntity;
 import dev.averageanime.block.type.blockentity.RationBoxBlockEntity;
 import dev.averageanime.block.type.blockentity.GenericDisplayBlockEntity;
-import dev.averageanime.block.type.blockentity.SmallBowlBlockEntity;
+import dev.averageanime.block.type.blockentity.LargeBowlBlockEntity;
 import dev.averageanime.config.ConfigValues;
 import dev.averageanime.config.ItemEffectOverride;
 import dev.averageanime.config.ItemNutritionOverride;
@@ -53,6 +53,10 @@ public interface Platform {
 
     default String getCategoryEffectOverride(String categoryName) { return ConfigValues.getCategoryEffectOverride(categoryName); }
 
+    default boolean isEffectDurationStacking() { return ConfigValues.isEffectDurationStacking(); }
+
+    default int getMaxStackedEffectDuration() { return ConfigValues.getMaxStackedEffectDuration(); }
+
     default List<ItemEffectOverride> getItemOverrideEntries(String itemId) { return ConfigValues.getItemOverrideEntries(itemId); }
 
     @Nullable
@@ -69,9 +73,11 @@ public interface Platform {
 
     default boolean isCuttingBoardEnabled() { return ConfigValues.isCuttingBoardEnabled(); }
 
-    default boolean isDippingEnabled() { return ConfigValues.isDippingEnabled(); }
+    default boolean isDisplayInteractionsEnabled() { return ConfigValues.isDisplayInteractionsEnabled(); }
 
-    default int getSmallBowlCapacityMb() { return ConfigValues.getSmallBowlCapacityMb(); }
+    default boolean isBasinFluidItemsEnabled() { return ConfigValues.isBasinFluidItemsEnabled(); }
+
+    default int getLargeBowlCapacityMb() { return ConfigValues.getLargeBowlCapacityMb(); }
 
     default boolean isGenericDisplayAllowed(ItemStack stack) { return ConfigValues.isGenericDisplayAllowed(stack); }
 
@@ -139,7 +145,9 @@ public interface Platform {
 
     Block getBowlBlock();
 
-    Block getSmallBowlBlock();
+    Block getLargeBowlBlock();
+
+    Block getBottleBlock();
 
     StorageAccess createStorageInventory(int size, IntUnaryOperator slotLimit, BiPredicate<Integer, ItemStack> validator);
 
@@ -162,5 +170,5 @@ public interface Platform {
 
     GenericDisplayBlockEntity createGenericDisplayPlateBlockEntity(BlockPos pos, BlockState state);
 
-    SmallBowlBlockEntity createSmallBowlBlockEntity(BlockPos pos, BlockState state);
+    LargeBowlBlockEntity createLargeBowlBlockEntity(BlockPos pos, BlockState state);
 }

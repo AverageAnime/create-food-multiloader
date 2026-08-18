@@ -6,13 +6,24 @@
             "tag": "c:waffle_batter_bucket"
         },
         {
-            "count": 8,
+            "tag": "c:chocolate_chips"
+        },
+        {
+            "tag": "c:chocolate_chips"
+        },
+        {
+            "tag": "c:chocolate_chips"
+        },
+        {
+            "tag": "c:chocolate_chips"
+        },
+        {
             "tag": "c:chocolate_chips"
         }
     ],
     "recipe_book_tab": "misc",
     "result": {
-        "count": 1,
+        "count": 2,
         "id": "createfood:chocolate_chip_waffle"
     },
     "neoforge:conditions": [

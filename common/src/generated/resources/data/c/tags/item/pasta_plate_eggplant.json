@@ -5,10 +5,6 @@
       "required": false
     },
     {
-      "id": "createfood:pasta_plate_eggplant",
-      "required": false
-    },
-    {
       "id": "culturalcreators:incomplete_fried_eggplant_pasta",
       "required": false
     }

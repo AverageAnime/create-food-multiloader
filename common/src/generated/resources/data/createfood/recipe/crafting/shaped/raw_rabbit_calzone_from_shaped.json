@@ -14,7 +14,7 @@
   ],
   "key": {
     "1": {
-      "tag": "c:cooked_rabbit"
+      "tag": "c:foods/raw_rabbit"
     },
     "2": {
       "tag": "c:raw_cheese_calzone"

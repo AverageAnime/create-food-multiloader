@@ -7,6 +7,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffect;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
@@ -29,10 +30,14 @@ public final class FoodEffect {
                     BuiltInRegistries.MOB_EFFECT.getHolder(ResourceLocation.parse(c.effectId()));
             if (holder.isPresent()) {
                 this.resolved = holder.get();
-                resolveAttempted = true;
-                return;
+                break;
             }
         }
+        // Marked whether or not a candidate matched. Setting this only on
+        // success meant a category with no loaded provider re-walked every
+        // candidate and hit the registry on every tooltip render and every
+        // bite, forever.
+        resolveAttempted = true;
     }
 
     public Optional<Holder<MobEffect>> get() {
@@ -72,6 +77,14 @@ public final class FoodEffect {
 
         public Builder or(String modId, String effectId) {
             candidates.add(new Candidate(modId, effectId));
+            return this;
+        }
+
+        /** Append another category's candidates, keeping their order. */
+        public Builder orAll(FoodEffect other) {
+            if (other != null) {
+                candidates.addAll(Arrays.asList(other.candidates));
+            }
             return this;
         }
 

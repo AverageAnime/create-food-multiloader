@@ -1,11 +1,7 @@
 {
   "values": [
     {
-      "id": "createfood:flowing_liquid_cheese",
-      "required": false
-    },
-    {
-      "id": "createfood:liquid_cheese",
+      "id": "#c:liquid_cheese",
       "required": false
     }
   ]

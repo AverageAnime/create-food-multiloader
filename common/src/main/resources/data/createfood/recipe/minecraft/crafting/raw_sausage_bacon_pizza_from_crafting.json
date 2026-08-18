@@ -5,7 +5,7 @@
             "tag": "c:raw_sausage_pizza"
         },
         {
-            "tag": "c:cooked_pork"
+            "tag": "c:foods/raw_pork"
         }
     ],
     "result": {

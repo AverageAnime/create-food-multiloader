@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "minecraft:hay_block",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:rice_bale",
+      "required": false
+    }
+  ]
+}

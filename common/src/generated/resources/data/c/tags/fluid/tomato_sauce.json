@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "delightfulcreators:tomato_sauce",
+      "required": false
+    },
+    {
+      "id": "delightfulcreators:flowing_tomato_sauce",
+      "required": false
+    }
+  ]
+}

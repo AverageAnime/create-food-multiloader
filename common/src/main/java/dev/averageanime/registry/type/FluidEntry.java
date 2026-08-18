@@ -2,7 +2,9 @@ package dev.averageanime.registry.type;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public final class FluidEntry {
 
@@ -12,11 +14,16 @@ public final class FluidEntry {
     private static final List<FluidEntry> REGISTRY = new ArrayList<>();
     public  static final List<FluidEntry> ALL      = Collections.unmodifiableList(REGISTRY);
 
+    private static final Map<String, String> TEXTURE_BY_ID = new HashMap<>();
+
     public final String id;
     public final int    slope;
     public final int    level;
     public final float  fogStart;
     public final float  fogEnd;
+
+    /** Base name of the {@code fluid/<texture>_still|_flow} sprites. Defaults to {@link #id}. */
+    public String texture;
 
     private FluidEntry(String id, int slope, int level, float fogStart, float fogEnd) {
         this.id       = id;
@@ -24,6 +31,22 @@ public final class FluidEntry {
         this.level    = level;
         this.fogStart = fogStart;
         this.fogEnd   = fogEnd;
+        this.texture  = id;
+    }
+
+    /** Reuse another fluid's sprites instead of requiring {@code <id>_still|_flow} textures. */
+    public FluidEntry tex(String texture) {
+        this.texture = texture;
+        TEXTURE_BY_ID.put(id, texture);
+        return this;
+    }
+
+    /**
+     * Sprite base name for a fluid id. Falls back to the id itself, which covers both
+     * un-aliased fluids and config-defined ones that never appear in {@link #ALL}.
+     */
+    public static String textureFor(String id) {
+        return TEXTURE_BY_ID.getOrDefault(id, id);
     }
 
     private static FluidEntry register(FluidEntry def) {

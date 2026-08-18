@@ -163,6 +163,20 @@ public class EffectFood extends Item {
                 base.eatSeconds(), base.usingConvertsTo(), effects.build().effects());
     }
 
+    /**
+     * Apply the effects that are not baked into the FOOD component.
+     *
+     * <p>Block forms (cakes, pies, pizzas, waffles) eat by reading their slice
+     * item's FOOD component directly and never run {@link #finishUsingItem},
+     * so the compat-category effects -- which are deferred precisely because
+     * they cannot be baked -- silently never fired when the block was eaten.
+     * The block eat paths call this so a slice and its block behave alike.
+     */
+    public void applyNonBakedEffects(Level level, LivingEntity consumer) {
+        applyAdditions(level, consumer);
+        applyDeferredEffects(level, consumer);
+    }
+
     protected void applyDeferredEffects(Level level, LivingEntity consumer) {
         if (level.isClientSide) return;
         String itemId = BuiltInRegistries.ITEM.getKey(this).getPath();

@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "c:chocolate_sweet_roll_base"
+    },
+    {
+      "tag": "c:berry_cream_frosting"
+    },
+    {
+      "item": "minecraft:sweet_berries"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "createfood:berry_cream_chocolate_sweet_roll_sweet_berry"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "berry_cream_chocolate_sweet_roll_sweet_berry"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "berry_cream_chocolate_sweet_roll_sweet_berry"
+    }
+  ]
+}

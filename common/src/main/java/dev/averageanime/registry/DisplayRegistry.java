@@ -15,7 +15,7 @@ public final class DisplayRegistry {
     private DisplayRegistry() {}
 
     public enum DisplayType {
-        PLATE, SMALL_PLATE, BOTTLE, BOWL, BOWL_FOOD, SMALL_BOWL, PLATE_FOOD
+        PLATE, SMALL_PLATE, BOTTLE, BOWL, BOWL_FOOD, LARGE_BOWL, PLATE_FOOD
     }
 
     public static final Set<String> EXCLUDED_ITEMS = Set.of(
@@ -69,6 +69,7 @@ public final class DisplayRegistry {
         Registrar register = (pattern, configs) ->
                 m.put(pattern, configs.length == 1 ? configs[0] : List.of(configs));
 
+        register.add("_truffle",                   DisplayEntry.of(PLATE).maxStack(6).build(), DisplayEntry.of(SMALL_PLATE).build());
         register.add("kelp_roll_slice",            DisplayEntry.of(PLATE).maxStack(6).build(), DisplayEntry.of(SMALL_PLATE).build());
         register.add("meringue_cookie",            DisplayEntry.of(PLATE).maxStack(9).build(), DisplayEntry.of(SMALL_PLATE).build());
         register.add("kelp_roll",                  DisplayEntry.of(PLATE).maxStack(3).build());
@@ -103,10 +104,11 @@ public final class DisplayRegistry {
         register.add("hot_white_chocolate_bottle", DisplayEntry.of(BOTTLE).height(8).particles(smoke()).build());
         register.add("_jam_bottle",                DisplayEntry.of(BOTTLE).height(9).build());
         register.add("cane_syrup_bottle",          DisplayEntry.of(BOTTLE).height(9).build());
-        register.add("taco_sauce_bottle",          DisplayEntry.of(BOTTLE).height(9).build());
+        register.add("_sauce_bottle",              DisplayEntry.of(BOTTLE).height(9).build());
         register.add("sugar_cane_juice_bottle",    DisplayEntry.of(BOTTLE).height(9).build());
         register.add("egg_whites_bottle",          DisplayEntry.of(BOTTLE).height(9).build());
         register.add("_juice_bottle",              DisplayEntry.of(BOTTLE).height(10).build());
+        register.add("_trifle_bottle",             DisplayEntry.of(BOTTLE).height(8).build());
         register.add("chocolate_bottle",           DisplayEntry.of(BOTTLE).height(8).build());
         register.add("dark_chocolate_bottle",      DisplayEntry.of(BOTTLE).height(8).build());
         register.add("white_chocolate_bottle",     DisplayEntry.of(BOTTLE).height(8).build());
@@ -119,7 +121,7 @@ public final class DisplayRegistry {
         register.add("soup_bowl",                  DisplayEntry.of(BOWL_FOOD).height(4).particles(smoke()).build());
         register.add("stew_bowl",                  DisplayEntry.of(BOWL_FOOD).height(4).particles(smoke()).build());
         register.add("_bowl",                      DisplayEntry.of(BOWL_FOOD).height(4).build());
-        register.add("salad",                      DisplayEntry.of(SMALL_BOWL).build());
+        register.add("salad",                      DisplayEntry.of(LARGE_BOWL).build());
         register.add("pasta_plate",                DisplayEntry.of(PLATE_FOOD).build());
         register.add("breakfast_plate",            DisplayEntry.of(PLATE_FOOD).build());
         register.add("egg_plate",                  DisplayEntry.of(PLATE_FOOD).build());
@@ -181,7 +183,7 @@ public final class DisplayRegistry {
         return switch (type) {
             case PLATE       -> itemName + "_plate_block";
             case SMALL_PLATE -> itemName + "_small_plate_block";
-            case SMALL_BOWL     -> itemName + "_small_bowl_block";
+            case LARGE_BOWL     -> itemName + "_large_bowl_block";
             case BOWL           -> itemName + "_bowl_block";
             case BOTTLE      -> itemName.contains("_bottle") ? itemName + "_block" : itemName + "_bottle_block";
             case BOWL_FOOD   -> itemName.contains("_bowl")   ? itemName + "_block" : itemName + "_bowl_block";

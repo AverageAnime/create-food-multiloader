@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "delightfulcreators:melon_juice",
+      "required": false
+    },
+    {
+      "id": "delightfulcreators:flowing_melon_juice",
+      "required": false
+    }
+  ]
+}

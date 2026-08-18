@@ -1,6 +1,8 @@
 package dev.averageanime.block.type.misc;
 
 import dev.averageanime.util.ItemSpawns;
+import dev.averageanime.item.effect.EffectContext;
+import dev.averageanime.item.type.EffectFood;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.component.DataComponents;
@@ -95,11 +97,21 @@ public abstract class ConsumableBlock extends Block {
         FoodProperties food = sliceStack.get(DataComponents.FOOD);
         if (food != null) {
             player.getFoodData().eat(food);
-            for (FoodProperties.PossibleEffect effect : food.effects()) {
-                if (!level.isClientSide && effect != null
-                        && level.random.nextFloat() < effect.probability()) {
-                    player.addEffect(effect.effect());
+            EffectContext.begin(player, sliceStack);
+            try {
+                for (FoodProperties.PossibleEffect effect : food.effects()) {
+                    if (!level.isClientSide && effect != null
+                            && level.random.nextFloat() < effect.probability()) {
+                        player.addEffect(effect.effect());
+                    }
                 }
+                // Compat-category effects are deferred rather than baked into FOOD,
+                // so eating the block form would otherwise skip them entirely.
+                if (sliceStack.getItem() instanceof EffectFood effectFood) {
+                    effectFood.applyNonBakedEffects(level, player);
+                }
+            } finally {
+                EffectContext.end(player);
             }
         }
 

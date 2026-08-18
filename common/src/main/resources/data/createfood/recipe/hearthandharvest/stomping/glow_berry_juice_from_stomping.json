@@ -1,46 +1,37 @@
 {
-  "type": "hearthandharvest:stomping",
-  "ingredients": [
-    {
-      "item": "minecraft:glow_berries"
+    "type": "hearthandharvest:stomping",
+    "ingredients": [
+        {
+            "item": "minecraft:glow_berries"
+        },
+        {
+            "tag": "c:sugar"
+        }
+    ],
+    "result_fluid": {
+        "amount": 250,
+        "id": "createfood:glow_berry_juice"
     },
-    {
-      "item": "minecraft:glow_berries"
-    },
-    {
-      "item": "minecraft:glow_berries"
-    },
-    {
-      "item": "minecraft:glow_berries"
-    },
-    {
-      "tag": "c:sugar"
-    }
-  ],
-  "result_fluid": {
-    "amount": 250,
-    "id": "createfood:glow_berry_juice"
-  },
-  "neoforge:conditions": [
-    {
-      "type": "neoforge:mod_loaded",
-      "modid": "hearthandharvest"
-    },
-    {
-      "type": "createfood:enabled",
-      "id": "glow_berry_juice"
-    }
-  ],
-  "fabric:load_conditions": [
-    {
-      "condition": "fabric:all_mods_loaded",
-      "values": [
-        "hearthandharvest"
-      ]
-    },
-    {
-      "condition": "createfood:enabled",
-      "id": "glow_berry_juice"
-    }
-  ]
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "hearthandharvest"
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "glow_berry_juice"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "hearthandharvest"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
+            "id": "glow_berry_juice"
+        }
+    ]
 }

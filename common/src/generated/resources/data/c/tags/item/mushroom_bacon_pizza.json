@@ -3,10 +3,6 @@
     {
       "id": "createfood:mushroom_bacon_pizza",
       "required": false
-    },
-    {
-      "id": "createfood:mushroom_bacon_pizza",
-      "required": false
     }
   ]
 }

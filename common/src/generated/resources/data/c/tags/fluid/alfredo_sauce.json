@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "createfood:flowing_alfredo_sauce",
+      "required": false
+    },
+    {
+      "id": "createfood:alfredo_sauce",
+      "required": false
+    }
+  ]
+}

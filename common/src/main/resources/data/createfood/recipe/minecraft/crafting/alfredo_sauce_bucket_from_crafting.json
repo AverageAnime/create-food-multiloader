@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:bucket"
+    },
+    {
+      "tag": "c:alfredo_sauce_bottle"
+    },
+    {
+      "tag": "c:alfredo_sauce_bottle"
+    },
+    {
+      "tag": "c:alfredo_sauce_bottle"
+    },
+    {
+      "tag": "c:alfredo_sauce_bottle"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "createfood:alfredo_sauce_bucket"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "alfredo_sauce_bucket"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "alfredo_sauce_bucket"
+    }
+  ]
+}

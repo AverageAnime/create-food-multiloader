@@ -14,7 +14,8 @@ public final class TabFilters {
                 && !path.equals("small_plate_block")
                 && !path.equals("plate_block")
                 && !path.equals("bowl_block")
-                && !path.equals("small_bowl_block")
+                && !path.equals("large_bowl_block")
+                && !path.equals("bottle_block")
                 && !displayBlockPaths.contains(path)
                 && ConfigValues.isItemEnabled(path);
     }
@@ -27,7 +28,8 @@ public final class TabFilters {
         return !path.equals("plate_block")
                 && !path.equals("small_plate_block")
                 && !path.equals("bowl_block")
-                && !path.equals("small_bowl_block")
+                && !path.equals("large_bowl_block")
+                && !path.equals("bottle_block")
                 && !path.equals("generic_display_plate_block")
                 && !path.equals("generic_display_bowl_block")
                 && ConfigValues.isDisplayBlockEnabled(path);

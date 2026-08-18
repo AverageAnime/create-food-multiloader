@@ -1,5 +1,7 @@
 package dev.averageanime.config;
 
+import dev.averageanime.registry.FluidAmounts;
+
 import java.util.List;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
@@ -69,10 +71,11 @@ public final class ConfigSchema {
 
         b.push("display");
         ConfigValues.ENABLE_CUTTING_BOARD = b.defineBool("enable_cutting_board", true);
-        ConfigValues.ENABLE_DIPPING = b.defineBool("enable_dipping", true);
+        ConfigValues.ENABLE_DISPLAY_INTERACTIONS = b.defineBool("enable_display_interactions", true);
         ConfigValues.ENABLE_GENERIC_DISPLAY = b.defineBool("enable_generic_display", true);
-        ConfigValues.SMALL_BOWL_CAPACITY_MB = b.defineInt("small_bowl_capacity_mb", 4000, 1000, 16000, false);
-        ConfigValues.DIPPING_EXCLUDE = b.defineList("dipping_exclude", ConfigDefaults.DIPPING_EXCLUDE_DEFAULT,
+        ConfigValues.LARGE_BOWL_CAPACITY_MB = b.defineInt("large_bowl_capacity_mb",
+                FluidAmounts.BUCKET * 4, FluidAmounts.BUCKET, FluidAmounts.BUCKET * 16, false);
+        ConfigValues.DISPLAY_INTERACTIONS_EXCLUDE = b.defineList("display_interactions_exclude", ConfigDefaults.DISPLAY_INTERACTIONS_EXCLUDE_DEFAULT,
                 FILTER_HINT, STRING, false);
         ConfigValues.GENERIC_DISPLAY_EXCLUDE = b.defineList("generic_display_exclude", ConfigDefaults.GENERIC_DISPLAY_EXCLUDE_DEFAULT,
                 FILTER_HINT, STRING, false);
@@ -137,14 +140,24 @@ public final class ConfigSchema {
         ConfigValues.ITEM_EFFECT_OVERRIDES = b.defineList("item_overrides", ConfigDefaults.ITEM_EFFECT_OVERRIDES_DEFAULT,
                 () -> "item_id|category_or_effect_id|duration|amplifier[|chance]  OR  item_id|category_or_effect_id|remove",
                 ConfigDefaults.ITEM_EFFECT_OVERRIDE_VALIDATOR, false);
+        ConfigValues.STACK_EFFECT_DURATION = b.defineBool("stack_duration", true);
+        ConfigValues.MAX_STACKED_DURATION = b.defineInt("max_stacked_duration", 36000, 0, 1728000, false);
         b.pop();
-        ConfigValues.ITEM_NUTRITION_OVERRIDES = b.defineList("nutrition_saturation", List.of(),
+        ConfigValues.ITEM_NUTRITION_OVERRIDES = b.defineList("nutrition_saturation",
+                ConfigDefaults.ITEM_NUTRITION_OVERRIDES_DEFAULT,
                 () -> "item_id|nutrition|saturation",
                 ConfigDefaults.ITEM_NUTRITION_OVERRIDE_VALIDATOR, false);
         b.push("remainders");
         ConfigValues.ENABLE_EGG_IMPACT_REMAINDER = b.defineBool("enable_egg_impact_remainder", true);
         ConfigValues.CRAFTING_REMAINDERS = b.defineList("crafting_remainders", ConfigDefaults.CRAFTING_REMAINDERS_DEFAULT,
                 () -> "input_item|remainder_item", STRING, false);
+        b.pop();
+        b.pop();
+
+        b.push("compat");
+        b.push("create");
+        ConfigValues.CREATE_EXPANDED_BASIN_FLUIDS = b.defineBool("expanded_basin_fluids", true);
+        ConfigValues.CREATE_BASIN_FLUID_ITEMS = b.defineBool("basin_fluid_items", true);
         b.pop();
         b.pop();
     }

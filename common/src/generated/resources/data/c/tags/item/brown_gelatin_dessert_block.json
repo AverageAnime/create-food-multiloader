@@ -3,10 +3,6 @@
     {
       "id": "createfood:brown_gelatin_dessert_block",
       "required": false
-    },
-    {
-      "id": "createfood:brown_gelatin_dessert_block",
-      "required": false
     }
   ]
 }

@@ -3,10 +3,6 @@
     {
       "id": "createfood:raw_pumpkin_pie",
       "required": false
-    },
-    {
-      "id": "createfood:raw_pumpkin_pie",
-      "required": false
     }
   ]
 }

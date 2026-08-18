@@ -1,0 +1,155 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "farmersdelight"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "delightfulcreators"
+    },
+    {
+      "type": "createfood:enabled",
+      "id": "farmersdelight:stuffed_pumpkin_block"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "create"
+      ]
+    },
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "farmersdelight"
+      ]
+    },
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "delightfulcreators"
+      ]
+    },
+    {
+      "condition": "createfood:enabled",
+      "id": "farmersdelight:stuffed_pumpkin_block"
+    }
+  ],
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "item": "minecraft:pumpkin"
+  },
+  "loops": 1,
+  "results": [
+    {
+      "id": "farmersdelight:stuffed_pumpkin_block"
+    }
+  ],
+  "sequence": [
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "delightfulcreators:incomplete_stuffed_pumpkin"
+        },
+        {
+          "item": "farmersdelight:rice"
+        }
+      ],
+      "results": [
+        {
+          "id": "delightfulcreators:incomplete_stuffed_pumpkin"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "delightfulcreators:incomplete_stuffed_pumpkin"
+        },
+        {
+          "tag": "c:potato"
+        }
+      ],
+      "results": [
+        {
+          "id": "delightfulcreators:incomplete_stuffed_pumpkin"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "delightfulcreators:incomplete_stuffed_pumpkin"
+        },
+        {
+          "item": "minecraft:brown_mushroom"
+        }
+      ],
+      "results": [
+        {
+          "id": "delightfulcreators:incomplete_stuffed_pumpkin"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "delightfulcreators:incomplete_stuffed_pumpkin"
+        },
+        {
+          "tag": "c:onion"
+        }
+      ],
+      "results": [
+        {
+          "id": "delightfulcreators:incomplete_stuffed_pumpkin"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "delightfulcreators:incomplete_stuffed_pumpkin"
+        },
+        {
+          "tag": "c:fruits"
+        }
+      ],
+      "results": [
+        {
+          "id": "delightfulcreators:incomplete_stuffed_pumpkin"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "delightfulcreators:incomplete_stuffed_pumpkin"
+        },
+        {
+          "tag": "c:vegetables"
+        }
+      ],
+      "results": [
+        {
+          "id": "delightfulcreators:incomplete_stuffed_pumpkin"
+        }
+      ]
+    }
+  ],
+  "transitional_item": {
+    "id": "delightfulcreators:incomplete_stuffed_pumpkin"
+  }
+}

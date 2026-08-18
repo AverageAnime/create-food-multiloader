@@ -1,0 +1,42 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "delightfulcreators"
+    },
+    {
+      "type": "createfood:enabled",
+      "id": "minecraft:pumpkin_pie"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "delightfulcreators"
+      ]
+    },
+    {
+      "condition": "createfood:enabled",
+      "id": "minecraft:pumpkin_pie"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "delightfulcreators:pumpkin_pie_slice"
+    },
+    {
+      "item": "delightfulcreators:pumpkin_pie_slice"
+    },
+    {
+      "item": "delightfulcreators:pumpkin_pie_slice"
+    },
+    {
+      "item": "delightfulcreators:pumpkin_pie_slice"
+    }
+  ],
+  "result": {
+    "item": "minecraft:pumpkin_pie"
+  }
+}

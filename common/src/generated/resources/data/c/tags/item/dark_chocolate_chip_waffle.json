@@ -3,10 +3,6 @@
     {
       "id": "createfood:dark_chocolate_chip_waffle",
       "required": false
-    },
-    {
-      "id": "createfood:dark_chocolate_chip_waffle",
-      "required": false
     }
   ]
 }

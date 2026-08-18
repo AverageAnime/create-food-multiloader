@@ -4,7 +4,7 @@
   "cookingtime": 100,
   "experience": 0.35,
   "ingredient": {
-    "item": "createfood:raw_scotch_egg"
+    "tag": "c:raw_scotch_egg"
   },
   "result": {
     "count": 1,

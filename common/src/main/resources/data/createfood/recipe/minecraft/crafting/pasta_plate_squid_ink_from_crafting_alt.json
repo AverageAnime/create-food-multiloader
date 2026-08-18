@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "tag": "c:cooked_pasta"
+    },
+    {
+      "tag": "c:squid_ink_bucket"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "createfood:pasta_plate_squid_ink"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "pasta_plate_squid_ink"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "pasta_plate_squid_ink"
+    }
+  ]
+}

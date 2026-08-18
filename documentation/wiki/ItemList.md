@@ -1,6 +1,13 @@
-### ***2.7.0***
+### ***2.8.0***
 
-#### Items:
+---
+
+_For screenshots, see [Item Preview](Item-Preview)._
+
+---
+
+* createfood:alfredo_sauce_bottle
+* createfood:alfredo_sauce_bucket
 * createfood:apple_cheesecake
 * createfood:apple_cheesecake_slice
 * createfood:apple_cream_cake
@@ -39,7 +46,9 @@
 * createfood:apple_pie_filling_bucket
 * createfood:apple_popsicle
 * createfood:apple_slice
+* createfood:apple_trifle_bottle
 * createfood:bacon_bits
+* createfood:bacon_calzone
 * createfood:bacon_pizza
 * createfood:bacon_pizza_slice
 * createfood:bacon_sandwich
@@ -83,6 +92,7 @@
 * createfood:beef_bun_tomato
 * createfood:beef_bun_warped_fungus
 * createfood:beef_burrito_rice
+* createfood:beef_calzone
 * createfood:beef_meatball
 * createfood:beef_meatball_sandwich
 * createfood:beef_meatball_stick_1
@@ -140,11 +150,14 @@
 * createfood:berry_pie_filling_bucket
 * createfood:berry_pie_slice
 * createfood:berry_popsicle
+* createfood:berry_trifle_bottle
 * createfood:biscuit
+* createfood:black_gelatin_dessert_block
 * createfood:black_gelatin_dessert_slice
 * createfood:black_gelatin_mix_bucket
 * createfood:blackstrap_molasses_bottle
 * createfood:blackstrap_molasses_bucket
+* createfood:blue_gelatin_dessert_block
 * createfood:blue_gelatin_dessert_slice
 * createfood:blue_gelatin_mix_bucket
 * createfood:boiled_egg
@@ -179,6 +192,7 @@
 * createfood:bread_slice_tomato
 * createfood:breakfast_bar
 * createfood:breakfast_plate
+* createfood:brown_gelatin_dessert_block
 * createfood:brown_gelatin_dessert_slice
 * createfood:brown_gelatin_mix_bucket
 * createfood:brown_sugar
@@ -186,7 +200,6 @@
 * createfood:butter
 * createfood:butter_dough
 * createfood:butter_dough_small
-* createfood:buttered_toast
 * createfood:butterscotch
 * createfood:butterscotch_apple
 * createfood:butterscotch_apple_slice
@@ -220,7 +233,6 @@
 * createfood:cacao_nibs
 * createfood:cake_base
 * createfood:cake_batter_bucket
-* createfood:calzone
 * createfood:cane_syrup_bottle
 * createfood:cane_syrup_bucket
 * createfood:caramel
@@ -254,8 +266,10 @@
 * createfood:cheese_biscuit
 * createfood:cheese_biscuit_sandwich
 * createfood:cheese_block
+* createfood:cheese_calzone
 * createfood:cheese_pizza
 * createfood:cheese_pizza_slice
+* createfood:cheese_potato_dumplings
 * createfood:cheese_pretzel_stick
 * createfood:cheese_sandwich
 * createfood:cheese_slice
@@ -293,6 +307,7 @@
 * createfood:chicken_burger_lettuce_tomato
 * createfood:chicken_burger_tomato
 * createfood:chicken_burrito_rice
+* createfood:chicken_calzone
 * createfood:chicken_cheeseburger
 * createfood:chicken_cheeseburger_bacon
 * createfood:chicken_cheeseburger_bacon_lettuce
@@ -357,6 +372,7 @@
 * createfood:chocolate_fudge
 * createfood:chocolate_fudge_bucket
 * createfood:chocolate_fudge_ice_cream_bowl
+* createfood:chocolate_ganache_bucket
 * createfood:chocolate_graham_cracker
 * createfood:chocolate_graham_cracker_apple_ice_cream
 * createfood:chocolate_graham_cracker_berry_ice_cream
@@ -389,6 +405,7 @@
 * createfood:chocolate_sugar_dough_small
 * createfood:chocolate_sweet_roll_base
 * createfood:chocolate_toast
+* createfood:chocolate_truffle
 * createfood:chorus_fruit_cheesecake
 * createfood:chorus_fruit_cheesecake_slice
 * createfood:chorus_fruit_cookie
@@ -440,6 +457,7 @@
 * createfood:chorus_fruit_pie_slice
 * createfood:chorus_fruit_popsicle
 * createfood:chorus_fruit_slice
+* createfood:chorus_fruit_trifle_bottle
 * createfood:cinnamon_sweet_roll_base
 * createfood:cloth_filter
 * createfood:cloth_filter_cacao_mass
@@ -505,6 +523,7 @@
 * createfood:custard_bottle
 * createfood:custard_bucket
 * createfood:custard_sugar_bottle
+* createfood:cyan_gelatin_dessert_block
 * createfood:cyan_gelatin_dessert_slice
 * createfood:cyan_gelatin_mix_bucket
 * createfood:dark_chocolate_apple
@@ -525,10 +544,12 @@
 * createfood:dark_chocolate_dried_coffee_beans
 * createfood:dark_chocolate_fudge
 * createfood:dark_chocolate_fudge_bucket
+* createfood:dark_chocolate_ganache_bucket
 * createfood:dark_chocolate_marshmallow_stick
 * createfood:dark_chocolate_pastry
 * createfood:dark_chocolate_pretzel_stick
 * createfood:dark_chocolate_toast
+* createfood:dark_chocolate_truffle
 * createfood:diced_onion
 * createfood:diced_tomato
 * createfood:donut_base
@@ -552,6 +573,7 @@
 * createfood:egg_burrito_cheese_sausage
 * createfood:egg_burrito_cheese_sausage_bacon
 * createfood:egg_burrito_sausage
+* createfood:egg_dumplings
 * createfood:egg_powder
 * createfood:egg_whites_bottle
 * createfood:egg_whites_bucket
@@ -581,6 +603,7 @@
 * createfood:fish_bacon_pizza
 * createfood:fish_bacon_pizza_slice
 * createfood:fish_burrito_rice
+* createfood:fish_calzone
 * createfood:fish_chowder_bowl
 * createfood:fish_chowder_bucket
 * createfood:fish_onion_pizza
@@ -608,6 +631,7 @@
 * createfood:fruit_smoothie_bottle
 * createfood:fruit_smoothie_bucket
 * createfood:gelatin
+* createfood:gelatin_dessert_block
 * createfood:gelatin_dessert_slice
 * createfood:gelatin_mix_bucket
 * createfood:glow_berry_cheesecake
@@ -658,14 +682,17 @@
 * createfood:glow_berry_pie_filling_bucket
 * createfood:glow_berry_pie_slice
 * createfood:glow_berry_popsicle
+* createfood:glow_berry_trifle_bottle
 * createfood:graham_cracker
 * createfood:graham_cracker_chocolate
 * createfood:graham_cracker_chocolate_marshmallow
 * createfood:graham_cracker_crumbs
 * createfood:graham_cracker_marshmallow
 * createfood:graham_cracker_pie_crust
+* createfood:gray_gelatin_dessert_block
 * createfood:gray_gelatin_dessert_slice
 * createfood:gray_gelatin_mix_bucket
+* createfood:green_gelatin_dessert_block
 * createfood:green_gelatin_dessert_slice
 * createfood:green_gelatin_mix_bucket
 * createfood:grilled_cheese_sandwich
@@ -689,7 +716,6 @@
 * createfood:hamburger_onion_bacon
 * createfood:hamburger_onion_bacon_lettuce
 * createfood:hamburger_onion_lettuce
-* createfood:hamburger_onion_lettuce_tomato
 * createfood:hamburger_peanut_butter
 * createfood:hamburger_peanut_butter_bacon
 * createfood:hamburger_tomato
@@ -720,7 +746,6 @@
 * createfood:honeyed_pretzel_stick
 * createfood:honeyed_sweet_roll
 * createfood:honeyed_toast
-* createfood:hot_cheese_biscuit_sandwich
 * createfood:hot_chocolate_bottle
 * createfood:hot_chocolate_bucket
 * createfood:hot_dark_chocolate_bottle
@@ -757,10 +782,13 @@
 * createfood:kelp_soup_bucket
 * createfood:leather_soup_bowl
 * createfood:leather_soup_bucket
+* createfood:light_blue_gelatin_dessert_block
 * createfood:light_blue_gelatin_dessert_slice
 * createfood:light_blue_gelatin_mix_bucket
+* createfood:light_gray_gelatin_dessert_block
 * createfood:light_gray_gelatin_dessert_slice
 * createfood:light_gray_gelatin_mix_bucket
+* createfood:lime_gelatin_dessert_block
 * createfood:lime_gelatin_dessert_slice
 * createfood:lime_gelatin_mix_bucket
 * createfood:liquid_cheese_bucket
@@ -771,6 +799,7 @@
 * createfood:macaroni_bowl_cheese_bacon
 * createfood:macaroni_bowl_cheese_sausage
 * createfood:macaroni_bowl_sausage
+* createfood:magenta_gelatin_dessert_block
 * createfood:magenta_gelatin_dessert_slice
 * createfood:magenta_gelatin_mix_bucket
 * createfood:magma_cream_marshmallow
@@ -827,8 +856,11 @@
 * createfood:melon_jam_chocolate_donut
 * createfood:melon_jam_donut
 * createfood:melon_jam_sandwich
+* createfood:melon_juice_bottle
+* createfood:melon_juice_bucket
 * createfood:melon_milkshake_bottle
 * createfood:melon_milkshake_bucket
+* createfood:melon_trifle_bottle
 * createfood:meringue_bowl
 * createfood:meringue_bucket
 * createfood:meringue_cookie
@@ -853,6 +885,7 @@
 * createfood:mushroom_bacon_pizza
 * createfood:mushroom_bacon_pizza_slice
 * createfood:mushroom_burrito_rice
+* createfood:mushroom_calzone
 * createfood:mushroom_cream_soup_bowl
 * createfood:mushroom_cream_soup_bowl_cheese
 * createfood:mushroom_cream_soup_bucket
@@ -868,8 +901,10 @@
 * createfood:mushroom_taco_lettuce_taco_sauce
 * createfood:mushroom_wrap_lettuce_potato
 * createfood:mutton_burrito_rice
+* createfood:mutton_calzone
 * createfood:mutton_sandwich
 * createfood:mutton_sandwich_beetroot
+* createfood:mutton_stew
 * createfood:mutton_stew_bowl
 * createfood:mutton_stew_bucket
 * createfood:mutton_taco
@@ -883,26 +918,40 @@
 * createfood:nacho_bowl_taco_sauce
 * createfood:onion_bacon_pizza
 * createfood:onion_bacon_pizza_slice
+* createfood:onion_calzone
 * createfood:onion_pizza
 * createfood:onion_pizza_slice
 * createfood:onion_rings
+* createfood:orange_gelatin_dessert_block
 * createfood:orange_gelatin_dessert_slice
 * createfood:orange_gelatin_mix_bucket
+* createfood:panna_cotta_bowl
+* createfood:panna_cotta_bowl_caramel
+* createfood:panna_cotta_bowl_chocolate
+* createfood:panna_cotta_bowl_fruit
+* createfood:panna_cotta_bucket
 * createfood:paprika
 * createfood:pasta
 * createfood:pasta_plate
+* createfood:pasta_plate_alfredo_sauce
+* createfood:pasta_plate_bacon
+* createfood:pasta_plate_bacon_alfredo_sauce
 * createfood:pasta_plate_beef_meatballs
 * createfood:pasta_plate_butter
 * createfood:pasta_plate_cheese
+* createfood:pasta_plate_cheese_alfredo_sauce
 * createfood:pasta_plate_cheese_tomato_sauce
 * createfood:pasta_plate_chicken_cut
+* createfood:pasta_plate_chicken_cut_alfredo_sauce
 * createfood:pasta_plate_chicken_cut_tomato_sauce
 * createfood:pasta_plate_eggplant
 * createfood:pasta_plate_endermite_meatballs
 * createfood:pasta_plate_endermite_meatballs_tomato_sauce
 * createfood:pasta_plate_fish
+* createfood:pasta_plate_fish_alfredo_sauce
 * createfood:pasta_plate_fish_tomato_sauce
 * createfood:pasta_plate_mushroom
+* createfood:pasta_plate_mushroom_alfredo_sauce
 * createfood:pasta_plate_mushroom_tomato_sauce
 * createfood:pasta_plate_mutton_chop
 * createfood:pasta_plate_pork_meatballs
@@ -919,6 +968,7 @@
 * createfood:peanut_butter_apple_jam_sandwich
 * createfood:peanut_butter_chorus_fruit_jam_sandwich
 * createfood:peanut_butter_melon_jam_sandwich
+* createfood:pink_gelatin_dessert_block
 * createfood:pink_gelatin_dessert_slice
 * createfood:pink_gelatin_mix_bucket
 * createfood:piping_bag
@@ -934,6 +984,7 @@
 * createfood:pork_meatball_stick_1
 * createfood:pork_meatball_stick_2
 * createfood:pork_meatball_stick_3
+* createfood:pork_stew
 * createfood:pork_stew_bowl
 * createfood:pork_stew_bucket
 * createfood:pork_taco
@@ -961,13 +1012,16 @@
 * createfood:pumpernickel_toast_slice
 * createfood:pumpkin_custard_bottle
 * createfood:pumpkin_custard_bucket
+* createfood:pumpkin_pie_block
 * createfood:pumpkin_pie_filling_bucket
 * createfood:pumpkin_pie_slice
 * createfood:pumpkin_puree_bottle
 * createfood:pumpkin_puree_bucket
+* createfood:purple_gelatin_dessert_block
 * createfood:purple_gelatin_dessert_slice
 * createfood:purple_gelatin_mix_bucket
 * createfood:rabbit_burrito_rice
+* createfood:rabbit_calzone
 * createfood:rabbit_cuts
 * createfood:rabbit_jerky
 * createfood:rabbit_meatball
@@ -982,21 +1036,28 @@
 * createfood:ration_box
 * createfood:raw_apple_cheesecake
 * createfood:raw_apple_pie
+* createfood:raw_bacon_calzone
 * createfood:raw_bacon_pizza
+* createfood:raw_beef_calzone
 * createfood:raw_beef_meatball
 * createfood:raw_berry_cheesecake
 * createfood:raw_berry_cookie
 * createfood:raw_berry_pie
 * createfood:raw_butterscotch_chip_chocolate_cookie
 * createfood:raw_butterscotch_chip_cookie
+* createfood:raw_butterscotch_chip_muffin
 * createfood:raw_calzone
 * createfood:raw_caramel_chip_chocolate_cookie
 * createfood:raw_caramel_chip_cookie
+* createfood:raw_caramel_chip_muffin
+* createfood:raw_cheese_calzone
 * createfood:raw_cheese_pizza
 * createfood:raw_cheesecake
+* createfood:raw_chicken_calzone
 * createfood:raw_chicken_patty
 * createfood:raw_chocolate_chip_chocolate_cookie
 * createfood:raw_chocolate_chip_cookie
+* createfood:raw_chocolate_chip_muffin
 * createfood:raw_chocolate_graham_cracker_pie_crust
 * createfood:raw_chocolate_pastry_base
 * createfood:raw_chocolate_pie
@@ -1010,8 +1071,10 @@
 * createfood:raw_cream_pie_graham_cracker
 * createfood:raw_dark_chocolate_chip_chocolate_cookie
 * createfood:raw_dark_chocolate_chip_cookie
+* createfood:raw_dark_chocolate_chip_muffin
 * createfood:raw_endermite_meatball
 * createfood:raw_fish_bacon_pizza
+* createfood:raw_fish_calzone
 * createfood:raw_fish_onion_pizza
 * createfood:raw_fish_pizza
 * createfood:raw_fish_sticks
@@ -1034,10 +1097,13 @@
 * createfood:raw_mini_graham_cracker_pie_crust
 * createfood:raw_mozzarella_sticks
 * createfood:raw_mushroom_bacon_pizza
+* createfood:raw_mushroom_calzone
 * createfood:raw_mushroom_fish_pizza
 * createfood:raw_mushroom_onion_pizza
 * createfood:raw_mushroom_pizza
+* createfood:raw_mutton_calzone
 * createfood:raw_onion_bacon_pizza
+* createfood:raw_onion_calzone
 * createfood:raw_onion_pizza
 * createfood:raw_onion_rings
 * createfood:raw_pastry_base
@@ -1045,8 +1111,10 @@
 * createfood:raw_pork_meatball
 * createfood:raw_pretzel_stick
 * createfood:raw_pumpkin_pie
+* createfood:raw_rabbit_calzone
 * createfood:raw_rabbit_meatball
 * createfood:raw_sausage_bacon_pizza
+* createfood:raw_sausage_calzone
 * createfood:raw_sausage_fish_pizza
 * createfood:raw_sausage_mushroom_pizza
 * createfood:raw_sausage_onion_pizza
@@ -1069,9 +1137,12 @@
 * createfood:raw_tater_tots
 * createfood:raw_toffee_chip_chocolate_cookie
 * createfood:raw_toffee_chip_cookie
+* createfood:raw_toffee_chip_muffin
 * createfood:raw_ube_cookie
 * createfood:raw_white_chocolate_chip_chocolate_cookie
 * createfood:raw_white_chocolate_chip_cookie
+* createfood:raw_white_chocolate_chip_muffin
+* createfood:red_gelatin_dessert_block
 * createfood:red_gelatin_dessert_slice
 * createfood:red_gelatin_mix_bucket
 * createfood:rice_pudding_bowl
@@ -1098,6 +1169,7 @@
 * createfood:sausage_biscuit_sandwich_fried_egg
 * createfood:sausage_biscuit_sandwich_fried_egg_bacon
 * createfood:sausage_bits
+* createfood:sausage_calzone
 * createfood:sausage_fish_pizza
 * createfood:sausage_fish_pizza_slice
 * createfood:sausage_mushroom_pizza
@@ -1176,6 +1248,7 @@
 * createfood:taco_sauce_bucket
 * createfood:taco_shell
 * createfood:tater_tots
+* createfood:toast_butter
 * createfood:toast_fried_egg_plate
 * createfood:toast_plate
 * createfood:toast_slice
@@ -1250,10 +1323,13 @@
 * createfood:white_chocolate_dried_coffee_beans
 * createfood:white_chocolate_fudge
 * createfood:white_chocolate_fudge_bucket
+* createfood:white_chocolate_ganache_bucket
 * createfood:white_chocolate_marshmallow_stick
 * createfood:white_chocolate_pastry
 * createfood:white_chocolate_pretzel_stick
 * createfood:white_chocolate_toast
+* createfood:white_chocolate_truffle
+* createfood:yellow_gelatin_dessert_block
 * createfood:yellow_gelatin_dessert_slice
 * createfood:yellow_gelatin_mix_bucket
 * createfood:yogurt_bottle

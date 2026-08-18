@@ -5,10 +5,6 @@
       "required": false
     },
     {
-      "id": "createfood:cake_base",
-      "required": false
-    },
-    {
       "id": "createadditions:cake_base_baked",
       "required": false
     },

@@ -10,21 +10,22 @@ These mods are non-essential, but recommended. Without them, there are noticeabl
 * [Delightful Creators](https://www.curseforge.com/minecraft/mc-mods/delightful-creators-forge)
 * [Display Delight](https://www.curseforge.com/minecraft/mc-mods/display-delight)
 
-Information regarding compatibility with Create & Farmer's Delight addons can be found [here](https://github.com/AverageAnime/create-food-multiloader/wiki/Compatibility).
-
 ### **Current Content:**
 
-* Over 1000 food-related items and over 100 new fluids. View the item list [here](https://github.com/AverageAnime/create-food-multiloader/wiki/Item-list).
+* Over 1300 food-related items and over 120 new fluids. [View item list](https://github.com/AverageAnime/create-food-multiloader/wiki/Item-List).
 * Everything is highly configurable, including hiding items, modifying nutrition/saturation values, and adding your own custom items, blocks, fluids, and display plates. Read more [here](https://github.com/AverageAnime/create-food-multiloader/wiki/Config-Options).
-* Fully implemented effects from [Farmer's Delight](https://www.curseforge.com/minecraft/mc-mods/farmers-delight), the [Let's Do series](https://lets-do.ch/), [Kaleidoscope Cookery](https://www.curseforge.com/minecraft/mc-mods/kaleidoscope-cookery), and more.
+* Fully implemented effects from [Farmer's Delight](https://www.curseforge.com/minecraft/mc-mods/farmers-delight), the [Let's Do series](https://lets-do.ch/), [Kaleidoscope Cookery](https://www.curseforge.com/minecraft/mc-mods/kaleidoscope-cookery), and more. Effects are based on ingredients and theme. Read more [here](https://github.com/AverageAnime/create-food-multiloader/wiki/Food-Effects-Guide).
 * Handcrafting system for simple recipes. Read more [here](https://github.com/AverageAnime/create-food-multiloader/wiki/Handcrafting-Guide).
-* Anything can be displayed on plates/bowls. You can also eat directly from the plates or use them as cutting boards. Read the guide [here](https://github.com/AverageAnime/create-food-multiloader/wiki/Display-Blocks-Guide).
+* Anything can be displayed on plates or bowls. Eat directly from a plate, use one as a cutting board, modify placed food by using an item on it, or fill a large bowl with fluid. Read more [here](https://github.com/AverageAnime/create-food-multiloader/wiki/Display-Blocks-Guide).
 * Cloth filters usable by hand or in recipes. Read more [here](https://github.com/AverageAnime/create-food-multiloader/wiki/Cloth-Filters-Guide).
 * Cook ingredients by holding them near a campfire or other heat source. Read more [here](https://github.com/AverageAnime/create-food-multiloader/wiki/Campfire-Cooking-Guide).
-* Small display bowls hold fluid, letting you dip food. Read more [here](https://github.com/AverageAnime/create-food-multiloader/wiki/Fluid-Dipping-Guide).
 * Two storage blocks, the cloth sack and the ration box. Read more [here](https://github.com/AverageAnime/create-food-multiloader/wiki/Storage-Blocks-Guide).
 * Placeable blocks for pizzas, cakes, pies, and more.
 * Animated textures for hot drinks.
+
+Read the full changelog [here](https://github.com/AverageAnime/create-food-multiloader/blob/1.21.1/CHANGELOG.md).
+
+Information regarding compatibility with other mods can be found [here](https://github.com/AverageAnime/create-food-multiloader/wiki/Compatibility).
 
 Information on versions prior to 2.0.0 can be found [here](https://github.com/AverageAnime/create-food/wiki).
 

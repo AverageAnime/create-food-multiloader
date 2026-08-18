@@ -1,5 +1,10 @@
-### ***2.7.1***
-> **Note: If you are updating to a version with new config defaults, you will need to regenerate the list, or add the new entries manually.**
+### ***3.0.0***
+
+---
+
+**If you are updating to a version with new config defaults, you will need to regenerate the list, or add the new entries manually.**
+
+---
 
 # `createfood-client.toml`
 
@@ -89,7 +94,7 @@ block = [
 Format: `mod:item_id|display_type|max_stack`, `mod:item_id|display_type|max_stack|height`, `mod:item_id|display_type|max_stack|height|particles`
 > **Note: Custom display blocks will require new model/blockstate/loot_table files.**
 * Register items from other mods to be placeable as display blocks using the `display_block` list.
-* `display_type` must be one of: `plate`, `plate_food`, `small_plate`, `bottle`, `bowl`, `display_bowl`, `salad_bowl`, `small_bowl`
+* `display_type` must be one of: `plate`, `plate_food`, `small_plate`, `bottle`, `bowl`, `display_bowl`, `salad_bowl`, `large_bowl` (legacy alias: `small_bowl`)
 * `plate_food` renders the food directly on a plate (used by the pasta and breakfast plates) and ignores `max_stack`.
 * `max_stack` controls the maximum number of items that can be placed on the display block.
 * `height` is optional and sets the model height in pixels (default: `12`). Fractional values such as `4.5` are allowed.
@@ -127,7 +132,7 @@ fluid = [
 
 ### Hiding Items
 Format: `item_id`
-* Create: Food items can be hidden in game by adding entries to the `hide_items` list. Recipes are also disabled. In 2.1.0+ display blocks are also hidden.
+* Create: Food items can be hidden in game by adding entries to the `hide_items` list. Their recipes and display blocks are disabled along with them.
 * Adding a fluid ID also hides that fluid's bucket, so `_bucket` is not needed.
 ```toml
 [items]
@@ -191,7 +196,7 @@ item = [
 - **enable_generic_display**: Enable generic display plate and bowl blocks that can hold any single item (default: `true`)
 - **enable_cutting_board**: Enable Farmer's Delight cutting board recipes to work on display plates (default: `true`)
 #### Exclude
-Format: `mod:mod_id`,  `item:mod_id:item_id`,  `tag:mod_id:tag_name`
+Format: `mod:mod_id`, `item:mod_id:item_id`, `tag:mod_id:tag_name`
 * Block specific items from being placed on generic display plates and bowls using `generic_display_exclude`.
 ```toml
 [blocks.display]
@@ -200,18 +205,19 @@ enable_generic_display = true
 generic_display_exclude = ["tag:c:tools"]
 ```
 
-### Fluid Dipping
-- **enable_dipping**: Allow a single small bowl to hold fluid, and food dipped into it to be transformed using Create's filling recipes (default: `true`)
-- **small_bowl_capacity_mb**: Maximum fluid, in mB, a small bowl can hold (default: `4000`)
+### Display Interactions
+- **enable_display_interactions**: Allow a held item used on a placed food to transform it using recipes that already exist — pour in a filled container, apply an ingredient, or take a drink back out with an empty container. Also covers dipping food into a large bowl of fluid (default: `true`)
+- **large_bowl_capacity_mb**: Maximum fluid, in mB, a large bowl can hold (default: `4000`)
 > **Note: Lowering this value after bowls have been filled beyond the new capacity silently discards the excess fluid the next time the bowl is loaded.**
-#### Dipping Exclude
-Format: `mod:mod_id`,  `item:mod_id:item_id`,  `tag:mod_id:tag_name`
-* Block specific items from being dipped using `dipping_exclude`. Empty by default.
+> **Renamed in 2.8.0: this option was `enable_dipping`, and `dipping_exclude` is now `display_interactions_exclude`. Both are new keys, so an existing config falls back to the defaults — set them again if you had changed them.**
+#### Display Interactions Exclude
+Format: `mod:mod_id`, `item:mod_id:item_id`, `tag:mod_id:tag_name`
+* Block specific foods from being transformed using `display_interactions_exclude`. Empty by default. The list names the food being *transformed*; listed items can still be used as an ingredient.
 ```toml
 [blocks.display]
-enable_dipping = true
-small_bowl_capacity_mb = 4000
-dipping_exclude = []
+enable_display_interactions = true
+large_bowl_capacity_mb = 4000
+display_interactions_exclude = []
 ```
 
 ---
@@ -227,7 +233,7 @@ dipping_exclude = []
 - **horizontal_range**: Horizontal search radius, in blocks, for detecting heat sources (default: `3`)
 - **vertical_range**: Vertical search radius, in blocks, for detecting heat sources (default: `1`)
 #### Filter & Exclude
-Format: `mod:mod_id`,  `item:mod_id:item_id`,  `tag:mod_id:tag_name`
+Format: `mod:mod_id`, `item:mod_id:item_id`, `tag:mod_id:tag_name`
 * Block specific items from being cooked using `campfire_cooking_exclude`. Takes priority over the filter and `sticks_only`.
 * Restrict campfire cooking to only produce outputs matching `campfire_cooking_filter`. Works in addition to `sticks_only` when both are set.
 ```toml
@@ -257,7 +263,7 @@ filter_interactions = [
 - **enable_handcrafting**: Toggle crafting two-ingredient recipes via `RMB` (default: `true`)
 - **enable_particles**: Show particle effects when handcrafting (default: `true`)
 #### Filter & Exclude
-Format: `mod:mod_id`,  `item:mod_id:item_id`,  `tag:mod_id:tag_name`
+Format: `mod:mod_id`, `item:mod_id:item_id`, `tag:mod_id:tag_name`
 * Block specific outputs from being handcrafted using `exclude`. Takes priority over the filter.
 * Restrict handcrafting to only allow outputs matching the `filter` list. If empty, all recipes are allowed.
 ```toml
@@ -277,7 +283,7 @@ filter = ["mod:createfood", "item:farmersdelight:hamburger", "tag:c:foods"]
 Format: `item_id|nutrition|saturation`
 * Overwrite nutrition and saturation using the `nutrition_saturation` list.
 * Use `-` to keep the default value.
-* `item_id` may be a **bare id** for a Create: Food item (e.g. `sugar_cane_juice_bottle`) or a **namespaced id** for any other mod's food (e.g. `minecraft:apple`, `farmersdelight:apple_pie_slice`). 
+* `item_id` may be a **bare id** for a Create: Food item (e.g. `sugar_cane_juice_bottle`) or a **namespaced id** for any other mod's food (e.g. `minecraft:apple`, `farmersdelight:apple_pie_slice`).
     * Foreign items must already have a food component.
 > **Note: Foreign-item overrides only affects item stacks created or loaded after reload — relog to refresh an existing inventory.**
 ```toml
@@ -287,6 +293,18 @@ nutrition_saturation = [
   "caramel_pretzel_stick|-|5",
   "minecraft:apple|1|0.1"
 ]
+```
+
+### Effect Stacking
+- **stack_duration**: Eating a food that grants an effect you already have at the same level adds the two durations together instead of the longer one replacing the shorter (default: `true`)
+- **max_stacked_duration**: Ceiling in ticks for a stacked duration (default: `36000`, 30 minutes). Set to `0` for no limit
+* Only the *same* level stacks. Speed I on top of Speed I sums; Speed II on top of Speed I still follows vanilla, where the stronger effect takes over and the weaker one resumes afterwards.
+* Applies to any food, not just this mod's - vanilla food and other mods' food stack with ours. Anything without a food value is untouched, so potions, beacons and similar sources keep vanilla behaviour.
+* Tooltips show an item's own effect duration, not what you would end up with after stacking.
+```toml
+[items.effects]
+stack_duration = true
+max_stacked_duration = 36000
 ```
 
 ### Effect Category Overrides
@@ -347,7 +365,7 @@ crafting_remainders = [
 - **cloth_sack_inventory**: Enable the cloth sack's inventory. When disabled it is purely cosmetic (default: `true`)
 - **cloth_sack_stack**: Allow each slot to hold a full stack instead of a single item (default: `true`)
 #### Filter & Exclude
-Format: `mod:mod_id`,  `item:mod_id:item_id`,  `tag:mod_id:tag_name`
+Format: `mod:mod_id`, `item:mod_id:item_id`, `tag:mod_id:tag_name`
 * Block specific items from being inserted using `cloth_sack_exclude`. Takes priority over everything.
 * Restrict what items can be inserted using `cloth_sack_filter`. If empty, all items are allowed (or only food when `allow_food` is on).
 ```toml
@@ -366,7 +384,7 @@ cloth_sack_filter = ["tag:c:foods"]
 - **ration_box_inventory**: Enable the ration box's inventory. When disabled it is purely cosmetic and cannot be eaten from (default: `true`)
 - **ration_box_stack**: Allow each slot to hold a full stack instead of a single item (default: `false`)
 #### Filter & Exclude
-Format: `mod:mod_id`,  `item:mod_id:item_id`,  `tag:mod_id:tag_name`
+Format: `mod:mod_id`, `item:mod_id:item_id`, `tag:mod_id:tag_name`
 * Block specific items from being inserted using `ration_box_exclude`. Takes priority over everything.
 * Restrict what items can be inserted using `ration_box_filter`. If empty, all items are allowed (or only food when `allow_food` is on). Entries are allowed in addition to food when `allow_food` is on.
 ```toml
@@ -377,4 +395,18 @@ ration_box_inventory = true
 ration_box_stack = false
 ration_box_exclude = ["item:minecraft:rotten_flesh"]
 ration_box_filter = ["mod:createfood", "tag:c:foods/meat"]
+```
+
+---
+
+## Compatibility
+
+### Create
+- **expanded_basin_fluids**: Give Create's basin **4** fluid input slots instead of the stock 2, so mixing recipes can call for more than two distinct fluids (default: `true`). **Turning this off discards any fluid sitting in the 3rd and 4th slots of existing basins**.
+  * Only the **input** is increased. The output tank stays at 2 slots, and each slot still holds 1000 mB.
+- **basin_fluid_items**: Let a filled bottle or bowl be poured into Create's basin by hand, and an empty container be filled from it, using Create's filling and emptying recipes (default: `true`).
+```toml
+[compat.create]
+expanded_basin_fluids = true
+basin_fluid_items = true
 ```

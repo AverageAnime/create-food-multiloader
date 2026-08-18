@@ -3,10 +3,6 @@
     {
       "id": "createfood:sausage_pizza",
       "required": false
-    },
-    {
-      "id": "createfood:sausage_pizza",
-      "required": false
     }
   ]
 }

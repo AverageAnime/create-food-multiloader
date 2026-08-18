@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "createfood:flowing_dark_chocolate_ganache",
+      "required": false
+    },
+    {
+      "id": "createfood:dark_chocolate_ganache",
+      "required": false
+    }
+  ]
+}

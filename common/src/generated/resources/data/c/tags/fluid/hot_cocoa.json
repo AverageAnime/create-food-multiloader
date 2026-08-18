@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "delightfulcreators:hot_cocoa",
+      "required": false
+    },
+    {
+      "id": "delightfulcreators:flowing_hot_cocoa",
+      "required": false
+    }
+  ]
+}

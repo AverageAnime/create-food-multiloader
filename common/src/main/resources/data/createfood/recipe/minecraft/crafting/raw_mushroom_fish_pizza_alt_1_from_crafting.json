@@ -14,7 +14,7 @@
             "tag": "c:mushrooms"
         },
         {
-            "tag": "c:cooked_fishes"
+            "tag": "c:foods/raw_fish"
         }
     ],
     "result": {

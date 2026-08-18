@@ -1,0 +1,33 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "displaydelight"
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "minecraft:bowl"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "displaydelight"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
+            "id": "minecraft:bowl"
+        }
+    ],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:food_plates"
+        }
+    ],
+    "result": {
+        "id": "minecraft:bowl"
+    }
+}
