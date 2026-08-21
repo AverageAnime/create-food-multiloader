@@ -38,7 +38,6 @@ public final class EffectContext {
         return ACTIVE.getOrDefault(entity, List.of());
     }
 
-    /** True while {@code entity} is part-way through consuming an item that carries a FOOD component. */
     public static boolean isConsuming(LivingEntity entity) {
         return CONSUMING.contains(entity);
     }

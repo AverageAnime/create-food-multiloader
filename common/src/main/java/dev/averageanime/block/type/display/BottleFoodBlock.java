@@ -57,11 +57,6 @@ public class BottleFoodBlock extends DisplayFoodBlock {
     @Override
     protected boolean handlesOwnContainer() { return true; }
 
-    /**
-     * Only the CONTENTS leave an empty bottle behind. Retrieving the drink whole hands back an item
-     * that already includes its bottle, so {@code handleLastItemRemoved} must still clear the block -
-     * leaving one there too would duplicate the container.
-     */
     @Override
     protected void handleLastItemEaten(BlockState state, Level level, BlockPos pos) {
         Block emptyBottle = Services.PLATFORM.getBottleBlock();

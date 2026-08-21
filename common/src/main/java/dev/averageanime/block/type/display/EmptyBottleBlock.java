@@ -29,17 +29,10 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 import java.util.function.Supplier;
 
-/**
- * The empty glass bottle left standing when a placed drink is taken, drunk, or decanted.
- *
- * <p>Unlike the other {@code Empty*} display blocks this has no {@code STACK_SIZE} - bottles are
- * single-serving, so empty bottles do not stack - and it stays out of the plate/bowl shift-cycle.
- */
 public class EmptyBottleBlock extends Block {
 
     public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
 
-    /** Matches {@link BottleFoodBlock}'s footprint, at the height of the empty bottle model. */
     private static final VoxelShape SHAPE = Block.box(5.5, 0.0, 5.5, 10.5, 9.0, 10.5);
 
     public EmptyBottleBlock(Properties properties) {

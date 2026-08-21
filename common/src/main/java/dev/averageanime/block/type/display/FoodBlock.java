@@ -130,13 +130,6 @@ public abstract class FoodBlock extends Block {
         return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
     }
 
-    /**
-     * Combines the held item with the food on this block via {@link FoodTransforms}, converting as many
-     * servings as the held stack can pay for. When the block can represent the whole result it becomes
-     * that block; otherwise the results go to the player.
-     *
-     * @return null when nothing matched, so the caller falls through to the default interaction
-     */
     @Nullable
     protected ItemInteractionResult tryTransform(BlockState state, Level level, BlockPos pos, Player player,
                                                  InteractionHand hand, ItemStack heldStack) {

@@ -33,10 +33,6 @@ public final class DippingRecipes {
     public record Dip(int fluidAmount, ItemStack result) {}
     public record Emptied(Fluid fluid, int amount, ItemStack container) {}
 
-    /**
-     * Pure recipe lookup. Callers apply {@link dev.averageanime.config.ConfigValues#isDisplayInteractionExcluded}
-     * themselves, against whichever stack they treat as the food being transformed.
-     */
     @SuppressWarnings({"unchecked", "rawtypes"})
     @Nullable
     public static Dip findFillingRecipe(Level level, ItemStack held, Fluid stored, int storedMb) {

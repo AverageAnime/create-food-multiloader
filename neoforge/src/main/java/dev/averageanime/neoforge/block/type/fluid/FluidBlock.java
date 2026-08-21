@@ -56,7 +56,6 @@ public class FluidBlock {
         this.texture = name;
     }
 
-    /** Reuse another fluid's sprites instead of requiring {@code <name>_still|_flow} textures. */
     public FluidBlock tex(String texture) {
         this.texture = texture;
         return this;

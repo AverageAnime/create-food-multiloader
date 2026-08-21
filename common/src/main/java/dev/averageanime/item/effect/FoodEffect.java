@@ -80,7 +80,6 @@ public final class FoodEffect {
             return this;
         }
 
-        /** Append another category's candidates, keeping their order. */
         public Builder orAll(FoodEffect other) {
             if (other != null) {
                 candidates.addAll(Arrays.asList(other.candidates));

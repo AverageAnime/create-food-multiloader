@@ -19,7 +19,6 @@ import org.jetbrains.annotations.Nullable;
 
 public class LargeBowlBlockEntity extends BlockEntity {
 
-    /** Fallback used only before config is bound (e.g. datagen); live capacity comes from {@link Services#PLATFORM}. */
     public static final int DEFAULT_CAPACITY_MB = FluidAmounts.BUCKET * 4;
 
     private static final String TAG_FLUID = "fluid";

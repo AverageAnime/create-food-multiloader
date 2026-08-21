@@ -24,14 +24,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-/**
- * Combining a placed food with a held item, using recipes that already exist: the food's own emptying
- * recipe (taking the contents back out), a filling recipe (topping it up with a held fluid), a
- * two-ingredient crafting recipe, or Create's deploying recipes as a fallback.
- *
- * <p>Shared by {@link FoodBlock}, which tracks servings, and by block-form foods such as a placed cake,
- * which simply become the result's block.
- */
 public final class FoodTransforms {
 
     private FoodTransforms() {}
@@ -102,16 +94,10 @@ public final class FoodTransforms {
         return new Outcome(result, leftovers, true, false);
     }
 
-    /** The containers to hand back for one consumed held item. */
     public static List<ItemStack> containersFor(Outcome outcome, ItemStack heldBefore) {
         return outcome.reconcile() ? reconcileContainers(heldBefore, outcome.leftovers()) : outcome.leftovers();
     }
 
-    /**
-     * One consumed held item yields exactly one container. Create's deploying recipes list the container
-     * manually because Create ignores crafting remainders, but those items also carry a real remainder for
-     * hand use, so the duplicate copy is dropped and the remainder granted once.
-     */
     private static List<ItemStack> reconcileContainers(ItemStack heldBefore, List<ItemStack> leftovers) {
         Item remainder = heldBefore.getItem().getCraftingRemainingItem();
         if (remainder == null || remainder == Items.AIR) {
@@ -132,10 +118,6 @@ public final class FoodTransforms {
         return out;
     }
 
-    /**
-     * Follows the container actually being handled rather than the block, so pouring a sauce bottle onto
-     * a plate sounds like a bottle and squeezing a piping bag sounds like fluid, not like a generic item.
-     */
     public static SoundEvent soundFor(Level level, ItemStack heldBefore, Outcome outcome, SoundEvent fallback) {
         // Taking contents out fills the held container; every other path empties one into the food.
         boolean fillingTheHeldContainer = !outcome.convertsBlock();
@@ -158,7 +140,6 @@ public final class FoodTransforms {
         return fallback;
     }
 
-    /** Hands over {@code times} copies of {@code prototype}, split to respect its max stack size. */
     public static void giveCopies(Player player, InteractionHand hand, ItemStack prototype, int times,
                                   boolean preferHand) {
         if (prototype.isEmpty() || times <= 0) return;

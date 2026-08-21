@@ -23,17 +23,9 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.block.state.properties.Property;
 
-/**
- * The same combine-with-a-held-item interaction as {@link FoodBlock#tryTransform}, but for foods that are
- * placed as blocks in their own right rather than displayed on a plate - a cake base, a gelatin dessert.
- *
- * <p>Those have no servings to count: the block simply becomes the result's block. This is what lets the
- * mod's hand-application recipes be dropped, since Create's {@code item_application} was the only thing
- * covering these blocks before.
- */
-public final class BlockFoodTransformInteraction {
+public final class BlockFoodTransformation {
 
-    private BlockFoodTransformInteraction() {}
+    private BlockFoodTransformation() {}
 
     public static boolean tryTransform(Player player, Level level, InteractionHand hand, BlockPos pos) {
         if (!Services.PLATFORM.isDisplayInteractionsEnabled()) return false;
@@ -102,7 +94,6 @@ public final class BlockFoodTransformInteraction {
         return key != null && key.getNamespace().equals(dev.averageanime.CreateFoodCommon.MOD_ID);
     }
 
-    /** Carries facing across so a frosted cake keeps the orientation of the one it replaced. */
     private static BlockState copyShared(BlockState from, BlockState to) {
         if (from.hasProperty(BlockStateProperties.HORIZONTAL_FACING)
                 && to.hasProperty(BlockStateProperties.HORIZONTAL_FACING)) {

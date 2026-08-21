@@ -13,17 +13,6 @@ import org.jetbrains.annotations.Nullable;
 import java.util.Collection;
 import java.util.List;
 
-/**
- * Reads Create's {@code create:deploying} recipes as a two-item combination: the placed food plus the
- * held item. Create mirrors every {@code create:item_application} recipe into deploying, so deploying
- * alone is the complete set.
- *
- * <p>Only a fallback — two-ingredient crafting recipes cover far more and are checked first. This
- * catches the handful of results that exist solely as deploying recipes (the chip milkshakes, the
- * cheese soup bowls, the topped eggplant burgers).
- *
- * <p>Yields nothing when Create is absent, like {@link DippingRecipes}.
- */
 public final class ApplicationRecipes {
 
     private static final ResourceLocation DEPLOYING_TYPE =
@@ -31,7 +20,6 @@ public final class ApplicationRecipes {
 
     private ApplicationRecipes() {}
 
-    /** {@code leftovers} are Create's manually authored container outputs, not crafting remainders. */
     public record Applied(ItemStack result, List<ItemStack> leftovers) {}
 
     @SuppressWarnings({"unchecked", "rawtypes"})

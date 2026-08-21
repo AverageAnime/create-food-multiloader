@@ -10,13 +10,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-/**
- * Reads the four registration lists out of {@code createfood-common.toml}.
- * <p>
- * These are consumed by the loaders' {@code *Registration} classes during mod construction, before the
- * loader has loaded the config spec, so {@link ConfigValues} suppliers are not readable yet and the file
- * has to be parsed directly. Keep the keys in sync with {@link ConfigSchema#build}.
- */
 public final class ConfigBootstrap {
 
     public static final String ITEMS         = "items.item";
@@ -29,14 +22,6 @@ public final class ConfigBootstrap {
 
     private ConfigBootstrap() {}
 
-    /**
-     * Returns the configured entries for {@code key}, falling back to {@code defaults} when the config file
-     * does not exist yet (first launch) or does not mention the key at all. A key that *is* present wins even
-     * when empty, so removing an entry keeps it removed.
-     * <p>
-     * During datagen the file is ignored entirely: generated resources must depend only on committed source,
-     * not on whatever the dev run directory happens to hold.
-     */
     public static List<String> read(String key, List<String> defaults) {
         if (Services.PLATFORM.isRunningDataGen()) return defaults;
         load();

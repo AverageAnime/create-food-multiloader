@@ -1,7 +1,7 @@
 package dev.averageanime.neoforge.block.type.display;
 
 import dev.averageanime.CreateFoodCommon;
-import dev.averageanime.block.type.display.BlockFoodTransformInteraction;
+import dev.averageanime.block.type.display.BlockFoodTransformation;
 import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.item.context.UseOnContext;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -18,7 +18,7 @@ public class FoodTransformEvents {
         UseOnContext ctx = event.getUseOnContext();
         if (ctx.getPlayer() == null) return;
 
-        boolean consumed = BlockFoodTransformInteraction.tryTransform(
+        boolean consumed = BlockFoodTransformation.tryTransform(
                 ctx.getPlayer(), ctx.getLevel(), ctx.getHand(), ctx.getClickedPos());
         if (consumed) {
             event.cancelWithResult(ItemInteractionResult.sidedSuccess(ctx.getLevel().isClientSide()));
