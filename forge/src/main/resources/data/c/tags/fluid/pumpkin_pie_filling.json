@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "createfood:flowing_pumpkin_pie_filling",
+      "required": false
+    },
+    {
+      "id": "createfood:pumpkin_pie_filling",
+      "required": false
+    }
+  ]
+}

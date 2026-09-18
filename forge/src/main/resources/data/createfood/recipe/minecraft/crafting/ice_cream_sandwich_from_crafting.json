@@ -1,0 +1,26 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:chocolate_graham_cracker_ice_cream"
+        },
+        {
+            "tag": "c:chocolate_graham_cracker"
+        }
+    ],
+    "result": {
+        "id": "createfood:ice_cream_sandwich"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "ice_cream_sandwich"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "ice_cream_sandwich"
+        }
+    ]
+}

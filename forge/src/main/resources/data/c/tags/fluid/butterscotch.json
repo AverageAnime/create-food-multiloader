@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "createfood:flowing_butterscotch",
+      "required": false
+    },
+    {
+      "id": "createfood:butterscotch",
+      "required": false
+    }
+  ]
+}

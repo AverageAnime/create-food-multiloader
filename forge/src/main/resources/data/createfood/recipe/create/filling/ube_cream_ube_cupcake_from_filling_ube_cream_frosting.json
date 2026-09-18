@@ -1,0 +1,42 @@
+{
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "tag": "c:ube_cupcake_base"
+        },
+        {
+            "type": "fluid_tag",
+            "amount": 250,
+            "fluid_tag": "c:ube_cream_frosting"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:ube_cream_ube_cupcake"
+            }
+        }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "create"
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "ube_cream_ube_cupcake"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "create"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
+            "id": "ube_cream_ube_cupcake"
+        }
+    ]
+}

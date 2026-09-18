@@ -1,0 +1,27 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:sweet_dough"
+        },
+        {
+            "tag": "c:toffee_chips"
+        }
+    ],
+    "result": {
+        "count": 8,
+        "id": "createfood:raw_toffee_chip_cookie"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "raw_toffee_chip_cookie"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "raw_toffee_chip_cookie"
+        }
+    ]
+}

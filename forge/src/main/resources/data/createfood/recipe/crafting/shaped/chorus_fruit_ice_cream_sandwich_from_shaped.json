@@ -1,0 +1,30 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "chorus_fruit_ice_cream_sandwich"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "chorus_fruit_ice_cream_sandwich"
+    }
+  ],
+  "key": {
+    "1": {
+      "tag": "c:chocolate_graham_cracker"
+    },
+    "2": {
+      "tag": "c:chocolate_graham_cracker_chorus_fruit_ice_cream"
+    }
+  },
+  "pattern": [
+    "1",
+    "2"
+  ],
+  "result": {
+    "id": "createfood:chorus_fruit_ice_cream_sandwich"
+  }
+}

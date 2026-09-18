@@ -1,0 +1,26 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "chocolate_cream_mini_waffle"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "chocolate_cream_mini_waffle"
+        }
+    ],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:mini_waffle"
+        },
+        {
+            "tag": "c:chocolate_cream_frosting"
+        }
+    ],
+    "result": {
+        "id": "createfood:chocolate_cream_mini_waffle"
+    }
+}

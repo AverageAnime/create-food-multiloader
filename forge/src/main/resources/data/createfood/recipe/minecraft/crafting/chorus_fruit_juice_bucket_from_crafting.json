@@ -1,0 +1,35 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:bucket"
+        },
+        {
+            "tag": "c:chorus_fruit_juice_bottle"
+        },
+        {
+            "tag": "c:chorus_fruit_juice_bottle"
+        },
+        {
+            "tag": "c:chorus_fruit_juice_bottle"
+        },
+        {
+            "tag": "c:chorus_fruit_juice_bottle"
+        }
+    ],
+    "result": {
+        "id": "createfood:chorus_fruit_juice_bucket"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "chorus_fruit_juice_bucket"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "chorus_fruit_juice_bucket"
+        }
+    ]
+}

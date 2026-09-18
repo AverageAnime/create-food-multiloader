@@ -1,0 +1,16 @@
+{
+  "values": [
+    {
+      "id": "veggiesdelight:zucchini",
+      "required": false
+    },
+    {
+      "id": "veggiesdelight:zucchini_slice",
+      "required": false
+    },
+    {
+      "id": "veggiesdelight:roasted_zucchini",
+      "required": false
+    }
+  ]
+}

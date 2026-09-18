@@ -1,0 +1,36 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "jmc"
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "jmc:pumpkin_cake"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "jmc"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
+            "id": "jmc:pumpkin_cake"
+        }
+    ],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:cream_cake"
+        },
+        {
+            "item": "minecraft:pumpkin"
+        }
+    ],
+    "result": {
+        "id": "jmc:pumpkin_cake"
+    }
+}

@@ -1,0 +1,34 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "key": {
+        "-": {
+            "item": "minecraft:stick"
+        },
+        "i": {
+            "item": "minecraft:ice"
+        },
+        "b": {
+            "tag": "c:chorus_fruit"
+        }
+    },
+    "pattern": [
+        "   ",
+        "ib ",
+        "-i "
+    ],
+    "result": {
+        "id": "createfood:chorus_fruit_popsicle"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "chorus_fruit_popsicle"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "chorus_fruit_popsicle"
+        }
+    ]
+}

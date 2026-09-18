@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "minecraft:pumpkin_pie",
+      "required": false
+    },
+    {
+      "id": "delightfulcreators:incomplete_pumpkin_pie",
+      "required": false
+    }
+  ]
+}

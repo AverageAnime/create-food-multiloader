@@ -1,0 +1,26 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "raw_fish_onion_pizza"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "raw_fish_onion_pizza"
+        }
+    ],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:raw_onion_pizza"
+        },
+        {
+            "tag": "c:foods/raw_fish"
+        }
+    ],
+    "result": {
+        "id": "createfood:raw_fish_onion_pizza"
+    }
+}

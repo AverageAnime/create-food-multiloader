@@ -1,0 +1,35 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:pizza_dough"
+        },
+        {
+            "tag": "c:tomato_sauce"
+        },
+        {
+            "tag": "c:cheeses"
+        },
+        {
+            "tag": "c:mushrooms"
+        },
+        {
+            "tag": "c:foods/raw_fish"
+        }
+    ],
+    "result": {
+        "id": "createfood:raw_mushroom_fish_pizza"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "raw_mushroom_fish_pizza"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "raw_mushroom_fish_pizza"
+        }
+    ]
+}

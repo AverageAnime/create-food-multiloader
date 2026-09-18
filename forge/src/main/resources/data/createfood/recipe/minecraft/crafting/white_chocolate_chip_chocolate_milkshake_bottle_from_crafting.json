@@ -1,0 +1,26 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "white_chocolate_chip_chocolate_milkshake_bottle"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "white_chocolate_chip_chocolate_milkshake_bottle"
+        }
+    ],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:chocolate_milkshake"
+        },
+        {
+            "tag": "c:white_chocolate_chips"
+        }
+    ],
+    "result": {
+        "id": "createfood:white_chocolate_chip_chocolate_milkshake_bottle"
+    }
+}

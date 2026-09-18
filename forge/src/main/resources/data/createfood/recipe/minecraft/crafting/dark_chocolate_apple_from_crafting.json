@@ -1,0 +1,26 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:apple"
+        },
+        {
+            "tag": "c:bar_of_dark_chocolate"
+        }
+    ],
+    "result": {
+        "id": "createfood:dark_chocolate_apple"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "dark_chocolate_apple"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "dark_chocolate_apple"
+        }
+    ]
+}

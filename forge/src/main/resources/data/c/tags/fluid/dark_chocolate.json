@@ -1,0 +1,20 @@
+{
+  "values": [
+    {
+      "id": "createfood:flowing_dark_chocolate",
+      "required": false
+    },
+    {
+      "id": "createfood:dark_chocolate",
+      "required": false
+    },
+    {
+      "id": "create_confectionery:black_chocolate",
+      "required": false
+    },
+    {
+      "id": "create_confectionery:flowing_black_chocolate",
+      "required": false
+    }
+  ]
+}

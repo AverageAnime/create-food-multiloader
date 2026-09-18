@@ -1,0 +1,36 @@
+{
+  "values": [
+    {
+      "id": "#c:foods/raw_calamari",
+      "required": false
+    },
+    {
+      "id": "#c:foods/cooked_calamari",
+      "required": false
+    },
+    {
+      "id": "rusticdelight:calamari",
+      "required": false
+    },
+    {
+      "id": "rusticdelight:calamari_slice",
+      "required": false
+    },
+    {
+      "id": "rusticdelight:cooked_calamari",
+      "required": false
+    },
+    {
+      "id": "rusticdelight:cooked_calamari_slice",
+      "required": false
+    },
+    {
+      "id": "culturaldelights:raw_calamari",
+      "required": false
+    },
+    {
+      "id": "culturaldelights:cooked_calamari",
+      "required": false
+    }
+  ]
+}

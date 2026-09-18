@@ -1,0 +1,139 @@
+plugins {
+    id 'eclipse'
+    id 'idea'
+    id 'maven-publish'
+    id 'net.minecraftforge.gradle'
+    id 'org.spongepowered.mixin'
+}
+
+version = project.version
+group = project.group
+description = project.description ?: findProperty('description')
+
+base {
+    archivesName = "${mod_id}-forge-${minecraft_version}"
+}
+
+java {
+    toolchain.languageVersion = JavaLanguageVersion.of(java_version)
+    withSourcesJar()
+}
+
+minecraft {
+    // ForgeGradle 6's bundled mapping providers do not expose Parchment for
+    // this target, so use official names until the mapping integration is
+    // added to the port.
+    mappings channel: 'official', version: minecraft_version
+
+    copyIdeResources = true
+
+    runs {
+        configureEach {
+            workingDirectory project.file('run')
+            property 'forge.logging.markers', 'REGISTRIES'
+            property 'forge.logging.console.level', 'debug'
+            mods {
+                "${mod_id}" {
+                    source sourceSets.main
+                }
+            }
+        }
+        client {
+            property 'forge.enabledGameTestNamespaces', mod_id
+        }
+        server {
+            args '--nogui'
+        }
+        data {
+            workingDirectory project.file('run-data')
+            args '--mod', mod_id, '--all',
+                    '--output', file('src/generated/resources/').absolutePath,
+                    '--existing', file('src/main/resources/').absolutePath
+        }
+    }
+}
+
+repositories {
+    maven { url = 'https://maven.createmod.net/' }
+    maven { url = 'https://maven.tterrag.com/' }
+    maven { url = 'https://cursemaven.com' }
+    maven { url = 'https://maven.blamejared.com' }
+    maven { url = 'https://maven.parchmentmc.org/' }
+    maven { url = 'https://api.modrinth.com/maven' }
+}
+
+dependencies {
+    minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
+    implementation(fg.deobf("com.simibubi.create:create-${minecraft_version}:${create_version}:slim")) {
+        transitive = false
+    }
+    runtimeOnly fg.deobf("dev.engine-room.flywheel:flywheel-forge-${minecraft_version}:1.0.6-281")
+    runtimeOnly fg.deobf("net.createmod.ponder:Ponder-Forge-${minecraft_version}:1.0.92")
+    runtimeOnly fg.deobf("com.tterrag.registrate:Registrate:MC1.20-1.3.11")
+    compileOnly "curse.maven:farmers-delight-398521:${farmers_delight_version}"
+    compileOnly "maven.modrinth:jade:${jade_version}+forge"
+    compileOnly 'io.github.llamalad7:mixinextras-common:0.4.1'
+    runtimeOnly 'io.github.llamalad7:mixinextras-forge:0.4.1'
+    annotationProcessor 'io.github.llamalad7:mixinextras-common:0.4.1'
+    annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
+}
+
+sourceSets.main.java {
+    // Datagen providers are being rebuilt against Forge's 1.20.1 data API;
+    // keep runtime compilation focused on the mod implementation meanwhile.
+    exclude 'dev/averageanime/neoforge/datagen/**'
+}
+
+sourceSets.main.resources {
+}
+
+processResources {
+    def expandProps = [
+            version: version,
+            group: project.group,
+            minecraft_version: minecraft_version,
+            minecraft_version_range: minecraft_version_range,
+            forge_version: forge_version,
+            forge_version_range: forge_version_range,
+            mod_name: mod_name,
+            mod_author: mod_author,
+            mod_id: mod_id,
+            license: license,
+            description: description
+    ]
+    inputs.properties(expandProps)
+    filesMatching(['META-INF/mods.toml', '*.mixins.json']) {
+        expand(expandProps)
+    }
+}
+
+tasks.matching { it.name == 'runData' }.configureEach {
+    dependsOn tasks.named('compileJava')
+    doFirst {
+        copy {
+            from layout.buildDirectory.file("tmp/compileJava/${mod_id}.refmap.json")
+            into layout.buildDirectory.dir('resources/main')
+        }
+    }
+}
+
+mixin {
+    add sourceSets.main, "${mod_id}.refmap.json"
+    config "${mod_id}.mixins.json"
+    config "${mod_id}.create.mixins.json"
+}
+
+jar {
+    manifest {
+        attributes([
+                'Specification-Title'      : mod_name,
+                'Specification-Vendor'     : mod_author,
+                'Specification-Version'   : project.jar.archiveVersion,
+                'Implementation-Title'    : project.name,
+                'Implementation-Version'  : project.jar.archiveVersion,
+                'Implementation-Vendor'   : mod_author,
+                'Built-On-Minecraft'      : minecraft_version,
+                'MixinConfigs'            : "${mod_id}.mixins.json,${mod_id}.create.mixins.json"
+        ])
+    }
+}

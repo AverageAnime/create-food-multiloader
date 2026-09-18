@@ -1,0 +1,32 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:chorus_fruit_cheesecake_slice"
+        },
+        {
+            "tag": "c:chorus_fruit_cheesecake_slice"
+        },
+        {
+            "tag": "c:chorus_fruit_cheesecake_slice"
+        },
+        {
+            "tag": "c:chorus_fruit_cheesecake_slice"
+        }
+    ],
+    "result": {
+        "id": "createfood:chorus_fruit_cheesecake"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "chorus_fruit_cheesecake"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "chorus_fruit_cheesecake"
+        }
+    ]
+}

@@ -1,0 +1,30 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "raw_chocolate_pastry_base"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "raw_chocolate_pastry_base"
+    }
+  ],
+  "key": {
+    "1": {
+      "tag": "c:butter"
+    },
+    "2": {
+      "tag": "c:chocolate_sweet_dough"
+    }
+  },
+  "pattern": [
+    "1",
+    "2"
+  ],
+  "result": {
+    "id": "createfood:raw_chocolate_pastry_base"
+  }
+}

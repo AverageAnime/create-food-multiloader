@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "fruitsdelight:orange",
+      "required": false
+    },
+    {
+      "id": "#c:orange_slice",
+      "required": false
+    }
+  ]
+}

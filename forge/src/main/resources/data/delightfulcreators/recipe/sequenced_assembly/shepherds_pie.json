@@ -1,0 +1,141 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "farmersdelight"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "delightfulcreators"
+    },
+    {
+      "type": "createfood:enabled",
+      "id": "farmersdelight:shepherds_pie_block"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "create"
+      ]
+    },
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "farmersdelight"
+      ]
+    },
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "delightfulcreators"
+      ]
+    },
+    {
+      "condition": "createfood:enabled",
+      "id": "farmersdelight:shepherds_pie_block"
+    }
+  ],
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "tag": "c:bowl"
+  },
+  "loops": 1,
+  "results": [
+    {
+      "id": "farmersdelight:shepherds_pie_block"
+    }
+  ],
+  "sequence": [
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "delightfulcreators:incomplete_shepherds_pie"
+        },
+        {
+          "tag": "c:foods/cooked_mutton"
+        }
+      ],
+      "results": [
+        {
+          "id": "delightfulcreators:incomplete_shepherds_pie"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "delightfulcreators:incomplete_shepherds_pie"
+        },
+        {
+          "tag": "c:foods/cooked_mutton"
+        }
+      ],
+      "results": [
+        {
+          "id": "delightfulcreators:incomplete_shepherds_pie"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "delightfulcreators:incomplete_shepherds_pie"
+        },
+        {
+          "item": "minecraft:baked_potato"
+        }
+      ],
+      "results": [
+        {
+          "id": "delightfulcreators:incomplete_shepherds_pie"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "delightfulcreators:incomplete_shepherds_pie"
+        },
+        {
+          "tag": "c:onion"
+        }
+      ],
+      "results": [
+        {
+          "id": "delightfulcreators:incomplete_shepherds_pie"
+        }
+      ]
+    },
+    {
+      "type": "create:filling",
+      "ingredients": [
+        {
+          "item": "delightfulcreators:incomplete_shepherds_pie"
+        },
+        {
+          "type": "fluid_tag",
+          "amount": 250,
+          "fluid_tag": "c:milk"
+        }
+      ],
+      "results": [
+        {
+          "id": "delightfulcreators:incomplete_shepherds_pie"
+        }
+      ]
+    }
+  ],
+  "transitional_item": {
+    "id": "delightfulcreators:incomplete_shepherds_pie"
+  }
+}

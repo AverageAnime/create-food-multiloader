@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "createfood:flowing_yogurt",
+      "required": false
+    },
+    {
+      "id": "createfood:yogurt",
+      "required": false
+    }
+  ]
+}

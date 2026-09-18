@@ -1,0 +1,39 @@
+{
+    "type": "farmersdelight:cooking",
+    "experience": 1.0,
+    "ingredients": [
+        {
+            "tag": "c:vinegar_bottle"
+        },
+        {
+            "tag": "c:buckets/milk"
+        }
+    ],
+    "recipe_book_tab": "drinks",
+    "result": {
+        "count": 1,
+        "id": "createfood:yogurt_bucket"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "farmersdelight"
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "yogurt_bucket"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "farmersdelight"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
+            "id": "yogurt_bucket"
+        }
+    ]
+}

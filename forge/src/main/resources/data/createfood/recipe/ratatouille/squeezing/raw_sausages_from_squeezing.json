@@ -1,0 +1,36 @@
+{
+  "type": "ratatouille:squeezing",
+  "ingredients": [
+    {
+      "tag": "c:foods/raw_meats/ground"
+    }
+  ],
+  "processing_time": 200,
+  "results": [
+    {
+      "id": "createfood:raw_sausages"
+    }
+  ],
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "ratatouille"
+    },
+    {
+      "type": "createfood:enabled",
+      "id": "raw_sausages"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "ratatouille"
+      ]
+    },
+    {
+      "condition": "createfood:enabled",
+      "id": "raw_sausages"
+    }
+  ]
+}

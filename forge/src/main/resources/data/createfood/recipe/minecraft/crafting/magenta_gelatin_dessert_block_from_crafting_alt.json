@@ -1,0 +1,26 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:gelatin_dessert_block"
+        },
+        {
+            "tag": "c:dyes/magenta"
+        }
+    ],
+    "result": {
+        "id": "createfood:magenta_gelatin_dessert_block"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "magenta_gelatin_dessert_block"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "magenta_gelatin_dessert_block"
+        }
+    ]
+}

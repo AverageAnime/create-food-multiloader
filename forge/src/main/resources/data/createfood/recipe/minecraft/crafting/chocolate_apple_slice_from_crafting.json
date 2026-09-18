@@ -1,0 +1,26 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:apple_slice"
+        },
+        {
+            "tag": "c:chocolate"
+        }
+    ],
+    "result": {
+        "id": "createfood:chocolate_apple_slice"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "chocolate_apple_slice"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "chocolate_apple_slice"
+        }
+    ]
+}

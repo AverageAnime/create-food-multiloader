@@ -1,0 +1,24 @@
+{
+  "values": [
+    {
+      "id": "#c:foods/raw_pork",
+      "required": false
+    },
+    {
+      "id": "#c:foods/raw_chicken",
+      "required": false
+    },
+    {
+      "id": "#c:foods/raw_beef",
+      "required": false
+    },
+    {
+      "id": "#c:foods/raw_mutton",
+      "required": false
+    },
+    {
+      "id": "#c:mushrooms",
+      "required": false
+    }
+  ]
+}

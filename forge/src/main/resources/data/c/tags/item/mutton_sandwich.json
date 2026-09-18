@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "createfood:mutton_sandwich",
+      "required": false
+    },
+    {
+      "id": "culturalcreators:incomplete_mutton_sandwich",
+      "required": false
+    }
+  ]
+}

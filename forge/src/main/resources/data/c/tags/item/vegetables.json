@@ -1,0 +1,68 @@
+{
+  "values": [
+    {
+      "id": "minecraft:carrot",
+      "required": false
+    },
+    {
+      "id": "minecraft:potato",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:tomato",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:onion",
+      "required": false
+    },
+    {
+      "id": "veggiesdelight:turnip",
+      "required": false
+    },
+    {
+      "id": "veggiesdelight:zucchini",
+      "required": false
+    },
+    {
+      "id": "veggiesdelight:zucchini_slice",
+      "required": false
+    },
+    {
+      "id": "veggiesdelight:broccoli",
+      "required": false
+    },
+    {
+      "id": "veggiesdelight:cauliflower",
+      "required": false
+    },
+    {
+      "id": "veggiesdelight:cauliflower_floret",
+      "required": false
+    },
+    {
+      "id": "veggiesdelight:garlic",
+      "required": false
+    },
+    {
+      "id": "veggiesdelight:garlic_clove",
+      "required": false
+    },
+    {
+      "id": "veggiesdelight:bellpepper",
+      "required": false
+    },
+    {
+      "id": "veggiesdelight:sweet_potato",
+      "required": false
+    },
+    {
+      "id": "expandeddelight:sweet_potato",
+      "required": false
+    },
+    {
+      "id": "expandeddelight:asparagus",
+      "required": false
+    }
+  ]
+}

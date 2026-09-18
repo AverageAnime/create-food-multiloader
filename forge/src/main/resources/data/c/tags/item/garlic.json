@@ -1,0 +1,16 @@
+{
+  "values": [
+    {
+      "id": "veggiesdelight:garlic",
+      "required": false
+    },
+    {
+      "id": "veggiesdelight:garlic_clove",
+      "required": false
+    },
+    {
+      "id": "veggiesdelight:roasted_garlic_clove",
+      "required": false
+    }
+  ]
+}

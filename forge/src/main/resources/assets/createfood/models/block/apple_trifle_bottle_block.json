@@ -1,0 +1,8 @@
+{
+	"format_version": "1.9.0",
+	"credit": "Made with Blockbench",
+	"parent": "createfood:block/bottle_base_trifle",
+	"textures": {
+		"4": "createfood:block/apple_trifle"
+	}
+}

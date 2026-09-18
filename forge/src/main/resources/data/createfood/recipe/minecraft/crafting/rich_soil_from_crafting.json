@@ -1,0 +1,57 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:dirt"
+    },
+    {
+      "tag": "c:eggshell"
+    },
+    {
+      "tag": "c:eggshell"
+    },
+    {
+      "tag": "c:eggshell"
+    },
+    {
+      "tag": "c:eggshell"
+    },
+    {
+      "tag": "c:eggshell"
+    },
+    {
+      "tag": "c:eggshell"
+    },
+    {
+      "tag": "c:eggshell"
+    },
+    {
+      "tag": "c:eggshell"
+    }
+  ],
+  "result": {
+    "id": "farmersdelight:rich_soil"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "farmersdelight"
+    },
+    {
+      "type": "createfood:enabled",
+      "id": "farmersdelight:rich_soil"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "farmersdelight"
+      ]
+    },
+    {
+      "condition": "createfood:enabled",
+      "id": "farmersdelight:rich_soil"
+    }
+  ]
+}

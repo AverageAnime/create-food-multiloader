@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "createfood:flowing_pumpkin_custard",
+      "required": false
+    },
+    {
+      "id": "createfood:pumpkin_custard",
+      "required": false
+    }
+  ]
+}

@@ -1,0 +1,233 @@
+{
+	"format_version": "1.9.0",
+	"credit": "Made with Blockbench",
+	"parent": "minecraft:block/block",
+	"textures": {
+		"2": "createfood:item/white_chocolate_chocolate_pastry",
+		"4": "createfood:block/chocolate_pastry_base",
+		"particle": "createfood:block/plate_block",
+		"plate": "createfood:block/plate_block"
+	},
+	"elements": [
+		{
+			"from": [1, 0, 1],
+			"to": [15, 1, 15],
+			"rotation": {
+				"angle": 0,
+				"axis": "y",
+				"origin": [8, 0.5, 8]
+			},
+			"faces": {
+				"north": {
+					"uv": [1, 14, 15, 15],
+					"texture": "#plate"
+				},
+				"east": {
+					"uv": [2, 15, 1, 1],
+					"rotation": 90,
+					"texture": "#plate"
+				},
+				"south": {
+					"uv": [15, 1, 1, 2],
+					"texture": "#plate"
+				},
+				"west": {
+					"uv": [14, 1, 15, 15],
+					"rotation": 90,
+					"texture": "#plate"
+				},
+				"up": {
+					"uv": [1, 1, 15, 15],
+					"rotation": 180,
+					"texture": "#plate"
+				},
+				"down": {
+					"uv": [1, 15, 15, 1],
+					"rotation": 180,
+					"texture": "#plate"
+				}
+			}
+		},
+		{
+			"from": [1, 1, 1],
+			"to": [15, 2, 15],
+			"rotation": {
+				"angle": 0,
+				"axis": "y",
+				"origin": [0, 1, 0]
+			},
+			"faces": {
+				"north": {
+					"uv": [15, 1, 1, 2],
+					"texture": "#plate"
+				},
+				"east": {
+					"uv": [14, 1, 15, 15],
+					"rotation": 90,
+					"texture": "#plate"
+				},
+				"south": {
+					"uv": [1, 14, 15, 15],
+					"texture": "#plate"
+				},
+				"west": {
+					"uv": [2, 15, 1, 1],
+					"rotation": 90,
+					"texture": "#plate"
+				},
+				"up": {
+					"uv": [1, 1, 15, 15],
+					"texture": "#plate"
+				},
+				"down": {
+					"uv": [1, 15, 15, 1],
+					"texture": "#plate"
+				}
+			}
+		},
+		{
+			"from": [9, 2, 9],
+			"to": [13, 5, 13],
+			"rotation": {
+				"angle": 0,
+				"axis": "x",
+				"origin": [10.5, 4.5, 10.5]
+			},
+			"faces": {
+				"north": {
+					"uv": [4, 0, 8, 3],
+					"texture": "#4"
+				},
+				"east": {
+					"uv": [4, 3, 8, 6],
+					"texture": "#4"
+				},
+				"south": {
+					"uv": [4, 4, 0, 7],
+					"texture": "#4"
+				},
+				"west": {
+					"uv": [8, 3, 4, 6],
+					"texture": "#4"
+				},
+				"up": {
+					"uv": [4, 4, 0, 0],
+					"texture": "#4"
+				}
+			}
+		},
+		{
+			"from": [10, 3, 8.5],
+			"to": [12, 4, 9.5],
+			"rotation": {
+				"angle": 0,
+				"axis": "x",
+				"origin": [11.5, 5.5, 9.5]
+			},
+			"faces": {
+				"north": {
+					"uv": [7, 10, 9, 11],
+					"texture": "#2"
+				},
+				"east": {
+					"uv": [7, 10, 8, 11],
+					"texture": "#2"
+				},
+				"west": {
+					"uv": [9, 10, 8, 11],
+					"texture": "#2"
+				},
+				"up": {
+					"uv": [9, 11, 7, 10],
+					"texture": "#2"
+				},
+				"down": {
+					"uv": [9, 10, 7, 11],
+					"texture": "#2"
+				}
+			}
+		},
+		{
+			"from": [3, 2, 9],
+			"to": [7, 5, 13],
+			"rotation": {
+				"angle": 0,
+				"axis": "x",
+				"origin": [4.5, 4.5, 10.5]
+			},
+			"faces": {
+				"north": {
+					"uv": [4, 0, 8, 3],
+					"texture": "#4"
+				},
+				"east": {
+					"uv": [4, 3, 8, 6],
+					"texture": "#4"
+				},
+				"south": {
+					"uv": [4, 4, 0, 7],
+					"texture": "#4"
+				},
+				"west": {
+					"uv": [8, 3, 4, 6],
+					"texture": "#4"
+				},
+				"up": {
+					"uv": [4, 4, 0, 0],
+					"texture": "#4"
+				}
+			}
+		},
+		{
+			"from": [4, 3, 8.5],
+			"to": [6, 4, 9.5],
+			"rotation": {
+				"angle": 0,
+				"axis": "x",
+				"origin": [5.5, 5.5, 9.5]
+			},
+			"faces": {
+				"north": {
+					"uv": [7, 10, 9, 11],
+					"texture": "#2"
+				},
+				"east": {
+					"uv": [7, 10, 8, 11],
+					"texture": "#2"
+				},
+				"west": {
+					"uv": [9, 10, 8, 11],
+					"texture": "#2"
+				},
+				"up": {
+					"uv": [9, 11, 7, 10],
+					"texture": "#2"
+				},
+				"down": {
+					"uv": [9, 10, 7, 11],
+					"texture": "#2"
+				}
+			}
+		}
+	],
+	"groups": [
+		{
+			"name": "plate",
+			"origin": [0, 1, 0],
+			"color": 0,
+			"children": [0, 1]
+		},
+		{
+			"name": "pastry_1",
+			"origin": [11.5, 4.5, 11],
+			"color": 0,
+			"children": [2, 3]
+		},
+		{
+			"name": "pastry_2",
+			"origin": [11.5, 4.5, 11],
+			"color": 0,
+			"children": [4, 5]
+		}
+	]
+}

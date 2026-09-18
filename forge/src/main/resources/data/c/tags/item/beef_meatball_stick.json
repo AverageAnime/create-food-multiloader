@@ -1,0 +1,16 @@
+{
+  "values": [
+    {
+      "id": "createfood:beef_meatball_stick_1",
+      "required": false
+    },
+    {
+      "id": "createfood:beef_meatball_stick_2",
+      "required": false
+    },
+    {
+      "id": "createfood:beef_meatball_stick_3",
+      "required": false
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "type": "farmersdelight:cooking",
+  "experience": 0.5,
+  "container": {
+    "count": 1,
+    "id": "minecraft:bowl"
+  },
+  "ingredients": [
+    {
+      "tag": "c:milk_bottle"
+    },
+    {
+      "tag": "c:potato"
+    },
+    {
+      "tag": "c:butter"
+    }
+  ],
+  "recipe_book_tab": "misc",
+  "result": {
+    "count": 1,
+    "id": "createfood:mashed_potatoes_bowl"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "farmersdelight"
+    },
+    {
+      "type": "createfood:enabled",
+      "id": "mashed_potatoes_bowl"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "farmersdelight"
+      ]
+    },
+    {
+      "condition": "createfood:enabled",
+      "id": "mashed_potatoes_bowl"
+    }
+  ]
+}

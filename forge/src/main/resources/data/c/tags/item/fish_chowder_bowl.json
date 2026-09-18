@@ -1,0 +1,8 @@
+{
+  "values": [
+    {
+      "id": "createfood:fish_chowder_bowl",
+      "required": false
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "values": [
+    {
+      "id": "createfood:unbreaded_chicken_patty",
+      "required": false
+    }
+  ]
+}

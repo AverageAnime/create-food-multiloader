@@ -1,0 +1,26 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:cloth_filter"
+        },
+        {
+            "tag": "c:cacao_mass_bucket"
+        }
+    ],
+    "result": {
+        "id": "createfood:cloth_filter_cacao_mass"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "cloth_filter_cacao_mass"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "cloth_filter_cacao_mass"
+        }
+    ]
+}

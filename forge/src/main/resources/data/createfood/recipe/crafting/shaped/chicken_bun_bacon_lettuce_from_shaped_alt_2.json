@@ -1,0 +1,30 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "chicken_bun_bacon_lettuce"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "chicken_bun_bacon_lettuce"
+    }
+  ],
+  "key": {
+    "1": {
+      "tag": "c:foods/leafy_green"
+    },
+    "2": {
+      "tag": "c:chicken_bun_bacon"
+    }
+  },
+  "pattern": [
+    "1",
+    "2"
+  ],
+  "result": {
+    "id": "createfood:chicken_bun_bacon_lettuce"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "veggiesdelight:sweet_potato",
+      "required": false
+    },
+    {
+      "id": "expandeddelight:sweet_potato",
+      "required": false
+    }
+  ]
+}

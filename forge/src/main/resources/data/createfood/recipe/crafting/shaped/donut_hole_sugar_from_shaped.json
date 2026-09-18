@@ -1,0 +1,30 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "donut_hole_sugar"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "donut_hole_sugar"
+    }
+  ],
+  "key": {
+    "1": {
+      "tag": "c:powdered_sugar"
+    },
+    "2": {
+      "tag": "c:donut_hole"
+    }
+  },
+  "pattern": [
+    "1",
+    "2"
+  ],
+  "result": {
+    "id": "createfood:donut_hole_sugar"
+  }
+}

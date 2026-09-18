@@ -1,0 +1,30 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "pita_dough"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "pita_dough"
+    }
+  ],
+  "key": {
+    "1": {
+      "tag": "c:vegetable_oil"
+    },
+    "2": {
+      "tag": "c:pita_dough_ingredients"
+    }
+  },
+  "pattern": [
+    "1",
+    "2"
+  ],
+  "result": {
+    "id": "createfood:pita_dough"
+  }
+}

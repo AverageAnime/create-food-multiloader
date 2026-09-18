@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "c:donut_base"
+    },
+    {
+      "tag": "c:berry_jam_bottle"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "createfood:berry_jam_donut"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "berry_jam_donut"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "berry_jam_donut"
+    }
+  ]
+}

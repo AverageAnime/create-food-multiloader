@@ -1,0 +1,35 @@
+{
+    "type": "minecraft:smoking",
+    "category": "food",
+    "cookingtime": 550,
+    "experience": 0.95,
+    "ingredient": {
+        "tag": "c:raw_berry_cheesecake"
+    },
+    "result": {
+        "count": 1,
+        "id": "farmersdelight:sweet_berry_cheesecake"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "farmersdelight"
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "farmersdelight:sweet_berry_cheesecake"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "farmersdelight"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
+            "id": "farmersdelight:sweet_berry_cheesecake"
+        }
+    ]
+}

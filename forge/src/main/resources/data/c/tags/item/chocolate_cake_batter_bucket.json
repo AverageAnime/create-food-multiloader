@@ -1,0 +1,8 @@
+{
+  "values": [
+    {
+      "id": "createfood:chocolate_cake_batter_bucket",
+      "required": false
+    }
+  ]
+}

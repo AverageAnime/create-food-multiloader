@@ -1,0 +1,16 @@
+{
+  "values": [
+    {
+      "id": "#c:bell_pepper",
+      "required": false
+    },
+    {
+      "id": "expandeddelight:chili_pepper",
+      "required": false
+    },
+    {
+      "id": "croptopia:chile_pepper",
+      "required": false
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "createfood:flowing_pork_stew",
+      "required": false
+    },
+    {
+      "id": "createfood:pork_stew",
+      "required": false
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:chocolate_sweet_roll_base"
+        },
+        {
+            "tag": "c:caramel"
+        }
+    ],
+    "result": {
+        "id": "createfood:caramel_chocolate_sweet_roll"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "caramel_chocolate_sweet_roll"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "caramel_chocolate_sweet_roll"
+        }
+    ]
+}

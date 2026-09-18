@@ -1,0 +1,35 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:bun"
+        },
+        {
+            "tag": "c:chicken_patty"
+        },
+        {
+            "tag": "c:cheeses"
+        },
+        {
+            "tag": "c:foods/leafy_green"
+        },
+        {
+            "tag": "c:bun"
+        }
+    ],
+    "result": {
+        "id": "createfood:chicken_cheeseburger_lettuce"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "chicken_cheeseburger_lettuce"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "chicken_cheeseburger_lettuce"
+        }
+    ]
+}

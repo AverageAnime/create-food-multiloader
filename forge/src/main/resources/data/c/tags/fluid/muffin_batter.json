@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "createfood:flowing_muffin_batter",
+      "required": false
+    },
+    {
+      "id": "createfood:muffin_batter",
+      "required": false
+    }
+  ]
+}

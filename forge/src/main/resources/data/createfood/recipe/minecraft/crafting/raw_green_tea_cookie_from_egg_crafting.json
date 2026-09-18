@@ -1,0 +1,44 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:not",
+            "value": {
+                "type": "neoforge:tag_empty",
+                "tag": "c:crops/green_tea_leaves"
+            }
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "raw_green_tea_cookie"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:tags_populated",
+            "registry": "minecraft:item",
+            "values": [
+                "c:crops/green_tea_leaves"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
+            "id": "raw_green_tea_cookie"
+        }
+    ],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:wheat"
+        },
+        {
+            "tag": "c:crops/green_tea_leaves"
+        },
+        {
+            "tag": "c:eggs"
+        }
+    ],
+    "result": {
+        "count": 8,
+        "id": "createfood:raw_green_tea_cookie"
+    }
+}

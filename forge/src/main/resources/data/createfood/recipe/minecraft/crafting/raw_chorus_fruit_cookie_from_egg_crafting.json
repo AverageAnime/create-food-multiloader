@@ -1,0 +1,33 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:wheat"
+        },
+        {
+            "tag": "c:eggs"
+        },
+        {
+            "tag": "c:sugar"
+        },
+        {
+            "tag": "c:chorus_fruit"
+        }
+    ],
+    "result": {
+        "count": 8,
+        "id": "createfood:raw_chorus_fruit_cookie"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "raw_chorus_fruit_cookie"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "raw_chorus_fruit_cookie"
+        }
+    ]
+}

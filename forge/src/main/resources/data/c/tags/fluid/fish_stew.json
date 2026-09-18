@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "delightfulcreators:fish_stew",
+      "required": false
+    },
+    {
+      "id": "delightfulcreators:flowing_fish_stew",
+      "required": false
+    }
+  ]
+}

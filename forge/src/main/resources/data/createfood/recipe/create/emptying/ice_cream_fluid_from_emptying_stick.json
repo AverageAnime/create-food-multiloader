@@ -1,0 +1,41 @@
+{
+    "type": "create:emptying",
+    "ingredients": [
+        {
+            "tag": "c:ice_cream_stick"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "minecraft:stick"
+            }
+        },
+        {
+            "amount": 125,
+            "id": "createfood:ice_cream"
+        }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "create"
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "ice_cream"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "create"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
+            "id": "ice_cream"
+        }
+    ]
+}

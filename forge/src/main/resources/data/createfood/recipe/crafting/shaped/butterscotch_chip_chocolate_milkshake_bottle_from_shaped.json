@@ -1,0 +1,30 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "butterscotch_chip_chocolate_milkshake_bottle"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "butterscotch_chip_chocolate_milkshake_bottle"
+    }
+  ],
+  "key": {
+    "1": {
+      "tag": "c:butterscotch_chips"
+    },
+    "2": {
+      "tag": "c:chocolate_milkshake"
+    }
+  },
+  "pattern": [
+    "1",
+    "2"
+  ],
+  "result": {
+    "id": "createfood:butterscotch_chip_chocolate_milkshake_bottle"
+  }
+}

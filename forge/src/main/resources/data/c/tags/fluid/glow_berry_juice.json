@@ -1,0 +1,20 @@
+{
+  "values": [
+    {
+      "id": "createfood:flowing_glow_berry_juice",
+      "required": false
+    },
+    {
+      "id": "createfood:glow_berry_juice",
+      "required": false
+    },
+    {
+      "id": "hearthandharvest:glow_berry_juice",
+      "required": false
+    },
+    {
+      "id": "hearthandharvest:flowing_glow_berry_juice",
+      "required": false
+    }
+  ]
+}

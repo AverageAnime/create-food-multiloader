@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "c:pumpernickel_toast_slice"
+    },
+    {
+      "tag": "c:cream_cheese"
+    },
+    {
+      "tag": "c:foods/cooked_salmon"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "createfood:pumpernickel_toast_cream_cheese_salmon"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "pumpernickel_toast_cream_cheese_salmon"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "pumpernickel_toast_cream_cheese_salmon"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "c:eggplant_bun"
+        },
+        {
+            "tag": "c:foods/leafy_green"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:eggplant_bun_lettuce"
+            }
+        }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "create"
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "eggplant_bun_lettuce"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "create"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
+            "id": "eggplant_bun_lettuce"
+        }
+    ]
+}

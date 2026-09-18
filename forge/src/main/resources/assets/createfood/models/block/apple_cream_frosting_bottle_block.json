@@ -1,0 +1,119 @@
+﻿{
+	"parent":  "createfood:block/bottle_base_frosting",
+	"textures":  {
+					"2":  "createfood:fluid/apple_cream_frosting_flow"
+				},
+	"display":  {
+					"thirdperson_righthand":  {
+												"rotation":  [
+																63,
+																142,
+																0
+															],
+												"translation":  [
+																	0.5,
+																	3.75,
+																	2
+																],
+												"scale":  [
+																0.7,
+																0.7,
+																0.7
+															]
+											},
+					"thirdperson_lefthand":  {
+												"rotation":  [
+																63,
+																142,
+																0
+															],
+												"translation":  [
+																	0.5,
+																	3.75,
+																	2
+																],
+												"scale":  [
+															0.7,
+															0.7,
+															0.7
+														]
+											},
+					"firstperson_righthand":  {
+												"rotation":  [
+																4,
+																0,
+																0
+															],
+												"translation":  [
+																	0,
+																	7,
+																	0
+																]
+											},
+					"firstperson_lefthand":  {
+												"rotation":  [
+																4,
+																0,
+																0
+															],
+												"translation":  [
+																	0,
+																	7,
+																	0
+																]
+											},
+					"ground":  {
+								"translation":  [
+													0,
+													2.5,
+													0
+												],
+								"scale":  [
+												0.5,
+												0.5,
+												0.5
+											]
+							},
+					"gui":  {
+								"rotation":  [
+												-150,
+												20,
+												-180
+											],
+								"translation":  [
+													0.75,
+													1.25,
+													0
+												]
+							},
+					"head":  {
+								"rotation":  [
+												0,
+												0,
+												90
+											],
+								"translation":  [
+													0,
+													-4.25,
+													-7
+												]
+							},
+					"fixed":  {
+								"rotation":  [
+												-90,
+												0,
+												0
+											],
+								"translation":  [
+													0,
+													0,
+													-16
+												],
+								"scale":  [
+												2,
+												2,
+												2
+											]
+							}
+				}
+}

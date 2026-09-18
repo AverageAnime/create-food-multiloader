@@ -1,0 +1,25 @@
+{
+    "type": "minecraft:smoking",
+    "category": "food",
+    "cookingtime": 100,
+    "experience": 0.35,
+    "ingredient": {
+        "tag": "c:pumpernickel_dough"
+    },
+    "result": {
+        "count": 1,
+        "id": "createfood:pumpernickel_bread"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "pumpernickel_bread"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "pumpernickel_bread"
+        }
+    ]
+}

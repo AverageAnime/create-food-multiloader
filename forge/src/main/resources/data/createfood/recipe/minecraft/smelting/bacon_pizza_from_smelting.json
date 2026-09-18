@@ -1,0 +1,25 @@
+{
+    "type": "minecraft:smelting",
+    "category": "food",
+    "cookingtime": 350,
+    "experience": 0.2,
+    "ingredient": {
+        "tag": "c:raw_bacon_pizza"
+    },
+    "result": {
+        "count": 1,
+        "id": "createfood:bacon_pizza"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "bacon_pizza"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "bacon_pizza"
+        }
+    ]
+}

@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "c:mini_waffle"
+    },
+    {
+      "tag": "c:cream_frosting"
+    },
+    {
+      "tag": "c:chorus_fruit"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "createfood:cream_mini_waffle_chorus_fruit"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "cream_mini_waffle_chorus_fruit"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "cream_mini_waffle_chorus_fruit"
+    }
+  ]
+}

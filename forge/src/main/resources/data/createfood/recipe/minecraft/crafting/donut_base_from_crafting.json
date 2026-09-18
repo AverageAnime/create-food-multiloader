@@ -1,0 +1,26 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:pastry_base"
+        },
+        {
+            "tag": "c:vegetable_oil_bucket"
+        }
+    ],
+    "result": {
+        "id": "createfood:donut_base"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "donut_base"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "donut_base"
+        }
+    ]
+}

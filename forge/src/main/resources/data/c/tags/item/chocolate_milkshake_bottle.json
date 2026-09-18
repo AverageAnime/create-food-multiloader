@@ -1,0 +1,16 @@
+{
+  "values": [
+    {
+      "id": "createfood:chocolate_milkshake_bottle",
+      "required": false
+    },
+    {
+      "id": "beachparty:chocolate_milkshake",
+      "required": false
+    },
+    {
+      "id": "create_dd:chocolate_milkshake",
+      "required": false
+    }
+  ]
+}

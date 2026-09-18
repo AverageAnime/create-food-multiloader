@@ -1,0 +1,6 @@
+﻿{
+	"parent":  "createfood:block/pizza_base_basic",
+	"textures":  {
+					"top":  "createfood:block/bacon_pizza_top"
+				}
+}

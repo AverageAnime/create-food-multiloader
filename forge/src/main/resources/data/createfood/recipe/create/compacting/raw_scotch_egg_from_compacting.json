@@ -1,0 +1,47 @@
+{
+  "type": "create:compacting",
+  "ingredients": [
+    {
+      "tag": "c:boiled_egg_peeled"
+    },
+    {
+      "tag": "c:ground_sausage"
+    },
+    {
+      "tag": "c:bread_crumbs"
+    },
+    {
+      "tag": "c:paprika"
+    }
+  ],
+  "results": [
+    {
+      "count": 1,
+      "item": {
+        "id": "createfood:raw_scotch_egg"
+      }
+    }
+  ],
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    },
+    {
+      "type": "createfood:enabled",
+      "id": "raw_scotch_egg"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "create"
+      ]
+    },
+    {
+      "condition": "createfood:enabled",
+      "id": "raw_scotch_egg"
+    }
+  ]
+}

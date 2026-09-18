@@ -1,0 +1,35 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "egg_burrito_cheese_bacon"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "egg_burrito_cheese_bacon"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "c:taco_shell_ingredient"
+    },
+    {
+      "tag": "c:egg_burrito_ingredients"
+    },
+    {
+      "tag": "c:egg_burrito_ingredients"
+    },
+    {
+      "tag": "c:cheeses"
+    },
+    {
+      "tag": "c:cooked_pork"
+    }
+  ],
+  "result": {
+    "id": "createfood:egg_burrito_cheese_bacon"
+  }
+}

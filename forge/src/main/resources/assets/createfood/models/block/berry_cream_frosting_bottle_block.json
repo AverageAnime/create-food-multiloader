@@ -1,0 +1,6 @@
+﻿{
+	"parent":  "createfood:block/bottle_base_frosting",
+	"textures":  {
+					"2":  "createfood:fluid/berry_cream_frosting_flow"
+				}
+}

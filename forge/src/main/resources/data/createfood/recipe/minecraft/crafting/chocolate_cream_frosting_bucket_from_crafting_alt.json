@@ -1,0 +1,35 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "chocolate_cream_frosting_bucket"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "chocolate_cream_frosting_bucket"
+        }
+    ],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:bucket"
+        },
+        {
+            "tag": "c:chocolate_cream_frosting"
+        },
+        {
+            "tag": "c:chocolate_cream_frosting"
+        },
+        {
+            "tag": "c:chocolate_cream_frosting"
+        },
+        {
+            "tag": "c:chocolate_cream_frosting"
+        }
+    ],
+    "result": {
+        "id": "createfood:chocolate_cream_frosting_bucket"
+    }
+}

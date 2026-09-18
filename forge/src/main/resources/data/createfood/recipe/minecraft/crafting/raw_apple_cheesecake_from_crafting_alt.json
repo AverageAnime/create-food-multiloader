@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "c:raw_graham_cracker_pie_crust"
+    },
+    {
+      "tag": "c:cheesecake_filling_bucket"
+    },
+    {
+      "tag": "c:apple"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "createfood:raw_apple_cheesecake"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "raw_apple_cheesecake"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "raw_apple_cheesecake"
+    }
+  ]
+}

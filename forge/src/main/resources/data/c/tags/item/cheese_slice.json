@@ -1,0 +1,32 @@
+{
+  "values": [
+    {
+      "id": "createfood:cheese_slice",
+      "required": false
+    },
+    {
+      "id": "meadow:piece_of_cheese",
+      "required": false
+    },
+    {
+      "id": "casualnessdelight:cheese_wheel_slice",
+      "required": false
+    },
+    {
+      "id": "hearthandharvest:cheddar_cheese_slice",
+      "required": false
+    },
+    {
+      "id": "hearthandharvest:goat_cheese_slice",
+      "required": false
+    },
+    {
+      "id": "ratatouille_fried_delights:cheese_slice",
+      "required": false
+    },
+    {
+      "id": "expandeddelight:goat_cheese_slice",
+      "required": false
+    }
+  ]
+}

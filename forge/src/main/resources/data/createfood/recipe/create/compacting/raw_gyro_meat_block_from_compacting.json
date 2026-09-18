@@ -1,0 +1,43 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "create"
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "raw_gyro_meat_block"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "create"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
+            "id": "raw_gyro_meat_block"
+        }
+    ],
+    "type": "create:compacting",
+    "ingredients": [
+        {
+            "tag": "c:foods/raw_meats/raw_mutton"
+        },
+        {
+            "tag": "c:foods/raw_meats/raw_mutton"
+        },
+        {
+            "tag": "c:gyro_meat_ingredients"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:raw_gyro_meat_block"
+            }
+        }
+    ]
+}

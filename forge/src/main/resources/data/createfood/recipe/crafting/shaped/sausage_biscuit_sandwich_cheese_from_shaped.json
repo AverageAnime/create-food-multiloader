@@ -1,0 +1,30 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "sausage_biscuit_sandwich_cheese"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "sausage_biscuit_sandwich_cheese"
+    }
+  ],
+  "key": {
+    "1": {
+      "tag": "c:biscuit"
+    },
+    "2": {
+      "tag": "c:sausage_biscuit_cheese"
+    }
+  },
+  "pattern": [
+    "1",
+    "2"
+  ],
+  "result": {
+    "id": "createfood:sausage_biscuit_sandwich_cheese"
+  }
+}

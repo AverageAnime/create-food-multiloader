@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "createfood:flowing_panna_cotta",
+      "required": false
+    },
+    {
+      "id": "createfood:panna_cotta",
+      "required": false
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+    "type": "create:milling",
+    "ingredients": [
+        {
+            "item": "minecraft:sugar"
+        }
+    ],
+    "processing_time": 100,
+    "results": [
+        {
+            "item": {
+                "id": "createfood:powdered_sugar"
+            }
+        },
+        {
+            "chance": 0.25,
+            "item": {
+                "id": "createfood:powdered_sugar"
+            }
+        }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "create"
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "powdered_sugar"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "create"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
+            "id": "powdered_sugar"
+        }
+    ]
+}

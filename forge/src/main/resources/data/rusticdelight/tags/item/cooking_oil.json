@@ -1,0 +1,8 @@
+{
+  "values": [
+    {
+      "id": "createfood:vegetable_oil_bucket",
+      "required": false
+    }
+  ]
+}

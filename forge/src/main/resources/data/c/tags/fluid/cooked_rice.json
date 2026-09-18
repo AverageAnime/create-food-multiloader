@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "delightfulcreators:cooked_rice",
+      "required": false
+    },
+    {
+      "id": "delightfulcreators:flowing_cooked_rice",
+      "required": false
+    }
+  ]
+}

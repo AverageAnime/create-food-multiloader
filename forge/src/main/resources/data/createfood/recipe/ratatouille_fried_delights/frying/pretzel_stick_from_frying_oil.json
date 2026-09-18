@@ -1,0 +1,42 @@
+{
+  "type": "ratatouille_fried_delights:frying",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "tag": "c:raw_pretzel_stick"
+    },
+    {
+      "type": "neoforge:tag",
+      "amount": 125,
+      "tag": "ratatouille_fried_delights:oil"
+    }
+  ],
+  "processing_time": 200,
+  "results": [
+    {
+      "id": "createfood:pretzel_stick"
+    }
+  ],
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "ratatouille_fried_delights"
+    },
+    {
+      "type": "createfood:enabled",
+      "id": "pretzel_stick"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "ratatouille_fried_delights"
+      ]
+    },
+    {
+      "condition": "createfood:enabled",
+      "id": "pretzel_stick"
+    }
+  ]
+}

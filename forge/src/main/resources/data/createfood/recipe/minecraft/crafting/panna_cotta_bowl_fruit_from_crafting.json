@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "c:panna_cotta_bowl"
+    },
+    {
+      "tag": "c:fruits"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "createfood:panna_cotta_bowl_fruit"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "panna_cotta_bowl_fruit"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "panna_cotta_bowl_fruit"
+    }
+  ]
+}

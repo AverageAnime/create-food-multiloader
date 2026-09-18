@@ -1,0 +1,8 @@
+{
+  "values": [
+    {
+      "id": "createfood:egg_bucket",
+      "required": false
+    }
+  ]
+}

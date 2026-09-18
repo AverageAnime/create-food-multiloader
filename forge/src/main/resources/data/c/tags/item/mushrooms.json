@@ -1,0 +1,20 @@
+{
+  "values": [
+    {
+      "id": "createfood:sliced_brown_mushroom",
+      "required": false
+    },
+    {
+      "id": "createfood:sliced_red_mushroom",
+      "required": false
+    },
+    {
+      "id": "minecraft:brown_mushroom",
+      "required": false
+    },
+    {
+      "id": "minecraft:red_mushroom",
+      "required": false
+    }
+  ]
+}

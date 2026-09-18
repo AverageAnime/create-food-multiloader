@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "c:dark_chocolate_chips"
+    },
+    {
+      "tag": "c:dark_chocolate_chips"
+    },
+    {
+      "tag": "c:dark_chocolate_chips"
+    },
+    {
+      "tag": "c:dark_chocolate_chips"
+    },
+    {
+      "tag": "c:marshmallow"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "createfood:marshmallow_dark_chocolate"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "marshmallow_dark_chocolate"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "marshmallow_dark_chocolate"
+    }
+  ]
+}

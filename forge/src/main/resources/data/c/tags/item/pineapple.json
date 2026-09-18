@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "fruitsdelight:pineapple",
+      "required": false
+    },
+    {
+      "id": "#c:pineapple_slice",
+      "required": false
+    }
+  ]
+}

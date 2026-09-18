@@ -1,0 +1,30 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "cacao_butter_bucket"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "cacao_butter_bucket"
+    }
+  ],
+  "key": {
+    "1": {
+      "item": "minecraft:bucket"
+    },
+    "2": {
+      "tag": "c:cloth_filter_cacao_mass"
+    }
+  },
+  "pattern": [
+    "1",
+    "2"
+  ],
+  "result": {
+    "id": "createfood:cacao_butter_bucket"
+  }
+}

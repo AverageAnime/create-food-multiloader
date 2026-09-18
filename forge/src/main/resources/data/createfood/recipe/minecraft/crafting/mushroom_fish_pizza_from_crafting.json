@@ -1,0 +1,32 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:mushroom_fish_pizza_slice"
+        },
+        {
+            "tag": "c:mushroom_fish_pizza_slice"
+        },
+        {
+            "tag": "c:mushroom_fish_pizza_slice"
+        },
+        {
+            "tag": "c:mushroom_fish_pizza_slice"
+        }
+    ],
+    "result": {
+        "id": "createfood:mushroom_fish_pizza"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "mushroom_fish_pizza"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "mushroom_fish_pizza"
+        }
+    ]
+}

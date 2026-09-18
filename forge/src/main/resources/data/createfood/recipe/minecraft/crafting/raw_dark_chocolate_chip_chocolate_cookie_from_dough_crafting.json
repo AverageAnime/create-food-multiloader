@@ -1,0 +1,27 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:chocolate_sweet_dough"
+        },
+        {
+            "tag": "c:dark_chocolate_chips"
+        }
+    ],
+    "result": {
+        "count": 8,
+        "id": "createfood:raw_dark_chocolate_chip_chocolate_cookie"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "raw_dark_chocolate_chip_chocolate_cookie"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "raw_dark_chocolate_chip_chocolate_cookie"
+        }
+    ]
+}

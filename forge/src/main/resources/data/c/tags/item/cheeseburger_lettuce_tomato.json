@@ -1,0 +1,8 @@
+{
+  "values": [
+    {
+      "id": "createfood:cheeseburger_lettuce_tomato",
+      "required": false
+    }
+  ]
+}

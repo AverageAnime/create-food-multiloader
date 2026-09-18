@@ -1,0 +1,40 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:not",
+            "value": {
+                "type": "neoforge:tag_empty",
+                "tag": "c:pepper"
+            }
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "spicy_chicken_nuggets"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:tags_populated",
+            "registry": "minecraft:item",
+            "values": [
+                "c:pepper"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
+            "id": "spicy_chicken_nuggets"
+        }
+    ],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:chicken_nuggets"
+        },
+        {
+            "tag": "c:pepper"
+        }
+    ],
+    "result": {
+        "id": "createfood:spicy_chicken_nuggets"
+    }
+}

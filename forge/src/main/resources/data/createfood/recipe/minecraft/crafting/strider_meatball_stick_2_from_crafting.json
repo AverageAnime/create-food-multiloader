@@ -1,0 +1,26 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "createfood:strider_meatball_stick_1"
+        },
+        {
+            "tag": "c:strider_meatball"
+        }
+    ],
+    "result": {
+        "id": "createfood:strider_meatball_stick_2"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "strider_meatball_stick_2"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "strider_meatball_stick_2"
+        }
+    ]
+}

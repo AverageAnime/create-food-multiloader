@@ -1,0 +1,32 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:sausage_mushroom_pizza_slice"
+        },
+        {
+            "tag": "c:sausage_mushroom_pizza_slice"
+        },
+        {
+            "tag": "c:sausage_mushroom_pizza_slice"
+        },
+        {
+            "tag": "c:sausage_mushroom_pizza_slice"
+        }
+    ],
+    "result": {
+        "id": "createfood:sausage_mushroom_pizza"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "sausage_mushroom_pizza"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "sausage_mushroom_pizza"
+        }
+    ]
+}

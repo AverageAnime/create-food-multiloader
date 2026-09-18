@@ -1,0 +1,29 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "pork_meatball_stick_2"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "pork_meatball_stick_2"
+        }
+    ],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:stick"
+        },
+        {
+            "tag": "c:pork_meatball"
+        },
+        {
+            "tag": "c:pork_meatball"
+        }
+    ],
+    "result": {
+        "id": "createfood:pork_meatball_stick_2"
+    }
+}

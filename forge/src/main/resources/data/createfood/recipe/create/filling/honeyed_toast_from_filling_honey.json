@@ -1,0 +1,42 @@
+{
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "tag": "c:toast"
+        },
+        {
+            "type": "fluid_tag",
+            "amount": 125,
+            "fluid_tag": "c:honey"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:honeyed_toast"
+            }
+        }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "create"
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "honeyed_toast"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "create"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
+            "id": "honeyed_toast"
+        }
+    ]
+}

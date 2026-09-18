@@ -1,0 +1,26 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "ice_cream_cone"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "ice_cream_cone"
+        }
+    ],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:waffle_cone"
+        },
+        {
+            "tag": "c:ice_cream_stick"
+        }
+    ],
+    "result": {
+        "id": "createfood:ice_cream_cone"
+    }
+}

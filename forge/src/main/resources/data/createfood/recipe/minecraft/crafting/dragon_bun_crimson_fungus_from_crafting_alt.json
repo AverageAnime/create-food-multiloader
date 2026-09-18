@@ -1,0 +1,29 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:bun"
+        },
+        {
+            "tag": "c:dragon_patty"
+        },
+        {
+            "item": "minecraft:crimson_fungus"
+        }
+    ],
+    "result": {
+        "id": "createfood:dragon_bun_crimson_fungus"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "dragon_bun_crimson_fungus"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "dragon_bun_crimson_fungus"
+        }
+    ]
+}

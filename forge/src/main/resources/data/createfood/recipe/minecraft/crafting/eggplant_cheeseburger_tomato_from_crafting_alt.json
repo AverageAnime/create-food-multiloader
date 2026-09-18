@@ -1,0 +1,49 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:not",
+            "value": {
+                "type": "neoforge:tag_empty",
+                "tag": "c:cooked_eggplant"
+            }
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "eggplant_cheeseburger_tomato"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:tags_populated",
+            "registry": "minecraft:item",
+            "values": [
+                "c:cooked_eggplant"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
+            "id": "eggplant_cheeseburger_tomato"
+        }
+    ],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:bun"
+        },
+        {
+            "tag": "c:cooked_eggplant"
+        },
+        {
+            "tag": "c:cheeses"
+        },
+        {
+            "tag": "c:tomato"
+        },
+        {
+            "tag": "c:bun"
+        }
+    ],
+    "result": {
+        "id": "createfood:eggplant_cheeseburger_tomato"
+    }
+}

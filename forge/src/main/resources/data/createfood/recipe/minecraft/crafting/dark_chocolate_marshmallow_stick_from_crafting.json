@@ -1,0 +1,26 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:marshmallow_stick"
+        },
+        {
+            "tag": "c:dark_chocolate_bottle"
+        }
+    ],
+    "result": {
+        "id": "createfood:dark_chocolate_marshmallow_stick"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "dark_chocolate_marshmallow_stick"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "dark_chocolate_marshmallow_stick"
+        }
+    ]
+}

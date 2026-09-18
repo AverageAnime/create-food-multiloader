@@ -1,0 +1,32 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:smores_pie_slice"
+        },
+        {
+            "tag": "c:smores_pie_slice"
+        },
+        {
+            "tag": "c:smores_pie_slice"
+        },
+        {
+            "tag": "c:smores_pie_slice"
+        }
+    ],
+    "result": {
+        "id": "createfood:smores_pie"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "smores_pie"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "smores_pie"
+        }
+    ]
+}

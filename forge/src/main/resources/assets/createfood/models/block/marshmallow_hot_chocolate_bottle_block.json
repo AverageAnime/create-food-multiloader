@@ -1,0 +1,8 @@
+{
+	"format_version": "1.9.0",
+	"credit": "Made with Blockbench",
+	"parent": "createfood:block/bottle_base_hot_choc_marsh",
+	"textures": {
+		"3": "createfood:fluid/hot_chocolate_still"
+	}
+}

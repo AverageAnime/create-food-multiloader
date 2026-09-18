@@ -1,0 +1,30 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "berry_cream_chocolate_donut"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "berry_cream_chocolate_donut"
+    }
+  ],
+  "key": {
+    "1": {
+      "tag": "c:berry_cream_frosting"
+    },
+    "2": {
+      "tag": "c:chocolate_donut_base"
+    }
+  },
+  "pattern": [
+    "1",
+    "2"
+  ],
+  "result": {
+    "id": "createfood:berry_cream_chocolate_donut"
+  }
+}

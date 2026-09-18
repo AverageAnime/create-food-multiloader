@@ -1,0 +1,25 @@
+{
+    "type": "minecraft:campfire_cooking",
+    "category": "food",
+    "cookingtime": 550,
+    "experience": 0.95,
+    "ingredient": {
+        "tag": "c:raw_pumpkin_pie"
+    },
+    "result": {
+        "count": 1,
+        "id": "minecraft:pumpkin_pie"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "minecraft:pumpkin_pie"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "minecraft:pumpkin_pie"
+        }
+    ]
+}

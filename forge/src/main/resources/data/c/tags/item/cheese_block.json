@@ -1,0 +1,36 @@
+{
+  "values": [
+    {
+      "id": "createfood:cheese_block",
+      "required": false
+    },
+    {
+      "id": "meadow:cheese_block",
+      "required": false
+    },
+    {
+      "id": "casualnessdelight:cheese_wheel",
+      "required": false
+    },
+    {
+      "id": "hearthandharvest:cheddar_cheese_wheel",
+      "required": false
+    },
+    {
+      "id": "hearthandharvest:goat_cheese_wheel",
+      "required": false
+    },
+    {
+      "id": "ratatouille_fried_delights:cheese",
+      "required": false
+    },
+    {
+      "id": "expandeddelight:cheese_wheel",
+      "required": false
+    },
+    {
+      "id": "expandeddelight:goat_cheese_wheel",
+      "required": false
+    }
+  ]
+}

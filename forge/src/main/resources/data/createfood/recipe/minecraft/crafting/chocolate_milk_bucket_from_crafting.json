@@ -1,0 +1,35 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:bucket"
+        },
+        {
+            "tag": "c:chocolate_milk"
+        },
+        {
+            "tag": "c:chocolate_milk"
+        },
+        {
+            "tag": "c:chocolate_milk"
+        },
+        {
+            "tag": "c:chocolate_milk"
+        }
+    ],
+    "result": {
+        "id": "createfood:chocolate_milk_bucket"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "chocolate_milk_bucket"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "chocolate_milk_bucket"
+        }
+    ]
+}

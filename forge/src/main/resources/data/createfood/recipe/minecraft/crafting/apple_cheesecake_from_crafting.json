@@ -1,0 +1,32 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:apple_cheesecake_slice"
+        },
+        {
+            "tag": "c:apple_cheesecake_slice"
+        },
+        {
+            "tag": "c:apple_cheesecake_slice"
+        },
+        {
+            "tag": "c:apple_cheesecake_slice"
+        }
+    ],
+    "result": {
+        "id": "createfood:apple_cheesecake"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "apple_cheesecake"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "apple_cheesecake"
+        }
+    ]
+}

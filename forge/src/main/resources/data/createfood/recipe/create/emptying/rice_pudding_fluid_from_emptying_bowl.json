@@ -1,0 +1,41 @@
+{
+  "type": "create:emptying",
+  "ingredients": [
+    {
+      "tag": "c:rice_pudding_bowl"
+    }
+  ],
+  "results": [
+    {
+      "item": {
+        "id": "minecraft:bowl"
+      }
+    },
+    {
+      "amount": 250,
+      "id": "createfood:rice_pudding"
+    }
+  ],
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    },
+    {
+      "type": "createfood:enabled",
+      "id": "rice_pudding"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "create"
+      ]
+    },
+    {
+      "condition": "createfood:enabled",
+      "id": "rice_pudding"
+    }
+  ]
+}

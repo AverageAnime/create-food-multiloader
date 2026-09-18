@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "delightfulcreators:beetroot_soup",
+      "required": false
+    },
+    {
+      "id": "delightfulcreators:flowing_beetroot_soup",
+      "required": false
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "values": [
+    {
+      "id": "createfood:salt",
+      "required": false
+    },
+    {
+      "id": "#c:dusts/salt",
+      "required": false
+    },
+    {
+      "id": "hearthandharvest:salt",
+      "required": false
+    },
+    {
+      "id": "meadow:alpine_salt",
+      "required": false
+    },
+    {
+      "id": "vegandelight:salt",
+      "required": false
+    },
+    {
+      "id": "ratatouille:salt",
+      "required": false
+    }
+  ]
+}

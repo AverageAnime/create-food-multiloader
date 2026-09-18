@@ -1,0 +1,20 @@
+{
+  "values": [
+    {
+      "id": "minecraft:cooked_beef",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:beef_patty",
+      "required": false
+    },
+    {
+      "id": "vegandelight:tofu_patty",
+      "required": false
+    },
+    {
+      "id": "ratatouille_fried_delights:hamburger_patty",
+      "required": false
+    }
+  ]
+}

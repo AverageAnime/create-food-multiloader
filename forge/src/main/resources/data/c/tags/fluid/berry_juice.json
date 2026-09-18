@@ -1,0 +1,20 @@
+{
+  "values": [
+    {
+      "id": "createfood:flowing_berry_juice",
+      "required": false
+    },
+    {
+      "id": "createfood:berry_juice",
+      "required": false
+    },
+    {
+      "id": "hearthandharvest:sweet_berry_juice",
+      "required": false
+    },
+    {
+      "id": "hearthandharvest:flowing_sweet_berry_juice",
+      "required": false
+    }
+  ]
+}

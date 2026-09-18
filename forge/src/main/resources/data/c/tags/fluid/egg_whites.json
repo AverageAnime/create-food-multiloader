@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "createfood:flowing_egg_whites",
+      "required": false
+    },
+    {
+      "id": "createfood:egg_whites",
+      "required": false
+    }
+  ]
+}

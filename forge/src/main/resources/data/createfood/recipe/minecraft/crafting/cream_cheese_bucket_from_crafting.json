@@ -1,0 +1,32 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:bucket"
+        },
+        {
+            "tag": "c:cream_cheese"
+        },
+        {
+            "tag": "c:cream_cheese"
+        },
+        {
+            "tag": "c:cream_cheese"
+        }
+    ],
+    "result": {
+        "id": "createfood:cream_cheese_bucket"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "cream_cheese_bucket"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "cream_cheese_bucket"
+        }
+    ]
+}

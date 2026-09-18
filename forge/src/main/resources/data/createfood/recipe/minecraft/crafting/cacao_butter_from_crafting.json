@@ -1,0 +1,24 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:cacao_butter_bucket"
+        }
+    ],
+    "result": {
+        "count": 3,
+        "id": "createfood:cacao_butter"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "cacao_butter"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "cacao_butter"
+        }
+    ]
+}

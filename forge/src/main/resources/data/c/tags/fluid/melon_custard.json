@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "createfood:flowing_melon_custard",
+      "required": false
+    },
+    {
+      "id": "createfood:melon_custard",
+      "required": false
+    }
+  ]
+}

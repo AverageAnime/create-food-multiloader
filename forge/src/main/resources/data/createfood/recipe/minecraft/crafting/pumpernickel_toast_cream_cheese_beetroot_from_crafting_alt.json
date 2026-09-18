@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "c:pumpernickel_toast_slice"
+    },
+    {
+      "tag": "c:cream_cheese"
+    },
+    {
+      "tag": "c:beetroot"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "createfood:pumpernickel_toast_cream_cheese_beetroot"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "pumpernickel_toast_cream_cheese_beetroot"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "pumpernickel_toast_cream_cheese_beetroot"
+    }
+  ]
+}

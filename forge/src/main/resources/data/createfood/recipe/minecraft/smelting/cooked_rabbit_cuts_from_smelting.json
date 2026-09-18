@@ -1,0 +1,25 @@
+{
+    "type": "minecraft:smelting",
+    "category": "food",
+    "cookingtime": 100,
+    "experience": 0.35,
+    "ingredient": {
+        "tag": "c:rabbit_cuts"
+    },
+    "result": {
+        "count": 1,
+        "id": "createfood:cooked_rabbit_cuts"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "cooked_rabbit_cuts"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "cooked_rabbit_cuts"
+        }
+    ]
+}

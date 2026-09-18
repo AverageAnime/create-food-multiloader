@@ -1,0 +1,26 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:raw_calzone"
+        },
+        {
+            "tag": "c:cheeses"
+        }
+    ],
+    "result": {
+        "id": "createfood:raw_cheese_calzone"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "raw_cheese_calzone"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "raw_cheese_calzone"
+        }
+    ]
+}

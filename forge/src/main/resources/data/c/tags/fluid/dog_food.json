@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "delightfulcreators:dog_food",
+      "required": false
+    },
+    {
+      "id": "delightfulcreators:flowing_dog_food",
+      "required": false
+    }
+  ]
+}

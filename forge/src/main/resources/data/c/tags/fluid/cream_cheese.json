@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "createfood:flowing_cream_cheese",
+      "required": false
+    },
+    {
+      "id": "createfood:cream_cheese",
+      "required": false
+    }
+  ]
+}

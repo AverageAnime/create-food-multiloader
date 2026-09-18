@@ -1,0 +1,29 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:bun"
+        },
+        {
+            "tag": "c:chicken_patty"
+        },
+        {
+            "tag": "c:foods/leafy_green"
+        }
+    ],
+    "result": {
+        "id": "createfood:chicken_bun_lettuce"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "chicken_bun_lettuce"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "chicken_bun_lettuce"
+        }
+    ]
+}
