@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "createfood:flowing_glow_berry_cream_frosting",
+      "required": false
+    },
+    {
+      "id": "createfood:glow_berry_cream_frosting",
+      "required": false
+    }
+  ]
+}

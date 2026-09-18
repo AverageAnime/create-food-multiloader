@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "#c:pepper",
+      "required": false
+    },
+    {
+      "id": "minecraft:nether_wart",
+      "required": false
+    }
+  ]
+}

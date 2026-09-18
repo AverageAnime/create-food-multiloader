@@ -1,0 +1,26 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:toast"
+        },
+        {
+            "item": "minecraft:honey_bottle"
+        }
+    ],
+    "result": {
+        "id": "createfood:honeyed_toast"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "honeyed_toast"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "honeyed_toast"
+        }
+    ]
+}

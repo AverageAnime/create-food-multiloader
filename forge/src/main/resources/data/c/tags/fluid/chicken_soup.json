@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "delightfulcreators:chicken_soup",
+      "required": false
+    },
+    {
+      "id": "delightfulcreators:flowing_chicken_soup",
+      "required": false
+    }
+  ]
+}

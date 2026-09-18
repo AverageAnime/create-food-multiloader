@@ -1,0 +1,123 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "farmersdelight"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "delightfulcreators"
+    },
+    {
+      "type": "createfood:enabled",
+      "id": "farmersdelight:grilled_salmon"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "create"
+      ]
+    },
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "farmersdelight"
+      ]
+    },
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "delightfulcreators"
+      ]
+    },
+    {
+      "condition": "createfood:enabled",
+      "id": "farmersdelight:grilled_salmon"
+    }
+  ],
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "tag": "c:bowl"
+  },
+  "loops": 1,
+  "results": [
+    {
+      "id": "farmersdelight:grilled_salmon"
+    }
+  ],
+  "sequence": [
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "delightfulcreators:incomplete_grilled_salmon"
+        },
+        {
+          "tag": "c:foods/cooked_salmon"
+        }
+      ],
+      "results": [
+        {
+          "id": "delightfulcreators:incomplete_grilled_salmon"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "delightfulcreators:incomplete_grilled_salmon"
+        },
+        {
+          "tag": "c:foods/leafy_green"
+        }
+      ],
+      "results": [
+        {
+          "id": "delightfulcreators:incomplete_grilled_salmon"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "delightfulcreators:incomplete_grilled_salmon"
+        },
+        {
+          "item": "minecraft:sweet_berries"
+        }
+      ],
+      "results": [
+        {
+          "id": "delightfulcreators:incomplete_grilled_salmon"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "delightfulcreators:incomplete_grilled_salmon"
+        },
+        {
+          "tag": "c:onion"
+        }
+      ],
+      "results": [
+        {
+          "id": "delightfulcreators:incomplete_grilled_salmon"
+        }
+      ]
+    }
+  ],
+  "transitional_item": {
+    "id": "delightfulcreators:incomplete_grilled_salmon"
+  }
+}

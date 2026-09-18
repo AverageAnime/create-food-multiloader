@@ -1,0 +1,16 @@
+{
+  "values": [
+    {
+      "id": "veggiesdelight:cauliflower",
+      "required": false
+    },
+    {
+      "id": "veggiesdelight:cauliflower_floret",
+      "required": false
+    },
+    {
+      "id": "veggiesdelight:roasted_cauliflower_floret",
+      "required": false
+    }
+  ]
+}

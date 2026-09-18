@@ -1,0 +1,41 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:cream_cheese_bucket"
+        },
+        {
+            "tag": "c:sour_cream_bottle"
+        },
+        {
+            "tag": "c:sugar"
+        },
+        {
+            "tag": "c:salt"
+        },
+        {
+            "tag": "c:eggs"
+        },
+        {
+            "tag": "c:eggs"
+        },
+        {
+            "item": "minecraft:bucket"
+        }
+    ],
+    "result": {
+        "id": "createfood:cheesecake_filling_bucket"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "cheesecake_filling_bucket"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "cheesecake_filling_bucket"
+        }
+    ]
+}

@@ -1,0 +1,30 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "gray_gelatin_dessert_block"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "gray_gelatin_dessert_block"
+    }
+  ],
+  "key": {
+    "1": {
+      "tag": "c:dyes/gray"
+    },
+    "2": {
+      "tag": "c:gelatin_dessert_block"
+    }
+  },
+  "pattern": [
+    "1",
+    "2"
+  ],
+  "result": {
+    "id": "createfood:gray_gelatin_dessert_block"
+  }
+}

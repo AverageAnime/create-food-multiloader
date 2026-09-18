@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:stick"
+    },
+    {
+      "item": "minecraft:honeycomb"
+    },
+    {
+      "tag": "c:sugar"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "createfood:honeycomb_candy_stick"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "honeycomb_candy_stick"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "honeycomb_candy_stick"
+    }
+  ]
+}

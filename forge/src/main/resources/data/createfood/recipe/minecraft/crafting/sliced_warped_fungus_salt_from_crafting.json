@@ -1,0 +1,26 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:sliced_warped_fungus"
+        },
+        {
+            "tag": "c:salt"
+        }
+    ],
+    "result": {
+        "id": "createfood:sliced_warped_fungus_salt"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "sliced_warped_fungus_salt"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "sliced_warped_fungus_salt"
+        }
+    ]
+}

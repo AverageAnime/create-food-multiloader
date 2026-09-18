@@ -1,0 +1,8 @@
+{
+  "values": [
+    {
+      "id": "createfood:kelp_soup_bucket",
+      "required": false
+    }
+  ]
+}

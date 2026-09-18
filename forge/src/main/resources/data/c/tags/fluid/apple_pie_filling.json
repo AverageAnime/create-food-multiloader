@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "createfood:flowing_apple_pie_filling",
+      "required": false
+    },
+    {
+      "id": "createfood:apple_pie_filling",
+      "required": false
+    }
+  ]
+}

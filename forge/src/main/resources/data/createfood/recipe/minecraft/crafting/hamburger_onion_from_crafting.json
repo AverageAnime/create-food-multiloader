@@ -1,0 +1,26 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:beef_bun_onion"
+        },
+        {
+            "tag": "c:bun"
+        }
+    ],
+    "result": {
+        "id": "createfood:hamburger_onion"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "hamburger_onion"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "hamburger_onion"
+        }
+    ]
+}

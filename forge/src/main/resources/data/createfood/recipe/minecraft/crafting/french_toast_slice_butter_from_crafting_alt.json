@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "createfood:french_toast_slice"
+    },
+    {
+      "tag": "c:heavy_cream_bottle"
+    },
+    {
+      "tag": "c:salt"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "createfood:french_toast_slice_butter"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "french_toast_slice_butter"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "french_toast_slice_butter"
+    }
+  ]
+}

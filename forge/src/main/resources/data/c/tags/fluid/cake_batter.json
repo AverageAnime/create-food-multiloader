@@ -1,0 +1,16 @@
+{
+  "values": [
+    {
+      "id": "createfood:flowing_cake_batter",
+      "required": false
+    },
+    {
+      "id": "createfood:cake_batter",
+      "required": false
+    },
+    {
+      "id": "ratatouille:cake_batter",
+      "required": false
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:baked_potato"
+    },
+    {
+      "tag": "c:butter"
+    },
+    {
+      "tag": "c:mushrooms"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "createfood:baked_potato_butter_mushroom"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "baked_potato_butter_mushroom"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "baked_potato_butter_mushroom"
+    }
+  ]
+}

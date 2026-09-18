@@ -1,0 +1,8 @@
+{
+  "values": [
+    {
+      "id": "createfood:apple_jam_bucket",
+      "required": false
+    }
+  ]
+}

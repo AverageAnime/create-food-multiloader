@@ -1,0 +1,41 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "glow_berry_cream_frosting_bucket"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "glow_berry_cream_frosting_bucket"
+        }
+    ],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:heavy_cream_bucket"
+        },
+        {
+            "tag": "c:sugar"
+        },
+        {
+            "tag": "c:sugar"
+        },
+        {
+            "tag": "c:frosting_ingredients"
+        },
+        {
+            "tag": "c:frosting_ingredients"
+        },
+        {
+            "item": "minecraft:glow_berries"
+        },
+        {
+            "item": "minecraft:bucket"
+        }
+    ],
+    "result": {
+        "id": "createfood:glow_berry_cream_frosting_bucket"
+    }
+}

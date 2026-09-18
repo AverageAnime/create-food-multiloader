@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "createfood:brown_sugar",
+      "required": false
+    },
+    {
+      "id": "ubesdelight:brown_sugar",
+      "required": false
+    }
+  ]
+}

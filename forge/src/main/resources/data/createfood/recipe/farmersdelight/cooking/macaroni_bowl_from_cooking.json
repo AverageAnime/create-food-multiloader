@@ -1,0 +1,46 @@
+{
+    "type": "farmersdelight:cooking",
+    "experience": 0.2,
+    "container": {
+        "count": 1,
+        "id": "minecraft:bowl"
+    },
+    "ingredients": [
+        {
+            "tag": "c:buckets/water"
+        },
+        {
+            "tag": "c:raw_macaroni"
+        },
+        {
+            "tag": "c:butter"
+        }
+    ],
+    "recipe_book_tab": "misc",
+    "result": {
+        "count": 1,
+        "id": "createfood:macaroni_bowl"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "farmersdelight"
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "macaroni_bowl"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "farmersdelight"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
+            "id": "macaroni_bowl"
+        }
+    ]
+}

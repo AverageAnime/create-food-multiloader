@@ -1,0 +1,29 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:gelatin_mix_bucket"
+        },
+        {
+            "tag": "c:dyes/red"
+        },
+        {
+            "item": "minecraft:bucket"
+        }
+    ],
+    "result": {
+        "id": "createfood:red_gelatin_mix_bucket"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "red_gelatin_mix_bucket"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "red_gelatin_mix_bucket"
+        }
+    ]
+}

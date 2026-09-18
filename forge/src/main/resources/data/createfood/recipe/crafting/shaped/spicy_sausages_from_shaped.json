@@ -1,0 +1,30 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "spicy_sausages"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "spicy_sausages"
+    }
+  ],
+  "key": {
+    "1": {
+      "tag": "c:paprika"
+    },
+    "2": {
+      "tag": "c:sausages"
+    }
+  },
+  "pattern": [
+    "1",
+    "2"
+  ],
+  "result": {
+    "id": "createfood:spicy_sausages"
+  }
+}

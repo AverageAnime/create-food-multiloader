@@ -1,0 +1,36 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:mutton_stew_bucket"
+        },
+        {
+            "tag": "c:bowl"
+        },
+        {
+            "tag": "c:bowl"
+        },
+        {
+            "tag": "c:bowl"
+        },
+        {
+            "tag": "c:bowl"
+        }
+    ],
+    "result": {
+        "count": 4,
+        "id": "createfood:mutton_stew_bowl"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "mutton_stew_bowl"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "mutton_stew_bowl"
+        }
+    ]
+}

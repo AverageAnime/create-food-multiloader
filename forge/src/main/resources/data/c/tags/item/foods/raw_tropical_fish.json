@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "minecraft:tropical_fish",
+      "required": false
+    },
+    {
+      "id": "createfood:tropical_fish_slice",
+      "required": false
+    }
+  ]
+}

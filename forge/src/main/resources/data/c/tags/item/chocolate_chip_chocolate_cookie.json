@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "createfood:chocolate_chip_chocolate_cookie",
+      "required": false
+    },
+    {
+      "id": "expandeddelight:chocolate_chip_chocolate_cookie",
+      "required": false
+    }
+  ]
+}

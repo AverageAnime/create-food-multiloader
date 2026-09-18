@@ -1,0 +1,27 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:sweet_dough"
+        },
+        {
+            "item": "minecraft:rotten_flesh"
+        }
+    ],
+    "result": {
+        "count": 8,
+        "id": "createfood:raw_flesh_cookie"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "raw_flesh_cookie"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "raw_flesh_cookie"
+        }
+    ]
+}

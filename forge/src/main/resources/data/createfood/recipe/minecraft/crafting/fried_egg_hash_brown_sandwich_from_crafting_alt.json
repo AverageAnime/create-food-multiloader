@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:bread"
+    },
+    {
+      "tag": "c:cooked_eggs"
+    },
+    {
+      "tag": "c:hash_browns"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "createfood:fried_egg_hash_brown_sandwich"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "fried_egg_hash_brown_sandwich"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "fried_egg_hash_brown_sandwich"
+    }
+  ]
+}

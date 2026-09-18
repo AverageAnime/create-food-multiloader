@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "c:sweet_roll_base"
+    },
+    {
+      "tag": "c:glow_berry_cream_frosting"
+    },
+    {
+      "item": "minecraft:glow_berries"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "createfood:glow_berry_cream_sweet_roll_glow_berry"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "glow_berry_cream_sweet_roll_glow_berry"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "glow_berry_cream_sweet_roll_glow_berry"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:gelatin_dessert_block"
+        },
+        {
+            "tag": "c:dyes/blue"
+        }
+    ],
+    "result": {
+        "id": "createfood:blue_gelatin_dessert_block"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "blue_gelatin_dessert_block"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "blue_gelatin_dessert_block"
+        }
+    ]
+}

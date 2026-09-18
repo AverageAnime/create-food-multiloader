@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "c:boiled_egg_peeled"
+    },
+    {
+      "tag": "c:ground_sausage"
+    },
+    {
+      "tag": "c:bread_crumbs"
+    },
+    {
+      "tag": "c:paprika"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "createfood:raw_scotch_egg"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "raw_scotch_egg"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "raw_scotch_egg"
+    }
+  ]
+}

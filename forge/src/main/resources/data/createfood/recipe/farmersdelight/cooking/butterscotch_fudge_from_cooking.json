@@ -1,0 +1,42 @@
+{
+    "type": "farmersdelight:cooking",
+    "experience": 0.5,
+    "ingredients": [
+        {
+            "tag": "c:condensed_milk"
+        },
+        {
+            "tag": "c:butterscotch_chips"
+        },
+        {
+            "tag": "c:butter"
+        }
+    ],
+    "recipe_book_tab": "misc",
+    "result": {
+        "count": 1,
+        "id": "createfood:butterscotch_fudge"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "farmersdelight"
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "butterscotch_fudge"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "farmersdelight"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
+            "id": "butterscotch_fudge"
+        }
+    ]
+}

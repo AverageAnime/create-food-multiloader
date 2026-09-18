@@ -1,0 +1,45 @@
+{
+  "type": "farmersdelight:cooking",
+  "experience": 0.35,
+  "ingredients": [
+    {
+      "tag": "c:bar_of_white_chocolate"
+    },
+    {
+      "tag": "c:heavy_cream_bottle"
+    },
+    {
+      "tag": "c:condensed_milk_bottle"
+    },
+    {
+      "tag": "c:butter"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "count": 1,
+    "id": "createfood:white_chocolate_ganache_bucket"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "farmersdelight"
+    },
+    {
+      "type": "createfood:enabled",
+      "id": "white_chocolate_ganache_bucket"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "farmersdelight"
+      ]
+    },
+    {
+      "condition": "createfood:enabled",
+      "id": "white_chocolate_ganache_bucket"
+    }
+  ]
+}

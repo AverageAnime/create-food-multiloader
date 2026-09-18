@@ -1,0 +1,26 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:cloth_filter_cacao_mass"
+        },
+        {
+            "item": "minecraft:bucket"
+        }
+    ],
+    "result": {
+        "id": "createfood:cacao_butter_bucket"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "cacao_butter_bucket"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "cacao_butter_bucket"
+        }
+    ]
+}

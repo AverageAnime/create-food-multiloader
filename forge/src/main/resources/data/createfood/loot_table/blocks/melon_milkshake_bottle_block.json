@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "createfood:melon_milkshake_bottle_block"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "createfood:blocks/melon_milkshake_bottle_block"
+}

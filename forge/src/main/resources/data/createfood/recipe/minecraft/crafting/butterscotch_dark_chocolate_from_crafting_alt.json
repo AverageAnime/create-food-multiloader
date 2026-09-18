@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "c:dark_chocolate_chips"
+    },
+    {
+      "tag": "c:dark_chocolate_chips"
+    },
+    {
+      "tag": "c:dark_chocolate_chips"
+    },
+    {
+      "tag": "c:dark_chocolate_chips"
+    },
+    {
+      "tag": "c:butterscotch"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "createfood:butterscotch_dark_chocolate"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "butterscotch_dark_chocolate"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "butterscotch_dark_chocolate"
+    }
+  ]
+}

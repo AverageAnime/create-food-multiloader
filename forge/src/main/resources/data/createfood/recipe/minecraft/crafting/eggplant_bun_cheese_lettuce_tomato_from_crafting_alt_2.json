@@ -1,0 +1,26 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "eggplant_bun_cheese_lettuce_tomato"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "eggplant_bun_cheese_lettuce_tomato"
+        }
+    ],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:eggplant_bun_lettuce_tomato"
+        },
+        {
+            "tag": "c:cheeses"
+        }
+    ],
+    "result": {
+        "id": "createfood:eggplant_bun_cheese_lettuce_tomato"
+    }
+}

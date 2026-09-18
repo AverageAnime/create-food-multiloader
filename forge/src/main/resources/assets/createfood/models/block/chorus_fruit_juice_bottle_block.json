@@ -1,0 +1,7 @@
+﻿{
+	"parent":  "createfood:block/bottle_base_juice",
+	"textures":  {
+					"3":  "createfood:fluid/chorus_fruit_juice_flow",
+					"4":  "createfood:fluid/chorus_fruit_juice_still"
+				}
+}

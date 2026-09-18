@@ -1,0 +1,25 @@
+{
+    "type": "minecraft:campfire_cooking",
+    "category": "food",
+    "cookingtime": 200,
+    "experience": 0.1,
+    "ingredient": {
+        "tag": "c:raw_pork_meatball"
+    },
+    "result": {
+        "count": 1,
+        "id": "createfood:pork_meatball"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "pork_meatball"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "pork_meatball"
+        }
+    ]
+}

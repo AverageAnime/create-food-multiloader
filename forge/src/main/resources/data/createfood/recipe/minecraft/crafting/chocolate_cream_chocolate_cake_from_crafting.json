@@ -1,0 +1,26 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:chocolate_cake_base"
+        },
+        {
+            "tag": "c:chocolate_cream_frosting_piping_bag"
+        }
+    ],
+    "result": {
+        "id": "createfood:chocolate_cream_chocolate_cake"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "chocolate_cream_chocolate_cake"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "chocolate_cream_chocolate_cake"
+        }
+    ]
+}

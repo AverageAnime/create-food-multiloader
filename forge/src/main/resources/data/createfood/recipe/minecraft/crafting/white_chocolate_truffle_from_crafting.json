@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "c:white_chocolate_ganache_bucket"
+    },
+    {
+      "tag": "c:white_chocolate"
+    },
+    {
+      "tag": "c:white_chocolate"
+    },
+    {
+      "tag": "c:white_chocolate"
+    },
+    {
+      "tag": "c:white_chocolate"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "id": "createfood:white_chocolate_truffle"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "white_chocolate_truffle"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "white_chocolate_truffle"
+    }
+  ]
+}

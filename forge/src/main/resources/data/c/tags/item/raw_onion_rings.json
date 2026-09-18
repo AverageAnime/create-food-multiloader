@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "createfood:raw_onion_rings",
+      "required": false
+    },
+    {
+      "id": "ratatouille_fried_delights:breaded_onion_rings",
+      "required": false
+    }
+  ]
+}

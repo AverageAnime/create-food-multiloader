@@ -1,0 +1,26 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:hash_brown_toast_plate"
+        },
+        {
+            "tag": "c:cooked_eggs"
+        }
+    ],
+    "result": {
+        "id": "createfood:breakfast_plate"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "breakfast_plate"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "breakfast_plate"
+        }
+    ]
+}

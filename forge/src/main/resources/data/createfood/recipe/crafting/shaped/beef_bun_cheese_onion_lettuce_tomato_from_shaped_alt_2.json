@@ -1,0 +1,30 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "beef_bun_cheese_onion_lettuce_tomato"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "beef_bun_cheese_onion_lettuce_tomato"
+    }
+  ],
+  "key": {
+    "1": {
+      "tag": "c:cheeses"
+    },
+    "2": {
+      "tag": "c:beef_bun_onion_lettuce_tomato"
+    }
+  },
+  "pattern": [
+    "1",
+    "2"
+  ],
+  "result": {
+    "id": "createfood:beef_bun_cheese_onion_lettuce_tomato"
+  }
+}

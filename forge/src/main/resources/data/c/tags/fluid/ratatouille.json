@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "delightfulcreators:ratatouille",
+      "required": false
+    },
+    {
+      "id": "delightfulcreators:flowing_ratatouille",
+      "required": false
+    }
+  ]
+}

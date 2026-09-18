@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "createfood:sliced_tomato",
+      "required": false
+    },
+    {
+      "id": "ratatouille_fried_delights:tomato_slices",
+      "required": false
+    }
+  ]
+}

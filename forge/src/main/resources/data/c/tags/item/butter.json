@@ -1,0 +1,20 @@
+{
+  "values": [
+    {
+      "id": "createfood:butter",
+      "required": false
+    },
+    {
+      "id": "croptopia:butter",
+      "required": false
+    },
+    {
+      "id": "ratatouille_fried_delights:butter",
+      "required": false
+    },
+    {
+      "id": "hearthandharvest:butter",
+      "required": false
+    }
+  ]
+}

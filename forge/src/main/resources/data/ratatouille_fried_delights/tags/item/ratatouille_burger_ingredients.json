@@ -1,0 +1,24 @@
+{
+  "values": [
+    {
+      "id": "createfood:bun",
+      "required": false
+    },
+    {
+      "id": "createfood:cheese_slice",
+      "required": false
+    },
+    {
+      "id": "createfood:chicken_patty",
+      "required": false
+    },
+    {
+      "id": "createfood:sausage_patty",
+      "required": false
+    },
+    {
+      "id": "createfood:sliced_tomato",
+      "required": false
+    }
+  ]
+}

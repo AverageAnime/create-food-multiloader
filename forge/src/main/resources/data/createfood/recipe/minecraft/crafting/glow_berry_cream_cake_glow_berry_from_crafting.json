@@ -1,0 +1,26 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:glow_berry_cream_cake"
+        },
+        {
+            "item": "minecraft:glow_berries"
+        }
+    ],
+    "result": {
+        "id": "createfood:glow_berry_cream_cake_glow_berry"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "glow_berry_cream_cake_glow_berry"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "glow_berry_cream_cake_glow_berry"
+        }
+    ]
+}

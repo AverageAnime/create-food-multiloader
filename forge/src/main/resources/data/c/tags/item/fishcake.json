@@ -1,0 +1,8 @@
+{
+  "values": [
+    {
+      "id": "createfood:fishcake",
+      "required": false
+    }
+  ]
+}

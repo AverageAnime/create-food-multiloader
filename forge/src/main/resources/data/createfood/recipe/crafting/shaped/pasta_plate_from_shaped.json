@@ -1,0 +1,30 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "pasta_plate"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "pasta_plate"
+    }
+  ],
+  "key": {
+    "1": {
+      "tag": "c:cooked_pasta"
+    },
+    "2": {
+      "item": "minecraft:bowl"
+    }
+  },
+  "pattern": [
+    "1",
+    "2"
+  ],
+  "result": {
+    "id": "createfood:pasta_plate"
+  }
+}

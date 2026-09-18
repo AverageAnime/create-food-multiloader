@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "c:raw_pie_crust"
+    },
+    {
+      "tag": "c:ground_sausage"
+    },
+    {
+      "tag": "c:carrot"
+    },
+    {
+      "tag": "c:onion"
+    },
+    {
+      "tag": "c:potato"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "createfood:raw_meat_pie"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "raw_meat_pie"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "raw_meat_pie"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "block": "createfood:scrambled_egg_sandwich_plate_block",
+          "condition": "minecraft:block_state_property",
+          "properties": {
+            "stack_size": "1"
+          }
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "createfood:scrambled_egg_sandwich_plate_block"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:inverted",
+          "term": {
+            "block": "createfood:scrambled_egg_sandwich_plate_block",
+            "condition": "minecraft:block_state_property",
+            "properties": {
+              "stack_size": "1"
+            }
+          }
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:bowl"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "createfood:blocks/scrambled_egg_sandwich_plate_block"
+}

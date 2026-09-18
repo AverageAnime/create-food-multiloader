@@ -1,0 +1,30 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "raw_glow_berry_cheesecake"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "raw_glow_berry_cheesecake"
+    }
+  ],
+  "key": {
+    "1": {
+      "item": "minecraft:glow_berries"
+    },
+    "2": {
+      "tag": "c:raw_cheesecake"
+    }
+  },
+  "pattern": [
+    "1",
+    "2"
+  ],
+  "result": {
+    "id": "createfood:raw_glow_berry_cheesecake"
+  }
+}

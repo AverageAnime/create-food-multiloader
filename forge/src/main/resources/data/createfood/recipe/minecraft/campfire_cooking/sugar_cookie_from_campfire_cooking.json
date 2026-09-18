@@ -1,0 +1,35 @@
+{
+    "type": "minecraft:campfire_cooking",
+    "category": "food",
+    "cookingtime": 200,
+    "experience": 0.1,
+    "ingredient": {
+        "tag": "c:raw_sugar_cookie"
+    },
+    "result": {
+        "count": 1,
+        "id": "expandeddelight:sugar_cookie"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "expandeddelight"
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "expandeddelight:sugar_cookie"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "expandeddelight"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
+            "id": "expandeddelight:sugar_cookie"
+        }
+    ]
+}

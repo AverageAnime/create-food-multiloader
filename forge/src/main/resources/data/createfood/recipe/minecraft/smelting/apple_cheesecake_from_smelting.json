@@ -1,0 +1,25 @@
+{
+    "type": "minecraft:smelting",
+    "category": "food",
+    "cookingtime": 550,
+    "experience": 0.95,
+    "ingredient": {
+        "tag": "c:raw_apple_cheesecake"
+    },
+    "result": {
+        "count": 1,
+        "id": "createfood:apple_cheesecake"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "apple_cheesecake"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "apple_cheesecake"
+        }
+    ]
+}

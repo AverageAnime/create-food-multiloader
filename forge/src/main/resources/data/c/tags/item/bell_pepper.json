@@ -1,0 +1,128 @@
+{
+  "values": [
+    {
+      "id": "#c:crops/bell_pepper",
+      "required": false
+    },
+    {
+      "id": "#c:crops/bellpepper",
+      "required": false
+    },
+    {
+      "id": "rusticdelight:bell_pepper_slice_black",
+      "required": false
+    },
+    {
+      "id": "rusticdelight:bell_pepper_slice_blue",
+      "required": false
+    },
+    {
+      "id": "rusticdelight:bell_pepper_slice_green",
+      "required": false
+    },
+    {
+      "id": "rusticdelight:bell_pepper_slice_orange",
+      "required": false
+    },
+    {
+      "id": "rusticdelight:bell_pepper_slice_pink",
+      "required": false
+    },
+    {
+      "id": "rusticdelight:bell_pepper_slice_purple",
+      "required": false
+    },
+    {
+      "id": "rusticdelight:bell_pepper_slice_red",
+      "required": false
+    },
+    {
+      "id": "rusticdelight:bell_pepper_slice_white",
+      "required": false
+    },
+    {
+      "id": "rusticdelight:bell_pepper_slice_yellow",
+      "required": false
+    },
+    {
+      "id": "rusticdelight:roasted_bell_pepper_black",
+      "required": false
+    },
+    {
+      "id": "rusticdelight:roasted_bell_pepper_blue",
+      "required": false
+    },
+    {
+      "id": "rusticdelight:roasted_bell_pepper_green",
+      "required": false
+    },
+    {
+      "id": "rusticdelight:roasted_bell_pepper_orange",
+      "required": false
+    },
+    {
+      "id": "rusticdelight:roasted_bell_pepper_pink",
+      "required": false
+    },
+    {
+      "id": "rusticdelight:roasted_bell_pepper_purple",
+      "required": false
+    },
+    {
+      "id": "rusticdelight:roasted_bell_pepper_red",
+      "required": false
+    },
+    {
+      "id": "rusticdelight:roasted_bell_pepper_white",
+      "required": false
+    },
+    {
+      "id": "rusticdelight:roasted_bell_pepper_yellow",
+      "required": false
+    },
+    {
+      "id": "rusticdelight:roasted_bell_pepper_slice_black",
+      "required": false
+    },
+    {
+      "id": "rusticdelight:roasted_bell_pepper_slice_blue",
+      "required": false
+    },
+    {
+      "id": "rusticdelight:roasted_bell_pepper_slice_green",
+      "required": false
+    },
+    {
+      "id": "rusticdelight:roasted_bell_pepper_slice_orange",
+      "required": false
+    },
+    {
+      "id": "rusticdelight:roasted_bell_pepper_slice_pink",
+      "required": false
+    },
+    {
+      "id": "rusticdelight:roasted_bell_pepper_slice_purple",
+      "required": false
+    },
+    {
+      "id": "rusticdelight:roasted_bell_pepper_slice_red",
+      "required": false
+    },
+    {
+      "id": "rusticdelight:roasted_bell_pepper_slice_white",
+      "required": false
+    },
+    {
+      "id": "rusticdelight:roasted_bell_pepper_slice_yellow",
+      "required": false
+    },
+    {
+      "id": "veggiesdelight:bellpepper",
+      "required": false
+    },
+    {
+      "id": "veggiesdelight:smoked_bellpepper",
+      "required": false
+    }
+  ]
+}

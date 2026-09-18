@@ -1,0 +1,41 @@
+{
+  "type": "create:deploying",
+  "ingredients": [
+    {
+      "tag": "c:raw_cheese_calzone"
+    },
+    {
+      "tag": "c:foods/raw_beef"
+    }
+  ],
+  "results": [
+    {
+      "count": 1,
+      "item": {
+        "id": "createfood:raw_beef_calzone"
+      }
+    }
+  ],
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    },
+    {
+      "type": "createfood:enabled",
+      "id": "raw_beef_calzone"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "create"
+      ]
+    },
+    {
+      "condition": "createfood:enabled",
+      "id": "raw_beef_calzone"
+    }
+  ]
+}

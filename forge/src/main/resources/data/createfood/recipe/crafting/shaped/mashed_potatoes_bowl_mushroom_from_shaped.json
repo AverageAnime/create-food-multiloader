@@ -1,0 +1,30 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "mashed_potatoes_bowl_mushroom"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "mashed_potatoes_bowl_mushroom"
+    }
+  ],
+  "key": {
+    "1": {
+      "tag": "c:mushrooms"
+    },
+    "2": {
+      "tag": "c:mashed_potatoes_bowl"
+    }
+  },
+  "pattern": [
+    "1",
+    "2"
+  ],
+  "result": {
+    "id": "createfood:mashed_potatoes_bowl_mushroom"
+  }
+}

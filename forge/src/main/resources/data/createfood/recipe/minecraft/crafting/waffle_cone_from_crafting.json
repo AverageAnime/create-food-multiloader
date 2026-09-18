@@ -1,0 +1,23 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "waffle_cone"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "waffle_cone"
+        }
+    ],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:mini_waffle"
+        }
+    ],
+    "result": {
+        "id": "createfood:waffle_cone"
+    }
+}

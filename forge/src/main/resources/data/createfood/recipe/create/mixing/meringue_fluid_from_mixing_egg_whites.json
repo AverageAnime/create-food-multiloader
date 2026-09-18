@@ -1,0 +1,41 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "type": "fluid_tag",
+      "amount": 250,
+      "fluid_tag": "c:egg_whites"
+    },
+    {
+      "tag": "c:sugar"
+    }
+  ],
+  "results": [
+    {
+      "amount": 250,
+      "id": "createfood:meringue"
+    }
+  ],
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    },
+    {
+      "type": "createfood:enabled",
+      "id": "meringue"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "create"
+      ]
+    },
+    {
+      "condition": "createfood:enabled",
+      "id": "meringue"
+    }
+  ]
+}

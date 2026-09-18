@@ -1,0 +1,32 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:fish_bacon_pizza_slice"
+        },
+        {
+            "tag": "c:fish_bacon_pizza_slice"
+        },
+        {
+            "tag": "c:fish_bacon_pizza_slice"
+        },
+        {
+            "tag": "c:fish_bacon_pizza_slice"
+        }
+    ],
+    "result": {
+        "id": "createfood:fish_bacon_pizza"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "fish_bacon_pizza"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "fish_bacon_pizza"
+        }
+    ]
+}

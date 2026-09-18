@@ -1,0 +1,26 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:pizza_dough"
+        },
+        {
+            "tag": "c:tomato_sauce"
+        }
+    ],
+    "result": {
+        "id": "createfood:pizza_dough_tomato_sauce"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "pizza_dough_tomato_sauce"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "pizza_dough_tomato_sauce"
+        }
+    ]
+}

@@ -1,0 +1,9 @@
+﻿{
+	"parent":  "createfood:block/pie_base",
+	"textures":  {
+					"bottom":  "createfood:block/raw_graham_cracker_bottom",
+					"top":  "createfood:block/raw_apple_cheesecake_top",
+					"side":  "createfood:block/raw_graham_cracker_side",
+					"particle":  "createfood:block/raw_graham_cracker_bottom"
+				}
+}

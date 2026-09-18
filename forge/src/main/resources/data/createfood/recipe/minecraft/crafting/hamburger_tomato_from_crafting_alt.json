@@ -1,0 +1,32 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "hamburger_tomato"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "hamburger_tomato"
+        }
+    ],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:bun"
+        },
+        {
+            "tag": "c:cooked_beef"
+        },
+        {
+            "tag": "c:tomato"
+        },
+        {
+            "tag": "c:bun"
+        }
+    ],
+    "result": {
+        "id": "createfood:hamburger_tomato"
+    }
+}

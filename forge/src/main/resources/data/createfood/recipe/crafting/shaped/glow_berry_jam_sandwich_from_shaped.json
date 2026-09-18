@@ -1,0 +1,30 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "glow_berry_jam_sandwich"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "glow_berry_jam_sandwich"
+    }
+  ],
+  "key": {
+    "1": {
+      "tag": "c:bread_slice"
+    },
+    "2": {
+      "tag": "c:bread_slice_glow_berry_jam"
+    }
+  },
+  "pattern": [
+    "1",
+    "2"
+  ],
+  "result": {
+    "id": "createfood:glow_berry_jam_sandwich"
+  }
+}

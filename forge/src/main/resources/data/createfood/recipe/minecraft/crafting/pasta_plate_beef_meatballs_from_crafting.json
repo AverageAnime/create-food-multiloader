@@ -1,0 +1,26 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:pasta_plate"
+        },
+        {
+            "tag": "c:small_beef_meatballs"
+        }
+    ],
+    "result": {
+        "id": "createfood:pasta_plate_beef_meatballs"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "pasta_plate_beef_meatballs"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "pasta_plate_beef_meatballs"
+        }
+    ]
+}

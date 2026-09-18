@@ -1,0 +1,41 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "chocolate_cake_batter_bucket"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "chocolate_cake_batter_bucket"
+        }
+    ],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:milk_bucket"
+        },
+        {
+            "tag": "c:sugar"
+        },
+        {
+            "tag": "c:flours/wheat"
+        },
+        {
+            "tag": "c:eggs"
+        },
+        {
+            "tag": "c:butter"
+        },
+        {
+            "tag": "c:cocoa_powder"
+        },
+        {
+            "item": "minecraft:bucket"
+        }
+    ],
+    "result": {
+        "id": "createfood:chocolate_cake_batter_bucket"
+    }
+}

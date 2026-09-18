@@ -1,0 +1,44 @@
+{
+  "type": "create:compacting",
+  "ingredients": [
+    {
+      "item": "minecraft:stick"
+    },
+    {
+      "item": "minecraft:honeycomb"
+    },
+    {
+      "tag": "c:sugar"
+    }
+  ],
+  "results": [
+    {
+      "count": 1,
+      "item": {
+        "id": "createfood:honeycomb_candy_stick"
+      }
+    }
+  ],
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    },
+    {
+      "type": "createfood:enabled",
+      "id": "honeycomb_candy_stick"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "create"
+      ]
+    },
+    {
+      "condition": "createfood:enabled",
+      "id": "honeycomb_candy_stick"
+    }
+  ]
+}

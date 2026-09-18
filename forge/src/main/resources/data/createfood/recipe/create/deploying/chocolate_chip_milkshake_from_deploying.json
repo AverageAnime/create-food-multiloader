@@ -1,0 +1,40 @@
+{
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "c:milkshake"
+        },
+        {
+            "tag": "c:chocolate_chips"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:chocolate_chip_milkshake_bottle"
+            }
+        }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "create"
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "chocolate_chip_milkshake_bottle"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "create"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
+            "id": "chocolate_chip_milkshake_bottle"
+        }
+    ]
+}

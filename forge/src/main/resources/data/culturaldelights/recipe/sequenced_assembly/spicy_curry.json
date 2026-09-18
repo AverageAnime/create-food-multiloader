@@ -1,0 +1,151 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "farmersdelight"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "culturaldelights"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "culturalcreators"
+    },
+    {
+      "type": "createfood:enabled",
+      "id": "culturaldelights:spicy_curry"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "create"
+      ]
+    },
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "farmersdelight"
+      ]
+    },
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "culturaldelights"
+      ]
+    },
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "culturalcreators"
+      ]
+    },
+    {
+      "condition": "createfood:enabled",
+      "id": "culturaldelights:spicy_curry"
+    }
+  ],
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "tag": "c:tomato_sauce"
+  },
+  "loops": 1,
+  "results": [
+    {
+      "id": "culturaldelights:spicy_curry"
+    }
+  ],
+  "sequence": [
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "culturalcreators:incomplete_spicy_curry"
+        },
+        {
+          "tag": "c:cooked_rice"
+        }
+      ],
+      "results": [
+        {
+          "id": "culturalcreators:incomplete_spicy_curry"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "culturalcreators:incomplete_spicy_curry"
+        },
+        {
+          "tag": "c:foods/cooked_chicken"
+        }
+      ],
+      "results": [
+        {
+          "id": "culturalcreators:incomplete_spicy_curry"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "culturalcreators:incomplete_spicy_curry"
+        },
+        {
+          "tag": "c:onion"
+        }
+      ],
+      "results": [
+        {
+          "id": "culturalcreators:incomplete_spicy_curry"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "culturalcreators:incomplete_spicy_curry"
+        },
+        {
+          "item": "minecraft:blaze_powder"
+        }
+      ],
+      "results": [
+        {
+          "id": "culturalcreators:incomplete_spicy_curry"
+        }
+      ]
+    },
+    {
+      "type": "create:filling",
+      "ingredients": [
+        {
+          "item": "culturalcreators:incomplete_spicy_curry"
+        },
+        {
+          "type": "fluid_tag",
+          "amount": 250,
+          "fluid_tag": "c:milk"
+        }
+      ],
+      "results": [
+        {
+          "id": "culturalcreators:incomplete_spicy_curry"
+        }
+      ]
+    }
+  ],
+  "transitional_item": {
+    "id": "culturalcreators:incomplete_spicy_curry"
+  }
+}

@@ -1,0 +1,35 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:bucket"
+        },
+        {
+            "tag": "c:hot_white_chocolate"
+        },
+        {
+            "tag": "c:hot_white_chocolate"
+        },
+        {
+            "tag": "c:hot_white_chocolate"
+        },
+        {
+            "tag": "c:hot_white_chocolate"
+        }
+    ],
+    "result": {
+        "id": "createfood:hot_white_chocolate_bucket"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "hot_white_chocolate_bucket"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "hot_white_chocolate_bucket"
+        }
+    ]
+}

@@ -1,0 +1,32 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:stick"
+        },
+        {
+            "item": "minecraft:ice"
+        },
+        {
+            "item": "minecraft:ice"
+        },
+        {
+            "tag": "c:chorus_fruit"
+        }
+    ],
+    "result": {
+        "id": "createfood:chorus_fruit_popsicle"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "chorus_fruit_popsicle"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "chorus_fruit_popsicle"
+        }
+    ]
+}

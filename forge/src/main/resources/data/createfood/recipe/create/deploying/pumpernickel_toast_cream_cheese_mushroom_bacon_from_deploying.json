@@ -1,0 +1,41 @@
+{
+  "type": "create:deploying",
+  "ingredients": [
+    {
+      "tag": "c:pumpernickel_toast_cream_cheese_mushroom"
+    },
+    {
+      "tag": "c:cooked_pork"
+    }
+  ],
+  "results": [
+    {
+      "count": 1,
+      "item": {
+        "id": "createfood:pumpernickel_toast_cream_cheese_mushroom_bacon"
+      }
+    }
+  ],
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    },
+    {
+      "type": "createfood:enabled",
+      "id": "pumpernickel_toast_cream_cheese_mushroom_bacon"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "create"
+      ]
+    },
+    {
+      "condition": "createfood:enabled",
+      "id": "pumpernickel_toast_cream_cheese_mushroom_bacon"
+    }
+  ]
+}

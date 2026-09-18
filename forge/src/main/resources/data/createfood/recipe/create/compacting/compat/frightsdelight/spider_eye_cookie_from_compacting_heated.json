@@ -1,0 +1,52 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "create"
+        },
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "frightsdelight"
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "frightsdelight:spider_eye_cookie"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "create"
+            ]
+        },
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "frightsdelight"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
+            "id": "frightsdelight:spider_eye_cookie"
+        }
+    ],
+    "type": "create:compacting",
+    "heat_requirement": "heated",
+    "ingredients": [
+        {
+            "tag": "c:sweet_dough"
+        },
+        {
+            "item": "minecraft:spider_eye"
+        }
+    ],
+    "results": [
+        {
+            "count": 8,
+            "item": {
+                "id": "frightsdelight:spider_eye_cookie"
+            }
+        }
+    ]
+}

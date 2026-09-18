@@ -1,0 +1,26 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:beef_bun_cheese_onion"
+        },
+        {
+            "tag": "c:cooked_pork"
+        }
+    ],
+    "result": {
+        "id": "createfood:beef_bun_cheese_onion_bacon"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "beef_bun_cheese_onion_bacon"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "beef_bun_cheese_onion_bacon"
+        }
+    ]
+}

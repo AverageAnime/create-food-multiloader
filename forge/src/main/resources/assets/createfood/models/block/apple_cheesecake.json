@@ -1,0 +1,9 @@
+﻿{
+	"parent":  "createfood:block/pie_base",
+	"textures":  {
+					"bottom":  "createfood:block/smores_pie_bottom",
+					"top":  "createfood:block/apple_cheesecake_top",
+					"side":  "createfood:block/smores_pie_side",
+					"particle":  "createfood:block/smores_pie_bottom"
+				}
+}

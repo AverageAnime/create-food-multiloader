@@ -1,0 +1,34 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "key": {
+        "-": {
+            "item": "minecraft:stick"
+        },
+        "i": {
+            "item": "minecraft:ice"
+        },
+        "b": {
+            "item": "minecraft:glow_berries"
+        }
+    },
+    "pattern": [
+        "   ",
+        "ib ",
+        "-i "
+    ],
+    "result": {
+        "id": "createfood:glow_berry_popsicle"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "glow_berry_popsicle"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "glow_berry_popsicle"
+        }
+    ]
+}

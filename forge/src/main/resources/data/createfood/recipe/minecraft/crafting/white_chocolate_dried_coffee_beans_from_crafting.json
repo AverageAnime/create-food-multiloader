@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "c:dried_coffee_beans"
+    },
+    {
+      "tag": "c:bar_of_white_chocolate"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "createfood:white_chocolate_dried_coffee_beans"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "white_chocolate_dried_coffee_beans"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "white_chocolate_dried_coffee_beans"
+    }
+  ]
+}

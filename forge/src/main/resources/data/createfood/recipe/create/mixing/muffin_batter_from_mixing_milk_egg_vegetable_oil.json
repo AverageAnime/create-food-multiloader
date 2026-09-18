@@ -1,0 +1,54 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "type": "fluid_tag",
+      "amount": 1000,
+      "fluid_tag": "c:milk"
+    },
+    {
+      "type": "fluid_tag",
+      "amount": 250,
+      "fluid_tag": "c:egg"
+    },
+    {
+      "type": "fluid_tag",
+      "amount": 250,
+      "fluid_tag": "c:vegetable_oil"
+    },
+    {
+      "tag": "c:sugar"
+    },
+    {
+      "tag": "c:flours/wheat"
+    }
+  ],
+  "results": [
+    {
+      "amount": 1000,
+      "id": "createfood:muffin_batter"
+    }
+  ],
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    },
+    {
+      "type": "createfood:enabled",
+      "id": "muffin_batter"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "create"
+      ]
+    },
+    {
+      "condition": "createfood:enabled",
+      "id": "muffin_batter"
+    }
+  ]
+}

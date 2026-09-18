@@ -1,0 +1,165 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "farmersdelight"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "culturaldelights"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "culturalcreators"
+    },
+    {
+      "type": "createfood:enabled",
+      "id": "culturaldelights:exotic_roll_medley"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "create"
+      ]
+    },
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "farmersdelight"
+      ]
+    },
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "culturaldelights"
+      ]
+    },
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "culturalcreators"
+      ]
+    },
+    {
+      "condition": "createfood:enabled",
+      "id": "culturaldelights:exotic_roll_medley"
+    }
+  ],
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "tag": "c:bowl"
+  },
+  "loops": 1,
+  "results": [
+    {
+      "id": "culturaldelights:exotic_roll_medley"
+    }
+  ],
+  "sequence": [
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "culturalcreators:incomplete_exotic_roll_medley"
+        },
+        {
+          "item": "culturaldelights:chicken_roll_slice"
+        }
+      ],
+      "results": [
+        {
+          "id": "culturalcreators:incomplete_exotic_roll_medley"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "culturalcreators:incomplete_exotic_roll_medley"
+        },
+        {
+          "item": "culturaldelights:chicken_roll_slice"
+        }
+      ],
+      "results": [
+        {
+          "id": "culturalcreators:incomplete_exotic_roll_medley"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "culturalcreators:incomplete_exotic_roll_medley"
+        },
+        {
+          "item": "culturaldelights:tropical_roll"
+        }
+      ],
+      "results": [
+        {
+          "id": "culturalcreators:incomplete_exotic_roll_medley"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "culturalcreators:incomplete_exotic_roll_medley"
+        },
+        {
+          "item": "culturaldelights:tropical_roll"
+        }
+      ],
+      "results": [
+        {
+          "id": "culturalcreators:incomplete_exotic_roll_medley"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "culturalcreators:incomplete_exotic_roll_medley"
+        },
+        {
+          "item": "culturaldelights:pufferfish_roll"
+        }
+      ],
+      "results": [
+        {
+          "id": "culturalcreators:incomplete_exotic_roll_medley"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "culturalcreators:incomplete_exotic_roll_medley"
+        },
+        {
+          "item": "culturaldelights:pufferfish_roll"
+        }
+      ],
+      "results": [
+        {
+          "id": "culturalcreators:incomplete_exotic_roll_medley"
+        }
+      ]
+    }
+  ],
+  "transitional_item": {
+    "id": "culturalcreators:incomplete_exotic_roll_medley"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "delightfulcreators:beef_stew",
+      "required": false
+    },
+    {
+      "id": "delightfulcreators:flowing_beef_stew",
+      "required": false
+    }
+  ]
+}

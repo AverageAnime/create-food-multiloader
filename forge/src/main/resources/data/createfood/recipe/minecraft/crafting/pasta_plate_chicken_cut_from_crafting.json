@@ -1,0 +1,26 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "pasta_plate_chicken_cut"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "pasta_plate_chicken_cut"
+        }
+    ],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:pasta_plate"
+        },
+        {
+            "tag": "c:cooked_chicken"
+        }
+    ],
+    "result": {
+        "id": "createfood:pasta_plate_chicken_cut"
+    }
+}

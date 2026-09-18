@@ -1,0 +1,26 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:sausage_biscuit"
+        },
+        {
+            "tag": "c:cheeses"
+        }
+    ],
+    "result": {
+        "id": "createfood:sausage_biscuit_cheese"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "sausage_biscuit_cheese"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "sausage_biscuit_cheese"
+        }
+    ]
+}

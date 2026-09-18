@@ -1,0 +1,103 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "farmersdelight"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "culturaldelights"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "culturalcreators"
+    },
+    {
+      "type": "createfood:enabled",
+      "id": "culturaldelights:elote"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "create"
+      ]
+    },
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "farmersdelight"
+      ]
+    },
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "culturaldelights"
+      ]
+    },
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "culturalcreators"
+      ]
+    },
+    {
+      "condition": "createfood:enabled",
+      "id": "culturaldelights:elote"
+    }
+  ],
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "item": "minecraft:stick"
+  },
+  "loops": 1,
+  "results": [
+    {
+      "id": "culturaldelights:elote"
+    }
+  ],
+  "sequence": [
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "culturalcreators:incomplete_elote"
+        },
+        {
+          "tag": "c:cooked_corn"
+        }
+      ],
+      "results": [
+        {
+          "id": "culturalcreators:incomplete_elote"
+        }
+      ]
+    },
+    {
+      "type": "create:filling",
+      "ingredients": [
+        {
+          "item": "culturalcreators:incomplete_elote"
+        },
+        {
+          "type": "fluid_tag",
+          "amount": 250,
+          "fluid_tag": "c:milk"
+        }
+      ],
+      "results": [
+        {
+          "id": "culturalcreators:incomplete_elote"
+        }
+      ]
+    }
+  ],
+  "transitional_item": {
+    "id": "culturalcreators:incomplete_elote"
+  }
+}

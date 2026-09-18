@@ -1,0 +1,41 @@
+{
+  "type": "create:deploying",
+  "ingredients": [
+    {
+      "tag": "c:scone"
+    },
+    {
+      "tag": "c:butter"
+    }
+  ],
+  "results": [
+    {
+      "count": 1,
+      "item": {
+        "id": "createfood:scone_butter"
+      }
+    }
+  ],
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    },
+    {
+      "type": "createfood:enabled",
+      "id": "scone_butter"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "create"
+      ]
+    },
+    {
+      "condition": "createfood:enabled",
+      "id": "scone_butter"
+    }
+  ]
+}

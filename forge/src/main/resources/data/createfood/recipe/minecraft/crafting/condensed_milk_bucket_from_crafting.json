@@ -1,0 +1,35 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:bucket"
+        },
+        {
+            "tag": "c:condensed_milk_bottle"
+        },
+        {
+            "tag": "c:condensed_milk_bottle"
+        },
+        {
+            "tag": "c:condensed_milk_bottle"
+        },
+        {
+            "tag": "c:condensed_milk_bottle"
+        }
+    ],
+    "result": {
+        "id": "createfood:condensed_milk_bucket"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "condensed_milk_bucket"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "condensed_milk_bucket"
+        }
+    ]
+}

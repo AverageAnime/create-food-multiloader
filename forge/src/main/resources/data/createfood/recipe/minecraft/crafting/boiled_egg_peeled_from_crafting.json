@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:boiled_egg"
+        }
+    ],
+    "result": {
+        "id": "createfood:boiled_egg_peeled"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "boiled_egg_peeled"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "boiled_egg_peeled"
+        }
+    ]
+}

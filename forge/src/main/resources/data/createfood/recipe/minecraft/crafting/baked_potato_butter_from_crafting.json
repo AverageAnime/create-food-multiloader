@@ -1,0 +1,26 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "baked_potato_butter"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "baked_potato_butter"
+        }
+    ],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:baked_potato"
+        },
+        {
+            "tag": "c:butter"
+        }
+    ],
+    "result": {
+        "id": "createfood:baked_potato_butter"
+    }
+}

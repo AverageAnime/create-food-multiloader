@@ -1,0 +1,26 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "chicken_bun_cheese_tomato"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "chicken_bun_cheese_tomato"
+        }
+    ],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:chicken_bun_tomato"
+        },
+        {
+            "tag": "c:cheeses"
+        }
+    ],
+    "result": {
+        "id": "createfood:chicken_bun_cheese_tomato"
+    }
+}

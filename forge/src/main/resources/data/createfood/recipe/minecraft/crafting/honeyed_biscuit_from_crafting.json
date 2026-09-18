@@ -1,0 +1,26 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:biscuit"
+        },
+        {
+            "item": "minecraft:honey_bottle"
+        }
+    ],
+    "result": {
+        "id": "createfood:honeyed_biscuit"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "honeyed_biscuit"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "honeyed_biscuit"
+        }
+    ]
+}

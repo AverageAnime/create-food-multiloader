@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "tag": "c:macaroni"
+    },
+    {
+      "tag": "c:sausages"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "createfood:macaroni_bowl_sausage"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "macaroni_bowl_sausage"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "macaroni_bowl_sausage"
+    }
+  ]
+}

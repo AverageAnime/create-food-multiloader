@@ -1,0 +1,41 @@
+{
+  "type": "create:deploying",
+  "ingredients": [
+    {
+      "tag": "c:donut_base"
+    },
+    {
+      "tag": "c:berry_jam_bottle"
+    }
+  ],
+  "results": [
+    {
+      "count": 1,
+      "item": {
+        "id": "createfood:berry_jam_donut"
+      }
+    }
+  ],
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    },
+    {
+      "type": "createfood:enabled",
+      "id": "berry_jam_donut"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "create"
+      ]
+    },
+    {
+      "condition": "createfood:enabled",
+      "id": "berry_jam_donut"
+    }
+  ]
+}

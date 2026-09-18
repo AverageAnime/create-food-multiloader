@@ -1,0 +1,26 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "fish_taco"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "fish_taco"
+        }
+    ],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:taco_shell"
+        },
+        {
+            "tag": "c:cooked_fishes"
+        }
+    ],
+    "result": {
+        "id": "createfood:fish_taco"
+    }
+}

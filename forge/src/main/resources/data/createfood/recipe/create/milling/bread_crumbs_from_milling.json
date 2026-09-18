@@ -1,0 +1,45 @@
+{
+    "type": "create:milling",
+    "ingredients": [
+        {
+            "tag": "c:bread_slice"
+        }
+    ],
+    "processing_time": 80,
+    "results": [
+        {
+            "count": 2,
+            "item": {
+                "id": "createfood:bread_crumbs"
+            }
+        },
+        {
+            "chance": 0.25,
+            "item": {
+                "id": "createfood:bread_crumbs"
+            }
+        }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "create"
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "bread_crumbs"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "create"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
+            "id": "bread_crumbs"
+        }
+    ]
+}

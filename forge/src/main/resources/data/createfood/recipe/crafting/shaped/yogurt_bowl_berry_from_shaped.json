@@ -1,0 +1,31 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "yogurt_bowl_berry"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "yogurt_bowl_berry"
+    }
+  ],
+  "key": {
+    "1": {
+      "item": "minecraft:sweet_berries"
+    },
+    "2": {
+      "tag": "c:yogurt_bowl"
+    }
+  },
+  "pattern": [
+    "1",
+    "2"
+  ],
+  "result": {
+    "count": 1,
+    "id": "createfood:yogurt_bowl_berry"
+  }
+}

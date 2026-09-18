@@ -1,0 +1,8 @@
+{
+  "values": [
+    {
+      "id": "createfood:cupcake_base",
+      "required": false
+    }
+  ]
+}

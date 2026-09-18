@@ -1,0 +1,25 @@
+{
+    "type": "minecraft:campfire_cooking",
+    "category": "food",
+    "cookingtime": 200,
+    "experience": 0.1,
+    "ingredient": {
+        "tag": "c:salt_dough"
+    },
+    "result": {
+        "count": 1,
+        "id": "createfood:bun"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "bun"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "bun"
+        }
+    ]
+}

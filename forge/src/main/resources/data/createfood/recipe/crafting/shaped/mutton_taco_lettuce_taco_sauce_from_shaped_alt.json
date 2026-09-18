@@ -1,0 +1,30 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "mutton_taco_lettuce_taco_sauce"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "mutton_taco_lettuce_taco_sauce"
+    }
+  ],
+  "key": {
+    "1": {
+      "tag": "c:taco_sauce_bottle"
+    },
+    "2": {
+      "tag": "c:mutton_taco_lettuce"
+    }
+  },
+  "pattern": [
+    "1",
+    "2"
+  ],
+  "result": {
+    "id": "createfood:mutton_taco_lettuce_taco_sauce"
+  }
+}

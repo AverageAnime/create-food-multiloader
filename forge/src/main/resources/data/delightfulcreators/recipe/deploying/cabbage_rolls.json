@@ -1,0 +1,48 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "farmersdelight"
+    },
+    {
+      "type": "createfood:enabled",
+      "id": "farmersdelight:cabbage_rolls"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "create"
+      ]
+    },
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "farmersdelight"
+      ]
+    },
+    {
+      "condition": "createfood:enabled",
+      "id": "farmersdelight:cabbage_rolls"
+    }
+  ],
+  "type": "create:deploying",
+  "ingredients": [
+    {
+      "tag": "c:foods/leafy_green"
+    },
+    {
+      "tag": "farmersdelight:cabbage_roll_ingredients"
+    }
+  ],
+  "results": [
+    {
+      "id": "farmersdelight:cabbage_rolls"
+    }
+  ]
+}

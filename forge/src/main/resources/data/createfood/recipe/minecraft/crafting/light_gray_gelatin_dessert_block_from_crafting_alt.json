@@ -1,0 +1,26 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:gelatin_dessert_block"
+        },
+        {
+            "tag": "c:dyes/light_gray"
+        }
+    ],
+    "result": {
+        "id": "createfood:light_gray_gelatin_dessert_block"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "light_gray_gelatin_dessert_block"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "light_gray_gelatin_dessert_block"
+        }
+    ]
+}

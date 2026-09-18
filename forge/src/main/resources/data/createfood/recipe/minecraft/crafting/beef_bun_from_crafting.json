@@ -1,0 +1,26 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:bun"
+        },
+        {
+            "tag": "c:cooked_beef"
+        }
+    ],
+    "result": {
+        "id": "createfood:beef_bun"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "beef_bun"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "beef_bun"
+        }
+    ]
+}

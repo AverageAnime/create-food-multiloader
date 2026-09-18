@@ -1,0 +1,217 @@
+{
+	"format_version": "1.9.0",
+	"credit": "Made with Blockbench",
+	"parent": "minecraft:block/block",
+	"textures": {
+		"3": "createfood:item/fried_egg_plate",
+		"particle": "createfood:block/plate_block",
+		"plate": "createfood:block/plate_block"
+	},
+	"elements": [
+		{
+			"from": [1, 0, 1],
+			"to": [15, 1, 15],
+			"rotation": {
+				"angle": 0,
+				"axis": "y",
+				"origin": [8, 0.5, 8]
+			},
+			"faces": {
+				"north": {
+					"uv": [1, 14, 15, 15],
+					"texture": "#plate"
+				},
+				"east": {
+					"uv": [2, 15, 1, 1],
+					"rotation": 90,
+					"texture": "#plate"
+				},
+				"south": {
+					"uv": [15, 1, 1, 2],
+					"texture": "#plate"
+				},
+				"west": {
+					"uv": [14, 1, 15, 15],
+					"rotation": 90,
+					"texture": "#plate"
+				},
+				"up": {
+					"uv": [1, 1, 15, 15],
+					"rotation": 180,
+					"texture": "#plate"
+				},
+				"down": {
+					"uv": [1, 15, 15, 1],
+					"rotation": 180,
+					"texture": "#plate"
+				}
+			}
+		},
+		{
+			"from": [1, 1, 1],
+			"to": [15, 2, 15],
+			"rotation": {
+				"angle": 0,
+				"axis": "y",
+				"origin": [0, 1, 0]
+			},
+			"faces": {
+				"north": {
+					"uv": [15, 1, 1, 2],
+					"texture": "#plate"
+				},
+				"east": {
+					"uv": [14, 1, 15, 15],
+					"rotation": 90,
+					"texture": "#plate"
+				},
+				"south": {
+					"uv": [1, 14, 15, 15],
+					"texture": "#plate"
+				},
+				"west": {
+					"uv": [2, 15, 1, 1],
+					"rotation": 90,
+					"texture": "#plate"
+				},
+				"up": {
+					"uv": [1, 1, 15, 15],
+					"texture": "#plate"
+				},
+				"down": {
+					"uv": [1, 15, 15, 1],
+					"texture": "#plate"
+				}
+			}
+		},
+		{
+			"from": [7.41514, 2, 1.07788],
+			"to": [10.41514, 3, 5.07788],
+			"rotation": {
+				"angle": 22.5,
+				"axis": "y",
+				"origin": [7.70617, 3, 7.45565]
+			},
+			"faces": {
+				"north": {
+					"uv": [10, 8, 11, 11],
+					"rotation": 90,
+					"texture": "#3"
+				},
+				"east": {
+					"uv": [7, 10, 11, 11],
+					"texture": "#3"
+				},
+				"south": {
+					"uv": [7, 11, 8, 8],
+					"rotation": 90,
+					"texture": "#3"
+				},
+				"west": {
+					"uv": [7, 8, 11, 9],
+					"texture": "#3"
+				},
+				"up": {
+					"uv": [7, 8, 11, 11],
+					"rotation": 270,
+					"texture": "#3"
+				},
+				"down": {
+					"uv": [7, 8, 11, 11],
+					"rotation": 90,
+					"texture": "#3"
+				}
+			}
+		},
+		{
+			"from": [4.41514, 2, 1.07788],
+			"to": [7.41514, 3, 5.07788],
+			"rotation": {
+				"angle": 22.5,
+				"axis": "y",
+				"origin": [7.70617, 3, 7.45565]
+			},
+			"faces": {
+				"north": {
+					"uv": [7, 11, 8, 8],
+					"rotation": 90,
+					"texture": "#3"
+				},
+				"east": {
+					"uv": [7, 8, 11, 9],
+					"texture": "#3"
+				},
+				"south": {
+					"uv": [10, 8, 11, 11],
+					"rotation": 90,
+					"texture": "#3"
+				},
+				"west": {
+					"uv": [7, 10, 11, 11],
+					"texture": "#3"
+				},
+				"up": {
+					"uv": [7, 8, 11, 11],
+					"rotation": 90,
+					"texture": "#3"
+				},
+				"down": {
+					"uv": [7, 8, 11, 11],
+					"rotation": 270,
+					"texture": "#3"
+				}
+			}
+		},
+		{
+			"from": [6.41514, 3, 2.07788],
+			"to": [8.41514, 4, 4.07788],
+			"rotation": {
+				"angle": 22.5,
+				"axis": "y",
+				"origin": [7.70617, 3, 7.45565]
+			},
+			"faces": {
+				"north": {
+					"uv": [8, 9, 10, 10],
+					"texture": "#3"
+				},
+				"east": {
+					"uv": [8, 8, 10, 9],
+					"texture": "#3"
+				},
+				"south": {
+					"uv": [10, 8, 8, 9],
+					"texture": "#3"
+				},
+				"west": {
+					"uv": [10, 9, 8, 10],
+					"texture": "#3"
+				},
+				"up": {
+					"uv": [8, 8, 10, 10],
+					"rotation": 180,
+					"texture": "#3"
+				},
+				"down": {
+					"uv": [0, 0, 2, 2],
+					"rotation": 180,
+					"texture": "#3"
+				}
+			}
+		}
+	],
+	"groups": [
+		{
+			"name": "plate",
+			"origin": [0, 1, 0],
+			"color": 0,
+			"children": [0, 1]
+		},
+		{
+			"name": "bread",
+			"origin": [8, 8, 8],
+			"color": 0,
+			"children": [2, 3, 4]
+		}
+	]
+}

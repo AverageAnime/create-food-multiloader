@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "fruitsdelight:hamimelon",
+      "required": false
+    },
+    {
+      "id": "#c:hamimelon_slice",
+      "required": false
+    }
+  ]
+}

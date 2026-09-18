@@ -1,0 +1,16 @@
+{
+  "values": [
+    {
+      "id": "createfood:donut_base",
+      "required": false
+    },
+    {
+      "id": "create_snt:donut",
+      "required": false
+    },
+    {
+      "id": "ratatouille_fried_delights:fried_donut",
+      "required": false
+    }
+  ]
+}

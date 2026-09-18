@@ -1,0 +1,30 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "honeyed_berries"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "honeyed_berries"
+    }
+  ],
+  "key": {
+    "1": {
+      "item": "minecraft:honey_bottle"
+    },
+    "2": {
+      "item": "minecraft:sweet_berries"
+    }
+  },
+  "pattern": [
+    "1",
+    "2"
+  ],
+  "result": {
+    "id": "createfood:honeyed_berries"
+  }
+}

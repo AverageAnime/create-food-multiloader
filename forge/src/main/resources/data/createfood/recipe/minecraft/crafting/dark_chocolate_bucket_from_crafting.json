@@ -1,0 +1,35 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:bucket"
+        },
+        {
+            "tag": "c:dark_chocolate_bottle"
+        },
+        {
+            "tag": "c:dark_chocolate_bottle"
+        },
+        {
+            "tag": "c:dark_chocolate_bottle"
+        },
+        {
+            "tag": "c:dark_chocolate_bottle"
+        }
+    ],
+    "result": {
+        "id": "createfood:dark_chocolate_bucket"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "dark_chocolate_bucket"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "dark_chocolate_bucket"
+        }
+    ]
+}

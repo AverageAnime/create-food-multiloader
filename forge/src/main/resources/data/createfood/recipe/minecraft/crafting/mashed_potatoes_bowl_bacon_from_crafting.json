@@ -1,0 +1,26 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:mashed_potatoes_bowl"
+        },
+        {
+            "tag": "c:cooked_pork"
+        }
+    ],
+    "result": {
+        "id": "createfood:mashed_potatoes_bowl_bacon"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "mashed_potatoes_bowl_bacon"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "mashed_potatoes_bowl_bacon"
+        }
+    ]
+}

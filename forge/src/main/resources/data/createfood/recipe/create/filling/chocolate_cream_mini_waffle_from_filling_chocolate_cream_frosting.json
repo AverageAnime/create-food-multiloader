@@ -1,0 +1,42 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "create"
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "chocolate_cream_mini_waffle"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "create"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
+            "id": "chocolate_cream_mini_waffle"
+        }
+    ],
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "tag": "c:mini_waffle"
+        },
+        {
+            "type": "fluid_tag",
+            "amount": 250,
+            "fluid_tag": "c:chocolate_cream_frosting"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:chocolate_cream_mini_waffle"
+            }
+        }
+    ]
+}

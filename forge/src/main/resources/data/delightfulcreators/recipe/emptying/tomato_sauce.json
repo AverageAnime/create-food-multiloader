@@ -1,0 +1,59 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "farmersdelight"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "delightfulcreators"
+    },
+    {
+      "type": "createfood:enabled",
+      "id": "minecraft:bowl"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "create"
+      ]
+    },
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "farmersdelight"
+      ]
+    },
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "delightfulcreators"
+      ]
+    },
+    {
+      "condition": "createfood:enabled",
+      "id": "minecraft:bowl"
+    }
+  ],
+  "type": "create:emptying",
+  "ingredients": [
+    {
+      "item": "farmersdelight:tomato_sauce"
+    }
+  ],
+  "results": [
+    {
+      "id": "minecraft:bowl"
+    },
+    {
+      "amount": 250,
+      "id": "delightfulcreators:tomato_sauce"
+    }
+  ]
+}

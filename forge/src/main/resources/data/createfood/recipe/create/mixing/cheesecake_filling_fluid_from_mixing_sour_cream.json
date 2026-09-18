@@ -1,0 +1,59 @@
+{
+    "type": "create:mixing",
+    "ingredients": [
+        {
+            "type": "fluid_tag",
+            "amount": 250,
+            "fluid_tag": "c:sour_cream"
+        },
+        {
+            "item": "createfood:cream_cheese"
+        },
+        {
+            "item": "createfood:cream_cheese"
+        },
+        {
+            "item": "createfood:cream_cheese"
+        },
+        {
+            "tag": "c:sugar"
+        },
+        {
+            "tag": "c:salt"
+        },
+        {
+            "tag": "c:eggs"
+        },
+        {
+            "tag": "c:eggs"
+        }
+    ],
+    "results": [
+        {
+            "amount": 1000,
+            "id": "createfood:cheesecake_filling"
+        }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "create"
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "cheesecake_filling"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "create"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
+            "id": "cheesecake_filling"
+        }
+    ]
+}

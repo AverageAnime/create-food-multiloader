@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "c:pumpernickel_toast_cream_cheese"
+    },
+    {
+      "tag": "c:mushrooms"
+    },
+    {
+      "tag": "c:cooked_pork"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "createfood:pumpernickel_toast_cream_cheese_mushroom_bacon"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "pumpernickel_toast_cream_cheese_mushroom_bacon"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "pumpernickel_toast_cream_cheese_mushroom_bacon"
+    }
+  ]
+}

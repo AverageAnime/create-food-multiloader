@@ -1,0 +1,31 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "pasta_plate_chicken_cut_alfredo_sauce"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "pasta_plate_chicken_cut_alfredo_sauce"
+    }
+  ],
+  "key": {
+    "1": {
+      "tag": "c:cooked_chicken"
+    },
+    "2": {
+      "tag": "c:pasta_plate_alfredo_sauce"
+    }
+  },
+  "pattern": [
+    "1",
+    "2"
+  ],
+  "result": {
+    "count": 1,
+    "id": "createfood:pasta_plate_chicken_cut_alfredo_sauce"
+  }
+}

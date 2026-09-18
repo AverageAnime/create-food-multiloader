@@ -1,0 +1,39 @@
+{
+    "type": "farmersdelight:cooking",
+    "experience": 0.25,
+    "ingredients": [
+        {
+            "tag": "c:brown_sugar"
+        },
+        {
+            "tag": "c:brown_sugar"
+        }
+    ],
+    "recipe_book_tab": "misc",
+    "result": {
+        "count": 1,
+        "id": "createfood:butterscotch"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "farmersdelight"
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "butterscotch"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "farmersdelight"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
+            "id": "butterscotch"
+        }
+    ]
+}

@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "createfood:vegetable_oil",
+      "required": false
+    },
+    {
+      "id": "createfood:flowing_vegetable_oil",
+      "required": false
+    }
+  ]
+}

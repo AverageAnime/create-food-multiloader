@@ -1,0 +1,62 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "delightfulcreators"
+    },
+    {
+      "type": "createfood:enabled",
+      "id": "delightfulcreators:beetroot_soup"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "create"
+      ]
+    },
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "delightfulcreators"
+      ]
+    },
+    {
+      "condition": "createfood:enabled",
+      "id": "delightfulcreators:beetroot_soup"
+    }
+  ],
+  "type": "create:mixing",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "tag": "c:beetroot"
+    },
+    {
+      "tag": "c:beetroot"
+    },
+    {
+      "tag": "c:beetroot"
+    },
+    {
+      "tag": "c:beetroot"
+    },
+    {
+      "tag": "c:beetroot"
+    },
+    {
+      "tag": "c:beetroot"
+    }
+  ],
+  "results": [
+    {
+      "amount": 250,
+      "id": "delightfulcreators:beetroot_soup"
+    }
+  ]
+}

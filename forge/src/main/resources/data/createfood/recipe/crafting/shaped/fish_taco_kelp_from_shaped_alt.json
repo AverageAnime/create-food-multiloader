@@ -1,0 +1,30 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "fish_taco_kelp"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "fish_taco_kelp"
+    }
+  ],
+  "key": {
+    "1": {
+      "item": "minecraft:dried_kelp"
+    },
+    "2": {
+      "tag": "c:fish_taco"
+    }
+  },
+  "pattern": [
+    "1",
+    "2"
+  ],
+  "result": {
+    "id": "createfood:fish_taco_kelp"
+  }
+}

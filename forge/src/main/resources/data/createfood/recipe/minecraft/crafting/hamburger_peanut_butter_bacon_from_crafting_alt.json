@@ -1,0 +1,49 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:not",
+            "value": {
+                "type": "neoforge:tag_empty",
+                "tag": "c:peanut_butter"
+            }
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "hamburger_peanut_butter_bacon"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:tags_populated",
+            "registry": "minecraft:item",
+            "values": [
+                "c:peanut_butter"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
+            "id": "hamburger_peanut_butter_bacon"
+        }
+    ],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:bun"
+        },
+        {
+            "tag": "c:cooked_beef"
+        },
+        {
+            "tag": "c:peanut_butter"
+        },
+        {
+            "tag": "c:cooked_pork"
+        },
+        {
+            "tag": "c:bun"
+        }
+    ],
+    "result": {
+        "id": "createfood:hamburger_peanut_butter_bacon"
+    }
+}

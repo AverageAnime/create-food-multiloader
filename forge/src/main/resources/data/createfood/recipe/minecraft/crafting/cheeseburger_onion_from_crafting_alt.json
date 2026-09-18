@@ -1,0 +1,35 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:bun"
+        },
+        {
+            "tag": "c:cooked_beef"
+        },
+        {
+            "tag": "c:cheeses"
+        },
+        {
+            "tag": "c:onion"
+        },
+        {
+            "tag": "c:bun"
+        }
+    ],
+    "result": {
+        "id": "createfood:cheeseburger_onion"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "cheeseburger_onion"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "cheeseburger_onion"
+        }
+    ]
+}

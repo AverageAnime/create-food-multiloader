@@ -1,0 +1,30 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "sliced_warped_fungus_salt"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "sliced_warped_fungus_salt"
+    }
+  ],
+  "key": {
+    "1": {
+      "tag": "c:salt"
+    },
+    "2": {
+      "tag": "c:sliced_warped_fungus"
+    }
+  },
+  "pattern": [
+    "1",
+    "2"
+  ],
+  "result": {
+    "id": "createfood:sliced_warped_fungus_salt"
+  }
+}

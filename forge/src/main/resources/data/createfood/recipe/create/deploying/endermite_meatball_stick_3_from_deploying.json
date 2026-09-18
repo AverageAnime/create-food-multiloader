@@ -1,0 +1,40 @@
+{
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "item": "createfood:endermite_meatball_stick_2"
+        },
+        {
+            "tag": "c:endermite_meatball"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:endermite_meatball_stick_3"
+            }
+        }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "create"
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "endermite_meatball_stick_3"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "create"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
+            "id": "endermite_meatball_stick_3"
+        }
+    ]
+}

@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "createfood:corn_flour",
+      "required": false
+    },
+    {
+      "id": "hearthandharvest:corn_meal",
+      "required": false
+    }
+  ]
+}

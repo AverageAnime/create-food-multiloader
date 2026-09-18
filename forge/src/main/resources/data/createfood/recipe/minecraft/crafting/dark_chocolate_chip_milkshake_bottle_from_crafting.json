@@ -1,0 +1,29 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "dark_chocolate_chip_milkshake_bottle"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "dark_chocolate_chip_milkshake_bottle"
+        }
+    ],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:milkshake"
+        },
+        {
+            "tag": "c:dark_chocolate_chips"
+        },
+        {
+            "item": "minecraft:glass_bottle"
+        }
+    ],
+    "result": {
+        "id": "createfood:dark_chocolate_chip_milkshake_bottle"
+    }
+}

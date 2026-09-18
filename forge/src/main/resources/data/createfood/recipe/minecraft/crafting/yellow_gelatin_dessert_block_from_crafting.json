@@ -1,0 +1,29 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:yellow_gelatin_mix_bucket"
+        },
+        {
+            "item": "minecraft:ice"
+        },
+        {
+            "item": "minecraft:ice"
+        }
+    ],
+    "result": {
+        "id": "createfood:yellow_gelatin_dessert_block"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "yellow_gelatin_dessert_block"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "yellow_gelatin_dessert_block"
+        }
+    ]
+}

@@ -1,0 +1,41 @@
+{
+    "type": "farmersdelight:cutting",
+    "ingredients": [
+        {
+            "tag": "c:ground_pork"
+        }
+    ],
+    "tool": {
+        "tag": "c:tools/knife"
+    },
+    "result": [
+        {
+            "item": {
+                "count": 2,
+                "id": "createfood:raw_pork_meatball"
+            }
+        }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "farmersdelight"
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "raw_pork_meatball"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "farmersdelight"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
+            "id": "raw_pork_meatball"
+        }
+    ]
+}

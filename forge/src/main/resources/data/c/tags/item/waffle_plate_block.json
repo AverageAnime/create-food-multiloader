@@ -1,0 +1,8 @@
+{
+  "values": [
+    {
+      "id": "createfood:waffle_plate_block",
+      "required": false
+    }
+  ]
+}

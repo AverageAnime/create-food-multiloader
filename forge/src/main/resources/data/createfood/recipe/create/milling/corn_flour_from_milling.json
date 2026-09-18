@@ -1,0 +1,59 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "create"
+        },
+        {
+            "type": "neoforge:not",
+            "value": {
+                "type": "neoforge:tag_empty",
+                "tag": "c:corn_kernel"
+            }
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "corn_flour"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "create"
+            ]
+        },
+        {
+            "condition": "fabric:tags_populated",
+            "registry": "minecraft:item",
+            "values": [
+                "c:corn_kernel"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
+            "id": "corn_flour"
+        }
+    ],
+    "type": "create:milling",
+    "ingredients": [
+        {
+            "tag": "c:corn_kernel"
+        }
+    ],
+    "processing_time": 80,
+    "results": [
+        {
+            "count": 2,
+            "item": {
+                "id": "createfood:corn_flour"
+            }
+        },
+        {
+            "chance": 0.5,
+            "item": {
+                "id": "createfood:corn_flour"
+            }
+        }
+    ]
+}

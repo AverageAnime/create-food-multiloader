@@ -1,0 +1,25 @@
+{
+    "type": "minecraft:campfire_cooking",
+    "category": "food",
+    "cookingtime": 200,
+    "experience": 0.1,
+    "ingredient": {
+        "tag": "c:cheese_sandwich"
+    },
+    "result": {
+        "count": 1,
+        "id": "createfood:grilled_cheese_sandwich"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "grilled_cheese_sandwich"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "grilled_cheese_sandwich"
+        }
+    ]
+}

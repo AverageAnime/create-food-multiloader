@@ -1,0 +1,32 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "mixed_salad_beetroot_carrot"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "mixed_salad_beetroot_carrot"
+        }
+    ],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:foods/leafy_green"
+        },
+        {
+            "tag": "c:carrot"
+        },
+        {
+            "tag": "c:beetroot"
+        },
+        {
+            "item": "minecraft:bowl"
+        }
+    ],
+    "result": {
+        "id": "createfood:mixed_salad_beetroot_carrot"
+    }
+}

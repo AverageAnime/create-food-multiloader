@@ -1,0 +1,20 @@
+{
+  "values": [
+    {
+      "id": "createfood:sausages",
+      "required": false
+    },
+    {
+      "id": "createfood:sausage_bits",
+      "required": false
+    },
+    {
+      "id": "hearthandharvest:cooked_sausage",
+      "required": false
+    },
+    {
+      "id": "ratatouille:sausage",
+      "required": false
+    }
+  ]
+}

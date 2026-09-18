@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "minecraft:warped_fungus",
+      "required": false
+    },
+    {
+      "id": "createfood:sliced_warped_fungus",
+      "required": false
+    }
+  ]
+}

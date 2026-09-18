@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "createfood:glow_berry_jam_bottle",
+      "required": false
+    },
+    {
+      "id": "hearthandharvest:glow_berry_jam",
+      "required": false
+    }
+  ]
+}

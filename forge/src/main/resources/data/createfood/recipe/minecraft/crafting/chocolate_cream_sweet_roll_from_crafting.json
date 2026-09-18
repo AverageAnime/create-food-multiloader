@@ -1,0 +1,26 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:sweet_roll_base"
+        },
+        {
+            "tag": "c:chocolate_cream_frosting"
+        }
+    ],
+    "result": {
+        "id": "createfood:chocolate_cream_sweet_roll"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "chocolate_cream_sweet_roll"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "chocolate_cream_sweet_roll"
+        }
+    ]
+}

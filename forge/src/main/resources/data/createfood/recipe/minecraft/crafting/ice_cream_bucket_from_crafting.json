@@ -1,0 +1,35 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:bucket"
+        },
+        {
+            "tag": "c:ice_cream_bowl"
+        },
+        {
+            "tag": "c:ice_cream_bowl"
+        },
+        {
+            "tag": "c:ice_cream_bowl"
+        },
+        {
+            "tag": "c:ice_cream_bowl"
+        }
+    ],
+    "result": {
+        "id": "createfood:ice_cream_bucket"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "ice_cream_bucket"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "ice_cream_bucket"
+        }
+    ]
+}

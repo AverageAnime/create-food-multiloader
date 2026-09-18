@@ -1,0 +1,8 @@
+{
+  "values": [
+    {
+      "id": "createfood:ration_box",
+      "required": false
+    }
+  ]
+}

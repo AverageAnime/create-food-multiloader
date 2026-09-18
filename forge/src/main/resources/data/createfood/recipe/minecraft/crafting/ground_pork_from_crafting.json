@@ -1,0 +1,23 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "ground_pork"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "ground_pork"
+        }
+    ],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:porkchop"
+        }
+    ],
+    "result": {
+        "id": "createfood:ground_pork"
+    }
+}

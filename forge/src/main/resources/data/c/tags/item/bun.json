@@ -1,0 +1,24 @@
+{
+  "values": [
+    {
+      "id": "createfood:bun",
+      "required": false
+    },
+    {
+      "id": "bakery:bun",
+      "required": false
+    },
+    {
+      "id": "ratatouille_fried_delights:burger_bun",
+      "required": false
+    },
+    {
+      "id": "ratatouille_fried_delights:top_burger_bun",
+      "required": false
+    },
+    {
+      "id": "ratatouille_fried_delights:bottom_burger_bun",
+      "required": false
+    }
+  ]
+}

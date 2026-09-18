@@ -1,0 +1,35 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:bucket"
+        },
+        {
+            "tag": "c:fruit_smoothie_bottle"
+        },
+        {
+            "tag": "c:fruit_smoothie_bottle"
+        },
+        {
+            "tag": "c:fruit_smoothie_bottle"
+        },
+        {
+            "tag": "c:fruit_smoothie_bottle"
+        }
+    ],
+    "result": {
+        "id": "createfood:fruit_smoothie_bucket"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "fruit_smoothie_bucket"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "fruit_smoothie_bucket"
+        }
+    ]
+}

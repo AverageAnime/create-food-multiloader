@@ -1,0 +1,32 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "egg_burrito_cheese"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "egg_burrito_cheese"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "c:taco_shell_ingredient"
+    },
+    {
+      "tag": "c:egg_burrito_ingredients"
+    },
+    {
+      "tag": "c:egg_burrito_ingredients"
+    },
+    {
+      "tag": "c:cheeses"
+    }
+  ],
+  "result": {
+    "id": "createfood:egg_burrito_cheese"
+  }
+}

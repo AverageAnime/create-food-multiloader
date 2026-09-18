@@ -1,0 +1,23 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "ground_rabbit"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "ground_rabbit"
+        }
+    ],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:rabbit"
+        }
+    ],
+    "result": {
+        "id": "createfood:ground_rabbit"
+    }
+}

@@ -1,0 +1,32 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:stick"
+        },
+        {
+            "item": "minecraft:ice"
+        },
+        {
+            "item": "minecraft:ice"
+        },
+        {
+            "item": "minecraft:glow_berries"
+        }
+    ],
+    "result": {
+        "id": "createfood:glow_berry_popsicle"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "glow_berry_popsicle"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "glow_berry_popsicle"
+        }
+    ]
+}

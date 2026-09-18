@@ -1,0 +1,30 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "raw_chorus_fruit_cheesecake"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "raw_chorus_fruit_cheesecake"
+    }
+  ],
+  "key": {
+    "1": {
+      "tag": "c:chorus_fruit"
+    },
+    "2": {
+      "tag": "c:raw_cheesecake"
+    }
+  },
+  "pattern": [
+    "1",
+    "2"
+  ],
+  "result": {
+    "id": "createfood:raw_chorus_fruit_cheesecake"
+  }
+}

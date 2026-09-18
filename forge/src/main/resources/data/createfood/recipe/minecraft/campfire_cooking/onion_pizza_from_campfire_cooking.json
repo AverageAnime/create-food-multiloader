@@ -1,0 +1,25 @@
+{
+    "type": "minecraft:campfire_cooking",
+    "category": "food",
+    "cookingtime": 350,
+    "experience": 0.2,
+    "ingredient": {
+        "tag": "c:raw_onion_pizza"
+    },
+    "result": {
+        "count": 1,
+        "id": "createfood:onion_pizza"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "onion_pizza"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "onion_pizza"
+        }
+    ]
+}

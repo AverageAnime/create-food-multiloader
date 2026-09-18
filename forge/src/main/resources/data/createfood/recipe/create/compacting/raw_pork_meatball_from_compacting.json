@@ -1,0 +1,38 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "create"
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "raw_pork_meatball"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "create"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
+            "id": "raw_pork_meatball"
+        }
+    ],
+    "type": "create:compacting",
+    "ingredients": [
+        {
+            "tag": "c:ground_pork"
+        }
+    ],
+    "results": [
+        {
+            "count": 2,
+            "item": {
+                "id": "createfood:raw_pork_meatball"
+            }
+        }
+    ]
+}

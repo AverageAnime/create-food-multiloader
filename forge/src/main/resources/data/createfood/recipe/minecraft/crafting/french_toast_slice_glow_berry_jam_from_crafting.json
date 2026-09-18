@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "createfood:french_toast_slice"
+    },
+    {
+      "tag": "c:glow_berry_jam_bottle"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "createfood:french_toast_slice_glow_berry_jam"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "french_toast_slice_glow_berry_jam"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "french_toast_slice_glow_berry_jam"
+    }
+  ]
+}

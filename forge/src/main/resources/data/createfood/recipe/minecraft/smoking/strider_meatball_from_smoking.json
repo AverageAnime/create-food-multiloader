@@ -1,0 +1,25 @@
+{
+    "type": "minecraft:smoking",
+    "category": "food",
+    "cookingtime": 100,
+    "experience": 0.35,
+    "ingredient": {
+        "tag": "c:raw_strider_meatball"
+    },
+    "result": {
+        "count": 1,
+        "id": "createfood:strider_meatball"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "strider_meatball"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "strider_meatball"
+        }
+    ]
+}

@@ -1,0 +1,35 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "sausage_biscuit_cheese_fried_egg_bacon"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "sausage_biscuit_cheese_fried_egg_bacon"
+        }
+    ],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:biscuit"
+        },
+        {
+            "tag": "c:cooked_pork"
+        },
+        {
+            "tag": "c:cooked_eggs"
+        },
+        {
+            "tag": "c:cheeses"
+        },
+        {
+            "tag": "c:sausage_patty"
+        }
+    ],
+    "result": {
+        "id": "createfood:sausage_biscuit_cheese_fried_egg_bacon"
+    }
+}

@@ -1,0 +1,107 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "farmersdelight"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "delightfulcreators"
+    },
+    {
+      "type": "createfood:enabled",
+      "id": "farmersdelight:steak_and_potatoes"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "create"
+      ]
+    },
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "farmersdelight"
+      ]
+    },
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "delightfulcreators"
+      ]
+    },
+    {
+      "condition": "createfood:enabled",
+      "id": "farmersdelight:steak_and_potatoes"
+    }
+  ],
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "tag": "c:cooked_rice"
+  },
+  "loops": 1,
+  "results": [
+    {
+      "id": "farmersdelight:steak_and_potatoes"
+    }
+  ],
+  "sequence": [
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "delightfulcreators:incomplete_steak_and_potatoes"
+        },
+        {
+          "tag": "c:cooked_beef"
+        }
+      ],
+      "results": [
+        {
+          "id": "delightfulcreators:incomplete_steak_and_potatoes"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "delightfulcreators:incomplete_steak_and_potatoes"
+        },
+        {
+          "item": "minecraft:baked_potato"
+        }
+      ],
+      "results": [
+        {
+          "id": "delightfulcreators:incomplete_steak_and_potatoes"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "delightfulcreators:incomplete_steak_and_potatoes"
+        },
+        {
+          "tag": "c:onion"
+        }
+      ],
+      "results": [
+        {
+          "id": "delightfulcreators:incomplete_steak_and_potatoes"
+        }
+      ]
+    }
+  ],
+  "transitional_item": {
+    "id": "delightfulcreators:incomplete_steak_and_potatoes"
+  }
+}

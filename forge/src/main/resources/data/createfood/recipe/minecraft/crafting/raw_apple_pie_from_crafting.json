@@ -1,0 +1,26 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:raw_pie_crust"
+        },
+        {
+            "tag": "c:apple_pie_filling_bucket"
+        }
+    ],
+    "result": {
+        "id": "createfood:raw_apple_pie"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "raw_apple_pie"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "raw_apple_pie"
+        }
+    ]
+}

@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "minecraft:bread",
+      "required": false
+    },
+    {
+      "id": "#c:foods/bread",
+      "required": false
+    }
+  ]
+}

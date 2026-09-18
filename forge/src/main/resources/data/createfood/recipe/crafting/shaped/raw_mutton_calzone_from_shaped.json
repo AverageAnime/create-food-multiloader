@@ -1,0 +1,31 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "raw_mutton_calzone"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "raw_mutton_calzone"
+    }
+  ],
+  "key": {
+    "1": {
+      "tag": "c:gyro_mutton_ingredient"
+    },
+    "2": {
+      "tag": "c:raw_cheese_calzone"
+    }
+  },
+  "pattern": [
+    "1",
+    "2"
+  ],
+  "result": {
+    "count": 1,
+    "id": "createfood:raw_mutton_calzone"
+  }
+}

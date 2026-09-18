@@ -1,0 +1,40 @@
+{
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "c:chocolate_donut_base"
+        },
+        {
+            "tag": "c:powdered_sugar"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:chocolate_donut_sugar"
+            }
+        }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "create"
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "chocolate_donut_sugar"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "create"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
+            "id": "chocolate_donut_sugar"
+        }
+    ]
+}

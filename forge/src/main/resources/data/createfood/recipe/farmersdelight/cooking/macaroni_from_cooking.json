@@ -1,0 +1,42 @@
+{
+    "type": "farmersdelight:cooking",
+    "experience": 0.2,
+    "ingredients": [
+        {
+            "tag": "c:buckets/water"
+        },
+        {
+            "tag": "c:raw_macaroni"
+        },
+        {
+            "tag": "c:butter"
+        }
+    ],
+    "recipe_book_tab": "misc",
+    "result": {
+        "count": 1,
+        "id": "createfood:macaroni"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "farmersdelight"
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "macaroni"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "farmersdelight"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
+            "id": "macaroni"
+        }
+    ]
+}

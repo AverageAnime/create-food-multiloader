@@ -1,0 +1,8 @@
+{
+  "values": [
+    {
+      "id": "createfood:donut_sugar",
+      "required": false
+    }
+  ]
+}

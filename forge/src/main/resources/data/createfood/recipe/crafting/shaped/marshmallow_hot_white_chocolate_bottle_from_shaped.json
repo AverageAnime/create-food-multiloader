@@ -1,0 +1,31 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "marshmallow_hot_white_chocolate_bottle"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "marshmallow_hot_white_chocolate_bottle"
+    }
+  ],
+  "key": {
+    "1": {
+      "tag": "c:marshmallow"
+    },
+    "2": {
+      "item": "createfood:hot_white_chocolate_bottle"
+    }
+  },
+  "pattern": [
+    "1",
+    "2"
+  ],
+  "result": {
+    "count": 1,
+    "id": "createfood:marshmallow_hot_white_chocolate_bottle"
+  }
+}

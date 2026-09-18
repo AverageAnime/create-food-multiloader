@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "createfood:waffle_cone",
+      "required": false
+    },
+    {
+      "id": "ratatouille_fried_delights:cone",
+      "required": false
+    }
+  ]
+}

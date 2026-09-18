@@ -1,0 +1,35 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:bucket"
+        },
+        {
+            "tag": "c:chorus_fruit_ice_cream_bowl"
+        },
+        {
+            "tag": "c:chorus_fruit_ice_cream_bowl"
+        },
+        {
+            "tag": "c:chorus_fruit_ice_cream_bowl"
+        },
+        {
+            "tag": "c:chorus_fruit_ice_cream_bowl"
+        }
+    ],
+    "result": {
+        "id": "createfood:chorus_fruit_ice_cream_bucket"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "chorus_fruit_ice_cream_bucket"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "chorus_fruit_ice_cream_bucket"
+        }
+    ]
+}

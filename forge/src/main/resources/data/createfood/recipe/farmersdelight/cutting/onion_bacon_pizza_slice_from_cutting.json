@@ -1,0 +1,41 @@
+{
+    "type": "farmersdelight:cutting",
+    "ingredients": [
+        {
+            "tag": "c:onion_bacon_pizza"
+        }
+    ],
+    "tool": {
+        "tag": "c:tools/knife"
+    },
+    "result": [
+        {
+            "item": {
+                "count": 4,
+                "id": "createfood:onion_bacon_pizza_slice"
+            }
+        }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "farmersdelight"
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "onion_bacon_pizza_slice"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "farmersdelight"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
+            "id": "onion_bacon_pizza_slice"
+        }
+    ]
+}

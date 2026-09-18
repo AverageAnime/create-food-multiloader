@@ -1,0 +1,26 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "rabbit_meatball_stick_2"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "rabbit_meatball_stick_2"
+        }
+    ],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "createfood:rabbit_meatball_stick_1"
+        },
+        {
+            "tag": "c:rabbit_meatball"
+        }
+    ],
+    "result": {
+        "id": "createfood:rabbit_meatball_stick_2"
+    }
+}

@@ -1,0 +1,49 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    },
+    {
+      "type": "createfood:enabled",
+      "id": "chorus_fruit_custard"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "create"
+      ]
+    },
+    {
+      "condition": "createfood:enabled",
+      "id": "chorus_fruit_custard"
+    }
+  ],
+  "type": "create:mixing",
+  "requiredSpeed": 32,
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "type": "fluid_tag",
+      "amount": 250,
+      "fluid_tag": "c:milk"
+    },
+    {
+      "tag": "c:egg_yolk"
+    },
+    {
+      "tag": "c:sugar"
+    },
+    {
+      "tag": "c:chorus_fruit"
+    }
+  ],
+  "results": [
+    {
+      "amount": 250,
+      "id": "createfood:chorus_fruit_custard"
+    }
+  ]
+}

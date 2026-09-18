@@ -1,0 +1,46 @@
+{
+    "type": "farmersdelight:cutting",
+    "ingredients": [
+        {
+            "item": "minecraft:rabbit"
+        }
+    ],
+    "tool": {
+        "tag": "c:tools/knife"
+    },
+    "result": [
+        {
+            "item": {
+                "count": 2,
+                "id": "createfood:rabbit_cuts"
+            }
+        },
+        {
+            "item": {
+                "id": "minecraft:bone_meal"
+            }
+        }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "farmersdelight"
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "rabbit_cuts"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "farmersdelight"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
+            "id": "rabbit_cuts"
+        }
+    ]
+}

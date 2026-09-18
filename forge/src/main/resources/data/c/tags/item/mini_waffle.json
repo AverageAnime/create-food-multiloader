@@ -1,0 +1,8 @@
+{
+  "values": [
+    {
+      "id": "createfood:mini_waffle",
+      "required": false
+    }
+  ]
+}

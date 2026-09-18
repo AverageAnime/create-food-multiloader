@@ -1,0 +1,44 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:not",
+            "value": {
+                "type": "neoforge:tag_empty",
+                "tag": "c:crops/ginger"
+            }
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "raw_ginger_cookie"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:tags_populated",
+            "registry": "minecraft:item",
+            "values": [
+                "c:crops/ginger"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
+            "id": "raw_ginger_cookie"
+        }
+    ],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:wheat"
+        },
+        {
+            "item": "minecraft:water_bucket"
+        },
+        {
+            "tag": "c:crops/ginger"
+        }
+    ],
+    "result": {
+        "count": 8,
+        "id": "createfood:raw_ginger_cookie"
+    }
+}

@@ -1,0 +1,25 @@
+{
+    "type": "minecraft:smoking",
+    "category": "food",
+    "cookingtime": 100,
+    "experience": 0.2,
+    "ingredient": {
+        "item": "minecraft:cocoa_beans"
+    },
+    "result": {
+        "count": 1,
+        "id": "createfood:cacao_nibs"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "cacao_nibs"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "cacao_nibs"
+        }
+    ]
+}

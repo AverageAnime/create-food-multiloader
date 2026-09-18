@@ -1,0 +1,50 @@
+{
+    "type": "create:mixing",
+    "requiredSpeed": 32,
+    "heat_requirement": "heated",
+    "ingredients": [
+        {
+            "tag": "c:white_chocolate_chips"
+        },
+        {
+            "tag": "c:butter"
+        },
+        {
+            "tag": "c:marshmallow"
+        },
+        {
+            "type": "fluid_tag",
+            "amount": 250,
+            "fluid_tag": "c:condensed_milk"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:marshmallow_white_chocolate_fudge"
+            }
+        }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "create"
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "marshmallow_white_chocolate_fudge"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "create"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
+            "id": "marshmallow_white_chocolate_fudge"
+        }
+    ]
+}

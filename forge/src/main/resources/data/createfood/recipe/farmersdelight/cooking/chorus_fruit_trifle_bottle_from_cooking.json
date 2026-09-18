@@ -1,0 +1,45 @@
+{
+  "type": "farmersdelight:cooking",
+  "experience": 0.35,
+  "ingredients": [
+    {
+      "tag": "c:custard_bottle"
+    },
+    {
+      "tag": "c:heavy_cream_bottle"
+    },
+    {
+      "tag": "c:chorus_fruit_jam_bottle"
+    },
+    {
+      "tag": "c:chorus_fruit"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "count": 1,
+    "id": "createfood:chorus_fruit_trifle_bottle"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "farmersdelight"
+    },
+    {
+      "type": "createfood:enabled",
+      "id": "chorus_fruit_trifle_bottle"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "farmersdelight"
+      ]
+    },
+    {
+      "condition": "createfood:enabled",
+      "id": "chorus_fruit_trifle_bottle"
+    }
+  ]
+}

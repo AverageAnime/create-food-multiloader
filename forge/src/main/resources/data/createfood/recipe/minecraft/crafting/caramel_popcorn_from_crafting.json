@@ -1,0 +1,40 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:not",
+            "value": {
+                "type": "neoforge:tag_empty",
+                "tag": "c:popcorn"
+            }
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "caramel_popcorn"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:tags_populated",
+            "registry": "minecraft:item",
+            "values": [
+                "c:popcorn"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
+            "id": "caramel_popcorn"
+        }
+    ],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:popcorn"
+        },
+        {
+            "tag": "c:caramel"
+        }
+    ],
+    "result": {
+        "id": "createfood:caramel_popcorn"
+    }
+}

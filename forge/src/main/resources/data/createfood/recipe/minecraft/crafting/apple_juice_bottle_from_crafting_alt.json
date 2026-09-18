@@ -1,0 +1,34 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:potion",
+            "components": {
+                "minecraft:potion_contents": {
+                    "potion": "minecraft:water"
+                }
+            }
+        },
+        {
+            "tag": "c:sugar"
+        },
+        {
+            "tag": "c:apple"
+        }
+    ],
+    "result": {
+        "id": "createfood:apple_juice_bottle"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "apple_juice_bottle"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "apple_juice_bottle"
+        }
+    ]
+}

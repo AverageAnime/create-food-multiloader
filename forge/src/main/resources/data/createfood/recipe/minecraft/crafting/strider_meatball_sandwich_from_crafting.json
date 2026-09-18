@@ -1,0 +1,26 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:bread"
+        },
+        {
+            "tag": "c:small_strider_meatballs"
+        }
+    ],
+    "result": {
+        "id": "createfood:strider_meatball_sandwich"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "strider_meatball_sandwich"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "strider_meatball_sandwich"
+        }
+    ]
+}

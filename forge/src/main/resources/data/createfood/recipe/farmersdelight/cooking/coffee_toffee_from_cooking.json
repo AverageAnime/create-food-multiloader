@@ -1,0 +1,42 @@
+{
+    "type": "farmersdelight:cooking",
+    "experience": 0.25,
+    "ingredients": [
+        {
+            "tag": "c:sugar"
+        },
+        {
+            "tag": "c:butter"
+        },
+        {
+            "tag": "c:espresso_powder"
+        }
+    ],
+    "recipe_book_tab": "misc",
+    "result": {
+        "count": 1,
+        "id": "createfood:coffee_toffee"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "farmersdelight"
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "coffee_toffee"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "farmersdelight"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
+            "id": "coffee_toffee"
+        }
+    ]
+}

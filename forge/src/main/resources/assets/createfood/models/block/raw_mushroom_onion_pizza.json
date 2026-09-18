@@ -1,0 +1,6 @@
+﻿{
+	"parent":  "createfood:block/pizza_base_raw",
+	"textures":  {
+					"top":  "createfood:block/raw_mushroom_onion_pizza_top"
+				}
+}

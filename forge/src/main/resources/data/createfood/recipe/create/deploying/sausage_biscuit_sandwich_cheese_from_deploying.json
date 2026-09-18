@@ -1,0 +1,40 @@
+{
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "c:sausage_biscuit_cheese"
+        },
+        {
+            "tag": "c:biscuit"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:sausage_biscuit_sandwich_cheese"
+            }
+        }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "create"
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "sausage_biscuit_sandwich_cheese"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "create"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
+            "id": "sausage_biscuit_sandwich_cheese"
+        }
+    ]
+}

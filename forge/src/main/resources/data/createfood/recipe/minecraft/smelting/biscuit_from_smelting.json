@@ -1,0 +1,25 @@
+{
+    "type": "minecraft:smelting",
+    "category": "food",
+    "cookingtime": 200,
+    "experience": 0.35,
+    "ingredient": {
+        "tag": "c:butter_dough"
+    },
+    "result": {
+        "count": 1,
+        "id": "createfood:biscuit"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "biscuit"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "biscuit"
+        }
+    ]
+}

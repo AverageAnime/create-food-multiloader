@@ -1,0 +1,52 @@
+{
+  "type": "create:mixing",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "type": "fluid_tag",
+      "amount": 250,
+      "fluid_tag": "c:milk"
+    },
+    {
+      "tag": "c:potato"
+    },
+    {
+      "tag": "c:butter"
+    },
+    {
+      "tag": "c:cooked_pork"
+    },
+    {
+      "tag": "c:bowl"
+    }
+  ],
+  "results": [
+    {
+      "item": {
+        "id": "createfood:mashed_potatoes_bowl_bacon"
+      }
+    }
+  ],
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    },
+    {
+      "type": "createfood:enabled",
+      "id": "mashed_potatoes_bowl_bacon"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "create"
+      ]
+    },
+    {
+      "condition": "createfood:enabled",
+      "id": "mashed_potatoes_bowl_bacon"
+    }
+  ]
+}

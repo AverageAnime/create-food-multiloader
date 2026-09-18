@@ -1,0 +1,55 @@
+{
+    "type": "farmersdelight:cutting",
+    "ingredients": [
+        {
+            "tag": "c:paprika_ingredient"
+        }
+    ],
+    "tool": {
+        "tag": "c:tools/knife"
+    },
+    "result": [
+        {
+            "item": {
+                "count": 2,
+                "id": "createfood:paprika"
+            }
+        }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "farmersdelight"
+        },
+        {
+            "type": "neoforge:not",
+            "value": {
+                "type": "neoforge:tag_empty",
+                "tag": "c:pepper"
+            }
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "paprika"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "farmersdelight"
+            ]
+        },
+        {
+            "condition": "fabric:tags_populated",
+            "registry": "minecraft:item",
+            "values": [
+                "c:pepper"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
+            "id": "paprika"
+        }
+    ]
+}

@@ -1,0 +1,60 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "farmersdelight"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "delightfulcreators"
+    },
+    {
+      "type": "createfood:enabled",
+      "id": "farmersdelight:cooked_rice"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "create"
+      ]
+    },
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "farmersdelight"
+      ]
+    },
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "delightfulcreators"
+      ]
+    },
+    {
+      "condition": "createfood:enabled",
+      "id": "farmersdelight:cooked_rice"
+    }
+  ],
+  "type": "create:filling",
+  "ingredients": [
+    {
+      "tag": "c:bowl"
+    },
+    {
+      "type": "fluid_tag",
+      "amount": 250,
+      "fluid_tag": "c:cooked_rice"
+    }
+  ],
+  "results": [
+    {
+      "id": "farmersdelight:cooked_rice"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "c:mini_waffle"
+    },
+    {
+      "tag": "c:glow_berry_cream_frosting"
+    },
+    {
+      "item": "minecraft:glow_berries"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "createfood:glow_berry_cream_mini_waffle_glow_berry"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "glow_berry_cream_mini_waffle_glow_berry"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "glow_berry_cream_mini_waffle_glow_berry"
+    }
+  ]
+}

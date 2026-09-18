@@ -1,0 +1,29 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:bun"
+        },
+        {
+            "tag": "c:dragon_patty"
+        },
+        {
+            "tag": "c:bun"
+        }
+    ],
+    "result": {
+        "id": "createfood:dragon_burger"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "dragon_burger"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "dragon_burger"
+        }
+    ]
+}

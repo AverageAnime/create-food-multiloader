@@ -1,0 +1,41 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "item": "minecraft:egg"
+    }
+  ],
+  "results": [
+    {
+      "amount": 250,
+      "id": "createfood:egg"
+    },
+    {
+      "item": {
+        "id": "createfood:eggshell"
+      }
+    }
+  ],
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    },
+    {
+      "type": "createfood:enabled",
+      "id": "egg"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "create"
+      ]
+    },
+    {
+      "condition": "createfood:enabled",
+      "id": "egg"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "jmc"
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "jmc:red_velvet_cake"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "jmc"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
+            "id": "jmc:red_velvet_cake"
+        }
+    ],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:cream_cake"
+        },
+        {
+            "item": "minecraft:red_dye"
+        }
+    ],
+    "result": {
+        "id": "jmc:red_velvet_cake"
+    }
+}

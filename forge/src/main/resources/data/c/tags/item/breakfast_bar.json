@@ -1,0 +1,8 @@
+{
+  "values": [
+    {
+      "id": "createfood:breakfast_bar",
+      "required": false
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:milkshake"
+        },
+        {
+            "tag": "c:toffee_chips"
+        },
+        {
+            "item": "minecraft:glass_bottle"
+        }
+    ],
+    "result": {
+        "id": "createfood:toffee_chip_milkshake_bottle"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "toffee_chip_milkshake_bottle"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "toffee_chip_milkshake_bottle"
+        }
+    ]
+}

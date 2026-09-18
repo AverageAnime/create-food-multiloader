@@ -1,0 +1,30 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:wheat"
+        },
+        {
+            "item": "minecraft:rotten_flesh"
+        },
+        {
+            "tag": "c:eggs"
+        }
+    ],
+    "result": {
+        "count": 8,
+        "id": "createfood:raw_flesh_cookie"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "raw_flesh_cookie"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "raw_flesh_cookie"
+        }
+    ]
+}

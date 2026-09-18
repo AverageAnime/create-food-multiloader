@@ -1,0 +1,26 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:mini_chocolate_pie_graham_cracker"
+        },
+        {
+            "tag": "c:marshmallow"
+        }
+    ],
+    "result": {
+        "id": "createfood:mini_smores_pie"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "mini_smores_pie"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "mini_smores_pie"
+        }
+    ]
+}

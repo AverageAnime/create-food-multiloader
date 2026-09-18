@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "c:graham_cracker"
+    },
+    {
+      "tag": "c:chocolate_chips"
+    },
+    {
+      "tag": "c:chocolate_chips"
+    },
+    {
+      "tag": "c:chocolate_chips"
+    },
+    {
+      "tag": "c:chocolate_chips"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "createfood:graham_cracker_chocolate"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "graham_cracker_chocolate"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "graham_cracker_chocolate"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "waffle_batter_bucket"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "waffle_batter_bucket"
+        }
+    ],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:milk_bucket"
+        },
+        {
+            "tag": "c:sugar"
+        },
+        {
+            "tag": "c:flours/wheat"
+        },
+        {
+            "tag": "c:egg_whites"
+        },
+        {
+            "tag": "c:butter"
+        },
+        {
+            "item": "minecraft:bucket"
+        }
+    ],
+    "result": {
+        "id": "createfood:waffle_batter_bucket"
+    }
+}

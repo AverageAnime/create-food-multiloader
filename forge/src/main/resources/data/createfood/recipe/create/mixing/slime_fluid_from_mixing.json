@@ -1,0 +1,48 @@
+{
+    "type": "create:mixing",
+    "heat_requirement": "heated",
+    "ingredients": [
+        {
+            "tag": "c:flours/wheat"
+        },
+        {
+            "tag": "c:gelatin"
+        },
+        {
+            "tag": "c:dyes/lime"
+        },
+        {
+            "type": "fluid_tag",
+            "amount": 250,
+            "fluid_tag": "c:water"
+        }
+    ],
+    "results": [
+        {
+            "amount": 1000,
+            "id": "createfood:slime"
+        }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "create"
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "slime"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "create"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
+            "id": "slime"
+        }
+    ]
+}

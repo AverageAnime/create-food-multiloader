@@ -1,0 +1,40 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "create"
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "ube_cake_base"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "create"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
+            "id": "ube_cake_base"
+        }
+    ],
+    "type": "create:compacting",
+    "heat_requirement": "heated",
+    "ingredients": [
+        {
+            "type": "fluid_tag",
+            "amount": 1000,
+            "fluid_tag": "c:ube_cake_batter"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createfood:ube_cake_base"
+            }
+        }
+    ]
+}

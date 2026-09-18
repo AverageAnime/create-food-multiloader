@@ -1,0 +1,26 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:chocolate_cream_cake"
+        },
+        {
+            "tag": "c:dark_chocolate_chips"
+        }
+    ],
+    "result": {
+        "id": "createfood:chocolate_cream_cake_dark_chocolate"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "chocolate_cream_cake_dark_chocolate"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "chocolate_cream_cake_dark_chocolate"
+        }
+    ]
+}

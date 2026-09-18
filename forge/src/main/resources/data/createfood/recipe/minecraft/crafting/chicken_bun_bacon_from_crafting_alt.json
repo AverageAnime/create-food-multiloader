@@ -1,0 +1,29 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "chicken_bun_bacon"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "chicken_bun_bacon"
+        }
+    ],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:bun"
+        },
+        {
+            "tag": "c:cooked_pork"
+        },
+        {
+            "tag": "c:chicken_patty"
+        }
+    ],
+    "result": {
+        "id": "createfood:chicken_bun_bacon"
+    }
+}

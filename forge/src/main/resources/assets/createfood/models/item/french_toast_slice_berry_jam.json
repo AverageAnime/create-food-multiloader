@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "createfood:item/french_toast_slice_berry_jam"
+  }
+}

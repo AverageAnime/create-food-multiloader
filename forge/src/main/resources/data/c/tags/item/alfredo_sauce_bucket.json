@@ -1,0 +1,8 @@
+{
+  "values": [
+    {
+      "id": "createfood:alfredo_sauce_bucket",
+      "required": false
+    }
+  ]
+}
