@@ -1,3 +1,19 @@
+### Fork & Port of Create: Food 1.21.1 v3.0.0-pre to forge 1.20.1
+
+Errors and bugs are not out of consideration! If anyone stumbles upon any, pull requests are always welcome via the Issues tab.
+Do not report issues to the original developer, as it is not their fork/port
+
+AI was used to develop this fork/port!
+
+### Why fork this mod?
+###
+I stumbled upon an issue when diagnosing why on my personal modpack "createfood-forge-1.20.1-2.6.0" is crashing client due to issue:
+`createfood:bar_of_chocolate_plate_block` bug [[Create Food causes Client crash in Creative Mode.
+ #55]](https://github.com/AverageAnime/create-food-multiloader/issues/55)", then found out that this was patched to mod version 2.7.1 but only on 1.21.1 and then theres version 3.0.0-pre,
+ then it hit me why not port the latest 3.0.0-pre to forge and 1.20.1.
+###
+__________________________________________________________________________________________________________________________________
+
 ![cflogobanner](https://github.com/user-attachments/assets/459fad44-da37-49a6-99e9-83085f49c48d)
 ### **About:**
 Create: Food is an add-on based on expanding food content found in Minecraft.
