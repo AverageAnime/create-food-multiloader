@@ -43,6 +43,6 @@ side="BOTH"
 [[dependencies.${mod_id}]]
 modId="jade"
 mandatory=false
-versionRange="[15.0.0,)"
+versionRange="[11.0.0,12.0.0)"
 ordering="AFTER"
 side="BOTH"
