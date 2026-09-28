@@ -1,3 +1,14 @@
 plugins {
     id 'groovy-gradle-plugin'
 }
+
+// The multiloader convention plugins live in the shared library, so a second mod adopting them gets a
+// build that is already proven rather than a hand-copied one. They are read in place rather than
+// relocated: a Gradle plugin id is not a class name, so there is no collision to avoid.
+def sharedGradle = file('../libs/aa-shared/gradle')
+if (!sharedGradle.exists()) {
+    throw new GradleException(
+            "Shared library missing at ${sharedGradle}. It is a local clone, not a submodule. "
+                    + "Run: git clone https://github.com/AverageAnime/aa-modlib.git libs/aa-shared")
+}
+sourceSets.main.groovy.srcDir sharedGradle

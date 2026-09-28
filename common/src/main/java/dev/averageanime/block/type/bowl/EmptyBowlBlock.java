@@ -1,11 +1,12 @@
 package dev.averageanime.block.type.bowl;
 
-import dev.averageanime.block.type.blockentity.GenericDisplayBlockEntity;
+import dev.averageanime.config.ConfigValues;
+import dev.averageanime.createfood.lib.block.GenericDisplayBlockEntity;
 import dev.averageanime.block.type.display.ContainerFoodBlock;
 import dev.averageanime.block.type.display.FoodBlock;
 import dev.averageanime.block.type.plate.EmptyPlateBlock;
 import dev.averageanime.platform.Services;
-import dev.averageanime.util.ItemSpawns;
+import dev.averageanime.createfood.lib.util.ItemSpawns;
 import dev.averageanime.util.PlayerItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -89,8 +90,8 @@ public class EmptyBowlBlock extends Block {
         Block bowlBlock = findBowlBlock(heldStack);
         boolean genericEligible = bowlBlock == null
                 && EmptyPlateBlock.isGenericDisplayEligible(heldStack.getItem())
-                && Services.PLATFORM.isGenericDisplayEnabled()
-                && Services.PLATFORM.isGenericDisplayAllowed(heldStack);
+                && ConfigValues.isGenericDisplayEnabled()
+                && ConfigValues.isGenericDisplayAllowed(heldStack);
 
         if (level.isClientSide) {
             return (bowlBlock != null || genericEligible)
@@ -105,8 +106,7 @@ public class EmptyBowlBlock extends Block {
             level.setBlock(pos, newState, 3);
             if (!player.isCreative()) {
                 heldStack.shrink(1);
-                // A ContainerFoodBlock reverts to this empty bowl when emptied, so the bowl is retained.
-                // Anything else vanishes instead, which would destroy it - hand it back.
+                // A ContainerFoodBlock reverts to this empty bowl; anything else would be destroyed.
                 if (!(bowlBlock instanceof ContainerFoodBlock)) {
                     PlayerItems.give(player, new ItemStack(Items.BOWL));
                 }
@@ -133,12 +133,12 @@ public class EmptyBowlBlock extends Block {
     private static Block findBowlBlock(ItemStack heldStack) {
         List<Supplier<Block>> suppliers = FoodBlock.Registry.getAllBlocks(heldStack.getItem());
         if (suppliers == null) return null;
-        // BowlBlock first: an item registered as both stacks servings, which is the richer behaviour.
+        // BowlBlock first: an item registered as both stacks servings.
         for (Supplier<Block> supplier : suppliers) {
             Block block = supplier.get();
             if (block instanceof BowlBlock) return block;
         }
-        // Soups, stews and ice creams are BowlFoodBlock and belong on an empty bowl just the same.
+        // Soups, stews and ice creams are BowlFoodBlock and belong here too.
         for (Supplier<Block> supplier : suppliers) {
             Block block = supplier.get();
             if (block instanceof BowlFoodBlock) return block;

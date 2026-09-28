@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "c:mixed_salad_plate"
+    },
+    {
+      "tag": "c:cooked_rice"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "createfood:mixed_salad_plate_rice"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "mixed_salad_plate_rice"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "mixed_salad_plate_rice"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:smelting",
+  "category": "food",
+  "cookingtime": 200,
+  "experience": 0.35,
+  "ingredient": {
+    "tag": "c:raw_vegetable_meatball"
+  },
+  "result": {
+    "count": 1,
+    "id": "createfood:vegetable_meatball"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "vegetable_meatball"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "vegetable_meatball"
+    }
+  ]
+}

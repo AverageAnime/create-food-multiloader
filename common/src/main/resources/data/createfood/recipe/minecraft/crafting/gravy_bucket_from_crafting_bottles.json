@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:bucket"
+    },
+    {
+      "tag": "c:gravy_bottle"
+    },
+    {
+      "tag": "c:gravy_bottle"
+    },
+    {
+      "tag": "c:gravy_bottle"
+    },
+    {
+      "tag": "c:gravy_bottle"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "createfood:gravy_bucket"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "gravy_bucket"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "gravy_bucket"
+    }
+  ]
+}

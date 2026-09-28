@@ -22,6 +22,8 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.List;
 import java.util.function.Supplier;
 
@@ -56,6 +58,9 @@ public final class BlockFactory {
             new CandleType("red_candle",        Blocks.RED_CANDLE),
             new CandleType("black_candle",      Blocks.BLACK_CANDLE)
     );
+
+    public static final List<String> CANDLE_SUFFIXES =
+            CANDLE_TYPES.stream().map(CandleType::suffix).toList();
 
     private record CakeRef(String name, Supplier<net.minecraft.world.level.block.Block> block) {}
 
@@ -111,6 +116,7 @@ public final class BlockFactory {
     }
 
     public static void registerConfigBlocks(Hooks hooks, List<String> entries) {
+        Set<String> claimed = new HashSet<>();
         for (String entry : entries) {
             String[] p = entry.split("\\|");
             if (p.length < 2) {
@@ -119,6 +125,11 @@ public final class BlockFactory {
             }
             String name = p[0];
             String type = p[1].toLowerCase();
+
+            if (BlockEntry.getById(name) != null || !claimed.add(name)) {
+                CreateFoodCommon.LOGGER.warn("Create: Food - Skipping custom_block entry, name already registered: {}", name);
+                continue;
+            }
             switch (type) {
                 case "cake_base" -> hooks.registerBlock(name, () -> new CakeBaseBlock(cakeProps()), 1, null);
                 case "raw_pie" -> hooks.registerBlock(name, () -> new RawPieBlock(cakeProps()), DEFAULT_STACK, null);

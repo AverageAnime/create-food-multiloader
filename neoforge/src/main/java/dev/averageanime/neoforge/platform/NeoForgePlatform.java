@@ -1,11 +1,12 @@
 package dev.averageanime.neoforge.platform;
 
 import dev.averageanime.block.type.blockentity.ClothSackBlockEntity;
-import dev.averageanime.block.type.blockentity.GenericDisplayBlockEntity;
+import dev.averageanime.createfood.lib.block.GenericDisplayBlockEntity;
 import dev.averageanime.block.type.blockentity.RationBoxBlockEntity;
-import dev.averageanime.item.storage.StorageAccess;
+import dev.averageanime.createfood.lib.storage.StorageAccess;
 import dev.averageanime.neoforge.block.BlockEntityRegistration;
 import dev.averageanime.neoforge.block.DisplayBlockRegistration;
+import dev.averageanime.createfood.lib.platform.AddonSource;
 import dev.averageanime.platform.Platform;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
@@ -19,15 +20,24 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.fml.ModList;
 import net.neoforged.fml.loading.FMLLoader;
 import net.neoforged.fml.loading.FMLPaths;
+import net.neoforged.fml.loading.LoadingModList;
+import net.neoforged.fml.loading.moddiscovery.ModFileInfo;
 import net.neoforged.neoforge.data.loading.DatagenModLoader;
 
+import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.ArrayList;
+import java.util.List;
 
 public class NeoForgePlatform implements Platform {
 
+    /** {@code LoadingModList}, not {@code ModList}: the latter is empty until every mod is constructed. */
     @Override
     public boolean isModLoaded(String modId) {
-        return ModList.get().isLoaded(modId);
+        LoadingModList loading = LoadingModList.get();
+        if (loading != null) return loading.getModFileById(modId) != null;
+        ModList list = ModList.get();
+        return list != null && list.isLoaded(modId);
     }
 
     @Override
@@ -38,6 +48,25 @@ public class NeoForgePlatform implements Platform {
     @Override
     public boolean isRunningDataGen() {
         return DatagenModLoader.isRunningDataGen();
+    }
+
+    /** {@code LoadingModList}, so this is safe from mixin plugins onward. */
+    @Override
+    public List<AddonSource> findModResources(String path) {
+        String[] parts = path.split("/");
+        List<AddonSource> found = new ArrayList<>();
+        for (ModFileInfo info : LoadingModList.get().getModFiles()) {
+            if (info == null || info.getMods().isEmpty()) continue;
+            try {
+                Path resource = info.getFile().findResource(parts);
+                if (resource != null && Files.exists(resource)) {
+                    found.add(new AddonSource(info.getMods().getFirst().getModId(), resource));
+                }
+            } catch (Exception ignored) {
+                // A mod file that cannot be probed contributes nothing.
+            }
+        }
+        return found;
     }
 
     @Override

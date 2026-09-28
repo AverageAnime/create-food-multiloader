@@ -5,12 +5,7 @@ import dev.averageanime.config.ConfigLifecycle;
 import io.github.fabricators_of_create.porting_lib.config.ModConfig;
 import io.github.fabricators_of_create.porting_lib.config.ModConfigEvent;
 
-/**
- * Routes Porting Lib's config lifecycle events to {@link ConfigLifecycle}.
- * The EVENT fields are global across all mods, so each callback filters for
- * this mod's SERVER config. Loading fires at server start, Reloading on file
- * edits and on remote clients when the synced config arrives.
- */
+/** The EVENT fields are global, so each callback filters for this mod. */
 public final class ConfigEvents {
 
     private ConfigEvents() {}

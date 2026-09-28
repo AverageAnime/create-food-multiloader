@@ -16,6 +16,10 @@
     }
   ],
   "recipe_book_tab": "drinks",
+  "container": {
+    "count": 1,
+    "id": "minecraft:glass_bottle"
+  },
   "result": {
     "count": 1,
     "id": "createfood:chorus_fruit_custard_bottle"

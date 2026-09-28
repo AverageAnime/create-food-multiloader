@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "c:kelp_soup_bowl"
+    },
+    {
+      "tag": "c:cooked_eggs"
+    },
+    {
+      "tag": "c:bowl"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "createfood:kelp_soup_bowl_fried_egg"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "kelp_soup_bowl_fried_egg"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "kelp_soup_bowl_fried_egg"
+    }
+  ]
+}

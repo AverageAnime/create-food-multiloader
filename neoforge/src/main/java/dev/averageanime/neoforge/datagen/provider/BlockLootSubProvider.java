@@ -1,5 +1,6 @@
 package dev.averageanime.neoforge.datagen.provider;
 
+import dev.averageanime.createfood.lib.datagen.DatagenHelpers;
 import dev.averageanime.block.type.bowl.*;
 import dev.averageanime.block.type.plate.*;
 import dev.averageanime.neoforge.block.BlockRegistration;
@@ -8,7 +9,7 @@ import dev.averageanime.neoforge.block.FluidRegistration;
 import dev.averageanime.block.type.cake.CakeFoodBlock;
 import dev.averageanime.block.type.cake.CakeCandleBlock;
 import dev.averageanime.block.type.display.*;
-import dev.averageanime.neoforge.block.type.fluid.FluidBlock;
+import dev.averageanime.createfood.lib.fluid.FluidBlock;
 import dev.averageanime.block.type.storage.ClothSackBlock;
 import dev.averageanime.block.type.storage.RationBoxBlock;
 import dev.averageanime.block.type.misc.ConsumableBlock;
@@ -105,11 +106,7 @@ public class BlockLootSubProvider extends net.minecraft.data.loot.BlockLootSubPr
     }
 
     private void simpleSelfDrop(Block block) {
-        add(block, LootTable.lootTable()
-                .withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .add(LootItem.lootTableItem(block))
-                        .when(ExplosionCondition.survivesExplosion())));
+        DatagenHelpers.selfDrop(this::add, block);
     }
 
     private void plateBlockLoot(DeferredBlock<Block> blockEntry) {
@@ -148,8 +145,8 @@ public class BlockLootSubProvider extends net.minecraft.data.loot.BlockLootSubPr
 
             if (fluidBlocks.contains(block)) return;
             if (block instanceof CakeCandleBlock) return;
-            if (block instanceof RationBoxBlock || block instanceof ClothSackBlock) return; // skip entirely
-            if (block.getLootTable().equals(net.minecraft.world.level.storage.loot.BuiltInLootTables.EMPTY)) return; // <-- add this
+            if (block instanceof RationBoxBlock || block instanceof ClothSackBlock) return;
+            if (block.getLootTable().equals(net.minecraft.world.level.storage.loot.BuiltInLootTables.EMPTY)) return;
 
             if (block instanceof CakeFoodBlock cakeBlock) {
                 add(block, slicedLootTable(block, cakeBlock.pieSlice.get(), 7));
@@ -237,7 +234,7 @@ public class BlockLootSubProvider extends net.minecraft.data.loot.BlockLootSubPr
                         .filter(b -> !fluidBlocks.contains(b))
                         .filter(b -> !(b instanceof CakeCandleBlock))
                         .filter(b -> !(b instanceof GenericDisplayPlateBlock))
-                        .filter(b -> !(b instanceof RationBoxBlock))      // <-- add
+                        .filter(b -> !(b instanceof RationBoxBlock))
                         .filter(b -> !(b instanceof ClothSackBlock))
         ).toList();
     }

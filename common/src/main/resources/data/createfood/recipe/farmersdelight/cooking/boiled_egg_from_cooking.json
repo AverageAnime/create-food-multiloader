@@ -1,13 +1,14 @@
 {
     "type": "farmersdelight:cooking",
-    "container": {
-        "count": 1,
-        "id": "minecraft:stick"
-    },
     "experience": 0.2,
     "ingredients": [
         {
-            "item": "minecraft:water_bucket"
+            "item": "minecraft:potion",
+            "components": {
+                "minecraft:potion_contents": {
+                    "potion": "minecraft:water"
+                }
+            }
         },
         {
             "item": "minecraft:egg"

@@ -26,4 +26,25 @@ runs
 neoforge/server
 neoforge/run
 .idea
-gradle/wrapper/gradle-wrapper.jar
+
+# logs and scratch files
+logs/
+**/logs/
+*.log
+*.log.gz
+*.tmp
+*.stackdump
+__pycache__/
+/documentation/toolkit/wip/
+/documentation/toolkit/scripts/
+/common/src/generated/addon-manifest.txt
+/common/src/generated/resources/.cache
+
+# claude
+.claude/
+CLAUDE.md
+CLAUDE.local.md
+.claude-*
+.mcp.json
+/libs/
+/libs/aa-shared/

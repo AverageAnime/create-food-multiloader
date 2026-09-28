@@ -1,0 +1,48 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "farmersdelight"
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "farmersdelight:vegetable_noodles"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "farmersdelight"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
+            "id": "farmersdelight:vegetable_noodles"
+        }
+    ],
+    "type": "farmersdelight:cooking",
+    "experience": 1.0,
+    "ingredients": [
+        {
+            "tag": "c:carrot"
+        },
+        {
+            "tag": "c:mushrooms"
+        },
+        {
+            "tag": "c:foods/pasta"
+        },
+        {
+            "tag": "c:foods/leafy_green"
+        },
+        {
+            "tag": "c:foods/vegetable"
+        }
+    ],
+    "recipe_book_tab": "meals",
+    "result": {
+        "count": 1,
+        "id": "farmersdelight:vegetable_noodles"
+    }
+}

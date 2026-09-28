@@ -2,7 +2,7 @@
     "type": "create:filling",
     "ingredients": [
         {
-            "item": "minecraft:sugar"
+            "tag": "c:sugar"
         },
         {
             "type": "fluid_tag",

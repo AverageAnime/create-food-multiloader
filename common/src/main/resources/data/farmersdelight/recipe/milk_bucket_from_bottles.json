@@ -1,0 +1,47 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "farmersdelight"
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "farmersdelight:milk_bottle"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "farmersdelight"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
+            "id": "farmersdelight:milk_bottle"
+        }
+    ],
+    "type": "minecraft:crafting_shapeless",
+    "category": "misc",
+    "ingredients": [
+        {
+            "item": "minecraft:bucket"
+        },
+        {
+            "tag": "c:milk_bottle"
+        },
+        {
+            "tag": "c:milk_bottle"
+        },
+        {
+            "tag": "c:milk_bottle"
+        },
+        {
+            "tag": "c:milk_bottle"
+        }
+    ],
+    "result": {
+        "count": 1,
+        "id": "minecraft:milk_bucket"
+    }
+}

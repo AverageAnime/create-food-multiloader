@@ -1,9 +1,10 @@
 package dev.averageanime.block.type.plate;
 
+import dev.averageanime.config.ConfigValues;
 import dev.averageanime.block.type.display.FoodBlock;
-import dev.averageanime.block.type.blockentity.GenericDisplayBlockEntity;
+import dev.averageanime.createfood.lib.block.GenericDisplayBlockEntity;
 import dev.averageanime.platform.Services;
-import dev.averageanime.util.RecipeReflection;
+import dev.averageanime.createfood.lib.recipe.RecipeReflection;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
@@ -35,7 +36,7 @@ public class PlateSliceInteraction {
 
     public static boolean couldSlice(Player player, Level level, InteractionHand hand,
                                      BlockPos pos, BlockState state) {
-        if (!Services.PLATFORM.isCuttingBoardEnabled()) return false;
+        if (!ConfigValues.isCuttingBoardEnabled()) return false;
         Block block = state.getBlock();
         ItemStack heldItem = player.getItemInHand(hand);
         if (heldItem.isEmpty()) return false;
@@ -54,7 +55,7 @@ public class PlateSliceInteraction {
 
     public static boolean trySlice(Player player, Level level, InteractionHand hand,
                                    BlockPos pos, BlockState state) {
-        if (!Services.PLATFORM.isCuttingBoardEnabled()) return false;
+        if (!ConfigValues.isCuttingBoardEnabled()) return false;
         if (level.isClientSide()) return false;
 
         Block block = state.getBlock();
@@ -142,6 +143,8 @@ public class PlateSliceInteraction {
         return List.of();
     }
 
+    // Reflects into Farmer's Delight's CuttingBoardRecipe rather than importing it, since this mod has
+    // no compile-time dependency on Farmer's Delight and must still work without it installed.
     private static boolean toolMatchesRecipe(ItemStack tool, Object recipe) {
         try {
             Method getToolMethod = recipe.getClass().getMethod("getTool");

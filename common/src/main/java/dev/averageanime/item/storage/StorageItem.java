@@ -1,5 +1,7 @@
 package dev.averageanime.item.storage;
 
+import dev.averageanime.createfood.lib.storage.StorageAccess;
+import dev.averageanime.config.ConfigValues;
 import dev.averageanime.platform.Services;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.component.DataComponents;
@@ -92,8 +94,7 @@ public abstract class StorageItem extends BlockItem {
             int slot = findFirstFoodSlot(handler);
             if (slot >= 0) {
                 ItemStack food = handler.getInventoryItem(slot).copyWithCount(1);
-                // finishUsingItem consumes the copy and hands back the container; it is also the only
-                // path that runs effect overrides and deferred effects on EffectFood / EffectDrink
+                // finishUsingItem is also the only path that runs effect overrides and deferred effects.
                 ItemStack original = food.copy();
                 ItemStack container = food.finishUsingItem(level, player);
                 handler.removeItem(slot, 1);
@@ -118,7 +119,7 @@ public abstract class StorageItem extends BlockItem {
     @Override
     public int getUseDuration(@NotNull ItemStack stack, @NotNull LivingEntity entity) {
         CustomData beData = stack.get(DataComponents.BLOCK_ENTITY_DATA);
-        // getUnsafe() skips the full tag copy — read-only access, never mutate
+        // getUnsafe() skips the full tag copy -- read-only, never mutate.
         if (beData != null) {
             int ticks = beData.getUnsafe().getInt("use_ticks");
             if (ticks > 0) return ticks;
@@ -129,7 +130,6 @@ public abstract class StorageItem extends BlockItem {
     @Override
     public @NotNull UseAnim getUseAnimation(@NotNull ItemStack stack) {
         CustomData beData = stack.get(DataComponents.BLOCK_ENTITY_DATA);
-        // getUnsafe() skips the full tag copy — read-only access, never mutate
         if (beData != null && beData.getUnsafe().getBoolean("is_drink")) return UseAnim.DRINK;
         return UseAnim.EAT;
     }
@@ -167,7 +167,10 @@ public abstract class StorageItem extends BlockItem {
 
     @Override
     public @NotNull Optional<TooltipComponent> getTooltipImage(@NotNull ItemStack stack) {
-        if (!Services.PLATFORM.isStorageTooltipIconsEnabled()) return Optional.empty();
+        if (!ConfigValues.isStorageTooltipIconsEnabled()) return Optional.empty();
+        // Item.getTooltipImage is a common method, so a dedicated server can reach it if another mod
+        // asks for tooltip lines. Return before Minecraft is resolved: that class is absent there.
+        if (!Services.PLATFORM.isClient()) return Optional.empty();
         var mc = net.minecraft.client.Minecraft.getInstance();
         if (mc.level == null) return Optional.empty();
         StorageAccess handler = loadInventory(stack, mc.level.registryAccess());

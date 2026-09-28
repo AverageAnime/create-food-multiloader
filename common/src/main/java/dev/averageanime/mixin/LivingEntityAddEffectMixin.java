@@ -1,9 +1,9 @@
 package dev.averageanime.mixin;
 
+import dev.averageanime.config.ConfigValues;
 import dev.averageanime.config.ItemEffectOverride;
 import dev.averageanime.item.effect.EffectContext;
 import dev.averageanime.item.type.EffectFood;
-import dev.averageanime.platform.Services;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
@@ -38,23 +38,18 @@ public abstract class LivingEntityAddEffectMixin {
         return createfood$stackDuration(effectInstance);
     }
 
-    /**
-     * Vanilla's {@code MobEffectInstance#update} keeps whichever instance is longer and discards the
-     * other, so eating a second food throws away the remaining time of the first. While a Create: Food
-     * item is being consumed, sum the two durations instead (same amplifier only) and hand vanilla the
-     * longer instance, which it then accepts through its normal path.
-     */
+    /** Sums durations (same amplifier) while a Create: Food item is being consumed, rather than vanilla discarding the shorter instance. */
     private MobEffectInstance createfood$stackDuration(MobEffectInstance incoming) {
         LivingEntity self = (LivingEntity) (Object) this;
         if (!EffectContext.isConsuming(self)) return incoming;
-        if (!Services.PLATFORM.isEffectDurationStacking()) return incoming;
+        if (!ConfigValues.isEffectDurationStacking()) return incoming;
 
         MobEffectInstance existing = self.getEffect(incoming.getEffect());
         if (existing == null) return incoming;
         if (existing.getAmplifier() != incoming.getAmplifier()) return incoming;
         if (existing.isInfiniteDuration() || incoming.isInfiniteDuration()) return incoming;
 
-        int cap = Services.PLATFORM.getMaxStackedEffectDuration();
+        int cap = ConfigValues.getMaxStackedEffectDuration();
         long summed = (long) existing.getDuration() + incoming.getDuration();
         int merged = (int) Math.min(summed, cap > 0 ? cap : Integer.MAX_VALUE);
         if (merged <= existing.getDuration()) return incoming;

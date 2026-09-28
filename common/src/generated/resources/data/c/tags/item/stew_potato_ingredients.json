@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "#c:potato",
+      "required": false
+    },
+    {
+      "id": "#c:sweet_potato",
+      "required": false
+    }
+  ]
+}

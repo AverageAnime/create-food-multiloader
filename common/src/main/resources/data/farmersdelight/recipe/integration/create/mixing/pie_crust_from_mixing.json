@@ -1,0 +1,29 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:false"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:not",
+            "value": {
+                "condition": "fabric:all_mods_loaded",
+                "values": [
+                    "minecraft"
+                ]
+            }
+        }
+    ],
+    "ingredient": {
+        "tag": "c:raw_pie_crust"
+    },
+    "type": "minecraft:campfire_cooking",
+    "cookingtime": 200,
+    "experience": 0.25,
+    "category": "food",
+    "result": {
+        "id": "farmersdelight:pie_crust",
+        "count": 1
+    }
+}

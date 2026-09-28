@@ -1,36 +1,40 @@
 {
-    "type": "farmersdelight:cooking",
-    "experience": 0.05,
-    "ingredients": [
-        {
-            "item": "farmersdelight:pumpkin_slice"
-        }
-    ],
-    "recipe_book_tab": "drinks",
-    "result": {
-        "count": 1,
-        "id": "createfood:pumpkin_puree_bottle"
+  "type": "farmersdelight:cooking",
+  "experience": 0.05,
+  "ingredients": [
+    {
+      "item": "farmersdelight:pumpkin_slice"
+    }
+  ],
+  "recipe_book_tab": "drinks",
+  "container": {
+    "count": 1,
+    "id": "minecraft:glass_bottle"
+  },
+  "result": {
+    "count": 1,
+    "id": "createfood:pumpkin_puree_bottle"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "farmersdelight"
     },
-    "neoforge:conditions": [
-        {
-            "type": "neoforge:mod_loaded",
-            "modid": "farmersdelight"
-        },
-        {
-            "type": "createfood:enabled",
-            "id": "pumpkin_puree_bottle"
-        }
-    ],
-    "fabric:load_conditions": [
-        {
-            "condition": "fabric:all_mods_loaded",
-            "values": [
-                "farmersdelight"
-            ]
-        },
-        {
-            "condition": "createfood:enabled",
-            "id": "pumpkin_puree_bottle"
-        }
-    ]
+    {
+      "type": "createfood:enabled",
+      "id": "pumpkin_puree_bottle"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "farmersdelight"
+      ]
+    },
+    {
+      "condition": "createfood:enabled",
+      "id": "pumpkin_puree_bottle"
+    }
+  ]
 }

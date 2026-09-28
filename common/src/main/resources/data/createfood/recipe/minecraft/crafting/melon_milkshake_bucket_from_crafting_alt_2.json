@@ -2,7 +2,7 @@
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {
-            "tag": "c:buckets/milk"
+            "tag": "c:any_milk_bucket"
         },
         {
             "tag": "c:melon_ice_cream_bucket"

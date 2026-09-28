@@ -1,0 +1,31 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "mashed_potatoes_plate"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "mashed_potatoes_plate"
+    }
+  ],
+  "key": {
+    "1": {
+      "tag": "c:mashed_potatoes_bowl"
+    },
+    "2": {
+      "item": "minecraft:bowl"
+    }
+  },
+  "pattern": [
+    "1",
+    "2"
+  ],
+  "result": {
+    "count": 1,
+    "id": "createfood:mashed_potatoes_plate"
+  }
+}

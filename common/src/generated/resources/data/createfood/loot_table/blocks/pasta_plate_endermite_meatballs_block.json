@@ -1,5 +1,17 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "pasta_plate_endermite_meatballs_block"
+    }
+  ],
   "type": "minecraft:block",
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "pasta_plate_endermite_meatballs_block"
+    }
+  ],
   "pools": [
     {
       "bonus_rolls": 0.0,

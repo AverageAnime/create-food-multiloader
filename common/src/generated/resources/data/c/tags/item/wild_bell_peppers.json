@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "rusticdelight:wild_bell_peppers",
+      "required": false
+    },
+    {
+      "id": "veggiesdelight:wild_bellpeppers",
+      "required": false
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "create"
+        },
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "regions_unexplored"
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "regions_unexplored:peat_grass_block"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "create"
+            ]
+        },
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "regions_unexplored"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
+            "id": "regions_unexplored:peat_grass_block"
+        }
+    ],
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "item": "regions_unexplored:peat_dirt"
+        },
+        {
+            "type": "fluid_tag",
+            "amount": 500,
+            "fluid_tag": "c:water"
+        }
+    ],
+    "results": [
+        {
+            "id": "regions_unexplored:peat_grass_block"
+        }
+    ]
+}

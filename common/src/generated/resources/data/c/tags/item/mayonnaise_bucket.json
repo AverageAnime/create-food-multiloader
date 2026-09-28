@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "create_bic_bit:mayonnaise_bucket",
+      "required": false
+    },
+    {
+      "id": "ratatouille_fried_delights:mayonnaise_bucket",
+      "required": false
+    }
+  ]
+}

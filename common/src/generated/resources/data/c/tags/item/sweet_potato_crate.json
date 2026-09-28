@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "expandeddelight:sweet_potato_crate",
+      "required": false
+    },
+    {
+      "id": "veggiesdelight:sweet_potato_crate",
+      "required": false
+    }
+  ]
+}

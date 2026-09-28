@@ -5,9 +5,7 @@
             "tag": "c:sugar"
         },
         {
-            "type": "fluid_tag",
-            "amount": 125,
-            "fluid_tag": "c:milk"
+            "tag": "c:milk_powder"
         },
         {
             "type": "fluid_tag",

@@ -1,8 +1,9 @@
 package dev.averageanime.client.tooltip;
 
+import dev.averageanime.config.ConfigValues;
+import dev.averageanime.platform.Services;
 import dev.averageanime.CreateFoodCommon;
 import dev.averageanime.block.type.display.FoodBlock;
-import dev.averageanime.platform.Services;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -27,14 +28,17 @@ public class ItemTooltips {
     private static Map<String, CustomTooltip> customTooltipMap = null;
 
     public static void addTooltip(List<Component> tooltips, String modName, String... ingredientLines) {
-        boolean shouldShow = !Services.PLATFORM.isShiftRequiredForTooltips() || Screen.hasShiftDown();
+        // Reached from Item.appendHoverText, which is a common method: guard before Screen is resolved,
+        // since net.minecraft.client.gui.screens.Screen does not exist on a dedicated server.
+        if (!Services.PLATFORM.isClient()) return;
+        boolean shouldShow = !ConfigValues.isShiftRequiredForTooltips() || Screen.hasShiftDown();
 
-        if (modName != null && Services.PLATFORM.isCompatibilityEnabled()) {
+        if (modName != null && ConfigValues.isCompatibilityEnabled()) {
             tooltips.add(Component.translatable(modName).withStyle(ChatFormatting.BLUE));
         }
 
         if (shouldShow) {
-            if (ingredientLines != null && ingredientLines.length > 0 && Services.PLATFORM.isIngredientsEnabled()) {
+            if (ingredientLines != null && ingredientLines.length > 0 && ConfigValues.isIngredientsEnabled()) {
                 tooltips.add(Component.translatable("tooltip.createfood.ingredients")
                         .withStyle(ChatFormatting.GOLD, ChatFormatting.ITALIC));
                 for (String line : ingredientLines) {
@@ -45,7 +49,7 @@ public class ItemTooltips {
             }
         } else {
             boolean hasIngredients = ingredientLines != null && ingredientLines.length > 0;
-            if (hasIngredients && Services.PLATFORM.isShiftRequiredForTooltips()) {
+            if (hasIngredients && ConfigValues.isShiftRequiredForTooltips()) {
                 tooltips.add(Component.translatable("tooltip.createfood.hold").withStyle(ChatFormatting.DARK_GRAY)
                         .append(Component.translatable("tooltip.createfood.shift").withStyle(ChatFormatting.GRAY))
                         .append(Component.translatable("tooltip.createfood.info").withStyle(ChatFormatting.DARK_GRAY)));
@@ -54,6 +58,7 @@ public class ItemTooltips {
     }
 
     public static void onItemTooltip(ItemStack stack, List<Component> lines) {
+        if (!Services.PLATFORM.isClient()) return;
         String itemId = stack.getItem().builtInRegistryHolder().key().location().toString();
         loadCustomTooltips();
         if (customTooltipMap.containsKey(itemId)) {
@@ -77,7 +82,7 @@ public class ItemTooltips {
     private static void loadCustomTooltips() {
         if (customTooltipMap != null) return;
         customTooltipMap = new HashMap<>();
-        for (String entry : Services.PLATFORM.getCustomTooltips()) {
+        for (String entry : ConfigValues.getCustomTooltips()) {
             try {
                 String[] parts = entry.split("\\|", 3);
                 if (parts.length < 2) {
@@ -95,7 +100,6 @@ public class ItemTooltips {
                         if (!shortKey.isEmpty()) tooltipKeys[i] = TOOLTIP_PREFIX + shortKey + TOOLTIP_SUFFIX;
                     }
                 }
-                // Optional third field: the blue compatibility line shown above the ingredients.
                 String compatKey = null;
                 if (parts.length == 3 && !parts[2].trim().isEmpty()) {
                     compatKey = COMPAT_PREFIX + parts[2].trim();

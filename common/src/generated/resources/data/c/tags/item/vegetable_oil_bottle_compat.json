@@ -1,0 +1,20 @@
+{
+  "values": [
+    {
+      "id": "createfood:vegetable_oil_bottle",
+      "required": false
+    },
+    {
+      "id": "hearthandharvest:cooking_oil",
+      "required": false
+    },
+    {
+      "id": "rusticdelight:cooking_oil",
+      "required": false
+    },
+    {
+      "id": "ratatouille_fried_delights:sunflower_seed_oil_bottle",
+      "required": false
+    }
+  ]
+}

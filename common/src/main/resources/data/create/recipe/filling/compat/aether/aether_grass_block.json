@@ -1,0 +1,50 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "aether"
+        },
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "create"
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "aether:aether_grass_block"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "aether"
+            ]
+        },
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "create"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
+            "id": "aether:aether_grass_block"
+        }
+    ],
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "item": "aether:aether_dirt"
+        },
+        {
+            "type": "fluid_tag",
+            "amount": 500,
+            "fluid_tag": "c:water"
+        }
+    ],
+    "results": [
+        {
+            "id": "aether:aether_grass_block"
+        }
+    ]
+}

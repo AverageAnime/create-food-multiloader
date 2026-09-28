@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "c:pork_plate_mashed_potatoes_fried_egg"
+    },
+    {
+      "tag": "c:gravy_bottle"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "createfood:pork_plate_mashed_potatoes_gravy_fried_egg"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "pork_plate_mashed_potatoes_gravy_fried_egg"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "pork_plate_mashed_potatoes_gravy_fried_egg"
+    }
+  ]
+}

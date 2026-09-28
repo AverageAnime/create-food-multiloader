@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "createfood:powdered_sugar",
+      "required": false
+    },
+    {
+      "id": "createfood:brown_sugar",
+      "required": false
+    }
+  ]
+}

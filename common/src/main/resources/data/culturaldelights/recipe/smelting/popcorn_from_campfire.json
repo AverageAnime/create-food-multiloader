@@ -1,0 +1,34 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "culturaldelights"
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "culturaldelights:popcorn"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "culturaldelights"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
+            "id": "culturaldelights:popcorn"
+        }
+    ],
+    "type": "minecraft:campfire_cooking",
+    "ingredient": {
+        "tag": "c:corn_kernel"
+    },
+    "result": {
+        "count": 1,
+        "id": "culturaldelights:popcorn"
+    },
+    "experience": 0.35,
+    "cookingtime": 600
+}

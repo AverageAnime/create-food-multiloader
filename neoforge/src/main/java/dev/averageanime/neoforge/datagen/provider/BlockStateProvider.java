@@ -15,7 +15,7 @@ import dev.averageanime.block.type.cake.CakeCandleBlock;
 import dev.averageanime.block.type.display.*;
 import dev.averageanime.block.type.bowl.BowlBlock;
 import dev.averageanime.block.type.plate.PlateBlock;
-import dev.averageanime.neoforge.block.type.fluid.FluidBlock;
+import dev.averageanime.createfood.lib.fluid.FluidBlock;
 import dev.averageanime.block.type.pie.PieBlock;
 import dev.averageanime.block.type.pie.PizzaBlock;
 import dev.averageanime.block.type.pie.RawPieBlock;

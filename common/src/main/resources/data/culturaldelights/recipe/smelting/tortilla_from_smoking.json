@@ -1,0 +1,34 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "culturaldelights"
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "culturaldelights:tortilla"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "culturaldelights"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
+            "id": "culturaldelights:tortilla"
+        }
+    ],
+    "type": "minecraft:smoking",
+    "ingredient": {
+        "tag": "c:corn_dough"
+    },
+    "result": {
+        "count": 1,
+        "id": "culturaldelights:tortilla"
+    },
+    "experience": 0.35,
+    "cookingtime": 100
+}

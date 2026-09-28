@@ -1,7 +1,7 @@
 package dev.averageanime.item.effect;
 
+import dev.averageanime.config.ConfigValues;
 import dev.averageanime.config.ItemEffectOverride;
-import dev.averageanime.platform.Services;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.item.ItemStack;
 
@@ -17,7 +17,7 @@ public final class TooltipContext {
     public static List<ItemEffectOverride> push(ItemStack stack) {
         String itemId = BuiltInRegistries.ITEM.getKey(stack.getItem()).toString();
         List<ItemEffectOverride> prev = ACTIVE.get();
-        ACTIVE.set(Services.PLATFORM.getItemOverrideEntries(itemId));
+        ACTIVE.set(ConfigValues.getItemOverrideEntries(itemId));
         return prev;
     }
 

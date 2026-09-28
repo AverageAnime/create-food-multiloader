@@ -1,48 +1,52 @@
 {
-    "type": "farmersdelight:cooking",
-    "experience": 0.1,
-    "ingredients": [
-        {
-            "tag": "c:gelatin"
-        },
-        {
-            "tag": "c:gelatin"
-        },
-        {
-            "tag": "c:gelatin"
-        },
-        {
-            "item": "minecraft:water_bucket"
-        },
-        {
-            "tag": "c:dyes/red"
-        }
-    ],
-    "recipe_book_tab": "drinks",
-    "result": {
-        "count": 1,
-        "id": "createfood:red_gelatin_mix_bucket"
+  "type": "farmersdelight:cooking",
+  "experience": 0.1,
+  "ingredients": [
+    {
+      "tag": "c:gelatin"
     },
-    "neoforge:conditions": [
-        {
-            "type": "neoforge:mod_loaded",
-            "modid": "farmersdelight"
-        },
-        {
-            "type": "createfood:enabled",
-            "id": "red_gelatin_mix_bucket"
-        }
-    ],
-    "fabric:load_conditions": [
-        {
-            "condition": "fabric:all_mods_loaded",
-            "values": [
-                "farmersdelight"
-            ]
-        },
-        {
-            "condition": "createfood:enabled",
-            "id": "red_gelatin_mix_bucket"
-        }
-    ]
+    {
+      "tag": "c:gelatin"
+    },
+    {
+      "tag": "c:gelatin"
+    },
+    {
+      "item": "minecraft:water_bucket"
+    },
+    {
+      "tag": "c:dyes/red"
+    }
+  ],
+  "recipe_book_tab": "drinks",
+  "container": {
+    "count": 1,
+    "id": "minecraft:bucket"
+  },
+  "result": {
+    "count": 1,
+    "id": "createfood:red_gelatin_mix_bucket"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "farmersdelight"
+    },
+    {
+      "type": "createfood:enabled",
+      "id": "red_gelatin_mix_bucket"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "farmersdelight"
+      ]
+    },
+    {
+      "condition": "createfood:enabled",
+      "id": "red_gelatin_mix_bucket"
+    }
+  ]
 }

@@ -1,0 +1,50 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "create"
+        },
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "vampirism"
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "vampirism:cursed_grass"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "create"
+            ]
+        },
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "vampirism"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
+            "id": "vampirism:cursed_grass"
+        }
+    ],
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "item": "vampirism:cursed_earth"
+        },
+        {
+            "type": "fluid_tag",
+            "amount": 500,
+            "fluid_tag": "c:water"
+        }
+    ],
+    "results": [
+        {
+            "id": "vampirism:cursed_grass"
+        }
+    ]
+}

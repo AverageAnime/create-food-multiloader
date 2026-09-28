@@ -1,40 +1,28 @@
 package dev.averageanime.registry.type;
 
+import dev.averageanime.createfood.lib.registry.LazyEntry;
 import dev.averageanime.util.Tooltips;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
 import java.util.function.Supplier;
 
-public final class BlockEntry {
+public final class BlockEntry extends LazyEntry<net.minecraft.world.level.block.Block> {
 
     private static final List<BlockEntry>        REGISTRY = new ArrayList<>();
     private static final Map<String, BlockEntry> BY_ID    = new HashMap<>();
     public  static final List<BlockEntry>        ALL      = Collections.unmodifiableList(REGISTRY);
 
-    public final String        id;
     public final BlockCategory category;
     public final @Nullable String sliceItemId;
     public final @Nullable Tooltips.TooltipSpec tip;
 
-    private Supplier<net.minecraft.world.level.block.Block> registered;
-
     private BlockEntry(String id, BlockCategory category,
                        @Nullable String sliceItemId, @Nullable Tooltips.TooltipSpec tip) {
-        this.id          = id;
+        super(id);
         this.category    = category;
         this.sliceItemId = sliceItemId;
         this.tip         = tip;
-    }
-
-    public void bind(Supplier<net.minecraft.world.level.block.Block> supplier) {
-        if (this.registered != null) throw new IllegalStateException("Already bound: " + id);
-        this.registered = supplier;
-    }
-
-    public net.minecraft.world.level.block.Block get() {
-        if (registered == null) throw new IllegalStateException("Not yet registered: " + id);
-        return registered.get();
     }
 
     public static @Nullable BlockEntry getById(String id) {

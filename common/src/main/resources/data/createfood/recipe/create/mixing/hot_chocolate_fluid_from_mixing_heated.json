@@ -8,7 +8,7 @@
         {
             "type": "fluid_tag",
             "amount": 125,
-            "fluid_tag": "c:milk"
+            "fluid_tag": "c:any_milk"
         },
         {
             "type": "fluid_tag",

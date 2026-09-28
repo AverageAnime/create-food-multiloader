@@ -1,0 +1,48 @@
+{
+    "type": "expandeddelight:juicing",
+    "container": {
+        "count": 1,
+        "id": "minecraft:glass_bottle"
+    },
+    "experience": 1,
+    "ingredients": [
+        {
+            "tag": "c:melon"
+        },
+        {
+            "tag": "c:sugar"
+        }
+    ],
+    "recipe_book_tab": "drinks",
+    "result": {
+        "count": 1,
+        "id": "delightfulcreators:melon_juice"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "delightfulcreators"
+        },
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "expandeddelight"
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "delightfulcreators:melon_juice"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "delightfulcreators",
+                "expandeddelight"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
+            "id": "delightfulcreators:melon_juice"
+        }
+    ]
+}

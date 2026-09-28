@@ -1,0 +1,29 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:false"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:not",
+            "value": {
+                "condition": "fabric:all_mods_loaded",
+                "values": [
+                    "minecraft"
+                ]
+            }
+        }
+    ],
+    "ingredient": {
+        "tag": "c:raw_chocolate_pie"
+    },
+    "type": "minecraft:campfire_cooking",
+    "cookingtime": 550,
+    "experience": 0.95,
+    "category": "food",
+    "result": {
+        "count": 1,
+        "id": "farmersdelight:chocolate_pie"
+    }
+}

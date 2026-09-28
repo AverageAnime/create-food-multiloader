@@ -5,6 +5,13 @@
             "modid": "create"
         },
         {
+            "type": "neoforge:not",
+            "value": {
+                "type": "neoforge:tag_empty",
+                "tag": "c:pepper"
+            }
+        },
+        {
             "type": "createfood:enabled",
             "id": "paprika"
         }
@@ -17,6 +24,13 @@
             ]
         },
         {
+            "condition": "fabric:tags_populated",
+            "registry": "minecraft:item",
+            "values": [
+                "c:pepper"
+            ]
+        },
+        {
             "condition": "createfood:enabled",
             "id": "paprika"
         }
@@ -24,7 +38,7 @@
     "type": "create:milling",
     "ingredients": [
         {
-            "tag": "c:paprika_ingredient"
+            "tag": "c:pepper"
         }
     ],
     "processing_time": 80,

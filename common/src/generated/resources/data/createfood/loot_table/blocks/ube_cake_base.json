@@ -1,5 +1,17 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "ube_cake_base"
+    }
+  ],
   "type": "minecraft:block",
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "ube_cake_base"
+    }
+  ],
   "pools": [
     {
       "bonus_rolls": 0.0,

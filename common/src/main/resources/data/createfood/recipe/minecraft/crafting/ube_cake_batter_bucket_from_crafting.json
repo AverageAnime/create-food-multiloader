@@ -2,19 +2,19 @@
     "neoforge:conditions": [
         {
             "type": "createfood:enabled",
-            "id": "chocolate_cake_batter_bucket"
+            "id": "ube_cake_batter_bucket"
         }
     ],
     "fabric:load_conditions": [
         {
             "condition": "createfood:enabled",
-            "id": "chocolate_cake_batter_bucket"
+            "id": "ube_cake_batter_bucket"
         }
     ],
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {
-            "item": "minecraft:milk_bucket"
+            "tag": "c:any_milk_bucket"
         },
         {
             "tag": "c:sugar"

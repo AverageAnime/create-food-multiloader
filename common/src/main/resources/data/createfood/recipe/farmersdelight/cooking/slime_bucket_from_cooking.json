@@ -1,45 +1,49 @@
 {
-    "type": "farmersdelight:cooking",
-    "experience": 0.1,
-    "ingredients": [
-        {
-            "tag": "c:crops/grain"
-        },
-        {
-            "tag": "c:gelatin"
-        },
-        {
-            "tag": "c:dyes/lime"
-        },
-        {
-            "tag": "c:buckets/water"
-        }
-    ],
-    "recipe_book_tab": "drinks",
-    "result": {
-        "count": 1,
-        "id": "createfood:slime_bucket"
+  "type": "farmersdelight:cooking",
+  "experience": 0.1,
+  "ingredients": [
+    {
+      "tag": "c:crops/grain"
     },
-    "neoforge:conditions": [
-        {
-            "type": "neoforge:mod_loaded",
-            "modid": "farmersdelight"
-        },
-        {
-            "type": "createfood:enabled",
-            "id": "slime_bucket"
-        }
-    ],
-    "fabric:load_conditions": [
-        {
-            "condition": "fabric:all_mods_loaded",
-            "values": [
-                "farmersdelight"
-            ]
-        },
-        {
-            "condition": "createfood:enabled",
-            "id": "slime_bucket"
-        }
-    ]
+    {
+      "tag": "c:gelatin"
+    },
+    {
+      "tag": "c:dyes/lime"
+    },
+    {
+      "tag": "c:buckets/water"
+    }
+  ],
+  "recipe_book_tab": "drinks",
+  "container": {
+    "count": 1,
+    "id": "minecraft:bucket"
+  },
+  "result": {
+    "count": 1,
+    "id": "createfood:slime_bucket"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "farmersdelight"
+    },
+    {
+      "type": "createfood:enabled",
+      "id": "slime_bucket"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "farmersdelight"
+      ]
+    },
+    {
+      "condition": "createfood:enabled",
+      "id": "slime_bucket"
+    }
+  ]
 }

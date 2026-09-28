@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "c:rice_plate_carrot"
+    },
+    {
+      "tag": "c:mixed_salad_beetroot_carrot"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "createfood:mixed_salad_plate_rice_carrot"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "mixed_salad_plate_rice_carrot"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "mixed_salad_plate_rice_carrot"
+    }
+  ]
+}

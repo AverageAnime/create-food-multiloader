@@ -1,0 +1,49 @@
+{
+  "type": "farmersdelight:cooking",
+  "experience": 0.5,
+  "ingredients": [
+    {
+      "tag": "c:milk_bottle"
+    },
+    {
+      "tag": "c:milk_bottle"
+    },
+    {
+      "tag": "c:milk_bottle"
+    },
+    {
+      "tag": "c:milk_bottle"
+    }
+  ],
+  "recipe_book_tab": "drinks",
+  "container": {
+    "count": 1,
+    "id": "minecraft:glass_bottle"
+  },
+  "result": {
+    "count": 3,
+    "id": "createfood:skim_milk_bottle"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "farmersdelight"
+    },
+    {
+      "type": "createfood:enabled",
+      "id": "skim_milk_bottle"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "farmersdelight"
+      ]
+    },
+    {
+      "condition": "createfood:enabled",
+      "id": "skim_milk_bottle"
+    }
+  ]
+}

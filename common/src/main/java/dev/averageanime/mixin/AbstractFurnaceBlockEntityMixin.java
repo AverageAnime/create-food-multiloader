@@ -16,6 +16,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
+// Covers Furnace, Smoker, and Blast Furnace in one mixin: all three extend this class.
 @Mixin(net.minecraft.world.level.block.entity.AbstractFurnaceBlockEntity.class)
 public abstract class AbstractFurnaceBlockEntityMixin {
 
@@ -23,6 +24,9 @@ public abstract class AbstractFurnaceBlockEntityMixin {
     @Unique private int createfood$tickInputCount = 0;
     @Unique private ItemStack createfood$pendingRemainder = ItemStack.EMPTY;
 
+    // No vanilla callback fires when a single item finishes smelting, and NeoForge patches burn's own
+    // parameter list, so a more direct @WrapOperation/@Local mixin on burn works on Fabric but not
+    // NeoForge. Diffing the slot-0 (input) count between serverTick's HEAD and TAIL works on both.
     @Inject(method = "serverTick", at = @At("HEAD"))
     private static void createfood$captureInput(Level level, BlockPos pos, BlockState state,
                                                 net.minecraft.world.level.block.entity.AbstractFurnaceBlockEntity blockEntity, CallbackInfo ci) {
@@ -44,6 +48,8 @@ public abstract class AbstractFurnaceBlockEntityMixin {
         self.createfood$flushRemainder(blockEntity);
     }
 
+    // Buffered until output slot 2 is free, merging with a same-type pending remainder; a different
+    // pending type is dropped on the ground to make room rather than lost.
     @Unique
     private void createfood$bufferRemainder(net.minecraft.world.level.block.entity.AbstractFurnaceBlockEntity blockEntity, Item remainder) {
         if (createfood$pendingRemainder.isEmpty()) {

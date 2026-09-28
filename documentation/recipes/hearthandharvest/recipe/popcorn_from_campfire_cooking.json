@@ -1,0 +1,35 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "hearthandharvest"
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "hearthandharvest:popcorn"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "hearthandharvest"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
+            "id": "hearthandharvest:popcorn"
+        }
+    ],
+    "type": "minecraft:campfire_cooking",
+    "category": "food",
+    "cookingtime": 600,
+    "experience": 0.35,
+    "ingredient": {
+        "tag": "c:corn_kernel"
+    },
+    "result": {
+        "count": 1,
+        "id": "hearthandharvest:popcorn"
+    }
+}

@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "c:chicken_plate"
+    },
+    {
+      "tag": "c:mashed_potatoes_bowl"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "createfood:chicken_plate_mashed_potatoes"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "chicken_plate_mashed_potatoes"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "chicken_plate_mashed_potatoes"
+    }
+  ]
+}

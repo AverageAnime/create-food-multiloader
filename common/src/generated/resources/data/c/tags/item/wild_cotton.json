@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "hearthandharvest:wild_cotton",
+      "required": false
+    },
+    {
+      "id": "rusticdelight:wild_cotton",
+      "required": false
+    }
+  ]
+}

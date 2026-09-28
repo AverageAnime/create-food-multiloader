@@ -1,0 +1,47 @@
+{
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "tag": "c:donut_base"
+        },
+        {
+            "type": "fluid_tag",
+            "amount": 250,
+            "fluid_tag": "c:chocolate"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "ratatouille_fried_delights:chocolate_donut"
+            }
+        }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "create"
+        },
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "ratatouille_fried_delights"
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "ratatouille_fried_delights:chocolate_donut"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "create",
+                "ratatouille_fried_delights"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
+            "id": "ratatouille_fried_delights:chocolate_donut"
+        }
+    ]
+}

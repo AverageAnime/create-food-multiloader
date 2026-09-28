@@ -5,6 +5,7 @@
 	"texture_size": [32, 32],
 	"textures": {
 		"3": "createfood:item/donut_base",
+		"particle": "createfood:block/small_plate_block",
 		"plate": "createfood:block/small_plate_block"
 	},
 	"elements": [
@@ -50,7 +51,7 @@
 			"from": [6.5, 1, 6.5],
 			"to": [7.5, 2, 9.5],
 			"rotation": {
-				"angle": 45,
+				"angle": 0,
 				"axis": "y",
 				"origin": [8, 1.5, 8]
 			},
@@ -81,7 +82,7 @@
 			"from": [7.5, 1, 6.5],
 			"to": [8.5, 2, 7.5],
 			"rotation": {
-				"angle": 45,
+				"angle": 0,
 				"axis": "y",
 				"origin": [8, 1.5, 8]
 			},
@@ -104,7 +105,7 @@
 			"from": [7.5, 1, 8.5],
 			"to": [8.5, 2, 9.5],
 			"rotation": {
-				"angle": 45,
+				"angle": 0,
 				"axis": "y",
 				"origin": [8, 1.5, 8]
 			},
@@ -127,7 +128,7 @@
 			"from": [8.5, 1, 6.5],
 			"to": [9.5, 2, 9.5],
 			"rotation": {
-				"angle": 45,
+				"angle": 0,
 				"axis": "y",
 				"origin": [8, 1.5, 8]
 			},
@@ -155,6 +156,42 @@
 			}
 		}
 	],
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [63, -180, 0],
+			"translation": [0, 6, 4.75]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [63, -180, 0],
+			"translation": [0, 6, 4.75]
+		},
+		"firstperson_righthand": {
+			"rotation": [0, -180, 0],
+			"translation": [0, 7, 0]
+		},
+		"firstperson_lefthand": {
+			"rotation": [0, -180, 0],
+			"translation": [0, 7, 0]
+		},
+		"ground": {
+			"translation": [0, 4, 0]
+		},
+		"gui": {
+			"rotation": [-150, 45, -180],
+			"translation": [0, 3.5, 0]
+		},
+		"head": {
+			"rotation": [0, -180, 0],
+			"translation": [0, 14, 0]
+		},
+		"fixed": {
+			"rotation": [-90, 0, 0],
+			"translation": [0, 0, -7]
+		},
+		"on_shelf": {
+			"rotation": [0, -180, 0]
+		}
+	},
 	"groups": [
 		{
 			"name": "plate",

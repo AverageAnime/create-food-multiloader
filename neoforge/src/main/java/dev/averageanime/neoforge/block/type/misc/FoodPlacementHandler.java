@@ -4,7 +4,7 @@ import dev.averageanime.CreateFoodCommon;
 import dev.averageanime.block.type.display.FoodBlock;
 import dev.averageanime.block.type.bowl.GenericDisplayBowlBlock;
 import dev.averageanime.block.type.plate.GenericDisplayPlateBlock;
-import dev.averageanime.block.type.blockentity.GenericDisplayBlockEntity;
+import dev.averageanime.createfood.lib.block.GenericDisplayBlockEntity;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.item.context.UseOnContext;

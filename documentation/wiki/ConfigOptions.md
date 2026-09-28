@@ -2,7 +2,7 @@
 
 ---
 
-**If you are updating to a version with new config defaults, you will need to regenerate the list, or add the new entries manually.**
+**If you are updating to a version with new config defaults, you will need to regenerate the list, or add the new entries manually.** The same applies after turning an addon on or off in `[addons]`: it changes what a *fresh* config is written with, not what is already in yours.
 
 ---
 
@@ -52,6 +52,21 @@ custom_tooltips = [
 ---
 
 # `createfood-common.toml`
+
+---
+
+## Addons
+
+### Enabled Addons
+Format: `addon_id`
+* Choose which addons contribute their content. The list holds the enabled ids, so delete to disable.
+* Create: Food ships two of its own: `createfoodplus` and `createfoodrebalance`.
+* Every installed addon is named in the log on startup.
+* An addon shapes the defaults a config is written with. A value already in your toml wins, so turning an addon on or off changes an existing config only once you reset the lists it contributes to.
+```toml
+[addons]
+addons_enabled = ["createfoodplus"]
+```
 
 ---
 
@@ -186,6 +201,39 @@ item = [
 
 ---
 
+## Registry Conditions
+Format: `<entry>@<clause>`, chainable as `<entry>@<clause>@<clause>`
+* Every line in `block`, `display_block`, `fluid` and `item` may end with a clause which decides whether it registers.
+* The clause goes at the very end of the line, after any `|` fields.
+> **Note: Changes require a game restart.**
+
+| Clause             | Meaning                                                       |
+|--------------------|---------------------------------------------------------------|
+| `@absent:<modids>` | Skip registration if any of them is installed.                |
+| `@mod:<modids>`    | Only register when all of them are installed.                 |
+| `@any:<modids>`    | Several mods could supply it, and one is enough to register.  |
+| `@always`          | Register unconditionally.                                     |
+
+```toml
+[blocks]
+block = [
+  "my_berry_pie|pie|createfood:my_berry_pie_slice@absent:createfoodplus"
+]
+display_block = [
+  "kaleidoscope_cookery:samsa|plate|2@mod:kaleidoscope_cookery"
+]
+fluid = [
+  "honey_syrup|4|3@absent:farmersrespite"
+]
+
+[items]
+item = [
+  "my_tea_leaves|plain@any:farmersrespite,farmersdelight@absent:createfoodplus"
+]
+```
+
+---
+
 # `createfood-server.toml`
 
 ---
@@ -285,6 +333,7 @@ Format: `item_id|nutrition|saturation`
 * Use `-` to keep the default value.
 * `item_id` may be a **bare id** for a Create: Food item (e.g. `sugar_cane_juice_bottle`) or a **namespaced id** for any other mod's food (e.g. `minecraft:apple`, `farmersdelight:apple_pie_slice`).
     * Foreign items must already have a food component.
+* This list is **empty by default**. The vanilla, Create and Farmer's Delight values ship in the `createfoodrebalance` addon, which is off unless you enable it in `[addons]` and reset this list.
 > **Note: Foreign-item overrides only affects item stacks created or loaded after reload — relog to refresh an existing inventory.**
 ```toml
 [items]
@@ -295,12 +344,22 @@ nutrition_saturation = [
 ]
 ```
 
+### Default Effects
+- **enable_default_effects**: Whether Create: Food's own foods and drinks grant the status effects they ship with (default: `true`)
+* Turn this off for a blank slate: no built-in effect fires and none is listed on a tooltip.
+* The config effect system keeps working. An `item_overrides` line still adds, adjusts or removes effects exactly as it does with defaults on, so you can switch the built-ins off and hand-pick the ones you want back.
+* Only this mod's items are affected. Vanilla and other mods' food keep their effects - remove those individually with `item_overrides`.
+```toml
+[items.effects]
+enable_default_effects = false
+item_overrides = ["smore|comfort|9000|0"]
+```
+
 ### Effect Stacking
 - **stack_duration**: Eating a food that grants an effect you already have at the same level adds the two durations together instead of the longer one replacing the shorter (default: `true`)
 - **max_stacked_duration**: Ceiling in ticks for a stacked duration (default: `36000`, 30 minutes). Set to `0` for no limit
 * Only the *same* level stacks. Speed I on top of Speed I sums; Speed II on top of Speed I still follows vanilla, where the stronger effect takes over and the weaker one resumes afterwards.
 * Applies to any food, not just this mod's - vanilla food and other mods' food stack with ours. Anything without a food value is untouched, so potions, beacons and similar sources keep vanilla behaviour.
-* Tooltips show an item's own effect duration, not what you would end up with after stacking.
 ```toml
 [items.effects]
 stack_duration = true
@@ -402,8 +461,8 @@ ration_box_filter = ["mod:createfood", "tag:c:foods/meat"]
 ## Compatibility
 
 ### Create
-- **expanded_basin_fluids**: Give Create's basin **4** fluid input slots instead of the stock 2, so mixing recipes can call for more than two distinct fluids (default: `true`). **Turning this off discards any fluid sitting in the 3rd and 4th slots of existing basins**.
-  * Only the **input** is increased. The output tank stays at 2 slots, and each slot still holds 1000 mB.
+- **expanded_basin_fluids**: Give Create's basin 4 fluid slots on each side instead of 2, allowing mixing recipes to call for more than two fluids and produce more than two (default: `true`). **Disabling discards any extra fluid, input or output**.
+  * Input and output are raised along with the recipe caps. Each slot still holds 1000 mB.
 - **basin_fluid_items**: Let a filled bottle or bowl be poured into Create's basin by hand, and an empty container be filled from it, using Create's filling and emptying recipes (default: `true`).
 ```toml
 [compat.create]

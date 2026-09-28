@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "farmersdelight:apple_cider",
+      "required": false
+    },
+    {
+      "id": "farmersrespite:apple_cider",
+      "required": false
+    }
+  ]
+}

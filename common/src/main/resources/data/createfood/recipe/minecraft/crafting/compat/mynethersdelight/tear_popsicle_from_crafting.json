@@ -1,0 +1,42 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:stick"
+        },
+        {
+            "tag": "c:ice_blocks"
+        },
+        {
+            "tag": "c:ice_blocks"
+        },
+        {
+            "tag": "c:ghast_tear"
+        }
+    ],
+    "result": {
+        "id": "mynethersdelight:tear_popsicle"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "mynethersdelight"
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "mynethersdelight:tear_popsicle"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "mynethersdelight"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
+            "id": "mynethersdelight:tear_popsicle"
+        }
+    ]
+}

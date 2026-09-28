@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "create:rope",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:rope",
+      "required": false
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "create"
+        },
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "neapolitan"
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "neapolitan:ice_cubes"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "create"
+            ]
+        },
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "neapolitan"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
+            "id": "neapolitan:ice_cubes"
+        }
+    ],
+    "type": "create:crushing",
+    "ingredients": [
+        {
+            "tag": "c:ice_blocks"
+        }
+    ],
+    "processing_time": 100,
+    "results": [
+        {
+            "count": 3,
+            "id": "neapolitan:ice_cubes"
+        },
+        {
+            "chance": 0.25,
+            "count": 3,
+            "id": "neapolitan:ice_cubes"
+        }
+    ]
+}

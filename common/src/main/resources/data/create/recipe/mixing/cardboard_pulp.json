@@ -1,0 +1,49 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "create"
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "create:pulp"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "create"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
+            "id": "create:pulp"
+        }
+    ],
+    "type": "create:mixing",
+    "ingredients": [
+        {
+            "tag": "create:pulpifiable"
+        },
+        {
+            "tag": "create:pulpifiable"
+        },
+        {
+            "tag": "create:pulpifiable"
+        },
+        {
+            "tag": "create:pulpifiable"
+        },
+        {
+            "type": "fluid_tag",
+            "amount": 250,
+            "fluid_tag": "c:water"
+        }
+    ],
+    "results": [
+        {
+            "id": "create:pulp"
+        }
+    ]
+}

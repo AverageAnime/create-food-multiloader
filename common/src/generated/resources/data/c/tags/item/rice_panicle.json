@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "farmersdelight:rice_panicle",
+      "required": false
+    },
+    {
+      "id": "kaleidoscope_cookery:rice_panicle",
+      "required": false
+    }
+  ]
+}

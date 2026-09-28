@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "farmersrespite:coffee",
+      "required": false
+    },
+    {
+      "id": "rusticdelight:coffee",
+      "required": false
+    }
+  ]
+}

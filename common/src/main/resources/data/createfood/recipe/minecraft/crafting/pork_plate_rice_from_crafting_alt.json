@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "tag": "c:cooked_pork"
+    },
+    {
+      "tag": "c:cooked_rice"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "createfood:pork_plate_rice"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "pork_plate_rice"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "pork_plate_rice"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "culturaldelights:spicy_curry",
+      "required": false
+    },
+    {
+      "id": "mynethersdelight:spicy_curry",
+      "required": false
+    }
+  ]
+}

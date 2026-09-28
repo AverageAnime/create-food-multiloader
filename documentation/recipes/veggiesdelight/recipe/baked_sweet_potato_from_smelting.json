@@ -1,0 +1,35 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "veggiesdelight"
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "veggiesdelight:baked_sweet_potato"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "veggiesdelight"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
+            "id": "veggiesdelight:baked_sweet_potato"
+        }
+    ],
+    "type": "minecraft:smelting",
+    "category": "food",
+    "cookingtime": 200,
+    "experience": 0.35,
+    "ingredient": {
+        "tag": "c:sweet_potato"
+    },
+    "result": {
+        "count": 1,
+        "id": "veggiesdelight:baked_sweet_potato"
+    }
+}

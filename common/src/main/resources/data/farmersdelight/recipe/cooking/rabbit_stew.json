@@ -1,0 +1,49 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "farmersdelight"
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "minecraft:rabbit_stew"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "farmersdelight"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
+            "id": "minecraft:rabbit_stew"
+        }
+    ],
+    "type": "farmersdelight:cooking",
+    "container": {
+        "count": 1,
+        "id": "minecraft:bowl"
+    },
+    "experience": 1.0,
+    "ingredients": [
+        {
+            "tag": "c:crops/potato"
+        },
+        {
+            "item": "minecraft:rabbit"
+        },
+        {
+            "tag": "c:carrot"
+        },
+        {
+            "tag": "c:mushrooms"
+        }
+    ],
+    "recipe_book_tab": "meals",
+    "result": {
+        "count": 1,
+        "id": "minecraft:rabbit_stew"
+    }
+}

@@ -1,8 +1,8 @@
 package dev.averageanime.registry;
 
-import dev.averageanime.registry.type.FluidEntry;
+import dev.averageanime.createfood.lib.fluid.FluidEntry;
 
-import static dev.averageanime.registry.type.FluidEntry.fluid;
+import static dev.averageanime.createfood.lib.fluid.FluidEntry.fluid;
 
 @SuppressWarnings("unused")
 public final class FluidRegistry {
@@ -74,6 +74,7 @@ public final class FluidRegistry {
     public static final FluidEntry GLOW_BERRY_JUICE_FLUID_ENTRY = fluid("glow_berry_juice",         3, 2);
     public static final FluidEntry GLOW_BERRY_MILKSHAKE_FLUID_ENTRY = fluid("glow_berry_milkshake",     2, 4);
     public static final FluidEntry GLOW_BERRY_PIE_FILLING_FLUID_ENTRY = fluid("glow_berry_pie_filling");
+    public static final FluidEntry GRAVY_FLUID_ENTRY = fluid("gravy");
     public static final FluidEntry GRAY_GELATIN_MIX_FLUID_ENTRY = fluid("gray_gelatin_mix");
     public static final FluidEntry GREEN_GELATIN_MIX_FLUID_ENTRY = fluid("green_gelatin_mix");
     public static final FluidEntry HEAVY_CREAM_FLUID_ENTRY = fluid("heavy_cream");
@@ -111,6 +112,7 @@ public final class FluidRegistry {
     public static final FluidEntry RED_GELATIN_MIX_FLUID_ENTRY = fluid("red_gelatin_mix");
     public static final FluidEntry RICE_PUDDING_FLUID_ENTRY = fluid("rice_pudding");
     public static final FluidEntry SHAKSHUKA_FLUID_ENTRY = fluid("shakshuka");
+    public static final FluidEntry SKIM_MILK_FLUID_ENTRY = fluid("skim_milk");
     public static final FluidEntry SLIME_FLUID_ENTRY = fluid("slime");
     public static final FluidEntry SOUR_CREAM_FLUID_ENTRY = fluid("sour_cream");
     public static final FluidEntry SQUID_INK_FLUID_ENTRY = fluid("squid_ink");

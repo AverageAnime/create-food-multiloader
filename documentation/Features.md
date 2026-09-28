@@ -197,6 +197,12 @@ Empty display surfaces cycle between three forms with `Shift + RMB`: plate → s
 - **Retrieve:** `RMB` on placed block
 - **Break:** `LMB` — drops block version
 
+Drinking a placed bottle, or decanting it with an empty glass bottle, leaves an empty bottle block (`createfood:bottle_block`) behind, the way a bowl already leaves `bowl_block`. Retrieving the drink whole still clears the block, since the item carries its own bottle. `RMB` that empty bottle with a filled bottle to stand that drink back up; `RMB` it empty-handed for the glass bottle.
+
+### Transforming placed food
+
+Using an item on a placed food combines the two through recipes that already exist — see §9.
+
 ### Auto-Registration
 
 > **Toolkit:** Most items are automatically caught by existing pattern-matching in `ModDisplayBlocks`. The toolkit checks the item ID against these patterns and informs you if new code is needed. The Display Block section in the Item tab only shows for regular items (not blocks or fluids, which are always auto-caught).
@@ -221,30 +227,48 @@ Pattern-matched automatically (by display type):
 
 ---
 
-## 9. Fluid Dipping
+## 9. Display Interactions
 
-A single small bowl (`createfood:small_bowl_block`) doubles as a fluid container. Fill it, then right-click it with a food item to transform that item using Create's `create:filling` recipes.
+Using a held item on a placed food combines the two, and a single large bowl (`createfood:large_bowl_block`) doubles as a fluid container you can dip food into.
+
+### Transforming placed food
+
+Right-clicking a placed food with a held item resolves against recipes that already exist, in this order:
+
+1. **Take the contents out** — hold the matching empty container (a glass bottle at a placed drink). You get the drink item and the empty container is left standing.
+2. **Top it up with a fluid** — hold a filled container. Its fluid plus the placed food resolves a `create:filling` recipe. The amount must match exactly, so nothing is destroyed; a bucket will not apply to a 250mb recipe.
+3. **Apply an ingredient** — a two-ingredient crafting recipe of the placed food plus the held item. This is the same recipe pool handcrafting reads, and needs no Create.
+4. **Create deploying recipes** — only for the handful of results that exist nowhere else, such as the chip milkshakes.
+
+As many servings are converted as the held stack can pay for. **When the block can represent the whole result it becomes that block** — a placed milkshake bottle plus chocolate chips becomes the chip milkshake bottle; a plate of four bases plus four ingredients becomes a plate of four results. Only a partial conversion, or a result with no block of that family, hands you items instead.
+
+Because this runs off an ordinary right-click, a Create Deployer can drive it.
+
+Excluded foods (`display_interactions_exclude`) are skipped. The list names the food being transformed — an item on it can still be used as an ingredient.
+
+### Dipping
 
 This is the mod's first *functional* Create integration — the ~450 `create:filling` and `create:emptying` recipe JSONs under `data/createfood/recipe/create/` previously only existed for Create's own machines. Create is not a build dependency; the recipes are read at runtime via registry lookup plus reflection, the same approach `PlateSliceInteraction` uses for Farmer's Delight cutting recipes. **Without Create the bowl still fills from buckets, but dipping is inert.**
 
 ### Holding fluid
 
-Only a lone bowl holds fluid; a stack of 2–8 behaves exactly as it always has. Capacity is 1000mb (one bucket).
+Only a lone bowl holds fluid; a stack of 2–8 behaves exactly as it always has. Capacity is 4000mb (four buckets), configurable via `large_bowl_capacity_mb`.
 
-Fluid is stored as raw millibuckets and recipes are charged their exact declared amount, so no rounding error accumulates across fill/dip cycles. "Servings" (`amount / 125`) is a display convention only.
+Fluid is stored as raw millibuckets and recipes are charged their exact declared amount. Every amount in the mod divides 1000 evenly, so no rounding error is possible across fill/dip cycles. "Servings" (`amount / 125`) lines up exactly with the smallest container — a stick or a bread slice is one serving.
 
 | Source | Amount | Returns |
 |--------|--------|---------|
 | Any bucket | 1000mb | Empty bucket |
-| Bottle (`create:emptying`) | 500mb | Glass bottle |
-| Filled bowl (`create:emptying`) | 333mb | Bowl |
-| Ice cream stick (`create:emptying`) | 111mb | Stick |
+| Concentrate bottle (`create:emptying`) | 500mb | Glass bottle |
+| Bottle (`create:emptying`) | 250mb | Glass bottle |
+| Filled bowl (`create:emptying`) | 250mb | Bowl |
+| Ice cream stick (`create:emptying`) | 125mb | Stick |
 
 A pour is refused outright if it does not fit in full or if the bowl holds a different fluid — nothing is ever partially consumed.
 
 ### Taking fluid back out
 
-Dipping an empty container fills it, which is the normal way to empty a bowl: a glass bottle takes 500mb, a bowl 333mb, a stick or waffle cone 111mb. These come from the 93 container-input filling recipes and are allowed by default; add them to `dipping_exclude` to restrict dipping to food only.
+Dipping an empty container fills it, which is the normal way to empty a bowl: a glass bottle takes 250mb (500mb for a concentrate), a bowl 250mb, a stick or waffle cone 125mb. These come from the 93 container-input filling recipes and are allowed by default; add them to `display_interactions_exclude` to restrict dipping to food only.
 
 Buckets are the exception and are handled natively in both directions, because Create's data never covers them — no filling recipe takes `minecraft:bucket` and no emptying recipe produces one. A bucket is all-or-nothing, so only a completely full bowl can fill one.
 
@@ -252,7 +276,7 @@ Buckets are the exception and are handled natively in both directions, because C
 
 One item converts per click; the result goes to the player's inventory, or drops at their feet if it does not fit.
 
-Exclusion is by exact item id (`dipping_exclude`), never by name — `createfood:ice_cream_bowl` and `createfood:pretzel_stick` are genuine food dips despite reading like containers, while bare `minecraft:bowl` and `minecraft:stick` are containers.
+Exclusion is by exact item id (`display_interactions_exclude`), never by name — `createfood:ice_cream_bowl` and `createfood:pretzel_stick` are genuine food dips despite reading like containers, while bare `minecraft:bowl` and `minecraft:stick` are containers.
 
 ### Losing the fluid
 
@@ -316,8 +340,8 @@ A filled bowl refuses the plate toggle, refuses pickup, and refuses to be stacke
 | `enable_cutting_board` | `true` | Allow cutting board offhand interaction on plates |
 | `enable_generic_display` | `true` | Allow any item to display generically on plates and bowls |
 | `exclude` | *(empty)* | Item IDs blocked from generic plate/bowl placement |
-| `enable_dipping` | `true` | Allow a single small bowl to hold fluid and transform dipped food (see §9) |
-| `dipping_exclude` | *(empty)* | Item IDs blocked as dipping inputs |
+| `enable_display_interactions` | `true` | Transform placed food with a held item, and dip food into a large bowl of fluid (see §9) |
+| `display_interactions_exclude` | *(empty)* | Item IDs blocked from being transformed |
 
 ---
 
@@ -334,4 +358,4 @@ Item tag files (`data/c/tags/item/<id>.json`) are generated automatically by `It
 **Textures you still need to create** (datagen references them but does not generate them):
 - `textures/item/<id>.png` for every item
 - `textures/block/<id>_top.png`, `_side.png`, `_inner.png` for cake/pie/pizza blocks
-- `textures/fluidEntry/<id>_still.png` and `<id>_flow.png` for fluids
+- `textures/fluid/<id>_still.png` and `<id>_flow.png` for fluids

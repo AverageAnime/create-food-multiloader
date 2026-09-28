@@ -1,6 +1,6 @@
 package dev.averageanime.menu.type.item;
 
-import dev.averageanime.item.storage.StorageAccess;
+import dev.averageanime.createfood.lib.storage.StorageAccess;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.sounds.SoundEvents;

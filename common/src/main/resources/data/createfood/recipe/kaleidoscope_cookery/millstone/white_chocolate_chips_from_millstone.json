@@ -1,0 +1,32 @@
+{
+  "type": "kaleidoscope_cookery:millstone",
+  "ingredient": {
+    "tag": "c:bar_of_white_chocolate"
+  },
+  "result": {
+    "count": 8,
+    "id": "createfood:white_chocolate_chips"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "kaleidoscope_cookery"
+    },
+    {
+      "type": "createfood:enabled",
+      "id": "white_chocolate_chips"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "kaleidoscope_cookery"
+      ]
+    },
+    {
+      "condition": "createfood:enabled",
+      "id": "white_chocolate_chips"
+    }
+  ]
+}

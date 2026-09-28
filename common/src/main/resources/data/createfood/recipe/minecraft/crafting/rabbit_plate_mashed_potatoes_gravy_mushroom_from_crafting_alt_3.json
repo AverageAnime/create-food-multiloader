@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "tag": "c:cooked_rabbit"
+    },
+    {
+      "tag": "c:mashed_potatoes_bowl_gravy"
+    },
+    {
+      "tag": "c:mushrooms"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "createfood:rabbit_plate_mashed_potatoes_gravy_mushroom"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "rabbit_plate_mashed_potatoes_gravy_mushroom"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "rabbit_plate_mashed_potatoes_gravy_mushroom"
+    }
+  ]
+}

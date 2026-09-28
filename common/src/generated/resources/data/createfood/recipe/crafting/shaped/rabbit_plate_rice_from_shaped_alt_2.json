@@ -1,0 +1,31 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "rabbit_plate_rice"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "rabbit_plate_rice"
+    }
+  ],
+  "key": {
+    "1": {
+      "tag": "c:cooked_rabbit"
+    },
+    "2": {
+      "tag": "c:rice_plate"
+    }
+  },
+  "pattern": [
+    "1",
+    "2"
+  ],
+  "result": {
+    "count": 1,
+    "id": "createfood:rabbit_plate_rice"
+  }
+}

@@ -1,7 +1,7 @@
 package dev.averageanime.item.interaction;
 
+import dev.averageanime.config.ConfigValues;
 import dev.averageanime.CreateFoodCommon;
-import dev.averageanime.platform.Services;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
@@ -18,7 +18,7 @@ import java.util.List;
 public class ClothFilterInteraction {
 
     public static boolean tryFilterInteraction(Player player, Level level) {
-        if (!Services.PLATFORM.isFilterInteractionsEnabled()) return false;
+        if (!ConfigValues.isFilterInteractionsEnabled()) return false;
 
         ItemStack mainHand = player.getMainHandItem();
         ItemStack offHand  = player.getOffhandItem();
@@ -73,7 +73,7 @@ public class ClothFilterInteraction {
     private static volatile ParsedInteractions parsed;
 
     private static List<Interaction> loadInteractions() {
-        List<? extends String> entries = Services.PLATFORM.getFilterInteractionEntries();
+        List<? extends String> entries = ConfigValues.getFilterInteractionEntries();
         ParsedInteractions p = parsed;
         if (p == null || p.source() != entries) {
             p = new ParsedInteractions(entries, entries.stream()

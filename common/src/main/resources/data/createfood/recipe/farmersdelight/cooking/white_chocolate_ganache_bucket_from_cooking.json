@@ -16,6 +16,10 @@
     }
   ],
   "recipe_book_tab": "meals",
+  "container": {
+    "count": 1,
+    "id": "minecraft:bucket"
+  },
   "result": {
     "count": 1,
     "id": "createfood:white_chocolate_ganache_bucket"

@@ -1,0 +1,26 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:hash_browns_plate"
+        },
+        {
+            "tag": "c:cooked_eggs"
+        }
+    ],
+    "result": {
+        "id": "createfood:hash_browns_plate_fried_egg"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "hash_browns_plate_fried_egg"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "hash_browns_plate_fried_egg"
+        }
+    ]
+}

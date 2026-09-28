@@ -1,0 +1,41 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "category": "misc",
+    "ingredients": [
+        {
+            "tag": "c:bread_slice"
+        },
+        {
+            "tag": "c:bread_slice"
+        },
+        {
+            "tag": "c:cooked_chicken"
+        },
+        {
+            "tag": "c:foods/leafy_green"
+        },
+        {
+            "tag": "c:carrot"
+        }
+    ],
+    "result": {
+        "count": 1,
+        "id": "farmersdelight:chicken_sandwich"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:false"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:not",
+            "value": {
+                "condition": "fabric:all_mods_loaded",
+                "values": [
+                    "minecraft"
+                ]
+            }
+        }
+    ]
+}

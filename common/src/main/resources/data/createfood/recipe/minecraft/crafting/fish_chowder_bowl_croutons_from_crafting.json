@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "c:fish_chowder_bowl"
+    },
+    {
+      "tag": "c:croutons"
+    },
+    {
+      "tag": "c:bowl"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "createfood:fish_chowder_bowl_croutons"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "fish_chowder_bowl_croutons"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "fish_chowder_bowl_croutons"
+    }
+  ]
+}

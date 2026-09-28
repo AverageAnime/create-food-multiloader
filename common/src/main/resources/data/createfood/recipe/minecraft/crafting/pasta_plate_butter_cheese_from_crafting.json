@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "c:pasta_plate_butter"
+    },
+    {
+      "tag": "c:cheeses"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "createfood:pasta_plate_butter_cheese"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "pasta_plate_butter_cheese"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "pasta_plate_butter_cheese"
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+    "type": "expandeddelight:juicing",
+    "container": {
+        "count": 1,
+        "id": "minecraft:glass_bottle"
+    },
+    "experience": 1,
+    "ingredients": [
+        {
+            "tag": "c:raspberry"
+        },
+        {
+            "tag": "c:sugar"
+        }
+    ],
+    "recipe_book_tab": "drinks",
+    "result": {
+        "count": 1,
+        "id": "hearthandharvest:raspberry_juice"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "expandeddelight"
+        },
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "hearthandharvest"
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "hearthandharvest:raspberry_juice"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "expandeddelight",
+                "hearthandharvest"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
+            "id": "hearthandharvest:raspberry_juice"
+        }
+    ]
+}

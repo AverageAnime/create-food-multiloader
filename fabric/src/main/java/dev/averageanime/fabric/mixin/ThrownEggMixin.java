@@ -8,11 +8,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-/**
- * Fabric parity for NeoForge's ProjectileImpactEvent handler — Fabric has no
- * projectile-impact callback. HEAD placement runs before the egg discards
- * itself; the common handler guards side, config gate and hidden-item state.
- */
+/** Fabric parity for NeoForge's ProjectileImpactEvent handler; HEAD placement runs before the egg discards itself. */
 @Mixin(ThrownEgg.class)
 public class ThrownEggMixin {
 

@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "hearthandharvest:carrot_cake",
+      "required": false
+    },
+    {
+      "id": "veggiesdelight:carrot_cake",
+      "required": false
+    }
+  ]
+}

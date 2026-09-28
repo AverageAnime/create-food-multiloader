@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "tag": "c:cooked_mutton"
+    },
+    {
+      "tag": "c:mashed_potatoes_bowl"
+    },
+    {
+      "tag": "c:cooked_eggs"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "createfood:mutton_plate_mashed_potatoes_fried_egg"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "mutton_plate_mashed_potatoes_fried_egg"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "mutton_plate_mashed_potatoes_fried_egg"
+    }
+  ]
+}

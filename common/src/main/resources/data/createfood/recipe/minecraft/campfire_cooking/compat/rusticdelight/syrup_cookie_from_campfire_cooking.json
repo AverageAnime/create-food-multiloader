@@ -1,0 +1,35 @@
+{
+    "type": "minecraft:campfire_cooking",
+    "category": "food",
+    "cookingtime": 600,
+    "experience": 0.35,
+    "ingredient": {
+        "tag": "c:raw_syrup_cookie"
+    },
+    "result": {
+        "count": 1,
+        "id": "rusticdelight:syrup_cookie"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "rusticdelight"
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "rusticdelight:syrup_cookie"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "rusticdelight"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
+            "id": "rusticdelight:syrup_cookie"
+        }
+    ]
+}

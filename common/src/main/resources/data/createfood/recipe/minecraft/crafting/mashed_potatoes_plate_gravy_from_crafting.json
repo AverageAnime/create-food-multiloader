@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "tag": "c:mashed_potatoes_bowl_gravy"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "createfood:mashed_potatoes_plate_gravy"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "mashed_potatoes_plate_gravy"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "mashed_potatoes_plate_gravy"
+    }
+  ]
+}

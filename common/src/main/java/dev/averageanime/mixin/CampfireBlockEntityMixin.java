@@ -14,6 +14,9 @@ import org.spongepowered.asm.mixin.injection.At;
 @Mixin(net.minecraft.world.level.block.entity.CampfireBlockEntity.class)
 public abstract class CampfireBlockEntityMixin {
 
+    // @Local(ordinal = 0) grabs cookTick's input ItemStack by position, not name. Wraps the
+    // dropItemStack call specifically (rather than injecting at TAIL) so the remainder drops at the
+    // coordinates already computed for the cooked result instead of recomputing them.
     @WrapOperation(method = "cookTick",
             at = @At(value = "INVOKE",
                     target = "Lnet/minecraft/world/Containers;dropItemStack(Lnet/minecraft/world/level/Level;DDDLnet/minecraft/world/item/ItemStack;)V"))

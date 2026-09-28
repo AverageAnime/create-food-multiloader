@@ -10,8 +10,6 @@ import java.util.function.Supplier;
 @SuppressWarnings("unused")
 public final class ConfigValues {
 
-    // ── Client ────────────────────────────────────────────────────────────
-
     static Supplier<Boolean> ALWAYS_DISPLAY_UPRIGHT       = unbound();
     static Supplier<Boolean> REQUIRE_SHIFT_FOR_TOOLTIPS   = unbound();
     static Supplier<Boolean> SHOW_COMPATIBILITY           = unbound();
@@ -21,8 +19,6 @@ public final class ConfigValues {
 
     static Supplier<List<? extends String>> CUSTOM_TOOLTIPS       = unbound();
     static Supplier<List<? extends String>> HIDE_ITEMS            = unbound();
-
-    // ── Server ────────────────────────────────────────────────────────────
 
     static Supplier<Boolean> CAMPFIRE_COOKING_ENABLED       = unbound();
     static Supplier<Boolean> CAMPFIRE_COOKING_REQUIRE_SHIFT = unbound();
@@ -38,6 +34,7 @@ public final class ConfigValues {
     static Supplier<Boolean> ENABLE_CUTTING_BOARD           = unbound();
     static Supplier<Boolean> ENABLE_DISPLAY_INTERACTIONS    = unbound();
     static Supplier<Integer> LARGE_BOWL_CAPACITY_MB         = unbound();
+    static Supplier<Boolean> ENABLE_DEFAULT_EFFECTS         = unbound();
     static Supplier<Boolean> ENABLE_EGG_IMPACT_REMAINDER    = unbound();
     static Supplier<Boolean> ENABLE_FILTER_INTERACTIONS     = unbound();
     static Supplier<Boolean> ENABLE_GENERIC_DISPLAY         = unbound();
@@ -91,6 +88,10 @@ public final class ConfigValues {
         catch (IllegalStateException ignored) { return null; }
     }
 
+    public static boolean areDefaultEffectsEnabled() {
+        try { return ENABLE_DEFAULT_EFFECTS.get(); } catch (IllegalStateException e) { return true; }
+    }
+
     public static boolean isEffectDurationStacking() {
         try { return STACK_EFFECT_DURATION.get(); } catch (IllegalStateException e) { return true; }
     }
@@ -118,6 +119,11 @@ public final class ConfigValues {
     public static boolean isItemEnabled(String itemId) {
         try { return ConfigParser.isItemEnabled(itemId, HIDE_ITEMS.get()); }
         catch (IllegalStateException ignored) { return true; }
+    }
+
+    /** The test behind the {@code createfood:enabled} recipe condition: enabled in config and registered. */
+    public static boolean isRecipeSubjectAvailable(String itemId) {
+        return isItemEnabled(itemId) && ConfigParser.isItemRegistered(itemId);
     }
 
     public static boolean isDisplayBlockEnabled(String blockId) {
@@ -148,28 +154,36 @@ public final class ConfigValues {
     }
 
     public static boolean isPumpkinPiePlacementEnabled() { try { return ENABLE_PUMPKIN_PIE_PLACEMENT.get(); } catch (IllegalStateException e) { return false; } }
-    public static boolean isCampfireCookingEnabled()       { return CAMPFIRE_COOKING_ENABLED.get(); }
+    public static boolean isCampfireCookingEnabled()       { try { return CAMPFIRE_COOKING_ENABLED.get();     } catch (IllegalStateException e) { return false; } }
     public static boolean isCampfireCookingRequireShift()  { try { return CAMPFIRE_COOKING_REQUIRE_SHIFT.get(); } catch (IllegalStateException e) { return true; } }
-    public static boolean isCampfireCookingSticksOnly()    { return CAMPFIRE_COOKING_STICKS_ONLY.get(); }
+    public static boolean isCampfireCookingSticksOnly()    { try { return CAMPFIRE_COOKING_STICKS_ONLY.get(); } catch (IllegalStateException e) { return false; } }
     public static int getCampfireCookingHorizontalRange() { try { return CAMPFIRE_COOKING_HORIZONTAL_RANGE.get(); } catch (IllegalStateException e) { return 3; } }
     public static int getCampfireCookingVerticalRange()   { try { return CAMPFIRE_COOKING_VERTICAL_RANGE.get();   } catch (IllegalStateException e) { return 1; } }
-    public static List<? extends String> getCampfireCookingExclude() { return CAMPFIRE_COOKING_EXCLUDE.get(); }
-    public static List<? extends String> getCampfireCookingFilter()  { return CAMPFIRE_COOKING_FILTER.get(); }
+    public static List<? extends String> getCampfireCookingExclude() { try { return CAMPFIRE_COOKING_EXCLUDE.get(); } catch (IllegalStateException e) { return List.of(); } }
+    public static List<? extends String> getCampfireCookingFilter()  { try { return CAMPFIRE_COOKING_FILTER.get();  } catch (IllegalStateException e) { return List.of(); } }
 
-    public static boolean isHandcraftingEnabled()          { return ENABLE_HANDCRAFTING.get(); }
-    public static boolean isHandcraftingSingleEnabled()    { return HANDCRAFTING_ALLOW_SINGLE.get(); }
-    public static boolean isHandcraftingParticlesEnabled() { return HANDCRAFTING_PARTICLES.get(); }
+    public static boolean isHandcraftingEnabled()          { try { return ENABLE_HANDCRAFTING.get();       } catch (IllegalStateException e) { return true;  } }
+    public static boolean isHandcraftingSingleEnabled()    { try { return HANDCRAFTING_ALLOW_SINGLE.get(); } catch (IllegalStateException e) { return false; } }
+    public static boolean isHandcraftingParticlesEnabled() { try { return HANDCRAFTING_PARTICLES.get();    } catch (IllegalStateException e) { return true;  } }
 
     public static boolean isHandcraftingAllowed(ItemStack result) {
-        if (ConfigParser.matchesFilterList(result, HANDCRAFTING_EXCLUDE.get())) return false;
-        List<? extends String> filter = HANDCRAFTING_FILTER.get();
+        List<? extends String> exclude;
+        List<? extends String> filter;
+        try {
+            exclude = HANDCRAFTING_EXCLUDE.get();
+            filter = HANDCRAFTING_FILTER.get();
+        } catch (IllegalStateException e) {
+            exclude = ConfigDefaults.HANDCRAFTING_EXCLUDE_DEFAULT;
+            filter = List.of();
+        }
+        if (ConfigParser.matchesFilterList(result, exclude)) return false;
         if (filter.isEmpty()) return true;
         return ConfigParser.matchesFilterList(result, filter);
     }
 
-    public static boolean isFilterInteractionsEnabled() { return ENABLE_FILTER_INTERACTIONS.get(); }
-    public static List<String> getFilterInteractions()  { return FILTER_INTERACTIONS.get().stream().map(String::valueOf).toList(); }
-    public static List<? extends String> getFilterInteractionEntries() { return FILTER_INTERACTIONS.get(); }
+    public static boolean isFilterInteractionsEnabled() { try { return ENABLE_FILTER_INTERACTIONS.get(); } catch (IllegalStateException e) { return true; } }
+    public static List<String> getFilterInteractions()  { return getFilterInteractionEntries().stream().map(String::valueOf).toList(); }
+    public static List<? extends String> getFilterInteractionEntries() { try { return FILTER_INTERACTIONS.get(); } catch (IllegalStateException e) { return ConfigDefaults.FILTER_INTERACTIONS_DEFAULT; } }
 
     public static boolean isBasinFluidItemsEnabled() { try { return CREATE_BASIN_FLUID_ITEMS.get(); } catch (IllegalStateException e) { return true; } }
 
@@ -181,7 +195,7 @@ public final class ConfigValues {
     public static boolean isShiftRequiredForTooltips() { try { return REQUIRE_SHIFT_FOR_TOOLTIPS.get(); } catch (IllegalStateException e) { return false; } }
     public static boolean isCompatibilityEnabled()     { try { return SHOW_COMPATIBILITY.get();         } catch (IllegalStateException e) { return true;  } }
     public static boolean isIngredientsEnabled()       { try { return SHOW_INGREDIENTS.get();           } catch (IllegalStateException e) { return true;  } }
-    public static List<? extends String> getCustomTooltips() { return CUSTOM_TOOLTIPS.get(); }
+    public static List<? extends String> getCustomTooltips() { try { return CUSTOM_TOOLTIPS.get(); } catch (IllegalStateException e) { return AddonDefaults.customTooltips(); } }
 
     public static boolean isClothSackInventoryEnabled() { try { return CLOTH_SACK_INVENTORY_ENABLED.get(); } catch (IllegalStateException e) { return true;  } }
     public static boolean isClothSackEatFromItem()      { try { return CLOTH_SACK_EAT_FROM_ITEM.get();     } catch (IllegalStateException e) { return false; } }

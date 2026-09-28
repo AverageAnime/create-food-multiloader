@@ -1,0 +1,59 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "farmersdelight"
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "farmersdelight:honey_glazed_ham_block"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "farmersdelight"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
+            "id": "farmersdelight:honey_glazed_ham_block"
+        }
+    ],
+    "type": "minecraft:crafting_shapeless",
+    "category": "misc",
+    "ingredients": [
+        {
+            "item": "minecraft:sweet_berries"
+        },
+        {
+            "item": "minecraft:honey_bottle"
+        },
+        {
+            "item": "minecraft:sweet_berries"
+        },
+        {
+            "item": "minecraft:sweet_berries"
+        },
+        {
+            "item": "farmersdelight:smoked_ham"
+        },
+        {
+            "item": "minecraft:sweet_berries"
+        },
+        {
+            "tag": "c:cooked_rice"
+        },
+        {
+            "item": "minecraft:bowl"
+        },
+        {
+            "tag": "c:cooked_rice"
+        }
+    ],
+    "result": {
+        "count": 1,
+        "id": "farmersdelight:honey_glazed_ham_block"
+    }
+}

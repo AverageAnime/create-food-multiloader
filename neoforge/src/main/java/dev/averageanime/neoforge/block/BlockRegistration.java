@@ -1,6 +1,7 @@
 package dev.averageanime.neoforge.block;
 
 import dev.averageanime.config.ConfigBootstrap;
+import dev.averageanime.config.AddonDefaults;
 import dev.averageanime.config.ConfigDefaults;
 import dev.averageanime.CreateFoodCommon;
 import dev.averageanime.block.BlockFactory;
@@ -98,7 +99,7 @@ public class BlockRegistration {
 
     private static void registerConfigBlocks() {
         BlockFactory.registerConfigBlocks(HOOKS,
-                ConfigBootstrap.read(ConfigBootstrap.BLOCKS, ConfigDefaults.CUSTOM_BLOCK_DEFAULT));
+                ConfigBootstrap.read(ConfigBootstrap.BLOCKS, AddonDefaults.customBlocks()));
     }
 
     public static void register(IEventBus eventBus) {

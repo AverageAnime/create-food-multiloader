@@ -1,0 +1,55 @@
+{
+  "type": "farmersdelight:cooking",
+  "experience": 0.35,
+  "container": {
+    "count": 1,
+    "id": "minecraft:bowl"
+  },
+  "ingredients": [
+    {
+      "tag": "c:foods/raw_fish"
+    },
+    {
+      "item": "minecraft:kelp"
+    },
+    {
+      "tag": "c:onion"
+    },
+    {
+      "tag": "c:salt"
+    },
+    {
+      "item": "minecraft:potion"
+    },
+    {
+      "tag": "c:cooked_eggs"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "count": 1,
+    "id": "createfood:kelp_soup_bowl_fried_egg"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "farmersdelight"
+    },
+    {
+      "type": "createfood:enabled",
+      "id": "kelp_soup_bowl_fried_egg"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "farmersdelight"
+      ]
+    },
+    {
+      "condition": "createfood:enabled",
+      "id": "kelp_soup_bowl_fried_egg"
+    }
+  ]
+}

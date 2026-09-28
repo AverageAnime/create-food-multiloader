@@ -1,0 +1,31 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "mashed_potatoes_plate_gravy_fried_egg"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "mashed_potatoes_plate_gravy_fried_egg"
+    }
+  ],
+  "key": {
+    "1": {
+      "tag": "c:cooked_eggs"
+    },
+    "2": {
+      "tag": "c:mashed_potatoes_plate_gravy"
+    }
+  },
+  "pattern": [
+    "1",
+    "2"
+  ],
+  "result": {
+    "count": 1,
+    "id": "createfood:mashed_potatoes_plate_gravy_fried_egg"
+  }
+}

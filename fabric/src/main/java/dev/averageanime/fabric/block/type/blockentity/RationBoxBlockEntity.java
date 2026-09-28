@@ -33,7 +33,6 @@ public class RationBoxBlockEntity
         });
     }
 
-    /** Typed accessor for platform menus that need a {@link StorageInventory}. */
     public StorageInventory storageInventory() {
         return (StorageInventory) inventory;
     }

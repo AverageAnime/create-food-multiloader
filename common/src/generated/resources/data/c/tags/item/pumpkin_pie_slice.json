@@ -7,6 +7,10 @@
     {
       "id": "delightfulcreators:pumpkin_pie_slice",
       "required": false
+    },
+    {
+      "id": "farmersdelight:pumpkin_pie_slice",
+      "required": false
     }
   ]
 }

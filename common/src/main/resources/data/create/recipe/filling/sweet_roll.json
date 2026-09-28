@@ -1,0 +1,34 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:false"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:not",
+            "value": {
+                "condition": "fabric:all_mods_loaded",
+                "values": [
+                    "minecraft"
+                ]
+            }
+        }
+    ],
+    "ingredients": [
+        {
+            "tag": "c:sweet_roll_base"
+        },
+        {
+            "type": "fluid_tag",
+            "amount": 250,
+            "fluid_tag": "c:cream_frosting"
+        }
+    ],
+    "type": "create:filling",
+    "results": [
+        {
+            "id": "create:sweet_roll"
+        }
+    ]
+}

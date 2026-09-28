@@ -7,6 +7,10 @@
     {
       "id": "hearthandharvest:mashed_potatoes",
       "required": false
+    },
+    {
+      "id": "veggiesdelight:mashed_potatoes",
+      "required": false
     }
   ]
 }

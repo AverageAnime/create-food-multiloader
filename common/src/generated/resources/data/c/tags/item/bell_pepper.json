@@ -1,14 +1,6 @@
 {
   "values": [
     {
-      "id": "#c:crops/bell_pepper",
-      "required": false
-    },
-    {
-      "id": "#c:crops/bellpepper",
-      "required": false
-    },
-    {
       "id": "rusticdelight:bell_pepper_slice_black",
       "required": false
     },

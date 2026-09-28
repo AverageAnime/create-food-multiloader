@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "hearthandharvest:scarecrow",
+      "required": false
+    },
+    {
+      "id": "kaleidoscope_cookery:scarecrow",
+      "required": false
+    }
+  ]
+}

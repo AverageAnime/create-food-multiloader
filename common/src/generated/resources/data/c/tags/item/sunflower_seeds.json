@@ -1,0 +1,16 @@
+{
+  "values": [
+    {
+      "id": "create_bic_bit:sunflower_seeds",
+      "required": false
+    },
+    {
+      "id": "hearthandharvest:sunflower_seeds",
+      "required": false
+    },
+    {
+      "id": "ratatouille_fried_delights:sunflower_seeds",
+      "required": false
+    }
+  ]
+}

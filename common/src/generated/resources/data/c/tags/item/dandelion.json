@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "veggiesdelight:dandelion",
+      "required": false
+    },
+    {
+      "id": "veggiesdelight:dandelion_leaf",
+      "required": false
+    }
+  ]
+}

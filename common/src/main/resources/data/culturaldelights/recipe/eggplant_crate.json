@@ -1,0 +1,39 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "culturaldelights"
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "culturaldelights:eggplant_crate"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "culturaldelights"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
+            "id": "culturaldelights:eggplant_crate"
+        }
+    ],
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "###",
+        "###",
+        "###"
+    ],
+    "key": {
+        "#": {
+            "tag": "c:eggplant"
+        }
+    },
+    "result": {
+        "count": 1,
+        "id": "culturaldelights:eggplant_crate"
+    }
+}

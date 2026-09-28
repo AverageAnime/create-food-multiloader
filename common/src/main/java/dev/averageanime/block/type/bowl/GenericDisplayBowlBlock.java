@@ -1,9 +1,10 @@
 package dev.averageanime.block.type.bowl;
 
+import dev.averageanime.config.ConfigValues;
 import com.mojang.serialization.MapCodec;
-import dev.averageanime.block.type.blockentity.GenericDisplayBlockEntity;
+import dev.averageanime.createfood.lib.block.GenericDisplayBlockEntity;
 import dev.averageanime.platform.Services;
-import dev.averageanime.util.ItemSpawns;
+import dev.averageanime.createfood.lib.util.ItemSpawns;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.component.DataComponents;
@@ -97,8 +98,8 @@ public class GenericDisplayBowlBlock extends BaseEntityBlock {
                                                        @NotNull InteractionHand hand,
                                                        @NotNull BlockHitResult hit) {
         if (heldStack.isEmpty()) return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
-        if (!Services.PLATFORM.isGenericDisplayEnabled()) return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
-        if (!Services.PLATFORM.isGenericDisplayAllowed(heldStack)) return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
+        if (!ConfigValues.isGenericDisplayEnabled()) return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
+        if (!ConfigValues.isGenericDisplayAllowed(heldStack)) return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
 
         if (level.isClientSide) return ItemInteractionResult.SUCCESS;
 

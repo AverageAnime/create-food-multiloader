@@ -7,6 +7,10 @@
     {
       "id": "#c:lemon_slice",
       "required": false
+    },
+    {
+      "id": "expandeddelight:lemon",
+      "required": false
     }
   ]
 }

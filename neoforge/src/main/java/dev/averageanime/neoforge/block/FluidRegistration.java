@@ -1,11 +1,13 @@
 package dev.averageanime.neoforge.block;
 
 import dev.averageanime.config.ConfigBootstrap;
+import dev.averageanime.config.AddonDefaults;
 import dev.averageanime.config.ConfigDefaults;
 import dev.averageanime.CreateFoodCommon;
-import dev.averageanime.neoforge.block.type.fluid.FluidBlock;
+import dev.averageanime.neoforge.item.ItemRegistration;
+import dev.averageanime.createfood.lib.fluid.FluidBlock;
 import dev.averageanime.registry.FluidRegistry;
-import dev.averageanime.registry.type.FluidEntry;
+import dev.averageanime.createfood.lib.fluid.FluidEntry;
 import net.minecraft.core.registries.Registries;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -27,6 +29,11 @@ public class FluidRegistration {
     public static final Map<String, FluidBlock.FluidType> BY_ID = new LinkedHashMap<>();
 
     static {
+        // Must happen before the first declaration below.
+        FluidBlock.configure(new FluidBlock.Registrars(
+                CreateFoodCommon.MOD_ID, FLUIDS, FLUID_TYPES,
+                BlockRegistration.BLOCKS, ItemRegistration.ITEMS));
+
         FluidRegistry.init();
         for (FluidEntry f : FluidEntry.ALL) {
             FluidBlock entry = new FluidBlock(f.id).tex(f.texture).fog(f.fogStart, f.fogEnd);
@@ -36,7 +43,7 @@ public class FluidRegistration {
     }
 
     private static void registerConfigFluids() {
-        for (String entry : ConfigBootstrap.read(ConfigBootstrap.FLUIDS, ConfigDefaults.CUSTOM_FLUID_DEFAULT)) {
+        for (String entry : ConfigBootstrap.read(ConfigBootstrap.FLUIDS, AddonDefaults.customFluids())) {
             String[] p = entry.split("\\|");
             if (p.length != 1 && p.length != 3) {
                 LOGGER.warn("Create: Food - Skipping invalid custom_fluid entry (expected name or name|slope|level): {}", entry);

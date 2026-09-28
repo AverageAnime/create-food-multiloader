@@ -9,7 +9,7 @@
             "tag": "c:cacao_butter"
         },
         {
-            "item": "minecraft:milk_bucket"
+            "tag": "c:milk_powder"
         }
     ],
     "recipe_book_tab": "misc",

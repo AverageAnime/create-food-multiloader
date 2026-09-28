@@ -1,6 +1,6 @@
 package dev.averageanime.block.type.blockentity;
 
-import dev.averageanime.item.storage.StorageAccess;
+import dev.averageanime.createfood.lib.storage.StorageAccess;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;

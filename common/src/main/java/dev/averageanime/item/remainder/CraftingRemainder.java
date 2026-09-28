@@ -1,7 +1,7 @@
 package dev.averageanime.item.remainder;
 
+import dev.averageanime.config.ConfigValues;
 import dev.averageanime.CreateFoodCommon;
-import dev.averageanime.platform.Services;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.projectile.ThrownEgg;
@@ -25,7 +25,7 @@ public final class CraftingRemainder {
 
     @Nullable
     public static Item getRemainderFor(Item input) {
-        List<? extends String> entries = Services.PLATFORM.getCraftingRemainders();
+        List<? extends String> entries = ConfigValues.getCraftingRemainders();
         RemainderCache c = cache;
         if (c == null || c.source() != entries) {
             c = new RemainderCache(entries, buildRemainderMap(entries));
@@ -53,11 +53,11 @@ public final class CraftingRemainder {
 
     public static void handleEggImpact(ThrownEgg egg) {
         if (egg.level().isClientSide()) return;
-        if (!Services.PLATFORM.isEggImpactRemainderEnabled()) return;
+        if (!ConfigValues.isEggImpactRemainderEnabled()) return;
 
         Item eggshellItem = resolveItem("createfood:eggshell");
         if (eggshellItem == Items.AIR) return;
-        if (!Services.PLATFORM.isItemEnabled(BuiltInRegistries.ITEM.getKey(eggshellItem).getPath())) return;
+        if (!ConfigValues.isItemEnabled(BuiltInRegistries.ITEM.getKey(eggshellItem).getPath())) return;
 
         ItemStack eggshell = new ItemStack(eggshellItem, 1);
         egg.level().addFreshEntity(

@@ -4,7 +4,7 @@ import dev.averageanime.CreateFoodCommon;
 import dev.averageanime.fabric.CreateFood;
 import dev.averageanime.fabric.block.DisplayBlockRegistration;
 import dev.averageanime.fabric.block.FluidRegistration;
-import dev.averageanime.registry.ItemRegistry;
+import dev.averageanime.registry.type.ItemEntry;
 import dev.averageanime.tab.TabFilters;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.core.Registry;
@@ -31,7 +31,7 @@ public class TabRegistration {
         Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, ITEM_GROUP_ID,
                 FabricItemGroup.builder()
                         .title(Component.translatable("tab.createfood"))
-                        .icon(() -> new ItemStack(ItemRegistry.BREAKFAST_PLATE.get()))
+                        .icon(() -> new ItemStack(ItemEntry.getById("toast_plate_hash_browns_fried_egg").get()))
                         .displayItems((params, output) -> {
                             Set<String> displayBlockPaths = collectDisplayBlockPaths();
                             BuiltInRegistries.ITEM.entrySet().stream()

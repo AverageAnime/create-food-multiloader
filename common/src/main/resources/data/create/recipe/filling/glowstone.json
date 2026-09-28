@@ -1,0 +1,46 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "create"
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "minecraft:glowstone_dust"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "create"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
+            "id": "minecraft:glowstone_dust"
+        }
+    ],
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "tag": "c:paprika"
+        },
+        {
+            "type": "fluid_stack",
+            "amount": 25,
+            "fluid": "create:potion",
+            "components": {
+                "create:potion_fluid_bottle_type": "regular",
+                "minecraft:potion_contents": {
+                    "potion": "minecraft:night_vision"
+                }
+            }
+        }
+    ],
+    "results": [
+        {
+            "id": "minecraft:glowstone_dust"
+        }
+    ]
+}

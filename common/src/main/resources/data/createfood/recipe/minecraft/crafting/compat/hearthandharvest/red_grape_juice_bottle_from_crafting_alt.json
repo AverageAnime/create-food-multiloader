@@ -1,0 +1,44 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:potion",
+            "components": {
+                "minecraft:potion_contents": {
+                    "potion": "minecraft:water"
+                }
+            }
+        },
+        {
+            "tag": "c:sugar"
+        },
+        {
+            "tag": "c:red_grape"
+        }
+    ],
+    "result": {
+        "id": "hearthandharvest:red_grape_juice"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "hearthandharvest"
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "hearthandharvest:red_grape_juice"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "hearthandharvest"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
+            "id": "hearthandharvest:red_grape_juice"
+        }
+    ]
+}

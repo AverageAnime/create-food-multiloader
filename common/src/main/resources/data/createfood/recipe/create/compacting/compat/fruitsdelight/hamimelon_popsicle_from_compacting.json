@@ -1,0 +1,51 @@
+{
+    "type": "create:compacting",
+    "ingredients": [
+        {
+            "item": "minecraft:stick"
+        },
+        {
+            "item": "minecraft:ice"
+        },
+        {
+            "item": "minecraft:ice"
+        },
+        {
+            "tag": "c:hamimelon"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "fruitsdelight:hamimelon_popsicle"
+            }
+        }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "create"
+        },
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "fruitsdelight"
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "fruitsdelight:hamimelon_popsicle"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "create",
+                "fruitsdelight"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
+            "id": "fruitsdelight:hamimelon_popsicle"
+        }
+    ]
+}

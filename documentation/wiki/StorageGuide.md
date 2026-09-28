@@ -22,4 +22,4 @@ The cloth sack and the ration box work the same way. They differ only in slot co
 
 ---
 
-Stack size, what may be stored, and the eat-from-item toggle are all configurable — see [Config Options](Config-Options).
+Stack size, what may be stored, and the eat-from-item toggle are all configurable — see [Config Options](https://github.com/AverageAnime/create-food-multiloader/wiki/Config-Options).

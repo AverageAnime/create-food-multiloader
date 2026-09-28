@@ -3,6 +3,10 @@
     {
       "id": "createfood:raw_apple_pie",
       "required": false
+    },
+    {
+      "id": "ratatouille_fried_delights:raw_apple_pie",
+      "required": false
     }
   ]
 }

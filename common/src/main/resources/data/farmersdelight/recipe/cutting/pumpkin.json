@@ -1,0 +1,47 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "farmersdelight"
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "farmersdelight:pumpkin_slice"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "farmersdelight"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
+            "id": "farmersdelight:pumpkin_slice"
+        }
+    ],
+    "type": "farmersdelight:cutting",
+    "ingredients": [
+        {
+            "tag": "c:crops/pumpkin"
+        }
+    ],
+    "result": [
+        {
+            "item": {
+                "count": 4,
+                "id": "farmersdelight:pumpkin_slice"
+            }
+        }
+    ],
+    "tool": [
+        {
+            "type": "farmersdelight:item_ability",
+            "action": "knife_dig"
+        },
+        {
+            "tag": "c:tools/knife"
+        }
+    ]
+}

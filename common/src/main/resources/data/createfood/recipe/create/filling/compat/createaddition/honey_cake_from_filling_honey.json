@@ -1,0 +1,47 @@
+{
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "tag": "c:cake_base"
+        },
+        {
+            "type": "fluid_tag",
+            "amount": 500,
+            "fluid_tag": "c:honey"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "createaddition:honey_cake"
+            }
+        }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "create"
+        },
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "createaddition"
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "createaddition:honey_cake"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "create",
+                "createaddition"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
+            "id": "createaddition:honey_cake"
+        }
+    ]
+}

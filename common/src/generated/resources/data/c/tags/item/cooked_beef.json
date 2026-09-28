@@ -15,6 +15,14 @@
     {
       "id": "ratatouille_fried_delights:hamburger_patty",
       "required": false
+    },
+    {
+      "id": "kaleidoscope_cookery:cooked_cow_offal",
+      "required": false
+    },
+    {
+      "id": "createfood:cooked_beef_cuts",
+      "required": false
     }
   ]
 }

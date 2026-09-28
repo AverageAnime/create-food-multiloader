@@ -6,7 +6,12 @@
             "tag": "c:raw_pasta"
         },
         {
-            "tag": "c:buckets/water"
+            "item": "minecraft:potion",
+            "components": {
+                "minecraft:potion_contents": {
+                    "potion": "minecraft:water"
+                }
+            }
         }
     ],
     "recipe_book_tab": "misc",

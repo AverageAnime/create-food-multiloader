@@ -1,6 +1,14 @@
 {
   "values": [
     {
+      "id": "ratatouille:melon_juice_fluid",
+      "required": false
+    },
+    {
+      "id": "ratatouille:flowing_melon_juice_fluid",
+      "required": false
+    },
+    {
       "id": "delightfulcreators:melon_juice",
       "required": false
     },

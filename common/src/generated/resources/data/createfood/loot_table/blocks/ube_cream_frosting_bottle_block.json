@@ -1,5 +1,17 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "ube_cream_frosting_bottle_block"
+    }
+  ],
   "type": "minecraft:block",
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "ube_cream_frosting_bottle_block"
+    }
+  ],
   "pools": [
     {
       "bonus_rolls": 0.0,

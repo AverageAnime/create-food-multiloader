@@ -1,6 +1,7 @@
 package dev.averageanime.neoforge.block;
 
 import dev.averageanime.config.ConfigBootstrap;
+import dev.averageanime.config.AddonDefaults;
 import dev.averageanime.config.ConfigDefaults;
 import com.electronwill.nightconfig.core.file.FileConfig;
 import dev.averageanime.CreateFoodCommon;
@@ -16,7 +17,7 @@ import dev.averageanime.block.type.plate.PlateBlock;
 import dev.averageanime.block.type.plate.EmptySmallPlateBlock;
 import dev.averageanime.registry.DisplayRegistry;
 import dev.averageanime.registry.DisplayRegistry.DisplayType;
-import dev.averageanime.registry.type.DisplayEntry;
+import dev.averageanime.createfood.lib.registry.DisplayEntry;
 import dev.averageanime.registry.type.BlockEntry;
 import dev.averageanime.registry.type.ItemEntry;
 import net.minecraft.core.particles.ParticleOptions;
@@ -81,8 +82,8 @@ public class DisplayBlockRegistration {
                 }
                 if (skip) continue;
 
-                List<DisplayEntry> configs = DisplayRegistry.findMatchingConfigs(itemName);
-                for (DisplayEntry config : configs) {
+                List<DisplayEntry<DisplayType>> configs = DisplayRegistry.findMatchingConfigs(itemName);
+                for (DisplayEntry<DisplayType> config : configs) {
                     String blockName = DisplayRegistry.getBlockName(itemName, config.type());
                     registerDisplayBlock(blockName, itemName, config);
                 }
@@ -97,7 +98,7 @@ public class DisplayBlockRegistration {
     }
 
     private static void registerDisplayBlock(String blockName, String itemName,
-                                             DisplayEntry config) {
+                                             DisplayEntry<DisplayType> config) {
         Supplier<net.minecraft.world.item.Item> itemSupplier = () -> {
             ItemEntry itemEntryDef = ItemEntry.ALL.stream()
                     .filter(d -> d.id.equals(itemName)).findFirst().orElse(null);
@@ -273,7 +274,7 @@ public class DisplayBlockRegistration {
     private static void registerConfigDisplayBlocks() {
         {
             List<String> entries = ConfigBootstrap.read(
-                    ConfigBootstrap.DISPLAY_BLOCK, ConfigDefaults.CUSTOM_DISPLAY_BLOCK_DEFAULT);
+                    ConfigBootstrap.DISPLAY_BLOCK, AddonDefaults.customDisplayBlocks());
             for (String entry : entries) {
                 String[] p = entry.split("\\|");
                 if (p.length < 3 || p.length > 5) {
@@ -298,8 +299,7 @@ public class DisplayBlockRegistration {
                         continue;
                     }
                 }
-                // Fifth field: "true"/"false", or a particle id ("minecraft:snowflake").
-                // "true" stays an alias for white smoke so existing configs keep working.
+                // Fifth field: "true"/"false", or a particle id; "true" is an alias for white smoke.
                 boolean hasParticles = false;
                 ParticleOptions particle = ParticleTypes.WHITE_SMOKE;
                 if (p.length == 5 && !p[4].isBlank() && !p[4].equalsIgnoreCase("false")) {
@@ -342,7 +342,7 @@ public class DisplayBlockRegistration {
                         return item != Items.AIR ? item : Items.BARRIER;
                     } catch (Exception e) { return Items.BARRIER; }
                 };
-                DisplayEntry config = new DisplayEntry(displayType, maxStack, height, hasParticles,
+                DisplayEntry<DisplayType> config = new DisplayEntry<DisplayType>(displayType, maxStack, height, hasParticles,
                         hasParticles ? () -> particleType : null);
                 registerDisplayBlockFromSupplier(blockName, itemSupplier, config);
             }
@@ -350,7 +350,7 @@ public class DisplayBlockRegistration {
     }
 
     private static void registerDisplayBlockFromSupplier(String blockName, Supplier<net.minecraft.world.item.Item> itemSupplier,
-                                                         DisplayEntry config) {
+                                                         DisplayEntry<DisplayType> config) {
         String suffixKey = DisplayBlocks.suffixKey(config.type());
 
         DeferredBlock<net.minecraft.world.level.block.Block> block = BLOCKS.register(blockName, () -> DisplayBlocks.createBlock(itemSupplier, config));

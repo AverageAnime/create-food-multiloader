@@ -12,6 +12,9 @@ public class BasinFluidEvents {
 
     @SubscribeEvent
     public static void onUseItemOnBlock(UseItemOnBlockEvent event) {
+        // UseItemOnBlockEvent fires once per phase (ITEM_BEFORE_BLOCK, BLOCK, ITEM_AFTER_BLOCK) for a
+        // single click; filtered to BLOCK, the phase matching the block's own use-item-on behavior,
+        // so this doesn't run the basin fill/drain check three times per interaction.
         if (event.getUsePhase() != UseItemOnBlockEvent.UsePhase.BLOCK) return;
 
         UseOnContext ctx = event.getUseOnContext();

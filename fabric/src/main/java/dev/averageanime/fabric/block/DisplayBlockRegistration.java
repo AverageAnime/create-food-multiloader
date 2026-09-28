@@ -1,6 +1,7 @@
 package dev.averageanime.fabric.block;
 
 import dev.averageanime.config.ConfigBootstrap;
+import dev.averageanime.config.AddonDefaults;
 import dev.averageanime.config.ConfigDefaults;
 import dev.averageanime.CreateFoodCommon;
 import dev.averageanime.fabric.CreateFood;
@@ -18,7 +19,7 @@ import dev.averageanime.fabric.block.type.misc.FoodPlacementHandler;
 import dev.averageanime.client.tooltip.ItemTooltips;
 import dev.averageanime.registry.DisplayRegistry;
 import dev.averageanime.registry.DisplayRegistry.DisplayType;
-import dev.averageanime.registry.type.DisplayEntry;
+import dev.averageanime.createfood.lib.registry.DisplayEntry;
 import dev.averageanime.registry.type.BlockEntry;
 import dev.averageanime.registry.type.ItemEntry;
 import net.fabricmc.loader.api.FabricLoader;
@@ -97,8 +98,8 @@ public class DisplayBlockRegistration {
                 }
                 if (skip) continue;
 
-                List<DisplayEntry> configs = DisplayRegistry.findMatchingConfigs(itemName);
-                for (DisplayEntry config : configs) {
+                List<DisplayEntry<DisplayType>> configs = DisplayRegistry.findMatchingConfigs(itemName);
+                for (DisplayEntry<DisplayType> config : configs) {
                     String blockName = DisplayRegistry.getBlockName(itemName, config.type());
                     registerDisplayBlock(blockName, itemName, config);
                 }
@@ -113,7 +114,7 @@ public class DisplayBlockRegistration {
     }
 
     private static void registerDisplayBlock(String blockName, String itemName,
-                                             DisplayEntry config) {
+                                             DisplayEntry<DisplayType> config) {
         Supplier<Item> itemSupplier = resolveModItemSupplier(itemName);
         registerDisplayBlockFromSupplier(blockName, itemSupplier, config);
     }
@@ -132,7 +133,7 @@ public class DisplayBlockRegistration {
 
     private static void registerDisplayBlockFromSupplier(String blockName,
                                                          Supplier<Item> itemSupplier,
-                                                         DisplayEntry config) {
+                                                         DisplayEntry<DisplayType> config) {
         String suffixKey = DisplayBlocks.suffixKey(config.type());
 
         Block block = DisplayBlocks.createBlock(itemSupplier, config);
@@ -160,8 +161,7 @@ public class DisplayBlockRegistration {
                         Item original = itemSupplier.get();
                         if (original != null && original != Items.BARRIER) {
                             ItemStack originalStack = new ItemStack(original);
-                            // Scope the original food's item_overrides — the shared tooltip
-                            // mixin pushed the display block's id, not the food's.
+                            // The shared tooltip mixin pushed the display block's id, not the food's.
                             dev.averageanime.item.effect.TooltipContext.runWith(originalStack, () ->
                                     original.appendHoverText(originalStack, context, components, flag));
                         }
@@ -208,8 +208,6 @@ public class DisplayBlockRegistration {
                         Item original = itemSupplier.get();
                         if (original != null && original != Items.BARRIER) {
                             ItemStack originalStack = new ItemStack(original);
-                            // Scope the original food's item_overrides — the shared tooltip
-                            // mixin pushed the display block's id, not the food's.
                             dev.averageanime.item.effect.TooltipContext.runWith(originalStack, () ->
                                     original.appendHoverText(originalStack, context, components, flag));
                         }
@@ -233,8 +231,6 @@ public class DisplayBlockRegistration {
                         Item original = itemSupplier.get();
                         if (original != null && original != Items.BARRIER) {
                             ItemStack originalStack = new ItemStack(original);
-                            // Scope the original food's item_overrides — the shared tooltip
-                            // mixin pushed the display block's id, not the food's.
                             dev.averageanime.item.effect.TooltipContext.runWith(originalStack, () ->
                                     original.appendHoverText(originalStack, context, components, flag));
                         }
@@ -269,7 +265,7 @@ public class DisplayBlockRegistration {
     private static void registerConfigDisplayBlocks() {
         {
             List<String> entries = ConfigBootstrap.read(
-                    ConfigBootstrap.DISPLAY_BLOCK, ConfigDefaults.CUSTOM_DISPLAY_BLOCK_DEFAULT);
+                    ConfigBootstrap.DISPLAY_BLOCK, AddonDefaults.customDisplayBlocks());
             for (String entry : entries) {
                 String[] p = entry.split("\\|");
                 if (p.length < 3 || p.length > 5) {
@@ -294,8 +290,6 @@ public class DisplayBlockRegistration {
                         continue;
                     }
                 }
-                // Fifth field: "true"/"false", or a particle id ("minecraft:snowflake").
-                // "true" stays an alias for white smoke so existing configs keep working.
                 boolean hasParticles = false;
                 ParticleOptions particle = ParticleTypes.WHITE_SMOKE;
                 if (p.length == 5 && !p[4].isBlank() && !p[4].equalsIgnoreCase("false")) {
@@ -340,7 +334,7 @@ public class DisplayBlockRegistration {
                     } catch (Exception e) { return Items.BARRIER; }
                 };
                 registerDisplayBlockFromSupplier(blockName, itemSupplier,
-                        new DisplayEntry(displayType, maxStack, height, hasParticles,
+                        new DisplayEntry<DisplayType>(displayType, maxStack, height, hasParticles,
                                 hasParticles ? () -> particleType : null));
             }
         }

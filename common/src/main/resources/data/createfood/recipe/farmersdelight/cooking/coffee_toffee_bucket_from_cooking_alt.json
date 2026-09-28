@@ -1,39 +1,43 @@
 {
-    "type": "farmersdelight:cooking",
-    "experience": 0.1,
-    "ingredients": [
-        {
-            "tag": "c:coffee_toffee"
-        },
-        {
-            "tag": "c:coffee_toffee"
-        }
-    ],
-    "recipe_book_tab": "drinks",
-    "result": {
-        "count": 1,
-        "id": "createfood:coffee_toffee_bucket"
+  "type": "farmersdelight:cooking",
+  "experience": 0.1,
+  "ingredients": [
+    {
+      "tag": "c:coffee_toffee"
     },
-    "neoforge:conditions": [
-        {
-            "type": "neoforge:mod_loaded",
-            "modid": "farmersdelight"
-        },
-        {
-            "type": "createfood:enabled",
-            "id": "coffee_toffee_bucket"
-        }
-    ],
-    "fabric:load_conditions": [
-        {
-            "condition": "fabric:all_mods_loaded",
-            "values": [
-                "farmersdelight"
-            ]
-        },
-        {
-            "condition": "createfood:enabled",
-            "id": "coffee_toffee_bucket"
-        }
-    ]
+    {
+      "tag": "c:coffee_toffee"
+    }
+  ],
+  "recipe_book_tab": "drinks",
+  "container": {
+    "count": 1,
+    "id": "minecraft:bucket"
+  },
+  "result": {
+    "count": 1,
+    "id": "createfood:coffee_toffee_bucket"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "farmersdelight"
+    },
+    {
+      "type": "createfood:enabled",
+      "id": "coffee_toffee_bucket"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "farmersdelight"
+      ]
+    },
+    {
+      "condition": "createfood:enabled",
+      "id": "coffee_toffee_bucket"
+    }
+  ]
 }

@@ -1,10 +1,16 @@
 package dev.averageanime.neoforge;
 
+import dev.averageanime.platform.Services;
+import dev.averageanime.createfood.lib.compat.BasinFluidCapacity;
+import dev.averageanime.createfood.lib.effect.EffectChain;
+import dev.averageanime.createfood.lib.pack.NeoForgeBuiltinPacks;
+import dev.averageanime.pack.BuiltInPacks;
 import dev.averageanime.CreateFoodCommon;
 import dev.averageanime.client.renderer.ClothSackRenderer;
 import dev.averageanime.config.ConfigLifecycle;
+import dev.averageanime.config.ConfigValues;
 import dev.averageanime.client.renderer.GenericDisplayPlateRenderer;
-import dev.averageanime.client.renderer.LargeBowlFluidRenderer;
+import dev.averageanime.createfood.lib.client.FluidSurfaceRenderer;
 import dev.averageanime.client.tooltip.StorageContentsTooltipRenderer;
 import dev.averageanime.client.screen.type.item.ClothSackItemScreen;
 import dev.averageanime.client.screen.type.block.ClothSackBlockScreen;
@@ -15,8 +21,9 @@ import dev.averageanime.neoforge.block.BlockEntityRegistration;
 import dev.averageanime.neoforge.block.BlockRegistration;
 import dev.averageanime.neoforge.block.DisplayBlockRegistration;
 import dev.averageanime.neoforge.block.FluidRegistration;
-import dev.averageanime.neoforge.block.type.fluid.FluidBlock;
-import dev.averageanime.neoforge.config.ConditionRegistration;
+import dev.averageanime.createfood.lib.fluid.FluidBlock;
+import dev.averageanime.createfood.lib.config.RecipeConditions;
+import dev.averageanime.createfood.lib.recipe.RecipeSubjects;
 import dev.averageanime.neoforge.config.ConfigRegistration;
 import dev.averageanime.neoforge.item.ItemRegistration;
 import dev.averageanime.neoforge.menu.MenuRegistration;
@@ -57,6 +64,14 @@ public class CreateFood {
     }
 
     public CreateFood(IEventBus modEventBus, ModContainer modContainer) {
+        // Wire the shared effect chain before anything resolves.
+        EffectChain.modLoadedCheck(Services.PLATFORM::isModLoaded);
+
+        // Read lazily: the mixins run long after this.
+        BasinFluidCapacity.gate(ConfigValues::isExpandedBasinFluidsEnabled);
+
+        NeoForgeBuiltinPacks.register(modEventBus, CreateFoodCommon.MOD_ID, BuiltInPacks.NAMES);
+
         modEventBus.addListener(this::commonSetup);
 
         modContainer.registerConfig(
@@ -82,7 +97,9 @@ public class CreateFood {
         modEventBus.addListener((ModConfigEvent.Reloading event) -> onServerConfigEvent(event.getConfig(), true));
         modEventBus.addListener((ModConfigEvent.Unloading event) -> onServerConfigEvent(event.getConfig(), false));
 
-        ConditionRegistration.register(modEventBus);
+        // Read lazily, like the basin gate above: recipes are not read until datapack load.
+        RecipeSubjects.gate(ConfigValues::isRecipeSubjectAvailable);
+        RecipeConditions.register(modEventBus, CreateFoodCommon.MOD_ID);
 
         NeoForge.EVENT_BUS.register(this);
         ItemRegistration.register(modEventBus);
@@ -136,7 +153,7 @@ public class CreateFood {
                     GenericDisplayPlateRenderer::new);
             event.registerBlockEntityRenderer(
                     BlockEntityRegistration.LARGE_BOWL.get(),
-                    LargeBowlFluidRenderer::new);
+                    ctx -> new FluidSurfaceRenderer<>(ctx, CreateFoodCommon.MOD_ID));
         }
 
         @SubscribeEvent

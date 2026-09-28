@@ -1,0 +1,34 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "culturaldelights"
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "culturaldelights:avocado_pit"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "culturaldelights"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
+            "id": "culturaldelights:avocado_pit"
+        }
+    ],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:avocado"
+        }
+    ],
+    "result": {
+        "count": 1,
+        "id": "culturaldelights:avocado_pit"
+    }
+}

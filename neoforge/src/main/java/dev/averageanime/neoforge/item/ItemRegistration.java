@@ -1,6 +1,7 @@
 package dev.averageanime.neoforge.item;
 
 import dev.averageanime.config.ConfigBootstrap;
+import dev.averageanime.config.AddonDefaults;
 import dev.averageanime.config.ConfigDefaults;
 import dev.averageanime.CreateFoodCommon;
 import dev.averageanime.config.ConfigValues;
@@ -61,7 +62,7 @@ public class ItemRegistration {
 
     private static void registerConfigItems() {
         ItemFactory.registerConfigItems(HOOKS,
-                ConfigBootstrap.read(ConfigBootstrap.ITEMS, ConfigDefaults.CUSTOM_ITEM_DEFAULT));
+                ConfigBootstrap.read(ConfigBootstrap.ITEMS, AddonDefaults.customItems()));
     }
 
     public static void register(IEventBus eventBus) {

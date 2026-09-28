@@ -1,45 +1,49 @@
 {
-    "type": "farmersdelight:cooking",
-    "experience": 0.75,
-    "ingredients": [
-        {
-            "tag": "c:melon"
-        },
-        {
-            "tag": "c:melon"
-        },
-        {
-            "tag": "c:sugar"
-        },
-        {
-            "tag": "c:sugar"
-        }
-    ],
-    "recipe_book_tab": "drinks",
-    "result": {
-        "count": 1,
-        "id": "createfood:melon_jam_bucket"
+  "type": "farmersdelight:cooking",
+  "experience": 0.75,
+  "ingredients": [
+    {
+      "tag": "c:melon"
     },
-    "neoforge:conditions": [
-        {
-            "type": "neoforge:mod_loaded",
-            "modid": "farmersdelight"
-        },
-        {
-            "type": "createfood:enabled",
-            "id": "melon_jam_bucket"
-        }
-    ],
-    "fabric:load_conditions": [
-        {
-            "condition": "fabric:all_mods_loaded",
-            "values": [
-                "farmersdelight"
-            ]
-        },
-        {
-            "condition": "createfood:enabled",
-            "id": "melon_jam_bucket"
-        }
-    ]
+    {
+      "tag": "c:melon"
+    },
+    {
+      "tag": "c:sugar"
+    },
+    {
+      "tag": "c:sugar"
+    }
+  ],
+  "recipe_book_tab": "drinks",
+  "container": {
+    "count": 1,
+    "id": "minecraft:bucket"
+  },
+  "result": {
+    "count": 1,
+    "id": "createfood:melon_jam_bucket"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "farmersdelight"
+    },
+    {
+      "type": "createfood:enabled",
+      "id": "melon_jam_bucket"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "farmersdelight"
+      ]
+    },
+    {
+      "condition": "createfood:enabled",
+      "id": "melon_jam_bucket"
+    }
+  ]
 }

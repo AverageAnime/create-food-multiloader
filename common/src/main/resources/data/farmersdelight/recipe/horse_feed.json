@@ -1,0 +1,49 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "farmersdelight"
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "farmersdelight:horse_feed"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "farmersdelight"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
+            "id": "farmersdelight:horse_feed"
+        }
+    ],
+    "type": "minecraft:crafting_shapeless",
+    "category": "misc",
+    "ingredients": [
+        [
+            {
+                "item": "minecraft:hay_block"
+            },
+            {
+                "item": "farmersdelight:rice_bale"
+            }
+        ],
+        {
+            "tag": "c:apple"
+        },
+        {
+            "tag": "c:apple"
+        },
+        {
+            "item": "minecraft:golden_carrot"
+        }
+    ],
+    "result": {
+        "count": 1,
+        "id": "farmersdelight:horse_feed"
+    }
+}

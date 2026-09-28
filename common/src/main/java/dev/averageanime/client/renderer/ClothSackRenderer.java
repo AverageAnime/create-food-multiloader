@@ -1,10 +1,10 @@
 package dev.averageanime.client.renderer;
 
+import dev.averageanime.config.ConfigValues;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
 import dev.averageanime.block.type.blockentity.ClothSackBlockEntity;
 import dev.averageanime.block.type.storage.ClothSackBlock;
-import dev.averageanime.platform.Services;
 import net.minecraft.client.renderer.LightTexture;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
@@ -40,7 +40,7 @@ public class ClothSackRenderer<T extends ClothSackBlockEntity> implements BlockE
                        @NotNull PoseStack poseStack, @NotNull MultiBufferSource bufferSource,
                        int packedLight, int packedOverlay) {
 
-        if (!Services.PLATFORM.isSackBlockIconsEnabled()) return;
+        if (!ConfigValues.isSackBlockIconsEnabled()) return;
 
         BlockState state = be.getBlockState();
         if (!state.hasProperty(ClothSackBlock.FACING)) return;

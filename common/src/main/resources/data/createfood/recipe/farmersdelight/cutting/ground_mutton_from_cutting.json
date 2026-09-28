@@ -2,7 +2,7 @@
     "type": "farmersdelight:cutting",
     "ingredients": [
         {
-            "item": "farmersdelight:mutton_chops"
+            "tag": "c:mutton_chops"
         }
     ],
     "tool": {

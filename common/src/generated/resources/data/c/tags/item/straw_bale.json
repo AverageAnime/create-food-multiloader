@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "farmersdelight:straw_bale",
+      "required": false
+    },
+    {
+      "id": "kaleidoscope_cookery:straw_block",
+      "required": false
+    }
+  ]
+}

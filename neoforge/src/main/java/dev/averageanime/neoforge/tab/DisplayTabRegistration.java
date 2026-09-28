@@ -20,7 +20,7 @@ public class DisplayTabRegistration {
 
     public static final Supplier<CreativeModeTab> CREATEFOOD_TAB_BLOCK = CREATIVE_MODE_TAB.register("createfood_display",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(net.minecraft.core.registries.BuiltInRegistries.BLOCK.get(
-                    net.minecraft.resources.ResourceLocation.fromNamespaceAndPath(CreateFoodCommon.MOD_ID, "breakfast_plate_block"))))
+                    net.minecraft.resources.ResourceLocation.fromNamespaceAndPath(CreateFoodCommon.MOD_ID, "toast_plate_hash_browns_fried_egg_block"))))
                     .title(Component.translatable("tab.createfood.display"))
                     .displayItems((params, output) -> DisplayBlockRegistration.BLOCKS.getEntries().stream()
                             .filter(holder -> TabFilters.isDisplayTabItem(holder.getId().getPath()))

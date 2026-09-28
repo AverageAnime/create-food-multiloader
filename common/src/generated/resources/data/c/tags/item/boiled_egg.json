@@ -3,6 +3,10 @@
     {
       "id": "createfood:boiled_egg",
       "required": false
+    },
+    {
+      "id": "mynethersdelight:boiled_egg",
+      "required": false
     }
   ]
 }

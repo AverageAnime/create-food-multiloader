@@ -1,0 +1,41 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "create"
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "create:blaze_cake_base"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "create"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
+            "id": "create:blaze_cake_base"
+        }
+    ],
+    "type": "create:compacting",
+    "ingredients": [
+        {
+            "tag": "c:eggs"
+        },
+        {
+            "tag": "c:sugar"
+        },
+        {
+            "item": "create:cinder_flour"
+        }
+    ],
+    "results": [
+        {
+            "id": "create:blaze_cake_base"
+        }
+    ]
+}

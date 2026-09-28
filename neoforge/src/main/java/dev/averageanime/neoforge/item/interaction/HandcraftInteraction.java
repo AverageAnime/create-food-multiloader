@@ -8,6 +8,8 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
 
+// Two separate events are needed to catch the off-hand follow-up: RightClickItem covers the
+// off-hand aimed at air, RightClickBlock covers it aimed at a block.
 @EventBusSubscriber(modid = CreateFoodCommon.MOD_ID)
 public class HandcraftInteraction {
 

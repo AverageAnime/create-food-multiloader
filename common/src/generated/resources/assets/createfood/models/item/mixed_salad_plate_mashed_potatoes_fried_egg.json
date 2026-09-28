@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "createfood:item/mixed_salad_plate_mashed_potatoes_fried_egg"
+  }
+}

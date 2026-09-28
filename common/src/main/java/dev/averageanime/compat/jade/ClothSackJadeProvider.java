@@ -2,7 +2,7 @@ package dev.averageanime.compat.jade;
 
 import dev.averageanime.CreateFoodCommon;
 import dev.averageanime.block.type.blockentity.ClothSackBlockEntity;
-import dev.averageanime.item.storage.StorageAccess;
+import dev.averageanime.createfood.lib.storage.StorageAccess;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.entity.BlockEntity;

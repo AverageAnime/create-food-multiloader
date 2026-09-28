@@ -41,7 +41,7 @@
         {
             "type": "fluid_tag",
             "amount": 1000,
-            "fluid_tag": "c:milk"
+            "fluid_tag": "c:any_milk"
         },
         {
             "tag": "c:sugar"

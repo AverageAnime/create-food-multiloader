@@ -1,0 +1,16 @@
+{
+  "values": [
+    {
+      "id": "delightfulcreators:melon_juice_bucket",
+      "required": false
+    },
+    {
+      "id": "farmersrespite:melon_juice_bucket",
+      "required": false
+    },
+    {
+      "id": "ratatouille:melon_juice_fluid_bucket",
+      "required": false
+    }
+  ]
+}

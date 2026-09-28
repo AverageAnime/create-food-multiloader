@@ -1,39 +1,43 @@
 {
-    "type": "farmersdelight:cooking",
-    "experience": 0.45,
-    "ingredients": [
-        {
-            "tag": "c:apple"
-        },
-        {
-            "tag": "c:sugar"
-        }
-    ],
-    "recipe_book_tab": "drinks",
-    "result": {
-        "count": 1,
-        "id": "createfood:apple_jam_bottle"
+  "type": "farmersdelight:cooking",
+  "experience": 0.45,
+  "ingredients": [
+    {
+      "tag": "c:apple"
     },
-    "neoforge:conditions": [
-        {
-            "type": "neoforge:mod_loaded",
-            "modid": "farmersdelight"
-        },
-        {
-            "type": "createfood:enabled",
-            "id": "apple_jam_bottle"
-        }
-    ],
-    "fabric:load_conditions": [
-        {
-            "condition": "fabric:all_mods_loaded",
-            "values": [
-                "farmersdelight"
-            ]
-        },
-        {
-            "condition": "createfood:enabled",
-            "id": "apple_jam_bottle"
-        }
-    ]
+    {
+      "tag": "c:sugar"
+    }
+  ],
+  "recipe_book_tab": "drinks",
+  "container": {
+    "count": 1,
+    "id": "minecraft:glass_bottle"
+  },
+  "result": {
+    "count": 1,
+    "id": "createfood:apple_jam_bottle"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "farmersdelight"
+    },
+    {
+      "type": "createfood:enabled",
+      "id": "apple_jam_bottle"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "farmersdelight"
+      ]
+    },
+    {
+      "condition": "createfood:enabled",
+      "id": "apple_jam_bottle"
+    }
+  ]
 }

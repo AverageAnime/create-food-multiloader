@@ -25,7 +25,7 @@ public class DisplayTabRegistration {
                 FabricItemGroup.builder()
                         .title(Component.translatable("tab.createfood.display"))
                         .icon(() -> new ItemStack(BuiltInRegistries.BLOCK.get(
-                                ResourceLocation.fromNamespaceAndPath(CreateFoodCommon.MOD_ID, "breakfast_plate_block"))))
+                                ResourceLocation.fromNamespaceAndPath(CreateFoodCommon.MOD_ID, "toast_plate_hash_browns_fried_egg_block"))))
                         .displayItems((params, output) ->
                                 DisplayBlockRegistration.getRegisteredDisplayBlocks().stream()
                                         .filter(b -> TabFilters.isDisplayTabItem(BuiltInRegistries.BLOCK.getKey(b).getPath()))

@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "c:bun"
+    },
+    {
+      "tag": "c:vegetable_patty"
+    },
+    {
+      "tag": "c:foods/leafy_green"
+    },
+    {
+      "tag": "c:tomato"
+    },
+    {
+      "tag": "c:bun"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "createfood:vegetable_burger_lettuce_tomato"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "vegetable_burger_lettuce_tomato"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "vegetable_burger_lettuce_tomato"
+    }
+  ]
+}

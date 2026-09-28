@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "c:mashed_potatoes_plate_carrot"
+    },
+    {
+      "tag": "c:cooked_fishes"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "createfood:fish_plate_mashed_potatoes_carrot"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "fish_plate_mashed_potatoes_carrot"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "fish_plate_mashed_potatoes_carrot"
+    }
+  ]
+}

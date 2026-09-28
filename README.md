@@ -12,13 +12,13 @@ These mods are non-essential, but recommended. Without them, there are noticeabl
 
 ### **Current Content:**
 
-* Over 1300 food-related items and over 120 new fluids. [View item list](https://github.com/AverageAnime/create-food-multiloader/wiki/Item-List).
+* Over 1000 food-related items and over 120 new fluids. [View item list](https://github.com/AverageAnime/create-food-multiloader/wiki/Item-List).
 * Everything is highly configurable, including hiding items, modifying nutrition/saturation values, and adding your own custom items, blocks, fluids, and display plates. Read more [here](https://github.com/AverageAnime/create-food-multiloader/wiki/Config-Options).
 * Fully implemented effects from [Farmer's Delight](https://www.curseforge.com/minecraft/mc-mods/farmers-delight), the [Let's Do series](https://lets-do.ch/), [Kaleidoscope Cookery](https://www.curseforge.com/minecraft/mc-mods/kaleidoscope-cookery), and more. Effects are based on ingredients and theme. Read more [here](https://github.com/AverageAnime/create-food-multiloader/wiki/Food-Effects-Guide).
 * Handcrafting system for simple recipes. Read more [here](https://github.com/AverageAnime/create-food-multiloader/wiki/Handcrafting-Guide).
-* Anything can be displayed on plates or bowls. Eat directly from a plate, use one as a cutting board, modify placed food by using an item on it, or fill a large bowl with fluid. Read more [here](https://github.com/AverageAnime/create-food-multiloader/wiki/Display-Blocks-Guide).
+* Anything can be displayed on plates or bowls. Eat directly from a plate, use it as a cutting board, or modify placed food by using an item on it. Read more [here](https://github.com/AverageAnime/create-food-multiloader/wiki/Display-Blocks-Guide).
 * Cloth filters usable by hand or in recipes. Read more [here](https://github.com/AverageAnime/create-food-multiloader/wiki/Cloth-Filters-Guide).
-* Cook ingredients by holding them near a campfire or other heat source. Read more [here](https://github.com/AverageAnime/create-food-multiloader/wiki/Campfire-Cooking-Guide).
+* Cook ingredients by holding them near a campfire or other heat sources. Read more [here](https://github.com/AverageAnime/create-food-multiloader/wiki/Campfire-Cooking-Guide).
 * Two storage blocks, the cloth sack and the ration box. Read more [here](https://github.com/AverageAnime/create-food-multiloader/wiki/Storage-Blocks-Guide).
 * Placeable blocks for pizzas, cakes, pies, and more.
 * Animated textures for hot drinks.
@@ -29,9 +29,9 @@ Information regarding compatibility with other mods can be found [here](https://
 
 Information on versions prior to 2.0.0 can be found [here](https://github.com/AverageAnime/create-food/wiki).
 
-### **Item Preview (2.7.0)**
-![fullprev270](https://github.com/user-attachments/assets/cf037ec1-2b8b-498b-91fd-74de1526c7ea)
-![bucketprev270](https://github.com/user-attachments/assets/05f967e7-ed4d-4aa4-8a68-ce33d55f80ac)
+### **Item Preview (3.0.0)**
+![fullprev300](https://github.com/user-attachments/assets/56f22473-051f-4a15-8514-57edd6862b09)
+![bucketprev300](https://github.com/user-attachments/assets/9a73ac50-517d-44b2-a1cf-eae941d0cdd8)
 
 ### **My Other Mods**
 * [Create: Engineers](https://www.curseforge.com/minecraft/mc-mods/create-engineers)

@@ -1,0 +1,60 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "culturaldelights"
+        },
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "farmersdelight"
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "culturaldelights:poached_eggplants"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "culturaldelights"
+            ]
+        },
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "farmersdelight"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
+            "id": "culturaldelights:poached_eggplants"
+        }
+    ],
+    "type": "farmersdelight:cooking",
+    "container": {
+        "count": 1,
+        "id": "minecraft:bowl"
+    },
+    "cookingtime": 400,
+    "experience": 2.0,
+    "ingredients": [
+        {
+            "tag": "c:eggplant"
+        },
+        {
+            "tag": "c:onion"
+        },
+        {
+            "tag": "c:tomato_sauce"
+        },
+        {
+            "tag": "c:eggs"
+        }
+    ],
+    "recipe_book_tab": "meals",
+    "result": {
+        "count": 1,
+        "id": "culturaldelights:poached_eggplants"
+    }
+}

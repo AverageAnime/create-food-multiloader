@@ -1,6 +1,7 @@
 package dev.averageanime.fabric.block;
 
 import dev.averageanime.config.ConfigBootstrap;
+import dev.averageanime.config.AddonDefaults;
 import dev.averageanime.config.ConfigDefaults;
 import dev.averageanime.CreateFoodCommon;
 import dev.averageanime.block.BlockFactory;
@@ -63,15 +64,14 @@ public class BlockRegistration {
                         .strength(1.0f, 2.0f).sound(SoundType.WOOL).noOcclusion()),
                 block -> new ClothSackItem(block, new net.minecraft.world.item.Item.Properties()));
 
-        // Config blocks first: a config `cake` only gets its candle variants if it is registered
-        // before registerCandleCakes walks the accumulated cake list.
+        // Config blocks first: registerCandleCakes walks the accumulated cake list.
         registerConfigBlocks();
         BlockFactory.registerCandleCakes(HOOKS);
     }
 
     private static void registerConfigBlocks() {
         BlockFactory.registerConfigBlocks(HOOKS,
-                ConfigBootstrap.read(ConfigBootstrap.BLOCKS, ConfigDefaults.CUSTOM_BLOCK_DEFAULT));
+                ConfigBootstrap.read(ConfigBootstrap.BLOCKS, AddonDefaults.customBlocks()));
     }
 
     private static BlockItem blockItem(Block block, int stackLimit, @Nullable Tooltips.TooltipSpec tip) {

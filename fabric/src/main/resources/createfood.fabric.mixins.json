@@ -7,13 +7,9 @@
   "mixins": [
     "ThrownEggMixin"
   ],
-  "client": [
-    "FogRendererMixin",
-    "ScreenEffectRendererMixin"
-  ],
+  "client": [],
   "server": [],
   "injectors": {
     "defaultRequire": 1
   }
 }
-

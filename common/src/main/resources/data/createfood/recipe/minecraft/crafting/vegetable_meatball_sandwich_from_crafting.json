@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:bread"
+    },
+    {
+      "tag": "c:small_vegetable_meatballs"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "createfood:vegetable_meatball_sandwich"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "vegetable_meatball_sandwich"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "vegetable_meatball_sandwich"
+    }
+  ]
+}

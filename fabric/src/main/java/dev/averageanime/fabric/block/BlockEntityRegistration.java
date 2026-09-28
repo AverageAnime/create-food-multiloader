@@ -1,7 +1,7 @@
 package dev.averageanime.fabric.block;
 
 import dev.averageanime.CreateFoodCommon;
-import dev.averageanime.block.type.blockentity.GenericDisplayBlockEntity;
+import dev.averageanime.createfood.lib.block.GenericDisplayBlockEntity;
 import dev.averageanime.block.type.blockentity.LargeBowlBlockEntity;
 import dev.averageanime.fabric.block.type.blockentity.ClothSackBlockEntity;
 import dev.averageanime.fabric.block.type.blockentity.RationBoxBlockEntity;

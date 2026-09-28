@@ -1,6 +1,7 @@
 package dev.averageanime.fabric.item;
 
 import dev.averageanime.config.ConfigBootstrap;
+import dev.averageanime.config.AddonDefaults;
 import dev.averageanime.config.ConfigDefaults;
 import dev.averageanime.config.ConfigValues;
 import dev.averageanime.config.ItemEffectOverride;
@@ -40,9 +41,7 @@ public class ItemRegistration {
 
         @Override
         public void addFoodEffect(FoodProperties.Builder builder, String itemId, EffectEntry spec) {
-            // Matches NeoForge: honour the per-item config override, and carry
-            // the spec's own probability instead of forcing every baked effect
-            // to fire. Fabric previously did neither.
+            // Matches NeoForge: honour the per-item override and the spec's own probability.
             ItemEffectOverride override = ConfigValues.getItemEffectOverride(itemId, spec.categoryOrEffectId());
             int duration = spec.duration;
             int amplifier = spec.amplifier;
@@ -61,6 +60,6 @@ public class ItemRegistration {
 
     private static void registerConfigItems() {
         ItemFactory.registerConfigItems(HOOKS,
-                ConfigBootstrap.read(ConfigBootstrap.ITEMS, ConfigDefaults.CUSTOM_ITEM_DEFAULT));
+                ConfigBootstrap.read(ConfigBootstrap.ITEMS, AddonDefaults.customItems()));
     }
 }

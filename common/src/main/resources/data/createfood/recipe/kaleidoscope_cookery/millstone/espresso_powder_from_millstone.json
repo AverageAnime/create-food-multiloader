@@ -1,0 +1,46 @@
+{
+  "type": "kaleidoscope_cookery:millstone",
+  "ingredient": {
+    "tag": "c:dried_coffee_beans"
+  },
+  "result": {
+    "count": 2,
+    "id": "createfood:espresso_powder"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "kaleidoscope_cookery"
+    },
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:coffee_beans"
+      }
+    },
+    {
+      "type": "createfood:enabled",
+      "id": "espresso_powder"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "kaleidoscope_cookery"
+      ]
+    },
+    {
+      "condition": "fabric:tags_populated",
+      "registry": "minecraft:item",
+      "values": [
+        "c:coffee_beans"
+      ]
+    },
+    {
+      "condition": "createfood:enabled",
+      "id": "espresso_powder"
+    }
+  ]
+}

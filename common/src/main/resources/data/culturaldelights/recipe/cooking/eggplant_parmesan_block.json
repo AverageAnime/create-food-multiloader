@@ -1,0 +1,66 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "farmersdelight"
+        },
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "culturaldelights"
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "culturaldelights:eggplant_parmesan_block"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "farmersdelight"
+            ]
+        },
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "culturaldelights"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
+            "id": "culturaldelights:eggplant_parmesan_block"
+        }
+    ],
+    "type": "farmersdelight:cooking",
+    "container": {
+        "count": 1,
+        "id": "minecraft:bowl"
+    },
+    "cookingtime": 400,
+    "experience": 2.0,
+    "ingredients": [
+        {
+            "tag": "culturaldelights:regular_eggplants"
+        },
+        {
+            "tag": "c:foods/milk"
+        },
+        {
+            "tag": "c:eggs"
+        },
+        {
+            "tag": "c:raw_pasta"
+        },
+        {
+            "tag": "c:tomato_sauce"
+        },
+        {
+            "tag": "c:bread"
+        }
+    ],
+    "recipe_book_tab": "meals",
+    "result": {
+        "count": 1,
+        "id": "culturaldelights:eggplant_parmesan_block"
+    }
+}

@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "fruitsdelight:blueberry_muffin",
+      "required": false
+    },
+    {
+      "id": "hearthandharvest:blueberry_muffin",
+      "required": false
+    }
+  ]
+}

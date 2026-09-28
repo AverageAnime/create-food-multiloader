@@ -3,21 +3,12 @@
     "experience": 0.5,
     "ingredients": [
         {
-            "tag": "c:milk_bottle"
-        },
-        {
-            "tag": "c:milk_bottle"
-        },
-        {
-            "tag": "c:milk_bottle"
-        },
-        {
-            "tag": "c:milk_bottle"
+            "tag": "c:skim_milk_bottle"
         }
     ],
     "recipe_book_tab": "misc",
     "result": {
-        "count": 1,
+        "count": 2,
         "id": "createfood:milk_powder"
     },
     "neoforge:conditions": [

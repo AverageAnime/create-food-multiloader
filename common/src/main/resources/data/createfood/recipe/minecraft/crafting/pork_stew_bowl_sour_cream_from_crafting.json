@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "c:pork_stew_bowl"
+    },
+    {
+      "tag": "c:sour_cream_bottle"
+    },
+    {
+      "tag": "c:bowl"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "createfood:pork_stew_bowl_sour_cream"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "pork_stew_bowl_sour_cream"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "pork_stew_bowl_sour_cream"
+    }
+  ]
+}

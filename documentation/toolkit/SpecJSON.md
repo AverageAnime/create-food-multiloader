@@ -19,6 +19,26 @@ The file must be a `.json` file with a top-level `"items"` array. Each element i
 
 ---
 
+## Compat items go to the addon spec
+
+An item marked `"isCompat": true` emits no `ItemRegistry.java` line and no `ConfigDefaults.java`
+fragment. Toolkit writes it into `common/src/main/resources/data/createfood/addons/createfoodplus.json` instead, as an
+entry in the Create: Food+ addon spec, and adds its id to that file's `hide_items`.
+
+That spec is a bundled addon: it ships inside the mod jar and is read from the classpath, so an item
+added here is live on the next build with no other edit. Players can turn the whole addon off with
+`[addons] addons_enabled` in `createfood-common.toml`.
+
+Nothing about how you author a spec changes -- the same `isCompat`, `compatKey`, `tooltips`, `effects`,
+`nutrition` and `saturation` fields drive it. Only the destination moves. Compat blocks behave the same
+way, emitting into the spec's `blocks` section rather than `BlockRegistry.java`.
+
+The reason is that compat content is on its way out of the base mod and into a separate resource-only
+jar, Create: Food+. Authoring it as spec entries now means it does not have to be converted later. See
+[Addon Spec](../wiki/AddonsGuide.md) for the file format and how Create: Food loads it.
+
+Non-compat items are unaffected and still emit Java registry lines as before.
+
 ## Recipes-only mode
 
 If the item is already registered — you just want to add more recipes for it — you
@@ -214,6 +234,7 @@ Array of effect objects. Each has:
 | `Night Vision` | Night Vision |
 | `Glowing` | Glowing |
 | `Water Breathing` | Water Breathing |
+| `Dolphins Grace` | Dolphins Grace |
 | `Fire Resistance` | Fire Resistance |
 | `Slow Falling` | Slow Falling |
 | `Regeneration` | Regeneration |
@@ -294,7 +315,7 @@ Array of effect objects. Each has:
 ```
 
 ### `isCompat` and `compatKey`
-Set `"isCompat": true` when the item requires a compat mod to be present (e.g. popcorn items). `compatKey` is the config key used. This generates a `ConfigDefaults.java` entry to add the item to `HIDE_ITEMS_DEFAULT`.
+Set `"isCompat": true` when the item requires a compat mod to be present (e.g. popcorn items). `compatKey` is the config key used. The item is written to the Create: Food+ addon spec and added to that file's `hide_items`, not to `ConfigDefaults.java`.
 
 ```json
 "isCompat": true,
@@ -482,10 +503,13 @@ Array of ingredient objects. Each has a `type` and `value`:
 ```
 
 ### `output`
-The output item ID (no namespace). Defaults to the item's own `id` if omitted.
+The output item ID. Defaults to the item's own `id` if omitted. A bare id is resolved in
+`createfood:`, so only content belonging to another mod needs its namespace written out — which is
+how a spec entry declares a route that finishes in a compat mod's item.
 
 ```json
 "output": "pasta_plate_mushroom_tomato_sauce"
+"output": "hearthandharvest:blueberry_pie"
 ```
 
 ### `count`
@@ -612,7 +636,7 @@ You do not need to write recipes for these — the toolkit generates them when i
 | All `item` registrations | `ItemRegistry.java` line, `DisplayRegistry.java` exclusion if needed |
 | All `block` registrations | `BlockRegistry.java` line, `ItemRegistry.java` slice line |
 | All `fluidEntry` registrations | `FluidRegistry.java` line |
-| `isCompat: true` | `ConfigDefaults.java` entry (adds to `HIDE_ITEMS_DEFAULT`) |
+| `isCompat: true` | Entry in `createfoodplus.json` (its `items`/`blocks` section, plus its `hide_items`) |
 
 ### Registration line shapes
 

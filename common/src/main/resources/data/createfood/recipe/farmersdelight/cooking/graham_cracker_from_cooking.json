@@ -3,7 +3,7 @@
     "experience": 0.25,
     "ingredients": [
         {
-            "tag": "c:milk_bottle"
+            "tag": "c:any_milk_bottle"
         },
         {
             "item": "minecraft:honey_bottle"
@@ -17,7 +17,7 @@
     ],
     "recipe_book_tab": "misc",
     "result": {
-        "count": 1,
+        "count": 8,
         "id": "createfood:graham_cracker"
     },
     "neoforge:conditions": [

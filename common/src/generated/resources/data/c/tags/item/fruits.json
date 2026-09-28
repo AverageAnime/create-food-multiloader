@@ -119,6 +119,10 @@
     {
       "id": "fruitsdelight:pineapple_slice",
       "required": false
+    },
+    {
+      "id": "#c:foods/berry",
+      "required": false
     }
   ]
 }

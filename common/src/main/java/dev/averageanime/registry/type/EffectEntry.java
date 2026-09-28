@@ -1,19 +1,19 @@
 package dev.averageanime.registry.type;
 
-import dev.averageanime.item.effect.FoodEffect;
+import dev.averageanime.createfood.lib.effect.EffectChain;
 import net.minecraft.core.Holder;
 import net.minecraft.world.effect.MobEffect;
 import org.jetbrains.annotations.Nullable;
 
 public final class EffectEntry {
 
-    private final @Nullable FoodEffect foodEffect;
+    private final @Nullable EffectChain foodEffect;
     private final @Nullable Holder<MobEffect> rawEffect;
     public final int duration;
     public final int amplifier;
     public final float chance;
 
-    private EffectEntry(@Nullable FoodEffect foodEffect, @Nullable Holder<MobEffect> rawEffect,
+    private EffectEntry(@Nullable EffectChain foodEffect, @Nullable Holder<MobEffect> rawEffect,
                         int duration, int amplifier, float chance) {
         this.foodEffect = foodEffect;
         this.rawEffect  = rawEffect;
@@ -24,7 +24,7 @@ public final class EffectEntry {
 
     public boolean isFoodEffect() { return foodEffect != null; }
 
-    public @Nullable FoodEffect foodEffect() { return foodEffect; }
+    public @Nullable EffectChain foodEffect() { return foodEffect; }
 
     public @Nullable Holder<MobEffect> rawEffect() { return rawEffect; }
 
@@ -32,18 +32,18 @@ public final class EffectEntry {
         if (foodEffect != null) return foodEffect.getCategoryName();
         if (rawEffect  != null) return rawEffect.unwrapKey()
                 .map(k -> k.location().toString()).orElse("unknown");
-        throw new IllegalStateException("EffectSpec has neither FoodEffect nor rawEffect");
+        throw new IllegalStateException("EffectSpec has neither EffectChain nor rawEffect");
     }
 
-    public static EffectEntry of(FoodEffect e, int dur) {
+    public static EffectEntry of(EffectChain e, int dur) {
         return new EffectEntry(e, null, dur, 0, 1.0f);
     }
 
-    public static EffectEntry of(FoodEffect e, int dur, int amp) {
+    public static EffectEntry of(EffectChain e, int dur, int amp) {
         return new EffectEntry(e, null, dur, amp, 1.0f);
     }
 
-    public static EffectEntry of(FoodEffect e, int dur, int amp, float chance) {
+    public static EffectEntry of(EffectChain e, int dur, int amp, float chance) {
         return new EffectEntry(e, null, dur, amp, chance);
     }
 

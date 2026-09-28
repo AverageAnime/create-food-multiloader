@@ -1,51 +1,55 @@
 {
-    "type": "farmersdelight:cooking",
-    "experience": 0.95,
-    "ingredients": [
-        {
-            "item": "minecraft:water_bucket"
-        },
-        {
-            "tag": "c:sugar"
-        },
-        {
-            "tag": "c:sugar"
-        },
-        {
-            "tag": "c:fruits"
-        },
-        {
-            "tag": "c:fruits"
-        },
-        {
-            "tag": "c:fruits"
-        }
-    ],
-    "recipe_book_tab": "drinks",
-    "result": {
-        "count": 1,
-        "id": "createfood:vinegar_bucket"
+  "type": "farmersdelight:cooking",
+  "experience": 0.95,
+  "ingredients": [
+    {
+      "item": "minecraft:water_bucket"
     },
-    "neoforge:conditions": [
-        {
-            "type": "neoforge:mod_loaded",
-            "modid": "farmersdelight"
-        },
-        {
-            "type": "createfood:enabled",
-            "id": "vinegar_bucket"
-        }
-    ],
-    "fabric:load_conditions": [
-        {
-            "condition": "fabric:all_mods_loaded",
-            "values": [
-                "farmersdelight"
-            ]
-        },
-        {
-            "condition": "createfood:enabled",
-            "id": "vinegar_bucket"
-        }
-    ]
+    {
+      "tag": "c:sugar"
+    },
+    {
+      "tag": "c:sugar"
+    },
+    {
+      "tag": "c:fruits"
+    },
+    {
+      "tag": "c:fruits"
+    },
+    {
+      "tag": "c:fruits"
+    }
+  ],
+  "recipe_book_tab": "drinks",
+  "container": {
+    "count": 1,
+    "id": "minecraft:bucket"
+  },
+  "result": {
+    "count": 1,
+    "id": "createfood:vinegar_bucket"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "farmersdelight"
+    },
+    {
+      "type": "createfood:enabled",
+      "id": "vinegar_bucket"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "farmersdelight"
+      ]
+    },
+    {
+      "condition": "createfood:enabled",
+      "id": "vinegar_bucket"
+    }
+  ]
 }

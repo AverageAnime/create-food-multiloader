@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "createfood:item/rabbit_plate_mashed_potatoes_gravy_mushroom"
+  }
+}

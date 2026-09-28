@@ -9,4 +9,4 @@
 
 ---
 
-Which recipes can be handcrafted is controlled by a filter and an exclude list — see [Config Options](Config-Options).
+Which recipes can be handcrafted is controlled by a filter and an exclude list — see [Config Options](https://github.com/AverageAnime/create-food-multiloader/wiki/Config-Options).

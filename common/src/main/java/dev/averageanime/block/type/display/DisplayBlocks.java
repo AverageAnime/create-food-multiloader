@@ -8,7 +8,7 @@ import dev.averageanime.block.type.plate.PlateFoodBlock;
 import dev.averageanime.block.type.plate.SmallPlateBlock;
 import dev.averageanime.platform.Services;
 import dev.averageanime.registry.DisplayRegistry.DisplayType;
-import dev.averageanime.registry.type.DisplayEntry;
+import dev.averageanime.createfood.lib.registry.DisplayEntry;
 import net.minecraft.world.level.block.Block;
 
 public final class DisplayBlocks {
@@ -16,7 +16,7 @@ public final class DisplayBlocks {
     private DisplayBlocks() {}
 
     public static Block createBlock(java.util.function.Supplier<net.minecraft.world.item.Item> itemSupplier,
-                                    DisplayEntry config) {
+                                    DisplayEntry<DisplayType> config) {
         return switch (config.type()) {
             case PLATE -> new PlateBlock(itemSupplier, config.maxStack(), Services.PLATFORM::getPlateBlock);
             case SMALL_PLATE -> new SmallPlateBlock(itemSupplier, Services.PLATFORM::getSmallPlateBlock);

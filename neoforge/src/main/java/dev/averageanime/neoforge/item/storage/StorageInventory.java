@@ -1,6 +1,6 @@
 package dev.averageanime.neoforge.item.storage;
 
-import dev.averageanime.item.storage.StorageAccess;
+import dev.averageanime.createfood.lib.storage.StorageAccess;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.item.ItemStack;

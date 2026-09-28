@@ -83,7 +83,6 @@ public final class BlockRegistry {
     public static final BlockEntry PINK_GELATIN_DESSERT_BLOCK_ENTRY = BlockEntry.gelatin("pink_gelatin_dessert_block");
     public static final BlockEntry PIZZA_DOUGH = BlockEntry.rawPizza("pizza_dough");
     public static final BlockEntry PIZZA_DOUGH_TOMATO_SAUCE = BlockEntry.rawPizza("pizza_dough_tomato_sauce", tips(null, "tomato_sauce_ingredient"));
-    public static final BlockEntry PUMPKIN_PIE_BLOCK_ENTRY = BlockEntry.cookedPie("pumpkin_pie_block", "pumpkin_pie_slice");
     public static final BlockEntry PURPLE_GELATIN_DESSERT_BLOCK_ENTRY = BlockEntry.gelatin("purple_gelatin_dessert_block");
     public static final BlockEntry RAW_APPLE_CHEESECAKE = BlockEntry.rawPie("raw_apple_cheesecake");
     public static final BlockEntry RAW_APPLE_PIE = BlockEntry.rawPie("raw_apple_pie");

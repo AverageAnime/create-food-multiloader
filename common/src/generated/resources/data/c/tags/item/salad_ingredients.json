@@ -1,10 +1,6 @@
 {
   "values": [
     {
-      "id": "#c:foods/leafy_green",
-      "required": false
-    },
-    {
       "id": "croptopia:lettuce",
       "required": false
     },

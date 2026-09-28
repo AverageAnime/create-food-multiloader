@@ -2,7 +2,7 @@
     "type": "farmersdelight:cutting",
     "ingredients": [
         {
-            "item": "farmersdelight:chicken_cuts"
+            "tag": "c:chicken_cuts"
         }
     ],
     "tool": {

@@ -3,6 +3,10 @@
     {
       "id": "createfood:meat_pie",
       "required": false
+    },
+    {
+      "id": "kaleidoscope_cookery:meat_pie",
+      "required": false
     }
   ]
 }

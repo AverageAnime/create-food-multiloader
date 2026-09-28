@@ -1,5 +1,6 @@
 package dev.averageanime.item.storage;
 
+import dev.averageanime.createfood.lib.storage.StorageAccess;
 import dev.averageanime.config.ConfigValues;
 import dev.averageanime.platform.Services;
 import net.minecraft.network.chat.Component;
@@ -18,8 +19,8 @@ public abstract class RationBoxItem extends StorageItem {
         super(block, properties);
     }
 
-    @Override protected boolean isInventoryEnabled()   { return Services.PLATFORM.isRationBoxInventoryEnabled(); }
-    @Override protected boolean isEatFromItemEnabled() { return Services.PLATFORM.isRationBoxEatFromItemEnabled(); }
+    @Override protected boolean isInventoryEnabled()   { return ConfigValues.isRationBoxInventoryEnabled(); }
+    @Override protected boolean isEatFromItemEnabled() { return ConfigValues.isRationBoxEatFromItemEnabled(); }
 
     @Override
     protected InteractionResultHolder<ItemStack> onInventoryDisabled(ItemStack stack, boolean isClientSide) {

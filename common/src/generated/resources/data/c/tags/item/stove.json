@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "farmersdelight:stove",
+      "required": false
+    },
+    {
+      "id": "kaleidoscope_cookery:stove",
+      "required": false
+    }
+  ]
+}

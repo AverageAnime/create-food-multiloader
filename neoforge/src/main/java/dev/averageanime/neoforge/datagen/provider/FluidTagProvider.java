@@ -1,8 +1,9 @@
 package dev.averageanime.neoforge.datagen.provider;
 
 import dev.averageanime.CreateFoodCommon;
+import dev.averageanime.createfood.lib.datagen.DatagenHelpers;
 import dev.averageanime.neoforge.block.FluidRegistration;
-import dev.averageanime.neoforge.block.type.fluid.FluidBlock;
+import dev.averageanime.createfood.lib.fluid.FluidBlock;
 import java.util.concurrent.CompletableFuture;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
@@ -35,12 +36,8 @@ public class FluidTagProvider extends TagsProvider<Fluid> {
             String fluidId = fluidType.SOURCE.getId().getPath();
             String flowingId = fluidType.FLOWING.getId().getPath();
 
-            TagKey<Fluid> tag = TagKey.create(Registries.FLUID,
-                    ResourceLocation.fromNamespaceAndPath("c", fluidId));
-
-            tag(tag)
-                    .addOptional(ResourceLocation.fromNamespaceAndPath(CreateFoodCommon.MOD_ID, flowingId))
-                    .addOptional(ResourceLocation.fromNamespaceAndPath(CreateFoodCommon.MOD_ID, fluidId));
+            DatagenHelpers.conventionTag((key, id) -> tag(key).addOptional(id),
+                    CreateFoodCommon.MOD_ID, fluidId, flowingId);
         }
 
         tag(fluidTag("berry_juice"))
@@ -52,6 +49,13 @@ public class FluidTagProvider extends TagsProvider<Fluid> {
 
         tag(fluidTag("cake_batter"))
                 .addOptional(ResourceLocation.parse("ratatouille:cake_batter"));
+
+        // Our Delightful Creators melon juice override reads c:melon, which covers the melon slices
+        // Ratatouille's own mixing recipe names, so the two race in the basin. Listing its fluid keeps
+        // whichever wins interchangeable.
+        tag(fluidTag("melon_juice"))
+                .addOptional(ResourceLocation.parse("ratatouille:melon_juice_fluid"))
+                .addOptional(ResourceLocation.parse("ratatouille:flowing_melon_juice_fluid"));
 
         tag(fluidTag("caramel"))
                 .addOptional(ResourceLocation.parse("create_confectionery:caramel"))
@@ -66,24 +70,44 @@ public class FluidTagProvider extends TagsProvider<Fluid> {
                 .addOptional(ResourceLocation.parse("create_confectionery:white_chocolate"))
                 .addOptional(ResourceLocation.parse("create_confectionery:flowing_white_chocolate"));
 
-        // Delightful Creators turns Farmer's Delight dishes into Create fluids. Aliasing them under c:
-        // lets our recipes reference them by tag instead of naming the mod directly. None of these
-        // collide with a Create: Food fluid — our soups and stews are separate dishes by design.
         for (String id : DELIGHTFUL_CREATORS_FLUIDS) {
             tag(fluidTag(id))
                     .addOptional(ResourceLocation.fromNamespaceAndPath("delightfulcreators", id))
                     .addOptional(ResourceLocation.fromNamespaceAndPath("delightfulcreators", "flowing_" + id));
         }
 
-        // Cultural Creators' one fluid, aliased for the same reason.
         tag(fluidTag("creamed_corn"))
                 .addOptional(ResourceLocation.parse("culturalcreators:creamed_corn"))
                 .addOptional(ResourceLocation.parse("culturalcreators:flowing_creamed_corn"));
 
-        // Reciprocal: lets Ratatouille Fried Delights' Continuous Fryer run on Create: Food's vegetable oil.
+        // Lets Ratatouille Fried Delights' fryer run on Create: Food's vegetable oil.
         tag(modTag("ratatouille_fried_delights", "oil"))
                 .addOptional(ResourceLocation.parse("createfood:vegetable_oil"))
                 .addOptional(ResourceLocation.parse("createfood:flowing_vegetable_oil"));
+
+        // Whole milk and skim milk stay separate tags so that separating cream out of
+        // milk actually costs whole milk; c:any_milk is for the many recipes that do
+        // not care which they get. Nesting the two tags rather than listing fluid ids
+        // keeps this correct as other mods contribute their own milks.
+        // c:any_milk must never appear in the cream separation recipe -- it would let
+        // that recipe satisfy itself from its own skim output and revert it to 1:1.
+        tag(fluidTag("any_milk"))
+                .addTag(fluidTag("milk"))
+                .addTag(fluidTag("skim_milk"));
+
+        // c:any_juice is for recipes that want juice but do not care which -- vinegar is the
+        // one so far. Nesting the per-flavour tags rather than listing fluid ids means the
+        // foreign juices already aliased above (Hearth and Harvest's berry juices, Ratatouille's
+        // and Delightful Creators' melon juice) come along without being repeated here.
+        // c:melon_juice has no Create: Food fluid of its own and is empty without those mods,
+        // which costs nothing.
+        tag(fluidTag("any_juice"))
+                .addTag(fluidTag("apple_juice"))
+                .addTag(fluidTag("berry_juice"))
+                .addTag(fluidTag("chorus_fruit_juice"))
+                .addTag(fluidTag("glow_berry_juice"))
+                .addTag(fluidTag("melon_juice"))
+                .addTag(fluidTag("sugar_cane_juice"));
     }
 
     private static TagKey<Fluid> fluidTag(String id) {

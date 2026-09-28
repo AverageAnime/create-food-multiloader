@@ -1,123 +1,123 @@
 {
-  "neoforge:conditions": [
-    {
-      "type": "neoforge:mod_loaded",
-      "modid": "create"
-    },
-    {
-      "type": "neoforge:mod_loaded",
-      "modid": "farmersdelight"
-    },
-    {
-      "type": "neoforge:mod_loaded",
-      "modid": "delightfulcreators"
-    },
-    {
-      "type": "createfood:enabled",
-      "id": "farmersdelight:fruit_salad"
-    }
-  ],
-  "fabric:load_conditions": [
-    {
-      "condition": "fabric:all_mods_loaded",
-      "values": [
-        "create"
-      ]
-    },
-    {
-      "condition": "fabric:all_mods_loaded",
-      "values": [
-        "farmersdelight"
-      ]
-    },
-    {
-      "condition": "fabric:all_mods_loaded",
-      "values": [
-        "delightfulcreators"
-      ]
-    },
-    {
-      "condition": "createfood:enabled",
-      "id": "farmersdelight:fruit_salad"
-    }
-  ],
-  "type": "create:sequenced_assembly",
-  "ingredient": {
-    "tag": "c:bowl"
-  },
-  "loops": 1,
-  "results": [
-    {
-      "id": "farmersdelight:fruit_salad"
-    }
-  ],
-  "sequence": [
-    {
-      "type": "create:deploying",
-      "ingredients": [
+    "neoforge:conditions": [
         {
-          "item": "delightfulcreators:incomplete_fruit_salad"
+            "type": "neoforge:mod_loaded",
+            "modid": "create"
         },
         {
-          "tag": "c:melon"
-        }
-      ],
-      "results": [
-        {
-          "id": "delightfulcreators:incomplete_fruit_salad"
-        }
-      ]
-    },
-    {
-      "type": "create:deploying",
-      "ingredients": [
-        {
-          "item": "delightfulcreators:incomplete_fruit_salad"
+            "type": "neoforge:mod_loaded",
+            "modid": "farmersdelight"
         },
         {
-          "tag": "c:apple"
-        }
-      ],
-      "results": [
-        {
-          "id": "delightfulcreators:incomplete_fruit_salad"
-        }
-      ]
-    },
-    {
-      "type": "create:deploying",
-      "ingredients": [
-        {
-          "item": "delightfulcreators:incomplete_fruit_salad"
+            "type": "neoforge:mod_loaded",
+            "modid": "delightfulcreators"
         },
         {
-          "tag": "c:fruits"
+            "type": "createfood:enabled",
+            "id": "farmersdelight:fruit_salad"
         }
-      ],
-      "results": [
+    ],
+    "fabric:load_conditions": [
         {
-          "id": "delightfulcreators:incomplete_fruit_salad"
-        }
-      ]
-    },
-    {
-      "type": "create:deploying",
-      "ingredients": [
-        {
-          "item": "delightfulcreators:incomplete_fruit_salad"
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "create"
+            ]
         },
         {
-          "item": "farmersdelight:pumpkin_slice"
-        }
-      ],
-      "results": [
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "farmersdelight"
+            ]
+        },
         {
-          "id": "delightfulcreators:incomplete_fruit_salad"
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "delightfulcreators"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
+            "id": "farmersdelight:fruit_salad"
         }
-      ]
+    ],
+    "type": "create:sequenced_assembly",
+    "ingredient": {
+        "tag": "c:bowl"
+    },
+    "loops": 1,
+    "results": [
+        {
+            "id": "farmersdelight:fruit_salad"
+        }
+    ],
+    "sequence": [
+        {
+            "type": "create:deploying",
+            "ingredients": [
+                {
+                    "item": "delightfulcreators:incomplete_fruit_salad"
+                },
+                {
+                    "tag": "c:melon"
+                }
+            ],
+            "results": [
+                {
+                    "id": "delightfulcreators:incomplete_fruit_salad"
+                }
+            ]
+        },
+        {
+            "type": "create:deploying",
+            "ingredients": [
+                {
+                    "item": "delightfulcreators:incomplete_fruit_salad"
+                },
+                {
+                    "tag": "c:apple"
+                }
+            ],
+            "results": [
+                {
+                    "id": "delightfulcreators:incomplete_fruit_salad"
+                }
+            ]
+        },
+        {
+            "type": "create:deploying",
+            "ingredients": [
+                {
+                    "item": "delightfulcreators:incomplete_fruit_salad"
+                },
+                {
+                    "tag": "c:fruits"
+                }
+            ],
+            "results": [
+                {
+                    "id": "delightfulcreators:incomplete_fruit_salad"
+                }
+            ]
+        },
+        {
+            "type": "create:deploying",
+            "ingredients": [
+                {
+                    "item": "delightfulcreators:incomplete_fruit_salad"
+                },
+                {
+                    "tag": "c:pumpkin"
+                }
+            ],
+            "results": [
+                {
+                    "id": "delightfulcreators:incomplete_fruit_salad"
+                }
+            ]
+        }
+    ],
+    "transitional_item": {
+        "id": "delightfulcreators:incomplete_fruit_salad"
     }
-  ],
-  "transitional_item": {
-    "id": "delightfulcreators:incomplete_fruit_salad"
-  }
 }

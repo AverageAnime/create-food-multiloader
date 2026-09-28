@@ -3,6 +3,10 @@
     {
       "id": "createfood:pastry_base",
       "required": false
+    },
+    {
+      "id": "ratatouille_fried_delights:puff_pastry",
+      "required": false
     }
   ]
 }

@@ -1,0 +1,43 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "culturaldelights"
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "culturaldelights:calamari_roll"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "culturaldelights"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
+            "id": "culturaldelights:calamari_roll"
+        }
+    ],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:dried_kelp"
+        },
+        {
+            "tag": "c:cooked_rice"
+        },
+        {
+            "tag": "c:foods/raw_calamari"
+        },
+        {
+            "tag": "c:foods/raw_calamari"
+        }
+    ],
+    "result": {
+        "count": 2,
+        "id": "culturaldelights:calamari_roll"
+    }
+}

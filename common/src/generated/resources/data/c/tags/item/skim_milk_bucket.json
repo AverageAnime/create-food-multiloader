@@ -1,0 +1,8 @@
+{
+  "values": [
+    {
+      "id": "createfood:skim_milk_bucket",
+      "required": false
+    }
+  ]
+}

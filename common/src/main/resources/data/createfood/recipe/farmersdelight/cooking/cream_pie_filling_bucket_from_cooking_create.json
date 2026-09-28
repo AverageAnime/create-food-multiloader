@@ -1,48 +1,52 @@
 {
-    "type": "farmersdelight:cooking",
-    "experience": 0.25,
-    "ingredients": [
-        {
-            "tag": "c:heavy_cream_bucket"
-        },
-        {
-            "tag": "c:flours/wheat"
-        },
-        {
-            "tag": "c:butter"
-        },
-        {
-            "tag": "c:sugar"
-        },
-        {
-            "tag": "c:eggs"
-        }
-    ],
-    "recipe_book_tab": "drinks",
-    "result": {
-        "count": 1,
-        "id": "createfood:cream_pie_filling_bucket"
+  "type": "farmersdelight:cooking",
+  "experience": 0.25,
+  "ingredients": [
+    {
+      "tag": "c:heavy_cream_bucket"
     },
-    "neoforge:conditions": [
-        {
-            "type": "neoforge:mod_loaded",
-            "modid": "farmersdelight"
-        },
-        {
-            "type": "createfood:enabled",
-            "id": "cream_pie_filling_bucket"
-        }
-    ],
-    "fabric:load_conditions": [
-        {
-            "condition": "fabric:all_mods_loaded",
-            "values": [
-                "farmersdelight"
-            ]
-        },
-        {
-            "condition": "createfood:enabled",
-            "id": "cream_pie_filling_bucket"
-        }
-    ]
+    {
+      "tag": "c:flours/wheat"
+    },
+    {
+      "tag": "c:butter"
+    },
+    {
+      "tag": "c:sugar"
+    },
+    {
+      "tag": "c:eggs"
+    }
+  ],
+  "recipe_book_tab": "drinks",
+  "container": {
+    "count": 1,
+    "id": "minecraft:bucket"
+  },
+  "result": {
+    "count": 1,
+    "id": "createfood:cream_pie_filling_bucket"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "farmersdelight"
+    },
+    {
+      "type": "createfood:enabled",
+      "id": "cream_pie_filling_bucket"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "farmersdelight"
+      ]
+    },
+    {
+      "condition": "createfood:enabled",
+      "id": "cream_pie_filling_bucket"
+    }
+  ]
 }

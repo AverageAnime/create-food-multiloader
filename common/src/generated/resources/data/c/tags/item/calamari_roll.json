@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "culturaldelights:calamari_roll",
+      "required": false
+    },
+    {
+      "id": "rusticdelight:calamari_roll",
+      "required": false
+    }
+  ]
+}

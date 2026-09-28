@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "createfood:flowing_gravy",
+      "required": false
+    },
+    {
+      "id": "createfood:gravy",
+      "required": false
+    }
+  ]
+}

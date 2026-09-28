@@ -1,0 +1,35 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "expandeddelight"
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "expandeddelight:grilled_cheese"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "expandeddelight"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
+            "id": "expandeddelight:grilled_cheese"
+        }
+    ],
+    "type": "minecraft:campfire_cooking",
+    "category": "food",
+    "cookingtime": 600,
+    "experience": 0.55,
+    "ingredient": {
+        "tag": "c:cheese_sandwich"
+    },
+    "result": {
+        "count": 1,
+        "id": "expandeddelight:grilled_cheese"
+    }
+}

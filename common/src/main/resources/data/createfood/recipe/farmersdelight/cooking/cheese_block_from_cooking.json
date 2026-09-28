@@ -3,7 +3,7 @@
     "experience": 0.5,
     "ingredients": [
         {
-            "tag": "c:buckets/milk"
+            "tag": "c:any_milk_bucket"
         },
         {
             "tag": "c:vinegar_bottle"

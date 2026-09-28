@@ -23,6 +23,7 @@
   ],
   "recipe_book_tab": "meals",
   "container": {
+    "count": 1,
     "id": "minecraft:bucket"
   },
   "result": {

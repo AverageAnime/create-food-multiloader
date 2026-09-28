@@ -1,5 +1,6 @@
 package dev.averageanime.item;
 
+import dev.averageanime.createfood.lib.registry.RegistryHooks;
 import dev.averageanime.CreateFoodCommon;
 import dev.averageanime.client.tooltip.ItemTooltips;
 import dev.averageanime.item.effect.EffectSpecs;
@@ -19,6 +20,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.TooltipFlag;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.function.BiConsumer;
@@ -26,8 +28,8 @@ import java.util.function.Supplier;
 
 public final class ItemFactory {
 
-    public interface Hooks {
-        Supplier<net.minecraft.world.item.Item> register(String id, Supplier<net.minecraft.world.item.Item> factory);
+    /** Registration itself is the shared half; the rest is how this mod builds a food item. */
+    public interface Hooks extends RegistryHooks<net.minecraft.world.item.Item> {
 
         EffectFood createEffectFood(Properties props, Set<String> ids, List<DeferredFx> deferred, Tooltips.TooltipSpec tip);
 
@@ -98,9 +100,8 @@ public final class ItemFactory {
         return new EffectDrink(fp, EffectSpecs.existingIds(def.effects), EffectSpecs.deferredFx(def.effects), def.tip);
     }
 
-    // ── Config-driven items ────────────────────────────────────────────────
-
     public static void registerConfigItems(Hooks hooks, List<String> entries) {
+        Set<String> claimed = new HashSet<>();
         for (String entry : entries) {
             String[] p = entry.split("\\|");
             if (p.length < 2) {
@@ -109,6 +110,12 @@ public final class ItemFactory {
             }
             String name = p[0];
             String type = p[1].toLowerCase();
+
+            // A duplicate name would make the loader throw; one bad config line should not be fatal.
+            if (ItemEntry.exists(name) || !claimed.add(name)) {
+                CreateFoodCommon.LOGGER.warn("Create: Food - Skipping custom_item entry, name already registered: {}", name);
+                continue;
+            }
             switch (type) {
                 case "plain", "ingredient_bottle", "ingredient_bowl", "piping_bag" ->
                         hooks.register(name, () -> buildSimpleConfigItem(type));

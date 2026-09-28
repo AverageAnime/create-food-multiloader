@@ -9,13 +9,10 @@
         },
         {
             "item": "minecraft:stick"
-        },
-        {
-            "item": "minecraft:stick"
         }
     ],
     "result": {
-        "count": 3,
+        "count": 2,
         "id": "createfood:chocolate_ice_cream_stick"
     },
     "neoforge:conditions": [

@@ -2,15 +2,15 @@
 
 ---
 
-**Stacking:**
+### Stacking
 
-Durations add up. Eating a second food that grants an effect you already have at the same level extends what is left rather than replacing it. Levels do not add up.
+Eating a second food that grants an effect you already have at the same level extends what is left rather than replacing it. Levels do not add up.
 
-A single effect stacks to a maximum of 30 minutes by default. Any food stacks. Other ways of obtaining mob effects keep vanilla behavior. Can be modified with `stack_duration` and `max_stacked_duration`. See [Config Options](Config-Options).
+A single effect stacks to a maximum of 30 minutes by default. Other ways of obtaining mob effects keep vanilla behavior. Can be modified with `stack_duration` and `max_stacked_duration`. See [Config Options](https://github.com/AverageAnime/create-food-multiloader/wiki/Config-Options).
 
 ---
 
-**Supported Effects:**
+### Supported Effects
 
 | Effect              | Description                                                                                                 |
 |---------------------|-------------------------------------------------------------------------------------------------------------|
@@ -44,10 +44,12 @@ A single effect stacks to a maximum of 30 minutes by default. Any food stacks. O
 | `lightning`         | Chance to strike target with lightning                                                                      |
 | `lozenge`           | Eat and drink faster                                                                                        |
 | `mining`            | Mining speed bonus based on depth                                                                           |
+| `mustard`           | Nearby Creepers flee from the user                                                                          |
 | `nourishment`       | Nourishment/saturation                                                                                      |
 | `pacify`            | Reduces enemy aggression; Endermen safe                                                                     |
 | `party_starter`     | Fireworks on hit + bonus damage                                                                             |
 | `perception`        | Entities nearby the user will begin to glow                                                                 |
+| `preservation`      | Rotten flesh, raw chicken, poisonous potatoes, pufferfish, and spider eyes cause no debuffs                 |
 | `prickly`           | Damages entities that collide with you                                                                      |
 | `pyromaniac`        | Heals the user slowly while standing in fire                                                                |
 | `rage_aura`         | Mobs around you become hostile                                                                              |
@@ -58,6 +60,7 @@ A single effect stacks to a maximum of 30 minutes by default. Any food stacks. O
 | `repulsion`         | Periodically pushes enemies away                                                                            |
 | `rest`              | Makes phantoms disappear                                                                                    |
 | `rested`            | Bonus experience gain                                                                                       |
+| `satiated_shield`   | Hunger acts as extra health; damage is absorbed by hunger first                                             |
 | `satiation`         | Hunger management                                                                                           |
 | `shrinking`         | Crawl into 1-block gaps while sneaking                                                                      |
 | `sliding`           | Boats you ride slide on any block as if on ice                                                              |
@@ -73,7 +76,10 @@ A single effect stacks to a maximum of 30 minutes by default. Any food stacks. O
 | `touch_poison`      | Melee attacks apply Poison                                                                                  |
 | `touch_regen`       | Melee attacks apply Regeneration                                                                            |
 | `tough`             | Grants Absorption, Regeneration, and Resistance                                                             |
+| `tundra_strider`    | Increases movement speed on snow, ice, and powder snow, and prevents sinking into it                        |
+| `vigor`             | Running does not consume hunger                                                                             |
 | `vitality`          | Exhaustion reduction                                                                                        |
+| `warmth`            | Slowly regenerates health near heat sources such as stoves, campfires, and lava                             |
 | `water_walking`     | Allows the user to walk on water                                                                            |
 | `well_served`       | You will not become truly hungry while this effect is active                                                |
 
@@ -82,7 +88,7 @@ overrides keep working, and will be removed in a later release.
 
 ---
 
-**Ingredient Effects:**
+### Ingredient Effects
 
 Which effects are applied comes from its ingredients, theme, and tier. Tier follows nutrition, and sets how many effects are guaranteed:
 
@@ -184,7 +190,7 @@ Each ingredient contributes the effect below. Some ingredients include a bonus e
 
 ---
 
-**Theme Effects:**
+### Theme Effects
 
 Some effects come from what a dish *is* rather than what is in it. Theme effects do not count against the tier limit.
 

@@ -1,5 +1,7 @@
 package dev.averageanime.config;
 
+import dev.averageanime.createfood.lib.config.ConfigSpecBuilder;
+import dev.averageanime.createfood.lib.config.ConfigSpecOverlay;
 import dev.averageanime.registry.FluidAmounts;
 
 import java.util.List;
@@ -8,27 +10,27 @@ import java.util.function.Supplier;
 
 public final class ConfigSchema {
 
-    public interface SpecBuilder {
-        void push(String path);
-        void pop();
-        Supplier<Boolean> defineBool(String key, boolean defaultValue);
-        Supplier<Integer> defineInt(String key, int defaultValue, int min, int max, boolean gameRestart);
-        Supplier<List<? extends String>> defineList(String key, List<String> defaultValue,
-                Supplier<String> elementHint, Predicate<Object> elementValidator, boolean gameRestart);
-    }
-
     private static final Predicate<Object> STRING = obj -> obj instanceof String;
     private static final Supplier<String> FILTER_HINT = () -> "mod:mod_id,  item:mod_id:item_id,  tag:mod_id:tag_name";
 
     private ConfigSchema() {}
 
-    public static void build(SpecBuilder client, SpecBuilder common, SpecBuilder server) {
-        buildClient(client);
-        buildCommon(common);
-        buildServer(server);
+    /**
+     * Each builder is wrapped so an addon can supply the default an option is declared with, keyed by its
+     * dotted path. Every {@code define} below still names this mod's own default; the wrapper is what
+     * merges anything an addon adds to it.
+     */
+    public static void build(ConfigSpecBuilder client, ConfigSpecBuilder common, ConfigSpecBuilder server) {
+        ConfigSpecBuilder wrappedClient = ConfigSpecOverlay.wrap(client, AddonDefaults.forFile(AddonDefaults.CLIENT));
+        ConfigSpecBuilder wrappedCommon = ConfigSpecOverlay.wrap(common, AddonDefaults.forFile(AddonDefaults.COMMON));
+        ConfigSpecBuilder wrappedServer = ConfigSpecOverlay.wrap(server, AddonDefaults.forFile(AddonDefaults.SERVER));
+        buildClient(wrappedClient);
+        buildCommon(wrappedCommon);
+        buildServer(wrappedServer);
+        ConfigSpecOverlay.reportDeclared(wrappedClient, wrappedCommon, wrappedServer);
     }
 
-    private static void buildClient(SpecBuilder b) {
+    private static void buildClient(ConfigSpecBuilder b) {
         b.push("blocks");
         ConfigValues.ALWAYS_DISPLAY_UPRIGHT = b.defineBool("always_display_upright", false);
         ConfigValues.SHOW_SACK_BLOCK_ICONS = b.defineBool("show_sack_block_icons", true);
@@ -44,7 +46,12 @@ public final class ConfigSchema {
         b.pop();
     }
 
-    private static void buildCommon(SpecBuilder b) {
+    private static void buildCommon(ConfigSpecBuilder b) {
+        b.push("addons");
+        b.defineList("addons_enabled", AddonGate.defaults(),
+                () -> "addon_id", STRING, true);
+        b.pop();
+
         b.push("blocks");
         b.defineList("block", ConfigDefaults.CUSTOM_BLOCK_DEFAULT,
                 () -> "name|type|slice_item_id  OR  name|type",
@@ -66,7 +73,7 @@ public final class ConfigSchema {
         b.pop();
     }
 
-    private static void buildServer(SpecBuilder b) {
+    private static void buildServer(ConfigSpecBuilder b) {
         b.push("blocks");
 
         b.push("display");
@@ -134,17 +141,17 @@ public final class ConfigSchema {
 
         b.push("items");
         b.push("effects");
+        ConfigValues.ENABLE_DEFAULT_EFFECTS = b.defineBool("enable_default_effects", true);
         ConfigValues.CATEGORY_EFFECT_OVERRIDES = b.defineList("category_overrides", List.of(),
                 () -> "category_name|mod_id:effect_id",
                 ConfigDefaults.CATEGORY_EFFECT_OVERRIDE_VALIDATOR, false);
-        ConfigValues.ITEM_EFFECT_OVERRIDES = b.defineList("item_overrides", ConfigDefaults.ITEM_EFFECT_OVERRIDES_DEFAULT,
+        ConfigValues.ITEM_EFFECT_OVERRIDES = b.defineList("item_overrides", List.of(),
                 () -> "item_id|category_or_effect_id|duration|amplifier[|chance]  OR  item_id|category_or_effect_id|remove",
                 ConfigDefaults.ITEM_EFFECT_OVERRIDE_VALIDATOR, false);
         ConfigValues.STACK_EFFECT_DURATION = b.defineBool("stack_duration", true);
         ConfigValues.MAX_STACKED_DURATION = b.defineInt("max_stacked_duration", 36000, 0, 1728000, false);
         b.pop();
-        ConfigValues.ITEM_NUTRITION_OVERRIDES = b.defineList("nutrition_saturation",
-                ConfigDefaults.ITEM_NUTRITION_OVERRIDES_DEFAULT,
+        ConfigValues.ITEM_NUTRITION_OVERRIDES = b.defineList("nutrition_saturation", List.of(),
                 () -> "item_id|nutrition|saturation",
                 ConfigDefaults.ITEM_NUTRITION_OVERRIDE_VALIDATOR, false);
         b.push("remainders");

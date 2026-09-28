@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "c:pasta_plate"
+    },
+    {
+      "tag": "c:small_vegetable_meatballs"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "createfood:pasta_plate_vegetable_meatballs"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "pasta_plate_vegetable_meatballs"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "pasta_plate_vegetable_meatballs"
+    }
+  ]
+}

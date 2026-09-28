@@ -23,13 +23,31 @@ neoForge {
         }
         client {
             client()
+            // Lets a dev-time addon that is still a source tree be picked up without building a jar.
+            systemProperty 'createfood.addonRoots',
+                    providers.systemProperty('createfood.addonRoots').getOrElse('')
         }
         data {
             data()
+            // Generated resources must depend only on committed source, so these are empty unless an
+            // addon root is named explicitly. An addon supplies both its spec and its hand-authored
+            // recipes, and the second is what RecipeGenerator mirrors into shaped variants.
+            systemProperty 'createfood.addonRoots',
+                    providers.systemProperty('createfood.addonRoots').getOrElse('')
+            systemProperty 'createfood.recipeSourceRoots',
+                    providers.systemProperty('createfood.recipeSourceRoots').getOrElse('')
             programArguments.addAll '--mod', mod_id, '--all',
                     '--output', file('../common/src/generated/resources').absolutePath,
                     '--existing', file('src/main/resources').absolutePath,
                     '--existing', file('../common/src/main/resources').absolutePath
+            // ExistingFileHelper treats each --existing as one pack root and does not descend
+            // into resourcepacks/, so the foreign textures and models that moved into the
+            // built-in packs would drop out of model and texture validation. Listed from the
+            // filesystem so adding a pack needs no edit here.
+            file('../common/src/main/resources/resourcepacks').listFiles()
+                    ?.findAll { it.directory }?.sort { it.name }?.each {
+                programArguments.addAll '--existing', it.absolutePath
+            }
         }
         server {
             server()
@@ -42,7 +60,6 @@ neoForge {
         }
     }
     repositories {
-        // CurseMaven
         exclusiveContent {
             forRepository {
                 maven {
@@ -67,11 +84,6 @@ neoForge {
     }
 
     dependencies {
-        //implementation("com.simibubi.create:create-${minecraft_version}:${create_version}:slim") { transitive = false }
-        //implementation("net.createmod.ponder:Ponder-NeoForge-${minecraft_version}:${ponder_version}")
-        //compileOnly("dev.engine-room.flywheel:flywheel-neoforge-api-${minecraft_version}:${flywheel_version}")
-        //runtimeOnly("dev.engine-room.flywheel:flywheel-neoforge-${minecraft_version}:${flywheel_version}")
-        //implementation("com.tterrag.registrate:Registrate:${registrate_version}")
 
         compileOnly "curse.maven:farmers-delight-398521:8672744"
 
@@ -84,42 +96,7 @@ neoForge {
 
 sourceSets.main.resources { srcDir '../common/src/generated/resources' }
 
-tasks.register('liteJar', Jar) {
-    archiveClassifier = 'lite'
-
-    from sourceSets.main.output
-
-    exclude '**/block/type/display/**'
-    exclude '**/block/DisplayBlockRegistration.class'
-    exclude '**/tab/DisplayTabRegistration.class'
-
-    exclude '**/blockstates/*_plate_block.json'
-    exclude '**/blockstates/plate_block.json'
-    exclude '**/blockstates/small_plate_block.json'
-    exclude '**/models/item/*_plate_block.json'
-    exclude '**/models/item/*_bottle_block.json'
-    exclude '**/models/item/*_bowl_block.json'
-    exclude '**/models/block/*_plate_block.json'
-    exclude '**/models/block/*_bottle_block.json'
-    exclude '**/models/block/*_bowl_block.json'
-    exclude '**/models/block/*_plate_block_1.json'
-    exclude '**/models/block/*_plate_block_2.json'
-    exclude '**/models/block/*_plate_block_3.json'
-    exclude '**/models/block/*_plate_block_4.json'
-    exclude '**/models/block/*_plate_block_5.json'
-    exclude '**/models/block/*_plate_block_6.json'
-    exclude '**/models/block/*_plate_block_7.json'
-    exclude '**/models/block/*_plate_block_8.json'
-    exclude '**/models/block/*_plate_block_9.json'
-    exclude '**/models/block/plate_block.json'
-    exclude '**/models/block/small_plate_block.json'
-    exclude '**/loot_table/blocks/*_plate_block.json'
-    exclude '**/loot_table/blocks/plate_block.json'
-    exclude '**/loot_table/blocks/small_plate_block.json'
-}
-
 tasks.named('processResources') {
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 }
 
-build.dependsOn liteJar

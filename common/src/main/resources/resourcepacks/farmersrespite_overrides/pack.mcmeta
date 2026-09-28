@@ -1,0 +1,10 @@
+{
+  "pack": {
+    "description": "Overrides applied by ${mod_name}",
+    "pack_format": 34,
+    "supported_formats": {
+      "min_inclusive": 15,
+      "max_inclusive": 99
+    }
+  }
+}

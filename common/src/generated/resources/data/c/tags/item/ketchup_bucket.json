@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "create_bic_bit:ketchup_bucket",
+      "required": false
+    },
+    {
+      "id": "ratatouille_fried_delights:ketchup_bucket",
+      "required": false
+    }
+  ]
+}

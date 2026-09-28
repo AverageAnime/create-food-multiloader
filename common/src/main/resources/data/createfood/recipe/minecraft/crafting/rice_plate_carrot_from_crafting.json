@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "c:rice_plate"
+    },
+    {
+      "tag": "c:carrot"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "createfood:rice_plate_carrot"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "rice_plate_carrot"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "rice_plate_carrot"
+    }
+  ]
+}

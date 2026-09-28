@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:smoking",
+  "category": "food",
+  "cookingtime": 200,
+  "experience": 0.35,
+  "ingredient": {
+    "tag": "c:beef_cuts"
+  },
+  "result": {
+    "count": 1,
+    "id": "createfood:cooked_beef_cuts"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "cooked_beef_cuts"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "cooked_beef_cuts"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "create"
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "minecraft:granite"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "create"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
+            "id": "minecraft:granite"
+        }
+    ],
+    "type": "create:compacting",
+    "ingredients": [
+        {
+            "item": "minecraft:flint"
+        },
+        {
+            "item": "minecraft:flint"
+        },
+        {
+            "item": "minecraft:red_sand"
+        },
+        {
+            "type": "fluid_tag",
+            "amount": 100,
+            "fluid_tag": "c:lava"
+        }
+    ],
+    "results": [
+        {
+            "id": "minecraft:granite"
+        }
+    ]
+}

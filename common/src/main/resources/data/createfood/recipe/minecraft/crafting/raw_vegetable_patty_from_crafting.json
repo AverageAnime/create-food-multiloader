@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "c:raw_vegetable_meatball"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "createfood:raw_vegetable_patty"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "raw_vegetable_patty"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "raw_vegetable_patty"
+    }
+  ]
+}

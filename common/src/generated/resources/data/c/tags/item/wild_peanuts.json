@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "expandeddelight:wild_peanuts",
+      "required": false
+    },
+    {
+      "id": "hearthandharvest:wild_peanuts",
+      "required": false
+    }
+  ]
+}

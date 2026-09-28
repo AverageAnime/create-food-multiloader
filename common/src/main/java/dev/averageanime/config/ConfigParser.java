@@ -1,6 +1,9 @@
 package dev.averageanime.config;
 
 import net.minecraft.core.component.DataComponents;
+import dev.averageanime.createfood.lib.config.ItemFilter;
+import dev.averageanime.createfood.lib.config.ListParseCache;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
@@ -117,6 +120,17 @@ public final class ConfigParser {
         return !hideItems.contains(itemId);
     }
 
+    /** Whether {@code itemId} names something the game has; a bare id reads in the mod namespace. */
+    public static boolean isItemRegistered(String itemId) {
+        ResourceLocation id = itemId.contains(":")
+                ? ResourceLocation.tryParse(itemId)
+                : ResourceLocation.fromNamespaceAndPath(dev.averageanime.CreateFoodCommon.MOD_ID, itemId);
+        if (id == null) return false;
+        return BuiltInRegistries.ITEM.containsKey(id)
+                || BuiltInRegistries.BLOCK.containsKey(id)
+                || BuiltInRegistries.FLUID.containsKey(id);
+    }
+
     public static boolean isDisplayBlockEnabled(String blockId, List<? extends String> hideItems) {
         if (!isItemEnabled(blockId, hideItems)) return false;
         String base = blockId
@@ -132,37 +146,8 @@ public final class ConfigParser {
         return isItemEnabled(base, hideItems);
     }
 
-    private record CompiledFilter(Set<String> mods, Set<String> items, List<TagKey<Item>> tags) {}
-
-    private static final ListParseCache<CompiledFilter> FILTERS =
-            new ListParseCache<>(ConfigParser::compileFilter);
-
-    private static CompiledFilter compileFilter(List<? extends String> list) {
-        Set<String> mods = new HashSet<>();
-        Set<String> items = new HashSet<>();
-        List<TagKey<Item>> tags = new ArrayList<>();
-        for (String entry : list) {
-            if (entry.startsWith("mod:")) {
-                mods.add(entry.substring(4));
-            } else if (entry.startsWith("item:")) {
-                items.add(entry.substring(5));
-            } else if (entry.startsWith("tag:")) {
-                ResourceLocation tagLoc = ResourceLocation.tryParse(entry.substring(4));
-                if (tagLoc != null) tags.add(TagKey.create(Registries.ITEM, tagLoc));
-            }
-        }
-        return new CompiledFilter(Set.copyOf(mods), Set.copyOf(items), List.copyOf(tags));
-    }
-
     public static boolean matchesFilterList(ItemStack stack, List<? extends String> list) {
-        if (list.isEmpty()) return false;
-        CompiledFilter filter = FILTERS.get(list);
-        ResourceLocation key = stack.getItem().builtInRegistryHolder().key().location();
-        if (filter.mods().contains(key.getNamespace()) || filter.items().contains(key.toString())) return true;
-        for (TagKey<Item> tag : filter.tags()) {
-            if (stack.is(tag)) return true;
-        }
-        return false;
+        return ItemFilter.matches(stack, list);
     }
 
     public static boolean isClothSackItemAllowed(ItemStack stack, List<? extends String> exclude,

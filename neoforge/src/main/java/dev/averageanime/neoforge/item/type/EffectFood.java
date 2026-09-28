@@ -29,6 +29,9 @@ public class EffectFood extends dev.averageanime.item.type.EffectFood {
         super(properties, existingEffectIds, deferredEffects, tip);
     }
 
+    // Overrides NeoForge's IItemExtension.getFoodProperties so external mods reading nutrition off
+    // this item (AppleSkin, tooltip renderers) see the config-overridden value. Fabric has no
+    // equivalent hook, hence no Fabric-side override of this method.
     @Nullable
     @Override
     public FoodProperties getFoodProperties(@NotNull ItemStack stack, @Nullable LivingEntity entity) {

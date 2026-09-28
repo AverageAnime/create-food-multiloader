@@ -1,14 +1,16 @@
 package dev.averageanime.fabric.platform;
 
 import dev.averageanime.block.type.blockentity.ClothSackBlockEntity;
-import dev.averageanime.block.type.blockentity.GenericDisplayBlockEntity;
+import dev.averageanime.createfood.lib.block.GenericDisplayBlockEntity;
 import dev.averageanime.block.type.blockentity.RationBoxBlockEntity;
 import dev.averageanime.fabric.block.BlockEntityRegistration;
 import dev.averageanime.fabric.block.DisplayBlockRegistration;
-import dev.averageanime.item.storage.StorageAccess;
+import dev.averageanime.createfood.lib.storage.StorageAccess;
+import dev.averageanime.createfood.lib.platform.AddonSource;
 import dev.averageanime.platform.Platform;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.loader.api.FabricLoader;
+import net.fabricmc.loader.api.ModContainer;
 import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
@@ -23,7 +25,10 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.NotNull;
 
+import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.ArrayList;
+import java.util.List;
 
 public class FabricPlatform implements Platform {
 
@@ -35,6 +40,22 @@ public class FabricPlatform implements Platform {
     @Override
     public boolean isDevelopmentEnvironment() {
         return FabricLoader.getInstance().isDevelopmentEnvironment();
+    }
+
+    /** {@code getAllMods()} is populated before entrypoints run, so this is safe from {@code onInitialize} onward. */
+    @Override
+    public List<AddonSource> findModResources(String path) {
+        List<AddonSource> found = new ArrayList<>();
+        for (ModContainer mod : FabricLoader.getInstance().getAllMods()) {
+            try {
+                mod.findPath(path)
+                        .filter(Files::exists)
+                        .ifPresent(p -> found.add(new AddonSource(mod.getMetadata().getId(), p)));
+            } catch (Exception ignored) {
+                // A mod container that cannot be probed contributes nothing.
+            }
+        }
+        return found;
     }
 
     @Override

@@ -5,7 +5,6 @@ plugins {
 
 neoForge {
     neoFormVersion = neo_form_version
-    // Automatically enable AccessTransformers if the file exists
     def at = file('src/main/resources/META-INF/accesstransformer.cfg')
     if (at.exists()) {
         accessTransformers.from(at.absolutePath)
@@ -41,6 +40,24 @@ dependencies {
     compileOnly group: 'com.electronwill.night-config', name: 'toml', version: '3.8.0'
 }
 
+// The shared library is authored under dev.averageanime.lib and rewritten into this mod's own root
+// before compilation, so Create: Food and Create: Metalwork never ship the same fully-qualified class.
+// Source relocation rather than a shaded jar because the library is a git submodule, not an artifact.
+def sharedSrc = rootProject.file('libs/aa-shared/src/main/java')
+def relocateShared = tasks.register('relocateShared', Copy) {
+    description = 'Rewrite the shared library into ' + shared_relocate_root
+    onlyIf { sharedSrc.exists() }
+    from(sharedSrc)
+    into layout.buildDirectory.dir('generated/shared-src')
+    def fromPkg = 'dev.averageanime.lib'
+    def fromDir = fromPkg.replace('.', '/')
+    def toDir = shared_relocate_root.replace('.', '/')
+    filter { line -> line.replace(fromPkg, shared_relocate_root) }
+    eachFile { it.path = it.path.replace(fromDir, toDir) }
+    includeEmptyDirs = false
+}
+sourceSets.main.java.srcDir(relocateShared)
+
 configurations {
     commonJava {
         canBeResolved = false
@@ -52,9 +69,14 @@ configurations {
     }
 }
 
+// One artifact per source directory rather than `.singleFile`, which throws as
+// soon as a second srcDir exists (the shared-library submodule adds one).
+// Consumers take these as a FileCollection via `source(configurations.commonJava)`
+// and `from(configurations.commonResources)`, both of which already accept N dirs.
 artifacts {
-    commonJava sourceSets.main.java.sourceDirectories.singleFile
-    commonResources sourceSets.main.resources.sourceDirectories.singleFile
+    // builtBy so a loader module taking these as source still triggers the relocation first
+    sourceSets.main.java.sourceDirectories.each { dir -> commonJava(dir) { builtBy(relocateShared) } }
+    sourceSets.main.resources.sourceDirectories.each { commonResources it }
 }
 
 
@@ -70,12 +92,51 @@ sourceSets {
 
 // Dumps every food value as the compiler sees it, so the rebalance tooling's
 // text parse of ItemRegistry.java can be diffed against javac's view.
-// See documentation/toolkit/scripts/foodbalance.py --verify-runtime
+// See documentation/toolkit/scripts/cfood.py balance verify-runtime
 tasks.register('dumpFoodValues', JavaExec) {
     group = 'verification'
     description = 'Write build/food-values-runtime.csv from ItemEntry.ALL'
     classpath = sourceSets.test.runtimeClasspath
     mainClass = 'dev.averageanime.tools.DumpFoodValues'
+}
+
+// Asserts every createfood:enabled recipe condition names something this mod
+// actually declares. A bare id resolves in the mod namespace, so a foreign item
+// written without its namespace silently disables its own recipe.
+tasks.register('verifyRecipeConditions', JavaExec) {
+    group = 'verification'
+    description = 'Check createfood:enabled condition ids resolve to declared registrations'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'dev.averageanime.tools.VerifyRecipeConditions'
+    workingDir = rootProject.projectDir
+}
+
+// Flattens the bundled addon specs, plus any named by -Dcreatefood.addonRoots, and
+// checks they merge into the config defaults cleanly: every entry survives its
+// validator, no addon displaces a built-in default, and the effective defaults still
+// match common/src/test/resources/addon-defaults-snapshot.txt. Rewrite that snapshot
+// after an intended change with -Dcreatefood.writeSnapshot=true.
+tasks.register('verifyAddonSpec', JavaExec) {
+    group = 'verification'
+    description = 'Flatten addon specs and check they merge into the config defaults cleanly'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'dev.averageanime.tools.VerifyAddonSpec'
+    workingDir = rootProject.projectDir
+    systemProperty 'createfood.addonRoots', providers.systemProperty('createfood.addonRoots').getOrElse('')
+    systemProperty 'createfood.writeSnapshot', providers.systemProperty('createfood.writeSnapshot').getOrElse('false')
+}
+
+// Checks the built-in packs line up: every pack named in BuiltInPacks has a readable
+// pack.mcmeta, no pack holds a namespace other than the mod it is named for, nothing foreign is left
+// in the root pack, and each title's Assets/Data suffix matches what the pack actually contains.
+// The pack.mcmeta check is the load-bearing one -- on NeoForge a declared pack with no metadata is a
+// startup crash, and Fabric would not reproduce it.
+tasks.register('verifyBuiltInPacks', JavaExec) {
+    group = 'verification'
+    description = 'Check built-in packs are declared, populated and titled consistently'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'dev.averageanime.tools.VerifyBuiltInPacks'
+    workingDir = rootProject.projectDir
 }
 
 // Confirms every vanilla fallback id in EffectCategories actually exists.

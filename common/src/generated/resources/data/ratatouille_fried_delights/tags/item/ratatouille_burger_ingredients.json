@@ -19,6 +19,10 @@
     {
       "id": "createfood:sliced_tomato",
       "required": false
+    },
+    {
+      "id": "createfood:vegetable_patty",
+      "required": false
     }
   ]
 }

@@ -1,0 +1,31 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "fish_plate_rice_carrot"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "fish_plate_rice_carrot"
+    }
+  ],
+  "key": {
+    "1": {
+      "tag": "c:carrot"
+    },
+    "2": {
+      "tag": "c:fish_plate_rice"
+    }
+  },
+  "pattern": [
+    "1",
+    "2"
+  ],
+  "result": {
+    "count": 1,
+    "id": "createfood:fish_plate_rice_carrot"
+  }
+}

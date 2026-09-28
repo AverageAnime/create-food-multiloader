@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "tag": "c:cooked_fishes"
+    },
+    {
+      "tag": "c:mashed_potatoes_bowl_gravy"
+    },
+    {
+      "tag": "c:cooked_eggs"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "createfood:fish_plate_mashed_potatoes_gravy_fried_egg"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "fish_plate_mashed_potatoes_gravy_fried_egg"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "fish_plate_mashed_potatoes_gravy_fried_egg"
+    }
+  ]
+}

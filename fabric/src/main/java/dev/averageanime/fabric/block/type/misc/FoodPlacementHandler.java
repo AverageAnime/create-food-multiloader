@@ -3,7 +3,7 @@ package dev.averageanime.fabric.block.type.misc;
 import dev.averageanime.block.type.display.FoodBlock;
 import dev.averageanime.block.type.bowl.GenericDisplayBowlBlock;
 import dev.averageanime.block.type.plate.GenericDisplayPlateBlock;
-import dev.averageanime.block.type.blockentity.GenericDisplayBlockEntity;
+import dev.averageanime.createfood.lib.block.GenericDisplayBlockEntity;
 import net.fabricmc.fabric.api.event.player.AttackBlockCallback;
 import net.fabricmc.fabric.api.event.player.UseBlockCallback;
 import net.minecraft.core.component.DataComponents;

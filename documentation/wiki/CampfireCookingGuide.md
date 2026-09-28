@@ -12,4 +12,4 @@ Disabled by default. Enable in `createfood-server.toml`.
 
 ---
 
-Ranges, the `Shift` requirement, and which recipes can be cooked this way are all configurable — see [Config Options](Config-Options).
+Ranges, the `Shift` requirement, and which recipes can be cooked this way are all configurable — see [Config Options](https://github.com/AverageAnime/create-food-multiloader/wiki/Config-Options).

@@ -1,0 +1,32 @@
+{
+  "type": "kaleidoscope_cookery:millstone",
+  "ingredient": {
+    "item": "createfood:pressed_cocoa"
+  },
+  "result": {
+    "count": 3,
+    "id": "createfood:cocoa_powder"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "kaleidoscope_cookery"
+    },
+    {
+      "type": "createfood:enabled",
+      "id": "cocoa_powder"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "kaleidoscope_cookery"
+      ]
+    },
+    {
+      "condition": "createfood:enabled",
+      "id": "cocoa_powder"
+    }
+  ]
+}

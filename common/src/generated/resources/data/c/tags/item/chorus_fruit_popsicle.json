@@ -3,6 +3,10 @@
     {
       "id": "createfood:chorus_fruit_popsicle",
       "required": false
+    },
+    {
+      "id": "ends_delight:chorus_fruit_popsicle",
+      "required": false
     }
   ]
 }

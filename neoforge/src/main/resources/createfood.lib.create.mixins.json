@@ -1,0 +1,16 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "${shared_relocate_root}.mixin.create",
+  "compatibilityLevel": "JAVA_21",
+  "plugin": "dev.averageanime.neoforge.mixin.CreateCompatMixinPlugin",
+  "mixins": [
+    "BasinFluidCapacityMixin",
+    "BasinRecipeFluidLimitMixin"
+  ],
+  "client": [],
+  "server": [],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

@@ -1,8 +1,8 @@
 package dev.averageanime.item.interaction;
 
+import dev.averageanime.config.ConfigValues;
 import dev.averageanime.config.ConfigParser;
 import dev.averageanime.item.remainder.CraftingRemainder;
-import dev.averageanime.platform.Services;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.registries.Registries;
@@ -36,13 +36,15 @@ public class CampfireCookingInteraction {
 
     private record HeatSourceCache(long tick, boolean nearHeatSource) {}
 
+    // Heat-source detection walks a block volume around the player; caching the result for this many
+    // ticks avoids repeating that scan every tick while a player just stands there cooking.
     private static final int HEAT_SOURCE_SCAN_INTERVAL = 10;
 
     private static final Map<UUID, CookProgress> PROGRESS = new HashMap<>();
     private static final Map<UUID, HeatSourceCache> HEAT_SOURCE_CACHE = new HashMap<>();
 
     public static void tickPlayer(ServerPlayer player, Level level) {
-        if (!Services.PLATFORM.isCampfireCookingEnabled()) {
+        if (!ConfigValues.isCampfireCookingEnabled()) {
             clearProgress(player);
             return;
         }
@@ -53,7 +55,7 @@ public class CampfireCookingInteraction {
             return;
         }
 
-        if (Services.PLATFORM.isCampfireCookingRequireShift() && !player.isShiftKeyDown()) {
+        if (ConfigValues.isCampfireCookingRequireShift() && !player.isShiftKeyDown()) {
             clearProgress(player);
             return;
         }
@@ -74,12 +76,12 @@ public class CampfireCookingInteraction {
         CampfireCookingRecipe recipe = recipeOpt.get().value();
         ItemStack result = recipe.getResultItem(level.registryAccess());
 
-        if (ConfigParser.matchesFilterList(result, Services.PLATFORM.getCampfireCookingExclude())) {
+        if (ConfigParser.matchesFilterList(result, ConfigValues.getCampfireCookingExclude())) {
             clearProgress(player);
             return;
         }
 
-        if (Services.PLATFORM.isCampfireCookingSticksOnly()) {
+        if (ConfigValues.isCampfireCookingSticksOnly()) {
             String resultPath = result.getItem().builtInRegistryHolder().key().location().getPath();
             if (!resultPath.endsWith("_stick")) {
                 clearProgress(player);
@@ -87,7 +89,7 @@ public class CampfireCookingInteraction {
             }
         }
 
-        List<? extends String> filter = Services.PLATFORM.getCampfireCookingFilter();
+        List<? extends String> filter = ConfigValues.getCampfireCookingFilter();
         if (!filter.isEmpty() && !ConfigParser.matchesFilterList(result, filter)) {
             clearProgress(player);
             return;
@@ -165,8 +167,8 @@ public class CampfireCookingInteraction {
     }
 
     private static boolean isNearHeatSource(ServerPlayer player, Level level) {
-        int hRange = Services.PLATFORM.getCampfireCookingHorizontalRange();
-        int vRange = Services.PLATFORM.getCampfireCookingVerticalRange();
+        int hRange = ConfigValues.getCampfireCookingHorizontalRange();
+        int vRange = ConfigValues.getCampfireCookingVerticalRange();
         BlockPos center = player.blockPosition();
         BlockPos.MutableBlockPos cursor = new BlockPos.MutableBlockPos();
         for (int x = -hRange; x <= hRange; x++) {

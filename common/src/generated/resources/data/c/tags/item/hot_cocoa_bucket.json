@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "delightfulcreators:hot_cocoa_bucket",
+      "required": false
+    },
+    {
+      "id": "farmersrespite:hot_cocoa_bucket",
+      "required": false
+    }
+  ]
+}

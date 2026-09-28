@@ -38,11 +38,17 @@ public class DataGeneratorRegistration {
                                 BlockLootSubProvider::new,
                                 LootContextParamSets.BLOCK)),
                         lookupProvider));
+        // After the loot tables are written, so it can add conditions to the ones an addon owns.
+        generator.addProvider(event.includeServer(),
+                new AddonLootConditionProvider(output));
+
         generator.addProvider(event.includeServer(),
                 new ItemTagProvider(output, lookupProvider, existingFileHelper));
         generator.addProvider(event.includeServer(),
                 new FluidTagProvider(output, lookupProvider, existingFileHelper));
         generator.addProvider(event.includeServer(),
                 new RecipeGenerator(output));
+        generator.addProvider(true,
+                new AddonManifestProvider(output));
     }
 }

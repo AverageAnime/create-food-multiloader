@@ -1,10 +1,11 @@
 package dev.averageanime.block.type.bowl;
 
+import dev.averageanime.config.ConfigValues;
 import com.mojang.serialization.MapCodec;
 import dev.averageanime.block.type.blockentity.LargeBowlBlockEntity;
 import dev.averageanime.block.type.display.FoodBlock;
 import dev.averageanime.platform.Services;
-import dev.averageanime.util.ItemSpawns;
+import dev.averageanime.createfood.lib.util.ItemSpawns;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.sounds.SoundEvents;
@@ -158,7 +159,7 @@ public class EmptyLargeBowlBlock extends BaseEntityBlock {
         Fluid spill = Fluids.EMPTY;
         if (!isMoving && !state.is(newState.getBlock()) && !level.isClientSide()) {
             LargeBowlBlockEntity bowl = getTank(level, pos, state);
-            if (bowl != null && bowl.getAmount() == Services.PLATFORM.getLargeBowlCapacityMb()) {
+            if (bowl != null && bowl.getAmount() == ConfigValues.getLargeBowlCapacityMb()) {
                 spill = bowl.getFluid();
             }
         }

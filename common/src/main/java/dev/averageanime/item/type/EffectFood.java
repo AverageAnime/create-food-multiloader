@@ -1,11 +1,11 @@
 package dev.averageanime.item.type;
 
+import dev.averageanime.config.ConfigValues;
 import dev.averageanime.config.ItemEffectOverride;
 import dev.averageanime.config.ItemNutritionOverride;
 import dev.averageanime.client.tooltip.ItemTooltips;
 import dev.averageanime.item.effect.EffectCategories;
-import dev.averageanime.item.effect.FoodEffect;
-import dev.averageanime.platform.Services;
+import dev.averageanime.createfood.lib.effect.EffectChain;
 import dev.averageanime.util.Tooltips;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.core.Holder;
@@ -109,13 +109,15 @@ public class EffectFood extends Item {
 
     protected FoodProperties applyEffectOverrides(FoodProperties base) {
         String itemId = BuiltInRegistries.ITEM.getKey(this).getPath();
-        List<ItemEffectOverride> overrides = Services.PLATFORM.getItemOverrideEntries(itemId).stream()
+        List<ItemEffectOverride> overrides = ConfigValues.getItemOverrideEntries(itemId).stream()
                 .filter(o -> isExistingEffect(o.categoryOrEffectId()))
                 .toList();
-        if (overrides.isEmpty()) return base;
+        List<FoodProperties.PossibleEffect> enabled = enabledEffects(base, itemId);
+        // With defaults on and nothing overridden there is nothing to rebuild.
+        if (overrides.isEmpty() && enabled.size() == base.effects().size()) return base;
 
         var fx = new FoodProperties.Builder();
-        for (var possible : base.effects()) {
+        for (var possible : enabled) {
             ItemEffectOverride override = findOverrideForEffect(overrides, possible.effect());
             if (override == null) {
                 fx.effect(possible.effect(), possible.probability());
@@ -138,12 +140,35 @@ public class EffectFood extends Item {
         return null;
     }
 
+    /**
+     * The baked FOOD effects that still fire: all of them, or -- when the built-in set is switched off --
+     * only those an {@code item_overrides} line names. Callers pass the item's registry path, which is how
+     * Create: Food's own items are spelled in that config list.
+     */
+    public static List<FoodProperties.PossibleEffect> enabledEffects(FoodProperties food, String itemId) {
+        if (ConfigValues.areDefaultEffectsEnabled()) return food.effects();
+        List<ItemEffectOverride> overrides = ConfigValues.getItemOverrideEntries(itemId);
+        return food.effects().stream()
+                .filter(possible -> {
+                    ItemEffectOverride override = findOverrideForEffect(overrides, possible.effect());
+                    return override != null && !override.remove();
+                })
+                .toList();
+    }
+
+    /** A pinned category counts as config-authored, so it survives the built-in set being switched off. */
+    private static boolean isDeferredEnabled(DeferredFx deferred, @Nullable ItemEffectOverride override) {
+        if (ConfigValues.areDefaultEffectsEnabled()) return true;
+        if (override != null && !override.remove()) return true;
+        return ConfigValues.getCategoryEffectOverride(deferred.categoryOrEffectId()) != null;
+    }
+
     protected FoodProperties applyNutritionOverride(FoodProperties base) {
         return applyNutritionOverride(base, BuiltInRegistries.ITEM.getKey(this).getPath());
     }
 
     public static FoodProperties applyNutritionOverride(FoodProperties base, String itemId) {
-        ItemNutritionOverride override = Services.PLATFORM.getItemNutritionOverride(itemId);
+        ItemNutritionOverride override = ConfigValues.getItemNutritionOverride(itemId);
         if (override == null) return base;
 
         int nutrition = override.hasNutritionOverride() ? override.nutrition() : base.nutrition();
@@ -163,15 +188,7 @@ public class EffectFood extends Item {
                 base.eatSeconds(), base.usingConvertsTo(), effects.build().effects());
     }
 
-    /**
-     * Apply the effects that are not baked into the FOOD component.
-     *
-     * <p>Block forms (cakes, pies, pizzas, waffles) eat by reading their slice
-     * item's FOOD component directly and never run {@link #finishUsingItem},
-     * so the compat-category effects -- which are deferred precisely because
-     * they cannot be baked -- silently never fired when the block was eaten.
-     * The block eat paths call this so a slice and its block behave alike.
-     */
+    /** Applies the effects not baked into the FOOD component; the block eat paths call this so a slice and its block behave alike. */
     public void applyNonBakedEffects(Level level, LivingEntity consumer) {
         applyAdditions(level, consumer);
         applyDeferredEffects(level, consumer);
@@ -181,8 +198,9 @@ public class EffectFood extends Item {
         if (level.isClientSide) return;
         String itemId = BuiltInRegistries.ITEM.getKey(this).getPath();
         for (DeferredFx deferred : deferredEffects) {
-            ItemEffectOverride override = Services.PLATFORM.getItemEffectOverride(itemId, deferred.categoryOrEffectId());
+            ItemEffectOverride override = ConfigValues.getItemEffectOverride(itemId, deferred.categoryOrEffectId());
             if (override != null && override.remove()) continue;
+            if (!isDeferredEnabled(deferred, override)) continue;
             float chance = override != null ? override.chance() : deferred.chance();
             if (consumer.getRandom().nextFloat() >= chance) continue;
             deferred.effect().get().ifPresent(holder -> {
@@ -196,7 +214,7 @@ public class EffectFood extends Item {
     protected void applyAdditions(Level level, LivingEntity consumer) {
         if (level.isClientSide) return;
         String itemId = BuiltInRegistries.ITEM.getKey(this).getPath();
-        for (ItemEffectOverride addition : Services.PLATFORM.getItemOverrideEntries(itemId)) {
+        for (ItemEffectOverride addition : ConfigValues.getItemOverrideEntries(itemId)) {
             if (addition.remove()) continue;
             if (isExistingEffect(addition.categoryOrEffectId())) continue;
             if (consumer.getRandom().nextFloat() >= addition.chance()) continue;
@@ -232,12 +250,12 @@ public class EffectFood extends Item {
         if (food == null) return;
 
         String itemId = BuiltInRegistries.ITEM.getKey(this).getPath();
-        List<ItemEffectOverride> allOverrides = Services.PLATFORM.getItemOverrideEntries(itemId);
+        List<ItemEffectOverride> allOverrides = ConfigValues.getItemOverrideEntries(itemId);
         List<ItemEffectOverride> existingOverrides = allOverrides.isEmpty() ? allOverrides
                 : allOverrides.stream()
                         .filter(o -> isExistingEffect(o.categoryOrEffectId()))
                         .toList();
-        for (FoodProperties.PossibleEffect possible : food.effects()) {
+        for (FoodProperties.PossibleEffect possible : enabledEffects(food, itemId)) {
             ItemEffectOverride override = findOverrideForEffect(existingOverrides, possible.effect());
             if (override != null && override.remove()) continue;
             if (override != null) {
@@ -259,8 +277,9 @@ public class EffectFood extends Item {
         }
 
         for (DeferredFx deferred : deferredEffects) {
-            ItemEffectOverride override = Services.PLATFORM.getItemEffectOverride(itemId, deferred.categoryOrEffectId());
+            ItemEffectOverride override = ConfigValues.getItemEffectOverride(itemId, deferred.categoryOrEffectId());
             if (override != null && override.remove()) continue;
+            if (!isDeferredEnabled(deferred, override)) continue;
             deferred.effect().get().ifPresent(holder -> {
                 int dur = override != null ? override.duration() : deferred.duration();
                 int amp = override != null ? override.amplifier() : deferred.amplifier();
@@ -276,7 +295,7 @@ public class EffectFood extends Item {
 
         String itemId = BuiltInRegistries.ITEM.getKey(stack.getItem()).toString();
         String displayName = stack.getHoverName().getString();
-        for (ItemEffectOverride override : Services.PLATFORM.getItemOverrideEntries(itemId)) {
+        for (ItemEffectOverride override : ConfigValues.getItemOverrideEntries(itemId)) {
             if (!override.remove()) continue;
             resolveEffect(override.categoryOrEffectId()).ifPresent(holder -> {
                 String descriptionText = Component.translatable(holder.value().getDescriptionId()).getString();
@@ -328,7 +347,7 @@ public class EffectFood extends Item {
     public static Optional<Holder<MobEffect>> resolveEffect(String categoryOrEffectId) {
         Optional<Holder<MobEffect>> fromCategory = EffectCategories
                 .getByName(categoryOrEffectId)
-                .flatMap(FoodEffect::get);
+                .flatMap(EffectChain::get);
         if (fromCategory.isPresent()) return fromCategory;
 
         try {

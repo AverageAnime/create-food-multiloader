@@ -1,9 +1,10 @@
 package dev.averageanime.block.type.plate;
 
-import dev.averageanime.block.type.blockentity.GenericDisplayBlockEntity;
+import dev.averageanime.config.ConfigValues;
+import dev.averageanime.createfood.lib.block.GenericDisplayBlockEntity;
 import dev.averageanime.block.type.display.FoodBlock;
 import dev.averageanime.platform.Services;
-import dev.averageanime.util.ItemSpawns;
+import dev.averageanime.createfood.lib.util.ItemSpawns;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.sounds.SoundEvents;
@@ -90,8 +91,8 @@ public class EmptyPlateBlock extends Block {
             if (canAcceptFood
                     && (FoodBlock.Registry.canPlaceOnPlate(heldStack.getItem(), false)
                         || (isGenericDisplayEligible(heldStack.getItem())
-                            && Services.PLATFORM.isGenericDisplayEnabled()
-                            && Services.PLATFORM.isGenericDisplayAllowed(heldStack)))) {
+                            && ConfigValues.isGenericDisplayEnabled()
+                            && ConfigValues.isGenericDisplayAllowed(heldStack)))) {
                 return ItemInteractionResult.SUCCESS;
             }
             return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
@@ -134,8 +135,8 @@ public class EmptyPlateBlock extends Block {
         }
 
         if (isGenericDisplayEligible(heldStack.getItem())) {
-            if (!Services.PLATFORM.isGenericDisplayEnabled()
-                    || !Services.PLATFORM.isGenericDisplayAllowed(heldStack)) {
+            if (!ConfigValues.isGenericDisplayEnabled()
+                    || !ConfigValues.isGenericDisplayAllowed(heldStack)) {
                 return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
             }
             Block genericPlate = Services.PLATFORM.getGenericDisplayPlateBlock();

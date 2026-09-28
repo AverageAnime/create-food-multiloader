@@ -1,0 +1,35 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:false"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:not",
+            "value": {
+                "condition": "fabric:all_mods_loaded",
+                "values": [
+                    "minecraft"
+                ]
+            }
+        }
+    ],
+    "ingredients": [
+        {
+            "tag": "c:pasta_plate_tomato_sauce"
+        },
+        {
+            "tag": "c:cooked_mutton"
+        }
+    ],
+    "type": "create:deploying",
+    "results": [
+        {
+            "count": 1,
+            "item": {
+                "id": "farmersdelight:pasta_with_mutton_chop"
+            }
+        }
+    ]
+}

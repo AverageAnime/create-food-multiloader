@@ -1,6 +1,6 @@
 package dev.averageanime.block.type.display;
 
-import dev.averageanime.util.ItemSpawns;
+import dev.averageanime.createfood.lib.util.ItemSpawns;
 import dev.averageanime.util.PlayerItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -75,8 +75,7 @@ public class EmptyBottleBlock extends Block {
         level.setBlock(pos, newState, 3);
         if (!player.isCreative()) {
             heldStack.shrink(1);
-            // The held drink carries its own bottle, and a BottleFoodBlock vanishes when retrieved rather
-            // than reverting here - so this bottle would simply be destroyed. Hand it back.
+            // The held drink carries its own bottle, so this one would otherwise be destroyed.
             PlayerItems.give(player, new ItemStack(Items.GLASS_BOTTLE));
         }
         level.playSound(null, pos, SoundEvents.BOTTLE_FILL, SoundSource.BLOCKS, 1.0F, 1.0F);

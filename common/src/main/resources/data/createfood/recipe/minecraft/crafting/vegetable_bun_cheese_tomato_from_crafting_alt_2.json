@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "c:vegetable_bun_cheese"
+    },
+    {
+      "tag": "c:tomato"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "createfood:vegetable_bun_cheese_tomato"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "vegetable_bun_cheese_tomato"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "vegetable_bun_cheese_tomato"
+    }
+  ]
+}

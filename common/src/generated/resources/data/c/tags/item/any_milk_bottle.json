@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "#c:milk_bottle",
+      "required": false
+    },
+    {
+      "id": "#c:skim_milk_bottle",
+      "required": false
+    }
+  ]
+}

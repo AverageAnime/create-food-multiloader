@@ -15,6 +15,10 @@
     {
       "id": "ratatouille_fried_delights:peeled_potato",
       "required": false
+    },
+    {
+      "id": "rusticdelight:potato_slices",
+      "required": false
     }
   ]
 }

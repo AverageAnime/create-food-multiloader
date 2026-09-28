@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "c:vegetable_bun_cheese_lettuce"
+    },
+    {
+      "tag": "c:bun"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "createfood:vegetable_cheeseburger_lettuce"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "vegetable_cheeseburger_lettuce"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "vegetable_cheeseburger_lettuce"
+    }
+  ]
+}

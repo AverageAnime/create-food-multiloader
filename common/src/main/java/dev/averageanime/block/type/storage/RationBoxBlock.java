@@ -1,5 +1,6 @@
 package dev.averageanime.block.type.storage;
 
+import dev.averageanime.config.ConfigValues;
 import com.mojang.serialization.MapCodec;
 import dev.averageanime.block.type.blockentity.RationBoxBlockEntity;
 import dev.averageanime.platform.Services;
@@ -78,7 +79,7 @@ public class RationBoxBlock extends BaseEntityBlock {
     protected @NotNull InteractionResult useWithoutItem(@NotNull BlockState state, Level level,
                                                         @NotNull BlockPos pos, @NotNull Player player,
                                                         @NotNull BlockHitResult hit) {
-        if (!level.isClientSide && Services.PLATFORM.isRationBoxInventoryEnabled()) {
+        if (!level.isClientSide && ConfigValues.isRationBoxInventoryEnabled()) {
             if (level.getBlockEntity(pos) instanceof RationBoxBlockEntity rationBox) {
                 level.playSound(null, pos, SoundEvents.BARREL_OPEN, SoundSource.BLOCKS, 1.0f, 1.0f);
                 Services.PLATFORM.openBlockInventoryMenu(player, rationBox, pos);

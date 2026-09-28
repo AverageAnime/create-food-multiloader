@@ -3,6 +3,10 @@
     {
       "id": "farmersdelight:cooked_rice",
       "required": false
+    },
+    {
+      "id": "kaleidoscope_cookery:cooked_rice",
+      "required": false
     }
   ]
 }

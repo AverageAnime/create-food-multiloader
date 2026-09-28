@@ -1,0 +1,41 @@
+{
+  "type": "create:deploying",
+  "ingredients": [
+    {
+      "tag": "c:mixed_salad_plate_mashed_potatoes"
+    },
+    {
+      "tag": "c:cooked_eggs"
+    }
+  ],
+  "results": [
+    {
+      "count": 1,
+      "item": {
+        "id": "createfood:mixed_salad_plate_mashed_potatoes_fried_egg"
+      }
+    }
+  ],
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    },
+    {
+      "type": "createfood:enabled",
+      "id": "mixed_salad_plate_mashed_potatoes_fried_egg"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "create"
+      ]
+    },
+    {
+      "condition": "createfood:enabled",
+      "id": "mixed_salad_plate_mashed_potatoes_fried_egg"
+    }
+  ]
+}

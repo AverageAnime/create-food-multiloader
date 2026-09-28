@@ -1,0 +1,45 @@
+{
+  "type": "brewinandchewin:fermenting",
+  "base_fluid": {
+    "amount": 1000,
+    "ingredient": {
+      "tag": "#c:heavy_cream"
+    },
+    "unit": "millibuckets"
+  },
+  "experience": 1.0,
+  "fermenting_time": 4800,
+  "ingredients": [
+    {
+      "tag": "c:vinegar_bottle"
+    }
+  ],
+  "result": {
+    "amount": 1000,
+    "id": "createfood:sour_cream"
+  },
+  "temperature": 2,
+  "unit": "millibuckets",
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "brewinandchewin"
+    },
+    {
+      "type": "createfood:enabled",
+      "id": "sour_cream"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "brewinandchewin"
+      ]
+    },
+    {
+      "condition": "createfood:enabled",
+      "id": "sour_cream"
+    }
+  ]
+}

@@ -3,6 +3,10 @@
     {
       "id": "fruitsdelight:blueberry_jam",
       "required": false
+    },
+    {
+      "id": "hearthandharvest:blueberry_jam",
+      "required": false
     }
   ]
 }

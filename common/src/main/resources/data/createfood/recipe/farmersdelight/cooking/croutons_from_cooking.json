@@ -1,0 +1,42 @@
+{
+  "type": "farmersdelight:cooking",
+  "experience": 0.15,
+  "ingredients": [
+    {
+      "tag": "c:bread_crumbs"
+    },
+    {
+      "tag": "c:vegetable_oil_bottle"
+    },
+    {
+      "tag": "c:salt"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "count": 2,
+    "id": "createfood:croutons"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "farmersdelight"
+    },
+    {
+      "type": "createfood:enabled",
+      "id": "croutons"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "farmersdelight"
+      ]
+    },
+    {
+      "condition": "createfood:enabled",
+      "id": "croutons"
+    }
+  ]
+}

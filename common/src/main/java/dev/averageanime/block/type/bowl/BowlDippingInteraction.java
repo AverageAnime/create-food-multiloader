@@ -1,8 +1,8 @@
 package dev.averageanime.block.type.bowl;
 
+import dev.averageanime.createfood.lib.recipe.DippingRecipes;
 import dev.averageanime.block.type.blockentity.LargeBowlBlockEntity;
 import dev.averageanime.config.ConfigValues;
-import dev.averageanime.platform.Services;
 import dev.averageanime.util.PlayerItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -25,7 +25,7 @@ public final class BowlDippingInteraction {
 
     public static ItemInteractionResult tryInteract(Player player, Level level, InteractionHand hand,
                                                     BlockPos pos, LargeBowlBlockEntity bowl) {
-        if (!Services.PLATFORM.isDisplayInteractionsEnabled()) return null;
+        if (!ConfigValues.isDisplayInteractionsEnabled()) return null;
 
         ItemStack held = player.getItemInHand(hand);
         if (held.isEmpty()) return null;
@@ -53,7 +53,7 @@ public final class BowlDippingInteraction {
 
     private static boolean canFillBucket(ItemStack held, LargeBowlBlockEntity bowl) {
         return held.getItem() == Items.BUCKET
-                && bowl.getAmount() >= Services.PLATFORM.getLargeBowlCapacityMb()
+                && bowl.getAmount() >= ConfigValues.getLargeBowlCapacityMb()
                 && filledBucketFor(bowl) != null;
     }
 
@@ -66,7 +66,7 @@ public final class BowlDippingInteraction {
     private static ItemInteractionResult fillBucket(Player player, Level level, InteractionHand hand,
                                                     BlockPos pos, LargeBowlBlockEntity bowl) {
         ItemStack filled = filledBucketFor(bowl);
-        if (filled == null || !bowl.drain(Services.PLATFORM.getLargeBowlCapacityMb())) return null;
+        if (filled == null || !bowl.drain(ConfigValues.getLargeBowlCapacityMb())) return null;
 
         if (!player.isCreative()) {
             player.getItemInHand(hand).shrink(1);

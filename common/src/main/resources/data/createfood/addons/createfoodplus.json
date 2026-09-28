@@ -1,0 +1,1971 @@
+{
+  "spec_version": 1,
+  "addon_id": "createfoodplus",
+  "name": "Create: Food+",
+  "default_enabled": true,
+  "items": [
+    {
+      "id": "beef_bun_peanut_butter",
+      "type": "food",
+      "nutrition": 8,
+      "saturation": 0.6
+    },
+    {
+      "id": "beef_bun_peanut_butter_bacon",
+      "type": "food",
+      "nutrition": 9,
+      "saturation": 0.9
+    },
+    {
+      "id": "bread_slice_peanut_butter",
+      "type": "food",
+      "nutrition": 5,
+      "saturation": 0.5
+    },
+    {
+      "id": "caramel_popcorn",
+      "type": "food",
+      "nutrition": 2,
+      "saturation": 1.0,
+      "effects": [
+        {
+          "category": "minecraft:strength",
+          "duration": 600,
+          "amplifier": 0,
+          "chance": 0.5
+        }
+      ]
+    },
+    {
+      "id": "chocolate_dried_coffee_beans",
+      "type": "food",
+      "nutrition": 7,
+      "saturation": 0.4,
+      "effects": [
+        {
+          "category": "nourishment",
+          "duration": 900,
+          "amplifier": 0
+        },
+        {
+          "category": "sugar_rush",
+          "duration": 900,
+          "amplifier": 0
+        },
+        {
+          "category": "minecraft:haste",
+          "duration": 900,
+          "amplifier": 0,
+          "chance": 0.5
+        }
+      ]
+    },
+    {
+      "id": "cinnamon_sweet_roll_base",
+      "type": "food",
+      "nutrition": 4,
+      "saturation": 0.5
+    },
+    {
+      "id": "coffee_toffee",
+      "type": "food",
+      "nutrition": 2,
+      "saturation": 1.0,
+      "effects": [
+        {
+          "category": "minecraft:haste",
+          "duration": 600,
+          "amplifier": 0,
+          "chance": 0.5
+        },
+        {
+          "category": "minecraft:speed",
+          "duration": 600,
+          "amplifier": 0,
+          "chance": 0.35
+        }
+      ]
+    },
+    {
+      "id": "coffee_toffee_fudge",
+      "type": "food",
+      "nutrition": 4,
+      "saturation": 0.7,
+      "effects": [
+        {
+          "category": "nourishment",
+          "duration": 600,
+          "amplifier": 0
+        },
+        {
+          "category": "minecraft:haste",
+          "duration": 600,
+          "amplifier": 0,
+          "chance": 0.5
+        },
+        {
+          "category": "sugar_rush",
+          "duration": 600,
+          "amplifier": 0,
+          "chance": 0.35
+        },
+        {
+          "category": "minecraft:speed",
+          "duration": 600,
+          "amplifier": 0,
+          "chance": 0.25
+        }
+      ]
+    },
+    {
+      "id": "corn_flour",
+      "type": "plain"
+    },
+    {
+      "id": "dark_chocolate_dried_coffee_beans",
+      "type": "food",
+      "nutrition": 7,
+      "saturation": 0.6,
+      "effects": [
+        {
+          "category": "nourishment",
+          "duration": 900,
+          "amplifier": 0
+        },
+        {
+          "category": "stimulation",
+          "duration": 900,
+          "amplifier": 0
+        },
+        {
+          "category": "minecraft:haste",
+          "duration": 900,
+          "amplifier": 0,
+          "chance": 0.5
+        }
+      ]
+    },
+    {
+      "id": "dragon_bun",
+      "type": "food",
+      "nutrition": 7,
+      "saturation": 0.7
+    },
+    {
+      "id": "dragon_bun_crimson_fungus",
+      "type": "food",
+      "nutrition": 8,
+      "saturation": 0.7
+    },
+    {
+      "id": "dragon_bun_warped_fungus",
+      "type": "food",
+      "nutrition": 8,
+      "saturation": 0.7
+    },
+    {
+      "id": "dragon_burger",
+      "type": "food",
+      "nutrition": 10,
+      "saturation": 0.6,
+      "effects": [
+        {
+          "category": "nourishment",
+          "duration": 2400,
+          "amplifier": 0
+        },
+        {
+          "category": "minecraft:absorption",
+          "duration": 1200,
+          "amplifier": 1
+        },
+        {
+          "category": "explosion",
+          "duration": 1200,
+          "amplifier": 0
+        }
+      ]
+    },
+    {
+      "id": "dragon_burger_crimson_fungus",
+      "type": "food",
+      "nutrition": 11,
+      "saturation": 0.6,
+      "effects": [
+        {
+          "category": "nourishment",
+          "duration": 2400,
+          "amplifier": 0
+        },
+        {
+          "category": "minecraft:absorption",
+          "duration": 1200,
+          "amplifier": 1
+        },
+        {
+          "category": "explosion",
+          "duration": 1200,
+          "amplifier": 0
+        },
+        {
+          "category": "minecraft:fire_resistance",
+          "duration": 1200,
+          "amplifier": 0,
+          "chance": 0.5
+        }
+      ]
+    },
+    {
+      "id": "dragon_burger_warped_fungus",
+      "type": "food",
+      "nutrition": 11,
+      "saturation": 0.6,
+      "effects": [
+        {
+          "category": "nourishment",
+          "duration": 2400,
+          "amplifier": 0
+        },
+        {
+          "category": "minecraft:absorption",
+          "duration": 1200,
+          "amplifier": 1
+        },
+        {
+          "category": "explosion",
+          "duration": 1200,
+          "amplifier": 0
+        },
+        {
+          "category": "minecraft:slow_falling",
+          "duration": 1200,
+          "amplifier": 0,
+          "chance": 0.5
+        }
+      ]
+    },
+    {
+      "id": "dragon_patty",
+      "type": "food",
+      "nutrition": 4,
+      "saturation": 0.4
+    },
+    {
+      "id": "dried_coffee_beans",
+      "type": "plain"
+    },
+    {
+      "id": "eggplant_bun",
+      "type": "food",
+      "nutrition": 6,
+      "saturation": 0.6
+    },
+    {
+      "id": "eggplant_bun_cheese",
+      "type": "food",
+      "nutrition": 7,
+      "saturation": 1.0
+    },
+    {
+      "id": "eggplant_bun_cheese_lettuce",
+      "type": "food",
+      "nutrition": 8,
+      "saturation": 1.0
+    },
+    {
+      "id": "eggplant_bun_cheese_lettuce_tomato",
+      "type": "food",
+      "nutrition": 9,
+      "saturation": 0.8
+    },
+    {
+      "id": "eggplant_bun_cheese_tomato",
+      "type": "food",
+      "nutrition": 8,
+      "saturation": 0.9
+    },
+    {
+      "id": "eggplant_bun_lettuce",
+      "type": "food",
+      "nutrition": 7,
+      "saturation": 0.7
+    },
+    {
+      "id": "eggplant_bun_lettuce_tomato",
+      "type": "food",
+      "nutrition": 8,
+      "saturation": 0.6
+    },
+    {
+      "id": "eggplant_bun_tomato",
+      "type": "food",
+      "nutrition": 6,
+      "saturation": 0.8
+    },
+    {
+      "id": "eggplant_burger",
+      "type": "food",
+      "nutrition": 8,
+      "saturation": 0.8,
+      "effects": [
+        {
+          "category": "nourishment",
+          "duration": 1200,
+          "amplifier": 0
+        },
+        {
+          "category": "recovering",
+          "duration": 900,
+          "amplifier": 0
+        }
+      ]
+    },
+    {
+      "id": "eggplant_burger_lettuce",
+      "type": "food",
+      "nutrition": 10,
+      "saturation": 0.6,
+      "effects": [
+        {
+          "category": "nourishment",
+          "duration": 2400,
+          "amplifier": 0
+        },
+        {
+          "category": "recovering",
+          "duration": 1200,
+          "amplifier": 0
+        },
+        {
+          "category": "refreshing",
+          "duration": 1200,
+          "amplifier": 0
+        }
+      ]
+    },
+    {
+      "id": "eggplant_burger_tomato",
+      "type": "food",
+      "nutrition": 9,
+      "saturation": 0.7,
+      "effects": [
+        {
+          "category": "nourishment",
+          "duration": 1200,
+          "amplifier": 0
+        },
+        {
+          "category": "recovering",
+          "duration": 900,
+          "amplifier": 0
+        }
+      ]
+    },
+    {
+      "id": "eggplant_cheeseburger",
+      "type": "food",
+      "nutrition": 10,
+      "saturation": 0.9,
+      "effects": [
+        {
+          "category": "nourishment",
+          "duration": 2400,
+          "amplifier": 0
+        },
+        {
+          "category": "satiated_shield",
+          "duration": 1200,
+          "amplifier": 0
+        },
+        {
+          "category": "recovering",
+          "duration": 1200,
+          "amplifier": 0
+        }
+      ]
+    },
+    {
+      "id": "eggplant_cheeseburger_lettuce",
+      "type": "food",
+      "nutrition": 11,
+      "saturation": 0.8,
+      "effects": [
+        {
+          "category": "nourishment",
+          "duration": 2400,
+          "amplifier": 0
+        },
+        {
+          "category": "satiated_shield",
+          "duration": 1200,
+          "amplifier": 0
+        },
+        {
+          "category": "recovering",
+          "duration": 1200,
+          "amplifier": 0
+        },
+        {
+          "category": "refreshing",
+          "duration": 1200,
+          "amplifier": 0,
+          "chance": 0.5
+        }
+      ]
+    },
+    {
+      "id": "eggplant_cheeseburger_lettuce_tomato",
+      "type": "food",
+      "nutrition": 11,
+      "saturation": 0.9,
+      "effects": [
+        {
+          "category": "nourishment",
+          "duration": 2400,
+          "amplifier": 0
+        },
+        {
+          "category": "satiated_shield",
+          "duration": 1200,
+          "amplifier": 0
+        },
+        {
+          "category": "recovering",
+          "duration": 1200,
+          "amplifier": 0
+        },
+        {
+          "category": "refreshing",
+          "duration": 1200,
+          "amplifier": 0,
+          "chance": 0.5
+        }
+      ]
+    },
+    {
+      "id": "eggplant_cheeseburger_tomato",
+      "type": "food",
+      "nutrition": 10,
+      "saturation": 1.0,
+      "effects": [
+        {
+          "category": "nourishment",
+          "duration": 2400,
+          "amplifier": 0
+        },
+        {
+          "category": "satiated_shield",
+          "duration": 1200,
+          "amplifier": 0
+        },
+        {
+          "category": "recovering",
+          "duration": 1200,
+          "amplifier": 0
+        }
+      ]
+    },
+    {
+      "id": "endermite_meatball",
+      "type": "food",
+      "nutrition": 3,
+      "saturation": 0.7
+    },
+    {
+      "id": "endermite_meatball_sandwich",
+      "type": "food",
+      "nutrition": 9,
+      "saturation": 0.4,
+      "effects": [
+        {
+          "category": "nourishment",
+          "duration": 1200,
+          "amplifier": 0
+        },
+        {
+          "category": "rest",
+          "duration": 900,
+          "amplifier": 0
+        },
+        {
+          "category": "minecraft:regeneration",
+          "duration": 900,
+          "amplifier": 0,
+          "chance": 0.5
+        }
+      ]
+    },
+    {
+      "id": "endermite_meatball_stick_1",
+      "type": "stick",
+      "nutrition": 5,
+      "saturation": 0.7,
+      "effects": [
+        {
+          "category": "rest",
+          "duration": 600,
+          "amplifier": 0
+        },
+        {
+          "category": "minecraft:regeneration",
+          "duration": 600,
+          "amplifier": 0,
+          "chance": 0.5
+        }
+      ]
+    },
+    {
+      "id": "endermite_meatball_stick_2",
+      "type": "stick",
+      "nutrition": 5,
+      "saturation": 0.8,
+      "effects": [
+        {
+          "category": "rest",
+          "duration": 600,
+          "amplifier": 0
+        },
+        {
+          "category": "minecraft:regeneration",
+          "duration": 600,
+          "amplifier": 0,
+          "chance": 0.5
+        }
+      ]
+    },
+    {
+      "id": "endermite_meatball_stick_3",
+      "type": "stick",
+      "nutrition": 6,
+      "saturation": 0.7,
+      "effects": [
+        {
+          "category": "rest",
+          "duration": 600,
+          "amplifier": 0
+        },
+        {
+          "category": "minecraft:regeneration",
+          "duration": 600,
+          "amplifier": 0,
+          "chance": 0.5
+        }
+      ]
+    },
+    {
+      "id": "espresso_powder",
+      "type": "plain"
+    },
+    {
+      "id": "ground_endermite",
+      "type": "plain"
+    },
+    {
+      "id": "hamburger_peanut_butter",
+      "type": "food",
+      "nutrition": 10,
+      "saturation": 0.7,
+      "effects": [
+        {
+          "category": "nourishment",
+          "duration": 2400,
+          "amplifier": 0
+        },
+        {
+          "category": "minecraft:strength",
+          "duration": 1200,
+          "amplifier": 1
+        },
+        {
+          "category": "lozenge",
+          "duration": 1200,
+          "amplifier": 0
+        }
+      ]
+    },
+    {
+      "id": "hamburger_peanut_butter_bacon",
+      "type": "food",
+      "nutrition": 11,
+      "saturation": 0.9,
+      "effects": [
+        {
+          "category": "nourishment",
+          "duration": 2400,
+          "amplifier": 0
+        },
+        {
+          "category": "minecraft:strength",
+          "duration": 1200,
+          "amplifier": 1
+        },
+        {
+          "category": "lozenge",
+          "duration": 1200,
+          "amplifier": 0
+        },
+        {
+          "category": "raging",
+          "duration": 1200,
+          "amplifier": 0,
+          "chance": 0.5
+        }
+      ]
+    },
+    {
+      "id": "marshmallow_coffee_toffee_fudge",
+      "type": "food",
+      "nutrition": 5,
+      "saturation": 0.5,
+      "effects": [
+        {
+          "category": "nourishment",
+          "duration": 600,
+          "amplifier": 0
+        },
+        {
+          "category": "warmth",
+          "duration": 600,
+          "amplifier": 0,
+          "chance": 0.5
+        },
+        {
+          "category": "minecraft:haste",
+          "duration": 600,
+          "amplifier": 0,
+          "chance": 0.35
+        },
+        {
+          "category": "sugar_rush",
+          "duration": 600,
+          "amplifier": 0,
+          "chance": 0.25
+        },
+        {
+          "category": "minecraft:speed",
+          "duration": 600,
+          "amplifier": 0,
+          "chance": 0.2
+        }
+      ]
+    },
+    {
+      "id": "minced_dragon",
+      "type": "plain"
+    },
+    {
+      "id": "pasta_plate_eggplant",
+      "type": "bowl",
+      "nutrition": 6,
+      "saturation": 0.7,
+      "effects": [
+        {
+          "category": "nourishment",
+          "duration": 600,
+          "amplifier": 0
+        },
+        {
+          "category": "recovering",
+          "duration": 600,
+          "amplifier": 0,
+          "chance": 0.5
+        }
+      ]
+    },
+    {
+      "id": "pasta_plate_endermite_meatballs",
+      "type": "bowl",
+      "nutrition": 8,
+      "saturation": 0.6,
+      "effects": [
+        {
+          "category": "nourishment",
+          "duration": 1200,
+          "amplifier": 0
+        },
+        {
+          "category": "satiation",
+          "duration": 900,
+          "amplifier": 0
+        },
+        {
+          "category": "rest",
+          "duration": 900,
+          "amplifier": 0,
+          "chance": 0.5
+        },
+        {
+          "category": "minecraft:regeneration",
+          "duration": 900,
+          "amplifier": 0,
+          "chance": 0.35
+        }
+      ]
+    },
+    {
+      "id": "pasta_plate_endermite_meatballs_tomato_sauce",
+      "type": "bowl",
+      "nutrition": 10,
+      "saturation": 0.7,
+      "effects": [
+        {
+          "category": "nourishment",
+          "duration": 2400,
+          "amplifier": 0
+        },
+        {
+          "category": "satiation",
+          "duration": 1200,
+          "amplifier": 0
+        },
+        {
+          "category": "rest",
+          "duration": 1200,
+          "amplifier": 0
+        },
+        {
+          "category": "minecraft:regeneration",
+          "duration": 1200,
+          "amplifier": 1,
+          "chance": 0.5
+        },
+        {
+          "category": "warmth",
+          "duration": 1200,
+          "amplifier": 0,
+          "chance": 0.35
+        },
+        {
+          "category": "recovering",
+          "duration": 1200,
+          "amplifier": 0,
+          "chance": 0.25
+        }
+      ]
+    },
+    {
+      "id": "pasta_plate_strider_meatballs",
+      "type": "bowl",
+      "nutrition": 7,
+      "saturation": 0.8,
+      "effects": [
+        {
+          "category": "nourishment",
+          "duration": 1200,
+          "amplifier": 0
+        },
+        {
+          "category": "satiation",
+          "duration": 900,
+          "amplifier": 0
+        },
+        {
+          "category": "minecraft:fire_resistance",
+          "duration": 900,
+          "amplifier": 0,
+          "chance": 0.5
+        }
+      ]
+    },
+    {
+      "id": "pasta_plate_strider_meatballs_tomato_sauce",
+      "type": "bowl",
+      "nutrition": 10,
+      "saturation": 0.7,
+      "effects": [
+        {
+          "category": "nourishment",
+          "duration": 2400,
+          "amplifier": 0
+        },
+        {
+          "category": "satiation",
+          "duration": 1200,
+          "amplifier": 0
+        },
+        {
+          "category": "minecraft:fire_resistance",
+          "duration": 1200,
+          "amplifier": 0
+        },
+        {
+          "category": "warmth",
+          "duration": 1200,
+          "amplifier": 0,
+          "chance": 0.5
+        },
+        {
+          "category": "recovering",
+          "duration": 1200,
+          "amplifier": 0,
+          "chance": 0.35
+        }
+      ]
+    },
+    {
+      "id": "peanut_butter_apple_jam_sandwich",
+      "type": "food",
+      "nutrition": 8,
+      "saturation": 0.5,
+      "effects": [
+        {
+          "category": "nourishment",
+          "duration": 1200,
+          "amplifier": 0
+        },
+        {
+          "category": "lozenge",
+          "duration": 900,
+          "amplifier": 0
+        },
+        {
+          "category": "sugar_rush",
+          "duration": 900,
+          "amplifier": 0,
+          "chance": 0.5
+        },
+        {
+          "category": "animal_charm",
+          "duration": 900,
+          "amplifier": 0,
+          "chance": 0.35
+        }
+      ]
+    },
+    {
+      "id": "peanut_butter_chorus_fruit_jam_sandwich",
+      "type": "food",
+      "nutrition": 9,
+      "saturation": 0.5,
+      "effects": [
+        {
+          "category": "nourishment",
+          "duration": 1200,
+          "amplifier": 0
+        },
+        {
+          "category": "lozenge",
+          "duration": 900,
+          "amplifier": 0
+        },
+        {
+          "category": "sugar_rush",
+          "duration": 900,
+          "amplifier": 0,
+          "chance": 0.5
+        },
+        {
+          "category": "minecraft:slow_falling",
+          "duration": 900,
+          "amplifier": 0,
+          "chance": 0.35
+        },
+        {
+          "category": "minecraft:jump_boost",
+          "duration": 900,
+          "amplifier": 0,
+          "chance": 0.25
+        }
+      ]
+    },
+    {
+      "id": "peanut_butter_melon_jam_sandwich",
+      "type": "food",
+      "nutrition": 8,
+      "saturation": 0.6,
+      "effects": [
+        {
+          "category": "nourishment",
+          "duration": 1200,
+          "amplifier": 0
+        },
+        {
+          "category": "lozenge",
+          "duration": 900,
+          "amplifier": 0
+        },
+        {
+          "category": "sugar_rush",
+          "duration": 900,
+          "amplifier": 0,
+          "chance": 0.5
+        },
+        {
+          "category": "minecraft:regeneration",
+          "duration": 900,
+          "amplifier": 0,
+          "chance": 0.35
+        }
+      ]
+    },
+    {
+      "id": "pumpkin_pie_slice",
+      "type": "food",
+      "nutrition": 4,
+      "saturation": 0.2,
+      "effects": [
+        {
+          "category": "nourishment",
+          "duration": 600,
+          "amplifier": 0
+        },
+        {
+          "category": "minecraft:luck",
+          "duration": 600,
+          "amplifier": 0,
+          "chance": 0.5
+        }
+      ]
+    },
+    {
+      "id": "raw_cinnamon_sweet_roll_base",
+      "type": "plain"
+    },
+    {
+      "id": "raw_endermite_meatball",
+      "type": "plain"
+    },
+    {
+      "id": "raw_flesh_cookie",
+      "type": "plain"
+    },
+    {
+      "id": "raw_ginger_cookie",
+      "type": "plain"
+    },
+    {
+      "id": "raw_green_tea_cookie",
+      "type": "plain"
+    },
+    {
+      "id": "raw_soul_berry_cookie",
+      "type": "plain"
+    },
+    {
+      "id": "raw_spider_eye_cookie",
+      "type": "plain"
+    },
+    {
+      "id": "raw_strider_meatball",
+      "type": "plain"
+    },
+    {
+      "id": "raw_sugar_cookie",
+      "type": "plain"
+    },
+    {
+      "id": "raw_syrup_cookie",
+      "type": "plain"
+    },
+    {
+      "id": "raw_ube_cookie",
+      "type": "plain"
+    },
+    {
+      "id": "small_endermite_meatballs",
+      "type": "food",
+      "nutrition": 1,
+      "saturation": 0.7
+    },
+    {
+      "id": "small_strider_meatballs",
+      "type": "food",
+      "nutrition": 1,
+      "saturation": 0.7
+    },
+    {
+      "id": "strider_meatball",
+      "type": "food",
+      "nutrition": 3,
+      "saturation": 0.6
+    },
+    {
+      "id": "strider_meatball_sandwich",
+      "type": "food",
+      "nutrition": 8,
+      "saturation": 0.6,
+      "effects": [
+        {
+          "category": "nourishment",
+          "duration": 1200,
+          "amplifier": 0
+        },
+        {
+          "category": "minecraft:fire_resistance",
+          "duration": 900,
+          "amplifier": 0
+        }
+      ]
+    },
+    {
+      "id": "strider_meatball_stick_1",
+      "type": "stick",
+      "nutrition": 5,
+      "saturation": 0.6,
+      "effects": [
+        {
+          "category": "minecraft:fire_resistance",
+          "duration": 600,
+          "amplifier": 0
+        }
+      ]
+    },
+    {
+      "id": "strider_meatball_stick_2",
+      "type": "stick",
+      "nutrition": 5,
+      "saturation": 0.8,
+      "effects": [
+        {
+          "category": "minecraft:fire_resistance",
+          "duration": 600,
+          "amplifier": 0
+        }
+      ]
+    },
+    {
+      "id": "strider_meatball_stick_3",
+      "type": "stick",
+      "nutrition": 6,
+      "saturation": 0.6,
+      "effects": [
+        {
+          "category": "minecraft:fire_resistance",
+          "duration": 600,
+          "amplifier": 0
+        }
+      ]
+    },
+    {
+      "id": "tortilla_chip_bowl",
+      "type": "bowl",
+      "nutrition": 4,
+      "saturation": 0.4,
+      "effects": [
+        {
+          "category": "nourishment",
+          "duration": 600,
+          "amplifier": 0
+        }
+      ]
+    },
+    {
+      "id": "ube_cream_frosting_bottle",
+      "type": "bottle",
+      "nutrition": 5,
+      "saturation": 0.2
+    },
+    {
+      "id": "ube_cream_frosting_piping_bag",
+      "type": "piping_bag"
+    },
+    {
+      "id": "ube_cream_ube_cake_slice",
+      "type": "food",
+      "nutrition": 3,
+      "saturation": 0.2,
+      "effects": [
+        {
+          "category": "sugar_rush",
+          "duration": 600,
+          "amplifier": 0,
+          "chance": 0.5
+        }
+      ]
+    },
+    {
+      "id": "ube_cream_ube_cupcake",
+      "type": "fast_food",
+      "nutrition": 4,
+      "saturation": 1.1,
+      "effects": [
+        {
+          "category": "nourishment",
+          "duration": 600,
+          "amplifier": 0
+        },
+        {
+          "category": "sugar_rush",
+          "duration": 600,
+          "amplifier": 0,
+          "chance": 0.5
+        }
+      ]
+    },
+    {
+      "id": "ube_cupcake_base",
+      "type": "fast_food",
+      "nutrition": 3,
+      "saturation": 0.9
+    },
+    {
+      "id": "ube_sugar_dough",
+      "type": "plain"
+    },
+    {
+      "id": "white_chocolate_dried_coffee_beans",
+      "type": "food",
+      "nutrition": 6,
+      "saturation": 0.6,
+      "effects": [
+        {
+          "category": "nourishment",
+          "duration": 600,
+          "amplifier": 0
+        },
+        {
+          "category": "sweetening",
+          "duration": 600,
+          "amplifier": 0,
+          "chance": 0.5
+        },
+        {
+          "category": "minecraft:haste",
+          "duration": 600,
+          "amplifier": 0,
+          "chance": 0.35
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "id": "pumpkin_pie_block",
+      "type": "pie",
+      "slice": "createfood:pumpkin_pie_slice"
+    },
+    {
+      "id": "ube_cake_base",
+      "type": "cake_base"
+    },
+    {
+      "id": "ube_cream_ube_cake",
+      "type": "cake",
+      "slice": "createfood:ube_cream_ube_cake_slice"
+    }
+  ],
+  "fluids": [
+    {
+      "id": "coffee_toffee"
+    },
+    {
+      "id": "coffee_toffee_fudge"
+    },
+    {
+      "id": "ube_cake_batter",
+      "slope": 2,
+      "level": 4
+    },
+    {
+      "id": "ube_cream_frosting"
+    }
+  ],
+  "display_blocks": [
+    {
+      "item": "createfood:cinnamon_sweet_roll_base",
+      "display": "plate",
+      "max_stack": 4
+    },
+    {
+      "item": "createfood:cinnamon_sweet_roll_base",
+      "display": "small_plate",
+      "max_stack": 1
+    },
+    {
+      "item": "createfood:coffee_toffee_fudge",
+      "display": "plate",
+      "max_stack": 2
+    },
+    {
+      "item": "createfood:coffee_toffee_fudge",
+      "display": "small_plate",
+      "max_stack": 1
+    },
+    {
+      "item": "createfood:dragon_burger_crimson_fungus",
+      "display": "plate",
+      "max_stack": 1
+    },
+    {
+      "item": "createfood:dragon_burger_warped_fungus",
+      "display": "plate",
+      "max_stack": 1
+    },
+    {
+      "item": "createfood:dragon_burger",
+      "display": "plate",
+      "max_stack": 1
+    },
+    {
+      "item": "createfood:eggplant_burger_lettuce",
+      "display": "plate",
+      "max_stack": 1
+    },
+    {
+      "item": "createfood:eggplant_burger_tomato",
+      "display": "plate",
+      "max_stack": 1
+    },
+    {
+      "item": "createfood:eggplant_burger",
+      "display": "plate",
+      "max_stack": 1
+    },
+    {
+      "item": "createfood:eggplant_cheeseburger_lettuce_tomato",
+      "display": "plate",
+      "max_stack": 1
+    },
+    {
+      "item": "createfood:eggplant_cheeseburger_lettuce",
+      "display": "plate",
+      "max_stack": 1
+    },
+    {
+      "item": "createfood:eggplant_cheeseburger_tomato",
+      "display": "plate",
+      "max_stack": 1
+    },
+    {
+      "item": "createfood:eggplant_cheeseburger",
+      "display": "plate",
+      "max_stack": 1
+    },
+    {
+      "item": "createfood:endermite_meatball_sandwich",
+      "display": "plate",
+      "max_stack": 2
+    },
+    {
+      "item": "createfood:endermite_meatball_stick_3",
+      "display": "plate",
+      "max_stack": 3
+    },
+    {
+      "item": "createfood:espresso_powder",
+      "display": "display_bowl",
+      "max_stack": 2
+    },
+    {
+      "item": "createfood:hamburger_peanut_butter_bacon",
+      "display": "plate",
+      "max_stack": 1
+    },
+    {
+      "item": "createfood:hamburger_peanut_butter",
+      "display": "plate",
+      "max_stack": 1
+    },
+    {
+      "item": "createfood:marshmallow_coffee_toffee_fudge",
+      "display": "plate",
+      "max_stack": 2
+    },
+    {
+      "item": "createfood:marshmallow_coffee_toffee_fudge",
+      "display": "small_plate",
+      "max_stack": 1
+    },
+    {
+      "item": "createfood:pasta_plate_eggplant",
+      "display": "plate_food",
+      "max_stack": 1
+    },
+    {
+      "item": "createfood:pasta_plate_endermite_meatballs_tomato_sauce",
+      "display": "plate_food",
+      "max_stack": 1
+    },
+    {
+      "item": "createfood:pasta_plate_endermite_meatballs",
+      "display": "plate_food",
+      "max_stack": 1
+    },
+    {
+      "item": "createfood:pasta_plate_strider_meatballs_tomato_sauce",
+      "display": "plate_food",
+      "max_stack": 1
+    },
+    {
+      "item": "createfood:pasta_plate_strider_meatballs",
+      "display": "plate_food",
+      "max_stack": 1
+    },
+    {
+      "item": "createfood:peanut_butter_apple_jam_sandwich",
+      "display": "plate",
+      "max_stack": 1
+    },
+    {
+      "item": "createfood:peanut_butter_chorus_fruit_jam_sandwich",
+      "display": "plate",
+      "max_stack": 1
+    },
+    {
+      "item": "createfood:peanut_butter_melon_jam_sandwich",
+      "display": "plate",
+      "max_stack": 1
+    },
+    {
+      "item": "createfood:strider_meatball_sandwich",
+      "display": "plate",
+      "max_stack": 2
+    },
+    {
+      "item": "createfood:strider_meatball_stick_3",
+      "display": "plate",
+      "max_stack": 3
+    },
+    {
+      "item": "createfood:tortilla_chip_bowl",
+      "display": "bowl",
+      "max_stack": 1,
+      "height": 4
+    },
+    {
+      "item": "createfood:ube_cake_base",
+      "display": "plate",
+      "max_stack": 1
+    },
+    {
+      "item": "createfood:ube_cream_frosting_bottle",
+      "display": "bottle",
+      "max_stack": 1,
+      "height": 12
+    },
+    {
+      "item": "createfood:ube_cream_ube_cake_slice",
+      "display": "small_plate",
+      "max_stack": 1
+    },
+    {
+      "item": "createfood:ube_cream_ube_cake",
+      "display": "plate",
+      "max_stack": 1
+    },
+    {
+      "item": "createfood:ube_cream_ube_cupcake",
+      "display": "plate",
+      "max_stack": 4
+    },
+    {
+      "item": "createfood:ube_cream_ube_cupcake",
+      "display": "small_plate",
+      "max_stack": 1
+    },
+    {
+      "item": "createfood:ube_cupcake_base",
+      "display": "plate",
+      "max_stack": 4
+    },
+    {
+      "item": "createfood:ube_cupcake_base",
+      "display": "small_plate",
+      "max_stack": 1
+    }
+  ],
+  "tooltips": [
+    {
+      "item": "createfood:beef_bun_peanut_butter",
+      "tooltips": [
+        "peanut_butter"
+      ],
+      "compat": "peanut_butter"
+    },
+    {
+      "item": "createfood:beef_bun_peanut_butter_bacon",
+      "tooltips": [
+        "peanut_butter",
+        "bacon"
+      ],
+      "compat": "peanut_butter"
+    },
+    {
+      "item": "createfood:bread_slice_peanut_butter",
+      "tooltips": [
+        "peanut_butter"
+      ],
+      "compat": "peanut_butter"
+    },
+    {
+      "item": "createfood:caramel_popcorn",
+      "tooltips": [
+        "caramel"
+      ],
+      "compat": "corn"
+    },
+    {
+      "item": "createfood:chocolate_dried_coffee_beans",
+      "tooltips": [
+        "chocolate"
+      ],
+      "compat": "coffee"
+    },
+    {
+      "item": "createfood:cinnamon_sweet_roll_base",
+      "tooltips": [],
+      "compat": "cinnamon"
+    },
+    {
+      "item": "createfood:coffee_toffee",
+      "tooltips": [],
+      "compat": "coffee"
+    },
+    {
+      "item": "createfood:coffee_toffee_fudge",
+      "tooltips": [],
+      "compat": "coffee"
+    },
+    {
+      "item": "createfood:corn_flour",
+      "tooltips": [],
+      "compat": "corn"
+    },
+    {
+      "item": "createfood:dark_chocolate_dried_coffee_beans",
+      "tooltips": [
+        "dark_chocolate"
+      ],
+      "compat": "coffee"
+    },
+    {
+      "item": "createfood:dragon_bun",
+      "tooltips": [],
+      "compat": "dragon_meat"
+    },
+    {
+      "item": "createfood:dragon_bun_crimson_fungus",
+      "tooltips": [
+        "crimson_fungus"
+      ],
+      "compat": "dragon_meat"
+    },
+    {
+      "item": "createfood:dragon_bun_warped_fungus",
+      "tooltips": [
+        "warped_fungus"
+      ],
+      "compat": "dragon_meat"
+    },
+    {
+      "item": "createfood:dragon_burger",
+      "tooltips": [],
+      "compat": "dragon_meat"
+    },
+    {
+      "item": "createfood:dragon_burger_crimson_fungus",
+      "tooltips": [
+        "crimson_fungus"
+      ],
+      "compat": "dragon_meat"
+    },
+    {
+      "item": "createfood:dragon_burger_warped_fungus",
+      "tooltips": [
+        "warped_fungus"
+      ],
+      "compat": "dragon_meat"
+    },
+    {
+      "item": "createfood:dragon_patty",
+      "tooltips": [],
+      "compat": "dragon_meat"
+    },
+    {
+      "item": "createfood:dried_coffee_beans",
+      "tooltips": [],
+      "compat": "coffee"
+    },
+    {
+      "item": "createfood:eggplant_bun",
+      "tooltips": [],
+      "compat": "eggplant"
+    },
+    {
+      "item": "createfood:eggplant_bun_cheese",
+      "tooltips": [
+        "cheese"
+      ],
+      "compat": "eggplant"
+    },
+    {
+      "item": "createfood:eggplant_bun_cheese_lettuce",
+      "tooltips": [
+        "cheese",
+        "lettuce"
+      ],
+      "compat": "eggplant"
+    },
+    {
+      "item": "createfood:eggplant_bun_cheese_lettuce_tomato",
+      "tooltips": [
+        "cheese",
+        "lettuce",
+        "tomato"
+      ],
+      "compat": "eggplant"
+    },
+    {
+      "item": "createfood:eggplant_bun_cheese_tomato",
+      "tooltips": [
+        "cheese",
+        "tomato"
+      ],
+      "compat": "eggplant"
+    },
+    {
+      "item": "createfood:eggplant_bun_lettuce",
+      "tooltips": [
+        "lettuce",
+        "tomato"
+      ],
+      "compat": "eggplant"
+    },
+    {
+      "item": "createfood:eggplant_bun_lettuce_tomato",
+      "tooltips": [
+        "lettuce"
+      ],
+      "compat": "eggplant"
+    },
+    {
+      "item": "createfood:eggplant_bun_tomato",
+      "tooltips": [
+        "tomato"
+      ],
+      "compat": "eggplant"
+    },
+    {
+      "item": "createfood:eggplant_burger",
+      "tooltips": [],
+      "compat": "eggplant"
+    },
+    {
+      "item": "createfood:eggplant_burger_lettuce",
+      "tooltips": [
+        "lettuce"
+      ],
+      "compat": "eggplant"
+    },
+    {
+      "item": "createfood:eggplant_burger_tomato",
+      "tooltips": [
+        "tomato"
+      ],
+      "compat": "eggplant"
+    },
+    {
+      "item": "createfood:eggplant_cheeseburger",
+      "tooltips": [],
+      "compat": "eggplant"
+    },
+    {
+      "item": "createfood:eggplant_cheeseburger_lettuce",
+      "tooltips": [
+        "lettuce"
+      ],
+      "compat": "eggplant"
+    },
+    {
+      "item": "createfood:eggplant_cheeseburger_lettuce_tomato",
+      "tooltips": [
+        "lettuce",
+        "tomato"
+      ],
+      "compat": "eggplant"
+    },
+    {
+      "item": "createfood:eggplant_cheeseburger_tomato",
+      "tooltips": [
+        "tomato"
+      ],
+      "compat": "eggplant"
+    },
+    {
+      "item": "createfood:endermite_meatball",
+      "tooltips": [],
+      "compat": "endermite_meat"
+    },
+    {
+      "item": "createfood:endermite_meatball_sandwich",
+      "tooltips": [
+        "endermite_meatballs"
+      ],
+      "compat": "endermite_meat"
+    },
+    {
+      "item": "createfood:endermite_meatball_stick_1",
+      "tooltips": [],
+      "compat": "endermite_meat"
+    },
+    {
+      "item": "createfood:endermite_meatball_stick_2",
+      "tooltips": [],
+      "compat": "endermite_meat"
+    },
+    {
+      "item": "createfood:endermite_meatball_stick_3",
+      "tooltips": [],
+      "compat": "endermite_meat"
+    },
+    {
+      "item": "createfood:espresso_powder",
+      "tooltips": [],
+      "compat": "coffee"
+    },
+    {
+      "item": "createfood:ground_endermite",
+      "tooltips": [],
+      "compat": "endermite_meat"
+    },
+    {
+      "item": "createfood:hamburger_peanut_butter",
+      "tooltips": [
+        "peanut_butter"
+      ],
+      "compat": "peanut_butter"
+    },
+    {
+      "item": "createfood:hamburger_peanut_butter_bacon",
+      "tooltips": [
+        "peanut_butter",
+        "bacon"
+      ],
+      "compat": "peanut_butter"
+    },
+    {
+      "item": "createfood:marshmallow_coffee_toffee_fudge",
+      "tooltips": [
+        "marshmallow"
+      ],
+      "compat": "coffee"
+    },
+    {
+      "item": "createfood:minced_dragon",
+      "tooltips": [],
+      "compat": "dragon_meat"
+    },
+    {
+      "item": "createfood:pasta_plate_eggplant",
+      "tooltips": [
+        "eggplant"
+      ],
+      "compat": "eggplant"
+    },
+    {
+      "item": "createfood:pasta_plate_endermite_meatballs",
+      "tooltips": [
+        "endermite_meatballs"
+      ],
+      "compat": "endermite_meat"
+    },
+    {
+      "item": "createfood:pasta_plate_endermite_meatballs_tomato_sauce",
+      "tooltips": [
+        "tomato_sauce",
+        "endermite_meatballs"
+      ],
+      "compat": "endermite_meat"
+    },
+    {
+      "item": "createfood:pasta_plate_strider_meatballs",
+      "tooltips": [
+        "strider_meatballs"
+      ],
+      "compat": "strider_meat"
+    },
+    {
+      "item": "createfood:pasta_plate_strider_meatballs_tomato_sauce",
+      "tooltips": [
+        "tomato_sauce",
+        "strider_meatballs"
+      ],
+      "compat": "strider_meat"
+    },
+    {
+      "item": "createfood:peanut_butter_apple_jam_sandwich",
+      "tooltips": [
+        "peanut_butter",
+        "apple_jam"
+      ],
+      "compat": "peanut_butter"
+    },
+    {
+      "item": "createfood:peanut_butter_chorus_fruit_jam_sandwich",
+      "tooltips": [
+        "peanut_butter",
+        "chorus_fruit_jam"
+      ],
+      "compat": "peanut_butter"
+    },
+    {
+      "item": "createfood:peanut_butter_melon_jam_sandwich",
+      "tooltips": [
+        "peanut_butter",
+        "melon_jam"
+      ],
+      "compat": "peanut_butter"
+    },
+    {
+      "item": "createfood:raw_cinnamon_sweet_roll_base",
+      "tooltips": [],
+      "compat": "cinnamon"
+    },
+    {
+      "item": "createfood:raw_endermite_meatball",
+      "tooltips": [],
+      "compat": "endermite_meat"
+    },
+    {
+      "item": "createfood:raw_flesh_cookie",
+      "tooltips": [
+        "flesh"
+      ],
+      "compat": "raw_flesh_cookie"
+    },
+    {
+      "item": "createfood:raw_ginger_cookie",
+      "tooltips": [
+        "ginger"
+      ],
+      "compat": "raw_ginger_cookie"
+    },
+    {
+      "item": "createfood:raw_green_tea_cookie",
+      "tooltips": [],
+      "compat": "raw_green_tea_cookie"
+    },
+    {
+      "item": "createfood:raw_soul_berry_cookie",
+      "tooltips": [
+        "soul_berry"
+      ],
+      "compat": "raw_flesh_cookie"
+    },
+    {
+      "item": "createfood:raw_spider_eye_cookie",
+      "tooltips": [
+        "spider_eye"
+      ],
+      "compat": "raw_flesh_cookie"
+    },
+    {
+      "item": "createfood:raw_strider_meatball",
+      "tooltips": [],
+      "compat": "strider_meat"
+    },
+    {
+      "item": "createfood:raw_sugar_cookie",
+      "tooltips": [],
+      "compat": "raw_sugar_cookie"
+    },
+    {
+      "item": "createfood:raw_syrup_cookie",
+      "tooltips": [],
+      "compat": "raw_syrup_cookie"
+    },
+    {
+      "item": "createfood:raw_ube_cookie",
+      "tooltips": [],
+      "compat": "ube"
+    },
+    {
+      "item": "createfood:small_endermite_meatballs",
+      "tooltips": [],
+      "compat": "endermite_meat"
+    },
+    {
+      "item": "createfood:small_strider_meatballs",
+      "tooltips": [],
+      "compat": "strider_meat"
+    },
+    {
+      "item": "createfood:strider_meatball",
+      "tooltips": [],
+      "compat": "strider_meat"
+    },
+    {
+      "item": "createfood:strider_meatball_sandwich",
+      "tooltips": [
+        "strider_meatballs"
+      ],
+      "compat": "strider_meat"
+    },
+    {
+      "item": "createfood:strider_meatball_stick_1",
+      "tooltips": [],
+      "compat": "strider_meat"
+    },
+    {
+      "item": "createfood:strider_meatball_stick_2",
+      "tooltips": [],
+      "compat": "strider_meat"
+    },
+    {
+      "item": "createfood:strider_meatball_stick_3",
+      "tooltips": [],
+      "compat": "strider_meat"
+    },
+    {
+      "item": "createfood:tortilla_chip_bowl",
+      "tooltips": [],
+      "compat": "corn"
+    },
+    {
+      "item": "createfood:ube_cake_base",
+      "tooltips": [],
+      "compat": "ube"
+    },
+    {
+      "item": "createfood:ube_cake_batter_bucket",
+      "tooltips": [],
+      "compat": "ube"
+    },
+    {
+      "item": "createfood:ube_cream_frosting_bottle",
+      "tooltips": [],
+      "compat": "ube"
+    },
+    {
+      "item": "createfood:ube_cream_frosting_bucket",
+      "tooltips": [],
+      "compat": "ube"
+    },
+    {
+      "item": "createfood:ube_cream_frosting_piping_bag",
+      "tooltips": [
+        "ube_cream_frosting"
+      ],
+      "compat": "ube"
+    },
+    {
+      "item": "createfood:ube_cream_ube_cake",
+      "tooltips": [
+        "ube_cream_frosting"
+      ],
+      "compat": "ube"
+    },
+    {
+      "item": "createfood:ube_cream_ube_cake_slice",
+      "tooltips": [
+        "ube_cream_frosting"
+      ],
+      "compat": "ube"
+    },
+    {
+      "item": "createfood:ube_cream_ube_cupcake",
+      "tooltips": [
+        "ube_cream_frosting"
+      ],
+      "compat": "ube"
+    },
+    {
+      "item": "createfood:ube_cupcake_base",
+      "tooltips": [],
+      "compat": "ube"
+    },
+    {
+      "item": "createfood:ube_sugar_dough",
+      "tooltips": [],
+      "compat": "ube"
+    },
+    {
+      "item": "createfood:white_chocolate_dried_coffee_beans",
+      "tooltips": [
+        "white_chocolate"
+      ],
+      "compat": "coffee"
+    }
+  ],
+  "crafting_remainders": [
+    {
+      "item": "createfood:ube_cake_batter_bucket",
+      "remainder": "minecraft:bucket"
+    }
+  ],
+  "hide_items": [
+    "beef_bun_peanut_butter",
+    "beef_bun_peanut_butter_bacon",
+    "bread_slice_peanut_butter",
+    "caramel_popcorn",
+    "chocolate_dried_coffee_beans",
+    "cinnamon_sweet_roll_base",
+    "coffee_toffee",
+    "coffee_toffee_fudge",
+    "corn_flour",
+    "dark_chocolate_dried_coffee_beans",
+    "dragon_bun",
+    "dragon_bun_crimson_fungus",
+    "dragon_bun_warped_fungus",
+    "dragon_burger",
+    "dragon_burger_crimson_fungus",
+    "dragon_burger_warped_fungus",
+    "dragon_patty",
+    "dried_coffee_beans",
+    "eggplant_bun",
+    "eggplant_bun_cheese",
+    "eggplant_bun_cheese_lettuce",
+    "eggplant_bun_cheese_lettuce_tomato",
+    "eggplant_bun_cheese_tomato",
+    "eggplant_bun_lettuce",
+    "eggplant_bun_lettuce_tomato",
+    "eggplant_bun_tomato",
+    "eggplant_burger",
+    "eggplant_burger_lettuce",
+    "eggplant_burger_tomato",
+    "eggplant_cheeseburger",
+    "eggplant_cheeseburger_lettuce",
+    "eggplant_cheeseburger_lettuce_tomato",
+    "eggplant_cheeseburger_tomato",
+    "endermite_meatball",
+    "endermite_meatball_sandwich",
+    "endermite_meatball_stick_1",
+    "endermite_meatball_stick_2",
+    "endermite_meatball_stick_3",
+    "espresso_powder",
+    "ground_endermite",
+    "hamburger_peanut_butter",
+    "hamburger_peanut_butter_bacon",
+    "marshmallow_coffee_toffee_fudge",
+    "minced_dragon",
+    "pasta_plate_eggplant",
+    "pasta_plate_endermite_meatballs",
+    "pasta_plate_endermite_meatballs_tomato_sauce",
+    "pasta_plate_strider_meatballs",
+    "pasta_plate_strider_meatballs_tomato_sauce",
+    "peanut_butter_apple_jam_sandwich",
+    "peanut_butter_chorus_fruit_jam_sandwich",
+    "peanut_butter_melon_jam_sandwich",
+    "pumpkin_pie_slice",
+    "raw_cinnamon_sweet_roll_base",
+    "raw_endermite_meatball",
+    "raw_flesh_cookie",
+    "raw_ginger_cookie",
+    "raw_green_tea_cookie",
+    "raw_soul_berry_cookie",
+    "raw_spider_eye_cookie",
+    "raw_strider_meatball",
+    "raw_sugar_cookie",
+    "raw_syrup_cookie",
+    "raw_ube_cookie",
+    "small_endermite_meatballs",
+    "small_strider_meatballs",
+    "strider_meatball",
+    "strider_meatball_sandwich",
+    "strider_meatball_stick_1",
+    "strider_meatball_stick_2",
+    "strider_meatball_stick_3",
+    "tortilla_chip_bowl",
+    "ube_cake_base",
+    "ube_cake_batter",
+    "ube_cream_frosting",
+    "ube_cream_frosting_bottle",
+    "ube_cream_frosting_piping_bag",
+    "ube_cream_ube_cake",
+    "ube_cream_ube_cake_slice",
+    "ube_cream_ube_cupcake",
+    "ube_cupcake_base",
+    "ube_sugar_dough",
+    "white_chocolate_dried_coffee_beans"
+  ]
+}

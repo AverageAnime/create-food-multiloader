@@ -1,0 +1,31 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "mutton_plate_mashed_potatoes_gravy"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "mutton_plate_mashed_potatoes_gravy"
+    }
+  ],
+  "key": {
+    "1": {
+      "tag": "c:mashed_potatoes_bowl_gravy"
+    },
+    "2": {
+      "tag": "c:mutton_plate"
+    }
+  },
+  "pattern": [
+    "1",
+    "2"
+  ],
+  "result": {
+    "count": 1,
+    "id": "createfood:mutton_plate_mashed_potatoes_gravy"
+  }
+}

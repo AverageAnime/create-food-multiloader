@@ -39,6 +39,8 @@ public abstract class PotionContentsTooltipMixin {
                         override.duration(), override.amplifier()));
             }
         }
+        // Skip the wrapped call entirely when filtering strips every effect, so a stack whose
+        // effects were all overridden away doesn't fall back to vanilla's gray "No Effects" line.
         if (hadAny && filtered.isEmpty()) return;
         original.call(filtered, tooltipAdder, durationFactor, tickRate);
     }

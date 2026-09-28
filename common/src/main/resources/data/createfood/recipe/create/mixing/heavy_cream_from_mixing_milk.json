@@ -9,8 +9,12 @@
     ],
     "results": [
         {
-            "amount": 1000,
+            "amount": 250,
             "id": "createfood:heavy_cream"
+        },
+        {
+            "amount": 750,
+            "id": "createfood:skim_milk"
         }
     ],
     "neoforge:conditions": [

@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "ratatouille_fried_delights:pancake",
+      "required": false
+    },
+    {
+      "id": "rusticdelight:pancake",
+      "required": false
+    }
+  ]
+}

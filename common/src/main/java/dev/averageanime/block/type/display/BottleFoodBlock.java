@@ -6,6 +6,7 @@ import dev.averageanime.item.type.EffectFood;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleOptions;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.RandomSource;
@@ -72,13 +73,13 @@ public class BottleFoodBlock extends DisplayFoodBlock {
         player.getFoodData().eat(props.nutrition(), props.saturation());
         EffectContext.begin(player, copy);
         try {
-            for (FoodProperties.PossibleEffect entry : props.effects()) {
+            for (FoodProperties.PossibleEffect entry : EffectFood.enabledEffects(props,
+                    BuiltInRegistries.ITEM.getKey(copy.getItem()).getPath())) {
                 if (level.random.nextFloat() < entry.probability()) {
                     player.addEffect(entry.effect());
                 }
             }
-            // Compat-category effects are deferred rather than baked into FOOD,
-            // so eating the block form would otherwise skip them entirely.
+            // Compat-category effects are deferred rather than baked into FOOD.
             if (copy.getItem() instanceof EffectFood effectFood) {
                 effectFood.applyNonBakedEffects(level, player);
             }

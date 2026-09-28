@@ -11,7 +11,7 @@
     "results": [
         {
             "item": {
-                "id": "createfood:toast_fried_egg_plate"
+                "id": "createfood:toast_plate_fried_egg"
             }
         }
     ],
@@ -22,7 +22,7 @@
         },
         {
             "type": "createfood:enabled",
-            "id": "toast_fried_egg_plate"
+            "id": "toast_plate_fried_egg"
         }
     ],
     "fabric:load_conditions": [
@@ -34,7 +34,7 @@
         },
         {
             "condition": "createfood:enabled",
-            "id": "toast_fried_egg_plate"
+            "id": "toast_plate_fried_egg"
         }
     ]
 }

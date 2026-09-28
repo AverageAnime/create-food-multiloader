@@ -3,7 +3,12 @@
     "experience": 0.2,
     "ingredients": [
         {
-            "tag": "c:buckets/water"
+            "item": "minecraft:potion",
+            "components": {
+                "minecraft:potion_contents": {
+                    "potion": "minecraft:water"
+                }
+            }
         },
         {
             "tag": "c:raw_macaroni"

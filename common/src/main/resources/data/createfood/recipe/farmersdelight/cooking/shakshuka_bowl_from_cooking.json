@@ -19,6 +19,10 @@
     }
   ],
   "recipe_book_tab": "meals",
+  "container": {
+    "count": 1,
+    "id": "minecraft:bowl"
+  },
   "result": {
     "count": 1,
     "id": "createfood:shakshuka_bowl"

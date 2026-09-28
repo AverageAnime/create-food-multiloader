@@ -1,7 +1,7 @@
 package dev.averageanime.registry;
 
 import dev.averageanime.registry.type.BlockEntry;
-import dev.averageanime.registry.type.DisplayEntry;
+import dev.averageanime.createfood.lib.registry.DisplayEntry;
 import dev.averageanime.registry.type.ItemEntry;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
@@ -38,7 +38,8 @@ public final class DisplayRegistry {
             "raw_",
             "stick_1",
             "stick_2",
-            "dough", "chips",
+            "dough",
+            "chips",
             "dried_coffee_beans",
             "chocolate_berries",
             "chocolate_apple",
@@ -57,7 +58,7 @@ public final class DisplayRegistry {
 
     @FunctionalInterface
     private interface Registrar {
-        void add(String pattern, DisplayEntry... configs);
+        void add(String pattern, DisplayEntry<DisplayType>... configs);
     }
 
     private static Supplier<ParticleOptions> smoke()     { return () -> ParticleTypes.WHITE_SMOKE; }
@@ -69,11 +70,12 @@ public final class DisplayRegistry {
         Registrar register = (pattern, configs) ->
                 m.put(pattern, configs.length == 1 ? configs[0] : List.of(configs));
 
+        register.add("_plate",               DisplayEntry.of(PLATE_FOOD).build());
         register.add("_truffle",                   DisplayEntry.of(PLATE).maxStack(6).build(), DisplayEntry.of(SMALL_PLATE).build());
         register.add("kelp_roll_slice",            DisplayEntry.of(PLATE).maxStack(6).build(), DisplayEntry.of(SMALL_PLATE).build());
         register.add("meringue_cookie",            DisplayEntry.of(PLATE).maxStack(9).build(), DisplayEntry.of(SMALL_PLATE).build());
         register.add("kelp_roll",                  DisplayEntry.of(PLATE).maxStack(3).build());
-        register.add("gelatin_dessert",            DisplayEntry.of(PLATE).maxStack(6).build());
+        register.add("gelatin_dessert",            DisplayEntry.of(PLATE).maxStack(6).build(), DisplayEntry.of(SMALL_PLATE).build());
         register.add("scotch_egg_slice",           DisplayEntry.of(PLATE).maxStack(4).build(), DisplayEntry.of(SMALL_PLATE).build());
         register.add("slice",                      DisplayEntry.of(SMALL_PLATE).build());
         register.add("cream_mini_waffle",          DisplayEntry.of(PLATE).maxStack(1).build());
@@ -82,8 +84,9 @@ public final class DisplayRegistry {
         register.add("pizza",                      DisplayEntry.of(PLATE).maxStack(1).build());
         register.add("cheese_block",               DisplayEntry.of(PLATE).maxStack(1).build());
         register.add("gyro",                       DisplayEntry.of(PLATE).maxStack(1).build());
+        register.add("ice_cream_bowl",             DisplayEntry.of(BOWL_FOOD).height(4.5).particles(snowflake()).build());
         register.add("waffle",                     DisplayEntry.of(PLATE).maxStack(1).build());
-        register.add("cupcake",                    DisplayEntry.of(PLATE).maxStack(4).build());
+        register.add("cupcake",                    DisplayEntry.of(PLATE).maxStack(4).build(), DisplayEntry.of(SMALL_PLATE).build());
         register.add("cake",                       DisplayEntry.of(PLATE).maxStack(1).build());
         register.add("mini_cream_pie",             DisplayEntry.of(SMALL_PLATE).build());
         register.add("mini_smores_pie",            DisplayEntry.of(SMALL_PLATE).build());
@@ -92,18 +95,18 @@ public final class DisplayRegistry {
         register.add("pie",                        DisplayEntry.of(PLATE).maxStack(1).build());
         register.add("burger",                     DisplayEntry.of(PLATE).maxStack(1).build());
         register.add("meatball_sandwich",          DisplayEntry.of(PLATE).maxStack(2).build());
-        register.add("hash_brown_sandwich",        DisplayEntry.of(PLATE).maxStack(2).build());
+        register.add("hash_browns_sandwich",       DisplayEntry.of(PLATE).maxStack(2).build());
         register.add("sandwich",                   DisplayEntry.of(PLATE).maxStack(1).build());
-        register.add("toast_plate",                DisplayEntry.of(PLATE_FOOD).build());
-        register.add("toast_fried_egg_plate",      DisplayEntry.of(PLATE_FOOD).build());
         register.add("toast",                      DisplayEntry.of(PLATE).maxStack(1).build());
-        register.add("calzone",                    DisplayEntry.of(PLATE).maxStack(2).build());
+        register.add("calzone",                    DisplayEntry.of(PLATE).maxStack(2).build(), DisplayEntry.of(SMALL_PLATE).build());
         register.add("smore",                      DisplayEntry.of(PLATE).maxStack(1).build());
         register.add("hot_chocolate_bottle",       DisplayEntry.of(BOTTLE).height(8).particles(smoke()).build());
         register.add("hot_dark_chocolate_bottle",  DisplayEntry.of(BOTTLE).height(8).particles(smoke()).build());
         register.add("hot_white_chocolate_bottle", DisplayEntry.of(BOTTLE).height(8).particles(smoke()).build());
         register.add("_jam_bottle",                DisplayEntry.of(BOTTLE).height(9).build());
         register.add("cane_syrup_bottle",          DisplayEntry.of(BOTTLE).height(9).build());
+        register.add("skim_milk_bottle",           DisplayEntry.of(BOTTLE).height(9).build());
+        register.add("gravy_bottle",               DisplayEntry.of(BOTTLE).height(9).build());
         register.add("_sauce_bottle",              DisplayEntry.of(BOTTLE).height(9).build());
         register.add("sugar_cane_juice_bottle",    DisplayEntry.of(BOTTLE).height(9).build());
         register.add("egg_whites_bottle",          DisplayEntry.of(BOTTLE).height(9).build());
@@ -117,17 +120,11 @@ public final class DisplayRegistry {
         register.add("_bottle",                    DisplayEntry.of(BOTTLE).height(12).build());
         register.add("_powder",                    DisplayEntry.of(BOWL).maxStack(2).build());
         register.add("powdered_sugar",             DisplayEntry.of(BOWL).maxStack(2).build());
-        register.add("ice_cream_bowl",             DisplayEntry.of(BOWL_FOOD).height(4.5).particles(snowflake()).build());
         register.add("soup_bowl",                  DisplayEntry.of(BOWL_FOOD).height(4).particles(smoke()).build());
         register.add("stew_bowl",                  DisplayEntry.of(BOWL_FOOD).height(4).particles(smoke()).build());
         register.add("_bowl",                      DisplayEntry.of(BOWL_FOOD).height(4).build());
         register.add("salad",                      DisplayEntry.of(LARGE_BOWL).build());
-        register.add("pasta_plate",                DisplayEntry.of(PLATE_FOOD).build());
-        register.add("breakfast_plate",            DisplayEntry.of(PLATE_FOOD).build());
-        register.add("egg_plate",                  DisplayEntry.of(PLATE_FOOD).build());
-        register.add("eggs_plate",                 DisplayEntry.of(PLATE_FOOD).build());
-        register.add("hash_brown_plate",           DisplayEntry.of(PLATE_FOOD).build());
-        register.add("cookie",                     DisplayEntry.of(PLATE).maxStack(4).build());
+        register.add("cookie",                     DisplayEntry.of(PLATE).maxStack(4).build(), DisplayEntry.of(SMALL_PLATE).build());
         register.add("wrap",                       DisplayEntry.of(PLATE).maxStack(2).build());
         register.add("taco",                       DisplayEntry.of(PLATE).maxStack(2).build());
         register.add("burrito",                    DisplayEntry.of(PLATE).maxStack(2).build());
@@ -136,29 +133,31 @@ public final class DisplayRegistry {
         register.add("stick",                      DisplayEntry.of(PLATE).maxStack(3).build());
         register.add("scone",                      DisplayEntry.of(PLATE).maxStack(4).build(), DisplayEntry.of(SMALL_PLATE).build());
         register.add("cone",                       DisplayEntry.of(PLATE).maxStack(2).build());
-        register.add("muffin",                     DisplayEntry.of(PLATE).maxStack(4).build());
-        register.add("pastry",                     DisplayEntry.of(PLATE).maxStack(4).build());
-        register.add("sweet_roll",                 DisplayEntry.of(PLATE).maxStack(4).build());
-        register.add("jam_donut",                  DisplayEntry.of(PLATE).maxStack(4).build());
-        register.add("jam_chocolate_donut",        DisplayEntry.of(PLATE).maxStack(4).build());
-        register.add("donut",                      DisplayEntry.of(PLATE).maxStack(5).build());
-        register.add("fudge",                      DisplayEntry.of(PLATE).maxStack(2).build());
+        register.add("muffin",                     DisplayEntry.of(PLATE).maxStack(4).build(), DisplayEntry.of(SMALL_PLATE).build());
+        register.add("pastry",                     DisplayEntry.of(PLATE).maxStack(4).build(), DisplayEntry.of(SMALL_PLATE).build());
+        register.add("sweet_roll",                 DisplayEntry.of(PLATE).maxStack(4).build(), DisplayEntry.of(SMALL_PLATE).build());
+        register.add("jam_donut",                  DisplayEntry.of(PLATE).maxStack(4).build(), DisplayEntry.of(SMALL_PLATE).build());
+        register.add("jam_chocolate_donut",        DisplayEntry.of(PLATE).maxStack(4).build(), DisplayEntry.of(SMALL_PLATE).build());
+        register.add("donut",                      DisplayEntry.of(PLATE).maxStack(5).build(), DisplayEntry.of(SMALL_PLATE).build());
+        register.add("fudge",                      DisplayEntry.of(PLATE).maxStack(2).build(), DisplayEntry.of(SMALL_PLATE).build());
         register.add("bar_of",                     DisplayEntry.of(PLATE).maxStack(6).build());
         register.add("popsicle",                   DisplayEntry.of(PLATE).maxStack(2).build());
         register.add("breakfast_bar",              DisplayEntry.of(PLATE).maxStack(6).build());
         register.add("baked_potato",               DisplayEntry.of(PLATE).maxStack(3).build(), DisplayEntry.of(SMALL_PLATE).build());
-        register.add("_chocolate",                 DisplayEntry.of(PLATE).maxStack(6).build());
+        register.add("_chocolate",                 DisplayEntry.of(PLATE).maxStack(6).build(), DisplayEntry.of(SMALL_PLATE).build());
 
         DISPLAY_CONFIGS = Collections.unmodifiableMap(m);
     }
 
     @SuppressWarnings("unchecked")
-    public static List<DisplayEntry> findMatchingConfigs(String itemName) {
+    public static List<DisplayEntry<DisplayType>> findMatchingConfigs(String itemName) {
         for (Map.Entry<String, Object> entry : DISPLAY_CONFIGS.entrySet()) {
             if (itemName.contains(entry.getKey())) {
                 Object value = entry.getValue();
-                if (value instanceof DisplayEntry single) return Collections.singletonList(single);
-                else if (value instanceof List<?> configs) return (List<DisplayEntry>) configs;
+                if (value instanceof DisplayEntry<?> single) {
+                    return Collections.singletonList((DisplayEntry<DisplayType>) single);
+                }
+                else if (value instanceof List<?> configs) return (List<DisplayEntry<DisplayType>>) configs;
             }
         }
         return Collections.emptyList();

@@ -1,6 +1,6 @@
 package dev.averageanime.item.interaction;
 
-import dev.averageanime.platform.Services;
+import dev.averageanime.config.ConfigValues;
 import net.minecraft.core.NonNullList;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
@@ -24,6 +24,9 @@ public class HandcraftInteraction {
 
     private static final Map<ServerPlayer, Long> recentTwoHandCraftTick = new WeakHashMap<>();
 
+    // A two-slot craft consumes the off-hand item here, but the loader still fires a separate
+    // off-hand interaction event afterward; the per-loader handlers call this to recognize that
+    // event as already-handled instead of processing it as its own craft or placement.
     public static boolean consumeRecentTwoHandCraft(ServerPlayer player, Level level) {
         Long tick = recentTwoHandCraftTick.get(player);
         if (tick != null && tick == level.getGameTime()) {
@@ -34,7 +37,7 @@ public class HandcraftInteraction {
     }
 
     public static boolean tryHandcraft(ServerPlayer player, Level level) {
-        if (!Services.PLATFORM.isHandcraftingEnabled()) return false;
+        if (!ConfigValues.isHandcraftingEnabled()) return false;
 
         ItemStack mainHand = player.getMainHandItem();
         ItemStack offHand  = player.getOffhandItem();
@@ -49,7 +52,7 @@ public class HandcraftInteraction {
             if (match.isPresent()) input = twoSlot;
         }
 
-        if (match.isEmpty() && Services.PLATFORM.isHandcraftingSingleEnabled()) {
+        if (match.isEmpty() && ConfigValues.isHandcraftingSingleEnabled()) {
             match = level.getRecipeManager().getRecipeFor(RecipeType.CRAFTING, input, level);
         }
 
@@ -99,7 +102,7 @@ public class HandcraftInteraction {
         double handY = player.getY() + player.getEyeHeight(player.getPose()) - 0.4;
         double handZ = player.getZ() + player.getLookAngle().z * 0.5;
 
-        if (level instanceof ServerLevel serverLevel && Services.PLATFORM.isHandcraftingParticlesEnabled()) {
+        if (level instanceof ServerLevel serverLevel && ConfigValues.isHandcraftingParticlesEnabled()) {
             serverLevel.sendParticles(
                     ParticleTypes.POOF,
                     handX, handY, handZ,
@@ -126,6 +129,6 @@ public class HandcraftInteraction {
     }
 
     public static boolean isAllowedByFilter(ItemStack result) {
-        return Services.PLATFORM.isHandcraftingAllowed(result);
+        return ConfigValues.isHandcraftingAllowed(result);
     }
 }

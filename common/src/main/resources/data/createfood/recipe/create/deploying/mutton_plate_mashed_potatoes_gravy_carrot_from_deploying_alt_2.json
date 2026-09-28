@@ -1,0 +1,41 @@
+{
+  "type": "create:deploying",
+  "ingredients": [
+    {
+      "tag": "c:mashed_potatoes_plate_gravy_carrot"
+    },
+    {
+      "tag": "c:cooked_mutton"
+    }
+  ],
+  "results": [
+    {
+      "count": 1,
+      "item": {
+        "id": "createfood:mutton_plate_mashed_potatoes_gravy_carrot"
+      }
+    }
+  ],
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    },
+    {
+      "type": "createfood:enabled",
+      "id": "mutton_plate_mashed_potatoes_gravy_carrot"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "create"
+      ]
+    },
+    {
+      "condition": "createfood:enabled",
+      "id": "mutton_plate_mashed_potatoes_gravy_carrot"
+    }
+  ]
+}

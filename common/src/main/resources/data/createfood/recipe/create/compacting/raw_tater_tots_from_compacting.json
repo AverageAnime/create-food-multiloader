@@ -1,6 +1,5 @@
 {
   "type": "create:compacting",
-  "heat_requirement": "heated",
   "ingredients": [
     {
       "tag": "c:shredded_potato"
@@ -15,7 +14,7 @@
   "results": [
     {
       "item": {
-        "id": "createfood:tater_tots"
+        "id": "createfood:raw_tater_tots"
       }
     }
   ],
@@ -26,7 +25,7 @@
     },
     {
       "type": "createfood:enabled",
-      "id": "tater_tots"
+      "id": "raw_tater_tots"
     }
   ],
   "fabric:load_conditions": [
@@ -38,7 +37,7 @@
     },
     {
       "condition": "createfood:enabled",
-      "id": "tater_tots"
+      "id": "raw_tater_tots"
     }
   ]
 }

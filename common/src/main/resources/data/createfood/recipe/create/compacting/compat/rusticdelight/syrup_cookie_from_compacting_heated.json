@@ -1,0 +1,52 @@
+{
+    "type": "create:compacting",
+    "heat_requirement": "heated",
+    "ingredients": [
+        {
+            "tag": "c:sweet_dough"
+        },
+        [
+            {
+                "tag": "c:cane_syrup_bottle"
+            },
+            {
+                "item": "hearthandharvest:syrup_bottle"
+            }
+        ]
+    ],
+    "results": [
+        {
+            "count": 8,
+            "item": {
+                "id": "rusticdelight:syrup_cookie"
+            }
+        }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "create"
+        },
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "rusticdelight"
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "rusticdelight:syrup_cookie"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "create",
+                "rusticdelight"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
+            "id": "rusticdelight:syrup_cookie"
+        }
+    ]
+}

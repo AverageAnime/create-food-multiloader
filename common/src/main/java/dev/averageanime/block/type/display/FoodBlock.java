@@ -1,21 +1,18 @@
 package dev.averageanime.block.type.display;
 
+import dev.averageanime.createfood.lib.block.StackedDisplayBlock;
 import dev.averageanime.block.type.bowl.BowlFoodBlock;
 import dev.averageanime.block.type.bowl.LargeBowlFoodBlock;
 import dev.averageanime.block.type.plate.*;
 import dev.averageanime.config.ConfigValues;
-import dev.averageanime.platform.Services;
-import dev.averageanime.util.ItemSpawns;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
-import net.minecraft.tags.TagKey;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.ItemInteractionResult;
@@ -23,56 +20,22 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.context.BlockPlaceContext;
-import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.block.state.properties.DirectionProperty;
-import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.phys.BlockHitResult;
-import net.minecraft.world.phys.shapes.CollisionContext;
-import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
 import java.util.function.Supplier;
 
-public abstract class FoodBlock extends Block {
-
-    public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
-    public static final IntegerProperty STACK_SIZE = IntegerProperty.create("stack_size", 1, 12);
-
-    public static final TagKey<Item> WRENCH = TagKey.create(
-            Registries.ITEM,
-            ResourceLocation.fromNamespaceAndPath("c", "tools/wrench")
-    );
-
-    public final int maxStackSize;
-    public final Supplier<Item> displayItem;
-    protected static final VoxelShape SHAPE = Block.box(1.0, 0.0, 1.0, 15.0, 2.0, 15.0);
+public abstract class FoodBlock extends StackedDisplayBlock {
 
     public FoodBlock(Properties properties, Supplier<Item> displayItem, int maxStackSize) {
-        super(properties);
-        this.displayItem = displayItem;
-        this.maxStackSize = Math.clamp(maxStackSize, 1, 12);
-        this.registerDefaultState(this.stateDefinition.any()
-                .setValue(FACING, Direction.NORTH)
-                .setValue(STACK_SIZE, this.maxStackSize));
-    }
-
-    @Override
-    public @NotNull VoxelShape getShape(@NotNull BlockState state, @NotNull BlockGetter level, @NotNull BlockPos pos, @NotNull CollisionContext context) {
-        return SHAPE;
-    }
-
-    @Override
-    public BlockState getStateForPlacement(BlockPlaceContext context) {
-        return this.defaultBlockState().setValue(FACING, context.getHorizontalDirection());
+        super(properties, displayItem, maxStackSize);
     }
 
     @Override
@@ -98,18 +61,6 @@ public abstract class FoodBlock extends Block {
         return InteractionResult.SUCCESS;
     }
 
-    protected ItemInteractionResult addItem(BlockState state, Level level, BlockPos pos, Player player, ItemStack heldStack) {
-        if (level.isClientSide) return ItemInteractionResult.SUCCESS;
-
-        int currentStack = state.getValue(STACK_SIZE);
-        if (currentStack >= maxStackSize) return ItemInteractionResult.FAIL;
-
-        level.setBlock(pos, state.setValue(STACK_SIZE, currentStack + 1), 3);
-        if (!player.isCreative()) heldStack.shrink(1);
-        level.playSound(null, pos, getAddSound(), SoundSource.BLOCKS, 1.0F, 1.0F);
-        return ItemInteractionResult.SUCCESS;
-    }
-
     @Override
     protected @NotNull ItemInteractionResult useItemOn(ItemStack heldStack, @NotNull BlockState state, @NotNull Level level, @NotNull BlockPos pos,
                                                        @NotNull Player player, @NotNull InteractionHand hand, @NotNull BlockHitResult hit) {
@@ -133,7 +84,7 @@ public abstract class FoodBlock extends Block {
     @Nullable
     protected ItemInteractionResult tryTransform(BlockState state, Level level, BlockPos pos, Player player,
                                                  InteractionHand hand, ItemStack heldStack) {
-        if (!Services.PLATFORM.isDisplayInteractionsEnabled()) return null;
+        if (!ConfigValues.isDisplayInteractionsEnabled()) return null;
         if (heldStack.isEmpty()) return null;
 
         Item placedItem = this.displayItem.get();
@@ -142,7 +93,7 @@ public abstract class FoodBlock extends Block {
         ItemStack placedStack = new ItemStack(placedItem);
         if (ConfigValues.isDisplayInteractionExcluded(placedStack)) return null;
 
-        FoodTransforms.Outcome outcome = FoodTransforms.resolve(level, placedStack, heldStack);
+        FoodConversion.Outcome outcome = FoodConversion.resolve(level, placedStack, heldStack);
         if (outcome == null) return null;
         if (level.isClientSide) return ItemInteractionResult.SUCCESS;
 
@@ -153,8 +104,8 @@ public abstract class FoodBlock extends Block {
 
         // Containers only come back for items actually spent, so creative does not mint them.
         if (!player.isCreative()) {
-            for (ItemStack container : FoodTransforms.containersFor(outcome, heldBefore)) {
-                FoodTransforms.giveCopies(player, hand, container, servings, true);
+            for (ItemStack container : FoodConversion.containersFor(outcome, heldBefore)) {
+                FoodConversion.giveCopies(player, hand, container, servings, true);
             }
         }
 
@@ -165,7 +116,7 @@ public abstract class FoodBlock extends Block {
                     .setValue(STACK_SIZE, servings);
             level.setBlock(pos, next, 3);
         } else {
-            FoodTransforms.giveCopies(player, hand, outcome.result(), servings, false);
+            FoodConversion.giveCopies(player, hand, outcome.result(), servings, false);
             if (size > servings) {
                 level.setBlock(pos, state.setValue(STACK_SIZE, size - servings), 3);
             } else {
@@ -173,7 +124,7 @@ public abstract class FoodBlock extends Block {
             }
         }
 
-        level.playSound(null, pos, FoodTransforms.soundFor(level, heldBefore, outcome, getAddSound()),
+        level.playSound(null, pos, FoodConversion.soundFor(level, heldBefore, outcome, getAddSound()),
                 SoundSource.BLOCKS, 0.9F, 1.0F);
         return ItemInteractionResult.SUCCESS;
     }
@@ -188,44 +139,6 @@ public abstract class FoodBlock extends Block {
             if (block.getClass() == this.getClass()) return block;
         }
         return null;
-    }
-
-    protected ItemInteractionResult wrenchPickup(BlockState state, Level level, BlockPos pos, Player player) {
-        if (level.isClientSide) return ItemInteractionResult.SUCCESS;
-
-        Direction direction = player.getDirection().getOpposite();
-        ItemSpawns.spawnItemEntity(level, new ItemStack(this.asItem()),
-                pos.getX() + 0.5, pos.getY() + 0.3, pos.getZ() + 0.5,
-                direction.getStepX() * 0.15, 0.05, direction.getStepZ() * 0.15);
-        level.removeBlock(pos, false);
-        level.playSound(null, pos, getRemoveSound(), SoundSource.BLOCKS, 1.0F, 0.8F);
-        return ItemInteractionResult.SUCCESS;
-    }
-
-    protected void removeItem(BlockState state, Level level, BlockPos pos, Player player) {
-        int currentStack = state.getValue(STACK_SIZE);
-        Direction direction = player.getDirection().getOpposite();
-        ItemStack dropStack = new ItemStack(this.displayItem.get());
-        ItemSpawns.spawnItemEntity(level, dropStack,
-                pos.getX() + 0.5, pos.getY() + 0.3, pos.getZ() + 0.5,
-                direction.getStepX() * 0.15, 0.05, direction.getStepZ() * 0.15);
-        if (currentStack > 1) {
-            level.setBlock(pos, state.setValue(STACK_SIZE, currentStack - 1), 3);
-        } else {
-            handleLastItemRemoved(state, level, pos);
-        }
-        level.playSound(null, pos, getRemoveSound(), SoundSource.BLOCKS, 0.8F, 0.8F);
-    }
-
-    protected void removeAllItems(BlockState state, Level level, BlockPos pos, Player player) {
-        int currentStack = state.getValue(STACK_SIZE);
-        Direction direction = player.getDirection().getOpposite();
-        ItemStack dropStack = new ItemStack(this.displayItem.get(), currentStack);
-        ItemSpawns.spawnItemEntity(level, dropStack,
-                pos.getX() + 0.5, pos.getY() + 0.3, pos.getZ() + 0.5,
-                direction.getStepX() * 0.15, 0.05, direction.getStepZ() * 0.15);
-        handleLastItemRemoved(state, level, pos);
-        level.playSound(null, pos, getRemoveSound(), SoundSource.BLOCKS, 1.0F, 0.8F);
     }
 
     public boolean tryEat(Player player, Level level, BlockPos pos, BlockState state) {
@@ -267,24 +180,6 @@ public abstract class FoodBlock extends Block {
     protected void handleLastItemEaten(BlockState state, Level level, BlockPos pos) {
         handleLastItemRemoved(state, level, pos);
     }
-
-    @Override
-    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-        builder.add(FACING, STACK_SIZE);
-    }
-
-    @Override
-    public boolean hasAnalogOutputSignal(@NotNull BlockState state) { return true; }
-
-    @Override
-    public int getAnalogOutputSignal(BlockState state, @NotNull Level level, @NotNull BlockPos pos) {
-        return state.getValue(STACK_SIZE);
-    }
-
-    protected abstract void handleLastItemRemoved(BlockState state, Level level, BlockPos pos);
-
-    public SoundEvent getAddSound() { return SoundEvents.ITEM_FRAME_ADD_ITEM; }
-    protected SoundEvent getRemoveSound() { return SoundEvents.ITEM_FRAME_REMOVE_ITEM; }
 
     public static class Registry {
 
@@ -329,6 +224,9 @@ public abstract class FoodBlock extends Block {
             COMPAT_BLOCK_MAPPING.clear();
         }
 
+        // Display Delight exposes no API to look up its per-item plate block, so this and
+        // getDisplayDelightSmallPlateBlock reconstruct its naming scheme from observed examples and
+        // probe each guess against the block registry.
         public static Block getDisplayDelightPlateBlock(Item item) {
             try {
                 ResourceLocation itemId = BuiltInRegistries.ITEM.getKey(item);

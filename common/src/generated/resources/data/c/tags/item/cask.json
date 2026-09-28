@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "expandeddelight:cask",
+      "required": false
+    },
+    {
+      "id": "hearthandharvest:cask",
+      "required": false
+    }
+  ]
+}

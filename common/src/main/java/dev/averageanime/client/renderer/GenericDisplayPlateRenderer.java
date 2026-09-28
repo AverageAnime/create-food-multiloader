@@ -1,10 +1,10 @@
 package dev.averageanime.client.renderer;
 
+import dev.averageanime.config.ConfigValues;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
 import dev.averageanime.block.type.bowl.GenericDisplayBowlBlock;
-import dev.averageanime.block.type.blockentity.GenericDisplayBlockEntity;
-import dev.averageanime.platform.Services;
+import dev.averageanime.createfood.lib.block.GenericDisplayBlockEntity;
 import net.minecraft.client.renderer.LightTexture;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
@@ -68,7 +68,7 @@ public class GenericDisplayPlateRenderer implements BlockEntityRenderer<GenericD
 
         boolean isBlock = displayedItem.getItem() instanceof BlockItem;
         boolean upright = isBowl
-                || Services.PLATFORM.isAlwaysDisplayUpright()
+                || ConfigValues.isAlwaysDisplayUpright()
                 || displayedItem.is(UPRIGHT_TAG)
                 || isBlock;
 

@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "c:beef_plate_mashed_potatoes_carrot"
+    },
+    {
+      "tag": "c:gravy_bottle"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "createfood:beef_plate_mashed_potatoes_gravy_carrot"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "beef_plate_mashed_potatoes_gravy_carrot"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "beef_plate_mashed_potatoes_gravy_carrot"
+    }
+  ]
+}

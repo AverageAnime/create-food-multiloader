@@ -1,5 +1,6 @@
 package dev.averageanime.block.type.storage;
 
+import dev.averageanime.config.ConfigValues;
 import com.mojang.serialization.MapCodec;
 import dev.averageanime.block.type.blockentity.ClothSackBlockEntity;
 import dev.averageanime.platform.Services;
@@ -85,7 +86,7 @@ public class ClothSackBlock extends BaseEntityBlock {
     protected @NotNull InteractionResult useWithoutItem(@NotNull BlockState state, Level level,
                                                         @NotNull BlockPos pos, @NotNull Player player,
                                                         @NotNull BlockHitResult hit) {
-        if (!level.isClientSide && Services.PLATFORM.isClothSackInventoryEnabled()) {
+        if (!level.isClientSide && ConfigValues.isClothSackInventoryEnabled()) {
             if (level.getBlockEntity(pos) instanceof ClothSackBlockEntity sack) {
                 if (!state.getValue(OPEN)) {
                     level.setBlock(pos, state.setValue(OPEN, true), Block.UPDATE_ALL);

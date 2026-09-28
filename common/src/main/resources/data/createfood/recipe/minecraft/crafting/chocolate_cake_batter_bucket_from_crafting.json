@@ -14,7 +14,7 @@
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {
-            "item": "minecraft:milk_bucket"
+            "tag": "c:any_milk_bucket"
         },
         {
             "tag": "c:sugar"

@@ -24,8 +24,8 @@ conventions are the settled result — follow them for new code so the drift doe
   in the same family holds something.
 - **`ContainerFoodBlock`** vs **`DisplayFoodBlock`** — the two abstract bases under `block/type/display/`,
   both extending `FoodBlock`. `ContainerFoodBlock` reverts to an injected base block when its last serving
-  is removed by hand (`PlateBlock`, `BowlBlock`, `SmallPlateBlock`). `DisplayFoodBlock` vanishes instead
-  (`PlateFoodBlock`, `BowlFoodBlock`, `BottleFoodBlock`). When adding a new food-display block, pick
+  is removed by hand (`PlateBlock`, `BowlBlock`, `SmallPlateBlock`, `BottleFoodBlock`). `DisplayFoodBlock`
+  vanishes instead (`PlateFoodBlock`, `BowlFoodBlock`). When adding a new food-display block, pick
   whichever of the two matches the removal behavior — don't reimplement `handleLastItemRemoved`.
 - **`Generic*`** prefix — reserved for the item-agnostic display variants (`GenericDisplayPlateBlock`,
   `GenericDisplayBowlBlock`, etc.) that hold an arbitrary player-chosen item, to keep them unambiguous

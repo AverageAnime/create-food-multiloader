@@ -1,0 +1,56 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "farmersdelight"
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "farmersdelight:stuffed_pumpkin_block"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "farmersdelight"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
+            "id": "farmersdelight:stuffed_pumpkin_block"
+        }
+    ],
+    "type": "farmersdelight:cooking",
+    "container": {
+        "count": 1,
+        "id": "minecraft:pumpkin"
+    },
+    "cookingtime": 400,
+    "experience": 2.0,
+    "ingredients": [
+        {
+            "tag": "c:crops/rice"
+        },
+        {
+            "tag": "c:onion"
+        },
+        {
+            "tag": "c:brown_mushroom"
+        },
+        {
+            "tag": "c:crops/potato"
+        },
+        {
+            "tag": "c:foods/berry"
+        },
+        {
+            "tag": "c:foods/vegetable"
+        }
+    ],
+    "recipe_book_tab": "meals",
+    "result": {
+        "count": 1,
+        "id": "farmersdelight:stuffed_pumpkin_block"
+    }
+}

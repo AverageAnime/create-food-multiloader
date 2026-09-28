@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "c:rabbit_plate_mashed_potatoes_mushroom"
+    },
+    {
+      "tag": "c:gravy_bottle"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "createfood:rabbit_plate_mashed_potatoes_gravy_mushroom"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "rabbit_plate_mashed_potatoes_gravy_mushroom"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "rabbit_plate_mashed_potatoes_gravy_mushroom"
+    }
+  ]
+}

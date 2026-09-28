@@ -2,8 +2,6 @@
 
 ---
 
-
-
 * Hold a filled cloth filter in your main hand and `RMB` to use it.
   * Some filters require a container item in your offhand to produce a result.
   * These interactions are also available through recipes and crafting remainders.
@@ -21,4 +19,4 @@
 
 ---
 
-Custom filter interactions can be defined with `filter_interactions` — see [Config Options](Config-Options).
+Custom filter interactions can be defined with `filter_interactions` — see [Config Options](https://github.com/AverageAnime/create-food-multiloader/wiki/Config-Options).

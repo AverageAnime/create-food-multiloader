@@ -1,5 +1,17 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "pasta_plate_strider_meatballs_tomato_sauce_block"
+    }
+  ],
   "type": "minecraft:block",
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "pasta_plate_strider_meatballs_tomato_sauce_block"
+    }
+  ],
   "pools": [
     {
       "bonus_rolls": 0.0,

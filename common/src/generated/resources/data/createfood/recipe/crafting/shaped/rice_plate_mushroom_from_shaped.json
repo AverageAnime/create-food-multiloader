@@ -1,0 +1,31 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "rice_plate_mushroom"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "rice_plate_mushroom"
+    }
+  ],
+  "key": {
+    "1": {
+      "tag": "c:mushrooms"
+    },
+    "2": {
+      "tag": "c:rice_plate"
+    }
+  },
+  "pattern": [
+    "1",
+    "2"
+  ],
+  "result": {
+    "count": 1,
+    "id": "createfood:rice_plate_mushroom"
+  }
+}

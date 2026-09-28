@@ -5,7 +5,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.state.BlockState;
 
 public class GenericDisplayBlockEntity
-        extends dev.averageanime.block.type.blockentity.GenericDisplayBlockEntity {
+        extends dev.averageanime.createfood.lib.block.GenericDisplayBlockEntity {
 
     public GenericDisplayBlockEntity(BlockPos pos, BlockState state) {
         super(BlockEntityRegistration.GENERIC_DISPLAY_PLATE, pos, state);

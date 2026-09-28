@@ -1,0 +1,35 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:bucket"
+        },
+        {
+            "tag": "c:skim_milk_bottle"
+        },
+        {
+            "tag": "c:skim_milk_bottle"
+        },
+        {
+            "tag": "c:skim_milk_bottle"
+        },
+        {
+            "tag": "c:skim_milk_bottle"
+        }
+    ],
+    "result": {
+        "id": "createfood:skim_milk_bucket"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "createfood:enabled",
+            "id": "skim_milk_bucket"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "createfood:enabled",
+            "id": "skim_milk_bucket"
+        }
+    ]
+}

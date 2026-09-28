@@ -1,5 +1,17 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "tortilla_chip_bowl_block"
+    }
+  ],
   "type": "minecraft:block",
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "tortilla_chip_bowl_block"
+    }
+  ],
   "pools": [
     {
       "bonus_rolls": 0.0,

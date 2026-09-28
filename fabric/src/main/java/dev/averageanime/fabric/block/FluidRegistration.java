@@ -1,10 +1,12 @@
 package dev.averageanime.fabric.block;
 
+import dev.averageanime.CreateFoodCommon;
 import dev.averageanime.config.ConfigBootstrap;
+import dev.averageanime.config.AddonDefaults;
 import dev.averageanime.config.ConfigDefaults;
-import dev.averageanime.fabric.block.type.fluid.FluidBlock;
+import dev.averageanime.createfood.lib.fluid.FluidBlock;
 import dev.averageanime.registry.FluidRegistry;
-import dev.averageanime.registry.type.FluidEntry;
+import dev.averageanime.createfood.lib.fluid.FluidEntry;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 
@@ -22,6 +24,7 @@ public class FluidRegistration {
     public  static final Map<String, FluidBlock> BY_ID  = new LinkedHashMap<>();
 
     public static void init() {
+        FluidBlock.configure(CreateFoodCommon.MOD_ID);
         FluidRegistry.init();
         for (FluidEntry f : FluidEntry.ALL) {
             FluidBlock entry = new FluidBlock(f.id).tex(f.texture).fog(f.fogStart, f.fogEnd);
@@ -34,7 +37,7 @@ public class FluidRegistration {
     }
 
     private static void registerConfigFluids() {
-        for (String entry : ConfigBootstrap.read(ConfigBootstrap.FLUIDS, ConfigDefaults.CUSTOM_FLUID_DEFAULT)) {
+        for (String entry : ConfigBootstrap.read(ConfigBootstrap.FLUIDS, AddonDefaults.customFluids())) {
             String[] p = entry.split("\\|");
             if (p.length != 1 && p.length != 3) {
                 LOGGER.warn("Create: Food - Skipping invalid custom_fluid entry (expected name or name|slope|level): {}", entry);

@@ -1,0 +1,36 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:false"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:not",
+            "value": {
+                "condition": "fabric:all_mods_loaded",
+                "values": [
+                    "minecraft"
+                ]
+            }
+        }
+    ],
+    "ingredients": [
+        {
+            "item": "minecraft:sweet_berries"
+        },
+        {
+            "tag": "c:sweet_dough"
+        }
+    ],
+    "heat_requirement": "heated",
+    "type": "create:compacting",
+    "results": [
+        {
+            "count": 8,
+            "item": {
+                "id": "farmersdelight:sweet_berry_cookie"
+            }
+        }
+    ]
+}

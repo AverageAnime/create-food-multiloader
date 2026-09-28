@@ -4,10 +4,13 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import dev.averageanime.CreateFoodCommon;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.file.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.concurrent.CompletableFuture;
 import net.minecraft.data.CachedOutput;
@@ -17,6 +20,9 @@ import org.jetbrains.annotations.NotNull;
 
 public record RecipeGenerator(PackOutput output) implements DataProvider {
 
+    /** Extra resource roots to scan for shapeless recipes, separated by {@link File#pathSeparator}. */
+    public static final String RECIPE_SOURCE_ROOTS_PROPERTY = "createfood.recipeSourceRoots";
+
     @Override
     public @NotNull CompletableFuture<?> run(@NotNull CachedOutput cache) {
         Path recipeRoot = output.getOutputFolder(PackOutput.Target.DATA_PACK)
@@ -24,19 +30,21 @@ public record RecipeGenerator(PackOutput output) implements DataProvider {
                 .resolve("recipe");
         Path shapedRoot = recipeRoot.resolve("crafting").resolve("shaped");
 
-        Path sourceRoot = locateSourceRecipes();
-
-        try (var stream = Files.walk(sourceRoot)) {
-            var futures = stream
-                    .filter(p -> p.toString().endsWith(".json"))
-                    .filter(p -> p.getFileName().toString().contains("_from_crafting"))
-                    .map(sourcePath -> processRecipe(sourcePath, sourceRoot, shapedRoot, cache))
-                    .filter(Objects::nonNull)
-                    .toList();
-            return CompletableFuture.allOf(futures.toArray(new CompletableFuture[0]));
-        } catch (IOException e) {
-            return CompletableFuture.completedFuture(null);
+        List<CompletableFuture<?>> futures = new ArrayList<>();
+        for (Path sourceRoot : locateSourceRecipes()) {
+            if (!Files.isDirectory(sourceRoot)) continue;
+            try (var stream = Files.walk(sourceRoot)) {
+                futures.addAll(stream
+                        .filter(p -> p.toString().endsWith(".json"))
+                        .filter(p -> p.getFileName().toString().contains("_from_crafting"))
+                        .map(sourcePath -> processRecipe(sourcePath, sourceRoot, shapedRoot, cache))
+                        .filter(Objects::nonNull)
+                        .toList());
+            } catch (IOException e) {
+                return CompletableFuture.completedFuture(null);
+            }
         }
+        return CompletableFuture.allOf(futures.toArray(new CompletableFuture[0]));
     }
 
     private CompletableFuture<?> processRecipe(Path sourcePath, Path sourceRoot,
@@ -90,8 +98,19 @@ public record RecipeGenerator(PackOutput output) implements DataProvider {
         }
     }
 
-    private Path locateSourceRecipes() {
-        return Path.of("../../common/src/main/resources/data/" + CreateFoodCommon.MOD_ID + "/recipe/minecraft/crafting");
+    /** Roots holding the shapeless recipes this mirrors into shaped ones; {@code -Dcreatefood.recipeSourceRoots} adds more. */
+    private List<Path> locateSourceRecipes() {
+        String suffix = "data/" + CreateFoodCommon.MOD_ID + "/recipe/minecraft/crafting";
+        List<Path> roots = new ArrayList<>();
+        roots.add(Path.of("../../common/src/main/resources/" + suffix));
+
+        String extra = System.getProperty(RECIPE_SOURCE_ROOTS_PROPERTY);
+        if (extra != null && !extra.isBlank()) {
+            for (String root : extra.split(File.pathSeparator)) {
+                if (!root.isBlank()) roots.add(Path.of(root.trim()).resolve(suffix));
+            }
+        }
+        return roots;
     }
 
     @Override

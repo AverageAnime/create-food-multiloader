@@ -5,8 +5,6 @@
   "compatibilityLevel": "JAVA_21",
   "plugin": "dev.averageanime.neoforge.mixin.CreateCompatMixinPlugin",
   "mixins": [
-    "BasinFluidCapacityMixin",
-    "BasinRecipeFluidLimitMixin",
     "FanProcessingRemainderMixin"
   ],
   "client": [],

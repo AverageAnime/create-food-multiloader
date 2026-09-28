@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "#c:buckets/milk",
+      "required": false
+    },
+    {
+      "id": "#c:skim_milk_bucket",
+      "required": false
+    }
+  ]
+}

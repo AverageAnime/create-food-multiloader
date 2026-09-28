@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "culturaldelights:elote",
+      "required": false
+    },
+    {
+      "id": "hearthandharvest:elote",
+      "required": false
+    }
+  ]
+}

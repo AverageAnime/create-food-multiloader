@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "createfood:item/chicken_plate_rice_fried_egg"
+  }
+}

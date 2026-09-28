@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "farmersdelight:hot_cocoa",
+      "required": false
+    },
+    {
+      "id": "farmersrespite:hot_cocoa",
+      "required": false
+    }
+  ]
+}

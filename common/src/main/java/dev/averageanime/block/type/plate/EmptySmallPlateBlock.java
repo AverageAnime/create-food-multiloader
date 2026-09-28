@@ -1,7 +1,7 @@
 package dev.averageanime.block.type.plate;
 
 import dev.averageanime.block.type.display.FoodBlock;
-import dev.averageanime.util.ItemSpawns;
+import dev.averageanime.createfood.lib.util.ItemSpawns;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.sounds.SoundEvents;

@@ -3,7 +3,6 @@ package dev.averageanime.config;
 import dev.averageanime.CreateFoodCommon;
 import dev.averageanime.item.remainder.CraftingRemainder;
 import dev.averageanime.mixin.ItemAccessorMixin;
-import dev.averageanime.platform.Services;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 
@@ -18,7 +17,7 @@ final class RemainderPatcher {
 
     static void apply() {
         restore();
-        for (String entry : Services.PLATFORM.getCraftingRemainders()) {
+        for (String entry : ConfigValues.getCraftingRemainders()) {
             String[] parts = entry.split("\\|");
             if (parts.length != 2) {
                 CreateFoodCommon.LOGGER.warn("Create: Food - Ignoring malformed crafting_remainders entry '{}'", entry);

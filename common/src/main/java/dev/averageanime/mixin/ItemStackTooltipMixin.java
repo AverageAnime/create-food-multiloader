@@ -29,6 +29,9 @@ public abstract class ItemStackTooltipMixin {
         } finally {
             TooltipContext.restore(prev);
         }
+        // EffectFood items already append their own override-aware effect lines internally; this
+        // branch patches tooltips for foreign (non-EffectFood) items whose effects this mod's
+        // config can still override.
         if (!(item instanceof EffectFood)) {
             EffectFood.appendForeignEffectLines(stack, context, tooltip);
         }

@@ -1,0 +1,53 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "farmersdelight"
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "farmersdelight:rice"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "farmersdelight"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
+            "id": "farmersdelight:rice"
+        }
+    ],
+    "type": "farmersdelight:cutting",
+    "ingredients": [
+        {
+            "tag": "c:rice_panicle"
+        }
+    ],
+    "result": [
+        {
+            "item": {
+                "count": 1,
+                "id": "farmersdelight:rice"
+            }
+        },
+        {
+            "item": {
+                "count": 1,
+                "id": "farmersdelight:straw"
+            }
+        }
+    ],
+    "tool": [
+        {
+            "type": "farmersdelight:item_ability",
+            "action": "knife_dig"
+        },
+        {
+            "tag": "c:tools/knife"
+        }
+    ]
+}

@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "ubesdelight:wild_garlic",
+      "required": false
+    },
+    {
+      "id": "veggiesdelight:wild_garlic",
+      "required": false
+    }
+  ]
+}

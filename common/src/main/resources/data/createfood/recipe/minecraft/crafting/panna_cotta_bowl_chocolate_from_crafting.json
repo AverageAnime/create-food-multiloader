@@ -6,6 +6,9 @@
     },
     {
       "tag": "c:bar_of_chocolate"
+    },
+    {
+      "tag": "c:bowl"
     }
   ],
   "result": {

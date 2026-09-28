@@ -1,6 +1,6 @@
 package dev.averageanime.fabric.item.storage;
 
-import dev.averageanime.item.storage.StorageAccess;
+import dev.averageanime.createfood.lib.storage.StorageAccess;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
@@ -33,8 +33,6 @@ public class StorageInventory extends SimpleContainer implements StorageAccess {
         super.setChanged();
         onChanged.run();
     }
-
-    // ── IStorageAccess bridges ──────────────────────────────────────────
 
     @Override
     public ItemStack getInventoryItem(int slot) {
@@ -79,8 +77,6 @@ public class StorageInventory extends SimpleContainer implements StorageAccess {
         deserializeNBT(registries, tag);
     }
 
-    // ── SimpleContainer overrides ────────────────────────────────────────────
-
     @Override
     public int getSlotLimit(int slot) {
         return slotLimitSupplier.get();
@@ -95,8 +91,6 @@ public class StorageInventory extends SimpleContainer implements StorageAccess {
     public boolean canPlaceItem(int slot, @NotNull ItemStack stack) {
         return validator.test(slot, stack);
     }
-
-    // ── NBT helpers (used by block entities that still call these directly) ──
 
     public CompoundTag serializeNBT(HolderLookup.Provider registries) {
         ListTag itemsTag = new ListTag();

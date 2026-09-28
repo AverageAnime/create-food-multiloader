@@ -1,0 +1,31 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "mixed_salad_plate_mashed_potatoes"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "mixed_salad_plate_mashed_potatoes"
+    }
+  ],
+  "key": {
+    "1": {
+      "tag": "c:mixed_salad_beetroot_carrot"
+    },
+    "2": {
+      "tag": "c:mashed_potatoes_plate"
+    }
+  },
+  "pattern": [
+    "1",
+    "2"
+  ],
+  "result": {
+    "count": 1,
+    "id": "createfood:mixed_salad_plate_mashed_potatoes"
+  }
+}

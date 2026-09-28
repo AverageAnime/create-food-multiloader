@@ -1,7 +1,7 @@
 package dev.averageanime.item.effect;
 
+import dev.averageanime.config.ConfigValues;
 import dev.averageanime.config.ItemEffectOverride;
-import dev.averageanime.platform.Services;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.entity.LivingEntity;
@@ -21,11 +21,10 @@ public final class EffectContext {
     private EffectContext() {}
 
     public static void begin(LivingEntity entity, ItemStack stack) {
-        // Only food counts as consumption for stacking purposes. This runs for every item finishing
-        // its use animation, so without the check a potion would stack its duration too.
+        // Only food counts for stacking; this runs for every item finishing its use animation.
         if (stack.has(DataComponents.FOOD)) CONSUMING.add(entity);
         String itemId = BuiltInRegistries.ITEM.getKey(stack.getItem()).toString();
-        List<ItemEffectOverride> overrides = Services.PLATFORM.getItemOverrideEntries(itemId);
+        List<ItemEffectOverride> overrides = ConfigValues.getItemOverrideEntries(itemId);
         if (!overrides.isEmpty()) ACTIVE.put(entity, overrides);
     }
 

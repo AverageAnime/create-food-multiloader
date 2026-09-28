@@ -22,6 +22,10 @@
     }
   ],
   "recipe_book_tab": "meals",
+  "container": {
+    "count": 1,
+    "id": "minecraft:bowl"
+  },
   "result": {
     "count": 1,
     "id": "createfood:mushroom_cream_soup_bowl_cheese"

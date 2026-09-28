@@ -4,7 +4,7 @@ import dev.averageanime.CreateFoodCommon;
 import dev.averageanime.neoforge.block.DisplayBlockRegistration;
 import dev.averageanime.neoforge.block.FluidRegistration;
 import dev.averageanime.neoforge.item.ItemRegistration;
-import dev.averageanime.registry.ItemRegistry;
+import dev.averageanime.registry.type.ItemEntry;
 import dev.averageanime.tab.TabFilters;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
@@ -26,7 +26,7 @@ public class TabRegistration {
 
     public static final Supplier<CreativeModeTab> CREATEFOOD_TAB = CREATIVE_MODE_TAB.register("createfood",
             () -> CreativeModeTab.builder()
-                    .icon(() -> new ItemStack(ItemRegistry.BREAKFAST_PLATE.get()))
+                    .icon(() -> new ItemStack(ItemEntry.getById("toast_plate_hash_browns_fried_egg").get()))
                     .title(Component.translatable("tab.createfood"))
                     .displayItems((params, output) -> {
                         Set<String> displayBlockPaths = DisplayBlockRegistration.BLOCKS.getEntries().stream()

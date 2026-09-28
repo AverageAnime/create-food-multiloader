@@ -1,0 +1,45 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "farmersdelight"
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "farmersdelight:vegetable_soup"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "farmersdelight"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
+            "id": "farmersdelight:vegetable_soup"
+        }
+    ],
+    "type": "farmersdelight:cooking",
+    "experience": 1.0,
+    "ingredients": [
+        {
+            "tag": "c:carrot"
+        },
+        {
+            "tag": "c:stew_potato_ingredients"
+        },
+        {
+            "tag": "c:beetroot"
+        },
+        {
+            "tag": "c:foods/leafy_green"
+        }
+    ],
+    "recipe_book_tab": "meals",
+    "result": {
+        "count": 1,
+        "id": "farmersdelight:vegetable_soup"
+    }
+}

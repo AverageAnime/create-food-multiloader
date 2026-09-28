@@ -1,0 +1,44 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "farmersdelight"
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "farmersdelight:barbecue_stick"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "farmersdelight"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
+            "id": "farmersdelight:barbecue_stick"
+        }
+    ],
+    "type": "minecraft:crafting_shapeless",
+    "category": "misc",
+    "ingredients": [
+        {
+            "tag": "c:tomato"
+        },
+        {
+            "tag": "c:onion"
+        },
+        {
+            "tag": "c:foods/cooked_meat"
+        },
+        {
+            "item": "minecraft:stick"
+        }
+    ],
+    "result": {
+        "count": 1,
+        "id": "farmersdelight:barbecue_stick"
+    }
+}

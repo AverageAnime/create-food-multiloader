@@ -19,7 +19,7 @@
             "dev.averageanime.fabric.CreateFood"
         ],
         "client": [
-            "dev.averageanime.fabric.CreateFood\$CreateFoodClient"
+            "dev.averageanime.fabric.CreateFoodClient"
         ],
         "jade": [
             "dev.averageanime.compat.jade.CreateFoodJadePlugin"
@@ -27,7 +27,8 @@
     },
     "mixins": [
         "${mod_id}.mixins.json",
-        "${mod_id}.fabric.mixins.json"
+        "${mod_id}.fabric.mixins.json",
+        "${mod_id}.lib.mixins.json"
     ],
     "depends": {
         "fabricloader": ">=${fabric_loader_version}",

@@ -1,61 +1,49 @@
 ### *** 3.0.0 ***
 
-[3.0.0-item-preview]
+![newprev300](https://github.com/user-attachments/assets/03ae6e5f-27c5-4fea-9693-ebab9998a33b)
 
 #### Changes:
-* New config option `expanded_basin_fluids` to increase max input fluids in Create basins from 2 → 4. (Default: true)
-* New config option `basin_fluid_items` to fill and empty Create basins by hand with filled containers. (Default: true)
+* New config option `expanded_basin_fluids` to increase max input/output fluids in Create basins from 2 → 4. (Default: true)
+* New config option `basin_fluid_items` to fill and empty Create basins by hand with filled container items. (Default: true)
+* New config option `enable_default_effects` to turn off the built-in food effects, leaving only the ones set in config. (Default: true)
+* New config option `stack_duration` to turn on effect duration stacking. (Default: true)
+* New config option `max_stacked_duration` to cap a stacked duration, in ticks. (Default: 36000)
+* New config option `addons_enabled` to enable additional config defaults. All cross-mod compat content is now addon-based. Read more [here](https://github.com/AverageAnime/create-food-multiloader/wiki/Addons-Guide).
 * Renamed `enable_dipping` to `enable_display_interactions` and `dipping_exclude` to `display_interactions_exclude`.
-* Placed food can now be modified by item interactions, entirely based on recipes that already exist. Works on plates, small plates, bowls, and bottles, and on foods placed as blocks in their own right such as cake bases, gelatin, raw pies and raw pizzas. Read more [here](https://github.com/AverageAnime/create-food-multiloader/wiki/Display-Blocks-Guide).
-* Removed 85 `create:item_application` recipes now covered by the above.
-* New `bottle_block`, the empty glass bottle left standing when a placed drink is drunk or decanted.
-* Standardized fluid amounts to 125mb / 250mb / 500mb / 1000mb + 750mb for batch outputs. The amounts 83mb / 111mb / 166mb / 333mb are no longer used.
-* Nutrition and saturation has been rebalanced to be consistently based on the food family, ingredients, and recipe cost.
-* Effects are rebalanced to be consistently based on the ingredients, theme, and tier. Read more about food effects [here](https://github.com/AverageAnime/create-food-multiloader/wiki/Food-Effects-Guide).
-  * Effect categories now fall back to a vanilla effect when the mod providing them is absent.
-  * Comfort effect is no longer used.
-* Effect durations now stack instead of the longer effect replacing the shorter.
-  * New config option `stack_duration` to turn duration stacking off. (Default: true)
-  * New config option `max_stacked_duration` to cap a stacked duration, in ticks. (Default: 36000)
-  * Applies only to food. Anything else that applies effects is not modified.
-* Farmer's Delight, Create, and vanilla food has also been adjusted accordingly.
+* Displayed food can now be modified by item interactions, based on existing recipes. Works on display blocks and on placeable foods. Read more [here](https://github.com/AverageAnime/create-food-multiloader/wiki/Display-Blocks-Guide).
+  * Removed 85 now redundant `create:item_application` recipes.
 * The `small_bowl` is renamed to `large_bowl` since it carries more fluid. **Existing bowls will be removed**.
-* Updates to recipe chains and ingredients.
-  * Removed all mixing recipes that creates a filled bucket, bottle, or bowl.
-  * Removed `cocoa_beans` → `chocolate_chips` cutting recipe.
-  * `*_jam` now uses heat.
-  * `*_juice` now uses 1 fruit down from 4.
-  * `*_waffle` cooking recipes updated to closer match mixing recipes.
-  * `cheese_block` now requires vinegar.
-  * `chocolate`, `dark_chocolate`, and `white_chocolate` now requires sugar.
-  * `cream_cheese` now requires heavy cream.
-  * `dark_chocolate` now requires cacao butter.
-  * `heavy_cream` no longer requires heat.
-  * `kelp_soup` now uses 250mb water instead of 1000mb.
-  * `milk_powder` is now made by heated compacting.
-  * `raw_cinnamon_sweet_roll_base` now uses butter.
-  * `raw_*_pizza` and `raw_*_calzone` now take raw toppings instead of cooked, except for `sausage` and `mutton` variants.
-  * `shakshuka` now uses 1 egg down from 2.
-  * `yogurt` now uses 4:1 milk to vinegar consistently.
-* Added new recipes for existing chains: `*_batter`, `*_bowl_cheese`, `*_chips`, `*_chocolate_chips`, `*_cream_frosting` , `*_custard`, `*_graham_cracker` , `*_ice_cream` , `*_milkshake`, `*_pie_filling` , `*_pudding` , `cheesecake_filling`, `condensed_milk`, `condensed_milk`, `cream_cheese`, `diced_*`, `ground_*`, `pumpernickel_dough`, `shredded_*`, `sour_cream`, `taco_sauce`, `vinegar`, and `yogurt`.
-* Delightful Creators' & Cultural Creators' recipes are now changed to match this mod and fix some bugs.
-  * All recipes now use tags and carry load conditions. New `c:avocado`, `c:cucumber`, `c:eggplant`, and `c:cooked_corn` tags.
-  * `avocado_toast` and `corn_dough` no longer cost less to automate than to craft by hand.
-  * Fix `hot_cocoa` and `cake` recipe incorrectly using Fabric fluid amounts and other various fluid duplication.
-  
+* The rice bowls are renamed to include kelp in the id. **Existing rice bowls will be removed**.
+* The breakfast plates are renamed onto the `toast_plate` lines. **Existing breakfast plates will be removed**.
+* Nutrition and saturation has been rebalanced to be consistently based on the food family, ingredients, and recipe cost.
+* Effects are rebalanced to be consistently based on the ingredients, theme, and tier. Effect categories now fall back to a vanilla effect. Comfort effect is no longer used. Read more about food effects [here](https://github.com/AverageAnime/create-food-multiloader/wiki/Food-Effects-Guide).
+* Many recipe chains and compatibility recipes have been updated. See the full list of changes [here](https://github.com/AverageAnime/create-food-multiloader/wiki/Recipe-Changelog).
+* Standardized fluid amounts to 125mb / 250mb / 500mb / 1000mb (+ 750mb for batch outputs).
+* New `bottle_block`, the empty glass bottle left standing when a placed drink is consumed.
+* Adjusted display block model orientation in hand, GUI, etc.
+* New small plate variants for cupcakes, donuts, pastries, filled chocolates, sweet rolls, calzones, gelatin desserts, cookies, muffins and fudge.
+* New tags for use with Almost Unified. Read more [here](https://github.com/AverageAnime/create-food-multiloader/wiki/Almost-Unified-Config).
+* New built-in resource packs for changes to other mods' textures, models and item names, enabled by default.
+
 #### Fixes:
-* Fix certain bowls not being returned as crafting remainders. [(#54)](https://github.com/AverageAnime/create-food-multiloader/pull/54)
-* Fix recipe overlap: `heavy_cream` / `milk_powder`, `cream_cheese` / `liquid_cheese`, `graham_cracker_crumbs` / `mini_pie_crusts`, and `raw_cinnamon_sweet_roll_base` / `raw_snickerdoodle`.
-* Fix recipes using incorrect inputs: `pumpkin_custard`, `glow_berry_cream_mini_waffle_glow_berry`, `chorus_fruit_cream_mini_waffle_chorus_fruit`, `mashed_potatoes_bowl_cheese`, and `eggplant_cheeseburger_tomato`.
+* Fix bowls not being returned as crafting remainders. [(#54)](https://github.com/AverageAnime/create-food-multiloader/pull/54)
+* Fix `cane_syrup_bottle` returning a bowl instead of a glass bottle.
+* Fix `chocolate_cream_chocolate_cake_slice` using `chocolate_cream_cake_slice` texture on small plates.
+* Fix `egg_whites` fluid duplication.
 * Fix `items.effects.category_overrides` entries disabling the effect when a mod is absent.
 * Fix `items.effects.item_overrides` being ignored when eating any food from its block form.
-* Fix ration box or cloth sack not applying effects and deleting the returned container.
-  * Always-edible food can now be eaten from storage on a full hunger bar as expected.
-  * Eating from storage now respects the eating speed of the item.
-* Fix `egg_whites` fluid duplication.
+* Fix `scrambled_eggs_plate_bacon` using wrong tag.
 * Fix cakes, pies, pizzas, waffles, candle cakes and bottle display blocks not applying compat effects when eaten from block.
 * Fix generated tag files containing duplicates.
-* Fix missing recipe conditions.
+* Fix ration box / cloth sack not applying effects and deleting any returned container.
+  * Always-edible food can now be eaten from storage on full hunger.
+  * Eating from storage now respects eating speed.
+* Fix various cooking recipes not requiring a container.
+* Fix various recipe conditions.
+* Fix various recipe names.
+* Fix various recipe overlap.
+* Fix various recipes using incorrect inputs.
+* Fix various translation keys.
 
 ### *** 2.7.1 ***
 

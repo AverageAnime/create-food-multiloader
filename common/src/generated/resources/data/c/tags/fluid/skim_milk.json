@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "createfood:flowing_skim_milk",
+      "required": false
+    },
+    {
+      "id": "createfood:skim_milk",
+      "required": false
+    }
+  ]
+}

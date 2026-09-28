@@ -1,0 +1,82 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "create"
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "create:sturdy_sheet"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "create"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
+            "id": "create:sturdy_sheet"
+        }
+    ],
+    "type": "create:sequenced_assembly",
+    "ingredient": {
+        "tag": "c:dusts/obsidian"
+    },
+    "results": [
+        {
+            "id": "create:sturdy_sheet"
+        }
+    ],
+    "sequence": [
+        {
+            "type": "create:filling",
+            "ingredients": [
+                {
+                    "item": "create:unprocessed_obsidian_sheet"
+                },
+                {
+                    "type": "fluid_tag",
+                    "amount": 500,
+                    "fluid_tag": "c:lava"
+                }
+            ],
+            "results": [
+                {
+                    "id": "create:unprocessed_obsidian_sheet"
+                }
+            ]
+        },
+        {
+            "type": "create:pressing",
+            "ingredients": [
+                {
+                    "item": "create:unprocessed_obsidian_sheet"
+                }
+            ],
+            "results": [
+                {
+                    "id": "create:unprocessed_obsidian_sheet"
+                }
+            ]
+        },
+        {
+            "type": "create:pressing",
+            "ingredients": [
+                {
+                    "item": "create:unprocessed_obsidian_sheet"
+                }
+            ],
+            "results": [
+                {
+                    "id": "create:unprocessed_obsidian_sheet"
+                }
+            ]
+        }
+    ],
+    "transitional_item": {
+        "id": "create:unprocessed_obsidian_sheet"
+    }
+}
