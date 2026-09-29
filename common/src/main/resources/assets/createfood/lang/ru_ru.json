@@ -783,7 +783,7 @@
   "createfood.configuration.enable_campfire_cooking": "Включить готовку на костре",
   "createfood.configuration.enable_campfire_cooking.tooltip": "Когда включено, игроки могут готовить по рецептам костра, удерживая ингредиент рядом с блоком farmersdelight:heat_sources. Применяется немедленно.",
   "createfood.configuration.enable_cutting_board": "Включить разделочную доску",
-  "createfood.configuration.enable_cutting_board.tooltip": "Если включено, игроки могут использовать нож на декоративных тарелках для нарезки еды с помощью рецептов нарезки Farmer's Delight. Применяется немедленно.",
+  "createfood.configuration.enable_cutting_board.tooltip": "Если включено, игроки могут использовать нож на декоративных тарелках для нарезки еды с помощью рецептов нарезки из Farmer's Delight. Применяется немедленно.",
   "createfood.configuration.enable_default_effects": "Включить стандартные эффекты",
   "createfood.configuration.enable_default_effects.tooltip": "Если отключено, собственные еда и напитки Create: Food не дают ни одного из своих встроенных статусных эффектов — применяются только эффекты, заданные вами в переопределениях предметов и категорий. Еда из ванили и других модов не затрагивается. Применяется немедленно.",
   "createfood.configuration.enable_display_interactions": "Включить взаимодействия витрин",
