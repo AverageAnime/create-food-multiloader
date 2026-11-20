@@ -2,15 +2,12 @@ package dev.averageanime.fabric.item;
 
 import dev.averageanime.config.ConfigBootstrap;
 import dev.averageanime.config.AddonDefaults;
-import dev.averageanime.config.ConfigDefaults;
 import dev.averageanime.config.ConfigValues;
-import dev.averageanime.config.ItemEffectOverride;
+import dev.averageanime.config.type.ItemEffectOverride;
 import dev.averageanime.CreateFoodCommon;
-import dev.averageanime.fabric.CreateFood;
 import dev.averageanime.item.ItemFactory;
 import dev.averageanime.item.type.EffectFood;
 import dev.averageanime.item.type.EffectFood.DeferredFx;
-import dev.averageanime.platform.Services;
 import dev.averageanime.registry.type.EffectEntry;
 import dev.averageanime.util.Tooltips;
 import net.minecraft.core.Registry;
@@ -53,7 +50,7 @@ public class ItemRegistration {
         }
     };
 
-    public static void registerItemRegistration() {
+    public static void init() {
         ItemFactory.registerAll(HOOKS);
         registerConfigItems();
     }

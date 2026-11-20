@@ -1,4 +1,4 @@
-### ***3.0.0***
+### ***3.1.0***
 
 ---
 
@@ -51,6 +51,22 @@ custom_tooltips = [
 
 ---
 
+## Compatibility
+
+### Farmer's Delight
+- **cooking_pot_display**: Show what is inside Farmer's Delight cooking pots, like Create's basin: liquid, ingredients and the finished meal (default: `true`). NeoForge only; on Fabric the pot stays as it is in Farmer's Delight Refabricated.
+  * Ingredients that carry a fluid (buckets, bottles, bowls) show while cooking, side by side in proportion to their amounts. One bucket fills the pot.
+  * Once a meal is ready, only the meal's own fluid shows, or none if it isn't a liquid.
+  * A pot showing no liquid looks like the regular closed pot.
+  * A heated pot only bubbles while it shows liquid.
+  * The hollow pot model comes from the built-in *Create: Food – Farmer's Delight (Assets)* resource pack.
+```toml
+[compat.farmersdelight]
+cooking_pot_display = true
+```
+
+---
+
 # `createfood-common.toml`
 
 ---
@@ -65,7 +81,7 @@ Format: `addon_id`
 * An addon shapes the defaults a config is written with. A value already in your toml wins, so turning an addon on or off changes an existing config only once you reset the lists it contributes to.
 ```toml
 [addons]
-addons_enabled = ["createfoodplus"]
+addons_enabled = ["createfoodplus", "createfoodrebalance"]
 ```
 
 ---
@@ -242,13 +258,15 @@ item = [
 
 ### Generic Display Plates & Bowls
 - **enable_generic_display**: Enable generic display plate and bowl blocks that can hold any single item (default: `true`)
-- **enable_cutting_board**: Enable Farmer's Delight cutting board recipes to work on display plates (default: `true`)
+- **enable_cutting_board**: Let a knife or other cutting tool process placed food on display plates, bowls and bottles with cutting recipes (default: `true`)
+- **enable_rolling_pin**: Let a rolling pin also press, compact and roll placed food with pressing, unheated compacting and baking mat recipes. Crumbs are cutting recipes, so they follow `enable_cutting_board` instead (default: `true`)
 #### Exclude
 Format: `mod:mod_id`, `item:mod_id:item_id`, `tag:mod_id:tag_name`
 * Block specific items from being placed on generic display plates and bowls using `generic_display_exclude`.
 ```toml
 [blocks.display]
 enable_cutting_board = true
+enable_rolling_pin = true
 enable_generic_display = true
 generic_display_exclude = ["tag:c:tools"]
 ```
@@ -257,10 +275,10 @@ generic_display_exclude = ["tag:c:tools"]
 - **enable_display_interactions**: Allow a held item used on a placed food to transform it using recipes that already exist — pour in a filled container, apply an ingredient, or take a drink back out with an empty container. Also covers dipping food into a large bowl of fluid (default: `true`)
 - **large_bowl_capacity_mb**: Maximum fluid, in mB, a large bowl can hold (default: `4000`)
 > **Note: Lowering this value after bowls have been filled beyond the new capacity silently discards the excess fluid the next time the bowl is loaded.**
-> **Renamed in 2.8.0: this option was `enable_dipping`, and `dipping_exclude` is now `display_interactions_exclude`. Both are new keys, so an existing config falls back to the defaults — set them again if you had changed them.**
+> **Renamed in 3.0.0: this option was `enable_dipping`, and `dipping_exclude` is now `display_interactions_exclude`. Both are new keys, so an existing config falls back to the defaults — set them again if you had changed them.**
 #### Display Interactions Exclude
 Format: `mod:mod_id`, `item:mod_id:item_id`, `tag:mod_id:tag_name`
-* Block specific foods from being transformed using `display_interactions_exclude`. Empty by default. The list names the food being *transformed*; listed items can still be used as an ingredient.
+* Block specific foods from being transformed using `display_interactions_exclude`. Empty by default. The list names the food being *transformed*; listed items can still be used as an ingredient. Tools on plates (knife, rolling pin) skip listed items too, so `tag:c:ingots` stops a rolling pin pressing ingots into sheets when Create is installed.
 ```toml
 [blocks.display]
 enable_display_interactions = true
@@ -333,7 +351,7 @@ Format: `item_id|nutrition|saturation`
 * Use `-` to keep the default value.
 * `item_id` may be a **bare id** for a Create: Food item (e.g. `sugar_cane_juice_bottle`) or a **namespaced id** for any other mod's food (e.g. `minecraft:apple`, `farmersdelight:apple_pie_slice`).
     * Foreign items must already have a food component.
-* This list is **empty by default**. The vanilla, Create and Farmer's Delight values ship in the `createfoodrebalance` addon, which is off unless you enable it in `[addons]` and reset this list.
+* Create: Food itself adds nothing to this list. The vanilla, Create and Farmer's Delight values a fresh config is written with come from the `createfoodrebalance` addon, which is on by default. To go without them, remove it from `addons_enabled` in `[addons]` and reset this list.
 > **Note: Foreign-item overrides only affects item stacks created or loaded after reload — relog to refresh an existing inventory.**
 ```toml
 [items]

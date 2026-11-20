@@ -2,7 +2,7 @@
   "type": "farmersdelight:cutting",
   "ingredients": [
     {
-      "tag": "c:mushrooms"
+      "tag": "c:any_sliced_mushrooms"
     }
   ],
   "tool": {

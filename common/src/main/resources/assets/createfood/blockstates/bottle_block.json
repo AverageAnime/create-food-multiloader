@@ -1,18 +1,93 @@
 {
   "variants": {
-    "facing=north": {
+    "facing=north,vessel=standard": {
       "model": "createfood:block/bottle_block",
       "y": 180
     },
-    "facing=east": {
+    "facing=east,vessel=standard": {
       "model": "createfood:block/bottle_block",
       "y": 270
     },
-    "facing=south": {
+    "facing=south,vessel=standard": {
       "model": "createfood:block/bottle_block"
     },
-    "facing=west": {
+    "facing=west,vessel=standard": {
       "model": "createfood:block/bottle_block",
+      "y": 90
+    },
+    "facing=north,vessel=mug": {
+      "model": "createfood:block/bottle_block_mug",
+      "y": 180
+    },
+    "facing=east,vessel=mug": {
+      "model": "createfood:block/bottle_block_mug",
+      "y": 270
+    },
+    "facing=south,vessel=mug": {
+      "model": "createfood:block/bottle_block_mug"
+    },
+    "facing=west,vessel=mug": {
+      "model": "createfood:block/bottle_block_mug",
+      "y": 90
+    },
+    "facing=north,vessel=jar": {
+      "model": "createfood:block/bottle_block_jar",
+      "y": 180
+    },
+    "facing=east,vessel=jar": {
+      "model": "createfood:block/bottle_block_jar",
+      "y": 270
+    },
+    "facing=south,vessel=jar": {
+      "model": "createfood:block/bottle_block_jar"
+    },
+    "facing=west,vessel=jar": {
+      "model": "createfood:block/bottle_block_jar",
+      "y": 90
+    },
+    "facing=north,vessel=tall": {
+      "model": "createfood:block/bottle_block_tall",
+      "y": 180
+    },
+    "facing=east,vessel=tall": {
+      "model": "createfood:block/bottle_block_tall",
+      "y": 270
+    },
+    "facing=south,vessel=tall": {
+      "model": "createfood:block/bottle_block_tall"
+    },
+    "facing=west,vessel=tall": {
+      "model": "createfood:block/bottle_block_tall",
+      "y": 90
+    },
+    "facing=north,vessel=goblet": {
+      "model": "createfood:block/bottle_block_goblet",
+      "y": 180
+    },
+    "facing=east,vessel=goblet": {
+      "model": "createfood:block/bottle_block_goblet",
+      "y": 270
+    },
+    "facing=south,vessel=goblet": {
+      "model": "createfood:block/bottle_block_goblet"
+    },
+    "facing=west,vessel=goblet": {
+      "model": "createfood:block/bottle_block_goblet",
+      "y": 90
+    },
+    "facing=north,vessel=juice": {
+      "model": "createfood:block/bottle_block_juice",
+      "y": 180
+    },
+    "facing=east,vessel=juice": {
+      "model": "createfood:block/bottle_block_juice",
+      "y": 270
+    },
+    "facing=south,vessel=juice": {
+      "model": "createfood:block/bottle_block_juice"
+    },
+    "facing=west,vessel=juice": {
+      "model": "createfood:block/bottle_block_juice",
       "y": 90
     }
   }

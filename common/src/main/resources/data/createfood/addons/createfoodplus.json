@@ -8,13 +8,13 @@
       "id": "beef_bun_peanut_butter",
       "type": "food",
       "nutrition": 8,
-      "saturation": 0.6
+      "saturation": 0.5
     },
     {
       "id": "beef_bun_peanut_butter_bacon",
       "type": "food",
       "nutrition": 9,
-      "saturation": 0.9
+      "saturation": 0.8
     },
     {
       "id": "bread_slice_peanut_butter",
@@ -64,7 +64,7 @@
       "id": "cinnamon_sweet_roll_base",
       "type": "food",
       "nutrition": 4,
-      "saturation": 0.5
+      "saturation": 0.4
     },
     {
       "id": "coffee_toffee",
@@ -90,7 +90,7 @@
       "id": "coffee_toffee_fudge",
       "type": "food",
       "nutrition": 4,
-      "saturation": 0.7,
+      "saturation": 0.6,
       "effects": [
         {
           "category": "nourishment",
@@ -149,48 +149,49 @@
       "id": "dragon_bun",
       "type": "food",
       "nutrition": 7,
-      "saturation": 0.7
+      "saturation": 0.5
     },
     {
       "id": "dragon_bun_crimson_fungus",
       "type": "food",
       "nutrition": 8,
-      "saturation": 0.7
+      "saturation": 0.6
     },
     {
       "id": "dragon_bun_warped_fungus",
       "type": "food",
       "nutrition": 8,
-      "saturation": 0.7
+      "saturation": 0.6
     },
     {
       "id": "dragon_burger",
       "type": "food",
-      "nutrition": 10,
-      "saturation": 0.6,
+      "nutrition": 9,
+      "saturation": 0.7,
       "effects": [
         {
           "category": "nourishment",
-          "duration": 2400,
+          "duration": 1200,
           "amplifier": 0
         },
         {
           "category": "minecraft:absorption",
-          "duration": 1200,
-          "amplifier": 1
+          "duration": 900,
+          "amplifier": 0
         },
         {
           "category": "explosion",
-          "duration": 1200,
-          "amplifier": 0
+          "duration": 900,
+          "amplifier": 0,
+          "chance": 0.5
         }
       ]
     },
     {
       "id": "dragon_burger_crimson_fungus",
       "type": "food",
-      "nutrition": 11,
-      "saturation": 0.6,
+      "nutrition": 10,
+      "saturation": 0.7,
       "effects": [
         {
           "category": "nourishment",
@@ -218,8 +219,8 @@
     {
       "id": "dragon_burger_warped_fungus",
       "type": "food",
-      "nutrition": 11,
-      "saturation": 0.6,
+      "nutrition": 10,
+      "saturation": 0.7,
       "effects": [
         {
           "category": "nourishment",
@@ -258,19 +259,19 @@
       "id": "eggplant_bun",
       "type": "food",
       "nutrition": 6,
-      "saturation": 0.6
+      "saturation": 0.5
     },
     {
       "id": "eggplant_bun_cheese",
       "type": "food",
-      "nutrition": 7,
-      "saturation": 1.0
+      "nutrition": 8,
+      "saturation": 0.7
     },
     {
       "id": "eggplant_bun_cheese_lettuce",
       "type": "food",
       "nutrition": 8,
-      "saturation": 1.0
+      "saturation": 0.9
     },
     {
       "id": "eggplant_bun_cheese_lettuce_tomato",
@@ -282,31 +283,31 @@
       "id": "eggplant_bun_cheese_tomato",
       "type": "food",
       "nutrition": 8,
-      "saturation": 0.9
+      "saturation": 0.8
     },
     {
       "id": "eggplant_bun_lettuce",
       "type": "food",
       "nutrition": 7,
-      "saturation": 0.7
+      "saturation": 0.6
     },
     {
       "id": "eggplant_bun_lettuce_tomato",
       "type": "food",
       "nutrition": 8,
-      "saturation": 0.6
+      "saturation": 0.5
     },
     {
       "id": "eggplant_bun_tomato",
       "type": "food",
-      "nutrition": 6,
-      "saturation": 0.8
+      "nutrition": 7,
+      "saturation": 0.6
     },
     {
       "id": "eggplant_burger",
       "type": "food",
       "nutrition": 8,
-      "saturation": 0.8,
+      "saturation": 0.7,
       "effects": [
         {
           "category": "nourishment",
@@ -323,23 +324,24 @@
     {
       "id": "eggplant_burger_lettuce",
       "type": "food",
-      "nutrition": 10,
-      "saturation": 0.6,
+      "nutrition": 9,
+      "saturation": 0.7,
       "effects": [
         {
           "category": "nourishment",
-          "duration": 2400,
+          "duration": 1200,
           "amplifier": 0
         },
         {
           "category": "recovering",
-          "duration": 1200,
+          "duration": 900,
           "amplifier": 0
         },
         {
           "category": "refreshing",
-          "duration": 1200,
-          "amplifier": 0
+          "duration": 900,
+          "amplifier": 0,
+          "chance": 0.5
         }
       ]
     },
@@ -365,7 +367,7 @@
       "id": "eggplant_cheeseburger",
       "type": "food",
       "nutrition": 10,
-      "saturation": 0.9,
+      "saturation": 0.8,
       "effects": [
         {
           "category": "nourishment",
@@ -387,8 +389,8 @@
     {
       "id": "eggplant_cheeseburger_lettuce",
       "type": "food",
-      "nutrition": 11,
-      "saturation": 0.8,
+      "nutrition": 10,
+      "saturation": 1.0,
       "effects": [
         {
           "category": "nourishment",
@@ -469,13 +471,13 @@
       "id": "endermite_meatball",
       "type": "food",
       "nutrition": 3,
-      "saturation": 0.7
+      "saturation": 0.6
     },
     {
       "id": "endermite_meatball_sandwich",
       "type": "food",
-      "nutrition": 9,
-      "saturation": 0.4,
+      "nutrition": 8,
+      "saturation": 0.6,
       "effects": [
         {
           "category": "nourishment",
@@ -499,7 +501,7 @@
       "id": "endermite_meatball_stick_1",
       "type": "stick",
       "nutrition": 5,
-      "saturation": 0.7,
+      "saturation": 0.6,
       "effects": [
         {
           "category": "rest",
@@ -518,7 +520,7 @@
       "id": "endermite_meatball_stick_2",
       "type": "stick",
       "nutrition": 5,
-      "saturation": 0.8,
+      "saturation": 0.7,
       "effects": [
         {
           "category": "rest",
@@ -537,7 +539,7 @@
       "id": "endermite_meatball_stick_3",
       "type": "stick",
       "nutrition": 6,
-      "saturation": 0.7,
+      "saturation": 0.6,
       "effects": [
         {
           "category": "rest",
@@ -616,7 +618,7 @@
       "id": "marshmallow_coffee_toffee_fudge",
       "type": "food",
       "nutrition": 5,
-      "saturation": 0.5,
+      "saturation": 0.6,
       "effects": [
         {
           "category": "nourishment",
@@ -675,8 +677,8 @@
     {
       "id": "pasta_plate_endermite_meatballs",
       "type": "bowl",
-      "nutrition": 8,
-      "saturation": 0.6,
+      "nutrition": 7,
+      "saturation": 0.8,
       "effects": [
         {
           "category": "nourishment",
@@ -747,7 +749,7 @@
       "id": "pasta_plate_strider_meatballs",
       "type": "bowl",
       "nutrition": 7,
-      "saturation": 0.8,
+      "saturation": 0.7,
       "effects": [
         {
           "category": "nourishment",
@@ -836,7 +838,7 @@
       "id": "peanut_butter_chorus_fruit_jam_sandwich",
       "type": "food",
       "nutrition": 9,
-      "saturation": 0.5,
+      "saturation": 0.4,
       "effects": [
         {
           "category": "nourishment",
@@ -901,14 +903,9 @@
     {
       "id": "pumpkin_pie_slice",
       "type": "food",
-      "nutrition": 4,
-      "saturation": 0.2,
+      "nutrition": 2,
+      "saturation": 0.3,
       "effects": [
-        {
-          "category": "nourishment",
-          "duration": 600,
-          "amplifier": 0
-        },
         {
           "category": "minecraft:luck",
           "duration": 600,
@@ -971,7 +968,7 @@
       "id": "small_strider_meatballs",
       "type": "food",
       "nutrition": 1,
-      "saturation": 0.7
+      "saturation": 0.6
     },
     {
       "id": "strider_meatball",
@@ -983,7 +980,7 @@
       "id": "strider_meatball_sandwich",
       "type": "food",
       "nutrition": 8,
-      "saturation": 0.6,
+      "saturation": 0.5,
       "effects": [
         {
           "category": "nourishment",
@@ -1000,8 +997,8 @@
     {
       "id": "strider_meatball_stick_1",
       "type": "stick",
-      "nutrition": 5,
-      "saturation": 0.6,
+      "nutrition": 4,
+      "saturation": 0.8,
       "effects": [
         {
           "category": "minecraft:fire_resistance",
@@ -1014,7 +1011,7 @@
       "id": "strider_meatball_stick_2",
       "type": "stick",
       "nutrition": 5,
-      "saturation": 0.8,
+      "saturation": 0.7,
       "effects": [
         {
           "category": "minecraft:fire_resistance",
@@ -1026,8 +1023,8 @@
     {
       "id": "strider_meatball_stick_3",
       "type": "stick",
-      "nutrition": 6,
-      "saturation": 0.6,
+      "nutrition": 5,
+      "saturation": 0.8,
       "effects": [
         {
           "category": "minecraft:fire_resistance",
@@ -1040,7 +1037,7 @@
       "id": "tortilla_chip_bowl",
       "type": "bowl",
       "nutrition": 4,
-      "saturation": 0.4,
+      "saturation": 0.6,
       "effects": [
         {
           "category": "nourishment",
@@ -1063,7 +1060,7 @@
       "id": "ube_cream_ube_cake_slice",
       "type": "food",
       "nutrition": 3,
-      "saturation": 0.2,
+      "saturation": 0.1,
       "effects": [
         {
           "category": "sugar_rush",

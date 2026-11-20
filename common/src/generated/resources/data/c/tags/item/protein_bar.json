@@ -1,0 +1,8 @@
+{
+  "values": [
+    {
+      "id": "createfood:protein_bar",
+      "required": false
+    }
+  ]
+}

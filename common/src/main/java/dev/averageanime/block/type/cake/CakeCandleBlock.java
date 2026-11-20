@@ -1,13 +1,11 @@
 package dev.averageanime.block.type.cake;
 
-import dev.averageanime.item.effect.EffectContext;
 import dev.averageanime.item.type.EffectFood;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.component.DataComponents;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.util.RandomSource;
 import net.minecraft.sounds.SoundEvents;
@@ -144,21 +142,7 @@ public class CakeCandleBlock extends Block {
             FoodProperties food = sliceStack.get(DataComponents.FOOD);
             if (food != null) {
                 player.getFoodData().eat(food);
-                EffectContext.begin(player, sliceStack);
-                try {
-                    for (FoodProperties.PossibleEffect effect : EffectFood.enabledEffects(food,
-                            BuiltInRegistries.ITEM.getKey(sliceStack.getItem()).getPath())) {
-                        if (effect != null && level.random.nextFloat() < effect.probability()) {
-                            player.addEffect(effect.effect());
-                        }
-                    }
-                    // Compat-category effects are deferred rather than baked into FOOD.
-                    if (sliceStack.getItem() instanceof EffectFood effectFood) {
-                        effectFood.applyNonBakedEffects(level, player);
-                    }
-                } finally {
-                    EffectContext.end(player);
-                }
+                EffectFood.applyEatEffects(level, player, sliceStack, food);
             }
         }
 

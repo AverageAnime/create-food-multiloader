@@ -3,36 +3,54 @@ package dev.averageanime.block.type.plate;
 import dev.averageanime.config.ConfigValues;
 import dev.averageanime.block.type.display.FoodBlock;
 import dev.averageanime.createfood.lib.block.GenericDisplayBlockEntity;
+import dev.averageanime.createfood.lib.recipe.BakingMatRecipes;
+import dev.averageanime.createfood.lib.recipe.CuttingRecipes;
+import dev.averageanime.createfood.lib.recipe.PressRecipes;
+import dev.averageanime.createfood.lib.recipe.adapted.PlateRecipeView;
 import dev.averageanime.platform.Services;
-import dev.averageanime.createfood.lib.recipe.RecipeReflection;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.item.crafting.Recipe;
-import net.minecraft.world.item.crafting.RecipeHolder;
-import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 
-import java.lang.reflect.Method;
-import java.util.Collection;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
+/**
+ * A plate is a cutting board for any held tool, and with a rolling pin also a hand press and baking mat.
+ * Recipes are read from the source mods when they are installed and from the adapted copies when they
+ * are not (see the library's {@code RecipeAdapter}).
+ *
+ * <p>Order, first match wins: cutting with the held tool; then, for a {@code c:tools/rolling_pin} only and
+ * while {@code enable_rolling_pin} is on, single-ingredient baking mat, pressing, and unheated one-item
+ * compacting. Cutting recipes that name the pin as their tool (crumbs) are ordinary cutting, so they
+ * follow {@code enable_cutting_board} alone. A pin may also do what a
+ * knife does (raw beef to ground beef); that overlap is intended.
+ *
+ * <p>When the last serving yields one item that has a plate block of the same kind, the plate converts in
+ * place instead of dropping it, as held-item conversions do; this is how salt dough becomes pizza dough.
+ *
+ * <p>An item named in {@code display_interactions_exclude} is left alone, as it is by display interactions.
+ */
 public class PlateSliceInteraction {
+
+    private static final TagKey<Item> ROLLING_PIN =
+            TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", "tools/rolling_pin"));
 
     public static boolean couldSlice(Player player, Level level, InteractionHand hand,
                                      BlockPos pos, BlockState state) {
@@ -43,12 +61,12 @@ public class PlateSliceInteraction {
 
         if (block instanceof GenericDisplayPlateBlock) {
             if (!(level.getBlockEntity(pos) instanceof GenericDisplayBlockEntity be) || be.isEmpty()) return false;
-            return !findCuttingResults(level, be.getDisplayedItem(), heldItem).isEmpty();
+            return !candidates(level, be.getDisplayedItem(), heldItem).isEmpty();
         }
         if (block instanceof FoodBlock foodBlock) {
             Item foodItem = foodBlock.displayItem.get();
             if (foodItem == null) return false;
-            return !findCuttingResults(level, new ItemStack(foodItem), heldItem).isEmpty();
+            return !candidates(level, new ItemStack(foodItem), heldItem).isEmpty();
         }
         return false;
     }
@@ -59,125 +77,87 @@ public class PlateSliceInteraction {
         if (level.isClientSide()) return false;
 
         Block block = state.getBlock();
+        ItemStack heldItem = player.getItemInHand(hand);
+        if (heldItem.isEmpty()) return false;
 
         if (block instanceof GenericDisplayPlateBlock) {
             GenericDisplayBlockEntity be = (GenericDisplayBlockEntity) level.getBlockEntity(pos);
             if (be == null || be.isEmpty()) return false;
-            ItemStack displayedItem = be.getDisplayedItem();
-
-            ItemStack heldItem = player.getItemInHand(hand);
-            List<ItemStack> results = heldItem.isEmpty() ? List.of() : findCuttingResults(level, displayedItem, heldItem);
+            List<ItemStack> results = rollFirst(level, be.getDisplayedItem(), heldItem);
             if (results.isEmpty()) return false;
 
             be.takeDisplayedItem();
-            double cx = pos.getX() + 0.5, cy = pos.getY() + 0.75, cz = pos.getZ() + 0.5;
-            for (ItemStack result : results) {
-                if (!result.isEmpty()) {
-                    ItemEntity entity = new ItemEntity(level, cx, cy, cz, result.copy());
-                    entity.setDefaultPickUpDelay();
-                    level.addFreshEntity(entity);
-                }
-            }
+            dropResults(level, pos, results);
             level.setBlock(pos, preserveFacing(Services.PLATFORM.getPlateBlock().defaultBlockState(), state), 3);
-            if (!player.isCreative()) {
-                heldItem.hurtAndBreak(1, (ServerLevel) level, (ServerPlayer) player, item -> {});
-            }
-            playSliceSound(level, pos);
+            finish(player, level, pos, heldItem);
             return true;
         }
 
         if (!(block instanceof FoodBlock foodBlock)) return false;
-
         Item foodItem = foodBlock.displayItem.get();
         if (foodItem == null) return false;
 
-        ItemStack heldItem = player.getItemInHand(hand);
-        ItemStack foodStack = new ItemStack(foodItem);
-        List<ItemStack> results = heldItem.isEmpty() ? List.of() : findCuttingResults(level, foodStack, heldItem);
+        List<ItemStack> results = rollFirst(level, new ItemStack(foodItem), heldItem);
         if (results.isEmpty()) return false;
 
-        double cx = pos.getX() + 0.5;
-        double cy = pos.getY() + 0.75;
-        double cz = pos.getZ() + 0.5;
-        for (ItemStack result : results) {
-            if (!result.isEmpty()) {
-                ItemEntity entity = new ItemEntity(level, cx, cy, cz, result.copy());
-                entity.setDefaultPickUpDelay();
-                level.addFreshEntity(entity);
-            }
+        Block plated = state.getValue(FoodBlock.STACK_SIZE) == 1 && results.size() == 1 && results.getFirst().getCount() == 1
+                ? foodBlock.displayBlockFor(results.getFirst().getItem()) : null;
+        if (plated != null) {
+            level.setBlock(pos, preserveFacing(plated.defaultBlockState().setValue(FoodBlock.STACK_SIZE, 1), state), 3);
+        } else {
+            dropResults(level, pos, results);
+            // One serving per use; the last one reverts to whatever container the block sits in.
+            foodBlock.removeServing(state, level, pos);
         }
-
-        Block emptyPlate = (block instanceof SmallPlateBlock)
-                ? Services.PLATFORM.getSmallPlateBlock()
-                : Services.PLATFORM.getPlateBlock();
-        level.setBlock(pos, preserveFacing(emptyPlate.defaultBlockState(), state), 3);
-
-        if (!player.isCreative()) {
-            heldItem.hurtAndBreak(1, (ServerLevel) level, (ServerPlayer) player, item -> {});
-        }
-
-        playSliceSound(level, pos);
+        finish(player, level, pos, heldItem);
         return true;
     }
 
-    @SuppressWarnings({"unchecked", "rawtypes"})
-    private static List<ItemStack> findCuttingResults(Level level, ItemStack foodStack, ItemStack toolStack) {
-        try {
-            RecipeType<?> cuttingType = BuiltInRegistries.RECIPE_TYPE.get(
-                    ResourceLocation.fromNamespaceAndPath("farmersdelight", "cutting"));
-            if (cuttingType == null) return List.of();
-
-            Collection<RecipeHolder<?>> recipes =
-                    (Collection) level.getRecipeManager().getAllRecipesFor((RecipeType) cuttingType);
-
-            for (RecipeHolder<?> holder : recipes) {
-                Recipe<?> recipe = holder.value();
-                var ingredients = recipe.getIngredients();
-                if (ingredients.isEmpty() || !ingredients.get(0).test(foodStack)) continue;
-                if (!toolMatchesRecipe(toolStack, recipe)) continue;
-                List<ItemStack> results = RecipeReflection.getRollableResults(recipe, level.random);
-                if (!results.isEmpty()) return results;
+    /** Every recipe the held tool could run on this item, in the order they are tried. */
+    private static List<PlateRecipeView> candidates(Level level, ItemStack food, ItemStack held) {
+        List<PlateRecipeView> found = new ArrayList<>();
+        if (ConfigValues.isDisplayInteractionExcluded(food)) return found;
+        for (PlateRecipeView view : CuttingRecipes.all(level)) {
+            if (view.accepts(food) && view.acceptsTool(held)) found.add(view);
+        }
+        if (held.is(ROLLING_PIN) && ConfigValues.isRollingPinEnabled()) {
+            for (PlateRecipeView view : BakingMatRecipes.all(level)) {
+                if (view.accepts(food) && view.acceptsTool(held)) found.add(view);
             }
-        } catch (Exception ignored) {
+            for (PlateRecipeView view : PressRecipes.pressing(level)) {
+                if (view.accepts(food)) found.add(view);
+            }
+            for (PlateRecipeView view : PressRecipes.compacting(level)) {
+                if (view.accepts(food)) found.add(view);
+            }
+        }
+        return found;
+    }
+
+    /** Rolls candidates in order; one whose chances all miss falls through to the next. */
+    private static List<ItemStack> rollFirst(Level level, ItemStack food, ItemStack held) {
+        for (PlateRecipeView view : candidates(level, food, held)) {
+            List<ItemStack> results = view.roll(level.random);
+            if (!results.isEmpty()) return results;
         }
         return List.of();
     }
 
-    // Reflects into Farmer's Delight's CuttingBoardRecipe rather than importing it, since this mod has
-    // no compile-time dependency on Farmer's Delight and must still work without it installed.
-    private static boolean toolMatchesRecipe(ItemStack tool, Object recipe) {
-        try {
-            Method getToolMethod = recipe.getClass().getMethod("getTool");
-            Object toolResult = getToolMethod.invoke(recipe);
-            if (toolResult == null) return true;
-
-            if (toolResult instanceof Optional<?> opt) {
-                if (opt.isEmpty()) return true;
-                return testIngredient(opt.get(), tool);
-            }
-            if (toolResult instanceof List<?> list) {
-                if (list.isEmpty()) return true;
-                for (Object elem : list) {
-                    if (testIngredient(elem, tool)) return true;
-                }
-                return false;
-            }
-            return testIngredient(toolResult, tool);
-        } catch (NoSuchMethodException e) {
-            return true;
-        } catch (Exception e) {
-            return true;
+    private static void dropResults(Level level, BlockPos pos, List<ItemStack> results) {
+        double cx = pos.getX() + 0.5, cy = pos.getY() + 0.75, cz = pos.getZ() + 0.5;
+        for (ItemStack result : results) {
+            if (result.isEmpty()) continue;
+            ItemEntity entity = new ItemEntity(level, cx, cy, cz, result.copy());
+            entity.setDefaultPickUpDelay();
+            level.addFreshEntity(entity);
         }
     }
 
-    private static boolean testIngredient(Object ingredient, ItemStack tool) {
-        try {
-            if (ingredient instanceof Ingredient ing) return ing.test(tool);
-            Method test = ingredient.getClass().getMethod("test", ItemStack.class);
-            return (boolean) test.invoke(ingredient, tool);
-        } catch (Exception e) {
-            return true;
+    private static void finish(Player player, Level level, BlockPos pos, ItemStack heldItem) {
+        if (!player.isCreative()) {
+            heldItem.hurtAndBreak(1, (ServerLevel) level, (ServerPlayer) player, item -> {});
         }
+        playSliceSound(level, pos);
     }
 
     private static BlockState preserveFacing(BlockState target, BlockState source) {

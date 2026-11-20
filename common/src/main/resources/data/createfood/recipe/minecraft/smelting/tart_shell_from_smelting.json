@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:smelting",
+  "category": "food",
+  "cookingtime": 150,
+  "experience": 0.15,
+  "ingredient": {
+    "tag": "c:raw_tart_shell"
+  },
+  "result": {
+    "count": 1,
+    "id": "createfood:tart_shell"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "tart_shell"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "tart_shell"
+    }
+  ]
+}

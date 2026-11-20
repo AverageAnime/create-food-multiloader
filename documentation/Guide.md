@@ -37,7 +37,7 @@ Refer to Design §2.
 - Assembled food (sandwich, bun, wrap)? → `food()` or `consumable()`
 - Piping bag? → `pipingBag()`, stack 2, return piping bag
 
-> **Toolkit:** Item Type, Stack Size, Converts To, and Remainder are in the Registration section. For fluids with bottle items, enable "Has bottle item" — bottle properties have their own Properties section. The toolkit outputs the correct helper method call (e.g. `bottle("id", 5, 0.8f, tips(...))`) for `ModItems.java`.
+> **Toolkit:** Item Type, Stack Size, Converts To, and Remainder are in the Registration section. For fluids with bottle items, enable "Has bottle item" — bottle properties have their own Properties section. The toolkit outputs the correct helper method call (e.g. `bottle("id", 5, 0.8f, tips(...))`) for `ItemRegistry.java`.
 
 ### Step 4 — Assign Effects
 
@@ -94,6 +94,8 @@ Consult Design §7. Work backwards from the finished item to raw ingredients and
 | Block-form food portioned into slices? | Cutting |
 | Simple dry combination with no processing? | Crafting |
 
+An `_alt` recipe may change the route but never replace an intermediate with its own ingredients — see Design §7 "Alternate recipes".
+
 > **Toolkit:** All recipe types are available in the Recipes tab. Select the recipe type and fill in the inputs. For Create recipes, the fluidBlock input/output toggle and fluidBlock|mB input type are available. Block slice cutting recipes and bottle filling/emptying recipes are auto-generated — they appear in the Recipes tab Files panel automatically.
 
 ### Step 8 — Assign the ID, Display Name, and Tags
@@ -147,9 +149,9 @@ Consult Design §8.
 *   <li>{@code tips("tooltip.compat.mymod", "bacon_ingredient", "cheese_ingredient")}
 *       — compat key is the full translation key; ingredient keys are SHORT
 *         (the {@code tooltip.createfood.} prefix is added automatically).
-*   <li>{@code fx(ModEffects.COMFORT, 1200)} — effect with amplifier 0, guaranteed.
+*   <li>{@code fx(EffectCategories.COMFORT, 1200)} — effect with amplifier 0, guaranteed.
 *   <li>{@code fx(MobEffects.WATER_BREATHING, 600, 1)} — effect with amplifier 1.
-*   <li>{@code fx(ModEffects.COMFORT, 1200, 0, 0.5f)} — 50% chance; shown in tooltip as a percentage.
+*   <li>{@code fx(EffectCategories.COMFORT, 1200, 0, 0.5f)} — 50% chance; shown in tooltip as a percentage.
 * </ul>
 *
 * <h3>Examples</h3>
@@ -165,7 +167,7 @@ Consult Design §8.
 * public static final DeferredItem<Item> MY_STEW =
 *     bowlConsumable("my_stew", 12, 0.9f,
 *         tips("tooltip.compat.mymod", "beef_ingredient"),
-*         fx(ModEffects.NOURISHMENT, 3600));
+*         fx(EffectCategories.NOURISHMENT, 3600));
 * }</pre>
 */
 ```
@@ -177,9 +179,9 @@ Consult Design §8.
 * <p>Covers two categories:
 * <ol>
 *   <li><b>Display blocks</b> — bottle, bowl, salad bowl, plate, small plate,
-*       and stacked plate blocks from {@link ModDisplayBlocks}.
+*       and stacked plate blocks from {@link DisplayRegistry}.
 *   <li><b>Food blocks</b> — cakes, pies, pizzas, raw blocks, and all other
-*       simple self-drop blocks from {@link ModBlocks}.
+*       simple self-drop blocks from {@link BlockRegistry}.
 * </ol>
 *
 * <h3>Display block loot rules</h3>
@@ -192,9 +194,9 @@ Consult Design §8.
 *
 * <h3>Food block loot rules</h3>
 * <ul>
-*   <li><b>ModCakeBlock (7 bites)</b> — whole block with no knife at bites=0;
+*   <li><b>CakeFoodBlock (7 bites)</b> — whole block with no knife at bites=0;
 *       knife yields 7..2 slices for bites=0..5; last bite always drops 1 slice.
-*   <li><b>ModPieBlock / PizzaBlock (4 bites)</b> — same structure scaled to 4 slices.
+*   <li><b>PieBlock / PizzaBlock (4 bites)</b> — same structure scaled to 4 slices.
 *   <li><b>Everything else</b> — simple survives_explosion self-drop.
 * </ul>
 */
@@ -215,12 +217,12 @@ Consult Design §8.
  *
  * <p>Coverage:
  * <ul>
- *   <li>All items in {@link ModItems} (food, ingredients, tools, bottles, etc.)
- *   <li>All block items registered in {@link ModBlocks}
- *   <li>Bucket items for every fluidBlock registered in {@link ModFluids}
+ *   <li>All items in {@link ItemRegistry} (food, ingredients, tools, bottles, etc.)
+ *   <li>All block items registered in {@link BlockRegistry}
+ *   <li>Bucket items for every fluidBlock registered in {@link FluidRegistry}
  * </ul>
  *
- * <p>Adding a new item to {@link ModItems} automatically generates its tag on
+ * <p>Adding a new item to {@link ItemRegistry} automatically generates its tag on
  * the next datagen run. No changes to this file are required.
  *
  * <p><b>Note:</b> Collection/grouping tags (e.g. {@code c:cheeses},
@@ -237,11 +239,11 @@ Consult Design §8.
  * <p>Covers three categories in one pass:
  * <ol>
  *   <li><b>Display block items</b> — block-parent models for display blocks
- *       (plates, bottles, bowls) registered in {@link ModDisplayBlocks}.
+ *       (plates, bottles, bowls) registered in {@link DisplayRegistry}.
  *   <li><b>Regular items</b> — {@code item/generated} flat-sprite models for
- *       every item in {@link ModItems}.
+ *       every item in {@link ItemRegistry}.
  *   <li><b>Block items</b> — {@code item/generated} flat-sprite models for
- *       every block registered in {@link ModBlocks}, except the 16 gelatin
+ *       every block registered in {@link BlockRegistry}, except the 16 gelatin
  *       dessert blocks whose item model parents the block model instead.
  * </ol>
  *
@@ -255,7 +257,7 @@ Consult Design §8.
 ```
 /**
  * Generates {@code data/c/tags/fluidBlock/<id>.json} for every fluidBlock registered
- * in {@link ModFluids}.
+ * in {@link FluidRegistry}.
  *
  * <p>Each fluidBlock gets one tag containing both the source and flowing variants:
  * <pre>
@@ -269,7 +271,7 @@ Consult Design §8.
  * }
  * </pre>
  *
- * <p>Adding a new fluidBlock to {@link ModFluids} automatically generates its tag
+ * <p>Adding a new fluidBlock to {@link FluidRegistry} automatically generates its tag
  * on the next datagen run. No changes to this file are required.
  */
 ```
@@ -281,15 +283,15 @@ Consult Design §8.
  * <p>Covers two categories:
  * <ol>
  *   <li><b>Display blocks</b> — bottle, bowl, plate, etc. registered in
- *       {@link ModDisplayBlocks}. Logic unchanged from the original.
+ *       {@link DisplayRegistry}. Logic unchanged from the original.
  *   <li><b>Food blocks</b> — cakes, pies, pizzas, waffles, raw blocks,
- *       and fluidBlock blocks from {@link ModBlocks} / {@link ModFluids}.
+ *       and fluidBlock blocks from {@link BlockRegistry} / {@link FluidRegistry}.
  * </ol>
  *
  * <h3>Food block formats</h3>
  * <ul>
- *   <li><b>ModCakeBlock</b> — {@code bites=0..6, facing} → {@code block/{id}} + {@code block/{id}_slice1..6}
- *   <li><b>ModPieBlock</b> — {@code bites=0..3, facing} → {@code block/{id}} + {@code block/{id}_slice1..3}
+ *   <li><b>CakeFoodBlock</b> — {@code bites=0..6, facing} → {@code block/{id}} + {@code block/{id}_slice1..6}
+ *   <li><b>PieBlock</b> — {@code bites=0..3, facing} → {@code block/{id}} + {@code block/{id}_slice1..3}
  *   <li><b>PizzaBlock (pizza)</b> — same as pie
  *   <li><b>PizzaBlock (waffle)</b> — {@code bites=0..3, facing} → {@code block/{id}} + {@code block/{prefix}mini_waffle1..3}
  *   <li><b>RawPieBlock</b> — {@code facing} only → {@code block/{id}}
@@ -301,8 +303,8 @@ Consult Design §8.
 
 ```
 /**
- * Generates block model JSON files for all food blocks in {@link ModBlocks}
- * and all fluidBlock blocks in {@link ModFluids}.
+ * Generates block model JSON files for all food blocks in {@link BlockRegistry}
+ * and all fluidBlock blocks in {@link FluidRegistry}.
  *
  * <h3>Model conventions per block type</h3>
  *

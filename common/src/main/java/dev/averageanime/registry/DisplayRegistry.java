@@ -51,8 +51,24 @@ public final class DisplayRegistry {
             "taco_shell",
             "donut_hole",
             "pie_crust",
+            "tart_shell",
             "sliced"
     );
+
+    /**
+     * Whether {@code itemName} gets no auto display block. The raw pizza line is exempt from
+     * {@link #SKIP_PATTERNS} even though "raw_" and "dough" match it: it is assembled on a plate, each
+     * ingredient converting the plated pizza through {@code FoodBlock.tryTransform}, so every stage needs a
+     * plate block of its own. Salt dough starts that line, since a rolling pin presses it into pizza dough
+     * on the plate.
+     */
+    public static boolean isSkipped(String itemName) {
+        if (EXCLUDED_ITEMS.contains(itemName)) return true;
+        if (itemName.equals("salt_dough")) return false;
+        BlockEntry block = BlockEntry.getById(itemName);
+        if (block != null && block.category == BlockEntry.BlockCategory.RAW_PIZZA) return false;
+        return SKIP_PATTERNS.stream().anyMatch(itemName::contains);
+    }
 
     public static final Map<String, Object> DISPLAY_CONFIGS;
 
@@ -82,20 +98,24 @@ public final class DisplayRegistry {
         register.add("honeyed_mini_waffle",        DisplayEntry.of(PLATE).maxStack(1).build());
         register.add("mini_waffle",                DisplayEntry.of(PLATE).maxStack(4).build());
         register.add("pizza",                      DisplayEntry.of(PLATE).maxStack(1).build());
+        register.add("salt_dough",                 DisplayEntry.of(PLATE).maxStack(1).build());
         register.add("cheese_block",               DisplayEntry.of(PLATE).maxStack(1).build());
         register.add("gyro",                       DisplayEntry.of(PLATE).maxStack(1).build());
         register.add("ice_cream_bowl",             DisplayEntry.of(BOWL_FOOD).height(4.5).particles(snowflake()).build());
         register.add("waffle",                     DisplayEntry.of(PLATE).maxStack(1).build());
         register.add("cupcake",                    DisplayEntry.of(PLATE).maxStack(4).build(), DisplayEntry.of(SMALL_PLATE).build());
+        register.add("shortcake",                  DisplayEntry.of(PLATE).maxStack(4).build(), DisplayEntry.of(SMALL_PLATE).build());
         register.add("cake",                       DisplayEntry.of(PLATE).maxStack(1).build());
         register.add("mini_cream_pie",             DisplayEntry.of(SMALL_PLATE).build());
         register.add("mini_smores_pie",            DisplayEntry.of(SMALL_PLATE).build());
         register.add("mini_cookie_cream_pie",      DisplayEntry.of(SMALL_PLATE).build());
         register.add("mini_chocolate_pie",         DisplayEntry.of(SMALL_PLATE).build());
+        register.add("tart",                       DisplayEntry.of(SMALL_PLATE).build());
         register.add("pie",                        DisplayEntry.of(PLATE).maxStack(1).build());
         register.add("burger",                     DisplayEntry.of(PLATE).maxStack(1).build());
         register.add("meatball_sandwich",          DisplayEntry.of(PLATE).maxStack(2).build());
         register.add("hash_browns_sandwich",       DisplayEntry.of(PLATE).maxStack(2).build());
+        register.add("cookie_sandwich",            DisplayEntry.of(PLATE).maxStack(4).build(), DisplayEntry.of(SMALL_PLATE).build());
         register.add("sandwich",                   DisplayEntry.of(PLATE).maxStack(1).build());
         register.add("toast",                      DisplayEntry.of(PLATE).maxStack(1).build());
         register.add("calzone",                    DisplayEntry.of(PLATE).maxStack(2).build(), DisplayEntry.of(SMALL_PLATE).build());
@@ -112,6 +132,8 @@ public final class DisplayRegistry {
         register.add("egg_whites_bottle",          DisplayEntry.of(BOTTLE).height(9).build());
         register.add("_juice_bottle",              DisplayEntry.of(BOTTLE).height(10).build());
         register.add("_trifle_bottle",             DisplayEntry.of(BOTTLE).height(8).build());
+        register.add("_ganache_bottle",            DisplayEntry.of(BOTTLE).height(9).build());
+        register.add("dulce_de_leche_bottle",      DisplayEntry.of(BOTTLE).height(9).build());
         register.add("chocolate_bottle",           DisplayEntry.of(BOTTLE).height(8).build());
         register.add("dark_chocolate_bottle",      DisplayEntry.of(BOTTLE).height(8).build());
         register.add("white_chocolate_bottle",     DisplayEntry.of(BOTTLE).height(8).build());
@@ -125,6 +147,7 @@ public final class DisplayRegistry {
         register.add("_bowl",                      DisplayEntry.of(BOWL_FOOD).height(4).build());
         register.add("salad",                      DisplayEntry.of(LARGE_BOWL).build());
         register.add("cookie",                     DisplayEntry.of(PLATE).maxStack(4).build(), DisplayEntry.of(SMALL_PLATE).build());
+        register.add("hot_dog",                    DisplayEntry.of(PLATE).maxStack(2).build());
         register.add("wrap",                       DisplayEntry.of(PLATE).maxStack(2).build());
         register.add("taco",                       DisplayEntry.of(PLATE).maxStack(2).build());
         register.add("burrito",                    DisplayEntry.of(PLATE).maxStack(2).build());
@@ -143,6 +166,8 @@ public final class DisplayRegistry {
         register.add("bar_of",                     DisplayEntry.of(PLATE).maxStack(6).build());
         register.add("popsicle",                   DisplayEntry.of(PLATE).maxStack(2).build());
         register.add("breakfast_bar",              DisplayEntry.of(PLATE).maxStack(6).build());
+        register.add("protein_bar",                DisplayEntry.of(PLATE).maxStack(6).build());
+        register.add("pemmican",                   DisplayEntry.of(PLATE).maxStack(6).build());
         register.add("baked_potato",               DisplayEntry.of(PLATE).maxStack(3).build(), DisplayEntry.of(SMALL_PLATE).build());
         register.add("_chocolate",                 DisplayEntry.of(PLATE).maxStack(6).build(), DisplayEntry.of(SMALL_PLATE).build());
 
@@ -176,6 +201,20 @@ public final class DisplayRegistry {
             }
         }
         return itemNames;
+    }
+
+    /** The shape a {@code custom_display_block} type string names, or null if it names none. */
+    public static DisplayType parseType(String name) {
+        return switch (name.toLowerCase()) {
+            case "plate" -> PLATE;
+            case "small_plate" -> SMALL_PLATE;
+            case "bottle" -> BOTTLE;
+            case "bowl" -> BOWL_FOOD;
+            case "display_bowl" -> BOWL;
+            case "salad_bowl", "large_bowl", "small_bowl" -> LARGE_BOWL;
+            case "plate_food" -> PLATE_FOOD;
+            default -> null;
+        };
     }
 
     public static String getBlockName(String itemName, DisplayType type) {

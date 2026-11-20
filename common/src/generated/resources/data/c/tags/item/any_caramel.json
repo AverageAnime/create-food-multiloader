@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "#c:caramel",
+      "required": false
+    },
+    {
+      "id": "#c:dulce_de_leche_bottle",
+      "required": false
+    }
+  ]
+}

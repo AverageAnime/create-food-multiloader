@@ -93,30 +93,34 @@ public abstract class FoodBlock extends StackedDisplayBlock {
         ItemStack placedStack = new ItemStack(placedItem);
         if (ConfigValues.isDisplayInteractionExcluded(placedStack)) return null;
 
-        FoodConversion.Outcome outcome = FoodConversion.resolve(level, placedStack, heldStack);
+        int size = state.getValue(STACK_SIZE);
+        FoodConversion.Outcome outcome = FoodConversion.resolve(level, placedStack, heldStack, size);
         if (outcome == null) return null;
+        // Each held item spent pays for servingsPerHeld servings; only whole payments are taken.
+        int spent = Math.min(heldStack.getCount(), size / outcome.servingsPerHeld());
+        if (spent == 0) return null;
         if (level.isClientSide) return ItemInteractionResult.SUCCESS;
 
-        int size = state.getValue(STACK_SIZE);
-        int servings = Math.min(heldStack.getCount(), size);
+        int servings = spent * outcome.servingsPerHeld();
+        int produced = spent * outcome.result().getCount();
         ItemStack heldBefore = heldStack.copy();
-        if (!player.isCreative()) heldStack.shrink(servings);
+        if (!player.isCreative()) heldStack.shrink(spent);
 
         // Containers only come back for items actually spent, so creative does not mint them.
         if (!player.isCreative()) {
             for (ItemStack container : FoodConversion.containersFor(outcome, heldBefore)) {
-                FoodConversion.giveCopies(player, hand, container, servings, true);
+                FoodConversion.giveCopies(player, hand, container, spent, true);
             }
         }
 
         Block target = outcome.convertsBlock() ? displayBlockFor(outcome.result().getItem()) : null;
-        if (target instanceof FoodBlock targetFood && servings == size && servings <= targetFood.maxStackSize) {
+        if (target instanceof FoodBlock targetFood && servings == size && produced <= targetFood.maxStackSize) {
             BlockState next = target.defaultBlockState()
                     .setValue(FACING, state.getValue(FACING))
-                    .setValue(STACK_SIZE, servings);
+                    .setValue(STACK_SIZE, produced);
             level.setBlock(pos, next, 3);
         } else {
-            FoodConversion.giveCopies(player, hand, outcome.result(), servings, false);
+            FoodConversion.giveCopies(player, hand, outcome.result(), spent, false);
             if (size > servings) {
                 level.setBlock(pos, state.setValue(STACK_SIZE, size - servings), 3);
             } else {
@@ -131,7 +135,7 @@ public abstract class FoodBlock extends StackedDisplayBlock {
 
     /** The block of this same family that displays {@code item}, or null if there is none. */
     @Nullable
-    private Block displayBlockFor(Item item) {
+    public Block displayBlockFor(Item item) {
         List<Supplier<Block>> suppliers = Registry.getAllBlocks(item);
         if (suppliers == null) return null;
         for (Supplier<Block> supplier : suppliers) {
@@ -162,6 +166,19 @@ public abstract class FoodBlock extends StackedDisplayBlock {
             level.playSound(null, pos, getEatSound(), SoundSource.PLAYERS, 0.5f, 1.0f);
         }
         return true;
+    }
+
+    /**
+     * Takes one serving off without eating it, as a tool on a plate does. The last serving reverts the block
+     * the way taking it by hand does, so a bowl or bottle comes back rather than a plate.
+     */
+    public void removeServing(BlockState state, Level level, BlockPos pos) {
+        int currentStack = state.getValue(STACK_SIZE);
+        if (currentStack > 1) {
+            level.setBlock(pos, state.setValue(STACK_SIZE, currentStack - 1), 3);
+        } else {
+            handleLastItemRemoved(state, level, pos);
+        }
     }
 
     protected void applyEatEffects(ItemStack copy, FoodProperties props, Player player, Level level, BlockPos pos) {

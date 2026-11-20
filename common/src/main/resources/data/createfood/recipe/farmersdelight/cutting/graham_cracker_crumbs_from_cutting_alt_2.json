@@ -6,7 +6,7 @@
         }
     ],
     "tool": {
-        "tag": "c:tools/knife"
+        "tag": "c:tools/rolling_pin"
     },
     "result": [
         {

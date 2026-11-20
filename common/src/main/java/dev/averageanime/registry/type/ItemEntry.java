@@ -5,7 +5,6 @@ import dev.averageanime.util.Tooltips;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
-import java.util.function.Supplier;
 
 public final class ItemEntry extends LazyEntry<net.minecraft.world.item.Item> {
 
@@ -19,10 +18,18 @@ public final class ItemEntry extends LazyEntry<net.minecraft.world.item.Item> {
     public final @Nullable Tooltips.TooltipSpec tip;
     public final List<EffectEntry>       effects;
     public final @Nullable String remainderId;
+    public final int          durability;
 
     private ItemEntry(String id, ItemCategory category, int nutrition, float saturation,
                       @Nullable Tooltips.TooltipSpec tip, @Nullable String remainderId, List<EffectEntry> effects) {
+        this(id, category, nutrition, saturation, tip, remainderId, effects, 0);
+    }
+
+    private ItemEntry(String id, ItemCategory category, int nutrition, float saturation,
+                      @Nullable Tooltips.TooltipSpec tip, @Nullable String remainderId, List<EffectEntry> effects,
+                      int durability) {
         super(id);
+        this.durability  = durability;
         this.category    = category;
         this.nutrition   = nutrition;
         this.saturation  = saturation;
@@ -38,7 +45,7 @@ public final class ItemEntry extends LazyEntry<net.minecraft.world.item.Item> {
 
     public static ItemEntry getById(String id) {
         ItemEntry def = BY_ID.get(id);
-        if (def == null) throw new IllegalArgumentException("No ItemDef with id: " + id);
+        if (def == null) throw new IllegalArgumentException("No ItemEntry with id: " + id);
         return def;
     }
 
@@ -126,6 +133,10 @@ public final class ItemEntry extends LazyEntry<net.minecraft.world.item.Item> {
         return register(new ItemEntry(id, ItemCategory.PIPING_BAG, 0, 0, tip, null, List.of()));
     }
 
+    public static ItemEntry tool(String id, int durability) {
+        return register(new ItemEntry(id, ItemCategory.TOOL, 0, 0, null, null, List.of(), durability));
+    }
+
     public enum ItemCategory {
         FOOD,
         FAST_FOOD,
@@ -139,5 +150,6 @@ public final class ItemEntry extends LazyEntry<net.minecraft.world.item.Item> {
         INGREDIENT_BOTTLE,
         INGREDIENT_BOWL,
         PIPING_BAG,
+        TOOL,
     }
 }

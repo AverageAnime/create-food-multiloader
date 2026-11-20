@@ -1,7 +1,7 @@
 {
     "type": "kaleidoscope_cookery:millstone",
     "ingredient": {
-        "tag": "c:pepper"
+        "tag": "c:paprika_ingredient"
     },
     "result": {
         "count": 2,
@@ -13,13 +13,6 @@
             "modid": "kaleidoscope_cookery"
         },
         {
-            "type": "neoforge:not",
-            "value": {
-                "type": "neoforge:tag_empty",
-                "tag": "c:pepper"
-            }
-        },
-        {
             "type": "createfood:enabled",
             "id": "paprika"
         }
@@ -29,13 +22,6 @@
             "condition": "fabric:all_mods_loaded",
             "values": [
                 "kaleidoscope_cookery"
-            ]
-        },
-        {
-            "condition": "fabric:tags_populated",
-            "registry": "minecraft:item",
-            "values": [
-                "c:pepper"
             ]
         },
         {

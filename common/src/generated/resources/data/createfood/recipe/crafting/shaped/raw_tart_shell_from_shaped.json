@@ -1,0 +1,31 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "raw_tart_shell"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "raw_tart_shell"
+    }
+  ],
+  "key": {
+    "1": {
+      "tag": "c:egg_yolk"
+    },
+    "2": {
+      "tag": "c:butter_dough_small"
+    }
+  },
+  "pattern": [
+    "1",
+    "2"
+  ],
+  "result": {
+    "count": 2,
+    "id": "createfood:raw_tart_shell"
+  }
+}

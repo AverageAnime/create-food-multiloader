@@ -13,7 +13,7 @@
         {
             "type": "fluid_tag",
             "amount": 250,
-            "fluid_tag": "c:any_milk"
+            "fluid_tag": "c:cooking_milk"
         }
     ],
     "results": [

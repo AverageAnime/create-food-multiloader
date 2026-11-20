@@ -1,5 +1,6 @@
 package dev.averageanime.neoforge;
 
+import dev.averageanime.config.ConfigBootstrap;
 import dev.averageanime.platform.Services;
 import dev.averageanime.createfood.lib.compat.BasinFluidCapacity;
 import dev.averageanime.createfood.lib.effect.EffectChain;
@@ -21,9 +22,13 @@ import dev.averageanime.neoforge.block.BlockEntityRegistration;
 import dev.averageanime.neoforge.block.BlockRegistration;
 import dev.averageanime.neoforge.block.DisplayBlockRegistration;
 import dev.averageanime.neoforge.block.FluidRegistration;
+import dev.averageanime.neoforge.compat.farmersdelight.ContainerFluids;
+import dev.averageanime.neoforge.compat.farmersdelight.FarmersDelightClient;
+import dev.averageanime.neoforge.compat.farmersdelight.HollowCookingPot;
 import dev.averageanime.createfood.lib.fluid.FluidBlock;
 import dev.averageanime.createfood.lib.config.RecipeConditions;
 import dev.averageanime.createfood.lib.recipe.RecipeSubjects;
+import dev.averageanime.createfood.lib.recipe.adapted.AdaptedRecipes;
 import dev.averageanime.neoforge.config.ConfigRegistration;
 import dev.averageanime.neoforge.item.ItemRegistration;
 import dev.averageanime.neoforge.menu.MenuRegistration;
@@ -37,12 +42,15 @@ import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;
+import net.neoforged.fml.ModList;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.config.ModConfigEvent;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
+import net.neoforged.neoforge.client.event.RecipesUpdatedEvent;
+import net.neoforged.neoforge.client.event.RegisterClientReloadListenersEvent;
 import net.neoforged.neoforge.client.event.RegisterClientTooltipComponentFactoriesEvent;
 import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
@@ -53,15 +61,6 @@ import org.slf4j.Logger;
 @Mod(CreateFoodCommon.MOD_ID)
 public class CreateFood {
     public static final Logger LOGGER = LogUtils.getLogger();
-
-    private static boolean isClassPresent(String className) {
-        try {
-            Class.forName(className);
-            return true;
-        } catch (ClassNotFoundException e) {
-            return false;
-        }
-    }
 
     public CreateFood(IEventBus modEventBus, ModContainer modContainer) {
         // Wire the shared effect chain before anything resolves.
@@ -77,17 +76,17 @@ public class CreateFood {
         modContainer.registerConfig(
                 net.neoforged.fml.config.ModConfig.Type.CLIENT,
                 ConfigRegistration.CLIENT_SPEC,
-                "createfood-client.toml"
+                ConfigBootstrap.CLIENT_FILE
         );
         modContainer.registerConfig(
                 net.neoforged.fml.config.ModConfig.Type.COMMON,
                 ConfigRegistration.COMMON_SPEC,
-                "createfood-common.toml"
+                ConfigBootstrap.COMMON_FILE
         );
         modContainer.registerConfig(
                 net.neoforged.fml.config.ModConfig.Type.SERVER,
                 ConfigRegistration.SERVER_SPEC,
-                "createfood-server.toml"
+                ConfigBootstrap.SERVER_FILE
         );
         modEventBus.addListener((FMLClientSetupEvent event) -> {
             IConfigScreenFactory factory = new ConfigRegistration.ConfigScreen();
@@ -100,6 +99,8 @@ public class CreateFood {
         // Read lazily, like the basin gate above: recipes are not read until datapack load.
         RecipeSubjects.gate(ConfigValues::isRecipeSubjectAvailable);
         RecipeConditions.register(modEventBus, CreateFoodCommon.MOD_ID);
+        // Copies Create/FD/Ube's Delight recipes for the plate and bowl interactions when those mods are absent.
+        AdaptedRecipes.register(modEventBus, CreateFoodCommon.MOD_ID);
 
         NeoForge.EVENT_BUS.register(this);
         ItemRegistration.register(modEventBus);
@@ -107,13 +108,9 @@ public class CreateFood {
         BlockRegistration.register(modEventBus);
         BlockEntityRegistration.register(modEventBus);
         MenuRegistration.register(modEventBus);
-        if (isClassPresent("dev.averageanime.neoforge.block.DisplayBlockRegistration")) {
-            DisplayBlockRegistration.register(modEventBus);
-        }
+        DisplayBlockRegistration.register(modEventBus);
         TabRegistration.register(modEventBus);
-        if (isClassPresent("dev.averageanime.neoforge.tab.DisplayTabRegistration")) {
-            DisplayTabRegistration.register(modEventBus);
-        }
+        DisplayTabRegistration.register(modEventBus);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
@@ -154,6 +151,21 @@ public class CreateFood {
             event.registerBlockEntityRenderer(
                     BlockEntityRegistration.LARGE_BOWL.get(),
                     ctx -> new FluidSurfaceRenderer<>(ctx, CreateFoodCommon.MOD_ID));
+            // Behind its own class so Farmer's Delight types are never loaded when it is absent.
+            if (ModList.get().isLoaded("farmersdelight")) {
+                FarmersDelightClient.registerRenderers(event);
+            }
+        }
+
+        @SubscribeEvent
+        public static void onRegisterReloadListeners(RegisterClientReloadListenersEvent event) {
+            event.registerReloadListener(HollowCookingPot.RELOAD_LISTENER);
+        }
+
+        /** Emptying recipes can change on joining a world and on every /reload. */
+        @SubscribeEvent
+        public static void onRecipesUpdated(RecipesUpdatedEvent event) {
+            ContainerFluids.clear();
         }
 
         @SubscribeEvent

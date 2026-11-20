@@ -36,11 +36,6 @@ public class CompatPlateBlocks {
         }
     }
 
-    public static boolean registerPlate(String modId, String itemName, String blockName, boolean isSmallPlate) {
-        Block targetBlock = isSmallPlate ? Services.PLATFORM.getSmallPlateBlock() : Services.PLATFORM.getPlateBlock();
-        return registerPlateEntry(new PlateEntry(modId, itemName, blockName), targetBlock);
-    }
-
     private static boolean registerPlateEntry(PlateEntry entry, Block targetBlock) {
         boolean registered = false;
 

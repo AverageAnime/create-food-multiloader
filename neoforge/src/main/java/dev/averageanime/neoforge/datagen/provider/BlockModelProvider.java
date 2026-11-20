@@ -2,9 +2,10 @@ package dev.averageanime.neoforge.datagen.provider;
 
 import dev.averageanime.CreateFoodCommon;
 import dev.averageanime.neoforge.block.FluidRegistration;
+import dev.averageanime.registry.BlockRegistry;
+import dev.averageanime.registry.type.BlockEntry;
 import dev.averageanime.createfood.lib.datagen.DatagenHelpers;
 import dev.averageanime.createfood.lib.fluid.FluidBlock;
-import dev.averageanime.createfood.lib.fluid.FluidEntry;
 import java.util.Map;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
@@ -20,6 +21,7 @@ public class BlockModelProvider extends net.neoforged.neoforge.client.model.gene
     protected void registerModels() {
         registerFluidBlockModels();
         registerSharedDisplayModels();
+        registerRawPizzaPlateModels();
     }
 
     private void registerFluidBlockModels() {
@@ -71,6 +73,17 @@ public class BlockModelProvider extends net.neoforged.neoforge.client.model.gene
         SHARED_DISPLAY_MODELS.forEach((blockModelId, parentId) ->
                 withExistingParent("block/" + blockModelId,
                         ResourceLocation.parse(parentId)));
+    }
+
+    // Every stage of the raw pizza line shares one plate geometry and differs only in its top, which follows
+    // the <id>_top naming of the standalone raw pizza models.
+    private void registerRawPizzaPlateModels() {
+        BlockRegistry.init();
+        for (BlockEntry entry : BlockEntry.ALL) {
+            if (entry.category != BlockEntry.BlockCategory.RAW_PIZZA) continue;
+            withExistingParent("block/" + entry.id + "_plate_block_1", cf("block/raw_pizza_plate_block"))
+                    .texture("top", cf("block/" + entry.id + "_top"));
+        }
     }
 
     private ResourceLocation cf(String path) {

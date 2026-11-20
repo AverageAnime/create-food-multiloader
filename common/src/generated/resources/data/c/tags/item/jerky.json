@@ -1,0 +1,28 @@
+{
+  "values": [
+    {
+      "id": "createfood:rabbit_jerky",
+      "required": false
+    },
+    {
+      "id": "createfood:cured_beef",
+      "required": false
+    },
+    {
+      "id": "createfood:dried_pork",
+      "required": false
+    },
+    {
+      "id": "brewinandchewin:jerky",
+      "required": false
+    },
+    {
+      "id": "hearthandharvest:jerky",
+      "required": false
+    },
+    {
+      "id": "ends_delight:dried_endermite_meat",
+      "required": false
+    }
+  ]
+}

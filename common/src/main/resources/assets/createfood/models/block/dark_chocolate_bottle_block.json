@@ -1,4 +1,4 @@
-﻿{
+{
 	"parent":  "createfood:block/bottle_base_chocolate",
 	"textures":  {
 					"2":  "createfood:fluid/dark_chocolate_still",

@@ -133,9 +133,9 @@
                     "item": "culturalcreators:incomplete_spicy_curry"
                 },
                 {
-                    "type": "fluid_tag",
+                    "type": "neoforge:tag",
                     "amount": 250,
-                    "fluid_tag": "c:milk"
+                    "tag": "c:milk"
                 }
             ],
             "results": [

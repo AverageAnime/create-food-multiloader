@@ -1,0 +1,32 @@
+{
+  "values": [
+    {
+      "id": "minecraft:sweet_berries",
+      "required": false
+    },
+    {
+      "id": "minecraft:glow_berries",
+      "required": false
+    },
+    {
+      "id": "#c:blueberry",
+      "required": false
+    },
+    {
+      "id": "#c:cranberry",
+      "required": false
+    },
+    {
+      "id": "#c:raspberry",
+      "required": false
+    },
+    {
+      "id": "#c:bayberry",
+      "required": false
+    },
+    {
+      "id": "#c:hawberry",
+      "required": false
+    }
+  ]
+}

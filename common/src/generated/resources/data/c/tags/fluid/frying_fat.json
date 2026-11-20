@@ -1,0 +1,9 @@
+{
+  "values": [
+    "#c:vegetable_oil",
+    {
+      "id": "#c:tallow",
+      "required": false
+    }
+  ]
+}

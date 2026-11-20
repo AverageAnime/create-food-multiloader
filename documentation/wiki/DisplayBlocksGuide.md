@@ -1,4 +1,4 @@
-### ***3.0.0***
+### ***3.1.0***
 
 ---
 
@@ -21,14 +21,20 @@
 * `RMB` empty-handed removes one serving, `Shift + RMB` removes all.
   * Some foods can be served on both plate sizes.
 * `Shift + LMB` on a filled plate eats directly from it.
-* `RMB` with a knife cuts the food, using Farmer's Delight cutting board recipes.
+* `RMB` with a knife cuts one serving of the food, using Farmer's Delight cutting board recipes.
+* `RMB` with a rolling pin also presses, compacts and rolls it, using Create pressing, unheated single-item compacting and single-ingredient Ube's Delight baking mat recipes. Items listed in `display_interactions_exclude` are skipped, and `enable_rolling_pin` turns the pin's extra recipes off.
+* Both work without Farmer's Delight, Create or Ube's Delight installed. See [Adapted Recipes](https://github.com/AverageAnime/create-food-multiloader/wiki/Adapted-Recipes).
 * Plates can also display any item generically, much like an item frame.
 
 ---
 
 ### Bowls & Bottles
 
-Bowls work similar to plates, with two differences: generically displayed items always render upright, and bowls do not support cutting board recipes. Drinking a placed bottle, or decanting it with an empty glass bottle, leaves an empty bottle behind — the same way a bowl leaves an empty bowl.
+Bowls work similar to plates, with two differences: generically displayed items always render upright, and an item displayed generically in a bowl cannot be cut. Food placed in a bowl or bottle can be cut or rolled like food on a plate. Drinking a placed bottle, or decanting it with an empty glass bottle, leaves an empty bottle behind — the same way a bowl leaves an empty bowl.
+
+* The empty bottle keeps the glass shape of the drink it held.
+* `Shift + RMB` empty-handed on an empty bottle cycles its shape: standard, mug, jar, tall, goblet, juice.
+* `RMB` with a filled bottle stands that drink back up. `RMB` empty-handed takes the glass bottle back.
 
 ---
 
@@ -56,6 +62,9 @@ Using an item on placed food combines the two, checked against existing recipes:
 * A filled container pours its fluid in. The amount must match exactly.
 * An ingredient that would craft with the placed food by hand.
 * Failing the above, Create deploying recipes.
+* Failing those too, on a plate holding several servings: a container holding enough for several fills tops that many (a ganache bottle tops two caramel shortbreads), or one ingredient that crafts with several of the placed food (a caramel piece turns four shortbreads into four caramel shortbreads).
+
+Filling and deploying recipes work without Create installed too.
 
 As many servings convert as the held stack can pay for. If the block can show the whole result, it becomes that block — a placed milkshake bottle plus chocolate chips becomes the chip milkshake bottle, and a plate of four bases plus four ingredients becomes a plate of four results. A partial conversion gives you items instead.
 
@@ -70,7 +79,7 @@ This also works on placeable foods — cake base, gelatin dessert, raw pie, pizz
     * Fluid cannot be added if it does not fit in full, or if the bowl already holds a different fluid.
 * `RMB` with a food item dips it. One item is converted per use, and the result goes to your inventory.
 * `RMB` with an empty container takes fluid back out.
-* Breaking a bowl holding exactly 1000mB leaves a fluid source block behind. Any other amount is lost.
+* Breaking a full bowl (4000mB by default) leaves a fluid source block behind. Any lesser amount is lost.
 
 ---
 

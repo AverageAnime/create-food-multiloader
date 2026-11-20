@@ -1,0 +1,35 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:bucket"
+    },
+    {
+      "tag": "c:dulce_de_leche_bottle"
+    },
+    {
+      "tag": "c:dulce_de_leche_bottle"
+    },
+    {
+      "tag": "c:dulce_de_leche_bottle"
+    },
+    {
+      "tag": "c:dulce_de_leche_bottle"
+    }
+  ],
+  "result": {
+    "id": "createfood:dulce_de_leche_bucket"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "dulce_de_leche_bucket"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "dulce_de_leche_bucket"
+    }
+  ]
+}

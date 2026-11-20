@@ -14,8 +14,8 @@ import org.spongepowered.asm.mixin.injection.At;
 public abstract class ItemStackFinishUsingItemMixin {
 
     // Wraps Item#finishUsingItem specifically (not the outer ItemStack#finishUsingItem) so the
-    // EffectContext scope matches the item's own consumption logic; ItemStackTooltipMixin and
-    // PotionContentsTooltipMixin depend on this context being active during that window.
+    // EffectContext scope matches the item's own consumption logic; LivingEntityAddEffectMixin reads
+    // it while the effects are applied. The tooltip mixins use the separate TooltipContext.
     @WrapOperation(method = "finishUsingItem",
             at = @At(value = "INVOKE",
                     target = "Lnet/minecraft/world/item/Item;finishUsingItem(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/level/Level;Lnet/minecraft/world/entity/LivingEntity;)Lnet/minecraft/world/item/ItemStack;"))

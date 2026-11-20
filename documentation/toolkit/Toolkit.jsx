@@ -237,8 +237,9 @@ function buildSliceJava(item){
   return buildItemJava({id:sid,itemType:itype,hasFood:sliceHasFood!==false,nutrition:sliceNutrition||2,saturation:sliceSaturation||0.3,fast:sliceFast!==false,effects:sliceEffects||[],showEffectTooltip:sliceShowEffectTooltip!==false,tooltipKeys:tooltipKeys||[],isCompat:isCompat||false,compatKey:compatKey||""});
 }
 function buildFluidJava(item){const{id,fluidFlowSlope,fluidFlowDecrease}=item;if(!id)return"";const flowArgs=(fluidFlowSlope>0&&fluidFlowDecrease>0)?", "+fluidFlowSlope+", "+fluidFlowDecrease:"";return "public static final FluidEntry "+id.toUpperCase()+"_FLUID_ENTRY = fluid(\""+id+"\""+flowArgs+");";}
-function buildBottleJava(item){const{id,bottleHasFood,bottleNutrition,bottleSaturation,bottleFast,bottleEffects,bottleTooltipKeys,tooltipKeys,isCompat,compatKey}=item;return buildItemJava({id:id+"_bottle",itemType:"bottle",hasFood:bottleHasFood!==false,nutrition:bottleNutrition||4,saturation:bottleSaturation||1.0,fast:bottleFast||false,effects:bottleEffects||[],tooltipKeys:bottleTooltipKeys||tooltipKeys||[],isCompat:isCompat||false,compatKey:compatKey||""});}
-function buildBowlJava(item){const{id,bowlHasFood,bowlNutrition,bowlSaturation,bowlFast,bowlEffects,bowlTooltipKeys,tooltipKeys,isCompat,compatKey}=item;return buildItemJava({id:id+"_bowl",itemType:"bowlFood",crBowl:true,hasFood:bowlHasFood!==false,nutrition:bowlNutrition||4,saturation:bowlSaturation||0.6,fast:bowlFast||false,effects:bowlEffects||[],tooltipKeys:bowlTooltipKeys||tooltipKeys||[],isCompat:isCompat||false,compatKey:compatKey||""});}
+// A bottle or bowl without food is an ingredientBottle/ingredientBowl: no food value, and those helpers take no effects or tooltips.
+function buildBottleJava(item){const{id,bottleHasFood,bottleNutrition,bottleSaturation,bottleFast,bottleEffects,bottleTooltipKeys,tooltipKeys,isCompat,compatKey}=item;if(bottleHasFood===false)return buildItemJava({id:id+"_bottle",itemType:"ingredientBottle"});return buildItemJava({id:id+"_bottle",itemType:"bottle",nutrition:bottleNutrition||4,saturation:bottleSaturation||1.0,fast:bottleFast||false,effects:bottleEffects||[],tooltipKeys:bottleTooltipKeys||tooltipKeys||[],isCompat:isCompat||false,compatKey:compatKey||""});}
+function buildBowlJava(item){const{id,bowlHasFood,bowlNutrition,bowlSaturation,bowlFast,bowlEffects,bowlTooltipKeys,tooltipKeys,isCompat,compatKey}=item;if(bowlHasFood===false)return buildItemJava({id:id+"_bowl",itemType:"ingredientBowl"});return buildItemJava({id:id+"_bowl",itemType:"bowlFood",crBowl:true,nutrition:bowlNutrition||4,saturation:bowlSaturation||0.6,fast:bowlFast||false,effects:bowlEffects||[],tooltipKeys:bowlTooltipKeys||tooltipKeys||[],isCompat:isCompat||false,compatKey:compatKey||""});}
 function blankAddonSpec(){return{spec_version:1,addon_id:"createfoodplus",name:"Create: Food+",items:[],blocks:[],fluids:[],display_blocks:[],tooltips:[],crafting_remainders:[],hide_items:[]};}
 function addAddon(files,section,entry){
   const spec=files[ADDON_SPEC]||blankAddonSpec();
@@ -305,9 +306,13 @@ const AMOUNTS={
 // Bottle sizes a fluid may declare. 250 is the default; 500 marks a concentrate.
 const BOTTLE_SIZES=[AMOUNTS.SERVING,AMOUNTS.BOTTLE_LARGE];
 const bottleSizeOf=item=>BOTTLE_SIZES.includes(item?.bottleSize)?item.bottleSize:AMOUNTS.SERVING;
+// Default ticks for a recipe type's time field. Milling gets its own: Create reads a missing processing_time as
+// 0, and a millstone at 0 restarts the recipe every tick without ever finishing it.
+const defaultTicks=type=>type==="create:milling"?50:200;
 // A tag with no namespace defaults to c:; one that already has a namespace is left alone.
 function nsTag(v){return v.includes(":")?v:"c:"+v;}
-function parseInputs(inputs){return inputs.map(inp=>{const v=inp.value.trim();if(inp.type==="item")return{item:v};if(inp.type==="fluid_tag"){const p=v.split(/\s*\|\s*/);return{type:"fluid_tag",amount:parseInt(p[1])||AMOUNTS.SERVING,fluid_tag:nsTag(p[0]||"")};}return{tag:nsTag(v)};});}
+// "water_bottle" is the one input a tag cannot express: a water bottle is minecraft:potion plus a component.
+function parseInputs(inputs){return inputs.map(inp=>{const v=(inp.value||"").trim();if(inp.type==="water_bottle")return{item:"minecraft:potion",components:{"minecraft:potion_contents":{potion:"minecraft:water"}}};if(inp.type==="item")return{item:v};if(inp.type==="fluid_tag"){const p=v.split(/\s*\|\s*/);return{type:"fluid_tag",amount:parseInt(p[1])||AMOUNTS.SERVING,fluid_tag:nsTag(p[0]||"")};}return{tag:nsTag(v)};});}
 function buildRecipeJson(rec){
   const{recipeType:rt,outputId,outputCount:oc,isFluidOutput,fluidAmount:fa,inputs,experience:xp,cookingtime:ct,shapedPattern,shapedKey}=rec;
   if(!outputId)return null;
@@ -317,6 +322,8 @@ function buildRecipeJson(rec){
   const modid=rtNs==="minecraft"?null:rtNs;
   const parsed=parseInputs(inputs),c=cond(baseId,modid);
   const iR=[{count:oc||1,item:{id:cid}}],fR=[{amount:fa||AMOUNTS.SERVING,id:cid}];
+  // byproductFluid ("<fluid>|<mB>") appends a fluid result after the main one, as butter churning leaves buttermilk.
+  const bpF=(()=>{const v=(rec.byproductFluid||"").trim();if(!v)return[];const [fid,amt]=v.split("|");const id=fid.includes(":")?fid:"createfood:"+fid;return[{amount:parseInt(amt,10)||AMOUNTS.SERVING,id}];})();
   // Recipe types outside Create/FD use a plain {id} result list and processing_time.
   const pR=[{id:cid,...(oc&&oc!==1?{count:oc}:{})}];
   const pt=ct||200;
@@ -333,11 +340,19 @@ function buildRecipeJson(rec){
   }
   if(rt==="create:deploying")return{type:"create:deploying",ingredients:parsed,results:iR,...c};
   if(rt==="create:item_application"){const results=[{item:{id:cid}}];if(rec.byproductId){const bid=rec.byproductId.includes(":")?rec.byproductId:"createfood:"+rec.byproductId;results.push({item:{id:bid}});}return{type:"create:item_application",ingredients:parsed,results,...c};}
-  if(rt==="create:mixing"||rt==="create:mixing_heated"){const h=rt==="create:mixing_heated";return{type:"create:mixing",...(h?{heat_requirement:"heated"}:{}),ingredients:parsed,results:isFluidOutput?fR:iR,...c};}
-  if(rt==="create:compacting"||rt==="create:compacting_heated"){const h=rt==="create:compacting_heated";return{type:"create:compacting",...(h?{heat_requirement:"heated"}:{}),ingredients:parsed,results:isFluidOutput?fR:iR,...c};}
+  if(rt==="create:mixing"||rt==="create:mixing_heated"){const h=rt==="create:mixing_heated";return{type:"create:mixing",...(h?{heat_requirement:"heated"}:{}),ingredients:parsed,results:[...(isFluidOutput?fR:iR),...bpF],...c};}
+  if(rt==="create:compacting"||rt==="create:compacting_heated"){const h=rt==="create:compacting_heated";return{type:"create:compacting",...(h?{heat_requirement:"heated"}:{}),ingredients:parsed,results:[...(isFluidOutput?fR:iR),...bpF],...c};}
   if(rt==="create:pressing")return{type:"create:pressing",ingredients:parsed,results:iR,...c};
-  if(rt==="create:milling")return{type:"create:milling",ingredients:parsed,results:iR,...c};
-  if(rt==="farmersdelight:cooking"){const isBowlOutput=cid.includes("_bowl")||baseId.includes("_bowl");const container=isBowlOutput?{container:{count:1,id:"minecraft:bowl"}}:{};return{type:"farmersdelight:cooking",experience:xp,ingredients:parsed,recipe_book_tab:"meals",...container,result:{count:oc||1,id:cid},...c};}
+  if(rt==="create:milling")return{type:"create:milling",ingredients:parsed,processing_time:ct||defaultTicks(rt),results:iR,...c};
+  if(rt==="farmersdelight:cooking"){
+    // The pot fills a vessel from its container slot, so a bottle or bucket result needs one as much as a
+    // bowl does; without it the meal comes out of nothing. cookingtime is written only when it differs
+    // from Farmer's Delight's own default of 200, so existing recipes keep their exact shape.
+    const isBowlOutput=cid.includes("_bowl")||baseId.includes("_bowl");
+    const vessel=isBowlOutput?"minecraft:bowl":baseId.endsWith("_bottle")?"minecraft:glass_bottle":baseId.endsWith("_bucket")?"minecraft:bucket":null;
+    const container=vessel?{container:{count:1,id:vessel}}:{};
+    const time=ct&&ct!==200?{cookingtime:ct}:{};
+    return{type:"farmersdelight:cooking",experience:xp,ingredients:parsed,recipe_book_tab:"meals",...container,...time,result:{count:oc||1,id:cid},...c};}
   if(rt==="farmersdelight:cutting")return{type:"farmersdelight:cutting",ingredients:parsed,tool:{tag:"c:tools/knife"},result:[{item:{count:oc||1,id:cid}}],...c};
   if(rt==="minecraft:crafting_shapeless")return{type:"minecraft:crafting_shapeless",ingredients:parsed,result:{count:oc||1,id:cid},...c};
   if(rt==="minecraft:crafting_shaped"){
@@ -358,14 +373,15 @@ function buildRecipeJson(rec){
   return null;
 }
 function recipeFilePath(rec){const rt=RECIPE_TYPES.find(r=>r.id===rec.recipeType);if(!rt||!rec.outputId)return null;const base=rec.outputId.includes(":")?rec.outputId.split(":")[1]:rec.outputId;const fluidInputs=(rec.inputs||[]).filter(i=>i.type==="fluid_tag");const fluidSuffix=fluidInputs.length>0?"_"+fluidInputs.map(i=>i.value.split("|")[0].split(":").pop().replace(/\//g,"_").trim()).join("_"):"";return "data/createfood/recipe/"+rt.dir+"/"+base+rt.suffix+fluidSuffix+(rec.altSuffix?"_"+rec.altSuffix:"")+".json";}
+// Each vessel recipe is gated on what it produces (the vessel, the fluid or the bucket), as the committed recipes are.
 const genBottleFilling=(id,size=AMOUNTS.SERVING)=>({type:"create:filling",ingredients:[{item:"minecraft:glass_bottle"},{type:"fluid_tag",amount:size,fluid_tag:"c:"+id}],results:[{item:{id:"createfood:"+id+"_bottle"}}],"neoforge:conditions":[{type:"neoforge:mod_loaded",modid:"create"},{type:"createfood:enabled",id:id+"_bottle"}],"fabric:load_conditions":[{condition:"fabric:all_mods_loaded",values:["create"]},{condition:"createfood:enabled",id:id+"_bottle"}]});
 const genBottleEmptying=(id,size=AMOUNTS.SERVING)=>({type:"create:emptying",ingredients:[{tag:"c:"+id+"_bottle"}],results:[{item:{id:"minecraft:glass_bottle"}},{amount:size,id:"createfood:"+id}],"neoforge:conditions":[{type:"neoforge:mod_loaded",modid:"create"},{type:"createfood:enabled",id}],"fabric:load_conditions":[{condition:"fabric:all_mods_loaded",values:["create"]},{condition:"createfood:enabled",id}]});
 const genBowlFilling=id=>({type:"create:filling",ingredients:[{item:"minecraft:bowl"},{type:"fluid_tag",amount:AMOUNTS.SERVING,fluid_tag:"c:"+id}],results:[{item:{id:"createfood:"+id+"_bowl"}}],"neoforge:conditions":[{type:"neoforge:mod_loaded",modid:"create"},{type:"createfood:enabled",id:id+"_bowl"}],"fabric:load_conditions":[{condition:"fabric:all_mods_loaded",values:["create"]},{condition:"createfood:enabled",id:id+"_bowl"}]});
 const genBowlEmptying=id=>({type:"create:emptying",ingredients:[{tag:"c:"+id+"_bowl"}],results:[{item:{id:"minecraft:bowl"}},{amount:AMOUNTS.SERVING,id:"createfood:"+id}],"neoforge:conditions":[{type:"neoforge:mod_loaded",modid:"create"},{type:"createfood:enabled",id}],"fabric:load_conditions":[{condition:"fabric:all_mods_loaded",values:["create"]},{condition:"createfood:enabled",id}]});
 const genBottleFromBucket=(id,size=AMOUNTS.SERVING)=>({type:"minecraft:crafting_shapeless",ingredients:[{tag:"c:"+id+"_bucket"},...Array(AMOUNTS.BUCKET/size).fill({item:"minecraft:glass_bottle"})],result:{id:"createfood:"+id+"_bottle",count:AMOUNTS.BUCKET/size},"neoforge:conditions":[{type:"createfood:enabled",id:id+"_bottle"}],"fabric:load_conditions":[{condition:"createfood:enabled",id:id+"_bottle"}]});
-const genBucketFromBottles=(id,size=AMOUNTS.SERVING)=>({type:"minecraft:crafting_shapeless",ingredients:[{item:"minecraft:bucket"},...Array(AMOUNTS.BUCKET/size).fill({tag:"c:"+id+"_bottle"})],result:{id:"createfood:"+id+"_bucket"},"neoforge:conditions":[{type:"createfood:enabled",id:id+"_bottle"}],"fabric:load_conditions":[{condition:"createfood:enabled",id:id+"_bottle"}]});
+const genBucketFromBottles=(id,size=AMOUNTS.SERVING)=>({type:"minecraft:crafting_shapeless",ingredients:[{item:"minecraft:bucket"},...Array(AMOUNTS.BUCKET/size).fill({tag:"c:"+id+"_bottle"})],result:{id:"createfood:"+id+"_bucket"},"neoforge:conditions":[{type:"createfood:enabled",id:id+"_bucket"}],"fabric:load_conditions":[{condition:"createfood:enabled",id:id+"_bucket"}]});
 const genBowlFromBucket=id=>({type:"minecraft:crafting_shapeless",ingredients:[{tag:"c:"+id+"_bucket"},...Array(AMOUNTS.BUCKET/AMOUNTS.SERVING).fill({item:"minecraft:bowl"})],result:{id:"createfood:"+id+"_bowl",count:AMOUNTS.BUCKET/AMOUNTS.SERVING},"neoforge:conditions":[{type:"createfood:enabled",id:id+"_bowl"}],"fabric:load_conditions":[{condition:"createfood:enabled",id:id+"_bowl"}]});
-const genBucketFromBowls=id=>({type:"minecraft:crafting_shapeless",ingredients:[{item:"minecraft:bucket"},...Array(AMOUNTS.BUCKET/AMOUNTS.SERVING).fill({tag:"c:"+id+"_bowl"})],result:{id:"createfood:"+id+"_bucket"},"neoforge:conditions":[{type:"createfood:enabled",id:id+"_bowl"}],"fabric:load_conditions":[{condition:"createfood:enabled",id:id+"_bowl"}]});
+const genBucketFromBowls=id=>({type:"minecraft:crafting_shapeless",ingredients:[{item:"minecraft:bucket"},...Array(AMOUNTS.BUCKET/AMOUNTS.SERVING).fill({tag:"c:"+id+"_bowl"})],result:{id:"createfood:"+id+"_bucket"},"neoforge:conditions":[{type:"createfood:enabled",id:id+"_bucket"}],"fabric:load_conditions":[{condition:"createfood:enabled",id:id+"_bucket"}]});
 
 function buildItemFiles(item){
   const{id:rawId,displayName,registrationType,blockType,sliceId,createBottle,tooltipKeys,customTooltipKeys,isCompat,hasDisplayBlock,displayConfigs,hasVariants,varPattern,varNamePat,variants:varVariants}=item;
@@ -380,9 +396,11 @@ function buildItemFiles(item){
   if(isItem)lang["item."+ns+"."+id]=displayName||id;
   if(isBlock){lang["block."+ns+"."+id]=displayName||id;if(!isRaw)lang["item."+ns+"."+effSlice]=displayName?"Slice of "+displayName:effSlice;}
   if(isFluid){
-    lang["fluid_type."+ns+"."+id]=(displayName||id)+" Fluid"; // #19
-    lang["block."+ns+"."+id+"_block"]=(displayName||id)+" Fluid";
-    lang["item."+ns+"."+id+"_bucket"]=(displayName||id)+" Bucket";
+    // vesselsOnly: the fluid, its block and its bucket are registered already; only the bottle and bowl are new.
+    if(!item.vesselsOnly){
+      lang["block."+ns+"."+id+"_block"]=(displayName||id)+" Fluid";
+      lang["item."+ns+"."+id+"_bucket"]=(displayName||id)+" Bucket";
+    }
     if(createBottle)lang["item."+ns+"."+id+"_bottle"]=displayName||id;
     if(item.createBowl)lang["item."+ns+"."+id+"_bowl"]=displayName||id;
   }
@@ -406,7 +424,7 @@ function buildItemFiles(item){
     else if(bj)addJava(BLOCK_REG,bj);
   }
   if(isFluid){
-    const fj=buildFluidJava({...item,id});if(fj)addFile(FLUID_REG,fj);
+    if(!item.vesselsOnly){const fj=buildFluidJava({...item,id});if(fj)addFile(FLUID_REG,fj);}
     if(createBottle){
       const bj2=buildBottleJava({...item,id});if(bj2)addJava(ITEM_REG,bj2);
     }
@@ -436,7 +454,6 @@ function _addVariantFiles(files,autoSet,variantSet,item,baseId,ns,isItem,isBlock
       lang["block."+vns+"."+vid]=v.displayName;
     }
     if(isFluid){
-      lang["fluid_type."+vns+"."+vid]=v.displayName+" Fluid";
       lang["block."+vns+"."+vid+"_block"]=v.displayName+" Fluid";
       lang["item."+vns+"."+vid+"_bucket"]=v.displayName+" Bucket";
       if(createBottle){
@@ -520,8 +537,8 @@ async function loadJSZip(){if(window.JSZip)return window.JSZip;return new Promis
 async function downloadZip(files,name){const Z=await loadJSZip(),z=new Z();for(const[p,c]of Object.entries(files)){if(p==="_autoSet"||p==="_variantSet")continue;z.file(p,typeof c==="string"?c:JSON.stringify(c,null,2)+"\n");}const b=await z.generateAsync({type:"blob"}),u=URL.createObjectURL(b),a=document.createElement("a");a.href=u;a.download=name;a.click();URL.revokeObjectURL(u);}
 function dlFile(fn,c){const s=typeof c==="string"?c:JSON.stringify(c,null,2)+"\n",b=new Blob([s],{type:"text/plain"}),u=URL.createObjectURL(b),a=document.createElement("a");a.href=u;a.download=fn;a.click();URL.revokeObjectURL(u);}
 
-const BLANK_REC=()=>({uid:Math.random().toString(36).slice(2),recipeType:"create:deploying",outputId:"",outputCount:1,isFluidOutput:false,fluidAmount:AMOUNTS.SERVING,inputs:[{type:"tag",value:""}],experience:0.0,cookingtime:200,altSuffix:"",byproductId:"",shapedPattern:["XXX","XXX","XXX"],shapedKey:[{letter:"X",inputType:"tag",input:""}]});
-function parseImportedJson(fn,txt){try{const o=JSON.parse(txt);if(o.type&&(o.results||o.result||o.ingredient)){const ia=Array.isArray(o.ingredients)?o.ingredients:(o.ingredient?[o.ingredient]:[]);const inputs=ia.map(i=>{if(i.fluid_tag)return{type:"fluid_tag",value:i.fluid_tag+"|"+(i.amount||250)};if(i.tag)return{type:"tag",value:i.tag};if(i.item)return{type:"item",value:i.item};return{type:"tag",value:""};});const oid=((o.results&&o.results[0]?(o.results[0].item?o.results[0].item.id:o.results[0].id):(o.result?o.result.id:""))||"").replace("createfood:","");const rtype=o.type==="create:mixing"&&o.heat_requirement==="heated"?"create:mixing_heated":o.type==="create:compacting"&&o.heat_requirement==="heated"?"create:compacting_heated":o.type;const cnt=((o.results&&o.results[0]?o.results[0].count:(o.result?o.result.count:1))||1);const byproductId=(o.results&&o.results[1]&&o.results[1].item?o.results[1].item.id:"").replace("createfood:","");return{type:"recipe",rec:{...BLANK_REC(),recipeType:rtype,outputId:oid,outputCount:cnt,isFluidOutput:!!(o.results&&o.results[0]&&o.results[0].amount),fluidAmount:(o.results&&o.results[0]&&o.results[0].amount)||250,inputs,experience:o.experience||0.0,cookingtime:o.cookingtime||200,byproductId}};}if(o.values!==undefined)return{type:"tag",ids:(o.values||[]).map(v=>(v.id||v).replace("createfood:",""))};if(Object.keys(o).some(k=>k.startsWith("item.createfood."))){const items={};for(const[k,v]of Object.entries(o))if(k.startsWith("item.createfood."))items[k.replace("item.createfood.","")]=v;return{type:"lang",items};}}catch(e){}return null;}
+const BLANK_REC=()=>({uid:Math.random().toString(36).slice(2),recipeType:"create:deploying",outputId:"",outputCount:1,isFluidOutput:false,fluidAmount:AMOUNTS.SERVING,inputs:[{type:"tag",value:""}],experience:0.0,cookingtime:200,altSuffix:"",byproductId:"",byproductFluid:"",shapedPattern:["XXX","XXX","XXX"],shapedKey:[{letter:"X",inputType:"tag",input:""}]});
+function parseImportedJson(fn,txt){try{const o=JSON.parse(txt);if(o.type&&(o.results||o.result||o.ingredient)){const ia=Array.isArray(o.ingredients)?o.ingredients:(o.ingredient?[o.ingredient]:[]);const inputs=ia.map(i=>{if(i.fluid_tag)return{type:"fluid_tag",value:i.fluid_tag+"|"+(i.amount||250)};if(i.tag)return{type:"tag",value:i.tag};if(i.item)return{type:"item",value:i.item};return{type:"tag",value:""};});const oid=((o.results&&o.results[0]?(o.results[0].item?o.results[0].item.id:o.results[0].id):(o.result?o.result.id:""))||"").replace("createfood:","");const rtype=o.type==="create:mixing"&&o.heat_requirement==="heated"?"create:mixing_heated":o.type==="create:compacting"&&o.heat_requirement==="heated"?"create:compacting_heated":o.type;const cnt=((o.results&&o.results[0]?o.results[0].count:(o.result?o.result.count:1))||1);const byproductId=(o.results&&o.results[1]&&o.results[1].item?o.results[1].item.id:"").replace("createfood:","");return{type:"recipe",rec:{...BLANK_REC(),recipeType:rtype,outputId:oid,outputCount:cnt,isFluidOutput:!!(o.results&&o.results[0]&&o.results[0].amount),fluidAmount:(o.results&&o.results[0]&&o.results[0].amount)||250,inputs,experience:o.experience||0.0,cookingtime:o.cookingtime||o.processing_time||defaultTicks(rtype),byproductId}};}if(o.values!==undefined)return{type:"tag",ids:(o.values||[]).map(v=>(v.id||v).replace("createfood:",""))};if(Object.keys(o).some(k=>k.startsWith("item.createfood."))){const items={};for(const[k,v]of Object.entries(o))if(k.startsWith("item.createfood."))items[k.replace("item.createfood.","")]=v;return{type:"lang",items};}}catch(e){}return null;}
 async function importFromFiles(fileList,{onImportRecipe,onImportItem,setLog,onBatchImport}){
   const results=[];
   const entries=[];
@@ -551,7 +568,7 @@ async function importFromFiles(fileList,{onImportRecipe,onImportItem,setLog,onBa
         const fileRecipesOnly=o.recipesOnly===true||o.mode==="recipesOnly";
         let recipesOnlyCount=0;
         const bItemFiles={};const bRecipeFiles={};const bSnapshots=[];
-        const mergeInto=(target,src)=>{const extractSetIds=s=>{const m=s&&s.match(/Set\.of\(([\s\S]*?)\)/);if(!m)return[];return m[1].split(",").map(x=>x.trim().replace(/^"|"$/g,"")).filter(Boolean);};const extractListIds=s=>{const m=s&&s.match(/List\.of\(([\s\S]*?)\)/);if(!m)return[];return m[1].split(",").map(x=>x.trim().replace(/^"|"$/g,"")).filter(Boolean);};for(const[k,v]of Object.entries(src)){if(k==="lang/en_us.json"||k.endsWith("/lang/en_us.json")){target[k]=typeof v==="object"?{...(target[k]||{}),...v}:v;}else if(k.endsWith("DisplayRegistry.java")&&typeof v==="string"&&typeof target[k]==="string"){const isExcluded=s=>s&&s.trimStart().includes("Set<String> EXCLUDED_ITEMS");if(isExcluded(target[k])&&isExcluded(v)){const ids=[...new Set([...extractSetIds(target[k]),...extractSetIds(v)])];target[k]=buildDisplayBlockNote(ids);}else{target[k]=target[k].includes(v)?target[k]:target[k]+"\n\n"+v;}}else if(k.endsWith("addon.json")&&typeof v==="object"&&typeof target[k]==="object"){const t=target[k];for(const sec of ["items","blocks","fluids","display_blocks","tooltips","crafting_remainders"]){const seen=new Set((t[sec]||[]).map(e=>e.id||e.item));for(const e of (v[sec]||[]))if(!seen.has(e.id||e.item)){(t[sec]=t[sec]||[]).push(e);seen.add(e.id||e.item);}}t.hide_items=[...new Set([...(t.hide_items||[]),...(v.hide_items||[])])];target[k]=t;}else if(k.endsWith("ConfigDefaults.java")&&typeof v==="string"&&typeof target[k]==="string"){const isDisable=s=>s&&s.trimStart().startsWith("public static final List<String> HIDE_ITEMS_DEFAULT");if(isDisable(target[k])&&isDisable(v)){const ids=[...new Set([...extractListIds(target[k]),...extractListIds(v)])];target[k]=buildModConfigNote(ids);}else{target[k]=target[k].includes(v)?target[k]:target[k]+"\n\n"+v;}}else if(typeof v==="string"&&typeof target[k]==="string"){const sep=(k.endsWith("ItemRegistry.java")||k.endsWith("BlockRegistry.java")||k.endsWith("FluidRegistry.java")||k.endsWith("DisplayRegistry.java"))?"\n":"\n\n";target[k]=target[k].includes(v)?target[k]:target[k]+sep+v;}else{target[k]=v;}}};
+        const mergeInto=(target,src)=>{const extractSetIds=s=>{const m=s&&s.match(/Set\.of\(([\s\S]*?)\)/);if(!m)return[];return m[1].split(",").map(x=>x.trim().replace(/^"|"$/g,"")).filter(Boolean);};const extractListIds=s=>{const m=s&&s.match(/List\.of\(([\s\S]*?)\)/);if(!m)return[];return m[1].split(",").map(x=>x.trim().replace(/^"|"$/g,"")).filter(Boolean);};for(const[k,v]of Object.entries(src)){if(k==="lang/en_us.json"||k.endsWith("/lang/en_us.json")){target[k]=typeof v==="object"?{...(target[k]||{}),...v}:v;}else if(k.endsWith("DisplayRegistry.java")&&typeof v==="string"&&typeof target[k]==="string"){const isExcluded=s=>s&&s.trimStart().includes("Set<String> EXCLUDED_ITEMS");if(isExcluded(target[k])&&isExcluded(v)){const ids=[...new Set([...extractSetIds(target[k]),...extractSetIds(v)])];target[k]=buildDisplayBlockNote(ids);}else{target[k]=target[k].includes(v)?target[k]:target[k]+"\n\n"+v;}}else if((k===ADDON_SPEC||k.endsWith("addon.json"))&&typeof v==="object"&&typeof target[k]==="object"){const t=target[k];for(const sec of ["items","blocks","fluids","display_blocks","tooltips","crafting_remainders"]){const seen=new Set((t[sec]||[]).map(e=>e.id||e.item));for(const e of (v[sec]||[]))if(!seen.has(e.id||e.item)){(t[sec]=t[sec]||[]).push(e);seen.add(e.id||e.item);}}t.hide_items=[...new Set([...(t.hide_items||[]),...(v.hide_items||[])])];target[k]=t;}else if(k.endsWith("ConfigDefaults.java")&&typeof v==="string"&&typeof target[k]==="string"){const isDisable=s=>s&&s.trimStart().startsWith("public static final List<String> HIDE_ITEMS_DEFAULT");if(isDisable(target[k])&&isDisable(v)){const ids=[...new Set([...extractListIds(target[k]),...extractListIds(v)])];target[k]=buildModConfigNote(ids);}else{target[k]=target[k].includes(v)?target[k]:target[k]+"\n\n"+v;}}else if(typeof v==="string"&&typeof target[k]==="string"){const sep=(k.endsWith("ItemRegistry.java")||k.endsWith("BlockRegistry.java")||k.endsWith("FluidRegistry.java")||k.endsWith("DisplayRegistry.java"))?"\n":"\n\n";target[k]=target[k].includes(v)?target[k]:target[k]+sep+v;}else{target[k]=v;}}};
         for(const spec of o.items){
           // ── Recipes-only mode ─────────────────────────────────────────
           // For items that are already registered elsewhere — no item/lang/registry
@@ -562,7 +579,7 @@ async function importFromFiles(fileList,{onImportRecipe,onImportItem,setLog,onBa
           if(itemRecipesOnly){
             if(!spec.id){results.push("⚠ "+name+": recipes-only item missing \"id\" — skipped");continue;}
             for(const r of(spec.recipes||[])){
-              const rec={...BLANK_REC(),recipeType:r.type,outputId:r.output||spec.id,outputCount:r.count??1,inputs:(r.inputs||[]).map(inp=>({type:inp.type||"tag",value:inp.value||""})),altSuffix:r.suffix||"",isFluidOutput:r.fluidOutput||false,fluidAmount:r.fluidAmount||250,experience:r.experience||0,cookingtime:r.cookingtime||200,byproductId:r.byproductId||r.extraOutput||""};
+              const rec={...BLANK_REC(),recipeType:r.type,outputId:r.output||spec.id,outputCount:r.count??1,inputs:(r.inputs||[]).map(inp=>({type:inp.type||"tag",value:inp.value||""})),altSuffix:r.suffix||"",isFluidOutput:r.fluidOutput||false,fluidAmount:r.fluidAmount||250,experience:r.experience||0,cookingtime:r.cookingtime||defaultTicks(r.type),byproductId:r.byproductId||r.extraOutput||"",byproductFluid:r.byproductFluid||""};
               if(r.type==="minecraft:crafting_shaped"&&r.pattern&&r.keys){rec.shapedPattern=r.pattern;rec.shapedKey=Object.entries(r.keys).map(([letter,inp])=>({letter,inputType:inp.type||"tag",input:inp.value||""}));}
               const p=recipeFilePath(rec);const j=buildRecipeJson(rec);
               if(p&&j){
@@ -575,18 +592,20 @@ async function importFromFiles(fileList,{onImportRecipe,onImportItem,setLog,onBa
           }
           // ─────────────────────────────────────────────────────────────
           const isFluid=spec.registrationType==="fluidEntry"||spec.type==="fluidEntry";
+          // Variants would each need their own existing fluid; nothing uses that, so it is refused rather than half-supported.
+          if(isFluid&&spec.vesselsOnly&&(spec.variants||[]).length){results.push("⚠ "+name+": "+spec.id+" sets vesselsOnly with variants, which is not supported — skipped");continue;}
           const isBlock=spec.registrationType==="block"||BLOCK_TYPES.includes(spec.type);
           const registrationType=isFluid?"fluidEntry":isBlock?"block":"item";
           const blockType=BLOCK_TYPES.includes(spec.type)?spec.type:(spec.blockType||"block_cake");
           const sliceFxArr=mapFx(spec.sliceEffects);
-          const itemState={...BLANK_ITEM,id:spec.id||"",displayName:spec.displayName||spec.display||spec.id||"",registrationType,blockType,itemType:(!isFluid&&!isBlock)?(spec.type||"food"):BLANK_ITEM.itemType,nutrition:spec.nutrition??BLANK_ITEM.nutrition,saturation:spec.saturation??BLANK_ITEM.saturation,fast:spec.fast??false,crBowl:spec.crBowl??false,effects:mapFx(spec.effects),tooltipKeys:spec.tooltips||spec.tooltipKeys||[],customTooltipKeys:(spec.customTooltips||spec.customTooltipKeys||[]).map(c=>(typeof c==="string"?{key:c,display:c}:{key:c.key,display:c.display||c.key})),customCompatKeys:(spec.customCompatKeys||[]).map(c=>(typeof c==="string"?{key:c,display:c}:{key:c.key,display:c.display||c.key})),isCompat:spec.isCompat||false,compatKey:spec.compatKey||"",sliceId:spec.sliceId||"",sliceHasFood:spec.sliceNutrition!=null?true:BLANK_ITEM.sliceHasFood,sliceNutrition:spec.sliceNutrition??BLANK_ITEM.sliceNutrition,sliceSaturation:spec.sliceSaturation??BLANK_ITEM.sliceSaturation,sliceFast:spec.sliceFast??BLANK_ITEM.sliceFast,sliceEffects:sliceFxArr,sliceJavaClass:sliceFxArr.length?"ConsumableItem":"Item",createBottle:spec.createBottle||false,bottleSize:BOTTLE_SIZES.includes(spec.bottleSize)?spec.bottleSize:AMOUNTS.SERVING,bottleNutrition:spec.bottleNutrition??4,bottleSaturation:spec.bottleSaturation??1.0,bottleEffects:mapFx(spec.bottleEffects),bottleTooltipKeys:spec.bottleTooltips||[],createBowl:spec.createBowl||false,bowlNutrition:spec.bowlNutrition??4,bowlSaturation:spec.bowlSaturation??0.6,bowlEffects:mapFx(spec.bowlEffects),bowlTooltipKeys:spec.bowlTooltips||[],hasVariants:!!(spec.variants?.length),variants:(spec.variants||[]).map(v=>({id:v.id,displayName:v.displayName||v.display||v.id,nutrition:v.nutrition,saturation:v.saturation,effects:mapFx(v.effects),tooltipKeys:v.tooltips||v.tooltipKeys||null}))};
+          const itemState={...BLANK_ITEM,id:spec.id||"",displayName:spec.displayName||spec.display||spec.id||"",registrationType,blockType,itemType:(!isFluid&&!isBlock)?(spec.type||"food"):BLANK_ITEM.itemType,nutrition:spec.nutrition??BLANK_ITEM.nutrition,saturation:spec.saturation??BLANK_ITEM.saturation,fast:spec.fast??false,crBowl:spec.crBowl??false,effects:mapFx(spec.effects),tooltipKeys:spec.tooltips||spec.tooltipKeys||[],customTooltipKeys:(spec.customTooltips||spec.customTooltipKeys||[]).map(c=>(typeof c==="string"?{key:c,display:c}:{key:c.key,display:c.display||c.key})),customCompatKeys:(spec.customCompatKeys||[]).map(c=>(typeof c==="string"?{key:c,display:c}:{key:c.key,display:c.display||c.key})),isCompat:spec.isCompat||false,compatKey:spec.compatKey||"",sliceId:spec.sliceId||"",sliceHasFood:spec.sliceNutrition!=null?true:BLANK_ITEM.sliceHasFood,sliceNutrition:spec.sliceNutrition??BLANK_ITEM.sliceNutrition,sliceSaturation:spec.sliceSaturation??BLANK_ITEM.sliceSaturation,sliceFast:spec.sliceFast??BLANK_ITEM.sliceFast,sliceEffects:sliceFxArr,sliceJavaClass:sliceFxArr.length?"ConsumableItem":"Item",createBottle:spec.createBottle||false,vesselsOnly:isFluid&&spec.vesselsOnly===true,bottleSize:BOTTLE_SIZES.includes(spec.bottleSize)?spec.bottleSize:AMOUNTS.SERVING,bottleHasFood:spec.bottleHasFood??BLANK_ITEM.bottleHasFood,bottleNutrition:spec.bottleNutrition??4,bottleSaturation:spec.bottleSaturation??1.0,bottleEffects:mapFx(spec.bottleEffects),bottleTooltipKeys:spec.bottleTooltips||[],createBowl:spec.createBowl||false,bowlHasFood:spec.bowlHasFood??BLANK_ITEM.bowlHasFood,bowlNutrition:spec.bowlNutrition??4,bowlSaturation:spec.bowlSaturation??0.6,bowlEffects:mapFx(spec.bowlEffects),bowlTooltipKeys:spec.bowlTooltips||[],hasVariants:!!(spec.variants?.length),variants:(spec.variants||[]).map(v=>({id:v.id,displayName:v.displayName||v.display||v.id,nutrition:v.nutrition,saturation:v.saturation,effects:mapFx(v.effects),tooltipKeys:v.tooltips||v.tooltipKeys||null}))};
           const effSlice=itemState.sliceId||(itemState.id?itemState.id+"_slice":"");
           const iFiles=buildItemFiles({...itemState,sliceId:effSlice});delete iFiles._autoSet;delete iFiles._variantSet;
           const arFiles=buildAutoRecipeFiles({...itemState,sliceId:effSlice});
           mergeInto(bItemFiles,iFiles);Object.assign(bRecipeFiles,arFiles);
           const autoPaths=new Set(Object.keys(arFiles));
           for(const r of(spec.recipes||[])){
-            const rec={...BLANK_REC(),recipeType:r.type,outputId:r.output||spec.id,outputCount:r.count??1,inputs:(r.inputs||[]).map(inp=>({type:inp.type||"tag",value:inp.value||""})),altSuffix:r.suffix||"",isFluidOutput:r.fluidOutput||false,fluidAmount:r.fluidAmount||250,experience:r.experience||0,cookingtime:r.cookingtime||200,byproductId:r.byproductId||r.extraOutput||""};
+            const rec={...BLANK_REC(),recipeType:r.type,outputId:r.output||spec.id,outputCount:r.count??1,inputs:(r.inputs||[]).map(inp=>({type:inp.type||"tag",value:inp.value||""})),altSuffix:r.suffix||"",isFluidOutput:r.fluidOutput||false,fluidAmount:r.fluidAmount||250,experience:r.experience||0,cookingtime:r.cookingtime||defaultTicks(r.type),byproductId:r.byproductId||r.extraOutput||"",byproductFluid:r.byproductFluid||""};
             if(r.type==="minecraft:crafting_shaped"&&r.pattern&&r.keys){rec.shapedPattern=r.pattern;rec.shapedKey=Object.entries(r.keys).map(([letter,inp])=>({letter,inputType:inp.type||"tag",input:inp.value||""}));}
             const p=recipeFilePath(rec);const j=buildRecipeJson(rec);
             if(p&&j){
@@ -729,7 +748,7 @@ const BLANK_ITEM={
   sliceJavaClass:"Item",sliceHasFood:true,sliceNutrition:2,sliceSaturation:0.3,sliceFast:true,
   sliceEffects:[],sliceShowEffectTooltip:true,
   fluidFlowSlope:0,fluidFlowDecrease:0,
-  createBottle:false,bottleSize:AMOUNTS.SERVING,
+  createBottle:false,bottleSize:AMOUNTS.SERVING,vesselsOnly:false,
   bottleHasFood:true,bottleNutrition:4,bottleSaturation:1.0,bottleFast:false,
   bottleEffects:[],bottleShowEffectTooltip:true,bottleStackSize:16,
   createBowl:false,
@@ -815,7 +834,7 @@ function ItemPanel({item,onChange,sections,setSections,onSave,onReset,hasSaved,a
         <div style={{display:"flex",gap:6,marginBottom:10}}>{["item","block","fluidEntry"].map(t=><button key={t} onClick={()=>{set("registrationType",t);openNext("registration");}} style={{flex:1,background:registrationType===t?S.accent:S.faint,border:"1px solid "+(registrationType===t?S.accent:S.border),color:S.text,borderRadius:5,padding:"5px 0",fontSize:11,cursor:"pointer",fontFamily:"inherit",fontWeight:registrationType===t?600:400,textTransform:"capitalize"}}>{t}</button>)}</div>
         {isItem&&isCF&&<><Sel label="Item Type" value={itemType||"food"} onChange={v=>{set("itemType",v);openNext("registration");}} options={ITEM_TYPE_OPTIONS.map(o=>({v:o.v,l:o.l}))} note={itemTypeInfo(itemType||"food").desc}/>{itemType==="plainCr"&&<Sel label="Remainder" value={craftRemainder} onChange={v=>set("craftRemainder",v)} options={CRAFT_REMAIN}/>}{(itemType==="bowlFood"||itemType==="bowlConsumable")&&<Tog label="Craft remainder returns bowl" value={crBowl||false} onChange={v=>set("crBowl",v)}/>}</>}
         {isBlock&&isCF&&<><Sel label="Block Type" value={blockType} onChange={v=>set("blockType",v)} options={[{v:"block_cake",l:"Cake (7 bites)"},{v:"block_pie",l:"Pie / Cheesecake (4 slices)"},{v:"block_pizza",l:"Pizza / Waffle (4 slices)"},{v:"block_raw_pie",l:"Raw Pie"},{v:"block_raw_pizza",l:"Raw Pizza"}]} note={{"block_cake":"Placed cake consumed bite by bite. Generates 7-slice cutting recipe and a slice item. Stack 1.","block_pie":"4-slice pie or cheesecake. Generates a cooked block + raw block pair and a slice item.","block_pizza":"4-slice pizza or waffle. Generates a cooked block + raw block pair and a slice item.","block_raw_pie":"Standalone raw pie block only — no cooked form or slice. Use when the cooked block is registered separately.","block_raw_pizza":"Standalone raw pizza block only — no cooked form or slice. Use when the cooked block is registered separately."}[blockType]}/>{(blockType==="block_cake"||blockType==="block_pie"||blockType==="block_pizza")&&<Inp label="Slice ID" value={sliceId} onChange={v=>set("sliceId",v)} placeholder={id?id+"_slice":"id_slice"} mono note="Only set this if the slice ID doesn't follow the default pattern."/>}</>}
-        {isFluid&&isCF&&<><div style={{display:"flex",gap:8}}><div style={{flex:1}}><Num label="Flow slope" value={fluidFlowSlope} onChange={v=>set("fluidFlowSlope",v)} min={0} max={5} note="Higher = flows less far sideways."/></div><div style={{flex:1}}><Num label="Flow decrease" value={fluidFlowDecrease} onChange={v=>set("fluidFlowDecrease",v)} min={0} max={8} note="Higher = shorter vertical drop."/></div></div><Tog label="Has bottle item" value={createBottle} onChange={v=>set("createBottle",v)}/>{createBottle&&<Sel label="Bottle size" value={String(item.bottleSize||AMOUNTS.SERVING)} onChange={v=>set("bottleSize",Number(v))} options={[{v:String(AMOUNTS.SERVING),l:AMOUNTS.SERVING+"mB — standard (4 per bucket)"},{v:String(AMOUNTS.BOTTLE_LARGE),l:AMOUNTS.BOTTLE_LARGE+"mB — concentrate (2 per bucket)"}]} note="Concentrates (jams, milkshakes, molasses, egg whites) use the larger bottle. Drives the filling, emptying and bucket crafting ratio."/>}<Tog label="Has bowl item" value={item.createBowl||false} onChange={v=>set("createBowl",v)}/></>}
+        {isFluid&&isCF&&<><div style={{display:"flex",gap:8}}><div style={{flex:1}}><Num label="Flow slope" value={fluidFlowSlope} onChange={v=>set("fluidFlowSlope",v)} min={0} max={5} note="Higher = flows less far sideways."/></div><div style={{flex:1}}><Num label="Flow decrease" value={fluidFlowDecrease} onChange={v=>set("fluidFlowDecrease",v)} min={0} max={8} note="Higher = shorter vertical drop."/></div></div><Tog label="Fluid already registered (add vessels only)" value={item.vesselsOnly||false} onChange={v=>set("vesselsOnly",v)}/>{item.vesselsOnly&&<Info>Only the bottle and bowl are generated: no FluidRegistry line, no fluid, block or bucket lang. The id must match the existing fluid.</Info>}<Tog label="Has bottle item" value={createBottle} onChange={v=>set("createBottle",v)}/>{createBottle&&<Sel label="Bottle size" value={String(item.bottleSize||AMOUNTS.SERVING)} onChange={v=>set("bottleSize",Number(v))} options={[{v:String(AMOUNTS.SERVING),l:AMOUNTS.SERVING+"mB — standard (4 per bucket)"},{v:String(AMOUNTS.BOTTLE_LARGE),l:AMOUNTS.BOTTLE_LARGE+"mB — concentrate (2 per bucket)"}]} note="Concentrates (jams, milkshakes, molasses, egg whites) use the larger bottle. Drives the filling, emptying and bucket crafting ratio."/>}<Tog label="Has bowl item" value={item.createBowl||false} onChange={v=>set("createBowl",v)}/></>}
         {!isCF&&<Info>Non-createfood namespace — lang and recipe files are generated; Java registration files are not.</Info>}
       </Section>
       {(()=>{const itype=itemType||"food";const typeHasFood=itemTypeHasFood(itype);const isConsumableType=itype==="consumable"||itype==="bowlConsumable";
@@ -831,7 +850,7 @@ function ItemPanel({item,onChange,sections,setSections,onSave,onReset,hasSaved,a
       </>}
       {isFluid&&isCF&&createBottle&&<>
         <Section title="Bottle Properties" open={openMap.bottleprops} onToggle={()=>toggle("bottleprops")}>
-          <Info>DrinkableItem registered for the bottle form of this fluidEntry. Stack size is always 16.</Info>
+          <Info>{bottleHasFood?"DrinkableItem registered for the bottle form of this fluidEntry.":"ingredientBottle registered for the bottle form of this fluidEntry — no food value, returns a glass bottle, and carries no effects or ingredient tooltips."} Stack size is always 16.</Info>
           <FoodSection hasFood={bottleHasFood} nutrition={bottleNutrition} saturation={bottleSaturation} fast={bottleFast} onToggle={v=>set("bottleHasFood",v)} onNut={v=>set("bottleNutrition",v)} onSat={v=>set("bottleSaturation",v)} onFast={v=>set("bottleFast",v)}/>
         </Section>
         {bottleHasFood&&<Section title="Bottle Effects" open={openMap.bottleeffects} onToggle={()=>toggle("bottleeffects")}>
@@ -843,7 +862,7 @@ function ItemPanel({item,onChange,sections,setSections,onSave,onReset,hasSaved,a
       </>}
       {isFluid&&isCF&&item.createBowl&&<>
         <Section title="Bowl Properties" open={openMap.bowlprops} onToggle={()=>toggle("bowlprops")}>
-          <Info>ConsumableItem registered for the bowl form of this fluidEntry. Stack size is always 16.</Info>
+          <Info>{item.bowlHasFood?"ConsumableItem registered for the bowl form of this fluidEntry.":"ingredientBowl registered for the bowl form of this fluidEntry — not edible, returns a bowl, and carries no effects or ingredient tooltips."} Stack size is always 16.</Info>
           <FoodSection hasFood={item.bowlHasFood} nutrition={item.bowlNutrition} saturation={item.bowlSaturation} fast={item.bowlFast} onToggle={v=>set("bowlHasFood",v)} onNut={v=>set("bowlNutrition",v)} onSat={v=>set("bowlSaturation",v)} onFast={v=>set("bowlFast",v)}/>
         </Section>
         {item.bowlHasFood&&<Section title="Bowl Effects" open={openMap.bowleffects} onToggle={()=>toggle("bowleffects")}>
@@ -958,13 +977,13 @@ function RecipeCard({rec,idx,onChange,onRemove,onCopy}){
       <span style={{background:S.accent,color:S.text,borderRadius:4,padding:"1px 8px",fontSize:11,fontWeight:700}}>#{idx+1}</span>
       <div style={{display:"flex",gap:4}}><Btn small color={S.faint} onClick={onCopy}>Copy</Btn><Btn small color={S.darkred} onClick={onRemove}>Remove</Btn></div>
     </div>
-    <Sel value={rec.recipeType} onChange={v=>upd("recipeType",v)} options={RECIPE_TYPES.map(r=>({v:r.id,l:r.label}))} note={RECIPE_TYPES.find(r=>r.id===rec.recipeType)?.desc}/>
+    <Sel value={rec.recipeType} onChange={v=>onChange({...rec,recipeType:v,cookingtime:rec.cookingtime===defaultTicks(rec.recipeType)?defaultTicks(v):rec.cookingtime})} options={RECIPE_TYPES.map(r=>({v:r.id,l:r.label}))} note={RECIPE_TYPES.find(r=>r.id===rec.recipeType)?.desc}/>
     {!isShaped&&<>
       <div style={{fontSize:10,color:S.muted,marginBottom:4}}>Inputs</div>
       {rec.inputs.map((inp,i)=>(
           <div key={i} style={{display:"flex",gap:4,marginBottom:4}}>
             <select value={inp.type} onChange={e=>updInp(i,{...inp,type:e.target.value})} style={{background:S.code,border:"1px solid "+S.border,color:S.muted,borderRadius:4,padding:"4px 5px",fontSize:11,fontFamily:"inherit",outline:"none"}}>
-              <option value="tag">tag c:</option><option value="item">item</option>
+              <option value="tag">tag c:</option><option value="item">item</option><option value="water_bottle">water bottle</option>
               {isCreate&&<option value="fluid_tag">fluidEntry|mB</option>}
             </select>
             <input value={inp.value} onChange={e=>updInp(i,{...inp,value:e.target.value})} placeholder={inp.type==="fluid_tag"?"apple_custard|250":inp.type==="item"?"minecraft:glass_bottle":"tag name"} style={{flex:1,background:S.code,border:"1px solid "+S.border,color:S.text,borderRadius:4,padding:"4px 7px",fontSize:11,fontFamily:"monospace",outline:"none"}}/>
@@ -985,6 +1004,7 @@ function RecipeCard({rec,idx,onChange,onRemove,onCopy}){
       {isMixComp&&<Tog label="Fluid output" value={rec.isFluidOutput} onChange={v=>upd("isFluidOutput",v)}/>}
       {rec.recipeType==="create:item_application"&&<Inp label="Byproduct ID (optional)" value={rec.byproductId||""} onChange={v=>upd("byproductId",v)} placeholder="piping_bag" mono note="Second item returned to the player (e.g. the applicator). Leave blank for none."/>}
       {rec.recipeType==="create:emptying"&&<Inp label="Container ID (optional)" value={rec.byproductId||""} onChange={v=>upd("byproductId",v)} placeholder="minecraft:stick" mono note="Container handed back with the fluid. Needed whenever it isn't named after the fluid — a stick, a bowl, a piping bag."/>}
+      {rec.recipeType==="create:milling"&&<Num label="Processing ticks" value={rec.cookingtime} onChange={v=>upd("cookingtime",v)} min={10} max={600} note="Base millstone time, scaled by speed. Existing recipes use 50 to 100."/>}
       {(isFD||(isVanilla&&!rec.recipeType.includes("crafting")))&&<div style={{display:"flex",gap:8}}><div style={{flex:1}}><Num label="XP" value={rec.experience} onChange={v=>upd("experience",v)} min={0} max={10} step={0.05}/></div>{isVanilla&&!rec.recipeType.includes("crafting")&&<div style={{flex:1}}><Num label="Cook ticks" value={rec.cookingtime} onChange={v=>upd("cookingtime",v)} min={20} max={600}/></div>}</div>}
     </>}
     {isShaped&&<>

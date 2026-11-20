@@ -32,7 +32,7 @@ public final class EffectEntry {
         if (foodEffect != null) return foodEffect.getCategoryName();
         if (rawEffect  != null) return rawEffect.unwrapKey()
                 .map(k -> k.location().toString()).orElse("unknown");
-        throw new IllegalStateException("EffectSpec has neither EffectChain nor rawEffect");
+        throw new IllegalStateException("EffectEntry has neither EffectChain nor rawEffect");
     }
 
     public static EffectEntry of(EffectChain e, int dur) {

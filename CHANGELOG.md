@@ -1,3 +1,38 @@
+### *** 3.1.0 ***
+![newprev310](https://github.com/user-attachments/assets/b6343c59-4e9f-4a6c-9bc3-837bb160cfbf)
+
+#### Changes:
+* Built-in resource packs now only appear when the related mod is present. [(#58)](https://github.com/AverageAnime/create-food-multiloader/issues/58)
+* Update ru_ru.json translations. [(#60)](https://github.com/AverageAnime/create-food-multiloader/pull/60)
+* Various recipe chains have been updated. See the full list of changes [here](https://github.com/AverageAnime/create-food-multiloader/wiki/Recipe-Changelog).
+* Rebalanced nutrition, saturation, and effects for various foods.
+  * Cooked meats are now changed to better match vanilla value spread.
+  * Foods are no longer worth less than a food they are made from, e.g. pastries, donuts and toast.
+* New config option `cooking_pot_display` to show the contents of Farmer's Delight cooking pots, similar to Create's basin. (Default: true)
+  * Bubble particles will also only appear while heated with a fluid inside.
+* Updated display plate interactions. They no longer require Create or Farmer's Delight installed, can convert multiple servings on a plate at once, and work on placeable blocks from other mods. Read more [here](https://github.com/AverageAnime/create-food-multiloader/wiki/Adapted-Recipes).
+* An empty `bottle_block` will now keep the shape of the drink it held. Use `Shift + RMB` empty-handed to cycle between shapes.
+* Any rolling pin (`c:tools/rolling_pin`) used on placed food now uses pressing, single-ingredient compacting (unheated) and Ube's Delight baking mat recipes.
+  * New config option `enable_rolling_pin` to turn this off while keeping knife cutting. (Default: true)
+  * Items listed in `display_interactions_exclude` are now also skipped by tools on plates, e.g. `tag:c:ingots` to stop a rolling pin pressing ingots into sheets.
+* New display blocks for `salt_dough`, `pizza_dough` and `raw_pizzas` so they can be placed and assembled on plates.
+* Farmer's Delight `sweet_berry_cheesecake` can now be placed on plates.
+* Delightful Creators and Cultural Creators bowl food buckets (soups, stews, `creamed_corn`, etc.) can now be crafted to and from 4 bowls, same as Create: Food's own soups.
+  * Vanilla `mushroom_stew`, `rabbit_stew` and `beetroot_soup` now leave their bowl when used in crafting, added to the `crafting_remainders` default.
+
+#### Fixes:
+* Fix Farmer's Respite `coffee_bean` not being tagged making `espresso_powder` recipes not work. [(#45)](https://github.com/AverageAnime/create-food-multiloader/issues/45)
+* Fix `ground_mushroom` recipes incorrectly using `c:mushrooms`; now uses `c:any_sliced_mushrooms` tag. [(#59)](https://github.com/AverageAnime/create-food-multiloader/issues/59)
+* Fix `sequenced_assembly` recipes being rejected by KubeJS-Create. [(#61)](https://github.com/AverageAnime/create-food-multiloader/issues/61)
+* Fix `create:milling` recipes missing `processing_time`. [(#62)](https://github.com/AverageAnime/create-food-multiloader/issues/62)
+* Fix missing `create:deploying` and `create:filling` recipes. [(#63)](https://github.com/AverageAnime/create-food-multiloader/issues/63)
+* Fix multi-serving plates deleting the other servings when cut; each use now takes one serving, leaving the container when empty.
+* Fix chocolate graham cracker + ice cream recipes so they now take two scoops, same as other recipes.
+* Fix Farmer's Delight `mutton_wrap` crafting recipe ignoring `hide_items`.
+* Fix some pasta plate recipes missing load conditions.
+* Fix `paprika` not being made from `nether_wart` in some recipes.
+* Fix Create Crafts & Additions `cake_base_baked` not being tagged as `c:cake_base`.
+
 ### *** 3.0.0 ***
 
 ![newprev300](https://github.com/user-attachments/assets/03ae6e5f-27c5-4fea-9693-ebab9998a33b)
@@ -209,7 +244,7 @@ Fabric version released.
 
 #### Changes:
 * New settings in`createfood-server.toml`.  Read more [here](https://github.com/AverageAnime/create-food-multiloader/wiki/Config-Options).
-* Crafting recipes with only two ingredients can now be made by holding the ingredients in each hand and using `RMB`. Read more [here](https://github.com/AverageAnime/create-food-multiloader/wiki/Hand-Crafting-Guide).
+* Crafting recipes with only two ingredients can now be made by holding the ingredients in each hand and using `RMB`. Read more [here](https://github.com/AverageAnime/create-food-multiloader/wiki/Handcrafting-Guide).
 * Filled cloth filters now have right click interactions to strain the contents. Read more [here](https://github.com/AverageAnime/create-food-multiloader/wiki/Cloth-Filters-Guide).
 * Display Delight supported items can now be placed onto Create: Food plates.
 * Create: Food plates now support bulk serving placement using `Shift + RMB`.

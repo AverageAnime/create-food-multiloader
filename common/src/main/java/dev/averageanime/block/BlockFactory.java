@@ -1,6 +1,7 @@
 package dev.averageanime.block;
 
 import dev.averageanime.CreateFoodCommon;
+import dev.averageanime.client.tooltip.ItemTooltips;
 import dev.averageanime.block.type.cake.*;
 import dev.averageanime.block.type.misc.CheeseBlock;
 import dev.averageanime.block.type.misc.GyroMeatBlock;
@@ -11,14 +12,17 @@ import dev.averageanime.block.type.pie.RawPizzaBlock;
 import dev.averageanime.registry.BlockRegistry;
 import dev.averageanime.registry.type.BlockEntry;
 import dev.averageanime.registry.ItemLookup;
-import dev.averageanime.registry.type.ItemEntry;
 import dev.averageanime.util.Tooltips;
-import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.Items;
+import net.minecraft.network.chat.Component;
+import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SlimeBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
@@ -28,6 +32,20 @@ import java.util.List;
 import java.util.function.Supplier;
 
 public final class BlockFactory {
+
+    /** The item of a block this mod registers, with the ingredient tooltip when it has one. */
+    public static BlockItem blockItem(Block block, int stackLimit, @Nullable Tooltips.TooltipSpec tip) {
+        Item.Properties props = new Item.Properties().stacksTo(stackLimit);
+        if (tip == null) return new BlockItem(block, props);
+        return new BlockItem(block, props) {
+            @Override
+            public void appendHoverText(@NotNull ItemStack stack, @NotNull Item.TooltipContext context,
+                                        @NotNull List<Component> components, @NotNull TooltipFlag flag) {
+                ItemTooltips.addTooltip(components, tip.compat(), tip.keys());
+                super.appendHoverText(stack, context, components, flag);
+            }
+        };
+    }
 
     public interface Hooks {
         Supplier<net.minecraft.world.level.block.Block> registerBlock(

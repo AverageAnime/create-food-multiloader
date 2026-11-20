@@ -8,7 +8,6 @@ import dev.averageanime.block.type.plate.EmptySmallPlateBlock;
 import dev.averageanime.block.type.plate.GenericDisplayPlateBlock;
 import dev.averageanime.config.ConfigValues;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
@@ -37,7 +36,6 @@ public final class BlockFoodConversion {
 
         // Display blocks run their own serving-aware version.
         if (block instanceof FoodBlock) return false;
-        if (!isModBlock(block)) return false;
         // These surfaces have their own useItemOn, and this event runs first.
         if (block instanceof EmptyBottleBlock
                 || block instanceof EmptyBowlBlock
@@ -61,7 +59,7 @@ public final class BlockFoodConversion {
         if (placedStack.isEmpty() || placedStack.getItem() == Items.AIR) return false;
         if (ConfigValues.isDisplayInteractionExcluded(placedStack)) return false;
 
-        FoodConversion.Outcome outcome = FoodConversion.resolve(level, placedStack, heldStack);
+        FoodConversion.Outcome outcome = FoodConversion.resolve(level, placedStack, heldStack, 1);
         if (outcome == null || !outcome.convertsBlock()) return false;
 
         Block target = Block.byItem(outcome.result().getItem());
@@ -81,11 +79,6 @@ public final class BlockFoodConversion {
         level.playSound(null, pos, FoodConversion.soundFor(level, heldBefore, outcome, SoundEvents.ITEM_FRAME_ADD_ITEM),
                 SoundSource.BLOCKS, 0.9F, 1.0F);
         return true;
-    }
-
-    private static boolean isModBlock(Block block) {
-        var key = BuiltInRegistries.BLOCK.getKey(block);
-        return key != null && key.getNamespace().equals(dev.averageanime.CreateFoodCommon.MOD_ID);
     }
 
     private static BlockState copyShared(BlockState from, BlockState to) {

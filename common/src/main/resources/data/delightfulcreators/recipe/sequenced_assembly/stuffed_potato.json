@@ -75,9 +75,9 @@
                     "item": "delightfulcreators:incomplete_stuffed_potato"
                 },
                 {
-                    "type": "fluid_tag",
+                    "type": "neoforge:tag",
                     "amount": 250,
-                    "fluid_tag": "c:milk"
+                    "tag": "c:milk"
                 }
             ],
             "results": [

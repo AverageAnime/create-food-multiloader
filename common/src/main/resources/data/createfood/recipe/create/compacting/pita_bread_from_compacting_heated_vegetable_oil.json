@@ -27,7 +27,7 @@
         {
             "type": "fluid_tag",
             "amount": 125,
-            "fluid_tag": "c:vegetable_oil"
+            "fluid_tag": "c:frying_fat"
         },
         {
             "tag": "c:pita_dough_ingredients"

@@ -67,7 +67,7 @@ The `custom_tooltips` config list adds ingredient tooltips to items from other m
 
 Custom tooltip changes require a game restart.
 
-> Custom tooltips are a player/server config feature. Use `tips(...)` in `ModItems.java` for items defined in the mod itself.
+> Custom tooltips are a player/server config feature. Use `tips(...)` in `ItemRegistry.java` for items defined in the mod itself.
 
 ---
 
@@ -114,14 +114,17 @@ To disable: set `enable_handcrafting = false`.
 
 ## 5. Campfire Cooking
 
-Holding a raw or cookable item and standing near any block tagged `farmersdelight:heat_sources` (5×4×5 radius around the player) will slowly cook it using vanilla campfire cooking recipes. Smoke particles appear during cooking; flame particles and a campfire crackle sound play on completion.
+Holding a raw or cookable item and standing near any block tagged `farmersdelight:heat_sources` (within `horizontal_range` blocks sideways and `vertical_range` blocks up or down of the player, 3 and 1 by default) will slowly cook it using vanilla campfire cooking recipes. Smoke particles appear during cooking; flame particles and a campfire crackle sound play on completion.
 
-By default (`sticks_only = true`) only items that produce a `*_stick` result are eligible — intended for marshmallow sticks and hot dog sticks. Set `sticks_only = false` to allow any campfire recipe.
+The feature is off by default (`enable_campfire_cooking = false`). Once enabled, any campfire recipe is eligible; set `sticks_only = true` to restrict it to items that produce a `*_stick` result — intended for marshmallow sticks and hot dog sticks. The Shift key must be held unless `require_shift = false`.
 
 | Config | Default | Effect |
 |--------|---------|--------|
-| `enable_campfire_cooking` | `true` | Toggle manual campfire cooking |
-| `sticks_only` | `true` | Restrict to results whose ID ends in `_stick` |
+| `enable_campfire_cooking` | `false` | Toggle manual campfire cooking |
+| `require_shift` | `true` | Only cook while the player is holding Shift |
+| `sticks_only` | `false` | Restrict to results whose ID ends in `_stick` |
+| `horizontal_range` | `3` | Blocks sideways to search for a heat source (1–16) |
+| `vertical_range` | `1` | Blocks up or down to search for a heat source (0–8) |
 | `campfire_cooking_exclude` | *(empty)* | Blacklist specific result item IDs |
 | `campfire_cooking_filter` | *(empty)* | Whitelist of allowed result item IDs (if non-empty, only these cook) |
 
@@ -135,7 +138,7 @@ Thrown egg → `eggshell` dropped at impact. Toggle with `enable_egg_impact_rema
 
 ### Custom Crafting Remainders
 
-Format: `"input_item|remainder_item"`. Default: `"minecraft:egg|createfood:eggshell"`.
+Format: `"input_item|remainder_item"`. Default: `"minecraft:egg|createfood:eggshell"`, and `minecraft:mushroom_stew`, `minecraft:rabbit_stew`, `minecraft:beetroot_soup` → `"|minecraft:bowl"`.
 
 > Only applies to vanilla crafting table recipes.
 
@@ -184,7 +187,7 @@ Decorative blocks. Not obtainable via recipes — placed and interacted with in 
 - **Add serving:** `RMB` with compatible food; `Shift + RMB` for all at once
 - **Remove serving:** `RMB` (one); `Shift + RMB` (all)
 - **Eat from plate:** `Shift + LMB` — consumes one serving directly
-- **Cutting board (offhand):** Holding a Farmer's Delight cutting board in offhand and pressing `RMB` on a plate processes the top item with cutting board recipes
+- **Cut or roll:** `RMB` holding a tool, in either hand, processes one serving with Farmer's Delight cutting recipes for that tool. A rolling pin (`c:tools/rolling_pin`) also runs single-ingredient Ube's Delight baking mat recipes, Create pressing, and unheated single-item Create compacting. Items in `display_interactions_exclude` are skipped. Works without Farmer's Delight, Create or Ube's Delight (see Dipping below). Gated by `enable_cutting_board`; the pin's baking mat, pressing and compacting also by `enable_rolling_pin`
 - **Break:** `LMB` — drops food block (full) or individual items + bowl (partial)
 
 When `enable_generic_display` is `true` (the default), any item not explicitly registered can still be placed on an empty plate or bowl and rendered generically.
@@ -197,7 +200,7 @@ Empty display surfaces cycle between three forms with `Shift + RMB`: plate → s
 - **Retrieve:** `RMB` on placed block
 - **Break:** `LMB` — drops block version
 
-Drinking a placed bottle, or decanting it with an empty glass bottle, leaves an empty bottle block (`createfood:bottle_block`) behind, the way a bowl already leaves `bowl_block`. Retrieving the drink whole still clears the block, since the item carries its own bottle. `RMB` that empty bottle with a filled bottle to stand that drink back up; `RMB` it empty-handed for the glass bottle.
+Drinking a placed bottle, or decanting it with an empty glass bottle, leaves an empty bottle block (`createfood:bottle_block`) behind, the way a bowl already leaves `bowl_block`. Retrieving the drink whole still clears the block, since the item carries its own bottle. `RMB` that empty bottle with a filled bottle to stand that drink back up; `RMB` it empty-handed for the glass bottle. An emptied bottle keeps the glass shape of the drink it held; `Shift + RMB` it empty-handed to cycle that shape (standard, mug, jar, tall, goblet, juice).
 
 ### Transforming placed food
 
@@ -205,7 +208,7 @@ Using an item on a placed food combines the two through recipes that already exi
 
 ### Auto-Registration
 
-> **Toolkit:** Most items are automatically caught by existing pattern-matching in `ModDisplayBlocks`. The toolkit checks the item ID against these patterns and informs you if new code is needed. The Display Block section in the Item tab only shows for regular items (not blocks or fluids, which are always auto-caught).
+> **Toolkit:** Most items are automatically caught by existing pattern-matching in `DisplayRegistry`. The toolkit checks the item ID against these patterns and informs you if new code is needed. The Display Block section in the Item tab only shows for regular items (not blocks or fluids, which are always auto-caught).
 
 Pattern-matched automatically (by display type):
 
@@ -239,8 +242,9 @@ Right-clicking a placed food with a held item resolves against recipes that alre
 2. **Top it up with a fluid** — hold a filled container. Its fluid plus the placed food resolves a `create:filling` recipe. The amount must match exactly, so nothing is destroyed; a bucket will not apply to a 250mb recipe.
 3. **Apply an ingredient** — a two-ingredient crafting recipe of the placed food plus the held item. This is the same recipe pool handcrafting reads, and needs no Create.
 4. **Create deploying recipes** — only for the handful of results that exist nowhere else, such as the chip milkshakes.
+5. **Several servings at once** — only when nothing above matched, and only on a block holding more than one serving. A container holding a whole multiple of the recipe's amount fills that many servings: a 250mb ganache bottle tops two caramel shortbreads at 125mb each. Otherwise a shapeless crafting recipe of several placed servings plus the held item: four shortbreads and a caramel piece become four caramel shortbreads. The block must hold at least that many servings, so again nothing is destroyed.
 
-As many servings are converted as the held stack can pay for. **When the block can represent the whole result it becomes that block** — a placed milkshake bottle plus chocolate chips becomes the chip milkshake bottle; a plate of four bases plus four ingredients becomes a plate of four results. Only a partial conversion, or a result with no block of that family, hands you items instead.
+As many servings are converted as the held stack can pay for, one held item per serving or, in step 5, per group of servings. **When the block can represent the whole result it becomes that block** — a placed milkshake bottle plus chocolate chips becomes the chip milkshake bottle; a plate of four bases plus four ingredients becomes a plate of four results. Only a partial conversion, or a result with no block of that family, hands you items instead.
 
 Because this runs off an ordinary right-click, a Create Deployer can drive it.
 
@@ -248,7 +252,9 @@ Excluded foods (`display_interactions_exclude`) are skipped. The list names the 
 
 ### Dipping
 
-This is the mod's first *functional* Create integration — the ~450 `create:filling` and `create:emptying` recipe JSONs under `data/createfood/recipe/create/` previously only existed for Create's own machines. Create is not a build dependency; the recipes are read at runtime via registry lookup plus reflection, the same approach `PlateSliceInteraction` uses for Farmer's Delight cutting recipes. **Without Create the bowl still fills from buckets, but dipping is inert.**
+This is the mod's first *functional* Create integration — the ~450 `create:filling` and `create:emptying` recipe JSONs under `data/createfood/recipe/create/` previously only existed for Create's own machines. Create is not a build dependency; the recipes are read at runtime via registry lookup plus reflection, the same approach the plate uses for Farmer's Delight cutting recipes.
+
+**Without Create, Farmer's Delight or Ube's Delight** their recipes are copied onto this mod's own `createfood:adapted_*` types at load, with only that mod's own `mod_loaded` condition removed, so dipping, topping and plate cutting/rolling keep working (Fabric included, where Create does not exist). The library's `RecipeAdapter` does this on the raw JSON before the loader evaluates conditions, so every other condition — `createfood:enabled`, other mods' `mod_loaded`, tag guards, retired recipes — still applies. Copies naming the absent mod's own items are skipped. With the mod installed nothing is copied. See the wiki's Adapted Recipes page for the types and writing them by hand.
 
 ### Holding fluid
 
@@ -290,7 +296,6 @@ A filled bowl refuses the plate toggle, refuses pickup, and refuses to be stacke
 
 | Setting | Default | Effect |
 |---------|---------|--------|
-| `hide_items` | *(compat items)* | Hide items and disable recipes. Requires `/reload`. |
 | `show_compatibility` | `true` | Show compat mod name in tooltips |
 | `show_ingredients` | `true` | Show ingredient list in tooltips |
 | `require_shift` | `false` | Only show tooltip details when Shift is held |
@@ -298,6 +303,17 @@ A filled bowl refuses the plate toggle, refuses pickup, and refuses to be stacke
 | `always_display_upright` | `false` | Force all display blocks to render upright regardless of placement |
 | `show_sack_block_icons` | `true` | Show content icons on placed cloth sack blocks |
 | `show_tooltip_icons` | `true` | Show icons in storage item tooltips |
+| `cooking_pot_display` | `true` | Show liquid, ingredients and the finished meal inside Farmer's Delight cooking pots; pots only bubble while holding liquid. NeoForge only |
+
+### `createfood-common.toml`
+
+Read before registries are built, so every option here needs a game restart.
+
+| Setting | Default | Effect |
+|---------|---------|--------|
+| `hide_items` | *(compat items)* | Hide items and disable recipes. Requires `/reload`. |
+| `addons_enabled` | *(all)* | Which addon packs are active |
+| `block`, `display_block`, `fluid`, `item` | *(empty)* | Register custom blocks, display blocks, fluids and items (see §2) |
 
 ### `createfood-server.toml`
 
@@ -306,6 +322,9 @@ A filled bowl refuses the plate toggle, refuses pickup, and refuses to be stacke
 | Setting | Default | Effect |
 |---------|---------|--------|
 | `category_overrides` | *(empty)* | Override which effect fires for a named category. Format: `"category_name\|mod_id:effect_id"` |
+| `enable_default_effects` | `true` | Apply the built-in effect set; when off only effects configured through `category_overrides`/`item_overrides` fire |
+| `stack_duration` | `true` | Sum durations of an effect already active when the same Create: Food effect is applied again |
+| `max_stacked_duration` | `36000` | Ticks a stacked effect cannot exceed (0 = uncapped) |
 | `item_overrides` | *(empty)* | Override or suppress effects on specific items. Format: `"item_id\|category_or_effect_id\|duration\|amplifier[\|chance]"` or `"item_id\|category_or_effect_id\|remove"` — chance is a float 0.0–1.0 |
 | `nutrition_saturation` | *(empty)* | Override nutrition and/or saturation for any item. Format: `"item_id\|nutrition\|saturation"` — use `-` to keep the built-in value |
 
@@ -320,8 +339,9 @@ A filled bowl refuses the plate toggle, refuses pickup, and refuses to be stacke
 | `exclude` | *(empty)* | Blacklist specific hand crafting outputs |
 | `enable_filter_interactions` | `true` | Toggle cloth filter RMB interactions |
 | `filter_interactions` | *(4 default entries)* | Define filter item → result interactions |
-| `enable_campfire_cooking` | `true` | Toggle manual campfire cooking (see §5) |
-| `sticks_only` | `true` | Restrict campfire cooking to `*_stick` results |
+| `enable_campfire_cooking` | `false` | Toggle manual campfire cooking (see §5) |
+| `sticks_only` | `false` | Restrict campfire cooking to `*_stick` results |
+| `require_shift`, `horizontal_range`, `vertical_range` | `true`, `3`, `1` | Campfire cooking trigger and search range (see §5) |
 | `campfire_cooking_exclude` | *(empty)* | Blacklist specific campfire cooking results |
 | `campfire_cooking_filter` | *(empty)* | Whitelist campfire cooking results |
 | `enable_pumpkin_pie_placement` | `false` | Allow placing vanilla pumpkin pie as a block |
@@ -330,16 +350,25 @@ A filled bowl refuses the plate toggle, refuses pickup, and refuses to be stacke
 
 | Setting | Default | Effect |
 |---------|---------|--------|
-| `crafting_remainders` | `minecraft:egg\|createfood:eggshell`, cake batter buckets\|`minecraft:bucket` | Add remainder items to vanilla crafting recipes and furnace/smoker smelting |
+| `crafting_remainders` | `minecraft:egg\|createfood:eggshell`, cake batter buckets\|`minecraft:bucket`, vanilla stews and soups\|`minecraft:bowl` | Add remainder items to vanilla crafting recipes and furnace/smoker smelting |
 | `enable_egg_impact_remainder` | `true` | Drop eggshell when thrown egg hits surface |
+
+**Create compatibility**
+
+| Setting | Default | Effect |
+|---------|---------|--------|
+| `expanded_basin_fluids` | `true` | Raise the basin's fluid slots from 2 to 4 per side. Turning it off discards fluid held in slots 3 and 4. |
+| `basin_fluid_items` | `true` | Pour a filled bottle or bowl into Create's basin by hand, and fill an empty container from it, using Create's filling and emptying recipes |
 
 **Display**
 
 | Setting | Default | Effect |
 |---------|---------|--------|
-| `enable_cutting_board` | `true` | Allow cutting board offhand interaction on plates |
+| `enable_cutting_board` | `true` | Allow cutting tools to process food on plates with cutting recipes |
+| `enable_rolling_pin` | `true` | Allow a rolling pin on plates to also press, compact and use baking mat recipes |
 | `enable_generic_display` | `true` | Allow any item to display generically on plates and bowls |
-| `exclude` | *(empty)* | Item IDs blocked from generic plate/bowl placement |
+| `generic_display_exclude` | *(empty)* | Item IDs blocked from generic plate/bowl placement |
+| `large_bowl_capacity_mb` | `4000` | Fluid a lone large bowl holds, 1000–16000 mb |
 | `enable_display_interactions` | `true` | Transform placed food with a held item, and dip food into a large bowl of fluid (see §9) |
 | `display_interactions_exclude` | *(empty)* | Item IDs blocked from being transformed |
 
@@ -347,13 +376,13 @@ A filled bowl refuses the plate toggle, refuses pickup, and refuses to be stacke
 
 ## 11. Datagen
 
-Item tag files (`data/c/tags/item/<id>.json`) are generated automatically by `ItemTagProvider` and item model files (`assets/createfood/models/item/<id>.json`) by `ItemModelProvider` on each datagen run. Coverage is automatic — every item in `ModItems`, every block in `ModBlocks`, and every fluidEntry bucket in `ModFluids` is included.
+Item tag files (`data/c/tags/item/<id>.json`) are generated automatically by `ItemTagProvider` and item model files (`assets/createfood/models/item/<id>.json`) by `ItemModelProvider` on each datagen run. Coverage is automatic — every item in `ItemRegistry`, every block in `BlockRegistry`, and every fluidEntry bucket in `FluidRegistry` is included.
 
 **Files you still write manually (or via toolkit):**
 - Lang entries (`en_us.json`)
 - Recipe JSONs
-- Display block registration code (`ModDisplayBlocks.java`)
-- Java registration lines (`ModItems`, `ModBlocks`, `ModFluids`)
+- Display block registration code (`DisplayRegistry.java`)
+- Java registration lines (`ItemRegistry`, `BlockRegistry`, `FluidRegistry`)
 
 **Textures you still need to create** (datagen references them but does not generate them):
 - `textures/item/<id>.png` for every item

@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "#c:any_milk_bottle",
+      "required": false
+    },
+    {
+      "id": "#c:buttermilk_bottle",
+      "required": false
+    }
+  ]
+}

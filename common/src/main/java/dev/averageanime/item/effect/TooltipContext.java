@@ -1,7 +1,7 @@
 package dev.averageanime.item.effect;
 
 import dev.averageanime.config.ConfigValues;
-import dev.averageanime.config.ItemEffectOverride;
+import dev.averageanime.config.type.ItemEffectOverride;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.item.ItemStack;
 

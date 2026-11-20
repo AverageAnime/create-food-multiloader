@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "c:shortbread_cookie_caramel"
+    },
+    {
+      "tag": "c:shortbread_cookie"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "createfood:shortbread_cookie_sandwich_caramel"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "shortbread_cookie_sandwich_caramel"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "shortbread_cookie_sandwich_caramel"
+    }
+  ]
+}

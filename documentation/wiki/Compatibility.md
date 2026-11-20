@@ -1,4 +1,4 @@
-### ***3.0.0***
+### ***3.1.0***
 
 ---
 
@@ -18,11 +18,17 @@ All tooltips are fully compatible and viewable through Jade. Configurable via Ja
 
 | Mod                                | New Items | Recipes | Tags |
 |------------------------------------|-----------|---------|------|
+| Alex's Mobs                        | ✘         | ✔       | ✘    |
+| Applied Energistics 2              | ✘         | ✔       | ✘    |
+| Bakery                             | ✘         | ✘       | ✔    |
 | Beach Party                        | ✘         | ✔       | ✔    |
+| Brewery                            | ✘         | ✘       | ✔    |
 | Brewin' & Chewin'                  | ✘         | ✔       | ✔    |
+| Candlelight                        | ✘         | ✘       | ✔    |
 | Casualness Delight                 | ✘         | ✘       | ✔    |
 | Corn Delight                       | ✘         | ✘       | ✘    |
 | Create: Bitterballen               | ✘         | ✔       | ✔    |
+| Create: Central Kitchen            | ✘         | ✔       | ✘    |
 | Create: Confectionery              | ✘         | ✔       | ✔    |
 | Create: Crafts & Additions         | ✘         | ✘       | ✔    |
 | Create: Deepfried                  | ✘         | ✘       | ✔    |
@@ -31,10 +37,12 @@ All tooltips are fully compatible and viewable through Jade. Configurable via Ja
 | Create: Factory                    | ✘         | ✘       | ✔    |
 | Create: Ratatouille                | ✘         | ✔       | ✔    |
 | Create: Ratatouille Fried Delights | ✘         | ✔       | ✔    |
+| Create: Sweets & Treats            | ✘         | ✘       | ✔    |
 | Croptopia                          | ✘         | ✘       | ✔    |
 | Cultural Creators                  | ✘         | ✔       | ✔    |
 | Cultural Delights                  | ✔         | ✔       | ✔    |
 | Delightful Creators                | ✘         | ✔       | ✔    |
+| Display Delight                    | ✘         | ✔       | ✔    |
 | Dumplings Delight                  | ✘         | ✘       | ✔    |
 | End's Delight                      | ✔         | ✔       | ✔    |
 | Ender's Delight                    | ✘         | ✔       | ✔    |
@@ -44,14 +52,21 @@ All tooltips are fully compatible and viewable through Jade. Configurable via Ja
 | Fright's Delight                   | ✔         | ✔       | ✔    |
 | Fruits Delight                     | ✘         | ✔       | ✔    |
 | Hearth and Harvest                 | ✘         | ✔       | ✔    |
+| Immersive Engineering              | ✘         | ✔       | ✘    |
 | Just More Cakes                    | ✘         | ✔       | ✘    |
 | Kaleidoscope Cookery               | ✘         | ✔       | ✔    |
 | Meadow                             | ✘         | ✘       | ✔    |
 | More Delight                       | ✘         | ✘       | ✔    |
 | My Nether's Delight                | ✔         | ✔       | ✔    |
+| Neapolitan                         | ✘         | ✔       | ✔    |
+| Nether's Delight                   | ✘         | ✘       | ✔    |
+| Oh The Biomes We've Gone           | ✘         | ✔       | ✘    |
+| Regions Unexplored                 | ✘         | ✔       | ✘    |
 | Rustic Delight                     | ✘         | ✔       | ✔    |
 | Seed Delight                       | ✘         | ✘       | ✘    |
+| The Aether                         | ✘         | ✔       | ✘    |
 | Tough As Nails                     | ✘         | ✘       | ✔    |
 | Ube's Delight                      | ✔         | ✔       | ✔    |
+| Vampirism                          | ✘         | ✔       | ✘    |
 | Vegan Delight                      | ✘         | ✘       | ✔    |
 | Veggies Delight                    | ✘         | ✔       | ✔    |

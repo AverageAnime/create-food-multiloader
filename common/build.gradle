@@ -42,7 +42,7 @@ dependencies {
 
 // The shared library is authored under dev.averageanime.lib and rewritten into this mod's own root
 // before compilation, so Create: Food and Create: Metalwork never ship the same fully-qualified class.
-// Source relocation rather than a shaded jar because the library is a git submodule, not an artifact.
+// Source relocation rather than a shaded jar because the library is a plain clone (a junction to the aa-modlib checkout), not an artifact.
 def sharedSrc = rootProject.file('libs/aa-shared/src/main/java')
 def relocateShared = tasks.register('relocateShared', Copy) {
     description = 'Rewrite the shared library into ' + shared_relocate_root
@@ -70,7 +70,7 @@ configurations {
 }
 
 // One artifact per source directory rather than `.singleFile`, which throws as
-// soon as a second srcDir exists (the shared-library submodule adds one).
+// soon as a second srcDir exists (the shared library adds one).
 // Consumers take these as a FileCollection via `source(configurations.commonJava)`
 // and `from(configurations.commonResources)`, both of which already accept N dirs.
 artifacts {

@@ -5,6 +5,7 @@
       "item": "minecraft:chicken"
     }
   ],
+  "processing_time": 50,
   "results": [
     {
       "count": 2,

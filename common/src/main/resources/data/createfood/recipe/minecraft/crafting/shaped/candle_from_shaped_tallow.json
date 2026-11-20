@@ -1,0 +1,31 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "S",
+    "T"
+  ],
+  "key": {
+    "S": {
+      "tag": "c:strings"
+    },
+    "T": {
+      "item": "createfood:tallow"
+    }
+  },
+  "result": {
+    "count": 1,
+    "id": "minecraft:candle"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "tallow"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "tallow"
+    }
+  ]
+}

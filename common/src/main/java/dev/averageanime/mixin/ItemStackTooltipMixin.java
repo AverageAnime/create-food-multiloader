@@ -2,7 +2,7 @@ package dev.averageanime.mixin;
 
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
-import dev.averageanime.config.ItemEffectOverride;
+import dev.averageanime.config.type.ItemEffectOverride;
 import dev.averageanime.item.effect.TooltipContext;
 import dev.averageanime.item.type.EffectFood;
 import net.minecraft.network.chat.Component;
@@ -19,7 +19,8 @@ public abstract class ItemStackTooltipMixin {
 
     @WrapOperation(method = "getTooltipLines",
             at = @At(value = "INVOKE",
-                    target = "Lnet/minecraft/world/item/Item;appendHoverText(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/item/Item$TooltipContext;Ljava/util/List;Lnet/minecraft/world/item/TooltipFlag;)V"))
+                    target = "Lnet/minecraft/world/item/Item;appendHoverText(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/item/Item$TooltipContext;Ljava/util/List;Lnet/minecraft/world/item/TooltipFlag;)V"),
+            require = 0)
     private void createfood$appendForeignEffectLines(Item item, ItemStack stack, Item.TooltipContext context,
                                                       List<Component> tooltip, TooltipFlag flag,
                                                       Operation<Void> original) {

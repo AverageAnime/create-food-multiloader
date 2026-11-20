@@ -3,7 +3,7 @@ package dev.averageanime.neoforge.compat.create;
 import dev.averageanime.config.ConfigValues;
 import dev.averageanime.block.type.bowl.BowlDippingInteraction;
 import dev.averageanime.createfood.lib.recipe.DippingRecipes;
-import dev.averageanime.util.PlayerItems;
+import dev.averageanime.createfood.lib.util.PlayerItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;

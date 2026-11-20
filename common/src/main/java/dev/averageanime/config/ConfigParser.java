@@ -1,23 +1,20 @@
 package dev.averageanime.config;
 
+import dev.averageanime.config.type.ItemNutritionOverride;
+import dev.averageanime.config.type.ItemEffectOverride;
 import net.minecraft.core.component.DataComponents;
 import dev.averageanime.createfood.lib.config.ItemFilter;
 import dev.averageanime.createfood.lib.config.ListParseCache;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.tags.TagKey;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
-import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
 public final class ConfigParser {
@@ -146,25 +143,15 @@ public final class ConfigParser {
         return isItemEnabled(base, hideItems);
     }
 
-    public static boolean matchesFilterList(ItemStack stack, List<? extends String> list) {
-        return ItemFilter.matches(stack, list);
-    }
-
-    public static boolean isClothSackItemAllowed(ItemStack stack, List<? extends String> exclude,
-                                                  List<? extends String> filter, boolean allowFood) {
-        if (matchesFilterList(stack, exclude)) return false;
-        boolean isFood = stack.has(DataComponents.FOOD);
-        if (allowFood && isFood) return true;
-        if (!filter.isEmpty()) return matchesFilterList(stack, filter);
-        return !allowFood;
-    }
-
-    public static boolean isRationBoxItemAllowed(ItemStack stack, List<? extends String> exclude,
-                                                  List<? extends String> filter, boolean allowFood) {
-        if (matchesFilterList(stack, exclude)) return false;
-        boolean isFood = stack.has(DataComponents.FOOD);
-        if (allowFood && isFood) return true;
-        if (!filter.isEmpty()) return matchesFilterList(stack, filter);
+    /**
+     * Whether a cloth sack or ration box accepts the stack. Food passes when {@code allowFood} is set;
+     * otherwise the filter decides, and with no filter the container takes only food.
+     */
+    public static boolean isStorageItemAllowed(ItemStack stack, List<? extends String> exclude,
+                                               List<? extends String> filter, boolean allowFood) {
+        if (ItemFilter.matches(stack, exclude)) return false;
+        if (allowFood && stack.has(DataComponents.FOOD)) return true;
+        if (!filter.isEmpty()) return ItemFilter.matches(stack, filter);
         return !allowFood;
     }
 }

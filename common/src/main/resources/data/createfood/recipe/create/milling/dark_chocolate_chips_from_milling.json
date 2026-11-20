@@ -5,6 +5,7 @@
       "tag": "c:bar_of_dark_chocolate"
     }
   ],
+  "processing_time": 80,
   "results": [
     {
       "count": 8,

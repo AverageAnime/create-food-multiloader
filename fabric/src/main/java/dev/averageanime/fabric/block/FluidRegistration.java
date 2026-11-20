@@ -3,7 +3,6 @@ package dev.averageanime.fabric.block;
 import dev.averageanime.CreateFoodCommon;
 import dev.averageanime.config.ConfigBootstrap;
 import dev.averageanime.config.AddonDefaults;
-import dev.averageanime.config.ConfigDefaults;
 import dev.averageanime.createfood.lib.fluid.FluidBlock;
 import dev.averageanime.registry.FluidRegistry;
 import dev.averageanime.createfood.lib.fluid.FluidEntry;

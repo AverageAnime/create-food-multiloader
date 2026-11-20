@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "#c:any_milk_bucket",
+      "required": false
+    },
+    {
+      "id": "#c:buttermilk_bucket",
+      "required": false
+    }
+  ]
+}

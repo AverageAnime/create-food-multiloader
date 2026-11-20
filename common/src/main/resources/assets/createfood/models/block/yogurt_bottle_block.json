@@ -1,4 +1,4 @@
-﻿{
+{
 	"parent":  "createfood:block/bottle_base_frosting",
 	"textures":  {
 					"2":  "createfood:fluid/yogurt_flow"

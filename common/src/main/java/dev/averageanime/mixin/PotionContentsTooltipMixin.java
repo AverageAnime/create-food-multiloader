@@ -2,7 +2,7 @@ package dev.averageanime.mixin;
 
 import com.llamalad7.mixinextras.injector.wrapmethod.WrapMethod;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
-import dev.averageanime.config.ItemEffectOverride;
+import dev.averageanime.config.type.ItemEffectOverride;
 import dev.averageanime.item.effect.TooltipContext;
 import dev.averageanime.item.type.EffectFood;
 import net.minecraft.network.chat.Component;
@@ -17,7 +17,8 @@ import java.util.function.Consumer;
 @Mixin(PotionContents.class)
 public abstract class PotionContentsTooltipMixin {
 
-    @WrapMethod(method = "addPotionTooltip(Ljava/lang/Iterable;Ljava/util/function/Consumer;FF)V")
+    @WrapMethod(method = "addPotionTooltip(Ljava/lang/Iterable;Ljava/util/function/Consumer;FF)V",
+            require = 0)
     private static void createfood$filterOverriddenEffects(Iterable<MobEffectInstance> effects,
                                                            Consumer<Component> tooltipAdder,
                                                            float durationFactor, float tickRate,

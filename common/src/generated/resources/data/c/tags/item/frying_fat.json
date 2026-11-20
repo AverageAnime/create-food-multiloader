@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "#c:vegetable_oil_bottle",
+      "required": false
+    },
+    {
+      "id": "createfood:tallow",
+      "required": false
+    }
+  ]
+}

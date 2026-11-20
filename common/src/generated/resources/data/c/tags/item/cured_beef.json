@@ -1,0 +1,8 @@
+{
+  "values": [
+    {
+      "id": "createfood:cured_beef",
+      "required": false
+    }
+  ]
+}

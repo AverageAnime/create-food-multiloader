@@ -1,4 +1,4 @@
-﻿{
+{
 	"parent":  "createfood:block/pie_base",
 	"textures":  {
 					"bottom":  "createfood:block/raw_pie_crust_bottom",

@@ -5,7 +5,7 @@
       "required": false
     },
     {
-      "id": "createadditions:cake_base_baked",
+      "id": "createaddition:cake_base_baked",
       "required": false
     },
     {

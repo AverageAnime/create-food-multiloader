@@ -5,6 +5,7 @@
       "tag": "c:crops/tomato"
     }
   ],
+  "processing_time": 50,
   "results": [
     {
       "count": 2,

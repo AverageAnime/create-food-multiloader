@@ -47,5 +47,10 @@ public final class BuiltInPacks {
             "ratatouille_fried_delights_overrides",
             "veggiesdelight_overrides");
 
+    // Both loaders register every pack. An asset that only works with NeoForge-only code does not go
+    // in the common pack directory: the hollow cooking pot models of farmersdelight_overrides live under
+    // neoforge/src/main/resources/resourcepacks/, so the Fabric jar carries the rest of that pack
+    // without them and its pot stays as Farmer's Delight draws it.
+
     private BuiltInPacks() {}
 }

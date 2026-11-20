@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "createfood:flowing_buttermilk",
+      "required": false
+    },
+    {
+      "id": "createfood:buttermilk",
+      "required": false
+    }
+  ]
+}

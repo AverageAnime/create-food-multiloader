@@ -1,7 +1,7 @@
 package dev.averageanime.mixin;
 
 import dev.averageanime.config.ConfigValues;
-import dev.averageanime.config.ItemEffectOverride;
+import dev.averageanime.config.type.ItemEffectOverride;
 import dev.averageanime.item.effect.EffectContext;
 import dev.averageanime.item.type.EffectFood;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -9,6 +9,7 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.ModifyVariable;
@@ -21,7 +22,7 @@ public abstract class LivingEntityAddEffectMixin {
             at = @At("HEAD"), cancellable = true)
     private void createfood$cancelRemovedEffect(MobEffectInstance effectInstance, @Nullable Entity source,
                                                 CallbackInfoReturnable<Boolean> cir) {
-        ItemEffectOverride override = findOverride(effectInstance);
+        ItemEffectOverride override = createfood$findOverride(effectInstance);
         if (override != null && override.remove()) {
             cir.setReturnValue(false);
         }
@@ -30,7 +31,7 @@ public abstract class LivingEntityAddEffectMixin {
     @ModifyVariable(method = "addEffect(Lnet/minecraft/world/effect/MobEffectInstance;Lnet/minecraft/world/entity/Entity;)Z",
             at = @At("HEAD"), argsOnly = true)
     private MobEffectInstance createfood$replaceEffect(MobEffectInstance effectInstance) {
-        ItemEffectOverride override = findOverride(effectInstance);
+        ItemEffectOverride override = createfood$findOverride(effectInstance);
         if (override != null && !override.remove()) {
             effectInstance = new MobEffectInstance(effectInstance.getEffect(), override.duration(), override.amplifier(),
                     effectInstance.isAmbient(), effectInstance.isVisible(), effectInstance.showIcon());
@@ -39,6 +40,7 @@ public abstract class LivingEntityAddEffectMixin {
     }
 
     /** Sums durations (same amplifier) while a Create: Food item is being consumed, rather than vanilla discarding the shorter instance. */
+    @Unique
     private MobEffectInstance createfood$stackDuration(MobEffectInstance incoming) {
         LivingEntity self = (LivingEntity) (Object) this;
         if (!EffectContext.isConsuming(self)) return incoming;
@@ -58,8 +60,9 @@ public abstract class LivingEntityAddEffectMixin {
                 incoming.isAmbient(), incoming.isVisible(), incoming.showIcon());
     }
 
+    @Unique
     @Nullable
-    private ItemEffectOverride findOverride(MobEffectInstance effectInstance) {
+    private ItemEffectOverride createfood$findOverride(MobEffectInstance effectInstance) {
         LivingEntity self = (LivingEntity) (Object) this;
         return EffectFood.findOverrideForEffect(EffectContext.active(self), effectInstance);
     }

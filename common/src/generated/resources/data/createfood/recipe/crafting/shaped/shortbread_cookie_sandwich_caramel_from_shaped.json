@@ -1,0 +1,31 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "shortbread_cookie_sandwich_caramel"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "shortbread_cookie_sandwich_caramel"
+    }
+  ],
+  "key": {
+    "1": {
+      "tag": "c:shortbread_cookie"
+    },
+    "2": {
+      "tag": "c:shortbread_cookie_caramel"
+    }
+  },
+  "pattern": [
+    "1",
+    "2"
+  ],
+  "result": {
+    "count": 1,
+    "id": "createfood:shortbread_cookie_sandwich_caramel"
+  }
+}

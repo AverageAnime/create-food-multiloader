@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "createfood:flowing_tallow",
+      "required": false
+    },
+    {
+      "id": "createfood:tallow",
+      "required": false
+    }
+  ]
+}

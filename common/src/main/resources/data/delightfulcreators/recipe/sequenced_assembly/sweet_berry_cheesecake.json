@@ -60,9 +60,9 @@
                     "item": "delightfulcreators:incomplete_sweet_berry_cheesecake"
                 },
                 {
-                    "type": "fluid_tag",
+                    "type": "neoforge:tag",
                     "amount": 250,
-                    "fluid_tag": "c:milk"
+                    "tag": "c:milk"
                 }
             ],
             "results": [

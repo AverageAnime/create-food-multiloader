@@ -22,9 +22,9 @@ import java.util.List;
 }, remap = false)
 public class FanProcessingRemainderMixin {
 
-    // require = 0, unlike this project's usual default of 1: silently no-ops instead of crashing if
-    // a future Create build renames or changes process. @Local(argsOnly = true) below pulls
-    // process's own parameters, not fields on this mixin class.
+    // require = 0, unlike this project's usual default of 1 for gameplay mixins: silently no-ops
+    // instead of crashing if a future Create build renames or changes process, and the cost is that
+    // fan-smoked items lose their remainder until this is updated.
     @ModifyReturnValue(method = "process", at = @At("RETURN"), require = 0)
     private List<ItemStack> createfood$addRemainder(List<ItemStack> original,
                                                     @Local(argsOnly = true) ItemStack stack,

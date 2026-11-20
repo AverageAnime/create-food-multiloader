@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "#c:sliced_brown_mushroom",
+      "required": false
+    },
+    {
+      "id": "#c:sliced_red_mushroom",
+      "required": false
+    }
+  ]
+}

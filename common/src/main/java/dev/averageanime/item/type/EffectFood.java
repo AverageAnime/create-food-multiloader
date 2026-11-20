@@ -1,10 +1,11 @@
 package dev.averageanime.item.type;
 
 import dev.averageanime.config.ConfigValues;
-import dev.averageanime.config.ItemEffectOverride;
-import dev.averageanime.config.ItemNutritionOverride;
+import dev.averageanime.config.type.ItemEffectOverride;
+import dev.averageanime.config.type.ItemNutritionOverride;
 import dev.averageanime.client.tooltip.ItemTooltips;
 import dev.averageanime.item.effect.EffectCategories;
+import dev.averageanime.item.effect.EffectContext;
 import dev.averageanime.createfood.lib.effect.EffectChain;
 import dev.averageanime.util.Tooltips;
 import net.minecraft.advancements.CriteriaTriggers;
@@ -186,6 +187,32 @@ public class EffectFood extends Item {
     public static FoodProperties withEffects(FoodProperties base, FoodProperties.Builder effects) {
         return new FoodProperties(base.nutrition(), base.saturation(), base.canAlwaysEat(),
                 base.eatSeconds(), base.usingConvertsTo(), effects.build().effects());
+    }
+
+    /**
+     * Applies a food's effects to a player eating it from a block rather than from the item, so a slice
+     * and its block behave alike: the baked effects (each at its own probability, server side only),
+     * then those a {@link EffectFood} defers. Overrides apply through the {@link EffectContext} opened
+     * around it. The caller feeds the player's hunger itself.
+     */
+    public static void applyEatEffects(Level level, Player player, ItemStack stack, FoodProperties food) {
+        EffectContext.begin(player, stack);
+        try {
+            if (!level.isClientSide) {
+                for (FoodProperties.PossibleEffect effect : enabledEffects(food,
+                        BuiltInRegistries.ITEM.getKey(stack.getItem()).getPath())) {
+                    if (effect != null && level.random.nextFloat() < effect.probability()) {
+                        player.addEffect(effect.effect());
+                    }
+                }
+            }
+            // Compat-category effects are deferred rather than baked into FOOD.
+            if (stack.getItem() instanceof EffectFood effectFood) {
+                effectFood.applyNonBakedEffects(level, player);
+            }
+        } finally {
+            EffectContext.end(player);
+        }
     }
 
     /** Applies the effects not baked into the FOOD component; the block eat paths call this so a slice and its block behave alike. */

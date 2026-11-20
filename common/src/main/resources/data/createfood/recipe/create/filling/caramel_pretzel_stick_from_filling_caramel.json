@@ -7,7 +7,7 @@
     {
       "type": "fluid_tag",
       "amount": 125,
-      "fluid_tag": "c:caramel"
+      "fluid_tag": "c:any_caramel"
     }
   ],
   "results": [

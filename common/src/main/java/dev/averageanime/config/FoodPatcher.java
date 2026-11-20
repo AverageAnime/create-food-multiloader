@@ -1,5 +1,7 @@
 package dev.averageanime.config;
 
+import dev.averageanime.config.type.ItemNutritionOverride;
+import dev.averageanime.config.type.ItemEffectOverride;
 import dev.averageanime.item.type.EffectFood;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.food.FoodProperties;

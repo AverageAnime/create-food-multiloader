@@ -1,0 +1,28 @@
+{
+  "values": [
+    {
+      "id": "#c:chocolate_chips",
+      "required": false
+    },
+    {
+      "id": "#c:dark_chocolate_chips",
+      "required": false
+    },
+    {
+      "id": "#c:white_chocolate_chips",
+      "required": false
+    },
+    {
+      "id": "#c:butterscotch_chips",
+      "required": false
+    },
+    {
+      "id": "#c:caramel_chips",
+      "required": false
+    },
+    {
+      "id": "#c:toffee_chips",
+      "required": false
+    }
+  ]
+}

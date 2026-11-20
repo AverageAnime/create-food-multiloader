@@ -30,7 +30,7 @@ public final class AddonManifest {
         for (String entry : AddonRegistry.displayBlocks()) {
             String item = field(entry, 0);
             String path = item.contains(":") ? item.substring(item.indexOf(':') + 1) : item;
-            DisplayType type = displayType(field(entry, 1));
+            DisplayType type = DisplayRegistry.parseType(field(entry, 1));
             if (type != null) names.add(DisplayRegistry.getBlockName(path, type));
         }
 
@@ -49,20 +49,6 @@ public final class AddonManifest {
         names.add("flowing_" + id);
         names.add(id + "_block");
         names.add(id + "_bucket");
-    }
-
-    /** Mirrors the config string to {@link DisplayType} mapping both loaders apply. */
-    private static DisplayType displayType(String name) {
-        return switch (name.toLowerCase()) {
-            case "plate" -> DisplayType.PLATE;
-            case "small_plate" -> DisplayType.SMALL_PLATE;
-            case "bottle" -> DisplayType.BOTTLE;
-            case "bowl" -> DisplayType.BOWL_FOOD;
-            case "display_bowl" -> DisplayType.BOWL;
-            case "salad_bowl", "large_bowl", "small_bowl" -> DisplayType.LARGE_BOWL;
-            case "plate_food" -> DisplayType.PLATE_FOOD;
-            default -> null;
-        };
     }
 
     private static String field(String entry, int index) {

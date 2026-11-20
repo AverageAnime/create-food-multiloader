@@ -34,12 +34,13 @@ conventions are the settled result — follow them for new code so the drift doe
 ## Package layout
 
 - **Records that represent a data spec belong in a `type/` sub-package**, not flat in their parent package.
-  Established in `registry/type/` (`BlockEntry`, `ItemEntry`, `FluidEntry`, `EffectEntry`, `DisplayEntry`,
-  `MultiDisplayEntry`) and `config/type/` (`ItemEffectOverride`, `ItemNutritionOverride`). Keep this rule
-  when adding new registry or config records.
+  Established in `registry/type/` (`BlockEntry`, `ItemEntry`, `EffectEntry`) and `config/type/`
+  (`ItemEffectOverride`, `ItemNutritionOverride`). `FluidEntry` and `DisplayEntry`
+  live in the shared library (`lib.fluid`, `lib.registry`). Keep this rule when adding new registry or
+  config records.
 - **Mixins are always named `<Target>Mixin`** (e.g. `CampfireBlockEntityMixin`), never left bare and never
   shadowing the vanilla class name. Use `<Target><Method>Mixin` only when two mixins target the same class
-  and need disambiguating. Accessors use `<Target>Accessor` (e.g. `ItemAccessor`).
+  and need disambiguating. Accessor mixins follow the same rule: `<Target>AccessorMixin` (e.g. `ItemAccessorMixin`).
 - **fabric and neoforge mirror common's package layout** for anything that exists in both — same relative
   path under `block/type/...`, `menu/type/...`, etc. A loader diverging from common's layout is a bug, not
   a style choice.

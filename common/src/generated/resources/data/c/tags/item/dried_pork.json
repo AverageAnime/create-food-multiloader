@@ -1,0 +1,8 @@
+{
+  "values": [
+    {
+      "id": "createfood:dried_pork",
+      "required": false
+    }
+  ]
+}

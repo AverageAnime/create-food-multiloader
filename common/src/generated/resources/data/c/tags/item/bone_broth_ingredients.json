@@ -15,6 +15,10 @@
     {
       "id": "#c:mushrooms",
       "required": false
+    },
+    {
+      "id": "createfood:jerky_powder",
+      "required": false
     }
   ]
 }

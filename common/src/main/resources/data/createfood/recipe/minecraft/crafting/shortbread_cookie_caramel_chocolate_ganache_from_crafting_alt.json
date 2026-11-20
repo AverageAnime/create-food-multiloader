@@ -1,0 +1,42 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "c:shortbread_cookie"
+    },
+    {
+      "tag": "c:shortbread_cookie"
+    },
+    {
+      "tag": "c:shortbread_cookie"
+    },
+    {
+      "tag": "c:shortbread_cookie"
+    },
+    {
+      "tag": "c:any_caramel"
+    },
+    {
+      "tag": "c:chocolate_ganache_bottle"
+    },
+    {
+      "tag": "c:chocolate_ganache_bottle"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "id": "createfood:shortbread_cookie_caramel_chocolate_ganache"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "shortbread_cookie_caramel_chocolate_ganache"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "shortbread_cookie_caramel_chocolate_ganache"
+    }
+  ]
+}

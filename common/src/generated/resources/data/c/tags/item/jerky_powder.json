@@ -1,0 +1,8 @@
+{
+  "values": [
+    {
+      "id": "createfood:jerky_powder",
+      "required": false
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 package dev.averageanime.item.interaction;
 
 import dev.averageanime.config.ConfigValues;
-import dev.averageanime.config.ConfigParser;
+import dev.averageanime.createfood.lib.config.ItemFilter;
 import dev.averageanime.item.remainder.CraftingRemainder;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
@@ -76,7 +76,8 @@ public class CampfireCookingInteraction {
         CampfireCookingRecipe recipe = recipeOpt.get().value();
         ItemStack result = recipe.getResultItem(level.registryAccess());
 
-        if (ConfigParser.matchesFilterList(result, ConfigValues.getCampfireCookingExclude())) {
+        List<? extends String> filter = ConfigValues.getCampfireCookingFilter();
+        if (!ItemFilter.allows(result, ConfigValues.getCampfireCookingExclude(), filter)) {
             clearProgress(player);
             return;
         }
@@ -87,12 +88,6 @@ public class CampfireCookingInteraction {
                 clearProgress(player);
                 return;
             }
-        }
-
-        List<? extends String> filter = ConfigValues.getCampfireCookingFilter();
-        if (!filter.isEmpty() && !ConfigParser.matchesFilterList(result, filter)) {
-            clearProgress(player);
-            return;
         }
 
         UUID id = player.getUUID();

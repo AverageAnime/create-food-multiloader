@@ -4,7 +4,7 @@
     "experience": 1,
     "ingredients": [
         {
-            "tag": "c:any_milk_bucket"
+            "tag": "c:cooking_milk_bucket"
         },
         {
             "tag": "c:vinegar_bottle"

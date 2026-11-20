@@ -1,0 +1,64 @@
+{
+    "type": "create:deploying",
+    "ingredients": [
+        {
+            "tag": "c:ube_cream_ube_cake"
+        },
+        {
+            "tag": "c:vegetables/ube"
+        }
+    ],
+    "results": [
+        {
+            "item": {
+                "id": "ubesdelight:ube_cake"
+            }
+        }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "create"
+        },
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "ubesdelight"
+        },
+        {
+            "type": "neoforge:not",
+            "value": {
+                "type": "neoforge:tag_empty",
+                "tag": "c:vegetables/ube"
+            }
+        },
+        {
+            "type": "createfood:enabled",
+            "id": "ubesdelight:ube_cake"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "create"
+            ]
+        },
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "ubesdelight"
+            ]
+        },
+        {
+            "condition": "fabric:tags_populated",
+            "registry": "minecraft:item",
+            "values": [
+                "c:vegetables/ube"
+            ]
+        },
+        {
+            "condition": "createfood:enabled",
+            "id": "ubesdelight:ube_cake"
+        }
+    ]
+}

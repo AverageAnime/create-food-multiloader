@@ -3,6 +3,10 @@
     {
       "id": "rusticdelight:coffee_beans",
       "required": false
+    },
+    {
+      "id": "farmersrespite:coffee_beans",
+      "required": false
     }
   ]
 }

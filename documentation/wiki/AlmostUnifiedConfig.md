@@ -1,4 +1,4 @@
-### ***3.0.0***
+### ***3.1.0***
 
 ---
 
@@ -35,7 +35,7 @@ Save as `config/almostunified/unification/food.json`, alongside `materials.json`
     "c:glow_berry_jam", "c:glow_berry_jam_bottle", "c:glow_berry_juice_bottle",
     "c:glow_berry_milkshake_bottle", "c:glow_berry_milkshake_bucket",
     "c:grilled_cheese_sandwich", "c:honeyed_donut",
-    "c:hot_chocolate_bottle", "c:hot_chocolate_bucket",
+    "c:hot_chocolate_bottle", "c:hot_chocolate_bucket", "c:hot_dog",
     "c:ice_cream_bucket", "c:ice_cream_cone",
     "c:macaroni_bowl_cheese", "c:marshmallow", "c:marshmallow_stick", "c:mashed_potatoes_bowl",
     "c:melon_jam", "c:melon_jam_bottle", "c:milk_powder",
@@ -63,6 +63,8 @@ Save as `config/almostunified/unification/food.json`, alongside `materials.json`
     "c:blueberry_jam_bottle", "c:boiled_egg", "c:chorus_fruit_pie",
     "c:chorus_fruit_pie_slice", "c:chorus_fruit_popsicle", "c:cooked_rice",
     "c:lemon", "c:meat_pie", "c:raw_apple_pie",
+    "c:carrot_cream_cake", "c:chorus_fruit_cookie", "c:coffee_beans", "c:cranberry",
+    "c:jerky", "c:pastry_base", "c:syrup",
 
     "c:apple_cider", "c:apple_cider_bucket", "c:baked_sweet_potato",
     "c:blueberry_muffin", "c:calamari_roll", "c:cask", "c:coffee", "c:cotton",
@@ -85,11 +87,11 @@ Save as `config/almostunified/unification/food.json`, alongside `materials.json`
 
     "c:bun", "c:cheeses", "c:cheese_block", "c:cheese_slice", "c:paprika",
     "c:peanut", "c:sausages", "c:sugar", "c:vegetable_oil",
-    "c:any_milk_bottle", "c:any_milk_bucket", "c:drinks/milk", "c:milk_bottle",
+    "c:any_milk_bottle", "c:any_milk_bucket", "c:any_sliced_mushrooms", "c:drinks/milk", "c:milk_bottle",
     "c:crops/garlic", "c:crops/ginger", "c:crops/grain", "c:crops/potato",
     "c:crops/rice", "c:tea_ingredients/sweet/weak",
 
-    "c:bell_pepper", "c:calamari", "c:fruits", "c:vegetables",
+    "c:bell_pepper", "c:calamari", "c:foods/berries", "c:fruits", "c:vegetables",
     "c:cheese", "c:ice", "c:raw_meat", "c:raw_meat_delight",
 
     "c:cooked_beef", "c:cooked_chicken", "c:cooked_fishes", "c:cooked_mutton",

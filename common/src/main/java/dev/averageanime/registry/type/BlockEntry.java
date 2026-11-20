@@ -5,7 +5,6 @@ import dev.averageanime.util.Tooltips;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
-import java.util.function.Supplier;
 
 public final class BlockEntry extends LazyEntry<net.minecraft.world.level.block.Block> {
 

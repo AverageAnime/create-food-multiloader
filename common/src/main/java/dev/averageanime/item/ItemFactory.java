@@ -65,6 +65,7 @@ public final class ItemFactory {
             case INGREDIENT_BOTTLE -> new EffectDrink(new Properties().stacksTo(16).craftRemainder(Items.GLASS_BOTTLE));
             case INGREDIENT_BOWL -> new net.minecraft.world.item.Item(new Properties().stacksTo(16).craftRemainder(Items.BOWL));
             case PIPING_BAG -> plainItem(def, new Properties().stacksTo(2).craftRemainder(ItemLookup.byModId("piping_bag").get()));
+            case TOOL -> plainItem(def, new Properties().durability(def.durability));
         };
     }
 

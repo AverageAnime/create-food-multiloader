@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "c:beef_cuts"
+    },
+    {
+      "tag": "c:beef_cuts"
+    },
+    {
+      "tag": "c:vinegar_bottle"
+    },
+    {
+      "tag": "c:salt"
+    }
+  ],
+  "result": {
+    "count": 2,
+    "id": "createfood:cured_beef"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "cured_beef"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "cured_beef"
+    }
+  ]
+}

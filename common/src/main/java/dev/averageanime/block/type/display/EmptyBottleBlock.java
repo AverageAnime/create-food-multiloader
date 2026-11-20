@@ -1,7 +1,7 @@
 package dev.averageanime.block.type.display;
 
 import dev.averageanime.createfood.lib.util.ItemSpawns;
-import dev.averageanime.util.PlayerItems;
+import dev.averageanime.createfood.lib.util.PlayerItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.sounds.SoundEvents;
@@ -20,6 +20,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
+import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
@@ -32,17 +33,16 @@ import java.util.function.Supplier;
 public class EmptyBottleBlock extends Block {
 
     public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
-
-    private static final VoxelShape SHAPE = Block.box(5.5, 0.0, 5.5, 10.5, 9.0, 10.5);
+    public static final EnumProperty<BottleVessel> VESSEL = EnumProperty.create("vessel", BottleVessel.class);
 
     public EmptyBottleBlock(Properties properties) {
         super(properties);
-        this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH));
+        this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(VESSEL, BottleVessel.STANDARD));
     }
 
     @Override
     public @NotNull VoxelShape getShape(@NotNull BlockState state, @NotNull BlockGetter level, @NotNull BlockPos pos, @NotNull CollisionContext context) {
-        return SHAPE;
+        return state.getValue(VESSEL).shape();
     }
 
     @Override
@@ -52,14 +52,21 @@ public class EmptyBottleBlock extends Block {
 
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-        builder.add(FACING);
+        builder.add(FACING, VESSEL);
     }
 
     @Override
     protected @NotNull ItemInteractionResult useItemOn(@NotNull ItemStack heldStack, @NotNull BlockState state, @NotNull Level level, @NotNull BlockPos pos,
                                                        Player player, @NotNull InteractionHand hand, @NotNull BlockHitResult hit) {
-        // Sneaking is the existing placement path's gesture; leave it alone.
-        if (player.isShiftKeyDown()) return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
+        // Vanilla only reaches here while sneaking if both hands are empty: that cycles the glass shape, the
+        // way empty plates and bowls change form. Sneaking with an item is the placement path's gesture.
+        if (player.isShiftKeyDown()) {
+            if (!heldStack.isEmpty()) return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
+            if (level.isClientSide) return ItemInteractionResult.SUCCESS;
+            level.setBlock(pos, state.setValue(VESSEL, state.getValue(VESSEL).next()), 3);
+            level.playSound(null, pos, SoundEvents.GLASS_PLACE, SoundSource.BLOCKS, 0.8F, 1.2F);
+            return ItemInteractionResult.SUCCESS;
+        }
 
         Block bottleBlock = findBottleBlock(heldStack);
         if (bottleBlock == null) return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;

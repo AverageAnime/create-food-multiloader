@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "c:scone"
+    },
+    {
+      "tag": "c:cream_frosting"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "createfood:shortcake_scone"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "shortcake_scone"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "shortcake_scone"
+    }
+  ]
+}

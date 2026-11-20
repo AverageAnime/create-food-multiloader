@@ -2,7 +2,6 @@ package dev.averageanime.neoforge.block;
 
 import dev.averageanime.config.ConfigBootstrap;
 import dev.averageanime.config.AddonDefaults;
-import dev.averageanime.config.ConfigDefaults;
 import dev.averageanime.CreateFoodCommon;
 import dev.averageanime.neoforge.item.ItemRegistration;
 import dev.averageanime.createfood.lib.fluid.FluidBlock;
@@ -14,7 +13,6 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 import net.neoforged.neoforge.registries.NeoForgeRegistries;
 
 import java.util.LinkedHashMap;
-import java.util.List;
 import java.util.Map;
 
 import static dev.averageanime.neoforge.CreateFood.LOGGER;

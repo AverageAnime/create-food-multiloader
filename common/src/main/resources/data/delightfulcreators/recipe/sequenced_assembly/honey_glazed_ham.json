@@ -91,9 +91,9 @@
           "item": "delightfulcreators:incomplete_honey_glazed_ham"
         },
         {
-          "type": "fluid_tag",
+          "type": "neoforge:tag",
           "amount": 250,
-          "fluid_tag": "c:honey"
+          "tag": "c:honey"
         }
       ],
       "results": [

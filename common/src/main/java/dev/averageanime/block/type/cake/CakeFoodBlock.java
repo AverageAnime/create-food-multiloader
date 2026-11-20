@@ -2,12 +2,10 @@ package dev.averageanime.block.type.cake;
 
 import dev.averageanime.block.type.misc.ConsumableBlock;
 import dev.averageanime.createfood.lib.util.ItemSpawns;
-import dev.averageanime.item.effect.EffectContext;
 import dev.averageanime.item.type.EffectFood;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.component.DataComponents;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
@@ -82,21 +80,7 @@ public class CakeFoodBlock extends CakeBlock {
         FoodProperties food = sliceStack.get(DataComponents.FOOD);
         if (food != null) {
             player.getFoodData().eat(food);
-            EffectContext.begin(player, sliceStack);
-            try {
-                for (FoodProperties.PossibleEffect effect : EffectFood.enabledEffects(food,
-                        BuiltInRegistries.ITEM.getKey(sliceStack.getItem()).getPath())) {
-                    if (!level.isClientSide && effect != null && level.random.nextFloat() < effect.probability()) {
-                        player.addEffect(effect.effect());
-                    }
-                }
-                // Compat-category effects are deferred rather than baked into FOOD.
-                if (sliceStack.getItem() instanceof EffectFood effectFood) {
-                    effectFood.applyNonBakedEffects(level, player);
-                }
-            } finally {
-                EffectContext.end(player);
-            }
+            EffectFood.applyEatEffects(level, player, sliceStack, food);
         }
 
         advanceBites(level, pos, state);

@@ -7,7 +7,7 @@
     },
     "ingredients": [
         {
-            "tag": "c:any_milk_bottle"
+            "tag": "c:cooking_milk_bottle"
         },
         {
             "tag": "c:potato"

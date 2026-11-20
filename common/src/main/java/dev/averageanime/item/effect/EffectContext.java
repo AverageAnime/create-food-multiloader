@@ -1,7 +1,7 @@
 package dev.averageanime.item.effect;
 
 import dev.averageanime.config.ConfigValues;
-import dev.averageanime.config.ItemEffectOverride;
+import dev.averageanime.config.type.ItemEffectOverride;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.entity.LivingEntity;
@@ -13,10 +13,15 @@ import java.util.Map;
 import java.util.Set;
 import java.util.WeakHashMap;
 
+/**
+ * What is being consumed by which entity. A singleplayer client and server both run consumption, so
+ * these are touched from two threads; the maps are weak so an entity that never reaches {@link #end}
+ * is not kept alive.
+ */
 public final class EffectContext {
 
-    private static final Map<LivingEntity, List<ItemEffectOverride>> ACTIVE = new WeakHashMap<>();
-    private static final Set<LivingEntity> CONSUMING = Collections.newSetFromMap(new WeakHashMap<>());
+    private static final Map<LivingEntity, List<ItemEffectOverride>> ACTIVE = Collections.synchronizedMap(new WeakHashMap<>());
+    private static final Set<LivingEntity> CONSUMING = Collections.synchronizedSet(Collections.newSetFromMap(new WeakHashMap<>()));
 
     private EffectContext() {}
 

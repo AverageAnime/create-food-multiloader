@@ -1,8 +1,31 @@
-### ***3.0.0***
+### ***3.1.0***
 
 ---
 
-## Recipe Chains and Ingredients
+* `bread_crumbs`, `cookie_crumbs`, `graham_cracker_crumbs` and `chocolate_graham_cracker_crumbs` cutting recipes now use a rolling pin (`c:tools/rolling_pin`) instead of a knife.
+* `paprika` cutting, milling and Kaleidoscope Cookery millstone recipes now use `c:paprika_ingredient`, which adds `nether_wart`, matching pressing.
+* `butter` is now pressed from `heavy_cream` (250mB), which also yields 125mB of `buttermilk`. The crafting recipe takes a `heavy_cream_bottle` alone and no longer needs `salt`.
+* New ingredient alternatives, accepted wherever the original is:
+  * `dulce_de_leche_bottle` in place of `caramel` (`c:any_caramel`): caramel apples, berries, chocolates, pastries, sweet rolls, toast, popcorn, pretzel and marshmallow sticks, `panna_cotta_bowl_caramel`.
+  * `buttermilk` in place of milk in cooking (`c:cooking_milk_bottle`, `c:cooking_milk_bucket`): cake, muffin and waffle batters, `cheese_block`, yogurt, graham crackers, `french_toast_slice` and mashed potatoes.
+  * `tallow` in place of `vegetable_oil_bottle` for frying (`c:frying_fat`): donut bases, croutons, `chicken_patty`, `fish_sticks`, `mozzarella_sticks`, `onion_rings`, `potato_chips`, `tater_tots`, pita bread and `fried_apple_pie`.
+  * `sweet_berries` and `glow_berries` wherever `c:fruits` is accepted.
+  * `skim_milk` in `hot_cocoa`.
+* Removed `create:deploying` recipes that applied a fluid from its container. Use their existing `create:filling` recipes instead.
+* Removed vanilla `mushroom_stew`, `rabbit_stew` and `beetroot_soup` crafting recipes in favor of the cooking pot.
+* Removed crafting recipes that skipped an intermediate by using its ingredients instead:
+  * `heavy_cream` + `salt` in place of `butter`: `toast_butter`, `scone_butter`, `french_toast_slice_butter`, `baked_potato_butter`, `pasta_plate_butter`, `pasta_plate_butter_cheese`, `raw_pastry_base`, `raw_chocolate_pastry_base`.
+  * Chips in place of a hollow chocolate: `butterscotch_*`, `caramel_*`, `toffee_*` and `marshmallow_*` chocolates, `graham_cracker_chocolate`.
+  * Crumbs, `butter` and `sugar` in place of the pie crust: `raw_cream_pie_graham_cracker`, `raw_cream_pie_chocolate_graham_cracker`.
+  * Filling ingredients in place of `meat_pie_filling`: `raw_meat_pie`.
+  * `raw_sausages` + `paprika` in place of `raw_spicy_sausages`: `raw_spicy_sausage_roll`.
+* Removed remaining redundant `create:item_application` recipes.
+
+---
+
+### ***3.0.0***
+
+---
 
 * Milling `beetroot` now yields red dye, beetroot seeds and shredded beetroot.
 * Removed `cocoa_beans` → `chocolate_chips` cutting recipe.

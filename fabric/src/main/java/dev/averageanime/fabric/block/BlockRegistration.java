@@ -2,7 +2,6 @@ package dev.averageanime.fabric.block;
 
 import dev.averageanime.config.ConfigBootstrap;
 import dev.averageanime.config.AddonDefaults;
-import dev.averageanime.config.ConfigDefaults;
 import dev.averageanime.CreateFoodCommon;
 import dev.averageanime.block.BlockFactory;
 import dev.averageanime.block.type.cake.CakeFoodBlock;
@@ -10,23 +9,15 @@ import dev.averageanime.block.type.storage.ClothSackBlock;
 import dev.averageanime.block.type.storage.RationBoxBlock;
 import dev.averageanime.fabric.item.storage.ClothSackItem;
 import dev.averageanime.fabric.item.storage.RationBoxItem;
-import dev.averageanime.client.tooltip.ItemTooltips;
-import dev.averageanime.platform.Services;
 import dev.averageanime.util.Tooltips;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.List;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
@@ -39,7 +30,7 @@ public class BlockRegistration {
         @Override
         public Supplier<Block> registerBlock(String name, Supplier<Block> blockSupplier, int stackLimit, @Nullable Tooltips.TooltipSpec tip) {
             Block block = blockSupplier.get();
-            Registry.register(BuiltInRegistries.ITEM, id(name), blockItem(block, stackLimit, tip));
+            Registry.register(BuiltInRegistries.ITEM, id(name), BlockFactory.blockItem(block, stackLimit, tip));
             Registry.register(BuiltInRegistries.BLOCK, id(name), block);
             return () -> block;
         }
@@ -72,19 +63,6 @@ public class BlockRegistration {
     private static void registerConfigBlocks() {
         BlockFactory.registerConfigBlocks(HOOKS,
                 ConfigBootstrap.read(ConfigBootstrap.BLOCKS, AddonDefaults.customBlocks()));
-    }
-
-    private static BlockItem blockItem(Block block, int stackLimit, @Nullable Tooltips.TooltipSpec tip) {
-        var props = new net.minecraft.world.item.Item.Properties().stacksTo(stackLimit);
-        if (tip == null) return new BlockItem(block, props);
-        return new BlockItem(block, props) {
-            @Override
-            public void appendHoverText(@NotNull ItemStack stack, @NotNull TooltipContext context,
-                                        @NotNull List<Component> components, @NotNull TooltipFlag flag) {
-                ItemTooltips.addTooltip(components, tip.compat(), tip.keys());
-                super.appendHoverText(stack, context, components, flag);
-            }
-        };
     }
 
     private static Block registerBlockWithCustomItem(String name, Supplier<Block> blockSupplier,

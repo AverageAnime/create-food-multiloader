@@ -2,6 +2,7 @@ package dev.averageanime.config;
 
 import dev.averageanime.CreateFoodCommon;
 import dev.averageanime.createfood.lib.config.RegistryCondition;
+import dev.averageanime.registry.DisplayRegistry;
 import net.minecraft.resources.ResourceLocation;
 
 import org.jetbrains.annotations.Nullable;
@@ -14,7 +15,10 @@ public final class ConfigDefaults {
     private ConfigDefaults() {}
 
     public static final List<String> CRAFTING_REMAINDERS_DEFAULT = List.of(
-            "minecraft:egg|createfood:eggshell"
+            "minecraft:egg|createfood:eggshell",
+            "minecraft:mushroom_stew|minecraft:bowl",
+            "minecraft:rabbit_stew|minecraft:bowl",
+            "minecraft:beetroot_soup|minecraft:bowl"
     );
 
     public static final List<String> CUSTOM_BLOCK_DEFAULT = List.of();
@@ -28,6 +32,7 @@ public final class ConfigDefaults {
             "create:builders_tea|bottle|1|10|true",
             "create:sweet_roll|plate|4",
             "farmersdelight:pumpkin_pie_slice|small_plate|1",
+            "farmersdelight:sweet_berry_cheesecake|plate|1",
             "minecraft:cake|plate|1",
             "minecraft:pumpkin_pie|plate|1"
     );
@@ -180,6 +185,8 @@ public final class ConfigDefaults {
             "veggiesdelight:zucchini_sandwich|zucchini,lettuce,tomato"
     );
 
+    public static final List<String> CLOTH_SACK_EXCLUDE_DEFAULT = List.of("item:createfood:cloth_sack");
+
     public static final List<String> DISPLAY_INTERACTIONS_EXCLUDE_DEFAULT = List.of(
     );
 
@@ -230,9 +237,8 @@ public final class ConfigDefaults {
         String[] p = fields(obj);
         if (p == null) return false;
         if (p.length < 3 || p.length > 5) return false;
-        Set<String> validTypes = Set.of("plate", "small_plate", "bottle", "bowl", "display_bowl", "salad_bowl", "large_bowl", "small_bowl", "plate_food");
         String type = p[1].toLowerCase();
-        if (!validTypes.contains(type)) return false;
+        if (DisplayRegistry.parseType(type) == null) return false;
         try { Integer.parseInt(p[2]); } catch (NumberFormatException e) { return false; }
         if (p.length >= 4) {
             try { Double.parseDouble(p[3]); } catch (NumberFormatException e) { return false; }

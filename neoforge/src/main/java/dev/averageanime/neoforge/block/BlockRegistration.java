@@ -2,28 +2,20 @@ package dev.averageanime.neoforge.block;
 
 import dev.averageanime.config.ConfigBootstrap;
 import dev.averageanime.config.AddonDefaults;
-import dev.averageanime.config.ConfigDefaults;
 import dev.averageanime.CreateFoodCommon;
 import dev.averageanime.block.BlockFactory;
 import dev.averageanime.block.type.cake.CakeFoodBlock;
 import dev.averageanime.block.type.storage.ClothSackBlock;
 import dev.averageanime.block.type.storage.RationBoxBlock;
-import dev.averageanime.client.tooltip.ItemTooltips;
 import dev.averageanime.neoforge.item.storage.ClothSackItem;
 import dev.averageanime.neoforge.item.storage.RationBoxItem;
-import dev.averageanime.platform.Services;
 import dev.averageanime.util.Tooltips;
-import net.minecraft.network.chat.Component;
-import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
@@ -46,7 +38,7 @@ public class BlockRegistration {
         @Override
         public Supplier<Block> registerBlock(String name, Supplier<Block> blockSupplier, int stackLimit, @Nullable Tooltips.TooltipSpec tip) {
             DeferredBlock<Block> block = BLOCKS.register(name, blockSupplier);
-            ITEMS.register(name, () -> blockItem(block.get(), stackLimit, tip));
+            ITEMS.register(name, () -> BlockFactory.blockItem(block.get(), stackLimit, tip));
             return block;
         }
 
@@ -56,19 +48,6 @@ public class BlockRegistration {
             PENDING_CANDLE_WIRING.add(new CandleWiring(baseCake, candleItem, candleCake));
         }
     };
-
-    private static BlockItem blockItem(Block block, int stackLimit, @Nullable Tooltips.TooltipSpec tip) {
-        var props = new net.minecraft.world.item.Item.Properties().stacksTo(stackLimit);
-        if (tip == null) return new BlockItem(block, props);
-        return new BlockItem(block, props) {
-            @Override
-            public void appendHoverText(@NotNull ItemStack stack, @NotNull TooltipContext context,
-                                        @NotNull List<Component> components, @NotNull TooltipFlag flag) {
-                ItemTooltips.addTooltip(components, tip.compat(), tip.keys());
-                super.appendHoverText(stack, context, components, flag);
-            }
-        };
-    }
 
     static {
         BlockFactory.registerAll(HOOKS);

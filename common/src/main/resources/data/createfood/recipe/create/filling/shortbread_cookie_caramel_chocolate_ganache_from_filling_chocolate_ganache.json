@@ -1,0 +1,43 @@
+{
+  "type": "create:filling",
+  "ingredients": [
+    {
+      "tag": "c:shortbread_cookie_caramel"
+    },
+    {
+      "type": "fluid_tag",
+      "amount": 125,
+      "fluid_tag": "c:chocolate_ganache"
+    }
+  ],
+  "results": [
+    {
+      "count": 1,
+      "item": {
+        "id": "createfood:shortbread_cookie_caramel_chocolate_ganache"
+      }
+    }
+  ],
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    },
+    {
+      "type": "createfood:enabled",
+      "id": "shortbread_cookie_caramel_chocolate_ganache"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "create"
+      ]
+    },
+    {
+      "condition": "createfood:enabled",
+      "id": "shortbread_cookie_caramel_chocolate_ganache"
+    }
+  ]
+}

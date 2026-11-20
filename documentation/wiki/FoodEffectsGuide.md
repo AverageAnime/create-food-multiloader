@@ -51,7 +51,6 @@ A single effect stacks to a maximum of 30 minutes by default. Other ways of obta
 | `perception`        | Entities nearby the user will begin to glow                                                                 |
 | `preservation`      | Rotten flesh, raw chicken, poisonous potatoes, pufferfish, and spider eyes cause no debuffs                 |
 | `prickly`           | Damages entities that collide with you                                                                      |
-| `pyromaniac`        | Heals the user slowly while standing in fire                                                                |
 | `rage_aura`         | Mobs around you become hostile                                                                              |
 | `raging`            | Allows you to gain a 5% attack speed boost upon dealing melee damage to entities. This stacks up to 4 times |
 | `recovering`        | Prevents Poison and Wither                                                                                  |

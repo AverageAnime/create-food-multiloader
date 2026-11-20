@@ -5,6 +5,7 @@
       "tag": "c:crops/onion"
     }
   ],
+  "processing_time": 50,
   "results": [
     {
       "count": 2,

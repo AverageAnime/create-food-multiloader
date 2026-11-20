@@ -1,5 +1,8 @@
 package dev.averageanime.config;
 
+import dev.averageanime.config.type.ItemNutritionOverride;
+import dev.averageanime.config.type.ItemEffectOverride;
+import dev.averageanime.createfood.lib.config.ItemFilter;
 import dev.averageanime.registry.FluidAmounts;
 import net.minecraft.world.item.ItemStack;
 import org.jetbrains.annotations.Nullable;
@@ -16,6 +19,7 @@ public final class ConfigValues {
     static Supplier<Boolean> SHOW_INGREDIENTS             = unbound();
     static Supplier<Boolean> SHOW_SACK_BLOCK_ICONS        = unbound();
     static Supplier<Boolean> SHOW_STORAGE_TOOLTIP_ICONS   = unbound();
+    static Supplier<Boolean> COOKING_POT_DISPLAY          = unbound();
 
     static Supplier<List<? extends String>> CUSTOM_TOOLTIPS       = unbound();
     static Supplier<List<? extends String>> HIDE_ITEMS            = unbound();
@@ -32,6 +36,7 @@ public final class ConfigValues {
     static Supplier<Boolean> CREATE_BASIN_FLUID_ITEMS       = unbound();
     static Supplier<Boolean> CREATE_EXPANDED_BASIN_FLUIDS   = unbound();
     static Supplier<Boolean> ENABLE_CUTTING_BOARD           = unbound();
+    static Supplier<Boolean> ENABLE_ROLLING_PIN             = unbound();
     static Supplier<Boolean> ENABLE_DISPLAY_INTERACTIONS    = unbound();
     static Supplier<Integer> LARGE_BOWL_CAPACITY_MB         = unbound();
     static Supplier<Boolean> ENABLE_DEFAULT_EFFECTS         = unbound();
@@ -138,10 +143,11 @@ public final class ConfigValues {
 
     public static boolean isAlwaysDisplayUpright()  { try { return ALWAYS_DISPLAY_UPRIGHT.get();  } catch (IllegalStateException e) { return false; } }
     public static boolean isCuttingBoardEnabled()   { try { return ENABLE_CUTTING_BOARD.get();    } catch (IllegalStateException e) { return true;  } }
+    public static boolean isRollingPinEnabled()     { try { return ENABLE_ROLLING_PIN.get();      } catch (IllegalStateException e) { return true;  } }
     public static boolean isGenericDisplayEnabled() { try { return ENABLE_GENERIC_DISPLAY.get();   } catch (IllegalStateException e) { return true;  } }
 
     public static boolean isGenericDisplayAllowed(ItemStack stack) {
-        try { return !ConfigParser.matchesFilterList(stack, GENERIC_DISPLAY_EXCLUDE.get()); }
+        try { return !ItemFilter.matches(stack, GENERIC_DISPLAY_EXCLUDE.get()); }
         catch (IllegalStateException e) { return true; }
     }
 
@@ -149,8 +155,8 @@ public final class ConfigValues {
     public static int getLargeBowlCapacityMb() { try { return LARGE_BOWL_CAPACITY_MB.get(); } catch (IllegalStateException e) { return FluidAmounts.BUCKET * 4; } }
 
     public static boolean isDisplayInteractionExcluded(ItemStack stack) {
-        try { return ConfigParser.matchesFilterList(stack, DISPLAY_INTERACTIONS_EXCLUDE.get()); }
-        catch (IllegalStateException e) { return ConfigParser.matchesFilterList(stack, ConfigDefaults.DISPLAY_INTERACTIONS_EXCLUDE_DEFAULT); }
+        try { return ItemFilter.matches(stack, DISPLAY_INTERACTIONS_EXCLUDE.get()); }
+        catch (IllegalStateException e) { return ItemFilter.matches(stack, ConfigDefaults.DISPLAY_INTERACTIONS_EXCLUDE_DEFAULT); }
     }
 
     public static boolean isPumpkinPiePlacementEnabled() { try { return ENABLE_PUMPKIN_PIE_PLACEMENT.get(); } catch (IllegalStateException e) { return false; } }
@@ -176,16 +182,15 @@ public final class ConfigValues {
             exclude = ConfigDefaults.HANDCRAFTING_EXCLUDE_DEFAULT;
             filter = List.of();
         }
-        if (ConfigParser.matchesFilterList(result, exclude)) return false;
-        if (filter.isEmpty()) return true;
-        return ConfigParser.matchesFilterList(result, filter);
+        return ItemFilter.allows(result, exclude, filter);
     }
 
     public static boolean isFilterInteractionsEnabled() { try { return ENABLE_FILTER_INTERACTIONS.get(); } catch (IllegalStateException e) { return true; } }
-    public static List<String> getFilterInteractions()  { return getFilterInteractionEntries().stream().map(String::valueOf).toList(); }
     public static List<? extends String> getFilterInteractionEntries() { try { return FILTER_INTERACTIONS.get(); } catch (IllegalStateException e) { return ConfigDefaults.FILTER_INTERACTIONS_DEFAULT; } }
 
     public static boolean isBasinFluidItemsEnabled() { try { return CREATE_BASIN_FLUID_ITEMS.get(); } catch (IllegalStateException e) { return true; } }
+
+    public static boolean isCookingPotDisplayEnabled() { try { return COOKING_POT_DISPLAY.get(); } catch (IllegalStateException e) { return true; } }
 
     public static boolean isExpandedBasinFluidsEnabled() { try { return CREATE_EXPANDED_BASIN_FLUIDS.get(); } catch (IllegalStateException e) { return true; } }
 
@@ -202,7 +207,7 @@ public final class ConfigValues {
     public static boolean isClothSackStacking()         { try { return CLOTH_SACK_STACK.get();             } catch (IllegalStateException e) { return true;  } }
 
     public static boolean isClothSackItemAllowed(ItemStack stack) {
-        try { return ConfigParser.isClothSackItemAllowed(stack, CLOTH_SACK_EXCLUDE.get(), CLOTH_SACK_FILTER.get(), CLOTH_SACK_ALLOW_FOOD.get()); }
+        try { return ConfigParser.isStorageItemAllowed(stack, CLOTH_SACK_EXCLUDE.get(), CLOTH_SACK_FILTER.get(), CLOTH_SACK_ALLOW_FOOD.get()); }
         catch (IllegalStateException ignored) { return true; }
     }
 
@@ -211,7 +216,7 @@ public final class ConfigValues {
     public static boolean isRationBoxStacking()           { try { return RATION_BOX_STACK.get();             } catch (IllegalStateException e) { return false; } }
 
     public static boolean isRationBoxItemAllowed(ItemStack stack) {
-        try { return ConfigParser.isRationBoxItemAllowed(stack, RATION_BOX_EXCLUDE.get(), RATION_BOX_FILTER.get(), RATION_BOX_ALLOW_FOOD.get()); }
+        try { return ConfigParser.isStorageItemAllowed(stack, RATION_BOX_EXCLUDE.get(), RATION_BOX_FILTER.get(), RATION_BOX_ALLOW_FOOD.get()); }
         catch (IllegalStateException ignored) { return true; }
     }
 

@@ -1,0 +1,31 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "raw_shortbread_cookie"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "raw_shortbread_cookie"
+    }
+  ],
+  "key": {
+    "1": {
+      "tag": "c:sugar"
+    },
+    "2": {
+      "tag": "c:butter_dough"
+    }
+  },
+  "pattern": [
+    "1",
+    "2"
+  ],
+  "result": {
+    "count": 8,
+    "id": "createfood:raw_shortbread_cookie"
+  }
+}

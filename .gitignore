@@ -25,7 +25,6 @@ runs
 
 neoforge/server
 neoforge/run
-.idea
 
 # logs and scratch files
 logs/
@@ -37,6 +36,7 @@ logs/
 __pycache__/
 /documentation/toolkit/wip/
 /documentation/toolkit/scripts/
+/documentation/recipes/
 /common/src/generated/addon-manifest.txt
 /common/src/generated/resources/.cache
 
@@ -47,4 +47,7 @@ CLAUDE.local.md
 .claude-*
 .mcp.json
 /libs/
-/libs/aa-shared/
+AGENTS.md
+
+# scratch item-id dump
+/cf_items.txt

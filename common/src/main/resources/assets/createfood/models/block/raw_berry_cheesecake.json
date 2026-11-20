@@ -1,4 +1,4 @@
-﻿{
+{
 	"parent":  "createfood:block/pie_base",
 	"textures":  {
 					"bottom":  "createfood:block/raw_graham_cracker_bottom",

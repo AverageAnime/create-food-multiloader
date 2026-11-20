@@ -2,7 +2,7 @@
 
 Items should integrate with the existing systems with the goal of coherence within established patterns, while maintaining the flexibility that makes items feel distinct and purposeful.
 
-> **Toolkit note:** The Create: Food Toolkit (`.jsx`) generates registration code (`ModItems`, `ModBlocks`, `ModFluids`), lang entries, and recipe JSONs. All JSON asset files (item tags, item models, fluidBlock block models, blockstates, loot tables, fluidBlock tags) are now generated automatically by datagen on the next run — you do not need to create or manage these files manually. You only need to provide the texture PNGs.
+> **Toolkit note:** The Create: Food Toolkit (`.jsx`) generates registration code (`ItemRegistry`, `BlockRegistry`, `FluidRegistry`), lang entries, and recipe JSONs. All JSON asset files (item tags, item models, fluidBlock block models, blockstates, loot tables, fluidBlock tags) are now generated automatically by datagen on the next run — you do not need to create or manage these files manually. You only need to provide the texture PNGs.
 
 ---
 
@@ -27,9 +27,9 @@ Building blocks and quick snacks. Wide saturation variance is acceptable.
 
 | Nutrition | Examples |
 |-----------|---------|
-| 1 | Mushroom slices, donut base, ice cream sticks, glow berry slices (fast, Night Vision) |
-| 2 | Bread slice, toast slice, ice cream cones, basic cake slices, boiled egg |
-| 3 | Toast plate, cookies, pastries, donut variants, butterscotch/toffee/caramel toast |
+| 1 | Mushroom slices, donut base, ice cream sticks, ice cream cones, glow berry slices (fast, Night Vision) |
+| 2 | Basic cake slices |
+| 3 | Cookies, pastries, donut variants, butterscotch/toffee/caramel toast |
 
 **Saturation:** any ladder rung. Concentrates may exceed it (see below).
 
@@ -43,9 +43,9 @@ First level of "real food." Single-ingredient additions or simple preparations.
 
 | Nutrition | Examples |
 |-----------|---------|
-| 4 | Donuts, muffins, basic chocolates, chicken nuggets |
-| 5 | Single-topping bread, basic pizza slices, milkshakes, custard bottle (plain) |
-| 6 | Bread with bacon/cheese, ice cream sandwiches, custard with sugar, chocolate milk |
+| 4 | Bread slice, toast slice, toast plate, donuts, muffins, basic chocolates, chicken nuggets |
+| 5 | Single-topping bread, basic pizza slices, milkshakes, custard bottle (plain), chocolate milk |
+| 6 | Bread with bacon/cheese, ice cream sandwiches, custard with sugar |
 
 **Saturation:** any ladder rung.
 
@@ -57,9 +57,9 @@ Standard satisfying meals. Mid-level food.
 
 | Nutrition | Examples |
 |-----------|---------|
-| 7 | Single-topping buns, simple sandwiches, jam sandwiches, mashed potatoes bowl |
-| 8 | Dual-topping buns, complex sandwiches, scrambled eggs with bacon, berry custard |
-| 9 | Multi-topping combinations, non-rice burritos, chorus fruit custard, melon custard |
+| 7 | Single-topping buns, simple sandwiches, jam sandwiches, mashed potatoes bowl, berry custard |
+| 8 | Dual-topping buns, complex sandwiches, scrambled eggs with bacon, pumpkin custard, melon custard, chorus fruit custard |
+| 9 | Multi-topping combinations, non-rice burritos |
 
 **Saturation:** any ladder rung.
 
@@ -71,9 +71,9 @@ Hearty meals requiring multiple quality ingredients.
 
 | Nutrition | Examples |
 |-----------|---------|
-| 10 | Cheeseburgers, fully-loaded buns, pork/rabbit tacos with lettuce & sauce, wraps, pumpkin custard |
-| 11 | Multi-ingredient burritos, premium sandwiches, chicken burrito with rice |
-| 12 | Complex burgers with 3+ toppings, stews, beef taco with lettuce, pork taco with lettuce & sauce |
+| 10 | Cheeseburgers, fully-loaded buns, tacos with lettuce, wraps |
+| 11 | Multi-ingredient burritos, premium sandwiches, beef burrito with rice, tacos with lettuce & sauce (beef, pork, rabbit) |
+| 12 | Complex burgers with 3+ toppings, stews, chicken burrito with rice, chicken taco with lettuce & sauce |
 
 **Saturation:** any ladder rung, subject to the effective cap.
 
@@ -85,8 +85,8 @@ Endgame food. Requires significant ingredient investment.
 
 | Nutrition | Examples |
 |-----------|---------|
-| 13 | Beef taco with lettuce & sauce, chicken taco with lettuce & sauce |
-| 14+ | Beef burrito with rice |
+| 13 | Egg burritos with cheese and sausage, sausage biscuits with one extra filling |
+| 14+ | Sausage biscuits with cheese, egg and bacon; sausage biscuit sandwiches (up to 19) |
 
 **Saturation:** any ladder rung, subject to the effective cap.
 
@@ -143,9 +143,9 @@ which is not a balance decision, it is a loss of information.
 
 ## 2. Item Types & Stack Rules
 
-> **Toolkit:** Set in the Registration section. Item Type, Stack Size, Converts To, and Remainder are all configurable fields. The toolkit outputs the correct helper call for `ModItems.java` automatically based on these settings.
+> **Toolkit:** Set in the Registration section. Item Type, Stack Size, Converts To, and Remainder are all configurable fields. The toolkit outputs the correct helper call for `ItemRegistry.java` automatically based on these settings.
 
-### Helper Methods (ModItems.java)
+### Helper Methods (ItemRegistry.java)
 
 The new registration system uses concise helper methods. The toolkit generates these directly — you add one line per item:
 
@@ -170,9 +170,9 @@ stickFoodCr("my_item", nut, sat, crStick) // always fast, stick craftRemainder
 // Trailing arg examples
 tips(null, "beef_ingredient", "lettuce_ingredient")
 tips("tooltip.compat.mymod", "beef_ingredient")
-fx(ModEffects.NOURISHMENT, 1200)
+fx(EffectCategories.NOURISHMENT, 1200)
 fx(MobEffects.WATER_BREATHING, 600, 1)       // amplifier 1
-fx(ModEffects.NOURISHMENT, 1200, 0, 0.5f)    // 50% chance
+fx(EffectCategories.NOURISHMENT, 1200, 0, 0.5f)    // 50% chance
 ```
 
 ### Bowl foods
@@ -202,12 +202,12 @@ fx(ModEffects.NOURISHMENT, 1200, 0, 0.5f)    // 50% chance
 
 ### Block-Form Foods
 
-> **Toolkit:** Select "block" registration type and choose the Block Type. The toolkit generates the `ModBlocks.java` and `ModItems.java` registration lines, lang entries, and cutting/combine-back recipes. Blockstates, fluidBlock block models, and loot tables are covered by datagen.
+> **Toolkit:** Select "block" registration type and choose the Block Type. The toolkit generates the `BlockRegistry.java` and `ItemRegistry.java` registration lines, lang entries, and cutting/combine-back recipes. Blockstates, fluidBlock block models, and loot tables are covered by datagen.
 
 | Method | Block type | Slices | Used for |
 |--------|-----------|--------|---------|
-| `registerCake` | `ModCakeBlock` | 7 | Cream cakes, cheesecakes |
-| `registerCookedPie` | `ModPieBlock` | 4 | Fruit pies, cheesecakes |
+| `registerCake` | `CakeFoodBlock` | 7 | Cream cakes, cheesecakes |
+| `registerCookedPie` | `PieBlock` | 4 | Fruit pies, cheesecakes |
 | `registerRawPie` | `RawPieBlock` | — | Uncooked pies |
 | `registerCookedPizza` | `PizzaBlock` | 4 | Cooked pizzas, waffles |
 | `registerRawPizza` | `RawPizzaBlock` | — | Raw pizzas |
@@ -243,7 +243,7 @@ filled at one rate and drained at another.
 
 ### Registering a New Fluid
 
-> **Toolkit:** Select "fluidBlock" registration type. Flow slope/decrease, bottle item, and bottle food properties are all configurable. The toolkit generates the `ModFluids.java` registration line, lang entries, and optionally the bottle item registration in `ModItems.java`. Blockstates, block models, and fluidBlock tags are all covered by datagen.
+> **Toolkit:** Select "fluidBlock" registration type. Flow slope/decrease, bottle item, and bottle food properties are all configurable. The toolkit generates the `FluidRegistry.java` registration line, lang entries, and optionally the bottle item registration in `ItemRegistry.java`. Blockstates, block models, and fluidBlock tags are all covered by datagen.
 
 **Flow presets:**
 
@@ -579,6 +579,22 @@ Loading fluidBlock into container. Custard/juice bottles, piping bags, buckets.
 
 Extracting fluidBlock from container.
 
+### Alternate recipes (`_alt`)
+
+An `_alt` recipe may take a different route to the same item, but it may not perform another item's
+processing implicitly. Every Create: Food intermediate the primary recipe consumes must appear in the alt
+**as that item (or its tag)**, never as the ingredients of its own recipe.
+
+- **Not allowed** — each was removed in 3.1.0: `heavy_cream_bottle + salt` for `c:butter`; four chips for
+  a hollow chocolate; crumbs + butter + sugar for a pie crust; sausage and vegetables for
+  `meat_pie_filling`; `raw_sausages + paprika` for `raw_spicy_sausages`.
+- **Allowed:** finished components combined in one step that the primary recipe does in two —
+  `baked_potato + butter + bacon`, `bun + cooked_beef + cheese`. Everything consumed is still something
+  the chain produces.
+
+**Test:** for each ingredient the alt drops compared with the primary recipe, check whether the alt's
+extra inputs are that ingredient's own recipe inputs. If they are, the alt is a bypass.
+
 ---
 
 ## 8. Tags & Naming Conventions
@@ -695,6 +711,10 @@ player the whole recipe:
   Create's `{"type": "fluid_stack", "amount": …, "fluid": …}` and
   `{"type": "fluid_tag", "amount": …, "fluid_tag": …}` for fluids. A block tag has no item-tag
   counterpart and must be spelled out as its members.
+  Exception: fluid slots inside a `sequenced_assembly` `sequence[]` use `{"type": "neoforge:tag", …}`.
+  Create's loader accepts `fluid_tag` anywhere, but KubeJS-Create parses fluids with the flat codec only and
+  rejects the whole recipe. This is safe on Fabric because Create has no Fabric 1.21.1 build, so those
+  recipes are only ever read under NeoForge.
 - **Widen a narrow tag only to the flat tag with the same leaf.** `c:crops/tomato` → `c:tomato` is
   right; `c:foods/raw_beef` → `c:dumpling_ingredients` and `c:foods/leafy_green` →
   `c:salad_ingredients` are the same aggregate trap as the fifth mode above, and a "smallest
@@ -850,9 +870,23 @@ silently, so an override could look finished with half its inputs untouched.
   minted for it. Most of the ten historical `_compat` tags turned out unnecessary, because their
   main tag is already all-one-item (`c:butter`, `c:milk_powder`, the jams and juices).
 
+### Milk Tags
+
+Pick the narrowest tier the dish really needs. Each has `_bottle` and `_bucket` item twins for the
+hand routes.
+
+| Tag | Holds | Use for |
+|---|---|---|
+| `c:milk` | whole milk | where the fat matters: custards, cream separation, condensed milk, alfredo, puddings, panna cotta |
+| `c:any_milk` | whole + skim | drinks and sauces: milkshakes, hot chocolate and cocoa, chocolate milk, liquid cheese, soups |
+| `c:cooking_milk` | any milk + buttermilk | baking and savoury cooking: batters, pie crust, graham crackers, french toast, mashed potatoes, cheese, yogurt |
+
+Buttermilk is acidic, so it never joins a drink or a whole-milk recipe. Cream separation must stay
+on `c:milk`: on a wider tag it would satisfy itself from its own skim output.
+
 ### Tooltip Keys
 
-`tooltip.createfood.<key>_ingredient` in en_us.json as `" + Display Name"`. Use `tips(compat, "key1", "key2")` in `ModItems.java`. Compat key (first argument) renders blue above ingredient list.
+`tooltip.createfood.<key>_ingredient` in en_us.json as `" + Display Name"`. Use `tips(compat, "key1", "key2")` in `ItemRegistry.java`. Compat key (first argument) renders blue above ingredient list.
 
 ### Display Block Registration
 

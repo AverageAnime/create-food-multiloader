@@ -5,7 +5,6 @@ import dev.averageanime.platform.Services;
 import dev.averageanime.createfood.lib.config.RegistryCondition;
 import dev.averageanime.createfood.lib.config.TomlListReader;
 
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -21,6 +20,11 @@ public final class ConfigBootstrap {
 
     // AddonGate.KEY is read from the same file, and the reader caches it on first load, so it has to be
     // named here or it reads as absent for the rest of the launch.
+    /** The common spec's file, which is read directly before the spec is built; the loaders register it under this name. */
+    public static final String COMMON_FILE = "createfood-common.toml";
+    public static final String CLIENT_FILE = "createfood-client.toml";
+    public static final String SERVER_FILE = "createfood-server.toml";
+
     private static final List<String> KEYS = List.of(ITEMS, BLOCKS, DISPLAY_BLOCK, FLUIDS, AddonGate.KEY);
 
     private static volatile TomlListReader reader;
@@ -44,18 +48,8 @@ public final class ConfigBootstrap {
 
     /** Drops entries a {@code @} clause rules out and strips the clause from the rest. */
     private static List<String> resolve(List<String> entries) {
-        List<String> kept = new ArrayList<>(entries.size());
-        for (String entry : entries) {
-            RegistryCondition.Split split = RegistryCondition.split(entry, CreateFoodCommon.LOGGER);
-            if (split == null) continue; // Malformed clause, already logged.
-            if (!split.condition().isSatisfied(Services.PLATFORM)) {
-                CreateFoodCommon.LOGGER.info("Create: Food - not registering {}: {}",
-                        name(split.payload()), split.condition().reason(Services.PLATFORM));
-                continue;
-            }
-            kept.add(split.payload());
-        }
-        return List.copyOf(kept);
+        return RegistryCondition.resolve(entries, ConfigBootstrap::name, Services.PLATFORM,
+                "Create: Food - ", CreateFoodCommon.LOGGER).kept();
     }
 
     private static TomlListReader reader() {
@@ -64,7 +58,7 @@ public final class ConfigBootstrap {
         synchronized (ConfigBootstrap.class) {
             if (reader == null) {
                 reader = new TomlListReader(
-                        Services.PLATFORM.getConfigDir().resolve("createfood-common.toml"),
+                        Services.PLATFORM.getConfigDir().resolve(COMMON_FILE),
                         KEYS, CreateFoodCommon.LOGGER);
             }
             return reader;

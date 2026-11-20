@@ -95,6 +95,17 @@ public class FluidTagProvider extends TagsProvider<Fluid> {
                 .addTag(fluidTag("milk"))
                 .addTag(fluidTag("skim_milk"));
 
+        // Any milk plus buttermilk, for baking and savoury cooking. Buttermilk is acidic, so
+        // drinks stay on c:any_milk and the fat-dependent recipes on c:milk.
+        tag(fluidTag("cooking_milk"))
+                .addTag(fluidTag("any_milk"))
+                .addOptionalTag(fluidTag("buttermilk"));
+
+        // Oil or rendered tallow, for the recipes that fry in it.
+        tag(fluidTag("frying_fat"))
+                .addTag(fluidTag("vegetable_oil"))
+                .addOptionalTag(fluidTag("tallow"));
+
         // c:any_juice is for recipes that want juice but do not care which -- vinegar is the
         // one so far. Nesting the per-flavour tags rather than listing fluid ids means the
         // foreign juices already aliased above (Hearth and Harvest's berry juices, Ratatouille's
@@ -108,6 +119,14 @@ public class FluidTagProvider extends TagsProvider<Fluid> {
                 .addTag(fluidTag("glow_berry_juice"))
                 .addTag(fluidTag("melon_juice"))
                 .addTag(fluidTag("sugar_cane_juice"));
+
+        // c:any_caramel is for recipes that use caramel; dulce de leche stands in for it there.
+        // c:caramel stays caramel-only because it also feeds the recipes that make caramel
+        // (compacting to the solid piece, chips, the bucket), which would otherwise turn dulce
+        // de leche into caramel. Optional: the dulce de leche fluid may not be registered.
+        tag(fluidTag("any_caramel"))
+                .addTag(fluidTag("caramel"))
+                .addOptionalTag(fluidTag("dulce_de_leche"));
     }
 
     private static TagKey<Fluid> fluidTag(String id) {

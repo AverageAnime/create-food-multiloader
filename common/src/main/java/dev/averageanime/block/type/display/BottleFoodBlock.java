@@ -1,6 +1,5 @@
 package dev.averageanime.block.type.display;
 
-import dev.averageanime.item.effect.EffectContext;
 import dev.averageanime.platform.Services;
 import dev.averageanime.item.type.EffectFood;
 
@@ -32,6 +31,8 @@ public class BottleFoodBlock extends DisplayFoodBlock {
 
     private final boolean hasParticles;
     private final Supplier<ParticleOptions> particleType;
+    // Resolved on first use: the registry key does not exist yet when the constructor runs.
+    private BottleVessel vessel;
 
     public BottleFoodBlock(Supplier<Item> displayItem) {
         this(displayItem, 0.0, false, null);
@@ -65,27 +66,21 @@ public class BottleFoodBlock extends DisplayFoodBlock {
         if (emptyState.hasProperty(FACING) && state.hasProperty(FACING)) {
             emptyState = emptyState.setValue(FACING, state.getValue(FACING));
         }
+        if (emptyState.hasProperty(EmptyBottleBlock.VESSEL)) {
+            emptyState = emptyState.setValue(EmptyBottleBlock.VESSEL, getVessel());
+        }
         level.setBlock(pos, emptyState, 3);
+    }
+
+    private BottleVessel getVessel() {
+        if (vessel == null) vessel = BottleVessel.forBlockName(BuiltInRegistries.BLOCK.getKey(this).getPath());
+        return vessel;
     }
 
     @Override
     protected void applyEatEffects(ItemStack copy, FoodProperties props, Player player, Level level, BlockPos pos) {
         player.getFoodData().eat(props.nutrition(), props.saturation());
-        EffectContext.begin(player, copy);
-        try {
-            for (FoodProperties.PossibleEffect entry : EffectFood.enabledEffects(props,
-                    BuiltInRegistries.ITEM.getKey(copy.getItem()).getPath())) {
-                if (level.random.nextFloat() < entry.probability()) {
-                    player.addEffect(entry.effect());
-                }
-            }
-            // Compat-category effects are deferred rather than baked into FOOD.
-            if (copy.getItem() instanceof EffectFood effectFood) {
-                effectFood.applyNonBakedEffects(level, player);
-            }
-        } finally {
-            EffectContext.end(player);
-        }
+        EffectFood.applyEatEffects(level, player, copy, props);
     }
 
     @Override

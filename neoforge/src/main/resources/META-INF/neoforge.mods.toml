@@ -1,6 +1,7 @@
 modLoader = "javafml" #mandatory
 loaderVersion = "${neoforge_loader_version_range}" #mandatory
 license = "${license}" # Review your options at https://choosealicense.com/.
+issueTrackerURL = "https://github.com/AverageAnime/create-food-multiloader/issues"
 [[mods]] #mandatory
 modId = "${mod_id}" #mandatory
 version = "${version}" #mandatory
@@ -16,7 +17,9 @@ config = "${mod_id}.create.mixins.json"
 [[mixins]]
 config = "${mod_id}.lib.create.mixins.json"
 [[mixins]]
-config = "${mod_id}.neoforge.mixins.json"
+config = "${mod_id}.lib.common.mixins.json"
+[[mixins]]
+config = "${mod_id}.farmersdelight.mixins.json"
 [[dependencies.${mod_id}]] #optional
 modId = "neoforge" #mandatory
 type="required" #mandatory (Can be one of "required", "optional", "incompatible" or "discouraged")

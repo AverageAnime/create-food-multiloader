@@ -1,26 +1,24 @@
 {
-    "type": "minecraft:crafting_shapeless",
-    "ingredients": [
-        {
-            "tag": "c:heavy_cream_bottle"
-        },
-        {
-            "tag": "c:salt"
-        }
-    ],
-    "result": {
-        "id": "createfood:butter"
-    },
-    "neoforge:conditions": [
-        {
-            "type": "createfood:enabled",
-            "id": "butter"
-        }
-    ],
-    "fabric:load_conditions": [
-        {
-            "condition": "createfood:enabled",
-            "id": "butter"
-        }
-    ]
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "c:heavy_cream_bottle"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "createfood:butter"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "butter"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "butter"
+    }
+  ]
 }

@@ -95,9 +95,9 @@
           "item": "culturalcreators:incomplete_fried_eggplant_pasta"
         },
         {
-          "type": "fluid_tag",
+          "type": "neoforge:tag",
           "amount": 250,
-          "fluid_tag": "c:tomato_sauce"
+          "tag": "c:tomato_sauce"
         }
       ],
       "results": [

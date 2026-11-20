@@ -3,7 +3,7 @@
     "experience": 0.25,
     "ingredients": [
         {
-            "tag": "c:any_milk_bottle"
+            "tag": "c:cooking_milk_bottle"
         },
         {
             "item": "minecraft:honey_bottle"

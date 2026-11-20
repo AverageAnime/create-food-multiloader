@@ -367,11 +367,13 @@ Set `"type": "fluidEntry"` or `"registrationType": "fluidEntry"`. Additional fie
 | `fluidFlowDecrease` | Flow decrease (e.g. `2`) |
 | `createBottle` | `true` to auto-generate bottle item + filling/emptying/bucket recipes |
 | `bottleSize` | Bottle volume in mB — `250` (default) or `500` for a concentrate. Sets the filling/emptying amount and derives the bucket crafting ratio (4 per bucket at 250, 2 at 500) |
+| `bottleHasFood` | `false` registers the bottle as an `ingredientBottle` (no food value, returns a glass bottle) instead of a food `bottle(...)`. Default `true`. Use it for sauces, oils and other fluids nobody drinks. The four recipes are the same either way; `bottleNutrition`, `bottleSaturation`, `bottleEffects` and `bottleTooltips` are ignored, because `ingredientBottle` takes none of them |
 | `bottleNutrition` | Bottle nutrition (default `4`) |
 | `bottleSaturation` | Bottle saturation (default `1.0`) |
 | `bottleEffects` | Array of effect objects for the bottle |
 | `bottleTooltips` | Tooltip keys for the bottle |
 | `createBowl` | `true` to auto-generate bowl item + filling/emptying/bucket recipes |
+| `bowlHasFood` | `false` registers the bowl as an `ingredientBowl` (not edible, returns a bowl) instead of a food `bowlFoodCr(...)`. Default `true`. The four recipes are the same either way; `bowlNutrition`, `bowlSaturation`, `bowlEffects` and `bowlTooltips` are ignored, because `ingredientBowl` takes none of them |
 | `bowlNutrition` | Bowl nutrition (default `4`) |
 | `bowlSaturation` | Bowl saturation (default `0.6`) |
 | `bowlEffects` | Array of effect objects for the bowl |
@@ -463,7 +465,7 @@ All valid recipe types:
 | `create:item_application` | Deployer applies item onto stationary target, returns result + optional applicator |
 | `create:emptying` | Extracts fluid from a container, returning both |
 | `create:filling` | Fills a container with fluid |
-| `create:milling` | Millstone grinds to powder |
+| `create:milling` | Millstone grinds to powder. Uses `cookingtime` as the processing time (default 50) |
 | `create:mixing_heated` | Mixer with heat |
 | `create:mixing` | Mixer, no heat |
 | `create:pressing` | Press on single item |
@@ -493,6 +495,7 @@ Array of ingredient objects. Each has a `type` and `value`:
 | `tag` | Tag path — `c:` is added only when the value has no namespace of its own | `"cooked_beef"`, `"c:cooked_beef"`, `"farmersdelight:tools/knives"` |
 | `item` | Full item ID with namespace | `"minecraft:glass_bottle"` |
 | `fluid_tag` | Tag path + mB amount separated by `\|`, same namespace rule as `tag` | `"honey\|125"`, `"c:honey\|125"`, `"ratatouille_fried_delights:oil\|100"` |
+| `water_bottle` | No value. Emits a water bottle, `{"item": "minecraft:potion", "components": {"minecraft:potion_contents": {"potion": "minecraft:water"}}}`, which no tag can express | `{ "type": "water_bottle" }` |
 
 ```json
 "inputs": [
@@ -542,6 +545,18 @@ For **emptying** it is the drained container returned alongside the fluid. Set i
 
 Omitting it on an emptying recipe falls back to the legacy shape, which emits the output id as *both* an item and a fluid — almost never what you want. The bottle and bowl emptying recipes are auto-generated and need no entry either way.
 
+### `byproductFluid`
+Optional. Used by `create:mixing`, `create:mixing_heated`, `create:compacting` and `create:compacting_heated`. Format `"<fluid>|<mB>"`; no namespace defaults to `createfood:`. It appends a fluid result after the recipe's main result, which may itself be an item or a fluid.
+
+```json
+{
+  "type": "create:compacting",
+  "inputs": [{ "type": "fluid_tag", "value": "c:heavy_cream|250" }],
+  "output": "butter",
+  "byproductFluid": "buttermilk|125"
+}
+```
+
 ### `suffix`
 The recipe type suffix (`_from_deploying`, `_from_crafting`, etc.) is **always added automatically** from the recipe type. The `suffix` field is only for disambiguating two recipes of the **same type** targeting the **same output** that would otherwise produce identical filenames.
 
@@ -561,6 +576,8 @@ If you have two `create:filling` recipes pointing at the same output (one with h
 
 ### `experience` and `cookingtime`
 Used by `farmersdelight:cooking`, `minecraft:smelting`, `minecraft:smoking`, and `minecraft:campfire_cooking`.
+`create:milling` reads `cookingtime` as its `processing_time` (default 50). A milling recipe always gets one,
+because Create treats a missing time as 0 and the millstone never finishes.
 
 ```json
 "experience": 0.35,
@@ -652,6 +669,13 @@ public static final BlockEntry APPLE_CREAM_CAKE = BlockEntry.cake("apple_cream_c
 
 // FluidRegistry.java — constant is the uppercased id + _FLUID_ENTRY
 public static final FluidEntry APPLE_CUSTARD_FLUID_ENTRY = fluid("apple_custard", 1, 4);
+
+// ItemRegistry.java — createBottle/createBowl vessels are food by default; bottleHasFood/bowlHasFood: false
+// makes them ingredientBottle/ingredientBowl
+public static final ItemEntry APPLE_CUSTARD_BOTTLE = bottle("apple_custard_bottle", 5, 0.8f, fx(COMFORT, 600));
+public static final ItemEntry GRAVY_BOTTLE = ingredientBottle("gravy_bottle");
+public static final ItemEntry BREAD_PUDDING_BOWL = bowlFoodCr("bread_pudding_bowl", 6, 0.9f, fx(NOURISHMENT, 600));
+public static final ItemEntry MERINGUE_BOWL = ingredientBowl("meringue_bowl");
 
 // DisplayRegistry.java — goes inside the static block; defaults (maxStack 1, height 12) are omitted
 register.add("cookie_dough", DisplayEntry.of(PLATE).maxStack(4).build());
@@ -798,6 +822,28 @@ ignored for those block types. Same for `ingredientBowl` and `ingredientBottle` 
 }
 ```
 
+### Fluid with an ingredient bottle or bowl
+
+```json
+{
+  "id": "gravy",
+  "displayName": "Gravy",
+  "type": "fluidEntry",
+  "createBottle": true,
+  "bottleHasFood": false
+}
+```
+
+```json
+{
+  "id": "meringue",
+  "displayName": "Meringue",
+  "type": "fluidEntry",
+  "createBowl": true,
+  "bowlHasFood": false
+}
+```
+
 ---
 
 ## Common mistakes
@@ -820,7 +866,7 @@ ignored for those block types. Same for `ingredientBowl` and `ingredientBottle` 
 
 **Wrong block type for waffle** — use `block_waffle`, not `block_pizza`. Waffles use a different block class and do not have a raw/cooked pair in the same sense as pies.
 
-**`createBottle`/`createBowl` on a fluidEntry** — bottle and bowl items are auto-generated into `ItemRegistry.java`. You do not need to add them as separate spec items. The bowl variant is automatically registered with `crBowl: true` so the bowl returns as a crafting remainder from filling recipes.
+**`createBottle`/`createBowl` on a fluidEntry** — bottle and bowl items are auto-generated into `ItemRegistry.java`. You do not need to add them as separate spec items. The bowl variant is automatically registered with `crBowl: true` so the bowl returns as a crafting remainder from filling recipes. That holds for a vessel that isn't food too: set `bottleHasFood: false` or `bowlHasFood: false` rather than adding a separate `ingredientBottle` or `ingredientBowl` spec item and writing its filling, emptying and bucket recipes by hand.
 
 **Incorrectly specifying `_ingredient`** — Toolkit automatically adds `_ingredient`, so it should not be included as part of the spec file.
 

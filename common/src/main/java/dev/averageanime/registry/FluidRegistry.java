@@ -30,6 +30,7 @@ public final class FluidRegistry {
     public static final FluidEntry BLUE_GELATIN_MIX_FLUID_ENTRY = fluid("blue_gelatin_mix");
     public static final FluidEntry BREAD_PUDDING_FLUID_ENTRY = fluid("bread_pudding");
     public static final FluidEntry BROWN_GELATIN_MIX_FLUID_ENTRY = fluid("brown_gelatin_mix");
+    public static final FluidEntry BUTTERMILK_FLUID_ENTRY = fluid("buttermilk");
     public static final FluidEntry BUTTERSCOTCH_FLUID_ENTRY = fluid("butterscotch");
     public static final FluidEntry BUTTERSCOTCH_FUDGE_FLUID_ENTRY = fluid("butterscotch_fudge");
     public static final FluidEntry CACAO_BUTTER_FLUID_ENTRY = fluid("cacao_butter");
@@ -63,6 +64,7 @@ public final class FluidRegistry {
     public static final FluidEntry DARK_CHOCOLATE_FLUID_ENTRY = fluid("dark_chocolate");
     public static final FluidEntry DARK_CHOCOLATE_FUDGE_FLUID_ENTRY = fluid("dark_chocolate_fudge");
     public static final FluidEntry DARK_CHOCOLATE_GANACHE_FLUID_ENTRY = fluid("dark_chocolate_ganache").tex("dark_chocolate_fudge");
+    public static final FluidEntry DULCE_DE_LECHE_FLUID_ENTRY = fluid("dulce_de_leche");
     public static final FluidEntry EGG_FLUID_ENTRY = fluid("egg");
     public static final FluidEntry EGG_WHITES_FLUID_ENTRY = fluid("egg_whites");
     public static final FluidEntry FISH_CHOWDER_FLUID_ENTRY = fluid("fish_chowder");
@@ -118,6 +120,7 @@ public final class FluidRegistry {
     public static final FluidEntry SQUID_INK_FLUID_ENTRY = fluid("squid_ink");
     public static final FluidEntry SUGAR_CANE_JUICE_FLUID_ENTRY = fluid("sugar_cane_juice",        3, 2);
     public static final FluidEntry TACO_SAUCE_FLUID_ENTRY = fluid("taco_sauce",              2, 4);
+    public static final FluidEntry TALLOW_FLUID_ENTRY = fluid("tallow");
     public static final FluidEntry TOFFEE_FLUID_ENTRY = fluid("toffee");
     public static final FluidEntry TOFFEE_FUDGE_FLUID_ENTRY = fluid("toffee_fudge");
     public static final FluidEntry TOMATO_CREAM_SOUP_FLUID_ENTRY = fluid("tomato_cream_soup");

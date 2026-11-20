@@ -22,16 +22,17 @@ public class MenuRegistration {
     public static final DeferredHolder<MenuType<?>, MenuType<RationBoxBlockMenu>>
         RATION_BOX = MENUS.register("ration_box",
             () -> IMenuTypeExtension.create((windowId, inv, data) -> {
-                RationBoxBlockEntity be = (RationBoxBlockEntity) inv.player.level()
-                        .getBlockEntity(data.readBlockPos());
+                // The block can be gone by the time the packet arrives; the menu then shows only the player inventory.
+                RationBoxBlockEntity be = inv.player.level().getBlockEntity(data.readBlockPos())
+                        instanceof RationBoxBlockEntity rb ? rb : null;
                 return new RationBoxBlockMenu(windowId, inv, be);
             }));
 
     public static final DeferredHolder<MenuType<?>, MenuType<ClothSackBlockMenu>>
         CLOTH_SACK = MENUS.register("cloth_sack",
             () -> IMenuTypeExtension.create((windowId, inv, data) -> {
-                ClothSackBlockEntity be = (ClothSackBlockEntity) inv.player.level()
-                        .getBlockEntity(data.readBlockPos());
+                ClothSackBlockEntity be = inv.player.level().getBlockEntity(data.readBlockPos())
+                        instanceof ClothSackBlockEntity cs ? cs : null;
                 return new ClothSackBlockMenu(windowId, inv, be);
             }));
 

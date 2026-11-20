@@ -44,6 +44,12 @@ public final class ConfigSchema {
         ConfigValues.CUSTOM_TOOLTIPS = b.defineList("custom_tooltips", ConfigDefaults.CUSTOM_TOOLTIPS_DEFAULT,
                 () -> "item_key|ingredients[|compat_key]", STRING, true);
         b.pop();
+
+        b.push("compat");
+        b.push("farmersdelight");
+        ConfigValues.COOKING_POT_DISPLAY = b.defineBool("cooking_pot_display", true);
+        b.pop();
+        b.pop();
     }
 
     private static void buildCommon(ConfigSpecBuilder b) {
@@ -78,6 +84,7 @@ public final class ConfigSchema {
 
         b.push("display");
         ConfigValues.ENABLE_CUTTING_BOARD = b.defineBool("enable_cutting_board", true);
+        ConfigValues.ENABLE_ROLLING_PIN = b.defineBool("enable_rolling_pin", true);
         ConfigValues.ENABLE_DISPLAY_INTERACTIONS = b.defineBool("enable_display_interactions", true);
         ConfigValues.ENABLE_GENERIC_DISPLAY = b.defineBool("enable_generic_display", true);
         ConfigValues.LARGE_BOWL_CAPACITY_MB = b.defineInt("large_bowl_capacity_mb",
@@ -94,7 +101,7 @@ public final class ConfigSchema {
         ConfigValues.CLOTH_SACK_STACK = b.defineBool("cloth_sack_stack", true);
         ConfigValues.CLOTH_SACK_EAT_FROM_ITEM = b.defineBool("cloth_sack_eat_from_item", false);
         ConfigValues.CLOTH_SACK_INVENTORY_ENABLED = b.defineBool("cloth_sack_inventory", true);
-        ConfigValues.CLOTH_SACK_EXCLUDE = b.defineList("cloth_sack_exclude", List.of("item:createfood:cloth_sack"),
+        ConfigValues.CLOTH_SACK_EXCLUDE = b.defineList("cloth_sack_exclude", ConfigDefaults.CLOTH_SACK_EXCLUDE_DEFAULT,
                 FILTER_HINT, STRING, false);
         ConfigValues.CLOTH_SACK_FILTER = b.defineList("cloth_sack_filter", List.of(), FILTER_HINT, STRING, false);
         b.pop();

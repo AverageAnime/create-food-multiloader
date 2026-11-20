@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "c:tart_shell"
+    },
+    {
+      "tag": "c:chorus_fruit_custard_bottle"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "createfood:chorus_fruit_custard_tart"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "createfood:enabled",
+      "id": "chorus_fruit_custard_tart"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "createfood:enabled",
+      "id": "chorus_fruit_custard_tart"
+    }
+  ]
+}

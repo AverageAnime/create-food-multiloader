@@ -1,4 +1,4 @@
-﻿{
+{
 	"parent":  "createfood:block/cream_cake_base",
 	"textures":  {
 					"bottom":  "createfood:block/ube_cake_bottom",

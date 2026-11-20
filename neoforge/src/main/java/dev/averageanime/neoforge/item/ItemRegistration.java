@@ -2,14 +2,12 @@ package dev.averageanime.neoforge.item;
 
 import dev.averageanime.config.ConfigBootstrap;
 import dev.averageanime.config.AddonDefaults;
-import dev.averageanime.config.ConfigDefaults;
 import dev.averageanime.CreateFoodCommon;
 import dev.averageanime.config.ConfigValues;
-import dev.averageanime.config.ItemEffectOverride;
+import dev.averageanime.config.type.ItemEffectOverride;
 import dev.averageanime.item.ItemFactory;
 import dev.averageanime.item.type.EffectFood.DeferredFx;
 import dev.averageanime.neoforge.item.type.EffectFood;
-import dev.averageanime.platform.Services;
 import dev.averageanime.registry.type.EffectEntry;
 import dev.averageanime.util.Tooltips;
 import net.minecraft.core.Holder;

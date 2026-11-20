@@ -29,9 +29,9 @@ Information regarding compatibility with other mods can be found [here](https://
 
 Information on versions prior to 2.0.0 can be found [here](https://github.com/AverageAnime/create-food/wiki).
 
-### **Item Preview (3.0.0)**
-![fullprev300](https://github.com/user-attachments/assets/56f22473-051f-4a15-8514-57edd6862b09)
-![bucketprev300](https://github.com/user-attachments/assets/9a73ac50-517d-44b2-a1cf-eae941d0cdd8)
+### **Item Preview (3.1.0)**
+![fullprev310](https://github.com/user-attachments/assets/059c1634-573e-4464-b917-8546838fe8f8)
+![bucketprev310](https://github.com/user-attachments/assets/59549195-7f95-4ca2-9241-b9661307a51d)
 
 ### **My Other Mods**
 * [Create: Engineers](https://www.curseforge.com/minecraft/mc-mods/create-engineers)

@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "createfood:flowing_dulce_de_leche",
+      "required": false
+    },
+    {
+      "id": "createfood:dulce_de_leche",
+      "required": false
+    }
+  ]
+}

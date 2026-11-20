@@ -3,6 +3,10 @@
     {
       "id": "fruitsdelight:cranberry",
       "required": false
+    },
+    {
+      "id": "expandeddelight:cranberries",
+      "required": false
     }
   ]
 }
