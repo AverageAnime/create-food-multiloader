@@ -85,7 +85,7 @@ public final class ConfigSchema {
         b.push("display");
         ConfigValues.ENABLE_CUTTING_BOARD = b.defineBool("enable_cutting_board", true);
         ConfigValues.ENABLE_ROLLING_PIN = b.defineBool("enable_rolling_pin", true);
-        ConfigValues.ENABLE_DISPLAY_INTERACTIONS = b.defineBool("enable_display_interactions", true);
+        ConfigValues.ENABLE_DISPLAY_INTERACTIONS = b.defineBool("enable_display_interactions", false);
         ConfigValues.ENABLE_GENERIC_DISPLAY = b.defineBool("enable_generic_display", true);
         ConfigValues.LARGE_BOWL_CAPACITY_MB = b.defineInt("large_bowl_capacity_mb",
                 FluidAmounts.BUCKET * 4, FluidAmounts.BUCKET, FluidAmounts.BUCKET * 16, false);
